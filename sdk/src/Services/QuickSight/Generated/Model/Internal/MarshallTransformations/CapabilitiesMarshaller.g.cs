@@ -69,6 +69,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.AdobeAction);
             }
 
+            if (requestObject.IsSetAdobeAnalyticsDataSource())
+            {
+                context.Writer.WritePropertyName("AdobeAnalyticsDataSource");
+                context.Writer.WriteStringValue(requestObject.AdobeAnalyticsDataSource);
+            }
+
             if (requestObject.IsSetAirtableAction())
             {
                 context.Writer.WritePropertyName("AirtableAction");
@@ -121,6 +127,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("AsanaAction");
                 context.Writer.WriteStringValue(requestObject.AsanaAction);
+            }
+
+            if (requestObject.IsSetAthenaDataSource())
+            {
+                context.Writer.WritePropertyName("AthenaDataSource");
+                context.Writer.WriteStringValue(requestObject.AthenaDataSource);
+            }
+
+            if (requestObject.IsSetAuroraDataSource())
+            {
+                context.Writer.WritePropertyName("AuroraDataSource");
+                context.Writer.WriteStringValue(requestObject.AuroraDataSource);
             }
 
             if (requestObject.IsSetAutomate())
@@ -211,6 +229,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ConfluenceKnowledgeBase");
                 context.Writer.WriteStringValue(requestObject.ConfluenceKnowledgeBase);
+            }
+
+            if (requestObject.IsSetCreateAdobeAnalyticsDataSource())
+            {
+                context.Writer.WritePropertyName("CreateAdobeAnalyticsDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateAdobeAnalyticsDataSource);
             }
 
             if (requestObject.IsSetCreateAndUpdateAdobeAction())
@@ -391,6 +415,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("CreateAndUpdateGmailAction");
                 context.Writer.WriteStringValue(requestObject.CreateAndUpdateGmailAction);
+            }
+
+            if (requestObject.IsSetCreateAndUpdateGongAction())
+            {
+                context.Writer.WritePropertyName("CreateAndUpdateGongAction");
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateGongAction);
             }
 
             if (requestObject.IsSetCreateAndUpdateGoogleAnalyticsAction())
@@ -741,6 +771,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.CreateAndUpdateZoomInfoAction);
             }
 
+            if (requestObject.IsSetCreateAthenaDataSource())
+            {
+                context.Writer.WritePropertyName("CreateAthenaDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateAthenaDataSource);
+            }
+
+            if (requestObject.IsSetCreateAuroraDataSource())
+            {
+                context.Writer.WritePropertyName("CreateAuroraDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateAuroraDataSource);
+            }
+
             if (requestObject.IsSetCreateChatAgents())
             {
                 context.Writer.WritePropertyName("CreateChatAgents");
@@ -753,10 +795,208 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.CreateDashboardExecutiveSummaryWithQ);
             }
 
+            if (requestObject.IsSetCreateDatabricksDataSource())
+            {
+                context.Writer.WritePropertyName("CreateDatabricksDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateDatabricksDataSource);
+            }
+
+            if (requestObject.IsSetCreateDb2DataSource())
+            {
+                context.Writer.WritePropertyName("CreateDb2DataSource");
+                context.Writer.WriteStringValue(requestObject.CreateDb2DataSource);
+            }
+
+            if (requestObject.IsSetCreateDenodoDataSource())
+            {
+                context.Writer.WritePropertyName("CreateDenodoDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateDenodoDataSource);
+            }
+
+            if (requestObject.IsSetCreateDocumentDbDataSource())
+            {
+                context.Writer.WritePropertyName("CreateDocumentDbDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateDocumentDbDataSource);
+            }
+
+            if (requestObject.IsSetCreateDremioDataSource())
+            {
+                context.Writer.WritePropertyName("CreateDremioDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateDremioDataSource);
+            }
+
+            if (requestObject.IsSetCreateDynamoDbDataSource())
+            {
+                context.Writer.WritePropertyName("CreateDynamoDbDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateDynamoDbDataSource);
+            }
+
+            if (requestObject.IsSetCreateExasolDataSource())
+            {
+                context.Writer.WritePropertyName("CreateExasolDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateExasolDataSource);
+            }
+
+            if (requestObject.IsSetCreateFileDataSource())
+            {
+                context.Writer.WritePropertyName("CreateFileDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateFileDataSource);
+            }
+
+            if (requestObject.IsSetCreateGitHubDataSource())
+            {
+                context.Writer.WritePropertyName("CreateGitHubDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateGitHubDataSource);
+            }
+
+            if (requestObject.IsSetCreateGoogleAnalyticsDataSource())
+            {
+                context.Writer.WritePropertyName("CreateGoogleAnalyticsDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateGoogleAnalyticsDataSource);
+            }
+
+            if (requestObject.IsSetCreateGoogleBigQueryDataSource())
+            {
+                context.Writer.WritePropertyName("CreateGoogleBigQueryDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateGoogleBigQueryDataSource);
+            }
+
+            if (requestObject.IsSetCreateGoogleSheetsDataSource())
+            {
+                context.Writer.WritePropertyName("CreateGoogleSheetsDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateGoogleSheetsDataSource);
+            }
+
+            if (requestObject.IsSetCreateImpalaDataSource())
+            {
+                context.Writer.WritePropertyName("CreateImpalaDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateImpalaDataSource);
+            }
+
+            if (requestObject.IsSetCreateJiraDataSource())
+            {
+                context.Writer.WritePropertyName("CreateJiraDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateJiraDataSource);
+            }
+
+            if (requestObject.IsSetCreateMariaDbDataSource())
+            {
+                context.Writer.WritePropertyName("CreateMariaDbDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateMariaDbDataSource);
+            }
+
+            if (requestObject.IsSetCreateMongoAtlasDataSource())
+            {
+                context.Writer.WritePropertyName("CreateMongoAtlasDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateMongoAtlasDataSource);
+            }
+
+            if (requestObject.IsSetCreateMongoDbDataSource())
+            {
+                context.Writer.WritePropertyName("CreateMongoDbDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateMongoDbDataSource);
+            }
+
+            if (requestObject.IsSetCreateMySqlDataSource())
+            {
+                context.Writer.WritePropertyName("CreateMySqlDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateMySqlDataSource);
+            }
+
+            if (requestObject.IsSetCreateOpenSearchDataSource())
+            {
+                context.Writer.WritePropertyName("CreateOpenSearchDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateOpenSearchDataSource);
+            }
+
+            if (requestObject.IsSetCreateOracleDataSource())
+            {
+                context.Writer.WritePropertyName("CreateOracleDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateOracleDataSource);
+            }
+
+            if (requestObject.IsSetCreatePayPalDataSource())
+            {
+                context.Writer.WritePropertyName("CreatePayPalDataSource");
+                context.Writer.WriteStringValue(requestObject.CreatePayPalDataSource);
+            }
+
+            if (requestObject.IsSetCreatePostgreSqlDataSource())
+            {
+                context.Writer.WritePropertyName("CreatePostgreSqlDataSource");
+                context.Writer.WriteStringValue(requestObject.CreatePostgreSqlDataSource);
+            }
+
+            if (requestObject.IsSetCreatePrestoDataSource())
+            {
+                context.Writer.WritePropertyName("CreatePrestoDataSource");
+                context.Writer.WriteStringValue(requestObject.CreatePrestoDataSource);
+            }
+
+            if (requestObject.IsSetCreateRadiantDataSource())
+            {
+                context.Writer.WritePropertyName("CreateRadiantDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateRadiantDataSource);
+            }
+
+            if (requestObject.IsSetCreateRdsDataSource())
+            {
+                context.Writer.WritePropertyName("CreateRdsDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateRdsDataSource);
+            }
+
+            if (requestObject.IsSetCreateRedshiftAutoDiscoveredDataSource())
+            {
+                context.Writer.WritePropertyName("CreateRedshiftAutoDiscoveredDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateRedshiftAutoDiscoveredDataSource);
+            }
+
+            if (requestObject.IsSetCreateRedshiftManualDataSource())
+            {
+                context.Writer.WritePropertyName("CreateRedshiftManualDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateRedshiftManualDataSource);
+            }
+
+            if (requestObject.IsSetCreateS3AnalyticsDataSource())
+            {
+                context.Writer.WritePropertyName("CreateS3AnalyticsDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateS3AnalyticsDataSource);
+            }
+
+            if (requestObject.IsSetCreateS3DataSource())
+            {
+                context.Writer.WritePropertyName("CreateS3DataSource");
+                context.Writer.WriteStringValue(requestObject.CreateS3DataSource);
+            }
+
+            if (requestObject.IsSetCreateS3TablesDataSource())
+            {
+                context.Writer.WritePropertyName("CreateS3TablesDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateS3TablesDataSource);
+            }
+
             if (requestObject.IsSetCreateSPICEDataset())
             {
                 context.Writer.WritePropertyName("CreateSPICEDataset");
                 context.Writer.WriteStringValue(requestObject.CreateSPICEDataset);
+            }
+
+            if (requestObject.IsSetCreateSalesforceDataSource())
+            {
+                context.Writer.WritePropertyName("CreateSalesforceDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateSalesforceDataSource);
+            }
+
+            if (requestObject.IsSetCreateSapHanaDataSource())
+            {
+                context.Writer.WritePropertyName("CreateSapHanaDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateSapHanaDataSource);
+            }
+
+            if (requestObject.IsSetCreateServiceNowDataSource())
+            {
+                context.Writer.WritePropertyName("CreateServiceNowDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateServiceNowDataSource);
             }
 
             if (requestObject.IsSetCreateSharedFolders())
@@ -765,16 +1005,100 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.CreateSharedFolders);
             }
 
+            if (requestObject.IsSetCreateSnowflakeDataSource())
+            {
+                context.Writer.WritePropertyName("CreateSnowflakeDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateSnowflakeDataSource);
+            }
+
             if (requestObject.IsSetCreateSpaces())
             {
                 context.Writer.WritePropertyName("CreateSpaces");
                 context.Writer.WriteStringValue(requestObject.CreateSpaces);
             }
 
+            if (requestObject.IsSetCreateSparkDataSource())
+            {
+                context.Writer.WritePropertyName("CreateSparkDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateSparkDataSource);
+            }
+
+            if (requestObject.IsSetCreateSqlServerDataSource())
+            {
+                context.Writer.WritePropertyName("CreateSqlServerDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateSqlServerDataSource);
+            }
+
+            if (requestObject.IsSetCreateSquareDataSource())
+            {
+                context.Writer.WritePropertyName("CreateSquareDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateSquareDataSource);
+            }
+
+            if (requestObject.IsSetCreateStarburstDataSource())
+            {
+                context.Writer.WritePropertyName("CreateStarburstDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateStarburstDataSource);
+            }
+
+            if (requestObject.IsSetCreateTeradataDataSource())
+            {
+                context.Writer.WritePropertyName("CreateTeradataDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateTeradataDataSource);
+            }
+
+            if (requestObject.IsSetCreateTimestreamDataSource())
+            {
+                context.Writer.WritePropertyName("CreateTimestreamDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateTimestreamDataSource);
+            }
+
+            if (requestObject.IsSetCreateTrinoDataSource())
+            {
+                context.Writer.WritePropertyName("CreateTrinoDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateTrinoDataSource);
+            }
+
+            if (requestObject.IsSetCreateTwitterDataSource())
+            {
+                context.Writer.WritePropertyName("CreateTwitterDataSource");
+                context.Writer.WriteStringValue(requestObject.CreateTwitterDataSource);
+            }
+
             if (requestObject.IsSetDashboard())
             {
                 context.Writer.WritePropertyName("Dashboard");
                 context.Writer.WriteStringValue(requestObject.Dashboard);
+            }
+
+            if (requestObject.IsSetDatabricksDataSource())
+            {
+                context.Writer.WritePropertyName("DatabricksDataSource");
+                context.Writer.WriteStringValue(requestObject.DatabricksDataSource);
+            }
+
+            if (requestObject.IsSetDb2DataSource())
+            {
+                context.Writer.WritePropertyName("Db2DataSource");
+                context.Writer.WriteStringValue(requestObject.Db2DataSource);
+            }
+
+            if (requestObject.IsSetDenodoDataSource())
+            {
+                context.Writer.WritePropertyName("DenodoDataSource");
+                context.Writer.WriteStringValue(requestObject.DenodoDataSource);
+            }
+
+            if (requestObject.IsSetDocumentDbDataSource())
+            {
+                context.Writer.WritePropertyName("DocumentDbDataSource");
+                context.Writer.WriteStringValue(requestObject.DocumentDbDataSource);
+            }
+
+            if (requestObject.IsSetDremioDataSource())
+            {
+                context.Writer.WritePropertyName("DremioDataSource");
+                context.Writer.WriteStringValue(requestObject.DremioDataSource);
             }
 
             if (requestObject.IsSetDropboxAction())
@@ -789,10 +1113,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.DunAndBradstreetAction);
             }
 
+            if (requestObject.IsSetDynamoDbDataSource())
+            {
+                context.Writer.WritePropertyName("DynamoDbDataSource");
+                context.Writer.WriteStringValue(requestObject.DynamoDbDataSource);
+            }
+
             if (requestObject.IsSetEditVisualWithQ())
             {
                 context.Writer.WritePropertyName("EditVisualWithQ");
                 context.Writer.WriteStringValue(requestObject.EditVisualWithQ);
+            }
+
+            if (requestObject.IsSetExasolDataSource())
+            {
+                context.Writer.WritePropertyName("ExasolDataSource");
+                context.Writer.WriteStringValue(requestObject.ExasolDataSource);
             }
 
             if (requestObject.IsSetExportToCsv())
@@ -849,6 +1185,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.FigmaAction);
             }
 
+            if (requestObject.IsSetFileDataSource())
+            {
+                context.Writer.WritePropertyName("FileDataSource");
+                context.Writer.WriteStringValue(requestObject.FileDataSource);
+            }
+
             if (requestObject.IsSetFlow())
             {
                 context.Writer.WritePropertyName("Flow");
@@ -867,6 +1209,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.GenericHTTPAction);
             }
 
+            if (requestObject.IsSetGitHubDataSource())
+            {
+                context.Writer.WritePropertyName("GitHubDataSource");
+                context.Writer.WriteStringValue(requestObject.GitHubDataSource);
+            }
+
             if (requestObject.IsSetGithubAction())
             {
                 context.Writer.WritePropertyName("GithubAction");
@@ -879,10 +1227,28 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.GmailAction);
             }
 
+            if (requestObject.IsSetGongAction())
+            {
+                context.Writer.WritePropertyName("GongAction");
+                context.Writer.WriteStringValue(requestObject.GongAction);
+            }
+
             if (requestObject.IsSetGoogleAnalyticsAction())
             {
                 context.Writer.WritePropertyName("GoogleAnalyticsAction");
                 context.Writer.WriteStringValue(requestObject.GoogleAnalyticsAction);
+            }
+
+            if (requestObject.IsSetGoogleAnalyticsDataSource())
+            {
+                context.Writer.WritePropertyName("GoogleAnalyticsDataSource");
+                context.Writer.WriteStringValue(requestObject.GoogleAnalyticsDataSource);
+            }
+
+            if (requestObject.IsSetGoogleBigQueryDataSource())
+            {
+                context.Writer.WritePropertyName("GoogleBigQueryDataSource");
+                context.Writer.WriteStringValue(requestObject.GoogleBigQueryDataSource);
             }
 
             if (requestObject.IsSetGoogleCalendarAction())
@@ -927,6 +1293,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.GoogleSheetsAction);
             }
 
+            if (requestObject.IsSetGoogleSheetsDataSource())
+            {
+                context.Writer.WritePropertyName("GoogleSheetsDataSource");
+                context.Writer.WriteStringValue(requestObject.GoogleSheetsDataSource);
+            }
+
             if (requestObject.IsSetGoogleSlidesAction())
             {
                 context.Writer.WritePropertyName("GoogleSlidesAction");
@@ -957,6 +1329,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.IDCKnowledgeBase);
             }
 
+            if (requestObject.IsSetImpalaDataSource())
+            {
+                context.Writer.WritePropertyName("ImpalaDataSource");
+                context.Writer.WriteStringValue(requestObject.ImpalaDataSource);
+            }
+
             if (requestObject.IsSetInboundEmailTrigger())
             {
                 context.Writer.WritePropertyName("InboundEmailTrigger");
@@ -985,6 +1363,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("JiraAction");
                 context.Writer.WriteStringValue(requestObject.JiraAction);
+            }
+
+            if (requestObject.IsSetJiraDataSource())
+            {
+                context.Writer.WritePropertyName("JiraDataSource");
+                context.Writer.WriteStringValue(requestObject.JiraDataSource);
             }
 
             if (requestObject.IsSetKnowledgeBase())
@@ -1023,16 +1407,40 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ManageSharedFolders);
             }
 
+            if (requestObject.IsSetMariaDbDataSource())
+            {
+                context.Writer.WritePropertyName("MariaDbDataSource");
+                context.Writer.WriteStringValue(requestObject.MariaDbDataSource);
+            }
+
             if (requestObject.IsSetMondayAction())
             {
                 context.Writer.WritePropertyName("MondayAction");
                 context.Writer.WriteStringValue(requestObject.MondayAction);
             }
 
+            if (requestObject.IsSetMongoAtlasDataSource())
+            {
+                context.Writer.WritePropertyName("MongoAtlasDataSource");
+                context.Writer.WriteStringValue(requestObject.MongoAtlasDataSource);
+            }
+
+            if (requestObject.IsSetMongoDbDataSource())
+            {
+                context.Writer.WritePropertyName("MongoDbDataSource");
+                context.Writer.WriteStringValue(requestObject.MongoDbDataSource);
+            }
+
             if (requestObject.IsSetMoodysAction())
             {
                 context.Writer.WritePropertyName("MoodysAction");
                 context.Writer.WriteStringValue(requestObject.MoodysAction);
+            }
+
+            if (requestObject.IsSetMySqlDataSource())
+            {
+                context.Writer.WritePropertyName("MySqlDataSource");
+                context.Writer.WriteStringValue(requestObject.MySqlDataSource);
             }
 
             if (requestObject.IsSetNewRelicAction())
@@ -1071,6 +1479,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.OpenAPIAction);
             }
 
+            if (requestObject.IsSetOpenSearchDataSource())
+            {
+                context.Writer.WritePropertyName("OpenSearchDataSource");
+                context.Writer.WriteStringValue(requestObject.OpenSearchDataSource);
+            }
+
+            if (requestObject.IsSetOracleDataSource())
+            {
+                context.Writer.WritePropertyName("OracleDataSource");
+                context.Writer.WriteStringValue(requestObject.OracleDataSource);
+            }
+
             if (requestObject.IsSetPagerDutyAction())
             {
                 context.Writer.WritePropertyName("PagerDutyAction");
@@ -1083,10 +1503,28 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.PagerDutyAgentAction);
             }
 
+            if (requestObject.IsSetPayPalDataSource())
+            {
+                context.Writer.WritePropertyName("PayPalDataSource");
+                context.Writer.WriteStringValue(requestObject.PayPalDataSource);
+            }
+
             if (requestObject.IsSetPerformFlowUiTask())
             {
                 context.Writer.WritePropertyName("PerformFlowUiTask");
                 context.Writer.WriteStringValue(requestObject.PerformFlowUiTask);
+            }
+
+            if (requestObject.IsSetPostgreSqlDataSource())
+            {
+                context.Writer.WritePropertyName("PostgreSqlDataSource");
+                context.Writer.WriteStringValue(requestObject.PostgreSqlDataSource);
+            }
+
+            if (requestObject.IsSetPrestoDataSource())
+            {
+                context.Writer.WritePropertyName("PrestoDataSource");
+                context.Writer.WriteStringValue(requestObject.PrestoDataSource);
             }
 
             if (requestObject.IsSetPrintReports())
@@ -1119,6 +1557,30 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.QuickEventTrigger);
             }
 
+            if (requestObject.IsSetRadiantDataSource())
+            {
+                context.Writer.WritePropertyName("RadiantDataSource");
+                context.Writer.WriteStringValue(requestObject.RadiantDataSource);
+            }
+
+            if (requestObject.IsSetRdsDataSource())
+            {
+                context.Writer.WritePropertyName("RdsDataSource");
+                context.Writer.WriteStringValue(requestObject.RdsDataSource);
+            }
+
+            if (requestObject.IsSetRedshiftAutoDiscoveredDataSource())
+            {
+                context.Writer.WritePropertyName("RedshiftAutoDiscoveredDataSource");
+                context.Writer.WriteStringValue(requestObject.RedshiftAutoDiscoveredDataSource);
+            }
+
+            if (requestObject.IsSetRedshiftManualDataSource())
+            {
+                context.Writer.WritePropertyName("RedshiftManualDataSource");
+                context.Writer.WriteStringValue(requestObject.RedshiftManualDataSource);
+            }
+
             if (requestObject.IsSetRenameSharedFolders())
             {
                 context.Writer.WritePropertyName("RenameSharedFolders");
@@ -1131,10 +1593,28 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Research);
             }
 
+            if (requestObject.IsSetS3AnalyticsDataSource())
+            {
+                context.Writer.WritePropertyName("S3AnalyticsDataSource");
+                context.Writer.WriteStringValue(requestObject.S3AnalyticsDataSource);
+            }
+
+            if (requestObject.IsSetS3DataSource())
+            {
+                context.Writer.WritePropertyName("S3DataSource");
+                context.Writer.WriteStringValue(requestObject.S3DataSource);
+            }
+
             if (requestObject.IsSetS3KnowledgeBase())
             {
                 context.Writer.WritePropertyName("S3KnowledgeBase");
                 context.Writer.WriteStringValue(requestObject.S3KnowledgeBase);
+            }
+
+            if (requestObject.IsSetS3TablesDataSource())
+            {
+                context.Writer.WritePropertyName("S3TablesDataSource");
+                context.Writer.WriteStringValue(requestObject.S3TablesDataSource);
             }
 
             if (requestObject.IsSetSAPBillOfMaterialAction())
@@ -1173,6 +1653,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.SalesforceAction);
             }
 
+            if (requestObject.IsSetSalesforceDataSource())
+            {
+                context.Writer.WritePropertyName("SalesforceDataSource");
+                context.Writer.WriteStringValue(requestObject.SalesforceDataSource);
+            }
+
             if (requestObject.IsSetSandPGMIAction())
             {
                 context.Writer.WritePropertyName("SandPGMIAction");
@@ -1183,6 +1669,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("SandPGlobalEnergyAction");
                 context.Writer.WriteStringValue(requestObject.SandPGlobalEnergyAction);
+            }
+
+            if (requestObject.IsSetSapHanaDataSource())
+            {
+                context.Writer.WritePropertyName("SapHanaDataSource");
+                context.Writer.WriteStringValue(requestObject.SapHanaDataSource);
             }
 
             if (requestObject.IsSetScenario())
@@ -1209,10 +1701,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ServiceNowAction);
             }
 
+            if (requestObject.IsSetServiceNowDataSource())
+            {
+                context.Writer.WritePropertyName("ServiceNowDataSource");
+                context.Writer.WriteStringValue(requestObject.ServiceNowDataSource);
+            }
+
             if (requestObject.IsSetShareAdobeAction())
             {
                 context.Writer.WritePropertyName("ShareAdobeAction");
                 context.Writer.WriteStringValue(requestObject.ShareAdobeAction);
+            }
+
+            if (requestObject.IsSetShareAdobeAnalyticsDataSource())
+            {
+                context.Writer.WritePropertyName("ShareAdobeAnalyticsDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareAdobeAnalyticsDataSource);
             }
 
             if (requestObject.IsSetShareAirtableAction())
@@ -1261,6 +1765,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ShareAsanaAction");
                 context.Writer.WriteStringValue(requestObject.ShareAsanaAction);
+            }
+
+            if (requestObject.IsSetShareAthenaDataSource())
+            {
+                context.Writer.WritePropertyName("ShareAthenaDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareAthenaDataSource);
+            }
+
+            if (requestObject.IsSetShareAuroraDataSource())
+            {
+                context.Writer.WritePropertyName("ShareAuroraDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareAuroraDataSource);
             }
 
             if (requestObject.IsSetShareBambooHRAction())
@@ -1353,10 +1869,40 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ShareDataSources);
             }
 
+            if (requestObject.IsSetShareDatabricksDataSource())
+            {
+                context.Writer.WritePropertyName("ShareDatabricksDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareDatabricksDataSource);
+            }
+
             if (requestObject.IsSetShareDatasets())
             {
                 context.Writer.WritePropertyName("ShareDatasets");
                 context.Writer.WriteStringValue(requestObject.ShareDatasets);
+            }
+
+            if (requestObject.IsSetShareDb2DataSource())
+            {
+                context.Writer.WritePropertyName("ShareDb2DataSource");
+                context.Writer.WriteStringValue(requestObject.ShareDb2DataSource);
+            }
+
+            if (requestObject.IsSetShareDenodoDataSource())
+            {
+                context.Writer.WritePropertyName("ShareDenodoDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareDenodoDataSource);
+            }
+
+            if (requestObject.IsSetShareDocumentDbDataSource())
+            {
+                context.Writer.WritePropertyName("ShareDocumentDbDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareDocumentDbDataSource);
+            }
+
+            if (requestObject.IsSetShareDremioDataSource())
+            {
+                context.Writer.WritePropertyName("ShareDremioDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareDremioDataSource);
             }
 
             if (requestObject.IsSetShareDropboxAction())
@@ -1371,6 +1917,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ShareDunAndBradstreetAction);
             }
 
+            if (requestObject.IsSetShareDynamoDbDataSource())
+            {
+                context.Writer.WritePropertyName("ShareDynamoDbDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareDynamoDbDataSource);
+            }
+
+            if (requestObject.IsSetShareExasolDataSource())
+            {
+                context.Writer.WritePropertyName("ShareExasolDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareExasolDataSource);
+            }
+
             if (requestObject.IsSetShareFactSetAction())
             {
                 context.Writer.WritePropertyName("ShareFactSetAction");
@@ -1383,10 +1941,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ShareFigmaAction);
             }
 
+            if (requestObject.IsSetShareFileDataSource())
+            {
+                context.Writer.WritePropertyName("ShareFileDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareFileDataSource);
+            }
+
             if (requestObject.IsSetShareGenericHTTPAction())
             {
                 context.Writer.WritePropertyName("ShareGenericHTTPAction");
                 context.Writer.WriteStringValue(requestObject.ShareGenericHTTPAction);
+            }
+
+            if (requestObject.IsSetShareGitHubDataSource())
+            {
+                context.Writer.WritePropertyName("ShareGitHubDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareGitHubDataSource);
             }
 
             if (requestObject.IsSetShareGithubAction())
@@ -1401,10 +1971,28 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ShareGmailAction);
             }
 
+            if (requestObject.IsSetShareGongAction())
+            {
+                context.Writer.WritePropertyName("ShareGongAction");
+                context.Writer.WriteStringValue(requestObject.ShareGongAction);
+            }
+
             if (requestObject.IsSetShareGoogleAnalyticsAction())
             {
                 context.Writer.WritePropertyName("ShareGoogleAnalyticsAction");
                 context.Writer.WriteStringValue(requestObject.ShareGoogleAnalyticsAction);
+            }
+
+            if (requestObject.IsSetShareGoogleAnalyticsDataSource())
+            {
+                context.Writer.WritePropertyName("ShareGoogleAnalyticsDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareGoogleAnalyticsDataSource);
+            }
+
+            if (requestObject.IsSetShareGoogleBigQueryDataSource())
+            {
+                context.Writer.WritePropertyName("ShareGoogleBigQueryDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareGoogleBigQueryDataSource);
             }
 
             if (requestObject.IsSetShareGoogleCalendarAction())
@@ -1449,6 +2037,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ShareGoogleSheetsAction);
             }
 
+            if (requestObject.IsSetShareGoogleSheetsDataSource())
+            {
+                context.Writer.WritePropertyName("ShareGoogleSheetsDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareGoogleSheetsDataSource);
+            }
+
             if (requestObject.IsSetShareGoogleSlidesAction())
             {
                 context.Writer.WritePropertyName("ShareGoogleSlidesAction");
@@ -1479,6 +2073,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ShareIDCKnowledgeBase);
             }
 
+            if (requestObject.IsSetShareImpalaDataSource())
+            {
+                context.Writer.WritePropertyName("ShareImpalaDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareImpalaDataSource);
+            }
+
             if (requestObject.IsSetShareIntercomAction())
             {
                 context.Writer.WritePropertyName("ShareIntercomAction");
@@ -1489,6 +2089,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ShareJiraAction");
                 context.Writer.WriteStringValue(requestObject.ShareJiraAction);
+            }
+
+            if (requestObject.IsSetShareJiraDataSource())
+            {
+                context.Writer.WritePropertyName("ShareJiraDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareJiraDataSource);
             }
 
             if (requestObject.IsSetShareKnowledgeBases())
@@ -1521,16 +2127,40 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ShareMSTeamsAction);
             }
 
+            if (requestObject.IsSetShareMariaDbDataSource())
+            {
+                context.Writer.WritePropertyName("ShareMariaDbDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareMariaDbDataSource);
+            }
+
             if (requestObject.IsSetShareMondayAction())
             {
                 context.Writer.WritePropertyName("ShareMondayAction");
                 context.Writer.WriteStringValue(requestObject.ShareMondayAction);
             }
 
+            if (requestObject.IsSetShareMongoAtlasDataSource())
+            {
+                context.Writer.WritePropertyName("ShareMongoAtlasDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareMongoAtlasDataSource);
+            }
+
+            if (requestObject.IsSetShareMongoDbDataSource())
+            {
+                context.Writer.WritePropertyName("ShareMongoDbDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareMongoDbDataSource);
+            }
+
             if (requestObject.IsSetShareMoodysAction())
             {
                 context.Writer.WritePropertyName("ShareMoodysAction");
                 context.Writer.WriteStringValue(requestObject.ShareMoodysAction);
+            }
+
+            if (requestObject.IsSetShareMySqlDataSource())
+            {
+                context.Writer.WritePropertyName("ShareMySqlDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareMySqlDataSource);
             }
 
             if (requestObject.IsSetShareNewRelicAction())
@@ -1569,6 +2199,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ShareOpenAPIAction);
             }
 
+            if (requestObject.IsSetShareOpenSearchDataSource())
+            {
+                context.Writer.WritePropertyName("ShareOpenSearchDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareOpenSearchDataSource);
+            }
+
+            if (requestObject.IsSetShareOracleDataSource())
+            {
+                context.Writer.WritePropertyName("ShareOracleDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareOracleDataSource);
+            }
+
             if (requestObject.IsSetSharePagerDutyAction())
             {
                 context.Writer.WritePropertyName("SharePagerDutyAction");
@@ -1579,6 +2221,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("SharePagerDutyAgentAction");
                 context.Writer.WriteStringValue(requestObject.SharePagerDutyAgentAction);
+            }
+
+            if (requestObject.IsSetSharePayPalDataSource())
+            {
+                context.Writer.WritePropertyName("SharePayPalDataSource");
+                context.Writer.WriteStringValue(requestObject.SharePayPalDataSource);
             }
 
             if (requestObject.IsSetSharePointAction())
@@ -1593,6 +2241,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.SharePointKnowledgeBase);
             }
 
+            if (requestObject.IsSetSharePostgreSqlDataSource())
+            {
+                context.Writer.WritePropertyName("SharePostgreSqlDataSource");
+                context.Writer.WriteStringValue(requestObject.SharePostgreSqlDataSource);
+            }
+
+            if (requestObject.IsSetSharePrestoDataSource())
+            {
+                context.Writer.WritePropertyName("SharePrestoDataSource");
+                context.Writer.WriteStringValue(requestObject.SharePrestoDataSource);
+            }
+
             if (requestObject.IsSetShareQBusinessKnowledgeBase())
             {
                 context.Writer.WritePropertyName("ShareQBusinessKnowledgeBase");
@@ -1605,10 +2265,52 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ShareQuickBooksAction);
             }
 
+            if (requestObject.IsSetShareRadiantDataSource())
+            {
+                context.Writer.WritePropertyName("ShareRadiantDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareRadiantDataSource);
+            }
+
+            if (requestObject.IsSetShareRdsDataSource())
+            {
+                context.Writer.WritePropertyName("ShareRdsDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareRdsDataSource);
+            }
+
+            if (requestObject.IsSetShareRedshiftAutoDiscoveredDataSource())
+            {
+                context.Writer.WritePropertyName("ShareRedshiftAutoDiscoveredDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareRedshiftAutoDiscoveredDataSource);
+            }
+
+            if (requestObject.IsSetShareRedshiftManualDataSource())
+            {
+                context.Writer.WritePropertyName("ShareRedshiftManualDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareRedshiftManualDataSource);
+            }
+
+            if (requestObject.IsSetShareS3AnalyticsDataSource())
+            {
+                context.Writer.WritePropertyName("ShareS3AnalyticsDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareS3AnalyticsDataSource);
+            }
+
+            if (requestObject.IsSetShareS3DataSource())
+            {
+                context.Writer.WritePropertyName("ShareS3DataSource");
+                context.Writer.WriteStringValue(requestObject.ShareS3DataSource);
+            }
+
             if (requestObject.IsSetShareS3KnowledgeBase())
             {
                 context.Writer.WritePropertyName("ShareS3KnowledgeBase");
                 context.Writer.WriteStringValue(requestObject.ShareS3KnowledgeBase);
+            }
+
+            if (requestObject.IsSetShareS3TablesDataSource())
+            {
+                context.Writer.WritePropertyName("ShareS3TablesDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareS3TablesDataSource);
             }
 
             if (requestObject.IsSetShareSAPBillOfMaterialAction())
@@ -1647,6 +2349,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ShareSalesforceAction);
             }
 
+            if (requestObject.IsSetShareSalesforceDataSource())
+            {
+                context.Writer.WritePropertyName("ShareSalesforceDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareSalesforceDataSource);
+            }
+
             if (requestObject.IsSetShareSandPGMIAction())
             {
                 context.Writer.WritePropertyName("ShareSandPGMIAction");
@@ -1659,10 +2367,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ShareSandPGlobalEnergyAction);
             }
 
+            if (requestObject.IsSetShareSapHanaDataSource())
+            {
+                context.Writer.WritePropertyName("ShareSapHanaDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareSapHanaDataSource);
+            }
+
             if (requestObject.IsSetShareServiceNowAction())
             {
                 context.Writer.WritePropertyName("ShareServiceNowAction");
                 context.Writer.WriteStringValue(requestObject.ShareServiceNowAction);
+            }
+
+            if (requestObject.IsSetShareServiceNowDataSource())
+            {
+                context.Writer.WritePropertyName("ShareServiceNowDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareServiceNowDataSource);
             }
 
             if (requestObject.IsSetShareSharePointAction())
@@ -1701,16 +2421,70 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ShareSnowFlakeAction);
             }
 
+            if (requestObject.IsSetShareSnowflakeDataSource())
+            {
+                context.Writer.WritePropertyName("ShareSnowflakeDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareSnowflakeDataSource);
+            }
+
             if (requestObject.IsSetShareSpaces())
             {
                 context.Writer.WritePropertyName("ShareSpaces");
                 context.Writer.WriteStringValue(requestObject.ShareSpaces);
             }
 
+            if (requestObject.IsSetShareSparkDataSource())
+            {
+                context.Writer.WritePropertyName("ShareSparkDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareSparkDataSource);
+            }
+
+            if (requestObject.IsSetShareSqlServerDataSource())
+            {
+                context.Writer.WritePropertyName("ShareSqlServerDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareSqlServerDataSource);
+            }
+
+            if (requestObject.IsSetShareSquareDataSource())
+            {
+                context.Writer.WritePropertyName("ShareSquareDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareSquareDataSource);
+            }
+
+            if (requestObject.IsSetShareStarburstDataSource())
+            {
+                context.Writer.WritePropertyName("ShareStarburstDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareStarburstDataSource);
+            }
+
+            if (requestObject.IsSetShareTeradataDataSource())
+            {
+                context.Writer.WritePropertyName("ShareTeradataDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareTeradataDataSource);
+            }
+
             if (requestObject.IsSetShareTextractAction())
             {
                 context.Writer.WritePropertyName("ShareTextractAction");
                 context.Writer.WriteStringValue(requestObject.ShareTextractAction);
+            }
+
+            if (requestObject.IsSetShareTimestreamDataSource())
+            {
+                context.Writer.WritePropertyName("ShareTimestreamDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareTimestreamDataSource);
+            }
+
+            if (requestObject.IsSetShareTrinoDataSource())
+            {
+                context.Writer.WritePropertyName("ShareTrinoDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareTrinoDataSource);
+            }
+
+            if (requestObject.IsSetShareTwitterDataSource())
+            {
+                context.Writer.WritePropertyName("ShareTwitterDataSource");
+                context.Writer.WriteStringValue(requestObject.ShareTwitterDataSource);
             }
 
             if (requestObject.IsSetShareVisierAgentAction())
@@ -1779,10 +2553,40 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.SnowFlakeAction);
             }
 
+            if (requestObject.IsSetSnowflakeDataSource())
+            {
+                context.Writer.WritePropertyName("SnowflakeDataSource");
+                context.Writer.WriteStringValue(requestObject.SnowflakeDataSource);
+            }
+
             if (requestObject.IsSetSpace())
             {
                 context.Writer.WritePropertyName("Space");
                 context.Writer.WriteStringValue(requestObject.Space);
+            }
+
+            if (requestObject.IsSetSparkDataSource())
+            {
+                context.Writer.WritePropertyName("SparkDataSource");
+                context.Writer.WriteStringValue(requestObject.SparkDataSource);
+            }
+
+            if (requestObject.IsSetSqlServerDataSource())
+            {
+                context.Writer.WritePropertyName("SqlServerDataSource");
+                context.Writer.WriteStringValue(requestObject.SqlServerDataSource);
+            }
+
+            if (requestObject.IsSetSquareDataSource())
+            {
+                context.Writer.WritePropertyName("SquareDataSource");
+                context.Writer.WriteStringValue(requestObject.SquareDataSource);
+            }
+
+            if (requestObject.IsSetStarburstDataSource())
+            {
+                context.Writer.WritePropertyName("StarburstDataSource");
+                context.Writer.WriteStringValue(requestObject.StarburstDataSource);
             }
 
             if (requestObject.IsSetStory())
@@ -1797,10 +2601,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.SubscribeDashboardEmailReports);
             }
 
+            if (requestObject.IsSetTeradataDataSource())
+            {
+                context.Writer.WritePropertyName("TeradataDataSource");
+                context.Writer.WriteStringValue(requestObject.TeradataDataSource);
+            }
+
             if (requestObject.IsSetTextractAction())
             {
                 context.Writer.WritePropertyName("TextractAction");
                 context.Writer.WriteStringValue(requestObject.TextractAction);
+            }
+
+            if (requestObject.IsSetTimestreamDataSource())
+            {
+                context.Writer.WritePropertyName("TimestreamDataSource");
+                context.Writer.WriteStringValue(requestObject.TimestreamDataSource);
             }
 
             if (requestObject.IsSetTopic())
@@ -1813,6 +2629,288 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Trigger");
                 context.Writer.WriteStringValue(requestObject.Trigger);
+            }
+
+            if (requestObject.IsSetTrinoDataSource())
+            {
+                context.Writer.WritePropertyName("TrinoDataSource");
+                context.Writer.WriteStringValue(requestObject.TrinoDataSource);
+            }
+
+            if (requestObject.IsSetTwitterDataSource())
+            {
+                context.Writer.WritePropertyName("TwitterDataSource");
+                context.Writer.WriteStringValue(requestObject.TwitterDataSource);
+            }
+
+            if (requestObject.IsSetUpdateAdobeAnalyticsDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateAdobeAnalyticsDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateAdobeAnalyticsDataSource);
+            }
+
+            if (requestObject.IsSetUpdateAthenaDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateAthenaDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateAthenaDataSource);
+            }
+
+            if (requestObject.IsSetUpdateAuroraDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateAuroraDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateAuroraDataSource);
+            }
+
+            if (requestObject.IsSetUpdateDatabricksDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateDatabricksDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateDatabricksDataSource);
+            }
+
+            if (requestObject.IsSetUpdateDb2DataSource())
+            {
+                context.Writer.WritePropertyName("UpdateDb2DataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateDb2DataSource);
+            }
+
+            if (requestObject.IsSetUpdateDenodoDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateDenodoDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateDenodoDataSource);
+            }
+
+            if (requestObject.IsSetUpdateDocumentDbDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateDocumentDbDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateDocumentDbDataSource);
+            }
+
+            if (requestObject.IsSetUpdateDremioDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateDremioDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateDremioDataSource);
+            }
+
+            if (requestObject.IsSetUpdateDynamoDbDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateDynamoDbDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateDynamoDbDataSource);
+            }
+
+            if (requestObject.IsSetUpdateExasolDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateExasolDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateExasolDataSource);
+            }
+
+            if (requestObject.IsSetUpdateFileDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateFileDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateFileDataSource);
+            }
+
+            if (requestObject.IsSetUpdateGitHubDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateGitHubDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateGitHubDataSource);
+            }
+
+            if (requestObject.IsSetUpdateGoogleAnalyticsDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateGoogleAnalyticsDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateGoogleAnalyticsDataSource);
+            }
+
+            if (requestObject.IsSetUpdateGoogleBigQueryDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateGoogleBigQueryDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateGoogleBigQueryDataSource);
+            }
+
+            if (requestObject.IsSetUpdateGoogleSheetsDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateGoogleSheetsDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateGoogleSheetsDataSource);
+            }
+
+            if (requestObject.IsSetUpdateImpalaDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateImpalaDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateImpalaDataSource);
+            }
+
+            if (requestObject.IsSetUpdateJiraDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateJiraDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateJiraDataSource);
+            }
+
+            if (requestObject.IsSetUpdateMariaDbDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateMariaDbDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateMariaDbDataSource);
+            }
+
+            if (requestObject.IsSetUpdateMongoAtlasDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateMongoAtlasDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateMongoAtlasDataSource);
+            }
+
+            if (requestObject.IsSetUpdateMongoDbDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateMongoDbDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateMongoDbDataSource);
+            }
+
+            if (requestObject.IsSetUpdateMySqlDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateMySqlDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateMySqlDataSource);
+            }
+
+            if (requestObject.IsSetUpdateOpenSearchDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateOpenSearchDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateOpenSearchDataSource);
+            }
+
+            if (requestObject.IsSetUpdateOracleDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateOracleDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateOracleDataSource);
+            }
+
+            if (requestObject.IsSetUpdatePayPalDataSource())
+            {
+                context.Writer.WritePropertyName("UpdatePayPalDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdatePayPalDataSource);
+            }
+
+            if (requestObject.IsSetUpdatePostgreSqlDataSource())
+            {
+                context.Writer.WritePropertyName("UpdatePostgreSqlDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdatePostgreSqlDataSource);
+            }
+
+            if (requestObject.IsSetUpdatePrestoDataSource())
+            {
+                context.Writer.WritePropertyName("UpdatePrestoDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdatePrestoDataSource);
+            }
+
+            if (requestObject.IsSetUpdateRadiantDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateRadiantDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateRadiantDataSource);
+            }
+
+            if (requestObject.IsSetUpdateRdsDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateRdsDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateRdsDataSource);
+            }
+
+            if (requestObject.IsSetUpdateRedshiftAutoDiscoveredDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateRedshiftAutoDiscoveredDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateRedshiftAutoDiscoveredDataSource);
+            }
+
+            if (requestObject.IsSetUpdateRedshiftManualDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateRedshiftManualDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateRedshiftManualDataSource);
+            }
+
+            if (requestObject.IsSetUpdateS3AnalyticsDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateS3AnalyticsDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateS3AnalyticsDataSource);
+            }
+
+            if (requestObject.IsSetUpdateS3DataSource())
+            {
+                context.Writer.WritePropertyName("UpdateS3DataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateS3DataSource);
+            }
+
+            if (requestObject.IsSetUpdateS3TablesDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateS3TablesDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateS3TablesDataSource);
+            }
+
+            if (requestObject.IsSetUpdateSalesforceDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateSalesforceDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateSalesforceDataSource);
+            }
+
+            if (requestObject.IsSetUpdateSapHanaDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateSapHanaDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateSapHanaDataSource);
+            }
+
+            if (requestObject.IsSetUpdateServiceNowDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateServiceNowDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateServiceNowDataSource);
+            }
+
+            if (requestObject.IsSetUpdateSnowflakeDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateSnowflakeDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateSnowflakeDataSource);
+            }
+
+            if (requestObject.IsSetUpdateSparkDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateSparkDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateSparkDataSource);
+            }
+
+            if (requestObject.IsSetUpdateSqlServerDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateSqlServerDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateSqlServerDataSource);
+            }
+
+            if (requestObject.IsSetUpdateSquareDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateSquareDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateSquareDataSource);
+            }
+
+            if (requestObject.IsSetUpdateStarburstDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateStarburstDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateStarburstDataSource);
+            }
+
+            if (requestObject.IsSetUpdateTeradataDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateTeradataDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateTeradataDataSource);
+            }
+
+            if (requestObject.IsSetUpdateTimestreamDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateTimestreamDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateTimestreamDataSource);
+            }
+
+            if (requestObject.IsSetUpdateTrinoDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateTrinoDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateTrinoDataSource);
+            }
+
+            if (requestObject.IsSetUpdateTwitterDataSource())
+            {
+                context.Writer.WritePropertyName("UpdateTwitterDataSource");
+                context.Writer.WriteStringValue(requestObject.UpdateTwitterDataSource);
             }
 
             if (requestObject.IsSetUseAdobeAction())
@@ -1993,6 +3091,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("UseGmailAction");
                 context.Writer.WriteStringValue(requestObject.UseGmailAction);
+            }
+
+            if (requestObject.IsSetUseGongAction())
+            {
+                context.Writer.WritePropertyName("UseGongAction");
+                context.Writer.WriteStringValue(requestObject.UseGongAction);
             }
 
             if (requestObject.IsSetUseGoogleAnalyticsAction())

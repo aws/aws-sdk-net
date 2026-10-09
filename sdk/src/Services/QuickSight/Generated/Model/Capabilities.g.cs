@@ -88,6 +88,19 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetAdobeAction() => this.AdobeAction != null;
 
         /// <summary>
+        /// Gets and sets the property AdobeAnalyticsDataSource. 
+        /// <para>
+        /// The ability to create, update, and share Adobe Analytics data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState AdobeAnalyticsDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AdobeAnalyticsDataSource property is set.
+        /// </summary>
+        internal bool IsSetAdobeAnalyticsDataSource() => this.AdobeAnalyticsDataSource != null;
+
+        /// <summary>
         /// Gets and sets the property AirtableAction. 
         /// <para>
         /// The ability to perform actions using Airtable connectors.
@@ -203,6 +216,32 @@ namespace Amazon.QuickSight.Model
         /// Checks to see if the AsanaAction property is set.
         /// </summary>
         internal bool IsSetAsanaAction() => this.AsanaAction != null;
+
+        /// <summary>
+        /// Gets and sets the property AthenaDataSource. 
+        /// <para>
+        /// The ability to create, update, and share Amazon Athena data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState AthenaDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AthenaDataSource property is set.
+        /// </summary>
+        internal bool IsSetAthenaDataSource() => this.AthenaDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property AuroraDataSource. 
+        /// <para>
+        /// The ability to create, update, and share Amazon Aurora data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState AuroraDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AuroraDataSource property is set.
+        /// </summary>
+        internal bool IsSetAuroraDataSource() => this.AuroraDataSource != null;
 
         /// <summary>
         /// Gets and sets the property Automate. 
@@ -389,6 +428,19 @@ namespace Amazon.QuickSight.Model
         /// Checks to see if the ConfluenceKnowledgeBase property is set.
         /// </summary>
         internal bool IsSetConfluenceKnowledgeBase() => this.ConfluenceKnowledgeBase != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateAdobeAnalyticsDataSource. 
+        /// <para>
+        /// The ability to create Adobe Analytics data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAdobeAnalyticsDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateAdobeAnalyticsDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateAdobeAnalyticsDataSource() => this.CreateAdobeAnalyticsDataSource != null;
 
         /// <summary>
         /// Gets and sets the property CreateAndUpdateAdobeAction. 
@@ -770,6 +822,19 @@ namespace Amazon.QuickSight.Model
         /// Checks to see if the CreateAndUpdateGmailAction property is set.
         /// </summary>
         internal bool IsSetCreateAndUpdateGmailAction() => this.CreateAndUpdateGmailAction != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateAndUpdateGongAction. 
+        /// <para>
+        /// The ability to create and update Gong actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAndUpdateGongAction { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateAndUpdateGongAction property is set.
+        /// </summary>
+        internal bool IsSetCreateAndUpdateGongAction() => this.CreateAndUpdateGongAction != null;
 
         /// <summary>
         /// Gets and sets the property CreateAndUpdateGoogleAnalyticsAction. 
@@ -1502,6 +1567,32 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetCreateAndUpdateZoomInfoAction() => this.CreateAndUpdateZoomInfoAction != null;
 
         /// <summary>
+        /// Gets and sets the property CreateAthenaDataSource. 
+        /// <para>
+        /// The ability to create Amazon Athena data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAthenaDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateAthenaDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateAthenaDataSource() => this.CreateAthenaDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateAuroraDataSource. 
+        /// <para>
+        /// The ability to create Amazon Aurora data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAuroraDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateAuroraDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateAuroraDataSource() => this.CreateAuroraDataSource != null;
+
+        /// <summary>
         /// Gets and sets the property CreateChatAgents. 
         /// <para>
         /// The ability to create chat agents.
@@ -1528,6 +1619,396 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetCreateDashboardExecutiveSummaryWithQ() => this.CreateDashboardExecutiveSummaryWithQ != null;
 
         /// <summary>
+        /// Gets and sets the property CreateDatabricksDataSource. 
+        /// <para>
+        /// The ability to create Databricks data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateDatabricksDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateDatabricksDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateDatabricksDataSource() => this.CreateDatabricksDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateDb2DataSource. 
+        /// <para>
+        /// The ability to create Db2 data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateDb2DataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateDb2DataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateDb2DataSource() => this.CreateDb2DataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateDenodoDataSource. 
+        /// <para>
+        /// The ability to create Denodo data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateDenodoDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateDenodoDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateDenodoDataSource() => this.CreateDenodoDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateDocumentDbDataSource. 
+        /// <para>
+        /// The ability to create Amazon DocumentDB data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateDocumentDbDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateDocumentDbDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateDocumentDbDataSource() => this.CreateDocumentDbDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateDremioDataSource. 
+        /// <para>
+        /// The ability to create Dremio data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateDremioDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateDremioDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateDremioDataSource() => this.CreateDremioDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateDynamoDbDataSource. 
+        /// <para>
+        /// The ability to create Amazon DynamoDB data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateDynamoDbDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateDynamoDbDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateDynamoDbDataSource() => this.CreateDynamoDbDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateExasolDataSource. 
+        /// <para>
+        /// The ability to create Exasol data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateExasolDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateExasolDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateExasolDataSource() => this.CreateExasolDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateFileDataSource. 
+        /// <para>
+        /// The ability to create file data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateFileDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateFileDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateFileDataSource() => this.CreateFileDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateGitHubDataSource. 
+        /// <para>
+        /// The ability to create GitHub data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateGitHubDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateGitHubDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateGitHubDataSource() => this.CreateGitHubDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateGoogleAnalyticsDataSource. 
+        /// <para>
+        /// The ability to create Google Analytics data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateGoogleAnalyticsDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateGoogleAnalyticsDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateGoogleAnalyticsDataSource() => this.CreateGoogleAnalyticsDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateGoogleBigQueryDataSource. 
+        /// <para>
+        /// The ability to create Google BigQuery data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateGoogleBigQueryDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateGoogleBigQueryDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateGoogleBigQueryDataSource() => this.CreateGoogleBigQueryDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateGoogleSheetsDataSource. 
+        /// <para>
+        /// The ability to create Google Sheets data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateGoogleSheetsDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateGoogleSheetsDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateGoogleSheetsDataSource() => this.CreateGoogleSheetsDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateImpalaDataSource. 
+        /// <para>
+        /// The ability to create Impala data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateImpalaDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateImpalaDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateImpalaDataSource() => this.CreateImpalaDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateJiraDataSource. 
+        /// <para>
+        /// The ability to create Jira data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateJiraDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateJiraDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateJiraDataSource() => this.CreateJiraDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateMariaDbDataSource. 
+        /// <para>
+        /// The ability to create MariaDB data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateMariaDbDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateMariaDbDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateMariaDbDataSource() => this.CreateMariaDbDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateMongoAtlasDataSource. 
+        /// <para>
+        /// The ability to create MongoDB Atlas data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateMongoAtlasDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateMongoAtlasDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateMongoAtlasDataSource() => this.CreateMongoAtlasDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateMongoDbDataSource. 
+        /// <para>
+        /// The ability to create MongoDB data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateMongoDbDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateMongoDbDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateMongoDbDataSource() => this.CreateMongoDbDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateMySqlDataSource. 
+        /// <para>
+        /// The ability to create MySQL data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateMySqlDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateMySqlDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateMySqlDataSource() => this.CreateMySqlDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateOpenSearchDataSource. 
+        /// <para>
+        /// The ability to create Amazon OpenSearch Service data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateOpenSearchDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateOpenSearchDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateOpenSearchDataSource() => this.CreateOpenSearchDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateOracleDataSource. 
+        /// <para>
+        /// The ability to create Oracle data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateOracleDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateOracleDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateOracleDataSource() => this.CreateOracleDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreatePayPalDataSource. 
+        /// <para>
+        /// The ability to create PayPal data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreatePayPalDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreatePayPalDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreatePayPalDataSource() => this.CreatePayPalDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreatePostgreSqlDataSource. 
+        /// <para>
+        /// The ability to create PostgreSQL data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreatePostgreSqlDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreatePostgreSqlDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreatePostgreSqlDataSource() => this.CreatePostgreSqlDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreatePrestoDataSource. 
+        /// <para>
+        /// The ability to create Presto data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreatePrestoDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreatePrestoDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreatePrestoDataSource() => this.CreatePrestoDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateRadiantDataSource. 
+        /// <para>
+        /// The ability to create Amazon QuickSight data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateRadiantDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateRadiantDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateRadiantDataSource() => this.CreateRadiantDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateRdsDataSource. 
+        /// <para>
+        /// The ability to create auto-discovered Amazon RDS data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateRdsDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateRdsDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateRdsDataSource() => this.CreateRdsDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateRedshiftAutoDiscoveredDataSource. 
+        /// <para>
+        /// The ability to create auto-discovered Amazon Redshift data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateRedshiftAutoDiscoveredDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateRedshiftAutoDiscoveredDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateRedshiftAutoDiscoveredDataSource() => this.CreateRedshiftAutoDiscoveredDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateRedshiftManualDataSource. 
+        /// <para>
+        /// The ability to create manually configured Amazon Redshift data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateRedshiftManualDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateRedshiftManualDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateRedshiftManualDataSource() => this.CreateRedshiftManualDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateS3AnalyticsDataSource. 
+        /// <para>
+        /// The ability to create Amazon S3 Analytics data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateS3AnalyticsDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateS3AnalyticsDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateS3AnalyticsDataSource() => this.CreateS3AnalyticsDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateS3DataSource. 
+        /// <para>
+        /// The ability to create Amazon S3 data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateS3DataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateS3DataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateS3DataSource() => this.CreateS3DataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateS3TablesDataSource. 
+        /// <para>
+        /// The ability to create Amazon S3 Tables data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateS3TablesDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateS3TablesDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateS3TablesDataSource() => this.CreateS3TablesDataSource != null;
+
+        /// <summary>
         /// Gets and sets the property CreateSPICEDataset. 
         /// <para>
         /// The ability to create a SPICE dataset.
@@ -1539,6 +2020,45 @@ namespace Amazon.QuickSight.Model
         /// Checks to see if the CreateSPICEDataset property is set.
         /// </summary>
         internal bool IsSetCreateSPICEDataset() => this.CreateSPICEDataset != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateSalesforceDataSource. 
+        /// <para>
+        /// The ability to create Salesforce data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateSalesforceDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateSalesforceDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateSalesforceDataSource() => this.CreateSalesforceDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateSapHanaDataSource. 
+        /// <para>
+        /// The ability to create SAP HANA data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateSapHanaDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateSapHanaDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateSapHanaDataSource() => this.CreateSapHanaDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateServiceNowDataSource. 
+        /// <para>
+        /// The ability to create ServiceNow data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateServiceNowDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateServiceNowDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateServiceNowDataSource() => this.CreateServiceNowDataSource != null;
 
         /// <summary>
         /// Gets and sets the property CreateSharedFolders. 
@@ -1554,6 +2074,19 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetCreateSharedFolders() => this.CreateSharedFolders != null;
 
         /// <summary>
+        /// Gets and sets the property CreateSnowflakeDataSource. 
+        /// <para>
+        /// The ability to create Snowflake data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateSnowflakeDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateSnowflakeDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateSnowflakeDataSource() => this.CreateSnowflakeDataSource != null;
+
+        /// <summary>
         /// Gets and sets the property CreateSpaces. 
         /// <para>
         /// The ability to create spaces.
@@ -1567,6 +2100,110 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetCreateSpaces() => this.CreateSpaces != null;
 
         /// <summary>
+        /// Gets and sets the property CreateSparkDataSource. 
+        /// <para>
+        /// The ability to create Spark data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateSparkDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateSparkDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateSparkDataSource() => this.CreateSparkDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateSqlServerDataSource. 
+        /// <para>
+        /// The ability to create SQL Server data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateSqlServerDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateSqlServerDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateSqlServerDataSource() => this.CreateSqlServerDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateSquareDataSource. 
+        /// <para>
+        /// The ability to create Square data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateSquareDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateSquareDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateSquareDataSource() => this.CreateSquareDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateStarburstDataSource. 
+        /// <para>
+        /// The ability to create Starburst data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateStarburstDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateStarburstDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateStarburstDataSource() => this.CreateStarburstDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateTeradataDataSource. 
+        /// <para>
+        /// The ability to create Teradata data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateTeradataDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateTeradataDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateTeradataDataSource() => this.CreateTeradataDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateTimestreamDataSource. 
+        /// <para>
+        /// The ability to create Amazon Timestream data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateTimestreamDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateTimestreamDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateTimestreamDataSource() => this.CreateTimestreamDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateTrinoDataSource. 
+        /// <para>
+        /// The ability to create Trino data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateTrinoDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateTrinoDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateTrinoDataSource() => this.CreateTrinoDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property CreateTwitterDataSource. 
+        /// <para>
+        /// The ability to create Twitter data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateTwitterDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateTwitterDataSource property is set.
+        /// </summary>
+        internal bool IsSetCreateTwitterDataSource() => this.CreateTwitterDataSource != null;
+
+        /// <summary>
         /// Gets and sets the property Dashboard. 
         /// <para>
         /// The ability to perform dashboard-related actions.
@@ -1578,6 +2215,71 @@ namespace Amazon.QuickSight.Model
         /// Checks to see if the Dashboard property is set.
         /// </summary>
         internal bool IsSetDashboard() => this.Dashboard != null;
+
+        /// <summary>
+        /// Gets and sets the property DatabricksDataSource. 
+        /// <para>
+        /// The ability to create, update, and share Databricks data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState DatabricksDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DatabricksDataSource property is set.
+        /// </summary>
+        internal bool IsSetDatabricksDataSource() => this.DatabricksDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property Db2DataSource. 
+        /// <para>
+        /// The ability to create, update, and share Db2 data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState Db2DataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Db2DataSource property is set.
+        /// </summary>
+        internal bool IsSetDb2DataSource() => this.Db2DataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property DenodoDataSource. 
+        /// <para>
+        /// The ability to create, update, and share Denodo data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState DenodoDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DenodoDataSource property is set.
+        /// </summary>
+        internal bool IsSetDenodoDataSource() => this.DenodoDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property DocumentDbDataSource. 
+        /// <para>
+        /// The ability to create, update, and share Amazon DocumentDB data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState DocumentDbDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DocumentDbDataSource property is set.
+        /// </summary>
+        internal bool IsSetDocumentDbDataSource() => this.DocumentDbDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property DremioDataSource. 
+        /// <para>
+        /// The ability to create, update, and share Dremio data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState DremioDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DremioDataSource property is set.
+        /// </summary>
+        internal bool IsSetDremioDataSource() => this.DremioDataSource != null;
 
         /// <summary>
         /// Gets and sets the property DropboxAction. 
@@ -1606,6 +2308,19 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDunAndBradstreetAction() => this.DunAndBradstreetAction != null;
 
         /// <summary>
+        /// Gets and sets the property DynamoDbDataSource. 
+        /// <para>
+        /// The ability to create, update, and share Amazon DynamoDB data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState DynamoDbDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DynamoDbDataSource property is set.
+        /// </summary>
+        internal bool IsSetDynamoDbDataSource() => this.DynamoDbDataSource != null;
+
+        /// <summary>
         /// Gets and sets the property EditVisualWithQ. 
         /// <para>
         /// The ability to Edit Visual with AI
@@ -1617,6 +2332,19 @@ namespace Amazon.QuickSight.Model
         /// Checks to see if the EditVisualWithQ property is set.
         /// </summary>
         internal bool IsSetEditVisualWithQ() => this.EditVisualWithQ != null;
+
+        /// <summary>
+        /// Gets and sets the property ExasolDataSource. 
+        /// <para>
+        /// The ability to create, update, and share Exasol data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ExasolDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExasolDataSource property is set.
+        /// </summary>
+        internal bool IsSetExasolDataSource() => this.ExasolDataSource != null;
 
         /// <summary>
         /// Gets and sets the property ExportToCsv. 
@@ -1736,6 +2464,19 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetFigmaAction() => this.FigmaAction != null;
 
         /// <summary>
+        /// Gets and sets the property FileDataSource. 
+        /// <para>
+        /// The ability to create, update, and share file data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState FileDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FileDataSource property is set.
+        /// </summary>
+        internal bool IsSetFileDataSource() => this.FileDataSource != null;
+
+        /// <summary>
         /// Gets and sets the property Flow. 
         /// <para>
         /// The ability to perform flow-related actions.
@@ -1775,6 +2516,19 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetGenericHTTPAction() => this.GenericHTTPAction != null;
 
         /// <summary>
+        /// Gets and sets the property GitHubDataSource. 
+        /// <para>
+        /// The ability to create, update, and share GitHub data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState GitHubDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GitHubDataSource property is set.
+        /// </summary>
+        internal bool IsSetGitHubDataSource() => this.GitHubDataSource != null;
+
+        /// <summary>
         /// Gets and sets the property GithubAction. 
         /// <para>
         /// The ability to perform actions using GitHub connectors.
@@ -1801,6 +2555,19 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetGmailAction() => this.GmailAction != null;
 
         /// <summary>
+        /// Gets and sets the property GongAction. 
+        /// <para>
+        /// The ability to perform actions using Gong connectors.
+        /// </para>
+        /// </summary>
+        public CapabilityState GongAction { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GongAction property is set.
+        /// </summary>
+        internal bool IsSetGongAction() => this.GongAction != null;
+
+        /// <summary>
         /// Gets and sets the property GoogleAnalyticsAction. 
         /// <para>
         /// The ability to perform actions using Google Analytics connectors.
@@ -1812,6 +2579,32 @@ namespace Amazon.QuickSight.Model
         /// Checks to see if the GoogleAnalyticsAction property is set.
         /// </summary>
         internal bool IsSetGoogleAnalyticsAction() => this.GoogleAnalyticsAction != null;
+
+        /// <summary>
+        /// Gets and sets the property GoogleAnalyticsDataSource. 
+        /// <para>
+        /// The ability to create, update, and share Google Analytics data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState GoogleAnalyticsDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GoogleAnalyticsDataSource property is set.
+        /// </summary>
+        internal bool IsSetGoogleAnalyticsDataSource() => this.GoogleAnalyticsDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property GoogleBigQueryDataSource. 
+        /// <para>
+        /// The ability to create, update, and share Google BigQuery data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState GoogleBigQueryDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GoogleBigQueryDataSource property is set.
+        /// </summary>
+        internal bool IsSetGoogleBigQueryDataSource() => this.GoogleBigQueryDataSource != null;
 
         /// <summary>
         /// Gets and sets the property GoogleCalendarAction. 
@@ -1902,6 +2695,19 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetGoogleSheetsAction() => this.GoogleSheetsAction != null;
 
         /// <summary>
+        /// Gets and sets the property GoogleSheetsDataSource. 
+        /// <para>
+        /// The ability to create, update, and share Google Sheets data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState GoogleSheetsDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GoogleSheetsDataSource property is set.
+        /// </summary>
+        internal bool IsSetGoogleSheetsDataSource() => this.GoogleSheetsDataSource != null;
+
+        /// <summary>
         /// Gets and sets the property GoogleSlidesAction. 
         /// <para>
         /// The ability to perform actions using Google Slides connectors.
@@ -1962,6 +2768,19 @@ namespace Amazon.QuickSight.Model
         /// Checks to see if the IDCKnowledgeBase property is set.
         /// </summary>
         internal bool IsSetIDCKnowledgeBase() => this.IDCKnowledgeBase != null;
+
+        /// <summary>
+        /// Gets and sets the property ImpalaDataSource. 
+        /// <para>
+        /// The ability to create, update, and share Impala data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ImpalaDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ImpalaDataSource property is set.
+        /// </summary>
+        internal bool IsSetImpalaDataSource() => this.ImpalaDataSource != null;
 
         /// <summary>
         /// Gets and sets the property InboundEmailTrigger. 
@@ -2028,6 +2847,19 @@ namespace Amazon.QuickSight.Model
         /// Checks to see if the JiraAction property is set.
         /// </summary>
         internal bool IsSetJiraAction() => this.JiraAction != null;
+
+        /// <summary>
+        /// Gets and sets the property JiraDataSource. 
+        /// <para>
+        /// The ability to create, update, and share Jira data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState JiraDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the JiraDataSource property is set.
+        /// </summary>
+        internal bool IsSetJiraDataSource() => this.JiraDataSource != null;
 
         /// <summary>
         /// Gets and sets the property KnowledgeBase. 
@@ -2115,6 +2947,19 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetManageSharedFolders() => this.ManageSharedFolders != null;
 
         /// <summary>
+        /// Gets and sets the property MariaDbDataSource. 
+        /// <para>
+        /// The ability to create, update, and share MariaDB data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState MariaDbDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MariaDbDataSource property is set.
+        /// </summary>
+        internal bool IsSetMariaDbDataSource() => this.MariaDbDataSource != null;
+
+        /// <summary>
         /// Gets and sets the property MondayAction. 
         /// <para>
         /// The ability to perform actions using Monday connectors.
@@ -2128,6 +2973,32 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetMondayAction() => this.MondayAction != null;
 
         /// <summary>
+        /// Gets and sets the property MongoAtlasDataSource. 
+        /// <para>
+        /// The ability to create, update, and share MongoDB Atlas data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState MongoAtlasDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MongoAtlasDataSource property is set.
+        /// </summary>
+        internal bool IsSetMongoAtlasDataSource() => this.MongoAtlasDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property MongoDbDataSource. 
+        /// <para>
+        /// The ability to create, update, and share MongoDB data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState MongoDbDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MongoDbDataSource property is set.
+        /// </summary>
+        internal bool IsSetMongoDbDataSource() => this.MongoDbDataSource != null;
+
+        /// <summary>
         /// Gets and sets the property MoodysAction. 
         /// <para>
         /// The ability to perform actions using Moody's GenAI Ready Data connectors.
@@ -2139,6 +3010,19 @@ namespace Amazon.QuickSight.Model
         /// Checks to see if the MoodysAction property is set.
         /// </summary>
         internal bool IsSetMoodysAction() => this.MoodysAction != null;
+
+        /// <summary>
+        /// Gets and sets the property MySqlDataSource. 
+        /// <para>
+        /// The ability to create, update, and share MySQL data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState MySqlDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MySqlDataSource property is set.
+        /// </summary>
+        internal bool IsSetMySqlDataSource() => this.MySqlDataSource != null;
 
         /// <summary>
         /// Gets and sets the property NewRelicAction. 
@@ -2216,6 +3100,32 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetOpenAPIAction() => this.OpenAPIAction != null;
 
         /// <summary>
+        /// Gets and sets the property OpenSearchDataSource. 
+        /// <para>
+        /// The ability to create, update, and share Amazon OpenSearch Service data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState OpenSearchDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OpenSearchDataSource property is set.
+        /// </summary>
+        internal bool IsSetOpenSearchDataSource() => this.OpenSearchDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property OracleDataSource. 
+        /// <para>
+        /// The ability to create, update, and share Oracle data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState OracleDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OracleDataSource property is set.
+        /// </summary>
+        internal bool IsSetOracleDataSource() => this.OracleDataSource != null;
+
+        /// <summary>
         /// Gets and sets the property PagerDutyAction. 
         /// <para>
         /// The ability to perform actions using PagerDuty Advance connectors.
@@ -2242,6 +3152,19 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetPagerDutyAgentAction() => this.PagerDutyAgentAction != null;
 
         /// <summary>
+        /// Gets and sets the property PayPalDataSource. 
+        /// <para>
+        /// The ability to create, update, and share PayPal data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState PayPalDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PayPalDataSource property is set.
+        /// </summary>
+        internal bool IsSetPayPalDataSource() => this.PayPalDataSource != null;
+
+        /// <summary>
         /// Gets and sets the property PerformFlowUiTask. 
         /// <para>
         /// The ability to use UI Agent step to perform tasks on public websites.
@@ -2253,6 +3176,32 @@ namespace Amazon.QuickSight.Model
         /// Checks to see if the PerformFlowUiTask property is set.
         /// </summary>
         internal bool IsSetPerformFlowUiTask() => this.PerformFlowUiTask != null;
+
+        /// <summary>
+        /// Gets and sets the property PostgreSqlDataSource. 
+        /// <para>
+        /// The ability to create, update, and share PostgreSQL data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState PostgreSqlDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PostgreSqlDataSource property is set.
+        /// </summary>
+        internal bool IsSetPostgreSqlDataSource() => this.PostgreSqlDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property PrestoDataSource. 
+        /// <para>
+        /// The ability to create, update, and share Presto data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState PrestoDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PrestoDataSource property is set.
+        /// </summary>
+        internal bool IsSetPrestoDataSource() => this.PrestoDataSource != null;
 
         /// <summary>
         /// Gets and sets the property PrintReports. 
@@ -2318,6 +3267,59 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetQuickEventTrigger() => this.QuickEventTrigger != null;
 
         /// <summary>
+        /// Gets and sets the property RadiantDataSource. 
+        /// <para>
+        /// The ability to create, update, and share Amazon QuickSight data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState RadiantDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RadiantDataSource property is set.
+        /// </summary>
+        internal bool IsSetRadiantDataSource() => this.RadiantDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property RdsDataSource. 
+        /// <para>
+        /// The ability to create, update, and share auto-discovered Amazon RDS data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState RdsDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RdsDataSource property is set.
+        /// </summary>
+        internal bool IsSetRdsDataSource() => this.RdsDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property RedshiftAutoDiscoveredDataSource. 
+        /// <para>
+        /// The ability to create, update, and share auto-discovered Amazon Redshift data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState RedshiftAutoDiscoveredDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RedshiftAutoDiscoveredDataSource property is set.
+        /// </summary>
+        internal bool IsSetRedshiftAutoDiscoveredDataSource() => this.RedshiftAutoDiscoveredDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property RedshiftManualDataSource. 
+        /// <para>
+        /// The ability to create, update, and share manually configured Amazon Redshift data
+        /// sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState RedshiftManualDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RedshiftManualDataSource property is set.
+        /// </summary>
+        internal bool IsSetRedshiftManualDataSource() => this.RedshiftManualDataSource != null;
+
+        /// <summary>
         /// Gets and sets the property RenameSharedFolders. 
         /// <para>
         /// The ability to rename shared folders.
@@ -2344,6 +3346,32 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetResearch() => this.Research != null;
 
         /// <summary>
+        /// Gets and sets the property S3AnalyticsDataSource. 
+        /// <para>
+        /// The ability to create, update, and share Amazon S3 Analytics data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState S3AnalyticsDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the S3AnalyticsDataSource property is set.
+        /// </summary>
+        internal bool IsSetS3AnalyticsDataSource() => this.S3AnalyticsDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property S3DataSource. 
+        /// <para>
+        /// The ability to create, update, and share Amazon S3 data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState S3DataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the S3DataSource property is set.
+        /// </summary>
+        internal bool IsSetS3DataSource() => this.S3DataSource != null;
+
+        /// <summary>
         /// Gets and sets the property S3KnowledgeBase.
         /// </summary>
         public CapabilityState S3KnowledgeBase { get; set; }
@@ -2352,6 +3380,19 @@ namespace Amazon.QuickSight.Model
         /// Checks to see if the S3KnowledgeBase property is set.
         /// </summary>
         internal bool IsSetS3KnowledgeBase() => this.S3KnowledgeBase != null;
+
+        /// <summary>
+        /// Gets and sets the property S3TablesDataSource. 
+        /// <para>
+        /// The ability to create, update, and share Amazon S3 Tables data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState S3TablesDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the S3TablesDataSource property is set.
+        /// </summary>
+        internal bool IsSetS3TablesDataSource() => this.S3TablesDataSource != null;
 
         /// <summary>
         /// Gets and sets the property SAPBillOfMaterialAction. 
@@ -2432,6 +3473,19 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetSalesforceAction() => this.SalesforceAction != null;
 
         /// <summary>
+        /// Gets and sets the property SalesforceDataSource. 
+        /// <para>
+        /// The ability to create, update, and share Salesforce data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState SalesforceDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SalesforceDataSource property is set.
+        /// </summary>
+        internal bool IsSetSalesforceDataSource() => this.SalesforceDataSource != null;
+
+        /// <summary>
         /// Gets and sets the property SandPGMIAction. 
         /// <para>
         /// The ability to perform actions using S&amp;P Global Market Intelligence connectors.
@@ -2456,6 +3510,19 @@ namespace Amazon.QuickSight.Model
         /// Checks to see if the SandPGlobalEnergyAction property is set.
         /// </summary>
         internal bool IsSetSandPGlobalEnergyAction() => this.SandPGlobalEnergyAction != null;
+
+        /// <summary>
+        /// Gets and sets the property SapHanaDataSource. 
+        /// <para>
+        /// The ability to create, update, and share SAP HANA data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState SapHanaDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SapHanaDataSource property is set.
+        /// </summary>
+        internal bool IsSetSapHanaDataSource() => this.SapHanaDataSource != null;
 
         /// <summary>
         /// Gets and sets the property Scenario. 
@@ -2511,6 +3578,19 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetServiceNowAction() => this.ServiceNowAction != null;
 
         /// <summary>
+        /// Gets and sets the property ServiceNowDataSource. 
+        /// <para>
+        /// The ability to create, update, and share ServiceNow data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ServiceNowDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ServiceNowDataSource property is set.
+        /// </summary>
+        internal bool IsSetServiceNowDataSource() => this.ServiceNowDataSource != null;
+
+        /// <summary>
         /// Gets and sets the property ShareAdobeAction. 
         /// <para>
         /// The ability to share Adobe Marketing Agent actions.
@@ -2522,6 +3602,19 @@ namespace Amazon.QuickSight.Model
         /// Checks to see if the ShareAdobeAction property is set.
         /// </summary>
         internal bool IsSetShareAdobeAction() => this.ShareAdobeAction != null;
+
+        /// <summary>
+        /// Gets and sets the property ShareAdobeAnalyticsDataSource. 
+        /// <para>
+        /// The ability to share Adobe Analytics data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareAdobeAnalyticsDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareAdobeAnalyticsDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareAdobeAnalyticsDataSource() => this.ShareAdobeAnalyticsDataSource != null;
 
         /// <summary>
         /// Gets and sets the property ShareAirtableAction. 
@@ -2626,6 +3719,32 @@ namespace Amazon.QuickSight.Model
         /// Checks to see if the ShareAsanaAction property is set.
         /// </summary>
         internal bool IsSetShareAsanaAction() => this.ShareAsanaAction != null;
+
+        /// <summary>
+        /// Gets and sets the property ShareAthenaDataSource. 
+        /// <para>
+        /// The ability to share Amazon Athena data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareAthenaDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareAthenaDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareAthenaDataSource() => this.ShareAthenaDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property ShareAuroraDataSource. 
+        /// <para>
+        /// The ability to share Amazon Aurora data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareAuroraDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareAuroraDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareAuroraDataSource() => this.ShareAuroraDataSource != null;
 
         /// <summary>
         /// Gets and sets the property ShareBambooHRAction. 
@@ -2814,6 +3933,19 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetShareDataSources() => this.ShareDataSources != null;
 
         /// <summary>
+        /// Gets and sets the property ShareDatabricksDataSource. 
+        /// <para>
+        /// The ability to share Databricks data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareDatabricksDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareDatabricksDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareDatabricksDataSource() => this.ShareDatabricksDataSource != null;
+
+        /// <summary>
         /// Gets and sets the property ShareDatasets. 
         /// <para>
         /// The ability to share datasets.
@@ -2825,6 +3957,58 @@ namespace Amazon.QuickSight.Model
         /// Checks to see if the ShareDatasets property is set.
         /// </summary>
         internal bool IsSetShareDatasets() => this.ShareDatasets != null;
+
+        /// <summary>
+        /// Gets and sets the property ShareDb2DataSource. 
+        /// <para>
+        /// The ability to share Db2 data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareDb2DataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareDb2DataSource property is set.
+        /// </summary>
+        internal bool IsSetShareDb2DataSource() => this.ShareDb2DataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property ShareDenodoDataSource. 
+        /// <para>
+        /// The ability to share Denodo data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareDenodoDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareDenodoDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareDenodoDataSource() => this.ShareDenodoDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property ShareDocumentDbDataSource. 
+        /// <para>
+        /// The ability to share Amazon DocumentDB data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareDocumentDbDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareDocumentDbDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareDocumentDbDataSource() => this.ShareDocumentDbDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property ShareDremioDataSource. 
+        /// <para>
+        /// The ability to share Dremio data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareDremioDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareDremioDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareDremioDataSource() => this.ShareDremioDataSource != null;
 
         /// <summary>
         /// Gets and sets the property ShareDropboxAction. 
@@ -2853,6 +4037,32 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetShareDunAndBradstreetAction() => this.ShareDunAndBradstreetAction != null;
 
         /// <summary>
+        /// Gets and sets the property ShareDynamoDbDataSource. 
+        /// <para>
+        /// The ability to share Amazon DynamoDB data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareDynamoDbDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareDynamoDbDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareDynamoDbDataSource() => this.ShareDynamoDbDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property ShareExasolDataSource. 
+        /// <para>
+        /// The ability to share Exasol data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareExasolDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareExasolDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareExasolDataSource() => this.ShareExasolDataSource != null;
+
+        /// <summary>
         /// Gets and sets the property ShareFactSetAction. 
         /// <para>
         /// The ability to share FactSet actions.
@@ -2879,6 +4089,19 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetShareFigmaAction() => this.ShareFigmaAction != null;
 
         /// <summary>
+        /// Gets and sets the property ShareFileDataSource. 
+        /// <para>
+        /// The ability to share file data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareFileDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareFileDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareFileDataSource() => this.ShareFileDataSource != null;
+
+        /// <summary>
         /// Gets and sets the property ShareGenericHTTPAction. 
         /// <para>
         /// The ability to share REST API connection actions.
@@ -2890,6 +4113,19 @@ namespace Amazon.QuickSight.Model
         /// Checks to see if the ShareGenericHTTPAction property is set.
         /// </summary>
         internal bool IsSetShareGenericHTTPAction() => this.ShareGenericHTTPAction != null;
+
+        /// <summary>
+        /// Gets and sets the property ShareGitHubDataSource. 
+        /// <para>
+        /// The ability to share GitHub data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareGitHubDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareGitHubDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareGitHubDataSource() => this.ShareGitHubDataSource != null;
 
         /// <summary>
         /// Gets and sets the property ShareGithubAction. 
@@ -2918,6 +4154,19 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetShareGmailAction() => this.ShareGmailAction != null;
 
         /// <summary>
+        /// Gets and sets the property ShareGongAction. 
+        /// <para>
+        /// The ability to share Gong actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareGongAction { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareGongAction property is set.
+        /// </summary>
+        internal bool IsSetShareGongAction() => this.ShareGongAction != null;
+
+        /// <summary>
         /// Gets and sets the property ShareGoogleAnalyticsAction. 
         /// <para>
         /// The ability to share Google Analytics actions.
@@ -2929,6 +4178,32 @@ namespace Amazon.QuickSight.Model
         /// Checks to see if the ShareGoogleAnalyticsAction property is set.
         /// </summary>
         internal bool IsSetShareGoogleAnalyticsAction() => this.ShareGoogleAnalyticsAction != null;
+
+        /// <summary>
+        /// Gets and sets the property ShareGoogleAnalyticsDataSource. 
+        /// <para>
+        /// The ability to share Google Analytics data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareGoogleAnalyticsDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareGoogleAnalyticsDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareGoogleAnalyticsDataSource() => this.ShareGoogleAnalyticsDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property ShareGoogleBigQueryDataSource. 
+        /// <para>
+        /// The ability to share Google BigQuery data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareGoogleBigQueryDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareGoogleBigQueryDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareGoogleBigQueryDataSource() => this.ShareGoogleBigQueryDataSource != null;
 
         /// <summary>
         /// Gets and sets the property ShareGoogleCalendarAction. 
@@ -3019,6 +4294,19 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetShareGoogleSheetsAction() => this.ShareGoogleSheetsAction != null;
 
         /// <summary>
+        /// Gets and sets the property ShareGoogleSheetsDataSource. 
+        /// <para>
+        /// The ability to share Google Sheets data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareGoogleSheetsDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareGoogleSheetsDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareGoogleSheetsDataSource() => this.ShareGoogleSheetsDataSource != null;
+
+        /// <summary>
         /// Gets and sets the property ShareGoogleSlidesAction. 
         /// <para>
         /// The ability to share Google Slides actions.
@@ -3081,6 +4369,19 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetShareIDCKnowledgeBase() => this.ShareIDCKnowledgeBase != null;
 
         /// <summary>
+        /// Gets and sets the property ShareImpalaDataSource. 
+        /// <para>
+        /// The ability to share Impala data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareImpalaDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareImpalaDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareImpalaDataSource() => this.ShareImpalaDataSource != null;
+
+        /// <summary>
         /// Gets and sets the property ShareIntercomAction. 
         /// <para>
         /// The ability to share Intercom actions.
@@ -3105,6 +4406,19 @@ namespace Amazon.QuickSight.Model
         /// Checks to see if the ShareJiraAction property is set.
         /// </summary>
         internal bool IsSetShareJiraAction() => this.ShareJiraAction != null;
+
+        /// <summary>
+        /// Gets and sets the property ShareJiraDataSource. 
+        /// <para>
+        /// The ability to share Jira data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareJiraDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareJiraDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareJiraDataSource() => this.ShareJiraDataSource != null;
 
         /// <summary>
         /// Gets and sets the property ShareKnowledgeBases.
@@ -3169,6 +4483,19 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetShareMSTeamsAction() => this.ShareMSTeamsAction != null;
 
         /// <summary>
+        /// Gets and sets the property ShareMariaDbDataSource. 
+        /// <para>
+        /// The ability to share MariaDB data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareMariaDbDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareMariaDbDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareMariaDbDataSource() => this.ShareMariaDbDataSource != null;
+
+        /// <summary>
         /// Gets and sets the property ShareMondayAction. 
         /// <para>
         /// The ability to share Monday actions.
@@ -3182,6 +4509,32 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetShareMondayAction() => this.ShareMondayAction != null;
 
         /// <summary>
+        /// Gets and sets the property ShareMongoAtlasDataSource. 
+        /// <para>
+        /// The ability to share MongoDB Atlas data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareMongoAtlasDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareMongoAtlasDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareMongoAtlasDataSource() => this.ShareMongoAtlasDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property ShareMongoDbDataSource. 
+        /// <para>
+        /// The ability to share MongoDB data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareMongoDbDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareMongoDbDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareMongoDbDataSource() => this.ShareMongoDbDataSource != null;
+
+        /// <summary>
         /// Gets and sets the property ShareMoodysAction. 
         /// <para>
         /// The ability to share Moody's GenAI Ready Data actions.
@@ -3193,6 +4546,19 @@ namespace Amazon.QuickSight.Model
         /// Checks to see if the ShareMoodysAction property is set.
         /// </summary>
         internal bool IsSetShareMoodysAction() => this.ShareMoodysAction != null;
+
+        /// <summary>
+        /// Gets and sets the property ShareMySqlDataSource. 
+        /// <para>
+        /// The ability to share MySQL data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareMySqlDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareMySqlDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareMySqlDataSource() => this.ShareMySqlDataSource != null;
 
         /// <summary>
         /// Gets and sets the property ShareNewRelicAction. 
@@ -3270,6 +4636,32 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetShareOpenAPIAction() => this.ShareOpenAPIAction != null;
 
         /// <summary>
+        /// Gets and sets the property ShareOpenSearchDataSource. 
+        /// <para>
+        /// The ability to share Amazon OpenSearch Service data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareOpenSearchDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareOpenSearchDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareOpenSearchDataSource() => this.ShareOpenSearchDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property ShareOracleDataSource. 
+        /// <para>
+        /// The ability to share Oracle data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareOracleDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareOracleDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareOracleDataSource() => this.ShareOracleDataSource != null;
+
+        /// <summary>
         /// Gets and sets the property SharePagerDutyAction. 
         /// <para>
         /// The ability to share PagerDuty Advance actions.
@@ -3296,6 +4688,19 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetSharePagerDutyAgentAction() => this.SharePagerDutyAgentAction != null;
 
         /// <summary>
+        /// Gets and sets the property SharePayPalDataSource. 
+        /// <para>
+        /// The ability to share PayPal data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState SharePayPalDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SharePayPalDataSource property is set.
+        /// </summary>
+        internal bool IsSetSharePayPalDataSource() => this.SharePayPalDataSource != null;
+
+        /// <summary>
         /// Gets and sets the property SharePointAction. 
         /// <para>
         /// The ability to perform actions using Microsoft SharePoint Online connectors.
@@ -3317,6 +4722,32 @@ namespace Amazon.QuickSight.Model
         /// Checks to see if the SharePointKnowledgeBase property is set.
         /// </summary>
         internal bool IsSetSharePointKnowledgeBase() => this.SharePointKnowledgeBase != null;
+
+        /// <summary>
+        /// Gets and sets the property SharePostgreSqlDataSource. 
+        /// <para>
+        /// The ability to share PostgreSQL data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState SharePostgreSqlDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SharePostgreSqlDataSource property is set.
+        /// </summary>
+        internal bool IsSetSharePostgreSqlDataSource() => this.SharePostgreSqlDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property SharePrestoDataSource. 
+        /// <para>
+        /// The ability to share Presto data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState SharePrestoDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SharePrestoDataSource property is set.
+        /// </summary>
+        internal bool IsSetSharePrestoDataSource() => this.SharePrestoDataSource != null;
 
         /// <summary>
         /// Gets and sets the property ShareQBusinessKnowledgeBase.
@@ -3342,6 +4773,84 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetShareQuickBooksAction() => this.ShareQuickBooksAction != null;
 
         /// <summary>
+        /// Gets and sets the property ShareRadiantDataSource. 
+        /// <para>
+        /// The ability to share Amazon QuickSight data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareRadiantDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareRadiantDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareRadiantDataSource() => this.ShareRadiantDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property ShareRdsDataSource. 
+        /// <para>
+        /// The ability to share auto-discovered Amazon RDS data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareRdsDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareRdsDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareRdsDataSource() => this.ShareRdsDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property ShareRedshiftAutoDiscoveredDataSource. 
+        /// <para>
+        /// The ability to share auto-discovered Amazon Redshift data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareRedshiftAutoDiscoveredDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareRedshiftAutoDiscoveredDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareRedshiftAutoDiscoveredDataSource() => this.ShareRedshiftAutoDiscoveredDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property ShareRedshiftManualDataSource. 
+        /// <para>
+        /// The ability to share manually configured Amazon Redshift data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareRedshiftManualDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareRedshiftManualDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareRedshiftManualDataSource() => this.ShareRedshiftManualDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property ShareS3AnalyticsDataSource. 
+        /// <para>
+        /// The ability to share Amazon S3 Analytics data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareS3AnalyticsDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareS3AnalyticsDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareS3AnalyticsDataSource() => this.ShareS3AnalyticsDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property ShareS3DataSource. 
+        /// <para>
+        /// The ability to share Amazon S3 data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareS3DataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareS3DataSource property is set.
+        /// </summary>
+        internal bool IsSetShareS3DataSource() => this.ShareS3DataSource != null;
+
+        /// <summary>
         /// Gets and sets the property ShareS3KnowledgeBase.
         /// </summary>
         public CapabilityState ShareS3KnowledgeBase { get; set; }
@@ -3350,6 +4859,19 @@ namespace Amazon.QuickSight.Model
         /// Checks to see if the ShareS3KnowledgeBase property is set.
         /// </summary>
         internal bool IsSetShareS3KnowledgeBase() => this.ShareS3KnowledgeBase != null;
+
+        /// <summary>
+        /// Gets and sets the property ShareS3TablesDataSource. 
+        /// <para>
+        /// The ability to share Amazon S3 Tables data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareS3TablesDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareS3TablesDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareS3TablesDataSource() => this.ShareS3TablesDataSource != null;
 
         /// <summary>
         /// Gets and sets the property ShareSAPBillOfMaterialAction. 
@@ -3430,6 +4952,19 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetShareSalesforceAction() => this.ShareSalesforceAction != null;
 
         /// <summary>
+        /// Gets and sets the property ShareSalesforceDataSource. 
+        /// <para>
+        /// The ability to share Salesforce data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareSalesforceDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareSalesforceDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareSalesforceDataSource() => this.ShareSalesforceDataSource != null;
+
+        /// <summary>
         /// Gets and sets the property ShareSandPGMIAction. 
         /// <para>
         /// The ability to share S&amp;P Global Market Intelligence actions.
@@ -3456,6 +4991,19 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetShareSandPGlobalEnergyAction() => this.ShareSandPGlobalEnergyAction != null;
 
         /// <summary>
+        /// Gets and sets the property ShareSapHanaDataSource. 
+        /// <para>
+        /// The ability to share SAP HANA data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareSapHanaDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareSapHanaDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareSapHanaDataSource() => this.ShareSapHanaDataSource != null;
+
+        /// <summary>
         /// Gets and sets the property ShareServiceNowAction. 
         /// <para>
         /// The ability to share ServiceNow actions.
@@ -3467,6 +5015,19 @@ namespace Amazon.QuickSight.Model
         /// Checks to see if the ShareServiceNowAction property is set.
         /// </summary>
         internal bool IsSetShareServiceNowAction() => this.ShareServiceNowAction != null;
+
+        /// <summary>
+        /// Gets and sets the property ShareServiceNowDataSource. 
+        /// <para>
+        /// The ability to share ServiceNow data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareServiceNowDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareServiceNowDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareServiceNowDataSource() => this.ShareServiceNowDataSource != null;
 
         /// <summary>
         /// Gets and sets the property ShareSharePointAction. 
@@ -3544,6 +5105,19 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetShareSnowFlakeAction() => this.ShareSnowFlakeAction != null;
 
         /// <summary>
+        /// Gets and sets the property ShareSnowflakeDataSource. 
+        /// <para>
+        /// The ability to share Snowflake data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareSnowflakeDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareSnowflakeDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareSnowflakeDataSource() => this.ShareSnowflakeDataSource != null;
+
+        /// <summary>
         /// Gets and sets the property ShareSpaces. 
         /// <para>
         /// The ability to share spaces with other users and groups.
@@ -3557,6 +5131,71 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetShareSpaces() => this.ShareSpaces != null;
 
         /// <summary>
+        /// Gets and sets the property ShareSparkDataSource. 
+        /// <para>
+        /// The ability to share Spark data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareSparkDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareSparkDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareSparkDataSource() => this.ShareSparkDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property ShareSqlServerDataSource. 
+        /// <para>
+        /// The ability to share SQL Server data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareSqlServerDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareSqlServerDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareSqlServerDataSource() => this.ShareSqlServerDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property ShareSquareDataSource. 
+        /// <para>
+        /// The ability to share Square data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareSquareDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareSquareDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareSquareDataSource() => this.ShareSquareDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property ShareStarburstDataSource. 
+        /// <para>
+        /// The ability to share Starburst data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareStarburstDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareStarburstDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareStarburstDataSource() => this.ShareStarburstDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property ShareTeradataDataSource. 
+        /// <para>
+        /// The ability to share Teradata data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareTeradataDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareTeradataDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareTeradataDataSource() => this.ShareTeradataDataSource != null;
+
+        /// <summary>
         /// Gets and sets the property ShareTextractAction. 
         /// <para>
         /// The ability to share Textract actions.
@@ -3568,6 +5207,45 @@ namespace Amazon.QuickSight.Model
         /// Checks to see if the ShareTextractAction property is set.
         /// </summary>
         internal bool IsSetShareTextractAction() => this.ShareTextractAction != null;
+
+        /// <summary>
+        /// Gets and sets the property ShareTimestreamDataSource. 
+        /// <para>
+        /// The ability to share Amazon Timestream data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareTimestreamDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareTimestreamDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareTimestreamDataSource() => this.ShareTimestreamDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property ShareTrinoDataSource. 
+        /// <para>
+        /// The ability to share Trino data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareTrinoDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareTrinoDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareTrinoDataSource() => this.ShareTrinoDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property ShareTwitterDataSource. 
+        /// <para>
+        /// The ability to share Twitter data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareTwitterDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShareTwitterDataSource property is set.
+        /// </summary>
+        internal bool IsSetShareTwitterDataSource() => this.ShareTwitterDataSource != null;
 
         /// <summary>
         /// Gets and sets the property ShareVisierAgentAction. 
@@ -3710,6 +5388,19 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetSnowFlakeAction() => this.SnowFlakeAction != null;
 
         /// <summary>
+        /// Gets and sets the property SnowflakeDataSource. 
+        /// <para>
+        /// The ability to create, update, and share Snowflake data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState SnowflakeDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SnowflakeDataSource property is set.
+        /// </summary>
+        internal bool IsSetSnowflakeDataSource() => this.SnowflakeDataSource != null;
+
+        /// <summary>
         /// Gets and sets the property Space. 
         /// <para>
         /// The ability to perform space-related actions.
@@ -3721,6 +5412,58 @@ namespace Amazon.QuickSight.Model
         /// Checks to see if the Space property is set.
         /// </summary>
         internal bool IsSetSpace() => this.Space != null;
+
+        /// <summary>
+        /// Gets and sets the property SparkDataSource. 
+        /// <para>
+        /// The ability to create, update, and share Spark data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState SparkDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SparkDataSource property is set.
+        /// </summary>
+        internal bool IsSetSparkDataSource() => this.SparkDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property SqlServerDataSource. 
+        /// <para>
+        /// The ability to create, update, and share SQL Server data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState SqlServerDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SqlServerDataSource property is set.
+        /// </summary>
+        internal bool IsSetSqlServerDataSource() => this.SqlServerDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property SquareDataSource. 
+        /// <para>
+        /// The ability to create, update, and share Square data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState SquareDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SquareDataSource property is set.
+        /// </summary>
+        internal bool IsSetSquareDataSource() => this.SquareDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property StarburstDataSource. 
+        /// <para>
+        /// The ability to create, update, and share Starburst data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState StarburstDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StarburstDataSource property is set.
+        /// </summary>
+        internal bool IsSetStarburstDataSource() => this.StarburstDataSource != null;
 
         /// <summary>
         /// Gets and sets the property Story. 
@@ -3749,6 +5492,19 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetSubscribeDashboardEmailReports() => this.SubscribeDashboardEmailReports != null;
 
         /// <summary>
+        /// Gets and sets the property TeradataDataSource. 
+        /// <para>
+        /// The ability to create, update, and share Teradata data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState TeradataDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TeradataDataSource property is set.
+        /// </summary>
+        internal bool IsSetTeradataDataSource() => this.TeradataDataSource != null;
+
+        /// <summary>
         /// Gets and sets the property TextractAction. 
         /// <para>
         /// The ability to perform actions using Textract connectors.
@@ -3760,6 +5516,19 @@ namespace Amazon.QuickSight.Model
         /// Checks to see if the TextractAction property is set.
         /// </summary>
         internal bool IsSetTextractAction() => this.TextractAction != null;
+
+        /// <summary>
+        /// Gets and sets the property TimestreamDataSource. 
+        /// <para>
+        /// The ability to create, update, and share Amazon Timestream data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState TimestreamDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TimestreamDataSource property is set.
+        /// </summary>
+        internal bool IsSetTimestreamDataSource() => this.TimestreamDataSource != null;
 
         /// <summary>
         /// Gets and sets the property Topic. 
@@ -3786,6 +5555,617 @@ namespace Amazon.QuickSight.Model
         /// Checks to see if the Trigger property is set.
         /// </summary>
         internal bool IsSetTrigger() => this.Trigger != null;
+
+        /// <summary>
+        /// Gets and sets the property TrinoDataSource. 
+        /// <para>
+        /// The ability to create, update, and share Trino data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState TrinoDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TrinoDataSource property is set.
+        /// </summary>
+        internal bool IsSetTrinoDataSource() => this.TrinoDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property TwitterDataSource. 
+        /// <para>
+        /// The ability to create, update, and share Twitter data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState TwitterDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TwitterDataSource property is set.
+        /// </summary>
+        internal bool IsSetTwitterDataSource() => this.TwitterDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateAdobeAnalyticsDataSource. 
+        /// <para>
+        /// The ability to update Adobe Analytics data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateAdobeAnalyticsDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateAdobeAnalyticsDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateAdobeAnalyticsDataSource() => this.UpdateAdobeAnalyticsDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateAthenaDataSource. 
+        /// <para>
+        /// The ability to update Amazon Athena data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateAthenaDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateAthenaDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateAthenaDataSource() => this.UpdateAthenaDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateAuroraDataSource. 
+        /// <para>
+        /// The ability to update Amazon Aurora data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateAuroraDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateAuroraDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateAuroraDataSource() => this.UpdateAuroraDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateDatabricksDataSource. 
+        /// <para>
+        /// The ability to update Databricks data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateDatabricksDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateDatabricksDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateDatabricksDataSource() => this.UpdateDatabricksDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateDb2DataSource. 
+        /// <para>
+        /// The ability to update Db2 data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateDb2DataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateDb2DataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateDb2DataSource() => this.UpdateDb2DataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateDenodoDataSource. 
+        /// <para>
+        /// The ability to update Denodo data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateDenodoDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateDenodoDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateDenodoDataSource() => this.UpdateDenodoDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateDocumentDbDataSource. 
+        /// <para>
+        /// The ability to update Amazon DocumentDB data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateDocumentDbDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateDocumentDbDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateDocumentDbDataSource() => this.UpdateDocumentDbDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateDremioDataSource. 
+        /// <para>
+        /// The ability to update Dremio data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateDremioDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateDremioDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateDremioDataSource() => this.UpdateDremioDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateDynamoDbDataSource. 
+        /// <para>
+        /// The ability to update Amazon DynamoDB data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateDynamoDbDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateDynamoDbDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateDynamoDbDataSource() => this.UpdateDynamoDbDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateExasolDataSource. 
+        /// <para>
+        /// The ability to update Exasol data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateExasolDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateExasolDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateExasolDataSource() => this.UpdateExasolDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateFileDataSource. 
+        /// <para>
+        /// The ability to update file data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateFileDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateFileDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateFileDataSource() => this.UpdateFileDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateGitHubDataSource. 
+        /// <para>
+        /// The ability to update GitHub data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateGitHubDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateGitHubDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateGitHubDataSource() => this.UpdateGitHubDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateGoogleAnalyticsDataSource. 
+        /// <para>
+        /// The ability to update Google Analytics data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateGoogleAnalyticsDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateGoogleAnalyticsDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateGoogleAnalyticsDataSource() => this.UpdateGoogleAnalyticsDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateGoogleBigQueryDataSource. 
+        /// <para>
+        /// The ability to update Google BigQuery data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateGoogleBigQueryDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateGoogleBigQueryDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateGoogleBigQueryDataSource() => this.UpdateGoogleBigQueryDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateGoogleSheetsDataSource. 
+        /// <para>
+        /// The ability to update Google Sheets data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateGoogleSheetsDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateGoogleSheetsDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateGoogleSheetsDataSource() => this.UpdateGoogleSheetsDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateImpalaDataSource. 
+        /// <para>
+        /// The ability to update Impala data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateImpalaDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateImpalaDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateImpalaDataSource() => this.UpdateImpalaDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateJiraDataSource. 
+        /// <para>
+        /// The ability to update Jira data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateJiraDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateJiraDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateJiraDataSource() => this.UpdateJiraDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateMariaDbDataSource. 
+        /// <para>
+        /// The ability to update MariaDB data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateMariaDbDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateMariaDbDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateMariaDbDataSource() => this.UpdateMariaDbDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateMongoAtlasDataSource. 
+        /// <para>
+        /// The ability to update MongoDB Atlas data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateMongoAtlasDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateMongoAtlasDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateMongoAtlasDataSource() => this.UpdateMongoAtlasDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateMongoDbDataSource. 
+        /// <para>
+        /// The ability to update MongoDB data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateMongoDbDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateMongoDbDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateMongoDbDataSource() => this.UpdateMongoDbDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateMySqlDataSource. 
+        /// <para>
+        /// The ability to update MySQL data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateMySqlDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateMySqlDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateMySqlDataSource() => this.UpdateMySqlDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateOpenSearchDataSource. 
+        /// <para>
+        /// The ability to update Amazon OpenSearch Service data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateOpenSearchDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateOpenSearchDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateOpenSearchDataSource() => this.UpdateOpenSearchDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateOracleDataSource. 
+        /// <para>
+        /// The ability to update Oracle data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateOracleDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateOracleDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateOracleDataSource() => this.UpdateOracleDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdatePayPalDataSource. 
+        /// <para>
+        /// The ability to update PayPal data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdatePayPalDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdatePayPalDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdatePayPalDataSource() => this.UpdatePayPalDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdatePostgreSqlDataSource. 
+        /// <para>
+        /// The ability to update PostgreSQL data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdatePostgreSqlDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdatePostgreSqlDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdatePostgreSqlDataSource() => this.UpdatePostgreSqlDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdatePrestoDataSource. 
+        /// <para>
+        /// The ability to update Presto data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdatePrestoDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdatePrestoDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdatePrestoDataSource() => this.UpdatePrestoDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateRadiantDataSource. 
+        /// <para>
+        /// The ability to update Amazon QuickSight data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateRadiantDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateRadiantDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateRadiantDataSource() => this.UpdateRadiantDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateRdsDataSource. 
+        /// <para>
+        /// The ability to update auto-discovered Amazon RDS data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateRdsDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateRdsDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateRdsDataSource() => this.UpdateRdsDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateRedshiftAutoDiscoveredDataSource. 
+        /// <para>
+        /// The ability to update auto-discovered Amazon Redshift data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateRedshiftAutoDiscoveredDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateRedshiftAutoDiscoveredDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateRedshiftAutoDiscoveredDataSource() => this.UpdateRedshiftAutoDiscoveredDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateRedshiftManualDataSource. 
+        /// <para>
+        /// The ability to update manually configured Amazon Redshift data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateRedshiftManualDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateRedshiftManualDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateRedshiftManualDataSource() => this.UpdateRedshiftManualDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateS3AnalyticsDataSource. 
+        /// <para>
+        /// The ability to update Amazon S3 Analytics data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateS3AnalyticsDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateS3AnalyticsDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateS3AnalyticsDataSource() => this.UpdateS3AnalyticsDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateS3DataSource. 
+        /// <para>
+        /// The ability to update Amazon S3 data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateS3DataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateS3DataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateS3DataSource() => this.UpdateS3DataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateS3TablesDataSource. 
+        /// <para>
+        /// The ability to update Amazon S3 Tables data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateS3TablesDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateS3TablesDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateS3TablesDataSource() => this.UpdateS3TablesDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateSalesforceDataSource. 
+        /// <para>
+        /// The ability to update Salesforce data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateSalesforceDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateSalesforceDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateSalesforceDataSource() => this.UpdateSalesforceDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateSapHanaDataSource. 
+        /// <para>
+        /// The ability to update SAP HANA data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateSapHanaDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateSapHanaDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateSapHanaDataSource() => this.UpdateSapHanaDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateServiceNowDataSource. 
+        /// <para>
+        /// The ability to update ServiceNow data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateServiceNowDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateServiceNowDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateServiceNowDataSource() => this.UpdateServiceNowDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateSnowflakeDataSource. 
+        /// <para>
+        /// The ability to update Snowflake data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateSnowflakeDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateSnowflakeDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateSnowflakeDataSource() => this.UpdateSnowflakeDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateSparkDataSource. 
+        /// <para>
+        /// The ability to update Spark data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateSparkDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateSparkDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateSparkDataSource() => this.UpdateSparkDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateSqlServerDataSource. 
+        /// <para>
+        /// The ability to update SQL Server data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateSqlServerDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateSqlServerDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateSqlServerDataSource() => this.UpdateSqlServerDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateSquareDataSource. 
+        /// <para>
+        /// The ability to update Square data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateSquareDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateSquareDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateSquareDataSource() => this.UpdateSquareDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateStarburstDataSource. 
+        /// <para>
+        /// The ability to update Starburst data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateStarburstDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateStarburstDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateStarburstDataSource() => this.UpdateStarburstDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateTeradataDataSource. 
+        /// <para>
+        /// The ability to update Teradata data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateTeradataDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateTeradataDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateTeradataDataSource() => this.UpdateTeradataDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateTimestreamDataSource. 
+        /// <para>
+        /// The ability to update Amazon Timestream data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateTimestreamDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateTimestreamDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateTimestreamDataSource() => this.UpdateTimestreamDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateTrinoDataSource. 
+        /// <para>
+        /// The ability to update Trino data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateTrinoDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateTrinoDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateTrinoDataSource() => this.UpdateTrinoDataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateTwitterDataSource. 
+        /// <para>
+        /// The ability to update Twitter data sources.
+        /// </para>
+        /// </summary>
+        public CapabilityState UpdateTwitterDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateTwitterDataSource property is set.
+        /// </summary>
+        internal bool IsSetUpdateTwitterDataSource() => this.UpdateTwitterDataSource != null;
 
         /// <summary>
         /// Gets and sets the property UseAdobeAction. 
@@ -4169,6 +6549,19 @@ namespace Amazon.QuickSight.Model
         /// Checks to see if the UseGmailAction property is set.
         /// </summary>
         internal bool IsSetUseGmailAction() => this.UseGmailAction != null;
+
+        /// <summary>
+        /// Gets and sets the property UseGongAction. 
+        /// <para>
+        /// The ability to use Gong actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseGongAction { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UseGongAction property is set.
+        /// </summary>
+        internal bool IsSetUseGongAction() => this.UseGongAction != null;
 
         /// <summary>
         /// Gets and sets the property UseGoogleAnalyticsAction. 
