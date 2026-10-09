@@ -109,6 +109,14 @@ namespace Amazon.Runtime.Internal.Transform
                     responseMetadata.ChecksumValidationStatus = ChecksumValidationStatus.SUCCESSFUL;
                 }
             }
+            else
+            {
+                // The hash has not been calculated yet because the response is streamed and
+                // has not been read. Give the stream a reference to the response metadata so
+                // it can set the final status (SUCCESSFUL / INVALID) when the caller reads the
+                // stream to completion and CalculateHash runs.
+                FlexibleChecksumStream.ChecksumValidationMetadata = responseMetadata;
+            }
         }
 
         protected void SetupCRCStream(IWebResponseData responseData, Stream responseStream, long contentLength)

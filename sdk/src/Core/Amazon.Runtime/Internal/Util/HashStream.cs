@@ -77,6 +77,15 @@ namespace Amazon.Runtime.Internal.Util
         public byte[] ExpectedHash { get; private set; }
 
         /// <summary>
+        /// Optional response metadata whose ChecksumValidationStatus is updated when the
+        /// hash is calculated: SUCCESSFUL on a match, INVALID on a mismatch. This lets a
+        /// streamed response report a validation result, since validation happens lazily
+        /// (after unmarshalling) once the caller reads the stream to completion. When null,
+        /// the status is not updated.
+        /// </summary>
+        internal ResponseMetadata ChecksumValidationMetadata { get; set; }
+
+        /// <summary>
         /// Expected length of stream.
         /// </summary>
         public long ExpectedLength { get; protected set; }
@@ -310,12 +319,26 @@ namespace Amazon.Runtime.Internal.Util
                     CalculatedHash = Algorithm.AppendLastBlock(ArrayEx.Empty<byte>());
                 }
                 else
+                {
+                    // The stream was not read to completion, so the checksum could not be
+                    // validated. Report that no validation was performed rather than leaving
+                    // a stale PENDING_RESPONSE_READ status.
                     CalculatedHash = ArrayEx.Empty<byte>();
+                    if (ChecksumValidationMetadata != null)
+                        ChecksumValidationMetadata.ChecksumValidationStatus = ChecksumValidationStatus.NOT_VALIDATED;
+                }
 
                 if (CalculatedHash.Length > 0 && ExpectedHash != null && ExpectedHash.Length > 0)
                 {
                     if (!CompareHashes(ExpectedHash, CalculatedHash))
+                    {
+                        if (ChecksumValidationMetadata != null)
+                            ChecksumValidationMetadata.ChecksumValidationStatus = ChecksumValidationStatus.INVALID;
                         throw new AmazonClientException("Expected hash not equal to calculated hash");
+                    }
+
+                    if (ChecksumValidationMetadata != null)
+                        ChecksumValidationMetadata.ChecksumValidationStatus = ChecksumValidationStatus.SUCCESSFUL;
                 }
             }
         }

@@ -72,12 +72,13 @@ namespace Amazon.Runtime
         NOT_VALIDATED,
         /// <summary>
         /// Set when a checksum was selected to be validated, but validation
-        /// will not completed until the response stream is fully read. At that point an exception
-        /// will be thrown if the checksum is invalid.
+        /// will not complete until the response stream is fully read. At that point
+        /// the status becomes SUCCESSFUL or INVALID, and an exception is thrown if the checksum is invalid.
         /// </summary>
         PENDING_RESPONSE_READ,
         /// <summary>
-        /// The checksum has been validated successfully during response unmarshalling.
+        /// The checksum has been validated successfully, either during response unmarshalling
+        /// or, for streaming responses, once the response stream was read to the end.
         /// </summary>
         SUCCESSFUL,
         /// <summary>

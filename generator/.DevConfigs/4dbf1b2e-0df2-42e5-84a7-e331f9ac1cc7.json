@@ -1,0 +1,9 @@
+{
+  "core": {
+    "updateMinimum": true,
+    "type": "patch",
+    "changeLogMessages": [
+      "Fixed ChecksumValidationStatus not being set to SUCCESSFUL/INVALID after reading a streamed GetObject response."
+    ]
+  }
+}
