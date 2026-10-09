@@ -1,0 +1,1361 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using Amazon.Runtime;
+using Amazon.ARCRegionswitch.Model;
+
+#pragma warning disable CS1570
+
+namespace Amazon.ARCRegionswitch
+{
+    /// <summary>
+    /// <para>Interface for accessing ARCRegionswitch</para>
+    ///
+    /// Amazon Application Recovery Controller (ARC) Region switch helps you to quickly and
+    /// reliably shift traffic away from an impaired Amazon Web Services Region to a healthy
+    /// Region. With Region switch, you can create plans that define the steps to shift traffic
+    /// for your application from one Amazon Web Services Region to another.
+    /// 
+    ///  
+    /// <para>
+    /// Region switch provides a structured approach to multi-Region failover, helping you
+    /// to meet your recovery time objectives (RTOs) and maintain business continuity during
+    /// regional disruptions.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/region-switch.html">Region
+    /// switch in ARC</a> in the <i>Amazon Application Recovery Controller User Guide</i>.
+    /// </para>
+    /// </summary>
+    public partial interface IAmazonARCRegionswitch : IAmazonService, IDisposable
+    {
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IARCRegionswitchPaginatorFactory Paginators { get; }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Approves a step in a plan execution that requires manual approval. When you create
+        /// a plan, you can include approval steps that require manual intervention before the
+        /// execution can proceed. This operation allows you to provide that approval.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify the plan ARN, execution ID, step name, and approval status. You can
+        /// also provide an optional comment explaining the approval decision.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ApprovePlanExecutionStep service method.</param>
+        /// <returns>The response from the ApprovePlanExecutionStep service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ApprovePlanExecutionStep">REST API Reference for ApprovePlanExecutionStep Operation</seealso>
+        ApprovePlanExecutionStepResponse ApprovePlanExecutionStep(ApprovePlanExecutionStepRequest request);
+#endif
+
+        /// <summary>
+        /// Approves a step in a plan execution that requires manual approval. When you create
+        /// a plan, you can include approval steps that require manual intervention before the
+        /// execution can proceed. This operation allows you to provide that approval.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify the plan ARN, execution ID, step name, and approval status. You can
+        /// also provide an optional comment explaining the approval decision.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ApprovePlanExecutionStep service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ApprovePlanExecutionStep service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ApprovePlanExecutionStep">REST API Reference for ApprovePlanExecutionStep Operation</seealso>
+        Task<ApprovePlanExecutionStepResponse> ApprovePlanExecutionStepAsync(ApprovePlanExecutionStepRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Cancels an in-progress plan execution. This operation stops the execution of the plan
+        /// and prevents any further steps from being processed.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify the plan ARN and execution ID. You can also provide an optional comment
+        /// explaining why the execution was canceled.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelPlanExecution service method.</param>
+        /// <returns>The response from the CancelPlanExecution service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/CancelPlanExecution">REST API Reference for CancelPlanExecution Operation</seealso>
+        CancelPlanExecutionResponse CancelPlanExecution(CancelPlanExecutionRequest request);
+#endif
+
+        /// <summary>
+        /// Cancels an in-progress plan execution. This operation stops the execution of the plan
+        /// and prevents any further steps from being processed.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify the plan ARN and execution ID. You can also provide an optional comment
+        /// explaining why the execution was canceled.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelPlanExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CancelPlanExecution service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/CancelPlanExecution">REST API Reference for CancelPlanExecution Operation</seealso>
+        Task<CancelPlanExecutionResponse> CancelPlanExecutionAsync(CancelPlanExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a new Region switch plan. A plan defines the steps required to shift traffic
+        /// from one Amazon Web Services Region to another.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify a name for the plan, the primary Region, and at least one additional
+        /// Region. You can also provide a description, execution role, recovery time objective,
+        /// associated alarms, triggers, and workflows that define the steps to execute during
+        /// a Region switch.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePlan service method.</param>
+        /// <returns>The response from the CreatePlan service method, as returned by ARCRegionswitch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/CreatePlan">REST API Reference for CreatePlan Operation</seealso>
+        CreatePlanResponse CreatePlan(CreatePlanRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a new Region switch plan. A plan defines the steps required to shift traffic
+        /// from one Amazon Web Services Region to another.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify a name for the plan, the primary Region, and at least one additional
+        /// Region. You can also provide a description, execution role, recovery time objective,
+        /// associated alarms, triggers, and workflows that define the steps to execute during
+        /// a Region switch.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreatePlan service method, as returned by ARCRegionswitch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/CreatePlan">REST API Reference for CreatePlan Operation</seealso>
+        Task<CreatePlanResponse> CreatePlanAsync(CreatePlanRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes a Region switch plan. You must specify the ARN of the plan to delete.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a plan that has an active execution in progress.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePlan service method.</param>
+        /// <returns>The response from the DeletePlan service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.IllegalStateException">
+        /// The operation failed because the current state of the resource doesn't allow the operation
+        /// to proceed.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 400
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/DeletePlan">REST API Reference for DeletePlan Operation</seealso>
+        DeletePlanResponse DeletePlan(DeletePlanRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes a Region switch plan. You must specify the ARN of the plan to delete.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a plan that has an active execution in progress.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeletePlan service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.IllegalStateException">
+        /// The operation failed because the current state of the resource doesn't allow the operation
+        /// to proceed.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 400
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/DeletePlan">REST API Reference for DeletePlan Operation</seealso>
+        Task<DeletePlanResponse> DeletePlanAsync(DeletePlanRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves detailed information about a Region switch plan. You must specify the ARN
+        /// of the plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPlan service method.</param>
+        /// <returns>The response from the GetPlan service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/GetPlan">REST API Reference for GetPlan Operation</seealso>
+        GetPlanResponse GetPlan(GetPlanRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves detailed information about a Region switch plan. You must specify the ARN
+        /// of the plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetPlan service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/GetPlan">REST API Reference for GetPlan Operation</seealso>
+        Task<GetPlanResponse> GetPlanAsync(GetPlanRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves the evaluation status of a Region switch plan. The evaluation status provides
+        /// information about the last time the plan was evaluated and any warnings or issues
+        /// detected.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPlanEvaluationStatus service method.</param>
+        /// <returns>The response from the GetPlanEvaluationStatus service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/GetPlanEvaluationStatus">REST API Reference for GetPlanEvaluationStatus Operation</seealso>
+        GetPlanEvaluationStatusResponse GetPlanEvaluationStatus(GetPlanEvaluationStatusRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves the evaluation status of a Region switch plan. The evaluation status provides
+        /// information about the last time the plan was evaluated and any warnings or issues
+        /// detected.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPlanEvaluationStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetPlanEvaluationStatus service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/GetPlanEvaluationStatus">REST API Reference for GetPlanEvaluationStatus Operation</seealso>
+        Task<GetPlanEvaluationStatusResponse> GetPlanEvaluationStatusAsync(GetPlanEvaluationStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves detailed information about a specific plan execution. You must specify the
+        /// plan ARN and execution ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPlanExecution service method.</param>
+        /// <returns>The response from the GetPlanExecution service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/GetPlanExecution">REST API Reference for GetPlanExecution Operation</seealso>
+        GetPlanExecutionResponse GetPlanExecution(GetPlanExecutionRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves detailed information about a specific plan execution. You must specify the
+        /// plan ARN and execution ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPlanExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetPlanExecution service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/GetPlanExecution">REST API Reference for GetPlanExecution Operation</seealso>
+        Task<GetPlanExecutionResponse> GetPlanExecutionAsync(GetPlanExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves information about a Region switch plan in a specific Amazon Web Services
+        /// Region. This operation is useful for getting Region-specific information about a plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPlanInRegion service method.</param>
+        /// <returns>The response from the GetPlanInRegion service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/GetPlanInRegion">REST API Reference for GetPlanInRegion Operation</seealso>
+        GetPlanInRegionResponse GetPlanInRegion(GetPlanInRegionRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves information about a Region switch plan in a specific Amazon Web Services
+        /// Region. This operation is useful for getting Region-specific information about a plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPlanInRegion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetPlanInRegion service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/GetPlanInRegion">REST API Reference for GetPlanInRegion Operation</seealso>
+        Task<GetPlanInRegionResponse> GetPlanInRegionAsync(GetPlanInRegionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the events that occurred during a plan execution. These events provide a detailed
+        /// timeline of the execution process.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPlanExecutionEvents service method.</param>
+        /// <returns>The response from the ListPlanExecutionEvents service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListPlanExecutionEvents">REST API Reference for ListPlanExecutionEvents Operation</seealso>
+        ListPlanExecutionEventsResponse ListPlanExecutionEvents(ListPlanExecutionEventsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the events that occurred during a plan execution. These events provide a detailed
+        /// timeline of the execution process.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPlanExecutionEvents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListPlanExecutionEvents service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListPlanExecutionEvents">REST API Reference for ListPlanExecutionEvents Operation</seealso>
+        Task<ListPlanExecutionEventsResponse> ListPlanExecutionEventsAsync(ListPlanExecutionEventsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the executions of a Region switch plan. This operation returns information about
+        /// both current and historical executions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPlanExecutions service method.</param>
+        /// <returns>The response from the ListPlanExecutions service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListPlanExecutions">REST API Reference for ListPlanExecutions Operation</seealso>
+        ListPlanExecutionsResponse ListPlanExecutions(ListPlanExecutionsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the executions of a Region switch plan. This operation returns information about
+        /// both current and historical executions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPlanExecutions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListPlanExecutions service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListPlanExecutions">REST API Reference for ListPlanExecutions Operation</seealso>
+        Task<ListPlanExecutionsResponse> ListPlanExecutionsAsync(ListPlanExecutionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists all Region switch plans in your Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPlans service method.</param>
+        /// <returns>The response from the ListPlans service method, as returned by ARCRegionswitch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListPlans">REST API Reference for ListPlans Operation</seealso>
+        ListPlansResponse ListPlans(ListPlansRequest request);
+#endif
+
+        /// <summary>
+        /// Lists all Region switch plans in your Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPlans service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListPlans service method, as returned by ARCRegionswitch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListPlans">REST API Reference for ListPlans Operation</seealso>
+        Task<ListPlansResponse> ListPlansAsync(ListPlansRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists all Region switch plans in your Amazon Web Services account that are available
+        /// in the current Amazon Web Services Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPlansInRegion service method.</param>
+        /// <returns>The response from the ListPlansInRegion service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 403
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListPlansInRegion">REST API Reference for ListPlansInRegion Operation</seealso>
+        ListPlansInRegionResponse ListPlansInRegion(ListPlansInRegionRequest request);
+#endif
+
+        /// <summary>
+        /// Lists all Region switch plans in your Amazon Web Services account that are available
+        /// in the current Amazon Web Services Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPlansInRegion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListPlansInRegion service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 403
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListPlansInRegion">REST API Reference for ListPlansInRegion Operation</seealso>
+        Task<ListPlansInRegionResponse> ListPlansInRegionAsync(ListPlansInRegionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// List the Amazon Route 53 health checks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRoute53HealthChecks service method.</param>
+        /// <returns>The response from the ListRoute53HealthChecks service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.IllegalArgumentException">
+        /// The request processing has an invalid argument.
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 500
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListRoute53HealthChecks">REST API Reference for ListRoute53HealthChecks Operation</seealso>
+        ListRoute53HealthChecksResponse ListRoute53HealthChecks(ListRoute53HealthChecksRequest request);
+#endif
+
+        /// <summary>
+        /// List the Amazon Route 53 health checks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRoute53HealthChecks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListRoute53HealthChecks service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.IllegalArgumentException">
+        /// The request processing has an invalid argument.
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 500
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListRoute53HealthChecks">REST API Reference for ListRoute53HealthChecks Operation</seealso>
+        Task<ListRoute53HealthChecksResponse> ListRoute53HealthChecksAsync(ListRoute53HealthChecksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// List the Amazon Route 53 health checks in a specific Amazon Web Services Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRoute53HealthChecksInRegion service method.</param>
+        /// <returns>The response from the ListRoute53HealthChecksInRegion service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.IllegalArgumentException">
+        /// The request processing has an invalid argument.
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 500
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListRoute53HealthChecksInRegion">REST API Reference for ListRoute53HealthChecksInRegion Operation</seealso>
+        ListRoute53HealthChecksInRegionResponse ListRoute53HealthChecksInRegion(ListRoute53HealthChecksInRegionRequest request);
+#endif
+
+        /// <summary>
+        /// List the Amazon Route 53 health checks in a specific Amazon Web Services Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRoute53HealthChecksInRegion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListRoute53HealthChecksInRegion service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.IllegalArgumentException">
+        /// The request processing has an invalid argument.
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 500
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListRoute53HealthChecksInRegion">REST API Reference for ListRoute53HealthChecksInRegion Operation</seealso>
+        Task<ListRoute53HealthChecksInRegionResponse> ListRoute53HealthChecksInRegionAsync(ListRoute53HealthChecksInRegionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the service quota warnings for the plans that you can access. Region switch
+        /// creates a warning when the applied quota value in one Region of a plan is lower than
+        /// the value required for the matching resource in another Region or account in the plan.
+        /// 
+        ///  
+        /// <para>
+        /// Returns the warnings for the plans that you own and for plans that are shared with
+        /// your account through AWS Resource Access Manager (AWS RAM). To return warnings for
+        /// specific plans, provide a list of plan Amazon Resource Names (ARNs). Region switch
+        /// ignores any plan ARN that you can't access. If you don't provide any plan ARNs, Region
+        /// switch returns the warnings for all of your accessible plans.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceQuotaWarnings service method.</param>
+        /// <returns>The response from the ListServiceQuotaWarnings service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 500
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListServiceQuotaWarnings">REST API Reference for ListServiceQuotaWarnings Operation</seealso>
+        ListServiceQuotaWarningsResponse ListServiceQuotaWarnings(ListServiceQuotaWarningsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the service quota warnings for the plans that you can access. Region switch
+        /// creates a warning when the applied quota value in one Region of a plan is lower than
+        /// the value required for the matching resource in another Region or account in the plan.
+        /// 
+        ///  
+        /// <para>
+        /// Returns the warnings for the plans that you own and for plans that are shared with
+        /// your account through AWS Resource Access Manager (AWS RAM). To return warnings for
+        /// specific plans, provide a list of plan Amazon Resource Names (ARNs). Region switch
+        /// ignores any plan ARN that you can't access. If you don't provide any plan ARNs, Region
+        /// switch returns the warnings for all of your accessible plans.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceQuotaWarnings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListServiceQuotaWarnings service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 500
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListServiceQuotaWarnings">REST API Reference for ListServiceQuotaWarnings Operation</seealso>
+        Task<ListServiceQuotaWarningsResponse> ListServiceQuotaWarningsAsync(ListServiceQuotaWarningsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the tags attached to a Region switch resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <returns>The response from the ListTagsForResource service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 500
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the tags attached to a Region switch resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListTagsForResource service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 500
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Starts the execution of a Region switch plan. You can execute a plan in either <c>graceful</c>
+        /// or <c>ungraceful</c> mode.
+        /// 
+        ///  
+        /// <para>
+        /// Specifing <c>ungraceful</c> mode either changes the behavior of the execution blocks
+        /// in a workflow or skips specific execution blocks.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartPlanExecution service method.</param>
+        /// <returns>The response from the StartPlanExecution service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ConflictException">
+        /// The client token was already used with different request parameters. A client token
+        /// must map to the same parameters for every request. To retry this operation, provide
+        /// a new client token.
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.IllegalArgumentException">
+        /// The request processing has an invalid argument.
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.IllegalStateException">
+        /// The operation failed because the current state of the resource doesn't allow the operation
+        /// to proceed.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 400
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/StartPlanExecution">REST API Reference for StartPlanExecution Operation</seealso>
+        StartPlanExecutionResponse StartPlanExecution(StartPlanExecutionRequest request);
+#endif
+
+        /// <summary>
+        /// Starts the execution of a Region switch plan. You can execute a plan in either <c>graceful</c>
+        /// or <c>ungraceful</c> mode.
+        /// 
+        ///  
+        /// <para>
+        /// Specifing <c>ungraceful</c> mode either changes the behavior of the execution blocks
+        /// in a workflow or skips specific execution blocks.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartPlanExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the StartPlanExecution service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ConflictException">
+        /// The client token was already used with different request parameters. A client token
+        /// must map to the same parameters for every request. To retry this operation, provide
+        /// a new client token.
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.IllegalArgumentException">
+        /// The request processing has an invalid argument.
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.IllegalStateException">
+        /// The operation failed because the current state of the resource doesn't allow the operation
+        /// to proceed.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 400
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/StartPlanExecution">REST API Reference for StartPlanExecution Operation</seealso>
+        Task<StartPlanExecutionResponse> StartPlanExecutionAsync(StartPlanExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Adds or updates tags for a Region switch resource. You can assign metadata to your
+        /// resources in the form of tags, which are key-value pairs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <returns>The response from the TagResource service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 500
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+#endif
+
+        /// <summary>
+        /// Adds or updates tags for a Region switch resource. You can assign metadata to your
+        /// resources in the form of tags, which are key-value pairs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the TagResource service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 500
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Removes tags from a Region switch resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <returns>The response from the UntagResource service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 500
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+#endif
+
+        /// <summary>
+        /// Removes tags from a Region switch resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UntagResource service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 500
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates an existing Region switch plan. You can modify the plan's description, workflows,
+        /// execution role, recovery time objective, associated alarms, and triggers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePlan service method.</param>
+        /// <returns>The response from the UpdatePlan service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/UpdatePlan">REST API Reference for UpdatePlan Operation</seealso>
+        UpdatePlanResponse UpdatePlan(UpdatePlanRequest request);
+#endif
+
+        /// <summary>
+        /// Updates an existing Region switch plan. You can modify the plan's description, workflows,
+        /// execution role, recovery time objective, associated alarms, and triggers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdatePlan service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/UpdatePlan">REST API Reference for UpdatePlan Operation</seealso>
+        Task<UpdatePlanResponse> UpdatePlanAsync(UpdatePlanRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates an in-progress plan execution. This operation allows you to modify certain
+        /// aspects of the execution, such as adding a comment or changing the action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePlanExecution service method.</param>
+        /// <returns>The response from the UpdatePlanExecution service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.IllegalStateException">
+        /// The operation failed because the current state of the resource doesn't allow the operation
+        /// to proceed.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 400
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/UpdatePlanExecution">REST API Reference for UpdatePlanExecution Operation</seealso>
+        UpdatePlanExecutionResponse UpdatePlanExecution(UpdatePlanExecutionRequest request);
+#endif
+
+        /// <summary>
+        /// Updates an in-progress plan execution. This operation allows you to modify certain
+        /// aspects of the execution, such as adding a comment or changing the action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePlanExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdatePlanExecution service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.IllegalStateException">
+        /// The operation failed because the current state of the resource doesn't allow the operation
+        /// to proceed.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 400
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/UpdatePlanExecution">REST API Reference for UpdatePlanExecution Operation</seealso>
+        Task<UpdatePlanExecutionResponse> UpdatePlanExecutionAsync(UpdatePlanExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates a specific step in an in-progress plan execution. This operation allows you
+        /// to modify the step's comment or action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePlanExecutionStep service method.</param>
+        /// <returns>The response from the UpdatePlanExecutionStep service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/UpdatePlanExecutionStep">REST API Reference for UpdatePlanExecutionStep Operation</seealso>
+        UpdatePlanExecutionStepResponse UpdatePlanExecutionStep(UpdatePlanExecutionStepRequest request);
+#endif
+
+        /// <summary>
+        /// Updates a specific step in an in-progress plan execution. This operation allows you
+        /// to modify the step's comment or action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePlanExecutionStep service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdatePlanExecutionStep service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/UpdatePlanExecutionStep">REST API Reference for UpdatePlanExecutionStep Operation</seealso>
+        Task<UpdatePlanExecutionStepResponse> UpdatePlanExecutionStepAsync(UpdatePlanExecutionStepRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request);
+
+#if NET8_0_OR_GREATER
+        // Warning CA1033 is issued when the child types can not call the method defined in parent types.
+        // In this use case the intended caller is only meant to be the interface as a factory
+        // method to create the child types. Given the SDK use case the warning can be ignored.
+#pragma warning disable CA1033
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.DynamicDependency(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties, typeof(AmazonARCRegionswitchConfig))]
+        static ClientConfig IAmazonService.CreateDefaultClientConfig() => new AmazonARCRegionswitchConfig();
+
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",
+            Justification = "This suppression is here to ignore the warnings caused by CognitoSync. See justification in IAmazonService.")]
+        static IAmazonService IAmazonService.CreateDefaultServiceClient(AWSCredentials awsCredentials, ClientConfig clientConfig)
+        {
+            var serviceClientConfig = clientConfig as AmazonARCRegionswitchConfig;
+            if (serviceClientConfig == null)
+            {
+                throw new AmazonClientException("ClientConfig is not of type AmazonARCRegionswitchConfig to create AmazonARCRegionswitchClient");
+            }
+
+            return awsCredentials == null ?
+                    new AmazonARCRegionswitchClient(serviceClientConfig) :
+                    new AmazonARCRegionswitchClient(awsCredentials, serviceClientConfig);
+        }
+#pragma warning restore CA1033
+#endif
+    }
+}

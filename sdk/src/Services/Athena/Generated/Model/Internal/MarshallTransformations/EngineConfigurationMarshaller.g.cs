@@ -1,0 +1,114 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.Athena.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.Athena.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// EngineConfiguration Marshaller
+    /// </summary>
+    public partial class EngineConfigurationMarshaller : IRequestMarshaller<EngineConfiguration, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(EngineConfiguration requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetAdditionalConfigs())
+            {
+                context.Writer.WritePropertyName("AdditionalConfigs");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectAdditionalConfigsKvp in requestObject.AdditionalConfigs)
+                {
+                    context.Writer.WritePropertyName(requestObjectAdditionalConfigsKvp.Key);
+                    var requestObjectAdditionalConfigsValue = requestObjectAdditionalConfigsKvp.Value;
+                    context.Writer.WriteStringValue(requestObjectAdditionalConfigsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetClassifications())
+            {
+                context.Writer.WritePropertyName("Classifications");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectClassificationsListValue in requestObject.Classifications)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ClassificationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectClassificationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetCoordinatorDpuSize())
+            {
+                context.Writer.WritePropertyName("CoordinatorDpuSize");
+                context.Writer.WriteNumberValue(requestObject.CoordinatorDpuSize.Value);
+            }
+
+            if (requestObject.IsSetDefaultExecutorDpuSize())
+            {
+                context.Writer.WritePropertyName("DefaultExecutorDpuSize");
+                context.Writer.WriteNumberValue(requestObject.DefaultExecutorDpuSize.Value);
+            }
+
+            if (requestObject.IsSetMaxConcurrentDpus())
+            {
+                context.Writer.WritePropertyName("MaxConcurrentDpus");
+                context.Writer.WriteNumberValue(requestObject.MaxConcurrentDpus.Value);
+            }
+
+            if (requestObject.IsSetSparkProperties())
+            {
+                context.Writer.WritePropertyName("SparkProperties");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectSparkPropertiesKvp in requestObject.SparkProperties)
+                {
+                    context.Writer.WritePropertyName(requestObjectSparkPropertiesKvp.Key);
+                    var requestObjectSparkPropertiesValue = requestObjectSparkPropertiesKvp.Value;
+                    context.Writer.WriteStringValue(requestObjectSparkPropertiesValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static EngineConfigurationMarshaller Instance = new EngineConfigurationMarshaller();
+    }
+}

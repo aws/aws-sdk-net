@@ -1,0 +1,88 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.Athena.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.Athena.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// ResultConfiguration Marshaller
+    /// </summary>
+    public partial class ResultConfigurationMarshaller : IRequestMarshaller<ResultConfiguration, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(ResultConfiguration requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetAclConfiguration())
+            {
+                context.Writer.WritePropertyName("AclConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AclConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AclConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetEncryptionConfiguration())
+            {
+                context.Writer.WritePropertyName("EncryptionConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EncryptionConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.EncryptionConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetExpectedBucketOwner())
+            {
+                context.Writer.WritePropertyName("ExpectedBucketOwner");
+                context.Writer.WriteStringValue(requestObject.ExpectedBucketOwner);
+            }
+
+            if (requestObject.IsSetOutputLocation())
+            {
+                context.Writer.WritePropertyName("OutputLocation");
+                context.Writer.WriteStringValue(requestObject.OutputLocation);
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static ResultConfigurationMarshaller Instance = new ResultConfigurationMarshaller();
+    }
+}

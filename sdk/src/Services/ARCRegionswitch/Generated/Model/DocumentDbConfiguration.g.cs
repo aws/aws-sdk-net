@@ -1,0 +1,138 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.ARCRegionswitch.Model
+{
+    /// <summary>
+    /// Configuration for Amazon DocumentDB global clusters used in a Region switch plan.
+    /// </summary>
+    public partial class DocumentDbConfiguration
+    {
+        /// <summary>
+        /// Gets and sets the property Behavior. 
+        /// <para>
+        /// The behavior for a global cluster, that is, only allow switchover or also allow failover.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public DocumentDbDefaultBehavior Behavior { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Behavior property is set.
+        /// </summary>
+        internal bool IsSetBehavior() => this.Behavior != null;
+
+        /// <summary>
+        /// Gets and sets the property CrossAccountRole. 
+        /// <para>
+        /// The cross account role for the configuration.
+        /// </para>
+        /// </summary>
+        public string CrossAccountRole { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CrossAccountRole property is set.
+        /// </summary>
+        internal bool IsSetCrossAccountRole() => this.CrossAccountRole != null;
+
+        /// <summary>
+        /// Gets and sets the property DatabaseClusterArns. 
+        /// <para>
+        /// The database cluster Amazon Resource Names (ARNs) for a DocumentDB global cluster.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public List<string> DatabaseClusterArns { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the DatabaseClusterArns property is set.
+        /// </summary>
+        internal bool IsSetDatabaseClusterArns() => this.DatabaseClusterArns != null && (this.DatabaseClusterArns.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property ExternalId. 
+        /// <para>
+        /// The external ID (secret key) for the configuration.
+        /// </para>
+        /// </summary>
+        public string ExternalId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExternalId property is set.
+        /// </summary>
+        internal bool IsSetExternalId() => this.ExternalId != null;
+
+        /// <summary>
+        /// Gets and sets the property GlobalClusterIdentifier. 
+        /// <para>
+        /// The global cluster identifier for a DocumentDB global cluster.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string GlobalClusterIdentifier { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GlobalClusterIdentifier property is set.
+        /// </summary>
+        internal bool IsSetGlobalClusterIdentifier() => this.GlobalClusterIdentifier != null;
+
+        /// <summary>
+        /// Gets and sets the property TimeoutMinutes. 
+        /// <para>
+        /// The timeout value specified for the configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1)]
+        public int? TimeoutMinutes { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TimeoutMinutes property is set.
+        /// </summary>
+        internal bool IsSetTimeoutMinutes() => this.TimeoutMinutes.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Ungraceful. 
+        /// <para>
+        /// The settings for ungraceful execution.
+        /// </para>
+        /// </summary>
+        public DocumentDbUngraceful Ungraceful { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Ungraceful property is set.
+        /// </summary>
+        internal bool IsSetUngraceful() => this.Ungraceful != null;
+    }
+}

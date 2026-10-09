@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.ARCRegionswitch.Generated
     {
         public void ARCRegionswitchListRoute53HealthChecksInRegion()
         {
-            #region example-1
+            #region ListRoute53HealthChecksInRegion-1
 
             var client = new AmazonARCRegionswitchClient();
-            var response = client.ListRoute53HealthChecksInRegion(new ListRoute53HealthChecksInRegionRequest 
+            var response = client.ListRoute53HealthChecksInRegion(new ListRoute53HealthChecksInRegionRequest
             {
                 Arn = "arn:aws:arc-region-switch::123456789012:plan/example:000000",
                 HostedZoneId = "Z0123456789ABCDEFGHI",
@@ -30,13 +31,10 @@ namespace AWSSDKDocSamples.Amazon.ARCRegionswitch.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

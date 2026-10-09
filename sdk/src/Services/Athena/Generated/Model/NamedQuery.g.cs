@@ -1,0 +1,120 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Athena.Model
+{
+    /// <summary>
+    /// A query, where <c>QueryString</c> contains the SQL statements that make up the query.
+    /// </summary>
+    public partial class NamedQuery
+    {
+        /// <summary>
+        /// Gets and sets the property Database. 
+        /// <para>
+        /// The database to which the query belongs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 255)]
+        public string Database { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Database property is set.
+        /// </summary>
+        internal bool IsSetDatabase() => this.Database != null;
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The query description.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 1024)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Description property is set.
+        /// </summary>
+        internal bool IsSetDescription() => this.Description != null;
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The query name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 128)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Name property is set.
+        /// </summary>
+        internal bool IsSetName() => this.Name != null;
+
+        /// <summary>
+        /// Gets and sets the property NamedQueryId. 
+        /// <para>
+        /// The unique identifier of the query.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 128)]
+        public string NamedQueryId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NamedQueryId property is set.
+        /// </summary>
+        internal bool IsSetNamedQueryId() => this.NamedQueryId != null;
+
+        /// <summary>
+        /// Gets and sets the property QueryString. 
+        /// <para>
+        /// The SQL statements that make up the query.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 262144)]
+        public string QueryString { get; set; }
+
+        /// <summary>
+        /// Checks to see if the QueryString property is set.
+        /// </summary>
+        internal bool IsSetQueryString() => this.QueryString != null;
+
+        /// <summary>
+        /// Gets and sets the property WorkGroup. 
+        /// <para>
+        /// The name of the workgroup that contains the named query.
+        /// </para>
+        /// </summary>
+        public string WorkGroup { get; set; }
+
+        /// <summary>
+        /// Checks to see if the WorkGroup property is set.
+        /// </summary>
+        internal bool IsSetWorkGroup() => this.WorkGroup != null;
+    }
+}

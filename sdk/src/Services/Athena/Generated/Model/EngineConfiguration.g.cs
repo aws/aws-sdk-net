@@ -1,0 +1,154 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Athena.Model
+{
+    /// <summary>
+    /// The engine configuration for the workgroup, which includes the minimum/maximum number
+    /// of Data Processing Units (DPU) that queries should use when running in provisioned
+    /// capacity. If not specified, Athena uses default values (Default value for min is 4
+    /// and for max is Minimum of 124 and allocated DPUs).
+    /// 
+    ///  
+    /// <para>
+    /// To specify DPU values for PC queries the WG containing EngineConfiguration should
+    /// have the following values: The name of the Classifications should be <c>athena-query-engine-properties</c>,
+    /// with the only allowed properties as <c>max-dpu-count</c> and <c>min-dpu-count</c>.
+    /// </para>
+    /// </summary>
+    public partial class EngineConfiguration
+    {
+        /// <summary>
+        /// Gets and sets the property AdditionalConfigs. 
+        /// <para>
+        /// Contains additional notebook engine <c>MAP<string, string></c> parameter mappings
+        /// in the form of key-value pairs. To specify an Athena notebook that the Jupyter server
+        /// will download and serve, specify a value for the <a>StartSessionRequest$NotebookVersion</a>
+        /// field, and then add a key named <c>NotebookId</c> to <c>AdditionalConfigs</c> that
+        /// has the value of the Athena notebook ID.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, string> AdditionalConfigs { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Checks to see if the AdditionalConfigs property is set.
+        /// </summary>
+        internal bool IsSetAdditionalConfigs() => this.AdditionalConfigs != null && (this.AdditionalConfigs.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property Classifications. 
+        /// <para>
+        /// The configuration classifications that can be specified for the engine.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<Classification> Classifications { get; set; } = AWSConfigs.InitializeCollections ? new List<Classification>() : null;
+
+        /// <summary>
+        /// Checks to see if the Classifications property is set.
+        /// </summary>
+        internal bool IsSetClassifications() => this.Classifications != null && (this.Classifications.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property CoordinatorDpuSize. 
+        /// <para>
+        /// The number of DPUs to use for the coordinator. A coordinator is a special executor
+        /// that orchestrates processing work and manages other executors in a notebook session.
+        /// The default is 1.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 1)]
+        public int? CoordinatorDpuSize { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CoordinatorDpuSize property is set.
+        /// </summary>
+        internal bool IsSetCoordinatorDpuSize() => this.CoordinatorDpuSize.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property DefaultExecutorDpuSize. 
+        /// <para>
+        /// The default number of DPUs to use for executors. An executor is the smallest unit
+        /// of compute that a notebook session can request from Athena. The default is 1.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 1)]
+        public int? DefaultExecutorDpuSize { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DefaultExecutorDpuSize property is set.
+        /// </summary>
+        internal bool IsSetDefaultExecutorDpuSize() => this.DefaultExecutorDpuSize.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property MaxConcurrentDpus. 
+        /// <para>
+        /// The maximum number of DPUs that can run concurrently.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 2, Max = 5000)]
+        public int? MaxConcurrentDpus { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MaxConcurrentDpus property is set.
+        /// </summary>
+        internal bool IsSetMaxConcurrentDpus() => this.MaxConcurrentDpus.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property SparkProperties. 
+        /// <para>
+        /// Specifies custom jar files and Spark properties for use cases like cluster encryption,
+        /// table formats, and general Spark tuning.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, string> SparkProperties { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Checks to see if the SparkProperties property is set.
+        /// </summary>
+        internal bool IsSetSparkProperties() => this.SparkProperties != null && (this.SparkProperties.Count > 0 || !AWSConfigs.InitializeCollections);
+    }
+}

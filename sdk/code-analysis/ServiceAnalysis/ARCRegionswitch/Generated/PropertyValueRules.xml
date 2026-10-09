@@ -2,35 +2,33 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.ApprovePlanExecutionStepRequest.Comment</property>
-    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.ApprovePlanExecutionStepRequest.PlanArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.CancelPlanExecutionRequest.Comment</property>
-    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.CancelPlanExecutionRequest.PlanArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.CreatePlanRequest.ExecutionRole</property>
-    <pattern>arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.CreatePlanRequest.Name</property>
     <min>1</min>
     <max>32</max>
-    <pattern>[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?</pattern>
+    <pattern>^[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.CreatePlanRequest.PrimaryRegion</property>
-    <pattern>[a-z]{2}-[a-z-]+-\d+</pattern>
+    <pattern>^[a-z]{2}-[a-z-]+-\d+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.CreatePlanRequest.RecoveryTimeObjectiveMinutes</property>
@@ -39,11 +37,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.DeletePlanRequest.Arn</property>
-    <pattern>arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.GetPlanRequest.Arn</property>
-    <pattern>arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.GetPlanEvaluationStatusRequest.MaxResults</property>
@@ -57,7 +55,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.GetPlanEvaluationStatusRequest.PlanArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.GetPlanEvaluationStatusResponse.NextToken</property>
@@ -66,11 +64,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.GetPlanEvaluationStatusResponse.PlanArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.GetPlanEvaluationStatusResponse.Region</property>
-    <pattern>[a-z]{2}-[a-z-]+-\d+</pattern>
+    <pattern>^[a-z]{2}-[a-z-]+-\d+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.GetPlanExecutionRequest.MaxResults</property>
@@ -79,19 +77,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.GetPlanExecutionRequest.PlanArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.GetPlanExecutionResponse.ActualRecoveryTime</property>
-    <pattern>P(?!$)(\d+Y)?(\d+M)?(\d+D)?(T(?=\d)(\d+H)?(\d+M)?(\d+S)?)?</pattern>
+    <pattern>^P(?!$)(\d+Y)?(\d+M)?(\d+D)?(T(?=\d)(\d+H)?(\d+M)?(\d+S)?)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.GetPlanExecutionResponse.PlanArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.GetPlanInRegionRequest.Arn</property>
-    <pattern>arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.ListPlanExecutionEventsRequest.MaxResults</property>
@@ -100,7 +98,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.ListPlanExecutionEventsRequest.PlanArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.ListPlanExecutionsRequest.MaxResults</property>
@@ -109,7 +107,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.ListPlanExecutionsRequest.PlanArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.ListPlansRequest.MaxResults</property>
@@ -143,7 +141,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.ListRoute53HealthChecksRequest.Arn</property>
-    <pattern>arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.ListRoute53HealthChecksRequest.HostedZoneId</property>
@@ -172,7 +170,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.ListRoute53HealthChecksInRegionRequest.Arn</property>
-    <pattern>arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.ListRoute53HealthChecksInRegionRequest.HostedZoneId</property>
@@ -216,46 +214,45 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.ListTagsForResourceRequest.Arn</property>
-    <pattern>arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.StartPlanExecutionRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\x21-\x7E]+</pattern>
+    <pattern>^[\x21-\x7E]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.StartPlanExecutionRequest.Comment</property>
-    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.StartPlanExecutionRequest.PlanArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.StartPlanExecutionRequest.RecoveryExecutionId</property>
-    <pattern>[a-z]{2}(-[a-z]+)+-[0-9]+/[0-9a-fA-F]{16}</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+)+-[0-9]+/[0-9a-fA-F]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.StartPlanExecutionResponse.Plan</property>
-    <pattern>arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.TagResourceRequest.Arn</property>
-    <pattern>arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.UntagResourceRequest.Arn</property>
-    <pattern>arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.UpdatePlanRequest.Arn</property>
-    <pattern>arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.UpdatePlanRequest.ExecutionRole</property>
-    <pattern>arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.UpdatePlanRequest.RecoveryTimeObjectiveMinutes</property>
@@ -264,47 +261,45 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.UpdatePlanExecutionRequest.Comment</property>
-    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.UpdatePlanExecutionRequest.PlanArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.UpdatePlanExecutionStepRequest.Comment</property>
-    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.UpdatePlanExecutionStepRequest.PlanArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.AbbreviatedExecution.ActualRecoveryTime</property>
-    <pattern>P(?!$)(\d+Y)?(\d+M)?(\d+D)?(T(?=\d)(\d+H)?(\d+M)?(\d+S)?)?</pattern>
+    <pattern>^P(?!$)(\d+Y)?(\d+M)?(\d+D)?(T(?=\d)(\d+H)?(\d+M)?(\d+S)?)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.AbbreviatedExecution.PlanArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.AbbreviatedPlan.Arn</property>
-    <pattern>arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.AbbreviatedPlan.Name</property>
     <min>1</min>
     <max>32</max>
-    <pattern>[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?</pattern>
+    <pattern>^[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.AbbreviatedPlan.Owner</property>
-    <pattern>\d{12}</pattern>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.AbbreviatedPlan.PrimaryRegion</property>
-    <pattern>[a-z]{2}-[a-z-]+-\d+</pattern>
+    <pattern>^[a-z]{2}-[a-z-]+-\d+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.AbbreviatedPlan.RecoveryTimeObjectiveMinutes</property>
@@ -313,7 +308,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.ArcRoutingControlConfiguration.CrossAccountRole</property>
-    <pattern>arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.ArcRoutingControlConfiguration.TimeoutMinutes</property>
@@ -321,25 +316,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.Asg.Arn</property>
-    <pattern>arn:aws[a-zA-Z-]*:autoscaling:[a-z0-9-]+:\d{12}:autoScalingGroup:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}:autoScalingGroupName/[\S\s]{1,255}</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:autoscaling:[a-z0-9-]+:\d{12}:autoScalingGroup:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}:autoScalingGroupName/[\S\s]{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.Asg.CrossAccountRole</property>
-    <pattern>arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.AssociatedAlarm.CrossAccountRole</property>
-    <pattern>arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.AuroraProvisionedScalingConfiguration.CrossAccountRole</property>
-    <pattern>arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.AuroraProvisionedScalingConfiguration.GlobalClusterIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.AuroraProvisionedScalingConfiguration.TimeoutMinutes</property>
@@ -347,13 +342,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.AuroraServerlessScalingConfiguration.CrossAccountRole</property>
-    <pattern>arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.AuroraServerlessScalingConfiguration.GlobalClusterIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.AuroraServerlessScalingConfiguration.TimeoutMinutes</property>
@@ -365,11 +360,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.DocumentDbConfiguration.CrossAccountRole</property>
-    <pattern>arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.DocumentDbConfiguration.GlobalClusterIdentifier</property>
-    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.DocumentDbConfiguration.TimeoutMinutes</property>
@@ -395,11 +390,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.EksCluster.ClusterArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:eks:[a-z0-9-]+:\d{12}:cluster/[a-zA-Z0-9][a-zA-Z0-9-_]{0,99}</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:eks:[a-z0-9-]+:\d{12}:cluster/[a-zA-Z0-9][a-zA-Z0-9-_]{0,99}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.EksCluster.CrossAccountRole</property>
-    <pattern>arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.EksResourceScalingConfiguration.TargetPercent</property>
@@ -416,11 +411,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.EventSourceMapping.Arn</property>
-    <pattern>arn:aws[a-zA-Z-]*:lambda:[a-z0-9-]+:\d{12}:event-source-mapping:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:lambda:[a-z0-9-]+:\d{12}:event-source-mapping:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.EventSourceMapping.CrossAccountRole</property>
-    <pattern>arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.ExecutionApprovalConfiguration.TimeoutMinutes</property>
@@ -428,13 +423,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.GlobalAuroraConfiguration.CrossAccountRole</property>
-    <pattern>arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.GlobalAuroraConfiguration.GlobalClusterIdentifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-:._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.GlobalAuroraConfiguration.TimeoutMinutes</property>
@@ -442,7 +437,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.KubernetesScalingResource.Namespace</property>
-    <pattern>[a-z0-9][a-z0-9-]{0,61}[a-z0-9]</pattern>
+    <pattern>^[a-z0-9][a-z0-9-]{0,61}[a-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.LambdaEventSourceMappingConfiguration.TimeoutMinutes</property>
@@ -450,17 +445,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.Lambdas.CrossAccountRole</property>
-    <pattern>arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.NeptuneGlobalDatabaseConfiguration.CrossAccountRole</property>
-    <pattern>arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.NeptuneGlobalDatabaseConfiguration.GlobalClusterIdentifier</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[A-Za-z][0-9A-Za-z-]*</pattern>
+    <pattern>^[A-Za-z][0-9A-Za-z-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.NeptuneGlobalDatabaseConfiguration.TimeoutMinutes</property>
@@ -468,25 +463,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.Plan.Arn</property>
-    <pattern>arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.Plan.ExecutionRole</property>
-    <pattern>arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.Plan.Name</property>
     <min>1</min>
     <max>32</max>
-    <pattern>[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?</pattern>
+    <pattern>^[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.Plan.Owner</property>
-    <pattern>\d{12}</pattern>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.Plan.PrimaryRegion</property>
-    <pattern>[a-z]{2}-[a-z-]+-\d+</pattern>
+    <pattern>^[a-z]{2}-[a-z-]+-\d+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.Plan.RecoveryTimeObjectiveMinutes</property>
@@ -495,7 +490,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.RdsCreateCrossRegionReplicaConfiguration.CrossAccountRole</property>
-    <pattern>arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.RdsCreateCrossRegionReplicaConfiguration.TimeoutMinutes</property>
@@ -503,7 +498,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.RdsPromoteReadReplicaConfiguration.CrossAccountRole</property>
-    <pattern>arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.RdsPromoteReadReplicaConfiguration.TimeoutMinutes</property>
@@ -511,7 +506,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.RdsSwitchoverReadReplicaConfiguration.CrossAccountRole</property>
-    <pattern>arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.RdsSwitchoverReadReplicaConfiguration.TimeoutMinutes</property>
@@ -519,11 +514,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.RegionSwitchPlanConfiguration.Arn</property>
-    <pattern>arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.RegionSwitchPlanConfiguration.CrossAccountRole</property>
-    <pattern>arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.Route53HealthCheck.HealthCheckId</property>
@@ -542,11 +537,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.Route53HealthCheck.Region</property>
-    <pattern>[a-z]{2}-[a-z-]+-\d+</pattern>
+    <pattern>^[a-z]{2}-[a-z-]+-\d+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.Route53HealthCheckConfiguration.CrossAccountRole</property>
-    <pattern>arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.Route53HealthCheckConfiguration.HostedZoneId</property>
@@ -569,48 +564,48 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.Route53ResourceRecordSet.Region</property>
-    <pattern>[a-z]{2}-[a-z-]+-\d+</pattern>
+    <pattern>^[a-z]{2}-[a-z-]+-\d+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.S3ReportOutputConfiguration.BucketOwner</property>
-    <pattern>\d{12}</pattern>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.S3ReportOutputConfiguration.BucketPath</property>
     <min>3</min>
     <max>512</max>
-    <pattern>(?:s3://)?[a-z0-9][a-z0-9-]{1,61}[a-z0-9](?:/[^/ ][^/]*)*/?</pattern>
+    <pattern>^(?:s3://)?[a-z0-9][a-z0-9-]{1,61}[a-z0-9](?:/[^/ ][^/]*)*/?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.Service.ClusterArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:ecs:[a-z0-9-]+:\d{12}:cluster/[a-zA-Z0-9_-]{1,255}</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:ecs:[a-z0-9-]+:\d{12}:cluster/[a-zA-Z0-9_-]{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.Service.CrossAccountRole</property>
-    <pattern>arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.Service.ServiceArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:ecs:[a-z0-9-]+:\d{12}:service/[a-zA-Z0-9_-]+/[a-zA-Z0-9_-]{1,255}</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:ecs:[a-z0-9-]+:\d{12}:service/[a-zA-Z0-9_-]+/[a-zA-Z0-9_-]{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.ServiceQuotaWarningSummary.AccountId</property>
-    <pattern>\d{12}</pattern>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.ServiceQuotaWarningSummary.PlanArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.ServiceQuotaWarningSummary.QuotaRegion</property>
-    <pattern>[a-z]{2}-[a-z-]+-\d+</pattern>
+    <pattern>^[a-z]{2}-[a-z-]+-\d+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.Trigger.TargetRegion</property>
-    <pattern>[a-z]{2}-[a-z-]+-\d+</pattern>
+    <pattern>^[a-z]{2}-[a-z-]+-\d+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.Workflow.WorkflowTargetRegion</property>
-    <pattern>[a-z]{2}-[a-z-]+-\d+</pattern>
+    <pattern>^[a-z]{2}-[a-z-]+-\d+$</pattern>
   </property-value-rule>
 </property-value-rules>
