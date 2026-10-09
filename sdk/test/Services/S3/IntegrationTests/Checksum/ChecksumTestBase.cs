@@ -63,6 +63,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             await new StreamReader(response.ResponseStream).ReadToEndAsync();
             response.ResponseStream.Dispose();
+
+            // Reading the stream to completion runs checksum validation, which updates
+            // the status from PENDING_RESPONSE_READ to SUCCESSFUL.
+            Assert.Equal(ChecksumValidationStatus.SUCCESSFUL, response.ResponseMetadata.ChecksumValidationStatus);
         }
 
         protected async Task CopyObjectUsingMultipartTestHelper(CoreChecksumAlgorithm algorithm, string bucketName)
