@@ -66,6 +66,11 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 			{
 				this.ProcessStructure(level + 1, variableName + "." + member.PropertyName, member.Shape, isSparse, isNested: false);
 			}
+			else if (!string.IsNullOrEmpty(member.CustomMarshallerTransformation))
+			{
+				// A dataTypeSwap keeps the modeled wire type, so the converted value is written as the modeled shape.
+				DetermineNormalCborWriteMethod(member.Shape, member.CustomMarshallerTransformation + "(" + memberProperty + ")", level, variableName, isSparse);
+			}
 			else if (member.IsMemoryStream)
 			{
 #>

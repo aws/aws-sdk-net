@@ -104,6 +104,7 @@ namespace Amazon.Extensions.CborProtocol.Internal
         private byte[] _buffer;
         private CborReader _internalCborReader;
         private int _currentChunkSize;
+        private bool _hasReadFromStream;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CborStreamReader"/> class that reads CBOR data
@@ -121,11 +122,11 @@ namespace Amazon.Extensions.CborProtocol.Internal
             _stream = stream ?? throw new ArgumentNullException(nameof(stream));
             _buffer = ArrayPool<byte>.Shared.Rent(AWSConfigs.CborReaderInitialBufferSize);
 
-            _currentChunkSize = _stream.Read(_buffer, 0, _buffer.Length);
-            var memorySlice = new ReadOnlyMemory<byte>(_buffer, 0, _currentChunkSize);
-
+            // The stream is first read on the first CBOR read, not here: the unmarshaller context constructs this
+            // reader before the response unmarshaller runs, and an event stream response hands the stream on
+            // undecoded, so reading here would consume its first frames.
             // We must allow multiple root values because when refilling the new chunk is just a fragment of the whole stream.
-            _internalCborReader = new CborReader(memorySlice, allowMultipleRootLevelValues: true);
+            _internalCborReader = new CborReader(ReadOnlyMemory<byte>.Empty, allowMultipleRootLevelValues: true);
         }
 
         /// <summary>
@@ -183,6 +184,12 @@ namespace Amazon.Extensions.CborProtocol.Internal
         /// </exception>
         private T ExecuteRead<T>(Func<CborReader, T> readOperation)
         {
+            if (!_hasReadFromStream)
+            {
+                _hasReadFromStream = true;
+                RefillBuffer();
+            }
+
             int maxRetries = 64;
             int retryCount = 0;
 
