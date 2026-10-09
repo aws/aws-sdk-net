@@ -2047,6 +2047,47 @@ namespace Amazon.SecurityAgent
     }
 
     /// <summary>
+    /// Constants used for properties of type TestScopeType.
+    /// </summary>
+    public class TestScopeType : ConstantClass
+    {
+        /// <summary>
+        /// Constant GENERATIVE_AI_APP for TestScopeType
+        /// </summary>
+        public static readonly TestScopeType GENERATIVE_AI_APP = new TestScopeType("GENERATIVE_AI_APP");
+
+        /// <summary>
+        /// Constant WEB_APP for TestScopeType
+        /// </summary>
+        public static readonly TestScopeType WEB_APP = new TestScopeType("WEB_APP");
+
+        /// <summary>
+        /// Constructs a custom TestScopeType for a value not among the defined constants.
+        /// </summary>
+        public TestScopeType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TestScopeType FindValue(string value)
+        {
+            return FindValue<TestScopeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TestScopeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ThreatActor.
     /// </summary>
     public class ThreatActor : ConstantClass
