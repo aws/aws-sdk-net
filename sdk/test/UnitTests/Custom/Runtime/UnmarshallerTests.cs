@@ -258,6 +258,105 @@ namespace AWSSDK.UnitTests
             // This implicitly asserts that the checksum is valid because an exception would be thrown otherwise
             var responseBody =  new StreamReader(getObjectResponse.ResponseStream).ReadToEnd();
             Assert.AreEqual(expectedResponseBody, responseBody);
+
+            // Once the stream has been read to completion the status is updated from
+            // PENDING_RESPONSE_READ to SUCCESSFUL.
+            Assert.AreEqual(ChecksumValidationStatus.SUCCESSFUL, getObjectResponse.ResponseMetadata.ChecksumValidationStatus);
+        }
+
+        private GetObjectResponse InvokeGetObject(string header, string checksumValue, string expectedResponseBody)
+        {
+            Tester.Reset();
+
+            var context = CreateTestContext();
+            var request = new GetObjectRequest
+            {
+                BucketName = "foo",
+                Key = "bar",
+                ChecksumMode = ChecksumMode.ENABLED
+            };
+
+            ((RequestContext)context.RequestContext).OriginalRequest = request;
+            ((RequestContext)context.RequestContext).Request = new GetObjectRequestMarshaller().Marshall(request);
+            ((RequestContext)context.RequestContext).Unmarshaller = GetObjectResponseUnmarshaller.Instance;
+
+            var response = MockWebResponse.Create(HttpStatusCode.OK, new Dictionary<string, string>(), expectedResponseBody);
+            response.Headers.Add("Content-Length", expectedResponseBody.Length.ToString());
+            response.Headers.Add(header, checksumValue);
+
+            context.ResponseContext.HttpResponse = new HttpWebRequestResponseData(response);
+
+            RuntimePipeline.InvokeSync(context);
+
+            Assert.IsInstanceOfType(context.ResponseContext.Response, typeof(GetObjectResponse));
+            return context.ResponseContext.Response as GetObjectResponse;
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        [DataRow("x-amz-checksum-sha1", "e1AsOh9IyGCa4hLN+2Od7jlnP14=")]
+        [DataRow("x-amz-checksum-sha256", "ZOyIygCyaOW6GjVnihtTFtIS9PNmskdyMlNKiuyjfzw=")]
+        [DataRow("x-amz-checksum-crc32", "i9aeUg==")]
+        public void TestGetObjectResponse_StatusBecomesSuccessful_AfterFullRead(string header, string checksumValue)
+        {
+            var getObjectResponse = InvokeGetObject(header, checksumValue, "Hello world");
+
+            // Before the stream is read the validation is pending.
+            Assert.AreEqual(ChecksumValidationStatus.PENDING_RESPONSE_READ, getObjectResponse.ResponseMetadata.ChecksumValidationStatus);
+
+            new StreamReader(getObjectResponse.ResponseStream).ReadToEnd();
+
+            // Reading to the end triggers checksum calculation and flips the status to SUCCESSFUL.
+            Assert.AreEqual(ChecksumValidationStatus.SUCCESSFUL, getObjectResponse.ResponseMetadata.ChecksumValidationStatus);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        [DataRow("x-amz-checksum-sha1", "invalid=")]
+        [DataRow("x-amz-checksum-sha256", "invalid=")]
+        [DataRow("x-amz-checksum-crc32", "invalid=")]
+        public void TestGetObjectResponse_StatusBecomesInvalid_OnChecksumMismatch(string header, string checksumValue)
+        {
+            var getObjectResponse = InvokeGetObject(header, checksumValue, "Hello world");
+
+            Assert.AreEqual(ChecksumValidationStatus.PENDING_RESPONSE_READ, getObjectResponse.ResponseMetadata.ChecksumValidationStatus);
+
+            AmazonClientException exception = null;
+            try
+            {
+                new StreamReader(getObjectResponse.ResponseStream).ReadToEnd();
+            }
+            catch (AmazonClientException e)
+            {
+                exception = e;
+            }
+
+            // A mismatch still throws, and now also records the status as INVALID.
+            Assert.IsNotNull(exception);
+            Assert.AreEqual("Expected hash not equal to calculated hash", exception.Message);
+            Assert.AreEqual(ChecksumValidationStatus.INVALID, getObjectResponse.ResponseMetadata.ChecksumValidationStatus);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        [DataRow("x-amz-checksum-crc32", "i9aeUg==")]
+        public void TestGetObjectResponse_StatusStaysPending_WhenStreamNotFullyRead(string header, string checksumValue)
+        {
+            var getObjectResponse = InvokeGetObject(header, checksumValue, "Hello world");
+
+            // Read only part of the body, then dispose. Because the stream was not read
+            // to the end no checksum is calculated, so the status must remain pending and
+            // no exception is thrown.
+            using (var stream = getObjectResponse.ResponseStream)
+            {
+                var buffer = new byte[5];
+                stream.Read(buffer, 0, buffer.Length);
+            }
+
+            Assert.AreEqual(ChecksumValidationStatus.PENDING_RESPONSE_READ, getObjectResponse.ResponseMetadata.ChecksumValidationStatus);
         }
 
         [TestMethod]
