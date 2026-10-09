@@ -14,6 +14,7 @@
  */
 
 using System;
+using System.Buffers;
 using System.Formats.Cbor;
 using System.IO;
 using Amazon.Util;
@@ -25,9 +26,15 @@ namespace Amazon.Extensions.CborProtocol
         /// <summary>
         /// Writes the contents of a <see cref="MemoryStream"/> as a CBOR byte string.
         /// Uses the stream's underlying buffer directly when it is publicly visible
-        /// (<see cref="MemoryStream.TryGetBuffer"/>), avoiding the byte[] copy that
-        /// <see cref="MemoryStream.ToArray"/> would allocate, otherwise falls back to ToArray().
+        /// (<see cref="MemoryStream.TryGetBuffer"/>), otherwise copies the contents into a
+        /// pooled buffer, so neither path allocates a byte[] the way <see cref="MemoryStream.ToArray"/> would.
         /// </summary>
+        /// <remarks>
+        /// This method always writes the entire contents of the MemoryStream, regardless of
+        /// the current <see cref="MemoryStream.Position"/>. When TryGetBuffer fails (e.g., for
+        /// MemoryStreams wrapping a byte array), the stream's <see cref="MemoryStream.Position"/>
+        /// is reset to 0 before reading, so the caller's stream position is modified as a side effect.
+        /// </remarks>
         /// <param name="writer">The CBOR writer to use.</param>
         /// <param name="value">The stream whose contents to write.</param>
         public static void WriteByteString(this CborWriter writer, MemoryStream value)
@@ -38,7 +45,20 @@ namespace Amazon.Extensions.CborProtocol
             }
             else
             {
-                writer.WriteByteString(value.ToArray());
+                var length = (int)value.Length;
+                var array = ArrayPool<byte>.Shared.Rent(length);
+                try
+                {
+                    value.Position = 0;
+                    // MemoryStream.Read is backed by an in-memory byte array and always returns the full
+                    // requested byte count in a single call, so there is no need to handle partial reads in a loop.
+                    value.Read(array, 0, length);
+                    writer.WriteByteString(new ReadOnlySpan<byte>(array, 0, length));
+                }
+                finally
+                {
+                    ArrayPool<byte>.Shared.Return(array);
+                }
             }
         }
 
