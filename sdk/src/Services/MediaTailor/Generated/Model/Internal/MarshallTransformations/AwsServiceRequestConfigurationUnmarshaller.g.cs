@@ -60,6 +60,13 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("Cache", targetDepth, ref reader))
+                {
+                    var unmarshaller = HttpRequestCacheConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.Cache = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("Headers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

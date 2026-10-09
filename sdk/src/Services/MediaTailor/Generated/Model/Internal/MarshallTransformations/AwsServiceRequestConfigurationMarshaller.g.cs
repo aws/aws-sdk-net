@@ -51,6 +51,17 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Body);
             }
 
+            if (requestObject.IsSetCache())
+            {
+                context.Writer.WritePropertyName("Cache");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HttpRequestCacheConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Cache, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetHeaders())
             {
                 context.Writer.WritePropertyName("Headers");

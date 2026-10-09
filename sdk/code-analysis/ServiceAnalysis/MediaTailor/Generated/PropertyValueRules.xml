@@ -69,6 +69,14 @@
     <pattern>^[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaTailor.Model.HttpRequestCacheConfiguration.TtlMaximumSeconds</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaTailor.Model.HttpRequestCacheConfiguration.TtlMinimumSeconds</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaTailor.Model.PlaybackConfiguration.PersonalizationThresholdSeconds</property>
     <min>1</min>
   </property-value-rule>
