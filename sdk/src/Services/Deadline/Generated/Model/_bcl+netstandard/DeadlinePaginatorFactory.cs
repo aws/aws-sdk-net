@@ -133,6 +133,14 @@ namespace Amazon.Deadline.Model
         }
 
         /// <summary>
+        /// Paginator for ListMemberships operation
+        ///</summary>
+        public IListMembershipsPaginator ListMemberships(ListMembershipsRequest request) 
+        {
+            return new ListMembershipsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListMeteredProducts operation
         ///</summary>
         public IListMeteredProductsPaginator ListMeteredProducts(ListMeteredProductsRequest request) 
