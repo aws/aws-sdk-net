@@ -319,7 +319,14 @@ namespace Amazon.Runtime.Internal.Util
                     CalculatedHash = Algorithm.AppendLastBlock(ArrayEx.Empty<byte>());
                 }
                 else
+                {
+                    // The stream was not read to completion, so the checksum could not be
+                    // validated. Report that no validation was performed rather than leaving
+                    // a stale PENDING_RESPONSE_READ status.
                     CalculatedHash = ArrayEx.Empty<byte>();
+                    if (ChecksumValidationMetadata != null)
+                        ChecksumValidationMetadata.ChecksumValidationStatus = ChecksumValidationStatus.NOT_VALIDATED;
+                }
 
                 if (CalculatedHash.Length > 0 && ExpectedHash != null && ExpectedHash.Length > 0)
                 {

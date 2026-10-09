@@ -343,20 +343,21 @@ namespace AWSSDK.UnitTests
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
         [DataRow("x-amz-checksum-crc32", "i9aeUg==")]
-        public void TestGetObjectResponse_StatusStaysPending_WhenStreamNotFullyRead(string header, string checksumValue)
+        public void TestGetObjectResponse_StatusBecomesNotValidated_WhenStreamNotFullyRead(string header, string checksumValue)
         {
             var getObjectResponse = InvokeGetObject(header, checksumValue, "Hello world");
 
             // Read only part of the body, then dispose. Because the stream was not read
-            // to the end no checksum is calculated, so the status must remain pending and
-            // no exception is thrown.
+            // to the end the checksum cannot be validated, so the status is reported as
+            // NOT_VALIDATED (rather than left stale at PENDING_RESPONSE_READ) and no
+            // exception is thrown.
             using (var stream = getObjectResponse.ResponseStream)
             {
                 var buffer = new byte[5];
                 stream.Read(buffer, 0, buffer.Length);
             }
 
-            Assert.AreEqual(ChecksumValidationStatus.PENDING_RESPONSE_READ, getObjectResponse.ResponseMetadata.ChecksumValidationStatus);
+            Assert.AreEqual(ChecksumValidationStatus.NOT_VALIDATED, getObjectResponse.ResponseMetadata.ChecksumValidationStatus);
         }
 
         [TestMethod]
