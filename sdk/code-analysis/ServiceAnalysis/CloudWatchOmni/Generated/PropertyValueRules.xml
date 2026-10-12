@@ -737,6 +737,12 @@
     <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchOmni.Model.UpdateSpaceRequest.AgentCoreEvaluationRoleArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchOmni.Model.UpdateSpaceRequest.Name</property>
     <min>3</min>
     <max>64</max>

@@ -231,6 +231,7 @@
     "SageMakerMetrics",
     "SageMakerRuntime",
     "SageMakerRuntimeHTTP2",
+    "SageMakerTrainingSessionRuntime",
     "SagemakerEdgeManager",
     "SagemakerJobRuntime",
     "SavingsPlans",

@@ -80,12 +80,6 @@ namespace Amazon.CloudWatchOmni.Model.Internal.MarshallTransformations
                         context.PopPathSegment();
                         break;
 
-                    case "namespace":
-                        context.AddPathSegment("Namespace");
-                        unmarshalledObject.Namespace = CborStringUnmarshaller.Instance.Unmarshall(context);
-                        context.PopPathSegment();
-                        break;
-
                     case "preferredStat":
                         context.AddPathSegment("PreferredStat");
                         unmarshalledObject.PreferredStat = CborStringUnmarshaller.Instance.Unmarshall(context);

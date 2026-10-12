@@ -36,6 +36,19 @@ namespace Amazon.CloudWatchOmni.Model
     public partial class UpdateSpaceRequest : AmazonCloudWatchOmniRequest
     {
         /// <summary>
+        /// Gets and sets the property AgentCoreEvaluationRoleArn. The ARN of the IAM role used
+        /// by AgentCore online evaluation. Must be in the caller's account. Omit if the space
+        /// does not use AgentCore online evaluation.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2048)]
+        public string AgentCoreEvaluationRoleArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AgentCoreEvaluationRoleArn property is set.
+        /// </summary>
+        internal bool IsSetAgentCoreEvaluationRoleArn() => this.AgentCoreEvaluationRoleArn != null;
+
+        /// <summary>
         /// Gets and sets the property EncryptionConfiguration. How to encrypt the space's data
         /// at rest. Omit to leave encryption unchanged. Pass `encryptionStrategy` AWS_OWNED to
         /// stop using a customer managed key and revert to service owned encryption.

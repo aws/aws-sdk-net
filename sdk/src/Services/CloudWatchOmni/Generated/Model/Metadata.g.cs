@@ -36,10 +36,9 @@ namespace Amazon.CloudWatchOmni.Model
     public partial class Metadata
     {
         /// <summary>
-        /// Gets and sets the property Logs. Per-signal LOGS query selectors: a LIST of blocks
-        /// the console ORs, each an AND of exact store column -> raw values. Node-level (edges
-        /// carry only traces). Populated when the request sets includeMetadata; derived labels
-        /// (logSourceType) are added by the service projection, not stored here.
+        /// Gets and sets the property Logs. LOGS query selectors: a list of blocks to OR together,
+        /// each block an AND of exact store column to raw value. Present on node metadata only
+        /// — edges carry trace selectors. Returned when the request sets includeMetadata.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -84,9 +83,9 @@ namespace Amazon.CloudWatchOmni.Model
         internal bool IsSetSemantics() => this.Semantics != null;
 
         /// <summary>
-        /// Gets and sets the property Traces. Per-signal TRACES query selectors (same block shape
-        /// as logs). Present on both node and edge metadata. serviceName is derived at the service
-        /// projection, not stored here.
+        /// Gets and sets the property Traces. TRACES query selectors, same block shape as the
+        /// logs selectors. Present on both node and edge metadata. Returned when the request
+        /// sets includeMetadata.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

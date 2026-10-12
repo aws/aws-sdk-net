@@ -67,6 +67,11 @@ namespace Amazon.CloudWatchOmni.Model.Internal.MarshallTransformations
             {
                 writer.WriteStartMap(null);
                 var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAgentCoreEvaluationRoleArn())
+                {
+                    context.Writer.WriteTextString("agentCoreEvaluationRoleArn");
+                    context.Writer.WriteTextString(publicRequest.AgentCoreEvaluationRoleArn);
+                }
                 if (publicRequest.IsSetEncryptionConfiguration())
                 {
                     context.Writer.WriteTextString("encryptionConfiguration");

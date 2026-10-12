@@ -1740,6 +1740,10 @@ namespace Amazon.CloudWatchOmni
         /// <exception cref="Amazon.CloudWatchOmni.Model.AccessDeniedException">
         /// The caller is not authorized to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.CloudWatchOmni.Model.ConflictException">
+        /// The operation could not be completed because of a conflict with the current state
+        /// of the resource.
+        /// </exception>
         /// <exception cref="Amazon.CloudWatchOmni.Model.InternalServerException">
         /// An unexpected error occurred while processing the request.
         /// </exception>
@@ -1780,6 +1784,10 @@ namespace Amazon.CloudWatchOmni
         /// <exception cref="Amazon.CloudWatchOmni.Model.AccessDeniedException">
         /// The caller is not authorized to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.CloudWatchOmni.Model.ConflictException">
+        /// The operation could not be completed because of a conflict with the current state
+        /// of the resource.
+        /// </exception>
         /// <exception cref="Amazon.CloudWatchOmni.Model.InternalServerException">
         /// An unexpected error occurred while processing the request.
         /// </exception>
@@ -1807,6 +1815,10 @@ namespace Amazon.CloudWatchOmni
         /// <returns>The response from the DeleteSpace service method, as returned by CloudWatchOmni.</returns>
         /// <exception cref="Amazon.CloudWatchOmni.Model.AccessDeniedException">
         /// The caller is not authorized to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchOmni.Model.ConflictException">
+        /// The operation could not be completed because of a conflict with the current state
+        /// of the resource.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchOmni.Model.InternalServerException">
         /// An unexpected error occurred while processing the request.
@@ -1847,6 +1859,10 @@ namespace Amazon.CloudWatchOmni
         /// <returns>The response from the DeleteSpace service method, as returned by CloudWatchOmni.</returns>
         /// <exception cref="Amazon.CloudWatchOmni.Model.AccessDeniedException">
         /// The caller is not authorized to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchOmni.Model.ConflictException">
+        /// The operation could not be completed because of a conflict with the current state
+        /// of the resource.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchOmni.Model.InternalServerException">
         /// An unexpected error occurred while processing the request.
@@ -3519,6 +3535,9 @@ namespace Amazon.CloudWatchOmni
         /// <exception cref="Amazon.CloudWatchOmni.Model.InternalServerException">
         /// An unexpected error occurred while processing the request.
         /// </exception>
+        /// <exception cref="Amazon.CloudWatchOmni.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
         /// <exception cref="Amazon.CloudWatchOmni.Model.ThrottlingException">
         /// The request was throttled due to exceeding the allowed request rate.
         /// </exception>
@@ -3558,6 +3577,9 @@ namespace Amazon.CloudWatchOmni
         /// </exception>
         /// <exception cref="Amazon.CloudWatchOmni.Model.InternalServerException">
         /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchOmni.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchOmni.Model.ThrottlingException">
         /// The request was throttled due to exceeding the allowed request rate.
