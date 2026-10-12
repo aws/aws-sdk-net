@@ -237,6 +237,19 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         internal bool IsSetPoolId() => this.PoolId != null;
 
         /// <summary>
+        /// Gets and sets the property PricingTier. 
+        /// <para>
+        /// The pricing model.
+        /// </para>
+        /// </summary>
+        public string PricingTier { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PricingTier property is set.
+        /// </summary>
+        internal bool IsSetPricingTier() => this.PricingTier != null;
+
+        /// <summary>
         /// Gets and sets the property RegistrationId. 
         /// <para>
         /// The unique identifier for the registration.

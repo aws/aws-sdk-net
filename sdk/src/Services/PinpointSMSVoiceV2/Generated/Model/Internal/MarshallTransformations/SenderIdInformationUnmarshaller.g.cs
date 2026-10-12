@@ -88,6 +88,13 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("PricingTier", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PricingTier = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("Registered", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;

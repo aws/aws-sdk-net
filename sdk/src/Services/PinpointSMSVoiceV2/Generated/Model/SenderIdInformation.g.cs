@@ -112,6 +112,19 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         internal bool IsSetMonthlyLeasingPrice() => this.MonthlyLeasingPrice != null;
 
         /// <summary>
+        /// Gets and sets the property PricingTier. 
+        /// <para>
+        /// The pricing model.
+        /// </para>
+        /// </summary>
+        public string PricingTier { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PricingTier property is set.
+        /// </summary>
+        internal bool IsSetPricingTier() => this.PricingTier != null;
+
+        /// <summary>
         /// Gets and sets the property Registered. 
         /// <para>
         /// True if the sender ID is registered.
