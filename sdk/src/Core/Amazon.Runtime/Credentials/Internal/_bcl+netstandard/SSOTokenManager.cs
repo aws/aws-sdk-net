@@ -107,7 +107,6 @@ namespace Amazon.Runtime.Credentials.Internal
 
         private class RefreshState
         {
-            public bool FailedLastRefreshAttempt { get; set; }
             public DateTime? BlockRefreshUntil { get; set; }
 
             public bool IsInRefreshCoolDown()
@@ -115,7 +114,7 @@ namespace Amazon.Runtime.Credentials.Internal
                 if (!BlockRefreshUntil.HasValue)
                     return false;
 
-                return BlockRefreshUntil.Value < AWSSDKUtils.CorrectedUtcNow;
+                return AWSSDKUtils.CorrectedUtcNow < BlockRefreshUntil.Value;
             }
         }
 
@@ -161,13 +160,6 @@ namespace Amazon.Runtime.Credentials.Internal
                 {
                     _logger.DebugFormat($"File cache SSOToken for [{options.StartUrl}] needs refresh");
 
-                    // only try and refresh an expired token once.  if we've already failed,
-                    // don't try again.
-                    if (true == inMemoryToken?.RefreshState.FailedLastRefreshAttempt &&
-                        ssoToken.IsExpired())
-                    {
-                        throw new AmazonClientException("SSO Token has expired and can not be refreshed");
-                    }
                     //if registration is within 5 minutes of expiration, generate a new token
                     if (ssoToken.RegisteredClientExpired() && options.SupportsGettingNewToken)
                     {
@@ -225,27 +217,25 @@ namespace Amazon.Runtime.Credentials.Internal
                         {
                             return GenerateNewToken(options);
                         }
-                        else if (!ssoToken.IsExpired())
+
+                        var newInMemoryToken = new CacheState
                         {
-                            var newInMemoryToken = new CacheState
+                            Token = ssoToken,
+                            RefreshState = new RefreshState
                             {
-                                Token = ssoToken,
-                                RefreshState = new RefreshState
-                                {
-                                    FailedLastRefreshAttempt = true,
-                                    BlockRefreshUntil = AWSSDKUtils.CorrectedUtcNow.AddSeconds(30)
-                                }
-                            };
+                                BlockRefreshUntil = AWSSDKUtils.CorrectedUtcNow.AddSeconds(30)
+                            }
+                        };
 
-                            if (AWSConfigs.UseSdkCache)
-                                _inMemoryCache.AddOrUpdate(options, newInMemoryToken);
+                        if (AWSConfigs.UseSdkCache)
+                            _inMemoryCache.AddOrUpdate(options, newInMemoryToken);
 
-                            return ssoToken;
-                        }
-                        else
+                        if (ssoToken.IsExpired())
                         {
                             throw new AmazonClientException("SSO Token has expired and failed to refresh", ex);
                         }
+
+                        return ssoToken;
                     }
 
                 }
@@ -431,13 +421,6 @@ namespace Amazon.Runtime.Credentials.Internal
                 {
                     _logger.DebugFormat($"File cache SSOToken for [{options.StartUrl}] needs refresh");
 
-                    // only try and refresh an expired token once.  if we've already failed,
-                    // don't try again.
-                    if (true == inMemoryToken?.RefreshState.FailedLastRefreshAttempt &&
-                        ssoToken.IsExpired())
-                    {
-                        throw new AmazonClientException("SSO Token has expired and can not be refreshed");
-                    }
                     //if registration is within 5 minutes of expiration, generate a new token
                     if (ssoToken.RegisteredClientExpired() && options.SupportsGettingNewToken)
                     {
@@ -492,27 +475,25 @@ namespace Amazon.Runtime.Credentials.Internal
                         {
                             return await GenerateNewTokenAsync(options, cancellationToken).ConfigureAwait(false);
                         }
-                        else if (!ssoToken.IsExpired())
+
+                        var newInMemoryToken = new CacheState
                         {
-                            var newInMemoryToken = new CacheState
+                            Token = ssoToken,
+                            RefreshState = new RefreshState
                             {
-                                Token = ssoToken,
-                                RefreshState = new RefreshState
-                                {
-                                    FailedLastRefreshAttempt = true,
-                                    BlockRefreshUntil = AWSSDKUtils.CorrectedUtcNow.AddSeconds(30)
-                                }
-                            };
+                                BlockRefreshUntil = AWSSDKUtils.CorrectedUtcNow.AddSeconds(30)
+                            }
+                        };
 
-                            if (AWSConfigs.UseSdkCache)
-                                _inMemoryCache.AddOrUpdate(options, newInMemoryToken);
+                        if (AWSConfigs.UseSdkCache)
+                            _inMemoryCache.AddOrUpdate(options, newInMemoryToken);
 
-                            return ssoToken;
-                        }
-                        else
+                        if (ssoToken.IsExpired())
                         {
                             throw new AmazonClientException("SSO Token has expired and failed to refresh", ex);
                         }
+
+                        return ssoToken;
                     }
 
                 }
