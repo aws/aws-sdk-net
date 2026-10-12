@@ -221,6 +221,11 @@ this.Write("\");\r\n");
 			{
 				this.ProcessStructure(level + 1, variableName + "." + member.PropertyName, member.Shape, isSparse, isNested: false);
 			}
+			else if (!string.IsNullOrEmpty(member.CustomMarshallerTransformation))
+			{
+				// A dataTypeSwap keeps the modeled wire type, so the converted value is written as the modeled shape.
+				DetermineNormalCborWriteMethod(member.Shape, member.CustomMarshallerTransformation + "(" + memberProperty + ")", level, variableName, isSparse);
+			}
 			else if (member.IsMemoryStream)
 			{
 
@@ -228,35 +233,35 @@ this.Write("\");\r\n");
         #line default
         #line hidden
         
-        #line 72 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 77 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 72 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 77 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("                context.Writer.WriteByteString(");
 
         
         #line default
         #line hidden
         
-        #line 72 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 77 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName + "." + member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 72 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 77 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 73 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 78 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 
 			}
 			else if (member.IsTimeStamp)
@@ -266,35 +271,35 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 78 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 83 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 78 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 83 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("                context.Writer.WriteDateTime(");
 
         
         #line default
         #line hidden
         
-        #line 78 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 83 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName + "." + member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 78 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 83 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(".Value);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 79 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 84 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 
 			}
 			else
@@ -306,21 +311,21 @@ this.Write(".Value);\r\n");
         #line default
         #line hidden
         
-        #line 86 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 91 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 86 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 91 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("            }\r\n");
 
         
         #line default
         #line hidden
         
-        #line 87 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 92 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 
 			if (member.IsIdempotent)
 			{
@@ -329,119 +334,119 @@ this.Write("            }\r\n");
         #line default
         #line hidden
         
-        #line 91 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 96 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 91 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
-this.Write(" \t\t   else if (!(");
-
-        
-        #line default
-        #line hidden
-        
-        #line 91 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 91 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
-this.Write(".IsSet");
-
-        
-        #line default
-        #line hidden
-        
-        #line 91 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 91 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
-this.Write("()))\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 92 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 92 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
-this.Write(" \t\t   {\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 93 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 93 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
-this.Write("                context.Writer.WriteTextString(\"");
-
-        
-        #line default
-        #line hidden
-        
-        #line 93 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 93 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
-this.Write("\");\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 94 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 94 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
-this.Write("                context.Writer.WriteTextString(Guid.NewGuid().ToString());\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 95 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 95 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
-this.Write(" \t\t   }\r\n");
 
         
         #line default
         #line hidden
         
         #line 96 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+this.Write(" \t\t   else if (!(");
+
+        
+        #line default
+        #line hidden
+        
+        #line 96 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 96 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+this.Write(".IsSet");
+
+        
+        #line default
+        #line hidden
+        
+        #line 96 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 96 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+this.Write("()))\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 97 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 97 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+this.Write(" \t\t   {\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 98 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 98 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+this.Write("                context.Writer.WriteTextString(\"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 98 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 98 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+this.Write("\");\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 99 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 99 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+this.Write("                context.Writer.WriteTextString(Guid.NewGuid().ToString());\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 100 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 100 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+this.Write(" \t\t   }\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 101 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 					
 			}
 		}
@@ -458,77 +463,77 @@ protected void ProcessStructure(int level, string variableName, Shape structure,
         #line default
         #line hidden
         
-        #line 108 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 113 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 108 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 113 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\tif (");
 
         
         #line default
         #line hidden
         
-        #line 108 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 113 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
 
         
         #line default
         #line hidden
         
-        #line 108 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 113 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(" == null)\r\n");
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 114 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 114 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\t\tcontext.Writer.WriteNull();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 110 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 115 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 110 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 115 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\telse\r\n");
 
         
         #line default
         #line hidden
         
-        #line 111 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 116 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 111 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 116 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\t{\r\n");
 
         
         #line default
         #line hidden
         
-        #line 112 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 117 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 
 					level += 1;
 				}
@@ -537,91 +542,91 @@ this.Write("\t\t\t{\r\n");
         #line default
         #line hidden
         
-        #line 116 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 121 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 116 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 121 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("            context.Writer.WriteStartArray(");
 
         
         #line default
         #line hidden
         
-        #line 116 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 121 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 116 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 121 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(".Count);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 117 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 122 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 117 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 122 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("            foreach(var ");
 
         
         #line default
         #line hidden
         
-        #line 117 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 122 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
 
         
         #line default
         #line hidden
         
-        #line 117 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 122 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("ListValue in ");
 
         
         #line default
         #line hidden
         
-        #line 117 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 122 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 117 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 122 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(")\r\n");
 
         
         #line default
         #line hidden
         
-        #line 118 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 123 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 118 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 123 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("            {\r\n");
 
         
         #line default
         #line hidden
         
-        #line 119 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 124 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
  
 				ProcessStructure(level + 1, flatVariableName + "ListValue", structure.ListShape, isSparse, isNested);
 
@@ -629,35 +634,35 @@ this.Write("            {\r\n");
         #line default
         #line hidden
         
-        #line 122 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 127 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 122 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 127 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("            }\r\n");
 
         
         #line default
         #line hidden
         
-        #line 123 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 128 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 123 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 128 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("            context.Writer.WriteEndArray();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 124 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 129 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 
 				if (isSparse && isNested) // if we're inside a nested collection and sparse, close the else bracket
 				{
@@ -666,21 +671,21 @@ this.Write("            context.Writer.WriteEndArray();\r\n");
         #line default
         #line hidden
         
-        #line 128 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 133 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level -1) * 4)));
 
         
         #line default
         #line hidden
         
-        #line 128 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 133 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\t}\r\n");
 
         
         #line default
         #line hidden
         
-        #line 129 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 134 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 
 				}
 			}
@@ -697,77 +702,77 @@ this.Write("\t\t\t}\r\n");
         #line default
         #line hidden
         
-        #line 141 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 146 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 141 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 146 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\tif (");
 
         
         #line default
         #line hidden
         
-        #line 141 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 146 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
 
         
         #line default
         #line hidden
         
-        #line 141 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 146 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(" == null)\r\n");
 
         
         #line default
         #line hidden
         
-        #line 142 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 147 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 142 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 147 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\t\tcontext.Writer.WriteNull();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 143 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 148 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 143 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 148 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\telse\r\n");
 
         
         #line default
         #line hidden
         
-        #line 144 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 149 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 144 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 149 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\t{\r\n");
 
         
         #line default
         #line hidden
         
-        #line 145 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 150 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 
 					level +=1;
 				}
@@ -776,91 +781,91 @@ this.Write("\t\t\t{\r\n");
         #line default
         #line hidden
         
-        #line 149 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 154 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 149 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 154 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("            context.Writer.WriteStartMap(null);\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 151 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 156 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 151 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 156 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("            var marshaller = ");
 
         
         #line default
         #line hidden
         
-        #line 151 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 156 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(structure.Name));
 
         
         #line default
         #line hidden
         
-        #line 151 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 156 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("Marshaller.Instance;\r\n");
 
         
         #line default
         #line hidden
         
-        #line 152 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 157 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 152 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 157 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("            marshaller.Marshall(");
 
         
         #line default
         #line hidden
         
-        #line 152 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 157 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 152 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 157 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(", context);\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 154 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 159 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 154 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 159 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("            context.Writer.WriteEndMap();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 155 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 160 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 
 				if (isSparse && isNested)
 				{
@@ -869,21 +874,21 @@ this.Write("            context.Writer.WriteEndMap();\r\n");
         #line default
         #line hidden
         
-        #line 159 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 164 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', (level - 1) * 4)));
 
         
         #line default
         #line hidden
         
-        #line 159 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 164 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\t}\r\n");
 
         
         #line default
         #line hidden
         
-        #line 160 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 165 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 
 				}
 			}
@@ -894,35 +899,35 @@ this.Write("\t\t\t}\r\n");
         #line default
         #line hidden
         
-        #line 166 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 171 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 166 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 171 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("            context.Writer.WriteByteString(");
 
         
         #line default
         #line hidden
         
-        #line 166 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 171 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 166 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 171 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 167 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 172 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 
 			}
 			else
@@ -941,147 +946,147 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 181 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 186 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 181 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 186 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("            context.Writer.WriteStartMap(null);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 182 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 187 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 182 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
-this.Write("            foreach (var ");
-
-        
-        #line default
-        #line hidden
-        
-        #line 182 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 182 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
-this.Write("Kvp in ");
-
-        
-        #line default
-        #line hidden
-        
-        #line 182 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 182 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
-this.Write(")\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 183 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 183 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
-this.Write("            {\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 184 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 184 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
-this.Write("                context.Writer.WriteTextString(");
-
-        
-        #line default
-        #line hidden
-        
-        #line 184 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 184 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
-this.Write("Kvp.Key);\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 185 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 185 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
-this.Write("                var ");
-
-        
-        #line default
-        #line hidden
-        
-        #line 185 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 185 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
-this.Write("Value = ");
-
-        
-        #line default
-        #line hidden
-        
-        #line 185 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 185 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
-this.Write("Kvp.Value;\r\n\r\n");
 
         
         #line default
         #line hidden
         
         #line 187 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+this.Write("            foreach (var ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 187 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 187 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+this.Write("Kvp in ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 187 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 187 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+this.Write(")\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 188 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 188 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+this.Write("            {\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 189 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 189 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+this.Write("                context.Writer.WriteTextString(");
+
+        
+        #line default
+        #line hidden
+        
+        #line 189 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 189 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+this.Write("Kvp.Key);\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 190 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 190 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+this.Write("                var ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 190 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 190 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+this.Write("Value = ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 190 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 190 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+this.Write("Kvp.Value;\r\n\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 192 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
                   
         if (isSparse)
         {
@@ -1094,35 +1099,35 @@ this.Write("Kvp.Value;\r\n\r\n");
         #line default
         #line hidden
         
-        #line 195 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 200 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 195 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 200 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("            }\r\n");
 
         
         #line default
         #line hidden
         
-        #line 196 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 201 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 196 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 201 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("            context.Writer.WriteEndMap();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 197 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 202 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 
 	}
 
@@ -1138,91 +1143,91 @@ protected void DetermineNormalCborWriteMethod(Shape shape, string memberProperty
         #line default
         #line hidden
         
-        #line 208 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 213 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 208 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 213 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\t\t\tif (");
 
         
         #line default
         #line hidden
         
-        #line 208 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 213 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 208 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 213 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(" == null)\r\n");
 
         
         #line default
         #line hidden
         
-        #line 209 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 214 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 209 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 214 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\t\t\t\tcontext.Writer.WriteNull();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 210 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 215 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 210 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 215 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\t\t\telse\r\n");
 
         
         #line default
         #line hidden
         
-        #line 211 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 216 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 211 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 216 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\t\t\t\tcontext.Writer.WriteTextString(");
 
         
         #line default
         #line hidden
         
-        #line 211 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 216 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
 
         
         #line default
         #line hidden
         
-        #line 211 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 216 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 212 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 217 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 
 			}
 			else
@@ -1232,35 +1237,35 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 217 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 222 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 217 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 222 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("                context.Writer.WriteTextString(");
 
         
         #line default
         #line hidden
         
-        #line 217 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 222 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
 
         
         #line default
         #line hidden
         
-        #line 217 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 222 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 218 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 223 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 
 			}
 		}
@@ -1273,91 +1278,91 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 226 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 231 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 226 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 231 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\t\t\tif (");
 
         
         #line default
         #line hidden
         
-        #line 226 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 231 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 226 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 231 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(" == null)\r\n");
 
         
         #line default
         #line hidden
         
-        #line 227 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 232 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 227 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 232 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\t\t\t\tcontext.Writer.WriteNull();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 228 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 233 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 228 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 233 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\t\t\telse\r\n");
 
         
         #line default
         #line hidden
         
-        #line 229 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 234 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 229 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 234 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\t\t\t\tcontext.Writer.WriteDateTime(");
 
         
         #line default
         #line hidden
         
-        #line 229 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 234 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
 
         
         #line default
         #line hidden
         
-        #line 229 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 234 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(".Value);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 230 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 235 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 
 			}
 			else
@@ -1367,35 +1372,35 @@ this.Write(".Value);\r\n");
         #line default
         #line hidden
         
-        #line 235 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 240 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 235 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 240 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("                context.Writer.WriteDateTime(");
 
         
         #line default
         #line hidden
         
-        #line 235 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 240 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
 
         
         #line default
         #line hidden
         
-        #line 235 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 240 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 236 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 241 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 
 			}
 		}
@@ -1408,91 +1413,91 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 244 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 249 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 244 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 249 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\t\t\tif (");
 
         
         #line default
         #line hidden
         
-        #line 244 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 249 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 244 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 249 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(" == null)\r\n");
 
         
         #line default
         #line hidden
         
-        #line 245 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 250 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 245 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 250 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\t\t\t\tcontext.Writer.WriteNull();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 246 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 251 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 246 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 251 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\t\t\telse\r\n");
 
         
         #line default
         #line hidden
         
-        #line 247 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 252 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 247 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 252 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\t\t\t\tcontext.Writer.WriteOptimizedNumber(");
 
         
         #line default
         #line hidden
         
-        #line 247 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 252 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
 
         
         #line default
         #line hidden
         
-        #line 247 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 252 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(".Value);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 248 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 253 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 
 			}
 			else
@@ -1502,35 +1507,35 @@ this.Write(".Value);\r\n");
         #line default
         #line hidden
         
-        #line 253 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 258 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 253 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 258 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("                context.Writer.WriteOptimizedNumber(");
 
         
         #line default
         #line hidden
         
-        #line 253 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 258 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
 
         
         #line default
         #line hidden
         
-        #line 253 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 258 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 254 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 259 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 
 			}
 		}
@@ -1543,91 +1548,91 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 262 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 267 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 262 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 267 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\t\t\tif (");
 
         
         #line default
         #line hidden
         
-        #line 262 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 267 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 262 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 267 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(" == null)\r\n");
 
         
         #line default
         #line hidden
         
-        #line 263 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 268 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 263 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 268 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\t\t\t\tcontext.Writer.WriteNull();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 264 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 269 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 264 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 269 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\t\t\telse\r\n");
 
         
         #line default
         #line hidden
         
-        #line 265 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 270 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 265 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 270 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\t\t\t\tcontext.Writer.WriteInt64(");
 
         
         #line default
         #line hidden
         
-        #line 265 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 270 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
 
         
         #line default
         #line hidden
         
-        #line 265 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 270 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(".Value);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 266 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 271 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 
 			}
 			else
@@ -1637,35 +1642,35 @@ this.Write(".Value);\r\n");
         #line default
         #line hidden
         
-        #line 271 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 276 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 271 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 276 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("                context.Writer.WriteInt64(");
 
         
         #line default
         #line hidden
         
-        #line 271 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 276 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
 
         
         #line default
         #line hidden
         
-        #line 271 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 276 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 272 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 277 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 
 			}
 		}
@@ -1678,91 +1683,91 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 280 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 285 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 280 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 285 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\t\t\tif (");
 
         
         #line default
         #line hidden
         
-        #line 280 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 285 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 280 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 285 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(" == null)\r\n");
 
         
         #line default
         #line hidden
         
-        #line 281 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 286 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 281 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 286 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\t\t\t\tcontext.Writer.WriteNull();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 282 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 287 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 282 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 287 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\t\t\telse\r\n");
 
         
         #line default
         #line hidden
         
-        #line 283 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 288 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 283 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 288 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\t\t\t\tcontext.Writer.WriteInt32(");
 
         
         #line default
         #line hidden
         
-        #line 283 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 288 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
 
         
         #line default
         #line hidden
         
-        #line 283 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 288 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(".Value);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 284 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 289 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 
 			}
 			else
@@ -1772,35 +1777,35 @@ this.Write(".Value);\r\n");
         #line default
         #line hidden
         
-        #line 289 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 294 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 289 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 294 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("                context.Writer.WriteInt32(");
 
         
         #line default
         #line hidden
         
-        #line 289 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 294 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
 
         
         #line default
         #line hidden
         
-        #line 289 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 294 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 290 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 295 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 
 			}
 		}
@@ -1813,91 +1818,91 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 298 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 303 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 298 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 303 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\t\t\tif (");
 
         
         #line default
         #line hidden
         
-        #line 298 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 303 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 298 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 303 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(" == null)\r\n");
 
         
         #line default
         #line hidden
         
-        #line 299 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 304 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 299 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 304 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\t\t\t\tcontext.Writer.WriteNull();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 300 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 305 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 300 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 305 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\t\t\telse\r\n");
 
         
         #line default
         #line hidden
         
-        #line 301 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 306 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 301 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 306 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("\t\t\t\t\t\tcontext.Writer.WriteBoolean(");
 
         
         #line default
         #line hidden
         
-        #line 301 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 306 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
 
         
         #line default
         #line hidden
         
-        #line 301 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 306 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(".Value);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 302 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 307 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 
 			}
 			else
@@ -1907,35 +1912,35 @@ this.Write(".Value);\r\n");
         #line default
         #line hidden
         
-        #line 307 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 312 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 307 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 312 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write("                context.Writer.WriteBoolean(");
 
         
         #line default
         #line hidden
         
-        #line 307 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 312 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
 
         
         #line default
         #line hidden
         
-        #line 307 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 312 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 308 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
+        #line 313 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 
 			}
 		}

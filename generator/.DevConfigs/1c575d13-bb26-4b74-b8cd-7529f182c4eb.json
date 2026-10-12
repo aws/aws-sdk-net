@@ -1,0 +1,257 @@
+{
+  "services": [
+    {
+      "serviceName": "AWSMarketplaceMetering",
+      "type": "patch",
+      "changeLogMessages": [
+        "AWSMarketplaceMetering is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "AppRunner",
+      "type": "patch",
+      "changeLogMessages": [
+        "AppRunner is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "B2bi",
+      "type": "patch",
+      "changeLogMessages": [
+        "B2bi is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "BCMDashboards",
+      "type": "patch",
+      "changeLogMessages": [
+        "BCMDashboards is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "BCMDataExports",
+      "type": "patch",
+      "changeLogMessages": [
+        "BCMDataExports is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "BCMPricingCalculator",
+      "type": "patch",
+      "changeLogMessages": [
+        "BCMPricingCalculator is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "BCMRecommendedActions",
+      "type": "patch",
+      "changeLogMessages": [
+        "BCMRecommendedActions is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "BedrockDataAutomationRuntime",
+      "type": "patch",
+      "changeLogMessages": [
+        "BedrockDataAutomationRuntime is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "Billing",
+      "type": "patch",
+      "changeLogMessages": [
+        "Billing is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "CloudControlApi",
+      "type": "patch",
+      "changeLogMessages": [
+        "CloudControlApi is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "CodeCommit",
+      "type": "patch",
+      "changeLogMessages": [
+        "CodeCommit is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "CodeStarconnections",
+      "type": "patch",
+      "changeLogMessages": [
+        "CodeStarconnections is now generated from its Smithy model. There are no changes to the public API.",
+        "The X-Amz-Target request header now uses the service shape name (CodeStar_connections_20191201.{Operation}) instead of the legacy namespaced prefix; the service accepts both and other AWS SDKs already send the new form."
+      ]
+    },
+    {
+      "serviceName": "CognitoIdentityProvider",
+      "type": "patch",
+      "changeLogMessages": [
+        "CognitoIdentityProvider is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "CostAndUsageReport",
+      "type": "patch",
+      "changeLogMessages": [
+        "CostAndUsageReport is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "CostOptimizationHub",
+      "type": "patch",
+      "changeLogMessages": [
+        "CostOptimizationHub is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "Evs",
+      "type": "patch",
+      "changeLogMessages": [
+        "Evs is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "FreeTier",
+      "type": "patch",
+      "changeLogMessages": [
+        "FreeTier is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "HealthLake",
+      "type": "patch",
+      "changeLogMessages": [
+        "HealthLake is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "Invoicing",
+      "type": "patch",
+      "changeLogMessages": [
+        "Invoicing is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "IoTFleetWise",
+      "type": "patch",
+      "changeLogMessages": [
+        "IoTFleetWise is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "LookoutEquipment",
+      "type": "patch",
+      "changeLogMessages": [
+        "LookoutEquipment is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "MWAAServerless",
+      "type": "patch",
+      "changeLogMessages": [
+        "MWAAServerless is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "Odb",
+      "type": "patch",
+      "changeLogMessages": [
+        "Odb is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "PCS",
+      "type": "patch",
+      "changeLogMessages": [
+        "PCS is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "PartnerCentralAccount",
+      "type": "patch",
+      "changeLogMessages": [
+        "PartnerCentralAccount is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "PartnerCentralBenefits",
+      "type": "patch",
+      "changeLogMessages": [
+        "PartnerCentralBenefits is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "PartnerCentralChannel",
+      "type": "patch",
+      "changeLogMessages": [
+        "PartnerCentralChannel is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "PartnerCentralSelling",
+      "type": "patch",
+      "changeLogMessages": [
+        "PartnerCentralSelling is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "PaymentCryptography",
+      "type": "patch",
+      "changeLogMessages": [
+        "PaymentCryptography is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "PinpointSMSVoiceV2",
+      "type": "patch",
+      "changeLogMessages": [
+        "PinpointSMSVoiceV2 is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "Proton",
+      "type": "patch",
+      "changeLogMessages": [
+        "Proton is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "Route53RecoveryCluster",
+      "type": "patch",
+      "changeLogMessages": [
+        "Route53RecoveryCluster is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "StepFunctions",
+      "type": "patch",
+      "changeLogMessages": [
+        "StepFunctions is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "TimestreamInfluxDB",
+      "type": "patch",
+      "changeLogMessages": [
+        "TimestreamInfluxDB is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "VerifiedPermissions",
+      "type": "patch",
+      "changeLogMessages": [
+        "VerifiedPermissions is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "VoiceID",
+      "type": "patch",
+      "changeLogMessages": [
+        "VoiceID is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    }
+  ]
+}
