@@ -32,7 +32,7 @@ namespace Amazon.Lambda.Model
     /// <summary>
     /// Container for the parameters to the ListAliases operation.
     /// Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">aliases</a>
-    /// for a Lambda function.
+    /// for a Lambda Event Function.
     /// </summary>
     public partial class ListAliasesRequest : AmazonLambdaRequest
     {

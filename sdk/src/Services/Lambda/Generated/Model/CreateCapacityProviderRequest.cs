@@ -31,7 +31,7 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCapacityProvider operation.
-    /// Creates a capacity provider that manages compute resources for Lambda functions
+    /// Creates a capacity provider that manages compute resources for Lambda Event Functions
     /// </summary>
     public partial class CreateCapacityProviderRequest : AmazonLambdaRequest
     {

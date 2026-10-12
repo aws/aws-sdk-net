@@ -31,8 +31,8 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the ListFunctions operation.
-    /// Returns a list of Lambda functions, with the version-specific configuration of each.
-    /// Lambda returns up to 50 functions per call.
+    /// Returns a list of Lambda Event Functions, with the version-specific configuration
+    /// of each. Lambda returns up to 50 functions per call.
     /// 
     ///  
     /// <para>
