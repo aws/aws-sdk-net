@@ -40,6 +40,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _memoryStrategyId;
         private List<string> _namespaces = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _namespaceTemplates = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private RecordExpirySpecification _recordExpirySpecification;
 
         /// <summary>
         /// Gets and sets the property Configuration. 
@@ -163,6 +164,28 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetNamespaceTemplates()
         {
             return this._namespaceTemplates != null && (this._namespaceTemplates.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecordExpirySpecification. 
+        /// <para>
+        /// Updates or removes the record expiry (long-term memory time-to-live) for this strategy.
+        /// Set <c>recordExpiryDurationDays</c> to configure or update the number of days after
+        /// which records expire, or set <c>action</c> to <c>REMOVE</c> to remove a previously
+        /// configured time-to-live so that newer records no longer expire. The change applies
+        /// only to records created after the update.
+        /// </para>
+        /// </summary>
+        public RecordExpirySpecification RecordExpirySpecification
+        {
+            get { return this._recordExpirySpecification; }
+            set { this._recordExpirySpecification = value; }
+        }
+
+        // Check to see if RecordExpirySpecification property is set
+        internal bool IsSetRecordExpirySpecification()
+        {
+            return this._recordExpirySpecification != null;
         }
 
     }

@@ -73,7 +73,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A client token is used for keeping track of idempotent requests. It can contain a
-        /// session id which can be around 250 chars, combined with a unique AWS identifier.
+        /// session id which can be around 250 chars, combined with a unique Amazon Web Services
+        /// identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
@@ -195,7 +196,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=1, Max=5)]
+        [AWSProperty(Min=0, Max=5)]
         public List<NamespaceKeyEntry> NamespaceKeys
         {
             get { return this._namespaceKeys; }

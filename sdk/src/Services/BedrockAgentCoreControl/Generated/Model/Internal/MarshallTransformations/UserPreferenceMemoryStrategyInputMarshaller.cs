@@ -91,6 +91,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetRecordExpirySpecification())
+            {
+                context.Writer.WritePropertyName("recordExpirySpecification");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RecordExpirySpecificationMarshaller.Instance;
+                marshaller.Marshall(requestObject.RecordExpirySpecification, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>
