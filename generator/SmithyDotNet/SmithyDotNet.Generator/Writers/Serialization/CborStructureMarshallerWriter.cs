@@ -4,7 +4,9 @@ using SmithyDotNet.Generator.Model.Shapes;
 namespace SmithyDotNet.Generator.Writers.Serialization;
 
 /// <summary>
-/// rpcv2Cbor structure marshaller: writes the members into the map the caller opened.
+/// rpcv2Cbor structure marshaller: writes the members into the map the caller opened. A request event-stream
+/// event uses the same class; its <c>@eventHeader</c>/<c>@eventPayload</c> members go to the message, not the
+/// map (see <see cref="MarshallerCommon.WriteEventPayload"/>).
 /// </summary>
 public sealed class CborStructureMarshallerWriter(GenerationContext context, string modelFileName)
 {
@@ -38,7 +40,19 @@ public sealed class CborStructureMarshallerWriter(GenerationContext context, str
                     writer.WriteLine("");
                     for (int i = 0; i < members.Count; i++)
                     {
-                        CborBodyMemberMarshaller.WriteBodyMember(writer, members[i], "requestObject");
+                        var member = members[i];
+                        if (member.IsEventPayload)
+                        {
+                            MarshallerCommon.WriteEventPayload(writer, member);
+                        }
+                        else if (member.IsEventHeader)
+                        {
+                            MarshallerCommon.WriteEventHeader(writer, member);
+                        }
+                        else
+                        {
+                            CborBodyMemberMarshaller.WriteBodyMember(writer, member, "requestObject");
+                        }
                         if (i < members.Count - 1)
                         {
                             writer.WriteLine("");

@@ -1,6 +1,5 @@
 using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Model.Shapes;
-using SmithyDotNet.Generator.Model.Traits;
 
 namespace SmithyDotNet.Generator.Writers.Serialization;
 
@@ -15,7 +14,7 @@ namespace SmithyDotNet.Generator.Writers.Serialization;
 /// A request event-stream event uses the same class. Its publisher marshaller calls it with the JSON
 /// object already open, so <c>@eventHeader</c> members go to <c>context.Request.EventHeaders</c> and an
 /// explicit <c>@eventPayload</c> to <c>context.Request.Content</c>, not the body (C2J
-/// <c>JsonRPCStructureMarshaller</c>).
+/// <c>JsonRPCStructureMarshaller</c>); see <see cref="MarshallerCommon.WriteEventPayload"/>.
 /// </summary>
 /// <param name="context"></param>
 /// <param name="modelFileName"></param>
@@ -39,7 +38,7 @@ public sealed class JsonStructureMarshallerWriter(GenerationContext context, str
             WriteMarshallerDocumentation(writer, className);
             writer.OpenBlock($"public partial class {marshallerClassName} : IRequestMarshaller<{className}, JsonMarshallerContext>", () =>
             {
-                WriteMarshallMethod(structure, members, writer, className);
+                WriteMarshallMethod(members, writer, className);
                 writer.WriteLine("");
                 MarshallerCommon.WriteStructureMarshallerSingleton(writer, marshallerClassName);
             });
@@ -47,30 +46,29 @@ public sealed class JsonStructureMarshallerWriter(GenerationContext context, str
         return writer.ToFormattedString(cancellationToken);
     }
 
-    private void WriteMarshallMethod(StructureShape structure, List<Member> members, CodeWriter writer, string className)
+    private static void WriteMarshallMethod(List<Member> members, CodeWriter writer, string className)
     {
         WriteMarshallMethodDocumentation(writer);
         writer.OpenBlock($"public void Marshall({className} requestObject, JsonMarshallerContext context)", () =>
         {
             writer.WriteLine("if (requestObject == null) return;");
             writer.WriteLine("");
-            WriteMemberMarshallers(writer, structure, members);
+            WriteMemberMarshallers(writer, members);
         });
     }
 
-    private void WriteMemberMarshallers(CodeWriter writer, StructureShape structure, List<Member> members)
+    private static void WriteMemberMarshallers(CodeWriter writer, List<Member> members)
     {
         for (int i = 0; i < members.Count; i++)
         {
             var member = members[i];
-            var memberShape = structure.Members[member.ModeledName];
-            if (memberShape.IsEventPayload())
+            if (member.IsEventPayload)
             {
-                WriteEventPayload(writer, member);
+                MarshallerCommon.WriteEventPayload(writer, member);
             }
-            else if (memberShape.IsEventHeader())
+            else if (member.IsEventHeader)
             {
-                WriteEventHeader(writer, member, memberShape);
+                MarshallerCommon.WriteEventHeader(writer, member);
             }
             else
             {
@@ -82,55 +80,6 @@ public sealed class JsonStructureMarshallerWriter(GenerationContext context, str
                 writer.WriteLine("");
             }
         }
-    }
-
-    // Blob/string are the raw bytes the publisher sends as octet-stream/text-plain; a structure/union writes
-    // its members into the object the publisher opened (the protocol tests expect the bare structure). The
-    // publisher marshaller picks the payload source and :content-type per event (EventStreamPublisherMarshallerWriter).
-    private static void WriteEventPayload(CodeWriter writer, Member member)
-    {
-        writer.OpenBlock($"if (requestObject.IsSet{member.PropertyName}())", () =>
-        {
-            if (member.Type.IsBlob)
-            {
-                writer.WriteLine($"context.Request.Content = requestObject.{member.PropertyName}.ToArray();");
-            }
-            else if (member.Type.MarshalsAsString)
-            {
-                writer.WriteLine($"context.Request.Content = Encoding.UTF8.GetBytes(requestObject.{member.PropertyName});");
-            }
-            else if (member.Type.IsStructure)
-            {
-                writer.WriteLine($"{member.Type.MarshallerName}.Instance.Marshall(requestObject.{member.PropertyName}, context);");
-            }
-            else
-            {
-                throw new GeneratorException($"Unsupported @eventPayload type '{member.Type.DotNetType}' on member '{member.ModeledName}'.");
-            }
-        });
-    }
-
-    // Header name is the member name, never @jsonName. An enum rides SetString via its implicit conversion.
-    private void WriteEventHeader(CodeWriter writer, Member member, MemberShape memberShape)
-    {
-        var value = $"requestObject.{member.PropertyName}";
-        var setter = context.Resolve(memberShape.Target) switch
-        {
-            StringShape or EnumShape => $"SetString({value})",
-            BooleanShape => $"SetBool({value}.Value)",
-            IntegerShape or IntEnumShape => $"SetInt32({value}.Value)",
-            LongShape => $"SetInt64({value}.Value)",
-            TimestampShape => $"SetTimestamp({value}.Value)",
-            BlobShape => $"SetByteBuf({value}.ToArray())",
-            var other => throw new GeneratorException($"Unsupported @eventHeader type '{other.Type}' on member '{member.ModeledName}'."),
-        };
-
-        writer.OpenBlock($"if (requestObject.IsSet{member.PropertyName}())", () =>
-        {
-            writer.WriteLine($"""var header = new Amazon.Runtime.EventStreams.EventStreamHeader("{member.ModeledName}");""");
-            writer.WriteLine($"header.{setter};");
-            writer.WriteLine("context.Request.EventHeaders.Add(header);");
-        });
     }
 
     private static void WriteMarshallerDocumentation(CodeWriter writer, string className)

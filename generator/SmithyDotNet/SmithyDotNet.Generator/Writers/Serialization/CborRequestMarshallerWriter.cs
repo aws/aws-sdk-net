@@ -8,6 +8,8 @@ namespace SmithyDotNet.Generator.Writers.Serialization;
 /// <summary>
 /// rpcv2Cbor request marshaller: <c>POST service/{Service}/operation/{Operation}</c> with a CBOR map
 /// body, HTTP binding traits ignored (https://smithy.io/2.0/additional-specs/protocols/smithy-rpc-v2-cbor.html#requests).
+/// An input event stream replaces the body with the consumer's event publisher
+/// (https://smithy.io/2.0/additional-specs/protocols/smithy-rpc-v2-cbor.html#requests).
 /// </summary>
 public sealed class CborRequestMarshallerWriter(GenerationContext context, string modelFileName)
 {
@@ -16,6 +18,13 @@ public sealed class CborRequestMarshallerWriter(GenerationContext context, strin
         var className = $"{operation.Name}Request";
         var members = TypeMapper.ResolveMembers(operation.Input, context);
         var compressionEncoding = MarshallerCommon.CompressionEncoding(operation);
+
+        // Every member is a body member, so an input event stream can only be the whole body: the other
+        // members would have to travel as an initial-request message, which Core cannot emit.
+        if (members.Count > 1 && members.Any(member => member.Type.IsEventStream))
+        {
+            throw new GeneratorException($"Operation '{operation.Name}' has an input event stream alongside other members, which is not supported.");
+        }
 
         // @hostLabel is not an HTTP binding, so it still applies.
         var hostLabelMembers = new List<Member>();
@@ -61,8 +70,9 @@ public sealed class CborRequestMarshallerWriter(GenerationContext context, strin
         List<Member> hostLabelMembers,
         string? compressionEncoding)
     {
+        var eventStream = members.FirstOrDefault(member => member.Type.IsEventStream);
         // A Unit input sends no body and no Content-Type; an empty input structure still sends an empty map.
-        var hasBody = operation.Shape.Input != ShapeId.Unit;
+        var hasBody = operation.Shape.Input != ShapeId.Unit && eventStream is null;
         var hostPrefix = operation.Shape.GetEndpoint()?.HostPrefix;
 
         writer.WriteLine("/// <summary>");
@@ -72,12 +82,20 @@ public sealed class CborRequestMarshallerWriter(GenerationContext context, strin
         {
             writer.WriteLine($"""IRequest request = new DefaultRequest(publicRequest, "{context.Namespace}");""");
             writer.WriteLine("""request.Headers["smithy-protocol"] = "rpc-v2-cbor";""");
-            if (hasBody)
+            if (eventStream is not null)
+            {
+                // The member's .NET type is the union class name, so it names the {Stream}PublisherMarshaller; the
+                // request property carries the "Publisher" suffix (see OperationWriter.ApplyEventStreamPublisher).
+                writer.WriteLine("""request.Headers["Content-Type"] = "application/vnd.amazon.eventstream";""");
+                writer.WriteLine($"request.EventStreamPublisher = new {eventStream.Type.DotNetType}PublisherMarshaller(publicRequest.{eventStream.PropertyName}Publisher);");
+            }
+            else if (hasBody)
             {
                 writer.WriteLine("""request.Headers["Content-Type"] = "application/cbor";""");
             }
-            // TODO: an operation with a response event stream accepts application/vnd.amazon.eventstream instead.
-            writer.WriteLine("""request.Headers["Accept"] = "application/cbor";""");
+            writer.WriteLine(operation.HasOutputEventStream
+                ? """request.Headers["Accept"] = "application/vnd.amazon.eventstream";"""
+                : """request.Headers["Accept"] = "application/cbor";""");
 
             AwsQueryCompatibleMarshalling.WriteQueryModeHeader(writer, context);
 

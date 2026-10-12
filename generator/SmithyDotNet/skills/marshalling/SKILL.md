@@ -274,7 +274,8 @@ members still get marshallers.
   event's `@eventPayload` member: a blob payload → `application/octet-stream`, a string payload →
   `text/plain`, both read from `context.Request.Content`; a structure payload or an implicit body →
   `application/json` from the JSON writer's stream. (C2J emits `text/plain` for a structure payload too,
-  but the event marshaller writes it as JSON, so JSON is kept here.) CBOR is not handled: restJson1 only.
+  but the event marshaller writes it as JSON, so JSON is kept here.) On rpcv2Cbor the class derives from
+  `CborEventStreamPublisher` and the body is a CBOR map (`application/cbor`).
 - The request member becomes a `Func<Task<I{Union}Event>> {Member}Publisher` property (keeps any modeled
   `[AWSProperty]`/`[Obsolete]`, no `IsSet`). The request marshaller wires it:
   `request.EventStreamPublisher = new {Union}PublisherMarshaller(publicRequest.{Member}Publisher)` with
@@ -375,6 +376,9 @@ writer gets swaps by reusing those helpers; an omitted override keeps the modele
   query member is checked with `== null`, since its type may not be a string.
 - Unmarshal (`JsonBodyMemberUnmarshaller.ScalarUnmarshaller`): `var unmarshaller = {Unmarshaller}.Instance;`,
   emitted verbatim.
+- CBOR body: `WriteInt64({Marshaller}(x))` for the epoch-millis marshaller, else `WriteTextString`; reads use
+  `Cbor{Unmarshaller}.Instance` (as C2J). The wire type stays the modeled one, so a swap on a string member
+  (the runtime cannot read a text string as another type) or a namespace-qualified name fails loud.
 - A response header swap that names an `Unmarshaller` fails loud (not supported yet).
 
 ## Error Dispatch
@@ -409,6 +413,9 @@ Core handles the `__type` difference transparently, so the generator only varies
 Every one of those decisions is gated on `GenerationContext.UsesHttpBindings`; `AwsJsonCodegenTests`
 pins the emitted code and the JSONRPC10/JsonProtocol protocol tests verify it end to end.
 
+An event stream must be the input's or output's only member: Core has no initial-request/response message, so
+siblings fail loud. The publisher's `Content-Type` replaces the x-amz-json one. The rest is the restJson1 path.
+
 ## rpcv2Cbor
 
 Spec: [Smithy RPC v2 CBOR](https://smithy.io/2.0/additional-specs/protocols/smithy-rpc-v2-cbor.html). Every
@@ -420,7 +427,10 @@ writers' output; the `Cbor*` writers mirror the JSON ones and are pinned by `Rpc
 
 A `@sparse` element writes CBOR null per the spec; C2J writes `{}` for a null structure element in a sparse
 list, but no CBOR service model uses `@sparse`. Documents and streaming blobs are rejected by
-`UnsupportedTraitValidator`; event streams are not supported.
+`UnsupportedTraitValidator`.
+
+Event streams follow the awsJson rules, plus `Accept: application/vnd.amazon.eventstream` for an output stream.
+Each event is a CBOR map decoded without its message headers, so a response `@eventHeader` fails loud.
 
 ## awsQueryCompatible
 

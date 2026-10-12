@@ -295,7 +295,7 @@ public class PaginationResolverTests
         {
             var input = index.Shapes[opShape.Input] as StructureShape ?? new StructureShape();
             var output = index.Shapes[opShape.Output] as StructureShape ?? new StructureShape();
-            ops.Add(new Operation(opShape.Id.Name, opShape, input, output, [], RequiresHttp2: false));
+            ops.Add(new Operation(opShape.Id.Name, opShape, input, output, [], RequiresHttp2: false, HasOutputEventStream: false));
         }
         return (index, ops);
     }
@@ -325,6 +325,6 @@ public class PaginationResolverTests
             },
         };
 
-        return new Operation("TestOp", opShape, structure, structure, [], RequiresHttp2: false);
+        return new Operation("TestOp", opShape, structure, structure, [], RequiresHttp2: false, HasOutputEventStream: false);
     }
 }

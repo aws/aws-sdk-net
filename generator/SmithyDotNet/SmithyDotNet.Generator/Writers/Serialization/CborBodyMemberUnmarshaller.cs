@@ -44,6 +44,25 @@ public static class CborBodyMemberUnmarshaller
     // nullable position (member, @sparse element) takes the CborNullable* variant. Map keys are strings.
     private static (string Type, string Instance) Unmarshaller(TypeDescriptor type)
     {
+        if (type.UnmarshallerOverride is { } swapUnmarshaller)
+        {
+            // The wire type stays the modeled one, and every CBOR runtime unmarshaller reads the CBOR item of its
+            // own type; none parses a text string into another type.
+            if (type.Target is StringShape or EnumShape)
+            {
+                throw new GeneratorException($"dataTypeSwap unmarshaller '{swapUnmarshaller}' is not supported on rpcv2Cbor: no runtime unmarshaller parses a CBOR text string into another type.");
+            }
+
+            // The swap names a Core scalar unmarshaller; the CBOR runtime has a Cbor-prefixed one for each, in
+            // its own namespace, so only a simple name can be prefixed.
+            if (swapUnmarshaller.Contains('.'))
+            {
+                throw new GeneratorException($"dataTypeSwap unmarshaller '{swapUnmarshaller}' is not supported on rpcv2Cbor; name the runtime unmarshaller without its namespace.");
+            }
+
+            return ($"Cbor{swapUnmarshaller}", $"Cbor{swapUnmarshaller}.Instance");
+        }
+
         if (type.UnmarshallerName is { } unmarshaller)
         {
             return (unmarshaller, $"{unmarshaller}.Instance");

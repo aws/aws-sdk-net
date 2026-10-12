@@ -103,17 +103,17 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             }
             else
             {
-                // awsJson1.x routes on X-Amz-Target and always sends a JSON body (see below), so the
-                // Content-Type is unconditional. Same two-statement shape as C2J.
+                // awsJson1.x routes on X-Amz-Target and always sends a JSON body (see below) unless an input
+                // event stream replaces it, in which case WriteEventStreamPublisher sets the Content-Type.
+                // Same two-statement shape as C2J.
                 writer.WriteLine($"""string target = "{context.ServiceShapeName}.{operation.Name}";""");
                 writer.WriteLine("""request.Headers["X-Amz-Target"] = target;""");
-                if (!String.IsNullOrEmpty(context.Customizations.OverrideContentType))
+                if (partitioned.PayloadMember is not { Type.IsEventStream: true })
                 {
-                    writer.WriteLine($"""request.Headers["Content-Type"] = "{context.Customizations.OverrideContentType}";""");
-                }
-                else
-                {
-                    writer.WriteLine($"""request.Headers["Content-Type"] = "application/x-amz-json-{JsonVersion(context.Protocol)}";""");
+                    var contentType = string.IsNullOrEmpty(context.Customizations.OverrideContentType)
+                        ? $"application/x-amz-json-{JsonVersion(context.Protocol)}"
+                        : context.Customizations.OverrideContentType;
+                    writer.WriteLine($"""request.Headers["Content-Type"] = "{contentType}";""");
                 }
             }
 
@@ -681,7 +681,8 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
     }
 
     // With httpBindings false (awsJson1.x) every member is a body member and the binding traits are
-    // ignored, as the protocol requires; @hostLabel is not an HTTP binding and still applies.
+    // ignored, as the protocol requires; @hostLabel is not an HTTP binding and still applies. An input
+    // event stream is the payload on either protocol.
     private static PartitionedMembers PartitionMembers(StructureShape input, List<Member> members, bool httpBindings)
     {
         var queryMembers = new List<(Member Member, string QueryName)>();
@@ -700,15 +701,32 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             var httpHeader = memberShape.GetHttpHeader();
             var httpPrefixHeaders = memberShape.GetHttpPrefixHeaders();
 
-            // Anywhere else the publisher is never wired and the body path emits a marshaller that doesn't exist.
-            if (member.Type.IsEventStream && !memberShape.IsHttpPayload())
+            if (member.Type.IsEventStream)
             {
-                throw new GeneratorException($"Event stream member '{member.PropertyName}' must be bound with @httpPayload.");
+                // Anywhere else the publisher is never wired and the body path emits a marshaller that doesn't exist.
+                if (httpBindings && !memberShape.IsHttpPayload())
+                {
+                    throw new GeneratorException($"Event stream member '{member.PropertyName}' must be bound with @httpPayload.");
+                }
+
+                // awsJson has no bindings, so the stream can only be the whole body: the other members would have
+                // to travel as an initial-request message, which Core cannot emit.
+                if (!httpBindings && members.Count > 1)
+                {
+                    throw new GeneratorException($"Event stream member '{member.PropertyName}' has sibling input members, which is not supported.");
+                }
             }
 
             if (!httpBindings)
             {
-                bodyMembers.Add(member);
+                if (member.Type.IsEventStream)
+                {
+                    payloadMember = member;
+                }
+                else
+                {
+                    bodyMembers.Add(member);
+                }
             }
             else if (httpQuery is not null)
             {

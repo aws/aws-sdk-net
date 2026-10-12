@@ -17,7 +17,8 @@ public record Operation(
     StructureShape Input,
     StructureShape Output,
     IReadOnlyList<StructureShape> Errors,
-    bool RequiresHttp2);
+    bool RequiresHttp2,
+    bool HasOutputEventStream);
 
 /// <summary>
 /// Resolves the service's operations into <see cref="Operation"/> records with their input, output,
@@ -59,15 +60,16 @@ public static class OperationResolver
                 errors.Add(ResolveStructure(index, errorId, "error", operation.Id));
             }
 
+            var hasOutputEventStream = Model.EventStreams.In(output, index).Any();
             var requiresHttp2 = h2Support switch
             {
                 H2SupportDegree.Required => true,
-                H2SupportDegree.EventStream => Model.EventStreams.In(output, index).Any(),
-                H2SupportDegree.Optional => Model.EventStreams.In(input, index).Any() && Model.EventStreams.In(output, index).Any(),
+                H2SupportDegree.EventStream => hasOutputEventStream,
+                H2SupportDegree.Optional => Model.EventStreams.In(input, index).Any() && hasOutputEventStream,
                 _ => false,
             };
 
-            resolved.Add(new Operation(operation.Id.Name, operation, input, output, errors, requiresHttp2));
+            resolved.Add(new Operation(operation.Id.Name, operation, input, output, errors, requiresHttp2, hasOutputEventStream));
         }
 
         return resolved;

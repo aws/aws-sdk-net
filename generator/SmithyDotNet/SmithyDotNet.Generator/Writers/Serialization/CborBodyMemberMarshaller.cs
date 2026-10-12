@@ -94,6 +94,15 @@ public static class CborBodyMemberMarshaller
             return;
         }
 
+        if (type.MarshallerOverride is { } marshaller)
+        {
+            var argument = MarshallerCommon.SwapArgument(type, value);
+            writer.WriteLine(MarshallerCommon.IsEpochMilliseconds(marshaller)
+                ? $"context.Writer.WriteInt64({marshaller}({argument}));"
+                : $"context.Writer.WriteTextString({marshaller}({argument}));");
+            return;
+        }
+
         var scalar = type.IsNullableValueType ? $"{value}.Value" : value;
         writer.WriteLine(type.Target switch
         {

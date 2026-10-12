@@ -81,6 +81,18 @@ public sealed class EventStreamPublisherCodegenTests : IDisposable
         Assert.DoesNotContain("evnt is ChatError", source);
     }
 
+    [Fact]
+    public void PublisherMarshaller_Cbor_DerivesFromCborBaseAndEncodesTheMapAsBody()
+    {
+        var context = TestModels.Context("Codegen/rpcv2cbor-model.json");
+        var source = new EventStreamPublisherMarshallerWriter(context, ModelFileName).Write(context.RequestEventStreams.Single(), TestContext.Current.CancellationToken);
+
+        Assert.Contains("public partial class InputStreamPublisherMarshaller : CborEventStreamPublisher", source);
+        Assert.Contains("var context = CreateCborMarshallerContext(writer);", source);
+        AssertBranch(source, wireName: "audio", contentType: "application/octet-stream", payload: "context.Request.Content");
+        AssertBranch(source, wireName: "metadata", contentType: "application/cbor", payload: "writer.Encode()");
+    }
+
     // The class and Func interface follow the union's renamed name; the request marshaller already
     // references `new {Renamed}PublisherMarshaller`, so the raw name would not compile.
     [Fact]

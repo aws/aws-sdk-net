@@ -33,11 +33,6 @@ public static class UnsupportedTraitValidator
         var found = new HashSet<string>();
         CollectDenied(index.Service.Traits, DeniedTraits, found);
 
-        // Event-stream codegen is only proven for restJson1. Other protocols (awsJson/CBOR) haven't
-        // verified their event-stream path, so reject a @streaming union there until they do - a
-        // streaming *blob* payload stays allowed on the JSON protocols.
-        var eventStreamsSupported = protocol == AWSProtocol.RestJson1;
-
         // rpcv2Cbor has no document encoding and no content streaming
         // (https://smithy.io/2.0/additional-specs/protocols/smithy-rpc-v2-cbor.html), and no CBOR model uses either.
         var documentsSupported = protocol != AWSProtocol.RpcV2Cbor;
@@ -80,11 +75,6 @@ public static class UnsupportedTraitValidator
         foreach (var shape in index.Shapes.Values)
         {
             CollectDenied(shape.Traits, DeniedTargetTraits, found);
-
-            if (!eventStreamsSupported && shape is UnionShape && shape.IsStreaming())
-            {
-                found.Add("@streaming (event stream)");
-            }
 
             if (!documentsSupported && shape is DocumentShape)
             {

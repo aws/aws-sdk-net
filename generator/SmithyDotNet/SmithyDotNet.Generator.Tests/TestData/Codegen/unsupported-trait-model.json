@@ -15,7 +15,6 @@
     "com.amazonaws.testunsupported#DoThingRequest": {
       "type": "structure",
       "members": {
-        "config": { "target": "com.amazonaws.testunsupported#Config" },
         "tableName": { "target": "smithy.api#String", "traits": { "aws.api#clientEndpointDiscoveryId": {} } },
         "matrix": { "target": "com.amazonaws.testunsupported#SparseMatrix" }
       }
@@ -28,25 +27,6 @@
     "com.amazonaws.testunsupported#Row": {
       "type": "list",
       "member": { "target": "smithy.api#String" }
-    },
-    "com.amazonaws.testunsupported#Config": {
-      "type": "structure",
-      "members": {
-        "events": { "target": "com.amazonaws.testunsupported#EventStream" }
-      }
-    },
-    "com.amazonaws.testunsupported#EventStream": {
-      "type": "union",
-      "members": {
-        "tick": { "target": "com.amazonaws.testunsupported#Tick" }
-      },
-      "traits": { "smithy.api#streaming": {} }
-    },
-    "com.amazonaws.testunsupported#Tick": {
-      "type": "structure",
-      "members": {
-        "at": { "target": "smithy.api#Timestamp" }
-      }
     }
   }
 }

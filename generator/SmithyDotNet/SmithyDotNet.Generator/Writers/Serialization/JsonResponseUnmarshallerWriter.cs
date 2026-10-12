@@ -197,7 +197,8 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
     /// <paramref name="bindStatusCode"/> <c>false</c> and the member falls through to the body.</para>
     ///
     /// <para>With <paramref name="httpBindings"/> <c>false</c> (awsJson1.x) the binding traits are ignored,
-    /// as that protocol requires, and every member except an event stream is a body member.</para>
+    /// as that protocol requires, and every member except an event stream is a body member. An event stream
+    /// with body siblings fails loud on every protocol: the stream is the whole body.</para>
     /// </summary>
     internal static PartitionedMembers PartitionByBinding(
         StructureShape structure, List<Member> members, bool httpBindings, bool bindStatusCode = true)
@@ -271,6 +272,14 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
         {
             var names = string.Join(", ", bodyMembers.Select(m => m.PropertyName));
             throw new GeneratorException($"@httpPayload member '{payloadMember.PropertyName}' cannot coexist with body members ({names}); every other member must be bound to a header.");
+        }
+
+        // An event stream IS the body too; its body siblings would arrive in an initial-response message, which
+        // Core cannot decode. On awsJson every non-stream member is a body member, so the stream must be alone.
+        if (eventStreamMember is not null && bodyMembers.Count > 0)
+        {
+            var names = string.Join(", ", bodyMembers.Select(m => m.PropertyName));
+            throw new GeneratorException($"Event stream member '{eventStreamMember.PropertyName}' cannot coexist with body members ({names}); every other member must be bound to a header.");
         }
 
         return new PartitionedMembers(headerMembers, bodyMembers, payloadMember, statusCodeMember, prefixHeadersMember, eventStreamMember);

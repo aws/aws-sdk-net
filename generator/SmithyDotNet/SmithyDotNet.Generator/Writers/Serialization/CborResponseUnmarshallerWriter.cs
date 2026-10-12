@@ -5,7 +5,8 @@ using SmithyDotNet.Generator.Writers.Shapes;
 namespace SmithyDotNet.Generator.Writers.Serialization;
 
 /// <summary>
-/// rpcv2Cbor response unmarshaller: the output read as a CBOR map, errors dispatched on the shape name.
+/// rpcv2Cbor response unmarshaller: the output read as a CBOR map, errors dispatched on the shape name. An
+/// output event stream IS the body and is handed to the generated event-stream class instead.
 /// </summary>
 public sealed class CborResponseUnmarshallerWriter(GenerationContext context, string modelFileName)
 {
@@ -14,8 +15,16 @@ public sealed class CborResponseUnmarshallerWriter(GenerationContext context, st
         var className = $"{operation.Name}Response";
         var unmarshallerClassName = $"{className}Unmarshaller";
         var members = TypeMapper.ResolveMembers(operation.Output, context);
-        var writer = new CodeWriter();
 
+        // Every member is a body member, so an output event stream can only be the whole body: the other
+        // members would arrive in an initial-response message, which Core cannot decode.
+        var hasEventStream = members.Any(member => member.Type.IsEventStream);
+        if (hasEventStream && members.Count > 1)
+        {
+            throw new GeneratorException($"Operation '{operation.Name}' has an output event stream alongside other members, which is not supported.");
+        }
+
+        var writer = new CodeWriter();
         FileHeader.WriteLicense(writer, modelFileName);
         WriteUsings(writer, context);
         FileHeader.WritePragma(writer, FileHeader.MarshallerWarnings);
@@ -31,6 +40,13 @@ public sealed class CborResponseUnmarshallerWriter(GenerationContext context, st
                 writer.WriteLine("");
                 WriteUnmarshallExceptionMethod(writer, operation);
                 writer.WriteLine("");
+                if (hasEventStream)
+                {
+                    MarshallerCommon.WriteHasStreamingProperty(writer);
+                    writer.WriteLine("");
+                    MarshallerCommon.WriteShouldReadEntireResponse(writer);
+                    writer.WriteLine("");
+                }
                 MarshallerCommon.WriteResponseUnmarshallerSingleton(writer, unmarshallerClassName);
             });
         });
@@ -46,8 +62,6 @@ public sealed class CborResponseUnmarshallerWriter(GenerationContext context, st
     }
 
     // A response with no members (Unit output included) reads nothing.
-    // TODO: a response event stream is assigned with MarshallerCommon.WriteEventStreamMember and the class overrides
-    // HasStreamingProperty/ShouldReadEntireResponse, as the JSON writer does.
     private static void WriteUnmarshallMethod(CodeWriter writer, string className, string operationName, List<Member> members)
     {
         writer.WriteLine("/// <summary>");
@@ -56,7 +70,11 @@ public sealed class CborResponseUnmarshallerWriter(GenerationContext context, st
         writer.OpenBlock("public override AmazonWebServiceResponse Unmarshall(CborUnmarshallerContext context)", () =>
         {
             writer.WriteLine($"var unmarshalledObject = new {className}();");
-            if (members.Count > 0)
+            if (members.FirstOrDefault(member => member.Type.IsEventStream) is { } eventStream)
+            {
+                MarshallerCommon.WriteEventStreamMember(writer, eventStream);
+            }
+            else if (members.Count > 0)
             {
                 writer.WriteLine("var reader = context.Reader;");
                 writer.WriteLine();

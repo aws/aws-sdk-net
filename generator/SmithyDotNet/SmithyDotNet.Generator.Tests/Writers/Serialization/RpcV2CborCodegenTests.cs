@@ -1,4 +1,5 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Writers.Serialization;
 using Xunit;
@@ -12,6 +13,7 @@ public class RpcV2CborCodegenTests
     private static readonly GenerationContext Context = TestModels.Context("Codegen/rpcv2cbor-model.json");
     private static readonly ShapeId Item = ShapeId.Parse("com.example#Item");
     private static readonly ShapeId Broken = ShapeId.Parse("com.example#Broken");
+    private static readonly ShapeId AudioEvent = ShapeId.Parse("com.example#AudioEvent");
 
     private static string RequestMarshaller(string operationName) =>
         new CborRequestMarshallerWriter(Context, ModelFileName)
@@ -49,6 +51,46 @@ public class RpcV2CborCodegenTests
         var unit = RequestMarshaller("Ping");
         Assert.DoesNotContain("Content-Type", unit);
         Assert.DoesNotContain("CborWriterPool", unit);
+    }
+
+    // Logs-style swap: a modeled long exposed as DateTime?, epoch milliseconds on the wire.
+    [Fact]
+    public void DataTypeSwap_EpochMillis_WritesInt64_AndReadsWithTheCborUnmarshaller()
+    {
+        var context = SwappedContext("big", "NullableDateTimeEpochLongMillisecondsUnmarshaller");
+        var ct = TestContext.Current.CancellationToken;
+        var operation = context.Operations.Single(o => o.Name == "Put");
+
+        var marshaller = new CborRequestMarshallerWriter(context, ModelFileName).Write(operation, ct);
+        var unmarshaller = new CborResponseUnmarshallerWriter(context, ModelFileName).Write(operation, ct);
+
+        Assert.Contains("context.Writer.WriteInt64(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochMilliseconds(publicRequest.Big.Value));", marshaller);
+        Assert.Contains("unmarshalledObject.Big = CborNullableDateTimeEpochLongMillisecondsUnmarshaller.Instance.Unmarshall(context);", unmarshaller);
+    }
+
+    [Theory]
+    [InlineData("big", "Amazon.Runtime.Internal.Transform.NullableDateTimeUnmarshaller", "without its namespace")]
+    [InlineData("name", "NullableDateTimeUnmarshaller", "text string")]
+    [InlineData("color", "NullableDateTimeUnmarshaller", "text string")]
+    public void DataTypeSwap_UnsupportedUnmarshaller_Throws(string member, string unmarshaller, string expected)
+    {
+        var context = SwappedContext(member, unmarshaller);
+
+        var ex = Assert.Throws<GeneratorException>(() => new CborResponseUnmarshallerWriter(context, ModelFileName)
+            .Write(context.Operations.Single(o => o.Name == "Put"), TestContext.Current.CancellationToken));
+        Assert.Contains(expected, ex.Message);
+    }
+
+    // Swaps PutRequest.big (marshalled) and the given PutResponse member (unmarshalled) to DateTime?.
+    private static GenerationContext SwappedContext(string responseMember, string unmarshaller)
+    {
+        var swap = new DataTypeSwap { Type = "DateTime?", Marshaller = "Amazon.Util.AWSSDKUtils.ConvertToUnixEpochMilliseconds", Unmarshaller = unmarshaller };
+        var customizations = new CustomizationsModel();
+        customizations.DataTypeSwaps["PutRequest"] = new Dictionary<string, DataTypeSwap>();
+        customizations.DataTypeSwaps["PutRequest"]["big"] = swap;
+        customizations.DataTypeSwaps["PutResponse"] = new Dictionary<string, DataTypeSwap>();
+        customizations.DataTypeSwaps["PutResponse"][responseMember] = swap;
+        return TestModels.Context(TestModels.Load("Codegen/rpcv2cbor-model.json"), customizations);
     }
 
     [Fact]
@@ -101,6 +143,41 @@ public class RpcV2CborCodegenTests
         Assert.Contains("public partial class BrokenExceptionUnmarshaller : ICborErrorResponseUnmarshaller<BrokenException, CborUnmarshallerContext>", source);
         Assert.Contains("""case "reason":""", source);
         Assert.DoesNotContain("""case "message":""", source);
+    }
+
+    [Fact]
+    public void Request_WiresTheInputStreamPublisher_InsteadOfABody()
+    {
+        var source = RequestMarshaller("Converse");
+
+        Assert.Contains("request.EventStreamPublisher = new InputStreamPublisherMarshaller(publicRequest.InputPublisher);", source);
+        Assert.Contains("""request.Headers["Accept"] = "application/vnd.amazon.eventstream";""", source);
+        Assert.DoesNotContain("application/cbor", source);
+    }
+
+    [Fact]
+    public void Response_HandsTheStreamToTheOutputStreamClass()
+    {
+        var source = ResponseUnmarshaller("Converse");
+
+        Assert.Contains("unmarshalledObject.Output = new OutputStream(context.Stream);", source);
+        Assert.Contains("public override bool HasStreamingProperty => true;", source);
+    }
+
+    [Fact]
+    public void EventMarshaller_PutsPayloadAndHeaderOnTheMessage()
+    {
+        var source = new CborStructureMarshallerWriter(Context, ModelFileName).Write(Context.Structures[AudioEvent], TestContext.Current.CancellationToken);
+
+        Assert.Contains("context.Request.Content = requestObject.Chunk.ToArray();", source);
+        Assert.Contains("""var header = new Amazon.Runtime.EventStreams.EventStreamHeader("codec");""", source);
+    }
+
+    [Fact]
+    public void EventUnmarshaller_EventHeader_Throws()
+    {
+        var ex = Assert.Throws<GeneratorException>(() => new CborStructureUnmarshallerWriter(Context, ModelFileName).Write(Context.Structures[AudioEvent], TestContext.Current.CancellationToken));
+        Assert.Contains("@eventHeader on 'AudioEvent'", ex.Message);
     }
 
     [Fact]

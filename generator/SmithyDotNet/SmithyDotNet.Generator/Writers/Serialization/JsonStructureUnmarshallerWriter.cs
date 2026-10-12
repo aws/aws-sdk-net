@@ -84,7 +84,7 @@ public sealed class JsonStructureUnmarshallerWriter(GenerationContext context, s
             // body loop (which the SEP guarantees is empty when a payload exists) and the header reads.
             if (payloadMember is not null)
             {
-                WritePayloadMember(writer, payloadMember);
+                MarshallerCommon.WriteEventPayloadMember(writer, payloadMember, "context, ref reader");
             }
             foreach (var member in headerMembers)
             {
@@ -112,31 +112,6 @@ public sealed class JsonStructureUnmarshallerWriter(GenerationContext context, s
         {
             JsonBodyMemberUnmarshaller.WriteMemberUnmarshallers(writer, members);
         });
-    }
-
-    // The @eventPayload member IS the message payload: a blob is the raw MemoryStream, a string is the
-    // stream read to end, a structure is deserialized by its own unmarshaller off the JSON reader.
-    private static void WritePayloadMember(CodeWriter writer, Member member)
-    {
-        if (member.Type.MarshalsAsString)
-        {
-            writer.OpenBlock("using (var sr = new StreamReader(context.Stream))", () =>
-            {
-                writer.WriteLine($"unmarshalledObject.{member.PropertyName} = sr.ReadToEnd();");
-            });
-        }
-        else if (member.Type.UnmarshallerName is { } unmarshaller)
-        {
-            writer.WriteLine($"unmarshalledObject.{member.PropertyName} = {unmarshaller}.Instance.Unmarshall(context, ref reader);");
-        }
-        else if (member.Type.IsBlob)
-        {
-            writer.WriteLine($"unmarshalledObject.{member.PropertyName} = context.Stream as MemoryStream;");
-        }
-        else
-        {
-            throw new GeneratorException($"@eventPayload member '{member.PropertyName}' must target a blob, string, or structure shape, but was '{member.Type.DotNetType}'.");
-        }
     }
 
     // A @eventHeader member is read from the event-message header via context.ResponseData. The accessor is

@@ -1,14 +1,25 @@
 using SmithyDotNet.Generator.Generation.Operations;
+using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
 
 namespace SmithyDotNet.Generator.Writers.Serialization;
 
 /// <summary>
-/// The protocol-neutral parts of the marshaller and unmarshaller classes, shared by the JSON and CBOR writers (for now).
-/// TODO: Event stream logic could also be moved here once it's added for protocols other than JSON.
+/// The protocol-neutral parts of the marshaller and unmarshaller classes, shared by the JSON and CBOR writers.
 /// </summary>
 public static class MarshallerCommon
 {
+    // A dataTypeSwap names the method to call but not whether it returns a number or a string, which picks
+    // the wire token. C2J hardcodes this one method as the number case (JsonRPCStructureMarshaller.tt).
+    private const string EpochMillisecondsMarshaller = "Amazon.Util.AWSSDKUtils.ConvertToUnixEpochMilliseconds";
+
+    internal static bool IsEpochMilliseconds(string marshaller) => string.Equals(marshaller, EpochMillisecondsMarshaller, StringComparison.OrdinalIgnoreCase);
+
+    // .Value when the modeled type is a value type (as C2J does; every swappable target but string/enum is)
+    // and the swapped type is nullable, so a swap to a reference type still compiles.
+    internal static string SwapArgument(TypeDescriptor type, string expression) =>
+        type.Target is not (StringShape or EnumShape) && type.IsNullableValueType ? $"{expression}.Value" : expression;
+
     // The client takes the first encoding it supports, so unsupported entries are skipped rather
     // than rejected. gzip is the whole supported set: it's emitted verbatim as an enum member and
     // CompressionEncodingAlgorithm has only NONE and gzip.
@@ -100,6 +111,82 @@ public static class MarshallerCommon
     internal static void WriteEventStreamMember(CodeWriter writer, Member eventStream)
     {
         writer.WriteLine($"unmarshalledObject.{eventStream.PropertyName} = new {eventStream.Type.DotNetType}(context.Stream);");
+    }
+
+    // An event's explicit @eventPayload. Blob/string are the raw bytes the publisher sends as octet-stream/text-plain;
+    // a structure/union writes its members into the object the publisher opened (the protocol tests expect the bare
+    // structure). The publisher marshaller picks the payload source and :content-type per event
+    // (EventStreamPublisherMarshallerWriter).
+    internal static void WriteEventPayload(CodeWriter writer, Member member)
+    {
+        writer.OpenBlock($"if (requestObject.IsSet{member.PropertyName}())", () =>
+        {
+            if (member.Type.IsBlob)
+            {
+                writer.WriteLine($"context.Request.Content = requestObject.{member.PropertyName}.ToArray();");
+            }
+            else if (member.Type.MarshalsAsString)
+            {
+                writer.WriteLine($"context.Request.Content = Encoding.UTF8.GetBytes(requestObject.{member.PropertyName});");
+            }
+            else if (member.Type.IsStructure)
+            {
+                writer.WriteLine($"{member.Type.MarshallerName}.Instance.Marshall(requestObject.{member.PropertyName}, context);");
+            }
+            else
+            {
+                throw new GeneratorException($"Unsupported @eventPayload type '{member.Type.DotNetType}' on member '{member.ModeledName}'.");
+            }
+        });
+    }
+
+    // The @eventPayload member IS the message payload: a blob is the raw MemoryStream, a string is the stream
+    // read to end, a structure is the whole body decoded by its own unmarshaller.
+    internal static void WriteEventPayloadMember(CodeWriter writer, Member member, string unmarshallArguments)
+    {
+        if (member.Type.MarshalsAsString)
+        {
+            writer.OpenBlock("using (var sr = new StreamReader(context.Stream))", () =>
+            {
+                writer.WriteLine($"unmarshalledObject.{member.PropertyName} = sr.ReadToEnd();");
+            });
+        }
+        else if (member.Type.UnmarshallerName is { } unmarshaller)
+        {
+            writer.WriteLine($"unmarshalledObject.{member.PropertyName} = {unmarshaller}.Instance.Unmarshall({unmarshallArguments});");
+        }
+        else if (member.Type.IsBlob)
+        {
+            writer.WriteLine($"unmarshalledObject.{member.PropertyName} = context.Stream as MemoryStream;");
+        }
+        else
+        {
+            throw new GeneratorException($"@eventPayload member '{member.PropertyName}' must target a blob, string, or structure shape, but was '{member.Type.DotNetType}'.");
+        }
+    }
+
+    // An event's @eventHeader goes to the message headers, not the body. Header name is the member name, never
+    // @jsonName. An enum rides SetString via its implicit conversion.
+    internal static void WriteEventHeader(CodeWriter writer, Member member)
+    {
+        var value = $"requestObject.{member.PropertyName}";
+        var setter = member.Type.Target switch
+        {
+            StringShape or EnumShape => $"SetString({value})",
+            BooleanShape => $"SetBool({value}.Value)",
+            IntegerShape or IntEnumShape => $"SetInt32({value}.Value)",
+            LongShape => $"SetInt64({value}.Value)",
+            TimestampShape => $"SetTimestamp({value}.Value)",
+            BlobShape => $"SetByteBuf({value}.ToArray())",
+            var other => throw new GeneratorException($"Unsupported @eventHeader type '{other.Type}' on member '{member.ModeledName}'."),
+        };
+
+        writer.OpenBlock($"if (requestObject.IsSet{member.PropertyName}())", () =>
+        {
+            writer.WriteLine($"""var header = new Amazon.Runtime.EventStreams.EventStreamHeader("{member.ModeledName}");""");
+            writer.WriteLine($"header.{setter};");
+            writer.WriteLine("context.Request.EventHeaders.Add(header);");
+        });
     }
 
     // Emitted when the response's @httpPayload is a @streaming blob or an event stream: the runtime
