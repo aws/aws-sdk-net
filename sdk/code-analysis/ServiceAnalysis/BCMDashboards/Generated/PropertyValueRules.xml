@@ -4,115 +4,115 @@
     <property>Amazon.BCMDashboards.Model.CreateDashboardRequest.Description</property>
     <min>1</min>
     <max>200</max>
-    <pattern>(?!.* {2})[ a-zA-Z0-9.,!?;:@#$%&amp;\-_/\\]*</pattern>
+    <pattern>^(?!.* {2})[ a-zA-Z0-9.,!?;:@#$%&amp;\-_/\\]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.CreateDashboardRequest.Name</property>
     <min>2</min>
     <max>50</max>
-    <pattern>(?!.* {2})[a-zA-Z][a-zA-Z0-9 _-]{0,48}[a-zA-Z0-9_-]</pattern>
+    <pattern>^(?!.* {2})[a-zA-Z][a-zA-Z0-9 _-]{0,48}[a-zA-Z0-9_-]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.CreateDashboardResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:dashboard/(\*|[-a-z0-9]+)</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:dashboard/(\*|[-a-z0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.CreateScheduledReportRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\u0021-\u007E]+</pattern>
+    <pattern>^[\u0021-\u007E]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.CreateScheduledReportResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:scheduled-report/(\*|[-a-z0-9]+)</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:scheduled-report/(\*|[-a-z0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.DeleteDashboardRequest.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:dashboard/(\*|[-a-z0-9]+)</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:dashboard/(\*|[-a-z0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.DeleteDashboardResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:dashboard/(\*|[-a-z0-9]+)</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:dashboard/(\*|[-a-z0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.DeleteScheduledReportRequest.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:scheduled-report/(\*|[-a-z0-9]+)</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:scheduled-report/(\*|[-a-z0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.DeleteScheduledReportResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:scheduled-report/(\*|[-a-z0-9]+)</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:scheduled-report/(\*|[-a-z0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.ExecuteScheduledReportRequest.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:scheduled-report/(\*|[-a-z0-9]+)</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:scheduled-report/(\*|[-a-z0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.ExecuteScheduledReportRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\u0021-\u007E]+</pattern>
+    <pattern>^[\u0021-\u007E]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.GetDashboardRequest.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:dashboard/(\*|[-a-z0-9]+)</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:dashboard/(\*|[-a-z0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.GetDashboardResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:dashboard/(\*|[-a-z0-9]+)</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:dashboard/(\*|[-a-z0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.GetDashboardResponse.Description</property>
     <min>1</min>
     <max>200</max>
-    <pattern>(?!.* {2})[ a-zA-Z0-9.,!?;:@#$%&amp;\-_/\\]*</pattern>
+    <pattern>^(?!.* {2})[ a-zA-Z0-9.,!?;:@#$%&amp;\-_/\\]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.GetDashboardResponse.Name</property>
     <min>2</min>
     <max>50</max>
-    <pattern>(?!.* {2})[a-zA-Z][a-zA-Z0-9 _-]{0,48}[a-zA-Z0-9_-]</pattern>
+    <pattern>^(?!.* {2})[a-zA-Z][a-zA-Z0-9 _-]{0,48}[a-zA-Z0-9_-]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.GetResourcePolicyRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:dashboard/(\*|[-a-z0-9]+)</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:dashboard/(\*|[-a-z0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.GetResourcePolicyResponse.PolicyDocument</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>[\S\s]*</pattern>
+    <pattern>^[\S\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.GetResourcePolicyResponse.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:dashboard/(\*|[-a-z0-9]+)</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:dashboard/(\*|[-a-z0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.GetScheduledReportRequest.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:scheduled-report/(\*|[-a-z0-9]+)</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:scheduled-report/(\*|[-a-z0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.ListDashboardsRequest.MaxResults</property>
@@ -123,13 +123,13 @@
     <property>Amazon.BCMDashboards.Model.ListDashboardsRequest.NextToken</property>
     <min>1</min>
     <max>8192</max>
-    <pattern>[\S\s]*</pattern>
+    <pattern>^[\S\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.ListDashboardsResponse.NextToken</property>
     <min>1</min>
     <max>8192</max>
-    <pattern>[\S\s]*</pattern>
+    <pattern>^[\S\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.ListScheduledReportsRequest.MaxResults</property>
@@ -140,235 +140,235 @@
     <property>Amazon.BCMDashboards.Model.ListScheduledReportsRequest.NextToken</property>
     <min>1</min>
     <max>8192</max>
-    <pattern>[\S\s]*</pattern>
+    <pattern>^[\S\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.ListScheduledReportsResponse.NextToken</property>
     <min>1</min>
     <max>8192</max>
-    <pattern>[\S\s]*</pattern>
+    <pattern>^[\S\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:(dashboard|scheduled-report)/(\*|[-a-z0-9]+)</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:(dashboard|scheduled-report)/(\*|[-a-z0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.TagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:(dashboard|scheduled-report)/(\*|[-a-z0-9]+)</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:(dashboard|scheduled-report)/(\*|[-a-z0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.UntagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:(dashboard|scheduled-report)/(\*|[-a-z0-9]+)</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:(dashboard|scheduled-report)/(\*|[-a-z0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.UpdateDashboardRequest.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:dashboard/(\*|[-a-z0-9]+)</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:dashboard/(\*|[-a-z0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.UpdateDashboardRequest.Description</property>
     <min>1</min>
     <max>200</max>
-    <pattern>(?!.* {2})[ a-zA-Z0-9.,!?;:@#$%&amp;\-_/\\]*</pattern>
+    <pattern>^(?!.* {2})[ a-zA-Z0-9.,!?;:@#$%&amp;\-_/\\]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.UpdateDashboardRequest.Name</property>
     <min>2</min>
     <max>50</max>
-    <pattern>(?!.* {2})[a-zA-Z][a-zA-Z0-9 _-]{0,48}[a-zA-Z0-9_-]</pattern>
+    <pattern>^(?!.* {2})[a-zA-Z][a-zA-Z0-9 _-]{0,48}[a-zA-Z0-9_-]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.UpdateDashboardResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:dashboard/(\*|[-a-z0-9]+)</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:dashboard/(\*|[-a-z0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.UpdateScheduledReportRequest.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:scheduled-report/(\*|[-a-z0-9]+)</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:scheduled-report/(\*|[-a-z0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.UpdateScheduledReportRequest.DashboardArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:dashboard/(\*|[-a-z0-9]+)</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:dashboard/(\*|[-a-z0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.UpdateScheduledReportRequest.Description</property>
     <min>1</min>
     <max>200</max>
-    <pattern>(?!.* {2})[ a-zA-Z0-9.,!?;:@#$%&amp;\-_/\\]*</pattern>
+    <pattern>^(?!.* {2})[ a-zA-Z0-9.,!?;:@#$%&amp;\-_/\\]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.UpdateScheduledReportRequest.Name</property>
     <min>2</min>
     <max>50</max>
-    <pattern>(?!.* {2})[a-zA-Z][a-zA-Z0-9 _-]{0,48}[a-zA-Z0-9_-]</pattern>
+    <pattern>^(?!.* {2})[a-zA-Z][a-zA-Z0-9 _-]{0,48}[a-zA-Z0-9_-]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.UpdateScheduledReportRequest.ScheduledReportExecutionRoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws[-a-z0-9]*:iam::[0-9]{12}:role/[a-zA-Z0-9+=,.@_/-]+</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:iam::[0-9]{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.UpdateScheduledReportResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:scheduled-report/(\*|[-a-z0-9]+)</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:scheduled-report/(\*|[-a-z0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.DashboardReference.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:dashboard/(\*|[-a-z0-9]+)</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:dashboard/(\*|[-a-z0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.DashboardReference.Description</property>
     <min>1</min>
     <max>200</max>
-    <pattern>(?!.* {2})[ a-zA-Z0-9.,!?;:@#$%&amp;\-_/\\]*</pattern>
+    <pattern>^(?!.* {2})[ a-zA-Z0-9.,!?;:@#$%&amp;\-_/\\]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.DashboardReference.Name</property>
     <min>2</min>
     <max>50</max>
-    <pattern>(?!.* {2})[a-zA-Z][a-zA-Z0-9 _-]{0,48}[a-zA-Z0-9_-]</pattern>
+    <pattern>^(?!.* {2})[a-zA-Z][a-zA-Z0-9 _-]{0,48}[a-zA-Z0-9_-]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.DateTimeValue.Value</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>[\S\s]*</pattern>
+    <pattern>^[\S\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.GroupDefinition.Key</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S\s]*</pattern>
+    <pattern>^[\S\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.ResourceTag.Key</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\S\s]*</pattern>
+    <pattern>^[\S\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.ResourceTag.Value</property>
     <min>0</min>
     <max>256</max>
-    <pattern>[\S\s]*</pattern>
+    <pattern>^[\S\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.ScheduleConfig.ScheduleExpression</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>[\S\s]*</pattern>
+    <pattern>^[\S\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.ScheduleConfig.ScheduleExpressionTimeZone</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>[\S\s]*</pattern>
+    <pattern>^[\S\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.ScheduledReport.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:scheduled-report/(\*|[-a-z0-9]+)</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:scheduled-report/(\*|[-a-z0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.ScheduledReport.DashboardArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:dashboard/(\*|[-a-z0-9]+)</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:dashboard/(\*|[-a-z0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.ScheduledReport.Description</property>
     <min>1</min>
     <max>200</max>
-    <pattern>(?!.* {2})[ a-zA-Z0-9.,!?;:@#$%&amp;\-_/\\]*</pattern>
+    <pattern>^(?!.* {2})[ a-zA-Z0-9.,!?;:@#$%&amp;\-_/\\]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.ScheduledReport.Name</property>
     <min>2</min>
     <max>50</max>
-    <pattern>(?!.* {2})[a-zA-Z][a-zA-Z0-9 _-]{0,48}[a-zA-Z0-9_-]</pattern>
+    <pattern>^(?!.* {2})[a-zA-Z][a-zA-Z0-9 _-]{0,48}[a-zA-Z0-9_-]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.ScheduledReport.ScheduledReportExecutionRoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws[-a-z0-9]*:iam::[0-9]{12}:role/[a-zA-Z0-9+=,.@_/-]+</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:iam::[0-9]{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.ScheduledReportInput.DashboardArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:dashboard/(\*|[-a-z0-9]+)</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:dashboard/(\*|[-a-z0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.ScheduledReportInput.Description</property>
     <min>1</min>
     <max>200</max>
-    <pattern>(?!.* {2})[ a-zA-Z0-9.,!?;:@#$%&amp;\-_/\\]*</pattern>
+    <pattern>^(?!.* {2})[ a-zA-Z0-9.,!?;:@#$%&amp;\-_/\\]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.ScheduledReportInput.Name</property>
     <min>2</min>
     <max>50</max>
-    <pattern>(?!.* {2})[a-zA-Z][a-zA-Z0-9 _-]{0,48}[a-zA-Z0-9_-]</pattern>
+    <pattern>^(?!.* {2})[a-zA-Z][a-zA-Z0-9 _-]{0,48}[a-zA-Z0-9_-]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.ScheduledReportInput.ScheduledReportExecutionRoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws[-a-z0-9]*:iam::[0-9]{12}:role/[a-zA-Z0-9+=,.@_/-]+</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:iam::[0-9]{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.ScheduledReportSummary.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:scheduled-report/(\*|[-a-z0-9]+)</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:scheduled-report/(\*|[-a-z0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.ScheduledReportSummary.DashboardArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:dashboard/(\*|[-a-z0-9]+)</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:bcm-dashboards::[0-9]{12}:dashboard/(\*|[-a-z0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.ScheduledReportSummary.Name</property>
     <min>2</min>
     <max>50</max>
-    <pattern>(?!.* {2})[a-zA-Z][a-zA-Z0-9 _-]{0,48}[a-zA-Z0-9_-]</pattern>
+    <pattern>^(?!.* {2})[a-zA-Z][a-zA-Z0-9 _-]{0,48}[a-zA-Z0-9_-]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.ScheduledReportSummary.ScheduleExpression</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>[\S\s]*</pattern>
+    <pattern>^[\S\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.ScheduledReportSummary.ScheduleExpressionTimeZone</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>[\S\s]*</pattern>
+    <pattern>^[\S\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.Widget.Description</property>
     <min>1</min>
     <max>200</max>
-    <pattern>(?!.* {2})[ a-zA-Z0-9.,!?;:@#$%&amp;\-_/\\]*</pattern>
+    <pattern>^(?!.* {2})[ a-zA-Z0-9.,!?;:@#$%&amp;\-_/\\]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.Widget.Height</property>
@@ -379,13 +379,13 @@
     <property>Amazon.BCMDashboards.Model.Widget.Id</property>
     <min>32</min>
     <max>32</max>
-    <pattern>[0-9a-f]{32}</pattern>
+    <pattern>^[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.Widget.Title</property>
     <min>2</min>
     <max>50</max>
-    <pattern>(?!.* {2})[a-zA-Z0-9_-][ a-zA-Z0-9_-]*[a-zA-Z0-9_-]</pattern>
+    <pattern>^(?!.* {2})[a-zA-Z0-9_-][ a-zA-Z0-9_-]*[a-zA-Z0-9_-]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMDashboards.Model.Widget.Width</property>

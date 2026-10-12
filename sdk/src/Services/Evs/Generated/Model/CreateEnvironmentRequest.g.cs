@@ -1,0 +1,413 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Evs.Model
+{
+    /// <summary>
+    /// Container for the parameters to the CreateEnvironment operation. Creates an Amazon
+    /// EVS environment that runs VCF software, such as SDDC Manager, NSX Manager, and vCenter
+    /// Server. <note> <para> When you specify <c>SELF_DEPLOYED</c> for <c>vcfVersion</c>,
+    /// Amazon EVS provisions only the VLAN subnets; no hosts are added and no VCF installation
+    /// is performed. After the environment is created, you can add hosts with <c>CreateEnvironmentHost</c>
+    /// and install VCF yourself. The <c>licenseInfo</c>, <c>hosts</c>, <c>vcfHostnames</c>,
+    /// <c>siteId</c>, and <c>connectivityInfo</c> parameters are not supported in this mode.
+    /// </para> </note> <para> When you specify any other VCF version, Amazon EVS installs
+    /// and configures VCF for you. For more information, see <a href="https://docs.aws.amazon.com/evs/latest/userguide/getting-started-self-deployed.html">Self-deployed
+    /// mode</a> in the <i>Amazon EVS User Guide</i>. </para> <important> <para> When Amazon
+    /// EVS installs VCF, the default ESX version for the selected VCF version will be used.
+    /// After a host is added with a specific ESX version, it can only be upgraded using vCenter
+    /// Lifecycle Manager. </para> </important> <note> <para> You cannot use the <c>dedicatedHostId</c>
+    /// and <c>placementGroupId</c> parameters together in the same <c>CreateEnvironment</c>
+    /// action. This results in a <c>ValidationException</c> response. </para> </note>
+    /// </summary>
+    public partial class CreateEnvironmentRequest : AmazonEvsRequest
+    {
+        /// <summary>
+        /// Gets and sets the property ClientToken. <note> 
+        /// <para>
+        /// This parameter is not used in Amazon EVS currently. If you supply input for this parameter,
+        /// it will have no effect.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// the environment creation request. If you do not specify a client token, a randomly
+        /// generated token is used for the request to ensure idempotency.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 100)]
+        public string ClientToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ClientToken property is set.
+        /// </summary>
+        internal bool IsSetClientToken() => this.ClientToken != null;
+
+        /// <summary>
+        /// Gets and sets the property ConnectivityInfo. 
+        /// <para>
+        /// The connectivity configuration for the environment. Amazon EVS requires that you specify
+        /// two route server peer IDs. During environment creation, the route server endpoints
+        /// peer with the NSX edges over the NSX uplink subnet, providing BGP-based dynamic routing
+        /// for overlay networks.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Not supported when <c>vcfVersion</c> is <c>SELF_DEPLOYED</c>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ConnectivityInfo ConnectivityInfo { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ConnectivityInfo property is set.
+        /// </summary>
+        internal bool IsSetConnectivityInfo() => this.ConnectivityInfo != null;
+
+        /// <summary>
+        /// Gets and sets the property EnvironmentName. 
+        /// <para>
+        /// The name to give to your environment. The name can contain only alphanumeric characters
+        /// (case-sensitive), hyphens, and underscores. It must start with an alphanumeric character,
+        /// and can't be longer than 100 characters. The name must be unique within the Amazon
+        /// Web Services Region and Amazon Web Services account that you're creating the environment
+        /// in.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 100)]
+        public string EnvironmentName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EnvironmentName property is set.
+        /// </summary>
+        internal bool IsSetEnvironmentName() => this.EnvironmentName != null;
+
+        /// <summary>
+        /// Gets and sets the property Hosts. 
+        /// <para>
+        /// The ESX hosts to add to the environment. For each host, provide the desired hostname,
+        /// EC2 SSH keypair name, and EC2 instance type. Optionally, provide a partition or cluster
+        /// placement group, or use Amazon EC2 Dedicated Hosts.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Not supported when <c>vcfVersion</c> is <c>SELF_DEPLOYED</c>. In that case, you can
+        /// add hosts using <c>CreateEnvironmentHost</c> after the environment is created.
+        /// </para>
+        ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 4, Max = 4)]
+        public List<HostInfoForCreate> Hosts { get; set; } = AWSConfigs.InitializeCollections ? new List<HostInfoForCreate>() : null;
+
+        /// <summary>
+        /// Checks to see if the Hosts property is set.
+        /// </summary>
+        internal bool IsSetHosts() => this.Hosts != null && (this.Hosts.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property InitialVlans. 
+        /// <para>
+        /// The initial VLAN subnets for the Amazon EVS environment.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// For each Amazon EVS VLAN subnet, you must specify a non-overlapping CIDR block. Amazon
+        /// EVS VLAN subnets have a minimum CIDR block size of /28 and a maximum size of /24.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public InitialVlans InitialVlans { get; set; }
+
+        /// <summary>
+        /// Checks to see if the InitialVlans property is set.
+        /// </summary>
+        internal bool IsSetInitialVlans() => this.InitialVlans != null;
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// A unique ID for the customer-managed KMS key that is used to encrypt the VCF credential
+        /// pairs for SDDC Manager, NSX Manager, and vCenter appliances. These credentials are
+        /// stored in Amazon Web Services Secrets Manager.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the KmsKeyId property is set.
+        /// </summary>
+        internal bool IsSetKmsKeyId() => this.KmsKeyId != null;
+
+        /// <summary>
+        /// Gets and sets the property LicenseInfo. 
+        /// <para>
+        /// The license information that Amazon EVS requires to create an environment. Amazon
+        /// EVS requires two license keys: a VCF solution key and a vSAN license key. The VCF
+        /// solution key must meet minimum core requirements, and the vSAN license key must meet
+        /// minimum capacity requirements for your selected instance type.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about minimum license requirements, see <a href="https://docs.aws.amazon.com/evs/latest/userguide/vcf-license-mgmt.html">the
+        /// VCF subscriptions section</a> in the <i>Amazon EVS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// VCF licenses can be used for only one Amazon EVS environment. Amazon EVS does not
+        /// support reuse of VCF licenses for multiple environments.
+        /// </para>
+        ///  
+        /// <para>
+        /// VCF license information can be retrieved from the Broadcom portal.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Not supported when <c>vcfVersion</c> is <c>SELF_DEPLOYED</c>.
+        /// </para>
+        ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 1)]
+        public List<LicenseInfo> LicenseInfo { get; set; } = AWSConfigs.InitializeCollections ? new List<LicenseInfo>() : null;
+
+        /// <summary>
+        /// Checks to see if the LicenseInfo property is set.
+        /// </summary>
+        internal bool IsSetLicenseInfo() => this.LicenseInfo != null && (this.LicenseInfo.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property ServiceAccessSecurityGroups. 
+        /// <para>
+        /// The security group that controls communication between the Amazon EVS control plane
+        /// and VPC. The default security group is used if a custom security group isn't specified.
+        /// </para>
+        ///  
+        /// <para>
+        /// The security group should allow access to the following.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// TCP/UDP access to the DNS servers
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// HTTPS/SSH access to the host management VLAN subnet
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// HTTPS/SSH access to the Management VM VLAN subnet
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You should avoid modifying the security group rules after deployment, as this can
+        /// break the persistent connection between the Amazon EVS control plane and VPC. This
+        /// can cause future environment actions like adding or removing hosts to fail.
+        /// </para>
+        /// </summary>
+        public ServiceAccessSecurityGroups ServiceAccessSecurityGroups { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ServiceAccessSecurityGroups property is set.
+        /// </summary>
+        internal bool IsSetServiceAccessSecurityGroups() => this.ServiceAccessSecurityGroups != null;
+
+        /// <summary>
+        /// Gets and sets the property ServiceAccessSubnetId. 
+        /// <para>
+        /// The subnet that is used to establish connectivity between the Amazon EVS control plane
+        /// and VPC. The Amazon EVS control plane uses this subnet to interface with your environment.
+        /// This includes validating DNS records and enabling Amazon EVS Connectors.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 15, Max = 24)]
+        public string ServiceAccessSubnetId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ServiceAccessSubnetId property is set.
+        /// </summary>
+        internal bool IsSetServiceAccessSubnetId() => this.ServiceAccessSubnetId != null;
+
+        /// <summary>
+        /// Gets and sets the property SiteId. 
+        /// <para>
+        /// The Broadcom Site ID that is allocated to you as part of your electronic software
+        /// delivery. This ID allows customer access to the Broadcom portal, and is provided to
+        /// you by Broadcom at the close of your software contract or contract renewal. Amazon
+        /// EVS uses the Broadcom Site ID that you provide to meet Broadcom VCF license usage
+        /// reporting requirements for Amazon EVS.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Not supported when <c>vcfVersion</c> is <c>SELF_DEPLOYED</c>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string SiteId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SiteId property is set.
+        /// </summary>
+        internal bool IsSetSiteId() => this.SiteId != null;
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Metadata that assists with categorization and organization. Each tag consists of a
+        /// key and an optional value. You define both. Tags don't propagate to any other cluster
+        /// or Amazon Web Services resources.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 200)]
+        public Dictionary<string, string> Tags { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Checks to see if the Tags property is set.
+        /// </summary>
+        internal bool IsSetTags() => this.Tags != null && (this.Tags.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property TermsAccepted. 
+        /// <para>
+        /// Confirmation that the customer has purchased and will continue to maintain the required
+        /// number of VCF software licenses to cover all physical processor cores in the Amazon
+        /// EVS environment. Information about your VCF software in Amazon EVS will be shared
+        /// with Broadcom to verify license compliance. Amazon EVS does not validate license keys.
+        /// To validate license keys, visit the Broadcom support portal.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public bool? TermsAccepted { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TermsAccepted property is set.
+        /// </summary>
+        internal bool IsSetTermsAccepted() => this.TermsAccepted.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property VcfHostnames. 
+        /// <para>
+        /// The DNS hostnames for the virtual machines that host the VCF management appliances.
+        /// Provide hostnames for vCenter, NSX Manager, SDDC Manager, and Cloud Builder.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Not supported when <c>vcfVersion</c> is <c>SELF_DEPLOYED</c>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public VcfHostnames VcfHostnames { get; set; }
+
+        /// <summary>
+        /// Checks to see if the VcfHostnames property is set.
+        /// </summary>
+        internal bool IsSetVcfHostnames() => this.VcfHostnames != null;
+
+        /// <summary>
+        /// Gets and sets the property VcfVersion. 
+        /// <para>
+        /// The VCF version to use for the environment.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>SELF_DEPLOYED</c>: You install VCF yourself. The <c>licenseInfo</c>, <c>hosts</c>,
+        /// <c>vcfHostnames</c>, <c>siteId</c>, and <c>connectivityInfo</c> parameters are not
+        /// supported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Any other valid value: Amazon EVS installs and configures VCF for you in the version
+        /// you specify.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public VcfVersion VcfVersion { get; set; }
+
+        /// <summary>
+        /// Checks to see if the VcfVersion property is set.
+        /// </summary>
+        internal bool IsSetVcfVersion() => this.VcfVersion != null;
+
+        /// <summary>
+        /// Gets and sets the property VpcId. 
+        /// <para>
+        /// A unique ID for the VPC that the environment is deployed inside.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon EVS requires that all VPC subnets exist in a single Availability Zone in a
+        /// Region where the service is available.
+        /// </para>
+        ///  
+        /// <para>
+        /// The VPC that you specify must have a valid DHCP option set with domain name, at least
+        /// two DNS servers, and an NTP server. These settings are used to configure your VCF
+        /// appliances and hosts. The VPC cannot be used with any other deployed Amazon EVS environment.
+        /// Amazon EVS does not provide multi-VPC support for environments at this time.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon EVS does not support the following Amazon Web Services networking options for
+        /// NSX overlay connectivity: cross-Region VPC peering, Amazon S3 gateway endpoints, or
+        /// Amazon Web Services Direct Connect virtual private gateway associations.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Ensure that you specify a VPC that is adequately sized to accommodate the Amazon EVS
+        /// subnets.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 12, Max = 21)]
+        public string VpcId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the VpcId property is set.
+        /// </summary>
+        internal bool IsSetVpcId() => this.VpcId != null;
+    }
+}

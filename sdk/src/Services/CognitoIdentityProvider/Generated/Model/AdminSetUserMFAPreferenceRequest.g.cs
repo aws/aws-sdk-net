@@ -1,0 +1,142 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.CognitoIdentityProvider.Model
+{
+    /// <summary>
+    /// Container for the parameters to the AdminSetUserMFAPreference operation. Sets the
+    /// user's multi-factor authentication (MFA) preference, including which MFA options are
+    /// activated, and if any are preferred. Only one factor can be set as preferred. The
+    /// preferred MFA factor will be used to authenticate a user if multiple factors are activated.
+    /// If multiple options are activated and no preference is set, a challenge to choose
+    /// an MFA option will be returned during sign-in. <note> <para> Amazon Cognito evaluates
+    /// Identity and Access Management (IAM) policies in requests for this API operation.
+    /// For this operation, you must use IAM credentials to authorize requests, and you must
+    /// grant yourself the corresponding IAM permission in a policy. </para> <para> <b>Learn
+    /// more</b> </para> <ul> <li> <para> <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+    /// Amazon Web Services API Requests</a> </para> </li> <li> <para> <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+    /// the Amazon Cognito user pools API and user pool endpoints</a> </para> </li> </ul>
+    /// </note>
+    /// </summary>
+    public partial class AdminSetUserMFAPreferenceRequest : AmazonCognitoIdentityProviderRequest
+    {
+        /// <summary>
+        /// Gets and sets the property EmailMfaSettings. 
+        /// <para>
+        /// User preferences for email message MFA. Activates or deactivates email MFA and sets
+        /// it as the preferred MFA method when multiple methods are available. To activate this
+        /// setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html">
+        /// Essentials tier</a> or higher.
+        /// </para>
+        /// </summary>
+        public EmailMfaSettingsType EmailMfaSettings { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EmailMfaSettings property is set.
+        /// </summary>
+        internal bool IsSetEmailMfaSettings() => this.EmailMfaSettings != null;
+
+        /// <summary>
+        /// Gets and sets the property SMSMfaSettings. 
+        /// <para>
+        /// User preferences for SMS message MFA. Activates or deactivates SMS MFA and sets it
+        /// as the preferred MFA method when multiple methods are available.
+        /// </para>
+        /// </summary>
+        public SMSMfaSettingsType SMSMfaSettings { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SMSMfaSettings property is set.
+        /// </summary>
+        internal bool IsSetSMSMfaSettings() => this.SMSMfaSettings != null;
+
+        /// <summary>
+        /// Gets and sets the property SoftwareTokenMfaSettings. 
+        /// <para>
+        /// User preferences for time-based one-time password (TOTP) MFA. Activates or deactivates
+        /// TOTP MFA and sets it as the preferred MFA method when multiple methods are available.
+        /// </para>
+        /// </summary>
+        public SoftwareTokenMfaSettingsType SoftwareTokenMfaSettings { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SoftwareTokenMfaSettings property is set.
+        /// </summary>
+        internal bool IsSetSoftwareTokenMfaSettings() => this.SoftwareTokenMfaSettings != null;
+
+        /// <summary>
+        /// Gets and sets the property UserPoolId. 
+        /// <para>
+        /// The ID of the user pool where you want to set a user's MFA preferences.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 55)]
+        public string UserPoolId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UserPoolId property is set.
+        /// </summary>
+        internal bool IsSetUserPoolId() => this.UserPoolId != null;
+
+        /// <summary>
+        /// Gets and sets the property Username. 
+        /// <para>
+        /// The name of the user that you want to query or modify. The value of this parameter
+        /// is typically your user's username, but it can be any of their alias attributes. If
+        /// <c>username</c> isn't an alias attribute in your user pool, this value must be the
+        /// <c>sub</c> of a local user or the username of a user from a third-party IdP.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Sensitive = true, Min = 1, Max = 128)]
+        public string Username { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Username property is set.
+        /// </summary>
+        internal bool IsSetUsername() => this.Username != null;
+
+        /// <summary>
+        /// Gets and sets the property WebAuthnMfaSettings. 
+        /// <para>
+        /// User preferences for passkey MFA. Activates or deactivates passkey MFA for the user.
+        /// When activated, passkey authentication requires user verification, and passkey sign-in
+        /// is available when MFA is required. To activate this setting, the <c>FactorConfiguration</c>
+        /// of your user pool <c>WebAuthnConfiguration</c> must be <c>MULTI_FACTOR_WITH_USER_VERIFICATION</c>.
+        /// To activate this setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html">
+        /// Essentials tier</a> or higher.
+        /// </para>
+        /// </summary>
+        public WebAuthnMfaSettingsType WebAuthnMfaSettings { get; set; }
+
+        /// <summary>
+        /// Checks to see if the WebAuthnMfaSettings property is set.
+        /// </summary>
+        internal bool IsSetWebAuthnMfaSettings() => this.WebAuthnMfaSettings != null;
+    }
+}

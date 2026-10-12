@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.PinpointSMSVoiceV2.Generated
     {
         public void PinpointSMSVoiceV2CarrierLookup()
         {
-            #region example-1
+            #region CarrierLookup-1
 
             var client = new AmazonPinpointSMSVoiceV2Client();
-            var response = client.CarrierLookup(new CarrierLookupRequest 
+            var response = client.CarrierLookup(new CarrierLookupRequest
             {
                 PhoneNumber = "+1 (555) 555-5333"
             });
@@ -28,17 +29,17 @@ namespace AWSSDKDocSamples.Amazon.PinpointSMSVoiceV2.Generated
             string isoCountryCode = response.IsoCountryCode;
             string mcc = response.MCC;
             string mnc = response.MNC;
-            string phoneNumberType = response.PhoneNumberType;
+            PhoneNumberType phoneNumberType = response.PhoneNumberType;
 
             #endregion
         }
 
         public void PinpointSMSVoiceV2CreateNotifyConfiguration()
         {
-            #region example-1
+            #region CreateNotifyConfiguration-1
 
             var client = new AmazonPinpointSMSVoiceV2Client();
-            var response = client.CreateNotifyConfiguration(new CreateNotifyConfigurationRequest 
+            var response = client.CreateNotifyConfiguration(new CreateNotifyConfigurationRequest
             {
                 DeletionProtectionEnabled = false,
                 DisplayName = "MyOTPConfig",
@@ -58,67 +59,67 @@ namespace AWSSDKDocSamples.Amazon.PinpointSMSVoiceV2.Generated
                 UseCase = "CODE_VERIFICATION"
             });
 
-            DateTime createdTimestamp = response.CreatedTimestamp;
-            bool deletionProtectionEnabled = response.DeletionProtectionEnabled;
+            DateTime? createdTimestamp = response.CreatedTimestamp;
+            bool? deletionProtectionEnabled = response.DeletionProtectionEnabled;
             string displayName = response.DisplayName;
             List<string> enabledChannels = response.EnabledChannels;
             List<string> enabledCountries = response.EnabledCountries;
             string notifyConfigurationArn = response.NotifyConfigurationArn;
             string notifyConfigurationId = response.NotifyConfigurationId;
-            string status = response.Status;
+            NotifyConfigurationStatus status = response.Status;
             List<Tag> tags = response.Tags;
-            string tier = response.Tier;
-            string tierUpgradeStatus = response.TierUpgradeStatus;
-            string useCase = response.UseCase;
+            NotifyConfigurationTier tier = response.Tier;
+            TierUpgradeStatus tierUpgradeStatus = response.TierUpgradeStatus;
+            NotifyConfigurationUseCase useCase = response.UseCase;
 
             #endregion
         }
 
         public void PinpointSMSVoiceV2DeleteNotifyConfiguration()
         {
-            #region example-1
+            #region DeleteNotifyConfiguration-1
 
             var client = new AmazonPinpointSMSVoiceV2Client();
-            var response = client.DeleteNotifyConfiguration(new DeleteNotifyConfigurationRequest 
+            var response = client.DeleteNotifyConfiguration(new DeleteNotifyConfigurationRequest
             {
                 NotifyConfigurationId = "nc-1234567890abcdef0"
             });
 
-            DateTime createdTimestamp = response.CreatedTimestamp;
-            bool deletionProtectionEnabled = response.DeletionProtectionEnabled;
+            DateTime? createdTimestamp = response.CreatedTimestamp;
+            bool? deletionProtectionEnabled = response.DeletionProtectionEnabled;
             string displayName = response.DisplayName;
             List<string> enabledChannels = response.EnabledChannels;
             List<string> enabledCountries = response.EnabledCountries;
             string notifyConfigurationArn = response.NotifyConfigurationArn;
             string notifyConfigurationId = response.NotifyConfigurationId;
-            string status = response.Status;
-            string tier = response.Tier;
-            string tierUpgradeStatus = response.TierUpgradeStatus;
-            string useCase = response.UseCase;
+            NotifyConfigurationStatus status = response.Status;
+            NotifyConfigurationTier tier = response.Tier;
+            TierUpgradeStatus tierUpgradeStatus = response.TierUpgradeStatus;
+            NotifyConfigurationUseCase useCase = response.UseCase;
 
             #endregion
         }
 
         public void PinpointSMSVoiceV2DeleteNotifyMessageSpendLimitOverride()
         {
-            #region example-1
+            #region DeleteNotifyMessageSpendLimitOverride-1
 
             var client = new AmazonPinpointSMSVoiceV2Client();
-            var response = client.DeleteNotifyMessageSpendLimitOverride(new DeleteNotifyMessageSpendLimitOverrideRequest 
+            var response = client.DeleteNotifyMessageSpendLimitOverride(new DeleteNotifyMessageSpendLimitOverrideRequest
             {
             });
 
-            long monthlyLimit = response.MonthlyLimit;
+            long? monthlyLimit = response.MonthlyLimit;
 
             #endregion
         }
 
         public void PinpointSMSVoiceV2DescribeNotifyConfigurations()
         {
-            #region example-1
+            #region DescribeNotifyConfigurations-1
 
             var client = new AmazonPinpointSMSVoiceV2Client();
-            var response = client.DescribeNotifyConfigurations(new DescribeNotifyConfigurationsRequest 
+            var response = client.DescribeNotifyConfigurations(new DescribeNotifyConfigurationsRequest
             {
                 Filters = new List<NotifyConfigurationFilter> {
                     new NotifyConfigurationFilter {
@@ -138,10 +139,10 @@ namespace AWSSDKDocSamples.Amazon.PinpointSMSVoiceV2.Generated
 
         public void PinpointSMSVoiceV2DescribeNotifyTemplates()
         {
-            #region example-1
+            #region DescribeNotifyTemplates-1
 
             var client = new AmazonPinpointSMSVoiceV2Client();
-            var response = client.DescribeNotifyTemplates(new DescribeNotifyTemplatesRequest 
+            var response = client.DescribeNotifyTemplates(new DescribeNotifyTemplatesRequest
             {
                 Filters = new List<NotifyTemplateFilter> {
                     new NotifyTemplateFilter {
@@ -167,10 +168,10 @@ namespace AWSSDKDocSamples.Amazon.PinpointSMSVoiceV2.Generated
 
         public void PinpointSMSVoiceV2ListAvailablePhoneNumbers()
         {
-            #region example-1
+            #region ListAvailablePhoneNumbers-1
 
             var client = new AmazonPinpointSMSVoiceV2Client();
-            var response = client.ListAvailablePhoneNumbers(new ListAvailablePhoneNumbersRequest 
+            var response = client.ListAvailablePhoneNumbers(new ListAvailablePhoneNumbersRequest
             {
                 IsoCountryCode = "US",
                 MaxResults = 10,
@@ -198,10 +199,10 @@ namespace AWSSDKDocSamples.Amazon.PinpointSMSVoiceV2.Generated
 
         public void PinpointSMSVoiceV2ListNotifyCountries()
         {
-            #region example-1
+            #region ListNotifyCountries-1
 
             var client = new AmazonPinpointSMSVoiceV2Client();
-            var response = client.ListNotifyCountries(new ListNotifyCountriesRequest 
+            var response = client.ListNotifyCountries(new ListNotifyCountriesRequest
             {
                 Channels = new List<string> {
                     "SMS"
@@ -216,10 +217,10 @@ namespace AWSSDKDocSamples.Amazon.PinpointSMSVoiceV2.Generated
 
         public void PinpointSMSVoiceV2SendNotifyTextMessage()
         {
-            #region example-1
+            #region SendNotifyTextMessage-1
 
             var client = new AmazonPinpointSMSVoiceV2Client();
-            var response = client.SendNotifyTextMessage(new SendNotifyTextMessageRequest 
+            var response = client.SendNotifyTextMessage(new SendNotifyTextMessageRequest
             {
                 DestinationPhoneNumber = "+12065550100",
                 NotifyConfigurationId = "nc-1234567890abcdef0",
@@ -238,10 +239,10 @@ namespace AWSSDKDocSamples.Amazon.PinpointSMSVoiceV2.Generated
 
         public void PinpointSMSVoiceV2SendNotifyVoiceMessage()
         {
-            #region example-1
+            #region SendNotifyVoiceMessage-1
 
             var client = new AmazonPinpointSMSVoiceV2Client();
-            var response = client.SendNotifyVoiceMessage(new SendNotifyVoiceMessageRequest 
+            var response = client.SendNotifyVoiceMessage(new SendNotifyVoiceMessageRequest
             {
                 DestinationPhoneNumber = "+12065550100",
                 NotifyConfigurationId = "nc-1234567890abcdef0",
@@ -261,25 +262,25 @@ namespace AWSSDKDocSamples.Amazon.PinpointSMSVoiceV2.Generated
 
         public void PinpointSMSVoiceV2SetNotifyMessageSpendLimitOverride()
         {
-            #region example-1
+            #region SetNotifyMessageSpendLimitOverride-1
 
             var client = new AmazonPinpointSMSVoiceV2Client();
-            var response = client.SetNotifyMessageSpendLimitOverride(new SetNotifyMessageSpendLimitOverrideRequest 
+            var response = client.SetNotifyMessageSpendLimitOverride(new SetNotifyMessageSpendLimitOverrideRequest
             {
                 MonthlyLimit = 1000
             });
 
-            long monthlyLimit = response.MonthlyLimit;
+            long? monthlyLimit = response.MonthlyLimit;
 
             #endregion
         }
 
         public void PinpointSMSVoiceV2UpdateNotifyConfiguration()
         {
-            #region example-1
+            #region UpdateNotifyConfiguration-1
 
             var client = new AmazonPinpointSMSVoiceV2Client();
-            var response = client.UpdateNotifyConfiguration(new UpdateNotifyConfigurationRequest 
+            var response = client.UpdateNotifyConfiguration(new UpdateNotifyConfigurationRequest
             {
                 DeletionProtectionEnabled = true,
                 EnabledChannels = new List<string> {
@@ -294,28 +295,25 @@ namespace AWSSDKDocSamples.Amazon.PinpointSMSVoiceV2.Generated
                 NotifyConfigurationId = "nc-1234567890abcdef0"
             });
 
-            DateTime createdTimestamp = response.CreatedTimestamp;
-            bool deletionProtectionEnabled = response.DeletionProtectionEnabled;
+            DateTime? createdTimestamp = response.CreatedTimestamp;
+            bool? deletionProtectionEnabled = response.DeletionProtectionEnabled;
             string displayName = response.DisplayName;
             List<string> enabledChannels = response.EnabledChannels;
             List<string> enabledCountries = response.EnabledCountries;
             string notifyConfigurationArn = response.NotifyConfigurationArn;
             string notifyConfigurationId = response.NotifyConfigurationId;
-            string status = response.Status;
-            string tier = response.Tier;
-            string tierUpgradeStatus = response.TierUpgradeStatus;
-            string useCase = response.UseCase;
+            NotifyConfigurationStatus status = response.Status;
+            NotifyConfigurationTier tier = response.Tier;
+            TierUpgradeStatus tierUpgradeStatus = response.TierUpgradeStatus;
+            NotifyConfigurationUseCase useCase = response.UseCase;
 
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

@@ -4,13 +4,13 @@
     <property>Amazon.Odb.Model.AssociateIamRoleToResourceRequest.IamRoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.AssociateIamRoleToResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-[a-z]?|aws-iso):odb:[a-z0-9-]+:\d{12}:(?:cloud-vm-cluster|cloud-autonomous-vm-cluster|exadb-vm-cluster)/[a-z0-9-_]+</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-[a-z]?|aws-iso):odb:[a-z0-9-]+:\d{12}:(?:cloud-vm-cluster|cloud-autonomous-vm-cluster|exadb-vm-cluster)/[a-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.AssociateVirtualMachinesToExadbVmClusterRequest.DesiredNodeCount</property>
@@ -20,7 +20,7 @@
     <property>Amazon.Odb.Model.AssociateVirtualMachinesToExadbVmClusterRequest.ExadbVmClusterId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateAutonomousDatabaseRequest.AdminPassword</property>
@@ -40,7 +40,7 @@
     <property>Amazon.Odb.Model.CreateAutonomousDatabaseRequest.ClientToken</property>
     <min>8</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_\/.=-]+</pattern>
+    <pattern>^[a-zA-Z0-9_\/.=-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateAutonomousDatabaseRequest.ComputeCount</property>
@@ -75,7 +75,7 @@
     <property>Amazon.Odb.Model.CreateAutonomousDatabaseRequest.DisplayName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*</pattern>
+    <pattern>^[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateAutonomousDatabaseRequest.NcharacterSet</property>
@@ -86,31 +86,31 @@
     <property>Amazon.Odb.Model.CreateAutonomousDatabaseRequest.OdbNetworkId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateAutonomousDatabaseRequest.ResourcePoolLeaderId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateAutonomousDatabaseBackupRequest.AutonomousDatabaseId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateAutonomousDatabaseBackupRequest.ClientToken</property>
     <min>8</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_\/.=-]+</pattern>
+    <pattern>^[a-zA-Z0-9_\/.=-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateAutonomousDatabaseBackupRequest.DisplayName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*</pattern>
+    <pattern>^[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateAutonomousDatabaseBackupRequest.RetentionPeriodInDays</property>
@@ -121,13 +121,13 @@
     <property>Amazon.Odb.Model.CreateAutonomousDatabaseWalletRequest.AutonomousDatabaseId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateAutonomousDatabaseWalletRequest.ClientToken</property>
     <min>8</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_\/.=-]+</pattern>
+    <pattern>^[a-zA-Z0-9_\/.=-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateAutonomousDatabaseWalletRequest.Password</property>
@@ -141,13 +141,13 @@
     <property>Amazon.Odb.Model.CreateCloudAutonomousVmClusterRequest.ClientToken</property>
     <min>8</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_\/.=-]+</pattern>
+    <pattern>^[a-zA-Z0-9_\/.=-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateCloudAutonomousVmClusterRequest.CloudExadataInfrastructureId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateCloudAutonomousVmClusterRequest.CpuCoreCountPerNode</property>
@@ -162,7 +162,7 @@
     <property>Amazon.Odb.Model.CreateCloudAutonomousVmClusterRequest.DisplayName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*</pattern>
+    <pattern>^[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateCloudAutonomousVmClusterRequest.MemoryPerOracleComputeUnitInGBs</property>
@@ -172,7 +172,7 @@
     <property>Amazon.Odb.Model.CreateCloudAutonomousVmClusterRequest.OdbNetworkId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateCloudAutonomousVmClusterRequest.ScanListenerPortNonTls</property>
@@ -207,49 +207,49 @@
     <property>Amazon.Odb.Model.CreateCloudExadataInfrastructureRequest.ClientToken</property>
     <min>8</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_\/.=-]+</pattern>
+    <pattern>^[a-zA-Z0-9_\/.=-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateCloudExadataInfrastructureRequest.DatabaseServerType</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_\/.=-]+</pattern>
+    <pattern>^[a-zA-Z0-9_\/.=-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateCloudExadataInfrastructureRequest.DisplayName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*</pattern>
+    <pattern>^[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateCloudExadataInfrastructureRequest.Shape</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_\/.=-]+</pattern>
+    <pattern>^[a-zA-Z0-9_\/.=-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateCloudExadataInfrastructureRequest.StorageServerType</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_\/.=-]+</pattern>
+    <pattern>^[a-zA-Z0-9_\/.=-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateCloudVmClusterRequest.ClientToken</property>
     <min>8</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_\/.=-]+</pattern>
+    <pattern>^[a-zA-Z0-9_\/.=-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateCloudVmClusterRequest.CloudExadataInfrastructureId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateCloudVmClusterRequest.ClusterName</property>
     <min>1</min>
     <max>11</max>
-    <pattern>[a-zA-Z][a-zA-Z0-9-]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateCloudVmClusterRequest.CpuCoreCount</property>
@@ -260,7 +260,7 @@
     <property>Amazon.Odb.Model.CreateCloudVmClusterRequest.DisplayName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*</pattern>
+    <pattern>^[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateCloudVmClusterRequest.GiVersion</property>
@@ -271,13 +271,13 @@
     <property>Amazon.Odb.Model.CreateCloudVmClusterRequest.Hostname</property>
     <min>1</min>
     <max>12</max>
-    <pattern>[a-zA-Z][a-zA-Z0-9-]*[a-zA-Z0-9]</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9-]*[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateCloudVmClusterRequest.OdbNetworkId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateCloudVmClusterRequest.ScanListenerPortTcp</property>
@@ -298,19 +298,19 @@
     <property>Amazon.Odb.Model.CreateExadbVmClusterRequest.ClientToken</property>
     <min>8</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_\/.=-]+</pattern>
+    <pattern>^[a-zA-Z0-9_\/.=-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateExadbVmClusterRequest.ClusterName</property>
     <min>1</min>
     <max>11</max>
-    <pattern>[a-zA-Z][a-zA-Z0-9-]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateExadbVmClusterRequest.DisplayName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*</pattern>
+    <pattern>^[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateExadbVmClusterRequest.EnabledEcpuCount</property>
@@ -320,7 +320,7 @@
     <property>Amazon.Odb.Model.CreateExadbVmClusterRequest.ExascaleDbStorageVaultId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateExadbVmClusterRequest.GridImageId</property>
@@ -331,7 +331,7 @@
     <property>Amazon.Odb.Model.CreateExadbVmClusterRequest.Hostname</property>
     <min>1</min>
     <max>12</max>
-    <pattern>[a-zA-Z][a-zA-Z0-9-]*[a-zA-Z0-9]</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9-]*[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateExadbVmClusterRequest.NodeCount</property>
@@ -341,7 +341,7 @@
     <property>Amazon.Odb.Model.CreateExadbVmClusterRequest.OdbNetworkId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateExadbVmClusterRequest.ScanListenerPortTcp</property>
@@ -398,7 +398,7 @@
     <property>Amazon.Odb.Model.CreateExascaleDbStorageVaultRequest.ClientToken</property>
     <min>8</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_\/.=-]+</pattern>
+    <pattern>^[a-zA-Z0-9_\/.=-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateExascaleDbStorageVaultRequest.Description</property>
@@ -409,7 +409,7 @@
     <property>Amazon.Odb.Model.CreateExascaleDbStorageVaultRequest.DisplayName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*</pattern>
+    <pattern>^[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateExascaleDbStorageVaultRequest.HighCapacityDatabaseStorageTotalSizeInGBs</property>
@@ -444,7 +444,7 @@
     <property>Amazon.Odb.Model.CreateOdbNetworkRequest.ClientToken</property>
     <min>8</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_\/.=-]+</pattern>
+    <pattern>^[a-zA-Z0-9_\/.=-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateOdbNetworkRequest.CustomDomainName</property>
@@ -455,13 +455,13 @@
     <property>Amazon.Odb.Model.CreateOdbNetworkRequest.DefaultDnsPrefix</property>
     <min>1</min>
     <max>15</max>
-    <pattern>[a-zA-Z][a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateOdbNetworkRequest.DisplayName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*</pattern>
+    <pattern>^[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateOdbNetworkRequest.KmsPolicyDocument</property>
@@ -482,211 +482,211 @@
     <property>Amazon.Odb.Model.CreateOdbPeeringConnectionRequest.ClientToken</property>
     <min>8</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_\/.=-]+</pattern>
+    <pattern>^[a-zA-Z0-9_\/.=-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateOdbPeeringConnectionRequest.DisplayName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*</pattern>
+    <pattern>^[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateOdbPeeringConnectionRequest.OdbNetworkId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateOdbPeeringConnectionRequest.PeerNetworkId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.DeleteAutonomousDatabaseRequest.AutonomousDatabaseId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.DeleteAutonomousDatabaseBackupRequest.AutonomousDatabaseBackupId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.DeleteCloudAutonomousVmClusterRequest.CloudAutonomousVmClusterId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.DeleteCloudExadataInfrastructureRequest.CloudExadataInfrastructureId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.DeleteCloudVmClusterRequest.CloudVmClusterId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.DeleteExadbVmClusterRequest.ExadbVmClusterId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.DeleteExascaleDbStorageVaultRequest.ExascaleDbStorageVaultId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.DeleteOdbNetworkRequest.OdbNetworkId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.DeleteOdbPeeringConnectionRequest.OdbPeeringConnectionId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.DisassociateIamRoleFromResourceRequest.IamRoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.DisassociateIamRoleFromResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-[a-z]?|aws-iso):odb:[a-z0-9-]+:\d{12}:(?:cloud-vm-cluster|cloud-autonomous-vm-cluster|exadb-vm-cluster)/[a-z0-9-_]+</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-[a-z]?|aws-iso):odb:[a-z0-9-]+:\d{12}:(?:cloud-vm-cluster|cloud-autonomous-vm-cluster|exadb-vm-cluster)/[a-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.DisassociateVirtualMachinesFromExadbVmClusterRequest.ExadbVmClusterId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.FailoverAutonomousDatabaseRequest.AutonomousDatabaseId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.FailoverAutonomousDatabaseRequest.PeerDbArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.GetAutonomousDatabaseRequest.AutonomousDatabaseId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.GetAutonomousDatabaseBackupRequest.AutonomousDatabaseBackupId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.GetAutonomousDatabaseWalletDetailsRequest.AutonomousDatabaseId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.GetCloudAutonomousVmClusterRequest.CloudAutonomousVmClusterId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.GetCloudExadataInfrastructureRequest.CloudExadataInfrastructureId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.GetCloudExadataInfrastructureUnallocatedResourcesRequest.CloudExadataInfrastructureId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.GetCloudVmClusterRequest.CloudVmClusterId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.GetDbNodeRequest.CloudVmClusterId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.GetDbNodeRequest.DbNodeId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.GetDbNodeRequest.ExadbVmClusterId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.GetDbServerRequest.CloudExadataInfrastructureId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.GetDbServerRequest.DbServerId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.GetExadbVmClusterRequest.ExadbVmClusterId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.GetExascaleDbStorageVaultRequest.ExascaleDbStorageVaultId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.GetOdbNetworkRequest.OdbNetworkId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.GetOdbPeeringConnectionRequest.OdbPeeringConnectionId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ListAutonomousDatabaseBackupsRequest.AutonomousDatabaseId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ListAutonomousDatabaseBackupsRequest.MaxResults</property>
@@ -712,7 +712,7 @@
     <property>Amazon.Odb.Model.ListAutonomousDatabaseClonesRequest.AutonomousDatabaseId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ListAutonomousDatabaseClonesRequest.MaxResults</property>
@@ -728,7 +728,7 @@
     <property>Amazon.Odb.Model.ListAutonomousDatabasePeersRequest.AutonomousDatabaseId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ListAutonomousDatabasePeersRequest.MaxResults</property>
@@ -737,16 +737,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ListAutonomousDatabasePeersRequest.NextToken</property>
-    <min>1</min>
-    <max>8192</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Odb.Model.ListAutonomousDatabasesRequest.MaxResults</property>
-    <min>1</min>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Odb.Model.ListAutonomousDatabasesRequest.NextToken</property>
     <min>1</min>
     <max>8192</max>
   </property-value-rule>
@@ -761,10 +751,20 @@
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Odb.Model.ListAutonomousDatabasesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.ListAutonomousDatabasesRequest.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Odb.Model.ListAutonomousVirtualMachinesRequest.CloudAutonomousVmClusterId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ListAutonomousVirtualMachinesRequest.MaxResults</property>
@@ -780,7 +780,7 @@
     <property>Amazon.Odb.Model.ListCloudAutonomousVmClustersRequest.CloudExadataInfrastructureId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ListCloudAutonomousVmClustersRequest.MaxResults</property>
@@ -806,7 +806,7 @@
     <property>Amazon.Odb.Model.ListCloudVmClustersRequest.CloudExadataInfrastructureId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ListCloudVmClustersRequest.MaxResults</property>
@@ -822,13 +822,13 @@
     <property>Amazon.Odb.Model.ListDbNodesRequest.CloudVmClusterId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ListDbNodesRequest.ExadbVmClusterId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ListDbNodesRequest.MaxResults</property>
@@ -844,7 +844,7 @@
     <property>Amazon.Odb.Model.ListDbServersRequest.CloudExadataInfrastructureId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ListDbServersRequest.MaxResults</property>
@@ -885,7 +885,7 @@
     <property>Amazon.Odb.Model.ListExadbVmClustersRequest.ExascaleDbStorageVaultId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ListExadbVmClustersRequest.MaxResults</property>
@@ -991,7 +991,7 @@
     <property>Amazon.Odb.Model.ListOdbPeeringConnectionsRequest.OdbNetworkId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ListSystemVersionsRequest.GiVersion</property>
@@ -1017,126 +1017,120 @@
     <property>Amazon.Odb.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.RebootAutonomousDatabaseRequest.AutonomousDatabaseId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.RebootDbNodeRequest.CloudVmClusterId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.RebootDbNodeRequest.DbNodeId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.RebootDbNodeRequest.ExadbVmClusterId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.RestoreAutonomousDatabaseRequest.AutonomousDatabaseId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ShrinkAutonomousDatabaseRequest.AutonomousDatabaseId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.StartAutonomousDatabaseRequest.AutonomousDatabaseId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.StartDbNodeRequest.CloudVmClusterId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.StartDbNodeRequest.DbNodeId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.StartDbNodeRequest.ExadbVmClusterId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.StopAutonomousDatabaseRequest.AutonomousDatabaseId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.StopDbNodeRequest.CloudVmClusterId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.StopDbNodeRequest.DbNodeId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.StopDbNodeRequest.ExadbVmClusterId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.SwitchoverAutonomousDatabaseRequest.AutonomousDatabaseId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.SwitchoverAutonomousDatabaseRequest.PeerDbArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.TagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.UntagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.UpdateAutonomousDatabaseRequest.AdminPassword</property>
     <min>12</min>
     <max>30</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Odb.Model.UpdateAutonomousDatabaseRequest.AutonomousDatabaseId</property>
-    <min>6</min>
-    <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.UpdateAutonomousDatabaseRequest.AutoRefreshFrequencyInSeconds</property>
@@ -1147,6 +1141,12 @@
     <property>Amazon.Odb.Model.UpdateAutonomousDatabaseRequest.AutoRefreshPointLagInSeconds</property>
     <min>0</min>
     <max>604800</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.UpdateAutonomousDatabaseRequest.AutonomousDatabaseId</property>
+    <min>6</min>
+    <max>2048</max>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.UpdateAutonomousDatabaseRequest.BackupRetentionPeriodInDays</property>
@@ -1190,7 +1190,7 @@
     <property>Amazon.Odb.Model.UpdateAutonomousDatabaseRequest.DisplayName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*</pattern>
+    <pattern>^[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.UpdateAutonomousDatabaseRequest.LocalAdgAutoFailoverMaxDataLossLimit</property>
@@ -1201,19 +1201,19 @@
     <property>Amazon.Odb.Model.UpdateAutonomousDatabaseRequest.PeerDbId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.UpdateAutonomousDatabaseRequest.ResourcePoolLeaderId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.UpdateAutonomousDatabaseBackupRequest.AutonomousDatabaseBackupId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.UpdateAutonomousDatabaseBackupRequest.RetentionPeriodInDays</property>
@@ -1224,13 +1224,13 @@
     <property>Amazon.Odb.Model.UpdateCloudExadataInfrastructureRequest.CloudExadataInfrastructureId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.UpdateExadbVmClusterRequest.DisplayName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*</pattern>
+    <pattern>^[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.UpdateExadbVmClusterRequest.EnabledEcpuCount</property>
@@ -1240,7 +1240,7 @@
     <property>Amazon.Odb.Model.UpdateExadbVmClusterRequest.ExadbVmClusterId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.UpdateExadbVmClusterRequest.GridImageId</property>
@@ -1277,13 +1277,13 @@
     <property>Amazon.Odb.Model.UpdateExascaleDbStorageVaultRequest.DisplayName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*</pattern>
+    <pattern>^[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.UpdateExascaleDbStorageVaultRequest.ExascaleDbStorageVaultId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.UpdateExascaleDbStorageVaultRequest.HighCapacityDatabaseStorageTotalSizeInGBs</property>
@@ -1293,7 +1293,7 @@
     <property>Amazon.Odb.Model.UpdateOdbNetworkRequest.DisplayName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*</pattern>
+    <pattern>^[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.UpdateOdbNetworkRequest.KmsPolicyDocument</property>
@@ -1304,7 +1304,7 @@
     <property>Amazon.Odb.Model.UpdateOdbNetworkRequest.OdbNetworkId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.UpdateOdbNetworkRequest.S3PolicyDocument</property>
@@ -1320,145 +1320,145 @@
     <property>Amazon.Odb.Model.UpdateOdbPeeringConnectionRequest.DisplayName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*</pattern>
+    <pattern>^[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.UpdateOdbPeeringConnectionRequest.OdbPeeringConnectionId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.AutonomousDatabase.AutonomousDatabaseArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.AutonomousDatabase.AutonomousDatabaseId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.AutonomousDatabase.OdbNetworkArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.AutonomousDatabase.OdbNetworkId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.AutonomousDatabaseBackup.AutonomousDatabaseBackupArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.AutonomousDatabaseBackup.AutonomousDatabaseBackupId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.AutonomousDatabaseBackup.AutonomousDatabaseId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.AutonomousDatabaseBackupSummary.AutonomousDatabaseBackupArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.AutonomousDatabaseBackupSummary.AutonomousDatabaseBackupId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.AutonomousDatabaseBackupSummary.AutonomousDatabaseId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.AutonomousDatabasePeerSummary.AutonomousDatabaseArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.AutonomousDatabasePeerSummary.AutonomousDatabaseId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.AutonomousDatabaseSummary.AutonomousDatabaseArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.AutonomousDatabaseSummary.AutonomousDatabaseId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.AutonomousDatabaseSummary.OdbNetworkArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.AutonomousDatabaseSummary.OdbNetworkId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.AutonomousVirtualMachineSummary.AutonomousVirtualMachineId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.AutonomousVirtualMachineSummary.DbServerId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.AwsEncryptionKeyConfiguration.IamRoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.AwsEncryptionKeyConfiguration.KmsKeyId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[a-zA-Z0-9_:./-]+</pattern>
+    <pattern>^[a-zA-Z0-9_:./-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.AwsEncryptionKeyConfigurationInput.IamRoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.AwsEncryptionKeyConfigurationInput.KmsKeyId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[a-zA-Z0-9_:./-]+</pattern>
+    <pattern>^[a-zA-Z0-9_:./-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CloneToRefreshableConfiguration.AutoRefreshFrequencyInSeconds</property>
@@ -1474,151 +1474,151 @@
     <property>Amazon.Odb.Model.CloneToRefreshableConfiguration.SourceAutonomousDatabaseId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CloudAutonomousVmCluster.CloudAutonomousVmClusterId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CloudAutonomousVmCluster.CloudExadataInfrastructureArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CloudAutonomousVmCluster.CloudExadataInfrastructureId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CloudAutonomousVmCluster.DisplayName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*</pattern>
+    <pattern>^[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CloudAutonomousVmCluster.OdbNetworkArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CloudAutonomousVmCluster.OdbNetworkId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CloudAutonomousVmClusterResourceDetails.CloudAutonomousVmClusterId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CloudAutonomousVmClusterSummary.CloudAutonomousVmClusterId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CloudAutonomousVmClusterSummary.CloudExadataInfrastructureArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CloudAutonomousVmClusterSummary.CloudExadataInfrastructureId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CloudAutonomousVmClusterSummary.DisplayName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*</pattern>
+    <pattern>^[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CloudAutonomousVmClusterSummary.OdbNetworkArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CloudAutonomousVmClusterSummary.OdbNetworkId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CloudExadataInfrastructure.CloudExadataInfrastructureId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CloudExadataInfrastructureSummary.CloudExadataInfrastructureId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CloudExadataInfrastructureUnallocatedResources.CloudExadataInfrastructureId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CloudVmCluster.CloudExadataInfrastructureArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CloudVmCluster.CloudVmClusterId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CloudVmCluster.OdbNetworkArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CloudVmCluster.OdbNetworkId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CloudVmClusterSummary.CloudExadataInfrastructureArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CloudVmClusterSummary.CloudVmClusterId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CloudVmClusterSummary.OdbNetworkArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CloudVmClusterSummary.OdbNetworkId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CrossRegionDataGuardConfiguration.SourceAutonomousDatabaseArn</property>
@@ -1639,7 +1639,7 @@
     <property>Amazon.Odb.Model.CustomerManagedAwsSecretConfiguration.IamRoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CustomerManagedAwsSecretConfiguration.SecretId</property>
@@ -1650,7 +1650,7 @@
     <property>Amazon.Odb.Model.CustomerManagedAwsSecretConfigurationInput.IamRoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CustomerManagedAwsSecretConfigurationInput.SecretId</property>
@@ -1661,193 +1661,193 @@
     <property>Amazon.Odb.Model.DatabaseCloneConfiguration.SourceAutonomousDatabaseId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.DbNode.DbNodeArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.DbNode.DbNodeId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.DbNode.DbServerId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.DbNodeSummary.DbNodeArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.DbNodeSummary.DbNodeId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.DbNodeSummary.DbServerId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.DbServer.DbServerId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.DbServerSummary.DbServerId</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_~.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ExadbVmCluster.ClusterName</property>
     <min>1</min>
     <max>11</max>
-    <pattern>[a-zA-Z][a-zA-Z0-9-]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ExadbVmCluster.DisplayName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*</pattern>
+    <pattern>^[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ExadbVmCluster.ExadbVmClusterArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ExadbVmCluster.ExadbVmClusterId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ExadbVmCluster.ExascaleDbStorageVaultArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ExadbVmCluster.ExascaleDbStorageVaultId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ExadbVmCluster.Hostname</property>
     <min>1</min>
     <max>12</max>
-    <pattern>[a-zA-Z][a-zA-Z0-9-]*[a-zA-Z0-9]</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9-]*[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ExadbVmCluster.OdbNetworkArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ExadbVmCluster.OdbNetworkId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ExadbVmClusterSummary.ClusterName</property>
     <min>1</min>
     <max>11</max>
-    <pattern>[a-zA-Z][a-zA-Z0-9-]*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ExadbVmClusterSummary.DisplayName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*</pattern>
+    <pattern>^[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ExadbVmClusterSummary.ExadbVmClusterArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ExadbVmClusterSummary.ExadbVmClusterId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ExadbVmClusterSummary.ExascaleDbStorageVaultArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ExadbVmClusterSummary.ExascaleDbStorageVaultId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ExadbVmClusterSummary.Hostname</property>
     <min>1</min>
     <max>12</max>
-    <pattern>[a-zA-Z][a-zA-Z0-9-]*[a-zA-Z0-9]</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9-]*[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ExadbVmClusterSummary.OdbNetworkArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ExadbVmClusterSummary.OdbNetworkId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ExascaleDbStorageVault.ExascaleDbStorageVaultArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ExascaleDbStorageVault.ExascaleDbStorageVaultId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ExascaleDbStorageVaultSummary.ExascaleDbStorageVaultArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ExascaleDbStorageVaultSummary.ExascaleDbStorageVaultId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.IamRole.IamRoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.LongTermBackupSchedule.RetentionPeriodInDays</property>
@@ -1868,13 +1868,13 @@
     <property>Amazon.Odb.Model.ManagedServices.ResourceGatewayArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ManagedServices.ServiceNetworkArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.OciDnsForwardingConfig.DomainName</property>
@@ -1895,7 +1895,7 @@
     <property>Amazon.Odb.Model.OciIamRole.IamRoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.OdbNetwork.AvailabilityZone</property>
@@ -1941,7 +1941,7 @@
     <property>Amazon.Odb.Model.OdbNetwork.OdbNetworkId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.OdbNetworkSummary.AvailabilityZone</property>
@@ -1987,30 +1987,30 @@
     <property>Amazon.Odb.Model.OdbNetworkSummary.OdbNetworkId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.OdbPeeringConnection.OdbPeeringConnectionId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.OdbPeeringConnectionSummary.OdbPeeringConnectionId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.PointInTimeRestoreConfiguration.SourceAutonomousDatabaseId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.RestoreFromBackupConfiguration.AutonomousDatabaseBackupId</property>
     <min>6</min>
     <max>2048</max>
-    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+    <pattern>^(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})$</pattern>
   </property-value-rule>
 </property-value-rules>

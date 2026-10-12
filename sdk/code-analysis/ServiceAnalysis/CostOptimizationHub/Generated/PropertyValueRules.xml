@@ -7,7 +7,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostOptimizationHub.Model.ListEnrollmentStatusesRequest.AccountId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostOptimizationHub.Model.ListEnrollmentStatusesRequest.MaxResults</property>
@@ -15,17 +15,17 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.CostOptimizationHub.Model.ListRecommendationsRequest.MaxResults</property>
-    <min>0</min>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.CostOptimizationHub.Model.ListRecommendationSummariesRequest.MaxResults</property>
     <min>0</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CostOptimizationHub.Model.ListRecommendationsRequest.MaxResults</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CostOptimizationHub.Model.AccountEnrollmentStatus.AccountId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
 </property-value-rules>

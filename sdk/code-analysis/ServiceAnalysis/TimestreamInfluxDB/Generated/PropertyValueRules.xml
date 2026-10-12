@@ -4,13 +4,13 @@
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbBackupRequest.DbResourceId</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbBackupRequest.Name</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbBackupRequest.RetentionDays</property>
@@ -26,41 +26,41 @@
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbBackupResponse.Arn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}</pattern>
+    <pattern>^arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbBackupResponse.DbParameterGroupId</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbBackupResponse.DbResourceId</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbBackupResponse.ExpiresAfter</property>
-    <pattern>\d{4}-\d{2}-\d{2}</pattern>
+    <pattern>^\d{4}-\d{2}-\d{2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbBackupResponse.Id</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbBackupResponse.KmsKeyId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[a-zA-Z0-9:/_\-]+</pattern>
+    <pattern>^[a-zA-Z0-9:/_\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbBackupResponse.Name</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbClusterRequest.AllocatedStorage</property>
@@ -71,25 +71,25 @@
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbClusterRequest.Bucket</property>
     <min>2</min>
     <max>64</max>
-    <pattern>[^_"][^"]*</pattern>
+    <pattern>^[^_"][^"]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbClusterRequest.DbParameterGroupIdentifier</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbClusterRequest.KmsKeyId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[a-zA-Z0-9:/_\-]+</pattern>
+    <pattern>^[a-zA-Z0-9:/_\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbClusterRequest.Name</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-zA-z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbClusterRequest.Organization</property>
@@ -100,7 +100,7 @@
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbClusterRequest.Password</property>
     <min>8</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbClusterRequest.Port</property>
@@ -116,7 +116,7 @@
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbClusterResponse.DbClusterId</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbInstanceRequest.AllocatedStorage</property>
@@ -127,25 +127,25 @@
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbInstanceRequest.Bucket</property>
     <min>2</min>
     <max>64</max>
-    <pattern>[^_"][^"]*</pattern>
+    <pattern>^[^_"][^"]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbInstanceRequest.DbParameterGroupIdentifier</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbInstanceRequest.KmsKeyId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[a-zA-Z0-9:/_\-]+</pattern>
+    <pattern>^[a-zA-Z0-9:/_\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbInstanceRequest.Name</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbInstanceRequest.Organization</property>
@@ -156,7 +156,7 @@
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbInstanceRequest.Password</property>
     <min>8</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbInstanceRequest.Port</property>
@@ -177,37 +177,37 @@
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbInstanceResponse.Arn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}</pattern>
+    <pattern>^arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbInstanceResponse.DbClusterId</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbInstanceResponse.DbParameterGroupIdentifier</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbInstanceResponse.Id</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbInstanceResponse.KmsKeyId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[a-zA-Z0-9:/_\-]+</pattern>
+    <pattern>^[a-zA-Z0-9:/_\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbInstanceResponse.Name</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbInstanceResponse.Port</property>
@@ -223,31 +223,31 @@
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbParameterGroupRequest.Name</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbParameterGroupResponse.Arn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}</pattern>
+    <pattern>^arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbParameterGroupResponse.Id</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbParameterGroupResponse.Name</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DeleteDbBackupRequest.Identifier</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DeleteDbBackupResponse.AllocatedStorage</property>
@@ -258,53 +258,53 @@
     <property>Amazon.TimestreamInfluxDB.Model.DeleteDbBackupResponse.Arn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}</pattern>
+    <pattern>^arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DeleteDbBackupResponse.DbParameterGroupId</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DeleteDbBackupResponse.DbResourceId</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DeleteDbBackupResponse.ExpiresAfter</property>
-    <pattern>\d{4}-\d{2}-\d{2}</pattern>
+    <pattern>^\d{4}-\d{2}-\d{2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DeleteDbBackupResponse.Id</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DeleteDbBackupResponse.KmsKeyId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[a-zA-Z0-9:/_\-]+</pattern>
+    <pattern>^[a-zA-Z0-9:/_\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DeleteDbBackupResponse.Name</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DeleteDbClusterRequest.DbClusterId</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DeleteDbInstanceRequest.Identifier</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DeleteDbInstanceResponse.AllocatedStorage</property>
@@ -315,37 +315,37 @@
     <property>Amazon.TimestreamInfluxDB.Model.DeleteDbInstanceResponse.Arn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}</pattern>
+    <pattern>^arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DeleteDbInstanceResponse.DbClusterId</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DeleteDbInstanceResponse.DbParameterGroupIdentifier</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DeleteDbInstanceResponse.Id</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DeleteDbInstanceResponse.KmsKeyId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[a-zA-Z0-9:/_\-]+</pattern>
+    <pattern>^[a-zA-Z0-9:/_\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DeleteDbInstanceResponse.Name</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DeleteDbInstanceResponse.Port</property>
@@ -356,7 +356,7 @@
     <property>Amazon.TimestreamInfluxDB.Model.GetDbBackupRequest.Identifier</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.GetDbBackupResponse.AllocatedStorage</property>
@@ -367,47 +367,47 @@
     <property>Amazon.TimestreamInfluxDB.Model.GetDbBackupResponse.Arn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}</pattern>
+    <pattern>^arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.GetDbBackupResponse.DbParameterGroupId</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.GetDbBackupResponse.DbResourceId</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.GetDbBackupResponse.ExpiresAfter</property>
-    <pattern>\d{4}-\d{2}-\d{2}</pattern>
+    <pattern>^\d{4}-\d{2}-\d{2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.GetDbBackupResponse.Id</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.GetDbBackupResponse.KmsKeyId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[a-zA-Z0-9:/_\-]+</pattern>
+    <pattern>^[a-zA-Z0-9:/_\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.GetDbBackupResponse.Name</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.GetDbClusterRequest.DbClusterId</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.GetDbClusterResponse.AllocatedStorage</property>
@@ -418,37 +418,37 @@
     <property>Amazon.TimestreamInfluxDB.Model.GetDbClusterResponse.Arn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}</pattern>
+    <pattern>^arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.GetDbClusterResponse.DbParameterGroupIdentifier</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.GetDbClusterResponse.EffectiveDbParameterGroupIdentifier</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.GetDbClusterResponse.Id</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.GetDbClusterResponse.KmsKeyId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[a-zA-Z0-9:/_\-]+</pattern>
+    <pattern>^[a-zA-Z0-9:/_\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.GetDbClusterResponse.Name</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-zA-z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.GetDbClusterResponse.Port</property>
@@ -459,7 +459,7 @@
     <property>Amazon.TimestreamInfluxDB.Model.GetDbInstanceRequest.Identifier</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.GetDbInstanceResponse.AllocatedStorage</property>
@@ -470,37 +470,37 @@
     <property>Amazon.TimestreamInfluxDB.Model.GetDbInstanceResponse.Arn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}</pattern>
+    <pattern>^arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.GetDbInstanceResponse.DbClusterId</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.GetDbInstanceResponse.DbParameterGroupIdentifier</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.GetDbInstanceResponse.Id</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.GetDbInstanceResponse.KmsKeyId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[a-zA-Z0-9:/_\-]+</pattern>
+    <pattern>^[a-zA-Z0-9:/_\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.GetDbInstanceResponse.Name</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.GetDbInstanceResponse.Port</property>
@@ -511,31 +511,31 @@
     <property>Amazon.TimestreamInfluxDB.Model.GetDbParameterGroupRequest.Identifier</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.GetDbParameterGroupResponse.Arn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}</pattern>
+    <pattern>^arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.GetDbParameterGroupResponse.Id</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.GetDbParameterGroupResponse.Name</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.ListDbBackupsRequest.DbResourceId</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.ListDbBackupsRequest.MaxResults</property>
@@ -580,7 +580,7 @@
     <property>Amazon.TimestreamInfluxDB.Model.ListDbInstancesForClusterRequest.DbClusterId</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.ListDbInstancesForClusterRequest.MaxResults</property>
@@ -612,19 +612,19 @@
     <property>Amazon.TimestreamInfluxDB.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}</pattern>
+    <pattern>^arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.RebootDbClusterRequest.DbClusterId</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.RebootDbInstanceRequest.Identifier</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.RebootDbInstanceResponse.AllocatedStorage</property>
@@ -635,37 +635,37 @@
     <property>Amazon.TimestreamInfluxDB.Model.RebootDbInstanceResponse.Arn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}</pattern>
+    <pattern>^arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.RebootDbInstanceResponse.DbClusterId</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.RebootDbInstanceResponse.DbParameterGroupIdentifier</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.RebootDbInstanceResponse.Id</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.RebootDbInstanceResponse.KmsKeyId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[a-zA-Z0-9:/_\-]+</pattern>
+    <pattern>^[a-zA-Z0-9:/_\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.RebootDbInstanceResponse.Name</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.RebootDbInstanceResponse.Port</property>
@@ -676,19 +676,19 @@
     <property>Amazon.TimestreamInfluxDB.Model.RestoreFromDbBackupRequest.DbBackupId</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.RestoreFromDbBackupRequest.KmsKeyId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[a-zA-Z0-9:/_\-]+</pattern>
+    <pattern>^[a-zA-Z0-9:/_\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.RestoreFromDbBackupRequest.Name</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.RestoreFromDbBackupRequest.Port</property>
@@ -699,31 +699,31 @@
     <property>Amazon.TimestreamInfluxDB.Model.RestoreFromDbBackupResponse.RestoredDbResourceId</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}</pattern>
+    <pattern>^arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.UntagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}</pattern>
+    <pattern>^arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.UpdateDbClusterRequest.DbClusterId</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.UpdateDbClusterRequest.DbParameterGroupIdentifier</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.UpdateDbClusterRequest.Port</property>
@@ -739,13 +739,13 @@
     <property>Amazon.TimestreamInfluxDB.Model.UpdateDbInstanceRequest.DbParameterGroupIdentifier</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.UpdateDbInstanceRequest.Identifier</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.UpdateDbInstanceRequest.Port</property>
@@ -761,37 +761,37 @@
     <property>Amazon.TimestreamInfluxDB.Model.UpdateDbInstanceResponse.Arn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}</pattern>
+    <pattern>^arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.UpdateDbInstanceResponse.DbClusterId</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.UpdateDbInstanceResponse.DbParameterGroupIdentifier</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.UpdateDbInstanceResponse.Id</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.UpdateDbInstanceResponse.KmsKeyId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[a-zA-Z0-9:/_\-]+</pattern>
+    <pattern>^[a-zA-Z0-9:/_\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.UpdateDbInstanceResponse.Name</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.UpdateDbInstanceResponse.Port</property>
@@ -802,7 +802,7 @@
     <property>Amazon.TimestreamInfluxDB.Model.DbBackupConfiguration.CustomSchedule</property>
     <min>9</min>
     <max>256</max>
-    <pattern>cron\(\S+ \S+ \S+ \S+ \S+ \S+\)</pattern>
+    <pattern>^cron\(\S+ \S+ \S+ \S+ \S+ \S+\)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DbBackupConfiguration.RetentionDays</property>
@@ -813,7 +813,7 @@
     <property>Amazon.TimestreamInfluxDB.Model.DbBackupConfigurationOutput.CustomSchedule</property>
     <min>9</min>
     <max>256</max>
-    <pattern>cron\(\S+ \S+ \S+ \S+ \S+ \S+\)</pattern>
+    <pattern>^cron\(\S+ \S+ \S+ \S+ \S+ \S+\)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DbBackupConfigurationOutput.RetentionDays</property>
@@ -824,35 +824,35 @@
     <property>Amazon.TimestreamInfluxDB.Model.DbBackupSummary.Arn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}</pattern>
+    <pattern>^arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DbBackupSummary.DbResourceId</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DbBackupSummary.ExpiresAfter</property>
-    <pattern>\d{4}-\d{2}-\d{2}</pattern>
+    <pattern>^\d{4}-\d{2}-\d{2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DbBackupSummary.Id</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DbBackupSummary.KmsKeyId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[a-zA-Z0-9:/_\-]+</pattern>
+    <pattern>^[a-zA-Z0-9:/_\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DbBackupSummary.Name</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DbClusterSummary.AllocatedStorage</property>
@@ -863,19 +863,19 @@
     <property>Amazon.TimestreamInfluxDB.Model.DbClusterSummary.Arn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}</pattern>
+    <pattern>^arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DbClusterSummary.Id</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DbClusterSummary.Name</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-zA-z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DbClusterSummary.Port</property>
@@ -891,19 +891,19 @@
     <property>Amazon.TimestreamInfluxDB.Model.DbInstanceForClusterSummary.Arn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}</pattern>
+    <pattern>^arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DbInstanceForClusterSummary.Id</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DbInstanceForClusterSummary.Name</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DbInstanceForClusterSummary.Port</property>
@@ -919,19 +919,19 @@
     <property>Amazon.TimestreamInfluxDB.Model.DbInstanceSummary.Arn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}</pattern>
+    <pattern>^arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DbInstanceSummary.Id</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DbInstanceSummary.Name</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DbInstanceSummary.Port</property>
@@ -942,19 +942,19 @@
     <property>Amazon.TimestreamInfluxDB.Model.DbParameterGroupSummary.Arn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}</pattern>
+    <pattern>^arn:aws[a-z\-]*:timestream\-influxdb:[a-z0-9\-]+:[0-9]{12}:(db\-instance|db\-cluster|db\-parameter\-group|db\-backup)/[a-zA-Z0-9]{3,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DbParameterGroupSummary.Id</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DbParameterGroupSummary.Name</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.Duration.Value</property>
@@ -1047,7 +1047,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv3CoreParameters.DataFusionConfig</property>
-    <pattern>[a-zA-Z0-9_.]+:[^,\s]+(?:,[a-zA-Z0-9_.]+:[^,\s]+)*</pattern>
+    <pattern>^[a-zA-Z0-9_.]+:[^,\s]+(?:,[a-zA-Z0-9_.]+:[^,\s]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv3CoreParameters.DataFusionMaxParquetFanout</property>
@@ -1103,7 +1103,7 @@
     <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv3CoreParameters.PluginRepositorySecretArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws|aws-cn|aws-us-gov):secretsmanager:[a-z0-9\-]+:[0-9]{12}:secret:[a-zA-Z0-9/_+=.@\-]+</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):secretsmanager:[a-z0-9\-]+:[0-9]{12}:secret:[a-zA-Z0-9/_+=.@\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv3CoreParameters.QueryFileLimit</property>
@@ -1154,7 +1154,7 @@
     <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv3EnterpriseParameters.CompactionMultipliers</property>
     <min>7</min>
     <max>16</max>
-    <pattern>\d+,\d+,\d+,\d+</pattern>
+    <pattern>^\d+,\d+,\d+,\d+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv3EnterpriseParameters.CompactionRowLimit</property>
@@ -1163,7 +1163,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv3EnterpriseParameters.DataFusionConfig</property>
-    <pattern>[a-zA-Z0-9_.]+:[^,\s]+(?:,[a-zA-Z0-9_.]+:[^,\s]+)*</pattern>
+    <pattern>^[a-zA-Z0-9_.]+:[^,\s]+(?:,[a-zA-Z0-9_.]+:[^,\s]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv3EnterpriseParameters.DataFusionMaxParquetFanout</property>
@@ -1224,7 +1224,7 @@
     <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv3EnterpriseParameters.PluginRepositorySecretArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws|aws-cn|aws-us-gov):secretsmanager:[a-z0-9\-]+:[0-9]{12}:secret:[a-zA-Z0-9/_+=.@\-]+</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):secretsmanager:[a-z0-9\-]+:[0-9]{12}:secret:[a-zA-Z0-9/_+=.@\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv3EnterpriseParameters.QueryFileLimit</property>
@@ -1275,13 +1275,13 @@
     <property>Amazon.TimestreamInfluxDB.Model.MaintenanceSchedule.PreferredMaintenanceWindow</property>
     <min>0</min>
     <max>19</max>
-    <pattern>$|^(Mon|Tue|Wed|Thu|Fri|Sat|Sun):([01]\d|2[0-3]):[0-5]\d-(Mon|Tue|Wed|Thu|Fri|Sat|Sun):([01]\d|2[0-3]):[0-5]\d</pattern>
+    <pattern>^$|^(Mon|Tue|Wed|Thu|Fri|Sat|Sun):([01]\d|2[0-3]):[0-5]\d-(Mon|Tue|Wed|Thu|Fri|Sat|Sun):([01]\d|2[0-3]):[0-5]\d$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.MaintenanceSchedule.Timezone</property>
     <min>1</min>
     <max>64</max>
-    <pattern>(UTC|[A-Za-z_]+/[A-Za-z0-9_]+(/[A-Za-z0-9_]+)?)</pattern>
+    <pattern>^(UTC|[A-Za-z_]+/[A-Za-z0-9_]+(/[A-Za-z0-9_]+)?)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.PercentOrAbsoluteLong.Absolute</property>
@@ -1292,12 +1292,12 @@
     <property>Amazon.TimestreamInfluxDB.Model.PercentOrAbsoluteLong.Percent</property>
     <min>2</min>
     <max>4</max>
-    <pattern>(?:100|[1-9]?[0-9])%</pattern>
+    <pattern>^(?:100|[1-9]?[0-9])%$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.S3Configuration.BucketName</property>
     <min>3</min>
     <max>63</max>
-    <pattern>[0-9a-z]+[0-9a-z\.\-]*[0-9a-z]+</pattern>
+    <pattern>^[0-9a-z]+[0-9a-z\.\-]*[0-9a-z]+$</pattern>
   </property-value-rule>
 </property-value-rules>

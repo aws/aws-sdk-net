@@ -32,13 +32,13 @@
     <property>Amazon.Route53RecoveryCluster.Model.ListRoutingControlsRequest.NextToken</property>
     <min>1</min>
     <max>8096</max>
-    <pattern>[\S]*</pattern>
+    <pattern>^[\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryCluster.Model.ListRoutingControlsResponse.NextToken</property>
     <min>1</min>
     <max>8096</max>
-    <pattern>[\S]*</pattern>
+    <pattern>^[\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryCluster.Model.UpdateRoutingControlStateRequest.RoutingControlArn</property>

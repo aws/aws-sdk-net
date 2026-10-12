@@ -7,25 +7,17 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Billing")]
-
 #if NET472
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Framework 4.7.2) - AWS Billing. Today, AWS announces the general availability of ListBillingViews API in the AWS SDKs, to enable AWS Billing Conductor (ABC) users to create proforma Cost and Usage Reports (CUR) programmatically.")]
-
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Framework 4.7.2) - AWS Billing.")]
 #elif NETSTANDARD2_0
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Billing. Today, AWS announces the general availability of ListBillingViews API in the AWS SDKs, to enable AWS Billing Conductor (ABC) users to create proforma Cost and Usage Reports (CUR) programmatically.")]
-
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Billing.")]
 #elif NETCOREAPP3_1
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - AWS Billing. Today, AWS announces the general availability of ListBillingViews API in the AWS SDKs, to enable AWS Billing Conductor (ABC) users to create proforma Cost and Usage Reports (CUR) programmatically.")]
-
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - AWS Billing.")]
 #elif NET8_0
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - AWS Billing. Today, AWS announces the general availability of ListBillingViews API in the AWS SDKs, to enable AWS Billing Conductor (ABC) users to create proforma Cost and Usage Reports (CUR) programmatically.")]
-
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - AWS Billing.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif
-
-
-
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]
@@ -33,18 +25,18 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-// Setting ComVisible to false makes the types in this assembly not visible 
-// to COM components.  If you need to access a type in this assembly from 
+// Setting ComVisible to false makes the types in this assembly not visible
+// to COM components.  If you need to access a type in this assembly from
 // COM, set the ComVisible attribute to true on that type.
 [assembly: ComVisible(false)]
 
 // Version information for an assembly consists of the following four values:
-//
+// 
 //      Major Version
 //      Minor Version 
 //      Build Number
 //      Revision
-//
+// 
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]

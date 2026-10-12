@@ -14,9 +14,8 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the bcm-recommended-actions-2024-11-14.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -39,16 +38,12 @@ namespace Amazon.BCMRecommendedActions
             new AmazonBCMRecommendedActionsEndpointResolver();
 
         private string _userAgent = UserAgentString;
-        ///<summary>
+
+        /// <summary>
         /// The ServiceId, which is the unique identifier for a service.
-        ///</summary>
-        public static new string ServiceId
-        {
-            get
-            {
-                return "BCM Recommended Actions";
-            }
-        }
+        /// </summary>
+        public static new string ServiceId => "BCM Recommended Actions";
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -63,35 +58,17 @@ namespace Amazon.BCMRecommendedActions
         /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
-        public override string RegionEndpointServiceName
-        {
-            get
-            {
-                return "bcm-recommended-actions";
-            }
-        }
+        public override string RegionEndpointServiceName => "bcm-recommended-actions";
 
         /// <summary>
         /// Gets the ServiceVersion property.
         /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2024-11-14";
-            }
-        }
+        public override string ServiceVersion => "2024-11-14";
 
         /// <summary>
         /// Gets the value of UserAgent property.
         /// </summary>
-        public override string UserAgent
-        {
-            get
-            {
-                return _userAgent;
-            }
-        }
+        public override string UserAgent => _userAgent;
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.
@@ -113,7 +90,5 @@ namespace Amazon.BCMRecommendedActions
             var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
             return EndpointResolver.GetEndpoint(executionContext);
         }
-
-
     }
 }

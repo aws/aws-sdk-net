@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.Billing.Generated
     {
         public void BillingAssociateSourceViews()
         {
-            #region example-1
+            #region AssociateSourceViews-1
 
             var client = new AmazonBillingClient();
-            var response = client.AssociateSourceViews(new AssociateSourceViewsRequest 
+            var response = client.AssociateSourceViews(new AssociateSourceViewsRequest
             {
                 Arn = "arn:aws:billing::123456789012:billingview/custom-46f47cb2-a11d-43f3-983d-470b5708a899",
                 SourceViews = new List<string> {
@@ -32,12 +33,11 @@ namespace AWSSDKDocSamples.Amazon.Billing.Generated
 
         public void BillingCreateBillingView()
         {
-            #region example-1
+            #region CreateBillingView-1
 
             var client = new AmazonBillingClient();
-            var response = client.CreateBillingView(new CreateBillingViewRequest 
+            var response = client.CreateBillingView(new CreateBillingViewRequest
             {
-                Name = "Example Custom Billing View",
                 DataFilterExpression = new Expression { Dimensions = new DimensionValues {
                     Key = "LINKED_ACCOUNT",
                     Values = new List<string> {
@@ -45,23 +45,24 @@ namespace AWSSDKDocSamples.Amazon.Billing.Generated
                     }
                 } },
                 Description = "Custom Billing View Example",
+                Name = "Example Custom Billing View",
                 SourceViews = new List<string> {
                     "arn:aws:billing::123456789101:billingview/primary"
                 }
             });
 
             string arn = response.Arn;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
 
             #endregion
         }
 
         public void BillingDeleteBillingView()
         {
-            #region example-1
+            #region DeleteBillingView-1
 
             var client = new AmazonBillingClient();
-            var response = client.DeleteBillingView(new DeleteBillingViewRequest 
+            var response = client.DeleteBillingView(new DeleteBillingViewRequest
             {
                 Arn = "arn:aws:billing::123456789101:billingview/custom-46f47cb2-a11d-43f3-983d-470b5708a899"
             });
@@ -73,10 +74,10 @@ namespace AWSSDKDocSamples.Amazon.Billing.Generated
 
         public void BillingDisassociateSourceViews()
         {
-            #region example-1
+            #region DisassociateSourceViews-1
 
             var client = new AmazonBillingClient();
-            var response = client.DisassociateSourceViews(new DisassociateSourceViewsRequest 
+            var response = client.DisassociateSourceViews(new DisassociateSourceViewsRequest
             {
                 Arn = "arn:aws:billing::123456789012:billingview/custom-46f47cb2-a11d-43f3-983d-470b5708a899",
                 SourceViews = new List<string> {
@@ -92,10 +93,10 @@ namespace AWSSDKDocSamples.Amazon.Billing.Generated
 
         public void BillingGetBillingView()
         {
-            #region example-1
+            #region GetBillingView-1
 
             var client = new AmazonBillingClient();
-            var response = client.GetBillingView(new GetBillingViewRequest 
+            var response = client.GetBillingView(new GetBillingViewRequest
             {
                 Arn = "arn:aws:billing::123456789101:billingview/custom-46f47cb2-a11d-43f3-983d-470b5708a899"
             });
@@ -107,10 +108,10 @@ namespace AWSSDKDocSamples.Amazon.Billing.Generated
 
         public void BillingGetResourcePolicy()
         {
-            #region example-1
+            #region GetResourcePolicy-1
 
             var client = new AmazonBillingClient();
-            var response = client.GetResourcePolicy(new GetResourcePolicyRequest 
+            var response = client.GetResourcePolicy(new GetResourcePolicyRequest
             {
                 ResourceArn = "arn:aws:billing::123456789101:billingview/custom-46f47cb2-a11d-43f3-983d-470b5708a899"
             });
@@ -123,14 +124,14 @@ namespace AWSSDKDocSamples.Amazon.Billing.Generated
 
         public void BillingListBillingViews()
         {
-            #region example-1
+            #region ListBillingViews-1
 
             var client = new AmazonBillingClient();
-            var response = client.ListBillingViews(new ListBillingViewsRequest 
+            var response = client.ListBillingViews(new ListBillingViewsRequest
             {
                 ActiveTimeRange = new ActiveTimeRange {
-                    ActiveAfterInclusive = DateTime.UtcNow,
-                    ActiveBeforeInclusive = DateTime.UtcNow
+                    ActiveAfterInclusive = new DateTime(2024, 7, 1, 0, 0, 0, DateTimeKind.Utc),
+                    ActiveBeforeInclusive = new DateTime(2024, 7, 31, 23, 59, 59, 999, DateTimeKind.Utc)
                 }
             });
 
@@ -141,14 +142,14 @@ namespace AWSSDKDocSamples.Amazon.Billing.Generated
 
         public void BillingListBillingViews()
         {
-            #region example-2
+            #region ListBillingViews-2
 
             var client = new AmazonBillingClient();
-            var response = client.ListBillingViews(new ListBillingViewsRequest 
+            var response = client.ListBillingViews(new ListBillingViewsRequest
             {
                 ActiveTimeRange = new ActiveTimeRange {
-                    ActiveAfterInclusive = DateTime.UtcNow,
-                    ActiveBeforeInclusive = DateTime.UtcNow
+                    ActiveAfterInclusive = new DateTime(2024, 7, 1, 0, 0, 1, DateTimeKind.Utc),
+                    ActiveBeforeInclusive = new DateTime(2024, 7, 1, 0, 0, 0, DateTimeKind.Utc)
                 }
             });
 
@@ -158,14 +159,14 @@ namespace AWSSDKDocSamples.Amazon.Billing.Generated
 
         public void BillingListBillingViewSegments()
         {
-            #region example-1
+            #region ListBillingViewSegments-1
 
             var client = new AmazonBillingClient();
-            var response = client.ListBillingViewSegments(new ListBillingViewSegmentsRequest 
+            var response = client.ListBillingViewSegments(new ListBillingViewSegmentsRequest
             {
                 TimeRange = new BillingViewSegmentTimeRange {
-                    BeginDateInclusive = DateTime.UtcNow,
-                    EndDateExclusive = DateTime.UtcNow
+                    BeginDateInclusive = new DateTime(2024, 7, 1, 0, 0, 0, DateTimeKind.Utc),
+                    EndDateExclusive = new DateTime(2024, 8, 1, 0, 0, 0, DateTimeKind.Utc)
                 }
             });
 
@@ -176,14 +177,14 @@ namespace AWSSDKDocSamples.Amazon.Billing.Generated
 
         public void BillingListBillingViewSegments()
         {
-            #region example-2
+            #region ListBillingViewSegments-2
 
             var client = new AmazonBillingClient();
-            var response = client.ListBillingViewSegments(new ListBillingViewSegmentsRequest 
+            var response = client.ListBillingViewSegments(new ListBillingViewSegmentsRequest
             {
                 TimeRange = new BillingViewSegmentTimeRange {
-                    BeginDateInclusive = DateTime.UtcNow,
-                    EndDateExclusive = DateTime.UtcNow
+                    BeginDateInclusive = new DateTime(2024, 8, 1, 0, 0, 0, DateTimeKind.Utc),
+                    EndDateExclusive = new DateTime(2024, 7, 1, 0, 0, 0, DateTimeKind.Utc)
                 }
             });
 
@@ -193,10 +194,10 @@ namespace AWSSDKDocSamples.Amazon.Billing.Generated
 
         public void BillingListSourceViewsForBillingView()
         {
-            #region example-1
+            #region ListSourceViewsForBillingView-1
 
             var client = new AmazonBillingClient();
-            var response = client.ListSourceViewsForBillingView(new ListSourceViewsForBillingViewRequest 
+            var response = client.ListSourceViewsForBillingView(new ListSourceViewsForBillingViewRequest
             {
                 Arn = "arn:aws:billing::123456789101:billingview/custom-46f47cb2-a11d-43f3-983d-470b5708a899"
             });
@@ -208,10 +209,10 @@ namespace AWSSDKDocSamples.Amazon.Billing.Generated
 
         public void BillingListTagsForResource()
         {
-            #region example-1
+            #region ListTagsForResource-1
 
             var client = new AmazonBillingClient();
-            var response = client.ListTagsForResource(new ListTagsForResourceRequest 
+            var response = client.ListTagsForResource(new ListTagsForResourceRequest
             {
                 ResourceArn = "arn:aws:billing::123456789101:billingview/custom-46f47cb2-a11d-43f3-983d-470b5708a899"
             });
@@ -223,10 +224,10 @@ namespace AWSSDKDocSamples.Amazon.Billing.Generated
 
         public void BillingTagResource()
         {
-            #region example-1
+            #region TagResource-1
 
             var client = new AmazonBillingClient();
-            var response = client.TagResource(new TagResourceRequest 
+            var response = client.TagResource(new TagResourceRequest
             {
                 ResourceArn = "arn:aws:billing::123456789101:billingview/custom-46f47cb2-a11d-43f3-983d-470b5708a899",
                 ResourceTags = new List<ResourceTag> {
@@ -243,10 +244,10 @@ namespace AWSSDKDocSamples.Amazon.Billing.Generated
 
         public void BillingUntagResource()
         {
-            #region example-1
+            #region UntagResource-1
 
             var client = new AmazonBillingClient();
-            var response = client.UntagResource(new UntagResourceRequest 
+            var response = client.UntagResource(new UntagResourceRequest
             {
                 ResourceArn = "arn:aws:billing::123456789101:billingview/custom-46f47cb2-a11d-43f3-983d-470b5708a899",
                 ResourceTagKeys = new List<string> {
@@ -260,12 +261,11 @@ namespace AWSSDKDocSamples.Amazon.Billing.Generated
 
         public void BillingUpdateBillingView()
         {
-            #region example-1
+            #region UpdateBillingView-1
 
             var client = new AmazonBillingClient();
-            var response = client.UpdateBillingView(new UpdateBillingViewRequest 
+            var response = client.UpdateBillingView(new UpdateBillingViewRequest
             {
-                Name = "Example Custom Billing View",
                 Arn = "arn:aws:billing::123456789101:billingview/custom-46f47cb2-a11d-43f3-983d-470b5708a899",
                 DataFilterExpression = new Expression { Dimensions = new DimensionValues {
                     Key = "LINKED_ACCOUNT",
@@ -273,22 +273,20 @@ namespace AWSSDKDocSamples.Amazon.Billing.Generated
                         "000000000000"
                     }
                 } },
-                Description = "Custom Billing View Example -- updated description"
+                Description = "Custom Billing View Example -- updated description",
+                Name = "Example Custom Billing View"
             });
 
             string arn = response.Arn;
-            DateTime updatedAt = response.UpdatedAt;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

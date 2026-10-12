@@ -4,19 +4,19 @@
     <property>Amazon.CodeStarconnections.Model.CreateConnectionRequest.ConnectionName</property>
     <min>1</min>
     <max>32</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.CreateConnectionRequest.HostArn</property>
     <min>0</min>
     <max>256</max>
-    <pattern>arn:aws(-[\w]+)*:codestar-connections:.+:[0-9]{12}:host\/.+</pattern>
+    <pattern>^arn:aws(-[\w]+)*:codestar-connections:.+:[0-9]{12}:host\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.CreateConnectionResponse.ConnectionArn</property>
     <min>0</min>
     <max>256</max>
-    <pattern>arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+</pattern>
+    <pattern>^arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.CreateHostRequest.Name</property>
@@ -34,19 +34,19 @@
     <property>Amazon.CodeStarconnections.Model.CreateHostResponse.HostArn</property>
     <min>0</min>
     <max>256</max>
-    <pattern>arn:aws(-[\w]+)*:codestar-connections:.+:[0-9]{12}:host\/.+</pattern>
+    <pattern>^arn:aws(-[\w]+)*:codestar-connections:.+:[0-9]{12}:host\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.CreateRepositoryLinkRequest.ConnectionArn</property>
     <min>0</min>
     <max>256</max>
-    <pattern>arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+</pattern>
+    <pattern>^arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.CreateRepositoryLinkRequest.EncryptionKeyArn</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws(-[\w]+)*:kms:[a-z\-0-9]+:\d{12}:key/[a-zA-Z0-9\-]+</pattern>
+    <pattern>^arn:aws(-[\w]+)*:kms:[a-z\-0-9]+:\d{12}:key/[a-zA-Z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.CreateRepositoryLinkRequest.OwnerId</property>
@@ -80,19 +80,19 @@
     <property>Amazon.CodeStarconnections.Model.CreateSyncConfigurationRequest.RoleArn</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws(-[\w]+)*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:aws(-[\w]+)*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.DeleteConnectionRequest.ConnectionArn</property>
     <min>0</min>
     <max>256</max>
-    <pattern>arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+</pattern>
+    <pattern>^arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.DeleteHostRequest.HostArn</property>
     <min>0</min>
     <max>256</max>
-    <pattern>arn:aws(-[\w]+)*:codestar-connections:.+:[0-9]{12}:host\/.+</pattern>
+    <pattern>^arn:aws(-[\w]+)*:codestar-connections:.+:[0-9]{12}:host\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.DeleteRepositoryLinkRequest.RepositoryLinkId</property>
@@ -108,13 +108,13 @@
     <property>Amazon.CodeStarconnections.Model.GetConnectionRequest.ConnectionArn</property>
     <min>0</min>
     <max>256</max>
-    <pattern>arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+</pattern>
+    <pattern>^arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.GetHostRequest.HostArn</property>
     <min>0</min>
     <max>256</max>
-    <pattern>arn:aws(-[\w]+)*:codestar-connections:.+:[0-9]{12}:host\/.+</pattern>
+    <pattern>^arn:aws(-[\w]+)*:codestar-connections:.+:[0-9]{12}:host\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.GetHostResponse.Name</property>
@@ -170,7 +170,7 @@
     <property>Amazon.CodeStarconnections.Model.ListConnectionsRequest.HostArnFilter</property>
     <min>0</min>
     <max>256</max>
-    <pattern>arn:aws(-[\w]+)*:codestar-connections:.+:[0-9]{12}:host\/.+</pattern>
+    <pattern>^arn:aws(-[\w]+)*:codestar-connections:.+:[0-9]{12}:host\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.ListConnectionsRequest.MaxResults</property>
@@ -258,25 +258,25 @@
     <property>Amazon.CodeStarconnections.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+</pattern>
+    <pattern>^arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+</pattern>
+    <pattern>^arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.UntagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+</pattern>
+    <pattern>^arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.UpdateHostRequest.HostArn</property>
     <min>0</min>
     <max>256</max>
-    <pattern>arn:aws(-[\w]+)*:codestar-connections:.+:[0-9]{12}:host\/.+</pattern>
+    <pattern>^arn:aws(-[\w]+)*:codestar-connections:.+:[0-9]{12}:host\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.UpdateHostRequest.ProviderEndpoint</property>
@@ -288,13 +288,13 @@
     <property>Amazon.CodeStarconnections.Model.UpdateRepositoryLinkRequest.ConnectionArn</property>
     <min>0</min>
     <max>256</max>
-    <pattern>arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+</pattern>
+    <pattern>^arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.UpdateRepositoryLinkRequest.EncryptionKeyArn</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws(-[\w]+)*:kms:[a-z\-0-9]+:\d{12}:key/[a-zA-Z0-9\-]+</pattern>
+    <pattern>^arn:aws(-[\w]+)*:kms:[a-z\-0-9]+:\d{12}:key/[a-zA-Z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.UpdateRepositoryLinkRequest.RepositoryLinkId</property>
@@ -348,37 +348,37 @@
     <property>Amazon.CodeStarconnections.Model.UpdateSyncConfigurationRequest.RoleArn</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws(-[\w]+)*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:aws(-[\w]+)*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.Connection.ConnectionArn</property>
     <min>0</min>
     <max>256</max>
-    <pattern>arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+</pattern>
+    <pattern>^arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.Connection.ConnectionName</property>
     <min>1</min>
     <max>32</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.Connection.HostArn</property>
     <min>0</min>
     <max>256</max>
-    <pattern>arn:aws(-[\w]+)*:codestar-connections:.+:[0-9]{12}:host\/.+</pattern>
+    <pattern>^arn:aws(-[\w]+)*:codestar-connections:.+:[0-9]{12}:host\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.Connection.OwnerAccountId</property>
     <min>12</min>
     <max>12</max>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.Host.HostArn</property>
     <min>0</min>
     <max>256</max>
-    <pattern>arn:aws(-[\w]+)*:codestar-connections:.+:[0-9]{12}:host\/.+</pattern>
+    <pattern>^arn:aws(-[\w]+)*:codestar-connections:.+:[0-9]{12}:host\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.Host.Name</property>
@@ -402,13 +402,13 @@
     <property>Amazon.CodeStarconnections.Model.RepositoryLinkInfo.ConnectionArn</property>
     <min>0</min>
     <max>256</max>
-    <pattern>arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+</pattern>
+    <pattern>^arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.RepositoryLinkInfo.EncryptionKeyArn</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws(-[\w]+)*:kms:[a-z\-0-9]+:\d{12}:key/[a-zA-Z0-9\-]+</pattern>
+    <pattern>^arn:aws(-[\w]+)*:kms:[a-z\-0-9]+:\d{12}:key/[a-zA-Z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.RepositoryLinkInfo.OwnerId</property>
@@ -418,7 +418,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.RepositoryLinkInfo.RepositoryLinkArn</property>
-    <pattern>^arn:aws(?:-[a-z]+)*:codestar-connections:[a-z\-0-9]+:\d{12}:repository-link\/[a-zA-Z0-9\-:/]+</pattern>
+    <pattern>^arn:aws(?:-[a-z]+)*:codestar-connections:[a-z\-0-9]+:\d{12}:repository-link\/[a-zA-Z0-9\-:/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.RepositoryLinkInfo.RepositoryLinkId</property>
@@ -513,7 +513,7 @@
     <property>Amazon.CodeStarconnections.Model.SyncConfiguration.RoleArn</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws(-[\w]+)*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:aws(-[\w]+)*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.Tag.Key</property>
@@ -531,12 +531,12 @@
     <property>Amazon.CodeStarconnections.Model.VpcConfiguration.TlsCertificate</property>
     <min>1</min>
     <max>16384</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.VpcConfiguration.VpcId</property>
     <min>12</min>
     <max>21</max>
-    <pattern>vpc-\w{8}(\w{9})?</pattern>
+    <pattern>^vpc-\w{8}(\w{9})?$</pattern>
   </property-value-rule>
 </property-value-rules>

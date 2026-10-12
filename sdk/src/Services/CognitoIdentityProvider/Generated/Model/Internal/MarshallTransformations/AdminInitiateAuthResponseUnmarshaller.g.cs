@@ -1,0 +1,202 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.CognitoIdentityProvider.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+using System.Globalization;
+using Amazon.Util;
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for AdminInitiateAuth operation.
+    /// </summary>
+    public partial class AdminInitiateAuthResponseUnmarshaller : JsonResponseUnmarshaller
+    {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
+        {
+            var unmarshalledObject = new AdminInitiateAuthResponse();
+            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+
+            context.Read(ref reader);
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth, ref reader))
+            {
+                if (context.TestExpression("AuthenticationResult", targetDepth, ref reader))
+                {
+                    var unmarshaller = AuthenticationResultTypeUnmarshaller.Instance;
+                    unmarshalledObject.AuthenticationResult = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("AvailableChallenges", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AvailableChallenges = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("ChallengeName", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ChallengeName = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("ChallengeParameters", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.ChallengeParameters = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("Session", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Session = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+            }
+
+            return unmarshalledObject;
+        }
+
+        /// <summary>
+        /// Unmarshall error response to exception.
+        /// </summary>
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        {
+            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
+
+            errorResponse.InnerException = innerException;
+            errorResponse.StatusCode = statusCode;
+
+            var responseBodyBytes = context.GetResponseBodyBytes();
+
+            using (var streamCopy = new MemoryStream(responseBodyBytes))
+            {
+                using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
+                {
+                    var readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("FeatureUnavailableInTierException"))
+                    {
+                        return FeatureUnavailableInTierExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("InternalErrorException"))
+                    {
+                        return InternalErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidEmailRoleAccessPolicyException"))
+                    {
+                        return InvalidEmailRoleAccessPolicyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidLambdaResponseException"))
+                    {
+                        return InvalidLambdaResponseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
+                    {
+                        return InvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidSmsRoleAccessPolicyException"))
+                    {
+                        return InvalidSmsRoleAccessPolicyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidSmsRoleTrustRelationshipException"))
+                    {
+                        return InvalidSmsRoleTrustRelationshipExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidUserPoolConfigurationException"))
+                    {
+                        return InvalidUserPoolConfigurationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("MFAMethodNotFoundException"))
+                    {
+                        return MFAMethodNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("NotAuthorizedException"))
+                    {
+                        return NotAuthorizedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotEnabledException"))
+                    {
+                        return OperationNotEnabledExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("PasswordResetRequiredException"))
+                    {
+                        return PasswordResetRequiredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+                    {
+                        return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyRequestsException"))
+                    {
+                        return TooManyRequestsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("UnexpectedLambdaException"))
+                    {
+                        return UnexpectedLambdaExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedOperationException"))
+                    {
+                        return UnsupportedOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("UserLambdaValidationException"))
+                    {
+                        return UserLambdaValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("UserNotConfirmedException"))
+                    {
+                        return UserNotConfirmedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("UserNotFoundException"))
+                    {
+                        return UserNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                }
+            }
+            return new AmazonCognitoIdentityProviderException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+        }
+
+        private static AdminInitiateAuthResponseUnmarshaller _instance = new AdminInitiateAuthResponseUnmarshaller();
+
+        internal static AdminInitiateAuthResponseUnmarshaller GetInstance() => _instance;
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static AdminInitiateAuthResponseUnmarshaller Instance => _instance;
+    }
+}

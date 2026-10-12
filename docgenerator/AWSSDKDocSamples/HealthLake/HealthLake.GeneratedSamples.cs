@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,30 +14,30 @@ namespace AWSSDKDocSamples.Amazon.HealthLake.Generated
     {
         public void HealthLakeRestoreFHIRDatastore()
         {
-            #region example-1
+            #region RestoreFHIRDatastore-1
 
             var client = new AmazonHealthLakeClient();
-            var response = client.RestoreFHIRDatastore(new RestoreFHIRDatastoreRequest 
+            var response = client.RestoreFHIRDatastore(new RestoreFHIRDatastoreRequest
             {
                 DatastoreName = "RestoredFhirDatastore",
-                RestoreConfiguration = new RestoreConfiguration { ContinuousBackupRestoreConfiguration = new ContinuousBackupRestoreConfiguration { RestorePointTime = new DateTime(2026, 8, 1, 12, 0, 0, DateTimeKind.Utc) } },
+                RestoreConfiguration = new RestoreConfiguration { ContinuousBackupRestoreConfiguration = new ContinuousBackupRestoreConfiguration { RestorePointTime = new DateTime(2026, 8, 1, 0, 0, 0, DateTimeKind.Utc) } },
                 SourceDatastoreId = "source-datastore-id"
             });
 
             string datastoreArn = response.DatastoreArn;
             string datastoreEndpoint = response.DatastoreEndpoint;
             string datastoreId = response.DatastoreId;
-            string datastoreStatus = response.DatastoreStatus;
+            DatastoreStatus datastoreStatus = response.DatastoreStatus;
 
             #endregion
         }
 
         public void HealthLakeUpdateFHIRDatastore()
         {
-            #region example-1
+            #region UpdateFHIRDatastore-1
 
             var client = new AmazonHealthLakeClient();
-            var response = client.UpdateFHIRDatastore(new UpdateFHIRDatastoreRequest 
+            var response = client.UpdateFHIRDatastore(new UpdateFHIRDatastoreRequest
             {
                 AnalyticsConfiguration = new AnalyticsConfiguration { Status = "DISABLED" },
                 DatastoreId = "datastore-id",
@@ -57,13 +58,10 @@ namespace AWSSDKDocSamples.Amazon.HealthLake.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

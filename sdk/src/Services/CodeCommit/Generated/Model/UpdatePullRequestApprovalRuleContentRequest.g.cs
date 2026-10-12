@@ -1,0 +1,135 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.CodeCommit.Model
+{
+    /// <summary>
+    /// Container for the parameters to the UpdatePullRequestApprovalRuleContent operation.
+    /// Updates the structure of an approval rule created specifically for a pull request.
+    /// For example, you can change the number of required approvers and the approval pool
+    /// for approvers.
+    /// </summary>
+    public partial class UpdatePullRequestApprovalRuleContentRequest : AmazonCodeCommitRequest
+    {
+        /// <summary>
+        /// Gets and sets the property ApprovalRuleName. 
+        /// <para>
+        /// The name of the approval rule you want to update.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 100)]
+        public string ApprovalRuleName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ApprovalRuleName property is set.
+        /// </summary>
+        internal bool IsSetApprovalRuleName() => this.ApprovalRuleName != null;
+
+        /// <summary>
+        /// Gets and sets the property ExistingRuleContentSha256. 
+        /// <para>
+        /// The SHA-256 hash signature for the content of the approval rule. You can retrieve
+        /// this information by using <a>GetPullRequest</a>.
+        /// </para>
+        /// </summary>
+        public string ExistingRuleContentSha256 { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExistingRuleContentSha256 property is set.
+        /// </summary>
+        internal bool IsSetExistingRuleContentSha256() => this.ExistingRuleContentSha256 != null;
+
+        /// <summary>
+        /// Gets and sets the property NewRuleContent. 
+        /// <para>
+        /// The updated content for the approval rule.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you update the content of the approval rule, you can specify approvers in an
+        /// approval pool in one of two ways:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>CodeCommitApprovers</b>: This option only requires an Amazon Web Services account
+        /// and a resource. It can be used for both IAM users and federated access users whose
+        /// name matches the provided resource name. This is a very powerful option that offers
+        /// a great deal of flexibility. For example, if you specify the Amazon Web Services account
+        /// <i>123456789012</i> and <i>Mary_Major</i>, all of the following are counted as approvals
+        /// coming from that user:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// An IAM user in the account (arn:aws:iam::<i>123456789012</i>:user/<i>Mary_Major</i>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A federated user identified in IAM as Mary_Major (arn:aws:sts::<i>123456789012</i>:federated-user/<i>Mary_Major</i>)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// This option does not recognize an active session of someone assuming the role of CodeCommitReview
+        /// with a role session name of <i>Mary_Major</i> (arn:aws:sts::<i>123456789012</i>:assumed-role/CodeCommitReview/<i>Mary_Major</i>)
+        /// unless you include a wildcard (*Mary_Major).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Fully qualified ARN</b>: This option allows you to specify the fully qualified
+        /// Amazon Resource Name (ARN) of the IAM user or role. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+        /// Identifiers</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 3000)]
+        public string NewRuleContent { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NewRuleContent property is set.
+        /// </summary>
+        internal bool IsSetNewRuleContent() => this.NewRuleContent != null;
+
+        /// <summary>
+        /// Gets and sets the property PullRequestId. 
+        /// <para>
+        /// The system-generated ID of the pull request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string PullRequestId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PullRequestId property is set.
+        /// </summary>
+        internal bool IsSetPullRequestId() => this.PullRequestId != null;
+    }
+}

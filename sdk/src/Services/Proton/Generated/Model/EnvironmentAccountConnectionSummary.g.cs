@@ -1,0 +1,189 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Proton.Model
+{
+    /// <summary>
+    /// Summary data of an Proton environment account connection resource.
+    /// </summary>
+    public partial class EnvironmentAccountConnectionSummary
+    {
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the environment account connection.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string Arn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Arn property is set.
+        /// </summary>
+        internal bool IsSetArn() => this.Arn != null;
+
+        /// <summary>
+        /// Gets and sets the property ComponentRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning
+        /// directly defined components in the associated environment account. It determines the
+        /// scope of infrastructure that a component can provision in the account.
+        /// </para>
+        ///  
+        /// <para>
+        /// The environment account connection must have a <c>componentRoleArn</c> to allow directly
+        /// defined components to be associated with any environments running in the account.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 200)]
+        public string ComponentRoleArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ComponentRoleArn property is set.
+        /// </summary>
+        internal bool IsSetComponentRoleArn() => this.ComponentRoleArn != null;
+
+        /// <summary>
+        /// Gets and sets the property EnvironmentAccountId. 
+        /// <para>
+        /// The ID of the environment account that's connected to the environment account connection.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string EnvironmentAccountId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EnvironmentAccountId property is set.
+        /// </summary>
+        internal bool IsSetEnvironmentAccountId() => this.EnvironmentAccountId != null;
+
+        /// <summary>
+        /// Gets and sets the property EnvironmentName. 
+        /// <para>
+        /// The name of the environment that's associated with the environment account connection.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 100)]
+        public string EnvironmentName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EnvironmentName property is set.
+        /// </summary>
+        internal bool IsSetEnvironmentName() => this.EnvironmentName != null;
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The ID of the environment account connection.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Id property is set.
+        /// </summary>
+        internal bool IsSetId() => this.Id != null;
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedAt. 
+        /// <para>
+        /// The time when the environment account connection was last modified.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public DateTime? LastModifiedAt { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LastModifiedAt property is set.
+        /// </summary>
+        internal bool IsSetLastModifiedAt() => this.LastModifiedAt.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property ManagementAccountId. 
+        /// <para>
+        /// The ID of the management account that's connected to the environment account connection.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string ManagementAccountId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ManagementAccountId property is set.
+        /// </summary>
+        internal bool IsSetManagementAccountId() => this.ManagementAccountId != null;
+
+        /// <summary>
+        /// Gets and sets the property RequestedAt. 
+        /// <para>
+        /// The time when the environment account connection request was made.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public DateTime? RequestedAt { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RequestedAt property is set.
+        /// </summary>
+        internal bool IsSetRequestedAt() => this.RequestedAt.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// The IAM service role that's associated with the environment account connection.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 200)]
+        public string RoleArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RoleArn property is set.
+        /// </summary>
+        internal bool IsSetRoleArn() => this.RoleArn != null;
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the environment account connection.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public EnvironmentAccountConnectionStatus Status { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Status property is set.
+        /// </summary>
+        internal bool IsSetStatus() => this.Status != null;
+    }
+}

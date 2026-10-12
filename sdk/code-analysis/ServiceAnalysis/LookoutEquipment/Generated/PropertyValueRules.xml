@@ -21,7 +21,7 @@
     <property>Amazon.LookoutEquipment.Model.CreateDatasetResponse.DatasetArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.CreateDatasetResponse.DatasetName</property>
@@ -55,7 +55,7 @@
     <property>Amazon.LookoutEquipment.Model.CreateInferenceSchedulerRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.CreateInferenceSchedulerRequest.ServerSideKmsKeyId</property>
@@ -67,7 +67,7 @@
     <property>Amazon.LookoutEquipment.Model.CreateInferenceSchedulerResponse.InferenceSchedulerArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:inference-scheduler\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:inference-scheduler\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.CreateInferenceSchedulerResponse.InferenceSchedulerName</property>
@@ -84,13 +84,13 @@
     <property>Amazon.LookoutEquipment.Model.CreateLabelRequest.Equipment</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[\P{M}\p{M}]{1,200}</pattern>
+    <pattern>^[\P{M}\p{M}]{1,200}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.CreateLabelRequest.FaultCode</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\P{M}\p{M}]{1,100}</pattern>
+    <pattern>^[\P{M}\p{M}]{1,100}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.CreateLabelRequest.LabelGroupName</property>
@@ -102,12 +102,13 @@
     <property>Amazon.LookoutEquipment.Model.CreateLabelRequest.Notes</property>
     <min>1</min>
     <max>2560</max>
-    <pattern>[\P{M}\p{M}]{1,2560}</pattern>
+    <pattern>^[\P{M}\p{M}]{1,2560}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.CreateLabelResponse.LabelId</property>
+    <min>0</min>
     <max>32</max>
-    <pattern>[A-Fa-f0-9]{0,32}</pattern>
+    <pattern>^[A-Fa-f0-9]{0,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.CreateLabelGroupRequest.ClientToken</property>
@@ -124,7 +125,7 @@
     <property>Amazon.LookoutEquipment.Model.CreateLabelGroupResponse.LabelGroupArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:label-group\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:label-group\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.CreateLabelGroupResponse.LabelGroupName</property>
@@ -158,7 +159,7 @@
     <property>Amazon.LookoutEquipment.Model.CreateModelRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.CreateModelRequest.ServerSideKmsKeyId</property>
@@ -170,7 +171,7 @@
     <property>Amazon.LookoutEquipment.Model.CreateModelResponse.ModelArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.CreateRetrainingSchedulerRequest.ClientToken</property>
@@ -197,7 +198,7 @@
     <property>Amazon.LookoutEquipment.Model.CreateRetrainingSchedulerResponse.ModelArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.CreateRetrainingSchedulerResponse.ModelName</property>
@@ -225,8 +226,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DeleteLabelRequest.LabelId</property>
+    <min>0</min>
     <max>32</max>
-    <pattern>[A-Fa-f0-9]{0,32}</pattern>
+    <pattern>^[A-Fa-f0-9]{0,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DeleteLabelGroupRequest.LabelGroupName</property>
@@ -244,7 +246,7 @@
     <property>Amazon.LookoutEquipment.Model.DeleteResourcePolicyRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DeleteRetrainingSchedulerRequest.ModelName</property>
@@ -254,20 +256,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeDataIngestionJobRequest.JobId</property>
+    <min>0</min>
     <max>32</max>
-    <pattern>[A-Fa-f0-9]{0,32}</pattern>
+    <pattern>^[A-Fa-f0-9]{0,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeDataIngestionJobResponse.DatasetArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeDataIngestionJobResponse.FailedReason</property>
     <min>1</min>
     <max>5000</max>
-    <pattern>[\P{M}\p{M}]{1,5000}</pattern>
+    <pattern>^[\P{M}\p{M}]{1,5000}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeDataIngestionJobResponse.IngestedDataSize</property>
@@ -275,26 +278,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeDataIngestionJobResponse.JobId</property>
+    <min>0</min>
     <max>32</max>
-    <pattern>[A-Fa-f0-9]{0,32}</pattern>
+    <pattern>^[A-Fa-f0-9]{0,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeDataIngestionJobResponse.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeDataIngestionJobResponse.SourceDatasetArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeDataIngestionJobResponse.StatusDetail</property>
     <min>1</min>
     <max>5000</max>
-    <pattern>[\P{M}\p{M}]{1,5000}</pattern>
+    <pattern>^[\P{M}\p{M}]{1,5000}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeDatasetRequest.DatasetName</property>
@@ -306,7 +310,7 @@
     <property>Amazon.LookoutEquipment.Model.DescribeDatasetResponse.DatasetArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeDatasetResponse.DatasetName</property>
@@ -318,7 +322,7 @@
     <property>Amazon.LookoutEquipment.Model.DescribeDatasetResponse.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeDatasetResponse.Schema</property>
@@ -329,13 +333,13 @@
     <property>Amazon.LookoutEquipment.Model.DescribeDatasetResponse.ServerSideKmsKeyId</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws[a-z\-]*:kms:[a-z0-9\-]*:\d{12}:[\w\-\/]+</pattern>
+    <pattern>^arn:aws[a-z\-]*:kms:[a-z0-9\-]*:\d{12}:[\w\-\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeDatasetResponse.SourceDatasetArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeInferenceSchedulerRequest.InferenceSchedulerName</property>
@@ -352,7 +356,7 @@
     <property>Amazon.LookoutEquipment.Model.DescribeInferenceSchedulerResponse.InferenceSchedulerArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:inference-scheduler\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:inference-scheduler\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeInferenceSchedulerResponse.InferenceSchedulerName</property>
@@ -364,7 +368,7 @@
     <property>Amazon.LookoutEquipment.Model.DescribeInferenceSchedulerResponse.ModelArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeInferenceSchedulerResponse.ModelName</property>
@@ -376,13 +380,13 @@
     <property>Amazon.LookoutEquipment.Model.DescribeInferenceSchedulerResponse.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeInferenceSchedulerResponse.ServerSideKmsKeyId</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws[a-z\-]*:kms:[a-z0-9\-]*:\d{12}:[\w\-\/]+</pattern>
+    <pattern>^arn:aws[a-z\-]*:kms:[a-z0-9\-]*:\d{12}:[\w\-\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeLabelRequest.LabelGroupName</property>
@@ -392,26 +396,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeLabelRequest.LabelId</property>
+    <min>0</min>
     <max>32</max>
-    <pattern>[A-Fa-f0-9]{0,32}</pattern>
+    <pattern>^[A-Fa-f0-9]{0,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeLabelResponse.Equipment</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[\P{M}\p{M}]{1,200}</pattern>
+    <pattern>^[\P{M}\p{M}]{1,200}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeLabelResponse.FaultCode</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\P{M}\p{M}]{1,100}</pattern>
+    <pattern>^[\P{M}\p{M}]{1,100}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeLabelResponse.LabelGroupArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:label-group\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:label-group\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeLabelResponse.LabelGroupName</property>
@@ -421,14 +426,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeLabelResponse.LabelId</property>
+    <min>0</min>
     <max>32</max>
-    <pattern>[A-Fa-f0-9]{0,32}</pattern>
+    <pattern>^[A-Fa-f0-9]{0,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeLabelResponse.Notes</property>
     <min>1</min>
     <max>2560</max>
-    <pattern>[\P{M}\p{M}]{1,2560}</pattern>
+    <pattern>^[\P{M}\p{M}]{1,2560}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeLabelGroupRequest.LabelGroupName</property>
@@ -440,7 +446,7 @@
     <property>Amazon.LookoutEquipment.Model.DescribeLabelGroupResponse.LabelGroupArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:label-group\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:label-group\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeLabelGroupResponse.LabelGroupName</property>
@@ -468,7 +474,7 @@
     <property>Amazon.LookoutEquipment.Model.DescribeModelResponse.DatasetArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeModelResponse.DatasetName</property>
@@ -480,13 +486,13 @@
     <property>Amazon.LookoutEquipment.Model.DescribeModelResponse.FailedReason</property>
     <min>1</min>
     <max>5000</max>
-    <pattern>[\P{M}\p{M}]{1,5000}</pattern>
+    <pattern>^[\P{M}\p{M}]{1,5000}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeModelResponse.LatestScheduledRetrainingFailedReason</property>
     <min>1</min>
     <max>5000</max>
-    <pattern>[\P{M}\p{M}]{1,5000}</pattern>
+    <pattern>^[\P{M}\p{M}]{1,5000}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeModelResponse.LatestScheduledRetrainingModelVersion</property>
@@ -496,7 +502,7 @@
     <property>Amazon.LookoutEquipment.Model.DescribeModelResponse.ModelArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeModelResponse.ModelMetrics</property>
@@ -533,7 +539,7 @@
     <property>Amazon.LookoutEquipment.Model.DescribeModelResponse.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeModelResponse.Schema</property>
@@ -544,7 +550,7 @@
     <property>Amazon.LookoutEquipment.Model.DescribeModelResponse.ServerSideKmsKeyId</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws[a-z\-]*:kms:[a-z0-9\-]*:\d{12}:[\w\-\/]+</pattern>
+    <pattern>^arn:aws[a-z\-]*:kms:[a-z0-9\-]*:\d{12}:[\w\-\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeModelResponse.SourceModelVersionArn</property>
@@ -571,7 +577,7 @@
     <property>Amazon.LookoutEquipment.Model.DescribeModelVersionResponse.DatasetArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeModelVersionResponse.DatasetName</property>
@@ -583,7 +589,7 @@
     <property>Amazon.LookoutEquipment.Model.DescribeModelVersionResponse.FailedReason</property>
     <min>1</min>
     <max>5000</max>
-    <pattern>[\P{M}\p{M}]{1,5000}</pattern>
+    <pattern>^[\P{M}\p{M}]{1,5000}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeModelVersionResponse.ImportedDataSizeInBytes</property>
@@ -593,7 +599,7 @@
     <property>Amazon.LookoutEquipment.Model.DescribeModelVersionResponse.ModelArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeModelVersionResponse.ModelMetrics</property>
@@ -630,7 +636,7 @@
     <property>Amazon.LookoutEquipment.Model.DescribeModelVersionResponse.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeModelVersionResponse.Schema</property>
@@ -641,7 +647,7 @@
     <property>Amazon.LookoutEquipment.Model.DescribeModelVersionResponse.ServerSideKmsKeyId</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws[a-z\-]*:kms:[a-z0-9\-]*:\d{12}:[\w\-\/]+</pattern>
+    <pattern>^arn:aws[a-z\-]*:kms:[a-z0-9\-]*:\d{12}:[\w\-\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeModelVersionResponse.SourceModelVersionArn</property>
@@ -653,18 +659,19 @@
     <property>Amazon.LookoutEquipment.Model.DescribeResourcePolicyRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeResourcePolicyResponse.PolicyRevisionId</property>
+    <min>0</min>
     <max>50</max>
-    <pattern>[0-9A-Fa-f]+</pattern>
+    <pattern>^[0-9A-Fa-f]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeResourcePolicyResponse.ResourcePolicy</property>
     <min>1</min>
     <max>20000</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeRetrainingSchedulerRequest.ModelName</property>
@@ -680,7 +687,7 @@
     <property>Amazon.LookoutEquipment.Model.DescribeRetrainingSchedulerResponse.ModelArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeRetrainingSchedulerResponse.ModelName</property>
@@ -715,13 +722,13 @@
     <property>Amazon.LookoutEquipment.Model.ImportDatasetRequest.SourceDatasetArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ImportDatasetResponse.DatasetArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ImportDatasetResponse.DatasetName</property>
@@ -731,8 +738,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ImportDatasetResponse.JobId</property>
+    <min>0</min>
     <max>32</max>
-    <pattern>[A-Fa-f0-9]{0,32}</pattern>
+    <pattern>^[A-Fa-f0-9]{0,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ImportModelVersionRequest.ClientToken</property>
@@ -755,7 +763,7 @@
     <property>Amazon.LookoutEquipment.Model.ImportModelVersionRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ImportModelVersionRequest.ServerSideKmsKeyId</property>
@@ -773,7 +781,7 @@
     <property>Amazon.LookoutEquipment.Model.ImportModelVersionResponse.ModelArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ImportModelVersionResponse.ModelName</property>
@@ -804,10 +812,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ListDataIngestionJobsRequest.NextToken</property>
+    <min>0</min>
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ListDataIngestionJobsResponse.NextToken</property>
+    <min>0</min>
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
@@ -823,10 +833,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ListDatasetsRequest.NextToken</property>
+    <min>0</min>
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ListDatasetsResponse.NextToken</property>
+    <min>0</min>
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
@@ -842,10 +854,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ListInferenceEventsRequest.NextToken</property>
+    <min>0</min>
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ListInferenceEventsResponse.NextToken</property>
+    <min>0</min>
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
@@ -861,10 +875,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ListInferenceExecutionsRequest.NextToken</property>
+    <min>0</min>
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ListInferenceExecutionsResponse.NextToken</property>
+    <min>0</min>
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
@@ -886,10 +902,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ListInferenceSchedulersRequest.NextToken</property>
+    <min>0</min>
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ListInferenceSchedulersResponse.NextToken</property>
+    <min>0</min>
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
@@ -905,23 +923,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ListLabelGroupsRequest.NextToken</property>
+    <min>0</min>
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ListLabelGroupsResponse.NextToken</property>
+    <min>0</min>
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ListLabelsRequest.Equipment</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[\P{M}\p{M}]{1,200}</pattern>
+    <pattern>^[\P{M}\p{M}]{1,200}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ListLabelsRequest.FaultCode</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\P{M}\p{M}]{1,100}</pattern>
+    <pattern>^[\P{M}\p{M}]{1,100}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ListLabelsRequest.LabelGroupName</property>
@@ -936,35 +956,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ListLabelsRequest.NextToken</property>
+    <min>0</min>
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ListLabelsResponse.NextToken</property>
-    <max>8192</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.LookoutEquipment.Model.ListModelsRequest.DatasetNameBeginsWith</property>
-    <min>1</min>
-    <max>200</max>
-    <pattern>^[0-9a-zA-Z_-]{1,200}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.LookoutEquipment.Model.ListModelsRequest.MaxResults</property>
-    <min>1</min>
-    <max>500</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.LookoutEquipment.Model.ListModelsRequest.ModelNameBeginsWith</property>
-    <min>1</min>
-    <max>200</max>
-    <pattern>^[0-9a-zA-Z_-]{1,200}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.LookoutEquipment.Model.ListModelsRequest.NextToken</property>
-    <max>8192</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.LookoutEquipment.Model.ListModelsResponse.NextToken</property>
+    <min>0</min>
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
@@ -988,10 +985,39 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ListModelVersionsRequest.NextToken</property>
+    <min>0</min>
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ListModelVersionsResponse.NextToken</property>
+    <min>0</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.ListModelsRequest.DatasetNameBeginsWith</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z_-]{1,200}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.ListModelsRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.ListModelsRequest.ModelNameBeginsWith</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z_-]{1,200}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.ListModelsRequest.NextToken</property>
+    <min>0</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.ListModelsResponse.NextToken</property>
+    <min>0</min>
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
@@ -1007,10 +1033,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ListRetrainingSchedulersRequest.NextToken</property>
+    <min>0</min>
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ListRetrainingSchedulersResponse.NextToken</property>
+    <min>0</min>
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
@@ -1021,8 +1049,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ListSensorStatisticsRequest.IngestionJobId</property>
+    <min>0</min>
     <max>32</max>
-    <pattern>[A-Fa-f0-9]{0,32}</pattern>
+    <pattern>^[A-Fa-f0-9]{0,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ListSensorStatisticsRequest.MaxResults</property>
@@ -1031,10 +1060,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ListSensorStatisticsRequest.NextToken</property>
+    <min>0</min>
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ListSensorStatisticsResponse.NextToken</property>
+    <min>0</min>
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
@@ -1049,31 +1080,33 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.PutResourcePolicyRequest.PolicyRevisionId</property>
+    <min>0</min>
     <max>50</max>
-    <pattern>[0-9A-Fa-f]+</pattern>
+    <pattern>^[0-9A-Fa-f]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.PutResourcePolicyRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.PutResourcePolicyRequest.ResourcePolicy</property>
     <min>1</min>
     <max>20000</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.PutResourcePolicyResponse.PolicyRevisionId</property>
+    <min>0</min>
     <max>50</max>
-    <pattern>[0-9A-Fa-f]+</pattern>
+    <pattern>^[0-9A-Fa-f]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.PutResourcePolicyResponse.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.StartDataIngestionJobRequest.ClientToken</property>
@@ -1090,12 +1123,13 @@
     <property>Amazon.LookoutEquipment.Model.StartDataIngestionJobRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.StartDataIngestionJobResponse.JobId</property>
+    <min>0</min>
     <max>32</max>
-    <pattern>[A-Fa-f0-9]{0,32}</pattern>
+    <pattern>^[A-Fa-f0-9]{0,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.StartInferenceSchedulerRequest.InferenceSchedulerName</property>
@@ -1107,7 +1141,7 @@
     <property>Amazon.LookoutEquipment.Model.StartInferenceSchedulerResponse.InferenceSchedulerArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:inference-scheduler\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:inference-scheduler\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.StartInferenceSchedulerResponse.InferenceSchedulerName</property>
@@ -1119,7 +1153,7 @@
     <property>Amazon.LookoutEquipment.Model.StartInferenceSchedulerResponse.ModelArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.StartInferenceSchedulerResponse.ModelName</property>
@@ -1137,7 +1171,7 @@
     <property>Amazon.LookoutEquipment.Model.StartRetrainingSchedulerResponse.ModelArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.StartRetrainingSchedulerResponse.ModelName</property>
@@ -1155,7 +1189,7 @@
     <property>Amazon.LookoutEquipment.Model.StopInferenceSchedulerResponse.InferenceSchedulerArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:inference-scheduler\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:inference-scheduler\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.StopInferenceSchedulerResponse.InferenceSchedulerName</property>
@@ -1167,7 +1201,7 @@
     <property>Amazon.LookoutEquipment.Model.StopInferenceSchedulerResponse.ModelArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.StopInferenceSchedulerResponse.ModelName</property>
@@ -1185,7 +1219,7 @@
     <property>Amazon.LookoutEquipment.Model.StopRetrainingSchedulerResponse.ModelArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.StopRetrainingSchedulerResponse.ModelName</property>
@@ -1227,7 +1261,7 @@
     <property>Amazon.LookoutEquipment.Model.UpdateActiveModelVersionResponse.ModelArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.UpdateActiveModelVersionResponse.ModelName</property>
@@ -1260,7 +1294,7 @@
     <property>Amazon.LookoutEquipment.Model.UpdateInferenceSchedulerRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.UpdateLabelGroupRequest.LabelGroupName</property>
@@ -1278,7 +1312,7 @@
     <property>Amazon.LookoutEquipment.Model.UpdateModelRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.UpdateRetrainingSchedulerRequest.LookbackWindow</property>
@@ -1300,7 +1334,7 @@
     <property>Amazon.LookoutEquipment.Model.DataIngestionJobSummary.DatasetArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DataIngestionJobSummary.DatasetName</property>
@@ -1310,8 +1344,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DataIngestionJobSummary.JobId</property>
+    <min>0</min>
     <max>32</max>
-    <pattern>[A-Fa-f0-9]{0,32}</pattern>
+    <pattern>^[A-Fa-f0-9]{0,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DatasetSchema.InlineDataSchema</property>
@@ -1322,7 +1357,7 @@
     <property>Amazon.LookoutEquipment.Model.DatasetSummary.DatasetArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DatasetSummary.DatasetName</property>
@@ -1343,7 +1378,7 @@
     <property>Amazon.LookoutEquipment.Model.InferenceEventSummary.InferenceSchedulerArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:inference-scheduler\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:inference-scheduler\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.InferenceEventSummary.InferenceSchedulerName</property>
@@ -1355,13 +1390,13 @@
     <property>Amazon.LookoutEquipment.Model.InferenceExecutionSummary.FailedReason</property>
     <min>1</min>
     <max>5000</max>
-    <pattern>[\P{M}\p{M}]{1,5000}</pattern>
+    <pattern>^[\P{M}\p{M}]{1,5000}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.InferenceExecutionSummary.InferenceSchedulerArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:inference-scheduler\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:inference-scheduler\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.InferenceExecutionSummary.InferenceSchedulerName</property>
@@ -1373,7 +1408,7 @@
     <property>Amazon.LookoutEquipment.Model.InferenceExecutionSummary.ModelArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.InferenceExecutionSummary.ModelName</property>
@@ -1420,7 +1455,7 @@
     <property>Amazon.LookoutEquipment.Model.InferenceS3InputConfiguration.Prefix</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>(^$)|([\u0009\u000A\u000D\u0020-\u00FF]{1,1023}/$)</pattern>
+    <pattern>^(^$)|([\u0009\u000A\u000D\u0020-\u00FF]{1,1023}/$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.InferenceS3OutputConfiguration.Bucket</property>
@@ -1432,7 +1467,7 @@
     <property>Amazon.LookoutEquipment.Model.InferenceS3OutputConfiguration.Prefix</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>(^$)|([\u0009\u000A\u000D\u0020-\u00FF]{1,1023}/$)</pattern>
+    <pattern>^(^$)|([\u0009\u000A\u000D\u0020-\u00FF]{1,1023}/$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.InferenceSchedulerSummary.DataDelayOffsetInMinutes</property>
@@ -1443,7 +1478,7 @@
     <property>Amazon.LookoutEquipment.Model.InferenceSchedulerSummary.InferenceSchedulerArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:inference-scheduler\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:inference-scheduler\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.InferenceSchedulerSummary.InferenceSchedulerName</property>
@@ -1455,7 +1490,7 @@
     <property>Amazon.LookoutEquipment.Model.InferenceSchedulerSummary.ModelArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.InferenceSchedulerSummary.ModelName</property>
@@ -1478,19 +1513,49 @@
     <property>Amazon.LookoutEquipment.Model.IngestionS3InputConfiguration.Prefix</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>(^$)|([\u0009\u000A\u000D\u0020-\u00FF]{1,1023}/$)</pattern>
+    <pattern>^(^$)|([\u0009\u000A\u000D\u0020-\u00FF]{1,1023}/$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.LabelGroupSummary.LabelGroupArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:label-group\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:label-group\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.LabelGroupSummary.LabelGroupName</property>
     <min>1</min>
     <max>200</max>
     <pattern>^[0-9a-zA-Z_-]{1,200}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.LabelSummary.Equipment</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[\P{M}\p{M}]{1,200}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.LabelSummary.FaultCode</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[\P{M}\p{M}]{1,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.LabelSummary.LabelGroupArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:label-group\/.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.LabelSummary.LabelGroupName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z_-]{1,200}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.LabelSummary.LabelId</property>
+    <min>0</min>
+    <max>32</max>
+    <pattern>^[A-Fa-f0-9]{0,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.LabelsInputConfiguration.LabelGroupName</property>
@@ -1508,36 +1573,7 @@
     <property>Amazon.LookoutEquipment.Model.LabelsS3InputConfiguration.Prefix</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>(^$)|([\u0009\u000A\u000D\u0020-\u00FF]{1,1023}/$)</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.LookoutEquipment.Model.LabelSummary.Equipment</property>
-    <min>1</min>
-    <max>200</max>
-    <pattern>[\P{M}\p{M}]{1,200}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.LookoutEquipment.Model.LabelSummary.FaultCode</property>
-    <min>1</min>
-    <max>100</max>
-    <pattern>[\P{M}\p{M}]{1,100}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.LookoutEquipment.Model.LabelSummary.LabelGroupArn</property>
-    <min>20</min>
-    <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:label-group\/.+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.LookoutEquipment.Model.LabelSummary.LabelGroupName</property>
-    <min>1</min>
-    <max>200</max>
-    <pattern>^[0-9a-zA-Z_-]{1,200}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.LookoutEquipment.Model.LabelSummary.LabelId</property>
-    <max>32</max>
-    <pattern>[A-Fa-f0-9]{0,32}</pattern>
+    <pattern>^(^$)|([\u0009\u000A\u000D\u0020-\u00FF]{1,1023}/$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ModelDiagnosticsOutputConfiguration.KmsKeyId</property>
@@ -1555,7 +1591,7 @@
     <property>Amazon.LookoutEquipment.Model.ModelDiagnosticsS3OutputConfiguration.Prefix</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>(^$)|([\u0009\u000A\u000D\u0020-\u00FF]{1,1023}/$)</pattern>
+    <pattern>^(^$)|([\u0009\u000A\u000D\u0020-\u00FF]{1,1023}/$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ModelSummary.ActiveModelVersion</property>
@@ -1571,7 +1607,7 @@
     <property>Amazon.LookoutEquipment.Model.ModelSummary.DatasetArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ModelSummary.DatasetName</property>
@@ -1587,7 +1623,7 @@
     <property>Amazon.LookoutEquipment.Model.ModelSummary.ModelArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ModelSummary.ModelName</property>
@@ -1599,7 +1635,7 @@
     <property>Amazon.LookoutEquipment.Model.ModelVersionSummary.ModelArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ModelVersionSummary.ModelName</property>
@@ -1625,7 +1661,7 @@
     <property>Amazon.LookoutEquipment.Model.RetrainingSchedulerSummary.ModelArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.RetrainingSchedulerSummary.ModelName</property>
@@ -1649,7 +1685,7 @@
     <property>Amazon.LookoutEquipment.Model.S3Object.Key</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\P{M}\p{M}]{1,1024}[^/]$</pattern>
+    <pattern>^[\P{M}\p{M}]{1,1024}[^/]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.SensorStatisticsSummary.ComponentName</property>
@@ -1673,6 +1709,6 @@
     <property>Amazon.LookoutEquipment.Model.Tag.Value</property>
     <min>0</min>
     <max>256</max>
-    <pattern>[\s\w+-=\.:/@]*</pattern>
+    <pattern>^[\s\w+-=\.:/@]*$</pattern>
   </property-value-rule>
 </property-value-rules>

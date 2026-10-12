@@ -1,630 +1,531 @@
 <?xml version="1.0" encoding="utf-8"?>
 <docs>
-    <doc>
-        <members>
-            <member name="M:Amazon.Invoicing.IAmazonInvoicing.BatchGetInvoiceProfile(Amazon.Invoicing.Model.BatchGetInvoiceProfileRequest)" />
-            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.BatchGetInvoiceProfile(Amazon.Invoicing.Model.BatchGetInvoiceProfileRequest)" />
-            <member name="T:Amazon.Invoicing.Model.BatchGetInvoiceProfileRequest" />
-            <member name="T:Amazon.Invoicing.Model.BatchGetInvoiceProfileResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="BatchGetInvoiceProfile"
-                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Invoicing.IAmazonInvoicing.CreateInvoiceUnit(Amazon.Invoicing.Model.CreateInvoiceUnitRequest)" />
-            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.CreateInvoiceUnit(Amazon.Invoicing.Model.CreateInvoiceUnitRequest)" />
-            <member name="T:Amazon.Invoicing.Model.CreateInvoiceUnitRequest" />
-            <member name="T:Amazon.Invoicing.Model.CreateInvoiceUnitResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="CreateInvoiceUnit"
-                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Invoicing.IAmazonInvoicing.CreateProcurementPortalPreference(Amazon.Invoicing.Model.CreateProcurementPortalPreferenceRequest)" />
-            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.CreateProcurementPortalPreference(Amazon.Invoicing.Model.CreateProcurementPortalPreferenceRequest)" />
-            <member name="T:Amazon.Invoicing.Model.CreateProcurementPortalPreferenceRequest" />
-            <member name="T:Amazon.Invoicing.Model.CreateProcurementPortalPreferenceResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="CreateProcurementPortalPreference for Coupa"
-                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Invoicing.IAmazonInvoicing.DeleteInvoiceUnit(Amazon.Invoicing.Model.DeleteInvoiceUnitRequest)" />
-            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.DeleteInvoiceUnit(Amazon.Invoicing.Model.DeleteInvoiceUnitRequest)" />
-            <member name="T:Amazon.Invoicing.Model.DeleteInvoiceUnitRequest" />
-            <member name="T:Amazon.Invoicing.Model.DeleteInvoiceUnitResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="DeleteInvoiceUnit"
-                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Invoicing.IAmazonInvoicing.DeleteProcurementPortalPreference(Amazon.Invoicing.Model.DeleteProcurementPortalPreferenceRequest)" />
-            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.DeleteProcurementPortalPreference(Amazon.Invoicing.Model.DeleteProcurementPortalPreferenceRequest)" />
-            <member name="T:Amazon.Invoicing.Model.DeleteProcurementPortalPreferenceRequest" />
-            <member name="T:Amazon.Invoicing.Model.DeleteProcurementPortalPreferenceResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="DeleteProcurementPortalPreference call"
-                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Invoicing.IAmazonInvoicing.GetInvoicePDF(Amazon.Invoicing.Model.GetInvoicePDFRequest)" />
-            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.GetInvoicePDF(Amazon.Invoicing.Model.GetInvoicePDFRequest)" />
-            <member name="T:Amazon.Invoicing.Model.GetInvoicePDFRequest" />
-            <member name="T:Amazon.Invoicing.Model.GetInvoicePDFResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="GetInvoicePDF without supplemental documents"
-                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Invoicing.IAmazonInvoicing.GetInvoicePDF(Amazon.Invoicing.Model.GetInvoicePDFRequest)" />
-            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.GetInvoicePDF(Amazon.Invoicing.Model.GetInvoicePDFRequest)" />
-            <member name="T:Amazon.Invoicing.Model.GetInvoicePDFRequest" />
-            <member name="T:Amazon.Invoicing.Model.GetInvoicePDFResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="GetInvoicePDF with supplemental documents"
-                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
-                    region="example-2" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Invoicing.IAmazonInvoicing.GetInvoiceUnit(Amazon.Invoicing.Model.GetInvoiceUnitRequest)" />
-            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.GetInvoiceUnit(Amazon.Invoicing.Model.GetInvoiceUnitRequest)" />
-            <member name="T:Amazon.Invoicing.Model.GetInvoiceUnitRequest" />
-            <member name="T:Amazon.Invoicing.Model.GetInvoiceUnitResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="GetInvoiceUnit as of current time"
-                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Invoicing.IAmazonInvoicing.GetInvoiceUnit(Amazon.Invoicing.Model.GetInvoiceUnitRequest)" />
-            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.GetInvoiceUnit(Amazon.Invoicing.Model.GetInvoiceUnitRequest)" />
-            <member name="T:Amazon.Invoicing.Model.GetInvoiceUnitRequest" />
-            <member name="T:Amazon.Invoicing.Model.GetInvoiceUnitResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="GetInvoiceUnit as of specified time"
-                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
-                    region="example-2" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Invoicing.IAmazonInvoicing.GetProcurementPortalPreference(Amazon.Invoicing.Model.GetProcurementPortalPreferenceRequest)" />
-            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.GetProcurementPortalPreference(Amazon.Invoicing.Model.GetProcurementPortalPreferenceRequest)" />
-            <member name="T:Amazon.Invoicing.Model.GetProcurementPortalPreferenceRequest" />
-            <member name="T:Amazon.Invoicing.Model.GetProcurementPortalPreferenceResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="GetProcurementPortalPreference for Coupa pref"
-                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
-            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
-            <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesRequest" />
-            <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="ListInvoiceSummaries with InvoiceId as selector"
-                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
-            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
-            <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesRequest" />
-            <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="ListInvoiceSummaries with AccountId as selector and billing period"
-                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
-                    region="example-2" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
-            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
-            <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesRequest" />
-            <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="ListInvoiceSummaries with AccountId as selector and time interval"
-                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
-                    region="example-3" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
-            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
-            <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesRequest" />
-            <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="ListInvoiceSummaries filtered by ReceiverRole"
-                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
-                    region="example-4" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
-            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
-            <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesRequest" />
-            <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="ListInvoiceSummaries with AccountId as selector and a billing period and max results"
-                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
-                    region="example-5" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
-            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
-            <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesRequest" />
-            <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="ListInvoiceSummaries with AccountId as selector and a billing period and next token"
-                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
-                    region="example-6" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListInvoiceUnits(Amazon.Invoicing.Model.ListInvoiceUnitsRequest)" />
-            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListInvoiceUnits(Amazon.Invoicing.Model.ListInvoiceUnitsRequest)" />
-            <member name="T:Amazon.Invoicing.Model.ListInvoiceUnitsRequest" />
-            <member name="T:Amazon.Invoicing.Model.ListInvoiceUnitsResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="ListInvoiceUnits without filters as of current time"
-                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListInvoiceUnits(Amazon.Invoicing.Model.ListInvoiceUnitsRequest)" />
-            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListInvoiceUnits(Amazon.Invoicing.Model.ListInvoiceUnitsRequest)" />
-            <member name="T:Amazon.Invoicing.Model.ListInvoiceUnitsRequest" />
-            <member name="T:Amazon.Invoicing.Model.ListInvoiceUnitsResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="ListInvoiceUnits with filters as of specified time"
-                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
-                    region="example-2" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListInvoiceUnits(Amazon.Invoicing.Model.ListInvoiceUnitsRequest)" />
-            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListInvoiceUnits(Amazon.Invoicing.Model.ListInvoiceUnitsRequest)" />
-            <member name="T:Amazon.Invoicing.Model.ListInvoiceUnitsRequest" />
-            <member name="T:Amazon.Invoicing.Model.ListInvoiceUnitsResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="ListInvoiceUnits with pagination - first page"
-                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
-                    region="example-3" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListInvoiceUnits(Amazon.Invoicing.Model.ListInvoiceUnitsRequest)" />
-            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListInvoiceUnits(Amazon.Invoicing.Model.ListInvoiceUnitsRequest)" />
-            <member name="T:Amazon.Invoicing.Model.ListInvoiceUnitsRequest" />
-            <member name="T:Amazon.Invoicing.Model.ListInvoiceUnitsResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="ListInvoiceUnits with pagination - second page"
-                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
-                    region="example-4" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListProcurementPortalPreferences(Amazon.Invoicing.Model.ListProcurementPortalPreferencesRequest)" />
-            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListProcurementPortalPreferences(Amazon.Invoicing.Model.ListProcurementPortalPreferencesRequest)" />
-            <member name="T:Amazon.Invoicing.Model.ListProcurementPortalPreferencesRequest" />
-            <member name="T:Amazon.Invoicing.Model.ListProcurementPortalPreferencesResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="ListProcurementPortalPreferences for Coupa prefs. First Call with following pages"
-                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListProcurementPortalPreferences(Amazon.Invoicing.Model.ListProcurementPortalPreferencesRequest)" />
-            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListProcurementPortalPreferences(Amazon.Invoicing.Model.ListProcurementPortalPreferencesRequest)" />
-            <member name="T:Amazon.Invoicing.Model.ListProcurementPortalPreferencesRequest" />
-            <member name="T:Amazon.Invoicing.Model.ListProcurementPortalPreferencesResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="ListProcurementPortalPreferences for Coupa prefs. Second Call with the last page"
-                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
-                    region="example-2" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListProcurementPortals(Amazon.Invoicing.Model.ListProcurementPortalsRequest)" />
-            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListProcurementPortals(Amazon.Invoicing.Model.ListProcurementPortalsRequest)" />
-            <member name="T:Amazon.Invoicing.Model.ListProcurementPortalsRequest" />
-            <member name="T:Amazon.Invoicing.Model.ListProcurementPortalsResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="ListProcurementPortals"
-                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListProcurementPortalSuppliers(Amazon.Invoicing.Model.ListProcurementPortalSuppliersRequest)" />
-            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListProcurementPortalSuppliers(Amazon.Invoicing.Model.ListProcurementPortalSuppliersRequest)" />
-            <member name="T:Amazon.Invoicing.Model.ListProcurementPortalSuppliersRequest" />
-            <member name="T:Amazon.Invoicing.Model.ListProcurementPortalSuppliersResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="ListProcurementPortalSuppliers"
-                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListTagsForResource(Amazon.Invoicing.Model.ListTagsForResourceRequest)" />
-            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListTagsForResource(Amazon.Invoicing.Model.ListTagsForResourceRequest)" />
-            <member name="T:Amazon.Invoicing.Model.ListTagsForResourceRequest" />
-            <member name="T:Amazon.Invoicing.Model.ListTagsForResourceResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="ListTagsForResource"
-                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Invoicing.IAmazonInvoicing.PutProcurementPortalPreference(Amazon.Invoicing.Model.PutProcurementPortalPreferenceRequest)" />
-            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.PutProcurementPortalPreference(Amazon.Invoicing.Model.PutProcurementPortalPreferenceRequest)" />
-            <member name="T:Amazon.Invoicing.Model.PutProcurementPortalPreferenceRequest" />
-            <member name="T:Amazon.Invoicing.Model.PutProcurementPortalPreferenceResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="PutProcurementPortalPreference for Coupa pref"
-                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Invoicing.IAmazonInvoicing.SendProcurementPortalValidation(Amazon.Invoicing.Model.SendProcurementPortalValidationRequest)" />
-            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.SendProcurementPortalValidation(Amazon.Invoicing.Model.SendProcurementPortalValidationRequest)" />
-            <member name="T:Amazon.Invoicing.Model.SendProcurementPortalValidationRequest" />
-            <member name="T:Amazon.Invoicing.Model.SendProcurementPortalValidationResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="SendProcurementPortalValidation call"
-                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Invoicing.IAmazonInvoicing.TagResource(Amazon.Invoicing.Model.TagResourceRequest)" />
-            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.TagResource(Amazon.Invoicing.Model.TagResourceRequest)" />
-            <member name="T:Amazon.Invoicing.Model.TagResourceRequest" />
-            <member name="T:Amazon.Invoicing.Model.TagResourceResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="TagResource"
-                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Invoicing.IAmazonInvoicing.UntagResource(Amazon.Invoicing.Model.UntagResourceRequest)" />
-            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.UntagResource(Amazon.Invoicing.Model.UntagResourceRequest)" />
-            <member name="T:Amazon.Invoicing.Model.UntagResourceRequest" />
-            <member name="T:Amazon.Invoicing.Model.UntagResourceResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="UntagResource"
-                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Invoicing.IAmazonInvoicing.UpdateInvoiceUnit(Amazon.Invoicing.Model.UpdateInvoiceUnitRequest)" />
-            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.UpdateInvoiceUnit(Amazon.Invoicing.Model.UpdateInvoiceUnitRequest)" />
-            <member name="T:Amazon.Invoicing.Model.UpdateInvoiceUnitRequest" />
-            <member name="T:Amazon.Invoicing.Model.UpdateInvoiceUnitResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="UpdateInvoiceUnit with all updatable fields"
-                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Invoicing.IAmazonInvoicing.UpdateInvoiceUnit(Amazon.Invoicing.Model.UpdateInvoiceUnitRequest)" />
-            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.UpdateInvoiceUnit(Amazon.Invoicing.Model.UpdateInvoiceUnitRequest)" />
-            <member name="T:Amazon.Invoicing.Model.UpdateInvoiceUnitRequest" />
-            <member name="T:Amazon.Invoicing.Model.UpdateInvoiceUnitResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="UpdateInvoiceUnit with specific fields"
-                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
-                    region="example-2" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Invoicing.IAmazonInvoicing.UpdateProcurementPortalPreferenceStatus(Amazon.Invoicing.Model.UpdateProcurementPortalPreferenceStatusRequest)" />
-            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.UpdateProcurementPortalPreferenceStatus(Amazon.Invoicing.Model.UpdateProcurementPortalPreferenceStatusRequest)" />
-            <member name="T:Amazon.Invoicing.Model.UpdateProcurementPortalPreferenceStatusRequest" />
-            <member name="T:Amazon.Invoicing.Model.UpdateProcurementPortalPreferenceStatusResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="UpdateProcurementPortalPreference for EinvoiceDeliveryPreferenceStatus and PurchaseOrderRetrievalPreferenceStatus"
-                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Invoicing.IAmazonInvoicing.VerifyProcurementPortalValidation(Amazon.Invoicing.Model.VerifyProcurementPortalValidationRequest)" />
-            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.VerifyProcurementPortalValidation(Amazon.Invoicing.Model.VerifyProcurementPortalValidationRequest)" />
-            <member name="T:Amazon.Invoicing.Model.VerifyProcurementPortalValidationRequest" />
-            <member name="T:Amazon.Invoicing.Model.VerifyProcurementPortalValidationResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="VerifyProcurementPortalValidation call"
-                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Invoicing.IAmazonInvoicing.BatchGetInvoiceProfile(Amazon.Invoicing.Model.BatchGetInvoiceProfileRequest)" />
+      <member name="M:Amazon.Invoicing.AmazonInvoicingClient.BatchGetInvoiceProfile(Amazon.Invoicing.Model.BatchGetInvoiceProfileRequest)" />
+      <member name="T:Amazon.Invoicing.Model.BatchGetInvoiceProfileRequest" />
+      <member name="T:Amazon.Invoicing.Model.BatchGetInvoiceProfileResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="BatchGetInvoiceProfile" source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs" region="BatchGetInvoiceProfile-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Invoicing.IAmazonInvoicing.CreateInvoiceUnit(Amazon.Invoicing.Model.CreateInvoiceUnitRequest)" />
+      <member name="M:Amazon.Invoicing.AmazonInvoicingClient.CreateInvoiceUnit(Amazon.Invoicing.Model.CreateInvoiceUnitRequest)" />
+      <member name="T:Amazon.Invoicing.Model.CreateInvoiceUnitRequest" />
+      <member name="T:Amazon.Invoicing.Model.CreateInvoiceUnitResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="CreateInvoiceUnit" source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs" region="CreateInvoiceUnit-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Invoicing.IAmazonInvoicing.CreateProcurementPortalPreference(Amazon.Invoicing.Model.CreateProcurementPortalPreferenceRequest)" />
+      <member name="M:Amazon.Invoicing.AmazonInvoicingClient.CreateProcurementPortalPreference(Amazon.Invoicing.Model.CreateProcurementPortalPreferenceRequest)" />
+      <member name="T:Amazon.Invoicing.Model.CreateProcurementPortalPreferenceRequest" />
+      <member name="T:Amazon.Invoicing.Model.CreateProcurementPortalPreferenceResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="CreateProcurementPortalPreference for Coupa" source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs" region="CreateProcurementPortalPreference-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Invoicing.IAmazonInvoicing.DeleteInvoiceUnit(Amazon.Invoicing.Model.DeleteInvoiceUnitRequest)" />
+      <member name="M:Amazon.Invoicing.AmazonInvoicingClient.DeleteInvoiceUnit(Amazon.Invoicing.Model.DeleteInvoiceUnitRequest)" />
+      <member name="T:Amazon.Invoicing.Model.DeleteInvoiceUnitRequest" />
+      <member name="T:Amazon.Invoicing.Model.DeleteInvoiceUnitResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="DeleteInvoiceUnit" source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs" region="DeleteInvoiceUnit-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Invoicing.IAmazonInvoicing.DeleteProcurementPortalPreference(Amazon.Invoicing.Model.DeleteProcurementPortalPreferenceRequest)" />
+      <member name="M:Amazon.Invoicing.AmazonInvoicingClient.DeleteProcurementPortalPreference(Amazon.Invoicing.Model.DeleteProcurementPortalPreferenceRequest)" />
+      <member name="T:Amazon.Invoicing.Model.DeleteProcurementPortalPreferenceRequest" />
+      <member name="T:Amazon.Invoicing.Model.DeleteProcurementPortalPreferenceResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="DeleteProcurementPortalPreference call" source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs" region="DeleteProcurementPortalPreference-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Invoicing.IAmazonInvoicing.GetInvoicePDF(Amazon.Invoicing.Model.GetInvoicePDFRequest)" />
+      <member name="M:Amazon.Invoicing.AmazonInvoicingClient.GetInvoicePDF(Amazon.Invoicing.Model.GetInvoicePDFRequest)" />
+      <member name="T:Amazon.Invoicing.Model.GetInvoicePDFRequest" />
+      <member name="T:Amazon.Invoicing.Model.GetInvoicePDFResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="GetInvoicePDF without supplemental documents" source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs" region="GetInvoicePDF-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Invoicing.IAmazonInvoicing.GetInvoicePDF(Amazon.Invoicing.Model.GetInvoicePDFRequest)" />
+      <member name="M:Amazon.Invoicing.AmazonInvoicingClient.GetInvoicePDF(Amazon.Invoicing.Model.GetInvoicePDFRequest)" />
+      <member name="T:Amazon.Invoicing.Model.GetInvoicePDFRequest" />
+      <member name="T:Amazon.Invoicing.Model.GetInvoicePDFResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="GetInvoicePDF with supplemental documents" source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs" region="GetInvoicePDF-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Invoicing.IAmazonInvoicing.GetInvoiceUnit(Amazon.Invoicing.Model.GetInvoiceUnitRequest)" />
+      <member name="M:Amazon.Invoicing.AmazonInvoicingClient.GetInvoiceUnit(Amazon.Invoicing.Model.GetInvoiceUnitRequest)" />
+      <member name="T:Amazon.Invoicing.Model.GetInvoiceUnitRequest" />
+      <member name="T:Amazon.Invoicing.Model.GetInvoiceUnitResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="GetInvoiceUnit as of current time" source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs" region="GetInvoiceUnit-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Invoicing.IAmazonInvoicing.GetInvoiceUnit(Amazon.Invoicing.Model.GetInvoiceUnitRequest)" />
+      <member name="M:Amazon.Invoicing.AmazonInvoicingClient.GetInvoiceUnit(Amazon.Invoicing.Model.GetInvoiceUnitRequest)" />
+      <member name="T:Amazon.Invoicing.Model.GetInvoiceUnitRequest" />
+      <member name="T:Amazon.Invoicing.Model.GetInvoiceUnitResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="GetInvoiceUnit as of specified time" source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs" region="GetInvoiceUnit-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Invoicing.IAmazonInvoicing.GetProcurementPortalPreference(Amazon.Invoicing.Model.GetProcurementPortalPreferenceRequest)" />
+      <member name="M:Amazon.Invoicing.AmazonInvoicingClient.GetProcurementPortalPreference(Amazon.Invoicing.Model.GetProcurementPortalPreferenceRequest)" />
+      <member name="T:Amazon.Invoicing.Model.GetProcurementPortalPreferenceRequest" />
+      <member name="T:Amazon.Invoicing.Model.GetProcurementPortalPreferenceResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="GetProcurementPortalPreference for Coupa pref" source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs" region="GetProcurementPortalPreference-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
+      <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
+      <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesRequest" />
+      <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="ListInvoiceSummaries with InvoiceId as selector" source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs" region="ListInvoiceSummaries-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
+      <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
+      <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesRequest" />
+      <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="ListInvoiceSummaries with AccountId as selector and billing period" source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs" region="ListInvoiceSummaries-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
+      <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
+      <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesRequest" />
+      <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="ListInvoiceSummaries with AccountId as selector and time interval" source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs" region="ListInvoiceSummaries-3" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
+      <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
+      <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesRequest" />
+      <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="ListInvoiceSummaries filtered by ReceiverRole" source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs" region="ListInvoiceSummaries-4" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
+      <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
+      <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesRequest" />
+      <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="ListInvoiceSummaries with AccountId as selector and a billing period and max results" source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs" region="ListInvoiceSummaries-5" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
+      <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
+      <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesRequest" />
+      <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="ListInvoiceSummaries with AccountId as selector and a billing period and next token" source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs" region="ListInvoiceSummaries-6" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListInvoiceUnits(Amazon.Invoicing.Model.ListInvoiceUnitsRequest)" />
+      <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListInvoiceUnits(Amazon.Invoicing.Model.ListInvoiceUnitsRequest)" />
+      <member name="T:Amazon.Invoicing.Model.ListInvoiceUnitsRequest" />
+      <member name="T:Amazon.Invoicing.Model.ListInvoiceUnitsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="ListInvoiceUnits without filters as of current time" source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs" region="ListInvoiceUnits-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListInvoiceUnits(Amazon.Invoicing.Model.ListInvoiceUnitsRequest)" />
+      <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListInvoiceUnits(Amazon.Invoicing.Model.ListInvoiceUnitsRequest)" />
+      <member name="T:Amazon.Invoicing.Model.ListInvoiceUnitsRequest" />
+      <member name="T:Amazon.Invoicing.Model.ListInvoiceUnitsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="ListInvoiceUnits with filters as of specified time" source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs" region="ListInvoiceUnits-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListInvoiceUnits(Amazon.Invoicing.Model.ListInvoiceUnitsRequest)" />
+      <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListInvoiceUnits(Amazon.Invoicing.Model.ListInvoiceUnitsRequest)" />
+      <member name="T:Amazon.Invoicing.Model.ListInvoiceUnitsRequest" />
+      <member name="T:Amazon.Invoicing.Model.ListInvoiceUnitsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="ListInvoiceUnits with pagination - first page" source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs" region="ListInvoiceUnits-3" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListInvoiceUnits(Amazon.Invoicing.Model.ListInvoiceUnitsRequest)" />
+      <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListInvoiceUnits(Amazon.Invoicing.Model.ListInvoiceUnitsRequest)" />
+      <member name="T:Amazon.Invoicing.Model.ListInvoiceUnitsRequest" />
+      <member name="T:Amazon.Invoicing.Model.ListInvoiceUnitsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="ListInvoiceUnits with pagination - second page" source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs" region="ListInvoiceUnits-4" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListProcurementPortalPreferences(Amazon.Invoicing.Model.ListProcurementPortalPreferencesRequest)" />
+      <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListProcurementPortalPreferences(Amazon.Invoicing.Model.ListProcurementPortalPreferencesRequest)" />
+      <member name="T:Amazon.Invoicing.Model.ListProcurementPortalPreferencesRequest" />
+      <member name="T:Amazon.Invoicing.Model.ListProcurementPortalPreferencesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="ListProcurementPortalPreferences for Coupa prefs. First Call with following pages" source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs" region="ListProcurementPortalPreferences-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListProcurementPortalPreferences(Amazon.Invoicing.Model.ListProcurementPortalPreferencesRequest)" />
+      <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListProcurementPortalPreferences(Amazon.Invoicing.Model.ListProcurementPortalPreferencesRequest)" />
+      <member name="T:Amazon.Invoicing.Model.ListProcurementPortalPreferencesRequest" />
+      <member name="T:Amazon.Invoicing.Model.ListProcurementPortalPreferencesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="ListProcurementPortalPreferences for Coupa prefs. Second Call with the last page" source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs" region="ListProcurementPortalPreferences-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListProcurementPortals(Amazon.Invoicing.Model.ListProcurementPortalsRequest)" />
+      <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListProcurementPortals(Amazon.Invoicing.Model.ListProcurementPortalsRequest)" />
+      <member name="T:Amazon.Invoicing.Model.ListProcurementPortalsRequest" />
+      <member name="T:Amazon.Invoicing.Model.ListProcurementPortalsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="ListProcurementPortals" source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs" region="ListProcurementPortals-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListProcurementPortalSuppliers(Amazon.Invoicing.Model.ListProcurementPortalSuppliersRequest)" />
+      <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListProcurementPortalSuppliers(Amazon.Invoicing.Model.ListProcurementPortalSuppliersRequest)" />
+      <member name="T:Amazon.Invoicing.Model.ListProcurementPortalSuppliersRequest" />
+      <member name="T:Amazon.Invoicing.Model.ListProcurementPortalSuppliersResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="ListProcurementPortalSuppliers" source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs" region="ListProcurementPortalSuppliers-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListTagsForResource(Amazon.Invoicing.Model.ListTagsForResourceRequest)" />
+      <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListTagsForResource(Amazon.Invoicing.Model.ListTagsForResourceRequest)" />
+      <member name="T:Amazon.Invoicing.Model.ListTagsForResourceRequest" />
+      <member name="T:Amazon.Invoicing.Model.ListTagsForResourceResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="ListTagsForResource" source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs" region="ListTagsForResource-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Invoicing.IAmazonInvoicing.PutProcurementPortalPreference(Amazon.Invoicing.Model.PutProcurementPortalPreferenceRequest)" />
+      <member name="M:Amazon.Invoicing.AmazonInvoicingClient.PutProcurementPortalPreference(Amazon.Invoicing.Model.PutProcurementPortalPreferenceRequest)" />
+      <member name="T:Amazon.Invoicing.Model.PutProcurementPortalPreferenceRequest" />
+      <member name="T:Amazon.Invoicing.Model.PutProcurementPortalPreferenceResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="PutProcurementPortalPreference for Coupa pref" source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs" region="PutProcurementPortalPreference-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Invoicing.IAmazonInvoicing.SendProcurementPortalValidation(Amazon.Invoicing.Model.SendProcurementPortalValidationRequest)" />
+      <member name="M:Amazon.Invoicing.AmazonInvoicingClient.SendProcurementPortalValidation(Amazon.Invoicing.Model.SendProcurementPortalValidationRequest)" />
+      <member name="T:Amazon.Invoicing.Model.SendProcurementPortalValidationRequest" />
+      <member name="T:Amazon.Invoicing.Model.SendProcurementPortalValidationResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="SendProcurementPortalValidation call" source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs" region="SendProcurementPortalValidation-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Invoicing.IAmazonInvoicing.TagResource(Amazon.Invoicing.Model.TagResourceRequest)" />
+      <member name="M:Amazon.Invoicing.AmazonInvoicingClient.TagResource(Amazon.Invoicing.Model.TagResourceRequest)" />
+      <member name="T:Amazon.Invoicing.Model.TagResourceRequest" />
+      <member name="T:Amazon.Invoicing.Model.TagResourceResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="TagResource" source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs" region="TagResource-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Invoicing.IAmazonInvoicing.UntagResource(Amazon.Invoicing.Model.UntagResourceRequest)" />
+      <member name="M:Amazon.Invoicing.AmazonInvoicingClient.UntagResource(Amazon.Invoicing.Model.UntagResourceRequest)" />
+      <member name="T:Amazon.Invoicing.Model.UntagResourceRequest" />
+      <member name="T:Amazon.Invoicing.Model.UntagResourceResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="UntagResource" source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs" region="UntagResource-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Invoicing.IAmazonInvoicing.UpdateInvoiceUnit(Amazon.Invoicing.Model.UpdateInvoiceUnitRequest)" />
+      <member name="M:Amazon.Invoicing.AmazonInvoicingClient.UpdateInvoiceUnit(Amazon.Invoicing.Model.UpdateInvoiceUnitRequest)" />
+      <member name="T:Amazon.Invoicing.Model.UpdateInvoiceUnitRequest" />
+      <member name="T:Amazon.Invoicing.Model.UpdateInvoiceUnitResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="UpdateInvoiceUnit with all updatable fields" source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs" region="UpdateInvoiceUnit-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Invoicing.IAmazonInvoicing.UpdateInvoiceUnit(Amazon.Invoicing.Model.UpdateInvoiceUnitRequest)" />
+      <member name="M:Amazon.Invoicing.AmazonInvoicingClient.UpdateInvoiceUnit(Amazon.Invoicing.Model.UpdateInvoiceUnitRequest)" />
+      <member name="T:Amazon.Invoicing.Model.UpdateInvoiceUnitRequest" />
+      <member name="T:Amazon.Invoicing.Model.UpdateInvoiceUnitResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="UpdateInvoiceUnit with specific fields" source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs" region="UpdateInvoiceUnit-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Invoicing.IAmazonInvoicing.UpdateProcurementPortalPreferenceStatus(Amazon.Invoicing.Model.UpdateProcurementPortalPreferenceStatusRequest)" />
+      <member name="M:Amazon.Invoicing.AmazonInvoicingClient.UpdateProcurementPortalPreferenceStatus(Amazon.Invoicing.Model.UpdateProcurementPortalPreferenceStatusRequest)" />
+      <member name="T:Amazon.Invoicing.Model.UpdateProcurementPortalPreferenceStatusRequest" />
+      <member name="T:Amazon.Invoicing.Model.UpdateProcurementPortalPreferenceStatusResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="UpdateProcurementPortalPreference for EinvoiceDeliveryPreferenceStatus and PurchaseOrderRetrievalPreferenceStatus" source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs" region="UpdateProcurementPortalPreferenceStatus-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Invoicing.IAmazonInvoicing.VerifyProcurementPortalValidation(Amazon.Invoicing.Model.VerifyProcurementPortalValidationRequest)" />
+      <member name="M:Amazon.Invoicing.AmazonInvoicingClient.VerifyProcurementPortalValidation(Amazon.Invoicing.Model.VerifyProcurementPortalValidationRequest)" />
+      <member name="T:Amazon.Invoicing.Model.VerifyProcurementPortalValidationRequest" />
+      <member name="T:Amazon.Invoicing.Model.VerifyProcurementPortalValidationResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="VerifyProcurementPortalValidation call" source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs" region="VerifyProcurementPortalValidation-1" />
+      </example>
+    </value>
+  </doc>
 </docs>

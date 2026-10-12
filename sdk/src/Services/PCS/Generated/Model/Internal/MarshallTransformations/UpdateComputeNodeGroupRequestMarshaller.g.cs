@@ -1,0 +1,187 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+using System.Buffers;
+
+using Amazon.PCS.Model;
+using System.Globalization;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.PCS.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// UpdateComputeNodeGroup Request Marshaller
+    /// </summary>
+    public partial class UpdateComputeNodeGroupRequestMarshaller : IMarshaller<IRequest, UpdateComputeNodeGroupRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    {
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((UpdateComputeNodeGroupRequest)input);
+        }
+
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(UpdateComputeNodeGroupRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.PCS");
+            string target = "AWSParallelComputingService.UpdateComputeNodeGroup";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2023-02-10";
+            request.HttpMethod = "POST";
+
+            request.ResourcePath = "/";
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using var writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetAmiId())
+            {
+                context.Writer.WritePropertyName("amiId");
+                context.Writer.WriteStringValue(publicRequest.AmiId);
+            }
+            if (publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+            else
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if (publicRequest.IsSetClusterIdentifier())
+            {
+                context.Writer.WritePropertyName("clusterIdentifier");
+                context.Writer.WriteStringValue(publicRequest.ClusterIdentifier);
+            }
+            if (publicRequest.IsSetComputeNodeGroupIdentifier())
+            {
+                context.Writer.WritePropertyName("computeNodeGroupIdentifier");
+                context.Writer.WriteStringValue(publicRequest.ComputeNodeGroupIdentifier);
+            }
+            if (publicRequest.IsSetCustomLaunchTemplate())
+            {
+                context.Writer.WritePropertyName("customLaunchTemplate");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CustomLaunchTemplateMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CustomLaunchTemplate, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetIamInstanceProfileArn())
+            {
+                context.Writer.WritePropertyName("iamInstanceProfileArn");
+                context.Writer.WriteStringValue(publicRequest.IamInstanceProfileArn);
+            }
+            if (publicRequest.IsSetNodeLifecycleActions())
+            {
+                context.Writer.WritePropertyName("nodeLifecycleActions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdateNodeLifecycleActionsRequestMarshaller.Instance;
+                marshaller.Marshall(publicRequest.NodeLifecycleActions, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetPurchaseOption())
+            {
+                context.Writer.WritePropertyName("purchaseOption");
+                context.Writer.WriteStringValue(publicRequest.PurchaseOption);
+            }
+            if (publicRequest.IsSetScalingConfiguration())
+            {
+                context.Writer.WritePropertyName("scalingConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ScalingConfigurationRequestMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ScalingConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetSlurmConfiguration())
+            {
+                context.Writer.WritePropertyName("slurmConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdateComputeNodeGroupSlurmConfigurationRequestMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SlurmConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetSpotOptions())
+            {
+                context.Writer.WritePropertyName("spotOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SpotOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SpotOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetSubnetIds())
+            {
+                context.Writer.WritePropertyName("subnetIds");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestSubnetIdsListValue in publicRequest.SubnetIds)
+                {
+                    context.Writer.WriteStringValue(publicRequestSubnetIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETFRAMEWORK
+            request.Content = memoryStream.ToArray();
+#endif
+
+            return request;
+        }
+
+        private static readonly UpdateComputeNodeGroupRequestMarshaller _instance = new();
+
+        internal static UpdateComputeNodeGroupRequestMarshaller GetInstance() => _instance;
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static UpdateComputeNodeGroupRequestMarshaller Instance => _instance;
+    }
+}

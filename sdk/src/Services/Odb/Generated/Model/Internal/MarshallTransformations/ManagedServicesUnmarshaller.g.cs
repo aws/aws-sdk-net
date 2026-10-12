@@ -1,0 +1,136 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.Odb.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.Odb.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for ManagedServices Object
+    /// </summary>
+    public partial class ManagedServicesUnmarshaller : IJsonUnmarshaller<ManagedServices, JsonUnmarshallerContext>
+    {
+        /// <summary>
+        /// Unmarshall the response from the service to the response class.
+        /// </summary>
+        /// <returns>The unmarshalled object</returns>
+        public ManagedServices Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        {
+            var unmarshalledObject = new ManagedServices();
+            if (context.IsEmptyResponse) return null;
+
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) return null;
+
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth, ref reader))
+            {
+                if (context.TestExpression("crossRegionS3RestoreSourcesAccess", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<CrossRegionS3RestoreSourcesAccess, CrossRegionS3RestoreSourcesAccessUnmarshaller>(CrossRegionS3RestoreSourcesAccessUnmarshaller.Instance);
+                    unmarshalledObject.CrossRegionS3RestoreSourcesAccess = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("kmsAccess", targetDepth, ref reader))
+                {
+                    var unmarshaller = KmsAccessUnmarshaller.Instance;
+                    unmarshalledObject.KmsAccess = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("managedS3BackupAccess", targetDepth, ref reader))
+                {
+                    var unmarshaller = ManagedS3BackupAccessUnmarshaller.Instance;
+                    unmarshalledObject.ManagedS3BackupAccess = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("managedServicesIpv4Cidrs", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ManagedServicesIpv4Cidrs = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("resourceGatewayArn", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceGatewayArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("s3Access", targetDepth, ref reader))
+                {
+                    var unmarshaller = S3AccessUnmarshaller.Instance;
+                    unmarshalledObject.S3Access = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("serviceNetworkArn", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ServiceNetworkArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("serviceNetworkEndpoint", targetDepth, ref reader))
+                {
+                    var unmarshaller = ServiceNetworkEndpointUnmarshaller.Instance;
+                    unmarshalledObject.ServiceNetworkEndpoint = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("stsAccess", targetDepth, ref reader))
+                {
+                    var unmarshaller = StsAccessUnmarshaller.Instance;
+                    unmarshalledObject.StsAccess = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("zeroEtlAccess", targetDepth, ref reader))
+                {
+                    var unmarshaller = ZeroEtlAccessUnmarshaller.Instance;
+                    unmarshalledObject.ZeroEtlAccess = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+            }
+            return unmarshalledObject;
+        }
+
+        private static ManagedServicesUnmarshaller _instance = new ManagedServicesUnmarshaller();
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static ManagedServicesUnmarshaller Instance => _instance;
+    }
+}

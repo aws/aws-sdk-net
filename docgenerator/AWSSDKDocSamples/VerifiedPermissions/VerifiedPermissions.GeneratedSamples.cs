@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.VerifiedPermissions.Generated
     {
         public void VerifiedPermissionsBatchGetPolicy()
         {
-            #region example-1
+            #region BatchGetPolicy-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.BatchGetPolicy(new BatchGetPolicyRequest 
+            var response = client.BatchGetPolicy(new BatchGetPolicyRequest
             {
                 Requests = new List<BatchGetPolicyInputItem> {
                     new BatchGetPolicyInputItem {
@@ -42,10 +43,10 @@ namespace AWSSDKDocSamples.Amazon.VerifiedPermissions.Generated
 
         public void VerifiedPermissionsBatchGetPolicy()
         {
-            #region example-2
+            #region BatchGetPolicy-2
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.BatchGetPolicy(new BatchGetPolicyRequest 
+            var response = client.BatchGetPolicy(new BatchGetPolicyRequest
             {
                 Requests = new List<BatchGetPolicyInputItem> {
                     new BatchGetPolicyInputItem {
@@ -67,10 +68,10 @@ namespace AWSSDKDocSamples.Amazon.VerifiedPermissions.Generated
 
         public void VerifiedPermissionsBatchIsAuthorized()
         {
-            #region example-1
+            #region BatchIsAuthorized-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.BatchIsAuthorized(new BatchIsAuthorizedRequest 
+            var response = client.BatchIsAuthorized(new BatchIsAuthorizedRequest
             {
                 Entities = new EntitiesDefinition { EntityList = new List<EntityItem> {
                     new EntityItem {
@@ -86,7 +87,6 @@ namespace AWSSDKDocSamples.Amazon.VerifiedPermissions.Generated
                             EntityType = "PhotoFlash::User"
                         },
                         Parents = new List<EntityIdentifier> {
-                            
                         }
                     },
                     new EntityItem {
@@ -102,7 +102,6 @@ namespace AWSSDKDocSamples.Amazon.VerifiedPermissions.Generated
                             EntityType = "PhotoFlash::User"
                         },
                         Parents = new List<EntityIdentifier> {
-                            
                         }
                     },
                     new EntityItem {
@@ -130,7 +129,6 @@ namespace AWSSDKDocSamples.Amazon.VerifiedPermissions.Generated
                             EntityType = "PhotoFlash::Account"
                         },
                         Parents = new List<EntityIdentifier> {
-                            
                         }
                     }
                 } },
@@ -174,10 +172,10 @@ namespace AWSSDKDocSamples.Amazon.VerifiedPermissions.Generated
 
         public void VerifiedPermissionsBatchIsAuthorizedWithToken()
         {
-            #region example-1
+            #region BatchIsAuthorizedWithToken-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.BatchIsAuthorizedWithToken(new BatchIsAuthorizedWithTokenRequest 
+            var response = client.BatchIsAuthorizedWithToken(new BatchIsAuthorizedWithTokenRequest
             {
                 Entities = new EntitiesDefinition { EntityList = new List<EntityItem> {
                     new EntityItem {
@@ -249,10 +247,10 @@ namespace AWSSDKDocSamples.Amazon.VerifiedPermissions.Generated
 
         public void VerifiedPermissionsCreateIdentitySource()
         {
-            #region example-1
+            #region CreateIdentitySource-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.CreateIdentitySource(new CreateIdentitySourceRequest 
+            var response = client.CreateIdentitySource(new CreateIdentitySourceRequest
             {
                 ClientToken = "a1b2c3d4-e5f6-a1b2-c3d4-TOKEN1111111",
                 Configuration = new Configuration { CognitoUserPoolConfiguration = new CognitoUserPoolConfiguration {
@@ -265,9 +263,9 @@ namespace AWSSDKDocSamples.Amazon.VerifiedPermissions.Generated
                 PrincipalEntityType = "User"
             });
 
-            DateTime createdDate = response.CreatedDate;
+            DateTime? createdDate = response.CreatedDate;
             string identitySourceId = response.IdentitySourceId;
-            DateTime lastUpdatedDate = response.LastUpdatedDate;
+            DateTime? lastUpdatedDate = response.LastUpdatedDate;
             string policyStoreId = response.PolicyStoreId;
 
             #endregion
@@ -275,25 +273,25 @@ namespace AWSSDKDocSamples.Amazon.VerifiedPermissions.Generated
 
         public void VerifiedPermissionsCreatePolicy()
         {
-            #region example-1
+            #region CreatePolicy-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.CreatePolicy(new CreatePolicyRequest 
+            var response = client.CreatePolicy(new CreatePolicyRequest
             {
-                Name = "name/example-policy",
                 ClientToken = "a1b2c3d4-e5f6-a1b2-c3d4-TOKEN1111111",
                 Definition = new PolicyDefinition { Static = new StaticPolicyDefinition {
                     Description = "Grant members of janeFriends UserGroup access to the vacationFolder Album",
                     Statement = "permit( principal in UserGroup::\"janeFriends\", action, resource in Album::\"vacationFolder\" );"
                 } },
+                Name = "name/example-policy",
                 PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a"
             });
 
-            DateTime createdDate = response.CreatedDate;
-            DateTime lastUpdatedDate = response.LastUpdatedDate;
+            DateTime? createdDate = response.CreatedDate;
+            DateTime? lastUpdatedDate = response.LastUpdatedDate;
             string policyId = response.PolicyId;
             string policyStoreId = response.PolicyStoreId;
-            string policyType = response.PolicyType;
+            PolicyType policyType = response.PolicyType;
             EntityIdentifier principal = response.Principal;
             EntityIdentifier resource = response.Resource;
 
@@ -302,12 +300,11 @@ namespace AWSSDKDocSamples.Amazon.VerifiedPermissions.Generated
 
         public void VerifiedPermissionsCreatePolicy()
         {
-            #region example-2
+            #region CreatePolicy-2
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.CreatePolicy(new CreatePolicyRequest 
+            var response = client.CreatePolicy(new CreatePolicyRequest
             {
-                Name = "name/example-template-linked-policy",
                 ClientToken = "a1b2c3d4-e5f6-a1b2-c3d4-TOKEN1111111",
                 Definition = new PolicyDefinition { TemplateLinked = new TemplateLinkedPolicyDefinition {
                     PolicyTemplateId = "PTEXAMPLEabcdefg111111",
@@ -316,14 +313,15 @@ namespace AWSSDKDocSamples.Amazon.VerifiedPermissions.Generated
                         EntityType = "User"
                     }
                 } },
+                Name = "name/example-template-linked-policy",
                 PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a"
             });
 
-            DateTime createdDate = response.CreatedDate;
-            DateTime lastUpdatedDate = response.LastUpdatedDate;
+            DateTime? createdDate = response.CreatedDate;
+            DateTime? lastUpdatedDate = response.LastUpdatedDate;
             string policyId = response.PolicyId;
             string policyStoreId = response.PolicyStoreId;
-            string policyType = response.PolicyType;
+            PolicyType policyType = response.PolicyType;
             EntityIdentifier principal = response.Principal;
             EntityIdentifier resource = response.Resource;
 
@@ -332,18 +330,18 @@ namespace AWSSDKDocSamples.Amazon.VerifiedPermissions.Generated
 
         public void VerifiedPermissionsCreatePolicyStore()
         {
-            #region example-1
+            #region CreatePolicyStore-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.CreatePolicyStore(new CreatePolicyStoreRequest 
+            var response = client.CreatePolicyStore(new CreatePolicyStoreRequest
             {
                 ClientToken = "a1b2c3d4-e5f6-a1b2-c3d4-TOKEN1111111",
                 ValidationSettings = new ValidationSettings { Mode = "STRICT" }
             });
 
             string arn = response.Arn;
-            DateTime createdDate = response.CreatedDate;
-            DateTime lastUpdatedDate = response.LastUpdatedDate;
+            DateTime? createdDate = response.CreatedDate;
+            DateTime? lastUpdatedDate = response.LastUpdatedDate;
             string policyStoreId = response.PolicyStoreId;
 
             #endregion
@@ -351,24 +349,24 @@ namespace AWSSDKDocSamples.Amazon.VerifiedPermissions.Generated
 
         public void VerifiedPermissionsCreatePolicyStore()
         {
-            #region example-2
+            #region CreatePolicyStore-2
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.CreatePolicyStore(new CreatePolicyStoreRequest 
+            var response = client.CreatePolicyStore(new CreatePolicyStoreRequest
             {
                 ClientToken = "a1b2c3d4-e5f6-a1b2-c3d4-TOKEN1111111",
                 EncryptionSettings = new EncryptionSettings { KmsEncryptionSettings = new KmsEncryptionSettings {
-                    Key = "arn:aws:kms:us-east-1:123456789012:key/abcdefgh-ijkl-mnop-qrst-uvwxyz123456",
                     EncryptionContext = new Dictionary<string, string> {
                         { "policy_store_owner", "Tim" }
-                    }
+                    },
+                    Key = "arn:aws:kms:us-east-1:123456789012:key/abcdefgh-ijkl-mnop-qrst-uvwxyz123456"
                 } },
                 ValidationSettings = new ValidationSettings { Mode = "STRICT" }
             });
 
             string arn = response.Arn;
-            DateTime createdDate = response.CreatedDate;
-            DateTime lastUpdatedDate = response.LastUpdatedDate;
+            DateTime? createdDate = response.CreatedDate;
+            DateTime? lastUpdatedDate = response.LastUpdatedDate;
             string policyStoreId = response.PolicyStoreId;
 
             #endregion
@@ -376,10 +374,10 @@ namespace AWSSDKDocSamples.Amazon.VerifiedPermissions.Generated
 
         public void VerifiedPermissionsCreatePolicyStoreAlias()
         {
-            #region example-1
+            #region CreatePolicyStoreAlias-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.CreatePolicyStoreAlias(new CreatePolicyStoreAliasRequest 
+            var response = client.CreatePolicyStoreAlias(new CreatePolicyStoreAliasRequest
             {
                 AliasName = "policy-store-alias/example-policy-store",
                 PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a"
@@ -387,7 +385,7 @@ namespace AWSSDKDocSamples.Amazon.VerifiedPermissions.Generated
 
             string aliasArn = response.AliasArn;
             string aliasName = response.AliasName;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string policyStoreId = response.PolicyStoreId;
 
             #endregion
@@ -395,28 +393,20 @@ namespace AWSSDKDocSamples.Amazon.VerifiedPermissions.Generated
 
         public void VerifiedPermissionsCreatePolicyTemplate()
         {
-            #region example-1
+            #region CreatePolicyTemplate-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.CreatePolicyTemplate(new CreatePolicyTemplateRequest 
+            var response = client.CreatePolicyTemplate(new CreatePolicyTemplateRequest
             {
-                Name = "name/example-policy-template",
                 ClientToken = "a1b2c3d4-e5f6-a1b2-c3d4-TOKEN1111111",
                 Description = "Template for research dept",
+                Name = "name/example-policy-template",
                 PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a",
-                Statement = "\"AccessVacation\"
-permit(
-    principal in ?principal,
-    action == Action::\"view\",
-    resource == Photo::\"VacationPhoto94.jpg\"
-)
-when {
-    principal has department && principal.department == \"research\"
-};"
+                Statement = "\"AccessVacation\"\npermit(\n    principal in ?principal,\n    action == Action::\"view\",\n    resource == Photo::\"VacationPhoto94.jpg\"\n)\nwhen {\n    principal has department && principal.department == \"research\"\n};"
             });
 
-            DateTime createdDate = response.CreatedDate;
-            DateTime lastUpdatedDate = response.LastUpdatedDate;
+            DateTime? createdDate = response.CreatedDate;
+            DateTime? lastUpdatedDate = response.LastUpdatedDate;
             string policyStoreId = response.PolicyStoreId;
             string policyTemplateId = response.PolicyTemplateId;
 
@@ -425,10 +415,10 @@ when {
 
         public void VerifiedPermissionsDeleteIdentitySource()
         {
-            #region example-1
+            #region DeleteIdentitySource-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.DeleteIdentitySource(new DeleteIdentitySourceRequest 
+            var response = client.DeleteIdentitySource(new DeleteIdentitySourceRequest
             {
                 IdentitySourceId = "ISEXAMPLEabcdefg111111",
                 PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a"
@@ -440,10 +430,10 @@ when {
 
         public void VerifiedPermissionsDeletePolicy()
         {
-            #region example-1
+            #region DeletePolicy-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.DeletePolicy(new DeletePolicyRequest 
+            var response = client.DeletePolicy(new DeletePolicyRequest
             {
                 PolicyId = "9wYxMpljbbZQb5fcZHyJhY",
                 PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a"
@@ -455,10 +445,10 @@ when {
 
         public void VerifiedPermissionsDeletePolicyStore()
         {
-            #region example-1
+            #region DeletePolicyStore-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.DeletePolicyStore(new DeletePolicyStoreRequest 
+            var response = client.DeletePolicyStore(new DeletePolicyStoreRequest
             {
                 PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a"
             });
@@ -469,10 +459,10 @@ when {
 
         public void VerifiedPermissionsDeletePolicyStoreAlias()
         {
-            #region example-1
+            #region DeletePolicyStoreAlias-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.DeletePolicyStoreAlias(new DeletePolicyStoreAliasRequest 
+            var response = client.DeletePolicyStoreAlias(new DeletePolicyStoreAliasRequest
             {
                 AliasName = "policy-store-alias/example-policy-store"
             });
@@ -483,10 +473,10 @@ when {
 
         public void VerifiedPermissionsDeletePolicyStoreAlias()
         {
-            #region example-2
+            #region DeletePolicyStoreAlias-2
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.DeletePolicyStoreAlias(new DeletePolicyStoreAliasRequest 
+            var response = client.DeletePolicyStoreAlias(new DeletePolicyStoreAliasRequest
             {
                 AliasName = "policy-store-alias/example-policy-store",
                 DeletionMode = "HardDelete"
@@ -498,10 +488,10 @@ when {
 
         public void VerifiedPermissionsDeletePolicyTemplate()
         {
-            #region example-1
+            #region DeletePolicyTemplate-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.DeletePolicyTemplate(new DeletePolicyTemplateRequest 
+            var response = client.DeletePolicyTemplate(new DeletePolicyTemplateRequest
             {
                 PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a",
                 PolicyTemplateId = "PTEXAMPLEabcdefg111111"
@@ -513,19 +503,19 @@ when {
 
         public void VerifiedPermissionsGetIdentitySource()
         {
-            #region example-1
+            #region GetIdentitySource-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.GetIdentitySource(new GetIdentitySourceRequest 
+            var response = client.GetIdentitySource(new GetIdentitySourceRequest
             {
                 IdentitySourceId = "ISEXAMPLEabcdefg111111",
                 PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a"
             });
 
-            DateTime createdDate = response.CreatedDate;
+            DateTime? createdDate = response.CreatedDate;
             IdentitySourceDetails details = response.Details;
             string identitySourceId = response.IdentitySourceId;
-            DateTime lastUpdatedDate = response.LastUpdatedDate;
+            DateTime? lastUpdatedDate = response.LastUpdatedDate;
             string policyStoreId = response.PolicyStoreId;
             string principalEntityType = response.PrincipalEntityType;
 
@@ -534,21 +524,21 @@ when {
 
         public void VerifiedPermissionsGetPolicy()
         {
-            #region example-1
+            #region GetPolicy-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.GetPolicy(new GetPolicyRequest 
+            var response = client.GetPolicy(new GetPolicyRequest
             {
                 PolicyId = "9wYixMplbbZQb5fcZHyJhY",
                 PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a"
             });
 
-            DateTime createdDate = response.CreatedDate;
+            DateTime? createdDate = response.CreatedDate;
             PolicyDefinitionDetail definition = response.Definition;
-            DateTime lastUpdatedDate = response.LastUpdatedDate;
+            DateTime? lastUpdatedDate = response.LastUpdatedDate;
             string policyId = response.PolicyId;
             string policyStoreId = response.PolicyStoreId;
-            string policyType = response.PolicyType;
+            PolicyType policyType = response.PolicyType;
             EntityIdentifier resource = response.Resource;
 
             #endregion
@@ -556,22 +546,22 @@ when {
 
         public void VerifiedPermissionsGetPolicy()
         {
-            #region example-2
+            #region GetPolicy-2
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.GetPolicy(new GetPolicyRequest 
+            var response = client.GetPolicy(new GetPolicyRequest
             {
                 PolicyId = "name/example-policy",
                 PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a"
             });
 
-            string name = response.Name;
-            DateTime createdDate = response.CreatedDate;
+            DateTime? createdDate = response.CreatedDate;
             PolicyDefinitionDetail definition = response.Definition;
-            DateTime lastUpdatedDate = response.LastUpdatedDate;
+            DateTime? lastUpdatedDate = response.LastUpdatedDate;
+            string name = response.Name;
             string policyId = response.PolicyId;
             string policyStoreId = response.PolicyStoreId;
-            string policyType = response.PolicyType;
+            PolicyType policyType = response.PolicyType;
             EntityIdentifier resource = response.Resource;
 
             #endregion
@@ -579,18 +569,18 @@ when {
 
         public void VerifiedPermissionsGetPolicyStore()
         {
-            #region example-1
+            #region GetPolicyStore-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.GetPolicyStore(new GetPolicyStoreRequest 
+            var response = client.GetPolicyStore(new GetPolicyStoreRequest
             {
                 PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a"
             });
 
             string arn = response.Arn;
-            DateTime createdDate = response.CreatedDate;
+            DateTime? createdDate = response.CreatedDate;
             EncryptionState encryptionState = response.EncryptionState;
-            DateTime lastUpdatedDate = response.LastUpdatedDate;
+            DateTime? lastUpdatedDate = response.LastUpdatedDate;
             string policyStoreId = response.PolicyStoreId;
             ValidationSettings validationSettings = response.ValidationSettings;
 
@@ -599,18 +589,18 @@ when {
 
         public void VerifiedPermissionsGetPolicyStore()
         {
-            #region example-2
+            #region GetPolicyStore-2
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.GetPolicyStore(new GetPolicyStoreRequest 
+            var response = client.GetPolicyStore(new GetPolicyStoreRequest
             {
                 PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a"
             });
 
             string arn = response.Arn;
-            DateTime createdDate = response.CreatedDate;
+            DateTime? createdDate = response.CreatedDate;
             EncryptionState encryptionState = response.EncryptionState;
-            DateTime lastUpdatedDate = response.LastUpdatedDate;
+            DateTime? lastUpdatedDate = response.LastUpdatedDate;
             string policyStoreId = response.PolicyStoreId;
             ValidationSettings validationSettings = response.ValidationSettings;
 
@@ -619,37 +609,37 @@ when {
 
         public void VerifiedPermissionsGetPolicyStoreAlias()
         {
-            #region example-1
+            #region GetPolicyStoreAlias-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.GetPolicyStoreAlias(new GetPolicyStoreAliasRequest 
+            var response = client.GetPolicyStoreAlias(new GetPolicyStoreAliasRequest
             {
                 AliasName = "policy-store-alias/example-policy-store"
             });
 
             string aliasArn = response.AliasArn;
             string aliasName = response.AliasName;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string policyStoreId = response.PolicyStoreId;
-            string state = response.State;
+            AliasState state = response.State;
 
             #endregion
         }
 
         public void VerifiedPermissionsGetPolicyTemplate()
         {
-            #region example-1
+            #region GetPolicyTemplate-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.GetPolicyTemplate(new GetPolicyTemplateRequest 
+            var response = client.GetPolicyTemplate(new GetPolicyTemplateRequest
             {
                 PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a",
                 PolicyTemplateId = "PTEXAMPLEabcdefg111111"
             });
 
-            DateTime createdDate = response.CreatedDate;
+            DateTime? createdDate = response.CreatedDate;
             string description = response.Description;
-            DateTime lastUpdatedDate = response.LastUpdatedDate;
+            DateTime? lastUpdatedDate = response.LastUpdatedDate;
             string policyStoreId = response.PolicyStoreId;
             string policyTemplateId = response.PolicyTemplateId;
             string statement = response.Statement;
@@ -659,19 +649,19 @@ when {
 
         public void VerifiedPermissionsGetPolicyTemplate()
         {
-            #region example-2
+            #region GetPolicyTemplate-2
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.GetPolicyTemplate(new GetPolicyTemplateRequest 
+            var response = client.GetPolicyTemplate(new GetPolicyTemplateRequest
             {
                 PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a",
                 PolicyTemplateId = "name/example-policy-template"
             });
 
-            string name = response.Name;
-            DateTime createdDate = response.CreatedDate;
+            DateTime? createdDate = response.CreatedDate;
             string description = response.Description;
-            DateTime lastUpdatedDate = response.LastUpdatedDate;
+            DateTime? lastUpdatedDate = response.LastUpdatedDate;
+            string name = response.Name;
             string policyStoreId = response.PolicyStoreId;
             string policyTemplateId = response.PolicyTemplateId;
             string statement = response.Statement;
@@ -681,16 +671,16 @@ when {
 
         public void VerifiedPermissionsGetSchema()
         {
-            #region example-1
+            #region GetSchema-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.GetSchema(new GetSchemaRequest 
+            var response = client.GetSchema(new GetSchemaRequest
             {
                 PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a"
             });
 
-            DateTime createdDate = response.CreatedDate;
-            DateTime lastUpdatedDate = response.LastUpdatedDate;
+            DateTime? createdDate = response.CreatedDate;
+            DateTime? lastUpdatedDate = response.LastUpdatedDate;
             string policyStoreId = response.PolicyStoreId;
             string schema = response.Schema;
 
@@ -699,10 +689,10 @@ when {
 
         public void VerifiedPermissionsIsAuthorized()
         {
-            #region example-1
+            #region IsAuthorized-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.IsAuthorized(new IsAuthorizedRequest 
+            var response = client.IsAuthorized(new IsAuthorizedRequest
             {
                 Action = new ActionIdentifier {
                     ActionId = "updatePhoto",
@@ -719,19 +709,19 @@ when {
                 }
             });
 
-            List<EvaluationErrorItem> errors = response.Errors;
-            string decision = response.Decision;
+            Decision decision = response.Decision;
             List<DeterminingPolicyItem> determiningPolicies = response.DeterminingPolicies;
+            List<EvaluationErrorItem> errors = response.Errors;
 
             #endregion
         }
 
         public void VerifiedPermissionsIsAuthorized()
         {
-            #region example-2
+            #region IsAuthorized-2
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.IsAuthorized(new IsAuthorizedRequest 
+            var response = client.IsAuthorized(new IsAuthorizedRequest
             {
                 Action = new ActionIdentifier {
                     ActionId = "view",
@@ -748,19 +738,19 @@ when {
                 }
             });
 
-            List<EvaluationErrorItem> errors = response.Errors;
-            string decision = response.Decision;
+            Decision decision = response.Decision;
             List<DeterminingPolicyItem> determiningPolicies = response.DeterminingPolicies;
+            List<EvaluationErrorItem> errors = response.Errors;
 
             #endregion
         }
 
         public void VerifiedPermissionsIsAuthorizedWithToken()
         {
-            #region example-1
+            #region IsAuthorizedWithToken-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.IsAuthorizedWithToken(new IsAuthorizedWithTokenRequest 
+            var response = client.IsAuthorizedWithToken(new IsAuthorizedWithTokenRequest
             {
                 Action = new ActionIdentifier {
                     ActionId = "View",
@@ -774,19 +764,19 @@ when {
                 }
             });
 
-            List<EvaluationErrorItem> errors = response.Errors;
-            string decision = response.Decision;
+            Decision decision = response.Decision;
             List<DeterminingPolicyItem> determiningPolicies = response.DeterminingPolicies;
+            List<EvaluationErrorItem> errors = response.Errors;
 
             #endregion
         }
 
         public void VerifiedPermissionsListIdentitySources()
         {
-            #region example-1
+            #region ListIdentitySources-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.ListIdentitySources(new ListIdentitySourcesRequest 
+            var response = client.ListIdentitySources(new ListIdentitySourcesRequest
             {
                 PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a"
             });
@@ -798,10 +788,10 @@ when {
 
         public void VerifiedPermissionsListPolicies()
         {
-            #region example-1
+            #region ListPolicies-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.ListPolicies(new ListPoliciesRequest 
+            var response = client.ListPolicies(new ListPoliciesRequest
             {
                 PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a"
             });
@@ -813,10 +803,10 @@ when {
 
         public void VerifiedPermissionsListPolicies()
         {
-            #region example-2
+            #region ListPolicies-2
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.ListPolicies(new ListPoliciesRequest 
+            var response = client.ListPolicies(new ListPoliciesRequest
             {
                 Filter = new PolicyFilter { Principal = new EntityReference { Identifier = new EntityIdentifier {
                     EntityId = "alice",
@@ -832,10 +822,10 @@ when {
 
         public void VerifiedPermissionsListPolicies()
         {
-            #region example-3
+            #region ListPolicies-3
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.ListPolicies(new ListPoliciesRequest 
+            var response = client.ListPolicies(new ListPoliciesRequest
             {
                 Filter = new PolicyFilter { PolicyType = "TEMPLATE_LINKED" },
                 PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a"
@@ -848,10 +838,10 @@ when {
 
         public void VerifiedPermissionsListPolicyStoreAliases()
         {
-            #region example-1
+            #region ListPolicyStoreAliases-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.ListPolicyStoreAliases(new ListPolicyStoreAliasesRequest 
+            var response = client.ListPolicyStoreAliases(new ListPolicyStoreAliasesRequest
             {
             });
 
@@ -862,10 +852,10 @@ when {
 
         public void VerifiedPermissionsListPolicyStoreAliases()
         {
-            #region example-2
+            #region ListPolicyStoreAliases-2
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.ListPolicyStoreAliases(new ListPolicyStoreAliasesRequest 
+            var response = client.ListPolicyStoreAliases(new ListPolicyStoreAliasesRequest
             {
                 Filter = new PolicyStoreAliasFilter { PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a" }
             });
@@ -877,10 +867,10 @@ when {
 
         public void VerifiedPermissionsListPolicyStores()
         {
-            #region example-1
+            #region ListPolicyStores-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.ListPolicyStores(new ListPolicyStoresRequest 
+            var response = client.ListPolicyStores(new ListPolicyStoresRequest
             {
             });
 
@@ -891,10 +881,10 @@ when {
 
         public void VerifiedPermissionsListPolicyTemplates()
         {
-            #region example-1
+            #region ListPolicyTemplates-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.ListPolicyTemplates(new ListPolicyTemplatesRequest 
+            var response = client.ListPolicyTemplates(new ListPolicyTemplatesRequest
             {
                 PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a"
             });
@@ -906,10 +896,10 @@ when {
 
         public void VerifiedPermissionsListTagsForResource()
         {
-            #region example-1
+            #region ListTagsForResource-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.ListTagsForResource(new ListTagsForResourceRequest 
+            var response = client.ListTagsForResource(new ListTagsForResourceRequest
             {
                 ResourceArn = "C7v5xMplfFH3i3e4Jrzb1a"
             });
@@ -921,17 +911,17 @@ when {
 
         public void VerifiedPermissionsPutSchema()
         {
-            #region example-1
+            #region PutSchema-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.PutSchema(new PutSchemaRequest 
+            var response = client.PutSchema(new PutSchemaRequest
             {
                 Definition = new SchemaDefinition { CedarJson = "{\"MySampleNamespace\": {\"actions\": {\"remoteAccess\": {\"appliesTo\": {\"principalTypes\": [\"Employee\"]}}},\"entityTypes\": {\"Employee\": {\"shape\": {\"attributes\": {\"jobLevel\": {\"type\": \"Long\"},\"name\": {\"type\": \"String\"}},\"type\": \"Record\"}}}}}" },
                 PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a"
             });
 
-            DateTime createdDate = response.CreatedDate;
-            DateTime lastUpdatedDate = response.LastUpdatedDate;
+            DateTime? createdDate = response.CreatedDate;
+            DateTime? lastUpdatedDate = response.LastUpdatedDate;
             List<string> namespaces = response.Namespaces;
             string policyStoreId = response.PolicyStoreId;
 
@@ -940,10 +930,10 @@ when {
 
         public void VerifiedPermissionsTagResource()
         {
-            #region example-1
+            #region TagResource-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.TagResource(new TagResourceRequest 
+            var response = client.TagResource(new TagResourceRequest
             {
                 ResourceArn = "C7v5xMplfFH3i3e4Jrzb1a",
                 Tags = new Dictionary<string, string> {
@@ -958,10 +948,10 @@ when {
 
         public void VerifiedPermissionsUntagResource()
         {
-            #region example-1
+            #region UntagResource-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.UntagResource(new UntagResourceRequest 
+            var response = client.UntagResource(new UntagResourceRequest
             {
                 ResourceArn = "C7v5xMplfFH3i3e4Jrzb1a",
                 TagKeys = new List<string> {
@@ -976,10 +966,10 @@ when {
 
         public void VerifiedPermissionsUpdateIdentitySource()
         {
-            #region example-1
+            #region UpdateIdentitySource-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.UpdateIdentitySource(new UpdateIdentitySourceRequest 
+            var response = client.UpdateIdentitySource(new UpdateIdentitySourceRequest
             {
                 IdentitySourceId = "ISEXAMPLEabcdefg111111",
                 PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a",
@@ -991,9 +981,9 @@ when {
                 } }
             });
 
-            DateTime createdDate = response.CreatedDate;
+            DateTime? createdDate = response.CreatedDate;
             string identitySourceId = response.IdentitySourceId;
-            DateTime lastUpdatedDate = response.LastUpdatedDate;
+            DateTime? lastUpdatedDate = response.LastUpdatedDate;
             string policyStoreId = response.PolicyStoreId;
 
             #endregion
@@ -1001,22 +991,22 @@ when {
 
         public void VerifiedPermissionsUpdatePolicy()
         {
-            #region example-1
+            #region UpdatePolicy-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.UpdatePolicy(new UpdatePolicyRequest 
+            var response = client.UpdatePolicy(new UpdatePolicyRequest
             {
-                Name = "name/example-policy-2",
                 Definition = new UpdatePolicyDefinition { Static = new UpdateStaticPolicyDefinition { Statement = "permit(principal, action, resource in Album::\"public_folder\");" } },
+                Name = "name/example-policy-2",
                 PolicyId = "9wYxMpljbbZQb5fcZHyJhY",
                 PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a"
             });
 
-            DateTime createdDate = response.CreatedDate;
-            DateTime lastUpdatedDate = response.LastUpdatedDate;
+            DateTime? createdDate = response.CreatedDate;
+            DateTime? lastUpdatedDate = response.LastUpdatedDate;
             string policyId = response.PolicyId;
             string policyStoreId = response.PolicyStoreId;
-            string policyType = response.PolicyType;
+            PolicyType policyType = response.PolicyType;
             EntityIdentifier resource = response.Resource;
 
             #endregion
@@ -1024,18 +1014,18 @@ when {
 
         public void VerifiedPermissionsUpdatePolicyStore()
         {
-            #region example-1
+            #region UpdatePolicyStore-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.UpdatePolicyStore(new UpdatePolicyStoreRequest 
+            var response = client.UpdatePolicyStore(new UpdatePolicyStoreRequest
             {
                 PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a",
                 ValidationSettings = new ValidationSettings { Mode = "OFF" }
             });
 
             string arn = response.Arn;
-            DateTime createdDate = response.CreatedDate;
-            DateTime lastUpdatedDate = response.LastUpdatedDate;
+            DateTime? createdDate = response.CreatedDate;
+            DateTime? lastUpdatedDate = response.LastUpdatedDate;
             string policyStoreId = response.PolicyStoreId;
 
             #endregion
@@ -1043,41 +1033,30 @@ when {
 
         public void VerifiedPermissionsUpdatePolicyTemplate()
         {
-            #region example-1
+            #region UpdatePolicyTemplate-1
 
             var client = new AmazonVerifiedPermissionsClient();
-            var response = client.UpdatePolicyTemplate(new UpdatePolicyTemplateRequest 
+            var response = client.UpdatePolicyTemplate(new UpdatePolicyTemplateRequest
             {
-                Name = "name/example-policy-template-2",
                 Description = "My updated template description",
+                Name = "name/example-policy-template-2",
                 PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a",
                 PolicyTemplateId = "PTEXAMPLEabcdefg111111",
-                Statement = "\"ResearchAccess\"
-permit(
-principal in ?principal,
-action == Action::\"view\",
-resource in ?resource\"
-)
-when {
-principal has department && principal.department == \"research\"
-};"
+                Statement = "\"ResearchAccess\"\npermit(\nprincipal in ?principal,\naction == Action::\"view\",\nresource in ?resource\"\n)\nwhen {\nprincipal has department && principal.department == \"research\"\n};"
             });
 
-            DateTime createdDate = response.CreatedDate;
-            DateTime lastUpdatedDate = response.LastUpdatedDate;
+            DateTime? createdDate = response.CreatedDate;
+            DateTime? lastUpdatedDate = response.LastUpdatedDate;
             string policyStoreId = response.PolicyStoreId;
             string policyTemplateId = response.PolicyTemplateId;
 
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

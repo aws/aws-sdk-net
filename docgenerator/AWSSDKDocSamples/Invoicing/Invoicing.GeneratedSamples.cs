@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
     {
         public void InvoicingBatchGetInvoiceProfile()
         {
-            #region example-1
+            #region BatchGetInvoiceProfile-1
 
             var client = new AmazonInvoicingClient();
-            var response = client.BatchGetInvoiceProfile(new BatchGetInvoiceProfileRequest 
+            var response = client.BatchGetInvoiceProfile(new BatchGetInvoiceProfileRequest
             {
                 AccountIds = new List<string> {
                     "111111111111"
@@ -30,10 +31,10 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
 
         public void InvoicingCreateInvoiceUnit()
         {
-            #region example-1
+            #region CreateInvoiceUnit-1
 
             var client = new AmazonInvoicingClient();
-            var response = client.CreateInvoiceUnit(new CreateInvoiceUnitRequest 
+            var response = client.CreateInvoiceUnit(new CreateInvoiceUnitRequest
             {
                 ClientToken = "e362c68e-4e74-48d7-9228-0bc5aa447b42",
                 Description = "Example Invoice Unit Description",
@@ -58,10 +59,10 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
 
         public void InvoicingCreateProcurementPortalPreference()
         {
-            #region example-1
+            #region CreateProcurementPortalPreference-1
 
             var client = new AmazonInvoicingClient();
-            var response = client.CreateProcurementPortalPreference(new CreateProcurementPortalPreferenceRequest 
+            var response = client.CreateProcurementPortalPreference(new CreateProcurementPortalPreferenceRequest
             {
                 BuyerDomain = "NetworkID",
                 BuyerIdentifier = "BuyerId_1",
@@ -75,7 +76,7 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
                 EinvoiceDeliveryEnabled = true,
                 EinvoiceDeliveryPreference = new EinvoiceDeliveryPreference {
                     ConnectionTestingMethod = "PROD_ENV_DOLLAR_TEST",
-                    EinvoiceDeliveryActivationDate = DateTime.UtcNow,
+                    EinvoiceDeliveryActivationDate = new DateTime(2025, 6, 18, 20, 41, 20, 91, DateTimeKind.Utc),
                     EinvoiceDeliveryAttachmentTypes = new List<string> {
                         "INVOICE_PDF"
                     },
@@ -131,10 +132,10 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
 
         public void InvoicingDeleteInvoiceUnit()
         {
-            #region example-1
+            #region DeleteInvoiceUnit-1
 
             var client = new AmazonInvoicingClient();
-            var response = client.DeleteInvoiceUnit(new DeleteInvoiceUnitRequest 
+            var response = client.DeleteInvoiceUnit(new DeleteInvoiceUnitRequest
             {
                 ClientToken = "e362c68e-4e74-48d7-9228-0bc5aa447b44",
                 InvoiceUnitArn = "arn:aws:invoicing::000000000000:invoice-unit/12345678"
@@ -147,10 +148,10 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
 
         public void InvoicingDeleteProcurementPortalPreference()
         {
-            #region example-1
+            #region DeleteProcurementPortalPreference-1
 
             var client = new AmazonInvoicingClient();
-            var response = client.DeleteProcurementPortalPreference(new DeleteProcurementPortalPreferenceRequest 
+            var response = client.DeleteProcurementPortalPreference(new DeleteProcurementPortalPreferenceRequest
             {
                 ClientToken = "e362c68e-4e74-48d7-9228-0bc5aa447b47",
                 ProcurementPortalPreferenceArn = "arn:aws:invoicing::111111111111:procurement-portal-preference/f71dd02e-f855-4b13-b793-0fd25c0b3ecd"
@@ -163,10 +164,10 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
 
         public void InvoicingGetInvoicePDF()
         {
-            #region example-1
+            #region GetInvoicePDF-1
 
             var client = new AmazonInvoicingClient();
-            var response = client.GetInvoicePDF(new GetInvoicePDFRequest 
+            var response = client.GetInvoicePDF(new GetInvoicePDFRequest
             {
                 InvoiceId = "abc123"
             });
@@ -178,10 +179,10 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
 
         public void InvoicingGetInvoicePDF()
         {
-            #region example-2
+            #region GetInvoicePDF-2
 
             var client = new AmazonInvoicingClient();
-            var response = client.GetInvoicePDF(new GetInvoicePDFRequest 
+            var response = client.GetInvoicePDF(new GetInvoicePDFRequest
             {
                 InvoiceId = "abc123"
             });
@@ -193,10 +194,10 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
 
         public void InvoicingGetInvoiceUnit()
         {
-            #region example-1
+            #region GetInvoiceUnit-1
 
             var client = new AmazonInvoicingClient();
-            var response = client.GetInvoiceUnit(new GetInvoiceUnitRequest 
+            var response = client.GetInvoiceUnit(new GetInvoiceUnitRequest
             {
                 InvoiceUnitArn = "arn:aws:invoicing::000000000000:invoice-unit/12345678"
             });
@@ -204,42 +205,42 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
             string description = response.Description;
             string invoiceReceiver = response.InvoiceReceiver;
             string invoiceUnitArn = response.InvoiceUnitArn;
-            DateTime lastModified = response.LastModified;
+            DateTime? lastModified = response.LastModified;
             string name = response.Name;
             InvoiceUnitRule rule = response.Rule;
-            bool taxInheritanceDisabled = response.TaxInheritanceDisabled;
+            bool? taxInheritanceDisabled = response.TaxInheritanceDisabled;
 
             #endregion
         }
 
         public void InvoicingGetInvoiceUnit()
         {
-            #region example-2
+            #region GetInvoiceUnit-2
 
             var client = new AmazonInvoicingClient();
-            var response = client.GetInvoiceUnit(new GetInvoiceUnitRequest 
+            var response = client.GetInvoiceUnit(new GetInvoiceUnitRequest
             {
-                AsOf = DateTime.UtcNow,
+                AsOf = new DateTime(2024, 12, 2, 0, 0, 0, DateTimeKind.Utc),
                 InvoiceUnitArn = "arn:aws:invoicing::000000000000:invoice-unit/87654321"
             });
 
             string description = response.Description;
             string invoiceReceiver = response.InvoiceReceiver;
             string invoiceUnitArn = response.InvoiceUnitArn;
-            DateTime lastModified = response.LastModified;
+            DateTime? lastModified = response.LastModified;
             string name = response.Name;
             InvoiceUnitRule rule = response.Rule;
-            bool taxInheritanceDisabled = response.TaxInheritanceDisabled;
+            bool? taxInheritanceDisabled = response.TaxInheritanceDisabled;
 
             #endregion
         }
 
         public void InvoicingGetProcurementPortalPreference()
         {
-            #region example-1
+            #region GetProcurementPortalPreference-1
 
             var client = new AmazonInvoicingClient();
-            var response = client.GetProcurementPortalPreference(new GetProcurementPortalPreferenceRequest 
+            var response = client.GetProcurementPortalPreference(new GetProcurementPortalPreferenceRequest
             {
                 ProcurementPortalPreferenceArn = "arn:aws:invoicing::111111111111:procurement-portal-preference/a34fd666-7810-4414-9360-aaa4bcab0abd"
             });
@@ -251,10 +252,10 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
 
         public void InvoicingListInvoiceSummaries()
         {
-            #region example-1
+            #region ListInvoiceSummaries-1
 
             var client = new AmazonInvoicingClient();
-            var response = client.ListInvoiceSummaries(new ListInvoiceSummariesRequest 
+            var response = client.ListInvoiceSummaries(new ListInvoiceSummariesRequest
             {
                 Selector = new InvoiceSummariesSelector {
                     ResourceType = "INVOICE_ID",
@@ -269,10 +270,10 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
 
         public void InvoicingListInvoiceSummaries()
         {
-            #region example-2
+            #region ListInvoiceSummaries-2
 
             var client = new AmazonInvoicingClient();
-            var response = client.ListInvoiceSummaries(new ListInvoiceSummariesRequest 
+            var response = client.ListInvoiceSummaries(new ListInvoiceSummariesRequest
             {
                 Filter = new InvoiceSummariesFilter { BillingPeriod = new BillingPeriod {
                     Month = 1,
@@ -291,14 +292,14 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
 
         public void InvoicingListInvoiceSummaries()
         {
-            #region example-3
+            #region ListInvoiceSummaries-3
 
             var client = new AmazonInvoicingClient();
-            var response = client.ListInvoiceSummaries(new ListInvoiceSummariesRequest 
+            var response = client.ListInvoiceSummaries(new ListInvoiceSummariesRequest
             {
                 Filter = new InvoiceSummariesFilter { TimeInterval = new DateInterval {
-                    EndDate = DateTime.UtcNow,
-                    StartDate = DateTime.UtcNow
+                    EndDate = new DateTime(2020, 6, 20, 7, 43, 27, DateTimeKind.Utc),
+                    StartDate = new DateTime(2020, 6, 1, 7, 43, 27, DateTimeKind.Utc)
                 } },
                 Selector = new InvoiceSummariesSelector {
                     ResourceType = "ACCOUNT_ID",
@@ -313,16 +314,16 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
 
         public void InvoicingListInvoiceSummaries()
         {
-            #region example-4
+            #region ListInvoiceSummaries-4
 
             var client = new AmazonInvoicingClient();
-            var response = client.ListInvoiceSummaries(new ListInvoiceSummariesRequest 
+            var response = client.ListInvoiceSummaries(new ListInvoiceSummariesRequest
             {
                 Filter = new InvoiceSummariesFilter {
                     ReceiverRole = "SELLER",
                     TimeInterval = new DateInterval {
-                        EndDate = DateTime.UtcNow,
-                        StartDate = DateTime.UtcNow
+                        EndDate = new DateTime(2025, 7, 1, 0, 0, 0, DateTimeKind.Utc),
+                        StartDate = new DateTime(2025, 6, 1, 0, 0, 0, DateTimeKind.Utc)
                     }
                 },
                 Selector = new InvoiceSummariesSelector {
@@ -338,10 +339,10 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
 
         public void InvoicingListInvoiceSummaries()
         {
-            #region example-5
+            #region ListInvoiceSummaries-5
 
             var client = new AmazonInvoicingClient();
-            var response = client.ListInvoiceSummaries(new ListInvoiceSummariesRequest 
+            var response = client.ListInvoiceSummaries(new ListInvoiceSummariesRequest
             {
                 Filter = new InvoiceSummariesFilter { BillingPeriod = new BillingPeriod {
                     Month = 1,
@@ -362,10 +363,10 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
 
         public void InvoicingListInvoiceSummaries()
         {
-            #region example-6
+            #region ListInvoiceSummaries-6
 
             var client = new AmazonInvoicingClient();
-            var response = client.ListInvoiceSummaries(new ListInvoiceSummariesRequest 
+            var response = client.ListInvoiceSummaries(new ListInvoiceSummariesRequest
             {
                 Filter = new InvoiceSummariesFilter { BillingPeriod = new BillingPeriod {
                     Month = 1,
@@ -385,10 +386,10 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
 
         public void InvoicingListInvoiceUnits()
         {
-            #region example-1
+            #region ListInvoiceUnits-1
 
             var client = new AmazonInvoicingClient();
-            var response = client.ListInvoiceUnits(new ListInvoiceUnitsRequest 
+            var response = client.ListInvoiceUnits(new ListInvoiceUnitsRequest
             {
             });
 
@@ -399,12 +400,12 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
 
         public void InvoicingListInvoiceUnits()
         {
-            #region example-2
+            #region ListInvoiceUnits-2
 
             var client = new AmazonInvoicingClient();
-            var response = client.ListInvoiceUnits(new ListInvoiceUnitsRequest 
+            var response = client.ListInvoiceUnits(new ListInvoiceUnitsRequest
             {
-                AsOf = DateTime.UtcNow,
+                AsOf = new DateTime(2024, 12, 2, 0, 0, 0, DateTimeKind.Utc),
                 Filters = new Filters { InvoiceReceivers = new List<string> {
                     "333333333333"
                 } }
@@ -417,10 +418,10 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
 
         public void InvoicingListInvoiceUnits()
         {
-            #region example-3
+            #region ListInvoiceUnits-3
 
             var client = new AmazonInvoicingClient();
-            var response = client.ListInvoiceUnits(new ListInvoiceUnitsRequest 
+            var response = client.ListInvoiceUnits(new ListInvoiceUnitsRequest
             {
                 MaxResults = 1
             });
@@ -433,10 +434,10 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
 
         public void InvoicingListInvoiceUnits()
         {
-            #region example-4
+            #region ListInvoiceUnits-4
 
             var client = new AmazonInvoicingClient();
-            var response = client.ListInvoiceUnits(new ListInvoiceUnitsRequest 
+            var response = client.ListInvoiceUnits(new ListInvoiceUnitsRequest
             {
                 MaxResults = 1,
                 NextToken = "nextTokenExample"
@@ -449,10 +450,10 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
 
         public void InvoicingListProcurementPortalPreferences()
         {
-            #region example-1
+            #region ListProcurementPortalPreferences-1
 
             var client = new AmazonInvoicingClient();
-            var response = client.ListProcurementPortalPreferences(new ListProcurementPortalPreferencesRequest 
+            var response = client.ListProcurementPortalPreferences(new ListProcurementPortalPreferencesRequest
             {
                 MaxResults = 2
             });
@@ -465,10 +466,10 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
 
         public void InvoicingListProcurementPortalPreferences()
         {
-            #region example-2
+            #region ListProcurementPortalPreferences-2
 
             var client = new AmazonInvoicingClient();
-            var response = client.ListProcurementPortalPreferences(new ListProcurementPortalPreferencesRequest 
+            var response = client.ListProcurementPortalPreferences(new ListProcurementPortalPreferencesRequest
             {
                 MaxResults = 2,
                 NextToken = "AAQA-EFRSURBSGpkVFU5MVNUVWNXTzNoUEptWEFGcEt0QzBBeHZaZmRUU2w3L0hRQmdDeEx3R0NuSnF2NjM5NGNmM1I5KzNIQzNnT0FBQUFmakI4QmdrcWhraUc5dzBCQndhZ2J6QnRBZ0VBTUdnR0NTcUdTSWIzRFFFSEFUQWVCZ2xnaGtnQlpRTUVBUzR3RVFRTVhPSnhEQ04rWk1idnAyb1RBZ0VRZ0RzbFJBeFlXMk9RRGFtTU8vdFc0MUJlTFFNU2hPR1E5bDM3MHcyS05mSjIzbU93MG1aVXk1MzBiWWVsZ3FaZzhjMndhTjZtNzNYTWd3bnpsZz09E8JRNUKK1r2-b9X8Qd1RAOSKHZOCy-UCpOQjJdSfZHcUefTH0YmlIW8ykllegYUWB1D1NjDjC3u2z2e4cLBTmQhrQewSBW-I_i8okXup9RWN60eMOnB6dl5jUiinJ-FjY_jGjbOkiWuJhXteDKP16RfVRW7mxp2-v1-B8gPPxGLolXHBHrb8gt18P8eWs8RcvRRmmbGUy5qa6nFH5WiCq9Bx2fTUTy9Iz_xZooNuiqC6y119EGQqJ9WsWsIUa8MbWHFXtn9-Uriz7osYocbFm1Evv_NCn3YK-wFy9rUlUskcM2n9AqvPYhOyf0reV7E8cErZFR_Ev8l008QcxQfaqK19-gKR9clddwoDzMVfVuyiW3vbzUXz7fzQLr-UMLCGdE3yHf1oz2SEbcxhHZ2eh7-9wEYDv0v92wXg7m7xaYvaKuVBPKqBaq66GdpS1HTfakkjRGvsoBStXWVgPahISglPO__-Ym5NnXOw2wENBVXZ7RsVe6nJ1X15bB1RDkqLV8xJD0L83snuCEBtM9pyUUQOPvfGHzC4yRusMgBav_y1kq0wjqsbJV5EhHV_SIwf-WZa_A=="
@@ -481,10 +482,10 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
 
         public void InvoicingListProcurementPortals()
         {
-            #region example-1
+            #region ListProcurementPortals-1
 
             var client = new AmazonInvoicingClient();
-            var response = client.ListProcurementPortals(new ListProcurementPortalsRequest 
+            var response = client.ListProcurementPortals(new ListProcurementPortalsRequest
             {
             });
 
@@ -495,10 +496,10 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
 
         public void InvoicingListProcurementPortalSuppliers()
         {
-            #region example-1
+            #region ListProcurementPortalSuppliers-1
 
             var client = new AmazonInvoicingClient();
-            var response = client.ListProcurementPortalSuppliers(new ListProcurementPortalSuppliersRequest 
+            var response = client.ListProcurementPortalSuppliers(new ListProcurementPortalSuppliersRequest
             {
                 PortalIdentifier = "KXMJQWBRNP"
             });
@@ -510,10 +511,10 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
 
         public void InvoicingListTagsForResource()
         {
-            #region example-1
+            #region ListTagsForResource-1
 
             var client = new AmazonInvoicingClient();
-            var response = client.ListTagsForResource(new ListTagsForResourceRequest 
+            var response = client.ListTagsForResource(new ListTagsForResourceRequest
             {
                 ResourceArn = "arn:aws:invoicing::000000000000:invoice-unit/12345678"
             });
@@ -525,10 +526,10 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
 
         public void InvoicingPutProcurementPortalPreference()
         {
-            #region example-1
+            #region PutProcurementPortalPreference-1
 
             var client = new AmazonInvoicingClient();
-            var response = client.PutProcurementPortalPreference(new PutProcurementPortalPreferenceRequest 
+            var response = client.PutProcurementPortalPreference(new PutProcurementPortalPreferenceRequest
             {
                 ClientToken = "e362c68e-4e74-48d7-9228-0bc5aa447b45",
                 Contacts = new List<Contact> {
@@ -540,7 +541,7 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
                 EinvoiceDeliveryEnabled = true,
                 EinvoiceDeliveryPreference = new EinvoiceDeliveryPreference {
                     ConnectionTestingMethod = "PROD_ENV_DOLLAR_TEST",
-                    EinvoiceDeliveryActivationDate = DateTime.UtcNow,
+                    EinvoiceDeliveryActivationDate = new DateTime(2025, 6, 18, 20, 41, 20, 91, DateTimeKind.Utc),
                     EinvoiceDeliveryAttachmentTypes = new List<string> {
                         "INVOICE_PDF"
                     },
@@ -585,10 +586,10 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
 
         public void InvoicingSendProcurementPortalValidation()
         {
-            #region example-1
+            #region SendProcurementPortalValidation-1
 
             var client = new AmazonInvoicingClient();
-            var response = client.SendProcurementPortalValidation(new SendProcurementPortalValidationRequest 
+            var response = client.SendProcurementPortalValidation(new SendProcurementPortalValidationRequest
             {
                 ProcurementPortalPreferenceArn = "arn:aws:invoicing::111111111111:procurement-portal-preference/f71dd02e-f855-4b13-b793-0fd25c0b3ecd"
             });
@@ -600,10 +601,10 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
 
         public void InvoicingTagResource()
         {
-            #region example-1
+            #region TagResource-1
 
             var client = new AmazonInvoicingClient();
-            var response = client.TagResource(new TagResourceRequest 
+            var response = client.TagResource(new TagResourceRequest
             {
                 ResourceArn = "arn:aws:invoicing::000000000000:invoice-unit/12345678",
                 ResourceTags = new List<ResourceTag> {
@@ -620,10 +621,10 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
 
         public void InvoicingUntagResource()
         {
-            #region example-1
+            #region UntagResource-1
 
             var client = new AmazonInvoicingClient();
-            var response = client.UntagResource(new UntagResourceRequest 
+            var response = client.UntagResource(new UntagResourceRequest
             {
                 ResourceArn = "arn:aws:invoicing::000000000000:invoice-unit/12345678",
                 ResourceTagKeys = new List<string> {
@@ -637,10 +638,10 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
 
         public void InvoicingUpdateInvoiceUnit()
         {
-            #region example-1
+            #region UpdateInvoiceUnit-1
 
             var client = new AmazonInvoicingClient();
-            var response = client.UpdateInvoiceUnit(new UpdateInvoiceUnitRequest 
+            var response = client.UpdateInvoiceUnit(new UpdateInvoiceUnitRequest
             {
                 ClientToken = "e362c68e-4e74-48d7-9228-0bc5aa447b42",
                 Description = "Updated IU description",
@@ -659,10 +660,10 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
 
         public void InvoicingUpdateInvoiceUnit()
         {
-            #region example-2
+            #region UpdateInvoiceUnit-2
 
             var client = new AmazonInvoicingClient();
-            var response = client.UpdateInvoiceUnit(new UpdateInvoiceUnitRequest 
+            var response = client.UpdateInvoiceUnit(new UpdateInvoiceUnitRequest
             {
                 ClientToken = "e362c68e-4e74-48d7-9228-0bc5aa447b43",
                 Description = "Updated IU description. All other fields remain unchanged",
@@ -676,10 +677,10 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
 
         public void InvoicingUpdateProcurementPortalPreferenceStatus()
         {
-            #region example-1
+            #region UpdateProcurementPortalPreferenceStatus-1
 
             var client = new AmazonInvoicingClient();
-            var response = client.UpdateProcurementPortalPreferenceStatus(new UpdateProcurementPortalPreferenceStatusRequest 
+            var response = client.UpdateProcurementPortalPreferenceStatus(new UpdateProcurementPortalPreferenceStatusRequest
             {
                 ClientToken = "e362c68e-4e74-48d7-9228-0bc5aa447b46",
                 EinvoiceDeliveryPreferenceStatus = "SUSPENDED",
@@ -696,10 +697,10 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
 
         public void InvoicingVerifyProcurementPortalValidation()
         {
-            #region example-1
+            #region VerifyProcurementPortalValidation-1
 
             var client = new AmazonInvoicingClient();
-            var response = client.VerifyProcurementPortalValidation(new VerifyProcurementPortalValidationRequest 
+            var response = client.VerifyProcurementPortalValidation(new VerifyProcurementPortalValidationRequest
             {
                 Code = "validation-code-123",
                 ProcurementPortalPreferenceArn = "arn:aws:invoicing::111111111111:procurement-portal-preference/f71dd02e-f855-4b13-b793-0fd25c0b3ecd"
@@ -710,13 +711,10 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

@@ -2,47 +2,47 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.Billing.Model.AssociateSourceViewsRequest.Arn</property>
-    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]</pattern>
+    <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.AssociateSourceViewsResponse.Arn</property>
-    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]</pattern>
+    <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.CreateBillingViewRequest.ClientToken</property>
-    <pattern>[a-zA-Z0-9-]+</pattern>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.CreateBillingViewRequest.Description</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>([ a-zA-Z0-9_\+=\.\-@]+)?</pattern>
+    <pattern>^([ a-zA-Z0-9_\+=\.\-@]+)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.CreateBillingViewRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[ a-zA-Z0-9_\+=\.\-@]+</pattern>
+    <pattern>^[ a-zA-Z0-9_\+=\.\-@]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.CreateBillingViewResponse.Arn</property>
-    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]</pattern>
+    <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.DeleteBillingViewRequest.Arn</property>
-    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]</pattern>
+    <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.DeleteBillingViewResponse.Arn</property>
-    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]</pattern>
+    <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.DisassociateSourceViewsRequest.Arn</property>
-    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]</pattern>
+    <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.DisassociateSourceViewsResponse.Arn</property>
-    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]</pattern>
+    <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.GetBillingPreferencesRequest.MaxResults</property>
@@ -53,21 +53,21 @@
     <property>Amazon.Billing.Model.GetBillingPreferencesRequest.NextToken</property>
     <min>1</min>
     <max>4095</max>
-    <pattern>[-a-zA-Z0-9+=/_]+</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.GetBillingPreferencesResponse.NextToken</property>
     <min>1</min>
     <max>4095</max>
-    <pattern>[-a-zA-Z0-9+=/_]+</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.GetBillingViewRequest.Arn</property>
-    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]</pattern>
+    <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.GetCreditAllocationHistoryRequest.AccountId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.GetCreditAllocationHistoryRequest.MaxResults</property>
@@ -78,66 +78,41 @@
     <property>Amazon.Billing.Model.GetCreditAllocationHistoryRequest.NextToken</property>
     <min>1</min>
     <max>4095</max>
-    <pattern>[-a-zA-Z0-9+=/_]+</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.GetCreditAllocationHistoryResponse.NextToken</property>
     <min>1</min>
     <max>4095</max>
-    <pattern>[-a-zA-Z0-9+=/_]+</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.GetEnterpriseSupportChargeSummaryRequest.BillingMonth</property>
-    <pattern>\d{4}-(0[1-9]|1[0-2])</pattern>
+    <pattern>^\d{4}-(0[1-9]|1[0-2])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.GetEnterpriseSupportChargeSummaryResponse.BillingMonth</property>
-    <pattern>\d{4}-(0[1-9]|1[0-2])</pattern>
+    <pattern>^\d{4}-(0[1-9]|1[0-2])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.GetEnterpriseSupportChargeSummaryResponse.PayerAccountId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.GetEnterpriseSupportContractDetailsRequest.BillingMonth</property>
-    <pattern>\d{4}-(0[1-9]|1[0-2])</pattern>
+    <pattern>^\d{4}-(0[1-9]|1[0-2])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.GetResourcePolicyRequest.ResourceArn</property>
-    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:[a-zA-Z0-9/:_\+=\.\@-]{0,70}[a-zA-Z0-9]</pattern>
+    <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:[a-zA-Z0-9/:_\+=\.\@-]{0,70}[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.GetResourcePolicyResponse.ResourceArn</property>
-    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:[a-zA-Z0-9/:_\+=\.\@-]{0,70}[a-zA-Z0-9]</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Billing.Model.ListBillingViewsRequest.MaxResults</property>
-    <min>1</min>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Billing.Model.ListBillingViewsRequest.NextToken</property>
-    <min>1</min>
-    <max>4095</max>
-    <pattern>[-a-zA-Z0-9+=/_]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Billing.Model.ListBillingViewsRequest.OwnerAccountId</property>
-    <pattern>[0-9]{12}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Billing.Model.ListBillingViewsRequest.SourceAccountId</property>
-    <pattern>[0-9]{12}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Billing.Model.ListBillingViewsResponse.NextToken</property>
-    <min>1</min>
-    <max>4095</max>
-    <pattern>[-a-zA-Z0-9+=/_]+</pattern>
+    <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:[a-zA-Z0-9/:_\+=\.\@-]{0,70}[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ListBillingViewSegmentsRequest.Arn</property>
-    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]</pattern>
+    <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ListBillingViewSegmentsRequest.MaxResults</property>
@@ -148,21 +123,46 @@
     <property>Amazon.Billing.Model.ListBillingViewSegmentsRequest.NextToken</property>
     <min>1</min>
     <max>4095</max>
-    <pattern>[-a-zA-Z0-9+=/_]+</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ListBillingViewSegmentsResponse.NextToken</property>
     <min>1</min>
     <max>4095</max>
-    <pattern>[-a-zA-Z0-9+=/_]+</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.ListBillingViewsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.ListBillingViewsRequest.NextToken</property>
+    <min>1</min>
+    <max>4095</max>
+    <pattern>^[-a-zA-Z0-9+=/_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.ListBillingViewsRequest.OwnerAccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.ListBillingViewsRequest.SourceAccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.ListBillingViewsResponse.NextToken</property>
+    <min>1</min>
+    <max>4095</max>
+    <pattern>^[-a-zA-Z0-9+=/_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ListBusinessSupportAccountChargesRequest.AccountId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ListBusinessSupportAccountChargesRequest.BillingMonth</property>
-    <pattern>\d{4}-(0[1-9]|1[0-2])</pattern>
+    <pattern>^\d{4}-(0[1-9]|1[0-2])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ListBusinessSupportAccountChargesRequest.MaxResults</property>
@@ -173,25 +173,25 @@
     <property>Amazon.Billing.Model.ListBusinessSupportAccountChargesRequest.NextToken</property>
     <min>1</min>
     <max>4095</max>
-    <pattern>[-a-zA-Z0-9+=/_]+</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ListBusinessSupportAccountChargesResponse.BillingMonth</property>
-    <pattern>\d{4}-(0[1-9]|1[0-2])</pattern>
+    <pattern>^\d{4}-(0[1-9]|1[0-2])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ListBusinessSupportAccountChargesResponse.NextToken</property>
     <min>1</min>
     <max>4095</max>
-    <pattern>[-a-zA-Z0-9+=/_]+</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ListBusinessSupportSubscriptionHistoryRequest.AccountId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ListBusinessSupportSubscriptionHistoryRequest.BillingMonth</property>
-    <pattern>\d{4}-(0[1-9]|1[0-2])</pattern>
+    <pattern>^\d{4}-(0[1-9]|1[0-2])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ListBusinessSupportSubscriptionHistoryRequest.MaxResults</property>
@@ -202,21 +202,21 @@
     <property>Amazon.Billing.Model.ListBusinessSupportSubscriptionHistoryRequest.NextToken</property>
     <min>1</min>
     <max>4095</max>
-    <pattern>[-a-zA-Z0-9+=/_]+</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ListBusinessSupportSubscriptionHistoryResponse.NextToken</property>
     <min>1</min>
     <max>4095</max>
-    <pattern>[-a-zA-Z0-9+=/_]+</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ListEnterpriseSupportLinkedAccountChargesRequest.AccountId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ListEnterpriseSupportLinkedAccountChargesRequest.BillingMonth</property>
-    <pattern>\d{4}-(0[1-9]|1[0-2])</pattern>
+    <pattern>^\d{4}-(0[1-9]|1[0-2])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ListEnterpriseSupportLinkedAccountChargesRequest.MaxResults</property>
@@ -227,17 +227,17 @@
     <property>Amazon.Billing.Model.ListEnterpriseSupportLinkedAccountChargesRequest.NextToken</property>
     <min>1</min>
     <max>4095</max>
-    <pattern>[-a-zA-Z0-9+=/_]+</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ListEnterpriseSupportLinkedAccountChargesResponse.NextToken</property>
     <min>1</min>
     <max>4095</max>
-    <pattern>[-a-zA-Z0-9+=/_]+</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ListSourceViewsForBillingViewRequest.Arn</property>
-    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]</pattern>
+    <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ListSourceViewsForBillingViewRequest.MaxResults</property>
@@ -248,59 +248,60 @@
     <property>Amazon.Billing.Model.ListSourceViewsForBillingViewRequest.NextToken</property>
     <min>1</min>
     <max>4095</max>
-    <pattern>[-a-zA-Z0-9+=/_]+</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ListSourceViewsForBillingViewResponse.NextToken</property>
     <min>1</min>
     <max>4095</max>
-    <pattern>[-a-zA-Z0-9+=/_]+</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ListTagsForResourceRequest.ResourceArn</property>
-    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:[a-zA-Z0-9/:_\+=\.\@-]{0,70}[a-zA-Z0-9]</pattern>
+    <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:[a-zA-Z0-9/:_\+=\.\@-]{0,70}[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.RedeemCreditsRequest.PromoCode</property>
     <min>1</min>
     <max>256</max>
-    <pattern>.*[^&lt;&gt;"&amp;\%|'  ]*.*</pattern>
+    <pattern>.*[^&lt;&gt;"&amp;\%|'
+	]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.TagResourceRequest.ResourceArn</property>
-    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:[a-zA-Z0-9/:_\+=\.\@-]{0,70}[a-zA-Z0-9]</pattern>
+    <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:[a-zA-Z0-9/:_\+=\.\@-]{0,70}[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.UntagResourceRequest.ResourceArn</property>
-    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:[a-zA-Z0-9/:_\+=\.\@-]{0,70}[a-zA-Z0-9]</pattern>
+    <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:[a-zA-Z0-9/:_\+=\.\@-]{0,70}[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.UpdateBillingViewRequest.Arn</property>
-    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]</pattern>
+    <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.UpdateBillingViewRequest.Description</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>([ a-zA-Z0-9_\+=\.\-@]+)?</pattern>
+    <pattern>^([ a-zA-Z0-9_\+=\.\-@]+)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.UpdateBillingViewRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[ a-zA-Z0-9_\+=\.\-@]+</pattern>
+    <pattern>^[ a-zA-Z0-9_\+=\.\-@]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.UpdateBillingViewResponse.Arn</property>
-    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]</pattern>
+    <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.Amount.CurrencyAmount</property>
-    <pattern>[0-9]+(.[0-9]+)</pattern>
+    <pattern>^[0-9]+(.[0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.Amount.CurrencyCode</property>
-    <pattern>[A-Z]{3}</pattern>
+    <pattern>^[A-Z]{3}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.BillingPeriod.Month</property>
@@ -316,11 +317,11 @@
     <property>Amazon.Billing.Model.BillingPreferenceForKey.Key</property>
     <min>1</min>
     <max>2148</max>
-    <pattern>[a-zA-Z0-9-\/\*: ]+</pattern>
+    <pattern>^[a-zA-Z0-9-\/\*: ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.BillingPreferenceSummary.AccountId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.BillingPreferenceSummary.AccountName</property>
@@ -331,79 +332,79 @@
     <property>Amazon.Billing.Model.BillingPreferenceSummary.Key</property>
     <min>1</min>
     <max>2148</max>
-    <pattern>[a-zA-Z0-9-\/\*: ]+</pattern>
+    <pattern>^[a-zA-Z0-9-\/\*: ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.BillingViewElement.Arn</property>
-    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]</pattern>
+    <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.BillingViewElement.Description</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>([ a-zA-Z0-9_\+=\.\-@]+)?</pattern>
+    <pattern>^([ a-zA-Z0-9_\+=\.\-@]+)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.BillingViewElement.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[ a-zA-Z0-9_\+=\.\-@]+</pattern>
+    <pattern>^[ a-zA-Z0-9_\+=\.\-@]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.BillingViewElement.OwnerAccountId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.BillingViewElement.SourceAccountId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.BillingViewListElement.Arn</property>
-    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]</pattern>
+    <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.BillingViewListElement.Description</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>([ a-zA-Z0-9_\+=\.\-@]+)?</pattern>
+    <pattern>^([ a-zA-Z0-9_\+=\.\-@]+)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.BillingViewListElement.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[ a-zA-Z0-9_\+=\.\-@]+</pattern>
+    <pattern>^[ a-zA-Z0-9_\+=\.\-@]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.BillingViewListElement.OwnerAccountId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.BillingViewListElement.SourceAccountId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.BillingViewSegmentsListElement.BillingGroupPrimaryAccountId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.BillingViewSegmentsListElement.BillingTransferAccountId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.BillingViewSegmentsListElement.ManagementAccountId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.BusinessSupportAccountCharge.AccountId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.BusinessSupportSubscriptionContract.AccountId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ChargeAccount.AccountId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ConflictException.ResourceId</property>
@@ -417,17 +418,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ContractAccount.AccountId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.CostCategoryValues.Key</property>
     <min>1</min>
     <max>50</max>
-    <pattern>(?! )[\p{L}\p{N}\p{Z}-_]*(?&lt;! )</pattern>
+    <pattern>^(?! )[\p{L}\p{N}\p{Z}-_]*(?&lt;! )$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.CreditAllocationHistoryEntry.AccountId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.CreditAllocationHistoryEntry.BillingMonth</property>
@@ -438,25 +439,25 @@
     <property>Amazon.Billing.Model.CreditAllocationHistoryEntry.CreditId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>[0-9]+</pattern>
+    <pattern>^[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.CreditData.AccountId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.CreditData.CreditId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>[0-9]+</pattern>
+    <pattern>^[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.LinkedAccountCharge.AccountId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.LinkedAccountCharge.PayerAccountId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ResourceNotFoundException.ResourceId</property>
@@ -502,22 +503,20 @@
     <property>Amazon.Billing.Model.StringSearch.SearchValue</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_\+=\.\-@ ]+</pattern>
+    <pattern>^[a-zA-Z0-9_\+=\.\-@ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.TagValues.Key</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>[\S\s]*</pattern>
+    <pattern>^[\S\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ValidationExceptionField.Message</property>
-    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ValidationExceptionField.Name</property>
-    <min>0</min>
     <max>100</max>
   </property-value-rule>
 </property-value-rules>

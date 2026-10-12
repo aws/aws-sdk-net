@@ -1,0 +1,117 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+using System.Buffers;
+
+using Amazon.Proton.Model;
+using System.Globalization;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.Proton.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// UpdateAccountSettings Request Marshaller
+    /// </summary>
+    public partial class UpdateAccountSettingsRequestMarshaller : IMarshaller<IRequest, UpdateAccountSettingsRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    {
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((UpdateAccountSettingsRequest)input);
+        }
+
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(UpdateAccountSettingsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Proton");
+            string target = "AwsProton20200720.UpdateAccountSettings";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-20";
+            request.HttpMethod = "POST";
+
+            request.ResourcePath = "/";
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using var writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetDeletePipelineProvisioningRepository())
+            {
+                context.Writer.WritePropertyName("deletePipelineProvisioningRepository");
+                context.Writer.WriteBooleanValue(publicRequest.DeletePipelineProvisioningRepository.Value);
+            }
+            if (publicRequest.IsSetPipelineCodebuildRoleArn())
+            {
+                context.Writer.WritePropertyName("pipelineCodebuildRoleArn");
+                context.Writer.WriteStringValue(publicRequest.PipelineCodebuildRoleArn);
+            }
+            if (publicRequest.IsSetPipelineProvisioningRepository())
+            {
+                context.Writer.WritePropertyName("pipelineProvisioningRepository");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RepositoryBranchInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.PipelineProvisioningRepository, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetPipelineServiceRoleArn())
+            {
+                context.Writer.WritePropertyName("pipelineServiceRoleArn");
+                context.Writer.WriteStringValue(publicRequest.PipelineServiceRoleArn);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETFRAMEWORK
+            request.Content = memoryStream.ToArray();
+#endif
+
+            return request;
+        }
+
+        private static readonly UpdateAccountSettingsRequestMarshaller _instance = new();
+
+        internal static UpdateAccountSettingsRequestMarshaller GetInstance() => _instance;
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static UpdateAccountSettingsRequestMarshaller Instance => _instance;
+    }
+}

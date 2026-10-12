@@ -1,0 +1,150 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.VerifiedPermissions.Model
+{
+    /// <summary>
+    /// Container for the parameters to the IsAuthorized operation. Makes an authorization
+    /// decision about a service request described in the parameters. The information in the
+    /// parameters can also define additional context that Verified Permissions can include
+    /// in the evaluation. The request is evaluated against all matching policies in the specified
+    /// policy store. The result of the decision is either <c>Allow</c> or <c>Deny</c>, along
+    /// with a list of the policies that resulted in the decision.
+    /// </summary>
+    public partial class IsAuthorizedRequest : AmazonVerifiedPermissionsRequest
+    {
+        /// <summary>
+        /// Gets and sets the property Action. 
+        /// <para>
+        /// Specifies the requested action to be authorized. For example, is the principal authorized
+        /// to perform this action on the resource?
+        /// </para>
+        /// </summary>
+        public ActionIdentifier Action { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Action property is set.
+        /// </summary>
+        internal bool IsSetAction() => this.Action != null;
+
+        /// <summary>
+        /// Gets and sets the property Context. 
+        /// <para>
+        /// Specifies additional context that can be used to make more granular authorization
+        /// decisions.
+        /// </para>
+        /// </summary>
+        public ContextDefinition Context { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Context property is set.
+        /// </summary>
+        internal bool IsSetContext() => this.Context != null;
+
+        /// <summary>
+        /// Gets and sets the property Entities. 
+        /// <para>
+        /// (Optional) Specifies the list of resources and principals and their associated attributes
+        /// that Verified Permissions can examine when evaluating the policies. These additional
+        /// entities and their attributes can be referenced and checked by conditional elements
+        /// in the policies in the specified policy store.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can include only principal and resource entities in this parameter; you can't
+        /// include actions. You must specify actions in the schema.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public EntitiesDefinition Entities { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Entities property is set.
+        /// </summary>
+        internal bool IsSetEntities() => this.Entities != null;
+
+        /// <summary>
+        /// Gets and sets the property PolicyStoreId. 
+        /// <para>
+        /// Specifies the ID of the policy store. Policies in this policy store will be used to
+        /// make an authorization decision for the input.
+        /// </para>
+        ///  
+        /// <para>
+        /// To specify a policy store, use its ID or alias name. When using an alias name, prefix
+        /// it with <c>policy-store-alias/</c>. For example:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ID: <c>PSEXAMPLEabcdefg111111</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Alias name: <c>policy-store-alias/example-policy-store</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To view aliases, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 200)]
+        public string PolicyStoreId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PolicyStoreId property is set.
+        /// </summary>
+        internal bool IsSetPolicyStoreId() => this.PolicyStoreId != null;
+
+        /// <summary>
+        /// Gets and sets the property Principal. 
+        /// <para>
+        /// Specifies the principal for which the authorization decision is to be made.
+        /// </para>
+        /// </summary>
+        public EntityIdentifier Principal { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Principal property is set.
+        /// </summary>
+        internal bool IsSetPrincipal() => this.Principal != null;
+
+        /// <summary>
+        /// Gets and sets the property Resource. 
+        /// <para>
+        /// Specifies the resource for which the authorization decision is to be made.
+        /// </para>
+        /// </summary>
+        public EntityIdentifier Resource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Resource property is set.
+        /// </summary>
+        internal bool IsSetResource() => this.Resource != null;
+    }
+}

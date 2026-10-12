@@ -1,231 +1,195 @@
 <?xml version="1.0" encoding="utf-8"?>
 <docs>
-    <doc>
-        <members>
-            <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.AdminCreateUser(Amazon.CognitoIdentityProvider.Model.AdminCreateUserRequest)" />
-            <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.AdminCreateUser(Amazon.CognitoIdentityProvider.Model.AdminCreateUserRequest)" />
-            <member name="T:Amazon.CognitoIdentityProvider.Model.AdminCreateUserRequest" />
-            <member name="T:Amazon.CognitoIdentityProvider.Model.AdminCreateUserResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This request submits a value for all possible parameters for AdminCreateUser.
-                </para>
-                <code
-                    title="An AdminCreateUser request for for a test user named John."
-                    source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs"
-                    region="an-admincreateuser-request-for-for-a-test-user-named-john-1689980900481" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.CreateUserPool(Amazon.CognitoIdentityProvider.Model.CreateUserPoolRequest)" />
-            <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.CreateUserPool(Amazon.CognitoIdentityProvider.Model.CreateUserPoolRequest)" />
-            <member name="T:Amazon.CognitoIdentityProvider.Model.CreateUserPoolRequest" />
-            <member name="T:Amazon.CognitoIdentityProvider.Model.CreateUserPoolResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    The following example creates a user pool with all configurable properties set to an example value. The resulting user pool allows sign-in with username or email address, has optional MFA, and has a Lambda function assigned to each possible trigger.
-                </para>
-                <code
-                    title="Example user pool with email and username sign-in"
-                    source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs"
-                    region="example-user-pool-with-email-and-username-sign-in-1689722835145" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.CreateUserPoolClient(Amazon.CognitoIdentityProvider.Model.CreateUserPoolClientRequest)" />
-            <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.CreateUserPoolClient(Amazon.CognitoIdentityProvider.Model.CreateUserPoolClientRequest)" />
-            <member name="T:Amazon.CognitoIdentityProvider.Model.CreateUserPoolClientRequest" />
-            <member name="T:Amazon.CognitoIdentityProvider.Model.CreateUserPoolClientResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    The following example creates an app client with all configurable properties set to an example value. The resulting user pool client connects to an analytics client, allows sign-in with username and password, and has two external identity providers associated with it.
-                </para>
-                <code
-                    title="Example user pool app client with email and username sign-in"
-                    source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs"
-                    region="example-user-pool-app-client-with-email-and-username-sign-in-1689885750745" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.CreateUserPoolReplica(Amazon.CognitoIdentityProvider.Model.CreateUserPoolReplicaRequest)" />
-            <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.CreateUserPoolReplica(Amazon.CognitoIdentityProvider.Model.CreateUserPoolReplicaRequest)" />
-            <member name="T:Amazon.CognitoIdentityProvider.Model.CreateUserPoolReplicaRequest" />
-            <member name="T:Amazon.CognitoIdentityProvider.Model.CreateUserPoolReplicaResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    The following example creates a replica of a user pool in the ap-south-1 Region.
-                </para>
-                <code
-                    title="Example create a replica of a user pool in a new Region"
-                    source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs"
-                    region="example-create-a-replica-of-a-user-pool-in-a-new-region-1745281038615" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.DeleteUserPoolReplica(Amazon.CognitoIdentityProvider.Model.DeleteUserPoolReplicaRequest)" />
-            <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.DeleteUserPoolReplica(Amazon.CognitoIdentityProvider.Model.DeleteUserPoolReplicaRequest)" />
-            <member name="T:Amazon.CognitoIdentityProvider.Model.DeleteUserPoolReplicaRequest" />
-            <member name="T:Amazon.CognitoIdentityProvider.Model.DeleteUserPoolReplicaResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    The following example deletes a user pool replica in the us-east-2 Region.
-                </para>
-                <code
-                    title="Example delete a user pool replica"
-                    source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs"
-                    region="example-delete-a-user-pool-replica-1745281451065" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.GetClientToken(Amazon.CognitoIdentityProvider.Model.GetClientTokenRequest)" />
-            <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.GetClientToken(Amazon.CognitoIdentityProvider.Model.GetClientTokenRequest)" />
-            <member name="T:Amazon.CognitoIdentityProvider.Model.GetClientTokenRequest" />
-            <member name="T:Amazon.CognitoIdentityProvider.Model.GetClientTokenResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    The following example gets an access token for the app client 1example23456789 with the custom scope solar-system-data/asteroids.add.
-                </para>
-                <code
-                    title="Example – Get an access token for machine-to-machine authorization"
-                    source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs"
-                    region="example-get-a-client-token-1782432000000" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.GetProvisionedLimit(Amazon.CognitoIdentityProvider.Model.GetProvisionedLimitRequest)" />
-            <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.GetProvisionedLimit(Amazon.CognitoIdentityProvider.Model.GetProvisionedLimitRequest)" />
-            <member name="T:Amazon.CognitoIdentityProvider.Model.GetProvisionedLimitRequest" />
-            <member name="T:Amazon.CognitoIdentityProvider.Model.GetProvisionedLimitResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    The following example returns the provisioned limit for the UserAuthentication API category.
-                </para>
-                <code
-                    title="Example get a provisioned limit"
-                    source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs"
-                    region="example-get-a-provisioned-limit-1782432000000" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.InitiateAuth(Amazon.CognitoIdentityProvider.Model.InitiateAuthRequest)" />
-            <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.InitiateAuth(Amazon.CognitoIdentityProvider.Model.InitiateAuthRequest)" />
-            <member name="T:Amazon.CognitoIdentityProvider.Model.InitiateAuthRequest" />
-            <member name="T:Amazon.CognitoIdentityProvider.Model.InitiateAuthResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    The following example signs in the user mytestuser with analytics data, client metadata, and user context data for advanced security.
-                </para>
-                <code
-                    title="Example username and password sign-in for a user who has TOTP MFA"
-                    source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs"
-                    region="example-username-and-password-sign-in-for-a-user-who-has-totp-mfa-1689887395219" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.ListUserPoolReplicas(Amazon.CognitoIdentityProvider.Model.ListUserPoolReplicasRequest)" />
-            <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.ListUserPoolReplicas(Amazon.CognitoIdentityProvider.Model.ListUserPoolReplicasRequest)" />
-            <member name="T:Amazon.CognitoIdentityProvider.Model.ListUserPoolReplicasRequest" />
-            <member name="T:Amazon.CognitoIdentityProvider.Model.ListUserPoolReplicasResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    The following example lists the replicas of a user pool that has a replica in the ap-south-1 Region.
-                </para>
-                <code
-                    title="Example list the replicas of a user pool"
-                    source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs"
-                    region="example-list-the-replicas-of-a-user-pool-1745281209294" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.ListUsers(Amazon.CognitoIdentityProvider.Model.ListUsersRequest)" />
-            <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.ListUsers(Amazon.CognitoIdentityProvider.Model.ListUsersRequest)" />
-            <member name="T:Amazon.CognitoIdentityProvider.Model.ListUsersRequest" />
-            <member name="T:Amazon.CognitoIdentityProvider.Model.ListUsersResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This request submits a value for all possible parameters for ListUsers. By iterating the PaginationToken, you can page through and collect all users in a user pool.
-                </para>
-                <code
-                    title="A ListUsers request for the next 3 users whose email address starts with &quot;testuser.&quot;"
-                    source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs"
-                    region="a-listusers-request-for-the-next-3-users-whose-email-address-starts-with-testuser-1689977648246" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.UpdateProvisionedLimit(Amazon.CognitoIdentityProvider.Model.UpdateProvisionedLimitRequest)" />
-            <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.UpdateProvisionedLimit(Amazon.CognitoIdentityProvider.Model.UpdateProvisionedLimitRequest)" />
-            <member name="T:Amazon.CognitoIdentityProvider.Model.UpdateProvisionedLimitRequest" />
-            <member name="T:Amazon.CognitoIdentityProvider.Model.UpdateProvisionedLimitResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    The following example sets the provisioned limit for the UserAuthentication API category to 300 RPS.
-                </para>
-                <code
-                    title="Example update a provisioned limit"
-                    source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs"
-                    region="example-update-a-provisioned-limit-1782432000000" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.UpdateUserPoolReplica(Amazon.CognitoIdentityProvider.Model.UpdateUserPoolReplicaRequest)" />
-            <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.UpdateUserPoolReplica(Amazon.CognitoIdentityProvider.Model.UpdateUserPoolReplicaRequest)" />
-            <member name="T:Amazon.CognitoIdentityProvider.Model.UpdateUserPoolReplicaRequest" />
-            <member name="T:Amazon.CognitoIdentityProvider.Model.UpdateUserPoolReplicaResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    The following example sets the status of a user pool replica in the us-east-1 Region to ACTIVE.
-                </para>
-                <code
-                    title="Example update a user pool replica"
-                    source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs"
-                    region="example-update-a-user-pool-replica-1745281323439" />
-            </example>
-        </value>
-    </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.AdminCreateUser(Amazon.CognitoIdentityProvider.Model.AdminCreateUserRequest)" />
+      <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.AdminCreateUser(Amazon.CognitoIdentityProvider.Model.AdminCreateUserRequest)" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.AdminCreateUserRequest" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.AdminCreateUserResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This request submits a value for all possible parameters for AdminCreateUser.
+        </para>
+        <code title="An AdminCreateUser request for for a test user named John." source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs" region="AdminCreateUser-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.CreateUserPool(Amazon.CognitoIdentityProvider.Model.CreateUserPoolRequest)" />
+      <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.CreateUserPool(Amazon.CognitoIdentityProvider.Model.CreateUserPoolRequest)" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.CreateUserPoolRequest" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.CreateUserPoolResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example creates a user pool with all configurable properties set to an example value. The resulting user pool allows sign-in with username or email address, has optional MFA, and has a Lambda function assigned to each possible trigger.
+        </para>
+        <code title="Example user pool with email and username sign-in" source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs" region="CreateUserPool-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.CreateUserPoolClient(Amazon.CognitoIdentityProvider.Model.CreateUserPoolClientRequest)" />
+      <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.CreateUserPoolClient(Amazon.CognitoIdentityProvider.Model.CreateUserPoolClientRequest)" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.CreateUserPoolClientRequest" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.CreateUserPoolClientResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example creates an app client with all configurable properties set to an example value. The resulting user pool client connects to an analytics client, allows sign-in with username and password, and has two external identity providers associated with it.
+        </para>
+        <code title="Example user pool app client with email and username sign-in" source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs" region="CreateUserPoolClient-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.CreateUserPoolReplica(Amazon.CognitoIdentityProvider.Model.CreateUserPoolReplicaRequest)" />
+      <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.CreateUserPoolReplica(Amazon.CognitoIdentityProvider.Model.CreateUserPoolReplicaRequest)" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.CreateUserPoolReplicaRequest" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.CreateUserPoolReplicaResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example creates a replica of a user pool in the ap-south-1 Region.
+        </para>
+        <code title="Example create a replica of a user pool in a new Region" source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs" region="CreateUserPoolReplica-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.DeleteUserPoolReplica(Amazon.CognitoIdentityProvider.Model.DeleteUserPoolReplicaRequest)" />
+      <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.DeleteUserPoolReplica(Amazon.CognitoIdentityProvider.Model.DeleteUserPoolReplicaRequest)" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.DeleteUserPoolReplicaRequest" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.DeleteUserPoolReplicaResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example deletes a user pool replica in the us-east-2 Region.
+        </para>
+        <code title="Example delete a user pool replica" source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs" region="DeleteUserPoolReplica-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.GetClientToken(Amazon.CognitoIdentityProvider.Model.GetClientTokenRequest)" />
+      <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.GetClientToken(Amazon.CognitoIdentityProvider.Model.GetClientTokenRequest)" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.GetClientTokenRequest" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.GetClientTokenResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example gets an access token for the app client 1example23456789 with the custom scope solar-system-data/asteroids.add.
+        </para>
+        <code title="Example – Get an access token for machine-to-machine authorization" source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs" region="GetClientToken-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.GetProvisionedLimit(Amazon.CognitoIdentityProvider.Model.GetProvisionedLimitRequest)" />
+      <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.GetProvisionedLimit(Amazon.CognitoIdentityProvider.Model.GetProvisionedLimitRequest)" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.GetProvisionedLimitRequest" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.GetProvisionedLimitResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example returns the provisioned limit for the UserAuthentication API category.
+        </para>
+        <code title="Example get a provisioned limit" source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs" region="GetProvisionedLimit-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.InitiateAuth(Amazon.CognitoIdentityProvider.Model.InitiateAuthRequest)" />
+      <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.InitiateAuth(Amazon.CognitoIdentityProvider.Model.InitiateAuthRequest)" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.InitiateAuthRequest" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.InitiateAuthResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example signs in the user mytestuser with analytics data, client metadata, and user context data for advanced security.
+        </para>
+        <code title="Example username and password sign-in for a user who has TOTP MFA" source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs" region="InitiateAuth-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.ListUserPoolReplicas(Amazon.CognitoIdentityProvider.Model.ListUserPoolReplicasRequest)" />
+      <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.ListUserPoolReplicas(Amazon.CognitoIdentityProvider.Model.ListUserPoolReplicasRequest)" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.ListUserPoolReplicasRequest" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.ListUserPoolReplicasResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example lists the replicas of a user pool that has a replica in the ap-south-1 Region.
+        </para>
+        <code title="Example list the replicas of a user pool" source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs" region="ListUserPoolReplicas-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.ListUsers(Amazon.CognitoIdentityProvider.Model.ListUsersRequest)" />
+      <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.ListUsers(Amazon.CognitoIdentityProvider.Model.ListUsersRequest)" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.ListUsersRequest" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.ListUsersResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This request submits a value for all possible parameters for ListUsers. By iterating the PaginationToken, you can page through and collect all users in a user pool.
+        </para>
+        <code title="A ListUsers request for the next 3 users whose email address starts with &quot;testuser.&quot;" source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs" region="ListUsers-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.UpdateProvisionedLimit(Amazon.CognitoIdentityProvider.Model.UpdateProvisionedLimitRequest)" />
+      <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.UpdateProvisionedLimit(Amazon.CognitoIdentityProvider.Model.UpdateProvisionedLimitRequest)" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.UpdateProvisionedLimitRequest" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.UpdateProvisionedLimitResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example sets the provisioned limit for the UserAuthentication API category to 300 RPS.
+        </para>
+        <code title="Example update a provisioned limit" source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs" region="UpdateProvisionedLimit-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.UpdateUserPoolReplica(Amazon.CognitoIdentityProvider.Model.UpdateUserPoolReplicaRequest)" />
+      <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.UpdateUserPoolReplica(Amazon.CognitoIdentityProvider.Model.UpdateUserPoolReplicaRequest)" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.UpdateUserPoolReplicaRequest" />
+      <member name="T:Amazon.CognitoIdentityProvider.Model.UpdateUserPoolReplicaResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example sets the status of a user pool replica in the us-east-1 Region to ACTIVE.
+        </para>
+        <code title="Example update a user pool replica" source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs" region="UpdateUserPoolReplica-1" />
+      </example>
+    </value>
+  </doc>
 </docs>

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralChannel.Generated
     {
         public void PartnerCentralChannelAcceptChannelHandshake()
         {
-            #region example-1
+            #region AcceptChannelHandshake-1
 
             var client = new AmazonPartnerCentralChannelClient();
-            var response = client.AcceptChannelHandshake(new AcceptChannelHandshakeRequest 
+            var response = client.AcceptChannelHandshake(new AcceptChannelHandshakeRequest
             {
                 Catalog = "AWS",
                 Identifier = "ch-4fj3bd2o3vb91"
@@ -29,10 +30,10 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralChannel.Generated
 
         public void PartnerCentralChannelCancelChannelHandshake()
         {
-            #region example-1
+            #region CancelChannelHandshake-1
 
             var client = new AmazonPartnerCentralChannelClient();
-            var response = client.CancelChannelHandshake(new CancelChannelHandshakeRequest 
+            var response = client.CancelChannelHandshake(new CancelChannelHandshakeRequest
             {
                 Catalog = "AWS",
                 Identifier = "ch-4fj3bd2o3vb91"
@@ -45,10 +46,10 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralChannel.Generated
 
         public void PartnerCentralChannelCreateChannelHandshake()
         {
-            #region example-1
+            #region CreateChannelHandshake-1
 
             var client = new AmazonPartnerCentralChannelClient();
-            var response = client.CreateChannelHandshake(new CreateChannelHandshakeRequest 
+            var response = client.CreateChannelHandshake(new CreateChannelHandshakeRequest
             {
                 AssociatedResourceIdentifier = "rs-abc123def456g",
                 Catalog = "AWS",
@@ -69,17 +70,17 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralChannel.Generated
 
         public void PartnerCentralChannelCreateChannelHandshake()
         {
-            #region example-2
+            #region CreateChannelHandshake-2
 
             var client = new AmazonPartnerCentralChannelClient();
-            var response = client.CreateChannelHandshake(new CreateChannelHandshakeRequest 
+            var response = client.CreateChannelHandshake(new CreateChannelHandshakeRequest
             {
                 AssociatedResourceIdentifier = "rs-abc123def456g",
                 Catalog = "AWS",
                 ClientToken = "clientToken",
                 HandshakeType = "START_SERVICE_PERIOD",
                 Payload = new ChannelHandshakePayload { StartServicePeriodPayload = new StartServicePeriodPayload {
-                    EndDate = new DateTime(2026, 7, 1, 12, 0, 0, DateTimeKind.Utc),
+                    EndDate = new DateTime(2026, 7, 1, 0, 0, 0, DateTimeKind.Utc),
                     Note = "Optional Note",
                     ProgramManagementAccountIdentifier = "pma-abcdef123456g",
                     ServicePeriodType = "FIXED_COMMITMENT_PERIOD"
@@ -93,10 +94,10 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralChannel.Generated
 
         public void PartnerCentralChannelCreateChannelHandshake()
         {
-            #region example-3
+            #region CreateChannelHandshake-3
 
             var client = new AmazonPartnerCentralChannelClient();
-            var response = client.CreateChannelHandshake(new CreateChannelHandshakeRequest 
+            var response = client.CreateChannelHandshake(new CreateChannelHandshakeRequest
             {
                 AssociatedResourceIdentifier = "rs-abc123def456g",
                 Catalog = "AWS",
@@ -115,10 +116,10 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralChannel.Generated
 
         public void PartnerCentralChannelCreateChannelHandshake()
         {
-            #region example-4
+            #region CreateChannelHandshake-4
 
             var client = new AmazonPartnerCentralChannelClient();
-            var response = client.CreateChannelHandshake(new CreateChannelHandshakeRequest 
+            var response = client.CreateChannelHandshake(new CreateChannelHandshakeRequest
             {
                 AssociatedResourceIdentifier = "pma-123abc456def7",
                 Catalog = "AWS",
@@ -133,10 +134,10 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralChannel.Generated
 
         public void PartnerCentralChannelCreateProgramManagementAccount()
         {
-            #region example-1
+            #region CreateProgramManagementAccount-1
 
             var client = new AmazonPartnerCentralChannelClient();
-            var response = client.CreateProgramManagementAccount(new CreateProgramManagementAccountRequest 
+            var response = client.CreateProgramManagementAccount(new CreateProgramManagementAccountRequest
             {
                 AccountId = "111122223333",
                 Catalog = "AWS",
@@ -152,10 +153,10 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralChannel.Generated
 
         public void PartnerCentralChannelCreateRelationship()
         {
-            #region example-1
+            #region CreateRelationship-1
 
             var client = new AmazonPartnerCentralChannelClient();
-            var response = client.CreateRelationship(new CreateRelationshipRequest 
+            var response = client.CreateRelationship(new CreateRelationshipRequest
             {
                 AssociatedAccountId = "987654321012",
                 AssociationType = "DOWNSTREAM_SELLER",
@@ -174,10 +175,10 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralChannel.Generated
 
         public void PartnerCentralChannelDeleteProgramManagementAccount()
         {
-            #region example-1
+            #region DeleteProgramManagementAccount-1
 
             var client = new AmazonPartnerCentralChannelClient();
-            var response = client.DeleteProgramManagementAccount(new DeleteProgramManagementAccountRequest 
+            var response = client.DeleteProgramManagementAccount(new DeleteProgramManagementAccountRequest
             {
                 Catalog = "AWS",
                 ClientToken = "clientToken",
@@ -190,10 +191,10 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralChannel.Generated
 
         public void PartnerCentralChannelDeleteRelationship()
         {
-            #region example-1
+            #region DeleteRelationship-1
 
             var client = new AmazonPartnerCentralChannelClient();
-            var response = client.DeleteRelationship(new DeleteRelationshipRequest 
+            var response = client.DeleteRelationship(new DeleteRelationshipRequest
             {
                 Catalog = "AWS",
                 ClientToken = "clientToken",
@@ -207,10 +208,10 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralChannel.Generated
 
         public void PartnerCentralChannelGetRelationship()
         {
-            #region example-1
+            #region GetRelationship-1
 
             var client = new AmazonPartnerCentralChannelClient();
-            var response = client.GetRelationship(new GetRelationshipRequest 
+            var response = client.GetRelationship(new GetRelationshipRequest
             {
                 Catalog = "AWS",
                 Identifier = "rs-l9o4fj3b5zb91",
@@ -224,10 +225,10 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralChannel.Generated
 
         public void PartnerCentralChannelListChannelHandshakes()
         {
-            #region example-1
+            #region ListChannelHandshakes-1
 
             var client = new AmazonPartnerCentralChannelClient();
-            var response = client.ListChannelHandshakes(new ListChannelHandshakesRequest 
+            var response = client.ListChannelHandshakes(new ListChannelHandshakesRequest
             {
                 AssociatedResourceIdentifiers = new List<string> {
                     "rs-123abc456def7"
@@ -255,10 +256,10 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralChannel.Generated
 
         public void PartnerCentralChannelListChannelHandshakes()
         {
-            #region example-2
+            #region ListChannelHandshakes-2
 
             var client = new AmazonPartnerCentralChannelClient();
-            var response = client.ListChannelHandshakes(new ListChannelHandshakesRequest 
+            var response = client.ListChannelHandshakes(new ListChannelHandshakesRequest
             {
                 AssociatedResourceIdentifiers = new List<string> {
                     "rs-123abc456def7"
@@ -286,10 +287,10 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralChannel.Generated
 
         public void PartnerCentralChannelListChannelHandshakes()
         {
-            #region example-3
+            #region ListChannelHandshakes-3
 
             var client = new AmazonPartnerCentralChannelClient();
-            var response = client.ListChannelHandshakes(new ListChannelHandshakesRequest 
+            var response = client.ListChannelHandshakes(new ListChannelHandshakesRequest
             {
                 AssociatedResourceIdentifiers = new List<string> {
                     "pma-123abc456def7"
@@ -319,10 +320,10 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralChannel.Generated
 
         public void PartnerCentralChannelListProgramManagementAccounts()
         {
-            #region example-1
+            #region ListProgramManagementAccounts-1
 
             var client = new AmazonPartnerCentralChannelClient();
-            var response = client.ListProgramManagementAccounts(new ListProgramManagementAccountsRequest 
+            var response = client.ListProgramManagementAccounts(new ListProgramManagementAccountsRequest
             {
                 AccountIds = new List<string> {
                     "111122223333"
@@ -352,10 +353,10 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralChannel.Generated
 
         public void PartnerCentralChannelListRelationships()
         {
-            #region example-1
+            #region ListRelationships-1
 
             var client = new AmazonPartnerCentralChannelClient();
-            var response = client.ListRelationships(new ListRelationshipsRequest 
+            var response = client.ListRelationships(new ListRelationshipsRequest
             {
                 AssociatedAccountIds = new List<string> {
                     "123456789012"
@@ -386,10 +387,10 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralChannel.Generated
 
         public void PartnerCentralChannelListTagsForResource()
         {
-            #region example-1
+            #region ListTagsForResource-1
 
             var client = new AmazonPartnerCentralChannelClient();
-            var response = client.ListTagsForResource(new ListTagsForResourceRequest 
+            var response = client.ListTagsForResource(new ListTagsForResourceRequest
             {
                 ResourceArn = "arn:aws:partnercentral:us-east-1:123456789012:catalog/AWS/program-management-account/pma-u8ic702rtzng8"
             });
@@ -401,10 +402,10 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralChannel.Generated
 
         public void PartnerCentralChannelRejectChannelHandshake()
         {
-            #region example-1
+            #region RejectChannelHandshake-1
 
             var client = new AmazonPartnerCentralChannelClient();
-            var response = client.RejectChannelHandshake(new RejectChannelHandshakeRequest 
+            var response = client.RejectChannelHandshake(new RejectChannelHandshakeRequest
             {
                 Catalog = "AWS",
                 Identifier = "ch-4fj3bd2o3vb91"
@@ -417,10 +418,10 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralChannel.Generated
 
         public void PartnerCentralChannelTagResource()
         {
-            #region example-1
+            #region TagResource-1
 
             var client = new AmazonPartnerCentralChannelClient();
-            var response = client.TagResource(new TagResourceRequest 
+            var response = client.TagResource(new TagResourceRequest
             {
                 ResourceArn = "arn:aws:partnercentral:us-east-1:123456789012:catalog/AWS/program-management-account/pma-u8ic702rtzng8/relationship/rs-l9o4fj3b5zb91",
                 Tags = new List<Tag> {
@@ -437,10 +438,10 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralChannel.Generated
 
         public void PartnerCentralChannelUntagResource()
         {
-            #region example-1
+            #region UntagResource-1
 
             var client = new AmazonPartnerCentralChannelClient();
-            var response = client.UntagResource(new UntagResourceRequest 
+            var response = client.UntagResource(new UntagResourceRequest
             {
                 ResourceArn = "arn:aws:partnercentral:us-east-1:123456789012:catalog/AWS/channel-handshake/ch-4fj3bd2o3vb91",
                 TagKeys = new List<string> {
@@ -454,10 +455,10 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralChannel.Generated
 
         public void PartnerCentralChannelUpdateProgramManagementAccount()
         {
-            #region example-1
+            #region UpdateProgramManagementAccount-1
 
             var client = new AmazonPartnerCentralChannelClient();
-            var response = client.UpdateProgramManagementAccount(new UpdateProgramManagementAccountRequest 
+            var response = client.UpdateProgramManagementAccount(new UpdateProgramManagementAccountRequest
             {
                 Catalog = "AWS",
                 DisplayName = "TestDisplayName",
@@ -472,10 +473,10 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralChannel.Generated
 
         public void PartnerCentralChannelUpdateRelationship()
         {
-            #region example-1
+            #region UpdateRelationship-1
 
             var client = new AmazonPartnerCentralChannelClient();
-            var response = client.UpdateRelationship(new UpdateRelationshipRequest 
+            var response = client.UpdateRelationship(new UpdateRelationshipRequest
             {
                 Catalog = "AWS",
                 DisplayName = "TestDisplayName",
@@ -489,13 +490,10 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralChannel.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }
