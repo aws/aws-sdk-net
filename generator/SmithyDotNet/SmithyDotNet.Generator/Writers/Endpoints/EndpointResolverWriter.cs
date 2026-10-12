@@ -26,14 +26,22 @@ public sealed class EndpointResolverWriter(GenerationContext context, string mod
         $"{context.Namespace}.Endpoints",
     ];
 
-    // Maps a rule-set builtIn to the config expression that sources it. Only the builtIns
-    // CloudTrailData uses are handled; anything else fails loudly rather than guessing.
+    // Maps a rule-set builtIn to the expression that sources it, as C2J does; anything else fails generation.
     private static readonly IReadOnlyDictionary<string, string> BuiltInSources = new Dictionary<string, string>
     {
         ["AWS::Region"] = "requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName",
         ["AWS::UseFIPS"] = "config.UseFIPSEndpoint",
         ["AWS::UseDualStack"] = "config.UseDualstackEndpoint",
         ["SDK::Endpoint"] = "config.ServiceURL",
+        ["AWS::S3::ForcePathStyle"] = "config.ForcePathStyle",
+        ["AWS::S3::Accelerate"] = "config.UseAccelerateEndpoint",
+        ["AWS::S3::UseArnRegion"] = "config.UseArnRegion",
+        ["AWS::S3Control::UseArnRegion"] = "config.UseArnRegion",
+        ["AWS::S3::DisableMultiRegionAccessPoints"] = "config.DisableMultiregionAccessPoints",
+        ["AWS::S3::UseGlobalEndpoint"] = "config.USEast1RegionalEndpointValue == S3UsEast1RegionalEndpointValue.Legacy",
+        ["AWS::STS::UseGlobalEndpoint"] = "false",
+        ["AWS::Auth::AccountId"] = "requestContext.Identity is AWSCredentials credentials ? credentials.GetCredentials()?.AccountId : null",
+        ["AWS::Auth::AccountIdEndpointMode"] = "config.AccountIdEndpointMode.ToString().ToLower()",
     };
 
     /// <summary>

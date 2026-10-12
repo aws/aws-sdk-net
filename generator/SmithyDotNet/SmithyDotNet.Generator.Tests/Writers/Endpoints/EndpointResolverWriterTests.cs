@@ -47,6 +47,23 @@ public class EndpointResolverWriterTests
         Assert.Contains("result.Endpoint = config.ServiceURL;", _output);
     }
 
+    [Theory]
+    [InlineData("ForcePathStyle", "config.ForcePathStyle")]
+    [InlineData("Accelerate", "config.UseAccelerateEndpoint")]
+    [InlineData("UseArnRegion", "config.UseArnRegion")]
+    [InlineData("UseControlArnRegion", "config.UseArnRegion")]
+    [InlineData("DisableMultiRegionAccessPoints", "config.DisableMultiregionAccessPoints")]
+    [InlineData("UseS3GlobalEndpoint", "config.USEast1RegionalEndpointValue == S3UsEast1RegionalEndpointValue.Legacy")]
+    [InlineData("UseGlobalEndpoint", "false")]
+    [InlineData("AccountId", "requestContext.Identity is AWSCredentials credentials ? credentials.GetCredentials()?.AccountId : null")]
+    [InlineData("AccountIdEndpointMode", "config.AccountIdEndpointMode.ToString().ToLower()")]
+    public void MapsServiceSpecificBuiltInParameters(string parameter, string source)
+    {
+        var output = new EndpointResolverWriter(TestModels.Context("Codegen/endpoint-context-params-model.json"), "smithy.json").Write(TestContext.Current.CancellationToken);
+
+        Assert.Contains($"result.{parameter} = {source};", output);
+    }
+
     [Fact]
     public void EmitsRegionFromServiceUrlBlock()
     {
