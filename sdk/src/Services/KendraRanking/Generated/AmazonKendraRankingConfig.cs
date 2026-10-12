@@ -33,7 +33,7 @@ namespace Amazon.KendraRanking
     public partial class AmazonKendraRankingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Kendra Ranking", "4.0.101.10");
+            InternalSDKUtils.BuildUserAgentString("Kendra Ranking", "4.0.101.11");
 
         private static readonly AmazonKendraRankingEndpointResolver EndpointResolver =
             new AmazonKendraRankingEndpointResolver();

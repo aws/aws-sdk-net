@@ -1,9 +1,0 @@
-{
-  "core": {
-    "changeLogMessages": [
-      "Fixed an issue where an event stream event whose payload is a raw blob or string (for example the `PayloadChunk` event of Lambda's `InvokeWithResponseStream`) was returned with its stream positioned past the first 4 KB. Reading the MemoryStream with Read, CopyTo or StreamReader returned nothing or only the tail; ToArray was unaffected. StreamingUtf8JsonReader no longer reads from the stream until its first Read call."
-    ],
-    "type": "patch",
-    "updateMinimum": true
-  }
-}

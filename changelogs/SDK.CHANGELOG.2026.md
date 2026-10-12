@@ -1,3 +1,116 @@
+### 4.0.351.0 (2026-10-12 18:11 UTC)
+* AppRunner (4.0.100.17)
+	* AppRunner is now generated from its Smithy model. There are no changes to the public API.
+* AWSMarketplaceMetering (4.0.101.1)
+	* AWSMarketplaceMetering is now generated from its Smithy model. There are no changes to the public API.
+* B2bi (4.0.100.17)
+	* B2bi is now generated from its Smithy model. There are no changes to the public API.
+* BCMDashboards (4.0.100.17)
+	* BCMDashboards is now generated from its Smithy model. There are no changes to the public API.
+* BCMDataExports (4.0.101.10)
+	* BCMDataExports is now generated from its Smithy model. There are no changes to the public API.
+* BCMPricingCalculator (4.0.102.10)
+	* BCMPricingCalculator is now generated from its Smithy model. There are no changes to the public API.
+* BCMRecommendedActions (4.0.102.10)
+	* BCMRecommendedActions is now generated from its Smithy model. There are no changes to the public API.
+* BedrockAgentCore (4.0.113.0)
+	* AgentCore Memory now supports Long-Term Memory Time-to-Live on Batch APIs.
+* BedrockAgentCoreControl (4.0.121.0)
+	* AgentCore Memory now supports configuring Long-Term Memory Time-to-Live (TTL) on Memory Strategies.
+* BedrockDataAutomationRuntime (4.0.100.17)
+	* BedrockDataAutomationRuntime is now generated from its Smithy model. There are no changes to the public API.
+* Billing (4.0.105.3)
+	* Billing is now generated from its Smithy model. There are no changes to the public API.
+* CloudControlApi (4.0.100.17)
+	* CloudControlApi is now generated from its Smithy model. There are no changes to the public API.
+* CloudWatchOmni (4.0.101.0)
+	* Adds support for updating agentCoreEvaluationRoleArn in UpdateSpace API
+* CodeCommit (4.0.101.9)
+	* CodeCommit is now generated from its Smithy model. There are no changes to the public API.
+* CodeStarconnections (4.0.100.17)
+	* CodeStarconnections is now generated from its Smithy model. There are no changes to the public API.
+	* The X-Amz-Target request header now uses the service shape name (CodeStar_connections_20191201.{Operation}) instead of the legacy namespaced prefix; the service accepts both and other AWS SDKs already send the new form.
+* CognitoIdentityProvider (4.0.106.2)
+	* CognitoIdentityProvider is now generated from its Smithy model. There are no changes to the public API.
+* CostAndUsageReport (4.0.100.17)
+	* CostAndUsageReport is now generated from its Smithy model. There are no changes to the public API.
+* CostOptimizationHub (4.0.100.17)
+	* CostOptimizationHub is now generated from its Smithy model. There are no changes to the public API.
+* DevOpsAgent (4.0.105.0)
+	* Adds support for the includedData field in GetAgentSpace and ListAgentSpaces APIs
+* Evs (4.0.102.6)
+	* Evs is now generated from its Smithy model. There are no changes to the public API.
+* FreeTier (4.0.100.17)
+	* FreeTier is now generated from its Smithy model. There are no changes to the public API.
+* Glue (4.0.114.0)
+	* Adds new AWS Glue Data Quality APIs to retrieve and list data quality evaluation results. The new GetDataQualityResultV2, BatchGetDataQualityResultV2, and ListDataQualityResultsV2 operations return data quality results published from any supported data processing engine.
+* HealthLake (4.0.103.6)
+	* HealthLake is now generated from its Smithy model. There are no changes to the public API.
+* Invoicing (4.0.103.2)
+	* Invoicing is now generated from its Smithy model. There are no changes to the public API.
+* IoTFleetWise (4.0.100.17)
+	* IoTFleetWise is now generated from its Smithy model. There are no changes to the public API.
+* Lambda (4.0.109.1)
+	* Doc updates to reposition Lambda Functions as Lambda Event Functions
+* LambdaCore (4.0.101.0)
+	* Lambda Network Connector now supports Lambda Web Functions, letting them reach private VPC resources, and adds versioning, each connector update creates an immutable version that revisions pin to, so customers can roll out and roll back networking changes without affecting running workloads
+* LambdaWeb (4.0.102.0)
+	* Lambda Web Functions GA launch. Lambda Web Functions enable customers to run web applications and API backends
+* LookoutEquipment (4.0.100.17)
+	* LookoutEquipment is now generated from its Smithy model. There are no changes to the public API.
+* MediaConnect (4.0.103.0)
+	* This release adds support for MediaConnect Router high-bitrate tiers. It also adds a configurable audio reference level for NDI flows, and enhanced source metadata that includes color information and transport stream ID.
+* MWAAServerless (4.0.101.9)
+	* MWAAServerless is now generated from its Smithy model. There are no changes to the public API.
+* ObservabilityAdmin (4.0.107.0)
+	* Adding support for TransactionSearch telemetry rules.
+* Odb (4.0.103.6)
+	* Odb is now generated from its Smithy model. There are no changes to the public API.
+* Omics (4.0.103.0)
+	* AWS HealthOmics now supports private workflow runs using VPC resources shared across accounts via AWS RAM. A new optional vpcOwnerAccountId field in CreateConfiguration's VpcConfig allows customers to specify the account that owns the shared subnets and security groups.
+* PartnerCentralAccount (4.0.102.10)
+	* PartnerCentralAccount is now generated from its Smithy model. There are no changes to the public API.
+* PartnerCentralBenefits (4.0.100.17)
+	* PartnerCentralBenefits is now generated from its Smithy model. There are no changes to the public API.
+* PartnerCentralChannel (4.0.100.17)
+	* PartnerCentralChannel is now generated from its Smithy model. There are no changes to the public API.
+* PartnerCentralSelling (4.0.103.6)
+	* PartnerCentralSelling is now generated from its Smithy model. There are no changes to the public API.
+* PaymentCryptography (4.0.100.17)
+	* PaymentCryptography is now generated from its Smithy model. There are no changes to the public API.
+* PCS (4.0.103.0)
+	* Adding scheduler version to RegisterComputeNodeGroup API. A compute node uses this value to run the matching scheduler version.
+	* PCS is now generated from its Smithy model. There are no changes to the public API.
+* PinpointSMSVoiceV2 (4.0.104.0)
+	* DescribePhoneNumbers and DescribeSenderIds now return an optional PricingTier field that indicates whether a phone number, sender ID, short code, or long code is classified as Domestic or International, enabling customers to identify origination identities eligible for local pricing.
+	* PinpointSMSVoiceV2 is now generated from its Smithy model. There are no changes to the public API.
+* Proton (4.0.100.17)
+	* Proton is now generated from its Smithy model. There are no changes to the public API.
+* Route53RecoveryCluster (4.0.100.17)
+	* Route53RecoveryCluster is now generated from its Smithy model. There are no changes to the public API.
+* SageMaker (4.0.121.0)
+	* Amazon SageMaker Training Session is a managed service for training on shared GPU infrastructure. It provides full lifecycle management of training sessions and exposes low-level primitive APIs for operations like forward-backward passes, optimizer steps, and state management.
+* SageMakerTrainingSessionRuntime (4.0.100.0)
+	* Amazon SageMaker Training Session Runtime provides APIs for executing operations within active training sessions, including asynchronous training operations, sampling and inference requests, and streaming real-time model responses, enabling programmatic control over the training loop.
+* SecurityAgent (4.0.113.0)
+	* Adds support for Jira integration provider in AWS Security Agent.
+* StepFunctions (4.0.100.18)
+	* StepFunctions is now generated from its Smithy model. There are no changes to the public API.
+* TimestreamInfluxDB (4.0.103.6)
+	* TimestreamInfluxDB is now generated from its Smithy model. There are no changes to the public API.
+* VerifiedPermissions (4.0.100.17)
+	* VerifiedPermissions is now generated from its Smithy model. There are no changes to the public API.
+* VoiceID (4.0.100.17)
+	* VoiceID is now generated from its Smithy model. There are no changes to the public API.
+* Extensions.CborProtocol (4.0.100.17)
+	* Fixed CborStreamReader reading from the response stream in its constructor, which consumed the first bytes of an event stream response before the generated event stream class could decode them.
+* Core 4.0.102.10
+	* Fixed `LoginAWSCredentials` failing at construction when no AWS region could be resolved. Valid cached login credentials are now returned without a region, and the region is resolved only when the credentials need to be refreshed. `LoginAWSCredentialsOptions.Region` is no longer filled from the default region chain at construction.
+	* Fixed an issue where an event stream event whose payload is a raw blob or string (for example the `PayloadChunk` event of Lambda's `InvokeWithResponseStream`) was returned with its stream positioned past the first 4 KB. Reading the MemoryStream with Read, CopyTo or StreamReader returned nothing or only the tail; ToArray was unaffected. StreamingUtf8JsonReader no longer reads from the stream until its first Read call.
+	* Fixed ChecksumValidationStatus not being set to SUCCESSFUL/INVALID after reading a streamed GetObject response.
+	* Fixed login credentials not retrying a failed token refresh after the 30-second cooldown.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.350.0 (2026-10-09 18:13 UTC)
 * ARCRegionswitch (4.0.103.3)
 	* ARCRegionswitch is now generated from its Smithy model. There are no changes to the public API.

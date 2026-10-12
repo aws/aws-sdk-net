@@ -32,7 +32,7 @@ namespace Amazon.IoTWireless
     public partial class AmazonIoTWirelessConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("IoT Wireless", "4.0.102.3");
+            InternalSDKUtils.BuildUserAgentString("IoT Wireless", "4.0.102.4");
 
         private static readonly AmazonIoTWirelessEndpointResolver EndpointResolver =
             new AmazonIoTWirelessEndpointResolver();
