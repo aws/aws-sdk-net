@@ -822,6 +822,11 @@ namespace Amazon.ObservabilityAdmin
         public static readonly ResourceType AWSWAFv2WebACL = new ResourceType("AWS::WAFv2::WebACL");
 
         /// <summary>
+        /// Constant AWSXRayTransactionSearchConfig for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSXRayTransactionSearchConfig = new ResourceType("AWS::XRay::TransactionSearchConfig");
+
+        /// <summary>
         /// Constructs a custom ResourceType for a value not among the defined constants.
         /// </summary>
         public ResourceType(string value) : base(value) { }
