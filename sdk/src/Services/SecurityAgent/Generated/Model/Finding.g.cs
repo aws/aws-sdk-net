@@ -216,6 +216,19 @@ namespace Amazon.SecurityAgent.Model
         internal bool IsSetLastUpdatedBy() => this.LastUpdatedBy != null;
 
         /// <summary>
+        /// Gets and sets the property LinkedIssue. 
+        /// <para>
+        /// The issue in a third-party issue tracker that this finding has been exported to.
+        /// </para>
+        /// </summary>
+        public LinkedIssue LinkedIssue { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LinkedIssue property is set.
+        /// </summary>
+        internal bool IsSetLinkedIssue() => this.LinkedIssue != null;
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the finding.

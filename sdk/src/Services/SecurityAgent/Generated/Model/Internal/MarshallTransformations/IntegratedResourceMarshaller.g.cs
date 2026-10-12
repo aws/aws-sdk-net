@@ -99,6 +99,17 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+
+            if (requestObject.IsSetJiraProject())
+            {
+                context.Writer.WritePropertyName("jiraProject");
+                context.Writer.WriteStartObject();
+
+                var marshaller = JiraProjectResourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.JiraProject, context);
+
+                context.Writer.WriteEndObject();
+            }
         }
 
         /// <summary>

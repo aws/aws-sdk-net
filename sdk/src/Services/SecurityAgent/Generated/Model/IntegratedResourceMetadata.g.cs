@@ -90,5 +90,18 @@ namespace Amazon.SecurityAgent.Model
         /// Checks to see if the GitlabRepository property is set.
         /// </summary>
         internal bool IsSetGitlabRepository() => this.GitlabRepository != null;
+
+        /// <summary>
+        /// Gets and sets the property JiraProject. 
+        /// <para>
+        /// The Jira project metadata.
+        /// </para>
+        /// </summary>
+        public JiraProjectMetadata JiraProject { get; set; }
+
+        /// <summary>
+        /// Checks to see if the JiraProject property is set.
+        /// </summary>
+        internal bool IsSetJiraProject() => this.JiraProject != null;
     }
 }

@@ -298,6 +298,144 @@ namespace Amazon.SecurityAgent
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Disassociates a batch of findings from their linked issues.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateFindingIssue service method.</param>
+        /// <returns>The response from the BatchDisassociateFindingIssue service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota. Review your current usage and request a quota
+        /// increase if needed.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchDisassociateFindingIssue">REST API Reference for BatchDisassociateFindingIssue Operation</seealso>
+        BatchDisassociateFindingIssueResponse BatchDisassociateFindingIssue(BatchDisassociateFindingIssueRequest request);
+#endif
+
+        /// <summary>
+        /// Disassociates a batch of findings from their linked issues.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateFindingIssue service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the BatchDisassociateFindingIssue service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota. Review your current usage and request a quota
+        /// increase if needed.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchDisassociateFindingIssue">REST API Reference for BatchDisassociateFindingIssue Operation</seealso>
+        Task<BatchDisassociateFindingIssueResponse> BatchDisassociateFindingIssueAsync(BatchDisassociateFindingIssueRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Exports a batch of findings to the connected issue tracker as issues.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchExportFindings service method.</param>
+        /// <returns>The response from the BatchExportFindings service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota. Review your current usage and request a quota
+        /// increase if needed.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchExportFindings">REST API Reference for BatchExportFindings Operation</seealso>
+        BatchExportFindingsResponse BatchExportFindings(BatchExportFindingsRequest request);
+#endif
+
+        /// <summary>
+        /// Exports a batch of findings to the connected issue tracker as issues.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchExportFindings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the BatchExportFindings service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota. Review your current usage and request a quota
+        /// increase if needed.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchExportFindings">REST API Reference for BatchExportFindings Operation</seealso>
+        Task<BatchExportFindingsResponse> BatchExportFindingsAsync(BatchExportFindingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Retrieves information about one or more agent spaces.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetAgentSpaces service method.</param>

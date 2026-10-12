@@ -1151,6 +1151,11 @@ namespace Amazon.SecurityAgent
         public static readonly Provider GITLAB = new Provider("GITLAB");
 
         /// <summary>
+        /// Constant JIRA for Provider
+        /// </summary>
+        public static readonly Provider JIRA = new Provider("JIRA");
+
+        /// <summary>
         /// Constructs a custom Provider for a value not among the defined constants.
         /// </summary>
         public Provider(string value) : base(value) { }
@@ -1185,6 +1190,11 @@ namespace Amazon.SecurityAgent
         /// Constant DOCUMENTATION for ProviderType
         /// </summary>
         public static readonly ProviderType DOCUMENTATION = new ProviderType("DOCUMENTATION");
+
+        /// <summary>
+        /// Constant ISSUE_TRACKING for ProviderType
+        /// </summary>
+        public static readonly ProviderType ISSUE_TRACKING = new ProviderType("ISSUE_TRACKING");
 
         /// <summary>
         /// Constant SOURCE_CODE for ProviderType
@@ -1272,6 +1282,11 @@ namespace Amazon.SecurityAgent
         /// Constant DOCUMENT for ResourceType
         /// </summary>
         public static readonly ResourceType DOCUMENT = new ResourceType("DOCUMENT");
+
+        /// <summary>
+        /// Constant PROJECT for ResourceType
+        /// </summary>
+        public static readonly ResourceType PROJECT = new ResourceType("PROJECT");
 
         /// <summary>
         /// Constructs a custom ResourceType for a value not among the defined constants.

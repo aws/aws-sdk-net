@@ -110,6 +110,17 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+
+            if (requestObject.IsSetJira())
+            {
+                context.Writer.WritePropertyName("jira");
+                context.Writer.WriteStartObject();
+
+                var marshaller = JiraIntegrationInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.Jira, context);
+
+                context.Writer.WriteEndObject();
+            }
         }
 
         /// <summary>
