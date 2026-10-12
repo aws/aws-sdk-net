@@ -1,4 +1,5 @@
 ﻿using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Manifests;
 using SmithyDotNet.Generator.Generation.ProjectFiles;
 
 namespace SmithyDotNet.Generator.Writers.NuGet;
@@ -23,7 +24,7 @@ public sealed class NuspecWriter(GenerationContext context)
         {
             writer.WriteLine($"<id>{context.AssemblyName}</id>");
             writer.WriteLine($"<title>AWSSDK - {context.ServiceName}</title>");
-            writer.WriteLine($"<version>{context.Manifest.GetServiceVersion(context.ServiceName)}</version>");
+            writer.WriteLine($"<version>{context.Manifest.GetPackageVersion(context.ServiceName)}</version>");
             writer.WriteLine("<authors>Amazon Web Services</authors>");
             writer.WriteLine($"<description>{System.Security.SecurityElement.Escape(context.Metadata?.Synopsis)}</description>");
             writer.WriteLine("<language>en-US</language>");
@@ -41,18 +42,67 @@ public sealed class NuspecWriter(GenerationContext context)
 
             writer.OpenXmlBlock("dependencies", () =>
             {
-                writer.OpenXmlBlock("group", () =>
+                var packagesByTarget = NugetPackagesByTarget();
+                if (packagesByTarget.Count == 0)
                 {
-                    foreach (var extension in context.ExtensionDependencies)
-                    {
-                        writer.WriteLine($"""<dependency id="{extension.PackageId}" version="[{context.Manifest.GetExtensionVersion(extension.Name)}, 5.0)" />""");
-                    }
+                    writer.OpenXmlBlock("group", () => WriteAwsDependencies(writer));
+                    return;
+                }
 
-                    var coreVersion = context.Manifest.CoreVersion ?? throw new GeneratorException($"'{context.Manifest.SourcePath}' has no 'CoreVersion' field.");
-                    writer.WriteLine($"""<dependency id="AWSSDK.Core" version="[{coreVersion}, 5.0)" />""");
-                });
+                // NuGet uses only the group matching the consumer's framework; the untargeted group is a fallback,
+                // never merged in. So once one package is framework-specific, every shipped framework gets a group
+                // with the AWS dependencies too. C2J leaves them in the untargeted group, so its Signin package
+                // doesn't bring in AWSSDK.Core.
+                var tfms = TargetPlatforms.FrameworkPlatforms
+                    .Concat(context.Metadata?.NetStandardSupport ?? true ? TargetPlatforms.NetPlatforms : [])
+                    .Select(platform => platform.Tfm)
+                    .ToList();
+                if (packagesByTarget.Select(group => group.Key).FirstOrDefault(target => !tfms.Contains(target)) is { } unshipped)
+                {
+                    throw new GeneratorException($"A nuget-dependency targets '{unshipped}', which {context.ServiceName} doesn't build for.");
+                }
+
+                foreach (var tfm in tfms)
+                {
+                    writer.WriteXmlBlock($"""<group targetFramework="{tfm}">""", "group", () =>
+                    {
+                        WriteAwsDependencies(writer);
+                        foreach (var package in packagesByTarget[tfm])
+                        {
+                            writer.WriteLine($"""<dependency id="{package.Name}" version="{package.Version}" />""");
+                        }
+                    });
+                }
             });
         });
+    }
+
+    private ILookup<string, NugetDependency> NugetPackagesByTarget()
+    {
+        var dependencies = context.Metadata?.NugetDependencies;
+        return ByTarget(dependencies?.NetStandard, TargetPlatforms.NetPlatforms)
+            .Concat(ByTarget(dependencies?.NetFramework, TargetPlatforms.FrameworkPlatforms))
+            .ToLookup(pair => pair.target, pair => pair.dependency);
+
+        // A package that lists no targets applies to its whole family, as its csproj ItemGroup has no condition.
+        static IEnumerable<(string target, NugetDependency dependency)> ByTarget(IReadOnlyList<NugetDependency>? family, IReadOnlyList<TargetPlatform> familyPlatforms) =>
+            (family ?? []).SelectMany(dependency => (dependency.Targets.Count > 0 ? dependency.Targets : familyPlatforms.Select(platform => platform.Tfm))
+                .Select(target => (target, dependency)));
+    }
+
+    private void WriteAwsDependencies(CodeWriter writer)
+    {
+        foreach (var dependency in context.Metadata?.Dependencies ?? [])
+        {
+            writer.WriteLine($"""<dependency id="AWSSDK.{dependency}" version="{context.Manifest.GetServiceDependencyRange(context.ServiceName, dependency)}" />""");
+        }
+
+        foreach (var extension in context.ExtensionDependencies)
+        {
+            writer.WriteLine($"""<dependency id="{extension.PackageId}" version="{context.Manifest.GetExtensionRange(extension.Name)}" />""");
+        }
+
+        writer.WriteLine($"""<dependency id="AWSSDK.Core" version="{context.Manifest.GetCoreRange()}" />""");
     }
 
     private void WriteFiles(CodeWriter writer)

@@ -83,8 +83,26 @@ public sealed class SdkVersionManifest
         return version;
     }
 
-    /// <summary>The <c>Version</c> of the <c>Extensions.{extensionName}</c> entry under <c>ExtensionVersions</c>.</summary>
-    public string GetExtensionVersion(string extensionName)
+    /// <summary>The package version of <paramref name="serviceName"/>: <see cref="GetServiceVersion"/> plus the preview label while in preview.</summary>
+    public string GetPackageVersion(string serviceName) =>
+        GetServiceVersion(serviceName) + Label(ServiceVersions.TryGetValue(serviceName, out var entry) && entry.InPreview);
+
+    /// <summary>
+    /// The nuspec range for <paramref name="serviceName"/>'s dependency on <paramref name="dependency"/>, from the version its own
+    /// entry pins (the release keeps it current; C2J uses it rather than the dependency's <c>Version</c>).
+    /// </summary>
+    public string GetServiceDependencyRange(string serviceName, string dependency)
+    {
+        if (!ServiceVersions.TryGetValue(serviceName, out var entry) || !entry.Dependencies.TryGetValue(dependency, out var version))
+        {
+            throw new GeneratorException($"'{SourcePath}' has no '{dependency}' dependency version for service '{serviceName}'.");
+        }
+
+        return Range(version, ServiceVersions.TryGetValue(dependency, out var dependencyEntry) && dependencyEntry.InPreview);
+    }
+
+    /// <summary>The nuspec range for the <c>Extensions.{extensionName}</c> entry under <c>ExtensionVersions</c>.</summary>
+    public string GetExtensionRange(string extensionName)
     {
         var key = $"Extensions.{extensionName}";
         if (!ExtensionVersions.TryGetValue(key, out var entry))
@@ -97,8 +115,24 @@ public sealed class SdkVersionManifest
             throw new GeneratorException($"Extension '{key}' in '{SourcePath}' has no 'Version' field.");
         }
 
-        return version;
+        return Range(version, entry.InPreview);
     }
+
+    /// <summary>The nuspec range for AWSSDK.Core.</summary>
+    public string GetCoreRange() => Range(CoreVersion ?? throw new GeneratorException($"'{SourcePath}' has no 'CoreVersion' field."), inPreview: false);
+
+    // A dependency in preview is pinned to preview builds: the label goes on both bounds, as in C2J.
+    private string Range(string version, bool inPreview)
+    {
+        var label = Label(inPreview);
+        return Version.TryParse(version, out var parsed)
+            ? $"[{version}{label}, {parsed.Major + 1}.0{label})"
+            : throw new GeneratorException($"'{SourcePath}' has an unparseable version '{version}'.");
+    }
+
+    // As in C2J, DefaultToPreview puts every package in preview, and the file stores the label without its '-'.
+    private string Label(bool inPreview) =>
+        (inPreview || DefaultToPreview) && !string.IsNullOrEmpty(PreviewLabel) ? $"-{PreviewLabel}" : "";
 
     /// <summary>
     /// Returns the assembly version for <paramref name="serviceName"/>: the entry's

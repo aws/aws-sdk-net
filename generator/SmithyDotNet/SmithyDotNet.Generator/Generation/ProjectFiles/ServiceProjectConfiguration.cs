@@ -59,9 +59,6 @@ public sealed record ServiceProjectConfiguration
 
     /// <summary>.NET Framework assembly references.</summary>
     public required IReadOnlyList<string> FrameworkReferences { get; init; }
-
-    // TODO: Add service-to-service ProjectReferences (e.g. SecurityToken, S3) once services with
-    // SDK dependencies beyond Core are onboarded.
 }
 
 /// <summary>

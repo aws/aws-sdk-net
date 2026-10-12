@@ -6,6 +6,7 @@ namespace SmithyDotNet.Generator.Tests.Writers.ProjectFiles;
 [Collection(nameof(CloudTrailModelCollection))]
 public class ServiceSpecificSolutionFileWriterTests : IDisposable
 {
+    private readonly CloudTrailModelFixture _fixture;
     private readonly string _slnxFile;
 
     // Temp SDK-layout root the constructor seeds; deleted in Dispose so a changed TestData fixture
@@ -14,6 +15,7 @@ public class ServiceSpecificSolutionFileWriterTests : IDisposable
 
     public ServiceSpecificSolutionFileWriterTests(CloudTrailModelFixture fixture)
     {
+        _fixture = fixture;
         var writer = new ServiceSpecificSolutionFileWriter(fixture.Context);
         // The writer resolves both the service csprojs and the sibling test projects by walking up
         // from the service folder to the "sdk" root, so mirror the real on-disk layout
@@ -89,6 +91,24 @@ public class ServiceSpecificSolutionFileWriterTests : IDisposable
         AssertHelper("""<Project Path="../SimpleNotificationService/AWSSDK.SimpleNotificationService.NetStandard.csproj" />""");
         AssertHelper("""<Project Path="../SQS/AWSSDK.SQS.NetFramework.csproj" />""");
         AssertHelper("""<Project Path="../SQS/AWSSDK.SQS.NetStandard.csproj" />""");
+    }
+
+    // As in C2J, a service dependency the core unit tests also reference (SQS) is listed once, under /Services/.
+    [Fact]
+    public void ServiceDependencyIsNotRepeatedUnderTestDependencies()
+    {
+        var serviceDirectory = Utils.PathCombineAlt(_seededSdkRoot, "src", "Services", "Glacier");
+        Directory.CreateDirectory(serviceDirectory);
+        File.WriteAllText(Utils.PathCombineAlt(serviceDirectory, "AWSSDK.Glacier.NetStandard.csproj"),
+            """<ProjectReference Include="../../Services/SQS/AWSSDK.SQS.NetStandard.csproj"/>""");
+
+        var slnx = new ServiceSpecificSolutionFileWriter(_fixture.Context).Write(serviceDirectory);
+
+        const string sqs = """<Project Path="../SQS/AWSSDK.SQS.NetStandard.csproj" />""";
+        var services = slnx.IndexOf("""<Folder Name="/Services/">""", StringComparison.Ordinal);
+        var reference = slnx.IndexOf(sqs, StringComparison.Ordinal);
+        Assert.True(0 <= services && services < reference);
+        Assert.Equal(reference, slnx.LastIndexOf(sqs, StringComparison.Ordinal));
     }
 
     private void AssertHelper(string expected)

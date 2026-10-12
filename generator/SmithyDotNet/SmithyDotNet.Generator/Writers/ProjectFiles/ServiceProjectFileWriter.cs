@@ -26,16 +26,23 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
     private IReadOnlyList<ReferenceDependency> NetStandardReferenceDependencies =>
         context.Metadata?.ReferenceDependencies?.NetStandard ?? [];
 
+    // NuGet packages a service's Custom\ code needs (signin's BouncyCastle), per its metadata nuget-dependencies.
+    private IReadOnlyList<NugetDependency> NetFrameworkNugetDependencies =>
+        context.Metadata?.NugetDependencies?.NetFramework ?? [];
+
+    private IReadOnlyList<NugetDependency> NetStandardNugetDependencies =>
+        context.Metadata?.NugetDependencies?.NetStandard ?? [];
+
     /// <summary>Writes <c>AWSSDK.{Service}.NetFramework.csproj</c>.</summary>
     public string WriteNetFramework()
     {
-        return WriteProject(context.IsTestService ? ServiceProjectConfigurations.NetFrameworkTestService : ServiceProjectConfigurations.NetFramework, NetFrameworkReferenceDependencies);
+        return WriteProject(context.IsTestService ? ServiceProjectConfigurations.NetFrameworkTestService : ServiceProjectConfigurations.NetFramework, NetFrameworkReferenceDependencies, NetFrameworkNugetDependencies);
     }
 
     /// <summary>Writes <c>AWSSDK.{Service}.NetStandard.csproj</c>.</summary>
     public string WriteNetStandard()
     {
-        return WriteProject(context.IsTestService ? ServiceProjectConfigurations.NetStandardTestService : ServiceProjectConfigurations.NetStandard, NetStandardReferenceDependencies);
+        return WriteProject(context.IsTestService ? ServiceProjectConfigurations.NetStandardTestService : ServiceProjectConfigurations.NetStandard, NetStandardReferenceDependencies, NetStandardNugetDependencies);
     }
 
     /// <summary>
@@ -67,6 +74,8 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
         sections.Add(WriteReadmePackaging);
         sections.Add(w => WriteConditionalCoreReferences(w, fw, ns, netStandardSupport));
         sections.Add(w => WriteAnalyzerPackageReferences(w, ns));
+
+        // TODO: nuget-dependencies need per-family conditions here; only signin has any, and nothing emits this project yet.
 
         // net472 needs the same framework references the NetFramework variant carries.
         if (fw.FrameworkReferences.Count > 0 || NetFrameworkReferenceDependencies.Count > 0)
@@ -156,7 +165,7 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
             writer.WriteLine();
             WriteGenerateAssemblyAttributeSuppressions(writer);
             writer.WriteLine();
-            WritePackagingProperties(writer, context.Manifest.GetServiceVersion(context.ServiceName));
+            WritePackagingProperties(writer, context.Manifest.GetPackageVersion(context.ServiceName));
             WriteAwsPackagingProperties(writer);
         });
     }
@@ -226,7 +235,7 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
         }
     }
 
-    private string WriteProject(ServiceProjectConfiguration config, IReadOnlyList<ReferenceDependency> referenceDependencies)
+    private string WriteProject(ServiceProjectConfiguration config, IReadOnlyList<ReferenceDependency> referenceDependencies, IReadOnlyList<NugetDependency> nugetDependencies)
     {
         var sections = new List<Action<CodeWriter>>
         {
@@ -242,6 +251,11 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
         if (config.PackageReferences.Count > 0)
         {
             sections.Add(w => WriteAnalyzerPackageReferences(w, config));
+        }
+
+        if (nugetDependencies.Count > 0)
+        {
+            sections.Add(w => WriteNugetDependencies(w, nugetDependencies));
         }
 
         if (config.FrameworkReferences.Count > 0 || referenceDependencies.Count > 0)
@@ -296,6 +310,11 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
 
     private void WriteSdkProjectReferences(CodeWriter writer, ServiceProjectConfiguration config)
     {
+        foreach (var dependency in context.Metadata?.Dependencies ?? [])
+        {
+            writer.WriteLine($"""<ProjectReference Include="{Utils.PathCombineAlt(SdkTreeLayout.SrcRootFromServiceSource, "Services", dependency, $"AWSSDK.{dependency}.{config.Variant}.csproj")}"/>""");
+        }
+
         foreach (var extension in context.ExtensionDependencies)
         {
             foreach (var project in extension.Projects)
@@ -356,6 +375,21 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
         {
             writer.WriteLine($"""<Analyzer Include= "{config.AnalyzersPath}" />""");
         });
+    }
+
+    // As C2J does, packages sharing a target list share one ItemGroup; a package without targets applies to all.
+    private static void WriteNugetDependencies(CodeWriter writer, IReadOnlyList<NugetDependency> dependencies)
+    {
+        foreach (var group in dependencies.GroupBy(dependency => string.Join(" Or ", dependency.Targets.Order(StringComparer.Ordinal).Select(target => $"'$(TargetFramework)'=='{target}'"))))
+        {
+            writer.WriteXmlBlock(group.Key.Length == 0 ? "<ItemGroup>" : $"""<ItemGroup Condition="{group.Key}">""", "ItemGroup", () =>
+            {
+                foreach (var dependency in group)
+                {
+                    writer.WriteLine($"""<PackageReference Include="{dependency.Name}" Version="{dependency.Version}"/>""");
+                }
+            });
+        }
     }
 
     private static void WriteAnalyzerPackageReferences(CodeWriter writer, ServiceProjectConfiguration config)
