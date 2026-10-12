@@ -25961,6 +25961,88 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type TrainingSessionStatus.
+    /// </summary>
+    public class TrainingSessionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Blocked for TrainingSessionStatus
+        /// </summary>
+        public static readonly TrainingSessionStatus Blocked = new TrainingSessionStatus("Blocked");
+        /// <summary>
+        /// Constant Created for TrainingSessionStatus
+        /// </summary>
+        public static readonly TrainingSessionStatus Created = new TrainingSessionStatus("Created");
+        /// <summary>
+        /// Constant Deleting for TrainingSessionStatus
+        /// </summary>
+        public static readonly TrainingSessionStatus Deleting = new TrainingSessionStatus("Deleting");
+        /// <summary>
+        /// Constant DeletionFailed for TrainingSessionStatus
+        /// </summary>
+        public static readonly TrainingSessionStatus DeletionFailed = new TrainingSessionStatus("DeletionFailed");
+        /// <summary>
+        /// Constant Expired for TrainingSessionStatus
+        /// </summary>
+        public static readonly TrainingSessionStatus Expired = new TrainingSessionStatus("Expired");
+        /// <summary>
+        /// Constant Failed for TrainingSessionStatus
+        /// </summary>
+        public static readonly TrainingSessionStatus Failed = new TrainingSessionStatus("Failed");
+        /// <summary>
+        /// Constant Running for TrainingSessionStatus
+        /// </summary>
+        public static readonly TrainingSessionStatus Running = new TrainingSessionStatus("Running");
+        /// <summary>
+        /// Constant Scheduled for TrainingSessionStatus
+        /// </summary>
+        public static readonly TrainingSessionStatus Scheduled = new TrainingSessionStatus("Scheduled");
+        /// <summary>
+        /// Constant Stopped for TrainingSessionStatus
+        /// </summary>
+        public static readonly TrainingSessionStatus Stopped = new TrainingSessionStatus("Stopped");
+        /// <summary>
+        /// Constant Stopping for TrainingSessionStatus
+        /// </summary>
+        public static readonly TrainingSessionStatus Stopping = new TrainingSessionStatus("Stopping");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TrainingSessionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrainingSessionStatus FindValue(string value)
+        {
+            return FindValue<TrainingSessionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrainingSessionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TransformInstanceType.
     /// </summary>
     public class TransformInstanceType : ConstantClass

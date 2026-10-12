@@ -6554,6 +6554,117 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateTrainingSession
+
+
+        /// <summary>
+        /// Creates a training session in Amazon SageMaker. A training session provisions compute
+        /// resources for fine-tuning a foundation model using Low-Rank Adaptation (LoRA). After
+        /// the session is created, you can submit training operations and sample inference requests
+        /// through the Amazon SageMaker Training Session Runtime API.
+        /// 
+        ///  
+        /// <para>
+        /// The following operations are related to <c>CreateTrainingSession</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DescribeTrainingSession</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ListTrainingSessions</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>StopTrainingSession</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DeleteTrainingSession</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrainingSession service method.</param>
+        /// 
+        /// <returns>The response from the CreateTrainingSession service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrainingSession">REST API Reference for CreateTrainingSession Operation</seealso>
+        public virtual CreateTrainingSessionResponse CreateTrainingSession(CreateTrainingSessionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateTrainingSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTrainingSessionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTrainingSessionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a training session in Amazon SageMaker. A training session provisions compute
+        /// resources for fine-tuning a foundation model using Low-Rank Adaptation (LoRA). After
+        /// the session is created, you can submit training operations and sample inference requests
+        /// through the Amazon SageMaker Training Session Runtime API.
+        /// 
+        ///  
+        /// <para>
+        /// The following operations are related to <c>CreateTrainingSession</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DescribeTrainingSession</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ListTrainingSessions</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>StopTrainingSession</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DeleteTrainingSession</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrainingSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTrainingSession service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrainingSession">REST API Reference for CreateTrainingSession Operation</seealso>
+        public virtual Task<CreateTrainingSessionResponse> CreateTrainingSessionAsync(CreateTrainingSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateTrainingSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTrainingSessionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateTrainingSessionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateTransformJob
 
 
@@ -10151,6 +10262,91 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = DeleteTrainingJobResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteTrainingJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteTrainingSession
+
+
+        /// <summary>
+        /// Deletes a training session. You must stop a running session before deleting it. Use
+        /// the <c>StopTrainingSession</c> operation to stop the session first.
+        /// 
+        ///  
+        /// <para>
+        /// The following operations are related to <c>DeleteTrainingSession</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CreateTrainingSession</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DescribeTrainingSession</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>StopTrainingSession</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrainingSession service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTrainingSession service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTrainingSession">REST API Reference for DeleteTrainingSession Operation</seealso>
+        public virtual DeleteTrainingSessionResponse DeleteTrainingSession(DeleteTrainingSessionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTrainingSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTrainingSessionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTrainingSessionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a training session. You must stop a running session before deleting it. Use
+        /// the <c>StopTrainingSession</c> operation to stop the session first.
+        /// 
+        ///  
+        /// <para>
+        /// The following operations are related to <c>DeleteTrainingSession</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CreateTrainingSession</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DescribeTrainingSession</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>StopTrainingSession</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrainingSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTrainingSession service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTrainingSession">REST API Reference for DeleteTrainingSession Operation</seealso>
+        public virtual Task<DeleteTrainingSessionResponse> DeleteTrainingSessionAsync(DeleteTrainingSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTrainingSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTrainingSessionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteTrainingSessionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -13927,6 +14123,99 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = DescribeTrainingPlanExtensionHistoryResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeTrainingPlanExtensionHistoryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeTrainingSession
+
+
+        /// <summary>
+        /// Retrieves detailed information about a training session, including its current status,
+        /// model configuration, Low-Rank Adaptation (LoRA) parameters, and timestamps.
+        /// 
+        ///  
+        /// <para>
+        /// The following operations are related to <c>DescribeTrainingSession</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CreateTrainingSession</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ListTrainingSessions</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>StopTrainingSession</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DeleteTrainingSession</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrainingSession service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTrainingSession service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrainingSession">REST API Reference for DescribeTrainingSession Operation</seealso>
+        public virtual DescribeTrainingSessionResponse DescribeTrainingSession(DescribeTrainingSessionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeTrainingSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrainingSessionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTrainingSessionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves detailed information about a training session, including its current status,
+        /// model configuration, Low-Rank Adaptation (LoRA) parameters, and timestamps.
+        /// 
+        ///  
+        /// <para>
+        /// The following operations are related to <c>DescribeTrainingSession</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CreateTrainingSession</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ListTrainingSessions</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>StopTrainingSession</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DeleteTrainingSession</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrainingSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTrainingSession service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrainingSession">REST API Reference for DescribeTrainingSession Operation</seealso>
+        public virtual Task<DescribeTrainingSessionResponse> DescribeTrainingSessionAsync(DescribeTrainingSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeTrainingSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrainingSessionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeTrainingSessionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -18596,6 +18885,79 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListTrainingSessions
+
+
+        /// <summary>
+        /// Lists training sessions in your account. You can filter results by creation time,
+        /// name, and status. The operation paginates results. To retrieve additional results,
+        /// use the <c>NextToken</c> parameter.
+        /// 
+        ///  
+        /// <para>
+        /// The following operations are related to <c>ListTrainingSessions</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CreateTrainingSession</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DescribeTrainingSession</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrainingSessions service method.</param>
+        /// 
+        /// <returns>The response from the ListTrainingSessions service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingSessions">REST API Reference for ListTrainingSessions Operation</seealso>
+        public virtual ListTrainingSessionsResponse ListTrainingSessions(ListTrainingSessionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTrainingSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTrainingSessionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTrainingSessionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists training sessions in your account. You can filter results by creation time,
+        /// name, and status. The operation paginates results. To retrieve additional results,
+        /// use the <c>NextToken</c> parameter.
+        /// 
+        ///  
+        /// <para>
+        /// The following operations are related to <c>ListTrainingSessions</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CreateTrainingSession</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DescribeTrainingSession</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrainingSessions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTrainingSessions service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingSessions">REST API Reference for ListTrainingSessions Operation</seealso>
+        public virtual Task<ListTrainingSessionsResponse> ListTrainingSessionsAsync(ListTrainingSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTrainingSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTrainingSessionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTrainingSessionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTransformJobs
 
 
@@ -20986,6 +21348,93 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = StopTrainingJobResponseUnmarshaller.Instance;
             
             return InvokeAsync<StopTrainingJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopTrainingSession
+
+
+        /// <summary>
+        /// Stops a running training session and sets the session status to <c>Stopping</c>. After
+        /// the session stops, the status changes to <c>Stopped</c>. To delete a stopped session,
+        /// use the <c>DeleteTrainingSession</c> operation.
+        /// 
+        ///  
+        /// <para>
+        /// The following operations are related to <c>StopTrainingSession</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CreateTrainingSession</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DescribeTrainingSession</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DeleteTrainingSession</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopTrainingSession service method.</param>
+        /// 
+        /// <returns>The response from the StopTrainingSession service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopTrainingSession">REST API Reference for StopTrainingSession Operation</seealso>
+        public virtual StopTrainingSessionResponse StopTrainingSession(StopTrainingSessionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopTrainingSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopTrainingSessionResponseUnmarshaller.Instance;
+
+            return Invoke<StopTrainingSessionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Stops a running training session and sets the session status to <c>Stopping</c>. After
+        /// the session stops, the status changes to <c>Stopped</c>. To delete a stopped session,
+        /// use the <c>DeleteTrainingSession</c> operation.
+        /// 
+        ///  
+        /// <para>
+        /// The following operations are related to <c>StopTrainingSession</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CreateTrainingSession</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DescribeTrainingSession</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DeleteTrainingSession</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopTrainingSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopTrainingSession service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopTrainingSession">REST API Reference for StopTrainingSession Operation</seealso>
+        public virtual Task<StopTrainingSessionResponse> StopTrainingSessionAsync(StopTrainingSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopTrainingSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopTrainingSessionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopTrainingSessionResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -693,6 +693,14 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ListTrainingSessions operation
+        ///</summary>
+        public IListTrainingSessionsPaginator ListTrainingSessions(ListTrainingSessionsRequest request) 
+        {
+            return new ListTrainingSessionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListTransformJobs operation
         ///</summary>
         public IListTransformJobsPaginator ListTransformJobs(ListTransformJobsRequest request) 

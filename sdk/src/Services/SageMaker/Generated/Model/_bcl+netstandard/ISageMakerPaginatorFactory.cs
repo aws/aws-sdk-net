@@ -848,6 +848,16 @@ namespace Amazon.SageMaker.Model
         IListTrainingPlansPaginator ListTrainingPlans(ListTrainingPlansRequest request);
 
         /// <summary>
+        /// Paginator for ListTrainingSessions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListTrainingSessionsPaginator ListTrainingSessions(ListTrainingSessionsRequest request);
+
+        /// <summary>
         /// Paginator for ListTransformJobs operation
         ///</summary>
         [AWSPaginator(
