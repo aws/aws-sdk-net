@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LambdaWeb.Model
 {
     /// <summary>
-    /// The request was throttled. Reduce the frequency of requests and try again.
+    /// The request was denied because it exceeded the request rate that Lambda allows for
+    /// your account. Reduce the frequency of requests and retry with exponential backoff.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

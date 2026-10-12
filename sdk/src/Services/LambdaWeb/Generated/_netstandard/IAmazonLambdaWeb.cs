@@ -32,16 +32,416 @@ namespace Amazon.LambdaWeb
     /// <summary>
     /// <para>Interface for accessing LambdaWeb</para>
     ///
-    /// <note> 
-    /// <para>
-    /// The AWS Lambda Web Functions APIs (<c>LambdaWeb</c> namespace) are experimental and
-    /// for internal AWS use only. They are not yet available to external customers.
+    /// With AWS Lambda Web Functions, you can run web applications and APIs as HTTP servers
+    /// on AWS Lambda (Lambda) without provisioning or managing servers. Use web functions
+    /// to run REST APIs, server-rendered web applications, and other HTTP workloads while
+    /// Lambda handles scaling and availability.
     /// 
-    ///  </note>
+    ///  
+    /// <para>
+    /// A web function has one or more immutable revisions (code and configuration) and one
+    /// or more endpoints that expose it over HTTPS.
     /// </para>
     /// </summary>
     public partial interface IAmazonLambdaWeb : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ILambdaWebPaginatorFactory Paginators { get; }
+#endif
+                
+        #region  CreateWebFunction
+
+
+
+        /// <summary>
+        /// Creates a web function with an initial revision and endpoint. To create a web function,
+        /// you provide the function name, revision configuration (code and service settings),
+        /// and endpoint configuration.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>CreateWebFunction</c> permission on the
+        /// web function. You don't need separate permissions for the initial revision or endpoint.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWebFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateWebFunction service method, as returned by LambdaWeb.</returns>
+        /// <exception cref="Amazon.LambdaWeb.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check the IAM policies for your
+        /// identity and any resource-based policy on the web function.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. For example, the resource
+        /// is being modified by another request, you tried to delete a revision that is serving
+        /// traffic on an endpoint, or the policy revision ID that you specified doesn't match
+        /// the current policy. Resolve the conflict and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.InternalServerException">
+        /// The request failed because of an internal error in the service. Retry the request.
+        /// If the error persists, open a support case.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ResourceNotFoundException">
+        /// The specified web function, revision, endpoint, or resource-based policy doesn't exist.
+        /// Verify the resource identifier and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ServiceQuotaExceededException">
+        /// The request would exceed a service quota, such as the maximum number of web functions
+        /// in your account or the maximum number of revisions or endpoints per web function.
+        /// Request a quota increase or reduce usage and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ThrottlingException">
+        /// The request was denied because it exceeded the request rate that Lambda allows for
+        /// your account. Reduce the frequency of requests and retry with exponential backoff.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ValidationException">
+        /// The request failed validation because a parameter was missing, malformed, or outside
+        /// the allowed range. Check the request parameters and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/CreateWebFunction">REST API Reference for CreateWebFunction Operation</seealso>
+        Task<CreateWebFunctionResponse> CreateWebFunctionAsync(CreateWebFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateWebFunctionEndpoint
+
+
+
+        /// <summary>
+        /// Creates an endpoint for a web function. An endpoint exposes the web function over
+        /// HTTPS and routes traffic to one or more revisions.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>CreateWebFunctionEndpoint</c> permission
+        /// on the web function, not on the endpoint being created.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWebFunctionEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateWebFunctionEndpoint service method, as returned by LambdaWeb.</returns>
+        /// <exception cref="Amazon.LambdaWeb.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check the IAM policies for your
+        /// identity and any resource-based policy on the web function.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. For example, the resource
+        /// is being modified by another request, you tried to delete a revision that is serving
+        /// traffic on an endpoint, or the policy revision ID that you specified doesn't match
+        /// the current policy. Resolve the conflict and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.InternalServerException">
+        /// The request failed because of an internal error in the service. Retry the request.
+        /// If the error persists, open a support case.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ResourceNotFoundException">
+        /// The specified web function, revision, endpoint, or resource-based policy doesn't exist.
+        /// Verify the resource identifier and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ServiceQuotaExceededException">
+        /// The request would exceed a service quota, such as the maximum number of web functions
+        /// in your account or the maximum number of revisions or endpoints per web function.
+        /// Request a quota increase or reduce usage and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ThrottlingException">
+        /// The request was denied because it exceeded the request rate that Lambda allows for
+        /// your account. Reduce the frequency of requests and retry with exponential backoff.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ValidationException">
+        /// The request failed validation because a parameter was missing, malformed, or outside
+        /// the allowed range. Check the request parameters and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/CreateWebFunctionEndpoint">REST API Reference for CreateWebFunctionEndpoint Operation</seealso>
+        Task<CreateWebFunctionEndpointResponse> CreateWebFunctionEndpointAsync(CreateWebFunctionEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateWebFunctionRevision
+
+
+
+        /// <summary>
+        /// Creates an immutable revision for a web function. A revision represents a specific
+        /// version of the function code and configuration.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>CreateWebFunctionRevision</c> permission
+        /// on the web function, not on the revision being created.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWebFunctionRevision service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateWebFunctionRevision service method, as returned by LambdaWeb.</returns>
+        /// <exception cref="Amazon.LambdaWeb.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check the IAM policies for your
+        /// identity and any resource-based policy on the web function.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. For example, the resource
+        /// is being modified by another request, you tried to delete a revision that is serving
+        /// traffic on an endpoint, or the policy revision ID that you specified doesn't match
+        /// the current policy. Resolve the conflict and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.InternalServerException">
+        /// The request failed because of an internal error in the service. Retry the request.
+        /// If the error persists, open a support case.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ResourceNotFoundException">
+        /// The specified web function, revision, endpoint, or resource-based policy doesn't exist.
+        /// Verify the resource identifier and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ServiceQuotaExceededException">
+        /// The request would exceed a service quota, such as the maximum number of web functions
+        /// in your account or the maximum number of revisions or endpoints per web function.
+        /// Request a quota increase or reduce usage and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ThrottlingException">
+        /// The request was denied because it exceeded the request rate that Lambda allows for
+        /// your account. Reduce the frequency of requests and retry with exponential backoff.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ValidationException">
+        /// The request failed validation because a parameter was missing, malformed, or outside
+        /// the allowed range. Check the request parameters and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/CreateWebFunctionRevision">REST API Reference for CreateWebFunctionRevision Operation</seealso>
+        Task<CreateWebFunctionRevisionResponse> CreateWebFunctionRevisionAsync(CreateWebFunctionRevisionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteResourcePolicy
+
+
+
+        /// <summary>
+        /// Removes the resource-based policy from a web function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by LambdaWeb.</returns>
+        /// <exception cref="Amazon.LambdaWeb.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check the IAM policies for your
+        /// identity and any resource-based policy on the web function.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. For example, the resource
+        /// is being modified by another request, you tried to delete a revision that is serving
+        /// traffic on an endpoint, or the policy revision ID that you specified doesn't match
+        /// the current policy. Resolve the conflict and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.InternalServerException">
+        /// The request failed because of an internal error in the service. Retry the request.
+        /// If the error persists, open a support case.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ResourceNotFoundException">
+        /// The specified web function, revision, endpoint, or resource-based policy doesn't exist.
+        /// Verify the resource identifier and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ThrottlingException">
+        /// The request was denied because it exceeded the request rate that Lambda allows for
+        /// your account. Reduce the frequency of requests and retry with exponential backoff.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ValidationException">
+        /// The request failed validation because a parameter was missing, malformed, or outside
+        /// the allowed range. Check the request parameters and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteWebFunction
+
+
+
+        /// <summary>
+        /// Deletes a web function and all of its associated revisions and endpoints.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>DeleteWebFunction</c> permission on the
+        /// web function. You don't need the <c>DeleteWebFunctionRevision</c> or <c>DeleteWebFunctionEndpoint</c>
+        /// permission.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWebFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteWebFunction service method, as returned by LambdaWeb.</returns>
+        /// <exception cref="Amazon.LambdaWeb.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check the IAM policies for your
+        /// identity and any resource-based policy on the web function.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. For example, the resource
+        /// is being modified by another request, you tried to delete a revision that is serving
+        /// traffic on an endpoint, or the policy revision ID that you specified doesn't match
+        /// the current policy. Resolve the conflict and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.InternalServerException">
+        /// The request failed because of an internal error in the service. Retry the request.
+        /// If the error persists, open a support case.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ResourceNotFoundException">
+        /// The specified web function, revision, endpoint, or resource-based policy doesn't exist.
+        /// Verify the resource identifier and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ThrottlingException">
+        /// The request was denied because it exceeded the request rate that Lambda allows for
+        /// your account. Reduce the frequency of requests and retry with exponential backoff.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ValidationException">
+        /// The request failed validation because a parameter was missing, malformed, or outside
+        /// the allowed range. Check the request parameters and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/DeleteWebFunction">REST API Reference for DeleteWebFunction Operation</seealso>
+        Task<DeleteWebFunctionResponse> DeleteWebFunctionAsync(DeleteWebFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteWebFunctionEndpoint
+
+
+
+        /// <summary>
+        /// Deletes a web function endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWebFunctionEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteWebFunctionEndpoint service method, as returned by LambdaWeb.</returns>
+        /// <exception cref="Amazon.LambdaWeb.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check the IAM policies for your
+        /// identity and any resource-based policy on the web function.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. For example, the resource
+        /// is being modified by another request, you tried to delete a revision that is serving
+        /// traffic on an endpoint, or the policy revision ID that you specified doesn't match
+        /// the current policy. Resolve the conflict and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.InternalServerException">
+        /// The request failed because of an internal error in the service. Retry the request.
+        /// If the error persists, open a support case.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ResourceNotFoundException">
+        /// The specified web function, revision, endpoint, or resource-based policy doesn't exist.
+        /// Verify the resource identifier and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ThrottlingException">
+        /// The request was denied because it exceeded the request rate that Lambda allows for
+        /// your account. Reduce the frequency of requests and retry with exponential backoff.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ValidationException">
+        /// The request failed validation because a parameter was missing, malformed, or outside
+        /// the allowed range. Check the request parameters and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/DeleteWebFunctionEndpoint">REST API Reference for DeleteWebFunctionEndpoint Operation</seealso>
+        Task<DeleteWebFunctionEndpointResponse> DeleteWebFunctionEndpointAsync(DeleteWebFunctionEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteWebFunctionRevision
+
+
+
+        /// <summary>
+        /// Deletes a web function revision. You cannot delete a revision that is currently serving
+        /// traffic on an endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWebFunctionRevision service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteWebFunctionRevision service method, as returned by LambdaWeb.</returns>
+        /// <exception cref="Amazon.LambdaWeb.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check the IAM policies for your
+        /// identity and any resource-based policy on the web function.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. For example, the resource
+        /// is being modified by another request, you tried to delete a revision that is serving
+        /// traffic on an endpoint, or the policy revision ID that you specified doesn't match
+        /// the current policy. Resolve the conflict and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.InternalServerException">
+        /// The request failed because of an internal error in the service. Retry the request.
+        /// If the error persists, open a support case.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ResourceNotFoundException">
+        /// The specified web function, revision, endpoint, or resource-based policy doesn't exist.
+        /// Verify the resource identifier and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ThrottlingException">
+        /// The request was denied because it exceeded the request rate that Lambda allows for
+        /// your account. Reduce the frequency of requests and retry with exponential backoff.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ValidationException">
+        /// The request failed validation because a parameter was missing, malformed, or outside
+        /// the allowed range. Check the request parameters and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/DeleteWebFunctionRevision">REST API Reference for DeleteWebFunctionRevision Operation</seealso>
+        Task<DeleteWebFunctionRevisionResponse> DeleteWebFunctionRevisionAsync(DeleteWebFunctionRevisionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetResourcePolicy
+
+
+
+        /// <summary>
+        /// Retrieves the resource-based policy attached to a web function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourcePolicy service method, as returned by LambdaWeb.</returns>
+        /// <exception cref="Amazon.LambdaWeb.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check the IAM policies for your
+        /// identity and any resource-based policy on the web function.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.InternalServerException">
+        /// The request failed because of an internal error in the service. Retry the request.
+        /// If the error persists, open a support case.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ResourceNotFoundException">
+        /// The specified web function, revision, endpoint, or resource-based policy doesn't exist.
+        /// Verify the resource identifier and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ThrottlingException">
+        /// The request was denied because it exceeded the request rate that Lambda allows for
+        /// your account. Reduce the frequency of requests and retry with exponential backoff.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ValidationException">
+        /// The request failed validation because a parameter was missing, malformed, or outside
+        /// the allowed range. Check the request parameters and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
                 
         #region  GetWebAccountSettings
 
@@ -50,13 +450,6 @@ namespace Amazon.LambdaWeb
         /// <summary>
         /// Retrieves details about your AWS Lambda Web Functions account settings for the current
         /// AWS Region, including the quotas that apply to web functions and your current usage.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// This API is experimental and for internal AWS use only. It is not yet available to
-        /// external customers.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetWebAccountSettings service method.</param>
         /// <param name="cancellationToken">
@@ -65,16 +458,480 @@ namespace Amazon.LambdaWeb
         /// 
         /// <returns>The response from the GetWebAccountSettings service method, as returned by LambdaWeb.</returns>
         /// <exception cref="Amazon.LambdaWeb.Model.AccessDeniedException">
-        /// You do not have sufficient permissions to perform this operation.
+        /// You don't have permission to perform this operation. Check the IAM policies for your
+        /// identity and any resource-based policy on the web function.
         /// </exception>
         /// <exception cref="Amazon.LambdaWeb.Model.InternalServerException">
-        /// An internal server error occurred. Try again later.
+        /// The request failed because of an internal error in the service. Retry the request.
+        /// If the error persists, open a support case.
         /// </exception>
         /// <exception cref="Amazon.LambdaWeb.Model.ThrottlingException">
-        /// The request was throttled. Reduce the frequency of requests and try again.
+        /// The request was denied because it exceeded the request rate that Lambda allows for
+        /// your account. Reduce the frequency of requests and retry with exponential backoff.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/GetWebAccountSettings">REST API Reference for GetWebAccountSettings Operation</seealso>
         Task<GetWebAccountSettingsResponse> GetWebAccountSettingsAsync(GetWebAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetWebFunction
+
+
+
+        /// <summary>
+        /// Retrieves details about a web function, including its current state and configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWebFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetWebFunction service method, as returned by LambdaWeb.</returns>
+        /// <exception cref="Amazon.LambdaWeb.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check the IAM policies for your
+        /// identity and any resource-based policy on the web function.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.InternalServerException">
+        /// The request failed because of an internal error in the service. Retry the request.
+        /// If the error persists, open a support case.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ResourceNotFoundException">
+        /// The specified web function, revision, endpoint, or resource-based policy doesn't exist.
+        /// Verify the resource identifier and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ThrottlingException">
+        /// The request was denied because it exceeded the request rate that Lambda allows for
+        /// your account. Reduce the frequency of requests and retry with exponential backoff.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ValidationException">
+        /// The request failed validation because a parameter was missing, malformed, or outside
+        /// the allowed range. Check the request parameters and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/GetWebFunction">REST API Reference for GetWebFunction Operation</seealso>
+        Task<GetWebFunctionResponse> GetWebFunctionAsync(GetWebFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetWebFunctionEndpoint
+
+
+
+        /// <summary>
+        /// Retrieves details about a web function endpoint, including its current state, configuration,
+        /// and domain name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWebFunctionEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetWebFunctionEndpoint service method, as returned by LambdaWeb.</returns>
+        /// <exception cref="Amazon.LambdaWeb.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check the IAM policies for your
+        /// identity and any resource-based policy on the web function.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.InternalServerException">
+        /// The request failed because of an internal error in the service. Retry the request.
+        /// If the error persists, open a support case.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ResourceNotFoundException">
+        /// The specified web function, revision, endpoint, or resource-based policy doesn't exist.
+        /// Verify the resource identifier and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ThrottlingException">
+        /// The request was denied because it exceeded the request rate that Lambda allows for
+        /// your account. Reduce the frequency of requests and retry with exponential backoff.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ValidationException">
+        /// The request failed validation because a parameter was missing, malformed, or outside
+        /// the allowed range. Check the request parameters and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/GetWebFunctionEndpoint">REST API Reference for GetWebFunctionEndpoint Operation</seealso>
+        Task<GetWebFunctionEndpointResponse> GetWebFunctionEndpointAsync(GetWebFunctionEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetWebFunctionRevision
+
+
+
+        /// <summary>
+        /// Retrieves details about a web function revision, including its state and configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWebFunctionRevision service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetWebFunctionRevision service method, as returned by LambdaWeb.</returns>
+        /// <exception cref="Amazon.LambdaWeb.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check the IAM policies for your
+        /// identity and any resource-based policy on the web function.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.InternalServerException">
+        /// The request failed because of an internal error in the service. Retry the request.
+        /// If the error persists, open a support case.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ResourceNotFoundException">
+        /// The specified web function, revision, endpoint, or resource-based policy doesn't exist.
+        /// Verify the resource identifier and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ThrottlingException">
+        /// The request was denied because it exceeded the request rate that Lambda allows for
+        /// your account. Reduce the frequency of requests and retry with exponential backoff.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ValidationException">
+        /// The request failed validation because a parameter was missing, malformed, or outside
+        /// the allowed range. Check the request parameters and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/GetWebFunctionRevision">REST API Reference for GetWebFunctionRevision Operation</seealso>
+        Task<GetWebFunctionRevisionResponse> GetWebFunctionRevisionAsync(GetWebFunctionRevisionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTags
+
+
+
+        /// <summary>
+        /// Returns a list of tags applied to a web function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTags service method, as returned by LambdaWeb.</returns>
+        /// <exception cref="Amazon.LambdaWeb.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check the IAM policies for your
+        /// identity and any resource-based policy on the web function.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.InternalServerException">
+        /// The request failed because of an internal error in the service. Retry the request.
+        /// If the error persists, open a support case.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ResourceNotFoundException">
+        /// The specified web function, revision, endpoint, or resource-based policy doesn't exist.
+        /// Verify the resource identifier and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ThrottlingException">
+        /// The request was denied because it exceeded the request rate that Lambda allows for
+        /// your account. Reduce the frequency of requests and retry with exponential backoff.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ValidationException">
+        /// The request failed validation because a parameter was missing, malformed, or outside
+        /// the allowed range. Check the request parameters and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/ListTags">REST API Reference for ListTags Operation</seealso>
+        Task<ListTagsResponse> ListTagsAsync(ListTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListWebFunctionEndpoints
+
+
+
+        /// <summary>
+        /// Lists endpoints for a web function. Use pagination to ensure that the operation returns
+        /// quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWebFunctionEndpoints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListWebFunctionEndpoints service method, as returned by LambdaWeb.</returns>
+        /// <exception cref="Amazon.LambdaWeb.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check the IAM policies for your
+        /// identity and any resource-based policy on the web function.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.InternalServerException">
+        /// The request failed because of an internal error in the service. Retry the request.
+        /// If the error persists, open a support case.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ResourceNotFoundException">
+        /// The specified web function, revision, endpoint, or resource-based policy doesn't exist.
+        /// Verify the resource identifier and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ThrottlingException">
+        /// The request was denied because it exceeded the request rate that Lambda allows for
+        /// your account. Reduce the frequency of requests and retry with exponential backoff.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ValidationException">
+        /// The request failed validation because a parameter was missing, malformed, or outside
+        /// the allowed range. Check the request parameters and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/ListWebFunctionEndpoints">REST API Reference for ListWebFunctionEndpoints Operation</seealso>
+        Task<ListWebFunctionEndpointsResponse> ListWebFunctionEndpointsAsync(ListWebFunctionEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListWebFunctionRevisions
+
+
+
+        /// <summary>
+        /// Lists revisions for a web function. Use pagination to ensure that the operation returns
+        /// quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWebFunctionRevisions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListWebFunctionRevisions service method, as returned by LambdaWeb.</returns>
+        /// <exception cref="Amazon.LambdaWeb.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check the IAM policies for your
+        /// identity and any resource-based policy on the web function.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.InternalServerException">
+        /// The request failed because of an internal error in the service. Retry the request.
+        /// If the error persists, open a support case.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ResourceNotFoundException">
+        /// The specified web function, revision, endpoint, or resource-based policy doesn't exist.
+        /// Verify the resource identifier and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ThrottlingException">
+        /// The request was denied because it exceeded the request rate that Lambda allows for
+        /// your account. Reduce the frequency of requests and retry with exponential backoff.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ValidationException">
+        /// The request failed validation because a parameter was missing, malformed, or outside
+        /// the allowed range. Check the request parameters and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/ListWebFunctionRevisions">REST API Reference for ListWebFunctionRevisions Operation</seealso>
+        Task<ListWebFunctionRevisionsResponse> ListWebFunctionRevisionsAsync(ListWebFunctionRevisionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListWebFunctions
+
+
+
+        /// <summary>
+        /// Lists web functions in your account. Use pagination to ensure that the operation returns
+        /// quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWebFunctions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListWebFunctions service method, as returned by LambdaWeb.</returns>
+        /// <exception cref="Amazon.LambdaWeb.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check the IAM policies for your
+        /// identity and any resource-based policy on the web function.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.InternalServerException">
+        /// The request failed because of an internal error in the service. Retry the request.
+        /// If the error persists, open a support case.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ThrottlingException">
+        /// The request was denied because it exceeded the request rate that Lambda allows for
+        /// your account. Reduce the frequency of requests and retry with exponential backoff.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ValidationException">
+        /// The request failed validation because a parameter was missing, malformed, or outside
+        /// the allowed range. Check the request parameters and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/ListWebFunctions">REST API Reference for ListWebFunctions Operation</seealso>
+        Task<ListWebFunctionsResponse> ListWebFunctionsAsync(ListWebFunctionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutResourcePolicy
+
+
+
+        /// <summary>
+        /// Adds or updates a resource-based policy on a web function. A resource-based policy
+        /// grants permissions to other AWS accounts or services to perform actions on the web
+        /// function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by LambdaWeb.</returns>
+        /// <exception cref="Amazon.LambdaWeb.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check the IAM policies for your
+        /// identity and any resource-based policy on the web function.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. For example, the resource
+        /// is being modified by another request, you tried to delete a revision that is serving
+        /// traffic on an endpoint, or the policy revision ID that you specified doesn't match
+        /// the current policy. Resolve the conflict and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.InternalServerException">
+        /// The request failed because of an internal error in the service. Retry the request.
+        /// If the error persists, open a support case.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ResourceNotFoundException">
+        /// The specified web function, revision, endpoint, or resource-based policy doesn't exist.
+        /// Verify the resource identifier and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ServiceQuotaExceededException">
+        /// The request would exceed a service quota, such as the maximum number of web functions
+        /// in your account or the maximum number of revisions or endpoints per web function.
+        /// Request a quota increase or reduce usage and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ThrottlingException">
+        /// The request was denied because it exceeded the request rate that Lambda allows for
+        /// your account. Reduce the frequency of requests and retry with exponential backoff.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ValidationException">
+        /// The request failed validation because a parameter was missing, malformed, or outside
+        /// the allowed range. Check the request parameters and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  TagResource
+
+
+
+        /// <summary>
+        /// Adds tags to a web function. If a tag key already exists, the existing value is overwritten
+        /// with the new value.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by LambdaWeb.</returns>
+        /// <exception cref="Amazon.LambdaWeb.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check the IAM policies for your
+        /// identity and any resource-based policy on the web function.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. For example, the resource
+        /// is being modified by another request, you tried to delete a revision that is serving
+        /// traffic on an endpoint, or the policy revision ID that you specified doesn't match
+        /// the current policy. Resolve the conflict and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.InternalServerException">
+        /// The request failed because of an internal error in the service. Retry the request.
+        /// If the error persists, open a support case.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ResourceNotFoundException">
+        /// The specified web function, revision, endpoint, or resource-based policy doesn't exist.
+        /// Verify the resource identifier and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ServiceQuotaExceededException">
+        /// The request would exceed a service quota, such as the maximum number of web functions
+        /// in your account or the maximum number of revisions or endpoints per web function.
+        /// Request a quota increase or reduce usage and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ThrottlingException">
+        /// The request was denied because it exceeded the request rate that Lambda allows for
+        /// your account. Reduce the frequency of requests and retry with exponential backoff.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ValidationException">
+        /// The request failed validation because a parameter was missing, malformed, or outside
+        /// the allowed range. Check the request parameters and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UntagResource
+
+
+
+        /// <summary>
+        /// Removes tags from a web function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by LambdaWeb.</returns>
+        /// <exception cref="Amazon.LambdaWeb.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check the IAM policies for your
+        /// identity and any resource-based policy on the web function.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. For example, the resource
+        /// is being modified by another request, you tried to delete a revision that is serving
+        /// traffic on an endpoint, or the policy revision ID that you specified doesn't match
+        /// the current policy. Resolve the conflict and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.InternalServerException">
+        /// The request failed because of an internal error in the service. Retry the request.
+        /// If the error persists, open a support case.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ResourceNotFoundException">
+        /// The specified web function, revision, endpoint, or resource-based policy doesn't exist.
+        /// Verify the resource identifier and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ThrottlingException">
+        /// The request was denied because it exceeded the request rate that Lambda allows for
+        /// your account. Reduce the frequency of requests and retry with exponential backoff.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ValidationException">
+        /// The request failed validation because a parameter was missing, malformed, or outside
+        /// the allowed range. Check the request parameters and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateWebFunctionEndpoint
+
+
+
+        /// <summary>
+        /// Updates the configuration of a web function endpoint. You can modify the authorization
+        /// type, auto-deployment mode, revision weights, scaling, and throttling settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWebFunctionEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateWebFunctionEndpoint service method, as returned by LambdaWeb.</returns>
+        /// <exception cref="Amazon.LambdaWeb.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check the IAM policies for your
+        /// identity and any resource-based policy on the web function.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. For example, the resource
+        /// is being modified by another request, you tried to delete a revision that is serving
+        /// traffic on an endpoint, or the policy revision ID that you specified doesn't match
+        /// the current policy. Resolve the conflict and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.InternalServerException">
+        /// The request failed because of an internal error in the service. Retry the request.
+        /// If the error persists, open a support case.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ResourceNotFoundException">
+        /// The specified web function, revision, endpoint, or resource-based policy doesn't exist.
+        /// Verify the resource identifier and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ServiceQuotaExceededException">
+        /// The request would exceed a service quota, such as the maximum number of web functions
+        /// in your account or the maximum number of revisions or endpoints per web function.
+        /// Request a quota increase or reduce usage and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ThrottlingException">
+        /// The request was denied because it exceeded the request rate that Lambda allows for
+        /// your account. Reduce the frequency of requests and retry with exponential backoff.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaWeb.Model.ValidationException">
+        /// The request failed validation because a parameter was missing, malformed, or outside
+        /// the allowed range. Check the request parameters and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/UpdateWebFunctionEndpoint">REST API Reference for UpdateWebFunctionEndpoint Operation</seealso>
+        Task<UpdateWebFunctionEndpointResponse> UpdateWebFunctionEndpointAsync(UpdateWebFunctionEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

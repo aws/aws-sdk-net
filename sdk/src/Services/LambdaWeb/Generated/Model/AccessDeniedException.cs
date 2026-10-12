@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LambdaWeb.Model
 {
     /// <summary>
-    /// You do not have sufficient permissions to perform this operation.
+    /// You don't have permission to perform this operation. Check the IAM policies for your
+    /// identity and any resource-based policy on the web function.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LambdaWeb.Model
 {
     /// <summary>
-    /// An internal server error occurred. Try again later.
+    /// The request failed because of an internal error in the service. Retry the request.
+    /// If the error persists, open a support case.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
