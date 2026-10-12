@@ -88,6 +88,13 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("ndiAudioReferenceLevel", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.NdiAudioReferenceLevel = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("ndiOutputTimecodeSource", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

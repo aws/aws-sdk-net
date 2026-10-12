@@ -346,6 +346,11 @@
     <pattern>^arn:.+:mediaconnect.+:flow:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConnect.Model.UpdateFlowOutputRequest.NdiAudioReferenceLevel</property>
+    <min>-40</min>
+    <max>0</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConnect.Model.UpdateFlowOutputRequest.OutputArn</property>
     <pattern>^arn:.+:mediaconnect.+:output:.+$</pattern>
   </property-value-rule>
@@ -396,6 +401,11 @@
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.AddBridgeFlowSourceRequest.FlowArn</property>
     <pattern>^arn:.+:mediaconnect.+:flow:.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.AddOutputRequest.NdiAudioReferenceLevel</property>
+    <min>-40</min>
+    <max>0</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.BatchGetRouterInputError.Arn</property>
@@ -479,6 +489,11 @@
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.MergeRouterInputConfiguration.NetworkInterfaceArn</property>
     <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerNetworkInterface:[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.NdiSourceSettings.AudioReferenceLevel</property>
+    <min>-40</min>
+    <max>0</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.PublicRouterNetworkInterfaceRule.Cidr</property>
@@ -598,6 +613,11 @@
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.StandardRouterOutputConfiguration.NetworkInterfaceArn</property>
     <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerNetworkInterface:[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.Transport.NdiAudioReferenceLevel</property>
+    <min>-40</min>
+    <max>0</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.UpdateBridgeFlowSourceRequest.FlowArn</property>

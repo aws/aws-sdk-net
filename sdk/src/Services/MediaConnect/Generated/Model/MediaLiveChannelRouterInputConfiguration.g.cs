@@ -31,6 +31,21 @@ namespace Amazon.MediaConnect.Model
 {
     /// <summary>
     /// Configuration settings for connecting a router input to a MediaLive channel output.
+    /// 
+    ///  
+    /// <para>
+    /// To connect the router input to the MediaLive channel output, provide all three of
+    /// <c>mediaLiveChannelArn</c>, <c>mediaLivePipelineId</c>, and <c>mediaLiveChannelOutputName</c>.
+    /// To disconnect it, call the update operation and omit all three fields while keeping
+    /// this configuration object.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// You can't change <c>sourceTransitDecryption</c> while the router input is connected
+    /// to a MediaLive channel output. To change it, first disconnect the router input, then
+    /// update the decryption.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class MediaLiveChannelRouterInputConfiguration
     {

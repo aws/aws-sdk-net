@@ -31,6 +31,20 @@ namespace Amazon.MediaConnect.Model
 {
     /// <summary>
     /// Configuration settings for connecting a router output to a MediaConnect flow source.
+    /// 
+    ///  
+    /// <para>
+    /// To connect the router output to the flow source, provide both <c>flowArn</c> and <c>flowSourceArn</c>.
+    /// To disconnect it, call the update operation and omit both fields while keeping this
+    /// configuration object.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// You can't change <c>destinationTransitEncryption</c> while the router output is connected
+    /// to a flow source. To change it, first disconnect the router output, then update the
+    /// encryption.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class MediaConnectFlowRouterOutputConfiguration
     {

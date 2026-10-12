@@ -161,6 +161,22 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
+        /// Gets and sets the property NdiAudioReferenceLevel. 
+        /// <para>
+        /// The audio reference level of the NDI receiver, in decibels relative to full scale
+        /// (dBFS). Common values are <c>-20</c> (NDI and SMPTE) and <c>-18</c> (EBU). If you
+        /// don't specify this field, MediaConnect uses <c>-20</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = -40, Max = 0)]
+        public int? NdiAudioReferenceLevel { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NdiAudioReferenceLevel property is set.
+        /// </summary>
+        internal bool IsSetNdiAudioReferenceLevel() => this.NdiAudioReferenceLevel.HasValue;
+
+        /// <summary>
         /// Gets and sets the property NdiOutputTimecodeSource. 
         /// <para>
         /// Controls how MediaConnect generates timecodes for NDI output frames. If you don't

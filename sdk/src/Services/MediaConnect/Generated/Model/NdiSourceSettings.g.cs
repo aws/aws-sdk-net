@@ -31,10 +31,33 @@ namespace Amazon.MediaConnect.Model
 {
     /// <summary>
     /// The settings for the NDI® source. This includes the exact name of the upstream NDI
-    /// sender that you want to connect to your source.
+    /// sender that you want to connect to your source. 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// When you update the NDI source, include only the members you want to change. MediaConnect
+    /// leaves the members that you don't specify unchanged.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class NdiSourceSettings
     {
+        /// <summary>
+        /// Gets and sets the property AudioReferenceLevel. 
+        /// <para>
+        /// The audio reference level of the NDI sender, in decibels relative to full scale (dBFS).
+        /// Common values are <c>-20</c> (NDI and SMPTE) and <c>-18</c> (EBU). If you don't specify
+        /// this field, MediaConnect uses <c>-20</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = -40, Max = 0)]
+        public int? AudioReferenceLevel { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AudioReferenceLevel property is set.
+        /// </summary>
+        internal bool IsSetAudioReferenceLevel() => this.AudioReferenceLevel.HasValue;
+
         /// <summary>
         /// Gets and sets the property SourceName. 
         /// <para>

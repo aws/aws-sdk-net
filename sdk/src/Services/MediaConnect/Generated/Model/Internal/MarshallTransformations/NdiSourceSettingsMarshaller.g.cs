@@ -45,6 +45,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetAudioReferenceLevel())
+            {
+                context.Writer.WritePropertyName("audioReferenceLevel");
+                context.Writer.WriteNumberValue(requestObject.AudioReferenceLevel.Value);
+            }
+
             if (requestObject.IsSetSourceName())
             {
                 context.Writer.WritePropertyName("sourceName");
