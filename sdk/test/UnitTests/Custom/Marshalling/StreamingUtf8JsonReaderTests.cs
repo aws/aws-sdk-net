@@ -40,6 +40,37 @@ namespace AWSSDK.UnitTests
             }
         }
 
+        // Mirrors a generated event stream event whose @eventPayload is a raw blob or string: the reader is
+        // constructed over the payload stream before the event unmarshaller hands that same stream to the caller,
+        // so constructing the reader must not advance it.
+        [TestMethod]
+        public void ConstructingTheReaderDoesNotAdvanceTheStream()
+        {
+            var payload = Encoding.UTF8.GetBytes("raw event payload, not JSON");
+            var stream = new MemoryStream(payload);
+            var reader = new StreamingUtf8JsonReader(stream);
+
+            Assert.AreEqual(0, stream.Position);
+            using (var sr = new StreamReader(stream))
+            {
+                Assert.AreEqual("raw event payload, not JSON", sr.ReadToEnd());
+            }
+        }
+
+        // Generated response unmarshallers for an @httpPayload structure check this before any Read() to return
+        // an empty response object for an empty body instead of failing on "no JSON tokens".
+        [TestMethod]
+        public void IsFinalBlockBeforeTheFirstReadTellsAnEmptyBodyFromAJsonBody()
+        {
+            var empty = new StreamingUtf8JsonReader(new MemoryStream(Array.Empty<byte>()));
+            Assert.IsTrue(empty.Reader.IsFinalBlock);
+
+            var json = new StreamingUtf8JsonReader(new MemoryStream(Encoding.UTF8.GetBytes("{}")));
+            Assert.IsFalse(json.Reader.IsFinalBlock);
+            Assert.IsTrue(json.Read());
+            Assert.AreEqual(JsonTokenType.StartObject, json.Reader.TokenType);
+        }
+
         // This method tests that if the json token starts in one buffer but continues into the next buffer
         // the reader can handle parsing it correctly.
         [TestMethod]
