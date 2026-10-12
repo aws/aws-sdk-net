@@ -39,7 +39,10 @@ namespace Amazon.LambdaCore.Model
     /// monitor the <c>LastUpdateStatus</c> field, which transitions through <c>InProgress</c>
     /// to <c>Successful</c> or <c>Failed</c>. If the update fails, the <c>LastUpdateStatusReasonCode</c>
     /// field provides a specific error code for troubleshooting. This operation is idempotent
-    /// when you provide a <c>ClientToken</c>. </para>
+    /// when you provide a <c>ClientToken</c>. </para> <para> Each successful configuration
+    /// change creates a new immutable version. A connector can have a limited number of versions;
+    /// once that limit is reached, further updates fail with <c>NetworkConnectorLimitExceededException</c>
+    /// until you delete older versions. </para>
     /// </summary>
     public partial class UpdateNetworkConnectorRequest : AmazonLambdaCoreRequest
     {
@@ -72,7 +75,11 @@ namespace Amazon.LambdaCore.Model
         internal bool IsSetConfiguration() => this.Configuration != null;
 
         /// <summary>
-        /// Gets and sets the property Identifier.
+        /// Gets and sets the property Identifier. 
+        /// <para>
+        /// The identifier of the network connector to update. You can specify the connector ID,
+        /// name, or full ARN.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 140)]
         public string Identifier { get; set; }

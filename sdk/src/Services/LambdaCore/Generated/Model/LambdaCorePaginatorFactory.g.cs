@@ -33,6 +33,14 @@ namespace Amazon.LambdaCore.Model
         }
 
         /// <summary>
+        /// Paginator for ListNetworkConnectorVersions operation
+        /// </summary>
+        public IListNetworkConnectorVersionsPaginator ListNetworkConnectorVersions(ListNetworkConnectorVersionsRequest request)
+        {
+            return new ListNetworkConnectorVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListNetworkConnectors operation
         /// </summary>
         public IListNetworkConnectorsPaginator ListNetworkConnectors(ListNetworkConnectorsRequest request)

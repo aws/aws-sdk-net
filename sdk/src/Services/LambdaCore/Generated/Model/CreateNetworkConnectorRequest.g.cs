@@ -38,11 +38,11 @@ namespace Amazon.LambdaCore.Model
     /// The network connector starts in <c>PENDING</c> state while ENIs are provisioned in
     /// your VPC (provisioning typically takes up to 10 minutes). Use <c>GetNetworkConnector</c>
     /// to poll the connector state until it reaches <c>ACTIVE</c>. Once active, you can attach
-    /// the connector to Lambda MicroVMs at run time using the <c>egressNetworkConnectors</c>
-    /// parameter on <c>RunMicroVm</c>. </para> <para> This operation is idempotent when you
-    /// provide a <c>ClientToken</c> — if you retry a request that completed successfully
-    /// using the same client token, the operation returns the existing connector without
-    /// creating a duplicate. </para>
+    /// the connector to supported Lambda compute resources — such as MicroVMs and WebFunctions
+    /// — at run time. For how to attach a connector, see the documentation for the specific
+    /// compute type. </para> <para> This operation is idempotent when you provide a <c>ClientToken</c>
+    /// — if you retry a request that completed successfully using the same client token,
+    /// the operation returns the existing connector without creating a duplicate. </para>
     /// </summary>
     public partial class CreateNetworkConnectorRequest : AmazonLambdaCoreRequest
     {

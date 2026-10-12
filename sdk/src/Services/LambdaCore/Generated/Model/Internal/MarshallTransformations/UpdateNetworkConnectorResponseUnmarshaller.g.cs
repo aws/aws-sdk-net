@@ -114,6 +114,20 @@ namespace Amazon.LambdaCore.Model.Internal.MarshallTransformations
                     unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("Version", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.Version = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("VersionArn", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VersionArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return unmarshalledObject;
@@ -140,6 +154,10 @@ namespace Amazon.LambdaCore.Model.Internal.MarshallTransformations
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValueException"))
                     {
                         return InvalidParameterValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("NetworkConnectorLimitExceededException"))
+                    {
+                        return NetworkConnectorLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceConflictException"))
                     {

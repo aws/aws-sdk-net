@@ -36,13 +36,24 @@ namespace Amazon.LambdaCore.Model
     /// calls to <c>GetNetworkConnector</c> return <c>ResourceNotFoundException</c>. <para>
     /// This operation is idempotent — calling delete on a connector that is already deleting
     /// or has been deleted succeeds without error. You can delete connectors in <c>ACTIVE</c>
-    /// or <c>FAILED</c> states. Before deleting a connector, ensure that no Lambda MicroVMs
-    /// are using it, as they will lose VPC egress connectivity immediately. </para>
+    /// or <c>FAILED</c> states. Before deleting a connector, ensure that no Lambda compute
+    /// resources are using it, as they will lose VPC egress connectivity immediately. </para>
+    /// <para> Deleting with an unqualified identifier removes the connector and all of its
+    /// versions. To remove a single historical version, supply its version-qualified ARN;
+    /// the connector and its remaining versions are unaffected. You can't delete the latest
+    /// version on its own — delete the connector to remove it. </para>
     /// </summary>
     public partial class DeleteNetworkConnectorRequest : AmazonLambdaCoreRequest
     {
         /// <summary>
-        /// Gets and sets the property Identifier.
+        /// Gets and sets the property Identifier. 
+        /// <para>
+        /// The identifier of the network connector to delete. Provide an unqualified ARN (or
+        /// an ID or name) to delete the entire connector and all of its versions, or a version-qualified
+        /// ARN — one that includes the immutable version suffix — to delete a specific historical
+        /// version. You can't delete the latest version with a version-qualified identifier;
+        /// delete the connector instead.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 140)]
         public string Identifier { get; set; }

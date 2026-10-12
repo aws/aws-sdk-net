@@ -30,8 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LambdaCore.Model
 {
     /// <summary>
-    /// The account has reached the maximum number of network connectors allowed. Delete unused
-    /// connectors or request a limit increase through Service Quotas.
+    /// The request would exceed a network connector limit. For <c>CreateNetworkConnector</c>,
+    /// the account has reached the maximum number of network connectors allowed. For <c>UpdateNetworkConnector</c>,
+    /// the connector has reached the maximum number of versions allowed.
     /// </summary>
 #if !NETSTANDARD
     [Serializable]

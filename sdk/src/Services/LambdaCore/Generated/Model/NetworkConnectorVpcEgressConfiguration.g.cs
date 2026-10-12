@@ -38,8 +38,8 @@ namespace Amazon.LambdaCore.Model
         /// <summary>
         /// Gets and sets the property AssociatedComputeResourceTypes. 
         /// <para>
-        /// The types of Lambda compute resources that can use this connector. Currently, only
-        /// <c>MicroVm</c> is supported.
+        /// The types of Lambda compute resources that can use this connector. Valid values are
+        /// <c>MicroVm</c> and <c>WebFunction</c>. Specify exactly one value.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -73,8 +73,8 @@ namespace Amazon.LambdaCore.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// The IDs of the VPC security groups to attach to the ENIs. Specify 0 to 5 security
-        /// groups. All security groups must be in the same VPC as the subnets.
+        /// The IDs of the VPC security groups to attach to the ENIs. All security groups must
+        /// be in the same VPC as the subnets.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -83,7 +83,7 @@ namespace Amazon.LambdaCore.Model
         /// a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min = 0, Max = 5)]
+        [AWSProperty(Min = 0, Max = 16)]
         public List<string> SecurityGroupIds { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>

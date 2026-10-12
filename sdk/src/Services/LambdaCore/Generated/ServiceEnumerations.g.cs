@@ -32,6 +32,11 @@ namespace Amazon.LambdaCore
         public static readonly ComputeResourceType MicroVm = new ComputeResourceType("MicroVm");
 
         /// <summary>
+        /// Constant WebFunction for ComputeResourceType
+        /// </summary>
+        public static readonly ComputeResourceType WebFunction = new ComputeResourceType("WebFunction");
+
+        /// <summary>
         /// Constructs a custom ComputeResourceType for a value not among the defined constants.
         /// </summary>
         public ComputeResourceType(string value) : base(value) { }
@@ -137,6 +142,11 @@ namespace Amazon.LambdaCore
         /// Constant InvalidSubnet for NetworkConnectorLastUpdateStatusReasonCode
         /// </summary>
         public static readonly NetworkConnectorLastUpdateStatusReasonCode InvalidSubnet = new NetworkConnectorLastUpdateStatusReasonCode("InvalidSubnet");
+
+        /// <summary>
+        /// Constant SecurityGroupsPerInterfaceLimitExceeded for NetworkConnectorLastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly NetworkConnectorLastUpdateStatusReasonCode SecurityGroupsPerInterfaceLimitExceeded = new NetworkConnectorLastUpdateStatusReasonCode("SecurityGroupsPerInterfaceLimitExceeded");
 
         /// <summary>
         /// Constant SubnetOutOfIPAddresses for NetworkConnectorLastUpdateStatusReasonCode
@@ -264,6 +274,11 @@ namespace Amazon.LambdaCore
         /// Constant InvalidSubnet for NetworkConnectorStateReasonCode
         /// </summary>
         public static readonly NetworkConnectorStateReasonCode InvalidSubnet = new NetworkConnectorStateReasonCode("InvalidSubnet");
+
+        /// <summary>
+        /// Constant SecurityGroupsPerInterfaceLimitExceeded for NetworkConnectorStateReasonCode
+        /// </summary>
+        public static readonly NetworkConnectorStateReasonCode SecurityGroupsPerInterfaceLimitExceeded = new NetworkConnectorStateReasonCode("SecurityGroupsPerInterfaceLimitExceeded");
 
         /// <summary>
         /// Constant SubnetOutOfIPAddresses for NetworkConnectorStateReasonCode

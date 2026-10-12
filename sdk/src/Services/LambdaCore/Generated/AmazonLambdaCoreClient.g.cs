@@ -43,18 +43,47 @@ namespace Amazon.LambdaCore
     /// for the lifetime of your application.
     /// </para>
     ///
+    /// Lambda 
+    /// <para>
+    ///  <b>Overview</b> 
+    /// </para>
+    ///  
+    /// <para>
     /// AWS Lambda Core is a set of APIs for managing shared infrastructure resources used
-    /// by AWS Lambda. The Lambda Core API provides operations for creating and managing network
-    /// connectors that enable Lambda MicroVMs to access resources in your Amazon Virtual
-    /// Private Cloud (Amazon VPC).
-    /// 
+    /// by Lambda. The Lambda Core API provides operations for creating and managing network
+    /// connectors that enable Lambda compute resources to access resources in your Amazon
+    /// Virtual Private Cloud (Amazon VPC).
+    /// </para>
     ///  
     /// <para>
     /// Network connectors provision elastic network interfaces (ENIs) in your VPC subnets,
     /// providing a managed network path from Lambda compute environments to private resources
     /// such as Amazon RDS databases, Amazon ElastiCache clusters, and internal APIs. You
-    /// create a network connector once and attach it to one or more Lambda MicroVMs at run
-    /// time.
+    /// create a network connector once and attach it to one or more Lambda compute resources
+    /// at run time.
+    /// </para>
+    ///  
+    /// <para>
+    /// The <i>Lambda Core API Reference</i> provides information about each of the API methods,
+    /// including details about the parameters in each API request and response.
+    /// </para>
+    ///   
+    /// <para>
+    /// You can use Software Development Kits (SDKs), Integrated Development Environment (IDE)
+    /// Toolkits, and command line tools to access the API. For installation instructions,
+    /// see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For a list of Region-specific endpoints that Lambda supports, see <a href="https://docs.aws.amazon.com/general/latest/gr/lambda-service.html">Lambda
+    /// endpoints and quotas</a> in the <i>Amazon Web Services General Reference.</i> 
+    /// </para>
+    ///  
+    /// <para>
+    /// When making the API calls, you will need to authenticate your request by providing
+    /// a signature. Lambda supports signature version 4. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    /// Version 4 signing process</a> in the <i>Amazon Web Services General Reference.</i>
+    /// 
     /// </para>
     /// </summary>
     public partial class AmazonLambdaCoreClient : AmazonServiceClient, IAmazonLambdaCore
@@ -270,8 +299,9 @@ namespace Amazon.LambdaCore
         /// This operation is asynchronous. The network connector starts in <c>PENDING</c> state
         /// while ENIs are provisioned in your VPC (provisioning typically takes up to 10 minutes).
         /// Use <c>GetNetworkConnector</c> to poll the connector state until it reaches <c>ACTIVE</c>.
-        /// Once active, you can attach the connector to Lambda MicroVMs at run time using the
-        /// <c>egressNetworkConnectors</c> parameter on <c>RunMicroVm</c>.
+        /// Once active, you can attach the connector to supported Lambda compute resources —
+        /// such as MicroVMs and WebFunctions — at run time. For how to attach a connector, see
+        /// the documentation for the specific compute type.
         /// </para>
         ///  
         /// <para>
@@ -287,8 +317,9 @@ namespace Amazon.LambdaCore
         /// about which parameter failed validation.
         /// </exception>
         /// <exception cref="Amazon.LambdaCore.Model.NetworkConnectorLimitExceededException">
-        /// The account has reached the maximum number of network connectors allowed. Delete unused
-        /// connectors or request a limit increase through Service Quotas.
+        /// The request would exceed a network connector limit. For <c>CreateNetworkConnector</c>,
+        /// the account has reached the maximum number of network connectors allowed. For <c>UpdateNetworkConnector</c>,
+        /// the connector has reached the maximum number of versions allowed.
         /// </exception>
         /// <exception cref="Amazon.LambdaCore.Model.ResourceConflictException">
         /// The request could not be completed due to a conflict with the current state of the
@@ -333,8 +364,9 @@ namespace Amazon.LambdaCore
         /// This operation is asynchronous. The network connector starts in <c>PENDING</c> state
         /// while ENIs are provisioned in your VPC (provisioning typically takes up to 10 minutes).
         /// Use <c>GetNetworkConnector</c> to poll the connector state until it reaches <c>ACTIVE</c>.
-        /// Once active, you can attach the connector to Lambda MicroVMs at run time using the
-        /// <c>egressNetworkConnectors</c> parameter on <c>RunMicroVm</c>.
+        /// Once active, you can attach the connector to supported Lambda compute resources —
+        /// such as MicroVMs and WebFunctions — at run time. For how to attach a connector, see
+        /// the documentation for the specific compute type.
         /// </para>
         ///  
         /// <para>
@@ -353,8 +385,9 @@ namespace Amazon.LambdaCore
         /// about which parameter failed validation.
         /// </exception>
         /// <exception cref="Amazon.LambdaCore.Model.NetworkConnectorLimitExceededException">
-        /// The account has reached the maximum number of network connectors allowed. Delete unused
-        /// connectors or request a limit increase through Service Quotas.
+        /// The request would exceed a network connector limit. For <c>CreateNetworkConnector</c>,
+        /// the account has reached the maximum number of network connectors allowed. For <c>UpdateNetworkConnector</c>,
+        /// the connector has reached the maximum number of versions allowed.
         /// </exception>
         /// <exception cref="Amazon.LambdaCore.Model.ResourceConflictException">
         /// The request could not be completed due to a conflict with the current state of the
@@ -388,8 +421,15 @@ namespace Amazon.LambdaCore
         /// <para>
         /// This operation is idempotent — calling delete on a connector that is already deleting
         /// or has been deleted succeeds without error. You can delete connectors in <c>ACTIVE</c>
-        /// or <c>FAILED</c> states. Before deleting a connector, ensure that no Lambda MicroVMs
-        /// are using it, as they will lose VPC egress connectivity immediately.
+        /// or <c>FAILED</c> states. Before deleting a connector, ensure that no Lambda compute
+        /// resources are using it, as they will lose VPC egress connectivity immediately.
+        /// </para>
+        ///  
+        /// <para>
+        /// Deleting with an unqualified identifier removes the connector and all of its versions.
+        /// To remove a single historical version, supply its version-qualified ARN; the connector
+        /// and its remaining versions are unaffected. You can't delete the latest version on
+        /// its own — delete the connector to remove it.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkConnector service method.</param>
@@ -443,8 +483,15 @@ namespace Amazon.LambdaCore
         /// <para>
         /// This operation is idempotent — calling delete on a connector that is already deleting
         /// or has been deleted succeeds without error. You can delete connectors in <c>ACTIVE</c>
-        /// or <c>FAILED</c> states. Before deleting a connector, ensure that no Lambda MicroVMs
-        /// are using it, as they will lose VPC egress connectivity immediately.
+        /// or <c>FAILED</c> states. Before deleting a connector, ensure that no Lambda compute
+        /// resources are using it, as they will lose VPC egress connectivity immediately.
+        /// </para>
+        ///  
+        /// <para>
+        /// Deleting with an unqualified identifier removes the connector and all of its versions.
+        /// To remove a single historical version, supply its version-qualified ARN; the connector
+        /// and its remaining versions are unaffected. You can't delete the latest version on
+        /// its own — delete the connector to remove it.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkConnector service method.</param>
@@ -578,6 +625,102 @@ namespace Amazon.LambdaCore
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns a paginated list of the versions of a network connector. Each configuration
+        /// update creates a new immutable version; this operation lists those versions for the
+        /// connector you specify. You can optionally filter results by version state. Use the
+        /// <c>Marker</c> parameter from a previous response to retrieve the next page of results.
+        /// 
+        ///  
+        /// <para>
+        /// Each item in the response includes the version-qualified ARN, version number, current
+        /// state, and last modified timestamp for that version. To retrieve the current (latest)
+        /// configuration of the connector, use <c>GetNetworkConnector</c>; to inspect a specific
+        /// version, call <c>GetNetworkConnector</c> with a version-qualified identifier.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkConnectorVersions service method.</param>
+        /// <returns>The response from the ListNetworkConnectorVersions service method, as returned by LambdaCore.</returns>
+        /// <exception cref="Amazon.LambdaCore.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid. Check the error message for details
+        /// about which parameter failed validation.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaCore.Model.ResourceNotFoundException">
+        /// The specified network connector does not exist. Verify the identifier (ID, name, or
+        /// ARN) and Region.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaCore.Model.ServiceException">
+        /// An internal service error occurred. Retry the request with exponential backoff.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaCore.Model.TooManyRequestsException">
+        /// The request was throttled due to exceeding the allowed request rate. Retry the request
+        /// after a brief wait using exponential backoff.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-core-2026-04-30/ListNetworkConnectorVersions">REST API Reference for ListNetworkConnectorVersions Operation</seealso>
+        public virtual ListNetworkConnectorVersionsResponse ListNetworkConnectorVersions(ListNetworkConnectorVersionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkConnectorVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkConnectorVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListNetworkConnectorVersionsResponse>(request, options);
+        }
+#else
+        internal virtual ListNetworkConnectorVersionsResponse ListNetworkConnectorVersions(ListNetworkConnectorVersionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkConnectorVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkConnectorVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListNetworkConnectorVersionsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns a paginated list of the versions of a network connector. Each configuration
+        /// update creates a new immutable version; this operation lists those versions for the
+        /// connector you specify. You can optionally filter results by version state. Use the
+        /// <c>Marker</c> parameter from a previous response to retrieve the next page of results.
+        /// 
+        ///  
+        /// <para>
+        /// Each item in the response includes the version-qualified ARN, version number, current
+        /// state, and last modified timestamp for that version. To retrieve the current (latest)
+        /// configuration of the connector, use <c>GetNetworkConnector</c>; to inspect a specific
+        /// version, call <c>GetNetworkConnector</c> with a version-qualified identifier.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkConnectorVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListNetworkConnectorVersions service method, as returned by LambdaCore.</returns>
+        /// <exception cref="Amazon.LambdaCore.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid. Check the error message for details
+        /// about which parameter failed validation.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaCore.Model.ResourceNotFoundException">
+        /// The specified network connector does not exist. Verify the identifier (ID, name, or
+        /// ARN) and Region.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaCore.Model.ServiceException">
+        /// An internal service error occurred. Retry the request with exponential backoff.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaCore.Model.TooManyRequestsException">
+        /// The request was throttled due to exceeding the allowed request rate. Retry the request
+        /// after a brief wait using exponential backoff.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-core-2026-04-30/ListNetworkConnectorVersions">REST API Reference for ListNetworkConnectorVersions Operation</seealso>
+        public virtual Task<ListNetworkConnectorVersionsResponse> ListNetworkConnectorVersionsAsync(ListNetworkConnectorVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkConnectorVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkConnectorVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListNetworkConnectorVersionsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Returns a paginated list of network connectors in your account for the current Region.
         /// You can optionally filter results by connector state. Use the <c>Marker</c> parameter
         /// from a previous response to retrieve the next page of results.
@@ -675,12 +818,23 @@ namespace Amazon.LambdaCore
         /// the <c>LastUpdateStatusReasonCode</c> field provides a specific error code for troubleshooting.
         /// This operation is idempotent when you provide a <c>ClientToken</c>.
         /// </para>
+        ///  
+        /// <para>
+        /// Each successful configuration change creates a new immutable version. A connector
+        /// can have a limited number of versions; once that limit is reached, further updates
+        /// fail with <c>NetworkConnectorLimitExceededException</c> until you delete older versions.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNetworkConnector service method.</param>
         /// <returns>The response from the UpdateNetworkConnector service method, as returned by LambdaCore.</returns>
         /// <exception cref="Amazon.LambdaCore.Model.InvalidParameterValueException">
         /// One of the parameters in the request is not valid. Check the error message for details
         /// about which parameter failed validation.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaCore.Model.NetworkConnectorLimitExceededException">
+        /// The request would exceed a network connector limit. For <c>CreateNetworkConnector</c>,
+        /// the account has reached the maximum number of network connectors allowed. For <c>UpdateNetworkConnector</c>,
+        /// the connector has reached the maximum number of versions allowed.
         /// </exception>
         /// <exception cref="Amazon.LambdaCore.Model.ResourceConflictException">
         /// The request could not be completed due to a conflict with the current state of the
@@ -732,6 +886,12 @@ namespace Amazon.LambdaCore
         /// the <c>LastUpdateStatusReasonCode</c> field provides a specific error code for troubleshooting.
         /// This operation is idempotent when you provide a <c>ClientToken</c>.
         /// </para>
+        ///  
+        /// <para>
+        /// Each successful configuration change creates a new immutable version. A connector
+        /// can have a limited number of versions; once that limit is reached, further updates
+        /// fail with <c>NetworkConnectorLimitExceededException</c> until you delete older versions.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNetworkConnector service method.</param>
         /// <param name="cancellationToken">
@@ -741,6 +901,11 @@ namespace Amazon.LambdaCore
         /// <exception cref="Amazon.LambdaCore.Model.InvalidParameterValueException">
         /// One of the parameters in the request is not valid. Check the error message for details
         /// about which parameter failed validation.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaCore.Model.NetworkConnectorLimitExceededException">
+        /// The request would exceed a network connector limit. For <c>CreateNetworkConnector</c>,
+        /// the account has reached the maximum number of network connectors allowed. For <c>UpdateNetworkConnector</c>,
+        /// the connector has reached the maximum number of versions allowed.
         /// </exception>
         /// <exception cref="Amazon.LambdaCore.Model.ResourceConflictException">
         /// The request could not be completed due to a conflict with the current state of the
