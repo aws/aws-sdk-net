@@ -122,6 +122,20 @@ namespace Amazon.PCS.Model
         internal bool IsSetNodeLifecycleActions() => this.NodeLifecycleActions != null;
 
         /// <summary>
+        /// Gets and sets the property SchedulerVersion. 
+        /// <para>
+        /// The scheduler version that the cluster is running. A compute node uses this value
+        /// to run the matching scheduler version.
+        /// </para>
+        /// </summary>
+        public string SchedulerVersion { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SchedulerVersion property is set.
+        /// </summary>
+        internal bool IsSetSchedulerVersion() => this.SchedulerVersion != null;
+
+        /// <summary>
         /// Gets and sets the property SharedSecret. 
         /// <para>
         /// For the Slurm scheduler, this is the shared Munge key the scheduler uses to authenticate

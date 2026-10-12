@@ -94,6 +94,13 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("schedulerVersion", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SchedulerVersion = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("sharedSecret", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
