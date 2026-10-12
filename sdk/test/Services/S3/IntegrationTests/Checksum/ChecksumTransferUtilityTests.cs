@@ -156,7 +156,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 var getBody = await new StreamReader(getResponse.ResponseStream).ReadToEndAsync();
                 Assert.Equal(content, getBody);
                 Assert.Equal(algorithm.ToString(), getResponse.ResponseMetadata.ChecksumAlgorithm.ToString(), ignoreCase: true);
-                Assert.Equal(ChecksumValidationStatus.PENDING_RESPONSE_READ, getResponse.ResponseMetadata.ChecksumValidationStatus);
+                // The stream has been read to completion above, so validation has run and
+                // the status is SUCCESSFUL. (Before reading the stream it would be PENDING_RESPONSE_READ.)
+                Assert.Equal(ChecksumValidationStatus.SUCCESSFUL, getResponse.ResponseMetadata.ChecksumValidationStatus);
 
                 await transfer.DownloadAsync(new TransferUtilityDownloadRequest
                 {
