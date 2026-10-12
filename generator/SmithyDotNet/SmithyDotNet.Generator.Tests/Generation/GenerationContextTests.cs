@@ -1,4 +1,5 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Generation.Manifests;
 using SmithyDotNet.Generator.Generation.ProjectFiles;
 using SmithyDotNet.Generator.Generation.Protocols;
@@ -100,6 +101,18 @@ public class GenerationContextTests
     public void Protocol_IsRestJson1()
     {
         Assert.Equal(AWSProtocol.RestJson1, _context.Protocol);
+    }
+
+    [Theory]
+    [InlineData("Codegen/codegen-model.json")]
+    [InlineData("Codegen/rpcv2cbor-model.json")]
+    public void UseWrappingResult_OutsideAwsJson_Throws(string modelPath)
+    {
+        var customizations = new CustomizationsModel();
+        customizations.OperationModifiers["GetThing"] = new OperationModifier { UseWrappingResult = true };
+
+        var ex = Assert.Throws<GeneratorException>(() => new GenerationContext(new ServiceIndex(TestModels.Load(modelPath)), TestManifests.Example(), customizations: customizations));
+        Assert.Contains("operationModifiers['GetThing'] wraps the output, which is only supported for awsJson.", ex.Message);
     }
 
     [Fact]

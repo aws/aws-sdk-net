@@ -179,16 +179,77 @@ public class CustomizationTransformTests
         Assert.Contains("which the shape already has", ex.Message);
     }
 
-    // operationModifiers and paginators
-
     [Fact]
-    public void OperationModifiers_OnNonOperation_Throws()
+    public void ShapeModifiers_Exclude_RemovesMember()
     {
         var customizations = new CustomizationsModel();
-        customizations.OperationModifiers["Bucket"] = new OperationModifier { DeprecatedMessage = "x" };
+        customizations.ShapeModifiers["Bucket"] = new ShapeModifier { Exclude = ["arn"] };
 
-        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
-        Assert.Contains("not an operation", ex.Message);
+        Assert.Equal(["name", "created"], Structure(Apply(customizations), "Bucket").Members.Keys);
+    }
+
+    [Fact]
+    public void ShapeModifiers_ExcludeUnknownMember_Throws()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ShapeModifiers["Bucket"] = new ShapeModifier { Exclude = ["missing"] };
+
+        var ex = Assert.Throws<GeneratorException>(() => Apply(customizations));
+        Assert.Contains("excludes member 'missing', which the shape does not have", ex.Message);
+    }
+
+    // operationModifiers and paginators
+
+    // ListBuckets is bound to the service; TagBucket and DeleteBucket are a resource's instance and collection operations.
+    [Theory]
+    [InlineData("ListBuckets")]
+    [InlineData("TagBucket")]
+    [InlineData("DeleteBucket")]
+    public void OperationModifiers_Exclude_UnbindsOperation(string operation)
+    {
+        var customizations = new CustomizationsModel();
+        customizations.OperationModifiers[operation] = new OperationModifier { Exclude = true };
+
+        var model = Apply(customizations);
+
+        var id = ShapeId.Parse($"com.example#{operation}");
+        Assert.DoesNotContain(model.Shapes.Values, shape => (shape as ServiceShape)?.Operations.Contains(id) == true || (shape as ResourceShape)?.AllOperations().Contains(id) == true);
+    }
+
+    [Fact]
+    public void OperationModifiers_UseWrappingResult_MovesOutputUnderOneMember()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.OperationModifiers["ListBuckets"] = new OperationModifier { UseWrappingResult = true, WrappedResultShape = "BucketPage", WrappedResultMember = "Page" };
+
+        var model = Apply(customizations);
+
+        var operation = Assert.IsType<OperationShape>(model.Shapes["com.example#ListBuckets"]);
+        var member = Assert.Single(Structure(model, operation.Output.Name).Members);
+        Assert.Equal(("Page", "BucketPage"), (member.Key, member.Value.Target.Name));
+        Assert.False(Structure(model, "BucketPage").IsOutput());
+    }
+
+    [Theory]
+    [InlineData("Bucket", false, false, null, "not an operation")]
+    [InlineData("Orphan", true, false, null, "excludes an operation that no service or resource lists")]
+    [InlineData("ListBuckets", false, true, "Bucket", "wrappedResultShape must name the output, 'BucketPage'")]
+    [InlineData("TagBucket", false, true, "Unit", "wrappedResultShape must name the output, 'Unit'")]
+    [InlineData("ListBuckets", false, false, "BucketPage", "needs both useWrappingResult and a wrappedResultMember")]
+    [InlineData("Orphan", false, true, "Chunk", "'com.example#OrphanWrappedOutput', which is already a shape in the model")]
+    public void OperationModifiers_Invalid_Throws(string operation, bool exclude, bool useWrappingResult, string? wrappedResultShape, string expectedInMessage)
+    {
+        var customizations = new CustomizationsModel();
+        customizations.OperationModifiers[operation] = new OperationModifier
+        {
+            Exclude = exclude,
+            UseWrappingResult = useWrappingResult,
+            WrappedResultShape = wrappedResultShape,
+            WrappedResultMember = wrappedResultShape is null ? null : "Page",
+        };
+
+        var ex = Assert.Throws<GeneratorException>(() => Apply(customizations));
+        Assert.Contains(expectedInMessage, ex.Message);
     }
 
     [Fact]

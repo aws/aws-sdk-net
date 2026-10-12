@@ -18,6 +18,11 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
         var unmarshallerClassName = $"{className}Unmarshaller";
         var resolvedMembers = TypeMapper.ResolveMembers(operation.Output, context);
         var members = PartitionByBinding(operation.Output, resolvedMembers, context.UsesHttpBindings);
+        if (context.Customizations.WrapsOutput(operation.Name))
+        {
+            // A wrapped output's single member is the whole body.
+            members = members with { BodyMembers = [], PayloadMember = members.BodyMembers.Single() };
+        }
 
         var writer = new CodeWriter();
 

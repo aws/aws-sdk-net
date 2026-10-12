@@ -77,6 +77,10 @@ public static class PaginationResolver
                 throw new GeneratorException($"Paginated operation '{operation.Name}': inputToken and outputToken must have the same number of entries.");
             }
 
+            // A wrapped output's members sit under its one wrapper member.
+            customizations.OperationModifiers.TryGetValue(operation.Name, out var modifier);
+            var outputPrefix = modifier is { UseWrappingResult: true } ? $"{modifier.WrappedResultMember}." : "";
+
             var inputTokenProperties = new List<string>();
             var outputTokenProperties = new List<string>();
             var tokensAreMaps = false;
@@ -84,7 +88,7 @@ public static class PaginationResolver
             for (var i = 0; i < inputTokens.Count; i++)
             {
                 var inputToken = ResolveMemberPath(operation, operation.Input, inputTokens[i], "inputToken", index, customizations);
-                var outputToken = ResolveMemberPath(operation, operation.Output, outputTokens[i], "outputToken", index, customizations);
+                var outputToken = ResolveMemberPath(operation, operation.Output, outputPrefix + outputTokens[i], "outputToken", index, customizations);
 
                 tokensAreMaps = inputToken.Target is MapShape && outputToken.Target is MapShape;
                 var tokensAreStrings = IsStringToken(inputToken.Target) && IsStringToken(outputToken.Target);
@@ -106,7 +110,7 @@ public static class PaginationResolver
             var resultKeys = new List<PaginatedResultKey>();
             foreach (var item in items)
             {
-                var (path, leaf, itemsTarget) = ResolveMemberPath(operation, operation.Output, item, "items", index, customizations);
+                var (path, leaf, itemsTarget) = ResolveMemberPath(operation, operation.Output, outputPrefix + item, "items", index, customizations);
                 if (itemsTarget is ListShape list)
                 {
                     // Derive the element type exactly the way TypeMapper types the List<T> property
@@ -137,7 +141,7 @@ public static class PaginationResolver
                 }
             }
 
-            var stopOnSameToken = customizations.OperationModifiers.TryGetValue(operation.Name, out var modifier) && modifier.StopPaginationOnSameToken;
+            var stopOnSameToken = modifier?.StopPaginationOnSameToken == true;
             result.Add(new PaginatedOperation(operation, inputTokenProperties, outputTokenProperties, tokensAreMaps, stopOnSameToken, pageSizeProperty, resultKeys));
         }
 

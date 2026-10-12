@@ -90,6 +90,25 @@ public class CustomizationsModelTests
     }
 
     [Fact]
+    public void Load_ExcludeAndWrappingResult_ReadsHooks()
+    {
+        var model = LoadFiles("""
+            {
+              "shapeModifiers": { "PutTargetsResponse": { "exclude": ["FailedEntryCount"] } },
+              "operationModifiers": {
+                "InvokeAsync": { "exclude": true },
+                "DescribeDomain": { "useWrappingResult": true, "wrappedResultShape": "DomainDetail", "wrappedResultMember": "DomainDetail" }
+              }
+            }
+            """);
+
+        Assert.Equal(["FailedEntryCount"], model.ShapeModifiers["PutTargetsResponse"].Exclude);
+        Assert.True(model.OperationModifiers["InvokeAsync"].Exclude);
+        var wrap = model.OperationModifiers["DescribeDomain"];
+        Assert.Equal((true, "DomainDetail", "DomainDetail"), (wrap.UseWrappingResult, wrap.WrappedResultShape, wrap.WrappedResultMember));
+    }
+
+    [Fact]
     public void Load_ShapeSubstitutions_EmitAsShape_Throws()
     {
         var ex = Assert.Throws<GeneratorException>(() => LoadFiles("""{ "shapeSubstitutions": { "Thing": { "emitAsShape": "String" } } }"""));

@@ -6,7 +6,8 @@
       "version": "2023-01-01",
       "operations": [
         { "target": "com.example#DoScalars" },
-        { "target": "com.example#DoNothing" }
+        { "target": "com.example#DoNothing" },
+        { "target": "com.example#GetCount" }
       ],
       "errors": [
         { "target": "com.example#BadThing" }
@@ -46,6 +47,16 @@
       "type": "operation",
       "input": { "target": "smithy.api#Unit" },
       "output": { "target": "smithy.api#Unit" }
+    },
+    "com.example#GetCount": {
+      "type": "operation",
+      "output": { "target": "com.example#Count" }
+    },
+    "com.example#Count": {
+      "type": "structure",
+      "members": {
+        "value": { "target": "smithy.api#Integer" }
+      }
     },
     "com.example#BadThing": {
       "type": "structure",

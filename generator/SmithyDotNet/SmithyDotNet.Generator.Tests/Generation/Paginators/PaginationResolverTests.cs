@@ -149,6 +149,19 @@ public class PaginationResolverTests
         Assert.Contains("'TestOp' requires HTTP/2", ex.Message);
     }
 
+    // ListFunctions takes its tokens from the service defaults, and they too go through the wrapper member.
+    [Fact]
+    public void Resolves_WrappedOutputThroughWrapperMember()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.OperationModifiers["ListFunctions"] = new OperationModifier { UseWrappingResult = true, WrappedResultShape = "ListFunctionsResponse", WrappedResultMember = "Page" };
+        var context = TestModels.Context(TestModels.Load("Model/paginated-model.json"), customizations);
+
+        var paginated = context.PaginatedOperations.Single(p => p.Operation.Name == "ListFunctions");
+        Assert.Equal(["Page.NextMarker"], paginated.OutputTokenProperties);
+        Assert.Equal([new PaginatedResultKey("Functions", "Page.Functions", "Function")], paginated.ResultKeys);
+    }
+
     // Paginator traits name modeled members; imagebuilder and inspector2 rename their items member "responses".
     [Fact]
     public void Resolves_RenamedItemsMember_ToNewProperty()

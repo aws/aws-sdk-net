@@ -9,7 +9,8 @@ namespace SmithyDotNet.Generator.Generation.Customizations;
 /// Applies model-shaped customization hooks to the Smithy model in place, before the
 /// <see cref="ServiceIndex"/> is built. Only a hook with a Smithy trait equivalent (<c>deprecatedMessage</c>;
 /// <c>renameShape</c> adds a service <c>rename</c> entry) or a structural edit (a member-keyed <c>renameShape</c>
-/// copies the member's target) is applied to the model; the rest, member renames included, are checked here and
+/// copies the member's target; <c>exclude</c> unbinds an operation or drops members; <c>useWrappingResult</c> wraps an
+/// output) is applied to the model; the rest, member renames included, are checked here and
 /// read from <see cref="GenerationContext.Customizations"/> by shape and member name where the member is resolved.
 /// A stale shape/member reference throws — it must fail the build, not silently stop applying.
 /// </summary>
@@ -44,6 +45,16 @@ public static class CustomizationTransform
                 shape.SetDeprecatedMessage(shapeMessage);
             }
 
+            // TODO: S3's excludeFromMarshalling and excludeFromUnmarshalling keep the member on the class but off the
+            // wire, so they need a marshalling-level flag rather than this removal.
+            foreach (var memberName in modifier.Exclude)
+            {
+                if (shape is not StructureShape excluded || !excluded.Members.Remove(memberName))
+                {
+                    throw new GeneratorException($"shapeModifiers['{shapeName}'] excludes member '{memberName}', which the shape does not have.");
+                }
+            }
+
             // The structure/enum restriction only bites member modifications - a shape-level hook (e.g.
             // deprecatedMessage on a string shape) applies to any shape.
             if (modifier.Modify.Count == 0)
@@ -71,14 +82,24 @@ public static class CustomizationTransform
         foreach (var (operationName, modifier) in customizations.OperationModifiers)
         {
             var shape = FindSingleShape(model, operationName, $"operationModifiers['{operationName}']");
-            if (shape is not OperationShape)
+            if (shape is not OperationShape operation)
             {
                 throw new GeneratorException($"operationModifiers['{operationName}'] targets a '{shape.Type}' shape, not an operation.");
             }
 
             if (modifier.DeprecatedMessage is { } message)
             {
-                shape.SetDeprecatedMessage(message);
+                operation.SetDeprecatedMessage(message);
+            }
+
+            if (modifier.Exclude)
+            {
+                ExcludeOperation(model, operation, operationName);
+            }
+
+            if (modifier.UseWrappingResult || modifier.WrappedResultShape is not null || modifier.WrappedResultMember is not null)
+            {
+                WrapOutput(model, operation, operationName, modifier);
             }
         }
     }
@@ -129,6 +150,52 @@ public static class CustomizationTransform
                 ValidateDataTypeSwap(model, member, memberName, swap, shapeName);
             }
         }
+    }
+
+    // Structures are emitted only when reachable from the service's operations, so the ones only this operation used go too.
+    private static void ExcludeOperation(SmithyModel model, OperationShape operation, string operationName)
+    {
+        var unbound = model.Shapes.Values.Sum(shape => shape switch
+        {
+            ServiceShape service => service.Operations.RemoveAll(id => id == operation.Id),
+            ResourceShape resource => resource.Operations.RemoveAll(id => id == operation.Id) + resource.CollectionOperations.RemoveAll(id => id == operation.Id),
+            _ => 0,
+        });
+        if (unbound == 0)
+        {
+            throw new GeneratorException($"operationModifiers['{operationName}'] excludes an operation that no service or resource lists in its operations; resource lifecycle bindings are not supported.");
+        }
+    }
+
+    // The response keeps one property, wrappedResultMember, typed as the modeled output: a new structure with that
+    // single member becomes the operation's output, and the modeled output turns into an ordinary class.
+    // JsonResponseUnmarshallerWriter reads that member from the whole body, and PaginationResolver resolves output
+    // paths through it.
+    private static void WrapOutput(SmithyModel model, OperationShape operation, string operationName, OperationModifier modifier)
+    {
+        var memberName = modifier.WrappedResultMember;
+        if (!modifier.UseWrappingResult || string.IsNullOrWhiteSpace(memberName))
+        {
+            throw new GeneratorException($"operationModifiers['{operationName}'] needs both useWrappingResult and a wrappedResultMember.");
+        }
+
+        if (modifier.WrappedResultShape != operation.Output.Name || model.Shapes.GetValueOrDefault(operation.Output.AbsoluteName) is not { } output)
+        {
+            throw new GeneratorException($"operationModifiers['{operationName}'] wrappedResultShape must name the output, '{operation.Output.Name}'.");
+        }
+
+        var wrapperId = new ShapeId(operation.Id.Namespace, $"{operation.Id.Name}WrappedOutput");
+        if (model.Shapes.ContainsKey(wrapperId.AbsoluteName))
+        {
+            throw new GeneratorException($"operationModifiers['{operationName}'] wraps the output as '{wrapperId}', which is already a shape in the model.");
+        }
+
+        var wrapper = new StructureShape { Id = wrapperId };
+        wrapper.Members[memberName] = new MemberShape { Target = output.Id };
+        model.Shapes[wrapperId.AbsoluteName] = wrapper;
+
+        output.Traits.Remove("smithy.api#output");
+        model.Shapes[operation.Id.AbsoluteName] = operation with { Output = wrapperId };
     }
 
     // A C# rename is exactly what Smithy's service `rename` expresses, and ServiceIndex.ToDotNetName already

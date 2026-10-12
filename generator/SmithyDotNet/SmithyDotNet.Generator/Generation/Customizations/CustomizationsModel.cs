@@ -25,6 +25,9 @@ public sealed record CustomizationsModel
     [JsonPropertyName("operationModifiers")]
     public Dictionary<string, OperationModifier> OperationModifiers { get; init; } = [];
 
+    /// <summary>True when <c>useWrappingResult</c> wraps <paramref name="operationName"/>'s output.</summary>
+    public bool WrapsOutput(string operationName) => OperationModifiers.TryGetValue(operationName, out var modifier) && modifier.UseWrappingResult;
+
     /// <summary>Handlers the client adds to its runtime pipeline in <c>CustomizeRuntimePipeline</c>.</summary>
     [JsonPropertyName("runtimePipelineOverride")]
     public RuntimePipelineOverride? RuntimePipelineOverride { get; init; }
@@ -217,6 +220,10 @@ public sealed record ShapeModifier
     [JsonPropertyName("modify")]
     public List<Dictionary<string, PropertyModifier>> Modify { get; init; } = [];
 
+    /// <summary>Members dropped from the shape, so they are neither emitted nor sent or read.</summary>
+    [JsonPropertyName("exclude")]
+    public List<string> Exclude { get; init; } = [];
+
     /// <summary>The <c>[Obsolete]</c> message for the shape (e.g. a request/response class); applied only when the shape is already <c>@deprecated</c>.</summary>
     [JsonPropertyName("deprecatedMessage")]
     public string? DeprecatedMessage { get; init; }
@@ -247,6 +254,25 @@ public sealed record OperationModifier
     /// </summary>
     [JsonPropertyName("stopPaginationOnSameToken")]
     public bool StopPaginationOnSameToken { get; init; }
+
+    /// <summary>Drops the operation, and with it the structures only it uses.</summary>
+    [JsonPropertyName("exclude")]
+    public bool Exclude { get; init; }
+
+    /// <summary>
+    /// The response exposes the output, <c>wrappedResultShape</c>, as a single <c>wrappedResultMember</c> property
+    /// instead of flattening its members.
+    /// </summary>
+    [JsonPropertyName("useWrappingResult")]
+    public bool UseWrappingResult { get; init; }
+
+    /// <summary>The name of the operation's output shape that <c>useWrappingResult</c> wraps.</summary>
+    [JsonPropertyName("wrappedResultShape")]
+    public string? WrappedResultShape { get; init; }
+
+    /// <summary>The name of the response's single property that holds the wrapped output.</summary>
+    [JsonPropertyName("wrappedResultMember")]
+    public string? WrappedResultMember { get; init; }
 }
 
 /// <summary>

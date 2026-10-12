@@ -272,6 +272,13 @@ public class GenerationContext
         Protocol = ProtocolResolver.Resolve(index.Service, SdkId);
         // TODO: restXml also honors the HTTP binding traits; add it here when that protocol lands.
         UsesHttpBindings = Protocol == AWSProtocol.RestJson1;
+        // The wrapped output is read as the whole response body, which only awsJson's response is.
+        // TODO: ec2 wraps outputs too; support it in the XML response unmarshaller when ec2Query lands.
+        if (Protocol is not (AWSProtocol.AwsJson1_0 or AWSProtocol.AwsJson1_1)
+            && Customizations.OperationModifiers.FirstOrDefault(entry => entry.Value.UseWrappingResult).Key is { } wrapped)
+        {
+            throw new GeneratorException($"operationModifiers['{wrapped}'] wraps the output, which is only supported for awsJson.");
+        }
         IsAwsQueryCompatible = index.Service.HasAwsQueryCompatible();
         ServiceShapeName = index.ServiceId.Name;
         Operations = OperationResolver.Resolve(index, Protocol);

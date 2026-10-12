@@ -19,7 +19,7 @@
           "arnNamespace": "testpaginated"
         },
         "aws.auth#sigv4": { "name": "testpaginated" },
-        "aws.protocols#restJson1": {},
+        "aws.protocols#awsJson1_1": {},
         "smithy.api#title": "Test Paginated Service",
         "smithy.api#paginated": {
           "inputToken": "marker",
