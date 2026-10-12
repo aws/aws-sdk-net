@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+  <doc>
+    <members>
+      <member name="M:Amazon.SageMakerTrainingSessionRuntime.IAmazonSageMakerTrainingSessionRuntime.ExecuteSamplingOperation(Amazon.SageMakerTrainingSessionRuntime.Model.ExecuteSamplingOperationRequest)" />
+      <member name="M:Amazon.SageMakerTrainingSessionRuntime.AmazonSageMakerTrainingSessionRuntimeClient.ExecuteSamplingOperation(Amazon.SageMakerTrainingSessionRuntime.Model.ExecuteSamplingOperationRequest)" />
+      <member name="T:Amazon.SageMakerTrainingSessionRuntime.Model.ExecuteSamplingOperationRequest" />
+      <member name="T:Amazon.SageMakerTrainingSessionRuntime.Model.ExecuteSamplingOperationResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Generates completions for a tokenized prompt using the session's current weights. Generation behavior is controlled by `samplingParams`, and the operation is dispatched asynchronously.
+        </para>
+        <code title="Generate samples from a prompt" source=".\AWSSDKDocSamples\SageMakerTrainingSessionRuntime\SageMakerTrainingSessionRuntime.GeneratedSamples.cs" region="ExecuteSamplingOperation-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.SageMakerTrainingSessionRuntime.IAmazonSageMakerTrainingSessionRuntime.ExecuteTrainingOperation(Amazon.SageMakerTrainingSessionRuntime.Model.ExecuteTrainingOperationRequest)" />
+      <member name="M:Amazon.SageMakerTrainingSessionRuntime.AmazonSageMakerTrainingSessionRuntimeClient.ExecuteTrainingOperation(Amazon.SageMakerTrainingSessionRuntime.Model.ExecuteTrainingOperationRequest)" />
+      <member name="T:Amazon.SageMakerTrainingSessionRuntime.Model.ExecuteTrainingOperationRequest" />
+      <member name="T:Amazon.SageMakerTrainingSessionRuntime.Model.ExecuteTrainingOperationResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Computes gradients for a batch of tokenized prompts and accumulates them into the session. Operations are applied in `sequenceNumber` order, so each call must supply the next number in the sequence.
+        </para>
+        <code title="Run a forward and backward pass" source=".\AWSSDKDocSamples\SageMakerTrainingSessionRuntime\SageMakerTrainingSessionRuntime.GeneratedSamples.cs" region="ExecuteTrainingOperation-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.SageMakerTrainingSessionRuntime.IAmazonSageMakerTrainingSessionRuntime.GetSamplingOperationResult(Amazon.SageMakerTrainingSessionRuntime.Model.GetSamplingOperationResultRequest)" />
+      <member name="M:Amazon.SageMakerTrainingSessionRuntime.AmazonSageMakerTrainingSessionRuntimeClient.GetSamplingOperationResult(Amazon.SageMakerTrainingSessionRuntime.Model.GetSamplingOperationResultRequest)" />
+      <member name="T:Amazon.SageMakerTrainingSessionRuntime.Model.GetSamplingOperationResultRequest" />
+      <member name="T:Amazon.SageMakerTrainingSessionRuntime.Model.GetSamplingOperationResultResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Retrieves the status and generated sequences for a sampling operation submitted with ExecuteSamplingOperation.
+        </para>
+        <code title="Get the result of a sampling operation" source=".\AWSSDKDocSamples\SageMakerTrainingSessionRuntime\SageMakerTrainingSessionRuntime.GeneratedSamples.cs" region="GetSamplingOperationResult-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.SageMakerTrainingSessionRuntime.IAmazonSageMakerTrainingSessionRuntime.GetTrainingOperationResult(Amazon.SageMakerTrainingSessionRuntime.Model.GetTrainingOperationResultRequest)" />
+      <member name="M:Amazon.SageMakerTrainingSessionRuntime.AmazonSageMakerTrainingSessionRuntimeClient.GetTrainingOperationResult(Amazon.SageMakerTrainingSessionRuntime.Model.GetTrainingOperationResultRequest)" />
+      <member name="T:Amazon.SageMakerTrainingSessionRuntime.Model.GetTrainingOperationResultRequest" />
+      <member name="T:Amazon.SageMakerTrainingSessionRuntime.Model.GetTrainingOperationResultResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Retrieves the status and result of a training operation submitted with ExecuteTrainingOperation.
+        </para>
+        <code title="Get the result of a training operation" source=".\AWSSDKDocSamples\SageMakerTrainingSessionRuntime\SageMakerTrainingSessionRuntime.GeneratedSamples.cs" region="GetTrainingOperationResult-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.SageMakerTrainingSessionRuntime.IAmazonSageMakerTrainingSessionRuntime.SampleTrainingSession(Amazon.SageMakerTrainingSessionRuntime.Model.SampleTrainingSessionRequest)" />
+      <member name="M:Amazon.SageMakerTrainingSessionRuntime.AmazonSageMakerTrainingSessionRuntimeClient.SampleTrainingSession(Amazon.SageMakerTrainingSessionRuntime.Model.SampleTrainingSessionRequest)" />
+      <member name="T:Amazon.SageMakerTrainingSessionRuntime.Model.SampleTrainingSessionRequest" />
+      <member name="T:Amazon.SageMakerTrainingSessionRuntime.Model.SampleTrainingSessionResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Sends a chat completion request to the session's current weights and receives the complete response in a single payload.
+        </para>
+        <code title="Sample from a training session" source=".\AWSSDKDocSamples\SageMakerTrainingSessionRuntime\SageMakerTrainingSessionRuntime.GeneratedSamples.cs" region="SampleTrainingSession-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.SageMakerTrainingSessionRuntime.IAmazonSageMakerTrainingSessionRuntime.SampleTrainingSessionWithResponseStream(Amazon.SageMakerTrainingSessionRuntime.Model.SampleTrainingSessionWithResponseStreamRequest)" />
+      <member name="M:Amazon.SageMakerTrainingSessionRuntime.AmazonSageMakerTrainingSessionRuntimeClient.SampleTrainingSessionWithResponseStream(Amazon.SageMakerTrainingSessionRuntime.Model.SampleTrainingSessionWithResponseStreamRequest)" />
+      <member name="T:Amazon.SageMakerTrainingSessionRuntime.Model.SampleTrainingSessionWithResponseStreamRequest" />
+      <member name="T:Amazon.SageMakerTrainingSessionRuntime.Model.SampleTrainingSessionWithResponseStreamResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Sends a chat completion request to the session's current weights and receives the response as a stream of payload chunks.
+        </para>
+        <code title="Stream samples from a training session" source=".\AWSSDKDocSamples\SageMakerTrainingSessionRuntime\SageMakerTrainingSessionRuntime.GeneratedSamples.cs" region="SampleTrainingSessionWithResponseStream-1" />
+      </example>
+    </value>
+  </doc>
+</docs>
