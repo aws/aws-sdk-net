@@ -51,6 +51,7 @@ namespace Amazon.Glue.Model
         private Dictionary<string, string> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<Column> _partitionKeys = AWSConfigs.InitializeCollections ? new List<Column>() : null;
         private int? _retention;
+        private RLSProperties _rlsProperties;
         private TableStatus _status;
         private StorageDescriptor _storageDescriptor;
         private string _tableType;
@@ -398,6 +399,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetRetention()
         {
             return this._retention.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RLSProperties. 
+        /// <para>
+        /// A <c>RLSProperties</c> structure that describes the default row-level security policy
+        /// of the table.
+        /// </para>
+        /// </summary>
+        public RLSProperties RLSProperties
+        {
+            get { return this._rlsProperties; }
+            set { this._rlsProperties = value; }
+        }
+
+        // Check to see if RLSProperties property is set
+        internal bool IsSetRLSProperties()
+        {
+            return this._rlsProperties != null;
         }
 
         /// <summary>

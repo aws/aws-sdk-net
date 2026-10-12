@@ -158,6 +158,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.Retention = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("RLSProperties", targetDepth, ref reader))
+                {
+                    var unmarshaller = RLSPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.RLSProperties = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = TableStatusUnmarshaller.Instance;

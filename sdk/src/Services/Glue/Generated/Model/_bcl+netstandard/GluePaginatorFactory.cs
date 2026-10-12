@@ -277,6 +277,14 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Paginator for ListDataQualityResultsV2 operation
+        ///</summary>
+        public IListDataQualityResultsV2Paginator ListDataQualityResultsV2(ListDataQualityResultsV2Request request) 
+        {
+            return new ListDataQualityResultsV2Paginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDataQualityRuleRecommendationRuns operation
         ///</summary>
         public IListDataQualityRuleRecommendationRunsPaginator ListDataQualityRuleRecommendationRuns(ListDataQualityRuleRecommendationRunsRequest request) 

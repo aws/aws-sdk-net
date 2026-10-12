@@ -328,6 +328,16 @@ namespace Amazon.Glue.Model
         IListDataQualityResultsPaginator ListDataQualityResults(ListDataQualityResultsRequest request);
 
         /// <summary>
+        /// Paginator for ListDataQualityResultsV2 operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListDataQualityResultsV2Paginator ListDataQualityResultsV2(ListDataQualityResultsV2Request request);
+
+        /// <summary>
         /// Paginator for ListDataQualityRuleRecommendationRuns operation
         ///</summary>
         [AWSPaginator(

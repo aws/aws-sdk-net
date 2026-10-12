@@ -969,6 +969,67 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  BatchGetDataQualityResultV2
+
+
+        /// <summary>
+        /// Retrieves a list of data quality results for the specified result IDs. You can specify
+        /// up to 100 result IDs in a single request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetDataQualityResultV2 service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetDataQualityResultV2 service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetDataQualityResultV2">REST API Reference for BatchGetDataQualityResultV2 Operation</seealso>
+        public virtual BatchGetDataQualityResultV2Response BatchGetDataQualityResultV2(BatchGetDataQualityResultV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetDataQualityResultV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetDataQualityResultV2ResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetDataQualityResultV2Response>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves a list of data quality results for the specified result IDs. You can specify
+        /// up to 100 result IDs in a single request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetDataQualityResultV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetDataQualityResultV2 service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetDataQualityResultV2">REST API Reference for BatchGetDataQualityResultV2 Operation</seealso>
+        public virtual Task<BatchGetDataQualityResultV2Response> BatchGetDataQualityResultV2Async(BatchGetDataQualityResultV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetDataQualityResultV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetDataQualityResultV2ResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchGetDataQualityResultV2Response>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchGetDataQualityRulesetEvaluationRun
 
 
@@ -10233,6 +10294,73 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  GetDataQualityResultV2
+
+
+        /// <summary>
+        /// Retrieves the result of a data quality rule evaluation published from any supported
+        /// data platform.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataQualityResultV2 service method.</param>
+        /// 
+        /// <returns>The response from the GetDataQualityResultV2 service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityResultV2">REST API Reference for GetDataQualityResultV2 Operation</seealso>
+        public virtual GetDataQualityResultV2Response GetDataQualityResultV2(GetDataQualityResultV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDataQualityResultV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataQualityResultV2ResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataQualityResultV2Response>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the result of a data quality rule evaluation published from any supported
+        /// data platform.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataQualityResultV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataQualityResultV2 service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityResultV2">REST API Reference for GetDataQualityResultV2 Operation</seealso>
+        public virtual Task<GetDataQualityResultV2Response> GetDataQualityResultV2Async(GetDataQualityResultV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDataQualityResultV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataQualityResultV2ResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDataQualityResultV2Response>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetDataQualityRuleRecommendationRun
 
 
@@ -15215,6 +15343,69 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  ListDataQualityResultsV2
+
+
+        /// <summary>
+        /// Returns a paginated list of data quality execution results for your account, filtered
+        /// by the specified criteria. Use the <c>NextToken</c> parameter to retrieve additional
+        /// results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataQualityResultsV2 service method.</param>
+        /// 
+        /// <returns>The response from the ListDataQualityResultsV2 service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityResultsV2">REST API Reference for ListDataQualityResultsV2 Operation</seealso>
+        public virtual ListDataQualityResultsV2Response ListDataQualityResultsV2(ListDataQualityResultsV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDataQualityResultsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataQualityResultsV2ResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataQualityResultsV2Response>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a paginated list of data quality execution results for your account, filtered
+        /// by the specified criteria. Use the <c>NextToken</c> parameter to retrieve additional
+        /// results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataQualityResultsV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataQualityResultsV2 service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityResultsV2">REST API Reference for ListDataQualityResultsV2 Operation</seealso>
+        public virtual Task<ListDataQualityResultsV2Response> ListDataQualityResultsV2Async(ListDataQualityResultsV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDataQualityResultsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataQualityResultsV2ResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDataQualityResultsV2Response>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListDataQualityRuleRecommendationRuns
 
 
@@ -17073,6 +17264,91 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = ModifyIntegrationResponseUnmarshaller.Instance;
             
             return InvokeAsync<ModifyIntegrationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PublishDataQualityResultV2
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is intended for internal use. Do not call it directly.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// AWS Glue Data Quality uses this operation to publish a data quality result.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PublishDataQualityResultV2 service method.</param>
+        /// 
+        /// <returns>The response from the PublishDataQualityResultV2 service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.IdempotentParameterMismatchException">
+        /// The same unique identifier was associated with two different records.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PublishDataQualityResultV2">REST API Reference for PublishDataQualityResultV2 Operation</seealso>
+        public virtual PublishDataQualityResultV2Response PublishDataQualityResultV2(PublishDataQualityResultV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PublishDataQualityResultV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PublishDataQualityResultV2ResponseUnmarshaller.Instance;
+
+            return Invoke<PublishDataQualityResultV2Response>(request, options);
+        }
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is intended for internal use. Do not call it directly.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// AWS Glue Data Quality uses this operation to publish a data quality result.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PublishDataQualityResultV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PublishDataQualityResultV2 service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.IdempotentParameterMismatchException">
+        /// The same unique identifier was associated with two different records.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PublishDataQualityResultV2">REST API Reference for PublishDataQualityResultV2 Operation</seealso>
+        public virtual Task<PublishDataQualityResultV2Response> PublishDataQualityResultV2Async(PublishDataQualityResultV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PublishDataQualityResultV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PublishDataQualityResultV2ResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PublishDataQualityResultV2Response>(request, options, cancellationToken);
         }
 
         #endregion

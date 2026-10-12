@@ -74,7 +74,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property AnalyzerResults. 
         /// <para>
         /// A list of <c>DataQualityAnalyzerResult</c> objects representing the results for each
-        /// analyzer. 
+        /// analyzer.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -192,8 +192,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Observations. 
         /// <para>
-        /// A list of <c>DataQualityObservation</c> objects representing the observations generated
-        /// after evaluating the rules and analyzers. 
+        /// A list of <c>DataQualityObservation</c> objects representing the anomaly detection
+        /// observations generated after evaluating the rules and analyzers.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -256,7 +256,6 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property RuleResults. 
         /// <para>
         /// A list of <c>DataQualityRuleResult</c> objects representing the results for each rule.
-        /// 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
