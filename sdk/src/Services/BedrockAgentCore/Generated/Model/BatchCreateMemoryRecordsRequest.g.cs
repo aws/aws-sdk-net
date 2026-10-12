@@ -63,6 +63,23 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetMemoryId() => this.MemoryId != null;
 
         /// <summary>
+        /// Gets and sets the property RecordExpirySpecification. 
+        /// <para>
+        /// The record expiry (long-term memory time-to-live) applied to every record created
+        /// by this request. Set <c>recordExpiryDurationDays</c> to the number of days after which
+        /// the records expire. Only the expiry provided here is applied; the records' strategy
+        /// association has no effect on their expiry. If you do not provide this value, the records
+        /// do not expire. The <c>REMOVE</c> action does not apply when creating records.
+        /// </para>
+        /// </summary>
+        public RecordExpirySpecification RecordExpirySpecification { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RecordExpirySpecification property is set.
+        /// </summary>
+        internal bool IsSetRecordExpirySpecification() => this.RecordExpirySpecification != null;
+
+        /// <summary>
         /// Gets and sets the property Records. 
         /// <para>
         /// A list of memory record creation inputs to be processed in the batch operation.

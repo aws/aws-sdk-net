@@ -51,6 +51,43 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetMemoryId() => this.MemoryId != null;
 
         /// <summary>
+        /// Gets and sets the property RecordExpirySpecification. 
+        /// <para>
+        /// The record expiry (long-term memory time-to-live) applied to every record updated
+        /// by this request. Set <c>recordExpiryDurationDays</c> to configure or overwrite the
+        /// number of days after which the records expire, or set <c>action</c> to <c>REMOVE</c>
+        /// to clear a previously configured expiry so that the records no longer expire.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you do not provide this value, the service determines each record's expiry from
+        /// its current state:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the record already has an expiry configured, the service resets and reapplies the
+        /// expiry based on the last applied <c>recordExpiryDurationDays</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the record does not have an expiry configured, no expiry is applied and the record
+        /// remains non-expiring. This is the outcome regardless of whether the record's strategy
+        /// configures an expiry.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Providing an explicit <c>recordExpiryDurationDays</c> always takes precedence: it
+        /// overwrites an existing expiry, or sets one on a record that previously had none.
+        /// </para>
+        /// </summary>
+        public RecordExpirySpecification RecordExpirySpecification { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RecordExpirySpecification property is set.
+        /// </summary>
+        internal bool IsSetRecordExpirySpecification() => this.RecordExpirySpecification != null;
+
+        /// <summary>
         /// Gets and sets the property Records. 
         /// <para>
         /// A list of memory record update inputs to be processed in the batch operation.

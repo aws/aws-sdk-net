@@ -63,6 +63,23 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetCreatedAt() => this.CreatedAt.HasValue;
 
         /// <summary>
+        /// Gets and sets the property ExpiresAt. 
+        /// <para>
+        /// The timestamp at which the memory record expires and becomes eligible for deletion.
+        /// This value is set when a record expiry (long-term memory time-to-live) applies to
+        /// the record, either from the strategy the record belongs to or from a record expiry
+        /// provided on the batch request that created or updated it. If the record has no expiry
+        /// configured, this value is not present and the record does not expire.
+        /// </para>
+        /// </summary>
+        public DateTime? ExpiresAt { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExpiresAt property is set.
+        /// </summary>
+        internal bool IsSetExpiresAt() => this.ExpiresAt.HasValue;
+
+        /// <summary>
         /// Gets and sets the property MemoryRecordId. 
         /// <para>
         /// The unique identifier of the memory record.
@@ -130,5 +147,20 @@ namespace Amazon.BedrockAgentCore.Model
         /// Checks to see if the Namespaces property is set.
         /// </summary>
         internal bool IsSetNamespaces() => this.Namespaces != null && (this.Namespaces.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property Timestamp. 
+        /// <para>
+        /// The timestamp based on which the memory record was ingested. This reflects the time
+        /// of the source content that the record was derived from, which can differ from <c>createdAt</c>,
+        /// the time the record itself was written.
+        /// </para>
+        /// </summary>
+        public DateTime? Timestamp { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Timestamp property is set.
+        /// </summary>
+        internal bool IsSetTimestamp() => this.Timestamp.HasValue;
     }
 }

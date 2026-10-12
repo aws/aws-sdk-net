@@ -143,5 +143,20 @@ namespace Amazon.BedrockAgentCore.Model
         /// Checks to see if the Score property is set.
         /// </summary>
         internal bool IsSetScore() => this.Score.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Timestamp. 
+        /// <para>
+        /// The timestamp based on which the memory record was ingested. This reflects the time
+        /// of the source content that the record was derived from, which can differ from <c>createdAt</c>,
+        /// the time the record itself was written.
+        /// </para>
+        /// </summary>
+        public DateTime? Timestamp { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Timestamp property is set.
+        /// </summary>
+        internal bool IsSetTimestamp() => this.Timestamp.HasValue;
     }
 }
