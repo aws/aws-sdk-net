@@ -48,5 +48,18 @@ namespace Amazon.DevOpsAgent.Model
         /// Checks to see if the AgentSpaceId property is set.
         /// </summary>
         internal bool IsSetAgentSpaceId() => this.AgentSpaceId != null;
+
+        /// <summary>
+        /// Gets and sets the property IncludedData. 
+        /// <para>
+        /// How much data to include in the response.
+        /// </para>
+        /// </summary>
+        public IncludedData IncludedData { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IncludedData property is set.
+        /// </summary>
+        internal bool IsSetIncludedData() => this.IncludedData != null;
     }
 }

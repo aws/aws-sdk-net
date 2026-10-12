@@ -36,6 +36,19 @@ namespace Amazon.DevOpsAgent.Model
     public partial class ListAgentSpacesRequest : AmazonDevOpsAgentRequest
     {
         /// <summary>
+        /// Gets and sets the property IncludedData. 
+        /// <para>
+        /// How much data to include in the response.
+        /// </para>
+        /// </summary>
+        public IncludedData IncludedData { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IncludedData property is set.
+        /// </summary>
+        internal bool IsSetIncludedData() => this.IncludedData != null;
+
+        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// Maximum number of results to return in a single call.

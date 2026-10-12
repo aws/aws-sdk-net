@@ -75,6 +75,19 @@ namespace Amazon.DevOpsAgent.Model
         internal bool IsSetBearerToken() => this.BearerToken != null;
 
         /// <summary>
+        /// Gets and sets the property CustomHeaders. 
+        /// <para>
+        /// MCP server configuration with one or more custom authentication headers.
+        /// </para>
+        /// </summary>
+        public MCPServerCustomHeadersConfig CustomHeaders { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CustomHeaders property is set.
+        /// </summary>
+        internal bool IsSetCustomHeaders() => this.CustomHeaders != null;
+
+        /// <summary>
         /// Gets and sets the property OAuth3LO. 
         /// <para>
         /// MCP server configuration with OAuth 3LO.

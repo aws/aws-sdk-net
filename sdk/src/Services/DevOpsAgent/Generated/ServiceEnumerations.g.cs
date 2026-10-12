@@ -574,6 +574,47 @@ namespace Amazon.DevOpsAgent
     }
 
     /// <summary>
+    /// Constants used for properties of type IncludedData.
+    /// </summary>
+    public class IncludedData : ConstantClass
+    {
+        /// <summary>
+        /// Constant ALL_DATA for IncludedData
+        /// </summary>
+        public static readonly IncludedData ALL_DATA = new IncludedData("ALL_DATA");
+
+        /// <summary>
+        /// Constant METADATA_ONLY for IncludedData
+        /// </summary>
+        public static readonly IncludedData METADATA_ONLY = new IncludedData("METADATA_ONLY");
+
+        /// <summary>
+        /// Constructs a custom IncludedData for a value not among the defined constants.
+        /// </summary>
+        public IncludedData(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IncludedData FindValue(string value)
+        {
+            return FindValue<IncludedData>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IncludedData(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type IpAddressType.
     /// </summary>
     public class IpAddressType : ConstantClass
@@ -633,6 +674,11 @@ namespace Amazon.DevOpsAgent
         /// Constant BearerToken for MCPServerAuthorizationMethod
         /// </summary>
         public static readonly MCPServerAuthorizationMethod BearerToken = new MCPServerAuthorizationMethod("bearer-token");
+
+        /// <summary>
+        /// Constant CustomHeaders for MCPServerAuthorizationMethod
+        /// </summary>
+        public static readonly MCPServerAuthorizationMethod CustomHeaders = new MCPServerAuthorizationMethod("custom-headers");
 
         /// <summary>
         /// Constant Oauth3lo for MCPServerAuthorizationMethod
