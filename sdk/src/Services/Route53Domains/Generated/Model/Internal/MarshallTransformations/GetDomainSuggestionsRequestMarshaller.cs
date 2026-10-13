@@ -87,6 +87,12 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.OnlyAvailable.Value);
             }
 
+            if(publicRequest.IsSetOnlyStandardPrices())
+            {
+                context.Writer.WritePropertyName("OnlyStandardPrices");
+                context.Writer.WriteBooleanValue(publicRequest.OnlyStandardPrices.Value);
+            }
+
             if(publicRequest.IsSetSuggestionCount())
             {
                 context.Writer.WritePropertyName("SuggestionCount");

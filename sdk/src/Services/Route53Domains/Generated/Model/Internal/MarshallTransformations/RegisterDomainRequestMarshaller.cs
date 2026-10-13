@@ -103,6 +103,17 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetConsent())
+            {
+                context.Writer.WritePropertyName("Consent");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ConsentMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Consent, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetDomainName())
             {
                 context.Writer.WritePropertyName("DomainName");

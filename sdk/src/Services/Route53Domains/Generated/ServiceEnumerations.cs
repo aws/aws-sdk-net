@@ -1731,6 +1731,56 @@ namespace Amazon.Route53Domains
 
 
     /// <summary>
+    /// Constants used for properties of type PriceType.
+    /// </summary>
+    public class PriceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant REGISTRY_PREMIUM for PriceType
+        /// </summary>
+        public static readonly PriceType REGISTRY_PREMIUM = new PriceType("REGISTRY_PREMIUM");
+        /// <summary>
+        /// Constant STANDARD for PriceType
+        /// </summary>
+        public static readonly PriceType STANDARD = new PriceType("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PriceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PriceType FindValue(string value)
+        {
+            return FindValue<PriceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PriceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ReachabilityStatus.
     /// </summary>
     public class ReachabilityStatus : ConstantClass
@@ -1914,6 +1964,10 @@ namespace Amazon.Route53Domains
         /// Constant DONT_KNOW for Transferable
         /// </summary>
         public static readonly Transferable DONT_KNOW = new Transferable("DONT_KNOW");
+        /// <summary>
+        /// Constant PENDING for Transferable
+        /// </summary>
+        public static readonly Transferable PENDING = new Transferable("PENDING");
         /// <summary>
         /// Constant PREMIUM_DOMAIN for Transferable
         /// </summary>

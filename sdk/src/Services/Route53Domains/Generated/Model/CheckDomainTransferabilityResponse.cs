@@ -35,6 +35,7 @@ namespace Amazon.Route53Domains.Model
     public partial class CheckDomainTransferabilityResponse : AmazonWebServiceResponse
     {
         private string _message;
+        private PriceWithCurrency _price;
         private DomainTransferability _transferability;
 
         /// <summary>
@@ -53,6 +54,31 @@ namespace Amazon.Route53Domains.Model
         internal bool IsSetMessage()
         {
             return this._message != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Price. 
+        /// <para>
+        /// The price to transfer the domain name to Route 53, in the currency that <c>Currency</c>
+        /// specifies. If the domain has registry premium pricing, this price is different from
+        /// the standard rate for the TLD that <c>ListPrices</c> returns. Use <c>PriceType</c>
+        /// to determine which rate applies.
+        /// </para>
+        ///  
+        /// <para>
+        /// This element is returned only when Route 53 can determine whether the domain is transferable.
+        /// </para>
+        /// </summary>
+        public PriceWithCurrency Price
+        {
+            get { return this._price; }
+            set { this._price = value; }
+        }
+
+        // Check to see if Price property is set
+        internal bool IsSetPrice()
+        {
+            return this._price != null;
         }
 
         /// <summary>

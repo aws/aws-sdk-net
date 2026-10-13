@@ -36,11 +36,13 @@ namespace Amazon.Route53Domains.Model
     {
         private string _availability;
         private string _domainName;
+        private PriceWithCurrency _price;
 
         /// <summary>
         /// Gets and sets the property Availability. 
         /// <para>
-        /// Whether the domain name is available for registering.
+        /// Specifies whether the domain name is available for registering. This element is populated
+        /// only if you specified <c>true</c> for <c>OnlyAvailable</c> in the request.
         /// </para>
         ///  <note> 
         /// <para>
@@ -121,6 +123,26 @@ namespace Amazon.Route53Domains.Model
         internal bool IsSetDomainName()
         {
             return this._domainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Price. 
+        /// <para>
+        /// The price to register the suggested domain name, in the currency that <c>Currency</c>
+        /// specifies. This element is populated only if you specified <c>true</c> for <c>OnlyAvailable</c>
+        /// in the request.
+        /// </para>
+        /// </summary>
+        public PriceWithCurrency Price
+        {
+            get { return this._price; }
+            set { this._price = value; }
+        }
+
+        // Check to see if Price property is set
+        internal bool IsSetPrice()
+        {
+            return this._price != null;
         }
 
     }

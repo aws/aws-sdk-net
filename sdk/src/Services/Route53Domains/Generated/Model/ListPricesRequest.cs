@@ -48,13 +48,20 @@ namespace Amazon.Route53Domains.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Domain renewal
+    /// Renewal
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Domain restoration
+    /// Restoration
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> <note> 
+    /// <para>
+    /// The prices that <c>ListPrices</c> returns are the standard rates for a TLD. <c>ListPrices</c>
+    /// doesn't return registry premium prices, which apply to individual domain names rather
+    /// than to a TLD. To get accurate pricing for a specific domain name, including premium
+    /// prices, call <c>GetDomainPrices</c>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListPricesRequest : AmazonRoute53DomainsRequest
     {

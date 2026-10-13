@@ -126,16 +126,11 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property Flags. 
         /// <para>
-        /// Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK
-        /// (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your
-        /// DNS provider isn't Route 53 and you don’t have KSK available.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you have KSK and ZSK keys, always use KSK to create a delegations signer (DS) record.
-        /// If you have ZSK keys only – use ZSK to create a DS record.
+        /// The DNSKEY flags that indicate the key type. This field is deprecated; the <c>DnssecKey</c>
+        /// response no longer returns the flags.
         /// </para>
         /// </summary>
+        [Obsolete("The DnssecKey response no longer returns the flags.")]
         public int? Flags
         {
             get { return this._flags; }
@@ -188,10 +183,11 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property PublicKey. 
         /// <para>
-        /// The base64-encoded public key part of the key pair that is passed to the registry
-        /// .
+        /// The base64-encoded public key of the key pair. This field is deprecated; the <c>DnssecKey</c>
+        /// response no longer returns the public key.
         /// </para>
         /// </summary>
+        [Obsolete("The DnssecKey response no longer returns the public key.")]
         [AWSProperty(Max=32768)]
         public string PublicKey
         {

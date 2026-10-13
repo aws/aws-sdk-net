@@ -37,6 +37,7 @@ namespace Amazon.Route53Domains.Model
     {
         private string _domainName;
         private bool? _onlyAvailable;
+        private bool? _onlyStandardPrices;
         private int? _suggestionCount;
 
         /// <summary>
@@ -95,7 +96,12 @@ namespace Amazon.Route53Domains.Model
         /// If <c>OnlyAvailable</c> is <c>true</c>, Route 53 returns only domain names that are
         /// available. If <c>OnlyAvailable</c> is <c>false</c>, Route 53 returns domain names
         /// without checking whether they're available to be registered. To determine whether
-        /// the domain is available, you can call <c>checkDomainAvailability</c> for each suggestion.
+        /// the domain is available, call <c>checkDomainAvailability</c> for each suggestion.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <c>OnlyAvailable</c> is <c>false</c>, Route 53 does not return pricing information
+        /// for the suggested domain names.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -109,6 +115,26 @@ namespace Amazon.Route53Domains.Model
         internal bool IsSetOnlyAvailable()
         {
             return this._onlyAvailable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnlyStandardPrices. 
+        /// <para>
+        /// If <c>true</c>, Route 53 returns only domain names that are priced at the standard
+        /// registration rate for their TLD. If <c>false</c>, Route 53 includes domain names with
+        /// premium pricing in the suggestions list. The default is <c>true</c>.
+        /// </para>
+        /// </summary>
+        public bool? OnlyStandardPrices
+        {
+            get { return this._onlyStandardPrices; }
+            set { this._onlyStandardPrices = value; }
+        }
+
+        // Check to see if OnlyStandardPrices property is set
+        internal bool IsSetOnlyStandardPrices()
+        {
+            return this._onlyStandardPrices.HasValue; 
         }
 
         /// <summary>

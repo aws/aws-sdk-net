@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Domains.Model
 {
     /// <summary>
-    /// Customer's consent for the owner change request.
+    /// The maximum amount that you agree to pay for an operation, and the currency for that
+    /// amount.
     /// </summary>
     public partial class Consent
     {
@@ -40,7 +41,7 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property Currency. 
         /// <para>
-        ///  Currency for the <c>MaxPrice</c>. 
+        ///  The currency for the <c>MaxPrice</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=3)]
@@ -59,10 +60,10 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property MaxPrice. 
         /// <para>
-        ///  Maximum amount the customer agreed to accept. 
+        ///  The maximum amount that you agree to accept. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0)]
+        [AWSProperty(Required=true, Min=0, Max=2000000000)]
         public double? MaxPrice
         {
             get { return this._maxPrice; }
