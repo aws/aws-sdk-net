@@ -1,3 +1,106 @@
+### 4.0.352.0 (2026-10-13 18:19 UTC)
+* AgentRegistryControl (4.0.103.0)
+	* AWS Agent Registry is improving recently launched custom metadata schema feature to make shared attributes easier to manage.
+* AppIntegrationsService (4.0.103.0)
+	* This release adds the Connect JWT authentication type and the AudienceOverride field to AuthConfig, letting A2A server applications authenticate with JWTs issued by Amazon Connect.
+* AppStream (4.0.103.0)
+	* Adds support for administrators to require users to re-authenticate OneDrive and Google Drive storage connectors when a streaming session is reused.
+* ARCRegionswitch (4.0.104.0)
+	* Adds support for SSM Execution Block in Region switch plans
+* BackupGateway (4.0.101.12)
+	* BackupGateway is now generated from its Smithy model. There are no changes to the public API.
+* ComputeOptimizer (4.0.100.18)
+	* ComputeOptimizer is now generated from its Smithy model. There are no changes to the public API.
+* Connect (4.0.123.0)
+	* New APIs to support aliases and versions for ContactFlow.
+* CostExplorer (4.0.101.2)
+	* CostExplorer is now generated from its Smithy model. There are no changes to the public API.
+* DataSync (4.0.101.0)
+	* AWS DataSync Enhanced mode now supports FSx for OpenZFS, NFS 4.2, and object metadata controls
+* DAX (4.0.100.18)
+	* DAX is now generated from its Smithy model. There are no changes to the public API.
+* EC2InstanceConnect (4.0.100.18)
+	* EC2InstanceConnect is now generated from its Smithy model. There are no changes to the public API.
+* ECRPublic (4.0.100.18)
+	* ECRPublic is now generated from its Smithy model. There are no changes to the public API.
+* EventBridge (4.0.101.4)
+	* EventBridge is now generated from its Smithy model. There are no changes to the public API.
+* ForecastQueryService (4.0.100.18)
+	* ForecastQueryService is now generated from its Smithy model. There are no changes to the public API.
+* ForecastService (4.0.100.18)
+	* ForecastService is now generated from its Smithy model. There are no changes to the public API.
+* FraudDetector (4.0.100.18)
+	* FraudDetector is now generated from its Smithy model. There are no changes to the public API.
+* FSx (4.0.101.4)
+	* FSx is now generated from its Smithy model. There are no changes to the public API.
+* GameLift (4.0.104.0)
+	* Adds support for new instance types in the C8a, C8i, C9g, M8a, M8i, and M9g families for managed EC2 and container fleets
+* Glue (4.0.115.0)
+	* Amazon Glue releasing support for adding custom namespace for S3 Tables in Glue zero-ETL integration
+	* Glue is now generated from its Smithy model. There are no changes to the public API.
+* IdentityStore (4.0.101.4)
+	* IdentityStore is now generated from its Smithy model. There are no changes to the public API.
+* Inspector (4.0.100.18)
+	* Inspector is now generated from its Smithy model. There are no changes to the public API.
+* IoTSecureTunneling (4.0.100.18)
+	* IoTSecureTunneling is now generated from its Smithy model. There are no changes to the public API.
+* IoTThingsGraph (4.0.100.18)
+	* IoTThingsGraph is now generated from its Smithy model. There are no changes to the public API.
+* Kendra (4.0.100.18)
+	* Kendra is now generated from its Smithy model. There are no changes to the public API.
+* KinesisAnalytics (4.0.100.18)
+	* KinesisAnalytics is now generated from its Smithy model. There are no changes to the public API.
+* LakeFormation (4.0.101.0)
+	* Added new LakeFormation APIs and documentation updates for Simple Row-level Security (RLS).
+* LambdaWeb (4.0.102.1)
+	* Documentation update to include common use cases.
+* LicenseManager (4.0.101.15)
+	* LicenseManager is now generated from its Smithy model. There are no changes to the public API.
+* MediaStore (4.0.100.18)
+	* MediaStore is now generated from its Smithy model. There are no changes to the public API.
+* MigrationHub (4.0.100.18)
+	* MigrationHub is now generated from its Smithy model. There are no changes to the public API.
+* MigrationHubConfig (4.0.100.18)
+	* MigrationHubConfig is now generated from its Smithy model. There are no changes to the public API.
+* Omics (4.0.104.0)
+	* With Expanded container registry support, you can use container images from registries such as Seqera (Wave), NVIDIA NGC, and Google Artifact Registry with AWS HealthOmics private workflows, without manually migrating images into Amazon ECR or editing your workflow definitions.
+* Organizations (4.0.102.3)
+	* Organizations is now generated from its Smithy model. There are no changes to the public API.
+* PartnerCentralRevenueMeasurement (4.0.100.16)
+	* PartnerCentralRevenueMeasurement is now generated from its Smithy model. There are no changes to the public API.
+* Personalize (4.0.100.18)
+	* Personalize is now generated from its Smithy model. There are no changes to the public API.
+* Pricing (4.0.100.18)
+	* Pricing is now generated from its Smithy model. There are no changes to the public API.
+* RedshiftServerless (4.0.102.9)
+	* RedshiftServerless is now generated from its Smithy model. There are no changes to the public API.
+* Rekognition (4.0.101.4)
+	* Rekognition is now generated from its Smithy model. All exception classes now expose the Code and Logref properties that the service returns in error responses.
+* Resiliencehubv2 (4.0.105.0)
+	* Adds support for DevOpsAgent integration where users can specify the agent space ARN at service level and launch investigations directly from Resilience Hub v2.
+* Route53Domains (4.0.101.0)
+	* Route 53 Domains now supports premium domains. This release adds consent objects to operations on premium domains and a new GetDomainPrices API. Also, the Flags and PublicKey fields were deprecated from the DnssecKey response.
+* Route53Resolver (4.0.100.19)
+	* Route53Resolver is now generated from its Smithy model. There are no changes to the public API.
+* SageMaker (4.0.122.0)
+	* Adds Amazon Athena, Cleanup, ForEach, and Amazon EMR Serverless step metadata, ForEach iteration context, and the CompletedWithFailures execution status to SageMaker Pipelines.
+	* SageMaker is now generated from its Smithy model. There are no changes to the public API.
+* SecretsManager (4.0.100.18)
+	* SecretsManager is now generated from its Smithy model. There are no changes to the public API.
+* SecurityHub (4.0.106.0)
+	* Adds and updates APIs to support criticality. This feature allows customers to create automation rules to assign criticality to resources matching a criteria. With this release, resources and exposure findings will include the criticality.
+* ServiceQuotas (4.0.101.6)
+	* ServiceQuotas is now generated from its Smithy model. There are no changes to the public API.
+* SSMContacts (4.0.100.18)
+	* SSMContacts is now generated from its Smithy model. There are no changes to the public API.
+* SSOAdmin (4.0.103.4)
+	* SSOAdmin is now generated from its Smithy model. There are no changes to the public API.
+* WorkMail (4.0.100.18)
+	* WorkMail is now generated from its Smithy model. There are no changes to the public API.
+* Extensions.CborProtocol (4.0.100.18)
+	* Reduce CPU and memory used to unmarshall CBOR responses: avoid per-read allocations in CborStreamReader, stop boxing numbers and booleans, and refill the read buffer ahead of values that cross a buffer boundary instead of catching an exception.
+	* Avoid copying binary values when marshalling a MemoryStream whose buffer isn't publicly visible.
+
 ### 4.0.351.0 (2026-10-12 18:11 UTC)
 * AppRunner (4.0.100.17)
 	* AppRunner is now generated from its Smithy model. There are no changes to the public API.
