@@ -45,6 +45,12 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetAudienceOverride())
+            {
+                context.Writer.WritePropertyName("AudienceOverride");
+                context.Writer.WriteStringValue(requestObject.AudienceOverride);
+            }
+
             if (requestObject.IsSetAuthType())
             {
                 context.Writer.WritePropertyName("AuthType");
