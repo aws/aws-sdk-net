@@ -85,5 +85,30 @@ namespace Amazon.Glue.Model
         /// Checks to see if the SourceProperties property is set.
         /// </summary>
         internal bool IsSetSourceProperties() => this.SourceProperties != null && (this.SourceProperties.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property TargetNamespace. 
+        /// <para>
+        /// An optional custom namespace for the integration's target. Supply this parameter only
+        /// when the target is an Amazon S3 Tables table bucket; it is not accepted for other
+        /// target types. The integration replicates data into the namespace you specify, reusing
+        /// it if it already exists. If you omit this parameter, the target namespace defaults
+        /// to <c>zetl_</c> followed by the integration ID, with hyphens converted to underscores.
+        /// </para>
+        ///  
+        /// <para>
+        /// The value is immutable after the integration is created; <c>ModifyIntegration</c>
+        /// rejects changes to it. It must be a valid Amazon S3 Tables namespace name: 1 to 255
+        /// characters using lowercase letters, numbers, and underscores, with no leading or trailing
+        /// underscore and no reserved <c>aws</c> prefix.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 255)]
+        public string TargetNamespace { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TargetNamespace property is set.
+        /// </summary>
+        internal bool IsSetTargetNamespace() => this.TargetNamespace != null;
     }
 }

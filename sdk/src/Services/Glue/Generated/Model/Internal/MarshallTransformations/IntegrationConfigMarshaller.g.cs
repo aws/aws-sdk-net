@@ -69,6 +69,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 }
                 context.Writer.WriteEndObject();
             }
+
+            if (requestObject.IsSetTargetNamespace())
+            {
+                context.Writer.WritePropertyName("TargetNamespace");
+                context.Writer.WriteStringValue(requestObject.TargetNamespace);
+            }
         }
 
         /// <summary>

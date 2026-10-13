@@ -73,6 +73,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.SourceProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("TargetNamespace", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TargetNamespace = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
