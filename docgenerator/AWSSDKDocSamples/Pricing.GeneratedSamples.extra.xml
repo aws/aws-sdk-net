@@ -1,41 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <docs>
-    <doc>
-        <members>
-            <member name="M:Amazon.Pricing.IAmazonPricing.DescribeServices(Amazon.Pricing.Model.DescribeServicesRequest)" />
-            <member name="M:Amazon.Pricing.AmazonPricingClient.DescribeServices(Amazon.Pricing.Model.DescribeServicesRequest)" />
-            <member name="T:Amazon.Pricing.Model.DescribeServicesRequest" />
-            <member name="T:Amazon.Pricing.Model.DescribeServicesResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    Retrieves the service for the given Service Code.
-                </para>
-                <code
-                    title="To retrieve a list of services and service codes"
-                    source=".\AWSSDKDocSamples\Pricing\Pricing.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Pricing.IAmazonPricing.GetAttributeValues(Amazon.Pricing.Model.GetAttributeValuesRequest)" />
-            <member name="M:Amazon.Pricing.AmazonPricingClient.GetAttributeValues(Amazon.Pricing.Model.GetAttributeValuesRequest)" />
-            <member name="T:Amazon.Pricing.Model.GetAttributeValuesRequest" />
-            <member name="T:Amazon.Pricing.Model.GetAttributeValuesResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This operation returns a list of values available for the given attribute.
-                </para>
-                <code
-                    title="To retrieve a list of attribute values"
-                    source=".\AWSSDKDocSamples\Pricing\Pricing.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Pricing.IAmazonPricing.DescribeServices(Amazon.Pricing.Model.DescribeServicesRequest)" />
+      <member name="M:Amazon.Pricing.AmazonPricingClient.DescribeServices(Amazon.Pricing.Model.DescribeServicesRequest)" />
+      <member name="T:Amazon.Pricing.Model.DescribeServicesRequest" />
+      <member name="T:Amazon.Pricing.Model.DescribeServicesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Retrieves the service for the given Service Code.
+        </para>
+        <code title="To retrieve a list of services and service codes" source=".\AWSSDKDocSamples\Pricing\Pricing.GeneratedSamples.cs" region="DescribeServices-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Pricing.IAmazonPricing.GetAttributeValues(Amazon.Pricing.Model.GetAttributeValuesRequest)" />
+      <member name="M:Amazon.Pricing.AmazonPricingClient.GetAttributeValues(Amazon.Pricing.Model.GetAttributeValuesRequest)" />
+      <member name="T:Amazon.Pricing.Model.GetAttributeValuesRequest" />
+      <member name="T:Amazon.Pricing.Model.GetAttributeValuesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This operation returns a list of values available for the given attribute.
+        </para>
+        <code title="To retrieve a list of attribute values" source=".\AWSSDKDocSamples\Pricing\Pricing.GeneratedSamples.cs" region="GetAttributeValues-1" />
+      </example>
+    </value>
+  </doc>
 </docs>

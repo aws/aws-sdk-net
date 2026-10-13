@@ -1,0 +1,149 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.SageMaker.Model
+{
+    /// <summary>
+    /// Container for the parameters to the CreateEndpoint operation. Creates an endpoint
+    /// using the endpoint configuration specified in the request. SageMaker uses the endpoint
+    /// to provision resources and deploy models. You create the endpoint configuration with
+    /// the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
+    /// API. <para> Use this API to deploy models using SageMaker hosting services. </para>
+    /// <note> <para> You must not delete an <c>EndpointConfig</c> that is in use by an endpoint
+    /// that is live or while the <c>UpdateEndpoint</c> or <c>CreateEndpoint</c> operations
+    /// are being performed on the endpoint. To update an endpoint, you must create a new
+    /// <c>EndpointConfig</c>. </para> </note> <para> The endpoint name must be unique within
+    /// an Amazon Web Services Region in your Amazon Web Services account. </para> <para>
+    /// When it receives the request, SageMaker creates the endpoint, launches the resources
+    /// (ML compute instances), and deploys the model(s) on them. </para> <note> <para> When
+    /// you call <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>,
+    /// a load call is made to DynamoDB to verify that your endpoint configuration exists.
+    /// When you read data from a DynamoDB table supporting <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
+    /// <c>Eventually Consistent Reads</c> </a>, the response might not reflect the results
+    /// of a recently completed write operation. The response might include some stale data.
+    /// If the dependent entities are not yet in DynamoDB, this causes a validation error.
+    /// If you repeat your read request after a short time, the response should return the
+    /// latest data. So retry logic is recommended to handle these possible issues. We also
+    /// recommend that customers call <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpointConfig.html">DescribeEndpointConfig</a>
+    /// before calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>
+    /// to minimize the potential impact of a DynamoDB eventually consistent read. </para>
+    /// </note> <para> When SageMaker receives the request, it sets the endpoint status to
+    /// <c>Creating</c>. After it creates the endpoint, it sets the status to <c>InService</c>.
+    /// SageMaker can then process incoming requests for inferences. To check the status of
+    /// an endpoint, use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpoint.html">DescribeEndpoint</a>
+    /// API. </para> <para> If any of the models hosted at this endpoint get model data from
+    /// an Amazon S3 location, SageMaker uses Amazon Web Services Security Token Service to
+    /// download model artifacts from the S3 path you provided. Amazon Web Services STS is
+    /// activated in your Amazon Web Services account by default. If you previously deactivated
+    /// Amazon Web Services STS for a region, you need to reactivate Amazon Web Services STS
+    /// for that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+    /// and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the
+    /// <i>Amazon Web Services Identity and Access Management User Guide</i>. </para> <note>
+    /// <para> To add the IAM role policies for using this API operation, go to the <a href="https://console.aws.amazon.com/iam/">IAM
+    /// console</a>, and choose Roles in the left navigation pane. Search the IAM role that
+    /// you want to grant access to use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>
+    /// and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
+    /// API operations, add the following policies to the role. </para> <ul> <li> <para> Option
+    /// 1: For a full SageMaker access, search and attach the <c>AmazonSageMakerFullAccess</c>
+    /// policy. </para> </li> <li> <para> Option 2: For granting a limited access to an IAM
+    /// role, paste the following Action elements manually into the JSON file of the IAM role:
+    /// </para> <para> <c>"Action": ["sagemaker:CreateEndpoint", "sagemaker:CreateEndpointConfig"]</c>
+    /// </para> <para> <c>"Resource": [</c> </para> <para> <c>"arn:aws:sagemaker:region:account-id:endpoint/endpointName"</c>
+    /// </para> <para> <c>"arn:aws:sagemaker:region:account-id:endpoint-config/endpointConfigName"</c>
+    /// </para> <para> <c>]</c> </para> <para> For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/api-permissions-reference.html">SageMaker
+    /// API Permissions: Actions, Permissions, and Resources Reference</a>. </para> </li>
+    /// </ul> </note>
+    /// </summary>
+    public partial class CreateEndpointRequest : AmazonSageMakerRequest
+    {
+        /// <summary>
+        /// Gets and sets the property DeploymentConfig.
+        /// </summary>
+        public DeploymentConfig DeploymentConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DeploymentConfig property is set.
+        /// </summary>
+        internal bool IsSetDeploymentConfig() => this.DeploymentConfig != null;
+
+        /// <summary>
+        /// Gets and sets the property EndpointConfigName. 
+        /// <para>
+        /// The name of an endpoint configuration. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 0, Max = 63)]
+        public string EndpointConfigName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EndpointConfigName property is set.
+        /// </summary>
+        internal bool IsSetEndpointConfigName() => this.EndpointConfigName != null;
+
+        /// <summary>
+        /// Gets and sets the property EndpointName. 
+        /// <para>
+        /// The name of the endpoint.The name must be unique within an Amazon Web Services Region
+        /// in your Amazon Web Services account. The name is case-insensitive in <c>CreateEndpoint</c>,
+        /// but the case is preserved and must be matched in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">InvokeEndpoint</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 0, Max = 63)]
+        public string EndpointName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EndpointName property is set.
+        /// </summary>
+        internal bool IsSetEndpointName() => this.EndpointName != null;
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// An array of key-value pairs. You can use tags to categorize your Amazon Web Services
+        /// resources in different ways, for example, by purpose, owner, or environment. For more
+        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// Amazon Web Services Resources</a>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 50)]
+        public List<Tag> Tags { get; set; } = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+
+        /// <summary>
+        /// Checks to see if the Tags property is set.
+        /// </summary>
+        internal bool IsSetTags() => this.Tags != null && (this.Tags.Count > 0 || !AWSConfigs.InitializeCollections);
+    }
+}

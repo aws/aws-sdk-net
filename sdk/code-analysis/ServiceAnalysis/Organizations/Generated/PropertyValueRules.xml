@@ -2,26 +2,31 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.Organizations.Model.AcceptHandshakeRequest.HandshakeId</property>
+    <min>0</min>
     <max>34</max>
     <pattern>^h-[0-9a-z]{8,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.AttachPolicyRequest.PolicyId</property>
+    <min>0</min>
     <max>130</max>
     <pattern>^p-[0-9a-zA-Z_]{8,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.AttachPolicyRequest.TargetId</property>
+    <min>0</min>
     <max>100</max>
     <pattern>^(r-[0-9a-z]{4,32})|(\d{12})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.CancelHandshakeRequest.HandshakeId</property>
+    <min>0</min>
     <max>34</max>
     <pattern>^h-[0-9a-z]{8,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.CloseAccountRequest.AccountId</property>
+    <min>0</min>
     <max>12</max>
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
@@ -29,80 +34,88 @@
     <property>Amazon.Organizations.Model.CreateAccountRequest.AccountName</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[\u0020-\u007E]+</pattern>
+    <pattern>^[\u0020-\u007E]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.CreateAccountRequest.Email</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[^\s@]+@[^\s@]+\.[^\s@]+</pattern>
+    <pattern>^[^\s@]+@[^\s@]+\.[^\s@]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.CreateAccountRequest.RoleName</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]{1,64}</pattern>
+    <pattern>^[\w+=,.@-]{1,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.CreateGovCloudAccountRequest.AccountName</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[\u0020-\u007E]+</pattern>
+    <pattern>^[\u0020-\u007E]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.CreateGovCloudAccountRequest.Email</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[^\s@]+@[^\s@]+\.[^\s@]+</pattern>
+    <pattern>^[^\s@]+@[^\s@]+\.[^\s@]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.CreateGovCloudAccountRequest.RoleName</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\w+=,.@-]{1,64}</pattern>
+    <pattern>^[\w+=,.@-]{1,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.CreateOrganizationalUnitRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.CreateOrganizationalUnitRequest.ParentId</property>
+    <min>0</min>
     <max>100</max>
     <pattern>^(r-[0-9a-z]{4,32})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.CreatePolicyRequest.Content</property>
     <min>1</min>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.CreatePolicyRequest.Description</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.CreatePolicyRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.DeclineHandshakeRequest.HandshakeId</property>
+    <min>0</min>
     <max>34</max>
     <pattern>^h-[0-9a-z]{8,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.DeleteOrganizationalUnitRequest.OrganizationalUnitId</property>
+    <min>0</min>
     <max>68</max>
     <pattern>^ou-[0-9a-z]{4,32}-[a-z0-9]{8,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.DeletePolicyRequest.PolicyId</property>
+    <min>0</min>
     <max>130</max>
     <pattern>^p-[0-9a-zA-Z_]{8,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.DeregisterDelegatedAdministratorRequest.AccountId</property>
+    <min>0</min>
     <max>12</max>
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
@@ -110,35 +123,41 @@
     <property>Amazon.Organizations.Model.DeregisterDelegatedAdministratorRequest.ServicePrincipal</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]*</pattern>
+    <pattern>^[\w+=,.@-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.DescribeAccountRequest.AccountId</property>
+    <min>0</min>
     <max>12</max>
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.DescribeCreateAccountStatusRequest.CreateAccountRequestId</property>
+    <min>0</min>
     <max>36</max>
     <pattern>^car-[a-z0-9]{8,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.DescribeEffectivePolicyRequest.TargetId</property>
+    <min>0</min>
     <max>100</max>
     <pattern>^(r-[0-9a-z]{4,32})|(\d{12})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.DescribeHandshakeRequest.HandshakeId</property>
+    <min>0</min>
     <max>34</max>
     <pattern>^h-[0-9a-z]{8,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.DescribeOrganizationalUnitRequest.OrganizationalUnitId</property>
+    <min>0</min>
     <max>68</max>
     <pattern>^ou-[0-9a-z]{4,32}-[a-z0-9]{8,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.DescribePolicyRequest.PolicyId</property>
+    <min>0</min>
     <max>130</max>
     <pattern>^p-[0-9a-zA-Z_]{8,128}$</pattern>
   </property-value-rule>
@@ -148,11 +167,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.DetachPolicyRequest.PolicyId</property>
+    <min>0</min>
     <max>130</max>
     <pattern>^p-[0-9a-zA-Z_]{8,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.DetachPolicyRequest.TargetId</property>
+    <min>0</min>
     <max>100</max>
     <pattern>^(r-[0-9a-z]{4,32})|(\d{12})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$</pattern>
   </property-value-rule>
@@ -160,10 +181,11 @@
     <property>Amazon.Organizations.Model.DisableAWSServiceAccessRequest.ServicePrincipal</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]*</pattern>
+    <pattern>^[\w+=,.@-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.DisablePolicyTypeRequest.RootId</property>
+    <min>0</min>
     <max>34</max>
     <pattern>^r-[0-9a-z]{4,32}$</pattern>
   </property-value-rule>
@@ -171,22 +193,25 @@
     <property>Amazon.Organizations.Model.EnableAWSServiceAccessRequest.ServicePrincipal</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]*</pattern>
+    <pattern>^[\w+=,.@-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.EnablePolicyTypeRequest.RootId</property>
+    <min>0</min>
     <max>34</max>
     <pattern>^r-[0-9a-z]{4,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.InviteAccountToOrganizationRequest.Notes</property>
+    <min>0</min>
     <max>1024</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.InviteOrganizationToTransferResponsibilityRequest.Notes</property>
+    <min>0</min>
     <max>1024</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.InviteOrganizationToTransferResponsibilityRequest.SourceName</property>
@@ -195,19 +220,38 @@
     <pattern>^[ -~]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Organizations.Model.ListAWSServiceAccessForOrganizationRequest.MaxResults</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.ListAWSServiceAccessForOrganizationRequest.NextToken</property>
+    <min>0</min>
+    <max>100000</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.ListAWSServiceAccessForOrganizationResponse.NextToken</property>
+    <min>0</min>
+    <max>100000</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Organizations.Model.ListAccountsRequest.MaxResults</property>
     <min>1</min>
     <max>20</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListAccountsRequest.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListAccountsResponse.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListAccountsForParentRequest.MaxResults</property>
@@ -216,18 +260,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListAccountsForParentRequest.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListAccountsForParentRequest.ParentId</property>
+    <min>0</min>
     <max>100</max>
     <pattern>^(r-[0-9a-z]{4,32})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListAccountsForParentResponse.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListAccountsWithInvalidEffectivePolicyRequest.MaxResults</property>
@@ -236,28 +283,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListAccountsWithInvalidEffectivePolicyRequest.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListAccountsWithInvalidEffectivePolicyResponse.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Organizations.Model.ListAWSServiceAccessForOrganizationRequest.MaxResults</property>
-    <min>1</min>
-    <max>20</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Organizations.Model.ListAWSServiceAccessForOrganizationRequest.NextToken</property>
-    <max>100000</max>
-    <pattern>[\s\S]*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Organizations.Model.ListAWSServiceAccessForOrganizationResponse.NextToken</property>
-    <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListChildrenRequest.MaxResults</property>
@@ -266,18 +300,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListChildrenRequest.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListChildrenRequest.ParentId</property>
+    <min>0</min>
     <max>100</max>
     <pattern>^(r-[0-9a-z]{4,32})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListChildrenResponse.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListCreateAccountStatusRequest.MaxResults</property>
@@ -286,13 +323,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListCreateAccountStatusRequest.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListCreateAccountStatusResponse.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListDelegatedAdministratorsRequest.MaxResults</property>
@@ -301,22 +340,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListDelegatedAdministratorsRequest.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListDelegatedAdministratorsRequest.ServicePrincipal</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]*</pattern>
+    <pattern>^[\w+=,.@-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListDelegatedAdministratorsResponse.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListDelegatedServicesForAccountRequest.AccountId</property>
+    <min>0</min>
     <max>12</max>
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
@@ -327,16 +369,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListDelegatedServicesForAccountRequest.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListDelegatedServicesForAccountResponse.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListEffectivePolicyValidationErrorsRequest.AccountId</property>
+    <min>0</min>
     <max>12</max>
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
@@ -347,22 +392,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListEffectivePolicyValidationErrorsRequest.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListEffectivePolicyValidationErrorsResponse.AccountId</property>
+    <min>0</min>
     <max>12</max>
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListEffectivePolicyValidationErrorsResponse.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListEffectivePolicyValidationErrorsResponse.Path</property>
-    <pattern>^(o-[a-z0-9]{10,32}\/r-[0-9a-z]{4,32}(\/ou\-[0-9a-z]{4,32}-[a-z0-9]{8,32})*(\/\d{12})*)\/</pattern>
+    <pattern>^(o-[a-z0-9]{10,32}\/r-[0-9a-z]{4,32}(\/ou\-[0-9a-z]{4,32}-[a-z0-9]{8,32})*(\/\d{12})*)\/$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListHandshakesForAccountRequest.MaxResults</property>
@@ -371,13 +419,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListHandshakesForAccountRequest.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListHandshakesForAccountResponse.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListHandshakesForOrganizationRequest.MaxResults</property>
@@ -386,13 +436,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListHandshakesForOrganizationRequest.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListHandshakesForOrganizationResponse.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListInboundResponsibilityTransfersRequest.Id</property>
@@ -405,13 +457,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListInboundResponsibilityTransfersRequest.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListInboundResponsibilityTransfersResponse.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListOrganizationalUnitsForParentRequest.MaxResults</property>
@@ -420,18 +474,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListOrganizationalUnitsForParentRequest.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListOrganizationalUnitsForParentRequest.ParentId</property>
+    <min>0</min>
     <max>100</max>
     <pattern>^(r-[0-9a-z]{4,32})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListOrganizationalUnitsForParentResponse.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListOutboundResponsibilityTransfersRequest.MaxResults</property>
@@ -440,16 +497,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListOutboundResponsibilityTransfersRequest.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListOutboundResponsibilityTransfersResponse.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListParentsRequest.ChildId</property>
+    <min>0</min>
     <max>100</max>
     <pattern>^(\d{12})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$</pattern>
   </property-value-rule>
@@ -460,13 +520,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListParentsRequest.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListParentsResponse.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListPoliciesRequest.MaxResults</property>
@@ -475,13 +537,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListPoliciesRequest.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListPoliciesResponse.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListPoliciesForTargetRequest.MaxResults</property>
@@ -490,18 +554,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListPoliciesForTargetRequest.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListPoliciesForTargetRequest.TargetId</property>
+    <min>0</min>
     <max>100</max>
     <pattern>^(r-[0-9a-z]{4,32})|(\d{12})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListPoliciesForTargetResponse.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListRootsRequest.MaxResults</property>
@@ -510,28 +577,33 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListRootsRequest.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListRootsResponse.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListTagsForResourceRequest.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListTagsForResourceRequest.ResourceId</property>
+    <min>0</min>
     <max>130</max>
     <pattern>^(r-[0-9a-z]{4,32})|(\d{12})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})|(^p-[0-9a-zA-Z_]{8,128})|(^rp-[0-9a-zA-Z_]{4,128})|(^rt-[0-9a-zA-Z_]{8,32})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListTagsForResourceResponse.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListTargetsForPolicyRequest.MaxResults</property>
@@ -540,31 +612,37 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListTargetsForPolicyRequest.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListTargetsForPolicyRequest.PolicyId</property>
+    <min>0</min>
     <max>130</max>
     <pattern>^p-[0-9a-zA-Z_]{8,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListTargetsForPolicyResponse.NextToken</property>
+    <min>0</min>
     <max>100000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.MoveAccountRequest.AccountId</property>
+    <min>0</min>
     <max>12</max>
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.MoveAccountRequest.DestinationParentId</property>
+    <min>0</min>
     <max>100</max>
     <pattern>^(r-[0-9a-z]{4,32})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.MoveAccountRequest.SourceParentId</property>
+    <min>0</min>
     <max>100</max>
     <pattern>^(r-[0-9a-z]{4,32})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$</pattern>
   </property-value-rule>
@@ -572,10 +650,11 @@
     <property>Amazon.Organizations.Model.PutResourcePolicyRequest.Content</property>
     <min>1</min>
     <max>40000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.RegisterDelegatedAdministratorRequest.AccountId</property>
+    <min>0</min>
     <max>12</max>
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
@@ -583,15 +662,17 @@
     <property>Amazon.Organizations.Model.RegisterDelegatedAdministratorRequest.ServicePrincipal</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]*</pattern>
+    <pattern>^[\w+=,.@-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.RemoveAccountFromOrganizationRequest.AccountId</property>
+    <min>0</min>
     <max>12</max>
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.TagResourceRequest.ResourceId</property>
+    <min>0</min>
     <max>130</max>
     <pattern>^(r-[0-9a-z]{4,32})|(\d{12})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})|(^p-[0-9a-zA-Z_]{8,128})|(^rp-[0-9a-zA-Z_]{4,128})|(^rt-[0-9a-zA-Z_]{8,32})$</pattern>
   </property-value-rule>
@@ -601,6 +682,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.UntagResourceRequest.ResourceId</property>
+    <min>0</min>
     <max>130</max>
     <pattern>^(r-[0-9a-z]{4,32})|(\d{12})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})|(^p-[0-9a-zA-Z_]{8,128})|(^rp-[0-9a-zA-Z_]{4,128})|(^rt-[0-9a-zA-Z_]{8,32})$</pattern>
   </property-value-rule>
@@ -608,31 +690,34 @@
     <property>Amazon.Organizations.Model.UpdateOrganizationalUnitRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.UpdateOrganizationalUnitRequest.OrganizationalUnitId</property>
+    <min>0</min>
     <max>68</max>
     <pattern>^ou-[0-9a-z]{4,32}-[a-z0-9]{8,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.UpdatePolicyRequest.Content</property>
     <min>1</min>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.UpdatePolicyRequest.Description</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.UpdatePolicyRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.UpdatePolicyRequest.PolicyId</property>
+    <min>0</min>
     <max>130</max>
     <pattern>^p-[0-9a-zA-Z_]{8,128}$</pattern>
   </property-value-rule>
@@ -648,16 +733,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.Account.Arn</property>
-    <pattern>^arn:aws:organizations::\d{12}:account\/o-[a-z0-9]{10,32}\/\d{12}</pattern>
+    <pattern>^arn:aws:organizations::\d{12}:account\/o-[a-z0-9]{10,32}\/\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.Account.Email</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[^\s@]+@[^\s@]+\.[^\s@]+</pattern>
+    <pattern>^[^\s@]+@[^\s@]+\.[^\s@]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.Account.Id</property>
+    <min>0</min>
     <max>12</max>
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
@@ -665,15 +751,17 @@
     <property>Amazon.Organizations.Model.Account.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.Child.Id</property>
+    <min>0</min>
     <max>100</max>
     <pattern>^(\d{12})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.CreateAccountStatus.AccountId</property>
+    <min>0</min>
     <max>12</max>
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
@@ -681,30 +769,33 @@
     <property>Amazon.Organizations.Model.CreateAccountStatus.AccountName</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[\u0020-\u007E]+</pattern>
+    <pattern>^[\u0020-\u007E]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.CreateAccountStatus.GovCloudAccountId</property>
+    <min>0</min>
     <max>12</max>
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.CreateAccountStatus.Id</property>
+    <min>0</min>
     <max>36</max>
     <pattern>^car-[a-z0-9]{8,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.DelegatedAdministrator.Arn</property>
-    <pattern>^arn:aws:organizations::\d{12}:account\/o-[a-z0-9]{10,32}\/\d{12}</pattern>
+    <pattern>^arn:aws:organizations::\d{12}:account\/o-[a-z0-9]{10,32}\/\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.DelegatedAdministrator.Email</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[^\s@]+@[^\s@]+\.[^\s@]+</pattern>
+    <pattern>^[^\s@]+@[^\s@]+\.[^\s@]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.DelegatedAdministrator.Id</property>
+    <min>0</min>
     <max>12</max>
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
@@ -712,21 +803,22 @@
     <property>Amazon.Organizations.Model.DelegatedAdministrator.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.DelegatedService.ServicePrincipal</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]*</pattern>
+    <pattern>^[\w+=,.@-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.EffectivePolicy.PolicyContent</property>
     <min>1</min>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.EffectivePolicy.TargetId</property>
+    <min>0</min>
     <max>100</max>
     <pattern>^(r-[0-9a-z]{4,32})|(\d{12})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$</pattern>
   </property-value-rule>
@@ -734,19 +826,21 @@
     <property>Amazon.Organizations.Model.EnabledServicePrincipal.ServicePrincipal</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]*</pattern>
+    <pattern>^[\w+=,.@-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.Handshake.Arn</property>
-    <pattern>^arn:aws:organizations::\d{12}:handshake\/o-[a-z0-9]{10,32}\/[a-z_]{1,32}\/h-[0-9a-z]{8,32}</pattern>
+    <pattern>^arn:aws:organizations::\d{12}:handshake\/o-[a-z0-9]{10,32}\/[a-z_]{1,32}\/h-[0-9a-z]{8,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.Handshake.Id</property>
+    <min>0</min>
     <max>34</max>
     <pattern>^h-[0-9a-z]{8,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.HandshakeFilter.ParentHandshakeId</property>
+    <min>0</min>
     <max>34</max>
     <pattern>^h-[0-9a-z]{8,32}$</pattern>
   </property-value-rule>
@@ -754,11 +848,11 @@
     <property>Amazon.Organizations.Model.HandshakeParty.Id</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.Organization.Arn</property>
-    <pattern>^arn:aws:organizations::\d{12}:organization\/o-[a-z0-9]{10,32}</pattern>
+    <pattern>^arn:aws:organizations::\d{12}:organization\/o-[a-z0-9]{10,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.Organization.Id</property>
@@ -766,25 +860,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.Organization.MasterAccountArn</property>
-    <pattern>^arn:aws:organizations::\d{12}:account\/o-[a-z0-9]{10,32}\/\d{12}</pattern>
+    <pattern>^arn:aws:organizations::\d{12}:account\/o-[a-z0-9]{10,32}\/\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.Organization.MasterAccountEmail</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[^\s@]+@[^\s@]+\.[^\s@]+</pattern>
+    <pattern>^[^\s@]+@[^\s@]+\.[^\s@]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.Organization.MasterAccountId</property>
+    <min>0</min>
     <max>12</max>
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.OrganizationalUnit.Arn</property>
-    <pattern>^arn:aws:organizations::\d{12}:ou\/o-[a-z0-9]{10,32}\/ou-[0-9a-z]{4,32}-[0-9a-z]{8,32}</pattern>
+    <pattern>^arn:aws:organizations::\d{12}:ou\/o-[a-z0-9]{10,32}\/ou-[0-9a-z]{4,32}-[0-9a-z]{8,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.OrganizationalUnit.Id</property>
+    <min>0</min>
     <max>68</max>
     <pattern>^ou-[0-9a-z]{4,32}-[a-z0-9]{8,32}$</pattern>
   </property-value-rule>
@@ -792,33 +888,36 @@
     <property>Amazon.Organizations.Model.OrganizationalUnit.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.OrganizationalUnit.Path</property>
-    <pattern>^(o-[a-z0-9]{10,32}\/r-[0-9a-z]{4,32}(\/ou\-[0-9a-z]{4,32}-[a-z0-9]{8,32})*(\/\d{12})*)\/</pattern>
+    <pattern>^(o-[a-z0-9]{10,32}\/r-[0-9a-z]{4,32}(\/ou\-[0-9a-z]{4,32}-[a-z0-9]{8,32})*(\/\d{12})*)\/$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.Parent.Id</property>
+    <min>0</min>
     <max>100</max>
     <pattern>^(r-[0-9a-z]{4,32})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.Policy.Content</property>
     <min>1</min>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.PolicySummary.Arn</property>
-    <pattern>^(arn:aws:organizations::\d{12}:policy\/o-[a-z0-9]{10,32}\/[0-9a-z_]+\/p-[0-9a-z]{10,32})|(arn:aws:organizations::aws:policy\/[0-9a-z_]+\/p-[0-9a-zA-Z_]{10,128})</pattern>
+    <pattern>^(arn:aws:organizations::\d{12}:policy\/o-[a-z0-9]{10,32}\/[0-9a-z_]+\/p-[0-9a-z]{10,32})|(arn:aws:organizations::aws:policy\/[0-9a-z_]+\/p-[0-9a-zA-Z_]{10,128})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.PolicySummary.Description</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.PolicySummary.Id</property>
+    <min>0</min>
     <max>130</max>
     <pattern>^p-[0-9a-zA-Z_]{8,128}$</pattern>
   </property-value-rule>
@@ -826,11 +925,11 @@
     <property>Amazon.Organizations.Model.PolicySummary.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.PolicyTargetSummary.Arn</property>
-    <pattern>^arn:aws:organizations::.+:.+</pattern>
+    <pattern>^arn:aws:organizations::.+:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.PolicyTargetSummary.Name</property>
@@ -839,6 +938,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.PolicyTargetSummary.TargetId</property>
+    <min>0</min>
     <max>100</max>
     <pattern>^(r-[0-9a-z]{4,32})|(\d{12})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$</pattern>
   </property-value-rule>
@@ -846,19 +946,21 @@
     <property>Amazon.Organizations.Model.ResourcePolicy.Content</property>
     <min>1</min>
     <max>40000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ResourcePolicySummary.Arn</property>
-    <pattern>^arn:[a-z0-9][a-z0-9-.]{0,62}:organizations::\d{12}:resourcepolicy\/o-[a-z0-9]{10,32}\/rp-[0-9a-zA-Z_]{4,128}</pattern>
+    <pattern>^arn:[a-z0-9][a-z0-9-.]{0,62}:organizations::\d{12}:resourcepolicy\/o-[a-z0-9]{10,32}\/rp-[0-9a-zA-Z_]{4,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ResourcePolicySummary.Id</property>
+    <min>0</min>
     <max>131</max>
     <pattern>^rp-[0-9a-zA-Z_]{4,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ResponsibilityTransfer.ActiveHandshakeId</property>
+    <min>0</min>
     <max>34</max>
     <pattern>^h-[0-9a-z]{8,32}$</pattern>
   </property-value-rule>
@@ -878,10 +980,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.Root.Arn</property>
-    <pattern>^arn:aws:organizations::\d{12}:root\/o-[a-z0-9]{10,32}\/r-[0-9a-z]{4,32}</pattern>
+    <pattern>^arn:aws:organizations::\d{12}:root\/o-[a-z0-9]{10,32}\/r-[0-9a-z]{4,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.Root.Id</property>
+    <min>0</min>
     <max>34</max>
     <pattern>^r-[0-9a-z]{4,32}$</pattern>
   </property-value-rule>
@@ -906,10 +1009,11 @@
     <property>Amazon.Organizations.Model.TransferParticipant.ManagementAccountEmail</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[^\s@]+@[^\s@]+\.[^\s@]+</pattern>
+    <pattern>^[^\s@]+@[^\s@]+\.[^\s@]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.TransferParticipant.ManagementAccountId</property>
+    <min>0</min>
     <max>12</max>
     <pattern>^\d{12}$</pattern>
   </property-value-rule>

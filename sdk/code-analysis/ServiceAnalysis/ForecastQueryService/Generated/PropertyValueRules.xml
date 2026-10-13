@@ -2,8 +2,9 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.ForecastQueryService.Model.QueryForecastRequest.ForecastArn</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>arn:([a-z\d-]+):forecast:.*:.*:.+</pattern>
+    <pattern>^arn:([a-z\d-]+):forecast:.*:.*:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastQueryService.Model.QueryForecastRequest.NextToken</property>
@@ -17,7 +18,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastQueryService.Model.QueryWhatIfForecastRequest.WhatIfForecastArn</property>
+    <min>0</min>
     <max>300</max>
-    <pattern>arn:([a-z\d-]+):forecast:.*:.*:.+</pattern>
+    <pattern>^arn:([a-z\d-]+):forecast:.*:.*:.+$</pattern>
   </property-value-rule>
 </property-value-rules>

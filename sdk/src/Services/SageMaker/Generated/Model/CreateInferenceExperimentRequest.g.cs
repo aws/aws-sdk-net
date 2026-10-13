@@ -1,0 +1,296 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.SageMaker.Model
+{
+    /// <summary>
+    /// Container for the parameters to the CreateInferenceExperiment operation. Creates an
+    /// inference experiment using the configurations specified in the request. <para> Use
+    /// this API to setup and schedule an experiment to compare model variants on a Amazon
+    /// SageMaker inference endpoint. For more information about inference experiments, see
+    /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests.html">Shadow
+    /// tests</a>. </para> <para> Amazon SageMaker begins your experiment at the scheduled
+    /// time and routes traffic to your endpoint's model variants based on your specified
+    /// configuration. </para> <para> While the experiment is in progress or after it has
+    /// concluded, you can view metrics that compare your model variants. For more information,
+    /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests-view-monitor-edit.html">View,
+    /// monitor, and edit shadow tests</a>. </para>
+    /// </summary>
+    public partial class CreateInferenceExperimentRequest : AmazonSageMakerRequest
+    {
+        /// <summary>
+        /// Gets and sets the property DataStorageConfig. 
+        /// <para>
+        ///  The Amazon S3 location and configuration for storing inference request and response
+        /// data. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  This is an optional parameter that you can use for data capture. For more information,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture
+        /// data</a>. 
+        /// </para>
+        /// </summary>
+        public InferenceExperimentDataStorageConfig DataStorageConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DataStorageConfig property is set.
+        /// </summary>
+        internal bool IsSetDataStorageConfig() => this.DataStorageConfig != null;
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description for the inference experiment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 1024)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Description property is set.
+        /// </summary>
+        internal bool IsSetDescription() => this.Description != null;
+
+        /// <summary>
+        /// Gets and sets the property EndpointName. 
+        /// <para>
+        ///  The name of the Amazon SageMaker endpoint on which you want to run the inference
+        /// experiment. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 0, Max = 63)]
+        public string EndpointName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EndpointName property is set.
+        /// </summary>
+        internal bool IsSetEndpointName() => this.EndpointName != null;
+
+        /// <summary>
+        /// Gets and sets the property KmsKey. 
+        /// <para>
+        ///  The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that
+        /// Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute
+        /// instance that hosts the endpoint. The <c>KmsKey</c> can be any of the following formats:
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// KMS key ID
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>"1234abcd-12ab-34cd-56ef-1234567890ab"</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Resource Name (ARN) of a KMS key
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// KMS key Alias
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>"alias/ExampleAlias"</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Resource Name (ARN) of a KMS key Alias
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  If you use a KMS key ID or an alias of your KMS key, the Amazon SageMaker execution
+        /// role must include permissions to call <c>kms:Encrypt</c>. If you don't provide a KMS
+        /// key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.
+        /// Amazon SageMaker uses server-side encryption with KMS managed keys for <c>OutputDataConfig</c>.
+        /// If you use a bucket policy with an <c>s3:PutObject</c> permission that only allows
+        /// objects with server-side encryption, set the condition key of <c>s3:x-amz-server-side-encryption</c>
+        /// to <c>"aws:kms"</c>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS
+        /// managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  The KMS key policy must grant permission to the IAM role that you specify in your
+        /// <c>CreateEndpoint</c> and <c>UpdateEndpoint</c> requests. For more information, see
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
+        /// Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management
+        /// Service Developer Guide</i>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 2048)]
+        public string KmsKey { get; set; }
+
+        /// <summary>
+        /// Checks to see if the KmsKey property is set.
+        /// </summary>
+        internal bool IsSetKmsKey() => this.KmsKey != null;
+
+        /// <summary>
+        /// Gets and sets the property ModelVariants. 
+        /// <para>
+        ///  An array of <c>ModelVariantConfig</c> objects. There is one for each variant in the
+        /// inference experiment. Each <c>ModelVariantConfig</c> object in the array describes
+        /// the infrastructure configuration for the corresponding variant. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 2)]
+        public List<ModelVariantConfig> ModelVariants { get; set; } = AWSConfigs.InitializeCollections ? new List<ModelVariantConfig>() : null;
+
+        /// <summary>
+        /// Checks to see if the ModelVariants property is set.
+        /// </summary>
+        internal bool IsSetModelVariants() => this.ModelVariants != null && (this.ModelVariants.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name for the inference experiment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 120)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Name property is set.
+        /// </summary>
+        internal bool IsSetName() => this.Name != null;
+
+        /// <summary>
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        ///  The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts
+        /// and container images, and manage Amazon SageMaker Inference endpoints for model deployment.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 20, Max = 2048)]
+        public string RoleArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RoleArn property is set.
+        /// </summary>
+        internal bool IsSetRoleArn() => this.RoleArn != null;
+
+        /// <summary>
+        /// Gets and sets the property Schedule. 
+        /// <para>
+        ///  The duration for which you want the inference experiment to run. If you don't specify
+        /// this field, the experiment automatically starts immediately upon creation and concludes
+        /// after 7 days. 
+        /// </para>
+        /// </summary>
+        public InferenceExperimentSchedule Schedule { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Schedule property is set.
+        /// </summary>
+        internal bool IsSetSchedule() => this.Schedule != null;
+
+        /// <summary>
+        /// Gets and sets the property ShadowModeConfig. 
+        /// <para>
+        ///  The configuration of <c>ShadowMode</c> inference experiment type. Use this field
+        /// to specify a production variant which takes all the inference requests, and a shadow
+        /// variant to which Amazon SageMaker replicates a percentage of the inference requests.
+        /// For the shadow variant also specify the percentage of requests that Amazon SageMaker
+        /// replicates. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public ShadowModeConfig ShadowModeConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ShadowModeConfig property is set.
+        /// </summary>
+        internal bool IsSetShadowModeConfig() => this.ShadowModeConfig != null;
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        ///  Array of key-value pairs. You can use tags to categorize your Amazon Web Services
+        /// resources in different ways, for example, by purpose, owner, or environment. For more
+        /// information, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/tagging.html">Tagging
+        /// your Amazon Web Services Resources</a>. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 50)]
+        public List<Tag> Tags { get; set; } = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+
+        /// <summary>
+        /// Checks to see if the Tags property is set.
+        /// </summary>
+        internal bool IsSetTags() => this.Tags != null && (this.Tags.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        ///  The type of the inference experiment that you want to run. The following types of
+        /// experiments are possible: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ShadowMode</c>: You can use this type to validate a shadow variant. For more information,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests.html">Shadow
+        /// tests</a>. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public InferenceExperimentType Type { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Type property is set.
+        /// </summary>
+        internal bool IsSetType() => this.Type != null;
+    }
+}

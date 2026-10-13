@@ -1,0 +1,103 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Rekognition.Model
+{
+    /// <summary>
+    /// Container for the parameters to the GetTextDetection operation. Gets the text detection
+    /// results of a Amazon Rekognition Video analysis started by <a>StartTextDetection</a>.
+    /// <para> Text detection with Amazon Rekognition Video is an asynchronous operation.
+    /// You start text detection by calling <a>StartTextDetection</a> which returns a job
+    /// identifier (<c>JobId</c>) When the text detection operation finishes, Amazon Rekognition
+    /// publishes a completion status to the Amazon Simple Notification Service topic registered
+    /// in the initial call to <c>StartTextDetection</c>. To get the results of the text detection
+    /// operation, first check that the status value published to the Amazon SNS topic is
+    /// <c>SUCCEEDED</c>. if so, call <c>GetTextDetection</c> and pass the job identifier
+    /// (<c>JobId</c>) from the initial call of <c>StartLabelDetection</c>. </para> <para>
+    /// <c>GetTextDetection</c> returns an array of detected text (<c>TextDetections</c>)
+    /// sorted by the time the text was detected, up to 100 words per frame of video. </para>
+    /// <para> Each element of the array includes the detected text, the precentage confidence
+    /// in the acuracy of the detected text, the time the text was detected, bounding box
+    /// information for where the text was located, and unique identifiers for words and their
+    /// lines. </para> <para> Use MaxResults parameter to limit the number of text detections
+    /// returned. If there are more results than specified in <c>MaxResults</c>, the value
+    /// of <c>NextToken</c> in the operation response contains a pagination token for getting
+    /// the next set of results. To get the next page of results, call <c>GetTextDetection</c>
+    /// and populate the <c>NextToken</c> request parameter with the token value returned
+    /// from the previous call to <c>GetTextDetection</c>. </para>
+    /// </summary>
+    public partial class GetTextDetectionRequest : AmazonRekognitionRequest
+    {
+        /// <summary>
+        /// Gets and sets the property JobId. 
+        /// <para>
+        /// Job identifier for the text detection operation for which you want results returned.
+        /// You get the job identifer from an initial call to <c>StartTextDetection</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 64)]
+        public string JobId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the JobId property is set.
+        /// </summary>
+        internal bool IsSetJobId() => this.JobId != null;
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// Maximum number of results to return per paginated call. The largest value you can
+        /// specify is 1000.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1)]
+        public int? MaxResults { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MaxResults property is set.
+        /// </summary>
+        internal bool IsSetMaxResults() => this.MaxResults.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// If the previous response was incomplete (because there are more labels to retrieve),
+        /// Amazon Rekognition Video returns a pagination token in the response. You can use this
+        /// pagination token to retrieve the next set of text.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 255)]
+        public string NextToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NextToken property is set.
+        /// </summary>
+        internal bool IsSetNextToken() => this.NextToken != null;
+    }
+}

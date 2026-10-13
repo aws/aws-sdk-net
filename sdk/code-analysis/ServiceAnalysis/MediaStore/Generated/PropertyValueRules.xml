@@ -4,79 +4,79 @@
     <property>Amazon.MediaStore.Model.CreateContainerRequest.ContainerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[\w-]+</pattern>
+    <pattern>^[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.DeleteContainerRequest.ContainerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[\w-]+</pattern>
+    <pattern>^[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.DeleteContainerPolicyRequest.ContainerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[\w-]+</pattern>
+    <pattern>^[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.DeleteCorsPolicyRequest.ContainerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[\w-]+</pattern>
+    <pattern>^[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.DeleteLifecyclePolicyRequest.ContainerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[\w-]+</pattern>
+    <pattern>^[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.DeleteMetricPolicyRequest.ContainerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[\w-]+</pattern>
+    <pattern>^[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.DescribeContainerRequest.ContainerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[\w-]+</pattern>
+    <pattern>^[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.GetContainerPolicyRequest.ContainerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[\w-]+</pattern>
+    <pattern>^[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.GetContainerPolicyResponse.Policy</property>
     <min>1</min>
     <max>8192</max>
-    <pattern>[\x00-\x7F]+</pattern>
+    <pattern>^[\x00-\x7F]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.GetCorsPolicyRequest.ContainerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[\w-]+</pattern>
+    <pattern>^[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.GetLifecyclePolicyRequest.ContainerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[\w-]+</pattern>
+    <pattern>^[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.GetLifecyclePolicyResponse.LifecyclePolicy</property>
     <min>0</min>
     <max>8192</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.GetMetricPolicyRequest.ContainerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[\w-]+</pattern>
+    <pattern>^[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.ListContainersRequest.MaxResults</property>
@@ -87,97 +87,97 @@
     <property>Amazon.MediaStore.Model.ListContainersRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[0-9A-Za-z=/+]+</pattern>
+    <pattern>^[0-9A-Za-z=/+]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.ListContainersResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[0-9A-Za-z=/+]+</pattern>
+    <pattern>^[0-9A-Za-z=/+]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.ListTagsForResourceRequest.Resource</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws:mediastore:[a-z]+-[a-z]+-\d:\d{12}:container/[\w-]{1,255}</pattern>
+    <pattern>^arn:aws:mediastore:[a-z]+-[a-z]+-\d:\d{12}:container/[\w-]{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.PutContainerPolicyRequest.ContainerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[\w-]+</pattern>
+    <pattern>^[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.PutContainerPolicyRequest.Policy</property>
     <min>1</min>
     <max>8192</max>
-    <pattern>[\x00-\x7F]+</pattern>
+    <pattern>^[\x00-\x7F]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.PutCorsPolicyRequest.ContainerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[\w-]+</pattern>
+    <pattern>^[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.PutLifecyclePolicyRequest.ContainerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[\w-]+</pattern>
+    <pattern>^[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.PutLifecyclePolicyRequest.LifecyclePolicy</property>
     <min>0</min>
     <max>8192</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.PutMetricPolicyRequest.ContainerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[\w-]+</pattern>
+    <pattern>^[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.StartAccessLoggingRequest.ContainerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[\w-]+</pattern>
+    <pattern>^[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.StopAccessLoggingRequest.ContainerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[\w-]+</pattern>
+    <pattern>^[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.TagResourceRequest.Resource</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws:mediastore:[a-z]+-[a-z]+-\d:\d{12}:container/[\w-]{1,255}</pattern>
+    <pattern>^arn:aws:mediastore:[a-z]+-[a-z]+-\d:\d{12}:container/[\w-]{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.UntagResourceRequest.Resource</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws:mediastore:[a-z]+-[a-z]+-\d:\d{12}:container/[\w-]{1,255}</pattern>
+    <pattern>^arn:aws:mediastore:[a-z]+-[a-z]+-\d:\d{12}:container/[\w-]{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.Container.ARN</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws:mediastore:[a-z]+-[a-z]+-\d:\d{12}:container/[\w-]{1,255}</pattern>
+    <pattern>^arn:aws:mediastore:[a-z]+-[a-z]+-\d:\d{12}:container/[\w-]{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.Container.Endpoint</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.Container.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[\w-]+</pattern>
+    <pattern>^[\w-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.Container.Status</property>
@@ -193,24 +193,24 @@
     <property>Amazon.MediaStore.Model.MetricPolicyRule.ObjectGroup</property>
     <min>1</min>
     <max>900</max>
-    <pattern>/?(?:[A-Za-z0-9_=:\.\-\~\*]+/){0,10}(?:[A-Za-z0-9_=:\.\-\~\*]+)?/?</pattern>
+    <pattern>^/?(?:[A-Za-z0-9_=:\.\-\~\*]+/){0,10}(?:[A-Za-z0-9_=:\.\-\~\*]+)?/?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.MetricPolicyRule.ObjectGroupName</property>
     <min>1</min>
     <max>30</max>
-    <pattern>[a-zA-Z0-9_]+</pattern>
+    <pattern>^[a-zA-Z0-9_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\p{L}\p{Z}\p{N}_.:/=+\-@]*</pattern>
+    <pattern>^[\p{L}\p{Z}\p{N}_.:/=+\-@]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.Tag.Value</property>
     <min>0</min>
     <max>256</max>
-    <pattern>[\p{L}\p{Z}\p{N}_.:/=+\-@]*</pattern>
+    <pattern>^[\p{L}\p{Z}\p{N}_.:/=+\-@]*$</pattern>
   </property-value-rule>
 </property-value-rules>

@@ -1,0 +1,112 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.ComputeOptimizer.Model
+{
+    /// <summary>
+    /// Describes the utilization metric of an Amazon ECS service. 
+    /// 
+    ///  
+    /// <para>
+    /// To determine the performance difference between your current Amazon ECS service and
+    /// the recommended option, compare the utilization metric data of your service against
+    /// its projected utilization metric data.
+    /// </para>
+    /// </summary>
+    public partial class ECSServiceUtilizationMetric
+    {
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///  The name of the utilization metric. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following utilization metrics are available:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Cpu</c> — The amount of CPU capacity that's used in the service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Memory</c> — The amount of memory that's used in the service.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ECSServiceMetricName Name { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Name property is set.
+        /// </summary>
+        internal bool IsSetName() => this.Name != null;
+
+        /// <summary>
+        /// Gets and sets the property Statistic. 
+        /// <para>
+        /// The statistic of the utilization metric.
+        /// </para>
+        ///  
+        /// <para>
+        /// The Compute Optimizer API, Command Line Interface (CLI), and SDKs return utilization
+        /// metrics using only the <c>Maximum</c> statistic, which is the highest value observed
+        /// during the specified period.
+        /// </para>
+        ///  
+        /// <para>
+        /// The Compute Optimizer console displays graphs for some utilization metrics using the
+        /// <c>Average</c> statistic, which is the value of <c>Sum</c> / <c>SampleCount</c> during
+        /// the specified period. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing
+        /// resource recommendations</a> in the <i>Compute Optimizer User Guide</i>. You can also
+        /// get averaged utilization metric data for your resources using Amazon CloudWatch. For
+        /// more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon
+        /// CloudWatch User Guide</a>.
+        /// </para>
+        /// </summary>
+        public ECSServiceMetricStatistic Statistic { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Statistic property is set.
+        /// </summary>
+        internal bool IsSetStatistic() => this.Statistic != null;
+
+        /// <summary>
+        /// Gets and sets the property Value. 
+        /// <para>
+        ///  The value of the utilization metric. 
+        /// </para>
+        /// </summary>
+        public double? Value { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Value property is set.
+        /// </summary>
+        internal bool IsSetValue() => this.Value.HasValue;
+    }
+}

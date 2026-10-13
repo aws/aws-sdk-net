@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralRevenueMeasurement.Generated
     {
         public void PartnerCentralRevenueMeasurementCreateMarketplaceRevenueShare()
         {
-            #region example-1
+            #region CreateMarketplaceRevenueShare-1
 
             var client = new AmazonPartnerCentralRevenueMeasurementClient();
-            var response = client.CreateMarketplaceRevenueShare(new CreateMarketplaceRevenueShareRequest 
+            var response = client.CreateMarketplaceRevenueShare(new CreateMarketplaceRevenueShareRequest
             {
                 Catalog = "AWS",
                 ProductId = "prod-abc123def4567"
@@ -30,10 +31,10 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralRevenueMeasurement.Generated
 
         public void PartnerCentralRevenueMeasurementCreateMarketplaceRevenueShareAllocation()
         {
-            #region example-1
+            #region CreateMarketplaceRevenueShareAllocation-1
 
             var client = new AmazonPartnerCentralRevenueMeasurementClient();
-            var response = client.CreateMarketplaceRevenueShareAllocation(new CreateMarketplaceRevenueShareAllocationRequest 
+            var response = client.CreateMarketplaceRevenueShareAllocation(new CreateMarketplaceRevenueShareAllocationRequest
             {
                 Catalog = "AWS",
                 EffectiveFrom = "2026-07-01",
@@ -46,17 +47,17 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralRevenueMeasurement.Generated
             string marketplaceRevenueShareAllocationId = response.MarketplaceRevenueShareAllocationId;
             string productId = response.ProductId;
             string revenueSharePercent = response.RevenueSharePercent;
-            string status = response.Status;
+            AllocationStatus status = response.Status;
 
             #endregion
         }
 
         public void PartnerCentralRevenueMeasurementCreateRevenueAttribution()
         {
-            #region example-1
+            #region CreateRevenueAttribution-1
 
             var client = new AmazonPartnerCentralRevenueMeasurementClient();
-            var response = client.CreateRevenueAttribution(new CreateRevenueAttributionRequest 
+            var response = client.CreateRevenueAttribution(new CreateRevenueAttributionRequest
             {
                 Catalog = "AWS",
                 Name = "My Revenue Attribution",
@@ -65,24 +66,24 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralRevenueMeasurement.Generated
 
             string arn = response.Arn;
             string id = response.Id;
-            string tenancyModel = response.TenancyModel;
+            TenancyModel tenancyModel = response.TenancyModel;
 
             #endregion
         }
 
         public void PartnerCentralRevenueMeasurementGetMarketplaceRevenueShare()
         {
-            #region example-1
+            #region GetMarketplaceRevenueShare-1
 
             var client = new AmazonPartnerCentralRevenueMeasurementClient();
-            var response = client.GetMarketplaceRevenueShare(new GetMarketplaceRevenueShareRequest 
+            var response = client.GetMarketplaceRevenueShare(new GetMarketplaceRevenueShareRequest
             {
                 Catalog = "AWS",
                 ProductId = "prod-abc123def4567"
             });
 
             string arn = response.Arn;
-            string catalog = response.Catalog;
+            CatalogName catalog = response.Catalog;
             string productId = response.ProductId;
 
             #endregion
@@ -90,10 +91,10 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralRevenueMeasurement.Generated
 
         public void PartnerCentralRevenueMeasurementGetMarketplaceRevenueShareAllocation()
         {
-            #region example-1
+            #region GetMarketplaceRevenueShareAllocation-1
 
             var client = new AmazonPartnerCentralRevenueMeasurementClient();
-            var response = client.GetMarketplaceRevenueShareAllocation(new GetMarketplaceRevenueShareAllocationRequest 
+            var response = client.GetMarketplaceRevenueShareAllocation(new GetMarketplaceRevenueShareAllocationRequest
             {
                 Catalog = "AWS",
                 MarketplaceRevenueShareAllocationId = "mrsa-abc123def4567",
@@ -105,86 +106,86 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralRevenueMeasurement.Generated
             string marketplaceRevenueShareAllocationId = response.MarketplaceRevenueShareAllocationId;
             string productId = response.ProductId;
             string revenueSharePercent = response.RevenueSharePercent;
-            string status = response.Status;
+            AllocationStatus status = response.Status;
 
             #endregion
         }
 
         public void PartnerCentralRevenueMeasurementGetRevenueAttribution()
         {
-            #region example-1
+            #region GetRevenueAttribution-1
 
             var client = new AmazonPartnerCentralRevenueMeasurementClient();
-            var response = client.GetRevenueAttribution(new GetRevenueAttributionRequest 
+            var response = client.GetRevenueAttribution(new GetRevenueAttributionRequest
             {
                 Catalog = "AWS",
                 Identifier = "ra-0a1b2c3d4e5f6"
             });
 
             string arn = response.Arn;
-            string catalog = response.Catalog;
+            CatalogName catalog = response.Catalog;
             string id = response.Id;
-            string tenancyModel = response.TenancyModel;
+            TenancyModel tenancyModel = response.TenancyModel;
 
             #endregion
         }
 
         public void PartnerCentralRevenueMeasurementGetRevenueAttributionAllocation()
         {
-            #region example-1
+            #region GetRevenueAttributionAllocation-1
 
             var client = new AmazonPartnerCentralRevenueMeasurementClient();
-            var response = client.GetRevenueAttributionAllocation(new GetRevenueAttributionAllocationRequest 
+            var response = client.GetRevenueAttributionAllocation(new GetRevenueAttributionAllocationRequest
             {
                 Catalog = "AWS",
                 RevenueAttributionAllocationId = "alloc-abc123def4567",
                 RevenueAttributionIdentifier = "ra-0a1b2c3d4e5f6"
             });
 
-            DateTime createdDate = response.CreatedDate;
+            DateTime? createdDate = response.CreatedDate;
             string customerAwsAccountId = response.CustomerAwsAccountId;
             string effectiveFrom = response.EffectiveFrom;
             string effectiveUntil = response.EffectiveUntil;
             string entityIdentifier = response.EntityIdentifier;
-            string entityType = response.EntityType;
-            DateTime lastModifiedDate = response.LastModifiedDate;
+            EntityType entityType = response.EntityType;
+            DateTime? lastModifiedDate = response.LastModifiedDate;
             string revenueAttributionAllocationId = response.RevenueAttributionAllocationId;
             string revenueAttributionIdentifier = response.RevenueAttributionIdentifier;
             string revenueAttributionLatestRevision = response.RevenueAttributionLatestRevision;
             string revenueAttributionRevision = response.RevenueAttributionRevision;
             string revenueSharePercent = response.RevenueSharePercent;
-            string status = response.Status;
+            AllocationStatus status = response.Status;
 
             #endregion
         }
 
         public void PartnerCentralRevenueMeasurementGetRevenueAttributionAllocationsTask()
         {
-            #region example-1
+            #region GetRevenueAttributionAllocationsTask-1
 
             var client = new AmazonPartnerCentralRevenueMeasurementClient();
-            var response = client.GetRevenueAttributionAllocationsTask(new GetRevenueAttributionAllocationsTaskRequest 
+            var response = client.GetRevenueAttributionAllocationsTask(new GetRevenueAttributionAllocationsTaskRequest
             {
                 Catalog = "AWS",
                 RevenueAttributionIdentifier = "ra-0a1b2c3d4e5f6"
             });
 
-            string catalog = response.Catalog;
+            CatalogName catalog = response.Catalog;
             string revenueAttributionArn = response.RevenueAttributionArn;
-            DateTime startedAt = response.StartedAt;
-            string status = response.Status;
+            DateTime? startedAt = response.StartedAt;
+            RevenueAttributionAllocationTaskStatus status = response.Status;
             string taskId = response.TaskId;
-            int totalRevenueAttributionAllocationRecords = response.TotalRevenueAttributionAllocationRecords;
+            int? totalRevenueAttributionAllocationRecords = response.TotalRevenueAttributionAllocationRecords;
 
             #endregion
         }
 
         public void PartnerCentralRevenueMeasurementListMarketplaceRevenueShareAllocations()
         {
-            #region example-1
+            #region ListMarketplaceRevenueShareAllocations-1
 
             var client = new AmazonPartnerCentralRevenueMeasurementClient();
-            var response = client.ListMarketplaceRevenueShareAllocations(new ListMarketplaceRevenueShareAllocationsRequest 
+            var response = client.ListMarketplaceRevenueShareAllocations(new ListMarketplaceRevenueShareAllocationsRequest
             {
                 Catalog = "AWS",
                 ProductId = "prod-abc123def4567"
@@ -197,10 +198,10 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralRevenueMeasurement.Generated
 
         public void PartnerCentralRevenueMeasurementListMarketplaceRevenueShares()
         {
-            #region example-1
+            #region ListMarketplaceRevenueShares-1
 
             var client = new AmazonPartnerCentralRevenueMeasurementClient();
-            var response = client.ListMarketplaceRevenueShares(new ListMarketplaceRevenueSharesRequest 
+            var response = client.ListMarketplaceRevenueShares(new ListMarketplaceRevenueSharesRequest
             {
                 Catalog = "AWS",
                 MaxResults = 10
@@ -213,10 +214,10 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralRevenueMeasurement.Generated
 
         public void PartnerCentralRevenueMeasurementListRevenueAttributionAllocations()
         {
-            #region example-1
+            #region ListRevenueAttributionAllocations-1
 
             var client = new AmazonPartnerCentralRevenueMeasurementClient();
-            var response = client.ListRevenueAttributionAllocations(new ListRevenueAttributionAllocationsRequest 
+            var response = client.ListRevenueAttributionAllocations(new ListRevenueAttributionAllocationsRequest
             {
                 Catalog = "AWS",
                 RevenueAttributionIdentifier = "ra-0a1b2c3d4e5f6"
@@ -229,10 +230,10 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralRevenueMeasurement.Generated
 
         public void PartnerCentralRevenueMeasurementListRevenueAttributions()
         {
-            #region example-1
+            #region ListRevenueAttributions-1
 
             var client = new AmazonPartnerCentralRevenueMeasurementClient();
-            var response = client.ListRevenueAttributions(new ListRevenueAttributionsRequest 
+            var response = client.ListRevenueAttributions(new ListRevenueAttributionsRequest
             {
                 Catalog = "AWS"
             });
@@ -244,10 +245,10 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralRevenueMeasurement.Generated
 
         public void PartnerCentralRevenueMeasurementStartRevenueAttributionAllocationsTask()
         {
-            #region example-1
+            #region StartRevenueAttributionAllocationsTask-1
 
             var client = new AmazonPartnerCentralRevenueMeasurementClient();
-            var response = client.StartRevenueAttributionAllocationsTask(new StartRevenueAttributionAllocationsTaskRequest 
+            var response = client.StartRevenueAttributionAllocationsTask(new StartRevenueAttributionAllocationsTaskRequest
             {
                 Catalog = "AWS",
                 ClientToken = "unique-token-123",
@@ -266,22 +267,22 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralRevenueMeasurement.Generated
                 }
             });
 
-            string catalog = response.Catalog;
+            CatalogName catalog = response.Catalog;
             string revenueAttributionArn = response.RevenueAttributionArn;
-            DateTime startedAt = response.StartedAt;
-            string status = response.Status;
+            DateTime? startedAt = response.StartedAt;
+            RevenueAttributionAllocationTaskStatus status = response.Status;
             string taskId = response.TaskId;
-            int totalRevenueAttributionAllocationRecords = response.TotalRevenueAttributionAllocationRecords;
+            int? totalRevenueAttributionAllocationRecords = response.TotalRevenueAttributionAllocationRecords;
 
             #endregion
         }
 
         public void PartnerCentralRevenueMeasurementUpdateMarketplaceRevenueShareAllocation()
         {
-            #region example-1
+            #region UpdateMarketplaceRevenueShareAllocation-1
 
             var client = new AmazonPartnerCentralRevenueMeasurementClient();
-            var response = client.UpdateMarketplaceRevenueShareAllocation(new UpdateMarketplaceRevenueShareAllocationRequest 
+            var response = client.UpdateMarketplaceRevenueShareAllocation(new UpdateMarketplaceRevenueShareAllocationRequest
             {
                 Catalog = "AWS",
                 MarketplaceRevenueShareAllocationId = "mrsa-abc123def4567",
@@ -295,17 +296,17 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralRevenueMeasurement.Generated
             string marketplaceRevenueShareAllocationId = response.MarketplaceRevenueShareAllocationId;
             string productId = response.ProductId;
             string revenueSharePercent = response.RevenueSharePercent;
-            string status = response.Status;
+            AllocationStatus status = response.Status;
 
             #endregion
         }
 
         public void PartnerCentralRevenueMeasurementUpdateRevenueAttribution()
         {
-            #region example-1
+            #region UpdateRevenueAttribution-1
 
             var client = new AmazonPartnerCentralRevenueMeasurementClient();
-            var response = client.UpdateRevenueAttribution(new UpdateRevenueAttributionRequest 
+            var response = client.UpdateRevenueAttribution(new UpdateRevenueAttributionRequest
             {
                 Catalog = "AWS",
                 Identifier = "ra-0a1b2c3d4e5f6",
@@ -314,18 +315,15 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralRevenueMeasurement.Generated
 
             string arn = response.Arn;
             string id = response.Id;
-            DateTime lastModifiedDate = response.LastModifiedDate;
+            DateTime? lastModifiedDate = response.LastModifiedDate;
 
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

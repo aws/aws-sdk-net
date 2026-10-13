@@ -9,7 +9,7 @@
     <property>Amazon.ECRPublic.Model.BatchCheckLayerAvailabilityRequest.RepositoryName</property>
     <min>2</min>
     <max>205</max>
-    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <pattern>^(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.BatchDeleteImageRequest.RegistryId</property>
@@ -20,7 +20,7 @@
     <property>Amazon.ECRPublic.Model.BatchDeleteImageRequest.RepositoryName</property>
     <min>2</min>
     <max>205</max>
-    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <pattern>^(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.CompleteLayerUploadRequest.RegistryId</property>
@@ -31,55 +31,55 @@
     <property>Amazon.ECRPublic.Model.CompleteLayerUploadRequest.RepositoryName</property>
     <min>2</min>
     <max>205</max>
-    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <pattern>^(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.CompleteLayerUploadRequest.UploadId</property>
-    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.CompleteLayerUploadResponse.LayerDigest</property>
-    <pattern>[a-zA-Z0-9-_+.]+:[a-fA-F0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9-_+.]+:[a-fA-F0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.CompleteLayerUploadResponse.RegistryId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.CompleteLayerUploadResponse.RepositoryName</property>
     <min>2</min>
     <max>205</max>
-    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <pattern>^(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.CompleteLayerUploadResponse.UploadId</property>
-    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.CreateRepositoryRequest.RepositoryName</property>
     <min>2</min>
     <max>205</max>
-    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <pattern>^(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.DeleteRepositoryRequest.RegistryId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.DeleteRepositoryRequest.RepositoryName</property>
     <min>2</min>
     <max>205</max>
-    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <pattern>^(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.DeleteRepositoryPolicyRequest.RegistryId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.DeleteRepositoryPolicyRequest.RepositoryName</property>
     <min>2</min>
     <max>205</max>
-    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <pattern>^(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.DeleteRepositoryPolicyResponse.PolicyText</property>
@@ -88,28 +88,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.DeleteRepositoryPolicyResponse.RegistryId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.DeleteRepositoryPolicyResponse.RepositoryName</property>
     <min>2</min>
     <max>205</max>
-    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ECRPublic.Model.DescribeImagesRequest.MaxResults</property>
-    <min>1</min>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ECRPublic.Model.DescribeImagesRequest.RegistryId</property>
-    <pattern>[0-9]{12}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ECRPublic.Model.DescribeImagesRequest.RepositoryName</property>
-    <min>2</min>
-    <max>205</max>
-    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <pattern>^(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.DescribeImageTagsRequest.MaxResults</property>
@@ -118,13 +103,28 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.DescribeImageTagsRequest.RegistryId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.DescribeImageTagsRequest.RepositoryName</property>
     <min>2</min>
     <max>205</max>
-    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <pattern>^(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECRPublic.Model.DescribeImagesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECRPublic.Model.DescribeImagesRequest.RegistryId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECRPublic.Model.DescribeImagesRequest.RepositoryName</property>
+    <min>2</min>
+    <max>205</max>
+    <pattern>^(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.DescribeRegistriesRequest.MaxResults</property>
@@ -138,27 +138,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.DescribeRepositoriesRequest.RegistryId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.GetRepositoryCatalogDataRequest.RegistryId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.GetRepositoryCatalogDataRequest.RepositoryName</property>
     <min>2</min>
     <max>205</max>
-    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <pattern>^(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.GetRepositoryPolicyRequest.RegistryId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.GetRepositoryPolicyRequest.RepositoryName</property>
     <min>2</min>
     <max>205</max>
-    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <pattern>^(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.GetRepositoryPolicyResponse.PolicyText</property>
@@ -167,13 +167,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.GetRepositoryPolicyResponse.RegistryId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.GetRepositoryPolicyResponse.RepositoryName</property>
     <min>2</min>
     <max>205</max>
-    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <pattern>^(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.InitiateLayerUploadRequest.RegistryId</property>
@@ -184,7 +184,7 @@
     <property>Amazon.ECRPublic.Model.InitiateLayerUploadRequest.RepositoryName</property>
     <min>2</min>
     <max>205</max>
-    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <pattern>^(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.InitiateLayerUploadResponse.PartSize</property>
@@ -192,7 +192,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.InitiateLayerUploadResponse.UploadId</property>
-    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.ListTagsForResourceRequest.ResourceArn</property>
@@ -218,7 +218,7 @@
     <property>Amazon.ECRPublic.Model.PutImageRequest.RepositoryName</property>
     <min>2</min>
     <max>205</max>
-    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <pattern>^(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.PutRegistryCatalogDataRequest.DisplayName</property>
@@ -227,13 +227,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.PutRepositoryCatalogDataRequest.RegistryId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.PutRepositoryCatalogDataRequest.RepositoryName</property>
     <min>2</min>
     <max>205</max>
-    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <pattern>^(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.SetRepositoryPolicyRequest.PolicyText</property>
@@ -242,13 +242,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.SetRepositoryPolicyRequest.RegistryId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.SetRepositoryPolicyRequest.RepositoryName</property>
     <min>2</min>
     <max>205</max>
-    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <pattern>^(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.SetRepositoryPolicyResponse.PolicyText</property>
@@ -257,13 +257,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.SetRepositoryPolicyResponse.RegistryId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.SetRepositoryPolicyResponse.RepositoryName</property>
     <min>2</min>
     <max>205</max>
-    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <pattern>^(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.TagResourceRequest.ResourceArn</property>
@@ -297,11 +297,11 @@
     <property>Amazon.ECRPublic.Model.UploadLayerPartRequest.RepositoryName</property>
     <min>2</min>
     <max>205</max>
-    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <pattern>^(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.UploadLayerPartRequest.UploadId</property>
-    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.UploadLayerPartResponse.LastByteReceived</property>
@@ -309,17 +309,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.UploadLayerPartResponse.RegistryId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.UploadLayerPartResponse.RepositoryName</property>
     <min>2</min>
     <max>205</max>
-    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <pattern>^(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.UploadLayerPartResponse.UploadId</property>
-    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.AuthorizationData.AuthorizationToken</property>
@@ -339,17 +339,17 @@
     <property>Amazon.ECRPublic.Model.Image.RepositoryName</property>
     <min>2</min>
     <max>205</max>
-    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <pattern>^(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.ImageDetail.RegistryId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.ImageDetail.RepositoryName</property>
     <min>2</min>
     <max>205</max>
-    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <pattern>^(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.ImageIdentifier.ImageTag</property>
@@ -367,21 +367,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.InvalidLayerPartException.RegistryId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.InvalidLayerPartException.RepositoryName</property>
     <min>2</min>
     <max>205</max>
-    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <pattern>^(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.InvalidLayerPartException.UploadId</property>
-    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.Layer.LayerDigest</property>
-    <pattern>[a-zA-Z0-9-_+.]+:[a-fA-F0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9-_+.]+:[a-fA-F0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.LayerFailure.LayerDigest</property>
@@ -395,13 +395,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.Registry.RegistryId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.RegistryAlias.Name</property>
     <min>2</min>
     <max>50</max>
-    <pattern>[a-z][a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <pattern>^[a-z][a-z0-9]+(?:[._-][a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.RegistryCatalogData.DisplayName</property>
@@ -410,7 +410,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.Repository.RegistryId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.Repository.RepositoryArn</property>
@@ -421,30 +421,36 @@
     <property>Amazon.ECRPublic.Model.Repository.RepositoryName</property>
     <min>2</min>
     <max>205</max>
-    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <pattern>^(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.RepositoryCatalogData.AboutText</property>
+    <min>0</min>
     <max>25600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.RepositoryCatalogData.Description</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.RepositoryCatalogData.LogoUrl</property>
+    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.RepositoryCatalogData.UsageText</property>
+    <min>0</min>
     <max>25600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.RepositoryCatalogDataInput.AboutText</property>
+    <min>0</min>
     <max>25600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.RepositoryCatalogDataInput.Description</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -454,6 +460,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECRPublic.Model.RepositoryCatalogDataInput.UsageText</property>
+    <min>0</min>
     <max>25600</max>
   </property-value-rule>
   <property-value-rule>

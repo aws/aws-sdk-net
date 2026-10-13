@@ -1,782 +1,563 @@
 <?xml version="1.0" encoding="utf-8"?>
 <docs>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.AssociateFaces(Amazon.Rekognition.Model.AssociateFacesRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.AssociateFaces(Amazon.Rekognition.Model.AssociateFacesRequest)" />
-            <member name="T:Amazon.Rekognition.Model.AssociateFacesRequest" />
-            <member name="T:Amazon.Rekognition.Model.AssociateFacesResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This operation associates one or more faces with an existing UserID.
-                </para>
-                <code
-                    title="AssociateFaces"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="associatefaces-1686181269281" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.CompareFaces(Amazon.Rekognition.Model.CompareFacesRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.CompareFaces(Amazon.Rekognition.Model.CompareFacesRequest)" />
-            <member name="T:Amazon.Rekognition.Model.CompareFacesRequest" />
-            <member name="T:Amazon.Rekognition.Model.CompareFacesResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This operation compares the largest face detected in the source image with each face detected in the target image.
-                </para>
-                <code
-                    title="To compare two images"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="to-compare-two-images-1482181985581" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.CopyProjectVersion(Amazon.Rekognition.Model.CopyProjectVersionRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.CopyProjectVersion(Amazon.Rekognition.Model.CopyProjectVersionRequest)" />
-            <member name="T:Amazon.Rekognition.Model.CopyProjectVersionRequest" />
-            <member name="T:Amazon.Rekognition.Model.CopyProjectVersionResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    Copies a version of an Amazon Rekognition Custom Labels model from a source project to a destination project.
-                </para>
-                <code
-                    title="CopyProjectVersion"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="copyprojectversion-1658203943815" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.CreateCollection(Amazon.Rekognition.Model.CreateCollectionRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.CreateCollection(Amazon.Rekognition.Model.CreateCollectionRequest)" />
-            <member name="T:Amazon.Rekognition.Model.CreateCollectionRequest" />
-            <member name="T:Amazon.Rekognition.Model.CreateCollectionResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This operation creates a Rekognition collection for storing image data.
-                </para>
-                <code
-                    title="To create a collection"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="to-create-a-collection-1481833313674" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.CreateDataset(Amazon.Rekognition.Model.CreateDatasetRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.CreateDataset(Amazon.Rekognition.Model.CreateDatasetRequest)" />
-            <member name="T:Amazon.Rekognition.Model.CreateDatasetRequest" />
-            <member name="T:Amazon.Rekognition.Model.CreateDatasetResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    Creates an Amazon Rekognition Custom Labels dataset with a manifest file stored in an Amazon S3 bucket.
-                </para>
-                <code
-                    title="To create an Amazon Rekognition Custom Labels dataset"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="to-create-an-amazon-rekognition-custom-labels-dataset-1690476237145" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.CreateProject(Amazon.Rekognition.Model.CreateProjectRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.CreateProject(Amazon.Rekognition.Model.CreateProjectRequest)" />
-            <member name="T:Amazon.Rekognition.Model.CreateProjectRequest" />
-            <member name="T:Amazon.Rekognition.Model.CreateProjectResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    Creates an Amazon Rekognition Custom Labels project.
-                </para>
-                <code
-                    title="To create an Amazon Rekognition Custom Labels project"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="to-create-an-amazon-rekognition-custom-labels-project-1690405898597" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.CreateProjectVersion(Amazon.Rekognition.Model.CreateProjectVersionRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.CreateProjectVersion(Amazon.Rekognition.Model.CreateProjectVersionRequest)" />
-            <member name="T:Amazon.Rekognition.Model.CreateProjectVersionRequest" />
-            <member name="T:Amazon.Rekognition.Model.CreateProjectVersionResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    Trains a version of an Amazon Rekognition Custom Labels model.
-                </para>
-                <code
-                    title="To train an Amazon Rekognition Custom Labels model"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="to-train-an-amazon-rekognition-custom-labels-model-1690555832843" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.CreateUser(Amazon.Rekognition.Model.CreateUserRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.CreateUser(Amazon.Rekognition.Model.CreateUserRequest)" />
-            <member name="T:Amazon.Rekognition.Model.CreateUserRequest" />
-            <member name="T:Amazon.Rekognition.Model.CreateUserResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    Creates a new User within a collection specified by CollectionId.
-                </para>
-                <code
-                    title="CreateUser"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="createuser-1686181562299" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.DeleteCollection(Amazon.Rekognition.Model.DeleteCollectionRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DeleteCollection(Amazon.Rekognition.Model.DeleteCollectionRequest)" />
-            <member name="T:Amazon.Rekognition.Model.DeleteCollectionRequest" />
-            <member name="T:Amazon.Rekognition.Model.DeleteCollectionResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This operation deletes a Rekognition collection.
-                </para>
-                <code
-                    title="To delete a collection"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="to-delete-a-collection-1481838179973" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.DeleteDataset(Amazon.Rekognition.Model.DeleteDatasetRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DeleteDataset(Amazon.Rekognition.Model.DeleteDatasetRequest)" />
-            <member name="T:Amazon.Rekognition.Model.DeleteDatasetRequest" />
-            <member name="T:Amazon.Rekognition.Model.DeleteDatasetResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    Deletes an Amazon Rekognition Custom Labels dataset.
-                </para>
-                <code
-                    title="To delete an Amazon Rekognition Custom Labels dataset"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="to-delete-an-amazon-rekognition-custom-labels-dataset-1690826556349" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.DeleteFaces(Amazon.Rekognition.Model.DeleteFacesRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DeleteFaces(Amazon.Rekognition.Model.DeleteFacesRequest)" />
-            <member name="T:Amazon.Rekognition.Model.DeleteFacesRequest" />
-            <member name="T:Amazon.Rekognition.Model.DeleteFacesResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This operation deletes one or more faces from a Rekognition collection.
-                </para>
-                <code
-                    title="To delete a face"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="to-delete-a-face-1482182799377" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.DeleteProject(Amazon.Rekognition.Model.DeleteProjectRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DeleteProject(Amazon.Rekognition.Model.DeleteProjectRequest)" />
-            <member name="T:Amazon.Rekognition.Model.DeleteProjectRequest" />
-            <member name="T:Amazon.Rekognition.Model.DeleteProjectResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    Deletes an Amazon Rekognition Custom Labels projects.
-                </para>
-                <code
-                    title="To delete an Amazon Rekognition Custom Labels project"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="to-delete-an-amazon-rekognition-custom-labels-project-1690409093478" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.DeleteProjectPolicy(Amazon.Rekognition.Model.DeleteProjectPolicyRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DeleteProjectPolicy(Amazon.Rekognition.Model.DeleteProjectPolicyRequest)" />
-            <member name="T:Amazon.Rekognition.Model.DeleteProjectPolicyRequest" />
-            <member name="T:Amazon.Rekognition.Model.DeleteProjectPolicyResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This operation deletes a revision of an existing project policy from an Amazon Rekognition Custom Labels project.
-                </para>
-                <code
-                    title="DeleteProjectPolicy"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="deleteprojectpolicy-1658204413810" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.DeleteProjectVersion(Amazon.Rekognition.Model.DeleteProjectVersionRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DeleteProjectVersion(Amazon.Rekognition.Model.DeleteProjectVersionRequest)" />
-            <member name="T:Amazon.Rekognition.Model.DeleteProjectVersionRequest" />
-            <member name="T:Amazon.Rekognition.Model.DeleteProjectVersionResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    Deletes a version of an Amazon Rekognition Custom Labels model.
-                </para>
-                <code
-                    title="To delete an Amazon Rekognition Custom Labels model"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="to-delete-an-amazon-rekognition-custom-labels-model-1690827562055" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.DeleteUser(Amazon.Rekognition.Model.DeleteUserRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DeleteUser(Amazon.Rekognition.Model.DeleteUserRequest)" />
-            <member name="T:Amazon.Rekognition.Model.DeleteUserRequest" />
-            <member name="T:Amazon.Rekognition.Model.DeleteUserResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    Deletes the specified UserID within the collection.
-                </para>
-                <code
-                    title="DeleteUser"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="deleteuser-1686181913475" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.DescribeDataset(Amazon.Rekognition.Model.DescribeDatasetRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DescribeDataset(Amazon.Rekognition.Model.DescribeDatasetRequest)" />
-            <member name="T:Amazon.Rekognition.Model.DescribeDatasetRequest" />
-            <member name="T:Amazon.Rekognition.Model.DescribeDatasetResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    Describes an Amazon Rekognition Custom Labels dataset.
-                </para>
-                <code
-                    title="To describe an Amazon Rekognition Custom Labels dataset"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="to-describe-an-amazon-rekognition-custom-labels-dataset-1690827075604" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.DescribeProjects(Amazon.Rekognition.Model.DescribeProjectsRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DescribeProjects(Amazon.Rekognition.Model.DescribeProjectsRequest)" />
-            <member name="T:Amazon.Rekognition.Model.DescribeProjectsRequest" />
-            <member name="T:Amazon.Rekognition.Model.DescribeProjectsResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    Describes an Amazon Rekognition Custom Labels projects.
-                </para>
-                <code
-                    title="To describe an Amazon Rekognition Custom Labels project."
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="to-describe-an-amazon-rekognition-custom-labels-project-1690400952376" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.DescribeProjectVersions(Amazon.Rekognition.Model.DescribeProjectVersionsRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DescribeProjectVersions(Amazon.Rekognition.Model.DescribeProjectVersionsRequest)" />
-            <member name="T:Amazon.Rekognition.Model.DescribeProjectVersionsRequest" />
-            <member name="T:Amazon.Rekognition.Model.DescribeProjectVersionsResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    Describes a version of an Amazon Rekognition Custom Labels model.
-                </para>
-                <code
-                    title="To describe an Amazon Rekognition Custom Labels model"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="to-describes-an-amazon-rekognition-custom-labels-model-1690558265950" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.DetectCustomLabels(Amazon.Rekognition.Model.DetectCustomLabelsRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DetectCustomLabels(Amazon.Rekognition.Model.DetectCustomLabelsRequest)" />
-            <member name="T:Amazon.Rekognition.Model.DetectCustomLabelsRequest" />
-            <member name="T:Amazon.Rekognition.Model.DetectCustomLabelsResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    Detects custom labels in an image with an Amazon Rekognition Custom Labels model
-                </para>
-                <code
-                    title="To detect custom labels in an image with an Amazon Rekognition Custom Labels model"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="to-detect-custom-labels-in-images-with-an-amazon-rekognition-custom-labels-model-1690832037913" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.DetectFaces(Amazon.Rekognition.Model.DetectFacesRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DetectFaces(Amazon.Rekognition.Model.DetectFacesRequest)" />
-            <member name="T:Amazon.Rekognition.Model.DetectFacesRequest" />
-            <member name="T:Amazon.Rekognition.Model.DetectFacesResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This operation detects faces in an image stored in an AWS S3 bucket.
-                </para>
-                <code
-                    title="To detect faces in an image"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="to-detect-faces-in-an-image-1481841782793" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.DetectLabels(Amazon.Rekognition.Model.DetectLabelsRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DetectLabels(Amazon.Rekognition.Model.DetectLabelsRequest)" />
-            <member name="T:Amazon.Rekognition.Model.DetectLabelsRequest" />
-            <member name="T:Amazon.Rekognition.Model.DetectLabelsResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This operation detects labels in the supplied image
-                </para>
-                <code
-                    title="To detect labels"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="to-detect-labels-1481834255770" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.DisassociateFaces(Amazon.Rekognition.Model.DisassociateFacesRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DisassociateFaces(Amazon.Rekognition.Model.DisassociateFacesRequest)" />
-            <member name="T:Amazon.Rekognition.Model.DisassociateFacesRequest" />
-            <member name="T:Amazon.Rekognition.Model.DisassociateFacesResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    Removes the association between a Face supplied in an array of FaceIds and the User.
-                </para>
-                <code
-                    title="DisassociateFaces"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="disassociatefaces-1686182627295" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.DistributeDatasetEntries(Amazon.Rekognition.Model.DistributeDatasetEntriesRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DistributeDatasetEntries(Amazon.Rekognition.Model.DistributeDatasetEntriesRequest)" />
-            <member name="T:Amazon.Rekognition.Model.DistributeDatasetEntriesRequest" />
-            <member name="T:Amazon.Rekognition.Model.DistributeDatasetEntriesResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    Distributes an Amazon Rekognition Custom Labels training dataset to a test dataset.
-                </para>
-                <code
-                    title="To distribute an Amazon Rekognition Custom Labels dataset"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="to-distribute-to-an-amazon-rekognition-custom-labels-dataset-1690816977073" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.GetMediaAnalysisJob(Amazon.Rekognition.Model.GetMediaAnalysisJobRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.GetMediaAnalysisJob(Amazon.Rekognition.Model.GetMediaAnalysisJobRequest)" />
-            <member name="T:Amazon.Rekognition.Model.GetMediaAnalysisJobRequest" />
-            <member name="T:Amazon.Rekognition.Model.GetMediaAnalysisJobResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    Retrieves the results for a given media analysis job.
-                </para>
-                <code
-                    title="GetMediaAnalysisJob"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="getmediaanalysisjob-1697650068124" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.IndexFaces(Amazon.Rekognition.Model.IndexFacesRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.IndexFaces(Amazon.Rekognition.Model.IndexFacesRequest)" />
-            <member name="T:Amazon.Rekognition.Model.IndexFacesRequest" />
-            <member name="T:Amazon.Rekognition.Model.IndexFacesResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This operation detects faces in an image and adds them to the specified Rekognition collection.
-                </para>
-                <code
-                    title="To add a face to a collection"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="to-add-a-face-to-a-collection-1482179542923" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.ListCollections(Amazon.Rekognition.Model.ListCollectionsRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.ListCollections(Amazon.Rekognition.Model.ListCollectionsRequest)" />
-            <member name="T:Amazon.Rekognition.Model.ListCollectionsRequest" />
-            <member name="T:Amazon.Rekognition.Model.ListCollectionsResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This operation returns a list of Rekognition collections.
-                </para>
-                <code
-                    title="To list the collections"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="to-list-the-collections-1482179199088" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.ListDatasetEntries(Amazon.Rekognition.Model.ListDatasetEntriesRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.ListDatasetEntries(Amazon.Rekognition.Model.ListDatasetEntriesRequest)" />
-            <member name="T:Amazon.Rekognition.Model.ListDatasetEntriesRequest" />
-            <member name="T:Amazon.Rekognition.Model.ListDatasetEntriesResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    Lists the JSON line entries in an Amazon Rekognition Custom Labels dataset.
-                </para>
-                <code
-                    title="To list the entries in an Amazon Rekognition Custom Labels dataset"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="to-list-the-entries-in-an-amazon-rekognition-custom-labels-dataset-1690823292345" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.ListDatasetLabels(Amazon.Rekognition.Model.ListDatasetLabelsRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.ListDatasetLabels(Amazon.Rekognition.Model.ListDatasetLabelsRequest)" />
-            <member name="T:Amazon.Rekognition.Model.ListDatasetLabelsRequest" />
-            <member name="T:Amazon.Rekognition.Model.ListDatasetLabelsResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    Lists the JSON line entries in an Amazon Rekognition Custom Labels dataset.
-                </para>
-                <code
-                    title="To list the entries in an Amazon Rekognition Custom Labels dataset"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="to-list-the-entries-in-an-amazon-rekognition-custom-labels-dataset-1690823292345" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.ListFaces(Amazon.Rekognition.Model.ListFacesRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.ListFaces(Amazon.Rekognition.Model.ListFacesRequest)" />
-            <member name="T:Amazon.Rekognition.Model.ListFacesRequest" />
-            <member name="T:Amazon.Rekognition.Model.ListFacesResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This operation lists the faces in a Rekognition collection.
-                </para>
-                <code
-                    title="To list the faces in a collection"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="to-list-the-faces-in-a-collection-1482181416530" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.ListMediaAnalysisJobs(Amazon.Rekognition.Model.ListMediaAnalysisJobsRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.ListMediaAnalysisJobs(Amazon.Rekognition.Model.ListMediaAnalysisJobsRequest)" />
-            <member name="T:Amazon.Rekognition.Model.ListMediaAnalysisJobsRequest" />
-            <member name="T:Amazon.Rekognition.Model.ListMediaAnalysisJobsResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    Returns a list of media analysis jobs.
-                </para>
-                <code
-                    title="ListMediaAnalysisJobs"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="listmediaanalysisjobs-1697650653077" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.ListProjectPolicies(Amazon.Rekognition.Model.ListProjectPoliciesRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.ListProjectPolicies(Amazon.Rekognition.Model.ListProjectPoliciesRequest)" />
-            <member name="T:Amazon.Rekognition.Model.ListProjectPoliciesRequest" />
-            <member name="T:Amazon.Rekognition.Model.ListProjectPoliciesResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This operation lists the project policies that are attached to an Amazon Rekognition Custom Labels project.
-                </para>
-                <code
-                    title="ListProjectPolicies"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="listprojectpolicies-1658202290173" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.ListUsers(Amazon.Rekognition.Model.ListUsersRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.ListUsers(Amazon.Rekognition.Model.ListUsersRequest)" />
-            <member name="T:Amazon.Rekognition.Model.ListUsersRequest" />
-            <member name="T:Amazon.Rekognition.Model.ListUsersResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    Returns metadata of the User such as UserID in the specified collection.
-                </para>
-                <code
-                    title="ListUsers"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="listusers-1686182360075" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.PutProjectPolicy(Amazon.Rekognition.Model.PutProjectPolicyRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.PutProjectPolicy(Amazon.Rekognition.Model.PutProjectPolicyRequest)" />
-            <member name="T:Amazon.Rekognition.Model.PutProjectPolicyRequest" />
-            <member name="T:Amazon.Rekognition.Model.PutProjectPolicyResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This operation attaches a project policy to a Amazon Rekognition Custom Labels project in a trusting AWS account.
-                </para>
-                <code
-                    title="PutProjectPolicy"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="putprojectpolicy-1658201727623" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.SearchFaces(Amazon.Rekognition.Model.SearchFacesRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.SearchFaces(Amazon.Rekognition.Model.SearchFacesRequest)" />
-            <member name="T:Amazon.Rekognition.Model.SearchFacesRequest" />
-            <member name="T:Amazon.Rekognition.Model.SearchFacesResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This operation searches for matching faces in the collection the supplied face belongs to.
-                </para>
-                <code
-                    title="To delete a face"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="to-delete-a-face-1482182799377" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.SearchFacesByImage(Amazon.Rekognition.Model.SearchFacesByImageRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.SearchFacesByImage(Amazon.Rekognition.Model.SearchFacesByImageRequest)" />
-            <member name="T:Amazon.Rekognition.Model.SearchFacesByImageRequest" />
-            <member name="T:Amazon.Rekognition.Model.SearchFacesByImageResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This operation searches for faces in a Rekognition collection that match the largest face in an S3 bucket stored image.
-                </para>
-                <code
-                    title="To search for faces matching a supplied image"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="to-search-for-faces-matching-a-supplied-image-1482175994491" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.SearchUsers(Amazon.Rekognition.Model.SearchUsersRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.SearchUsers(Amazon.Rekognition.Model.SearchUsersRequest)" />
-            <member name="T:Amazon.Rekognition.Model.SearchUsersRequest" />
-            <member name="T:Amazon.Rekognition.Model.SearchUsersResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    Searches for UserIDs within a collection based on a FaceId or UserId.
-                </para>
-                <code
-                    title="SearchUsers"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="searchusers-1686182912030" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.SearchUsersByImage(Amazon.Rekognition.Model.SearchUsersByImageRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.SearchUsersByImage(Amazon.Rekognition.Model.SearchUsersByImageRequest)" />
-            <member name="T:Amazon.Rekognition.Model.SearchUsersByImageRequest" />
-            <member name="T:Amazon.Rekognition.Model.SearchUsersByImageResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    Searches for UserIDs using a supplied image.
-                </para>
-                <code
-                    title="SearchUsersByImage"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="searchusersbyimage-1686183178610" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.StartMediaAnalysisJob(Amazon.Rekognition.Model.StartMediaAnalysisJobRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.StartMediaAnalysisJob(Amazon.Rekognition.Model.StartMediaAnalysisJobRequest)" />
-            <member name="T:Amazon.Rekognition.Model.StartMediaAnalysisJobRequest" />
-            <member name="T:Amazon.Rekognition.Model.StartMediaAnalysisJobResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    Initiates a new media analysis job.
-                </para>
-                <code
-                    title="StartMediaAnalysisJob"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="startmediaanalysisjob-1697651090922" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.StartProjectVersion(Amazon.Rekognition.Model.StartProjectVersionRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.StartProjectVersion(Amazon.Rekognition.Model.StartProjectVersionRequest)" />
-            <member name="T:Amazon.Rekognition.Model.StartProjectVersionRequest" />
-            <member name="T:Amazon.Rekognition.Model.StartProjectVersionResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    Starts a version of an Amazon Rekognition Custom Labels model.
-                </para>
-                <code
-                    title="To start an Amazon Rekognition Custom Labels model"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="to-start-an-amazon-rekognition-custom-labels-model-1690559168398" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.StopProjectVersion(Amazon.Rekognition.Model.StopProjectVersionRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.StopProjectVersion(Amazon.Rekognition.Model.StopProjectVersionRequest)" />
-            <member name="T:Amazon.Rekognition.Model.StopProjectVersionRequest" />
-            <member name="T:Amazon.Rekognition.Model.StopProjectVersionResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    Stops a version of an Amazon Rekognition Custom Labels model.
-                </para>
-                <code
-                    title="To stop an Amazon Rekognition Custom Labels model."
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="to-stop-an-amazon-rekognition-custom-labels-model-1690561110698" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.Rekognition.IAmazonRekognition.UpdateDatasetEntries(Amazon.Rekognition.Model.UpdateDatasetEntriesRequest)" />
-            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.UpdateDatasetEntries(Amazon.Rekognition.Model.UpdateDatasetEntriesRequest)" />
-            <member name="T:Amazon.Rekognition.Model.UpdateDatasetEntriesRequest" />
-            <member name="T:Amazon.Rekognition.Model.UpdateDatasetEntriesResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    Adds dataset entries to an Amazon Rekognition Custom Labels dataset.
-                </para>
-                <code
-                    title="To-add dataset entries to an Amazon Rekognition Custom Labels dataset"
-                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
-                    region="to-add-dataset-entries-to-an-amazon-rekognition-custom-labels-dataset-1690816977073" />
-            </example>
-        </value>
-    </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.AssociateFaces(Amazon.Rekognition.Model.AssociateFacesRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.AssociateFaces(Amazon.Rekognition.Model.AssociateFacesRequest)" />
+      <member name="T:Amazon.Rekognition.Model.AssociateFacesRequest" />
+      <member name="T:Amazon.Rekognition.Model.AssociateFacesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This operation associates one or more faces with an existing UserID.
+        </para>
+        <code title="AssociateFaces" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="AssociateFaces-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.CompareFaces(Amazon.Rekognition.Model.CompareFacesRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.CompareFaces(Amazon.Rekognition.Model.CompareFacesRequest)" />
+      <member name="T:Amazon.Rekognition.Model.CompareFacesRequest" />
+      <member name="T:Amazon.Rekognition.Model.CompareFacesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This operation compares the largest face detected in the source image with each face detected in the target image.
+        </para>
+        <code title="To compare two images" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="CompareFaces-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.CopyProjectVersion(Amazon.Rekognition.Model.CopyProjectVersionRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.CopyProjectVersion(Amazon.Rekognition.Model.CopyProjectVersionRequest)" />
+      <member name="T:Amazon.Rekognition.Model.CopyProjectVersionRequest" />
+      <member name="T:Amazon.Rekognition.Model.CopyProjectVersionResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Copies a version of an Amazon Rekognition Custom Labels model from a source project to a destination project.
+        </para>
+        <code title="CopyProjectVersion" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="CopyProjectVersion-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.CreateCollection(Amazon.Rekognition.Model.CreateCollectionRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.CreateCollection(Amazon.Rekognition.Model.CreateCollectionRequest)" />
+      <member name="T:Amazon.Rekognition.Model.CreateCollectionRequest" />
+      <member name="T:Amazon.Rekognition.Model.CreateCollectionResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This operation creates a Rekognition collection for storing image data.
+        </para>
+        <code title="To create a collection" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="CreateCollection-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.CreateDataset(Amazon.Rekognition.Model.CreateDatasetRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.CreateDataset(Amazon.Rekognition.Model.CreateDatasetRequest)" />
+      <member name="T:Amazon.Rekognition.Model.CreateDatasetRequest" />
+      <member name="T:Amazon.Rekognition.Model.CreateDatasetResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Creates an Amazon Rekognition Custom Labels dataset with a manifest file stored in an Amazon S3 bucket.
+        </para>
+        <code title="To create an Amazon Rekognition Custom Labels dataset" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="CreateDataset-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.CreateProject(Amazon.Rekognition.Model.CreateProjectRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.CreateProject(Amazon.Rekognition.Model.CreateProjectRequest)" />
+      <member name="T:Amazon.Rekognition.Model.CreateProjectRequest" />
+      <member name="T:Amazon.Rekognition.Model.CreateProjectResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Creates an Amazon Rekognition Custom Labels project.
+        </para>
+        <code title="To create an Amazon Rekognition Custom Labels project" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="CreateProject-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.CreateProjectVersion(Amazon.Rekognition.Model.CreateProjectVersionRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.CreateProjectVersion(Amazon.Rekognition.Model.CreateProjectVersionRequest)" />
+      <member name="T:Amazon.Rekognition.Model.CreateProjectVersionRequest" />
+      <member name="T:Amazon.Rekognition.Model.CreateProjectVersionResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Trains a version of an Amazon Rekognition Custom Labels model.
+        </para>
+        <code title="To train an Amazon Rekognition Custom Labels model" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="CreateProjectVersion-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.CreateUser(Amazon.Rekognition.Model.CreateUserRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.CreateUser(Amazon.Rekognition.Model.CreateUserRequest)" />
+      <member name="T:Amazon.Rekognition.Model.CreateUserRequest" />
+      <member name="T:Amazon.Rekognition.Model.CreateUserResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Creates a new User within a collection specified by CollectionId.
+        </para>
+        <code title="CreateUser" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="CreateUser-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.DeleteCollection(Amazon.Rekognition.Model.DeleteCollectionRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DeleteCollection(Amazon.Rekognition.Model.DeleteCollectionRequest)" />
+      <member name="T:Amazon.Rekognition.Model.DeleteCollectionRequest" />
+      <member name="T:Amazon.Rekognition.Model.DeleteCollectionResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This operation deletes a Rekognition collection.
+        </para>
+        <code title="To delete a collection" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="DeleteCollection-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.DeleteDataset(Amazon.Rekognition.Model.DeleteDatasetRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DeleteDataset(Amazon.Rekognition.Model.DeleteDatasetRequest)" />
+      <member name="T:Amazon.Rekognition.Model.DeleteDatasetRequest" />
+      <member name="T:Amazon.Rekognition.Model.DeleteDatasetResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Deletes an Amazon Rekognition Custom Labels dataset.
+        </para>
+        <code title="To delete an Amazon Rekognition Custom Labels dataset" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="DeleteDataset-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.DeleteFaces(Amazon.Rekognition.Model.DeleteFacesRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DeleteFaces(Amazon.Rekognition.Model.DeleteFacesRequest)" />
+      <member name="T:Amazon.Rekognition.Model.DeleteFacesRequest" />
+      <member name="T:Amazon.Rekognition.Model.DeleteFacesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This operation deletes one or more faces from a Rekognition collection.
+        </para>
+        <code title="To delete a face" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="DeleteFaces-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.DeleteProject(Amazon.Rekognition.Model.DeleteProjectRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DeleteProject(Amazon.Rekognition.Model.DeleteProjectRequest)" />
+      <member name="T:Amazon.Rekognition.Model.DeleteProjectRequest" />
+      <member name="T:Amazon.Rekognition.Model.DeleteProjectResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Deletes an Amazon Rekognition Custom Labels projects.
+        </para>
+        <code title="To delete an Amazon Rekognition Custom Labels project" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="DeleteProject-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.DeleteProjectPolicy(Amazon.Rekognition.Model.DeleteProjectPolicyRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DeleteProjectPolicy(Amazon.Rekognition.Model.DeleteProjectPolicyRequest)" />
+      <member name="T:Amazon.Rekognition.Model.DeleteProjectPolicyRequest" />
+      <member name="T:Amazon.Rekognition.Model.DeleteProjectPolicyResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This operation deletes a revision of an existing project policy from an Amazon Rekognition Custom Labels project.
+        </para>
+        <code title="DeleteProjectPolicy" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="DeleteProjectPolicy-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.DeleteProjectVersion(Amazon.Rekognition.Model.DeleteProjectVersionRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DeleteProjectVersion(Amazon.Rekognition.Model.DeleteProjectVersionRequest)" />
+      <member name="T:Amazon.Rekognition.Model.DeleteProjectVersionRequest" />
+      <member name="T:Amazon.Rekognition.Model.DeleteProjectVersionResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Deletes a version of an Amazon Rekognition Custom Labels model.
+        </para>
+        <code title="To delete an Amazon Rekognition Custom Labels model" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="DeleteProjectVersion-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.DeleteUser(Amazon.Rekognition.Model.DeleteUserRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DeleteUser(Amazon.Rekognition.Model.DeleteUserRequest)" />
+      <member name="T:Amazon.Rekognition.Model.DeleteUserRequest" />
+      <member name="T:Amazon.Rekognition.Model.DeleteUserResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Deletes the specified UserID within the collection.
+        </para>
+        <code title="DeleteUser" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="DeleteUser-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.DetectCustomLabels(Amazon.Rekognition.Model.DetectCustomLabelsRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DetectCustomLabels(Amazon.Rekognition.Model.DetectCustomLabelsRequest)" />
+      <member name="T:Amazon.Rekognition.Model.DetectCustomLabelsRequest" />
+      <member name="T:Amazon.Rekognition.Model.DetectCustomLabelsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Detects custom labels in an image with an Amazon Rekognition Custom Labels model
+        </para>
+        <code title="To detect custom labels in an image with an Amazon Rekognition Custom Labels model" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="DetectCustomLabels-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.DetectFaces(Amazon.Rekognition.Model.DetectFacesRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DetectFaces(Amazon.Rekognition.Model.DetectFacesRequest)" />
+      <member name="T:Amazon.Rekognition.Model.DetectFacesRequest" />
+      <member name="T:Amazon.Rekognition.Model.DetectFacesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This operation detects faces in an image stored in an AWS S3 bucket.
+        </para>
+        <code title="To detect faces in an image" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="DetectFaces-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.DetectLabels(Amazon.Rekognition.Model.DetectLabelsRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DetectLabels(Amazon.Rekognition.Model.DetectLabelsRequest)" />
+      <member name="T:Amazon.Rekognition.Model.DetectLabelsRequest" />
+      <member name="T:Amazon.Rekognition.Model.DetectLabelsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This operation detects labels in the supplied image
+        </para>
+        <code title="To detect labels" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="DetectLabels-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.DisassociateFaces(Amazon.Rekognition.Model.DisassociateFacesRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DisassociateFaces(Amazon.Rekognition.Model.DisassociateFacesRequest)" />
+      <member name="T:Amazon.Rekognition.Model.DisassociateFacesRequest" />
+      <member name="T:Amazon.Rekognition.Model.DisassociateFacesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Removes the association between a Face supplied in an array of FaceIds and the User.
+        </para>
+        <code title="DisassociateFaces" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="DisassociateFaces-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.DistributeDatasetEntries(Amazon.Rekognition.Model.DistributeDatasetEntriesRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DistributeDatasetEntries(Amazon.Rekognition.Model.DistributeDatasetEntriesRequest)" />
+      <member name="T:Amazon.Rekognition.Model.DistributeDatasetEntriesRequest" />
+      <member name="T:Amazon.Rekognition.Model.DistributeDatasetEntriesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Distributes an Amazon Rekognition Custom Labels training dataset to a test dataset.
+        </para>
+        <code title="To distribute an Amazon Rekognition Custom Labels dataset" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="DistributeDatasetEntries-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.IndexFaces(Amazon.Rekognition.Model.IndexFacesRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.IndexFaces(Amazon.Rekognition.Model.IndexFacesRequest)" />
+      <member name="T:Amazon.Rekognition.Model.IndexFacesRequest" />
+      <member name="T:Amazon.Rekognition.Model.IndexFacesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This operation detects faces in an image and adds them to the specified Rekognition collection.
+        </para>
+        <code title="To add a face to a collection" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="IndexFaces-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.ListCollections(Amazon.Rekognition.Model.ListCollectionsRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.ListCollections(Amazon.Rekognition.Model.ListCollectionsRequest)" />
+      <member name="T:Amazon.Rekognition.Model.ListCollectionsRequest" />
+      <member name="T:Amazon.Rekognition.Model.ListCollectionsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This operation returns a list of Rekognition collections.
+        </para>
+        <code title="To list the collections" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="ListCollections-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.ListDatasetEntries(Amazon.Rekognition.Model.ListDatasetEntriesRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.ListDatasetEntries(Amazon.Rekognition.Model.ListDatasetEntriesRequest)" />
+      <member name="T:Amazon.Rekognition.Model.ListDatasetEntriesRequest" />
+      <member name="T:Amazon.Rekognition.Model.ListDatasetEntriesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Lists the JSON line entries in an Amazon Rekognition Custom Labels dataset.
+        </para>
+        <code title="To list the entries in an Amazon Rekognition Custom Labels dataset" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="ListDatasetEntries-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.ListDatasetLabels(Amazon.Rekognition.Model.ListDatasetLabelsRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.ListDatasetLabels(Amazon.Rekognition.Model.ListDatasetLabelsRequest)" />
+      <member name="T:Amazon.Rekognition.Model.ListDatasetLabelsRequest" />
+      <member name="T:Amazon.Rekognition.Model.ListDatasetLabelsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Lists the JSON line entries in an Amazon Rekognition Custom Labels dataset.
+        </para>
+        <code title="To list the entries in an Amazon Rekognition Custom Labels dataset" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="ListDatasetLabels-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.ListFaces(Amazon.Rekognition.Model.ListFacesRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.ListFaces(Amazon.Rekognition.Model.ListFacesRequest)" />
+      <member name="T:Amazon.Rekognition.Model.ListFacesRequest" />
+      <member name="T:Amazon.Rekognition.Model.ListFacesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This operation lists the faces in a Rekognition collection.
+        </para>
+        <code title="To list the faces in a collection" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="ListFaces-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.ListUsers(Amazon.Rekognition.Model.ListUsersRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.ListUsers(Amazon.Rekognition.Model.ListUsersRequest)" />
+      <member name="T:Amazon.Rekognition.Model.ListUsersRequest" />
+      <member name="T:Amazon.Rekognition.Model.ListUsersResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Returns metadata of the User such as UserID in the specified collection.
+        </para>
+        <code title="ListUsers" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="ListUsers-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.PutProjectPolicy(Amazon.Rekognition.Model.PutProjectPolicyRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.PutProjectPolicy(Amazon.Rekognition.Model.PutProjectPolicyRequest)" />
+      <member name="T:Amazon.Rekognition.Model.PutProjectPolicyRequest" />
+      <member name="T:Amazon.Rekognition.Model.PutProjectPolicyResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This operation attaches a project policy to a Amazon Rekognition Custom Labels project in a trusting AWS account.
+        </para>
+        <code title="PutProjectPolicy" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="PutProjectPolicy-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.SearchFaces(Amazon.Rekognition.Model.SearchFacesRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.SearchFaces(Amazon.Rekognition.Model.SearchFacesRequest)" />
+      <member name="T:Amazon.Rekognition.Model.SearchFacesRequest" />
+      <member name="T:Amazon.Rekognition.Model.SearchFacesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This operation searches for matching faces in the collection the supplied face belongs to.
+        </para>
+        <code title="To delete a face" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="SearchFaces-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.SearchFacesByImage(Amazon.Rekognition.Model.SearchFacesByImageRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.SearchFacesByImage(Amazon.Rekognition.Model.SearchFacesByImageRequest)" />
+      <member name="T:Amazon.Rekognition.Model.SearchFacesByImageRequest" />
+      <member name="T:Amazon.Rekognition.Model.SearchFacesByImageResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This operation searches for faces in a Rekognition collection that match the largest face in an S3 bucket stored image.
+        </para>
+        <code title="To search for faces matching a supplied image" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="SearchFacesByImage-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.SearchUsers(Amazon.Rekognition.Model.SearchUsersRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.SearchUsers(Amazon.Rekognition.Model.SearchUsersRequest)" />
+      <member name="T:Amazon.Rekognition.Model.SearchUsersRequest" />
+      <member name="T:Amazon.Rekognition.Model.SearchUsersResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Searches for UserIDs within a collection based on a FaceId or UserId.
+        </para>
+        <code title="SearchUsers" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="SearchUsers-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.SearchUsersByImage(Amazon.Rekognition.Model.SearchUsersByImageRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.SearchUsersByImage(Amazon.Rekognition.Model.SearchUsersByImageRequest)" />
+      <member name="T:Amazon.Rekognition.Model.SearchUsersByImageRequest" />
+      <member name="T:Amazon.Rekognition.Model.SearchUsersByImageResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Searches for UserIDs using a supplied image.
+        </para>
+        <code title="SearchUsersByImage" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="SearchUsersByImage-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.StartMediaAnalysisJob(Amazon.Rekognition.Model.StartMediaAnalysisJobRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.StartMediaAnalysisJob(Amazon.Rekognition.Model.StartMediaAnalysisJobRequest)" />
+      <member name="T:Amazon.Rekognition.Model.StartMediaAnalysisJobRequest" />
+      <member name="T:Amazon.Rekognition.Model.StartMediaAnalysisJobResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Initiates a new media analysis job.
+        </para>
+        <code title="StartMediaAnalysisJob" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="StartMediaAnalysisJob-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.StartProjectVersion(Amazon.Rekognition.Model.StartProjectVersionRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.StartProjectVersion(Amazon.Rekognition.Model.StartProjectVersionRequest)" />
+      <member name="T:Amazon.Rekognition.Model.StartProjectVersionRequest" />
+      <member name="T:Amazon.Rekognition.Model.StartProjectVersionResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Starts a version of an Amazon Rekognition Custom Labels model.
+        </para>
+        <code title="To start an Amazon Rekognition Custom Labels model" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="StartProjectVersion-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.StopProjectVersion(Amazon.Rekognition.Model.StopProjectVersionRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.StopProjectVersion(Amazon.Rekognition.Model.StopProjectVersionRequest)" />
+      <member name="T:Amazon.Rekognition.Model.StopProjectVersionRequest" />
+      <member name="T:Amazon.Rekognition.Model.StopProjectVersionResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Stops a version of an Amazon Rekognition Custom Labels model.
+        </para>
+        <code title="To stop an Amazon Rekognition Custom Labels model." source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="StopProjectVersion-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Rekognition.IAmazonRekognition.UpdateDatasetEntries(Amazon.Rekognition.Model.UpdateDatasetEntriesRequest)" />
+      <member name="M:Amazon.Rekognition.AmazonRekognitionClient.UpdateDatasetEntries(Amazon.Rekognition.Model.UpdateDatasetEntriesRequest)" />
+      <member name="T:Amazon.Rekognition.Model.UpdateDatasetEntriesRequest" />
+      <member name="T:Amazon.Rekognition.Model.UpdateDatasetEntriesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Adds dataset entries to an Amazon Rekognition Custom Labels dataset.
+        </para>
+        <code title="To-add dataset entries to an Amazon Rekognition Custom Labels dataset" source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs" region="UpdateDatasetEntries-1" />
+      </example>
+    </value>
+  </doc>
 </docs>

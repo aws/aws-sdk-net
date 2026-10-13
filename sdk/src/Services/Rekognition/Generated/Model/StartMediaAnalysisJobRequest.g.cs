@@ -1,0 +1,133 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Rekognition.Model
+{
+    /// <summary>
+    /// Container for the parameters to the StartMediaAnalysisJob operation. <important> <para>
+    /// Service availability notice: Streaming Video and Bulk Image Analysis is no longer
+    /// available to new customers. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+    /// feature availability changes</a>. </para> <para> <b>This change does not impact the
+    /// availability of other Amazon Rekognition features.</b> </para> </important> <para>
+    /// Initiates a new media analysis job. Accepts a manifest file in an Amazon S3 bucket.
+    /// The output is a manifest file and a summary of the manifest stored in the Amazon S3
+    /// bucket. </para>
+    /// </summary>
+    public partial class StartMediaAnalysisJobRequest : AmazonRekognitionRequest
+    {
+        /// <summary>
+        /// Gets and sets the property ClientRequestToken. 
+        /// <para>
+        /// Idempotency token used to prevent the accidental creation of duplicate versions. If
+        /// you use the same token with multiple <c>StartMediaAnalysisJobRequest</c> requests,
+        /// the same response is returned. Use <c>ClientRequestToken</c> to prevent the same request
+        /// from being processed more than once.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 64)]
+        public string ClientRequestToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ClientRequestToken property is set.
+        /// </summary>
+        internal bool IsSetClientRequestToken() => this.ClientRequestToken != null;
+
+        /// <summary>
+        /// Gets and sets the property Input. 
+        /// <para>
+        /// Input data to be analyzed by the job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public MediaAnalysisInput Input { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Input property is set.
+        /// </summary>
+        internal bool IsSetInput() => this.Input != null;
+
+        /// <summary>
+        /// Gets and sets the property JobName. 
+        /// <para>
+        /// The name of the job. Does not have to be unique.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 64)]
+        public string JobName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the JobName property is set.
+        /// </summary>
+        internal bool IsSetJobName() => this.JobName != null;
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The identifier of customer managed AWS KMS key (name or ARN). The key is used to encrypt
+        /// images copied into the service. The key is also used to encrypt results and manifest
+        /// files written to the output Amazon S3 bucket.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2048)]
+        public string KmsKeyId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the KmsKeyId property is set.
+        /// </summary>
+        internal bool IsSetKmsKeyId() => this.KmsKeyId != null;
+
+        /// <summary>
+        /// Gets and sets the property OperationsConfig. 
+        /// <para>
+        /// Configuration options for the media analysis job to be created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public MediaAnalysisOperationsConfig OperationsConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OperationsConfig property is set.
+        /// </summary>
+        internal bool IsSetOperationsConfig() => this.OperationsConfig != null;
+
+        /// <summary>
+        /// Gets and sets the property OutputConfig. 
+        /// <para>
+        /// The Amazon S3 bucket location to store the results.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public MediaAnalysisOutputConfig OutputConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OutputConfig property is set.
+        /// </summary>
+        internal bool IsSetOutputConfig() => this.OutputConfig != null;
+    }
+}

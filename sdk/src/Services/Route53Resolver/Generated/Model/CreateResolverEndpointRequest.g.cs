@@ -1,0 +1,409 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Route53Resolver.Model
+{
+    /// <summary>
+    /// Container for the parameters to the CreateResolverEndpoint operation. Creates a Resolver
+    /// endpoint. There are two types of Resolver endpoints, inbound and outbound: <ul> <li>
+    /// <para> An <i>inbound Resolver endpoint</i> forwards DNS queries to the DNS service
+    /// for a VPC from your network. </para> </li> <li> <para> An <i>outbound Resolver endpoint</i>
+    /// forwards DNS queries from the DNS service for a VPC to your network. </para> </li>
+    /// </ul>
+    /// </summary>
+    public partial class CreateResolverEndpointRequest : AmazonRoute53ResolverRequest
+    {
+        /// <summary>
+        /// Gets and sets the property CreatorRequestId. 
+        /// <para>
+        /// A unique string that identifies the request and that allows failed requests to be
+        /// retried without the risk of running the operation twice. <c>CreatorRequestId</c> can
+        /// be any unique string, for example, a date/time stamp. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 255)]
+        public string CreatorRequestId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreatorRequestId property is set.
+        /// </summary>
+        internal bool IsSetCreatorRequestId() => this.CreatorRequestId != null;
+
+        /// <summary>
+        /// Gets and sets the property Direction. 
+        /// <para>
+        /// Specify the applicable value:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>INBOUND</c>: Resolver forwards DNS queries to the DNS service for a VPC from your
+        /// network.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>OUTBOUND</c>: Resolver forwards DNS queries from the DNS service for a VPC to
+        /// your network.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>INBOUND_DELEGATION</c>: Resolver delegates queries to Route 53 private hosted
+        /// zones from your network.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public ResolverEndpointDirection Direction { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Direction property is set.
+        /// </summary>
+        internal bool IsSetDirection() => this.Direction != null;
+
+        /// <summary>
+        /// Gets and sets the property Dns64Enabled. 
+        /// <para>
+        /// Specifies whether DNS64 is enabled for the inbound Resolver endpoint. When set to
+        /// <c>true</c>, Route 53 Resolver synthesizes AAAA (IPv6) records for IPv4-only services
+        /// by prepending the <c>64:ff9b::/96</c> prefix to the IPv4 address. This enables IPv6-only
+        /// clients that send queries through the inbound endpoint to reach IPv4-only services.
+        /// DNS64 works with NAT64 to provide complete IPv6-to-IPv4 translation. Default is false.
+        /// </para>
+        /// </summary>
+        public bool? Dns64Enabled { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Dns64Enabled property is set.
+        /// </summary>
+        internal bool IsSetDns64Enabled() => this.Dns64Enabled.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property IpAddresses. 
+        /// <para>
+        /// The subnets and IP addresses in your VPC that DNS queries originate from (for outbound
+        /// endpoints) or that you forward DNS queries to (for inbound endpoints). The subnet
+        /// ID uniquely identifies a VPC. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Even though the minimum is 1, Route 53 requires that you create at least two.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// We recommend using <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/outpost-resolver-getting-started.html">VPC
+        /// Resolver on Outposts</a> to create endpoints on Outposts Racks.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Outposts subnets with <a href="https://docs.aws.amazon.com/outposts/latest/server-userguide/local-network-interface.html">Local
+        /// Network Interface (LNI)</a> enabled are not compatible with Route 53 Resolver endpoints.
+        /// If you enable LNI on a subnet that contains Route 53 Resolver endpoint elastic network
+        /// interfaces (ENIs), those ENIs will stop functioning. For more information, see <a
+        /// href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/best-practices-resolver.html#best-practices-resolver-subnet-compatibility">Subnet
+        /// compatibility for Resolver endpoints</a> in the <i>Amazon Route 53 Developer Guide</i>.
+        /// </para>
+        ///  </important>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Required = true, Min = 2, Max = 20)]
+        public List<IpAddressRequest> IpAddresses { get; set; } = AWSConfigs.InitializeCollections ? new List<IpAddressRequest>() : null;
+
+        /// <summary>
+        /// Checks to see if the IpAddresses property is set.
+        /// </summary>
+        internal bool IsSetIpAddresses() => this.IpAddresses != null && (this.IpAddresses.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property Ipv6InternetAccessEnabled. 
+        /// <para>
+        /// Specifies whether IPv6 internet access is enabled for the outbound Resolver endpoint.
+        /// When set to <c>true</c>, the endpoint elastic network interfaces (ENIs) can forward
+        /// DNS queries to public IPv6 targets through an internet gateway. Default is false.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// When you enable IPv6 internet access, use network controls like security groups, NACLs,
+        /// or egress-only internet gateways to protect the endpoint ENIs from unsolicited ingress
+        /// traffic. Be aware that some network controls can affect DNS query throughput due to
+        /// connection tracking. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/userguide/security-group-connection-tracking.html">Amazon
+        /// EC2 security group connection tracking</a> and <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/best-practices-resolver-endpoint-scaling.html">Resolver
+        /// endpoint scaling</a>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public bool? Ipv6InternetAccessEnabled { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Ipv6InternetAccessEnabled property is set.
+        /// </summary>
+        internal bool IsSetIpv6InternetAccessEnabled() => this.Ipv6InternetAccessEnabled.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// A friendly name that lets you easily find a configuration in the Resolver dashboard
+        /// in the Route 53 console.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 64)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Name property is set.
+        /// </summary>
+        internal bool IsSetName() => this.Name != null;
+
+        /// <summary>
+        /// Gets and sets the property OutpostArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also
+        /// specify a value for the <c>PreferredInstanceType</c>. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Resolver endpoints on Outposts are supported on first-generation Outposts only. Inbound
+        /// and outbound Resolver endpoints aren't supported on second-generation Outposts.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 255)]
+        public string OutpostArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OutpostArn property is set.
+        /// </summary>
+        internal bool IsSetOutpostArn() => this.OutpostArn != null;
+
+        /// <summary>
+        /// Gets and sets the property PreferredInstanceType. 
+        /// <para>
+        /// The instance type. If you specify this, you must also specify a value for the <c>OutpostArn</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 255)]
+        public string PreferredInstanceType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PreferredInstanceType property is set.
+        /// </summary>
+        internal bool IsSetPreferredInstanceType() => this.PreferredInstanceType != null;
+
+        /// <summary>
+        /// Gets and sets the property Protocols. 
+        /// <para>
+        ///  The protocols you want to use for the endpoint. DoH-FIPS is applicable for default
+        /// inbound endpoints only. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For a default inbound endpoint you can apply the protocols as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  Do53 and DoH in combination.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Do53 and DoH-FIPS in combination.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Do53 alone.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DoH alone.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DoH-FIPS alone.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// None, which is treated as Do53.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For a delegation inbound endpoint you can use Do53 only.
+        /// </para>
+        ///  
+        /// <para>
+        /// For an outbound endpoint you can apply the protocols as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  Do53 and DoH in combination.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Do53 alone.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DoH alone.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// None, which is treated as Do53.
+        /// </para>
+        ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2)]
+        public List<string> Protocols { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the Protocols property is set.
+        /// </summary>
+        internal bool IsSetProtocols() => this.Protocols != null && (this.Protocols.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property ResolverEndpointType. 
+        /// <para>
+        ///  For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A dual-stack
+        /// endpoint means that it will resolve via both IPv4 and IPv6. This endpoint type is
+        /// applied to all IP addresses. 
+        /// </para>
+        /// </summary>
+        public ResolverEndpointType ResolverEndpointType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ResolverEndpointType property is set.
+        /// </summary>
+        internal bool IsSetResolverEndpointType() => this.ResolverEndpointType != null;
+
+        /// <summary>
+        /// Gets and sets the property RniEnhancedMetricsEnabled. 
+        /// <para>
+        /// Specifies whether RNI enhanced metrics are enabled for the Resolver endpoints. When
+        /// set to true, one-minute granular metrics are published in CloudWatch for each RNI
+        /// associated with this endpoint. When set to false, metrics are not published. Default
+        /// is false.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Standard CloudWatch pricing and charges are applied for using the Route 53 Resolver
+        /// endpoint RNI enhanced metrics. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/monitoring-resolver-with-cloudwatch.html">Detailed
+        /// metrics</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool? RniEnhancedMetricsEnabled { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RniEnhancedMetricsEnabled property is set.
+        /// </summary>
+        internal bool IsSetRniEnhancedMetricsEnabled() => this.RniEnhancedMetricsEnabled.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property SecurityGroupIds. 
+        /// <para>
+        /// The ID of one or more security groups that you want to use to control access to this
+        /// VPC. The security group that you specify must include one or more inbound rules (for
+        /// inbound Resolver endpoints) or outbound rules (for outbound Resolver endpoints). Inbound
+        /// and outbound rules must allow TCP and UDP access. For inbound access, open port 53.
+        /// For outbound access, open the port that you're using for DNS queries on your network.
+        /// </para>
+        ///  
+        /// <para>
+        /// Some security group rules will cause your connection to be tracked. For outbound resolver
+        /// endpoint, it can potentially impact the maximum queries per second from outbound endpoint
+        /// to your target name server. For inbound resolver endpoint, it can bring down the overall
+        /// maximum queries per second per IP address to as low as 1500. To avoid connection tracking
+        /// caused by security group, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#untracked-connectionsl">Untracked
+        /// connections</a>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public List<string> SecurityGroupIds { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the SecurityGroupIds property is set.
+        /// </summary>
+        internal bool IsSetSecurityGroupIds() => this.SecurityGroupIds != null && (this.SecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of the tag keys and values that you want to associate with the endpoint.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 200)]
+        public List<Tag> Tags { get; set; } = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+
+        /// <summary>
+        /// Checks to see if the Tags property is set.
+        /// </summary>
+        internal bool IsSetTags() => this.Tags != null && (this.Tags.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property TargetNameServerMetricsEnabled. 
+        /// <para>
+        /// Specifies whether target name server metrics are enabled for the outbound Resolver
+        /// endpoints. When set to true, one-minute granular metrics are published in CloudWatch
+        /// for each target name server associated with this endpoint. When set to false, metrics
+        /// are not published. Default is false. This is not supported for inbound Resolver endpoints.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Standard CloudWatch pricing and charges are applied for using the Route 53 Resolver
+        /// endpoint target name server metrics. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/monitoring-resolver-with-cloudwatch.html">Detailed
+        /// metrics</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool? TargetNameServerMetricsEnabled { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TargetNameServerMetricsEnabled property is set.
+        /// </summary>
+        internal bool IsSetTargetNameServerMetricsEnabled() => this.TargetNameServerMetricsEnabled.HasValue;
+    }
+}

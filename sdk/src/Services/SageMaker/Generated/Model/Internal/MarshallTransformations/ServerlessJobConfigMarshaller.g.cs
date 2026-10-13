@@ -1,0 +1,102 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.SageMaker.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// ServerlessJobConfig Marshaller
+    /// </summary>
+    public partial class ServerlessJobConfigMarshaller : IRequestMarshaller<ServerlessJobConfig, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(ServerlessJobConfig requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetAcceptEula())
+            {
+                context.Writer.WritePropertyName("AcceptEula");
+                context.Writer.WriteBooleanValue(requestObject.AcceptEula.Value);
+            }
+
+            if (requestObject.IsSetBaseModelArn())
+            {
+                context.Writer.WritePropertyName("BaseModelArn");
+                context.Writer.WriteStringValue(requestObject.BaseModelArn);
+            }
+
+            if (requestObject.IsSetCustomizationTechnique())
+            {
+                context.Writer.WritePropertyName("CustomizationTechnique");
+                context.Writer.WriteStringValue(requestObject.CustomizationTechnique);
+            }
+
+            if (requestObject.IsSetEvaluationType())
+            {
+                context.Writer.WritePropertyName("EvaluationType");
+                context.Writer.WriteStringValue(requestObject.EvaluationType);
+            }
+
+            if (requestObject.IsSetEvaluatorArn())
+            {
+                context.Writer.WritePropertyName("EvaluatorArn");
+                context.Writer.WriteStringValue(requestObject.EvaluatorArn);
+            }
+
+            if (requestObject.IsSetJobType())
+            {
+                context.Writer.WritePropertyName("JobType");
+                context.Writer.WriteStringValue(requestObject.JobType);
+            }
+
+            if (requestObject.IsSetPeft())
+            {
+                context.Writer.WritePropertyName("Peft");
+                context.Writer.WriteStringValue(requestObject.Peft);
+            }
+
+            if (requestObject.IsSetSequenceLength())
+            {
+                context.Writer.WritePropertyName("SequenceLength");
+                context.Writer.WriteStringValue(requestObject.SequenceLength);
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static ServerlessJobConfigMarshaller Instance = new ServerlessJobConfigMarshaller();
+    }
+}

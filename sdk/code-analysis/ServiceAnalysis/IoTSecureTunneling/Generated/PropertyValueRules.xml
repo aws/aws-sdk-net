@@ -2,11 +2,11 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.IoTSecureTunneling.Model.CloseTunnelRequest.TunnelId</property>
-    <pattern>[a-zA-Z0-9_\-+=:]{1,128}</pattern>
+    <pattern>^[a-zA-Z0-9_\-+=:]{1,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSecureTunneling.Model.DescribeTunnelRequest.TunnelId</property>
-    <pattern>[a-zA-Z0-9_\-+=:]{1,128}</pattern>
+    <pattern>^[a-zA-Z0-9_\-+=:]{1,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSecureTunneling.Model.ListTagsForResourceRequest.ResourceArn</property>
@@ -20,21 +20,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSecureTunneling.Model.ListTunnelsRequest.NextToken</property>
-    <pattern>[a-zA-Z0-9_=-]{1,4096}</pattern>
+    <pattern>^[a-zA-Z0-9_=-]{1,4096}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSecureTunneling.Model.ListTunnelsRequest.ThingName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9:_-]+</pattern>
+    <pattern>^[a-zA-Z0-9:_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSecureTunneling.Model.ListTunnelsResponse.NextToken</property>
-    <pattern>[a-zA-Z0-9_=-]{1,4096}</pattern>
+    <pattern>^[a-zA-Z0-9_=-]{1,4096}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSecureTunneling.Model.OpenTunnelRequest.Description</property>
-    <pattern>[^\p{C}]{1,2048}</pattern>
+    <pattern>^[^\p{C}]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSecureTunneling.Model.OpenTunnelResponse.TunnelArn</property>
@@ -43,11 +43,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSecureTunneling.Model.OpenTunnelResponse.TunnelId</property>
-    <pattern>[a-zA-Z0-9_\-+=:]{1,128}</pattern>
+    <pattern>^[a-zA-Z0-9_\-+=:]{1,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSecureTunneling.Model.RotateTunnelAccessTokenRequest.TunnelId</property>
-    <pattern>[a-zA-Z0-9_\-+=:]{1,128}</pattern>
+    <pattern>^[a-zA-Z0-9_\-+=:]{1,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSecureTunneling.Model.RotateTunnelAccessTokenResponse.TunnelArn</property>
@@ -68,7 +68,7 @@
     <property>Amazon.IoTSecureTunneling.Model.DestinationConfig.ThingName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9:_-]+</pattern>
+    <pattern>^[a-zA-Z0-9:_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSecureTunneling.Model.Tag.Key</property>
@@ -89,7 +89,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSecureTunneling.Model.Tunnel.Description</property>
-    <pattern>[^\p{C}]{1,2048}</pattern>
+    <pattern>^[^\p{C}]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSecureTunneling.Model.Tunnel.TunnelArn</property>
@@ -98,11 +98,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSecureTunneling.Model.Tunnel.TunnelId</property>
-    <pattern>[a-zA-Z0-9_\-+=:]{1,128}</pattern>
+    <pattern>^[a-zA-Z0-9_\-+=:]{1,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSecureTunneling.Model.TunnelSummary.Description</property>
-    <pattern>[^\p{C}]{1,2048}</pattern>
+    <pattern>^[^\p{C}]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSecureTunneling.Model.TunnelSummary.TunnelArn</property>
@@ -111,6 +111,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSecureTunneling.Model.TunnelSummary.TunnelId</property>
-    <pattern>[a-zA-Z0-9_\-+=:]{1,128}</pattern>
+    <pattern>^[a-zA-Z0-9_\-+=:]{1,128}$</pattern>
   </property-value-rule>
 </property-value-rules>

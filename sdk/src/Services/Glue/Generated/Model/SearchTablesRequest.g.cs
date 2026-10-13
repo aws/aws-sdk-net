@@ -1,0 +1,194 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Glue.Model
+{
+    /// <summary>
+    /// Container for the parameters to the SearchTables operation. Searches a set of tables
+    /// based on properties in the table metadata as well as on the parent database. You can
+    /// search against text or filter conditions. <para> You can only get tables that you
+    /// have access to based on the security policies defined in Lake Formation. You need
+    /// at least a read-only access to the table for it to be returned. If you do not have
+    /// access to all the columns in the table, these columns will not be searched against
+    /// when returning the list of tables back to you. If you have access to the columns but
+    /// not the data in the columns, those columns and the associated metadata for those columns
+    /// will be included in the search. </para>
+    /// </summary>
+    public partial class SearchTablesRequest : AmazonGlueRequest
+    {
+        /// <summary>
+        /// Gets and sets the property CatalogId. 
+        /// <para>
+        /// A unique identifier, consisting of <c> <i>account_id</i> </c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 255)]
+        public string CatalogId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CatalogId property is set.
+        /// </summary>
+        internal bool IsSetCatalogId() => this.CatalogId != null;
+
+        /// <summary>
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// A list of key-value pairs, and a comparator used to filter the search results. Returns
+        /// all entities matching the predicate.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>Comparator</c> member of the <c>PropertyPredicate</c> struct is used only for
+        /// time fields, and can be omitted for other field types. Also, when comparing string
+        /// values, such as when <c>Key=Name</c>, a fuzzy match algorithm is used. The <c>Key</c>
+        /// field (for example, the value of the <c>Name</c> field) is split on certain punctuation
+        /// characters, for example, -, :, #, etc. into tokens. Then each token is exact-match
+        /// compared with the <c>Value</c> member of <c>PropertyPredicate</c>. For example, if
+        /// <c>Key=Name</c> and <c>Value=link</c>, tables named <c>customer-link</c> and <c>xx-link-yy</c>
+        /// are returned, but <c>xxlinkyy</c> is not returned.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<PropertyPredicate> Filters { get; set; } = AWSConfigs.InitializeCollections ? new List<PropertyPredicate>() : null;
+
+        /// <summary>
+        /// Checks to see if the Filters property is set.
+        /// </summary>
+        internal bool IsSetFilters() => this.Filters != null && (this.Filters.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property IncludeStatusDetails. 
+        /// <para>
+        /// Specifies whether to include status details related to a request to create or update
+        /// an Glue Data Catalog view.
+        /// </para>
+        /// </summary>
+        public bool? IncludeStatusDetails { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IncludeStatusDetails property is set.
+        /// </summary>
+        internal bool IsSetIncludeStatusDetails() => this.IncludeStatusDetails.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of tables to return in a single response.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 1000)]
+        public int? MaxResults { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MaxResults property is set.
+        /// </summary>
+        internal bool IsSetMaxResults() => this.MaxResults.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// A continuation token, included if this is a continuation call.
+        /// </para>
+        /// </summary>
+        public string NextToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NextToken property is set.
+        /// </summary>
+        internal bool IsSetNextToken() => this.NextToken != null;
+
+        /// <summary>
+        /// Gets and sets the property ResourceShareType. 
+        /// <para>
+        /// Allows you to specify that you want to search the tables shared with your account.
+        /// The allowable values are <c>FOREIGN</c> or <c>ALL</c>. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If set to <c>FOREIGN</c>, will search the tables shared with your account. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If set to <c>ALL</c>, will search the tables shared with your account, as well as
+        /// the tables in yor local account. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ResourceShareType ResourceShareType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ResourceShareType property is set.
+        /// </summary>
+        internal bool IsSetResourceShareType() => this.ResourceShareType != null;
+
+        /// <summary>
+        /// Gets and sets the property SearchText. 
+        /// <para>
+        /// A string used for a text search.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specifying a value in quotes filters based on an exact match to the value.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 1024)]
+        public string SearchText { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SearchText property is set.
+        /// </summary>
+        internal bool IsSetSearchText() => this.SearchText != null;
+
+        /// <summary>
+        /// Gets and sets the property SortCriteria. 
+        /// <para>
+        /// A list of criteria for sorting the results by a field name, in an ascending or descending
+        /// order.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 1)]
+        public List<SortCriterion> SortCriteria { get; set; } = AWSConfigs.InitializeCollections ? new List<SortCriterion>() : null;
+
+        /// <summary>
+        /// Checks to see if the SortCriteria property is set.
+        /// </summary>
+        internal bool IsSetSortCriteria() => this.SortCriteria != null && (this.SortCriteria.Count > 0 || !AWSConfigs.InitializeCollections);
+    }
+}

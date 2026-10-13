@@ -1,0 +1,164 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.SageMaker.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for PendingProductionVariantSummary Object
+    /// </summary>
+    public partial class PendingProductionVariantSummaryUnmarshaller : IJsonUnmarshaller<PendingProductionVariantSummary, JsonUnmarshallerContext>
+    {
+        /// <summary>
+        /// Unmarshall the response from the service to the response class.
+        /// </summary>
+        /// <returns>The unmarshalled object</returns>
+        public PendingProductionVariantSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        {
+            var unmarshalledObject = new PendingProductionVariantSummary();
+            if (context.IsEmptyResponse) return null;
+
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) return null;
+
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth, ref reader))
+            {
+                if (context.TestExpression("AcceleratorType", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AcceleratorType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("CurrentInstanceCount", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.CurrentInstanceCount = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("CurrentServerlessConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = ProductionVariantServerlessConfigUnmarshaller.Instance;
+                    unmarshalledObject.CurrentServerlessConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("CurrentWeight", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
+                    unmarshalledObject.CurrentWeight = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("DeployedImages", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<DeployedImage, DeployedImageUnmarshaller>(DeployedImageUnmarshaller.Instance);
+                    unmarshalledObject.DeployedImages = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("DesiredInstanceCount", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.DesiredInstanceCount = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("DesiredServerlessConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = ProductionVariantServerlessConfigUnmarshaller.Instance;
+                    unmarshalledObject.DesiredServerlessConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("DesiredWeight", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
+                    unmarshalledObject.DesiredWeight = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("InstancePools", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<InstancePoolSummary, InstancePoolSummaryUnmarshaller>(InstancePoolSummaryUnmarshaller.Instance);
+                    unmarshalledObject.InstancePools = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("InstanceType", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("ManagedInstanceScaling", targetDepth, ref reader))
+                {
+                    var unmarshaller = ProductionVariantManagedInstanceScalingUnmarshaller.Instance;
+                    unmarshalledObject.ManagedInstanceScaling = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("RoutingConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = ProductionVariantRoutingConfigUnmarshaller.Instance;
+                    unmarshalledObject.RoutingConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("VariantName", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VariantName = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("VariantStatus", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ProductionVariantStatus, ProductionVariantStatusUnmarshaller>(ProductionVariantStatusUnmarshaller.Instance);
+                    unmarshalledObject.VariantStatus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+            }
+            return unmarshalledObject;
+        }
+
+        private static PendingProductionVariantSummaryUnmarshaller _instance = new PendingProductionVariantSummaryUnmarshaller();
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static PendingProductionVariantSummaryUnmarshaller Instance => _instance;
+    }
+}

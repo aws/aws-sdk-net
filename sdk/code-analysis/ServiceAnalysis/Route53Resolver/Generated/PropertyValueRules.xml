@@ -12,8 +12,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.AssociateFirewallRuleGroupRequest.Name</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
+    <pattern>^(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.AssociateFirewallRuleGroupRequest.VpcId</property>
@@ -37,8 +38,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.AssociateResolverRuleRequest.Name</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
+    <pattern>^(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.AssociateResolverRuleRequest.ResolverRuleId</property>
@@ -57,8 +59,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.CreateFirewallDomainListRequest.Name</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
+    <pattern>^(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.CreateFirewallRuleRequest.BlockOverrideDomain</property>
@@ -87,8 +90,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.CreateFirewallRuleRequest.Name</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
+    <pattern>^(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.CreateFirewallRuleRequest.Qtype</property>
@@ -102,8 +106,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.CreateFirewallRuleGroupRequest.Name</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
+    <pattern>^(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.CreateOutpostResolverRequest.CreatorRequestId</property>
@@ -133,8 +138,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.CreateResolverEndpointRequest.Name</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
+    <pattern>^(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.CreateResolverEndpointRequest.OutpostArn</property>
@@ -161,7 +167,7 @@
     <property>Amazon.Route53Resolver.Model.CreateResolverQueryLogConfigRequest.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
+    <pattern>^(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.CreateResolverRuleRequest.CreatorRequestId</property>
@@ -180,8 +186,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.CreateResolverRuleRequest.Name</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
+    <pattern>^(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.CreateResolverRuleRequest.ResolverEndpointId</property>
@@ -295,6 +302,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.GetFirewallRuleGroupPolicyResponse.FirewallRuleGroupPolicy</property>
+    <min>0</min>
     <max>30000</max>
   </property-value-rule>
   <property-value-rule>
@@ -334,6 +342,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.GetResolverQueryLogConfigPolicyResponse.ResolverQueryLogConfigPolicy</property>
+    <min>0</min>
     <max>30000</max>
   </property-value-rule>
   <property-value-rule>
@@ -353,6 +362,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.GetResolverRulePolicyResponse.ResolverRulePolicy</property>
+    <min>0</min>
     <max>30000</max>
   </property-value-rule>
   <property-value-rule>
@@ -372,11 +382,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.ImportFirewallDomainsResponse.Name</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
+    <pattern>^(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.ImportFirewallDomainsResponse.StatusMessage</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -420,6 +432,16 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.ListFirewallRuleTypesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.ListFirewallRuleTypesRequest.RuleType</property>
+    <min>0</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53Resolver.Model.ListFirewallRulesRequest.FirewallRuleGroupId</property>
     <min>1</min>
     <max>64</max>
@@ -428,15 +450,6 @@
     <property>Amazon.Route53Resolver.Model.ListFirewallRulesRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53Resolver.Model.ListFirewallRuleTypesRequest.MaxResults</property>
-    <min>1</min>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53Resolver.Model.ListFirewallRuleTypesRequest.RuleType</property>
-    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.ListOutpostResolversRequest.MaxResults</property>
@@ -541,6 +554,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.PutFirewallRuleGroupPolicyRequest.FirewallRuleGroupPolicy</property>
+    <min>0</min>
     <max>30000</max>
   </property-value-rule>
   <property-value-rule>
@@ -550,6 +564,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.PutResolverQueryLogConfigPolicyRequest.ResolverQueryLogConfigPolicy</property>
+    <min>0</min>
     <max>30000</max>
   </property-value-rule>
   <property-value-rule>
@@ -559,6 +574,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.PutResolverRulePolicyRequest.ResolverRulePolicy</property>
+    <min>0</min>
     <max>30000</max>
   </property-value-rule>
   <property-value-rule>
@@ -588,11 +604,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.UpdateFirewallDomainsResponse.Name</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
+    <pattern>^(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.UpdateFirewallDomainsResponse.StatusMessage</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -622,8 +640,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.UpdateFirewallRuleRequest.Name</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
+    <pattern>^(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.UpdateFirewallRuleRequest.Qtype</property>
@@ -637,8 +656,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.UpdateFirewallRuleGroupAssociationRequest.Name</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
+    <pattern>^(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.UpdateOutpostResolverRequest.Id</property>
@@ -667,8 +687,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.UpdateResolverEndpointRequest.Name</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
+    <pattern>^(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.UpdateResolverEndpointRequest.ResolverEndpointId</property>
@@ -707,8 +728,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.CreateFirewallRuleEntry.Name</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
+    <pattern>^(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.CreateFirewallRuleEntry.Qtype</property>
@@ -777,6 +799,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.FirewallDomainList.Category</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -806,11 +829,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.FirewallDomainList.Name</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
+    <pattern>^(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.FirewallDomainList.StatusMessage</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -820,6 +845,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.FirewallDomainListMetadata.Category</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -839,8 +865,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.FirewallDomainListMetadata.Name</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
+    <pattern>^(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.FirewallRule.BlockOverrideDomain</property>
@@ -879,8 +906,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.FirewallRule.Name</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
+    <pattern>^(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.FirewallRule.Qtype</property>
@@ -889,10 +917,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.FirewallRule.Status</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.FirewallRule.StatusMessage</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -922,8 +952,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.FirewallRuleGroup.Name</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
+    <pattern>^(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.FirewallRuleGroup.OwnerId</property>
@@ -932,6 +963,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.FirewallRuleGroup.StatusMessage</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -971,11 +1003,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.FirewallRuleGroupAssociation.Name</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
+    <pattern>^(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.FirewallRuleGroupAssociation.StatusMessage</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -1000,8 +1034,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.FirewallRuleGroupMetadata.Name</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
+    <pattern>^(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.FirewallRuleGroupMetadata.OwnerId</property>
@@ -1010,18 +1045,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.FirewallRuleTypeDefinition.Description</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.FirewallRuleTypeDefinition.DisplayName</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.FirewallRuleTypeDefinition.RuleType</property>
+    <min>0</min>
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.FirewallRuleTypeDefinition.Value</property>
+    <min>0</min>
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
@@ -1066,6 +1105,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.IpAddressResponse.StatusMessage</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -1136,6 +1176,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.OutpostResolver.StatusMessage</property>
+    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
@@ -1205,8 +1246,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.ResolverEndpoint.Name</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
+    <pattern>^(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.ResolverEndpoint.OutpostArn</property>
@@ -1221,6 +1263,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.ResolverEndpoint.StatusMessage</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -1252,7 +1295,7 @@
     <property>Amazon.Route53Resolver.Model.ResolverQueryLogConfig.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
+    <pattern>^(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.ResolverQueryLogConfig.OwnerId</property>
@@ -1316,8 +1359,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.ResolverRule.Name</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
+    <pattern>^(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.ResolverRule.OwnerId</property>
@@ -1331,6 +1375,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.ResolverRule.StatusMessage</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -1340,8 +1385,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.ResolverRuleAssociation.Name</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
+    <pattern>^(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.ResolverRuleAssociation.ResolverRuleId</property>
@@ -1350,6 +1396,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.ResolverRuleAssociation.StatusMessage</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -1359,8 +1406,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.ResolverRuleConfig.Name</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
+    <pattern>^(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.ResolverRuleConfig.ResolverEndpointId</property>
@@ -1369,10 +1417,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.SubscriptionInfo.ProductId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.SubscriptionInfo.VendorName</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -1432,8 +1482,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.UpdateFirewallRuleEntry.Name</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
+    <pattern>^(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.UpdateFirewallRuleEntry.Qtype</property>

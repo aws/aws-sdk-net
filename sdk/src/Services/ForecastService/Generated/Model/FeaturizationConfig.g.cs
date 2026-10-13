@@ -1,0 +1,174 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.ForecastService.Model
+{
+    /// <summary>
+    /// <note> 
+    /// <para>
+    /// This object belongs to the <a>CreatePredictor</a> operation. If you created your predictor
+    /// with <a>CreateAutoPredictor</a>, see <a>AttributeConfig</a>.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// In a <a>CreatePredictor</a> operation, the specified algorithm trains a model using
+    /// the specified dataset group. You can optionally tell the operation to modify data
+    /// fields prior to training a model. These modifications are referred to as <i>featurization</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// You define featurization using the <c>FeaturizationConfig</c> object. You specify
+    /// an array of transformations, one for each field that you want to featurize. You then
+    /// include the <c>FeaturizationConfig</c> object in your <c>CreatePredictor</c> request.
+    /// Amazon Forecast applies the featurization to the <c>TARGET_TIME_SERIES</c> and <c>RELATED_TIME_SERIES</c>
+    /// datasets before model training.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can create multiple featurization configurations. For example, you might call
+    /// the <c>CreatePredictor</c> operation twice by specifying different featurization configurations.
+    /// </para>
+    /// </summary>
+    public partial class FeaturizationConfig
+    {
+        /// <summary>
+        /// Gets and sets the property Featurizations. 
+        /// <para>
+        /// An array of featurization (transformation) information for the fields of a dataset.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 50)]
+        public List<Featurization> Featurizations { get; set; } = AWSConfigs.InitializeCollections ? new List<Featurization>() : null;
+
+        /// <summary>
+        /// Checks to see if the Featurizations property is set.
+        /// </summary>
+        internal bool IsSetFeaturizations() => this.Featurizations != null && (this.Featurizations.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property ForecastDimensions. 
+        /// <para>
+        /// An array of dimension (field) names that specify how to group the generated forecast.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, suppose that you are generating a forecast for item sales across all
+        /// of your stores, and your dataset contains a <c>store_id</c> field. If you want the
+        /// sales forecast for each item by store, you would specify <c>store_id</c> as the dimension.
+        /// </para>
+        ///  
+        /// <para>
+        /// All forecast dimensions specified in the <c>TARGET_TIME_SERIES</c> dataset don't need
+        /// to be specified in the <c>CreatePredictor</c> request. All forecast dimensions specified
+        /// in the <c>RELATED_TIME_SERIES</c> dataset must be specified in the <c>CreatePredictor</c>
+        /// request.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 10)]
+        public List<string> ForecastDimensions { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the ForecastDimensions property is set.
+        /// </summary>
+        internal bool IsSetForecastDimensions() => this.ForecastDimensions != null && (this.ForecastDimensions.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property ForecastFrequency. 
+        /// <para>
+        /// The frequency of predictions in a forecast.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day),
+        /// H (Hour), and min (Minute). For example, "1D" indicates every day and "15min" indicates
+        /// every 15 minutes. You cannot specify a value that would overlap with the next larger
+        /// frequency. That means, for example, you cannot specify a frequency of 60 minutes,
+        /// because that is equivalent to 1 hour. The valid values for each frequency are the
+        /// following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Minute - 1-59
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Hour - 1-23
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Day - 1-6
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Week - 1-4
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Month - 1-11
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Year - 1
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly
+        /// forecasts, you specify "3M".
+        /// </para>
+        ///  
+        /// <para>
+        /// The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the
+        /// TARGET_TIME_SERIES dataset frequency.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 5)]
+        public string ForecastFrequency { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ForecastFrequency property is set.
+        /// </summary>
+        internal bool IsSetForecastFrequency() => this.ForecastFrequency != null;
+    }
+}

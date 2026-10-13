@@ -1,0 +1,130 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.IdentityStore.Model
+{
+    /// <summary>
+    /// This request cannot be completed for one of the following reasons:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// Performing the requested operation would violate an existing uniqueness claim in the
+    /// identity store. Resolve the conflict before retrying this request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The requested resource was being concurrently modified by another request.
+    /// </para>
+    ///  </li> </ul>
+    /// </summary>
+#if !NETSTANDARD
+    [Serializable]
+#endif
+    public partial class ConflictException : AmazonIdentityStoreException
+    {
+        /// <summary>
+        /// Default constructor for ConflictException
+        /// message.
+        /// </summary>
+        public ConflictException() : base() { }
+
+        /// <summary>
+        /// Constructs a new ConflictException with the specified error
+        /// message.
+        /// </summary>
+        /// <param name="message">
+        /// Describes the error encountered.
+        /// </param>
+        public ConflictException(string message) : base(message) { }
+
+        /// <summary>
+        /// Construct instance of ConflictException
+        /// </summary>
+        public ConflictException(string message, Exception innerException) : base(message, innerException) { }
+
+        /// <summary>
+        /// Construct instance of ConflictException
+        /// </summary>
+        public ConflictException(Exception innerException) : base(innerException) { }
+
+        /// <summary>
+        /// Construct instance of ConflictException
+        /// </summary>
+        public ConflictException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) : base(message, innerException, errorType, errorCode, requestId, statusCode) { }
+
+        /// <summary>
+        /// Construct instance of ConflictException
+        /// </summary>
+        public ConflictException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) : base(message, errorType, errorCode, requestId, statusCode) { }
+
+        /// <summary>
+        /// Gets and sets the property Reason. 
+        /// <para>
+        /// Indicates the reason for a conflict error when the service is unable to access a Customer
+        /// Managed KMS key. For non-KMS permission errors, this field is not included.
+        /// </para>
+        /// </summary>
+        public ConflictExceptionReason Reason { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Reason property is set.
+        /// </summary>
+        internal bool IsSetReason() => this.Reason != null;
+
+#if !NETSTANDARD
+        /// <summary>
+        /// Constructs a new instance of the ConflictException class with serialized data.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
+        /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
+        protected ConflictException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+            : base(info, context)
+        {
+            this.Reason = (ConflictExceptionReason)info.GetValue("Reason", typeof(ConflictExceptionReason));
+            this.RequestId = (string)info.GetValue("RequestId", typeof(string));
+        }
+
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+        [System.Security.SecurityCritical]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("Reason", this.Reason);
+            info.AddValue("RequestId", this.RequestId);
+        }
+#endif
+    }
+}

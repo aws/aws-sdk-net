@@ -42,7 +42,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector.Model.CreateExclusionsPreviewResponse.PreviewToken</property>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector.Model.CreateResourceGroupResponse.ResourceGroupArn</property>
@@ -76,6 +76,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector.Model.GetAssessmentReportResponse.Url</property>
+    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -90,7 +91,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector.Model.GetExclusionsPreviewRequest.PreviewToken</property>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector.Model.GetExclusionsPreviewResponse.NextToken</property>

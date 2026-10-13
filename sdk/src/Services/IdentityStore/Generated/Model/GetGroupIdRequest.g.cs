@@ -1,0 +1,77 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.IdentityStore.Model
+{
+    /// <summary>
+    /// Container for the parameters to the GetGroupId operation. Retrieves <c>GroupId</c>
+    /// in an identity store. <note> <para> If you have access to a member account, you can
+    /// use this API operation from the member account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+    /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+    /// User Guide</i>. </para> </note>
+    /// </summary>
+    public partial class GetGroupIdRequest : AmazonIdentityStoreRequest
+    {
+        /// <summary>
+        /// Gets and sets the property AlternateIdentifier. 
+        /// <para>
+        /// A unique identifier for a user or group that is not the primary identifier. This value
+        /// can be an identifier from an external identity provider (IdP) that is associated with
+        /// the user, the group, or a unique attribute. For the unique attribute, the only valid
+        /// path is <c> displayName</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public AlternateIdentifier AlternateIdentifier { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AlternateIdentifier property is set.
+        /// </summary>
+        internal bool IsSetAlternateIdentifier() => this.AlternateIdentifier != null;
+
+        /// <summary>
+        /// Gets and sets the property IdentityStoreId. 
+        /// <para>
+        /// The globally unique identifier for the identity store.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify the identity store by ID or by Amazon Resource Name (ARN). For example,
+        /// identity store ID <c>d-1234567890</c> or identity store ARN <c>arn:aws:identitystore::111122223333:identitystore/d-1234567890</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 93)]
+        public string IdentityStoreId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IdentityStoreId property is set.
+        /// </summary>
+        internal bool IsSetIdentityStoreId() => this.IdentityStoreId != null;
+    }
+}

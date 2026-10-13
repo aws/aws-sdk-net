@@ -1,0 +1,125 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.CostExplorer.Model
+{
+    /// <summary>
+    /// Paginators for the CostExplorer service
+    /// </summary>
+    public interface ICostExplorerPaginatorFactory
+    {
+        /// <summary>
+        /// Paginator for GetAnomalies operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextPageToken"], LimitKey = "MaxResults", OutputToken = ["NextPageToken"])]
+        IGetAnomaliesPaginator GetAnomalies(GetAnomaliesRequest request);
+
+        /// <summary>
+        /// Paginator for GetAnomalyMonitors operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextPageToken"], LimitKey = "MaxResults", OutputToken = ["NextPageToken"])]
+        IGetAnomalyMonitorsPaginator GetAnomalyMonitors(GetAnomalyMonitorsRequest request);
+
+        /// <summary>
+        /// Paginator for GetAnomalySubscriptions operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextPageToken"], LimitKey = "MaxResults", OutputToken = ["NextPageToken"])]
+        IGetAnomalySubscriptionsPaginator GetAnomalySubscriptions(GetAnomalySubscriptionsRequest request);
+
+        /// <summary>
+        /// Paginator for GetCostAndUsageComparisons operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextPageToken"], LimitKey = "MaxResults", OutputToken = ["NextPageToken"])]
+        IGetCostAndUsageComparisonsPaginator GetCostAndUsageComparisons(GetCostAndUsageComparisonsRequest request);
+
+        /// <summary>
+        /// Paginator for GetCostComparisonDrivers operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextPageToken"], LimitKey = "MaxResults", OutputToken = ["NextPageToken"])]
+        IGetCostComparisonDriversPaginator GetCostComparisonDrivers(GetCostComparisonDriversRequest request);
+
+        /// <summary>
+        /// Paginator for GetReservationPurchaseRecommendation operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextPageToken"], LimitKey = "PageSize", OutputToken = ["NextPageToken"])]
+        IGetReservationPurchaseRecommendationPaginator GetReservationPurchaseRecommendation(GetReservationPurchaseRecommendationRequest request);
+
+        /// <summary>
+        /// Paginator for GetRightsizingRecommendation operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextPageToken"], LimitKey = "PageSize", OutputToken = ["NextPageToken"])]
+        IGetRightsizingRecommendationPaginator GetRightsizingRecommendation(GetRightsizingRecommendationRequest request);
+
+        /// <summary>
+        /// Paginator for GetSavingsPlansCoverage operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IGetSavingsPlansCoveragePaginator GetSavingsPlansCoverage(GetSavingsPlansCoverageRequest request);
+
+        /// <summary>
+        /// Paginator for GetSavingsPlansUtilizationDetails operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IGetSavingsPlansUtilizationDetailsPaginator GetSavingsPlansUtilizationDetails(GetSavingsPlansUtilizationDetailsRequest request);
+
+        /// <summary>
+        /// Paginator for ListCommitmentPurchaseAnalyses operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextPageToken"], LimitKey = "PageSize", OutputToken = ["NextPageToken"])]
+        IListCommitmentPurchaseAnalysesPaginator ListCommitmentPurchaseAnalyses(ListCommitmentPurchaseAnalysesRequest request);
+
+        /// <summary>
+        /// Paginator for ListCostAllocationTagBackfillHistory operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListCostAllocationTagBackfillHistoryPaginator ListCostAllocationTagBackfillHistory(ListCostAllocationTagBackfillHistoryRequest request);
+
+        /// <summary>
+        /// Paginator for ListCostAllocationTags operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListCostAllocationTagsPaginator ListCostAllocationTags(ListCostAllocationTagsRequest request);
+
+        /// <summary>
+        /// Paginator for ListCostCategoryDefinitions operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListCostCategoryDefinitionsPaginator ListCostCategoryDefinitions(ListCostCategoryDefinitionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListCostCategoryResourceAssociations operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListCostCategoryResourceAssociationsPaginator ListCostCategoryResourceAssociations(ListCostCategoryResourceAssociationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSavingsPlansPurchaseRecommendationGeneration operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextPageToken"], LimitKey = "PageSize", OutputToken = ["NextPageToken"])]
+        IListSavingsPlansPurchaseRecommendationGenerationPaginator ListSavingsPlansPurchaseRecommendationGeneration(ListSavingsPlansPurchaseRecommendationGenerationRequest request);
+    }
+}

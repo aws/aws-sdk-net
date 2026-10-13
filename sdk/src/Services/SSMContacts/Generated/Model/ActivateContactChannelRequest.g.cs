@@ -1,0 +1,67 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.SSMContacts.Model
+{
+    /// <summary>
+    /// Container for the parameters to the ActivateContactChannel operation. Activates a
+    /// contact's contact channel. Incident Manager can't engage a contact until the contact
+    /// channel has been activated.
+    /// </summary>
+    public partial class ActivateContactChannelRequest : AmazonSSMContactsRequest
+    {
+        /// <summary>
+        /// Gets and sets the property ActivationCode. 
+        /// <para>
+        /// The code sent to the contact channel when it was created in the contact.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 6, Max = 10)]
+        public string ActivationCode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ActivationCode property is set.
+        /// </summary>
+        internal bool IsSetActivationCode() => this.ActivationCode != null;
+
+        /// <summary>
+        /// Gets and sets the property ContactChannelId. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the contact channel.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 2048)]
+        public string ContactChannelId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ContactChannelId property is set.
+        /// </summary>
+        internal bool IsSetContactChannelId() => this.ContactChannelId != null;
+    }
+}

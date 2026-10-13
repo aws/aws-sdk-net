@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
     {
         public void SecretsManagerBatchGetSecretValue()
         {
-            #region to-retrieve-the-secret-values-for-a-group-of-secrets-listed-by-name-1704846593341
+            #region BatchGetSecretValue-1
 
             var client = new AmazonSecretsManagerClient();
-            var response = client.BatchGetSecretValue(new BatchGetSecretValueRequest 
+            var response = client.BatchGetSecretValue(new BatchGetSecretValueRequest
             {
                 SecretIdList = new List<string> {
                     "MySecret1",
@@ -33,10 +34,10 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
 
         public void SecretsManagerCancelRotateSecret()
         {
-            #region to-cancel-scheduled-rotation-for-a-secret-1523996016032
+            #region CancelRotateSecret-1
 
             var client = new AmazonSecretsManagerClient();
-            var response = client.CancelRotateSecret(new CancelRotateSecretRequest 
+            var response = client.CancelRotateSecret(new CancelRotateSecretRequest
             {
                 SecretId = "MyTestDatabaseSecret"
             });
@@ -49,10 +50,10 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
 
         public void SecretsManagerCreateSecret()
         {
-            #region to-create-a-basic-secret-1523996473658
+            #region CreateSecret-1
 
             var client = new AmazonSecretsManagerClient();
-            var response = client.CreateSecret(new CreateSecretRequest 
+            var response = client.CreateSecret(new CreateSecretRequest
             {
                 ClientRequestToken = "EXAMPLE1-90ab-cdef-fedc-ba987SECRET1",
                 Description = "My test database secret created with the CLI",
@@ -69,71 +70,26 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
 
         public void SecretsManagerDeleteResourcePolicy()
         {
-            #region to-delete-the-resource-based-policy-attached-to-a-secret-1530209419204
+            #region DeleteResourcePolicy-1
 
             var client = new AmazonSecretsManagerClient();
-            var response = client.DeleteResourcePolicy(new DeleteResourcePolicyRequest 
+            var response = client.DeleteResourcePolicy(new DeleteResourcePolicyRequest
             {
                 SecretId = "MyTestDatabaseSecret"
             });
 
             string arn = response.ARN;
             string name = response.Name;
-
-            #endregion
-        }
-
-        public void SecretsManagerDeleteSecret()
-        {
-            #region to-delete-a-secret-1523996905092
-
-            var client = new AmazonSecretsManagerClient();
-            var response = client.DeleteSecret(new DeleteSecretRequest 
-            {
-                RecoveryWindowInDays = 7,
-                SecretId = "MyTestDatabaseSecret1"
-            });
-
-            string arn = response.ARN;
-            DateTime deletionDate = response.DeletionDate;
-            string name = response.Name;
-
-            #endregion
-        }
-
-        public void SecretsManagerDescribeSecret()
-        {
-            #region to-retrieve-the-details-of-a-secret-1524000138629
-
-            var client = new AmazonSecretsManagerClient();
-            var response = client.DescribeSecret(new DescribeSecretRequest 
-            {
-                SecretId = "MyTestDatabaseSecret"
-            });
-
-            string arn = response.ARN;
-            string description = response.Description;
-            string kmsKeyId = response.KmsKeyId;
-            DateTime lastAccessedDate = response.LastAccessedDate;
-            DateTime lastChangedDate = response.LastChangedDate;
-            DateTime lastRotatedDate = response.LastRotatedDate;
-            string name = response.Name;
-            DateTime nextRotationDate = response.NextRotationDate;
-            bool rotationEnabled = response.RotationEnabled;
-            string rotationLambdaARN = response.RotationLambdaARN;
-            RotationRulesType rotationRules = response.RotationRules;
-            List<Tag> tags = response.Tags;
-            Dictionary<string, List<string>> versionIdsToStages = response.VersionIdsToStages;
 
             #endregion
         }
 
         public void SecretsManagerGetRandomPassword()
         {
-            #region to-generate-a-random-password-1524000546092
+            #region GetRandomPassword-1
 
             var client = new AmazonSecretsManagerClient();
-            var response = client.GetRandomPassword(new GetRandomPasswordRequest 
+            var response = client.GetRandomPassword(new GetRandomPasswordRequest
             {
                 IncludeSpace = true,
                 PasswordLength = 20,
@@ -147,10 +103,10 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
 
         public void SecretsManagerGetResourcePolicy()
         {
-            #region to-retrieve-the-resource-based-policy-attached-to-a-secret-1530209677536
+            #region GetResourcePolicy-1
 
             var client = new AmazonSecretsManagerClient();
-            var response = client.GetResourcePolicy(new GetResourcePolicyRequest 
+            var response = client.GetResourcePolicy(new GetResourcePolicyRequest
             {
                 SecretId = "MyTestDatabaseSecret"
             });
@@ -164,16 +120,16 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
 
         public void SecretsManagerGetSecretValue()
         {
-            #region to-retrieve-the-encrypted-secret-value-of-a-secret-1524000702484
+            #region GetSecretValue-1
 
             var client = new AmazonSecretsManagerClient();
-            var response = client.GetSecretValue(new GetSecretValueRequest 
+            var response = client.GetSecretValue(new GetSecretValueRequest
             {
                 SecretId = "MyTestDatabaseSecret"
             });
 
             string arn = response.ARN;
-            DateTime createdDate = response.CreatedDate;
+            DateTime? createdDate = response.CreatedDate;
             string name = response.Name;
             string secretString = response.SecretString;
             string versionId = response.VersionId;
@@ -184,10 +140,10 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
 
         public void SecretsManagerListSecrets()
         {
-            #region to-list-the-secrets-in-your-account-1524001246087
+            #region ListSecrets-1
 
             var client = new AmazonSecretsManagerClient();
-            var response = client.ListSecrets(new ListSecretsRequest 
+            var response = client.ListSecrets(new ListSecretsRequest
             {
             });
 
@@ -198,10 +154,10 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
 
         public void SecretsManagerListSecretVersionIds()
         {
-            #region to-list-all-of-the-secret-versions-associated-with-a-secret-1524000999164
+            #region ListSecretVersionIds-1
 
             var client = new AmazonSecretsManagerClient();
-            var response = client.ListSecretVersionIds(new ListSecretVersionIdsRequest 
+            var response = client.ListSecretVersionIds(new ListSecretVersionIdsRequest
             {
                 IncludeDeprecated = true,
                 SecretId = "MyTestDatabaseSecret"
@@ -216,22 +172,12 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
 
         public void SecretsManagerPutResourcePolicy()
         {
-            #region to-add-a-resource-based-policy-to-a-secret-1530209881839
+            #region PutResourcePolicy-1
 
             var client = new AmazonSecretsManagerClient();
-            var response = client.PutResourcePolicy(new PutResourcePolicyRequest 
+            var response = client.PutResourcePolicy(new PutResourcePolicyRequest
             {
-                ResourcePolicy = "{
-\"Version\":\"2012-10-17\",
-\"Statement\":[{
-\"Effect\":\"Allow\",
-\"Principal\":{
-\"AWS\":\"arn:aws:iam::123456789012:root\"
-},
-\"Action\":\"secretsmanager:GetSecretValue\",
-\"Resource\":\"*\"
-}]
-}",
+                ResourcePolicy = "{\n\"Version\":\"2012-10-17\",\n\"Statement\":[{\n\"Effect\":\"Allow\",\n\"Principal\":{\n\"AWS\":\"arn:aws:iam::123456789012:root\"\n},\n\"Action\":\"secretsmanager:GetSecretValue\",\n\"Resource\":\"*\"\n}]\n}",
                 SecretId = "MyTestDatabaseSecret"
             });
 
@@ -243,10 +189,10 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
 
         public void SecretsManagerPutSecretValue()
         {
-            #region to-store-a-secret-value-in-a-new-version-of-a-secret-1524001393971
+            #region PutSecretValue-1
 
             var client = new AmazonSecretsManagerClient();
-            var response = client.PutSecretValue(new PutSecretValueRequest 
+            var response = client.PutSecretValue(new PutSecretValueRequest
             {
                 ClientRequestToken = "EXAMPLE2-90ab-cdef-fedc-ba987EXAMPLE",
                 SecretId = "MyTestDatabaseSecret",
@@ -263,10 +209,10 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
 
         public void SecretsManagerReplicateSecretToRegions()
         {
-            #region example-1679591984774
+            #region ReplicateSecretToRegions-1
 
             var client = new AmazonSecretsManagerClient();
-            var response = client.ReplicateSecretToRegions(new ReplicateSecretToRegionsRequest 
+            var response = client.ReplicateSecretToRegions(new ReplicateSecretToRegionsRequest
             {
                 AddReplicaRegions = new List<ReplicaRegionType> {
                     new ReplicaRegionType { Region = "eu-west-3" }
@@ -283,10 +229,10 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
 
         public void SecretsManagerRestoreSecret()
         {
-            #region to-restore-a-previously-deleted-secret-1524001513930
+            #region RestoreSecret-1
 
             var client = new AmazonSecretsManagerClient();
-            var response = client.RestoreSecret(new RestoreSecretRequest 
+            var response = client.RestoreSecret(new RestoreSecretRequest
             {
                 SecretId = "MyTestDatabaseSecret"
             });
@@ -299,10 +245,10 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
 
         public void SecretsManagerRotateSecret()
         {
-            #region to-configure-rotation-for-a-secret-1524001629475
+            #region RotateSecret-1
 
             var client = new AmazonSecretsManagerClient();
-            var response = client.RotateSecret(new RotateSecretRequest 
+            var response = client.RotateSecret(new RotateSecretRequest
             {
                 RotationLambdaARN = "arn:aws:lambda:us-west-2:123456789012:function:MyTestDatabaseRotationLambda",
                 RotationRules = new RotationRulesType {
@@ -321,10 +267,10 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
 
         public void SecretsManagerRotateSecret()
         {
-            #region to-request-an-immediate-rotation-for-a-secret-1524001949004
+            #region RotateSecret-2
 
             var client = new AmazonSecretsManagerClient();
-            var response = client.RotateSecret(new RotateSecretRequest 
+            var response = client.RotateSecret(new RotateSecretRequest
             {
                 SecretId = "MyTestDatabaseSecret"
             });
@@ -338,10 +284,10 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
 
         public void SecretsManagerTagResource()
         {
-            #region to-add-tags-to-a-secret-1524002106718
+            #region TagResource-1
 
             var client = new AmazonSecretsManagerClient();
-            var response = client.TagResource(new TagResourceRequest 
+            var response = client.TagResource(new TagResourceRequest
             {
                 SecretId = "MyExampleSecret",
                 Tags = new List<Tag> {
@@ -362,10 +308,10 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
 
         public void SecretsManagerUntagResource()
         {
-            #region to-remove-tags-from-a-secret-1524002239065
+            #region UntagResource-1
 
             var client = new AmazonSecretsManagerClient();
-            var response = client.UntagResource(new UntagResourceRequest 
+            var response = client.UntagResource(new UntagResourceRequest
             {
                 SecretId = "MyTestDatabaseSecret",
                 TagKeys = new List<string> {
@@ -380,10 +326,28 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
 
         public void SecretsManagerUpdateSecret()
         {
-            #region to-update-the-description-of-a-secret-1524002349094
+            #region UpdateSecret-1
 
             var client = new AmazonSecretsManagerClient();
-            var response = client.UpdateSecret(new UpdateSecretRequest 
+            var response = client.UpdateSecret(new UpdateSecretRequest
+            {
+                SecretId = "MyTestDatabaseSecret",
+                SecretString = "{JSON STRING WITH CREDENTIALS}"
+            });
+
+            string arn = response.ARN;
+            string name = response.Name;
+            string versionId = response.VersionId;
+
+            #endregion
+        }
+
+        public void SecretsManagerUpdateSecret()
+        {
+            #region UpdateSecret-2
+
+            var client = new AmazonSecretsManagerClient();
+            var response = client.UpdateSecret(new UpdateSecretRequest
             {
                 ClientRequestToken = "EXAMPLE1-90ab-cdef-fedc-ba987EXAMPLE",
                 Description = "This is a new description for the secret.",
@@ -398,10 +362,10 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
 
         public void SecretsManagerUpdateSecret()
         {
-            #region to-update-the-kms-key-associated-with-a-secret-1524002421563
+            #region UpdateSecret-3
 
             var client = new AmazonSecretsManagerClient();
-            var response = client.UpdateSecret(new UpdateSecretRequest 
+            var response = client.UpdateSecret(new UpdateSecretRequest
             {
                 KmsKeyId = "arn:aws:kms:us-west-2:123456789012:key/EXAMPLE2-90ab-cdef-fedc-ba987EXAMPLE",
                 SecretId = "MyTestDatabaseSecret"
@@ -413,30 +377,12 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
             #endregion
         }
 
-        public void SecretsManagerUpdateSecret()
-        {
-            #region to-create-a-new-version-of-the-encrypted-secret-value-1524004651836
-
-            var client = new AmazonSecretsManagerClient();
-            var response = client.UpdateSecret(new UpdateSecretRequest 
-            {
-                SecretId = "MyTestDatabaseSecret",
-                SecretString = "{JSON STRING WITH CREDENTIALS}"
-            });
-
-            string arn = response.ARN;
-            string name = response.Name;
-            string versionId = response.VersionId;
-
-            #endregion
-        }
-
         public void SecretsManagerUpdateSecretVersionStage()
         {
-            #region to-add-a-staging-label-attached-to-a-version-of-a-secret-1524004783841
+            #region UpdateSecretVersionStage-1
 
             var client = new AmazonSecretsManagerClient();
-            var response = client.UpdateSecretVersionStage(new UpdateSecretVersionStageRequest 
+            var response = client.UpdateSecretVersionStage(new UpdateSecretVersionStageRequest
             {
                 MoveToVersionId = "EXAMPLE1-90ab-cdef-fedc-ba987SECRET1",
                 SecretId = "MyTestDatabaseSecret",
@@ -451,10 +397,10 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
 
         public void SecretsManagerUpdateSecretVersionStage()
         {
-            #region to-delete-a-staging-label-attached-to-a-version-of-a-secret-1524004862181
+            #region UpdateSecretVersionStage-2
 
             var client = new AmazonSecretsManagerClient();
-            var response = client.UpdateSecretVersionStage(new UpdateSecretVersionStageRequest 
+            var response = client.UpdateSecretVersionStage(new UpdateSecretVersionStageRequest
             {
                 RemoveFromVersionId = "EXAMPLE1-90ab-cdef-fedc-ba987SECRET1",
                 SecretId = "MyTestDatabaseSecret",
@@ -469,10 +415,10 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
 
         public void SecretsManagerUpdateSecretVersionStage()
         {
-            #region to-move-a-staging-label-from-one-version-of-a-secret-to-another-1524004963841
+            #region UpdateSecretVersionStage-3
 
             var client = new AmazonSecretsManagerClient();
-            var response = client.UpdateSecretVersionStage(new UpdateSecretVersionStageRequest 
+            var response = client.UpdateSecretVersionStage(new UpdateSecretVersionStageRequest
             {
                 MoveToVersionId = "EXAMPLE2-90ab-cdef-fedc-ba987SECRET2",
                 RemoveFromVersionId = "EXAMPLE1-90ab-cdef-fedc-ba987SECRET1",
@@ -488,38 +434,25 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
 
         public void SecretsManagerValidateResourcePolicy()
         {
-            #region to-validate-the-resource-policy-of-a-secret-1524000138629
+            #region ValidateResourcePolicy-1
 
             var client = new AmazonSecretsManagerClient();
-            var response = client.ValidateResourcePolicy(new ValidateResourcePolicyRequest 
+            var response = client.ValidateResourcePolicy(new ValidateResourcePolicyRequest
             {
-                ResourcePolicy = "{
-\"Version\":\"2012-10-17\",
-\"Statement\":[{
-\"Effect\":\"Allow\",
-\"Principal\":{
-\"AWS\":\"arn:aws:iam::123456789012:root\"
-},
-\"Action\":\"secretsmanager:GetSecretValue\",
-\"Resource\":\"*\"
-}]
-}",
+                ResourcePolicy = "{\n\"Version\":\"2012-10-17\",\n\"Statement\":[{\n\"Effect\":\"Allow\",\n\"Principal\":{\n\"AWS\":\"arn:aws:iam::123456789012:root\"\n},\n\"Action\":\"secretsmanager:GetSecretValue\",\n\"Resource\":\"*\"\n}]\n}",
                 SecretId = "MyTestDatabaseSecret"
             });
 
-            bool policyValidationPassed = response.PolicyValidationPassed;
+            bool? policyValidationPassed = response.PolicyValidationPassed;
             List<ValidationErrorsEntry> validationErrors = response.ValidationErrors;
 
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

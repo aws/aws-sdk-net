@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
     {
         public void RekognitionAssociateFaces()
         {
-            #region associatefaces-1686181269281
+            #region AssociateFaces-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.AssociateFaces(new AssociateFacesRequest 
+            var response = client.AssociateFaces(new AssociateFacesRequest
             {
                 ClientRequestToken = "550e8400-e29b-41d4-a716-446655440002",
                 CollectionId = "MyCollection",
@@ -31,17 +32,17 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
 
             List<AssociatedFace> associatedFaces = response.AssociatedFaces;
             List<UnsuccessfulFaceAssociation> unsuccessfulFaceAssociations = response.UnsuccessfulFaceAssociations;
-            string userStatus = response.UserStatus;
+            UserStatus userStatus = response.UserStatus;
 
             #endregion
         }
 
         public void RekognitionCompareFaces()
         {
-            #region to-compare-two-images-1482181985581
+            #region CompareFaces-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.CompareFaces(new CompareFacesRequest 
+            var response = client.CompareFaces(new CompareFacesRequest
             {
                 SimilarityThreshold = 90,
                 SourceImage = new Image { S3Object = new S3Object {
@@ -62,10 +63,10 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
 
         public void RekognitionCopyProjectVersion()
         {
-            #region copyprojectversion-1658203943815
+            #region CopyProjectVersion-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.CopyProjectVersion(new CopyProjectVersionRequest 
+            var response = client.CopyProjectVersion(new CopyProjectVersionRequest
             {
                 DestinationProjectArn = "arn:aws:rekognition:us-east-1:555555555555:project/DestinationProject/1656705098765",
                 KmsKeyId = "arn:1234abcd-12ab-34cd-56ef-1234567890ab",
@@ -88,26 +89,26 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
 
         public void RekognitionCreateCollection()
         {
-            #region to-create-a-collection-1481833313674
+            #region CreateCollection-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.CreateCollection(new CreateCollectionRequest 
+            var response = client.CreateCollection(new CreateCollectionRequest
             {
                 CollectionId = "myphotos"
             });
 
             string collectionArn = response.CollectionArn;
-            int statusCode = response.StatusCode;
+            int? statusCode = response.StatusCode;
 
             #endregion
         }
 
         public void RekognitionCreateDataset()
         {
-            #region to-create-an-amazon-rekognition-custom-labels-dataset-1690476237145
+            #region CreateDataset-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.CreateDataset(new CreateDatasetRequest 
+            var response = client.CreateDataset(new CreateDatasetRequest
             {
                 DatasetSource = new DatasetSource { GroundTruthManifest = new GroundTruthManifest { S3Object = new S3Object {
                     Bucket = "my-bucket",
@@ -124,10 +125,10 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
 
         public void RekognitionCreateProject()
         {
-            #region to-create-an-amazon-rekognition-custom-labels-project-1690405898597
+            #region CreateProject-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.CreateProject(new CreateProjectRequest 
+            var response = client.CreateProject(new CreateProjectRequest
             {
                 ProjectName = "my-project"
             });
@@ -139,10 +140,10 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
 
         public void RekognitionCreateProjectVersion()
         {
-            #region to-train-an-amazon-rekognition-custom-labels-model-1690555832843
+            #region CreateProjectVersion-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.CreateProjectVersion(new CreateProjectVersionRequest 
+            var response = client.CreateProjectVersion(new CreateProjectVersionRequest
             {
                 OutputConfig = new OutputConfig {
                     S3Bucket = "output_bucket",
@@ -159,10 +160,10 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
 
         public void RekognitionCreateUser()
         {
-            #region createuser-1686181562299
+            #region CreateUser-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.CreateUser(new CreateUserRequest 
+            var response = client.CreateUser(new CreateUserRequest
             {
                 CollectionId = "MyCollection",
                 UserId = "DemoUser"
@@ -174,25 +175,25 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
 
         public void RekognitionDeleteCollection()
         {
-            #region to-delete-a-collection-1481838179973
+            #region DeleteCollection-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.DeleteCollection(new DeleteCollectionRequest 
+            var response = client.DeleteCollection(new DeleteCollectionRequest
             {
                 CollectionId = "myphotos"
             });
 
-            int statusCode = response.StatusCode;
+            int? statusCode = response.StatusCode;
 
             #endregion
         }
 
         public void RekognitionDeleteDataset()
         {
-            #region to-delete-an-amazon-rekognition-custom-labels-dataset-1690826556349
+            #region DeleteDataset-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.DeleteDataset(new DeleteDatasetRequest 
+            var response = client.DeleteDataset(new DeleteDatasetRequest
             {
                 DatasetArn = "arn:aws:rekognition:us-east-1:111122223333:project/my-project/dataset/test/1690556733321"
             });
@@ -203,10 +204,10 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
 
         public void RekognitionDeleteFaces()
         {
-            #region to-delete-a-face-1482182799377
+            #region DeleteFaces-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.DeleteFaces(new DeleteFacesRequest 
+            var response = client.DeleteFaces(new DeleteFacesRequest
             {
                 CollectionId = "myphotos",
                 FaceIds = new List<string> {
@@ -221,25 +222,25 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
 
         public void RekognitionDeleteProject()
         {
-            #region to-delete-an-amazon-rekognition-custom-labels-project-1690409093478
+            #region DeleteProject-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.DeleteProject(new DeleteProjectRequest 
+            var response = client.DeleteProject(new DeleteProjectRequest
             {
                 ProjectArn = "arn:aws:rekognition:us-east-1:111122223333:project/my-project/1690405809285"
             });
 
-            string status = response.Status;
+            ProjectStatus status = response.Status;
 
             #endregion
         }
 
         public void RekognitionDeleteProjectPolicy()
         {
-            #region deleteprojectpolicy-1658204413810
+            #region DeleteProjectPolicy-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.DeleteProjectPolicy(new DeleteProjectPolicyRequest 
+            var response = client.DeleteProjectPolicy(new DeleteProjectPolicyRequest
             {
                 PolicyName = "testPolicy1",
                 PolicyRevisionId = "3b274c25e9203a56a99e00e3ff205fbc",
@@ -252,25 +253,25 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
 
         public void RekognitionDeleteProjectVersion()
         {
-            #region to-delete-an-amazon-rekognition-custom-labels-model-1690827562055
+            #region DeleteProjectVersion-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.DeleteProjectVersion(new DeleteProjectVersionRequest 
+            var response = client.DeleteProjectVersion(new DeleteProjectVersionRequest
             {
                 ProjectVersionArn = "arn:aws:rekognition:us-east-1:111122223333:project/my-project/version/1/1690556751958"
             });
 
-            string status = response.Status;
+            ProjectVersionStatus status = response.Status;
 
             #endregion
         }
 
         public void RekognitionDeleteUser()
         {
-            #region deleteuser-1686181913475
+            #region DeleteUser-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.DeleteUser(new DeleteUserRequest 
+            var response = client.DeleteUser(new DeleteUserRequest
             {
                 ClientRequestToken = "550e8400-e29b-41d4-a716-446655440001",
                 CollectionId = "MyCollection",
@@ -281,63 +282,12 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
             #endregion
         }
 
-        public void RekognitionDescribeDataset()
-        {
-            #region to-describe-an-amazon-rekognition-custom-labels-dataset-1690827075604
-
-            var client = new AmazonRekognitionClient();
-            var response = client.DescribeDataset(new DescribeDatasetRequest 
-            {
-                DatasetArn = "arn:aws:rekognition:us-east-1:111122223333:project/my-project/dataset/train/1690476084535"
-            });
-
-            DatasetDescription datasetDescription = response.DatasetDescription;
-
-            #endregion
-        }
-
-        public void RekognitionDescribeProjects()
-        {
-            #region to-describe-an-amazon-rekognition-custom-labels-project-1690400952376
-
-            var client = new AmazonRekognitionClient();
-            var response = client.DescribeProjects(new DescribeProjectsRequest 
-            {
-                ProjectNames = new List<string> {
-                    "my-project"
-                }
-            });
-
-            List<ProjectDescription> projectDescriptions = response.ProjectDescriptions;
-
-            #endregion
-        }
-
-        public void RekognitionDescribeProjectVersions()
-        {
-            #region to-describes-an-amazon-rekognition-custom-labels-model-1690558265950
-
-            var client = new AmazonRekognitionClient();
-            var response = client.DescribeProjectVersions(new DescribeProjectVersionsRequest 
-            {
-                ProjectArn = "arn:aws:rekognition:us-east-1:111122223333:project/my-project/1690474772815",
-                VersionNames = new List<string> {
-                    "1"
-                }
-            });
-
-            string nextToken = response.NextToken;
-            List<ProjectVersionDescription> projectVersionDescriptions = response.ProjectVersionDescriptions;
-
-            #endregion
-        }
-
         public void RekognitionDetectCustomLabels()
         {
-            #region to-detect-custom-labels-in-images-with-an-amazon-rekognition-custom-labels-model-1690832037913
+            #region DetectCustomLabels-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.DetectCustomLabels(new DetectCustomLabelsRequest 
+            var response = client.DetectCustomLabels(new DetectCustomLabelsRequest
             {
                 Image = new Image { S3Object = new S3Object {
                     Bucket = "custom-labels-console-us-east-1-1111111111",
@@ -355,10 +305,10 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
 
         public void RekognitionDetectFaces()
         {
-            #region to-detect-faces-in-an-image-1481841782793
+            #region DetectFaces-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.DetectFaces(new DetectFacesRequest 
+            var response = client.DetectFaces(new DetectFacesRequest
             {
                 Image = new Image { S3Object = new S3Object {
                     Bucket = "mybucket",
@@ -367,17 +317,17 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
             });
 
             List<FaceDetail> faceDetails = response.FaceDetails;
-            string orientationCorrection = response.OrientationCorrection;
+            OrientationCorrection orientationCorrection = response.OrientationCorrection;
 
             #endregion
         }
 
         public void RekognitionDetectLabels()
         {
-            #region to-detect-labels-1481834255770
+            #region DetectLabels-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.DetectLabels(new DetectLabelsRequest 
+            var response = client.DetectLabels(new DetectLabelsRequest
             {
                 Image = new Image { S3Object = new S3Object {
                     Bucket = "mybucket",
@@ -394,10 +344,10 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
 
         public void RekognitionDisassociateFaces()
         {
-            #region disassociatefaces-1686182627295
+            #region DisassociateFaces-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.DisassociateFaces(new DisassociateFacesRequest 
+            var response = client.DisassociateFaces(new DisassociateFacesRequest
             {
                 ClientRequestToken = "550e8400-e29b-41d4-a716-446655440003",
                 CollectionId = "MyCollection",
@@ -410,17 +360,17 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
 
             List<DisassociatedFace> disassociatedFaces = response.DisassociatedFaces;
             List<UnsuccessfulFaceDisassociation> unsuccessfulFaceDisassociations = response.UnsuccessfulFaceDisassociations;
-            string userStatus = response.UserStatus;
+            UserStatus userStatus = response.UserStatus;
 
             #endregion
         }
 
         public void RekognitionDistributeDatasetEntries()
         {
-            #region to-distribute-to-an-amazon-rekognition-custom-labels-dataset-1690816977073
+            #region DistributeDatasetEntries-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.DistributeDatasetEntries(new DistributeDatasetEntriesRequest 
+            var response = client.DistributeDatasetEntries(new DistributeDatasetEntriesRequest
             {
                 Datasets = new List<DistributeDataset> {
                     new DistributeDataset { Arn = "arn:aws:rekognition:us-east-1:111122223333:project/my-proj-2/dataset/train/1690564858106" },
@@ -432,40 +382,15 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
             #endregion
         }
 
-        public void RekognitionGetMediaAnalysisJob()
-        {
-            #region getmediaanalysisjob-1697650068124
-
-            var client = new AmazonRekognitionClient();
-            var response = client.GetMediaAnalysisJob(new GetMediaAnalysisJobRequest 
-            {
-                JobId = "861a0645d98ef88efb75477628c011c04942d9d5f58faf2703c393c8cf8c1537"
-            });
-
-            DateTime completionTimestamp = response.CompletionTimestamp;
-            DateTime creationTimestamp = response.CreationTimestamp;
-            MediaAnalysisInput input = response.Input;
-            string jobId = response.JobId;
-            string jobName = response.JobName;
-            MediaAnalysisManifestSummary manifestSummary = response.ManifestSummary;
-            MediaAnalysisOperationsConfig operationsConfig = response.OperationsConfig;
-            MediaAnalysisOutputConfig outputConfig = response.OutputConfig;
-            MediaAnalysisResults results = response.Results;
-            string status = response.Status;
-
-            #endregion
-        }
-
         public void RekognitionIndexFaces()
         {
-            #region to-add-a-face-to-a-collection-1482179542923
+            #region IndexFaces-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.IndexFaces(new IndexFacesRequest 
+            var response = client.IndexFaces(new IndexFacesRequest
             {
                 CollectionId = "myphotos",
                 DetectionAttributes = new List<string> {
-                    
                 },
                 ExternalImageId = "myphotoid",
                 Image = new Image { S3Object = new S3Object {
@@ -475,17 +400,17 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
             });
 
             List<FaceRecord> faceRecords = response.FaceRecords;
-            string orientationCorrection = response.OrientationCorrection;
+            OrientationCorrection orientationCorrection = response.OrientationCorrection;
 
             #endregion
         }
 
         public void RekognitionListCollections()
         {
-            #region to-list-the-collections-1482179199088
+            #region ListCollections-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.ListCollections(new ListCollectionsRequest 
+            var response = client.ListCollections(new ListCollectionsRequest
             {
             });
 
@@ -496,10 +421,10 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
 
         public void RekognitionListDatasetEntries()
         {
-            #region to-list-the-entries-in-an-amazon-rekognition-custom-labels-dataset-1690823292345
+            #region ListDatasetEntries-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.ListDatasetEntries(new ListDatasetEntriesRequest 
+            var response = client.ListDatasetEntries(new ListDatasetEntriesRequest
             {
                 ContainsLabels = new List<string> {
                     "camellia"
@@ -520,10 +445,10 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
 
         public void RekognitionListDatasetLabels()
         {
-            #region to-list-the-entries-in-an-amazon-rekognition-custom-labels-dataset-1690823292345
+            #region ListDatasetLabels-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.ListDatasetLabels(new ListDatasetLabelsRequest 
+            var response = client.ListDatasetLabels(new ListDatasetLabelsRequest
             {
                 DatasetArn = "arn:aws:rekognition:us-east-1:111122223333:project/my-proj-2/dataset/train/1690564858106",
                 MaxResults = 100,
@@ -537,10 +462,10 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
 
         public void RekognitionListFaces()
         {
-            #region to-list-the-faces-in-a-collection-1482181416530
+            #region ListFaces-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.ListFaces(new ListFacesRequest 
+            var response = client.ListFaces(new ListFacesRequest
             {
                 CollectionId = "myphotos",
                 MaxResults = 20
@@ -552,45 +477,12 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
             #endregion
         }
 
-        public void RekognitionListMediaAnalysisJobs()
-        {
-            #region listmediaanalysisjobs-1697650653077
-
-            var client = new AmazonRekognitionClient();
-            var response = client.ListMediaAnalysisJobs(new ListMediaAnalysisJobsRequest 
-            {
-                MaxResults = 10
-            });
-
-            List<MediaAnalysisJobDescription> mediaAnalysisJobs = response.MediaAnalysisJobs;
-
-            #endregion
-        }
-
-        public void RekognitionListProjectPolicies()
-        {
-            #region listprojectpolicies-1658202290173
-
-            var client = new AmazonRekognitionClient();
-            var response = client.ListProjectPolicies(new ListProjectPoliciesRequest 
-            {
-                MaxResults = 5,
-                NextToken = "",
-                ProjectArn = "arn:aws:rekognition:us-east-1:111122223333:project/my-sdk-project/1656557051929"
-            });
-
-            string nextToken = response.NextToken;
-            List<ProjectPolicy> projectPolicies = response.ProjectPolicies;
-
-            #endregion
-        }
-
         public void RekognitionListUsers()
         {
-            #region listusers-1686182360075
+            #region ListUsers-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.ListUsers(new ListUsersRequest 
+            var response = client.ListUsers(new ListUsersRequest
             {
                 CollectionId = "MyCollection"
             });
@@ -603,10 +495,10 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
 
         public void RekognitionPutProjectPolicy()
         {
-            #region putprojectpolicy-1658201727623
+            #region PutProjectPolicy-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.PutProjectPolicy(new PutProjectPolicyRequest 
+            var response = client.PutProjectPolicy(new PutProjectPolicyRequest
             {
                 PolicyDocument = "'{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"ALLOW\",\"Principal\":{\"AWS\":\"principal\"},\"Action\":\"rekognition:CopyProjectVersion\",\"Resource\":\"arn:aws:rekognition:us-east-1:123456789012:project/my-sdk-project/version/DestinationVersionName/1627045542080\"}]}'",
                 PolicyName = "SamplePolicy",
@@ -621,10 +513,10 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
 
         public void RekognitionSearchFaces()
         {
-            #region to-delete-a-face-1482182799377
+            #region SearchFaces-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.SearchFaces(new SearchFacesRequest 
+            var response = client.SearchFaces(new SearchFacesRequest
             {
                 CollectionId = "myphotos",
                 FaceId = "70008e50-75e4-55d0-8e80-363fb73b3a14",
@@ -640,10 +532,10 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
 
         public void RekognitionSearchFacesByImage()
         {
-            #region to-search-for-faces-matching-a-supplied-image-1482175994491
+            #region SearchFacesByImage-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.SearchFacesByImage(new SearchFacesByImageRequest 
+            var response = client.SearchFacesByImage(new SearchFacesByImageRequest
             {
                 CollectionId = "myphotos",
                 FaceMatchThreshold = 95,
@@ -656,17 +548,17 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
 
             List<FaceMatch> faceMatches = response.FaceMatches;
             BoundingBox searchedFaceBoundingBox = response.SearchedFaceBoundingBox;
-            float searchedFaceConfidence = response.SearchedFaceConfidence;
+            float? searchedFaceConfidence = response.SearchedFaceConfidence;
 
             #endregion
         }
 
         public void RekognitionSearchUsers()
         {
-            #region searchusers-1686182912030
+            #region SearchUsers-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.SearchUsers(new SearchUsersRequest 
+            var response = client.SearchUsers(new SearchUsersRequest
             {
                 CollectionId = "MyCollection",
                 MaxUsers = 2,
@@ -683,10 +575,10 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
 
         public void RekognitionSearchUsersByImage()
         {
-            #region searchusersbyimage-1686183178610
+            #region SearchUsersByImage-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.SearchUsersByImage(new SearchUsersByImageRequest 
+            var response = client.SearchUsersByImage(new SearchUsersByImageRequest
             {
                 CollectionId = "MyCollection",
                 Image = new Image { S3Object = new S3Object {
@@ -708,10 +600,10 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
 
         public void RekognitionStartMediaAnalysisJob()
         {
-            #region startmediaanalysisjob-1697651090922
+            #region StartMediaAnalysisJob-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.StartMediaAnalysisJob(new StartMediaAnalysisJobRequest 
+            var response = client.StartMediaAnalysisJob(new StartMediaAnalysisJobRequest
             {
                 Input = new MediaAnalysisInput { S3Object = new S3Object {
                     Bucket = "input-bucket",
@@ -735,42 +627,42 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
 
         public void RekognitionStartProjectVersion()
         {
-            #region to-start-an-amazon-rekognition-custom-labels-model-1690559168398
+            #region StartProjectVersion-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.StartProjectVersion(new StartProjectVersionRequest 
+            var response = client.StartProjectVersion(new StartProjectVersionRequest
             {
                 MaxInferenceUnits = 1,
                 MinInferenceUnits = 1,
                 ProjectVersionArn = "arn:aws:rekognition:us-east-1:111122223333:project/my-project/version/1/1690556751958"
             });
 
-            string status = response.Status;
+            ProjectVersionStatus status = response.Status;
 
             #endregion
         }
 
         public void RekognitionStopProjectVersion()
         {
-            #region to-stop-an-amazon-rekognition-custom-labels-model-1690561110698
+            #region StopProjectVersion-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.StopProjectVersion(new StopProjectVersionRequest 
+            var response = client.StopProjectVersion(new StopProjectVersionRequest
             {
                 ProjectVersionArn = "arn:aws:rekognition:us-east-1:111122223333:project/my-project/version/1/1690556751958"
             });
 
-            string status = response.Status;
+            ProjectVersionStatus status = response.Status;
 
             #endregion
         }
 
         public void RekognitionUpdateDatasetEntries()
         {
-            #region to-add-dataset-entries-to-an-amazon-rekognition-custom-labels-dataset-1690816977073
+            #region UpdateDatasetEntries-1
 
             var client = new AmazonRekognitionClient();
-            var response = client.UpdateDatasetEntries(new UpdateDatasetEntriesRequest 
+            var response = client.UpdateDatasetEntries(new UpdateDatasetEntriesRequest
             {
                 Changes = new DatasetChanges { GroundTruth = new MemoryStream({"source-ref":"s3://custom-labels-console-us-east-1-111111111/assets/flowers_1_test_dataset/mediterranean_spurge4.jpg","mediterranean_spurge":1,"mediterranean_spurge-metadata":{"confidence":1,"job-name":"labeling-job/mediterranean_spurge","class-name":"mediterranean_spurge","human-annotated":"yes","creation-date":"2021-07-11T03:33:42.025Z","type":"groundtruth/image-classification"},"with_leaves":1,"with_leaves-metadata":{"confidence":1,"job-name":"labeling-job/with_leaves","class-name":"with_leaves","human-annotated":"yes","creation-date":"2021-07-11T03:33:42.025Z","type":"groundtruth/image-classification"}}) },
                 DatasetArn = "arn:aws:rekognition:us-east-1:111122223333:project/my-proj-2/dataset/train/1690564858106"
@@ -780,13 +672,10 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

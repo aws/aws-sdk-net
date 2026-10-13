@@ -2,13 +2,14 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.AssociateEntityToThingRequest.EntityId</property>
+    <min>0</min>
     <max>160</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.AssociateEntityToThingRequest.ThingName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9:_-]+</pattern>
+    <pattern>^[a-zA-Z0-9:_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.CreateSystemInstanceRequest.FlowActionsRoleArn</property>
@@ -17,56 +18,68 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.DeleteFlowTemplateRequest.Id</property>
+    <min>0</min>
     <max>160</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.DeleteNamespaceResponse.NamespaceName</property>
+    <min>0</min>
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.DeleteSystemInstanceRequest.Id</property>
+    <min>0</min>
     <max>160</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.DeleteSystemTemplateRequest.Id</property>
+    <min>0</min>
     <max>160</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.DeploySystemInstanceRequest.Id</property>
+    <min>0</min>
     <max>160</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.DeprecateFlowTemplateRequest.Id</property>
+    <min>0</min>
     <max>160</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.DeprecateSystemTemplateRequest.Id</property>
+    <min>0</min>
     <max>160</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.DescribeNamespaceRequest.NamespaceName</property>
+    <min>0</min>
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.DescribeNamespaceResponse.NamespaceName</property>
+    <min>0</min>
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.DescribeNamespaceResponse.TrackingNamespaceName</property>
+    <min>0</min>
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.DissociateEntityFromThingRequest.ThingName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9:_-]+</pattern>
+    <pattern>^[a-zA-Z0-9:_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.GetFlowTemplateRequest.Id</property>
+    <min>0</min>
     <max>160</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.GetFlowTemplateRevisionsRequest.Id</property>
+    <min>0</min>
     <max>160</max>
   </property-value-rule>
   <property-value-rule>
@@ -76,18 +89,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.GetNamespaceDeletionStatusResponse.NamespaceName</property>
+    <min>0</min>
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.GetSystemInstanceRequest.Id</property>
+    <min>0</min>
     <max>160</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.GetSystemTemplateRequest.Id</property>
+    <min>0</min>
     <max>160</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.GetSystemTemplateRevisionsRequest.Id</property>
+    <min>0</min>
     <max>160</max>
   </property-value-rule>
   <property-value-rule>
@@ -102,6 +119,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.GetUploadStatusResponse.NamespaceName</property>
+    <min>0</min>
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
@@ -136,6 +154,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.SearchFlowExecutionsRequest.SystemInstanceId</property>
+    <min>0</min>
     <max>160</max>
   </property-value-rule>
   <property-value-rule>
@@ -155,6 +174,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.SearchThingsRequest.EntityId</property>
+    <min>0</min>
     <max>160</max>
   </property-value-rule>
   <property-value-rule>
@@ -169,6 +189,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.UndeploySystemInstanceRequest.Id</property>
+    <min>0</min>
     <max>160</max>
   </property-value-rule>
   <property-value-rule>
@@ -178,10 +199,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.UpdateFlowTemplateRequest.Id</property>
+    <min>0</min>
     <max>160</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.UpdateSystemTemplateRequest.Id</property>
+    <min>0</min>
     <max>160</max>
   </property-value-rule>
   <property-value-rule>
@@ -191,26 +214,32 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.DefinitionDocument.Text</property>
+    <min>0</min>
     <max>1048576</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.DependencyRevision.Id</property>
+    <min>0</min>
     <max>160</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.EntityDescription.Id</property>
+    <min>0</min>
     <max>160</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.FlowExecutionSummary.FlowTemplateId</property>
+    <min>0</min>
     <max>160</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.FlowExecutionSummary.SystemInstanceId</property>
+    <min>0</min>
     <max>160</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.FlowTemplateSummary.Id</property>
+    <min>0</min>
     <max>160</max>
   </property-value-rule>
   <property-value-rule>
@@ -225,10 +254,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.SystemInstanceSummary.Id</property>
+    <min>0</min>
     <max>160</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTThingsGraph.Model.SystemTemplateSummary.Id</property>
+    <min>0</min>
     <max>160</max>
   </property-value-rule>
   <property-value-rule>
@@ -246,6 +277,6 @@
     <property>Amazon.IoTThingsGraph.Model.Thing.ThingName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9:_-]+</pattern>
+    <pattern>^[a-zA-Z0-9:_-]+$</pattern>
   </property-value-rule>
 </property-value-rules>

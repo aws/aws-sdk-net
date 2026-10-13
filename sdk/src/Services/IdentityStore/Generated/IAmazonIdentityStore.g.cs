@@ -1,0 +1,1799 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using Amazon.Runtime;
+using Amazon.IdentityStore.Model;
+
+#pragma warning disable CS1570
+
+namespace Amazon.IdentityStore
+{
+    /// <summary>
+    /// <para>Interface for accessing IdentityStore</para>
+    ///
+    /// <note> 
+    /// <para>
+    ///  IAM Identity Center uses the <c>sso</c>, <c>sso-directory</c>, and <c>identitystore</c>
+    /// API namespaces. The <c>sso-directory</c> and <c>identitystore</c> namespaces authorize
+    /// access to data in the Identity Store. Make sure your policies with IAM actions from
+    /// these two namespaces are consistent to avoid conflicting authorization to the same
+    /// data.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// The Identity Store service used by IAM Identity Center provides a single place to
+    /// retrieve all of your identities (users and groups). You can use the identity store
+    /// API operations in this guide to manage your identity data programmatically. The scope
+    /// of these APIs allows you to create, read, update, delete, and list users, groups,
+    /// and memberships.
+    /// </para>
+    ///  
+    /// <para>
+    /// This guide also describes identity store operations that you can call and includes
+    /// detailed information about data types and errors.
+    /// </para>
+    ///  <important> 
+    /// <para>
+    /// If you use an external identity provider or Active Directory as your identity source,
+    /// we recommend that you use the <c>Create</c>, <c>Update</c>, and <c>Delete</c> APIs
+    /// with caution. Because IAM Identity Center doesn't support outbound synchronization,
+    /// your identity source won't automatically update with the changes that you make to
+    /// users or groups using these APIs.
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// Amazon Web Services provides SDKs that consist of libraries and sample code for various
+    /// programming languages and platforms (Java, Ruby, .Net, iOS, Android, and more). The
+    /// SDKs provide a convenient way to programmatically access the identity store and other
+    /// Amazon Web Services services. For more information about the Amazon Web Services SDKs,
+    /// including how to download and install them, see <a href="http://aws.amazon.com/tools/">Amazon
+    /// Web Services Builder Center Toolbox</a>.
+    /// </para>
+    /// </summary>
+    public partial interface IAmazonIdentityStore : IAmazonService, IDisposable
+    {
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IIdentityStorePaginatorFactory Paginators { get; }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a group within the specified identity store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGroup service method.</param>
+        /// <returns>The response from the CreateGroup service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ConflictException">
+        /// This request cannot be completed for one of the following reasons:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Performing the requested operation would violate an existing uniqueness claim in the
+        /// identity store. Resolve the conflict before retrying this request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The requested resource was being concurrently modified by another request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ServiceQuotaExceededException">
+        /// The request would cause the number of users or groups in the identity store to exceed
+        /// the maximum allowed.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
+        CreateGroupResponse CreateGroup(CreateGroupRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a group within the specified identity store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateGroup service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ConflictException">
+        /// This request cannot be completed for one of the following reasons:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Performing the requested operation would violate an existing uniqueness claim in the
+        /// identity store. Resolve the conflict before retrying this request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The requested resource was being concurrently modified by another request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ServiceQuotaExceededException">
+        /// The request would cause the number of users or groups in the identity store to exceed
+        /// the maximum allowed.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
+        Task<CreateGroupResponse> CreateGroupAsync(CreateGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a relationship between a member and a group. The following identifiers must
+        /// be specified: <c>GroupId</c>, <c>IdentityStoreId</c>, and <c>MemberId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGroupMembership service method.</param>
+        /// <returns>The response from the CreateGroupMembership service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ConflictException">
+        /// This request cannot be completed for one of the following reasons:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Performing the requested operation would violate an existing uniqueness claim in the
+        /// identity store. Resolve the conflict before retrying this request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The requested resource was being concurrently modified by another request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ServiceQuotaExceededException">
+        /// The request would cause the number of users or groups in the identity store to exceed
+        /// the maximum allowed.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/CreateGroupMembership">REST API Reference for CreateGroupMembership Operation</seealso>
+        CreateGroupMembershipResponse CreateGroupMembership(CreateGroupMembershipRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a relationship between a member and a group. The following identifiers must
+        /// be specified: <c>GroupId</c>, <c>IdentityStoreId</c>, and <c>MemberId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGroupMembership service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateGroupMembership service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ConflictException">
+        /// This request cannot be completed for one of the following reasons:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Performing the requested operation would violate an existing uniqueness claim in the
+        /// identity store. Resolve the conflict before retrying this request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The requested resource was being concurrently modified by another request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ServiceQuotaExceededException">
+        /// The request would cause the number of users or groups in the identity store to exceed
+        /// the maximum allowed.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/CreateGroupMembership">REST API Reference for CreateGroupMembership Operation</seealso>
+        Task<CreateGroupMembershipResponse> CreateGroupMembershipAsync(CreateGroupMembershipRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a user within the specified identity store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
+        /// <returns>The response from the CreateUser service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ConflictException">
+        /// This request cannot be completed for one of the following reasons:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Performing the requested operation would violate an existing uniqueness claim in the
+        /// identity store. Resolve the conflict before retrying this request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The requested resource was being concurrently modified by another request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ServiceQuotaExceededException">
+        /// The request would cause the number of users or groups in the identity store to exceed
+        /// the maximum allowed.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/CreateUser">REST API Reference for CreateUser Operation</seealso>
+        CreateUserResponse CreateUser(CreateUserRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a user within the specified identity store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateUser service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ConflictException">
+        /// This request cannot be completed for one of the following reasons:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Performing the requested operation would violate an existing uniqueness claim in the
+        /// identity store. Resolve the conflict before retrying this request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The requested resource was being concurrently modified by another request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ServiceQuotaExceededException">
+        /// The request would cause the number of users or groups in the identity store to exceed
+        /// the maximum allowed.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/CreateUser">REST API Reference for CreateUser Operation</seealso>
+        Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Delete a group within an identity store given <c>GroupId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGroup service method.</param>
+        /// <returns>The response from the DeleteGroup service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ConflictException">
+        /// This request cannot be completed for one of the following reasons:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Performing the requested operation would violate an existing uniqueness claim in the
+        /// identity store. Resolve the conflict before retrying this request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The requested resource was being concurrently modified by another request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
+        DeleteGroupResponse DeleteGroup(DeleteGroupRequest request);
+#endif
+
+        /// <summary>
+        /// Delete a group within an identity store given <c>GroupId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteGroup service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ConflictException">
+        /// This request cannot be completed for one of the following reasons:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Performing the requested operation would violate an existing uniqueness claim in the
+        /// identity store. Resolve the conflict before retrying this request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The requested resource was being concurrently modified by another request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
+        Task<DeleteGroupResponse> DeleteGroupAsync(DeleteGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Delete a membership within a group given <c>MembershipId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGroupMembership service method.</param>
+        /// <returns>The response from the DeleteGroupMembership service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ConflictException">
+        /// This request cannot be completed for one of the following reasons:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Performing the requested operation would violate an existing uniqueness claim in the
+        /// identity store. Resolve the conflict before retrying this request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The requested resource was being concurrently modified by another request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DeleteGroupMembership">REST API Reference for DeleteGroupMembership Operation</seealso>
+        DeleteGroupMembershipResponse DeleteGroupMembership(DeleteGroupMembershipRequest request);
+#endif
+
+        /// <summary>
+        /// Delete a membership within a group given <c>MembershipId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGroupMembership service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteGroupMembership service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ConflictException">
+        /// This request cannot be completed for one of the following reasons:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Performing the requested operation would violate an existing uniqueness claim in the
+        /// identity store. Resolve the conflict before retrying this request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The requested resource was being concurrently modified by another request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DeleteGroupMembership">REST API Reference for DeleteGroupMembership Operation</seealso>
+        Task<DeleteGroupMembershipResponse> DeleteGroupMembershipAsync(DeleteGroupMembershipRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes a user within an identity store given <c>UserId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUser service method.</param>
+        /// <returns>The response from the DeleteUser service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ConflictException">
+        /// This request cannot be completed for one of the following reasons:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Performing the requested operation would violate an existing uniqueness claim in the
+        /// identity store. Resolve the conflict before retrying this request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The requested resource was being concurrently modified by another request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
+        DeleteUserResponse DeleteUser(DeleteUserRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes a user within an identity store given <c>UserId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUser service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteUser service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ConflictException">
+        /// This request cannot be completed for one of the following reasons:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Performing the requested operation would violate an existing uniqueness claim in the
+        /// identity store. Resolve the conflict before retrying this request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The requested resource was being concurrently modified by another request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
+        Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves the group metadata and attributes from <c>GroupId</c> in an identity store.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGroup service method.</param>
+        /// <returns>The response from the DescribeGroup service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DescribeGroup">REST API Reference for DescribeGroup Operation</seealso>
+        DescribeGroupResponse DescribeGroup(DescribeGroupRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves the group metadata and attributes from <c>GroupId</c> in an identity store.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeGroup service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DescribeGroup">REST API Reference for DescribeGroup Operation</seealso>
+        Task<DescribeGroupResponse> DescribeGroupAsync(DescribeGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves membership metadata and attributes from <c>MembershipId</c> in an identity
+        /// store.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGroupMembership service method.</param>
+        /// <returns>The response from the DescribeGroupMembership service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DescribeGroupMembership">REST API Reference for DescribeGroupMembership Operation</seealso>
+        DescribeGroupMembershipResponse DescribeGroupMembership(DescribeGroupMembershipRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves membership metadata and attributes from <c>MembershipId</c> in an identity
+        /// store.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGroupMembership service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeGroupMembership service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DescribeGroupMembership">REST API Reference for DescribeGroupMembership Operation</seealso>
+        Task<DescribeGroupMembershipResponse> DescribeGroupMembershipAsync(DescribeGroupMembershipRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves details about the specified identity store, including its Amazon Resource
+        /// Name (ARN) and network configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityStore service method.</param>
+        /// <returns>The response from the DescribeIdentityStore service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DescribeIdentityStore">REST API Reference for DescribeIdentityStore Operation</seealso>
+        DescribeIdentityStoreResponse DescribeIdentityStore(DescribeIdentityStoreRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves details about the specified identity store, including its Amazon Resource
+        /// Name (ARN) and network configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityStore service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeIdentityStore service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DescribeIdentityStore">REST API Reference for DescribeIdentityStore Operation</seealso>
+        Task<DescribeIdentityStoreResponse> DescribeIdentityStoreAsync(DescribeIdentityStoreRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves the user metadata and attributes from the <c>UserId</c> in an identity store.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUser service method.</param>
+        /// <returns>The response from the DescribeUser service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DescribeUser">REST API Reference for DescribeUser Operation</seealso>
+        DescribeUserResponse DescribeUser(DescribeUserRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves the user metadata and attributes from the <c>UserId</c> in an identity store.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUser service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeUser service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DescribeUser">REST API Reference for DescribeUser Operation</seealso>
+        Task<DescribeUserResponse> DescribeUserAsync(DescribeUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves <c>GroupId</c> in an identity store.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGroupId service method.</param>
+        /// <returns>The response from the GetGroupId service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/GetGroupId">REST API Reference for GetGroupId Operation</seealso>
+        GetGroupIdResponse GetGroupId(GetGroupIdRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves <c>GroupId</c> in an identity store.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGroupId service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetGroupId service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/GetGroupId">REST API Reference for GetGroupId Operation</seealso>
+        Task<GetGroupIdResponse> GetGroupIdAsync(GetGroupIdRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves the <c>MembershipId</c> in an identity store.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGroupMembershipId service method.</param>
+        /// <returns>The response from the GetGroupMembershipId service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/GetGroupMembershipId">REST API Reference for GetGroupMembershipId Operation</seealso>
+        GetGroupMembershipIdResponse GetGroupMembershipId(GetGroupMembershipIdRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves the <c>MembershipId</c> in an identity store.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGroupMembershipId service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetGroupMembershipId service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/GetGroupMembershipId">REST API Reference for GetGroupMembershipId Operation</seealso>
+        Task<GetGroupMembershipIdResponse> GetGroupMembershipIdAsync(GetGroupMembershipIdRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves the <c>UserId</c> in an identity store.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUserId service method.</param>
+        /// <returns>The response from the GetUserId service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/GetUserId">REST API Reference for GetUserId Operation</seealso>
+        GetUserIdResponse GetUserId(GetUserIdRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves the <c>UserId</c> in an identity store.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUserId service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetUserId service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/GetUserId">REST API Reference for GetUserId Operation</seealso>
+        Task<GetUserIdResponse> GetUserIdAsync(GetUserIdRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Checks the user's membership in all requested groups and returns if the member exists
+        /// in all queried groups.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the IsMemberInGroups service method.</param>
+        /// <returns>The response from the IsMemberInGroups service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/IsMemberInGroups">REST API Reference for IsMemberInGroups Operation</seealso>
+        IsMemberInGroupsResponse IsMemberInGroups(IsMemberInGroupsRequest request);
+#endif
+
+        /// <summary>
+        /// Checks the user's membership in all requested groups and returns if the member exists
+        /// in all queried groups.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the IsMemberInGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the IsMemberInGroups service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/IsMemberInGroups">REST API Reference for IsMemberInGroups Operation</seealso>
+        Task<IsMemberInGroupsResponse> IsMemberInGroupsAsync(IsMemberInGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// For the specified group in the specified identity store, returns the list of all <c>
+        /// GroupMembership</c> objects and returns results in paginated form.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGroupMemberships service method.</param>
+        /// <returns>The response from the ListGroupMemberships service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ListGroupMemberships">REST API Reference for ListGroupMemberships Operation</seealso>
+        ListGroupMembershipsResponse ListGroupMemberships(ListGroupMembershipsRequest request);
+#endif
+
+        /// <summary>
+        /// For the specified group in the specified identity store, returns the list of all <c>
+        /// GroupMembership</c> objects and returns results in paginated form.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGroupMemberships service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListGroupMemberships service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ListGroupMemberships">REST API Reference for ListGroupMemberships Operation</seealso>
+        Task<ListGroupMembershipsResponse> ListGroupMembershipsAsync(ListGroupMembershipsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// For the specified member in the specified identity store, returns the list of all
+        /// <c> GroupMembership</c> objects and returns results in paginated form.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGroupMembershipsForMember service method.</param>
+        /// <returns>The response from the ListGroupMembershipsForMember service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ListGroupMembershipsForMember">REST API Reference for ListGroupMembershipsForMember Operation</seealso>
+        ListGroupMembershipsForMemberResponse ListGroupMembershipsForMember(ListGroupMembershipsForMemberRequest request);
+#endif
+
+        /// <summary>
+        /// For the specified member in the specified identity store, returns the list of all
+        /// <c> GroupMembership</c> objects and returns results in paginated form.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGroupMembershipsForMember service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListGroupMembershipsForMember service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ListGroupMembershipsForMember">REST API Reference for ListGroupMembershipsForMember Operation</seealso>
+        Task<ListGroupMembershipsForMemberResponse> ListGroupMembershipsForMemberAsync(ListGroupMembershipsForMemberRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists all groups in the identity store. Returns a paginated list of complete <c>Group</c>
+        /// objects. Filtering for a <c>Group</c> by the <c>DisplayName</c> attribute is deprecated.
+        /// Instead, use the <c>GetGroupId</c> API action.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGroups service method.</param>
+        /// <returns>The response from the ListGroups service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ListGroups">REST API Reference for ListGroups Operation</seealso>
+        ListGroupsResponse ListGroups(ListGroupsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists all groups in the identity store. Returns a paginated list of complete <c>Group</c>
+        /// objects. Filtering for a <c>Group</c> by the <c>DisplayName</c> attribute is deprecated.
+        /// Instead, use the <c>GetGroupId</c> API action.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListGroups service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ListGroups">REST API Reference for ListGroups Operation</seealso>
+        Task<ListGroupsResponse> ListGroupsAsync(ListGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the identity stores that you have access to. This operation returns only the
+        /// identity store ID and Amazon Resource Name (ARN) of each identity store. To obtain
+        /// additional information about an identity store, call <c>DescribeIdentityStore</c>.
+        /// 
+        ///  
+        /// <para>
+        /// This operation returns results in paginated form. Use the <c>NextToken</c> parameter
+        /// to retrieve additional pages of results.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIdentityStores service method.</param>
+        /// <returns>The response from the ListIdentityStores service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ListIdentityStores">REST API Reference for ListIdentityStores Operation</seealso>
+        ListIdentityStoresResponse ListIdentityStores(ListIdentityStoresRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the identity stores that you have access to. This operation returns only the
+        /// identity store ID and Amazon Resource Name (ARN) of each identity store. To obtain
+        /// additional information about an identity store, call <c>DescribeIdentityStore</c>.
+        /// 
+        ///  
+        /// <para>
+        /// This operation returns results in paginated form. Use the <c>NextToken</c> parameter
+        /// to retrieve additional pages of results.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIdentityStores service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListIdentityStores service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ListIdentityStores">REST API Reference for ListIdentityStores Operation</seealso>
+        Task<ListIdentityStoresResponse> ListIdentityStoresAsync(ListIdentityStoresRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists all users in the identity store. Returns a paginated list of complete <c>User</c>
+        /// objects. Filtering for a <c>User</c> by the <c>UserName</c> attribute is deprecated.
+        /// Instead, use the <c>GetUserId</c> API action.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUsers service method.</param>
+        /// <returns>The response from the ListUsers service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ListUsers">REST API Reference for ListUsers Operation</seealso>
+        ListUsersResponse ListUsers(ListUsersRequest request);
+#endif
+
+        /// <summary>
+        /// Lists all users in the identity store. Returns a paginated list of complete <c>User</c>
+        /// objects. Filtering for a <c>User</c> by the <c>UserName</c> attribute is deprecated.
+        /// Instead, use the <c>GetUserId</c> API action.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUsers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListUsers service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ListUsers">REST API Reference for ListUsers Operation</seealso>
+        Task<ListUsersResponse> ListUsersAsync(ListUsersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the specified group metadata and attributes in the specified identity store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGroup service method.</param>
+        /// <returns>The response from the UpdateGroup service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ConflictException">
+        /// This request cannot be completed for one of the following reasons:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Performing the requested operation would violate an existing uniqueness claim in the
+        /// identity store. Resolve the conflict before retrying this request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The requested resource was being concurrently modified by another request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ServiceQuotaExceededException">
+        /// The request would cause the number of users or groups in the identity store to exceed
+        /// the maximum allowed.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
+        UpdateGroupResponse UpdateGroup(UpdateGroupRequest request);
+#endif
+
+        /// <summary>
+        /// Updates the specified group metadata and attributes in the specified identity store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateGroup service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ConflictException">
+        /// This request cannot be completed for one of the following reasons:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Performing the requested operation would violate an existing uniqueness claim in the
+        /// identity store. Resolve the conflict before retrying this request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The requested resource was being concurrently modified by another request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ServiceQuotaExceededException">
+        /// The request would cause the number of users or groups in the identity store to exceed
+        /// the maximum allowed.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
+        Task<UpdateGroupResponse> UpdateGroupAsync(UpdateGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the configuration of the specified identity store, including its network configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIdentityStore service method.</param>
+        /// <returns>The response from the UpdateIdentityStore service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ConflictException">
+        /// This request cannot be completed for one of the following reasons:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Performing the requested operation would violate an existing uniqueness claim in the
+        /// identity store. Resolve the conflict before retrying this request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The requested resource was being concurrently modified by another request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/UpdateIdentityStore">REST API Reference for UpdateIdentityStore Operation</seealso>
+        UpdateIdentityStoreResponse UpdateIdentityStore(UpdateIdentityStoreRequest request);
+#endif
+
+        /// <summary>
+        /// Updates the configuration of the specified identity store, including its network configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIdentityStore service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateIdentityStore service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ConflictException">
+        /// This request cannot be completed for one of the following reasons:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Performing the requested operation would violate an existing uniqueness claim in the
+        /// identity store. Resolve the conflict before retrying this request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The requested resource was being concurrently modified by another request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/UpdateIdentityStore">REST API Reference for UpdateIdentityStore Operation</seealso>
+        Task<UpdateIdentityStoreResponse> UpdateIdentityStoreAsync(UpdateIdentityStoreRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the specified user metadata and attributes in the specified identity store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUser service method.</param>
+        /// <returns>The response from the UpdateUser service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ConflictException">
+        /// This request cannot be completed for one of the following reasons:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Performing the requested operation would violate an existing uniqueness claim in the
+        /// identity store. Resolve the conflict before retrying this request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The requested resource was being concurrently modified by another request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ServiceQuotaExceededException">
+        /// The request would cause the number of users or groups in the identity store to exceed
+        /// the maximum allowed.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
+        UpdateUserResponse UpdateUser(UpdateUserRequest request);
+#endif
+
+        /// <summary>
+        /// Updates the specified user metadata and attributes in the specified identity store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUser service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateUser service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ConflictException">
+        /// This request cannot be completed for one of the following reasons:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Performing the requested operation would violate an existing uniqueness claim in the
+        /// identity store. Resolve the conflict before retrying this request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The requested resource was being concurrently modified by another request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ServiceQuotaExceededException">
+        /// The request would cause the number of users or groups in the identity store to exceed
+        /// the maximum allowed.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
+        Task<UpdateUserResponse> UpdateUserAsync(UpdateUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request);
+
+#if NET8_0_OR_GREATER
+        // Warning CA1033 is issued when the child types can not call the method defined in parent types.
+        // In this use case the intended caller is only meant to be the interface as a factory
+        // method to create the child types. Given the SDK use case the warning can be ignored.
+#pragma warning disable CA1033
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.DynamicDependency(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties, typeof(AmazonIdentityStoreConfig))]
+        static ClientConfig IAmazonService.CreateDefaultClientConfig() => new AmazonIdentityStoreConfig();
+
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",
+            Justification = "This suppression is here to ignore the warnings caused by CognitoSync. See justification in IAmazonService.")]
+        static IAmazonService IAmazonService.CreateDefaultServiceClient(AWSCredentials awsCredentials, ClientConfig clientConfig)
+        {
+            var serviceClientConfig = clientConfig as AmazonIdentityStoreConfig;
+            if (serviceClientConfig == null)
+            {
+                throw new AmazonClientException("ClientConfig is not of type AmazonIdentityStoreConfig to create AmazonIdentityStoreClient");
+            }
+
+            return awsCredentials == null ?
+                    new AmazonIdentityStoreClient(serviceClientConfig) :
+                    new AmazonIdentityStoreClient(awsCredentials, serviceClientConfig);
+        }
+#pragma warning restore CA1033
+#endif
+    }
+}
