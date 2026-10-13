@@ -38,7 +38,12 @@ namespace Amazon.Runtime.Internal.Util
             {
                 // Generated response unmarshallers check IsFinalBlock on this before the first Read() to detect an
                 // empty body, so the stream has to have been read by the time the underlying reader is observed.
-                ReadFirstBuffer();
+                // This copies the Utf8JsonReader: per-token code should use the members below instead.
+                if (!_hasReadFromStream)
+                {
+                    ReadFirstBuffer();
+                }
+
                 return _reader;
             }
         }
@@ -117,6 +122,32 @@ namespace Amazon.Runtime.Internal.Util
             return _reader.TryGetBytesFromBase64(out value);
         }
 
+        /// <summary>
+        /// The type of the current JSON token.
+        /// </summary>
+        public JsonTokenType TokenType => _reader.TokenType;
+
+        /// <summary>
+        /// The raw UTF-8 bytes of the current JSON token value.
+        /// </summary>
+        public ReadOnlySpan<byte> ValueSpan => _reader.ValueSpan;
+
+        /// <summary>
+        /// Reads the current JSON string or property name token value as a <see cref="string"/>.
+        /// </summary>
+        public string GetString()
+        {
+            return _reader.GetString();
+        }
+
+        /// <summary>
+        /// Reads the current JSON true or false token value as a <see cref="bool"/>.
+        /// </summary>
+        public bool GetBoolean()
+        {
+            return _reader.GetBoolean();
+        }
+
         private Stream _stream;
         private byte[] _buffer;
         private bool _hasReadFromStream;
@@ -177,7 +208,10 @@ namespace Amazon.Runtime.Internal.Util
         /// <returns>true if there is more data, false otherwise.</returns>
         public bool Read()
         {
-            ReadFirstBuffer();
+            if (!_hasReadFromStream)
+            {
+                ReadFirstBuffer();
+            }
 
             // hasMoreData can return false if the value starts in one buffer and leaks into the next buffer
             bool hasMoreData = _reader.Read();
@@ -200,8 +234,6 @@ namespace Amazon.Runtime.Internal.Util
 
         private void ReadFirstBuffer()
         {
-            if (_hasReadFromStream)
-                return;
             _hasReadFromStream = true;
 
             int bytesRead = FillBuffer(_stream, ref _buffer, 0, _buffer.Length);
