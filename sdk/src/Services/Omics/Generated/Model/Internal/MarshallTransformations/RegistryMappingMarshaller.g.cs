@@ -45,6 +45,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetCredentialArn())
+            {
+                context.Writer.WritePropertyName("credentialArn");
+                context.Writer.WriteStringValue(requestObject.CredentialArn);
+            }
+
             if (requestObject.IsSetEcrAccountId())
             {
                 context.Writer.WritePropertyName("ecrAccountId");
