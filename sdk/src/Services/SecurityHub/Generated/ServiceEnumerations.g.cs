@@ -319,6 +319,11 @@ namespace Amazon.SecurityHub
         public static readonly AutomationRulesActionTypeV2 FINDING_FIELDS_UPDATE = new AutomationRulesActionTypeV2("FINDING_FIELDS_UPDATE");
 
         /// <summary>
+        /// Constant RESOURCE_FIELDS_UPDATE for AutomationRulesActionTypeV2
+        /// </summary>
+        public static readonly AutomationRulesActionTypeV2 RESOURCE_FIELDS_UPDATE = new AutomationRulesActionTypeV2("RESOURCE_FIELDS_UPDATE");
+
+        /// <summary>
         /// Constructs a custom AutomationRulesActionTypeV2 for a value not among the defined constants.
         /// </summary>
         public AutomationRulesActionTypeV2(string value) : base(value) { }
@@ -881,6 +886,52 @@ namespace Amazon.SecurityHub
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ControlStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type CriticalitySourceType.
+    /// </summary>
+    public class CriticalitySourceType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AutomationRule for CriticalitySourceType
+        /// </summary>
+        public static readonly CriticalitySourceType AutomationRule = new CriticalitySourceType("AutomationRule");
+
+        /// <summary>
+        /// Constant ResourceName for CriticalitySourceType
+        /// </summary>
+        public static readonly CriticalitySourceType ResourceName = new CriticalitySourceType("ResourceName");
+
+        /// <summary>
+        /// Constant TagInference for CriticalitySourceType
+        /// </summary>
+        public static readonly CriticalitySourceType TagInference = new CriticalitySourceType("TagInference");
+
+        /// <summary>
+        /// Constructs a custom CriticalitySourceType for a value not among the defined constants.
+        /// </summary>
+        public CriticalitySourceType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CriticalitySourceType FindValue(string value)
+        {
+            return FindValue<CriticalitySourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CriticalitySourceType(string value)
         {
             return FindValue(value);
         }
@@ -2483,6 +2534,16 @@ namespace Amazon.SecurityHub
         public static readonly GroupByField Finding_infoTypes = new GroupByField("finding_info.types");
 
         /// <summary>
+        /// Constant Impact for GroupByField
+        /// </summary>
+        public static readonly GroupByField Impact = new GroupByField("impact");
+
+        /// <summary>
+        /// Constant Likelihood for GroupByField
+        /// </summary>
+        public static readonly GroupByField Likelihood = new GroupByField("likelihood");
+
+        /// <summary>
         /// Constant MetadataProductName for GroupByField
         /// </summary>
         public static readonly GroupByField MetadataProductName = new GroupByField("metadata.product.name");
@@ -2501,6 +2562,11 @@ namespace Amazon.SecurityHub
         /// Constant ResourcesCloud_partition for GroupByField
         /// </summary>
         public static readonly GroupByField ResourcesCloud_partition = new GroupByField("resources.cloud_partition");
+
+        /// <summary>
+        /// Constant ResourcesCriticality for GroupByField
+        /// </summary>
+        public static readonly GroupByField ResourcesCriticality = new GroupByField("resources.criticality");
 
         /// <summary>
         /// Constant ResourcesName for GroupByField
@@ -3577,6 +3643,16 @@ namespace Amazon.SecurityHub
         public static readonly OcsfStringField Finding_infoUid = new OcsfStringField("finding_info.uid");
 
         /// <summary>
+        /// Constant Impact for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Impact = new OcsfStringField("impact");
+
+        /// <summary>
+        /// Constant Likelihood for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Likelihood = new OcsfStringField("likelihood");
+
+        /// <summary>
         /// Constant MalwareName for OcsfStringField
         /// </summary>
         public static readonly OcsfStringField MalwareName = new OcsfStringField("malware.name");
@@ -3640,6 +3716,11 @@ namespace Amazon.SecurityHub
         /// Constant ResourcesCloud_partition for OcsfStringField
         /// </summary>
         public static readonly OcsfStringField ResourcesCloud_partition = new OcsfStringField("resources.cloud_partition");
+
+        /// <summary>
+        /// Constant ResourcesCriticality for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesCriticality = new OcsfStringField("resources.criticality");
 
         /// <summary>
         /// Constant ResourcesDeviceEncryption_detailsKey_uid for OcsfStringField
@@ -4380,6 +4461,62 @@ namespace Amazon.SecurityHub
     }
 
     /// <summary>
+    /// Constants used for properties of type ResourceCriticality.
+    /// </summary>
+    public class ResourceCriticality : ConstantClass
+    {
+        /// <summary>
+        /// Constant High for ResourceCriticality
+        /// </summary>
+        public static readonly ResourceCriticality High = new ResourceCriticality("High");
+
+        /// <summary>
+        /// Constant Low for ResourceCriticality
+        /// </summary>
+        public static readonly ResourceCriticality Low = new ResourceCriticality("Low");
+
+        /// <summary>
+        /// Constant Medium for ResourceCriticality
+        /// </summary>
+        public static readonly ResourceCriticality Medium = new ResourceCriticality("Medium");
+
+        /// <summary>
+        /// Constant Unknown for ResourceCriticality
+        /// </summary>
+        public static readonly ResourceCriticality Unknown = new ResourceCriticality("Unknown");
+
+        /// <summary>
+        /// Constant VeryHigh for ResourceCriticality
+        /// </summary>
+        public static readonly ResourceCriticality VeryHigh = new ResourceCriticality("Very High");
+
+        /// <summary>
+        /// Constructs a custom ResourceCriticality for a value not among the defined constants.
+        /// </summary>
+        public ResourceCriticality(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceCriticality FindValue(string value)
+        {
+            return FindValue<ResourceCriticality>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceCriticality(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ResourceGroupByField.
     /// </summary>
     public class ResourceGroupByField : ConstantClass
@@ -4418,6 +4555,11 @@ namespace Amazon.SecurityHub
         /// Constant ResourceCloudPartition for ResourceGroupByField
         /// </summary>
         public static readonly ResourceGroupByField ResourceCloudPartition = new ResourceGroupByField("ResourceCloudPartition");
+
+        /// <summary>
+        /// Constant ResourceCriticality for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField ResourceCriticality = new ResourceGroupByField("ResourceCriticality");
 
         /// <summary>
         /// Constant ResourceInfoAIDetailsCanonicalId for ResourceGroupByField
@@ -4813,6 +4955,11 @@ namespace Amazon.SecurityHub
         /// Constant ResourceCloudPartition for ResourcesStringField
         /// </summary>
         public static readonly ResourcesStringField ResourceCloudPartition = new ResourcesStringField("ResourceCloudPartition");
+
+        /// <summary>
+        /// Constant ResourceCriticality for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField ResourceCriticality = new ResourcesStringField("ResourceCriticality");
 
         /// <summary>
         /// Constant ResourceGuid for ResourcesStringField

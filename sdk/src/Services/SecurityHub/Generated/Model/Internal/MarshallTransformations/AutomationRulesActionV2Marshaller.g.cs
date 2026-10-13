@@ -67,6 +67,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetResourceFieldsUpdate())
+            {
+                context.Writer.WritePropertyName("ResourceFieldsUpdate");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AutomationRulesResourceFieldsUpdateV2Marshaller.Instance;
+                marshaller.Marshall(requestObject.ResourceFieldsUpdate, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");

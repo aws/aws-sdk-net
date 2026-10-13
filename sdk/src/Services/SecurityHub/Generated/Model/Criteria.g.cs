@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Defines the parameters and conditions used to evaluate and filter security findings.
+    /// Defines the parameters and conditions used to evaluate and filter security findings
+    /// or resources.
     /// </summary>
     public partial class Criteria
     {
@@ -46,5 +47,18 @@ namespace Amazon.SecurityHub.Model
         /// Checks to see if the OcsfFindingCriteria property is set.
         /// </summary>
         internal bool IsSetOcsfFindingCriteria() => this.OcsfFindingCriteria != null;
+
+        /// <summary>
+        /// Gets and sets the property ResourceCriteria. 
+        /// <para>
+        /// The filtering conditions for resources.
+        /// </para>
+        /// </summary>
+        public ResourcesFilters ResourceCriteria { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ResourceCriteria property is set.
+        /// </summary>
+        internal bool IsSetResourceCriteria() => this.ResourceCriteria != null;
     }
 }

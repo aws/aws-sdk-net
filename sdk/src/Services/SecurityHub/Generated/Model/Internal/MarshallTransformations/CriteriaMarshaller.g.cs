@@ -55,6 +55,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+
+            if (requestObject.IsSetResourceCriteria())
+            {
+                context.Writer.WritePropertyName("ResourceCriteria");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ResourcesFiltersMarshaller.Instance;
+                marshaller.Marshall(requestObject.ResourceCriteria, context);
+
+                context.Writer.WriteEndObject();
+            }
         }
 
         /// <summary>
