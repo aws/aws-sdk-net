@@ -49,7 +49,8 @@ public final class HttpProtocolTestGenerator implements Runnable {
     // (await client.OperationAsync(request)) against a mocked HTTP layer.
     private static final Set<ShapeId> MOCKED_CLIENT_SERVICES = Set.of(
             ShapeId.from("aws.protocoltests.json10#JsonRpc10"),
-            ShapeId.from("aws.protocoltests.restjson#RestJson")
+            ShapeId.from("aws.protocoltests.restjson#RestJson"),
+            ShapeId.from("aws.protocoltests.json#JsonProtocol")
     );
     private final boolean useMockedClient;
     private final List<String> tagsToSkip = List.of("defaults" , "skip-legacy-conversion");

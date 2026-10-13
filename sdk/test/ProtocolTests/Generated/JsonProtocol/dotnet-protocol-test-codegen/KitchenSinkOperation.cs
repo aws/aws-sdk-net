@@ -34,6 +34,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.JsonProtocol
 {
@@ -47,7 +48,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonProtocol")]
-        public void serializes_string_shapesRequest()
+        public async Task serializes_string_shapesRequest()
         {
             // Arrange
             var request = new KitchenSinkOperationRequest
@@ -56,21 +57,29 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
             var config = new AmazonJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new KitchenSinkOperationRequestMarshaller();
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.KitchenSinkOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\"String\":\"abc xyz\"}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -80,7 +89,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonProtocol")]
-        public void serializes_string_shapes_with_jsonvalue_traitRequest()
+        public async Task serializes_string_shapes_with_jsonvalue_traitRequest()
         {
             // Arrange
             var request = new KitchenSinkOperationRequest
@@ -89,21 +98,29 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
             var config = new AmazonJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new KitchenSinkOperationRequestMarshaller();
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.KitchenSinkOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\"JsonValue\":\"{\\\"string\\\":\\\"value\\\",\\\"number\\\":1234.5,\\\"boolTrue\\\":true,\\\"boolFalse\\\":false,\\\"array\\\":[1,2,3,4],\\\"object\\\":{\\\"key\\\":\\\"value\\\"},\\\"null\\\":null}\"}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -113,7 +130,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonProtocol")]
-        public void serializes_integer_shapesRequest()
+        public async Task serializes_integer_shapesRequest()
         {
             // Arrange
             var request = new KitchenSinkOperationRequest
@@ -122,21 +139,29 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
             var config = new AmazonJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new KitchenSinkOperationRequestMarshaller();
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.KitchenSinkOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\"Integer\":1234}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -146,7 +171,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonProtocol")]
-        public void serializes_long_shapesRequest()
+        public async Task serializes_long_shapesRequest()
         {
             // Arrange
             var request = new KitchenSinkOperationRequest
@@ -155,21 +180,29 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
             var config = new AmazonJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new KitchenSinkOperationRequestMarshaller();
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.KitchenSinkOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\"Long\":999999999999}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -179,7 +212,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonProtocol")]
-        public void serializes_float_shapesRequest()
+        public async Task serializes_float_shapesRequest()
         {
             // Arrange
             var request = new KitchenSinkOperationRequest
@@ -188,21 +221,29 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
             var config = new AmazonJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new KitchenSinkOperationRequestMarshaller();
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.KitchenSinkOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\"Float\":1234.5}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -212,7 +253,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonProtocol")]
-        public void serializes_double_shapesRequest()
+        public async Task serializes_double_shapesRequest()
         {
             // Arrange
             var request = new KitchenSinkOperationRequest
@@ -221,21 +262,29 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
             var config = new AmazonJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new KitchenSinkOperationRequestMarshaller();
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.KitchenSinkOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\"Double\":1234.5}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -245,7 +294,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonProtocol")]
-        public void serializes_blob_shapesRequest()
+        public async Task serializes_blob_shapesRequest()
         {
             // Arrange
             var request = new KitchenSinkOperationRequest
@@ -254,21 +303,29 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
             var config = new AmazonJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new KitchenSinkOperationRequestMarshaller();
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.KitchenSinkOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\"Blob\":\"YmluYXJ5LXZhbHVl\"}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -278,7 +335,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonProtocol")]
-        public void serializes_boolean_shapes_trueRequest()
+        public async Task serializes_boolean_shapes_trueRequest()
         {
             // Arrange
             var request = new KitchenSinkOperationRequest
@@ -287,21 +344,29 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
             var config = new AmazonJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new KitchenSinkOperationRequestMarshaller();
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.KitchenSinkOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\"Boolean\":true}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -311,7 +376,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonProtocol")]
-        public void serializes_boolean_shapes_falseRequest()
+        public async Task serializes_boolean_shapes_falseRequest()
         {
             // Arrange
             var request = new KitchenSinkOperationRequest
@@ -320,21 +385,29 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
             var config = new AmazonJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new KitchenSinkOperationRequestMarshaller();
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.KitchenSinkOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\"Boolean\":false}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -344,7 +417,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonProtocol")]
-        public void serializes_timestamp_shapesRequest()
+        public async Task serializes_timestamp_shapesRequest()
         {
             // Arrange
             var request = new KitchenSinkOperationRequest
@@ -353,21 +426,29 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
             var config = new AmazonJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new KitchenSinkOperationRequestMarshaller();
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.KitchenSinkOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\"Timestamp\":946845296}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -377,7 +458,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonProtocol")]
-        public void serializes_timestamp_shapes_with_iso8601_timestampformatRequest()
+        public async Task serializes_timestamp_shapes_with_iso8601_timestampformatRequest()
         {
             // Arrange
             var request = new KitchenSinkOperationRequest
@@ -386,21 +467,29 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
             var config = new AmazonJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new KitchenSinkOperationRequestMarshaller();
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.KitchenSinkOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\"Iso8601Timestamp\":\"2000-01-02T20:34:56Z\"}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -410,7 +499,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonProtocol")]
-        public void serializes_timestamp_shapes_with_httpdate_timestampformatRequest()
+        public async Task serializes_timestamp_shapes_with_httpdate_timestampformatRequest()
         {
             // Arrange
             var request = new KitchenSinkOperationRequest
@@ -419,21 +508,29 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
             var config = new AmazonJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new KitchenSinkOperationRequestMarshaller();
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.KitchenSinkOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\"HttpdateTimestamp\":\"Sun, 02 Jan 2000 20:34:56 GMT\"}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -443,7 +540,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonProtocol")]
-        public void serializes_timestamp_shapes_with_unixtimestamp_timestampformatRequest()
+        public async Task serializes_timestamp_shapes_with_unixtimestamp_timestampformatRequest()
         {
             // Arrange
             var request = new KitchenSinkOperationRequest
@@ -452,21 +549,29 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
             var config = new AmazonJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new KitchenSinkOperationRequestMarshaller();
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.KitchenSinkOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\"UnixTimestamp\":946845296}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -476,7 +581,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonProtocol")]
-        public void serializes_list_shapesRequest()
+        public async Task serializes_list_shapesRequest()
         {
             // Arrange
             var request = new KitchenSinkOperationRequest
@@ -490,21 +595,29 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
             var config = new AmazonJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new KitchenSinkOperationRequestMarshaller();
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.KitchenSinkOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\"ListOfStrings\":[\"abc\",\"mno\",\"xyz\"]}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -514,7 +627,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonProtocol")]
-        public void serializes_empty_list_shapesRequest()
+        public async Task serializes_empty_list_shapesRequest()
         {
             // Arrange
             var request = new KitchenSinkOperationRequest
@@ -525,21 +638,29 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
             var config = new AmazonJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new KitchenSinkOperationRequestMarshaller();
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.KitchenSinkOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\"ListOfStrings\":[]}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -549,7 +670,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonProtocol")]
-        public void serializes_list_of_map_shapesRequest()
+        public async Task serializes_list_of_map_shapesRequest()
         {
             // Arrange
             var request = new KitchenSinkOperationRequest
@@ -575,21 +696,29 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
             var config = new AmazonJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new KitchenSinkOperationRequestMarshaller();
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.KitchenSinkOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\"ListOfMapsOfStrings\":[{\"foo\":\"bar\"},{\"abc\":\"xyz\"},{\"red\":\"blue\"}]}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -599,7 +728,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonProtocol")]
-        public void serializes_list_of_structure_shapesRequest()
+        public async Task serializes_list_of_structure_shapesRequest()
         {
             // Arrange
             var request = new KitchenSinkOperationRequest
@@ -622,21 +751,29 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
             var config = new AmazonJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new KitchenSinkOperationRequestMarshaller();
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.KitchenSinkOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\"ListOfStructs\":[{\"Value\":\"abc\"},{\"Value\":\"mno\"},{\"Value\":\"xyz\"}]}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -646,7 +783,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonProtocol")]
-        public void serializes_list_of_recursive_structure_shapesRequest()
+        public async Task serializes_list_of_recursive_structure_shapesRequest()
         {
             // Arrange
             var request = new KitchenSinkOperationRequest
@@ -673,21 +810,29 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
             var config = new AmazonJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new KitchenSinkOperationRequestMarshaller();
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.KitchenSinkOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\"RecursiveList\":[{\"RecursiveList\":[{\"RecursiveList\":[{\"Integer\":123}]}]}]}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -697,7 +842,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonProtocol")]
-        public void serializes_map_shapesRequest()
+        public async Task serializes_map_shapesRequest()
         {
             // Arrange
             var request = new KitchenSinkOperationRequest
@@ -711,21 +856,29 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
             var config = new AmazonJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new KitchenSinkOperationRequestMarshaller();
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.KitchenSinkOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\"MapOfStrings\":{\"abc\":\"xyz\",\"mno\":\"hjk\"}}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -735,7 +888,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonProtocol")]
-        public void serializes_empty_map_shapesRequest()
+        public async Task serializes_empty_map_shapesRequest()
         {
             // Arrange
             var request = new KitchenSinkOperationRequest
@@ -747,21 +900,29 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
             var config = new AmazonJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new KitchenSinkOperationRequestMarshaller();
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.KitchenSinkOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\"MapOfStrings\":{}}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -771,7 +932,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonProtocol")]
-        public void serializes_map_of_list_shapesRequest()
+        public async Task serializes_map_of_list_shapesRequest()
         {
             // Arrange
             var request = new KitchenSinkOperationRequest
@@ -793,21 +954,29 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
             var config = new AmazonJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new KitchenSinkOperationRequestMarshaller();
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.KitchenSinkOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\"MapOfListsOfStrings\":{\"abc\":[\"abc\",\"xyz\"],\"mno\":[\"xyz\",\"abc\"]}}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -817,7 +986,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonProtocol")]
-        public void serializes_map_of_structure_shapesRequest()
+        public async Task serializes_map_of_structure_shapesRequest()
         {
             // Arrange
             var request = new KitchenSinkOperationRequest
@@ -837,21 +1006,29 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
             var config = new AmazonJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new KitchenSinkOperationRequestMarshaller();
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.KitchenSinkOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\"MapOfStructs\":{\"key1\":{\"Value\":\"value-1\"},\"key2\":{\"Value\":\"value-2\"}}}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -861,7 +1038,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonProtocol")]
-        public void serializes_map_of_recursive_structure_shapesRequest()
+        public async Task serializes_map_of_recursive_structure_shapesRequest()
         {
             // Arrange
             var request = new KitchenSinkOperationRequest
@@ -891,21 +1068,29 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
             var config = new AmazonJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new KitchenSinkOperationRequestMarshaller();
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.KitchenSinkOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\"RecursiveMap\":{\"key1\":{\"RecursiveMap\":{\"key2\":{\"RecursiveMap\":{\"key3\":{\"Boolean\":false}}}}}}}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -915,7 +1100,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonProtocol")]
-        public void serializes_structure_shapesRequest()
+        public async Task serializes_structure_shapesRequest()
         {
             // Arrange
             var request = new KitchenSinkOperationRequest
@@ -927,21 +1112,29 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
             var config = new AmazonJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new KitchenSinkOperationRequestMarshaller();
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.KitchenSinkOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\"SimpleStruct\":{\"Value\":\"abc\"}}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -951,7 +1144,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonProtocol")]
-        public void serializes_structure_members_with_locationname_traitsRequest()
+        public async Task serializes_structure_members_with_locationname_traitsRequest()
         {
             // Arrange
             var request = new KitchenSinkOperationRequest
@@ -963,21 +1156,29 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
             var config = new AmazonJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new KitchenSinkOperationRequestMarshaller();
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.KitchenSinkOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\"StructWithJsonName\":{\"Value\":\"some-value\"}}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -987,7 +1188,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonProtocol")]
-        public void serializes_empty_structure_shapesRequest()
+        public async Task serializes_empty_structure_shapesRequest()
         {
             // Arrange
             var request = new KitchenSinkOperationRequest
@@ -998,21 +1199,29 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
             var config = new AmazonJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new KitchenSinkOperationRequestMarshaller();
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.KitchenSinkOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\"SimpleStruct\":{}}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -1022,7 +1231,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonProtocol")]
-        public void serializes_structure_which_have_no_membersRequest()
+        public async Task serializes_structure_which_have_no_membersRequest()
         {
             // Arrange
             var request = new KitchenSinkOperationRequest
@@ -1033,21 +1242,29 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
             var config = new AmazonJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new KitchenSinkOperationRequestMarshaller();
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.KitchenSinkOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\"EmptyStruct\":{}}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -1057,7 +1274,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonProtocol")]
-        public void serializes_recursive_structure_shapesRequest()
+        public async Task serializes_recursive_structure_shapesRequest()
         {
             // Arrange
             var request = new KitchenSinkOperationRequest
@@ -1091,21 +1308,29 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
             var config = new AmazonJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new KitchenSinkOperationRequestMarshaller();
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.KitchenSinkOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\"String\":\"top-value\",\"Boolean\":false,\"RecursiveStruct\":{\"String\":\"nested-value\",\"Boolean\":true,\"RecursiveList\":[{\"String\":\"string-only\"},{\"RecursiveStruct\":{\"MapOfStrings\":{\"color\":\"red\",\"size\":\"large\"}}}]}}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonProtocol.KitchenSinkOperation".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -1115,26 +1340,33 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonProtocol")]
-        public void parses_operations_with_empty_json_bodiesResponse()
+        public async Task parses_operations_with_empty_json_bodiesResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            byte[] bytes = Encoding.ASCII.GetBytes("{}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new KitchenSinkOperationResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.KitchenSinkOperationAsync(new KitchenSinkOperationRequest()).ConfigureAwait(false);
             var expectedResponse = new KitchenSinkOperationResponse
             {
             };
 
             // Assert
-            var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -1144,27 +1376,34 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonProtocol")]
-        public void parses_string_shapesResponse()
+        public async Task parses_string_shapesResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\"String\":\"string-value\"}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\"String\":\"string-value\"}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new KitchenSinkOperationResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.KitchenSinkOperationAsync(new KitchenSinkOperationRequest()).ConfigureAwait(false);
             var expectedResponse = new KitchenSinkOperationResponse
             {
                 String = "string-value",
             };
 
             // Assert
-            var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -1174,27 +1413,34 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonProtocol")]
-        public void parses_integer_shapesResponse()
+        public async Task parses_integer_shapesResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\"Integer\":1234}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\"Integer\":1234}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new KitchenSinkOperationResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.KitchenSinkOperationAsync(new KitchenSinkOperationRequest()).ConfigureAwait(false);
             var expectedResponse = new KitchenSinkOperationResponse
             {
                 Integer = 1234,
             };
 
             // Assert
-            var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -1204,27 +1450,34 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonProtocol")]
-        public void parses_long_shapesResponse()
+        public async Task parses_long_shapesResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\"Long\":1234567890123456789}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\"Long\":1234567890123456789}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new KitchenSinkOperationResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.KitchenSinkOperationAsync(new KitchenSinkOperationRequest()).ConfigureAwait(false);
             var expectedResponse = new KitchenSinkOperationResponse
             {
                 Long = 1234567890123456789,
             };
 
             // Assert
-            var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -1234,27 +1487,34 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonProtocol")]
-        public void parses_float_shapesResponse()
+        public async Task parses_float_shapesResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\"Float\":1234.5}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\"Float\":1234.5}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new KitchenSinkOperationResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.KitchenSinkOperationAsync(new KitchenSinkOperationRequest()).ConfigureAwait(false);
             var expectedResponse = new KitchenSinkOperationResponse
             {
                 Float = 1234.5F,
             };
 
             // Assert
-            var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -1264,27 +1524,34 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonProtocol")]
-        public void parses_double_shapesResponse()
+        public async Task parses_double_shapesResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\"Double\":123456789.12345679}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\"Double\":123456789.12345679}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new KitchenSinkOperationResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.KitchenSinkOperationAsync(new KitchenSinkOperationRequest()).ConfigureAwait(false);
             var expectedResponse = new KitchenSinkOperationResponse
             {
                 Double = 1.2345678912345679E8,
             };
 
             // Assert
-            var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -1294,27 +1561,34 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonProtocol")]
-        public void parses_boolean_shapes_trueResponse()
+        public async Task parses_boolean_shapes_trueResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\"Boolean\":true}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\"Boolean\":true}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new KitchenSinkOperationResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.KitchenSinkOperationAsync(new KitchenSinkOperationRequest()).ConfigureAwait(false);
             var expectedResponse = new KitchenSinkOperationResponse
             {
                 Boolean = true,
             };
 
             // Assert
-            var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -1324,27 +1598,34 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonProtocol")]
-        public void parses_boolean_falseResponse()
+        public async Task parses_boolean_falseResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\"Boolean\":false}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\"Boolean\":false}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new KitchenSinkOperationResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.KitchenSinkOperationAsync(new KitchenSinkOperationRequest()).ConfigureAwait(false);
             var expectedResponse = new KitchenSinkOperationResponse
             {
                 Boolean = false,
             };
 
             // Assert
-            var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -1354,27 +1635,34 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonProtocol")]
-        public void parses_blob_shapesResponse()
+        public async Task parses_blob_shapesResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\"Blob\":\"YmluYXJ5LXZhbHVl\"}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\"Blob\":\"YmluYXJ5LXZhbHVl\"}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new KitchenSinkOperationResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.KitchenSinkOperationAsync(new KitchenSinkOperationRequest()).ConfigureAwait(false);
             var expectedResponse = new KitchenSinkOperationResponse
             {
                 Blob = new MemoryStream(Encoding.UTF8.GetBytes("binary-value")),
             };
 
             // Assert
-            var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -1384,27 +1672,34 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonProtocol")]
-        public void parses_timestamp_shapesResponse()
+        public async Task parses_timestamp_shapesResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\"Timestamp\":946845296}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\"Timestamp\":946845296}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new KitchenSinkOperationResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.KitchenSinkOperationAsync(new KitchenSinkOperationRequest()).ConfigureAwait(false);
             var expectedResponse = new KitchenSinkOperationResponse
             {
                 Timestamp = ProtocolTestConstants.epoch.AddSeconds(946845296),
             };
 
             // Assert
-            var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -1414,27 +1709,34 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonProtocol")]
-        public void parses_iso8601_timestampsResponse()
+        public async Task parses_iso8601_timestampsResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\"Iso8601Timestamp\":\"2000-01-02T20:34:56Z\"}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\"Iso8601Timestamp\":\"2000-01-02T20:34:56Z\"}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new KitchenSinkOperationResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.KitchenSinkOperationAsync(new KitchenSinkOperationRequest()).ConfigureAwait(false);
             var expectedResponse = new KitchenSinkOperationResponse
             {
                 Iso8601Timestamp = ProtocolTestConstants.epoch.AddSeconds(946845296),
             };
 
             // Assert
-            var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -1444,27 +1746,34 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonProtocol")]
-        public void parses_httpdate_timestampsResponse()
+        public async Task parses_httpdate_timestampsResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\"HttpdateTimestamp\":\"Sun, 02 Jan 2000 20:34:56 GMT\"}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\"HttpdateTimestamp\":\"Sun, 02 Jan 2000 20:34:56 GMT\"}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new KitchenSinkOperationResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.KitchenSinkOperationAsync(new KitchenSinkOperationRequest()).ConfigureAwait(false);
             var expectedResponse = new KitchenSinkOperationResponse
             {
                 HttpdateTimestamp = ProtocolTestConstants.epoch.AddSeconds(946845296),
             };
 
             // Assert
-            var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -1474,18 +1783,26 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonProtocol")]
-        public void parses_list_shapesResponse()
+        public async Task parses_list_shapesResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\"ListOfStrings\":[\"abc\",\"mno\",\"xyz\"]}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\"ListOfStrings\":[\"abc\",\"mno\",\"xyz\"]}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new KitchenSinkOperationResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.KitchenSinkOperationAsync(new KitchenSinkOperationRequest()).ConfigureAwait(false);
             var expectedResponse = new KitchenSinkOperationResponse
             {
                 ListOfStrings =  new List<string>()
@@ -1497,9 +1814,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
 
             // Assert
-            var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -1509,18 +1825,26 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonProtocol")]
-        public void parses_list_of_map_shapesResponse()
+        public async Task parses_list_of_map_shapesResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\"ListOfMapsOfStrings\":[{\"size\":\"large\"},{\"color\":\"red\"}]}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\"ListOfMapsOfStrings\":[{\"size\":\"large\"},{\"color\":\"red\"}]}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new KitchenSinkOperationResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.KitchenSinkOperationAsync(new KitchenSinkOperationRequest()).ConfigureAwait(false);
             var expectedResponse = new KitchenSinkOperationResponse
             {
                 ListOfMapsOfStrings =  new List<Dictionary<string, string>>()
@@ -1539,9 +1863,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
 
             // Assert
-            var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -1551,18 +1874,26 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonProtocol")]
-        public void parses_list_of_list_shapesResponse()
+        public async Task parses_list_of_list_shapesResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\"ListOfLists\":[[\"abc\",\"mno\",\"xyz\"],[\"hjk\",\"qrs\",\"tuv\"]]}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\"ListOfLists\":[[\"abc\",\"mno\",\"xyz\"],[\"hjk\",\"qrs\",\"tuv\"]]}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new KitchenSinkOperationResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.KitchenSinkOperationAsync(new KitchenSinkOperationRequest()).ConfigureAwait(false);
             var expectedResponse = new KitchenSinkOperationResponse
             {
                 ListOfLists =  new List<List<string>>()
@@ -1583,9 +1914,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
 
             // Assert
-            var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -1595,18 +1925,26 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonProtocol")]
-        public void parses_list_of_structure_shapesResponse()
+        public async Task parses_list_of_structure_shapesResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\"ListOfStructs\":[{\"Value\":\"value-1\"},{\"Value\":\"value-2\"}]}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\"ListOfStructs\":[{\"Value\":\"value-1\"},{\"Value\":\"value-2\"}]}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new KitchenSinkOperationResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.KitchenSinkOperationAsync(new KitchenSinkOperationRequest()).ConfigureAwait(false);
             var expectedResponse = new KitchenSinkOperationResponse
             {
                 ListOfStructs =  new List<SimpleStruct>()
@@ -1623,9 +1961,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
 
             // Assert
-            var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -1635,18 +1972,26 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonProtocol")]
-        public void parses_list_of_recursive_structure_shapesResponse()
+        public async Task parses_list_of_recursive_structure_shapesResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\"RecursiveList\":[{\"RecursiveList\":[{\"RecursiveList\":[{\"String\":\"value\"}]}]}]}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\"RecursiveList\":[{\"RecursiveList\":[{\"RecursiveList\":[{\"String\":\"value\"}]}]}]}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new KitchenSinkOperationResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.KitchenSinkOperationAsync(new KitchenSinkOperationRequest()).ConfigureAwait(false);
             var expectedResponse = new KitchenSinkOperationResponse
             {
                 RecursiveList =  new List<KitchenSink>()
@@ -1671,9 +2016,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
 
             // Assert
-            var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -1683,18 +2027,26 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonProtocol")]
-        public void parses_map_shapesResponse()
+        public async Task parses_map_shapesResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\"MapOfStrings\":{\"size\":\"large\",\"color\":\"red\"}}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\"MapOfStrings\":{\"size\":\"large\",\"color\":\"red\"}}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new KitchenSinkOperationResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.KitchenSinkOperationAsync(new KitchenSinkOperationRequest()).ConfigureAwait(false);
             var expectedResponse = new KitchenSinkOperationResponse
             {
                 MapOfStrings = new Dictionary<string, string>()
@@ -1706,9 +2058,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
 
             // Assert
-            var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -1718,18 +2069,26 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonProtocol")]
-        public void parses_map_of_list_shapesResponse()
+        public async Task parses_map_of_list_shapesResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\"MapOfListsOfStrings\":{\"sizes\":[\"large\",\"small\"],\"colors\":[\"red\",\"green\"]}}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\"MapOfListsOfStrings\":{\"sizes\":[\"large\",\"small\"],\"colors\":[\"red\",\"green\"]}}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new KitchenSinkOperationResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.KitchenSinkOperationAsync(new KitchenSinkOperationRequest()).ConfigureAwait(false);
             var expectedResponse = new KitchenSinkOperationResponse
             {
                 MapOfListsOfStrings = new Dictionary<string, List<string>>()
@@ -1749,9 +2108,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
 
             // Assert
-            var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -1761,18 +2119,26 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonProtocol")]
-        public void parses_map_of_map_shapesResponse()
+        public async Task parses_map_of_map_shapesResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\"MapOfMaps\":{\"sizes\":{\"large\":\"L\",\"medium\":\"M\"},\"colors\":{\"red\":\"R\",\"blue\":\"B\"}}}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\"MapOfMaps\":{\"sizes\":{\"large\":\"L\",\"medium\":\"M\"},\"colors\":{\"red\":\"R\",\"blue\":\"B\"}}}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new KitchenSinkOperationResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.KitchenSinkOperationAsync(new KitchenSinkOperationRequest()).ConfigureAwait(false);
             var expectedResponse = new KitchenSinkOperationResponse
             {
                 MapOfMaps = new Dictionary<string, Dictionary<string, string>>()
@@ -1794,9 +2160,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
 
             // Assert
-            var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -1806,18 +2171,26 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonProtocol")]
-        public void parses_map_of_structure_shapesResponse()
+        public async Task parses_map_of_structure_shapesResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\"MapOfStructs\":{\"size\":{\"Value\":\"small\"},\"color\":{\"Value\":\"red\"}}}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\"MapOfStructs\":{\"size\":{\"Value\":\"small\"},\"color\":{\"Value\":\"red\"}}}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new KitchenSinkOperationResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.KitchenSinkOperationAsync(new KitchenSinkOperationRequest()).ConfigureAwait(false);
             var expectedResponse = new KitchenSinkOperationResponse
             {
                 MapOfStructs = new Dictionary<string, SimpleStruct>()
@@ -1835,9 +2208,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
 
             // Assert
-            var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -1847,18 +2219,26 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonProtocol")]
-        public void parses_map_of_recursive_structure_shapesResponse()
+        public async Task parses_map_of_recursive_structure_shapesResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\"RecursiveMap\":{\"key-1\":{\"RecursiveMap\":{\"key-2\":{\"RecursiveMap\":{\"key-3\":{\"String\":\"value\"}}}}}}}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\"RecursiveMap\":{\"key-1\":{\"RecursiveMap\":{\"key-2\":{\"RecursiveMap\":{\"key-3\":{\"String\":\"value\"}}}}}}}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new KitchenSinkOperationResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.KitchenSinkOperationAsync(new KitchenSinkOperationRequest()).ConfigureAwait(false);
             var expectedResponse = new KitchenSinkOperationResponse
             {
                 RecursiveMap = new Dictionary<string, KitchenSink>()
@@ -1886,9 +2266,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
 
             // Assert
-            var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -1898,27 +2277,34 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonProtocol")]
-        public void parses_the_request_id_from_the_responseResponse()
+        public async Task parses_the_request_id_from_the_responseResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            webResponseData.Headers["X-Amzn-Requestid"] = "amazon-uniq-request-id";
-            byte[] bytes = Encoding.ASCII.GetBytes("{}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            mockResponse.Headers["X-Amzn-Requestid"] = "amazon-uniq-request-id";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new KitchenSinkOperationResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.KitchenSinkOperationAsync(new KitchenSinkOperationRequest()).ConfigureAwait(false);
             var expectedResponse = new KitchenSinkOperationResponse
             {
             };
 
             // Assert
-            var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
     }
