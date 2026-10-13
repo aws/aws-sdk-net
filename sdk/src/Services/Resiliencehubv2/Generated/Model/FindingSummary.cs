@@ -37,6 +37,7 @@ namespace Amazon.Resiliencehubv2.Model
         private string _description;
         private FailureCategory _failureCategory;
         private string _findingId;
+        private string _investigationDeepLink;
         private string _name;
         private PolicyComponent _policyComponent;
         private string _serviceArn;
@@ -95,6 +96,25 @@ namespace Amazon.Resiliencehubv2.Model
         internal bool IsSetFindingId()
         {
             return this._findingId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InvestigationDeepLink. 
+        /// <para>
+        /// A deep link to an interactive DevOps Agent investigation seeded with this finding.
+        /// This value is null until DevOps Agent creates an investigation.
+        /// </para>
+        /// </summary>
+        public string InvestigationDeepLink
+        {
+            get { return this._investigationDeepLink; }
+            set { this._investigationDeepLink = value; }
+        }
+
+        // Check to see if InvestigationDeepLink property is set
+        internal bool IsSetInvestigationDeepLink()
+        {
+            return this._investigationDeepLink != null;
         }
 
         /// <summary>

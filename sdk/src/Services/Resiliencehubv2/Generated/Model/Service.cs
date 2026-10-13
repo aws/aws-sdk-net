@@ -42,6 +42,7 @@ namespace Amazon.Resiliencehubv2.Model
         private DateTime? _createdAt;
         private DependencyDiscoveryConfig _dependencyDiscovery;
         private string _description;
+        private DevOpsAgentConfigurationView _devOpsAgentConfiguration;
         private EffectivePolicyValues _effectivePolicyValues;
         private AssessmentCost _estimatedAssessmentCost;
         private string _kmsKeyId;
@@ -189,6 +190,24 @@ namespace Amazon.Resiliencehubv2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DevOpsAgentConfiguration. 
+        /// <para>
+        /// The current DevOps Agent integration state for the service.
+        /// </para>
+        /// </summary>
+        public DevOpsAgentConfigurationView DevOpsAgentConfiguration
+        {
+            get { return this._devOpsAgentConfiguration; }
+            set { this._devOpsAgentConfiguration = value; }
+        }
+
+        // Check to see if DevOpsAgentConfiguration property is set
+        internal bool IsSetDevOpsAgentConfiguration()
+        {
+            return this._devOpsAgentConfiguration != null;
         }
 
         /// <summary>

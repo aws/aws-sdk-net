@@ -98,6 +98,12 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("devOpsAgentConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = DevOpsAgentConfigurationViewUnmarshaller.Instance;
+                    unmarshalledObject.DevOpsAgentConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("effectivePolicyValues", targetDepth, ref reader))
                 {
                     var unmarshaller = EffectivePolicyValuesUnmarshaller.Instance;

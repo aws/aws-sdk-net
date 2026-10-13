@@ -1393,6 +1393,30 @@
     <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.DevOpsAgentConfiguration.AgentSpaceArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws[a-zA-Z-]*:aidevops:[a-z0-9-]+:[0-9]{12}:agentspace/[a-zA-Z0-9-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.DevOpsAgentConfigurationView.AgentSpaceArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws[a-zA-Z-]*:aidevops:[a-z0-9-]+:[0-9]{12}:agentspace/[a-zA-Z0-9-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.DevOpsAgentConfigurationView.AgentSpaceId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.DevOpsAgentConfigurationView.Region</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Resiliencehubv2.Model.DisasterRecoverySource.PolicyName</property>
     <min>2</min>
     <max>60</max>
@@ -1792,6 +1816,12 @@
     <min>12</min>
     <max>12</max>
     <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ServiceSummary.DevOpsAgentSpaceArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws[a-zA-Z-]*:aidevops:[a-z0-9-]+:[0-9]{12}:agentspace/[a-zA-Z0-9-]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Resiliencehubv2.Model.ServiceSummary.Name</property>
