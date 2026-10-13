@@ -45,17 +45,17 @@ namespace Amazon.Runtime.Documents.Internal.Transform
                     return new Document();
                 case JsonTokenType.True:
                 case JsonTokenType.False:
-                    return new Document(reader.Reader.GetBoolean());
+                    return new Document(reader.GetBoolean());
                 case JsonTokenType.Number:
-                    if (reader.Reader.TryGetInt32(out int intValue))
+                    if (reader.TryGetInt32(out int intValue))
                     {
                         return new Document(intValue);
                     }
-                    else if (reader.Reader.TryGetInt64(out long longValue))
+                    else if (reader.TryGetInt64(out long longValue))
                     {
                         return new Document(longValue);
                     }
-                    else if (reader.Reader.TryGetDouble(out double doubleValue))
+                    else if (reader.TryGetDouble(out double doubleValue))
                     {
                         return new Document(doubleValue);
                     }
@@ -64,7 +64,7 @@ namespace Amazon.Runtime.Documents.Internal.Transform
                         throw new JsonException("Unsupported number type.");
                     }
                 case JsonTokenType.String:
-                    return new Document(reader.Reader.GetString());
+                    return new Document(reader.GetString());
                 case JsonTokenType.StartArray:
                     var list = new List<Document>();
 
