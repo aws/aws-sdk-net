@@ -51,14 +51,35 @@ public class WriteByteStringTests
     }
 
     [Fact]
-    public void NonExposableStream_FallsBackToToArray_AndMatches()
+    public void NonExposableStream_FallsBackToPooledCopy_AndMatches()
     {
         var payload = new byte[] { 10, 20, 30 };
         // MemoryStream(byte[]) is NOT publicly visible, so TryGetBuffer returns false
-        // and the extension must fall back to ToArray().
+        // and the extension must fall back to copying into a pooled buffer.
         var stream = new MemoryStream(payload);
 
         Assert.False(stream.TryGetBuffer(out _), "Expected a non-exposable buffer for this test");
+        Assert.Equal(EncodeViaToArray(stream), EncodeViaExtension(stream));
+    }
+
+    [Fact]
+    public void NonExposableStreamWithNonZeroPosition_WritesFullContents()
+    {
+        var payload = new byte[] { 7, 8, 9, 10 };
+        var stream = new MemoryStream(payload);
+        stream.Position = 2; // the fallback path must still write the whole stream
+
+        Assert.Equal(EncodeViaToArray(stream), EncodeViaExtension(stream));
+    }
+
+    [Fact]
+    public void LargeNonExposableStream_MatchesToArray()
+    {
+        // 100,001 bytes: the pooled buffer is rented larger than the payload, so only the payload length may be written.
+        var payload = new byte[100_001];
+        new Random(42).NextBytes(payload);
+        var stream = new MemoryStream(payload);
+
         Assert.Equal(EncodeViaToArray(stream), EncodeViaExtension(stream));
     }
 
@@ -89,5 +110,24 @@ public class WriteByteStringTests
         stream.Write(payload, 0, payload.Length);
 
         Assert.Equal(EncodeViaToArray(stream), EncodeViaExtension(stream));
+    }
+
+    // A non-exposable MemoryStream whose Read returns at most 3 bytes per call.
+    private sealed class ShortReadMemoryStream : MemoryStream
+    {
+        public ShortReadMemoryStream(byte[] buffer) : base(buffer) { }
+
+        public override int Read(byte[] buffer, int offset, int count) => base.Read(buffer, offset, Math.Min(count, 3));
+    }
+
+    [Fact]
+    public void NonExposableStreamWithShortReads_WritesFullContents()
+    {
+        var payload = new byte[1000];
+        new Random(7).NextBytes(payload);
+        var stream = new ShortReadMemoryStream(payload);
+
+        Assert.False(stream.TryGetBuffer(out _), "Expected a non-exposable buffer for this test");
+        Assert.Equal(EncodeViaToArray(new MemoryStream(payload)), EncodeViaExtension(stream));
     }
 }
