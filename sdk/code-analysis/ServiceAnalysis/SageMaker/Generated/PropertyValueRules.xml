@@ -9567,6 +9567,16 @@
     <pattern>^[a-zA-Z0-9._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.AthenaStepMetadata.QueryExecutionId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.AthenaStepMetadata.S3OutputLocation</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.AuthorizedUrl.LocalPath</property>
     <min>0</min>
     <max>1024</max>
@@ -10179,6 +10189,16 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ClarifyShapConfig.NumberOfSamples</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CleanupFailure.ErrorMessage</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CleanupFailure.StepName</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ClusterAccountingDatabase.Endpoint</property>
@@ -11245,6 +11265,28 @@
     <pattern>^\/\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.EMRServerlessStepMetadata.ApplicationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*[0-9a-z]+.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.EMRServerlessStepMetadata.JobRunId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*[0-9a-z]+.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.EMRServerlessStepMetadata.JobRunName</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.EMRServerlessStepMetadata.LogFilePath</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.EMRStepMetadata.ClusterId</property>
     <min>0</min>
     <max>256</max>
@@ -11849,6 +11891,11 @@
     <min>1</min>
     <max>63</max>
     <pattern>^[a-z0-9](-*[a-z0-9]){0,62}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ForEachSelectorResult.StepName</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.GenerativeAiSettings.AmazonBedrockRoleArn</property>
@@ -12712,6 +12759,16 @@
     <min>0</min>
     <max>256</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.IterationContext.Item</property>
+    <min>0</min>
+    <max>12800</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.IterationContext.ParentStepName</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.Job.FailureReason</property>

@@ -90,6 +90,19 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetFailureReason() => this.FailureReason != null;
 
         /// <summary>
+        /// Gets and sets the property IterationContext. 
+        /// <para>
+        /// The context for the iteration of a ForEach step that generated this step execution.
+        /// </para>
+        /// </summary>
+        public IterationContext IterationContext { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IterationContext property is set.
+        /// </summary>
+        internal bool IsSetIterationContext() => this.IterationContext != null;
+
+        /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
         /// Metadata to run the pipeline step.

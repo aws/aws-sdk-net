@@ -35,6 +35,19 @@ namespace Amazon.SageMaker.Model
     public partial class PipelineExecutionStepMetadata
     {
         /// <summary>
+        /// Gets and sets the property Athena. 
+        /// <para>
+        /// The metadata for the Athena step execution.
+        /// </para>
+        /// </summary>
+        public AthenaStepMetadata Athena { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Athena property is set.
+        /// </summary>
+        internal bool IsSetAthena() => this.Athena != null;
+
+        /// <summary>
         /// Gets and sets the property AutoMLJob. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the AutoML job that was run by this step.
@@ -165,6 +178,19 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetClarifyCheck() => this.ClarifyCheck != null;
 
         /// <summary>
+        /// Gets and sets the property Cleanup. 
+        /// <para>
+        /// The metadata for the cleanup step execution.
+        /// </para>
+        /// </summary>
+        public CleanupStepMetadata Cleanup { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Cleanup property is set.
+        /// </summary>
+        internal bool IsSetCleanup() => this.Cleanup != null;
+
+        /// <summary>
         /// Gets and sets the property Condition. 
         /// <para>
         /// The outcome of the condition evaluation that was run by this step execution.
@@ -189,6 +215,19 @@ namespace Amazon.SageMaker.Model
         /// Checks to see if the EMR property is set.
         /// </summary>
         internal bool IsSetEMR() => this.EMR != null;
+
+        /// <summary>
+        /// Gets and sets the property EMRServerless. 
+        /// <para>
+        /// The configurations and outcomes of an Amazon EMR Serverless step execution.
+        /// </para>
+        /// </summary>
+        public EMRServerlessStepMetadata EMRServerless { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EMRServerless property is set.
+        /// </summary>
+        internal bool IsSetEMRServerless() => this.EMRServerless != null;
 
         /// <summary>
         /// Gets and sets the property Endpoint. 
@@ -228,6 +267,19 @@ namespace Amazon.SageMaker.Model
         /// Checks to see if the Fail property is set.
         /// </summary>
         internal bool IsSetFail() => this.Fail != null;
+
+        /// <summary>
+        /// Gets and sets the property ForEach. 
+        /// <para>
+        /// The metadata for the ForEach step execution.
+        /// </para>
+        /// </summary>
+        public ForEachStepMetadata ForEach { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ForEach property is set.
+        /// </summary>
+        internal bool IsSetForEach() => this.ForEach != null;
 
         /// <summary>
         /// Gets and sets the property InferenceComponent. 

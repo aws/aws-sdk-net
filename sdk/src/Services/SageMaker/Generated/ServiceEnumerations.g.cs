@@ -4610,6 +4610,47 @@ namespace Amazon.SageMaker
     }
 
     /// <summary>
+    /// Constants used for properties of type CleanupFailureErrorCode.
+    /// </summary>
+    public class CleanupFailureErrorCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant ClientError for CleanupFailureErrorCode
+        /// </summary>
+        public static readonly CleanupFailureErrorCode ClientError = new CleanupFailureErrorCode("ClientError");
+
+        /// <summary>
+        /// Constant InternalFailure for CleanupFailureErrorCode
+        /// </summary>
+        public static readonly CleanupFailureErrorCode InternalFailure = new CleanupFailureErrorCode("InternalFailure");
+
+        /// <summary>
+        /// Constructs a custom CleanupFailureErrorCode for a value not among the defined constants.
+        /// </summary>
+        public CleanupFailureErrorCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CleanupFailureErrorCode FindValue(string value)
+        {
+            return FindValue<CleanupFailureErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CleanupFailureErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ClusterAutoScalerType.
     /// </summary>
     public class ClusterAutoScalerType : ConstantClass
@@ -8700,6 +8741,52 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FlowDefinitionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ForEachStatus.
+    /// </summary>
+    public class ForEachStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant Failed for ForEachStatus
+        /// </summary>
+        public static readonly ForEachStatus Failed = new ForEachStatus("Failed");
+
+        /// <summary>
+        /// Constant Stopped for ForEachStatus
+        /// </summary>
+        public static readonly ForEachStatus Stopped = new ForEachStatus("Stopped");
+
+        /// <summary>
+        /// Constant Succeeded for ForEachStatus
+        /// </summary>
+        public static readonly ForEachStatus Succeeded = new ForEachStatus("Succeeded");
+
+        /// <summary>
+        /// Constructs a custom ForEachStatus for a value not among the defined constants.
+        /// </summary>
+        public ForEachStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ForEachStatus FindValue(string value)
+        {
+            return FindValue<ForEachStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ForEachStatus(string value)
         {
             return FindValue(value);
         }
@@ -15788,6 +15875,11 @@ namespace Amazon.SageMaker
     /// </summary>
     public class PipelineExecutionStatus : ConstantClass
     {
+        /// <summary>
+        /// Constant CompletedWithFailures for PipelineExecutionStatus
+        /// </summary>
+        public static readonly PipelineExecutionStatus CompletedWithFailures = new PipelineExecutionStatus("CompletedWithFailures");
+
         /// <summary>
         /// Constant Executing for PipelineExecutionStatus
         /// </summary>

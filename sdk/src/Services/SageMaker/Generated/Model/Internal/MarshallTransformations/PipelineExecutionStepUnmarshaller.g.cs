@@ -81,6 +81,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("IterationContext", targetDepth, ref reader))
+                {
+                    var unmarshaller = IterationContextUnmarshaller.Instance;
+                    unmarshalledObject.IterationContext = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("Metadata", targetDepth, ref reader))
                 {
                     var unmarshaller = PipelineExecutionStepMetadataUnmarshaller.Instance;

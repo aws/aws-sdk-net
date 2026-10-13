@@ -53,6 +53,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("Athena", targetDepth, ref reader))
+                {
+                    var unmarshaller = AthenaStepMetadataUnmarshaller.Instance;
+                    unmarshalledObject.Athena = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("AutoMLJob", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoMLJobStepMetadataUnmarshaller.Instance;
@@ -102,6 +109,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("Cleanup", targetDepth, ref reader))
+                {
+                    var unmarshaller = CleanupStepMetadataUnmarshaller.Instance;
+                    unmarshalledObject.Cleanup = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("Condition", targetDepth, ref reader))
                 {
                     var unmarshaller = ConditionStepMetadataUnmarshaller.Instance;
@@ -113,6 +127,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = EMRStepMetadataUnmarshaller.Instance;
                     unmarshalledObject.EMR = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("EMRServerless", targetDepth, ref reader))
+                {
+                    var unmarshaller = EMRServerlessStepMetadataUnmarshaller.Instance;
+                    unmarshalledObject.EMRServerless = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
@@ -134,6 +155,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = FailStepMetadataUnmarshaller.Instance;
                     unmarshalledObject.Fail = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("ForEach", targetDepth, ref reader))
+                {
+                    var unmarshaller = ForEachStepMetadataUnmarshaller.Instance;
+                    unmarshalledObject.ForEach = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
