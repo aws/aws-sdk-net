@@ -524,11 +524,13 @@ namespace Amazon.Extensions.CborProtocol.Internal
         /// Makes sure the buffer holds enough of an upcoming definite-length CBOR item for <see cref="CborReader"/>
         /// to accept it: the whole payload of a string, or for a map or array at least one byte per element,
         /// since <see cref="CborReader"/> rejects a declared length that can't fit in the bytes it holds.
-        /// If the item runs past the end of the current chunk, the buffer is refilled, and expanded first
-        /// when the item is larger than the buffer's capacity.
+        /// If the item runs past the end of the current chunk, the buffer is refilled until the item is buffered
+        /// or the stream ends. <see cref="RefillBuffer"/> grows the buffer at most 2x at a time, and only when it is
+        /// full of received bytes, so the allocation tracks the data that actually arrives rather than the declared
+        /// length; a corrupt or truncated header can't force an oversized allocation.
         ///
-        /// This reads large items in one step instead of through multiple incremental refills, and avoids
-        /// the exception the read would otherwise throw when an item straddles the end of a chunk.
+        /// This avoids the exception the read would otherwise throw when an item straddles the end of a chunk. If
+        /// the stream ends first, the read throws the same bounded <see cref="CborContentException"/> as before.
         /// </summary>
         /// <param name="minBytesPerElement">The minimum encoded size of one element of the declared length:
         /// 1 for strings (bytes) and arrays (items), 2 for maps (a key and a value per entry).</param>
@@ -593,53 +595,21 @@ namespace Amazon.Extensions.CborProtocol.Internal
             if (len64 <= (ulong)(leftoverBytesCount - headerLength))
                 return;
 
-            // Add header length margin to ensure we can read the full header + payload contiguously.
-            len64 += MaxCborHeaderLength;
-
-            // Guard against unreasonably large declared lengths that would exceed our
-            // maximum buffer size (int.MaxValue) or cause overflow when cast to int.
-            // CBOR supports 64-bit lengths theoretically, but such values are not expected
-            // in real-world SDK payloads. If we encounter a larger value, it is most likely
-            // due to malformed or corrupted data, so we skip preemptive expansion and
-            // fall back to incremental reading instead.
-            if (len64 > (ulong)int.MaxValue - (ulong)MaxCborHeaderLength)
+            // Lengths that can't fit in a buffer are malformed or corrupt. Skip the refill and let the read fail.
+            if (len64 > (ulong)(int.MaxValue - headerLength))
             {
-                _logger.DebugFormat("Skipping preemptive expansion: declared length {0} too large.", len64);
+                _logger.DebugFormat("Skipping refill ahead of read: declared length {0} too large.", len64);
                 return;
             }
 
-            // Safe cast since len64 <= int.MaxValue at this point.
-            int declaredLength = (int)len64;
+            // Bytes the reader needs buffered: the header plus the declared payload (or minimum element bytes).
+            int required = (int)len64 + headerLength;
 
-            // If the declared value fits within the current buffer capacity, moving the leftover bytes
-            // to the start of the buffer and reading more is enough.
-            if (declaredLength <= _buffer.Length)
+            // Refill until the whole item is buffered or the stream runs dry.
+            while (!_streamExhausted && _internalCborReader.BytesRemaining < required)
             {
-                if (!_streamExhausted)
-                    RefillBuffer();
-                return;
+                RefillBuffer();
             }
-
-            var newBuffer = ArrayPool<byte>.Shared.Rent(declaredLength);
-
-            Buffer.BlockCopy(_buffer, unreadOffset, newBuffer, 0, leftoverBytesCount);
-            ArrayPool<byte>.Shared.Return(_buffer);
-            _buffer = newBuffer;
-
-            // Read from stream into buffer after leftovers
-            var bytesReadFromStream = _stream.Read(_buffer, leftoverBytesCount, _buffer.Length - leftoverBytesCount);
-            if (bytesReadFromStream == 0)
-                _streamExhausted = true;
-
-            // Update the total size of valid data in our buffer.
-            _currentChunkSize = leftoverBytesCount + bytesReadFromStream;
-
-            var newMemorySlice = new ReadOnlyMemory<byte>(_buffer, 0, _currentChunkSize);
-            _internalCborReader.Reset(newMemorySlice);
-
-            _logger.DebugFormat(
-                "Preemptive buffer expansion for large CBOR value. Declared length: {0}, buffer resized to {1}.",
-                declaredLength, _buffer.Length);
         }
 
         public string ReadTextString() => ExecuteValueRead(static (self, r) => { self.EnsureDefiniteLengthItemIsBuffered(1); return r.ReadTextString(); });

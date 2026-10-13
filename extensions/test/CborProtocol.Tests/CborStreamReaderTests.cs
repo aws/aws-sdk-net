@@ -1272,4 +1272,20 @@ public class CborStreamReaderTests : IClassFixture<BufferSizeConfigFixture>
         Assert.Equal(CborReaderState.EndMap, reader.PeekState());
         Assert.Equal(1, reader.CurrentDepth);
     }
+
+    [Fact]
+    public void CorruptArrayHeader_DeclaringHugeLength_DoesNotGrowBufferToDeclaredLength()
+    {
+        // 0x9A = array with a 4-byte length: 100,000,000 elements, followed by only 3 bytes of body.
+        var bytes = new byte[] { 0x9A, 0x05, 0xF5, 0xE1, 0x00, 0x01, 0x02, 0x03 };
+        using var reader = new CborStreamReader(new MemoryStream(bytes));
+
+        Assert.Throws<CborContentException>(() => reader.ReadStartArray());
+
+        // The buffer grows only as received bytes arrive, so a header can't force a ~100 MB allocation.
+        var buffer = (byte[])typeof(CborStreamReader)
+            .GetField("_buffer", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)!
+            .GetValue(reader)!;
+        Assert.True(buffer.Length <= 1024 * 1024, $"Read buffer grew to {buffer.Length} bytes for an 8-byte stream.");
+    }
 }
