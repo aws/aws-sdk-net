@@ -479,6 +479,102 @@ namespace Amazon.LakeFormation
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Attaches a row-level security policy to a resource for a principal. When the principal
+        /// queries the resource, Lake Formation applies the policy's filter expression so that
+        /// only the permitted rows are returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachRLSPolicy service method.</param>
+        /// <returns>The response from the AttachRLSPolicy service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/AttachRLSPolicy">REST API Reference for AttachRLSPolicy Operation</seealso>
+        public virtual AttachRLSPolicyResponse AttachRLSPolicy(AttachRLSPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AttachRLSPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachRLSPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<AttachRLSPolicyResponse>(request, options);
+        }
+#else
+        internal virtual AttachRLSPolicyResponse AttachRLSPolicy(AttachRLSPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AttachRLSPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachRLSPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<AttachRLSPolicyResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Attaches a row-level security policy to a resource for a principal. When the principal
+        /// queries the resource, Lake Formation applies the policy's filter expression so that
+        /// only the permitted rows are returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachRLSPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the AttachRLSPolicy service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/AttachRLSPolicy">REST API Reference for AttachRLSPolicy Operation</seealso>
+        public virtual Task<AttachRLSPolicyResponse> AttachRLSPolicyAsync(AttachRLSPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AttachRLSPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachRLSPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AttachRLSPolicyResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Batch operation to grant permissions to the principal.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGrantPermissions service method.</param>
@@ -1207,6 +1303,98 @@ namespace Amazon.LakeFormation
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates a row-level security (RLS) policy. A row-level security policy defines a filter
+        /// expression that Lake Formation evaluates to determine which rows of a table a principal
+        /// is allowed to see. The policy is created independently of any resource, and is later
+        /// associated with a resource and principal using <c>AttachRLSPolicy</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRLSPolicy service method.</param>
+        /// <returns>The response from the CreateRLSPolicy service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateRLSPolicy">REST API Reference for CreateRLSPolicy Operation</seealso>
+        public virtual CreateRLSPolicyResponse CreateRLSPolicy(CreateRLSPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateRLSPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRLSPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRLSPolicyResponse>(request, options);
+        }
+#else
+        internal virtual CreateRLSPolicyResponse CreateRLSPolicy(CreateRLSPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateRLSPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRLSPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRLSPolicyResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Creates a row-level security (RLS) policy. A row-level security policy defines a filter
+        /// expression that Lake Formation evaluates to determine which rows of a table a principal
+        /// is allowed to see. The policy is created independently of any resource, and is later
+        /// associated with a resource and principal using <c>AttachRLSPolicy</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRLSPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateRLSPolicy service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateRLSPolicy">REST API Reference for CreateRLSPolicy Operation</seealso>
+        public virtual Task<CreateRLSPolicyResponse> CreateRLSPolicyAsync(CreateRLSPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateRLSPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRLSPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateRLSPolicyResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Deletes a data cell filter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataCellsFilter service method.</param>
@@ -1735,6 +1923,88 @@ namespace Amazon.LakeFormation
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Deletes a row-level security policy. Any active attachments of the policy are automatically
+        /// removed as part of the deletion, so you do not need to detach the policy first.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRLSPolicy service method.</param>
+        /// <returns>The response from the DeleteRLSPolicy service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteRLSPolicy">REST API Reference for DeleteRLSPolicy Operation</seealso>
+        public virtual DeleteRLSPolicyResponse DeleteRLSPolicy(DeleteRLSPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRLSPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRLSPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRLSPolicyResponse>(request, options);
+        }
+#else
+        internal virtual DeleteRLSPolicyResponse DeleteRLSPolicy(DeleteRLSPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRLSPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRLSPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRLSPolicyResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Deletes a row-level security policy. Any active attachments of the policy are automatically
+        /// removed as part of the deletion, so you do not need to detach the policy first.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRLSPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteRLSPolicy service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteRLSPolicy">REST API Reference for DeleteRLSPolicy Operation</seealso>
+        public virtual Task<DeleteRLSPolicyResponse> DeleteRLSPolicyAsync(DeleteRLSPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRLSPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRLSPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRLSPolicyResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Deregisters the resource as managed by the Data Catalog.
         /// 
         ///  
@@ -2021,6 +2291,90 @@ namespace Amazon.LakeFormation
             options.ResponseUnmarshaller = DescribeTransactionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeTransactionResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Detaches a row-level security policy from a resource for a principal. After the policy
+        /// is detached, its filter expression is no longer applied to the principal's queries
+        /// on that resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachRLSPolicy service method.</param>
+        /// <returns>The response from the DetachRLSPolicy service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DetachRLSPolicy">REST API Reference for DetachRLSPolicy Operation</seealso>
+        public virtual DetachRLSPolicyResponse DetachRLSPolicy(DetachRLSPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DetachRLSPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachRLSPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DetachRLSPolicyResponse>(request, options);
+        }
+#else
+        internal virtual DetachRLSPolicyResponse DetachRLSPolicy(DetachRLSPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DetachRLSPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachRLSPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DetachRLSPolicyResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Detaches a row-level security policy from a resource for a principal. After the policy
+        /// is detached, its filter expression is no longer applied to the principal's queries
+        /// on that resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachRLSPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DetachRLSPolicy service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DetachRLSPolicy">REST API Reference for DetachRLSPolicy Operation</seealso>
+        public virtual Task<DetachRLSPolicyResponse> DetachRLSPolicyAsync(DetachRLSPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DetachRLSPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachRLSPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DetachRLSPolicyResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -2691,6 +3045,82 @@ namespace Amazon.LakeFormation
             options.ResponseUnmarshaller = GetQueryStatisticsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetQueryStatisticsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns the definition of a row-level security policy, including its attachment columns
+        /// and filter expression.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRLSPolicy service method.</param>
+        /// <returns>The response from the GetRLSPolicy service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetRLSPolicy">REST API Reference for GetRLSPolicy Operation</seealso>
+        public virtual GetRLSPolicyResponse GetRLSPolicy(GetRLSPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRLSPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRLSPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetRLSPolicyResponse>(request, options);
+        }
+#else
+        internal virtual GetRLSPolicyResponse GetRLSPolicy(GetRLSPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRLSPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRLSPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetRLSPolicyResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns the definition of a row-level security policy, including its attachment columns
+        /// and filter expression.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRLSPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetRLSPolicy service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetRLSPolicy">REST API Reference for GetRLSPolicy Operation</seealso>
+        public virtual Task<GetRLSPolicyResponse> GetRLSPolicyAsync(GetRLSPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRLSPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRLSPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRLSPolicyResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -3829,6 +4259,156 @@ namespace Amazon.LakeFormation
             options.ResponseUnmarshaller = ListPermissionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListPermissionsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the row-level security policies in the Data Catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRLSPolicies service method.</param>
+        /// <returns>The response from the ListRLSPolicies service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListRLSPolicies">REST API Reference for ListRLSPolicies Operation</seealso>
+        public virtual ListRLSPoliciesResponse ListRLSPolicies(ListRLSPoliciesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRLSPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRLSPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListRLSPoliciesResponse>(request, options);
+        }
+#else
+        internal virtual ListRLSPoliciesResponse ListRLSPolicies(ListRLSPoliciesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRLSPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRLSPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListRLSPoliciesResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Lists the row-level security policies in the Data Catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRLSPolicies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListRLSPolicies service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListRLSPolicies">REST API Reference for ListRLSPolicies Operation</seealso>
+        public virtual Task<ListRLSPoliciesResponse> ListRLSPoliciesAsync(ListRLSPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRLSPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRLSPoliciesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRLSPoliciesResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the row-level security policy attachments in the Data Catalog. You can filter
+        /// the results by resource, principal, or policy name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRLSPolicyAttachments service method.</param>
+        /// <returns>The response from the ListRLSPolicyAttachments service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListRLSPolicyAttachments">REST API Reference for ListRLSPolicyAttachments Operation</seealso>
+        public virtual ListRLSPolicyAttachmentsResponse ListRLSPolicyAttachments(ListRLSPolicyAttachmentsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRLSPolicyAttachmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRLSPolicyAttachmentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListRLSPolicyAttachmentsResponse>(request, options);
+        }
+#else
+        internal virtual ListRLSPolicyAttachmentsResponse ListRLSPolicyAttachments(ListRLSPolicyAttachmentsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRLSPolicyAttachmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRLSPolicyAttachmentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListRLSPolicyAttachmentsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Lists the row-level security policy attachments in the Data Catalog. You can filter
+        /// the results by resource, principal, or policy name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRLSPolicyAttachments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListRLSPolicyAttachments service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListRLSPolicyAttachments">REST API Reference for ListRLSPolicyAttachments Operation</seealso>
+        public virtual Task<ListRLSPolicyAttachmentsResponse> ListRLSPolicyAttachmentsAsync(ListRLSPolicyAttachmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRLSPolicyAttachmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRLSPolicyAttachmentsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRLSPolicyAttachmentsResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -5053,6 +5633,94 @@ namespace Amazon.LakeFormation
             options.ResponseUnmarshaller = UpdateLakeFormationIdentityCenterConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateLakeFormationIdentityCenterConfigurationResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the filter expression of an existing row-level security policy. The change
+        /// applies to all attachments of the policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRLSPolicy service method.</param>
+        /// <returns>The response from the UpdateRLSPolicy service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateRLSPolicy">REST API Reference for UpdateRLSPolicy Operation</seealso>
+        public virtual UpdateRLSPolicyResponse UpdateRLSPolicy(UpdateRLSPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateRLSPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRLSPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRLSPolicyResponse>(request, options);
+        }
+#else
+        internal virtual UpdateRLSPolicyResponse UpdateRLSPolicy(UpdateRLSPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateRLSPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRLSPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRLSPolicyResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Updates the filter expression of an existing row-level security policy. The change
+        /// applies to all attachments of the policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRLSPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateRLSPolicy service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateRLSPolicy">REST API Reference for UpdateRLSPolicy Operation</seealso>
+        public virtual Task<UpdateRLSPolicyResponse> UpdateRLSPolicyAsync(UpdateRLSPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateRLSPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRLSPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateRLSPolicyResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK

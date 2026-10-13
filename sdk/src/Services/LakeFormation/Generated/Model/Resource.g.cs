@@ -132,6 +132,20 @@ namespace Amazon.LakeFormation.Model
         internal bool IsSetLFTagPolicy() => this.LFTagPolicy != null;
 
         /// <summary>
+        /// Gets and sets the property RLSPolicy. 
+        /// <para>
+        /// A row-level security policy resource. Specify this when granting or revoking permissions
+        /// on a row-level security policy.
+        /// </para>
+        /// </summary>
+        public RLSPolicyResource RLSPolicy { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RLSPolicy property is set.
+        /// </summary>
+        internal bool IsSetRLSPolicy() => this.RLSPolicy != null;
+
+        /// <summary>
         /// Gets and sets the property Table. 
         /// <para>
         /// The table for the resource. A table is a metadata definition that represents your
