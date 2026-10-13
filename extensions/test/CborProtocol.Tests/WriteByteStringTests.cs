@@ -111,4 +111,23 @@ public class WriteByteStringTests
 
         Assert.Equal(EncodeViaToArray(stream), EncodeViaExtension(stream));
     }
+
+    // A non-exposable MemoryStream whose Read returns at most 3 bytes per call.
+    private sealed class ShortReadMemoryStream : MemoryStream
+    {
+        public ShortReadMemoryStream(byte[] buffer) : base(buffer) { }
+
+        public override int Read(byte[] buffer, int offset, int count) => base.Read(buffer, offset, Math.Min(count, 3));
+    }
+
+    [Fact]
+    public void NonExposableStreamWithShortReads_WritesFullContents()
+    {
+        var payload = new byte[1000];
+        new Random(7).NextBytes(payload);
+        var stream = new ShortReadMemoryStream(payload);
+
+        Assert.False(stream.TryGetBuffer(out _), "Expected a non-exposable buffer for this test");
+        Assert.Equal(EncodeViaToArray(new MemoryStream(payload)), EncodeViaExtension(stream));
+    }
 }

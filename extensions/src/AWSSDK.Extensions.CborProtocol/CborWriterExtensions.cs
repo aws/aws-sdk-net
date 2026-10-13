@@ -50,10 +50,14 @@ namespace Amazon.Extensions.CborProtocol
                 try
                 {
                     value.Position = 0;
-                    // MemoryStream.Read is backed by an in-memory byte array and always returns the full
-                    // requested byte count in a single call, so there is no need to handle partial reads in a loop.
-                    value.Read(array, 0, length);
-                    writer.WriteByteString(new ReadOnlySpan<byte>(array, 0, length));
+                    // Honor Read's return value: a MemoryStream subclass may return fewer bytes per call.
+                    int totalRead = 0;
+                    int bytesRead;
+                    while (totalRead < length && (bytesRead = value.Read(array, totalRead, length - totalRead)) > 0)
+                    {
+                        totalRead += bytesRead;
+                    }
+                    writer.WriteByteString(new ReadOnlySpan<byte>(array, 0, totalRead));
                 }
                 finally
                 {
