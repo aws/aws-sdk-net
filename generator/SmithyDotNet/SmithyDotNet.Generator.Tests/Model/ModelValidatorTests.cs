@@ -6,12 +6,14 @@ namespace SmithyDotNet.Generator.Tests.Model;
 
 public class ModelValidatorTests
 {
-    [Fact]
-    public void Validate_ValidModel_DoesNotThrow()
+    [Theory]
+    [InlineData("2.0")]
+    [InlineData("2.1")]
+    public void Validate_ValidModel_DoesNotThrow(string version)
     {
         var model = new SmithyModel
         {
-            Version = "2.0",
+            Version = version,
             Shapes = new Dictionary<string, Shape?>
             {
                 ["com.example#MyService"] = new ServiceShape { ApiVersion = "2023-01-01" },

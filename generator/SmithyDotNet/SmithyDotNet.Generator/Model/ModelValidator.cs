@@ -9,9 +9,9 @@ public static class ModelValidator
 {
     public static void Validate(SmithyModel model)
     {
-        if (model.Version != "2.0")
+        if (model.Version != "2.0" && model.Version != "2.1")
         {
-            throw new GeneratorException($"Unsupported Smithy version '{model.Version}'. This generator requires Smithy 2.0.");
+            throw new GeneratorException($"Unsupported Smithy version '{model.Version}'. This generator requires Smithy 2.0 or 2.1.");
         }
 
         var serviceCount = model.Shapes.Values.OfType<ServiceShape>().Count();
