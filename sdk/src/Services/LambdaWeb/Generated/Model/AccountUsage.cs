@@ -39,7 +39,8 @@ namespace Amazon.LambdaWeb.Model
         /// <summary>
         /// Gets and sets the property FunctionCount. 
         /// <para>
-        /// The number of web functions in your account in the current AWS Region.
+        /// The number of web functions in your account in the current AWS Region. This count
+        /// includes web functions in all states, not only functions in the <c>Active</c> state.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
