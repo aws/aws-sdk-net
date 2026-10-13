@@ -89,8 +89,12 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property SubnetArns. 
         /// <para>
-        /// Specifies the ARN of the subnet where your VPC endpoint is located. You can only specify
-        /// one ARN.
+        /// Specifies the ARN of the subnet where DataSync creates the network interfaces that
+        /// handle data transfer traffic for your tasks. You can only specify one ARN.
+        /// </para>
+        ///  
+        /// <para>
+        /// The subnet doesn't have to be the subnet that contains your VPC endpoint.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -114,7 +118,10 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property VpcEndpointId. 
         /// <para>
-        /// Specifies the ID of the VPC endpoint that your agent connects to.
+        /// Specifies the ID of the VPC service endpoint that's recorded for your agent. The endpoint
+        /// ID is informational and isn't verified by DataSync. Your agent communicates through
+        /// the private IP address in <c>PrivateLinkEndpoint</c>, which is set when you activate
+        /// the agent.
         /// </para>
         /// </summary>
         public string VpcEndpointId

@@ -48,7 +48,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>AUTOMATIC</c> (default): DataSync chooses NFS version 4.1.
+        ///  <c>AUTOMATIC</c> (default): DataSync chooses NFS version 4.1. For Amazon FSx for
+        /// OpenZFS locations, DataSync first attempts to use NFS version 4.2, then falls back
+        /// to version 4.1, and then to earlier versions if needed.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -65,6 +67,12 @@ namespace Amazon.DataSync.Model
         ///  <c>NFSv4_1</c>: Stateful protocol version that supports sessions, directory delegations,
         /// and parallel data processing. NFS version 4.1 also includes all features available
         /// in version 4.0.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NFSv4_2</c>: Stateful protocol version that supports sparse file operations, space
+        /// reservation, and server-side copy operations, in addition to all features available
+        /// in version 4.1. Selecting NFS version 4.2 requires an Enhanced mode task.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>

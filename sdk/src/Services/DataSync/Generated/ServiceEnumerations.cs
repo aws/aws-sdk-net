@@ -924,6 +924,10 @@ namespace Amazon.DataSync
         /// Constant NFS4_1 for NfsVersion
         /// </summary>
         public static readonly NfsVersion NFS4_1 = new NfsVersion("NFS4_1");
+        /// <summary>
+        /// Constant NFS4_2 for NfsVersion
+        /// </summary>
+        public static readonly NfsVersion NFS4_2 = new NfsVersion("NFS4_2");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -954,6 +958,56 @@ namespace Amazon.DataSync
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NfsVersion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ObjectMetadata.
+    /// </summary>
+    public class ObjectMetadata : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for ObjectMetadata
+        /// </summary>
+        public static readonly ObjectMetadata NONE = new ObjectMetadata("NONE");
+        /// <summary>
+        /// Constant PRESERVE for ObjectMetadata
+        /// </summary>
+        public static readonly ObjectMetadata PRESERVE = new ObjectMetadata("PRESERVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ObjectMetadata(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ObjectMetadata FindValue(string value)
+        {
+            return FindValue<ObjectMetadata>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ObjectMetadata(string value)
         {
             return FindValue(value);
         }
