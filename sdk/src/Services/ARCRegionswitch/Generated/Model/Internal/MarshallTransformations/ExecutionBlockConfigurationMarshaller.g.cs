@@ -242,6 +242,17 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+
+            if (requestObject.IsSetSsmSendCommandConfig())
+            {
+                context.Writer.WritePropertyName("ssmSendCommandConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SsmSendCommandConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SsmSendCommandConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
         }
 
         /// <summary>

@@ -265,5 +265,18 @@ namespace Amazon.ARCRegionswitch.Model
         /// Checks to see if the Route53HealthCheckConfig property is set.
         /// </summary>
         internal bool IsSetRoute53HealthCheckConfig() => this.Route53HealthCheckConfig != null;
+
+        /// <summary>
+        /// Gets and sets the property SsmSendCommandConfig. 
+        /// <para>
+        /// Specifies an AWS Systems Manager <c>SendCommand</c> execution block.
+        /// </para>
+        /// </summary>
+        public SsmSendCommandConfiguration SsmSendCommandConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SsmSendCommandConfig property is set.
+        /// </summary>
+        internal bool IsSetSsmSendCommandConfig() => this.SsmSendCommandConfig != null;
     }
 }

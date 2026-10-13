@@ -573,6 +573,11 @@ namespace Amazon.ARCRegionswitch
         public static readonly ExecutionBlockType Route53HealthCheck = new ExecutionBlockType("Route53HealthCheck");
 
         /// <summary>
+        /// Constant SSMSendCommand for ExecutionBlockType
+        /// </summary>
+        public static readonly ExecutionBlockType SSMSendCommand = new ExecutionBlockType("SSMSendCommand");
+
+        /// <summary>
         /// Constructs a custom ExecutionBlockType for a value not among the defined constants.
         /// </summary>
         public ExecutionBlockType(string value) : base(value) { }
@@ -1465,6 +1470,42 @@ namespace Amazon.ARCRegionswitch
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ServiceQuotaWarningStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SsmSendCommandUngracefulBehavior.
+    /// </summary>
+    public class SsmSendCommandUngracefulBehavior : ConstantClass
+    {
+        /// <summary>
+        /// Constant Skip for SsmSendCommandUngracefulBehavior
+        /// </summary>
+        public static readonly SsmSendCommandUngracefulBehavior Skip = new SsmSendCommandUngracefulBehavior("skip");
+
+        /// <summary>
+        /// Constructs a custom SsmSendCommandUngracefulBehavior for a value not among the defined constants.
+        /// </summary>
+        public SsmSendCommandUngracefulBehavior(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SsmSendCommandUngracefulBehavior FindValue(string value)
+        {
+            return FindValue<SsmSendCommandUngracefulBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SsmSendCommandUngracefulBehavior(string value)
         {
             return FindValue(value);
         }

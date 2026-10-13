@@ -178,6 +178,13 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
                     unmarshalledObject.Route53HealthCheckConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("ssmSendCommandConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = SsmSendCommandConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SsmSendCommandConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
