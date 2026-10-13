@@ -81,6 +81,14 @@ public record ServiceMetadata
     /// </summary>
     [JsonPropertyName("netstandard-support")]
     public bool NetStandardSupport { get; init; } = true;
+
+    /// <summary>
+    /// Assemblies granted <c>[InternalsVisibleTo]</c>, by name. Each gets the SDK's public key unless it spells
+    /// out its own <c>PublicKey=</c> (S3's <c>DynamicProxyGenAssembly2</c> is signed with Castle's key, not ours).
+    /// </summary>
+    [JsonPropertyName("internals-visible-to")]
+    public IReadOnlyList<string> InternalsVisibleTo { get; init; } = [];
+
     /// <summary>
     /// Loads and deserializes the <c>metadata.json</c> at <paramref name="metadataPath"/>.
     /// </summary>

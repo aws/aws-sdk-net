@@ -28,6 +28,8 @@ A **removed** line in generated output is a red flag — investigate it, do not 
 - Namespace structure (`{Namespace}`, `{Namespace}.Model`)
 - `internal bool IsSet{Property}()` per member — the public `AWSSDKUtils.IsPropertySet`
   reflection API and existing marshallers invoke these by name
+- `[InternalsVisibleTo]` grants, from metadata.json `internals-visible-to` (DynamoDBv2 and S3 unit tests
+  reach internals; an entry without its own `PublicKey=` gets the SDK's)
 
 ## What Can Differ
 
