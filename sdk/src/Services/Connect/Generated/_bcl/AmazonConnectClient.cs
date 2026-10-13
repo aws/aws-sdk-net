@@ -3993,6 +3993,95 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  CreateContactFlowAlias
+
+
+        /// <summary>
+        /// Creates a named alias that points to a specific version of a flow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContactFlowAlias service method.</param>
+        /// 
+        /// <returns>The response from the CreateContactFlowAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowAlias">REST API Reference for CreateContactFlowAlias Operation</seealso>
+        public virtual CreateContactFlowAliasResponse CreateContactFlowAlias(CreateContactFlowAliasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateContactFlowAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContactFlowAliasResponseUnmarshaller.Instance;
+
+            return Invoke<CreateContactFlowAliasResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a named alias that points to a specific version of a flow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContactFlowAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateContactFlowAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowAlias">REST API Reference for CreateContactFlowAlias Operation</seealso>
+        public virtual Task<CreateContactFlowAliasResponse> CreateContactFlowAliasAsync(CreateContactFlowAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateContactFlowAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContactFlowAliasResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateContactFlowAliasResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateContactFlowModule
 
 
@@ -4274,8 +4363,7 @@ namespace Amazon.Connect
         /// <summary>
         /// Publishes a new version of the flow provided. Versions are immutable and monotonically
         /// increasing. If the <c>FlowContentSha256</c> provided is different from the <c>FlowContentSha256</c>
-        /// of the <c>$LATEST</c> published flow content, then an error is returned. This API
-        /// only supports creating versions for flows of type <c>Campaign</c>.
+        /// of the <c>$LATEST</c> published flow content, then an error is returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateContactFlowVersion service method.</param>
         /// 
@@ -4315,8 +4403,7 @@ namespace Amazon.Connect
         /// <summary>
         /// Publishes a new version of the flow provided. Versions are immutable and monotonically
         /// increasing. If the <c>FlowContentSha256</c> provided is different from the <c>FlowContentSha256</c>
-        /// of the <c>$LATEST</c> published flow content, then an error is returned. This API
-        /// only supports creating versions for flows of type <c>Campaign</c>.
+        /// of the <c>$LATEST</c> published flow content, then an error is returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateContactFlowVersion service method.</param>
         /// <param name="cancellationToken">
@@ -7938,6 +8025,83 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DeleteContactFlowAlias
+
+
+        /// <summary>
+        /// Deletes an alias from a flow without deleting the version that the alias points to.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContactFlowAlias service method.</param>
+        /// 
+        /// <returns>The response from the DeleteContactFlowAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowAlias">REST API Reference for DeleteContactFlowAlias Operation</seealso>
+        public virtual DeleteContactFlowAliasResponse DeleteContactFlowAlias(DeleteContactFlowAliasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteContactFlowAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContactFlowAliasResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteContactFlowAliasResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an alias from a flow without deleting the version that the alias points to.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContactFlowAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteContactFlowAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowAlias">REST API Reference for DeleteContactFlowAlias Operation</seealso>
+        public virtual Task<DeleteContactFlowAliasResponse> DeleteContactFlowAliasAsync(DeleteContactFlowAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteContactFlowAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContactFlowAliasResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteContactFlowAliasResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteContactFlowModule
 
 
@@ -11500,6 +11664,85 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = DescribeContactFlowResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeContactFlowResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeContactFlowAlias
+
+
+        /// <summary>
+        /// Returns information about a specific flow alias, including the version that it points
+        /// to.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContactFlowAlias service method.</param>
+        /// 
+        /// <returns>The response from the DescribeContactFlowAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlowAlias">REST API Reference for DescribeContactFlowAlias Operation</seealso>
+        public virtual DescribeContactFlowAliasResponse DescribeContactFlowAlias(DescribeContactFlowAliasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeContactFlowAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeContactFlowAliasResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeContactFlowAliasResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns information about a specific flow alias, including the version that it points
+        /// to.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContactFlowAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeContactFlowAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlowAlias">REST API Reference for DescribeContactFlowAlias Operation</seealso>
+        public virtual Task<DescribeContactFlowAliasResponse> DescribeContactFlowAliasAsync(DescribeContactFlowAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeContactFlowAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeContactFlowAliasResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeContactFlowAliasResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -18326,6 +18569,85 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = ListContactEvaluationsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListContactEvaluationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListContactFlowAliases
+
+
+        /// <summary>
+        /// Lists the aliases associated with a flow, including the version that each alias points
+        /// to.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContactFlowAliases service method.</param>
+        /// 
+        /// <returns>The response from the ListContactFlowAliases service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowAliases">REST API Reference for ListContactFlowAliases Operation</seealso>
+        public virtual ListContactFlowAliasesResponse ListContactFlowAliases(ListContactFlowAliasesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContactFlowAliasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContactFlowAliasesResponseUnmarshaller.Instance;
+
+            return Invoke<ListContactFlowAliasesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the aliases associated with a flow, including the version that each alias points
+        /// to.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContactFlowAliases service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListContactFlowAliases service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowAliases">REST API Reference for ListContactFlowAliases Operation</seealso>
+        public virtual Task<ListContactFlowAliasesResponse> ListContactFlowAliasesAsync(ListContactFlowAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContactFlowAliasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContactFlowAliasesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListContactFlowAliasesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -30386,6 +30708,95 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = UpdateContactEvaluationResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateContactEvaluationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateContactFlowAlias
+
+
+        /// <summary>
+        /// Updates the name, description, or flow version associated with an alias.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContactFlowAlias service method.</param>
+        /// 
+        /// <returns>The response from the UpdateContactFlowAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowAlias">REST API Reference for UpdateContactFlowAlias Operation</seealso>
+        public virtual UpdateContactFlowAliasResponse UpdateContactFlowAlias(UpdateContactFlowAliasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateContactFlowAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContactFlowAliasResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateContactFlowAliasResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the name, description, or flow version associated with an alias.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContactFlowAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateContactFlowAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowAlias">REST API Reference for UpdateContactFlowAlias Operation</seealso>
+        public virtual Task<UpdateContactFlowAliasResponse> UpdateContactFlowAliasAsync(UpdateContactFlowAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateContactFlowAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContactFlowAliasResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateContactFlowAliasResponse>(request, options, cancellationToken);
         }
 
         #endregion

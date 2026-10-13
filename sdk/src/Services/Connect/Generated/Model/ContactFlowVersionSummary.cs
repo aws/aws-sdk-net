@@ -35,13 +35,15 @@ namespace Amazon.Connect.Model
     public partial class ContactFlowVersionSummary
     {
         private string _arn;
+        private string _lastModifiedRegion;
+        private DateTime? _lastModifiedTime;
         private long? _version;
         private string _versionDescription;
 
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the view version.
+        /// The Amazon Resource Name (ARN) of the flow version.
         /// </para>
         /// </summary>
         public string Arn
@@ -54,6 +56,42 @@ namespace Amazon.Connect.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedRegion. 
+        /// <para>
+        /// The Amazon Web Services Region where this resource was last modified.
+        /// </para>
+        /// </summary>
+        public string LastModifiedRegion
+        {
+            get { return this._lastModifiedRegion; }
+            set { this._lastModifiedRegion = value; }
+        }
+
+        // Check to see if LastModifiedRegion property is set
+        internal bool IsSetLastModifiedRegion()
+        {
+            return this._lastModifiedRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedTime. 
+        /// <para>
+        /// The timestamp when this resource was last modified.
+        /// </para>
+        /// </summary>
+        public DateTime? LastModifiedTime
+        {
+            get { return this._lastModifiedTime; }
+            set { this._lastModifiedTime = value; }
+        }
+
+        // Check to see if LastModifiedTime property is set
+        internal bool IsSetLastModifiedTime()
+        {
+            return this._lastModifiedTime.HasValue; 
         }
 
         /// <summary>
