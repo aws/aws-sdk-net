@@ -47,6 +47,7 @@ namespace Amazon.AppStream.Model
         private string _name;
         private string _redirectURL;
         private List<StackError> _stackErrors = AWSConfigs.InitializeCollections ? new List<StackError>() : null;
+        private StorageConnectorAuthentication _storageConnectorAuthentication;
         private List<StorageConnector> _storageConnectors = AWSConfigs.InitializeCollections ? new List<StorageConnector>() : null;
         private StreamingExperienceSettings _streamingExperienceSettings;
         private List<UserSetting> _userSettings = AWSConfigs.InitializeCollections ? new List<UserSetting>() : null;
@@ -311,6 +312,28 @@ namespace Amazon.AppStream.Model
         internal bool IsSetStackErrors()
         {
             return this._stackErrors != null && (this._stackErrors.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageConnectorAuthentication. 
+        /// <para>
+        /// Indicates whether users' cloud storage authentication persists across streaming sessions.
+        /// When this attribute is FORCE_REAUTHENTICATION, WorkSpaces Applications removes the
+        /// stored authentication for the stack's OneDrive and Google Drive connectors when a
+        /// user's session ends. The user links their cloud storage again on their next session.
+        /// The default is REUSE_CREDENTIALS.
+        /// </para>
+        /// </summary>
+        public StorageConnectorAuthentication StorageConnectorAuthentication
+        {
+            get { return this._storageConnectorAuthentication; }
+            set { this._storageConnectorAuthentication = value; }
+        }
+
+        // Check to see if StorageConnectorAuthentication property is set
+        internal bool IsSetStorageConnectorAuthentication()
+        {
+            return this._storageConnectorAuthentication != null;
         }
 
         /// <summary>

@@ -2195,6 +2195,10 @@ namespace Amazon.AppStream
         /// </summary>
         public static readonly StackAttribute REDIRECT_URL = new StackAttribute("REDIRECT_URL");
         /// <summary>
+        /// Constant STORAGE_CONNECTOR_AUTHENTICATION for StackAttribute
+        /// </summary>
+        public static readonly StackAttribute STORAGE_CONNECTOR_AUTHENTICATION = new StackAttribute("STORAGE_CONNECTOR_AUTHENTICATION");
+        /// <summary>
         /// Constant STORAGE_CONNECTOR_GOOGLE_DRIVE for StackAttribute
         /// </summary>
         public static readonly StackAttribute STORAGE_CONNECTOR_GOOGLE_DRIVE = new StackAttribute("STORAGE_CONNECTOR_GOOGLE_DRIVE");
@@ -2302,6 +2306,56 @@ namespace Amazon.AppStream
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StackErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StorageConnectorAuthentication.
+    /// </summary>
+    public class StorageConnectorAuthentication : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FORCE_REAUTHENTICATION for StorageConnectorAuthentication
+        /// </summary>
+        public static readonly StorageConnectorAuthentication FORCE_REAUTHENTICATION = new StorageConnectorAuthentication("FORCE_REAUTHENTICATION");
+        /// <summary>
+        /// Constant REUSE_CREDENTIALS for StorageConnectorAuthentication
+        /// </summary>
+        public static readonly StorageConnectorAuthentication REUSE_CREDENTIALS = new StorageConnectorAuthentication("REUSE_CREDENTIALS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StorageConnectorAuthentication(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StorageConnectorAuthentication FindValue(string value)
+        {
+            return FindValue<StorageConnectorAuthentication>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StorageConnectorAuthentication(string value)
         {
             return FindValue(value);
         }

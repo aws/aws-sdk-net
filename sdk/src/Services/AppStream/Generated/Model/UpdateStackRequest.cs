@@ -47,6 +47,7 @@ namespace Amazon.AppStream.Model
         private string _feedbackURL;
         private string _name;
         private string _redirectURL;
+        private StorageConnectorAuthentication _storageConnectorAuthentication;
         private List<StorageConnector> _storageConnectors = AWSConfigs.InitializeCollections ? new List<StorageConnector>() : null;
         private StreamingExperienceSettings _streamingExperienceSettings;
         private List<UserSetting> _userSettings = AWSConfigs.InitializeCollections ? new List<UserSetting>() : null;
@@ -293,6 +294,28 @@ namespace Amazon.AppStream.Model
         internal bool IsSetRedirectURL()
         {
             return this._redirectURL != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageConnectorAuthentication. 
+        /// <para>
+        /// Specifies whether users' cloud storage authentication persists across streaming sessions.
+        /// When you specify FORCE_REAUTHENTICATION, WorkSpaces Applications removes the stored
+        /// authentication for the stack's OneDrive and Google Drive connectors when a user's
+        /// session ends. The user links their cloud storage again on their next session. To clear
+        /// this attribute, add STORAGE_CONNECTOR_AUTHENTICATION to AttributesToDelete.
+        /// </para>
+        /// </summary>
+        public StorageConnectorAuthentication StorageConnectorAuthentication
+        {
+            get { return this._storageConnectorAuthentication; }
+            set { this._storageConnectorAuthentication = value; }
+        }
+
+        // Check to see if StorageConnectorAuthentication property is set
+        internal bool IsSetStorageConnectorAuthentication()
+        {
+            return this._storageConnectorAuthentication != null;
         }
 
         /// <summary>
