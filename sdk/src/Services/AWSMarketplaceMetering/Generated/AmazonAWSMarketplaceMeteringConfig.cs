@@ -32,7 +32,7 @@ namespace Amazon.AWSMarketplaceMetering
     public partial class AmazonAWSMarketplaceMeteringConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Marketplace Metering", "4.0.101.1");
+            InternalSDKUtils.BuildUserAgentString("Marketplace Metering", "4.0.101.2");
 
         private static readonly AmazonAWSMarketplaceMeteringEndpointResolver EndpointResolver =
             new AmazonAWSMarketplaceMeteringEndpointResolver();

@@ -1,9 +1,0 @@
-{
-  "core": {
-    "changeLogMessages": [
-      "Fixed a JSON response unmarshalling slowdown introduced in 4.0.102.10 by StreamingUtf8JsonReader deferring its first stream read."
-    ],
-    "type": "patch",
-    "updateMinimum": true
-  }
-}

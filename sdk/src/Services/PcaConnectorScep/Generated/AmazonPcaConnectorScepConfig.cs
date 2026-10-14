@@ -32,7 +32,7 @@ namespace Amazon.PcaConnectorScep
     public partial class AmazonPcaConnectorScepConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Pca Connector Scep", "4.0.100.17");
+            InternalSDKUtils.BuildUserAgentString("Pca Connector Scep", "4.0.100.18");
 
         private static readonly AmazonPcaConnectorScepEndpointResolver EndpointResolver =
             new AmazonPcaConnectorScepEndpointResolver();

@@ -1,3 +1,99 @@
+### 4.0.353.0 (2026-10-14 18:14 UTC)
+* ApplicationAutoScaling (4.0.100.18)
+	* ApplicationAutoScaling is now generated from its Smithy model. There are no changes to the public API.
+* ApplicationInsights (4.0.101.12)
+	* ApplicationInsights is now generated from its Smithy model. There are no changes to the public API.
+* ARCRegionswitch (4.0.105.0)
+	* Features - Adds support for an optional payload to invoke the Lambda function with as part of the Custom action Lambda execution block
+* AutoScalingPlans (4.0.100.18)
+	* AutoScalingPlans is now generated from its Smithy model. There are no changes to the public API.
+* AWSMarketplaceMetering (4.0.101.2)
+	* Documentation update - added a Get started pointer to the AWS Marketplace AI Metering Agent Skill in the BatchMeterUsage API reference. No API or behavior change.
+* BedrockAgentCoreControl (4.0.122.0)
+	* This release supports scoping Amazon Bedrock AgentCore Gateway rate limits by request header or request body field.
+* CloudFront (4.0.103.0)
+	* This release adds a new "IpAddressType" field to "VPCOriginEndpointConfig", allowing customers to specify whether their VPC origin accepts IPv4-only or dualstack connections.
+* CloudHSMV2 (4.0.100.18)
+	* CloudHSMV2 is now generated from its Smithy model. There are no changes to the public API.
+* CodeBuild (4.0.101.18)
+	* CodeBuild is now generated from its Smithy model. There are no changes to the public API.
+* CodeConnections (4.0.101.2)
+	* CodeConnections is now generated from its Smithy model. Requests now use the rpcv2Cbor operation path derived from the service shape name (service/CodeConnections_20231201/operation/{OperationName}); the service accepts both paths. There are no changes to the public API.
+* Comprehend (4.0.100.18)
+	* Comprehend is now generated from its Smithy model. There are no changes to the public API.
+* ComprehendMedical (4.0.100.18)
+	* ComprehendMedical is now generated from its Smithy model. There are no changes to the public API.
+* ComputeOptimizerAutomation (4.0.100.18)
+	* ComputeOptimizerAutomation is now generated from its Smithy model. There are no changes to the public API.
+* DataSync (4.0.101.1)
+	* DataSync is now generated from its Smithy model. There are no changes to the public API.
+* DynamoDBStreams (4.0.101.0)
+	* Add support for a new iterator type (AT TIMESTAMP) for DynamoDB Streams GetShardIterator API that allows reading from a specific point in time from the stream.
+* EC2 (4.0.127.0)
+	* Adds T8i instance sizes to the InstanceType enum. T8i instances are low-cost burstable instances powered by custom sixth generation Intel Xeon 6 processors, available exclusively on AWS, and built on the latest sixth generation AWS Nitro cards
+* EndUserMessaging (4.0.100.3)
+	* EndUserMessaging is now generated from its Smithy model. There are no changes to the public API.
+* EventBridgeV2 (4.0.100.4)
+	* EventBridgeV2 is now generated from its Smithy model. There are no changes to the public API.
+* FMS (4.0.101.2)
+	* FMS is now generated from its Smithy model. There are no changes to the public API.
+* GuardDuty (4.0.110.0)
+	* Releasing support for Custom Detection Rule Runtime Monitoring
+* Imagebuilder (4.0.103.0)
+	* This release adds parentInstance to infrastructure configurations, so builds can use an already-running instance from an Amazon EC2 Auto Scaling group. It also adds terminateInstanceOnCompletion, which keeps build and test instances running after image creation ends.
+* Interconnect (4.0.100.18)
+	* Interconnect is now generated from its Smithy model. There are no changes to the public API.
+* KendraRanking (4.0.101.12)
+	* KendraRanking is now generated from its Smithy model. There are no changes to the public API.
+* Keyspaces (4.0.101.2)
+	* Keyspaces is now generated from its Smithy model. There are no changes to the public API.
+* KeyspacesStreams (4.0.100.18)
+	* KeyspacesStreams is now generated from its Smithy model. There are no changes to the public API.
+* KinesisAnalyticsV2 (4.0.101.13)
+	* KinesisAnalyticsV2 is now generated from its Smithy model. There are no changes to the public API.
+* Lambda (4.0.110.0)
+	* AWS Lambda now supports an optional X-Ray trace header for chained invocations in durable executions, enabling child invocations to be linked to the initiating span.
+* LambdaWeb (4.0.102.2)
+	* LambdaWeb is now generated from its Smithy model. There are no changes to the public API.
+	* Exception properties bound to response headers are now populated from those headers.
+* MailManager (4.0.101.16)
+	* MailManager is now generated from its Smithy model. There are no changes to the public API.
+* MarketplaceAgreement (4.0.103.2)
+	* MarketplaceAgreement is now generated from its Smithy model. There are no changes to the public API.
+* MarketplaceEntitlementService (4.0.100.18)
+	* MarketplaceEntitlementService is now generated from its Smithy model. There are no changes to the public API.
+* MemoryDB (4.0.100.18)
+	* MemoryDB is now generated from its Smithy model. There are no changes to the public API.
+* NetworkFirewall (4.0.105.7)
+	* NetworkFirewall is now generated from its Smithy model. There are no changes to the public API.
+* Organizations (4.0.103.0)
+	* With dual-stack enabled, all requests now resolve to the endpoint in the partition's primary Region (for example, organizations.us-east-1.api.aws) and are signed for that Region. Previously, requests from other Regions resolved to a nonexistent endpoint. No API changes.
+* PI (4.0.101.2)
+	* PI is now generated from its Smithy model. There are no changes to the public API.
+* RedshiftDataAPIService (4.0.103.4)
+	* RedshiftDataAPIService is now generated from its Smithy model. There are no changes to the public API.
+* ResourceGroupsTaggingAPI (4.0.100.18)
+	* ResourceGroupsTaggingAPI is now generated from its Smithy model. DescribeReportCreationResponse now exposes the StartDate property that the service returns.
+* ServiceCatalog (4.0.100.18)
+	* ServiceCatalog is now generated from its Smithy model. There are no changes to the public API.
+* ServiceDiscovery (4.0.101.14)
+	* ServiceDiscovery is now generated from its Smithy model. There are no changes to the public API.
+* Textract (4.0.100.18)
+	* Textract is now generated from its Smithy model. All exception classes now expose the Code property that the service returns in error responses.
+* TranscribeService (4.0.102.4)
+	* TranscribeService is now generated from its Smithy model. There are no changes to the public API.
+* Transfer (4.0.105.0)
+	* AWS Transfer Family now lets you store SFTP server host keys in AWS Secrets Manager in your own AWS account. This gives you greater control over your server identity and helps simplify server migrations and failover.
+	* Transfer is now generated from its Smithy model. There are no changes to the public API.
+* Translate (4.0.101.2)
+	* Translate is now generated from its Smithy model. There are no changes to the public API.
+* WorkspacesInstances (4.0.102.7)
+	* WorkspacesInstances is now generated from its Smithy model. There are no changes to the public API.
+* Core 4.0.102.11
+	* Clarified in the `StreamingUtf8JsonReader.Reader` documentation that accessing it copies the underlying `Utf8JsonReader`; per-token reads should use the forwarding members.
+	* Fixed a JSON response unmarshalling slowdown introduced in 4.0.102.10 by StreamingUtf8JsonReader deferring its first stream read.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.352.0 (2026-10-13 18:19 UTC)
 * AgentRegistryControl (4.0.103.0)
 	* AWS Agent Registry is improving recently launched custom metadata schema feature to make shared attributes easier to manage.

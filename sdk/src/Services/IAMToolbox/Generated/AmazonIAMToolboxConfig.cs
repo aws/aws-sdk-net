@@ -32,7 +32,7 @@ namespace Amazon.IAMToolbox
     public partial class AmazonIAMToolboxConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("IAM Toolbox", "4.0.100.7");
+            InternalSDKUtils.BuildUserAgentString("IAM Toolbox", "4.0.100.8");
 
         private static readonly AmazonIAMToolboxEndpointResolver EndpointResolver =
             new AmazonIAMToolboxEndpointResolver();

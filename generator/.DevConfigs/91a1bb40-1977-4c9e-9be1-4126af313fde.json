@@ -1,9 +1,0 @@
-{
-  "core": {
-    "changeLogMessages": [
-      "Clarified in the `StreamingUtf8JsonReader.Reader` documentation that accessing it copies the underlying `Utf8JsonReader`; per-token reads should use the forwarding members."
-    ],
-    "type": "patch",
-    "updateMinimum": false
-  }
-}
