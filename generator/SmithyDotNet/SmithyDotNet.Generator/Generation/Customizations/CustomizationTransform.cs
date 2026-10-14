@@ -150,8 +150,54 @@ public static class CustomizationTransform
                 ValidateDataTypeSwap(model, member, memberName, swap, shapeName);
             }
         }
+
+        // The convenience hooks name an operation (noArgOverloads, simpleMethods) or a request/structure
+        // class (simpleConstructors). The writers only consult them for shapes the model actually has, so a
+        // stale key would otherwise be silently skipped (as in C2J). Fail loudly instead, like every hook
+        // above — the stale entry must be removed from the customizations file.
+        foreach (var operationName in customizations.NoArgOverloads)
+        {
+            if (FindSingleShape(model, operationName, $"noArgOverloads['{operationName}']") is not OperationShape)
+            {
+                throw new GeneratorException($"noArgOverloads['{operationName}'] targets a shape that is not an operation.");
+            }
+        }
+
+        if (customizations.SimpleMethods is { } simpleMethods)
+        {
+            foreach (var operationName in simpleMethods.Operations.Keys)
+            {
+                if (FindSingleShape(model, operationName, $"simpleMethods['{operationName}']") is not OperationShape)
+                {
+                    throw new GeneratorException($"simpleMethods['{operationName}'] targets a shape that is not an operation.");
+                }
+            }
+        }
+
+        if (customizations.SimpleConstructors is { } simpleConstructors)
+        {
+            foreach (var className in simpleConstructors.Constructors.Keys)
+            {
+                // A request class is always emitted as {Op}Request; its Smithy input shape is often named
+                // differently (e.g. PutItemInput), so accept the key when the operation exists.
+                if (className.EndsWith("Request", StringComparison.Ordinal)
+                    && ModelHasShape<OperationShape>(model, className[..^"Request".Length]))
+                {
+                    continue;
+                }
+
+                // Otherwise the key must name a shape in the model; a stale (absent) one throws. Unlike the
+                // other hooks, a present-but-non-structure key is tolerated (the writers only emit a
+                // constructor for an emitted class, skipping it as C2J does): one shared customizations file
+                // serves every API version, and a shape that is a structure in one can be a map/list in
+                // another (DynamoDB's Key/KeySchema are structures in 2011-12-05, a map/list in 2012-08-10).
+                FindSingleShape(model, className, $"simpleConstructors['{className}']");
+            }
+        }
     }
 
+    private static bool ModelHasShape<T>(SmithyModel model, string bareName) where T : Shape =>
+        model.Shapes.Any(entry => ShapeId.Parse(entry.Key).Name == bareName && entry.Value is T);
     // Structures are emitted only when reachable from the service's operations, so the ones only this operation used go too.
     private static void ExcludeOperation(SmithyModel model, OperationShape operation, string operationName)
     {

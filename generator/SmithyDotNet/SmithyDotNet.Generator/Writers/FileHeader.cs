@@ -150,6 +150,31 @@ public static class FileHeader
     ];
 
     /// <summary>
+    /// Usings for the <c>simpleConstructors</c> tests file. The caller appends the service namespace
+    /// and its <c>.Model</c> namespace.
+    /// </summary>
+    public static IReadOnlyList<string> SimpleConstructorTestsUsings { get; } =
+    [
+        "System.Collections.Generic",
+        "System.IO",
+        "Microsoft.VisualStudio.TestTools.UnitTesting",
+    ];
+
+    /// <summary>
+    /// Usings for the <c>simpleMethods</c> tests file. The caller appends, as a second group, the
+    /// service's <c>.Model</c> namespace and the service namespace.
+    /// </summary>
+    public static IReadOnlyList<string> SimpleMethodTestsUsings { get; } =
+    [
+        "System",
+        "System.Collections.Generic",
+        "System.IO",
+        "System.Linq",
+        "System.Text",
+        "Microsoft.VisualStudio.TestTools.UnitTesting",
+    ];
+
+    /// <summary>
     /// Usings for the auth resolver file: the runtime, auth, and identity namespaces the resolver references.
     /// </summary>
     public static IReadOnlyList<string> AuthResolverUsings { get; } =

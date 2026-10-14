@@ -340,6 +340,42 @@ public class ClientClassWriterTests
         Assert.DoesNotContain("#endregion", _output);
     }
 
+    [Fact]
+    public void SimpleMethods_EmitSyncAndAsyncOverloadsCarryingMemberDocs()
+    {
+        var customizations = new CustomizationsModel
+        {
+            SimpleMethods = new SimpleMethodsCustomization { Operations = { ["PutAuditEvents"] = new SimpleMethodForms { Forms = [["ChannelArn"]] } } },
+        };
+        var output = WriteWith(customizations: customizations);
+
+        // Sync overload is NETFRAMEWORK-only (no netstandard counterpart); async is on all targets.
+        Assert.Contains("public virtual PutAuditEventsResponse PutAuditEvents(string channelArn)", output);
+        Assert.Contains("public virtual Task<PutAuditEventsResponse> PutAuditEventsAsync(string channelArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))", output);
+
+        // Body builds the request from the positional parameter and delegates to the request overload.
+        Assert.Contains("request.ChannelArn = channelArn;", output);
+        Assert.Contains("return PutAuditEventsAsync(request, cancellationToken);", output);
+
+        // The parameter doc is the member's @documentation, lightly sanitized.
+        Assert.Contains("""<param name="channelArn">The ARN or ID (the ARN suffix) of a channel.</param>""", output);
+    }
+
+    [Fact]
+    public void NoArgOverload_EmitsPublicNetFrameworkSyncInternalElsewhereAndAsync()
+    {
+        var customizations = new CustomizationsModel { NoArgOverloads = ["PutAuditEvents"] };
+        var output = WriteWith(customizations: customizations);
+
+        // Sync visibility splits by TFM like the request-taking method; async is public everywhere.
+        Assert.Contains("public virtual PutAuditEventsResponse PutAuditEvents()", output);
+        Assert.Contains("internal virtual PutAuditEventsResponse PutAuditEvents()", output);
+        Assert.Contains("public virtual Task<PutAuditEventsResponse> PutAuditEventsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))", output);
+
+        Assert.Contains("return PutAuditEvents(new PutAuditEventsRequest());", output);
+        Assert.Contains("return PutAuditEventsAsync(new PutAuditEventsRequest(), cancellationToken);", output);
+    }
+
     private string WriteWith(ServiceMetadata? metadata = null, CustomizationsModel? customizations = null)
     {
         var context = new GenerationContext(_fixture.Index, _fixture.Context.Manifest, metadata, customizations);

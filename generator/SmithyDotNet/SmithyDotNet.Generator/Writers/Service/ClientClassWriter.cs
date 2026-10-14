@@ -119,59 +119,59 @@ public sealed class ClientClassWriter(GenerationContext context, string modelFil
         var client = $"{_clientName}Client";
         var config = _configName;
 
-        WriteCtorDoc(writer, DefaultCredentialsSummary());
+        DocumentationFormatter.WriteConstructorDocumentation(writer,DefaultCredentialsSummary());
         writer.WriteLine($"public {client}() : base(new {config}()) {{ }}");
         writer.WriteLine();
 
-        WriteCtorDoc(writer, DefaultCredentialsSummary(), ("region", "The region to connect."));
+        DocumentationFormatter.WriteConstructorDocumentation(writer,DefaultCredentialsSummary(), ("region", "The region to connect."));
         writer.WriteLine($"public {client}(RegionEndpoint region) : base(new {config} {{ RegionEndpoint = region }}) {{ }}");
         writer.WriteLine();
 
-        WriteCtorDoc(writer, DefaultCredentialsSummary(), ("config", $"The {client} Configuration Object"));
+        DocumentationFormatter.WriteConstructorDocumentation(writer,DefaultCredentialsSummary(), ("config", $"The {client} Configuration Object"));
         writer.WriteLine($"public {client}({config} config) : base(config) {{ }}");
         writer.WriteLine();
 
-        WriteCtorDoc(writer, [$"Constructs {client} with AWS Credentials"], ("credentials", "AWS Credentials"));
+        DocumentationFormatter.WriteConstructorDocumentation(writer,[$"Constructs {client} with AWS Credentials"], ("credentials", "AWS Credentials"));
         writer.WriteLine($"public {client}(AWSCredentials credentials)");
         writer.OpenBlock($"    : this(credentials, new {config}())", () => { });
         writer.WriteLine();
 
-        WriteCtorDoc(writer, [$"Constructs {client} with AWS Credentials"], ("credentials", "AWS Credentials"), ("region", "The region to connect."));
+        DocumentationFormatter.WriteConstructorDocumentation(writer,[$"Constructs {client} with AWS Credentials"], ("credentials", "AWS Credentials"), ("region", "The region to connect."));
         writer.WriteLine($"public {client}(AWSCredentials credentials, RegionEndpoint region)");
         writer.OpenBlock($"    : this(credentials, new {config} {{ RegionEndpoint = region }})", () => { });
         writer.WriteLine();
 
-        WriteCtorDoc(writer, [$"Constructs {client} with AWS Credentials and an", $"{client} Configuration object."], ("credentials", "AWS Credentials"), ("clientConfig", $"The {client} Configuration Object"));
+        DocumentationFormatter.WriteConstructorDocumentation(writer,[$"Constructs {client} with AWS Credentials and an", $"{client} Configuration object."], ("credentials", "AWS Credentials"), ("clientConfig", $"The {client} Configuration Object"));
         writer.WriteLine($"public {client}(AWSCredentials credentials, {config} clientConfig)");
         writer.OpenBlock("    : base(credentials, clientConfig)", () => { });
         writer.WriteLine();
 
-        WriteCtorDoc(writer, AccessKeySummary(), ("awsAccessKeyId", "AWS Access Key ID"), ("awsSecretAccessKey", "AWS Secret Access Key"));
+        DocumentationFormatter.WriteConstructorDocumentation(writer,AccessKeySummary(), ("awsAccessKeyId", "AWS Access Key ID"), ("awsSecretAccessKey", "AWS Secret Access Key"));
         writer.WriteLine($"public {client}(string awsAccessKeyId, string awsSecretAccessKey)");
         writer.OpenBlock($"    : this(awsAccessKeyId, awsSecretAccessKey, new {config}())", () => { });
         writer.WriteLine();
 
-        WriteCtorDoc(writer, AccessKeySummary(), ("awsAccessKeyId", "AWS Access Key ID"), ("awsSecretAccessKey", "AWS Secret Access Key"), ("region", "The region to connect."));
+        DocumentationFormatter.WriteConstructorDocumentation(writer,AccessKeySummary(), ("awsAccessKeyId", "AWS Access Key ID"), ("awsSecretAccessKey", "AWS Secret Access Key"), ("region", "The region to connect."));
         writer.WriteLine($"public {client}(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region)");
         writer.OpenBlock($"    : this(awsAccessKeyId, awsSecretAccessKey, new {config} {{ RegionEndpoint = region }})", () => { });
         writer.WriteLine();
 
-        WriteCtorDoc(writer, [$"Constructs {client} with AWS Access Key ID, AWS Secret Key and an", $"{client} Configuration object. "], ("awsAccessKeyId", "AWS Access Key ID"), ("awsSecretAccessKey", "AWS Secret Access Key"), ("clientConfig", $"The {client} Configuration Object"));
+        DocumentationFormatter.WriteConstructorDocumentation(writer,[$"Constructs {client} with AWS Access Key ID, AWS Secret Key and an", $"{client} Configuration object. "], ("awsAccessKeyId", "AWS Access Key ID"), ("awsSecretAccessKey", "AWS Secret Access Key"), ("clientConfig", $"The {client} Configuration Object"));
         writer.WriteLine($"public {client}(string awsAccessKeyId, string awsSecretAccessKey, {config} clientConfig)");
         writer.OpenBlock("    : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)", () => { });
         writer.WriteLine();
 
-        WriteCtorDoc(writer, AccessKeySummary(), ("awsAccessKeyId", "AWS Access Key ID"), ("awsSecretAccessKey", "AWS Secret Access Key"), ("awsSessionToken", "AWS Session Token"));
+        DocumentationFormatter.WriteConstructorDocumentation(writer,AccessKeySummary(), ("awsAccessKeyId", "AWS Access Key ID"), ("awsSecretAccessKey", "AWS Secret Access Key"), ("awsSessionToken", "AWS Session Token"));
         writer.WriteLine($"public {client}(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken)");
         writer.OpenBlock($"    : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new {config}())", () => { });
         writer.WriteLine();
 
-        WriteCtorDoc(writer, AccessKeySummary(), ("awsAccessKeyId", "AWS Access Key ID"), ("awsSecretAccessKey", "AWS Secret Access Key"), ("awsSessionToken", "AWS Session Token"), ("region", "The region to connect."));
+        DocumentationFormatter.WriteConstructorDocumentation(writer,AccessKeySummary(), ("awsAccessKeyId", "AWS Access Key ID"), ("awsSecretAccessKey", "AWS Secret Access Key"), ("awsSessionToken", "AWS Session Token"), ("region", "The region to connect."));
         writer.WriteLine($"public {client}(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)");
         writer.OpenBlock($"    : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new {config} {{ RegionEndpoint = region }})", () => { });
         writer.WriteLine();
 
-        WriteCtorDoc(writer, [$"Constructs {client} with AWS Access Key ID, AWS Secret Key and an", $"{client} Configuration object. "], ("awsAccessKeyId", "AWS Access Key ID"), ("awsSecretAccessKey", "AWS Secret Access Key"), ("awsSessionToken", "AWS Session Token"), ("clientConfig", $"The {client} Configuration Object"));
+        DocumentationFormatter.WriteConstructorDocumentation(writer,[$"Constructs {client} with AWS Access Key ID, AWS Secret Key and an", $"{client} Configuration object. "], ("awsAccessKeyId", "AWS Access Key ID"), ("awsSecretAccessKey", "AWS Secret Access Key"), ("awsSessionToken", "AWS Session Token"), ("clientConfig", $"The {client} Configuration Object"));
         writer.WriteLine($"public {client}(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, {config} clientConfig)");
         writer.OpenBlock("    : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)", () => { });
         writer.WriteLine();
@@ -198,21 +198,6 @@ public sealed class ClientClassWriter(GenerationContext context, string modelFil
     [
         $"Constructs {_clientName}Client with AWS Access Key ID and AWS Secret Key",
     ];
-
-    private static void WriteCtorDoc(CodeWriter writer, string[] summaryLines, params (string Name, string Description)[] paramTags)
-    {
-        writer.WriteLine("/// <summary>");
-        foreach (var line in summaryLines)
-        {
-            writer.WriteLine(line.Length == 0 ? "/// " : $"/// {line}");
-        }
-
-        writer.WriteLine("/// </summary>");
-        foreach (var (name, description) in paramTags)
-        {
-            writer.WriteLine($"/// <param name=\"{name}\">{description}</param>");
-        }
-    }
 
     private void WriteOverrides(CodeWriter writer)
     {
@@ -406,11 +391,108 @@ public sealed class ClientClassWriter(GenerationContext context, string modelFil
             writer.WriteLine($"return InvokeAsync<{responseType}>(request, options, cancellationToken);");
         });
 
+        // Convenience overloads (simpleMethods, then noArgOverloads) sit inside the same h2 guard as the
+        // operation they wrap, so they are excluded below net8 along with it.
+        WriteSimpleMethods(writer, operation, obsolete);
+        WriteNoArgOverloads(writer, operation, obsolete);
+
         if (operation.RequiresHttp2)
         {
             writer.WriteLine("#endif");
         }
         writer.WriteLine();
+    }
+
+    // simpleMethods: for each form, a sync overload (NETFRAMEWORK-only `public virtual`) and an async
+    // overload (all targets), each building the request from the positional parameters and delegating to
+    // the request-taking method. C2J emits no netstandard sync simple method, so the sync overload is
+    // guarded without an #else.
+    private void WriteSimpleMethods(CodeWriter writer, Operation operation, string? obsolete)
+    {
+        if (context.Customizations.MethodFormsFor(operation.Name) is not { } forms)
+        {
+            return;
+        }
+
+        var responseType = $"{operation.Name}Response";
+        var requestType = $"{operation.Name}Request";
+        var members = TypeMapper.ResolveMembers(operation.Input, context);
+
+        foreach (var form in forms)
+        {
+            var formMembers = ConvenienceMembers.Resolve(form, members);
+            var parameters = ConvenienceMembers.ParameterList(formMembers, remapStream: true);
+            var paramTags = formMembers.Select(m => (SdkNaming.ToParameterName(m.PropertyName), DocumentationFormatter.ParamDocForOperation(m.Documentation, operation.Name))).ToList();
+
+            void WriteBody(string delegateCall)
+            {
+                writer.WriteLine($"var request = new {requestType}();");
+                foreach (var member in formMembers)
+                {
+                    writer.WriteLine($"request.{member.PropertyName} = {SdkNaming.ToParameterName(member.PropertyName)};");
+                }
+
+                writer.WriteLine(delegateCall);
+            }
+
+            writer.WriteLine();
+            writer.WriteLine("#if NETFRAMEWORK");
+            DocumentationFormatter.WriteOperationDocumentation(writer, context, operation, isAsync: false, parameters: paramTags);
+            if (obsolete is not null)
+            {
+                writer.WriteLine(obsolete);
+            }
+            writer.OpenBlock($"public virtual {responseType} {operation.Name}({parameters})", () => WriteBody($"return {operation.Name}(request);"));
+            writer.WriteLine("#endif");
+
+            writer.WriteLine();
+            DocumentationFormatter.WriteOperationDocumentation(writer, context, operation, isAsync: true, parameters: paramTags);
+            if (obsolete is not null)
+            {
+                writer.WriteLine(obsolete);
+            }
+
+            var asyncParameters = parameters.Length > 0 ? $"{parameters}, " : parameters;
+            writer.OpenBlock($"public virtual Task<{responseType}> {operation.Name}Async({asyncParameters}System.Threading.CancellationToken cancellationToken = default(CancellationToken))", () => WriteBody($"return {operation.Name}Async(request, cancellationToken);"));
+        }
+    }
+
+    // noArgOverloads: a parameterless sync overload (public on NETFRAMEWORK, internal elsewhere, mirroring
+    // the request-taking method's visibility split) and a parameterless async overload (all targets), each
+    // delegating with a fresh empty request.
+    private void WriteNoArgOverloads(CodeWriter writer, Operation operation, string? obsolete)
+    {
+        if (!context.Customizations.CreateNoArgOverload(operation.Name))
+        {
+            return;
+        }
+
+        var responseType = $"{operation.Name}Response";
+        var requestType = $"{operation.Name}Request";
+
+        writer.WriteLine();
+        writer.WriteLine("#if NETFRAMEWORK");
+        DocumentationFormatter.WriteOperationDocumentation(writer, context, operation, isAsync: false, parameters: []);
+        if (obsolete is not null)
+        {
+            writer.WriteLine(obsolete);
+        }
+        writer.OpenBlock($"public virtual {responseType} {operation.Name}()", () => writer.WriteLine($"return {operation.Name}(new {requestType}());"));
+        writer.WriteLine("#else");
+        if (obsolete is not null)
+        {
+            writer.WriteLine(obsolete);
+        }
+        writer.OpenBlock($"internal virtual {responseType} {operation.Name}()", () => writer.WriteLine($"return {operation.Name}(new {requestType}());"));
+        writer.WriteLine("#endif");
+
+        writer.WriteLine();
+        DocumentationFormatter.WriteOperationDocumentation(writer, context, operation, isAsync: true, parameters: []);
+        if (obsolete is not null)
+        {
+            writer.WriteLine(obsolete);
+        }
+        writer.OpenBlock($"public virtual Task<{responseType}> {operation.Name}Async(System.Threading.CancellationToken cancellationToken = default(CancellationToken))", () => writer.WriteLine($"return {operation.Name}Async(new {requestType}(), cancellationToken);"));
     }
 
     private void WriteInvokeOptions(CodeWriter writer, Operation operation)

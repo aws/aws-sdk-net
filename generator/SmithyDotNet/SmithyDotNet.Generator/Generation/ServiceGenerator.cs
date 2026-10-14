@@ -168,6 +168,24 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             EmitUnder(testsOutputPath, writtenTests, testsRelativePath, endpointProviderTestSuiteWriter.Write(cancellationToken));
         }
 
+        // Convenience-customization tests live beside the endpoint tests under the test tree, each
+        // gated (like C2J's GenerateCustomizationTests) on the service carrying that hook. Reflection
+        // tests, so they pin the public surface simpleConstructors/simpleMethods add.
+        if (testsOutputPath is not null)
+        {
+            if (context.Customizations.SimpleConstructors is { Constructors.Count: > 0 })
+            {
+                var simpleConstructorTestsWriter = new SimpleConstructorTestsWriter(context, modelFileName);
+                EmitUnder(testsOutputPath, writtenTests, Path.Combine("UnitTests", "Generated", "Customizations", "Constructors", $"{context.BaseName}ConstructorTests.cs"), simpleConstructorTestsWriter.Write(cancellationToken));
+            }
+
+            if (context.Customizations.SimpleMethods is { Operations.Count: > 0 })
+            {
+                var simpleMethodTestsWriter = new SimpleMethodTestsWriter(context, modelFileName);
+                EmitUnder(testsOutputPath, writtenTests, Path.Combine("UnitTests", "Generated", "Customizations", "SimpleMethods", $"{context.BaseName}MethodTests.cs"), simpleMethodTestsWriter.Write(cancellationToken));
+            }
+        }
+
         // Every service gets a unit-test project so the files under UnitTests/ (generated endpoint
         // tests today, hand-written tests as they are added) have a project to compile under. Not
         // gated on endpoint tests — the legacy generator emits it for every service.

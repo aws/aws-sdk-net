@@ -190,4 +190,29 @@ public class CustomizationsModelTests
 
         Assert.Equal(new DataTypeSwap { Type = "decimal?", Marshaller = "M" }, customizations.DataTypeSwaps["Spend"]["Amount"]);
     }
+
+    // acm splits simpleMethods and simpleConstructors into their own sibling files alongside noArgOverloads.
+    [Fact]
+    public void Load_ConvenienceHooks_ReadAndMergeAcrossFiles()
+    {
+        var customizations = LoadFiles(
+            """{ "noArgOverloads": [ "ListKeys" ] }""",
+            """{ "simpleMethods": { "operations": { "DeleteCertificate": { "methodForms": [ [ "CertificateArn" ] ] } } } }""",
+            """{ "simpleConstructors": { "constructors": { "DeleteCertificateRequest": { "constructorForms": [ [ "CertificateArn" ] ] } } } }""");
+
+        Assert.True(customizations.CreateNoArgOverload("listkeys"));
+        Assert.Equal([["CertificateArn"]], customizations.MethodFormsFor("DeleteCertificate"));
+        Assert.Equal([["CertificateArn"]], customizations.ConstructorFormsFor("DeleteCertificateRequest"));
+        Assert.Null(customizations.MethodFormsFor("Missing"));
+        Assert.Null(customizations.ConstructorFormsFor("Missing"));
+    }
+
+    [Fact]
+    public void Load_SimpleMethods_SameOperationInTwoFiles_Throws()
+    {
+        var ex = Assert.Throws<GeneratorException>(() => LoadFiles(
+            """{ "simpleMethods": { "operations": { "DoThing": { "methodForms": [ [ "A" ] ] } } } }""",
+            """{ "simpleMethods": { "operations": { "DoThing": { "methodForms": [ [ "B" ] ] } } } }"""));
+        Assert.Contains("simpleMethods['DoThing'] appears in more than one customizations file", ex.Message);
+    }
 }

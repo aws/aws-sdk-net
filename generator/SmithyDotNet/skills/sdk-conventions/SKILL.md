@@ -286,6 +286,17 @@ added to the modeled one. A field the trait already has fails generation.
 Unlike the C2J-inherited hooks above, `paginators` names members as the model does (like `@paginated`), not by their
 emitted name.
 
+Three convenience hooks add hand-picked public members, read from `GenerationContext.Customizations` (not folded into the
+model). A form names members by C# property name (case-insensitive); a stale operation/class/member reference fails
+generation, as the other hooks do (`CustomizationTransform.Validate` for the operation/class key, `ConvenienceMembers.Resolve`
+for a form member). All three carry the member `@documentation` onto the parameters via `DocumentationFormatter.ParamDocFor*`.
+- `noArgOverloads` — parameterless client overloads (sync + async), via `ClientClassWriter`/`ClientInterfaceWriter`.
+- `simpleMethods` — client overloads taking listed request members positionally (sync + async), same writers.
+- `simpleConstructors` — request/structure constructors taking listed members, via `OperationWriter`/`StructureWriter` using
+  `SimpleConstructorWriter` (assigns the property, not C2J's backing field — same constructor signature).
+
+`ServiceGenerator` emits C2J's reflection tests under `UnitTests/Generated/Customizations/` when the hook is present
+(`SimpleConstructorTestsWriter`, `SimpleMethodTestsWriter`); `noArgOverloads` has no generated test.
 `operationModifiers.{Operation}.exclude` unbinds the operation from its service or resource and `shapeModifiers.{Shape}.exclude`
 removes members, so whatever is no longer reachable is not emitted. `useWrappingResult` moves the output under one member,
 `wrappedResultMember`, of a new output structure: the response has a single property of the output's type, paginator paths go

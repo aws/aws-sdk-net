@@ -1,6 +1,7 @@
 using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Generation.Operations;
 using SmithyDotNet.Generator.Model.Traits;
+using SmithyDotNet.Generator.Writers.Shapes;
 
 namespace SmithyDotNet.Generator.Writers.Service;
 
@@ -140,6 +141,7 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
             }
             writer.OpenBlock($"public partial class {opRecord.ClassName} : {opRecord.BaseClass}", () =>
             {
+                SimpleConstructorWriter.Write(writer, context, opRecord.ClassName, opRecord.Members);
                 MemberWriter.WriteMembers(writer, opRecord.Members);
                 if (opRecord.HasRequestEventStream)
                 {

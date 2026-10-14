@@ -40,7 +40,11 @@ public sealed class StructureWriter(GenerationContext context, string modelFileN
             var declaration = isEventStreamEvent
                 ? $"public partial class {className} : Amazon.Runtime.EventStreams.IEventStreamEvent"
                 : $"public partial class {className}";
-            writer.OpenBlock(declaration, () => MemberWriter.WriteMembers(writer, members));
+            writer.OpenBlock(declaration, () =>
+            {
+                SimpleConstructorWriter.Write(writer, context, className, members);
+                MemberWriter.WriteMembers(writer, members);
+            });
         });
 
         return writer.ToFormattedString(cancellationToken);

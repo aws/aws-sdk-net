@@ -306,4 +306,52 @@ public class CustomizationTransformTests
         var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
         Assert.Contains(expectedInMessage, ex.Message);
     }
+
+    // convenience hooks (noArgOverloads / simpleMethods / simpleConstructors)
+
+    [Fact]
+    public void NoArgOverloads_OnNonOperation_Throws()
+    {
+        var customizations = new CustomizationsModel { NoArgOverloads = ["Bucket"] };
+
+        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
+        Assert.Contains("noArgOverloads['Bucket'] targets a shape that is not an operation", ex.Message);
+    }
+
+    [Fact]
+    public void SimpleMethods_OnStaleOperation_Throws()
+    {
+        var customizations = new CustomizationsModel { SimpleMethods = new SimpleMethodsCustomization { Operations = { ["Ghost"] = new SimpleMethodForms() } } };
+
+        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
+        Assert.Contains("simpleMethods['Ghost'] does not match any shape", ex.Message);
+    }
+
+    [Fact]
+    public void SimpleConstructors_OnStaleClass_Throws()
+    {
+        var customizations = new CustomizationsModel { SimpleConstructors = new SimpleConstructorsCustomization { Constructors = { ["Ghost"] = new SimpleConstructorForms() } } };
+
+        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
+        Assert.Contains("simpleConstructors['Ghost'] does not match any shape", ex.Message);
+    }
+
+    [Fact]
+    public void SimpleConstructors_OnExistingStructure_Validates()
+    {
+        var customizations = new CustomizationsModel { SimpleConstructors = new SimpleConstructorsCustomization { Constructors = { ["Bucket"] = new SimpleConstructorForms() } } };
+
+        // Existence check passes; no throw.
+        ApplyAndValidate(customizations);
+    }
+
+    // A shared customizations file serves every API version; a key that is a structure in one version can be a
+    // map/list here. A present-but-non-structure key is tolerated (the writers skip it), unlike a stale one.
+    [Fact]
+    public void SimpleConstructors_OnPresentNonStructure_Tolerated()
+    {
+        var customizations = new CustomizationsModel { SimpleConstructors = new SimpleConstructorsCustomization { Constructors = { ["LegacyId"] = new SimpleConstructorForms() } } };
+
+        ApplyAndValidate(customizations);
+    }
 }
