@@ -34,6 +34,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.JsonProtocol
 {
@@ -47,7 +48,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonProtocol")]
-        public void AwsJson11StructuresDontSerializeNullValuesRequest()
+        public async Task AwsJson11StructuresDontSerializeNullValuesRequest()
         {
             // Arrange
             var request = new NullOperationRequest
@@ -56,21 +57,28 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
             var config = new AmazonJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new NullOperationRequestMarshaller();
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.NullOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonProtocol.NullOperation".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonProtocol.NullOperation".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
         }
 
         /// <summary>
@@ -80,26 +88,33 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonProtocol")]
-        public void AwsJson11StructuresDontDeserializeNullValuesResponse()
+        public async Task AwsJson11StructuresDontDeserializeNullValuesResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"string\": null\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\n    \"string\": null\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new NullOperationResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.NullOperationAsync(new NullOperationRequest()).ConfigureAwait(false);
             var expectedResponse = new NullOperationResponse
             {
             };
 
             // Assert
-            var actualResponse = (NullOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<NullOperationResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
     }

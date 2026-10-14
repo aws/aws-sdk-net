@@ -29,16 +29,26 @@ namespace Amazon.Runtime.Internal.Util
     public ref struct StreamingUtf8JsonReader
     {
         private Utf8JsonReader _reader;
+
         /// <summary>
-        /// The UTF8JsonReader attached to the instance. 
+        /// A copy of the underlying <see cref="Utf8JsonReader"/>, positioned on the current token.
+        /// Reading it fills the first buffer if the stream has not been read yet.
         /// </summary>
+        /// <remarks>
+        /// Each access copies the whole reader struct. Use it only for one-off checks that have no forwarding
+        /// member here, such as <see cref="Utf8JsonReader.IsFinalBlock"/> before the first <see cref="Read"/>
+        /// to detect an empty body. Per-token code should use the forwarding members of this struct
+        /// (<see cref="TokenType"/>, <see cref="GetString"/>, <see cref="TryGetInt32"/>, ...), which do not copy.
+        /// </remarks>
         public Utf8JsonReader Reader
         {
             get
             {
-                // Generated response unmarshallers check IsFinalBlock on this before the first Read() to detect an
-                // empty body, so the stream has to have been read by the time the underlying reader is observed.
-                ReadFirstBuffer();
+                if (!_hasReadFromStream)
+                {
+                    ReadFirstBuffer();
+                }
+
                 return _reader;
             }
         }
@@ -117,6 +127,32 @@ namespace Amazon.Runtime.Internal.Util
             return _reader.TryGetBytesFromBase64(out value);
         }
 
+        /// <summary>
+        /// The type of the current JSON token.
+        /// </summary>
+        public JsonTokenType TokenType => _reader.TokenType;
+
+        /// <summary>
+        /// The raw UTF-8 bytes of the current JSON token value.
+        /// </summary>
+        public ReadOnlySpan<byte> ValueSpan => _reader.ValueSpan;
+
+        /// <summary>
+        /// Reads the current JSON string or property name token value as a <see cref="string"/>.
+        /// </summary>
+        public string GetString()
+        {
+            return _reader.GetString();
+        }
+
+        /// <summary>
+        /// Reads the current JSON true or false token value as a <see cref="bool"/>.
+        /// </summary>
+        public bool GetBoolean()
+        {
+            return _reader.GetBoolean();
+        }
+
         private Stream _stream;
         private byte[] _buffer;
         private bool _hasReadFromStream;
@@ -177,7 +213,10 @@ namespace Amazon.Runtime.Internal.Util
         /// <returns>true if there is more data, false otherwise.</returns>
         public bool Read()
         {
-            ReadFirstBuffer();
+            if (!_hasReadFromStream)
+            {
+                ReadFirstBuffer();
+            }
 
             // hasMoreData can return false if the value starts in one buffer and leaks into the next buffer
             bool hasMoreData = _reader.Read();
@@ -200,8 +239,6 @@ namespace Amazon.Runtime.Internal.Util
 
         private void ReadFirstBuffer()
         {
-            if (_hasReadFromStream)
-                return;
             _hasReadFromStream = true;
 
             int bytesRead = FillBuffer(_stream, ref _buffer, 0, _buffer.Length);
