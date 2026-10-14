@@ -116,6 +116,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("parentInstance", targetDepth, ref reader))
+                {
+                    var unmarshaller = ParentInstanceConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ParentInstance = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("placement", targetDepth, ref reader))
                 {
                     var unmarshaller = PlacementUnmarshaller.Instance;
@@ -150,6 +156,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("terminateInstanceOnCompletion", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.TerminateInstanceOnCompletion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("terminateInstanceOnFailure", targetDepth, ref reader))

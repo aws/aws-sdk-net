@@ -147,6 +147,17 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
 
+            if(publicRequest.IsSetParentInstance())
+            {
+                context.Writer.WritePropertyName("parentInstance");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ParentInstanceConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ParentInstance, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetPlacement())
             {
                 context.Writer.WritePropertyName("placement");
@@ -207,6 +218,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                         context.Writer.WriteStringValue(publicRequestTagsValue);
                 }
                 context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTerminateInstanceOnCompletion())
+            {
+                context.Writer.WritePropertyName("terminateInstanceOnCompletion");
+                context.Writer.WriteBooleanValue(publicRequest.TerminateInstanceOnCompletion.Value);
             }
 
             if(publicRequest.IsSetTerminateInstanceOnFailure())

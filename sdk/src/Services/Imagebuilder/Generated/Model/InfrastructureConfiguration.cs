@@ -44,12 +44,14 @@ namespace Amazon.Imagebuilder.Model
         private string _keyPair;
         private Logging _logging;
         private string _name;
+        private ParentInstanceConfiguration _parentInstance;
         private Placement _placement;
         private Dictionary<string, string> _resourceTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _snsTopicArn;
         private string _subnetId;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private bool? _terminateInstanceOnCompletion;
         private bool? _terminateInstanceOnFailure;
 
         /// <summary>
@@ -243,6 +245,25 @@ namespace Amazon.Imagebuilder.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ParentInstance. 
+        /// <para>
+        /// The Amazon EC2 Auto Scaling group that Image Builder takes the build instance from,
+        /// instead of launching a new instance. This applies only to the build phase.
+        /// </para>
+        /// </summary>
+        public ParentInstanceConfiguration ParentInstance
+        {
+            get { return this._parentInstance; }
+            set { this._parentInstance = value; }
+        }
+
+        // Check to see if ParentInstance property is set
+        internal bool IsSetParentInstance()
+        {
+            return this._parentInstance != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Placement. 
         /// <para>
         /// The instance placement settings that define where the build and test instances that
@@ -379,6 +400,25 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TerminateInstanceOnCompletion. 
+        /// <para>
+        /// Specifies whether Image Builder terminates build and test instances when image creation
+        /// ends without a failure.
+        /// </para>
+        /// </summary>
+        public bool? TerminateInstanceOnCompletion
+        {
+            get { return this._terminateInstanceOnCompletion; }
+            set { this._terminateInstanceOnCompletion = value; }
+        }
+
+        // Check to see if TerminateInstanceOnCompletion property is set
+        internal bool IsSetTerminateInstanceOnCompletion()
+        {
+            return this._terminateInstanceOnCompletion.HasValue; 
         }
 
         /// <summary>

@@ -51,11 +51,13 @@ namespace Amazon.Imagebuilder.Model
         private List<string> _instanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _keyPair;
         private Logging _logging;
+        private ParentInstanceConfiguration _parentInstance;
         private Placement _placement;
         private Dictionary<string, string> _resourceTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _snsTopicArn;
         private string _subnetId;
+        private bool? _terminateInstanceOnCompletion;
         private bool? _terminateInstanceOnFailure;
 
         /// <summary>
@@ -242,6 +244,32 @@ namespace Amazon.Imagebuilder.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ParentInstance. 
+        /// <para>
+        /// The Amazon EC2 Auto Scaling group that Image Builder takes the build instance from,
+        /// instead of launching a new instance. This applies only to the build phase.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this feature, the execution role for the build must have permissions to describe
+        /// the Auto Scaling group, tag the instance while it's still in the group, and detach
+        /// it from the group. For more information, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/infra-config-parent-instance.html">Build
+        /// on an instance from an Auto Scaling group</a> in the <i>EC2 Image Builder User Guide</i>.
+        /// </para>
+        /// </summary>
+        public ParentInstanceConfiguration ParentInstance
+        {
+            get { return this._parentInstance; }
+            set { this._parentInstance = value; }
+        }
+
+        // Check to see if ParentInstance property is set
+        internal bool IsSetParentInstance()
+        {
+            return this._parentInstance != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Placement. 
         /// <para>
         /// The instance placement settings that define where the build and test instances that
@@ -359,6 +387,25 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetSubnetId()
         {
             return this._subnetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TerminateInstanceOnCompletion. 
+        /// <para>
+        /// Specifies whether Image Builder terminates build and test instances when image creation
+        /// ends without a failure (success, cancellation, or expiration). Defaults to <c>true</c>.
+        /// </para>
+        /// </summary>
+        public bool? TerminateInstanceOnCompletion
+        {
+            get { return this._terminateInstanceOnCompletion; }
+            set { this._terminateInstanceOnCompletion = value; }
+        }
+
+        // Check to see if TerminateInstanceOnCompletion property is set
+        internal bool IsSetTerminateInstanceOnCompletion()
+        {
+            return this._terminateInstanceOnCompletion.HasValue; 
         }
 
         /// <summary>
