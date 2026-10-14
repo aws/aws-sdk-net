@@ -37,6 +37,7 @@ namespace Amazon.Lambda.Model
     {
         private string _functionName;
         private string _tenantId;
+        private string _xAmznTraceId;
 
         /// <summary>
         /// Gets and sets the property FunctionName. 
@@ -74,6 +75,33 @@ namespace Amazon.Lambda.Model
         internal bool IsSetTenantId()
         {
             return this._tenantId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property XAmznTraceId. 
+        /// <para>
+        /// The optional X-Ray trace header to use when starting the chained invocation. If you
+        /// omit this value, the child invocation inherits the parent durable execution's trace
+        /// header.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify this value on the <c>START</c> update for the chained invocation operation.
+        /// For more information about the header format, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing
+        /// header</a> in the <i>X-Ray Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=8192)]
+        public string XAmznTraceId
+        {
+            get { return this._xAmznTraceId; }
+            set { this._xAmznTraceId = value; }
+        }
+
+        // Check to see if XAmznTraceId property is set
+        internal bool IsSetXAmznTraceId()
+        {
+            return this._xAmznTraceId != null;
         }
 
     }

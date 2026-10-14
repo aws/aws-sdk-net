@@ -58,6 +58,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.TenantId);
             }
 
+            if(requestObject.IsSetXAmznTraceId())
+            {
+                context.Writer.WritePropertyName("XAmznTraceId");
+                context.Writer.WriteStringValue(requestObject.XAmznTraceId);
+            }
+
         }
 
         /// <summary>

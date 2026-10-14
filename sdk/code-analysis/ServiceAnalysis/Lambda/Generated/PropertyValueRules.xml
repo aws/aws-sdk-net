@@ -1144,7 +1144,7 @@
     <property>Amazon.Lambda.Model.GetRuntimeManagementConfigResponse.RuntimeVersionArn</property>
     <min>26</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*):lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}::runtime:.+</pattern>
+    <pattern>((arn:(aws[a-zA-Z-]*):lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}::runtime:.+)|(arn:(aws[a-zA-Z-]*):lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:runtime/[A-Za-z0-9_.-]{1,128}/version/[A-Za-z0-9_.-]{1,128}))</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.InvokeRequest.DurableExecutionName</property>
@@ -1684,7 +1684,7 @@
     <property>Amazon.Lambda.Model.PutRuntimeManagementConfigRequest.RuntimeVersionArn</property>
     <min>26</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*):lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}::runtime:.+</pattern>
+    <pattern>((arn:(aws[a-zA-Z-]*):lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}::runtime:.+)|(arn:(aws[a-zA-Z-]*):lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:runtime/[A-Za-z0-9_.-]{1,128}/version/[A-Za-z0-9_.-]{1,128}))</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PutRuntimeManagementConfigResponse.FunctionArn</property>
@@ -1696,7 +1696,7 @@
     <property>Amazon.Lambda.Model.PutRuntimeManagementConfigResponse.RuntimeVersionArn</property>
     <min>26</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*):lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}::runtime:.+</pattern>
+    <pattern>((arn:(aws[a-zA-Z-]*):lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}::runtime:.+)|(arn:(aws[a-zA-Z-]*):lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:runtime/[A-Za-z0-9_.-]{1,128}/version/[A-Za-z0-9_.-]{1,128}))</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.RemoveLayerVersionPermissionRequest.LayerName</property>
@@ -2328,6 +2328,11 @@
     <pattern>[a-zA-Z0-9\._:\/=+\-@ ]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.ChainedInvokeOptions.XAmznTraceId</property>
+    <min>0</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.ChainedInvokeStartedDetails.DurableExecutionArn</property>
     <min>1</min>
     <max>1024</max>
@@ -2864,7 +2869,7 @@
     <property>Amazon.Lambda.Model.RuntimeVersionConfig.RuntimeVersionArn</property>
     <min>26</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*):lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}::runtime:.+</pattern>
+    <pattern>((arn:(aws[a-zA-Z-]*):lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}::runtime:.+)|(arn:(aws[a-zA-Z-]*):lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:runtime/[A-Za-z0-9_.-]{1,128}/version/[A-Za-z0-9_.-]{1,128}))</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.ScalingConfig.MaximumConcurrency</property>
