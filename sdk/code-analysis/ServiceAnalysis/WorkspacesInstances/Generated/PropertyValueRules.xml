@@ -7,13 +7,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.AssociateVolumeRequest.VolumeId</property>
-    <pattern>vol-[0-9a-zA-Z]{1,63}</pattern>
+    <pattern>^vol-[0-9a-zA-Z]{1,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.AssociateVolumeRequest.WorkspaceInstanceId</property>
     <min>15</min>
     <max>70</max>
-    <pattern>wsinst-[0-9a-zA-Z]{8,63}</pattern>
+    <pattern>^wsinst-[0-9a-zA-Z]{8,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.CreateVolumeRequest.AvailabilityZone</property>
@@ -24,7 +24,7 @@
     <property>Amazon.WorkspacesInstances.Model.CreateVolumeRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\x20-\x7E]+</pattern>
+    <pattern>^[\x20-\x7E]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.CreateVolumeRequest.Iops</property>
@@ -41,7 +41,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.CreateVolumeRequest.SnapshotId</property>
-    <pattern>snap-[0-9a-zA-Z]{1,63}</pattern>
+    <pattern>^snap-[0-9a-zA-Z]{1,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.CreateVolumeRequest.Throughput</property>
@@ -49,29 +49,29 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.CreateVolumeResponse.VolumeId</property>
-    <pattern>vol-[0-9a-zA-Z]{1,63}</pattern>
+    <pattern>^vol-[0-9a-zA-Z]{1,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.CreateWorkspaceInstanceRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\x20-\x7E]+</pattern>
+    <pattern>^[\x20-\x7E]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.CreateWorkspaceInstanceResponse.WorkspaceInstanceId</property>
     <min>15</min>
     <max>70</max>
-    <pattern>wsinst-[0-9a-zA-Z]{8,63}</pattern>
+    <pattern>^wsinst-[0-9a-zA-Z]{8,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.DeleteVolumeRequest.VolumeId</property>
-    <pattern>vol-[0-9a-zA-Z]{1,63}</pattern>
+    <pattern>^vol-[0-9a-zA-Z]{1,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.DeleteWorkspaceInstanceRequest.WorkspaceInstanceId</property>
     <min>15</min>
     <max>70</max>
-    <pattern>wsinst-[0-9a-zA-Z]{8,63}</pattern>
+    <pattern>^wsinst-[0-9a-zA-Z]{8,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.DisassociateVolumeRequest.Device</property>
@@ -80,25 +80,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.DisassociateVolumeRequest.VolumeId</property>
-    <pattern>vol-[0-9a-zA-Z]{1,63}</pattern>
+    <pattern>^vol-[0-9a-zA-Z]{1,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.DisassociateVolumeRequest.WorkspaceInstanceId</property>
     <min>15</min>
     <max>70</max>
-    <pattern>wsinst-[0-9a-zA-Z]{8,63}</pattern>
+    <pattern>^wsinst-[0-9a-zA-Z]{8,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.GetWorkspaceInstanceRequest.WorkspaceInstanceId</property>
     <min>15</min>
     <max>70</max>
-    <pattern>wsinst-[0-9a-zA-Z]{8,63}</pattern>
+    <pattern>^wsinst-[0-9a-zA-Z]{8,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.GetWorkspaceInstanceResponse.WorkspaceInstanceId</property>
     <min>15</min>
     <max>70</max>
-    <pattern>wsinst-[0-9a-zA-Z]{8,63}</pattern>
+    <pattern>^wsinst-[0-9a-zA-Z]{8,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.ListInstanceTypesRequest.MaxResults</property>
@@ -134,7 +134,7 @@
     <property>Amazon.WorkspacesInstances.Model.ListTagsForResourceRequest.WorkspaceInstanceId</property>
     <min>15</min>
     <max>70</max>
-    <pattern>wsinst-[0-9a-zA-Z]{8,63}</pattern>
+    <pattern>^wsinst-[0-9a-zA-Z]{8,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.ListWorkspaceInstancesRequest.MaxResults</property>
@@ -155,13 +155,13 @@
     <property>Amazon.WorkspacesInstances.Model.TagResourceRequest.WorkspaceInstanceId</property>
     <min>15</min>
     <max>70</max>
-    <pattern>wsinst-[0-9a-zA-Z]{8,63}</pattern>
+    <pattern>^wsinst-[0-9a-zA-Z]{8,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.UntagResourceRequest.WorkspaceInstanceId</property>
     <min>15</min>
     <max>70</max>
-    <pattern>wsinst-[0-9a-zA-Z]{8,63}</pattern>
+    <pattern>^wsinst-[0-9a-zA-Z]{8,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.BlockDeviceMappingRequest.DeviceName</property>
@@ -175,7 +175,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.BlockDeviceMappingRequest.VirtualName</property>
-    <pattern>ephemeral(0|[1-9][0-9]{0,2})</pattern>
+    <pattern>^ephemeral(0|[1-9][0-9]{0,2})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.CapacityReservationTarget.CapacityReservationId</property>
@@ -186,7 +186,7 @@
     <property>Amazon.WorkspacesInstances.Model.CapacityReservationTarget.CapacityReservationResourceGroupArn</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.ConnectionTrackingSpecificationRequest.TcpEstablishedTimeout</property>
@@ -229,7 +229,7 @@
     <property>Amazon.WorkspacesInstances.Model.IamInstanceProfileSpecification.Arn</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.IamInstanceProfileSpecification.Name</property>
@@ -250,7 +250,7 @@
     <property>Amazon.WorkspacesInstances.Model.InstanceNetworkInterfaceSpecification.Description</property>
     <min>0</min>
     <max>1000</max>
-    <pattern>[\S\s]*</pattern>
+    <pattern>^[\S\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.InstanceNetworkInterfaceSpecification.DeviceIndex</property>
@@ -274,11 +274,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.InstanceNetworkInterfaceSpecification.NetworkInterfaceId</property>
-    <pattern>eni-[0-9a-zA-Z]{1,63}</pattern>
+    <pattern>^eni-[0-9a-zA-Z]{1,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.InstanceNetworkInterfaceSpecification.PrivateIpAddress</property>
-    <pattern>(\b25[0-5]|\b2[0-4][0-9]|\b[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}</pattern>
+    <pattern>^(\b25[0-5]|\b2[0-4][0-9]|\b[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.InstanceNetworkInterfaceSpecification.SecondaryPrivateIpAddressCount</property>
@@ -286,13 +286,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.InstanceNetworkInterfaceSpecification.SubnetId</property>
-    <pattern>subnet-[0-9a-zA-Z]{1,63}</pattern>
+    <pattern>^subnet-[0-9a-zA-Z]{1,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.InstanceTypeInfo.InstanceType</property>
     <min>1</min>
     <max>64</max>
-    <pattern>([a-z0-9-]+)\.([a-z0-9]+)</pattern>
+    <pattern>^([a-z0-9-]+)\.([a-z0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.Ipv4PrefixSpecificationRequest.Ipv4Prefix</property>
@@ -300,23 +300,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.Ipv6PrefixSpecificationRequest.Ipv6Prefix</property>
-    <pattern>(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))\/([0-9]{1,2}|1[01][0-9]|12[0-8])</pattern>
+    <pattern>^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))\/([0-9]{1,2}|1[01][0-9]|12[0-8])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.LicenseConfigurationRequest.LicenseConfigurationArn</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.ManagedInstanceRequest.ImageId</property>
-    <pattern>ami-[0-9a-zA-Z]{1,63}</pattern>
+    <pattern>^ami-[0-9a-zA-Z]{1,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.ManagedInstanceRequest.InstanceType</property>
     <min>1</min>
     <max>64</max>
-    <pattern>([a-z0-9-]+)\.([a-z0-9]+)</pattern>
+    <pattern>^([a-z0-9-]+)\.([a-z0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.ManagedInstanceRequest.Ipv6AddressCount</property>
@@ -334,7 +334,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.ManagedInstanceRequest.PrivateIpAddress</property>
-    <pattern>(\b25[0-5]|\b2[0-4][0-9]|\b[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}</pattern>
+    <pattern>^(\b25[0-5]|\b2[0-4][0-9]|\b[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.ManagedInstanceRequest.RamdiskId</property>
@@ -343,7 +343,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.ManagedInstanceRequest.SubnetId</property>
-    <pattern>subnet-[0-9a-zA-Z]{1,63}</pattern>
+    <pattern>^subnet-[0-9a-zA-Z]{1,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.ManagedInstanceRequest.UserData</property>
@@ -357,11 +357,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.Placement.AvailabilityZone</property>
-    <pattern>[a-z]{2}-[a-z]+-\d(?:[a-z]|-[a-z]+-\d[a-z])</pattern>
+    <pattern>^[a-z]{2}-[a-z]+-\d(?:[a-z]|-[a-z]+-\d[a-z])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.Placement.GroupId</property>
-    <pattern>pg-[0-9a-zA-Z]{1,63}</pattern>
+    <pattern>^pg-[0-9a-zA-Z]{1,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.Placement.GroupName</property>
@@ -370,13 +370,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.Placement.HostId</property>
-    <pattern>h-[0-9a-zA-Z]{1,63}</pattern>
+    <pattern>^h-[0-9a-zA-Z]{1,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.Placement.HostResourceGroupArn</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.Placement.PartitionNumber</property>
@@ -384,11 +384,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.PrivateIpAddressSpecification.PrivateIpAddress</property>
-    <pattern>(\b25[0-5]|\b2[0-4][0-9]|\b[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}</pattern>
+    <pattern>^(\b25[0-5]|\b2[0-4][0-9]|\b[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.Region.RegionName</property>
-    <pattern>[-0-9a-z]{1,31}</pattern>
+    <pattern>^[-0-9a-z]{1,31}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.SpotMarketOptions.BlockDurationMinutes</property>
@@ -403,18 +403,18 @@
     <property>Amazon.WorkspacesInstances.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>
-    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-@]+)</pattern>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.Tag.Value</property>
     <min>0</min>
     <max>256</max>
-    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-@]*)</pattern>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.WorkspaceInstance.WorkspaceInstanceId</property>
     <min>15</min>
     <max>70</max>
-    <pattern>wsinst-[0-9a-zA-Z]{8,63}</pattern>
+    <pattern>^wsinst-[0-9a-zA-Z]{8,63}$</pattern>
   </property-value-rule>
 </property-value-rules>

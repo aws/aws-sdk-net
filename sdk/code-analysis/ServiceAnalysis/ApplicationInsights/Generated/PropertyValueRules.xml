@@ -4,19 +4,19 @@
     <property>Amazon.ApplicationInsights.Model.AddWorkloadRequest.ComponentName</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>(?:^[\d\w\-_\.+]*$)|(?:^arn:aws(-\w+)*:[\w\d-]+:([\w\d-]*)?:[\w\d_-]*([:/].+)*$)</pattern>
+    <pattern>^(?:^[\d\w\-_\.+]*$)|(?:^arn:aws(-\w+)*:[\w\d-]+:([\w\d-]*)?:[\w\d_-]*([:/].+)*$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.AddWorkloadRequest.ResourceGroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.AddWorkloadResponse.WorkloadId</property>
     <min>38</min>
     <max>38</max>
-    <pattern>w-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</pattern>
+    <pattern>^w-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.CreateApplicationRequest.OpsItemSNSTopicArn</property>
@@ -28,7 +28,7 @@
     <property>Amazon.ApplicationInsights.Model.CreateApplicationRequest.ResourceGroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.CreateApplicationRequest.SNSNotificationArn</property>
@@ -46,43 +46,43 @@
     <property>Amazon.ApplicationInsights.Model.CreateComponentRequest.ResourceGroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.CreateLogPatternRequest.Pattern</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[\S\s]+</pattern>
+    <pattern>^[\S\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.CreateLogPatternRequest.PatternName</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.CreateLogPatternRequest.PatternSetName</property>
     <min>1</min>
     <max>30</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.CreateLogPatternRequest.ResourceGroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.CreateLogPatternResponse.ResourceGroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.DeleteApplicationRequest.ResourceGroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.DeleteComponentRequest.ComponentName</property>
@@ -94,25 +94,25 @@
     <property>Amazon.ApplicationInsights.Model.DeleteComponentRequest.ResourceGroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.DeleteLogPatternRequest.PatternName</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.DeleteLogPatternRequest.PatternSetName</property>
     <min>1</min>
     <max>30</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.DeleteLogPatternRequest.ResourceGroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.DescribeApplicationRequest.AccountId</property>
@@ -124,7 +124,7 @@
     <property>Amazon.ApplicationInsights.Model.DescribeApplicationRequest.ResourceGroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.DescribeComponentRequest.AccountId</property>
@@ -136,13 +136,13 @@
     <property>Amazon.ApplicationInsights.Model.DescribeComponentRequest.ComponentName</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>(?:^[\d\w\-_\.+]*$)|(?:^arn:aws(-\w+)*:[\w\d-]+:([\w\d-]*)?:[\w\d_-]*([:/].+)*$)</pattern>
+    <pattern>^(?:^[\d\w\-_\.+]*$)|(?:^arn:aws(-\w+)*:[\w\d-]+:([\w\d-]*)?:[\w\d_-]*([:/].+)*$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.DescribeComponentRequest.ResourceGroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.DescribeComponentConfigurationRequest.AccountId</property>
@@ -154,19 +154,19 @@
     <property>Amazon.ApplicationInsights.Model.DescribeComponentConfigurationRequest.ComponentName</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>(?:^[\d\w\-_\.+]*$)|(?:^arn:aws(-\w+)*:[\w\d-]+:([\w\d-]*)?:[\w\d_-]*([:/].+)*$)</pattern>
+    <pattern>^(?:^[\d\w\-_\.+]*$)|(?:^arn:aws(-\w+)*:[\w\d-]+:([\w\d-]*)?:[\w\d_-]*([:/].+)*$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.DescribeComponentConfigurationRequest.ResourceGroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.DescribeComponentConfigurationResponse.ComponentConfiguration</property>
     <min>1</min>
     <max>10000</max>
-    <pattern>[\S\s]+</pattern>
+    <pattern>^[\S\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.DescribeComponentConfigurationResponse.Tier</property>
@@ -177,13 +177,13 @@
     <property>Amazon.ApplicationInsights.Model.DescribeComponentConfigurationRecommendationRequest.ComponentName</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>(?:^[\d\w\-_\.+]*$)|(?:^arn:aws(-\w+)*:[\w\d-]+:([\w\d-]*)?:[\w\d_-]*([:/].+)*$)</pattern>
+    <pattern>^(?:^[\d\w\-_\.+]*$)|(?:^arn:aws(-\w+)*:[\w\d-]+:([\w\d-]*)?:[\w\d_-]*([:/].+)*$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.DescribeComponentConfigurationRecommendationRequest.ResourceGroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.DescribeComponentConfigurationRecommendationRequest.Tier</property>
@@ -194,13 +194,13 @@
     <property>Amazon.ApplicationInsights.Model.DescribeComponentConfigurationRecommendationRequest.WorkloadName</property>
     <min>1</min>
     <max>12</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.DescribeComponentConfigurationRecommendationResponse.ComponentConfiguration</property>
     <min>1</min>
     <max>10000</max>
-    <pattern>[\S\s]+</pattern>
+    <pattern>^[\S\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.DescribeLogPatternRequest.AccountId</property>
@@ -212,19 +212,19 @@
     <property>Amazon.ApplicationInsights.Model.DescribeLogPatternRequest.PatternName</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.DescribeLogPatternRequest.PatternSetName</property>
     <min>1</min>
     <max>30</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.DescribeLogPatternRequest.ResourceGroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.DescribeLogPatternResponse.AccountId</property>
@@ -236,7 +236,7 @@
     <property>Amazon.ApplicationInsights.Model.DescribeLogPatternResponse.ResourceGroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.DescribeObservationRequest.AccountId</property>
@@ -248,7 +248,7 @@
     <property>Amazon.ApplicationInsights.Model.DescribeObservationRequest.ObservationId</property>
     <min>38</min>
     <max>38</max>
-    <pattern>o-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</pattern>
+    <pattern>^o-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.DescribeProblemRequest.AccountId</property>
@@ -260,7 +260,7 @@
     <property>Amazon.ApplicationInsights.Model.DescribeProblemRequest.ProblemId</property>
     <min>38</min>
     <max>38</max>
-    <pattern>p-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</pattern>
+    <pattern>^p-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.DescribeProblemResponse.SNSNotificationArn</property>
@@ -278,7 +278,7 @@
     <property>Amazon.ApplicationInsights.Model.DescribeProblemObservationsRequest.ProblemId</property>
     <min>38</min>
     <max>38</max>
-    <pattern>p-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</pattern>
+    <pattern>^p-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.DescribeWorkloadRequest.AccountId</property>
@@ -290,25 +290,25 @@
     <property>Amazon.ApplicationInsights.Model.DescribeWorkloadRequest.ComponentName</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>(?:^[\d\w\-_\.+]*$)|(?:^arn:aws(-\w+)*:[\w\d-]+:([\w\d-]*)?:[\w\d_-]*([:/].+)*$)</pattern>
+    <pattern>^(?:^[\d\w\-_\.+]*$)|(?:^arn:aws(-\w+)*:[\w\d-]+:([\w\d-]*)?:[\w\d_-]*([:/].+)*$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.DescribeWorkloadRequest.ResourceGroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.DescribeWorkloadRequest.WorkloadId</property>
     <min>38</min>
     <max>38</max>
-    <pattern>w-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</pattern>
+    <pattern>^w-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.DescribeWorkloadResponse.WorkloadId</property>
     <min>38</min>
     <max>38</max>
-    <pattern>w-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</pattern>
+    <pattern>^w-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.ListApplicationsRequest.AccountId</property>
@@ -325,13 +325,13 @@
     <property>Amazon.ApplicationInsights.Model.ListApplicationsRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>.+</pattern>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.ListApplicationsResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>.+</pattern>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.ListComponentsRequest.AccountId</property>
@@ -348,19 +348,19 @@
     <property>Amazon.ApplicationInsights.Model.ListComponentsRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>.+</pattern>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.ListComponentsRequest.ResourceGroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.ListComponentsResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>.+</pattern>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.ListConfigurationHistoryRequest.AccountId</property>
@@ -377,66 +377,19 @@
     <property>Amazon.ApplicationInsights.Model.ListConfigurationHistoryRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>.+</pattern>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.ListConfigurationHistoryRequest.ResourceGroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.ListConfigurationHistoryResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>.+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApplicationInsights.Model.ListLogPatternsRequest.AccountId</property>
-    <min>12</min>
-    <max>12</max>
-    <pattern>^\d{12}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApplicationInsights.Model.ListLogPatternsRequest.MaxResults</property>
-    <min>1</min>
-    <max>40</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApplicationInsights.Model.ListLogPatternsRequest.NextToken</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>.+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApplicationInsights.Model.ListLogPatternsRequest.PatternSetName</property>
-    <min>1</min>
-    <max>30</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApplicationInsights.Model.ListLogPatternsRequest.ResourceGroupName</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApplicationInsights.Model.ListLogPatternsResponse.AccountId</property>
-    <min>12</min>
-    <max>12</max>
-    <pattern>^\d{12}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApplicationInsights.Model.ListLogPatternsResponse.NextToken</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>.+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApplicationInsights.Model.ListLogPatternsResponse.ResourceGroupName</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.ListLogPatternSetsRequest.AccountId</property>
@@ -453,13 +406,13 @@
     <property>Amazon.ApplicationInsights.Model.ListLogPatternSetsRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>.+</pattern>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.ListLogPatternSetsRequest.ResourceGroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.ListLogPatternSetsResponse.AccountId</property>
@@ -471,13 +424,60 @@
     <property>Amazon.ApplicationInsights.Model.ListLogPatternSetsResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>.+</pattern>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.ListLogPatternSetsResponse.ResourceGroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationInsights.Model.ListLogPatternsRequest.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationInsights.Model.ListLogPatternsRequest.MaxResults</property>
+    <min>1</min>
+    <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationInsights.Model.ListLogPatternsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationInsights.Model.ListLogPatternsRequest.PatternSetName</property>
+    <min>1</min>
+    <max>30</max>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationInsights.Model.ListLogPatternsRequest.ResourceGroupName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationInsights.Model.ListLogPatternsResponse.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationInsights.Model.ListLogPatternsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationInsights.Model.ListLogPatternsResponse.ResourceGroupName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.ListProblemsRequest.AccountId</property>
@@ -489,7 +489,7 @@
     <property>Amazon.ApplicationInsights.Model.ListProblemsRequest.ComponentName</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>(?:^[\d\w\-_\.+]*$)|(?:^arn:aws(-\w+)*:[\w\d-]+:([\w\d-]*)?:[\w\d_-]*([:/].+)*$)</pattern>
+    <pattern>^(?:^[\d\w\-_\.+]*$)|(?:^arn:aws(-\w+)*:[\w\d-]+:([\w\d-]*)?:[\w\d_-]*([:/].+)*$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.ListProblemsRequest.MaxResults</property>
@@ -500,13 +500,13 @@
     <property>Amazon.ApplicationInsights.Model.ListProblemsRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>.+</pattern>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.ListProblemsRequest.ResourceGroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.ListProblemsResponse.AccountId</property>
@@ -518,13 +518,13 @@
     <property>Amazon.ApplicationInsights.Model.ListProblemsResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>.+</pattern>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.ListProblemsResponse.ResourceGroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.ListTagsForResourceRequest.ResourceARN</property>
@@ -542,7 +542,7 @@
     <property>Amazon.ApplicationInsights.Model.ListWorkloadsRequest.ComponentName</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>(?:^[\d\w\-_\.+]*$)|(?:^arn:aws(-\w+)*:[\w\d-]+:([\w\d-]*)?:[\w\d_-]*([:/].+)*$)</pattern>
+    <pattern>^(?:^[\d\w\-_\.+]*$)|(?:^arn:aws(-\w+)*:[\w\d-]+:([\w\d-]*)?:[\w\d_-]*([:/].+)*$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.ListWorkloadsRequest.MaxResults</property>
@@ -553,37 +553,37 @@
     <property>Amazon.ApplicationInsights.Model.ListWorkloadsRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>.+</pattern>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.ListWorkloadsRequest.ResourceGroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.ListWorkloadsResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>.+</pattern>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.RemoveWorkloadRequest.ComponentName</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>(?:^[\d\w\-_\.+]*$)|(?:^arn:aws(-\w+)*:[\w\d-]+:([\w\d-]*)?:[\w\d_-]*([:/].+)*$)</pattern>
+    <pattern>^(?:^[\d\w\-_\.+]*$)|(?:^arn:aws(-\w+)*:[\w\d-]+:([\w\d-]*)?:[\w\d_-]*([:/].+)*$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.RemoveWorkloadRequest.ResourceGroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.RemoveWorkloadRequest.WorkloadId</property>
     <min>38</min>
     <max>38</max>
-    <pattern>w-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</pattern>
+    <pattern>^w-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.TagResourceRequest.ResourceARN</property>
@@ -607,7 +607,7 @@
     <property>Amazon.ApplicationInsights.Model.UpdateApplicationRequest.ResourceGroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.UpdateApplicationRequest.SNSNotificationArn</property>
@@ -631,25 +631,25 @@
     <property>Amazon.ApplicationInsights.Model.UpdateComponentRequest.ResourceGroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.UpdateComponentConfigurationRequest.ComponentConfiguration</property>
     <min>1</min>
     <max>10000</max>
-    <pattern>[\S\s]+</pattern>
+    <pattern>^[\S\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.UpdateComponentConfigurationRequest.ComponentName</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>(?:^[\d\w\-_\.+]*$)|(?:^arn:aws(-\w+)*:[\w\d-]+:([\w\d-]*)?:[\w\d_-]*([:/].+)*$)</pattern>
+    <pattern>^(?:^[\d\w\-_\.+]*$)|(?:^arn:aws(-\w+)*:[\w\d-]+:([\w\d-]*)?:[\w\d_-]*([:/].+)*$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.UpdateComponentConfigurationRequest.ResourceGroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.UpdateComponentConfigurationRequest.Tier</property>
@@ -660,73 +660,73 @@
     <property>Amazon.ApplicationInsights.Model.UpdateLogPatternRequest.Pattern</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[\S\s]+</pattern>
+    <pattern>^[\S\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.UpdateLogPatternRequest.PatternName</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.UpdateLogPatternRequest.PatternSetName</property>
     <min>1</min>
     <max>30</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.UpdateLogPatternRequest.ResourceGroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.UpdateLogPatternResponse.ResourceGroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.UpdateProblemRequest.ProblemId</property>
     <min>38</min>
     <max>38</max>
-    <pattern>p-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</pattern>
+    <pattern>^p-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.UpdateWorkloadRequest.ComponentName</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>(?:^[\d\w\-_\.+]*$)|(?:^arn:aws(-\w+)*:[\w\d-]+:([\w\d-]*)?:[\w\d_-]*([:/].+)*$)</pattern>
+    <pattern>^(?:^[\d\w\-_\.+]*$)|(?:^arn:aws(-\w+)*:[\w\d-]+:([\w\d-]*)?:[\w\d_-]*([:/].+)*$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.UpdateWorkloadRequest.ResourceGroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.UpdateWorkloadRequest.WorkloadId</property>
     <min>38</min>
     <max>38</max>
-    <pattern>w-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</pattern>
+    <pattern>^w-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.UpdateWorkloadResponse.WorkloadId</property>
     <min>38</min>
     <max>38</max>
-    <pattern>w-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</pattern>
+    <pattern>^w-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.ApplicationComponent.ComponentName</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>(?:^[\d\w\-_\.+]*$)|(?:^arn:aws(-\w+)*:[\w\d-]+:([\w\d-]*)?:[\w\d_-]*([:/].+)*$)</pattern>
+    <pattern>^(?:^[\d\w\-_\.+]*$)|(?:^arn:aws(-\w+)*:[\w\d-]+:([\w\d-]*)?:[\w\d_-]*([:/].+)*$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.ApplicationComponent.ResourceType</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[0-9a-zA-Z:_]*</pattern>
+    <pattern>^[0-9a-zA-Z:_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.ApplicationComponent.Tier</property>
@@ -749,7 +749,7 @@
     <property>Amazon.ApplicationInsights.Model.ApplicationInfo.ResourceGroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.ApplicationInfo.SNSNotificationArn</property>
@@ -767,31 +767,31 @@
     <property>Amazon.ApplicationInsights.Model.ConfigurationEvent.ResourceGroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.LogPattern.Pattern</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[\S\s]+</pattern>
+    <pattern>^[\S\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.LogPattern.PatternName</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.LogPattern.PatternSetName</property>
     <min>1</min>
     <max>30</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.Observation.Id</property>
     <min>38</min>
     <max>38</max>
-    <pattern>o-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</pattern>
+    <pattern>^o-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.Problem.AccountId</property>
@@ -803,13 +803,13 @@
     <property>Amazon.ApplicationInsights.Model.Problem.Id</property>
     <min>38</min>
     <max>38</max>
-    <pattern>p-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</pattern>
+    <pattern>^p-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.Problem.ResourceGroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.Tag.Key</property>
@@ -833,7 +833,7 @@
     <property>Amazon.ApplicationInsights.Model.Workload.ComponentName</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>(?:^[\d\w\-_\.+]*$)|(?:^arn:aws(-\w+)*:[\w\d-]+:([\w\d-]*)?:[\w\d_-]*([:/].+)*$)</pattern>
+    <pattern>^(?:^[\d\w\-_\.+]*$)|(?:^arn:aws(-\w+)*:[\w\d-]+:([\w\d-]*)?:[\w\d_-]*([:/].+)*$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.Workload.Tier</property>
@@ -844,19 +844,19 @@
     <property>Amazon.ApplicationInsights.Model.Workload.WorkloadId</property>
     <min>38</min>
     <max>38</max>
-    <pattern>w-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</pattern>
+    <pattern>^w-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.Workload.WorkloadName</property>
     <min>1</min>
     <max>12</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.WorkloadConfiguration.Configuration</property>
     <min>1</min>
     <max>10000</max>
-    <pattern>[\S\s]+</pattern>
+    <pattern>^[\S\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.WorkloadConfiguration.Tier</property>
@@ -867,6 +867,6 @@
     <property>Amazon.ApplicationInsights.Model.WorkloadConfiguration.WorkloadName</property>
     <min>1</min>
     <max>12</max>
-    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+    <pattern>^[a-zA-Z0-9\.\-_]*$</pattern>
   </property-value-rule>
 </property-value-rules>

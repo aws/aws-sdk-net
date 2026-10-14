@@ -1,250 +1,211 @@
 <?xml version="1.0" encoding="utf-8"?>
 <docs>
-    <doc>
-        <members>
-            <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.DeleteScalingPolicy(Amazon.ApplicationAutoScaling.Model.DeleteScalingPolicyRequest)" />
-            <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.DeleteScalingPolicy(Amazon.ApplicationAutoScaling.Model.DeleteScalingPolicyRequest)" />
-            <member name="T:Amazon.ApplicationAutoScaling.Model.DeleteScalingPolicyRequest" />
-            <member name="T:Amazon.ApplicationAutoScaling.Model.DeleteScalingPolicyResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This example deletes a scaling policy for the Amazon ECS service called web-app, which is running in the default cluster.
-                </para>
-                <code
-                    title="To delete a scaling policy"
-                    source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs"
-                    region="to-delete-a-scaling-policy-1470863892689" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.DeleteScheduledAction(Amazon.ApplicationAutoScaling.Model.DeleteScheduledActionRequest)" />
-            <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.DeleteScheduledAction(Amazon.ApplicationAutoScaling.Model.DeleteScheduledActionRequest)" />
-            <member name="T:Amazon.ApplicationAutoScaling.Model.DeleteScheduledActionRequest" />
-            <member name="T:Amazon.ApplicationAutoScaling.Model.DeleteScheduledActionResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This example deletes a scheduled action for the AppStream 2.0 fleet called sample-fleet.
-                </para>
-                <code
-                    title="To delete a scheduled action"
-                    source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs"
-                    region="to-delete-a-scheduled-action-1677963329606" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.DeregisterScalableTarget(Amazon.ApplicationAutoScaling.Model.DeregisterScalableTargetRequest)" />
-            <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.DeregisterScalableTarget(Amazon.ApplicationAutoScaling.Model.DeregisterScalableTargetRequest)" />
-            <member name="T:Amazon.ApplicationAutoScaling.Model.DeregisterScalableTargetRequest" />
-            <member name="T:Amazon.ApplicationAutoScaling.Model.DeregisterScalableTargetResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This example deregisters a scalable target for an Amazon ECS service called web-app that is running in the default cluster.
-                </para>
-                <code
-                    title="To deregister a scalable target"
-                    source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs"
-                    region="to-deregister-a-scalable-target-1470864164895" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.DescribeScalableTargets(Amazon.ApplicationAutoScaling.Model.DescribeScalableTargetsRequest)" />
-            <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.DescribeScalableTargets(Amazon.ApplicationAutoScaling.Model.DescribeScalableTargetsRequest)" />
-            <member name="T:Amazon.ApplicationAutoScaling.Model.DescribeScalableTargetsRequest" />
-            <member name="T:Amazon.ApplicationAutoScaling.Model.DescribeScalableTargetsResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This example describes the scalable targets for the ECS service namespace.
-                </para>
-                <code
-                    title="To describe scalable targets"
-                    source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs"
-                    region="to-describe-scalable-targets-1470864286961" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.DescribeScalingActivities(Amazon.ApplicationAutoScaling.Model.DescribeScalingActivitiesRequest)" />
-            <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.DescribeScalingActivities(Amazon.ApplicationAutoScaling.Model.DescribeScalingActivitiesRequest)" />
-            <member name="T:Amazon.ApplicationAutoScaling.Model.DescribeScalingActivitiesRequest" />
-            <member name="T:Amazon.ApplicationAutoScaling.Model.DescribeScalingActivitiesResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This example describes the scaling activities for an Amazon ECS service called web-app that is running in the default cluster.
-                </para>
-                <code
-                    title="To describe scaling activities for a scalable target"
-                    source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs"
-                    region="to-describe-scaling-activities-for-a-scalable-target-1470864398629" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.DescribeScalingPolicies(Amazon.ApplicationAutoScaling.Model.DescribeScalingPoliciesRequest)" />
-            <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.DescribeScalingPolicies(Amazon.ApplicationAutoScaling.Model.DescribeScalingPoliciesRequest)" />
-            <member name="T:Amazon.ApplicationAutoScaling.Model.DescribeScalingPoliciesRequest" />
-            <member name="T:Amazon.ApplicationAutoScaling.Model.DescribeScalingPoliciesResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This example describes the scaling policies for the ECS service namespace.
-                </para>
-                <code
-                    title="To describe scaling policies"
-                    source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs"
-                    region="to-describe-scaling-policies-1470864609734" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.DescribeScheduledActions(Amazon.ApplicationAutoScaling.Model.DescribeScheduledActionsRequest)" />
-            <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.DescribeScheduledActions(Amazon.ApplicationAutoScaling.Model.DescribeScheduledActionsRequest)" />
-            <member name="T:Amazon.ApplicationAutoScaling.Model.DescribeScheduledActionsRequest" />
-            <member name="T:Amazon.ApplicationAutoScaling.Model.DescribeScheduledActionsResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This example describes the scheduled actions for the dynamodb service namespace.
-                </para>
-                <code
-                    title="To describe scheduled actions"
-                    source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs"
-                    region="to-describe-scheduled-actions-1677965249349" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.ListTagsForResource(Amazon.ApplicationAutoScaling.Model.ListTagsForResourceRequest)" />
-            <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.ListTagsForResource(Amazon.ApplicationAutoScaling.Model.ListTagsForResourceRequest)" />
-            <member name="T:Amazon.ApplicationAutoScaling.Model.ListTagsForResourceRequest" />
-            <member name="T:Amazon.ApplicationAutoScaling.Model.ListTagsForResourceResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This example lists the tag key names and values that are attached to the scalable target specified by its ARN.
-                </para>
-                <code
-                    title="To list tags for a scalable target"
-                    source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs"
-                    region="to-list-tags-for-a-scalable-target-1677971474903" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.PutScalingPolicy(Amazon.ApplicationAutoScaling.Model.PutScalingPolicyRequest)" />
-            <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.PutScalingPolicy(Amazon.ApplicationAutoScaling.Model.PutScalingPolicyRequest)" />
-            <member name="T:Amazon.ApplicationAutoScaling.Model.PutScalingPolicyRequest" />
-            <member name="T:Amazon.ApplicationAutoScaling.Model.PutScalingPolicyResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    The following example applies a target tracking scaling policy with a predefined metric specification to an Amazon ECS service called web-app in the default cluster. The policy keeps the average CPU utilization of the service at 75 percent, with scale-out and scale-in cooldown periods of 60 seconds.
-                </para>
-                <code
-                    title="To apply a target tracking scaling policy with a predefined metric specification"
-                    source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs"
-                    region="to-apply-a-target-tracking-scaling-policy-with-a-predefined-metric-specification-1569364247984" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.PutScheduledAction(Amazon.ApplicationAutoScaling.Model.PutScheduledActionRequest)" />
-            <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.PutScheduledAction(Amazon.ApplicationAutoScaling.Model.PutScheduledActionRequest)" />
-            <member name="T:Amazon.ApplicationAutoScaling.Model.PutScheduledActionRequest" />
-            <member name="T:Amazon.ApplicationAutoScaling.Model.PutScheduledActionResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This example adds a scheduled action to a DynamoDB table called TestTable to scale out on a recurring schedule. On the specified schedule (every day at 12:15pm UTC), if the current capacity is below the value specified for MinCapacity, Application Auto Scaling scales out to the value specified by MinCapacity.
-                </para>
-                <code
-                    title="To create a recurring scheduled action"
-                    source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs"
-                    region="to-create-a-recurring-scheduled-action-1677970068621" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.RegisterScalableTarget(Amazon.ApplicationAutoScaling.Model.RegisterScalableTargetRequest)" />
-            <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.RegisterScalableTarget(Amazon.ApplicationAutoScaling.Model.RegisterScalableTargetRequest)" />
-            <member name="T:Amazon.ApplicationAutoScaling.Model.RegisterScalableTargetRequest" />
-            <member name="T:Amazon.ApplicationAutoScaling.Model.RegisterScalableTargetResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This example registers a scalable target from an Amazon ECS service called web-app that is running on the default cluster, with a minimum desired count of 1 task and a maximum desired count of 10 tasks.
-                </para>
-                <code
-                    title="To register an ECS service as a scalable target"
-                    source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs"
-                    region="to-register-a-new-scalable-target-1470864910380" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.TagResource(Amazon.ApplicationAutoScaling.Model.TagResourceRequest)" />
-            <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.TagResource(Amazon.ApplicationAutoScaling.Model.TagResourceRequest)" />
-            <member name="T:Amazon.ApplicationAutoScaling.Model.TagResourceRequest" />
-            <member name="T:Amazon.ApplicationAutoScaling.Model.TagResourceResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This example adds a tag with the key name "environment" and the value "production" to the scalable target specified by its ARN.
-                </para>
-                <code
-                    title="To add a tag to a scalable target"
-                    source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs"
-                    region="to-add-a-tag-to-a-scalable-target-1677970764620" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.UntagResource(Amazon.ApplicationAutoScaling.Model.UntagResourceRequest)" />
-            <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.UntagResource(Amazon.ApplicationAutoScaling.Model.UntagResourceRequest)" />
-            <member name="T:Amazon.ApplicationAutoScaling.Model.UntagResourceRequest" />
-            <member name="T:Amazon.ApplicationAutoScaling.Model.UntagResourceResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This example removes the tag pair with the key name "environment" from the scalable target specified by its ARN.
-                </para>
-                <code
-                    title="To remove a tag from a scalable target"
-                    source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs"
-                    region="to-remove-a-tag-from-a-scalable-target-1677971117168" />
-            </example>
-        </value>
-    </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.DeleteScalingPolicy(Amazon.ApplicationAutoScaling.Model.DeleteScalingPolicyRequest)" />
+      <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.DeleteScalingPolicy(Amazon.ApplicationAutoScaling.Model.DeleteScalingPolicyRequest)" />
+      <member name="T:Amazon.ApplicationAutoScaling.Model.DeleteScalingPolicyRequest" />
+      <member name="T:Amazon.ApplicationAutoScaling.Model.DeleteScalingPolicyResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example deletes a scaling policy for the Amazon ECS service called web-app, which is running in the default cluster.
+        </para>
+        <code title="To delete a scaling policy" source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs" region="DeleteScalingPolicy-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.DeleteScheduledAction(Amazon.ApplicationAutoScaling.Model.DeleteScheduledActionRequest)" />
+      <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.DeleteScheduledAction(Amazon.ApplicationAutoScaling.Model.DeleteScheduledActionRequest)" />
+      <member name="T:Amazon.ApplicationAutoScaling.Model.DeleteScheduledActionRequest" />
+      <member name="T:Amazon.ApplicationAutoScaling.Model.DeleteScheduledActionResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example deletes a scheduled action for the AppStream 2.0 fleet called sample-fleet.
+        </para>
+        <code title="To delete a scheduled action" source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs" region="DeleteScheduledAction-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.DeregisterScalableTarget(Amazon.ApplicationAutoScaling.Model.DeregisterScalableTargetRequest)" />
+      <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.DeregisterScalableTarget(Amazon.ApplicationAutoScaling.Model.DeregisterScalableTargetRequest)" />
+      <member name="T:Amazon.ApplicationAutoScaling.Model.DeregisterScalableTargetRequest" />
+      <member name="T:Amazon.ApplicationAutoScaling.Model.DeregisterScalableTargetResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example deregisters a scalable target for an Amazon ECS service called web-app that is running in the default cluster.
+        </para>
+        <code title="To deregister a scalable target" source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs" region="DeregisterScalableTarget-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.DescribeScalableTargets(Amazon.ApplicationAutoScaling.Model.DescribeScalableTargetsRequest)" />
+      <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.DescribeScalableTargets(Amazon.ApplicationAutoScaling.Model.DescribeScalableTargetsRequest)" />
+      <member name="T:Amazon.ApplicationAutoScaling.Model.DescribeScalableTargetsRequest" />
+      <member name="T:Amazon.ApplicationAutoScaling.Model.DescribeScalableTargetsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example describes the scalable targets for the ECS service namespace.
+        </para>
+        <code title="To describe scalable targets" source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs" region="DescribeScalableTargets-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.DescribeScalingActivities(Amazon.ApplicationAutoScaling.Model.DescribeScalingActivitiesRequest)" />
+      <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.DescribeScalingActivities(Amazon.ApplicationAutoScaling.Model.DescribeScalingActivitiesRequest)" />
+      <member name="T:Amazon.ApplicationAutoScaling.Model.DescribeScalingActivitiesRequest" />
+      <member name="T:Amazon.ApplicationAutoScaling.Model.DescribeScalingActivitiesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example describes the scaling activities for an Amazon ECS service called web-app that is running in the default cluster.
+        </para>
+        <code title="To describe scaling activities for a scalable target" source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs" region="DescribeScalingActivities-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.DescribeScalingPolicies(Amazon.ApplicationAutoScaling.Model.DescribeScalingPoliciesRequest)" />
+      <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.DescribeScalingPolicies(Amazon.ApplicationAutoScaling.Model.DescribeScalingPoliciesRequest)" />
+      <member name="T:Amazon.ApplicationAutoScaling.Model.DescribeScalingPoliciesRequest" />
+      <member name="T:Amazon.ApplicationAutoScaling.Model.DescribeScalingPoliciesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example describes the scaling policies for the ECS service namespace.
+        </para>
+        <code title="To describe scaling policies" source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs" region="DescribeScalingPolicies-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.DescribeScheduledActions(Amazon.ApplicationAutoScaling.Model.DescribeScheduledActionsRequest)" />
+      <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.DescribeScheduledActions(Amazon.ApplicationAutoScaling.Model.DescribeScheduledActionsRequest)" />
+      <member name="T:Amazon.ApplicationAutoScaling.Model.DescribeScheduledActionsRequest" />
+      <member name="T:Amazon.ApplicationAutoScaling.Model.DescribeScheduledActionsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example describes the scheduled actions for the dynamodb service namespace.
+        </para>
+        <code title="To describe scheduled actions" source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs" region="DescribeScheduledActions-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.ListTagsForResource(Amazon.ApplicationAutoScaling.Model.ListTagsForResourceRequest)" />
+      <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.ListTagsForResource(Amazon.ApplicationAutoScaling.Model.ListTagsForResourceRequest)" />
+      <member name="T:Amazon.ApplicationAutoScaling.Model.ListTagsForResourceRequest" />
+      <member name="T:Amazon.ApplicationAutoScaling.Model.ListTagsForResourceResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example lists the tag key names and values that are attached to the scalable target specified by its ARN.
+        </para>
+        <code title="To list tags for a scalable target" source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs" region="ListTagsForResource-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.PutScalingPolicy(Amazon.ApplicationAutoScaling.Model.PutScalingPolicyRequest)" />
+      <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.PutScalingPolicy(Amazon.ApplicationAutoScaling.Model.PutScalingPolicyRequest)" />
+      <member name="T:Amazon.ApplicationAutoScaling.Model.PutScalingPolicyRequest" />
+      <member name="T:Amazon.ApplicationAutoScaling.Model.PutScalingPolicyResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example applies a target tracking scaling policy with a predefined metric specification to an Amazon ECS service called web-app in the default cluster. The policy keeps the average CPU utilization of the service at 75 percent, with scale-out and scale-in cooldown periods of 60 seconds.
+        </para>
+        <code title="To apply a target tracking scaling policy with a predefined metric specification" source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs" region="PutScalingPolicy-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.PutScheduledAction(Amazon.ApplicationAutoScaling.Model.PutScheduledActionRequest)" />
+      <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.PutScheduledAction(Amazon.ApplicationAutoScaling.Model.PutScheduledActionRequest)" />
+      <member name="T:Amazon.ApplicationAutoScaling.Model.PutScheduledActionRequest" />
+      <member name="T:Amazon.ApplicationAutoScaling.Model.PutScheduledActionResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example adds a scheduled action to a DynamoDB table called TestTable to scale out on a recurring schedule. On the specified schedule (every day at 12:15pm UTC), if the current capacity is below the value specified for MinCapacity, Application Auto Scaling scales out to the value specified by MinCapacity.
+        </para>
+        <code title="To create a recurring scheduled action" source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs" region="PutScheduledAction-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.RegisterScalableTarget(Amazon.ApplicationAutoScaling.Model.RegisterScalableTargetRequest)" />
+      <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.RegisterScalableTarget(Amazon.ApplicationAutoScaling.Model.RegisterScalableTargetRequest)" />
+      <member name="T:Amazon.ApplicationAutoScaling.Model.RegisterScalableTargetRequest" />
+      <member name="T:Amazon.ApplicationAutoScaling.Model.RegisterScalableTargetResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example registers a scalable target from an Amazon ECS service called web-app that is running on the default cluster, with a minimum desired count of 1 task and a maximum desired count of 10 tasks.
+        </para>
+        <code title="To register an ECS service as a scalable target" source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs" region="RegisterScalableTarget-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.TagResource(Amazon.ApplicationAutoScaling.Model.TagResourceRequest)" />
+      <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.TagResource(Amazon.ApplicationAutoScaling.Model.TagResourceRequest)" />
+      <member name="T:Amazon.ApplicationAutoScaling.Model.TagResourceRequest" />
+      <member name="T:Amazon.ApplicationAutoScaling.Model.TagResourceResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example adds a tag with the key name "environment" and the value "production" to the scalable target specified by its ARN.
+        </para>
+        <code title="To add a tag to a scalable target" source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs" region="TagResource-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.UntagResource(Amazon.ApplicationAutoScaling.Model.UntagResourceRequest)" />
+      <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.UntagResource(Amazon.ApplicationAutoScaling.Model.UntagResourceRequest)" />
+      <member name="T:Amazon.ApplicationAutoScaling.Model.UntagResourceRequest" />
+      <member name="T:Amazon.ApplicationAutoScaling.Model.UntagResourceResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example removes the tag pair with the key name "environment" from the scalable target specified by its ARN.
+        </para>
+        <code title="To remove a tag from a scalable target" source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs" region="UntagResource-1" />
+      </example>
+    </value>
+  </doc>
 </docs>

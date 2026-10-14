@@ -674,13 +674,13 @@
     <property>Amazon.FMS.Model.EC2CreateRouteAction.DestinationCidrBlock</property>
     <min>0</min>
     <max>256</max>
-    <pattern>[a-f0-9:./]+</pattern>
+    <pattern>^[a-f0-9:./]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.EC2CreateRouteAction.DestinationIpv6CidrBlock</property>
     <min>0</min>
     <max>256</max>
-    <pattern>[a-f0-9:./]+</pattern>
+    <pattern>^[a-f0-9:./]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.EC2CreateRouteAction.DestinationPrefixListId</property>
@@ -702,13 +702,13 @@
     <property>Amazon.FMS.Model.EC2DeleteRouteAction.DestinationCidrBlock</property>
     <min>0</min>
     <max>256</max>
-    <pattern>[a-f0-9:./]+</pattern>
+    <pattern>^[a-f0-9:./]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.EC2DeleteRouteAction.DestinationIpv6CidrBlock</property>
     <min>0</min>
     <max>256</max>
-    <pattern>[a-f0-9:./]+</pattern>
+    <pattern>^[a-f0-9:./]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.EC2DeleteRouteAction.DestinationPrefixListId</property>
@@ -725,13 +725,13 @@
     <property>Amazon.FMS.Model.EC2ReplaceRouteAction.DestinationCidrBlock</property>
     <min>0</min>
     <max>256</max>
-    <pattern>[a-f0-9:./]+</pattern>
+    <pattern>^[a-f0-9:./]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.EC2ReplaceRouteAction.DestinationIpv6CidrBlock</property>
     <min>0</min>
     <max>256</max>
-    <pattern>[a-f0-9:./]+</pattern>
+    <pattern>^[a-f0-9:./]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.EC2ReplaceRouteAction.DestinationPrefixListId</property>
@@ -767,25 +767,36 @@
     <property>Amazon.FMS.Model.ExpectedRoute.IpV4Cidr</property>
     <min>0</min>
     <max>256</max>
-    <pattern>[a-f0-9:./]+</pattern>
+    <pattern>^[a-f0-9:./]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.ExpectedRoute.IpV6Cidr</property>
     <min>0</min>
     <max>256</max>
-    <pattern>[a-f0-9:./]+</pattern>
+    <pattern>^[a-f0-9:./]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.ExpectedRoute.PrefixListId</property>
     <min>0</min>
     <max>256</max>
-    <pattern>[a-f0-9:./]+</pattern>
+    <pattern>^[a-f0-9:./]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.ExpectedRoute.RouteTableId</property>
     <min>1</min>
     <max>1024</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.FMSPolicyUpdateFirewallCreationConfigAction.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.FMSPolicyUpdateFirewallCreationConfigAction.FirewallCreationConfig</property>
+    <min>1</min>
+    <max>30000</max>
+    <pattern>^((?!\\[nr]).)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.FailedItem.URI</property>
@@ -842,17 +853,6 @@
     <min>1</min>
     <max>1024</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FMS.Model.FMSPolicyUpdateFirewallCreationConfigAction.Description</property>
-    <min>0</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FMS.Model.FMSPolicyUpdateFirewallCreationConfigAction.FirewallCreationConfig</property>
-    <min>1</min>
-    <max>30000</max>
-    <pattern>^((?!\\[nr]).)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.InvalidNetworkAclEntriesViolation.CurrentAssociatedNetworkAcl</property>
@@ -1038,18 +1038,6 @@
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.FMS.Model.NetworkFirewallMissingExpectedRoutesViolation.ViolationTarget</property>
-    <min>0</min>
-    <max>1024</max>
-    <pattern>.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FMS.Model.NetworkFirewallMissingExpectedRoutesViolation.VpcId</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.FMS.Model.NetworkFirewallMissingExpectedRTViolation.AvailabilityZone</property>
     <min>0</min>
     <max>1024</max>
@@ -1067,13 +1055,25 @@
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FMS.Model.NetworkFirewallMissingExpectedRTViolation.VPC</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FMS.Model.NetworkFirewallMissingExpectedRTViolation.ViolationTarget</property>
     <min>0</min>
     <max>1024</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.FMS.Model.NetworkFirewallMissingExpectedRTViolation.VPC</property>
+    <property>Amazon.FMS.Model.NetworkFirewallMissingExpectedRoutesViolation.ViolationTarget</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.NetworkFirewallMissingExpectedRoutesViolation.VpcId</property>
     <min>1</min>
     <max>1024</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
@@ -1087,19 +1087,19 @@
     <property>Amazon.FMS.Model.NetworkFirewallMissingFirewallViolation.TargetViolationReason</property>
     <min>0</min>
     <max>256</max>
-    <pattern>\w+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FMS.Model.NetworkFirewallMissingFirewallViolation.ViolationTarget</property>
-    <min>0</min>
-    <max>1024</max>
-    <pattern>.*</pattern>
+    <pattern>^\w+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.NetworkFirewallMissingFirewallViolation.VPC</property>
     <min>1</min>
     <max>1024</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.NetworkFirewallMissingFirewallViolation.ViolationTarget</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.NetworkFirewallMissingSubnetViolation.AvailabilityZone</property>
@@ -1110,19 +1110,19 @@
     <property>Amazon.FMS.Model.NetworkFirewallMissingSubnetViolation.TargetViolationReason</property>
     <min>0</min>
     <max>256</max>
-    <pattern>\w+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FMS.Model.NetworkFirewallMissingSubnetViolation.ViolationTarget</property>
-    <min>0</min>
-    <max>1024</max>
-    <pattern>.*</pattern>
+    <pattern>^\w+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.NetworkFirewallMissingSubnetViolation.VPC</property>
     <min>1</min>
     <max>1024</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.NetworkFirewallMissingSubnetViolation.ViolationTarget</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.NetworkFirewallPolicyModifiedViolation.ViolationTarget</property>
@@ -1174,6 +1174,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.Policy.PolicyDescription</property>
+    <min>0</min>
     <max>256</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
@@ -1342,6 +1343,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.ResourceSet.Description</property>
+    <min>0</min>
     <max>256</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
@@ -1365,6 +1367,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.ResourceSetSummary.Description</property>
+    <min>0</min>
     <max>256</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
@@ -1388,6 +1391,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.ResourceTag.Value</property>
+    <min>0</min>
     <max>256</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:\/=+\-@*\\]*)$</pattern>
   </property-value-rule>
@@ -1468,13 +1472,13 @@
     <property>Amazon.FMS.Model.SecurityGroupRuleDescription.IPV4Range</property>
     <min>0</min>
     <max>256</max>
-    <pattern>[a-f0-9:./]+</pattern>
+    <pattern>^[a-f0-9:./]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.SecurityGroupRuleDescription.IPV6Range</property>
     <min>0</min>
     <max>256</max>
-    <pattern>[a-f0-9:./]+</pattern>
+    <pattern>^[a-f0-9:./]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.SecurityGroupRuleDescription.PrefixListId</property>
@@ -1496,7 +1500,7 @@
     <property>Amazon.FMS.Model.SecurityServicePolicyData.ManagedServiceData</property>
     <min>1</min>
     <max>30000</max>
-    <pattern>^((?!\\[nr]).)+</pattern>
+    <pattern>^((?!\\[nr]).)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.StatefulRuleGroup.ResourceId</property>
@@ -1569,16 +1573,16 @@
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.FMS.Model.ThirdPartyFirewallMissingExpectedRouteTableViolation.ViolationTarget</property>
-    <min>0</min>
-    <max>1024</max>
-    <pattern>.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.FMS.Model.ThirdPartyFirewallMissingExpectedRouteTableViolation.VPC</property>
     <min>1</min>
     <max>1024</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.ThirdPartyFirewallMissingExpectedRouteTableViolation.ViolationTarget</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.ThirdPartyFirewallMissingFirewallViolation.AvailabilityZone</property>
@@ -1589,19 +1593,19 @@
     <property>Amazon.FMS.Model.ThirdPartyFirewallMissingFirewallViolation.TargetViolationReason</property>
     <min>0</min>
     <max>256</max>
-    <pattern>\w+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FMS.Model.ThirdPartyFirewallMissingFirewallViolation.ViolationTarget</property>
-    <min>0</min>
-    <max>1024</max>
-    <pattern>.*</pattern>
+    <pattern>^\w+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.ThirdPartyFirewallMissingFirewallViolation.VPC</property>
     <min>1</min>
     <max>1024</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.ThirdPartyFirewallMissingFirewallViolation.ViolationTarget</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.ThirdPartyFirewallMissingSubnetViolation.AvailabilityZone</property>
@@ -1612,19 +1616,19 @@
     <property>Amazon.FMS.Model.ThirdPartyFirewallMissingSubnetViolation.TargetViolationReason</property>
     <min>0</min>
     <max>256</max>
-    <pattern>\w+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FMS.Model.ThirdPartyFirewallMissingSubnetViolation.ViolationTarget</property>
-    <min>0</min>
-    <max>1024</max>
-    <pattern>.*</pattern>
+    <pattern>^\w+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.ThirdPartyFirewallMissingSubnetViolation.VPC</property>
     <min>1</min>
     <max>1024</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.ThirdPartyFirewallMissingSubnetViolation.ViolationTarget</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.ViolationDetail.MemberAccount</property>

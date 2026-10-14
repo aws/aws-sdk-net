@@ -16,7 +16,7 @@
     <property>Amazon.CodeBuild.Model.CreateFleetRequest.Name</property>
     <min>2</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9][A-Za-z0-9\-_]{1,127}</pattern>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9\-_]{1,127}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.CreateProjectRequest.Description</property>
@@ -31,7 +31,7 @@
     <property>Amazon.CodeBuild.Model.CreateProjectRequest.Name</property>
     <min>2</min>
     <max>150</max>
-    <pattern>[A-Za-z0-9][A-Za-z0-9\-_]{1,149}</pattern>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9\-_]{1,149}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.CreateProjectRequest.QueuedTimeoutInMinutes</property>
@@ -56,7 +56,7 @@
     <property>Amazon.CodeBuild.Model.CreateWebhookRequest.ProjectName</property>
     <min>2</min>
     <max>150</max>
-    <pattern>[A-Za-z0-9][A-Za-z0-9\-_]{1,149}</pattern>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9\-_]{1,149}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.DeleteBuildBatchRequest.Id</property>
@@ -94,7 +94,7 @@
     <property>Amazon.CodeBuild.Model.DeleteWebhookRequest.ProjectName</property>
     <min>2</min>
     <max>150</max>
-    <pattern>[A-Za-z0-9][A-Za-z0-9\-_]{1,149}</pattern>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9\-_]{1,149}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.DescribeCodeCoveragesRequest.MaxLineCoveragePercentage</property>
@@ -403,7 +403,7 @@
     <property>Amazon.CodeBuild.Model.UpdateWebhookRequest.ProjectName</property>
     <min>2</min>
     <max>150</max>
-    <pattern>[A-Za-z0-9][A-Za-z0-9\-_]{1,149}</pattern>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9\-_]{1,149}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.Build.Arn</property>
@@ -597,7 +597,7 @@
     <property>Amazon.CodeBuild.Model.Fleet.Name</property>
     <min>2</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9][A-Za-z0-9\-_]{1,127}</pattern>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9\-_]{1,127}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.NetworkInterface.NetworkInterfaceId</property>
@@ -620,7 +620,7 @@
     <property>Amazon.CodeBuild.Model.Project.Name</property>
     <min>2</min>
     <max>150</max>
-    <pattern>[A-Za-z0-9][A-Za-z0-9\-_]{1,149}</pattern>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9\-_]{1,149}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.Project.PublicProjectAlias</property>

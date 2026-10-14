@@ -1,0 +1,58 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.TranscribeService.Model
+{
+    /// <summary>
+    /// Container for the parameters to the GetMedicalTranscriptionJob operation. Provides
+    /// information about the specified medical transcription job. <para> To view the status
+    /// of the specified medical transcription job, check the <c>TranscriptionJobStatus</c>
+    /// field. If the status is <c>COMPLETED</c>, the job is finished. You can find the results
+    /// at the location specified in <c>TranscriptFileUri</c>. If the status is <c>FAILED</c>,
+    /// <c>FailureReason</c> provides details on why your transcription job failed. </para>
+    /// <para> To get a list of your medical transcription jobs, use the operation. </para>
+    /// </summary>
+    public partial class GetMedicalTranscriptionJobRequest : AmazonTranscribeServiceRequest
+    {
+        /// <summary>
+        /// Gets and sets the property MedicalTranscriptionJobName. 
+        /// <para>
+        /// The name of the medical transcription job you want information about. Job names are
+        /// case sensitive.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 200)]
+        public string MedicalTranscriptionJobName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MedicalTranscriptionJobName property is set.
+        /// </summary>
+        internal bool IsSetMedicalTranscriptionJobName() => this.MedicalTranscriptionJobName != null;
+    }
+}

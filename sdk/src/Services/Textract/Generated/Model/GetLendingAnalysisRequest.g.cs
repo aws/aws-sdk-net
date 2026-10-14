@@ -1,0 +1,93 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Textract.Model
+{
+    /// <summary>
+    /// Container for the parameters to the GetLendingAnalysis operation. Gets the results
+    /// for an Amazon Textract asynchronous operation that analyzes text in a lending document.
+    /// <para> You start asynchronous text analysis by calling <c>StartLendingAnalysis</c>,
+    /// which returns a job identifier (<c>JobId</c>). When the text analysis operation finishes,
+    /// Amazon Textract publishes a completion status to the Amazon Simple Notification Service
+    /// (Amazon SNS) topic that's registered in the initial call to <c>StartLendingAnalysis</c>.
+    /// </para> <para> To get the results of the text analysis operation, first check that
+    /// the status value published to the Amazon SNS topic is SUCCEEDED. If so, call GetLendingAnalysis,
+    /// and pass the job identifier (<c>JobId</c>) from the initial call to <c>StartLendingAnalysis</c>.
+    /// </para>
+    /// </summary>
+    public partial class GetLendingAnalysisRequest : AmazonTextractRequest
+    {
+        /// <summary>
+        /// Gets and sets the property JobId. 
+        /// <para>
+        /// A unique identifier for the lending or text-detection job. The <c>JobId</c> is returned
+        /// from <c>StartLendingAnalysis</c>. A <c>JobId</c> value is only valid for 7 days.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 64)]
+        public string JobId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the JobId property is set.
+        /// </summary>
+        internal bool IsSetJobId() => this.JobId != null;
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return per paginated call. The largest value that
+        /// you can specify is 30. If you specify a value greater than 30, a maximum of 30 results
+        /// is returned. The default value is 30.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1)]
+        public int? MaxResults { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MaxResults property is set.
+        /// </summary>
+        internal bool IsSetMaxResults() => this.MaxResults.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// If the previous response was incomplete, Amazon Textract returns a pagination token
+        /// in the response. You can use this pagination token to retrieve the next set of lending
+        /// results.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 1024)]
+        public string NextToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NextToken property is set.
+        /// </summary>
+        internal bool IsSetNextToken() => this.NextToken != null;
+    }
+}

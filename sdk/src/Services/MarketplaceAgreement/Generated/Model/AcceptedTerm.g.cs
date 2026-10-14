@@ -1,0 +1,226 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.MarketplaceAgreement.Model
+{
+    /// <summary>
+    /// A subset of terms proposed by the proposer, which have been accepted by the acceptor
+    /// as part of agreement creation.
+    /// </summary>
+    public partial class AcceptedTerm
+    {
+        /// <summary>
+        /// Gets and sets the property ByolPricingTerm. 
+        /// <para>
+        /// Enables you and your customers to move your existing agreements to AWS Marketplace.
+        /// The customer won't be charged for product usage in AWS Marketplace because they already
+        /// paid for the product outside of AWS Marketplace.
+        /// </para>
+        /// </summary>
+        public ByolPricingTerm ByolPricingTerm { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ByolPricingTerm property is set.
+        /// </summary>
+        internal bool IsSetByolPricingTerm() => this.ByolPricingTerm != null;
+
+        /// <summary>
+        /// Gets and sets the property ConfigurableUpfrontPricingTerm. 
+        /// <para>
+        /// Defines a prepaid payment model that allows buyers to configure the entitlements they
+        /// want to purchase and the duration.
+        /// </para>
+        /// </summary>
+        public ConfigurableUpfrontPricingTerm ConfigurableUpfrontPricingTerm { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ConfigurableUpfrontPricingTerm property is set.
+        /// </summary>
+        internal bool IsSetConfigurableUpfrontPricingTerm() => this.ConfigurableUpfrontPricingTerm != null;
+
+        /// <summary>
+        /// Gets and sets the property FixedUpfrontPricingTerm. 
+        /// <para>
+        /// Defines a pre-paid pricing model where the customers are charged a fixed upfront amount.
+        /// </para>
+        /// </summary>
+        public FixedUpfrontPricingTerm FixedUpfrontPricingTerm { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FixedUpfrontPricingTerm property is set.
+        /// </summary>
+        internal bool IsSetFixedUpfrontPricingTerm() => this.FixedUpfrontPricingTerm != null;
+
+        /// <summary>
+        /// Gets and sets the property FreeTrialPricingTerm. 
+        /// <para>
+        /// Defines a short-term free pricing model where the buyers aren’t charged anything within
+        /// a specified limit.
+        /// </para>
+        /// </summary>
+        public FreeTrialPricingTerm FreeTrialPricingTerm { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FreeTrialPricingTerm property is set.
+        /// </summary>
+        internal bool IsSetFreeTrialPricingTerm() => this.FreeTrialPricingTerm != null;
+
+        /// <summary>
+        /// Gets and sets the property LegalTerm. 
+        /// <para>
+        /// Defines the list of text agreements proposed to the acceptors. An example is the end
+        /// user license agreement (EULA).
+        /// </para>
+        /// </summary>
+        public LegalTerm LegalTerm { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LegalTerm property is set.
+        /// </summary>
+        internal bool IsSetLegalTerm() => this.LegalTerm != null;
+
+        /// <summary>
+        /// Gets and sets the property NetPaymentTerm. 
+        /// <para>
+        /// Defines the net payment due period for the agreement, specifying when payment is due
+        /// after an invoice is issued.
+        /// </para>
+        /// </summary>
+        public NetPaymentTerm NetPaymentTerm { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NetPaymentTerm property is set.
+        /// </summary>
+        internal bool IsSetNetPaymentTerm() => this.NetPaymentTerm != null;
+
+        /// <summary>
+        /// Gets and sets the property PaymentScheduleTerm. 
+        /// <para>
+        /// Defines an installment-based pricing model where customers are charged a fixed price
+        /// on different dates during the agreement validity period. This is used most commonly
+        /// for flexible payment schedule pricing.
+        /// </para>
+        /// </summary>
+        public PaymentScheduleTerm PaymentScheduleTerm { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PaymentScheduleTerm property is set.
+        /// </summary>
+        internal bool IsSetPaymentScheduleTerm() => this.PaymentScheduleTerm != null;
+
+        /// <summary>
+        /// Gets and sets the property RecurringPaymentTerm. 
+        /// <para>
+        /// Defines a pricing model where customers are charged a fixed recurring price at the
+        /// end of each billing period.
+        /// </para>
+        /// </summary>
+        public RecurringPaymentTerm RecurringPaymentTerm { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RecurringPaymentTerm property is set.
+        /// </summary>
+        internal bool IsSetRecurringPaymentTerm() => this.RecurringPaymentTerm != null;
+
+        /// <summary>
+        /// Gets and sets the property RenewalTerm. 
+        /// <para>
+        /// Defines that on graceful expiration of the agreement (when the agreement ends on its
+        /// pre-defined end date), a new agreement will be created using the accepted terms on
+        /// the existing agreement. In other words, the agreement will be renewed. Presence of
+        /// <c>RenewalTerm</c> in the offer document means that auto-renewal is allowed. The acceptor
+        /// will have the option to accept or decline auto-renewal at the offer acceptance/agreement
+        /// creation. The acceptor can also change this flag from <c>True</c> to <c>False</c>
+        /// or <c>False</c> to <c>True</c>, within the limits set by <c>LockoutPeriod</c> and
+        /// <c>MaxRenewals</c>. Setting the flag to <c>True</c> doesn't by itself guarantee that
+        /// the agreement renews, because the proposer can also opt out.
+        /// </para>
+        /// </summary>
+        public RenewalTerm RenewalTerm { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RenewalTerm property is set.
+        /// </summary>
+        internal bool IsSetRenewalTerm() => this.RenewalTerm != null;
+
+        /// <summary>
+        /// Gets and sets the property SupportTerm. 
+        /// <para>
+        /// Defines the customer support available for the acceptors when they purchase the software.
+        /// </para>
+        /// </summary>
+        public SupportTerm SupportTerm { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SupportTerm property is set.
+        /// </summary>
+        internal bool IsSetSupportTerm() => this.SupportTerm != null;
+
+        /// <summary>
+        /// Gets and sets the property UsageBasedPricingTerm. 
+        /// <para>
+        /// Defines a usage-based pricing model (typically, pay-as-you-go pricing), where the
+        /// customers are charged based on product usage.
+        /// </para>
+        /// </summary>
+        public UsageBasedPricingTerm UsageBasedPricingTerm { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UsageBasedPricingTerm property is set.
+        /// </summary>
+        internal bool IsSetUsageBasedPricingTerm() => this.UsageBasedPricingTerm != null;
+
+        /// <summary>
+        /// Gets and sets the property ValidityTerm. 
+        /// <para>
+        /// Defines the conditions that will keep an agreement created from this offer valid.
+        /// </para>
+        /// </summary>
+        public ValidityTerm ValidityTerm { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ValidityTerm property is set.
+        /// </summary>
+        internal bool IsSetValidityTerm() => this.ValidityTerm != null;
+
+        /// <summary>
+        /// Gets and sets the property VariablePaymentTerm. 
+        /// <para>
+        /// Defines a payment model where sellers can submit variable payment requests up to a
+        /// maximum charge amount, with configurable approval strategies and expiration timelines.
+        /// </para>
+        /// </summary>
+        public VariablePaymentTerm VariablePaymentTerm { get; set; }
+
+        /// <summary>
+        /// Checks to see if the VariablePaymentTerm property is set.
+        /// </summary>
+        internal bool IsSetVariablePaymentTerm() => this.VariablePaymentTerm != null;
+    }
+}

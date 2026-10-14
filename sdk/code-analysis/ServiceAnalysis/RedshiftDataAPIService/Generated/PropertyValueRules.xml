@@ -9,11 +9,11 @@
     <property>Amazon.RedshiftDataAPIService.Model.BatchExecuteStatementRequest.ClusterIdentifier</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-z][a-z0-9]*(-[a-z0-9]+)*</pattern>
+    <pattern>^[a-z][a-z0-9]*(-[a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.BatchExecuteStatementRequest.SessionId</property>
-    <pattern>[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?</pattern>
+    <pattern>^[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.BatchExecuteStatementRequest.SessionKeepAliveSeconds</property>
@@ -22,7 +22,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.BatchExecuteStatementRequest.StatementName</property>
-    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -34,35 +33,35 @@
     <property>Amazon.RedshiftDataAPIService.Model.BatchExecuteStatementRequest.WorkgroupName</property>
     <min>3</min>
     <max>128</max>
-    <pattern>([a-z0-9-]{3,63}|arn:(aws(-[a-z]+)*):redshift-serverless:([a-z]{2}(-gov|(-iso[a-z]?))?|eusc-[a-z]+)-[a-z]+-\d{1}:\d{12}:workgroup/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[a-z0-9-]{1,63}/[a-z0-9-]{1,63}))</pattern>
+    <pattern>^([a-z0-9-]{3,63}|arn:(aws(-[a-z]+)*):redshift-serverless:([a-z]{2}(-gov|(-iso[a-z]?))?|eusc-[a-z]+)-[a-z]+-\d{1}:\d{12}:workgroup/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[a-z0-9-]{1,63}/[a-z0-9-]{1,63}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.BatchExecuteStatementResponse.ClusterIdentifier</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-z][a-z0-9]*(-[a-z0-9]+)*</pattern>
+    <pattern>^[a-z][a-z0-9]*(-[a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.BatchExecuteStatementResponse.Id</property>
-    <pattern>[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?</pattern>
+    <pattern>^[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.BatchExecuteStatementResponse.SessionId</property>
-    <pattern>[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?</pattern>
+    <pattern>^[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.BatchExecuteStatementResponse.WorkgroupName</property>
     <min>3</min>
     <max>128</max>
-    <pattern>([a-z0-9-]{3,63}|arn:(aws(-[a-z]+)*):redshift-serverless:([a-z]{2}(-gov|(-iso[a-z]?))?|eusc-[a-z]+)-[a-z]+-\d{1}:\d{12}:workgroup/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[a-z0-9-]{1,63}/[a-z0-9-]{1,63}))</pattern>
+    <pattern>^([a-z0-9-]{3,63}|arn:(aws(-[a-z]+)*):redshift-serverless:([a-z]{2}(-gov|(-iso[a-z]?))?|eusc-[a-z]+)-[a-z]+-\d{1}:\d{12}:workgroup/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[a-z0-9-]{1,63}/[a-z0-9-]{1,63}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.CancelStatementRequest.Id</property>
-    <pattern>[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?</pattern>
+    <pattern>^[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.DescribeStatementRequest.Id</property>
-    <pattern>[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?</pattern>
+    <pattern>^[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.DescribeStatementRequest.WaitTimeSeconds</property>
@@ -71,19 +70,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.DescribeStatementResponse.Id</property>
-    <pattern>[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?</pattern>
+    <pattern>^[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.DescribeStatementResponse.WorkgroupName</property>
     <min>3</min>
     <max>128</max>
-    <pattern>([a-z0-9-]{3,63}|arn:(aws(-[a-z]+)*):redshift-serverless:([a-z]{2}(-gov|(-iso[a-z]?))?|eusc-[a-z]+)-[a-z]+-\d{1}:\d{12}:workgroup/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[a-z0-9-]{1,63}/[a-z0-9-]{1,63}))</pattern>
+    <pattern>^([a-z0-9-]{3,63}|arn:(aws(-[a-z]+)*):redshift-serverless:([a-z]{2}(-gov|(-iso[a-z]?))?|eusc-[a-z]+)-[a-z]+-\d{1}:\d{12}:workgroup/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[a-z0-9-]{1,63}/[a-z0-9-]{1,63}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.DescribeTableRequest.ClusterIdentifier</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-z][a-z0-9]*(-[a-z0-9]+)*</pattern>
+    <pattern>^[a-z][a-z0-9]*(-[a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.DescribeTableRequest.MaxResults</property>
@@ -94,7 +93,7 @@
     <property>Amazon.RedshiftDataAPIService.Model.DescribeTableRequest.WorkgroupName</property>
     <min>3</min>
     <max>128</max>
-    <pattern>([a-z0-9-]{3,63}|arn:(aws(-[a-z]+)*):redshift-serverless:([a-z]{2}(-gov|(-iso[a-z]?))?|eusc-[a-z]+)-[a-z]+-\d{1}:\d{12}:workgroup/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[a-z0-9-]{1,63}/[a-z0-9-]{1,63}))</pattern>
+    <pattern>^([a-z0-9-]{3,63}|arn:(aws(-[a-z]+)*):redshift-serverless:([a-z]{2}(-gov|(-iso[a-z]?))?|eusc-[a-z]+)-[a-z]+-\d{1}:\d{12}:workgroup/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[a-z0-9-]{1,63}/[a-z0-9-]{1,63}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.ExecuteStatementRequest.ClientToken</property>
@@ -105,11 +104,11 @@
     <property>Amazon.RedshiftDataAPIService.Model.ExecuteStatementRequest.ClusterIdentifier</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-z][a-z0-9]*(-[a-z0-9]+)*</pattern>
+    <pattern>^[a-z][a-z0-9]*(-[a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.ExecuteStatementRequest.SessionId</property>
-    <pattern>[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?</pattern>
+    <pattern>^[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.ExecuteStatementRequest.SessionKeepAliveSeconds</property>
@@ -118,7 +117,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.ExecuteStatementRequest.StatementName</property>
-    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -130,31 +128,31 @@
     <property>Amazon.RedshiftDataAPIService.Model.ExecuteStatementRequest.WorkgroupName</property>
     <min>3</min>
     <max>128</max>
-    <pattern>([a-z0-9-]{3,63}|arn:(aws(-[a-z]+)*):redshift-serverless:([a-z]{2}(-gov|(-iso[a-z]?))?|eusc-[a-z]+)-[a-z]+-\d{1}:\d{12}:workgroup/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[a-z0-9-]{1,63}/[a-z0-9-]{1,63}))</pattern>
+    <pattern>^([a-z0-9-]{3,63}|arn:(aws(-[a-z]+)*):redshift-serverless:([a-z]{2}(-gov|(-iso[a-z]?))?|eusc-[a-z]+)-[a-z]+-\d{1}:\d{12}:workgroup/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[a-z0-9-]{1,63}/[a-z0-9-]{1,63}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.ExecuteStatementResponse.ClusterIdentifier</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-z][a-z0-9]*(-[a-z0-9]+)*</pattern>
+    <pattern>^[a-z][a-z0-9]*(-[a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.ExecuteStatementResponse.Id</property>
-    <pattern>[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?</pattern>
+    <pattern>^[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.ExecuteStatementResponse.SessionId</property>
-    <pattern>[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?</pattern>
+    <pattern>^[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.ExecuteStatementResponse.WorkgroupName</property>
     <min>3</min>
     <max>128</max>
-    <pattern>([a-z0-9-]{3,63}|arn:(aws(-[a-z]+)*):redshift-serverless:([a-z]{2}(-gov|(-iso[a-z]?))?|eusc-[a-z]+)-[a-z]+-\d{1}:\d{12}:workgroup/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[a-z0-9-]{1,63}/[a-z0-9-]{1,63}))</pattern>
+    <pattern>^([a-z0-9-]{3,63}|arn:(aws(-[a-z]+)*):redshift-serverless:([a-z]{2}(-gov|(-iso[a-z]?))?|eusc-[a-z]+)-[a-z]+-\d{1}:\d{12}:workgroup/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[a-z0-9-]{1,63}/[a-z0-9-]{1,63}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.GetStatementResultRequest.Id</property>
-    <pattern>[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?</pattern>
+    <pattern>^[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.GetStatementResultRequest.WaitTimeSeconds</property>
@@ -163,7 +161,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.GetStatementResultV2Request.Id</property>
-    <pattern>[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?</pattern>
+    <pattern>^[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.GetStatementResultV2Request.WaitTimeSeconds</property>
@@ -174,7 +172,7 @@
     <property>Amazon.RedshiftDataAPIService.Model.ListDatabasesRequest.ClusterIdentifier</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-z][a-z0-9]*(-[a-z0-9]+)*</pattern>
+    <pattern>^[a-z][a-z0-9]*(-[a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.ListDatabasesRequest.MaxResults</property>
@@ -185,13 +183,13 @@
     <property>Amazon.RedshiftDataAPIService.Model.ListDatabasesRequest.WorkgroupName</property>
     <min>3</min>
     <max>128</max>
-    <pattern>([a-z0-9-]{3,63}|arn:(aws(-[a-z]+)*):redshift-serverless:([a-z]{2}(-gov|(-iso[a-z]?))?|eusc-[a-z]+)-[a-z]+-\d{1}:\d{12}:workgroup/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[a-z0-9-]{1,63}/[a-z0-9-]{1,63}))</pattern>
+    <pattern>^([a-z0-9-]{3,63}|arn:(aws(-[a-z]+)*):redshift-serverless:([a-z]{2}(-gov|(-iso[a-z]?))?|eusc-[a-z]+)-[a-z]+-\d{1}:\d{12}:workgroup/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[a-z0-9-]{1,63}/[a-z0-9-]{1,63}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.ListSchemasRequest.ClusterIdentifier</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-z][a-z0-9]*(-[a-z0-9]+)*</pattern>
+    <pattern>^[a-z][a-z0-9]*(-[a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.ListSchemasRequest.MaxResults</property>
@@ -202,13 +200,13 @@
     <property>Amazon.RedshiftDataAPIService.Model.ListSchemasRequest.WorkgroupName</property>
     <min>3</min>
     <max>128</max>
-    <pattern>([a-z0-9-]{3,63}|arn:(aws(-[a-z]+)*):redshift-serverless:([a-z]{2}(-gov|(-iso[a-z]?))?|eusc-[a-z]+)-[a-z]+-\d{1}:\d{12}:workgroup/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[a-z0-9-]{1,63}/[a-z0-9-]{1,63}))</pattern>
+    <pattern>^([a-z0-9-]{3,63}|arn:(aws(-[a-z]+)*):redshift-serverless:([a-z]{2}(-gov|(-iso[a-z]?))?|eusc-[a-z]+)-[a-z]+-\d{1}:\d{12}:workgroup/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[a-z0-9-]{1,63}/[a-z0-9-]{1,63}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.ListSessionsRequest.ClusterIdentifier</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-z][a-z0-9]*(-[a-z0-9]+)*</pattern>
+    <pattern>^[a-z][a-z0-9]*(-[a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.ListSessionsRequest.MaxResults</property>
@@ -217,19 +215,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.ListSessionsRequest.SessionId</property>
-    <pattern>[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?</pattern>
+    <pattern>^[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.ListSessionsRequest.WorkgroupName</property>
     <min>3</min>
     <max>128</max>
-    <pattern>([a-z0-9-]{3,63}|arn:(aws(-[a-z]+)*):redshift-serverless:([a-z]{2}(-gov|(-iso[a-z]?))?|eusc-[a-z]+)-[a-z]+-\d{1}:\d{12}:workgroup/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[a-z0-9-]{1,63}/[a-z0-9-]{1,63}))</pattern>
+    <pattern>^([a-z0-9-]{3,63}|arn:(aws(-[a-z]+)*):redshift-serverless:([a-z]{2}(-gov|(-iso[a-z]?))?|eusc-[a-z]+)-[a-z]+-\d{1}:\d{12}:workgroup/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[a-z0-9-]{1,63}/[a-z0-9-]{1,63}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.ListStatementsRequest.ClusterIdentifier</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-z][a-z0-9]*(-[a-z0-9]+)*</pattern>
+    <pattern>^[a-z][a-z0-9]*(-[a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.ListStatementsRequest.MaxResults</property>
@@ -238,20 +236,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.ListStatementsRequest.StatementName</property>
-    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.ListStatementsRequest.WorkgroupName</property>
     <min>3</min>
     <max>128</max>
-    <pattern>([a-z0-9-]{3,63}|arn:(aws(-[a-z]+)*):redshift-serverless:([a-z]{2}(-gov|(-iso[a-z]?))?|eusc-[a-z]+)-[a-z]+-\d{1}:\d{12}:workgroup/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[a-z0-9-]{1,63}/[a-z0-9-]{1,63}))</pattern>
+    <pattern>^([a-z0-9-]{3,63}|arn:(aws(-[a-z]+)*):redshift-serverless:([a-z]{2}(-gov|(-iso[a-z]?))?|eusc-[a-z]+)-[a-z]+-\d{1}:\d{12}:workgroup/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[a-z0-9-]{1,63}/[a-z0-9-]{1,63}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.ListTablesRequest.ClusterIdentifier</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-z][a-z0-9]*(-[a-z0-9]+)*</pattern>
+    <pattern>^[a-z][a-z0-9]*(-[a-z0-9]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.ListTablesRequest.MaxResults</property>
@@ -262,11 +259,11 @@
     <property>Amazon.RedshiftDataAPIService.Model.ListTablesRequest.WorkgroupName</property>
     <min>3</min>
     <max>128</max>
-    <pattern>([a-z0-9-]{3,63}|arn:(aws(-[a-z]+)*):redshift-serverless:([a-z]{2}(-gov|(-iso[a-z]?))?|eusc-[a-z]+)-[a-z]+-\d{1}:\d{12}:workgroup/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[a-z0-9-]{1,63}/[a-z0-9-]{1,63}))</pattern>
+    <pattern>^([a-z0-9-]{3,63}|arn:(aws(-[a-z]+)*):redshift-serverless:([a-z]{2}(-gov|(-iso[a-z]?))?|eusc-[a-z]+)-[a-z]+-\d{1}:\d{12}:workgroup/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[a-z0-9-]{1,63}/[a-z0-9-]{1,63}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.SessionData.CurrentStatementId</property>
-    <pattern>[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?</pattern>
+    <pattern>^[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.SessionData.SessionAliveSeconds</property>
@@ -275,17 +272,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.SessionData.SessionId</property>
-    <pattern>[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?</pattern>
+    <pattern>^[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.SessionData.WorkgroupName</property>
     <min>3</min>
     <max>128</max>
-    <pattern>([a-z0-9-]{3,63}|arn:(aws(-[a-z]+)*):redshift-serverless:([a-z]{2}(-gov|(-iso[a-z]?))?|eusc-[a-z]+)-[a-z]+-\d{1}:\d{12}:workgroup/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[a-z0-9-]{1,63}/[a-z0-9-]{1,63}))</pattern>
+    <pattern>^([a-z0-9-]{3,63}|arn:(aws(-[a-z]+)*):redshift-serverless:([a-z]{2}(-gov|(-iso[a-z]?))?|eusc-[a-z]+)-[a-z]+-\d{1}:\d{12}:workgroup/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[a-z0-9-]{1,63}/[a-z0-9-]{1,63}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.SqlParameter.Name</property>
-    <pattern>[0-9a-zA-Z_]+</pattern>
+    <pattern>^[0-9a-zA-Z_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.SqlParameter.Value</property>
@@ -293,19 +290,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.StatementData.Id</property>
-    <pattern>[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?</pattern>
+    <pattern>^[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.StatementData.SessionId</property>
-    <pattern>[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?</pattern>
+    <pattern>^[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.StatementData.StatementName</property>
-    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.SubStatementData.Id</property>
-    <pattern>[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?</pattern>
+    <pattern>^[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d{0,2})?$</pattern>
   </property-value-rule>
 </property-value-rules>

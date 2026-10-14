@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,33 +14,33 @@ namespace AWSSDKDocSamples.Amazon.EndUserMessaging.Generated
     {
         public void EndUserMessagingCreateBrandProfile()
         {
-            #region example-1
+            #region CreateBrandProfile-1
 
             var client = new AmazonEndUserMessagingClient();
-            var response = client.CreateBrandProfile(new CreateBrandProfileRequest 
+            var response = client.CreateBrandProfile(new CreateBrandProfileRequest
             {
                 BrandProfileName = "AcmeCorp",
                 DeletionProtectionEnabled = true
             });
 
-            int attributesCreated = response.AttributesCreated;
+            int? attributesCreated = response.AttributesCreated;
             string brandProfileArn = response.BrandProfileArn;
             string brandProfileId = response.BrandProfileId;
             string brandProfileName = response.BrandProfileName;
-            DateTime createdAt = response.CreatedAt;
-            bool deletionProtectionEnabled = response.DeletionProtectionEnabled;
-            string status = response.Status;
-            DateTime updatedAt = response.UpdatedAt;
+            DateTime? createdAt = response.CreatedAt;
+            bool? deletionProtectionEnabled = response.DeletionProtectionEnabled;
+            Status status = response.Status;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void EndUserMessagingCreateBrandProfileAttributes()
         {
-            #region example-1
+            #region CreateBrandProfileAttributes-1
 
             var client = new AmazonEndUserMessagingClient();
-            var response = client.CreateBrandProfileAttributes(new CreateBrandProfileAttributesRequest 
+            var response = client.CreateBrandProfileAttributes(new CreateBrandProfileAttributesRequest
             {
                 Attributes = new List<BrandProfileAttributeInput> {
                     new BrandProfileAttributeInput {
@@ -59,10 +60,10 @@ namespace AWSSDKDocSamples.Amazon.EndUserMessaging.Generated
 
         public void EndUserMessagingCreateBrandProfileFromRegistration()
         {
-            #region example-1
+            #region CreateBrandProfileFromRegistration-1
 
             var client = new AmazonEndUserMessagingClient();
-            var response = client.CreateBrandProfileFromRegistration(new CreateBrandProfileFromRegistrationRequest 
+            var response = client.CreateBrandProfileFromRegistration(new CreateBrandProfileFromRegistrationRequest
             {
                 BrandProfileName = "AcmeCorp",
                 RegistrationId = "reg-abc12345678901234",
@@ -76,10 +77,10 @@ namespace AWSSDKDocSamples.Amazon.EndUserMessaging.Generated
 
         public void EndUserMessagingCreateNotifyCodeConfiguration()
         {
-            #region example-1
+            #region CreateNotifyCodeConfiguration-1
 
             var client = new AmazonEndUserMessagingClient();
-            var response = client.CreateNotifyCodeConfiguration(new CreateNotifyCodeConfigurationRequest 
+            var response = client.CreateNotifyCodeConfiguration(new CreateNotifyCodeConfigurationRequest
             {
                 ChannelParameters = new ChannelParameters { Text = new TextParameters { InlineTemplateBody = "Your verification code is {{code}}." } },
                 CodeConfigurationParameters = new CodeConfigurationParameters {
@@ -98,10 +99,10 @@ namespace AWSSDKDocSamples.Amazon.EndUserMessaging.Generated
 
         public void EndUserMessagingCreateRegistrationsFromBrandProfile()
         {
-            #region example-1
+            #region CreateRegistrationsFromBrandProfile-1
 
             var client = new AmazonEndUserMessagingClient();
-            var response = client.CreateRegistrationsFromBrandProfile(new CreateRegistrationsFromBrandProfileRequest 
+            var response = client.CreateRegistrationsFromBrandProfile(new CreateRegistrationsFromBrandProfileRequest
             {
                 BrandProfileId = "bp-abc12345678901234",
                 RegistrationTypes = new List<string> {
@@ -117,10 +118,10 @@ namespace AWSSDKDocSamples.Amazon.EndUserMessaging.Generated
 
         public void EndUserMessagingDeleteBrandProfile()
         {
-            #region example-1
+            #region DeleteBrandProfile-1
 
             var client = new AmazonEndUserMessagingClient();
-            var response = client.DeleteBrandProfile(new DeleteBrandProfileRequest 
+            var response = client.DeleteBrandProfile(new DeleteBrandProfileRequest
             {
                 BrandProfileId = "bp-abc12345678901234"
             });
@@ -133,10 +134,10 @@ namespace AWSSDKDocSamples.Amazon.EndUserMessaging.Generated
 
         public void EndUserMessagingDeleteBrandProfileAttribute()
         {
-            #region example-1
+            #region DeleteBrandProfileAttribute-1
 
             var client = new AmazonEndUserMessagingClient();
-            var response = client.DeleteBrandProfileAttribute(new DeleteBrandProfileAttributeRequest 
+            var response = client.DeleteBrandProfileAttribute(new DeleteBrandProfileAttributeRequest
             {
                 AttributeName = "SupportEmail",
                 BrandProfileId = "bp-abc12345678901234"
@@ -150,10 +151,10 @@ namespace AWSSDKDocSamples.Amazon.EndUserMessaging.Generated
 
         public void EndUserMessagingDeleteNotifyCodeConfiguration()
         {
-            #region example-1
+            #region DeleteNotifyCodeConfiguration-1
 
             var client = new AmazonEndUserMessagingClient();
-            var response = client.DeleteNotifyCodeConfiguration(new DeleteNotifyCodeConfigurationRequest 
+            var response = client.DeleteNotifyCodeConfiguration(new DeleteNotifyCodeConfigurationRequest
             {
                 NotifyCodeConfigurationId = "ncc-abc12345678901234"
             });
@@ -164,10 +165,10 @@ namespace AWSSDKDocSamples.Amazon.EndUserMessaging.Generated
 
         public void EndUserMessagingGetBrandProfile()
         {
-            #region example-1
+            #region GetBrandProfile-1
 
             var client = new AmazonEndUserMessagingClient();
-            var response = client.GetBrandProfile(new GetBrandProfileRequest 
+            var response = client.GetBrandProfile(new GetBrandProfileRequest
             {
                 BrandProfileId = "bp-abc12345678901234"
             });
@@ -175,62 +176,62 @@ namespace AWSSDKDocSamples.Amazon.EndUserMessaging.Generated
             string brandProfileArn = response.BrandProfileArn;
             string brandProfileId = response.BrandProfileId;
             string brandProfileName = response.BrandProfileName;
-            DateTime createdAt = response.CreatedAt;
-            bool deletionProtectionEnabled = response.DeletionProtectionEnabled;
-            string status = response.Status;
-            DateTime updatedAt = response.UpdatedAt;
+            DateTime? createdAt = response.CreatedAt;
+            bool? deletionProtectionEnabled = response.DeletionProtectionEnabled;
+            Status status = response.Status;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void EndUserMessagingGetBrandProfileAttribute()
         {
-            #region example-1
+            #region GetBrandProfileAttribute-1
 
             var client = new AmazonEndUserMessagingClient();
-            var response = client.GetBrandProfileAttribute(new GetBrandProfileAttributeRequest 
+            var response = client.GetBrandProfileAttribute(new GetBrandProfileAttributeRequest
             {
                 AttributeName = "SupportEmail",
                 BrandProfileId = "bp-abc12345678901234"
             });
 
             string attributeName = response.AttributeName;
-            string attributeType = response.AttributeType;
+            BrandProfileAttributeType attributeType = response.AttributeType;
             string attributeValue = response.AttributeValue;
             string category = response.Category;
-            DateTime createdAt = response.CreatedAt;
-            DateTime updatedAt = response.UpdatedAt;
+            DateTime? createdAt = response.CreatedAt;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void EndUserMessagingGetJob()
         {
-            #region example-1
+            #region GetJob-1
 
             var client = new AmazonEndUserMessagingClient();
-            var response = client.GetJob(new GetJobRequest 
+            var response = client.GetJob(new GetJobRequest
             {
                 JobId = "job-abc12345678901234"
             });
 
             string brandProfileId = response.BrandProfileId;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string jobId = response.JobId;
             string operationType = response.OperationType;
             List<JobResource> resources = response.Resources;
-            string status = response.Status;
-            DateTime updatedAt = response.UpdatedAt;
+            JobStatus status = response.Status;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void EndUserMessagingGetNotifyCodeConfiguration()
         {
-            #region example-1
+            #region GetNotifyCodeConfiguration-1
 
             var client = new AmazonEndUserMessagingClient();
-            var response = client.GetNotifyCodeConfiguration(new GetNotifyCodeConfigurationRequest 
+            var response = client.GetNotifyCodeConfiguration(new GetNotifyCodeConfigurationRequest
             {
                 NotifyCodeConfigurationId = "ncc-abc12345678901234"
             });
@@ -242,10 +243,10 @@ namespace AWSSDKDocSamples.Amazon.EndUserMessaging.Generated
 
         public void EndUserMessagingListBrandProfileAttributes()
         {
-            #region example-1
+            #region ListBrandProfileAttributes-1
 
             var client = new AmazonEndUserMessagingClient();
-            var response = client.ListBrandProfileAttributes(new ListBrandProfileAttributesRequest 
+            var response = client.ListBrandProfileAttributes(new ListBrandProfileAttributesRequest
             {
                 BrandProfileId = "bp-abc12345678901234",
                 MaxResults = 10
@@ -258,10 +259,10 @@ namespace AWSSDKDocSamples.Amazon.EndUserMessaging.Generated
 
         public void EndUserMessagingListBrandProfiles()
         {
-            #region example-1
+            #region ListBrandProfiles-1
 
             var client = new AmazonEndUserMessagingClient();
-            var response = client.ListBrandProfiles(new ListBrandProfilesRequest 
+            var response = client.ListBrandProfiles(new ListBrandProfilesRequest
             {
                 MaxResults = 10
             });
@@ -273,10 +274,10 @@ namespace AWSSDKDocSamples.Amazon.EndUserMessaging.Generated
 
         public void EndUserMessagingListJobs()
         {
-            #region example-1
+            #region ListJobs-1
 
             var client = new AmazonEndUserMessagingClient();
-            var response = client.ListJobs(new ListJobsRequest 
+            var response = client.ListJobs(new ListJobsRequest
             {
                 MaxResults = 10,
                 Status = "SUCCESS"
@@ -289,10 +290,10 @@ namespace AWSSDKDocSamples.Amazon.EndUserMessaging.Generated
 
         public void EndUserMessagingListNotifyCodeConfigurations()
         {
-            #region example-1
+            #region ListNotifyCodeConfigurations-1
 
             var client = new AmazonEndUserMessagingClient();
-            var response = client.ListNotifyCodeConfigurations(new ListNotifyCodeConfigurationsRequest 
+            var response = client.ListNotifyCodeConfigurations(new ListNotifyCodeConfigurationsRequest
             {
                 MaxResults = 10
             });
@@ -304,10 +305,10 @@ namespace AWSSDKDocSamples.Amazon.EndUserMessaging.Generated
 
         public void EndUserMessagingListRegistrationsFromBrandProfile()
         {
-            #region example-1
+            #region ListRegistrationsFromBrandProfile-1
 
             var client = new AmazonEndUserMessagingClient();
-            var response = client.ListRegistrationsFromBrandProfile(new ListRegistrationsFromBrandProfileRequest 
+            var response = client.ListRegistrationsFromBrandProfile(new ListRegistrationsFromBrandProfileRequest
             {
                 BrandProfileId = "bp-abc12345678901234",
                 MaxResults = 10
@@ -320,10 +321,10 @@ namespace AWSSDKDocSamples.Amazon.EndUserMessaging.Generated
 
         public void EndUserMessagingListTagsForResource()
         {
-            #region example-1
+            #region ListTagsForResource-1
 
             var client = new AmazonEndUserMessagingClient();
-            var response = client.ListTagsForResource(new ListTagsForResourceRequest 
+            var response = client.ListTagsForResource(new ListTagsForResourceRequest
             {
                 ResourceArn = "arn:aws:end-user-messaging:us-east-1:123456789012:brand-profile/bp-abc12345678901234"
             });
@@ -335,10 +336,10 @@ namespace AWSSDKDocSamples.Amazon.EndUserMessaging.Generated
 
         public void EndUserMessagingSendNotifyCodeVerification()
         {
-            #region example-1
+            #region SendNotifyCodeVerification-1
 
             var client = new AmazonEndUserMessagingClient();
-            var response = client.SendNotifyCodeVerification(new SendNotifyCodeVerificationRequest 
+            var response = client.SendNotifyCodeVerification(new SendNotifyCodeVerificationRequest
             {
                 Channel = "TEXT",
                 DestinationIdentity = "+14255550100",
@@ -355,10 +356,10 @@ namespace AWSSDKDocSamples.Amazon.EndUserMessaging.Generated
 
         public void EndUserMessagingTagResource()
         {
-            #region example-1
+            #region TagResource-1
 
             var client = new AmazonEndUserMessagingClient();
-            var response = client.TagResource(new TagResourceRequest 
+            var response = client.TagResource(new TagResourceRequest
             {
                 ResourceArn = "arn:aws:end-user-messaging:us-east-1:123456789012:brand-profile/bp-abc12345678901234",
                 Tags = new List<Tag> {
@@ -375,10 +376,10 @@ namespace AWSSDKDocSamples.Amazon.EndUserMessaging.Generated
 
         public void EndUserMessagingUntagResource()
         {
-            #region example-1
+            #region UntagResource-1
 
             var client = new AmazonEndUserMessagingClient();
-            var response = client.UntagResource(new UntagResourceRequest 
+            var response = client.UntagResource(new UntagResourceRequest
             {
                 ResourceArn = "arn:aws:end-user-messaging:us-east-1:123456789012:brand-profile/bp-abc12345678901234",
                 TagKeys = new List<string> {
@@ -392,10 +393,10 @@ namespace AWSSDKDocSamples.Amazon.EndUserMessaging.Generated
 
         public void EndUserMessagingUpdateBrandProfile()
         {
-            #region example-1
+            #region UpdateBrandProfile-1
 
             var client = new AmazonEndUserMessagingClient();
-            var response = client.UpdateBrandProfile(new UpdateBrandProfileRequest 
+            var response = client.UpdateBrandProfile(new UpdateBrandProfileRequest
             {
                 BrandProfileId = "bp-abc12345678901234",
                 BrandProfileName = "AcmeCorpUpdated",
@@ -405,20 +406,20 @@ namespace AWSSDKDocSamples.Amazon.EndUserMessaging.Generated
             string brandProfileArn = response.BrandProfileArn;
             string brandProfileId = response.BrandProfileId;
             string brandProfileName = response.BrandProfileName;
-            DateTime createdAt = response.CreatedAt;
-            bool deletionProtectionEnabled = response.DeletionProtectionEnabled;
-            string status = response.Status;
-            DateTime updatedAt = response.UpdatedAt;
+            DateTime? createdAt = response.CreatedAt;
+            bool? deletionProtectionEnabled = response.DeletionProtectionEnabled;
+            Status status = response.Status;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void EndUserMessagingUpdateBrandProfileAttribute()
         {
-            #region example-1
+            #region UpdateBrandProfileAttribute-1
 
             var client = new AmazonEndUserMessagingClient();
-            var response = client.UpdateBrandProfileAttribute(new UpdateBrandProfileAttributeRequest 
+            var response = client.UpdateBrandProfileAttribute(new UpdateBrandProfileAttributeRequest
             {
                 AttributeName = "SupportEmail",
                 AttributeValue = "help@example.com",
@@ -427,21 +428,21 @@ namespace AWSSDKDocSamples.Amazon.EndUserMessaging.Generated
             });
 
             string attributeName = response.AttributeName;
-            string attributeType = response.AttributeType;
+            BrandProfileAttributeType attributeType = response.AttributeType;
             string attributeValue = response.AttributeValue;
             string category = response.Category;
-            DateTime createdAt = response.CreatedAt;
-            DateTime updatedAt = response.UpdatedAt;
+            DateTime? createdAt = response.CreatedAt;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void EndUserMessagingUpdateBrandProfileFromRegistration()
         {
-            #region example-1
+            #region UpdateBrandProfileFromRegistration-1
 
             var client = new AmazonEndUserMessagingClient();
-            var response = client.UpdateBrandProfileFromRegistration(new UpdateBrandProfileFromRegistrationRequest 
+            var response = client.UpdateBrandProfileFromRegistration(new UpdateBrandProfileFromRegistrationRequest
             {
                 BrandProfileId = "bp-abc12345678901234",
                 OnAttributeConflict = "REPLACE",
@@ -456,10 +457,10 @@ namespace AWSSDKDocSamples.Amazon.EndUserMessaging.Generated
 
         public void EndUserMessagingUpdateNotifyCodeConfiguration()
         {
-            #region example-1
+            #region UpdateNotifyCodeConfiguration-1
 
             var client = new AmazonEndUserMessagingClient();
-            var response = client.UpdateNotifyCodeConfiguration(new UpdateNotifyCodeConfigurationRequest 
+            var response = client.UpdateNotifyCodeConfiguration(new UpdateNotifyCodeConfigurationRequest
             {
                 CodeConfigurationParameters = new UpdateCodeConfigurationParameters {
                     CodeLength = 8,
@@ -475,10 +476,10 @@ namespace AWSSDKDocSamples.Amazon.EndUserMessaging.Generated
 
         public void EndUserMessagingUpdateRegistrationsFromBrandProfile()
         {
-            #region example-1
+            #region UpdateRegistrationsFromBrandProfile-1
 
             var client = new AmazonEndUserMessagingClient();
-            var response = client.UpdateRegistrationsFromBrandProfile(new UpdateRegistrationsFromBrandProfileRequest 
+            var response = client.UpdateRegistrationsFromBrandProfile(new UpdateRegistrationsFromBrandProfileRequest
             {
                 BrandProfileId = "bp-abc12345678901234",
                 OnAttributeConflict = "PRESERVE",
@@ -495,28 +496,25 @@ namespace AWSSDKDocSamples.Amazon.EndUserMessaging.Generated
 
         public void EndUserMessagingValidateNotifyCodeVerification()
         {
-            #region example-1
+            #region ValidateNotifyCodeVerification-1
 
             var client = new AmazonEndUserMessagingClient();
-            var response = client.ValidateNotifyCodeVerification(new ValidateNotifyCodeVerificationRequest 
+            var response = client.ValidateNotifyCodeVerification(new ValidateNotifyCodeVerificationRequest
             {
                 Code = "123456",
                 DestinationIdentity = "+14255550100",
                 ReferenceId = "signup-flow-42"
             });
 
-            string status = response.Status;
+            VerificationStatus status = response.Status;
 
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

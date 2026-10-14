@@ -1,0 +1,115 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Translate.Model
+{
+    /// <summary>
+    /// This is the response object from the GetParallelData operation.
+    /// </summary>
+    public partial class GetParallelDataResponse : AmazonWebServiceResponse
+    {
+        /// <summary>
+        /// Gets and sets the property AuxiliaryDataLocation. 
+        /// <para>
+        /// The Amazon S3 location of a file that provides any errors or warnings that were produced
+        /// by your input file. This file was created when Amazon Translate attempted to create
+        /// a parallel data resource. The location is returned as a presigned URL to that has
+        /// a 30-minute expiration.
+        /// </para>
+        /// </summary>
+        public ParallelDataDataLocation AuxiliaryDataLocation { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AuxiliaryDataLocation property is set.
+        /// </summary>
+        internal bool IsSetAuxiliaryDataLocation() => this.AuxiliaryDataLocation != null;
+
+        /// <summary>
+        /// Gets and sets the property DataLocation. 
+        /// <para>
+        /// The Amazon S3 location of the most recent parallel data input file that was successfully
+        /// imported into Amazon Translate. The location is returned as a presigned URL that has
+        /// a 30-minute expiration.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Amazon Translate doesn't scan all input files for the risk of CSV injection attacks.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// CSV injection occurs when a .csv or .tsv file is altered so that a record contains
+        /// malicious code. The record begins with a special character, such as =, +, -, or @.
+        /// When the file is opened in a spreadsheet program, the program might interpret the
+        /// record as a formula and run the code within it.
+        /// </para>
+        ///  
+        /// <para>
+        /// Before you download an input file from Amazon S3, ensure that you recognize the file
+        /// and trust its creator.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public ParallelDataDataLocation DataLocation { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DataLocation property is set.
+        /// </summary>
+        internal bool IsSetDataLocation() => this.DataLocation != null;
+
+        /// <summary>
+        /// Gets and sets the property LatestUpdateAttemptAuxiliaryDataLocation. 
+        /// <para>
+        /// The Amazon S3 location of a file that provides any errors or warnings that were produced
+        /// by your input file. This file was created when Amazon Translate attempted to update
+        /// a parallel data resource. The location is returned as a presigned URL to that has
+        /// a 30-minute expiration.
+        /// </para>
+        /// </summary>
+        public ParallelDataDataLocation LatestUpdateAttemptAuxiliaryDataLocation { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LatestUpdateAttemptAuxiliaryDataLocation property is set.
+        /// </summary>
+        internal bool IsSetLatestUpdateAttemptAuxiliaryDataLocation() => this.LatestUpdateAttemptAuxiliaryDataLocation != null;
+
+        /// <summary>
+        /// Gets and sets the property ParallelDataProperties. 
+        /// <para>
+        /// The properties of the parallel data resource that is being retrieved.
+        /// </para>
+        /// </summary>
+        public ParallelDataProperties ParallelDataProperties { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ParallelDataProperties property is set.
+        /// </summary>
+        internal bool IsSetParallelDataProperties() => this.ParallelDataProperties != null;
+    }
+}

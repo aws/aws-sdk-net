@@ -1,0 +1,59 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.DataSync.Model
+{
+    /// <summary>
+    /// Specifies the level of detail for a particular aspect of your DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">task
+    /// report</a>.
+    /// </summary>
+    public partial class ReportOverride
+    {
+        /// <summary>
+        /// Gets and sets the property ReportLevel. 
+        /// <para>
+        /// Specifies whether your task report includes errors only or successes and errors.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, your report might mostly include only what didn't go well in your transfer
+        /// (<c>ERRORS_ONLY</c>). At the same time, you want to verify that your <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">task
+        /// filter</a> is working correctly. In this situation, you can get a list of what files
+        /// DataSync successfully skipped and if something transferred that you didn't to transfer
+        /// (<c>SUCCESSES_AND_ERRORS</c>).
+        /// </para>
+        /// </summary>
+        public ReportLevel ReportLevel { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ReportLevel property is set.
+        /// </summary>
+        internal bool IsSetReportLevel() => this.ReportLevel != null;
+    }
+}

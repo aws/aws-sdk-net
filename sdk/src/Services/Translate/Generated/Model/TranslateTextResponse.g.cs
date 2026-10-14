@@ -1,0 +1,112 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Translate.Model
+{
+    /// <summary>
+    /// This is the response object from the TranslateText operation.
+    /// </summary>
+    public partial class TranslateTextResponse : AmazonWebServiceResponse
+    {
+        /// <summary>
+        /// Gets and sets the property AppliedSettings. 
+        /// <para>
+        /// Optional settings that modify the translation output.
+        /// </para>
+        /// </summary>
+        public TranslationSettings AppliedSettings { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AppliedSettings property is set.
+        /// </summary>
+        internal bool IsSetAppliedSettings() => this.AppliedSettings != null;
+
+        /// <summary>
+        /// Gets and sets the property AppliedTerminologies. 
+        /// <para>
+        /// The names of the custom terminologies applied to the input text by Amazon Translate
+        /// for the translated text response.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<AppliedTerminology> AppliedTerminologies { get; set; } = AWSConfigs.InitializeCollections ? new List<AppliedTerminology>() : null;
+
+        /// <summary>
+        /// Checks to see if the AppliedTerminologies property is set.
+        /// </summary>
+        internal bool IsSetAppliedTerminologies() => this.AppliedTerminologies != null && (this.AppliedTerminologies.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property SourceLanguageCode. 
+        /// <para>
+        /// The language code for the language of the source text.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 2, Max = 5)]
+        public string SourceLanguageCode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SourceLanguageCode property is set.
+        /// </summary>
+        internal bool IsSetSourceLanguageCode() => this.SourceLanguageCode != null;
+
+        /// <summary>
+        /// Gets and sets the property TargetLanguageCode. 
+        /// <para>
+        /// The language code for the language of the target text. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 2, Max = 5)]
+        public string TargetLanguageCode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TargetLanguageCode property is set.
+        /// </summary>
+        internal bool IsSetTargetLanguageCode() => this.TargetLanguageCode != null;
+
+        /// <summary>
+        /// Gets and sets the property TranslatedText. 
+        /// <para>
+        /// The translated text.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 0, Max = 20000)]
+        public string TranslatedText { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TranslatedText property is set.
+        /// </summary>
+        internal bool IsSetTranslatedText() => this.TranslatedText != null;
+    }
+}

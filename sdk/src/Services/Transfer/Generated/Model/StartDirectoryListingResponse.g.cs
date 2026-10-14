@@ -1,0 +1,66 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Transfer.Model
+{
+    /// <summary>
+    /// This is the response object from the StartDirectoryListing operation.
+    /// </summary>
+    public partial class StartDirectoryListingResponse : AmazonWebServiceResponse
+    {
+        /// <summary>
+        /// Gets and sets the property ListingId. 
+        /// <para>
+        /// Returns a unique identifier for the directory listing call.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 512)]
+        public string ListingId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ListingId property is set.
+        /// </summary>
+        internal bool IsSetListingId() => this.ListingId != null;
+
+        /// <summary>
+        /// Gets and sets the property OutputFileName. 
+        /// <para>
+        /// Returns the file name where the results are stored. This is a combination of the connector
+        /// ID and the listing ID: <c>&lt;connector-id&gt;-&lt;listing-id&gt;.json</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 26, Max = 537)]
+        public string OutputFileName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OutputFileName property is set.
+        /// </summary>
+        internal bool IsSetOutputFileName() => this.OutputFileName != null;
+    }
+}

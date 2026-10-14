@@ -1,0 +1,151 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.ServiceCatalog.Model
+{
+    /// <summary>
+    /// Container for the parameters to the ImportAsProvisionedProduct operation. Requests
+    /// the import of a resource as an Service Catalog provisioned product that is associated
+    /// to an Service Catalog product and provisioning artifact. Once imported, all supported
+    /// governance actions are supported on the provisioned product. <para> Resource import
+    /// only supports CloudFormation stack ARNs. CloudFormation StackSets, and non-root nested
+    /// stacks, are not supported. </para> <para> The CloudFormation stack must have one of
+    /// the following statuses to be imported: <c>CREATE_COMPLETE</c>, <c>UPDATE_COMPLETE</c>,
+    /// <c>UPDATE_ROLLBACK_COMPLETE</c>, <c>IMPORT_COMPLETE</c>, and <c>IMPORT_ROLLBACK_COMPLETE</c>.
+    /// </para> <para> Import of the resource requires that the CloudFormation stack template
+    /// matches the associated Service Catalog product provisioning artifact. </para> <note>
+    /// <para> When you import an existing CloudFormation stack into a portfolio, Service
+    /// Catalog does not apply the product's associated constraints during the import process.
+    /// Service Catalog applies the constraints after you call <c>UpdateProvisionedProduct</c>
+    /// for the provisioned product. </para> </note> <para> The user or role that performs
+    /// this operation must have the <c>cloudformation:GetTemplate</c> and <c>cloudformation:DescribeStacks</c>
+    /// IAM policy permissions. </para> <para> You can only import one provisioned product
+    /// at a time. The product's CloudFormation stack must have the <c>IMPORT_COMPLETE</c>
+    /// status before you import another. </para>
+    /// </summary>
+    public partial class ImportAsProvisionedProductRequest : AmazonServiceCatalogRequest
+    {
+        /// <summary>
+        /// Gets and sets the property AcceptLanguage. 
+        /// <para>
+        /// The language code.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>jp</c> - Japanese
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>zh</c> - Chinese
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 100)]
+        public string AcceptLanguage { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AcceptLanguage property is set.
+        /// </summary>
+        internal bool IsSetAcceptLanguage() => this.AcceptLanguage != null;
+
+        /// <summary>
+        /// Gets and sets the property IdempotencyToken. 
+        /// <para>
+        /// A unique identifier that you provide to ensure idempotency. If multiple requests differ
+        /// only by the idempotency token, the same response is returned for each repeated request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 128)]
+        public string IdempotencyToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IdempotencyToken property is set.
+        /// </summary>
+        internal bool IsSetIdempotencyToken() => this.IdempotencyToken != null;
+
+        /// <summary>
+        /// Gets and sets the property PhysicalId. 
+        /// <para>
+        /// The unique identifier of the resource to be imported. It only currently supports CloudFormation
+        /// stack IDs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string PhysicalId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PhysicalId property is set.
+        /// </summary>
+        internal bool IsSetPhysicalId() => this.PhysicalId != null;
+
+        /// <summary>
+        /// Gets and sets the property ProductId. 
+        /// <para>
+        /// The product identifier.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 100)]
+        public string ProductId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ProductId property is set.
+        /// </summary>
+        internal bool IsSetProductId() => this.ProductId != null;
+
+        /// <summary>
+        /// Gets and sets the property ProvisionedProductName. 
+        /// <para>
+        /// The user-friendly name of the provisioned product. The value must be unique for the
+        /// Amazon Web Services account. The name cannot be updated after the product is provisioned.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 128)]
+        public string ProvisionedProductName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ProvisionedProductName property is set.
+        /// </summary>
+        internal bool IsSetProvisionedProductName() => this.ProvisionedProductName != null;
+
+        /// <summary>
+        /// Gets and sets the property ProvisioningArtifactId. 
+        /// <para>
+        /// The identifier of the provisioning artifact.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 100)]
+        public string ProvisioningArtifactId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ProvisioningArtifactId property is set.
+        /// </summary>
+        internal bool IsSetProvisioningArtifactId() => this.ProvisioningArtifactId != null;
+    }
+}

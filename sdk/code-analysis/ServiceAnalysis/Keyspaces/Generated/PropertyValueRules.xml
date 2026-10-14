@@ -4,13 +4,13 @@
     <property>Amazon.Keyspaces.Model.CreateKeyspaceRequest.KeyspaceName</property>
     <min>1</min>
     <max>48</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.CreateKeyspaceResponse.ResourceArn</property>
     <min>20</min>
     <max>1000</max>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.CreateTableRequest.DefaultTimeToLive</property>
@@ -21,25 +21,25 @@
     <property>Amazon.Keyspaces.Model.CreateTableRequest.KeyspaceName</property>
     <min>1</min>
     <max>48</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.CreateTableRequest.TableName</property>
     <min>1</min>
     <max>48</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.CreateTableResponse.ResourceArn</property>
     <min>20</min>
     <max>1000</max>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.CreateTypeRequest.KeyspaceName</property>
     <min>1</min>
     <max>48</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.CreateTypeRequest.TypeName</property>
@@ -50,7 +50,7 @@
     <property>Amazon.Keyspaces.Model.CreateTypeResponse.KeyspaceArn</property>
     <min>20</min>
     <max>1000</max>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.CreateTypeResponse.TypeName</property>
@@ -61,25 +61,25 @@
     <property>Amazon.Keyspaces.Model.DeleteKeyspaceRequest.KeyspaceName</property>
     <min>1</min>
     <max>48</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.DeleteTableRequest.KeyspaceName</property>
     <min>1</min>
     <max>48</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.DeleteTableRequest.TableName</property>
     <min>1</min>
     <max>48</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.DeleteTypeRequest.KeyspaceName</property>
     <min>1</min>
     <max>48</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.DeleteTypeRequest.TypeName</property>
@@ -90,7 +90,7 @@
     <property>Amazon.Keyspaces.Model.DeleteTypeResponse.KeyspaceArn</property>
     <min>20</min>
     <max>1000</max>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.DeleteTypeResponse.TypeName</property>
@@ -101,13 +101,13 @@
     <property>Amazon.Keyspaces.Model.GetKeyspaceRequest.KeyspaceName</property>
     <min>1</min>
     <max>48</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.GetKeyspaceResponse.KeyspaceName</property>
     <min>1</min>
     <max>48</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.GetKeyspaceResponse.ReplicationStrategy</property>
@@ -118,19 +118,19 @@
     <property>Amazon.Keyspaces.Model.GetKeyspaceResponse.ResourceArn</property>
     <min>20</min>
     <max>1000</max>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.GetTableRequest.KeyspaceName</property>
     <min>1</min>
     <max>48</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.GetTableRequest.TableName</property>
     <min>1</min>
     <max>48</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.GetTableResponse.DefaultTimeToLive</property>
@@ -141,61 +141,61 @@
     <property>Amazon.Keyspaces.Model.GetTableResponse.KeyspaceName</property>
     <min>1</min>
     <max>48</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.GetTableResponse.LatestStreamArn</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.GetTableResponse.ResourceArn</property>
     <min>20</min>
     <max>1000</max>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.GetTableResponse.TableName</property>
     <min>1</min>
     <max>48</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.GetTableAutoScalingSettingsRequest.KeyspaceName</property>
     <min>1</min>
     <max>48</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.GetTableAutoScalingSettingsRequest.TableName</property>
     <min>1</min>
     <max>48</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.GetTableAutoScalingSettingsResponse.KeyspaceName</property>
     <min>1</min>
     <max>48</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.GetTableAutoScalingSettingsResponse.ResourceArn</property>
     <min>20</min>
     <max>1000</max>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.GetTableAutoScalingSettingsResponse.TableName</property>
     <min>1</min>
     <max>48</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.GetTypeRequest.KeyspaceName</property>
     <min>1</min>
     <max>48</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.GetTypeRequest.TypeName</property>
@@ -206,13 +206,13 @@
     <property>Amazon.Keyspaces.Model.GetTypeResponse.KeyspaceArn</property>
     <min>20</min>
     <max>1000</max>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.GetTypeResponse.KeyspaceName</property>
     <min>1</min>
     <max>48</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.GetTypeResponse.TypeName</property>
@@ -238,7 +238,7 @@
     <property>Amazon.Keyspaces.Model.ListTablesRequest.KeyspaceName</property>
     <min>1</min>
     <max>48</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.ListTablesRequest.MaxResults</property>
@@ -269,7 +269,7 @@
     <property>Amazon.Keyspaces.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>1000</max>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.ListTagsForResourceResponse.NextToken</property>
@@ -280,7 +280,7 @@
     <property>Amazon.Keyspaces.Model.ListTypesRequest.KeyspaceName</property>
     <min>1</min>
     <max>48</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.ListTypesRequest.MaxResults</property>
@@ -301,55 +301,55 @@
     <property>Amazon.Keyspaces.Model.RestoreTableRequest.SourceKeyspaceName</property>
     <min>1</min>
     <max>48</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.RestoreTableRequest.SourceTableName</property>
     <min>1</min>
     <max>48</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.RestoreTableRequest.TargetKeyspaceName</property>
     <min>1</min>
     <max>48</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.RestoreTableRequest.TargetTableName</property>
     <min>1</min>
     <max>48</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.RestoreTableResponse.RestoredTableARN</property>
     <min>20</min>
     <max>1000</max>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.TagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>1000</max>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.UntagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>1000</max>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.UpdateKeyspaceRequest.KeyspaceName</property>
     <min>1</min>
     <max>48</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.UpdateKeyspaceResponse.ResourceArn</property>
     <min>20</min>
     <max>1000</max>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.UpdateTableRequest.DefaultTimeToLive</property>
@@ -360,19 +360,19 @@
     <property>Amazon.Keyspaces.Model.UpdateTableRequest.KeyspaceName</property>
     <min>1</min>
     <max>48</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.UpdateTableRequest.TableName</property>
     <min>1</min>
     <max>48</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.UpdateTableResponse.ResourceArn</property>
     <min>20</min>
     <max>1000</max>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.AutoScalingSettings.MaximumUnits</property>
@@ -412,7 +412,7 @@
     <property>Amazon.Keyspaces.Model.KeyspaceSummary.KeyspaceName</property>
     <min>1</min>
     <max>48</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.KeyspaceSummary.ReplicationStrategy</property>
@@ -423,7 +423,7 @@
     <property>Amazon.Keyspaces.Model.KeyspaceSummary.ResourceArn</property>
     <min>20</min>
     <max>1000</max>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.ReplicaAutoScalingSpecification.Region</property>
@@ -453,7 +453,7 @@
     <property>Amazon.Keyspaces.Model.ReplicationGroupStatus.TablesReplicationProgress</property>
     <min>2</min>
     <max>7</max>
-    <pattern>[0-9]{1,3}(?:[.][0-9]{1,2})?%</pattern>
+    <pattern>^[0-9]{1,3}(?:[.][0-9]{1,2})?%$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.ReplicationSpecification.ReplicationStrategy</property>
@@ -464,25 +464,25 @@
     <property>Amazon.Keyspaces.Model.ResourceNotFoundException.ResourceArn</property>
     <min>20</min>
     <max>1000</max>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.TableSummary.KeyspaceName</property>
     <min>1</min>
     <max>48</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.TableSummary.ResourceArn</property>
     <min>20</min>
     <max>1000</max>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.TableSummary.TableName</property>
     <min>1</min>
     <max>48</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.Tag.Key</property>

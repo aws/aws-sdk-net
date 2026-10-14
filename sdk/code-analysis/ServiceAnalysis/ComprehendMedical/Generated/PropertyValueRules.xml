@@ -183,7 +183,7 @@
     <property>Amazon.ComprehendMedical.Model.StartEntitiesDetectionV2JobRequest.DataAccessRoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ComprehendMedical.Model.StartEntitiesDetectionV2JobRequest.JobName</property>
@@ -213,7 +213,7 @@
     <property>Amazon.ComprehendMedical.Model.StartICD10CMInferenceJobRequest.DataAccessRoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ComprehendMedical.Model.StartICD10CMInferenceJobRequest.JobName</property>
@@ -243,7 +243,7 @@
     <property>Amazon.ComprehendMedical.Model.StartPHIDetectionJobRequest.DataAccessRoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ComprehendMedical.Model.StartPHIDetectionJobRequest.JobName</property>
@@ -273,7 +273,7 @@
     <property>Amazon.ComprehendMedical.Model.StartRxNormInferenceJobRequest.DataAccessRoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ComprehendMedical.Model.StartRxNormInferenceJobRequest.JobName</property>
@@ -303,7 +303,7 @@
     <property>Amazon.ComprehendMedical.Model.StartSNOMEDCTInferenceJobRequest.DataAccessRoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ComprehendMedical.Model.StartSNOMEDCTInferenceJobRequest.JobName</property>
@@ -397,7 +397,7 @@
     <property>Amazon.ComprehendMedical.Model.ComprehendMedicalAsyncJobProperties.DataAccessRoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ComprehendMedical.Model.ComprehendMedicalAsyncJobProperties.JobId</property>
@@ -451,6 +451,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ComprehendMedical.Model.InputDataConfig.S3Key</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -462,6 +463,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ComprehendMedical.Model.OutputDataConfig.S3Key</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*</pattern>
   </property-value-rule>

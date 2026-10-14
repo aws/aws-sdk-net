@@ -1,0 +1,76 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.NetworkFirewall.Model
+{
+    /// <summary>
+    /// Additional settings for a stateful rule. This is part of the <a>StatefulRule</a> configuration.
+    /// </summary>
+    public partial class RuleOption
+    {
+        /// <summary>
+        /// Gets and sets the property Keyword. 
+        /// <para>
+        /// The keyword for the Suricata compatible rule option. You must include a <c>sid</c>
+        /// (signature ID), and can optionally include other keywords. For information about Suricata
+        /// compatible keywords, see <a href="https://suricata.readthedocs.io/en/suricata-7.0.8/rules/intro.html#rule-options">Rule
+        /// options</a> in the Suricata documentation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 128)]
+        public string Keyword { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Keyword property is set.
+        /// </summary>
+        internal bool IsSetKeyword() => this.Keyword != null;
+
+        /// <summary>
+        /// Gets and sets the property Settings. 
+        /// <para>
+        /// The settings of the Suricata compatible rule option. Rule options have zero or more
+        /// setting values, and the number of possible and required settings depends on the <c>Keyword</c>.
+        /// For more information about the settings for specific options, see <a href="https://suricata.readthedocs.io/en/suricata-7.0.8/rules/intro.html#rule-options">Rule
+        /// options</a>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> Settings { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the Settings property is set.
+        /// </summary>
+        internal bool IsSetSettings() => this.Settings != null && (this.Settings.Count > 0 || !AWSConfigs.InitializeCollections);
+    }
+}

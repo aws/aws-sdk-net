@@ -1,0 +1,110 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.TranscribeService.Model
+{
+    /// <summary>
+    /// Contains the Amazon S3 location of the training data you want to use to create a new
+    /// custom language model, and permissions to access this location.
+    /// 
+    ///  
+    /// <para>
+    /// When using <c>InputDataConfig</c>, you must include these sub-parameters: <c>S3Uri</c>
+    /// and <c>DataAccessRoleArn</c>. You can optionally include <c>TuningDataS3Uri</c>.
+    /// </para>
+    /// </summary>
+    public partial class InputDataConfig
+    {
+        /// <summary>
+        /// Gets and sets the property DataAccessRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon
+        /// S3 bucket that contains your input files. If the role that you specify doesn’t have
+        /// the appropriate permissions to access the specified Amazon S3 location, your request
+        /// fails.
+        /// </para>
+        ///  
+        /// <para>
+        /// IAM role ARNs have the format <c>arn:partition:iam::account:role/role-name-with-path</c>.
+        /// For example: <c>arn:aws:iam::111122223333:role/Admin</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
+        /// ARNs</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 20, Max = 2048)]
+        public string DataAccessRoleArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DataAccessRoleArn property is set.
+        /// </summary>
+        internal bool IsSetDataAccessRoleArn() => this.DataAccessRoleArn != null;
+
+        /// <summary>
+        /// Gets and sets the property S3Uri. 
+        /// <para>
+        /// The Amazon S3 location (URI) of the text files you want to use to train your custom
+        /// language model.
+        /// </para>
+        ///  
+        /// <para>
+        /// Here's an example URI path: <c>s3://DOC-EXAMPLE-BUCKET/my-model-training-data/</c>
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 2000)]
+        public string S3Uri { get; set; }
+
+        /// <summary>
+        /// Checks to see if the S3Uri property is set.
+        /// </summary>
+        internal bool IsSetS3Uri() => this.S3Uri != null;
+
+        /// <summary>
+        /// Gets and sets the property TuningDataS3Uri. 
+        /// <para>
+        /// The Amazon S3 location (URI) of the text files you want to use to tune your custom
+        /// language model.
+        /// </para>
+        ///  
+        /// <para>
+        /// Here's an example URI path: <c>s3://DOC-EXAMPLE-BUCKET/my-model-tuning-data/</c> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2000)]
+        public string TuningDataS3Uri { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TuningDataS3Uri property is set.
+        /// </summary>
+        internal bool IsSetTuningDataS3Uri() => this.TuningDataS3Uri != null;
+    }
+}

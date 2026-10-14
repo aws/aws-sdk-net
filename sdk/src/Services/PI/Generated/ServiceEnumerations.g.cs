@@ -1,0 +1,468 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using Amazon.Runtime;
+
+namespace Amazon.PI
+{
+    /// <summary>
+    /// Constants used for properties of type AcceptLanguage.
+    /// </summary>
+    public class AcceptLanguage : ConstantClass
+    {
+        /// <summary>
+        /// Constant EN_US for AcceptLanguage
+        /// </summary>
+        public static readonly AcceptLanguage EN_US = new AcceptLanguage("EN_US");
+
+        /// <summary>
+        /// Constructs a custom AcceptLanguage for a value not among the defined constants.
+        /// </summary>
+        public AcceptLanguage(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AcceptLanguage FindValue(string value)
+        {
+            return FindValue<AcceptLanguage>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AcceptLanguage(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AnalysisStatus.
+    /// </summary>
+    public class AnalysisStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant FAILED for AnalysisStatus
+        /// </summary>
+        public static readonly AnalysisStatus FAILED = new AnalysisStatus("FAILED");
+
+        /// <summary>
+        /// Constant RUNNING for AnalysisStatus
+        /// </summary>
+        public static readonly AnalysisStatus RUNNING = new AnalysisStatus("RUNNING");
+
+        /// <summary>
+        /// Constant SUCCEEDED for AnalysisStatus
+        /// </summary>
+        public static readonly AnalysisStatus SUCCEEDED = new AnalysisStatus("SUCCEEDED");
+
+        /// <summary>
+        /// Constructs a custom AnalysisStatus for a value not among the defined constants.
+        /// </summary>
+        public AnalysisStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalysisStatus FindValue(string value)
+        {
+            return FindValue<AnalysisStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalysisStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ContextType.
+    /// </summary>
+    public class ContextType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CAUSAL for ContextType
+        /// </summary>
+        public static readonly ContextType CAUSAL = new ContextType("CAUSAL");
+
+        /// <summary>
+        /// Constant CONTEXTUAL for ContextType
+        /// </summary>
+        public static readonly ContextType CONTEXTUAL = new ContextType("CONTEXTUAL");
+
+        /// <summary>
+        /// Constructs a custom ContextType for a value not among the defined constants.
+        /// </summary>
+        public ContextType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContextType FindValue(string value)
+        {
+            return FindValue<ContextType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContextType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DetailStatus.
+    /// </summary>
+    public class DetailStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant AVAILABLE for DetailStatus
+        /// </summary>
+        public static readonly DetailStatus AVAILABLE = new DetailStatus("AVAILABLE");
+
+        /// <summary>
+        /// Constant PROCESSING for DetailStatus
+        /// </summary>
+        public static readonly DetailStatus PROCESSING = new DetailStatus("PROCESSING");
+
+        /// <summary>
+        /// Constant UNAVAILABLE for DetailStatus
+        /// </summary>
+        public static readonly DetailStatus UNAVAILABLE = new DetailStatus("UNAVAILABLE");
+
+        /// <summary>
+        /// Constructs a custom DetailStatus for a value not among the defined constants.
+        /// </summary>
+        public DetailStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DetailStatus FindValue(string value)
+        {
+            return FindValue<DetailStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DetailStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FeatureStatus.
+    /// </summary>
+    public class FeatureStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for FeatureStatus
+        /// </summary>
+        public static readonly FeatureStatus DISABLED = new FeatureStatus("DISABLED");
+
+        /// <summary>
+        /// Constant DISABLED_PENDING_REBOOT for FeatureStatus
+        /// </summary>
+        public static readonly FeatureStatus DISABLED_PENDING_REBOOT = new FeatureStatus("DISABLED_PENDING_REBOOT");
+
+        /// <summary>
+        /// Constant ENABLED for FeatureStatus
+        /// </summary>
+        public static readonly FeatureStatus ENABLED = new FeatureStatus("ENABLED");
+
+        /// <summary>
+        /// Constant ENABLED_PENDING_REBOOT for FeatureStatus
+        /// </summary>
+        public static readonly FeatureStatus ENABLED_PENDING_REBOOT = new FeatureStatus("ENABLED_PENDING_REBOOT");
+
+        /// <summary>
+        /// Constant UNKNOWN for FeatureStatus
+        /// </summary>
+        public static readonly FeatureStatus UNKNOWN = new FeatureStatus("UNKNOWN");
+
+        /// <summary>
+        /// Constant UNSUPPORTED for FeatureStatus
+        /// </summary>
+        public static readonly FeatureStatus UNSUPPORTED = new FeatureStatus("UNSUPPORTED");
+
+        /// <summary>
+        /// Constructs a custom FeatureStatus for a value not among the defined constants.
+        /// </summary>
+        public FeatureStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FeatureStatus FindValue(string value)
+        {
+            return FindValue<FeatureStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FeatureStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FineGrainedAction.
+    /// </summary>
+    public class FineGrainedAction : ConstantClass
+    {
+        /// <summary>
+        /// Constant DescribeDimensionKeys for FineGrainedAction
+        /// </summary>
+        public static readonly FineGrainedAction DescribeDimensionKeys = new FineGrainedAction("DescribeDimensionKeys");
+
+        /// <summary>
+        /// Constant GetDimensionKeyDetails for FineGrainedAction
+        /// </summary>
+        public static readonly FineGrainedAction GetDimensionKeyDetails = new FineGrainedAction("GetDimensionKeyDetails");
+
+        /// <summary>
+        /// Constant GetResourceMetrics for FineGrainedAction
+        /// </summary>
+        public static readonly FineGrainedAction GetResourceMetrics = new FineGrainedAction("GetResourceMetrics");
+
+        /// <summary>
+        /// Constructs a custom FineGrainedAction for a value not among the defined constants.
+        /// </summary>
+        public FineGrainedAction(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FineGrainedAction FindValue(string value)
+        {
+            return FindValue<FineGrainedAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FineGrainedAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PeriodAlignment.
+    /// </summary>
+    public class PeriodAlignment : ConstantClass
+    {
+        /// <summary>
+        /// Constant END_TIME for PeriodAlignment
+        /// </summary>
+        public static readonly PeriodAlignment END_TIME = new PeriodAlignment("END_TIME");
+
+        /// <summary>
+        /// Constant START_TIME for PeriodAlignment
+        /// </summary>
+        public static readonly PeriodAlignment START_TIME = new PeriodAlignment("START_TIME");
+
+        /// <summary>
+        /// Constructs a custom PeriodAlignment for a value not among the defined constants.
+        /// </summary>
+        public PeriodAlignment(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PeriodAlignment FindValue(string value)
+        {
+            return FindValue<PeriodAlignment>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PeriodAlignment(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ServiceType.
+    /// </summary>
+    public class ServiceType : ConstantClass
+    {
+        /// <summary>
+        /// Constant DOCDB for ServiceType
+        /// </summary>
+        public static readonly ServiceType DOCDB = new ServiceType("DOCDB");
+
+        /// <summary>
+        /// Constant RDS for ServiceType
+        /// </summary>
+        public static readonly ServiceType RDS = new ServiceType("RDS");
+
+        /// <summary>
+        /// Constructs a custom ServiceType for a value not among the defined constants.
+        /// </summary>
+        public ServiceType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceType FindValue(string value)
+        {
+            return FindValue<ServiceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type Severity.
+    /// </summary>
+    public class Severity : ConstantClass
+    {
+        /// <summary>
+        /// Constant HIGH for Severity
+        /// </summary>
+        public static readonly Severity HIGH = new Severity("HIGH");
+
+        /// <summary>
+        /// Constant LOW for Severity
+        /// </summary>
+        public static readonly Severity LOW = new Severity("LOW");
+
+        /// <summary>
+        /// Constant MEDIUM for Severity
+        /// </summary>
+        public static readonly Severity MEDIUM = new Severity("MEDIUM");
+
+        /// <summary>
+        /// Constructs a custom Severity for a value not among the defined constants.
+        /// </summary>
+        public Severity(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Severity FindValue(string value)
+        {
+            return FindValue<Severity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Severity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TextFormat.
+    /// </summary>
+    public class TextFormat : ConstantClass
+    {
+        /// <summary>
+        /// Constant MARKDOWN for TextFormat
+        /// </summary>
+        public static readonly TextFormat MARKDOWN = new TextFormat("MARKDOWN");
+
+        /// <summary>
+        /// Constant PLAIN_TEXT for TextFormat
+        /// </summary>
+        public static readonly TextFormat PLAIN_TEXT = new TextFormat("PLAIN_TEXT");
+
+        /// <summary>
+        /// Constructs a custom TextFormat for a value not among the defined constants.
+        /// </summary>
+        public TextFormat(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TextFormat FindValue(string value)
+        {
+            return FindValue<TextFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TextFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+}

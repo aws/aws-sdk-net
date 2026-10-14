@@ -1,0 +1,182 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+using System.Buffers;
+
+using Amazon.CodeBuild.Model;
+using System.Globalization;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// UpdateFleet Request Marshaller
+    /// </summary>
+    public partial class UpdateFleetRequestMarshaller : IMarshaller<IRequest, UpdateFleetRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    {
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((UpdateFleetRequest)input);
+        }
+
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(UpdateFleetRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CodeBuild");
+            string target = "CodeBuild_20161006.UpdateFleet";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-10-06";
+            request.HttpMethod = "POST";
+
+            request.ResourcePath = "/";
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using var writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetArn())
+            {
+                context.Writer.WritePropertyName("arn");
+                context.Writer.WriteStringValue(publicRequest.Arn);
+            }
+            if (publicRequest.IsSetBaseCapacity())
+            {
+                context.Writer.WritePropertyName("baseCapacity");
+                context.Writer.WriteNumberValue(publicRequest.BaseCapacity.Value);
+            }
+            if (publicRequest.IsSetComputeConfiguration())
+            {
+                context.Writer.WritePropertyName("computeConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ComputeConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ComputeConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetComputeType())
+            {
+                context.Writer.WritePropertyName("computeType");
+                context.Writer.WriteStringValue(publicRequest.ComputeType);
+            }
+            if (publicRequest.IsSetEnvironmentType())
+            {
+                context.Writer.WritePropertyName("environmentType");
+                context.Writer.WriteStringValue(publicRequest.EnvironmentType);
+            }
+            if (publicRequest.IsSetFleetServiceRole())
+            {
+                context.Writer.WritePropertyName("fleetServiceRole");
+                context.Writer.WriteStringValue(publicRequest.FleetServiceRole);
+            }
+            if (publicRequest.IsSetImageId())
+            {
+                context.Writer.WritePropertyName("imageId");
+                context.Writer.WriteStringValue(publicRequest.ImageId);
+            }
+            if (publicRequest.IsSetOverflowBehavior())
+            {
+                context.Writer.WritePropertyName("overflowBehavior");
+                context.Writer.WriteStringValue(publicRequest.OverflowBehavior);
+            }
+            if (publicRequest.IsSetProxyConfiguration())
+            {
+                context.Writer.WritePropertyName("proxyConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ProxyConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ProxyConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetScalingConfiguration())
+            {
+                context.Writer.WritePropertyName("scalingConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ScalingConfigurationInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ScalingConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetVpcConfig())
+            {
+                context.Writer.WritePropertyName("vpcConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VpcConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.VpcConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETFRAMEWORK
+            request.Content = memoryStream.ToArray();
+#endif
+
+            return request;
+        }
+
+        private static readonly UpdateFleetRequestMarshaller _instance = new();
+
+        internal static UpdateFleetRequestMarshaller GetInstance() => _instance;
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static UpdateFleetRequestMarshaller Instance => _instance;
+    }
+}

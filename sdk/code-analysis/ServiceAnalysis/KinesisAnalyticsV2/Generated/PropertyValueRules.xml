@@ -4,13 +4,13 @@
     <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationCloudWatchLoggingOptionRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationCloudWatchLoggingOptionRequest.ConditionalToken</property>
     <min>1</min>
     <max>512</max>
-    <pattern>[a-zA-Z0-9-_+/=]+</pattern>
+    <pattern>^[a-zA-Z0-9-_+/=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationCloudWatchLoggingOptionRequest.CurrentApplicationVersionId</property>
@@ -21,7 +21,7 @@
     <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationCloudWatchLoggingOptionResponse.ApplicationARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationCloudWatchLoggingOptionResponse.ApplicationVersionId</property>
@@ -37,7 +37,7 @@
     <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationInputRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationInputRequest.CurrentApplicationVersionId</property>
@@ -48,7 +48,7 @@
     <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationInputResponse.ApplicationARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationInputResponse.ApplicationVersionId</property>
@@ -59,7 +59,7 @@
     <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationInputProcessingConfigurationRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationInputProcessingConfigurationRequest.CurrentApplicationVersionId</property>
@@ -70,13 +70,13 @@
     <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationInputProcessingConfigurationRequest.InputId</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationInputProcessingConfigurationResponse.ApplicationARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationInputProcessingConfigurationResponse.ApplicationVersionId</property>
@@ -87,13 +87,13 @@
     <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationInputProcessingConfigurationResponse.InputId</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationOutputRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationOutputRequest.CurrentApplicationVersionId</property>
@@ -104,7 +104,7 @@
     <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationOutputResponse.ApplicationARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationOutputResponse.ApplicationVersionId</property>
@@ -115,7 +115,7 @@
     <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationReferenceDataSourceRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationReferenceDataSourceRequest.CurrentApplicationVersionId</property>
@@ -126,7 +126,7 @@
     <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationReferenceDataSourceResponse.ApplicationARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationReferenceDataSourceResponse.ApplicationVersionId</property>
@@ -137,13 +137,13 @@
     <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationVpcConfigurationRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationVpcConfigurationRequest.ConditionalToken</property>
     <min>1</min>
     <max>512</max>
-    <pattern>[a-zA-Z0-9-_+/=]+</pattern>
+    <pattern>^[a-zA-Z0-9-_+/=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationVpcConfigurationRequest.CurrentApplicationVersionId</property>
@@ -154,7 +154,7 @@
     <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationVpcConfigurationResponse.ApplicationARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.AddApplicationVpcConfigurationResponse.ApplicationVersionId</property>
@@ -175,19 +175,19 @@
     <property>Amazon.KinesisAnalyticsV2.Model.CreateApplicationRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.CreateApplicationRequest.ServiceExecutionRole</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.CreateApplicationPresignedUrlRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.CreateApplicationPresignedUrlRequest.SessionExpirationDurationInSeconds</property>
@@ -203,37 +203,37 @@
     <property>Amazon.KinesisAnalyticsV2.Model.CreateApplicationSnapshotRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.CreateApplicationSnapshotRequest.SnapshotName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationCloudWatchLoggingOptionRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationCloudWatchLoggingOptionRequest.CloudWatchLoggingOptionId</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationCloudWatchLoggingOptionRequest.ConditionalToken</property>
     <min>1</min>
     <max>512</max>
-    <pattern>[a-zA-Z0-9-_+/=]+</pattern>
+    <pattern>^[a-zA-Z0-9-_+/=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationCloudWatchLoggingOptionRequest.CurrentApplicationVersionId</property>
@@ -244,7 +244,7 @@
     <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationCloudWatchLoggingOptionResponse.ApplicationARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationCloudWatchLoggingOptionResponse.ApplicationVersionId</property>
@@ -260,7 +260,7 @@
     <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationInputProcessingConfigurationRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationInputProcessingConfigurationRequest.CurrentApplicationVersionId</property>
@@ -271,13 +271,13 @@
     <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationInputProcessingConfigurationRequest.InputId</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationInputProcessingConfigurationResponse.ApplicationARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationInputProcessingConfigurationResponse.ApplicationVersionId</property>
@@ -288,7 +288,7 @@
     <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationOutputRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationOutputRequest.CurrentApplicationVersionId</property>
@@ -299,13 +299,13 @@
     <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationOutputRequest.OutputId</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationOutputResponse.ApplicationARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationOutputResponse.ApplicationVersionId</property>
@@ -316,7 +316,7 @@
     <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationReferenceDataSourceRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationReferenceDataSourceRequest.CurrentApplicationVersionId</property>
@@ -327,13 +327,13 @@
     <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationReferenceDataSourceRequest.ReferenceId</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationReferenceDataSourceResponse.ApplicationARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationReferenceDataSourceResponse.ApplicationVersionId</property>
@@ -344,25 +344,25 @@
     <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationSnapshotRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationSnapshotRequest.SnapshotName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationVpcConfigurationRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationVpcConfigurationRequest.ConditionalToken</property>
     <min>1</min>
     <max>512</max>
-    <pattern>[a-zA-Z0-9-_+/=]+</pattern>
+    <pattern>^[a-zA-Z0-9-_+/=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationVpcConfigurationRequest.CurrentApplicationVersionId</property>
@@ -373,13 +373,13 @@
     <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationVpcConfigurationRequest.VpcConfigurationId</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationVpcConfigurationResponse.ApplicationARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.DeleteApplicationVpcConfigurationResponse.ApplicationVersionId</property>
@@ -395,13 +395,13 @@
     <property>Amazon.KinesisAnalyticsV2.Model.DescribeApplicationRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.DescribeApplicationOperationRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.DescribeApplicationOperationRequest.OperationId</property>
@@ -412,19 +412,19 @@
     <property>Amazon.KinesisAnalyticsV2.Model.DescribeApplicationSnapshotRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.DescribeApplicationSnapshotRequest.SnapshotName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.DescribeApplicationVersionRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.DescribeApplicationVersionRequest.ApplicationVersionId</property>
@@ -435,19 +435,19 @@
     <property>Amazon.KinesisAnalyticsV2.Model.DiscoverInputSchemaRequest.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.DiscoverInputSchemaRequest.ServiceExecutionRole</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.ListApplicationOperationsRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.ListApplicationOperationsRequest.Limit</property>
@@ -470,27 +470,10 @@
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.KinesisAnalyticsV2.Model.ListApplicationsRequest.Limit</property>
-    <min>1</min>
-    <max>50</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.KinesisAnalyticsV2.Model.ListApplicationsRequest.NextToken</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.KinesisAnalyticsV2.Model.ListApplicationsResponse.NextToken</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.ListApplicationSnapshotsRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.ListApplicationSnapshotsRequest.Limit</property>
@@ -511,7 +494,7 @@
     <property>Amazon.KinesisAnalyticsV2.Model.ListApplicationVersionsRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.ListApplicationVersionsRequest.Limit</property>
@@ -529,16 +512,33 @@
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.ListApplicationsRequest.Limit</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.ListApplicationsRequest.NextToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.ListApplicationsResponse.NextToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.ListTagsForResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.RollbackApplicationRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.RollbackApplicationRequest.CurrentApplicationVersionId</property>
@@ -554,7 +554,7 @@
     <property>Amazon.KinesisAnalyticsV2.Model.StartApplicationRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.StartApplicationResponse.OperationId</property>
@@ -565,7 +565,7 @@
     <property>Amazon.KinesisAnalyticsV2.Model.StopApplicationRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.StopApplicationResponse.OperationId</property>
@@ -576,25 +576,25 @@
     <property>Amazon.KinesisAnalyticsV2.Model.TagResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.UntagResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.UpdateApplicationRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.UpdateApplicationRequest.ConditionalToken</property>
     <min>1</min>
     <max>512</max>
-    <pattern>[a-zA-Z0-9-_+/=]+</pattern>
+    <pattern>^[a-zA-Z0-9-_+/=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.UpdateApplicationRequest.CurrentApplicationVersionId</property>
@@ -605,7 +605,7 @@
     <property>Amazon.KinesisAnalyticsV2.Model.UpdateApplicationRequest.ServiceExecutionRoleUpdate</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.UpdateApplicationResponse.OperationId</property>
@@ -616,19 +616,19 @@
     <property>Amazon.KinesisAnalyticsV2.Model.UpdateApplicationMaintenanceConfigurationRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.UpdateApplicationMaintenanceConfigurationResponse.ApplicationARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.ApplicationDetail.ApplicationARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.ApplicationDetail.ApplicationDescription</property>
@@ -639,7 +639,7 @@
     <property>Amazon.KinesisAnalyticsV2.Model.ApplicationDetail.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.ApplicationDetail.ApplicationVersionId</property>
@@ -665,13 +665,13 @@
     <property>Amazon.KinesisAnalyticsV2.Model.ApplicationDetail.ConditionalToken</property>
     <min>1</min>
     <max>512</max>
-    <pattern>[a-zA-Z0-9-_+/=]+</pattern>
+    <pattern>^[a-zA-Z0-9-_+/=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.ApplicationDetail.ServiceExecutionRole</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.ApplicationEncryptionConfiguration.KeyId</property>
@@ -692,19 +692,19 @@
     <property>Amazon.KinesisAnalyticsV2.Model.ApplicationMaintenanceConfigurationDescription.ApplicationMaintenanceWindowEndTime</property>
     <min>5</min>
     <max>5</max>
-    <pattern>([01][0-9]|2[0-3]):[0-5][0-9]</pattern>
+    <pattern>^([01][0-9]|2[0-3]):[0-5][0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.ApplicationMaintenanceConfigurationDescription.ApplicationMaintenanceWindowStartTime</property>
     <min>5</min>
     <max>5</max>
-    <pattern>([01][0-9]|2[0-3]):[0-5][0-9]</pattern>
+    <pattern>^([01][0-9]|2[0-3]):[0-5][0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.ApplicationMaintenanceConfigurationUpdate.ApplicationMaintenanceWindowStartTimeUpdate</property>
     <min>5</min>
     <max>5</max>
-    <pattern>([01][0-9]|2[0-3]):[0-5][0-9]</pattern>
+    <pattern>^([01][0-9]|2[0-3]):[0-5][0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.ApplicationOperationInfo.Operation</property>
@@ -725,19 +725,19 @@
     <property>Amazon.KinesisAnalyticsV2.Model.ApplicationRestoreConfiguration.SnapshotName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.ApplicationSummary.ApplicationARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.ApplicationSummary.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.ApplicationSummary.ApplicationVersionId</property>
@@ -758,6 +758,16 @@
     <property>Amazon.KinesisAnalyticsV2.Model.ApplicationVersionSummary.ApplicationVersionId</property>
     <min>1</min>
     <max>999999999</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.CSVMappingParameters.RecordColumnDelimiter</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.CSVMappingParameters.RecordRowDelimiter</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.CheckpointConfiguration.CheckpointInterval</property>
@@ -787,37 +797,37 @@
     <property>Amazon.KinesisAnalyticsV2.Model.CloudWatchLoggingOption.LogStreamARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.CloudWatchLoggingOptionDescription.CloudWatchLoggingOptionId</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.CloudWatchLoggingOptionDescription.LogStreamARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.CloudWatchLoggingOptionDescription.RoleARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.CloudWatchLoggingOptionUpdate.CloudWatchLoggingOptionId</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.CloudWatchLoggingOptionUpdate.LogStreamARNUpdate</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.CodeContent.TextContent</property>
@@ -855,16 +865,6 @@
     <max>52428800</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.KinesisAnalyticsV2.Model.CSVMappingParameters.RecordColumnDelimiter</property>
-    <min>1</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.KinesisAnalyticsV2.Model.CSVMappingParameters.RecordRowDelimiter</property>
-    <min>1</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.ErrorInfo.ErrorString</property>
     <min>1</min>
     <max>512</max>
@@ -873,61 +873,61 @@
     <property>Amazon.KinesisAnalyticsV2.Model.GlueDataCatalogConfiguration.DatabaseARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.GlueDataCatalogConfigurationDescription.DatabaseARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.GlueDataCatalogConfigurationUpdate.DatabaseARNUpdate</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.Input.NamePrefix</property>
     <min>1</min>
     <max>32</max>
-    <pattern>[^-\s&lt;&gt;&amp;]*</pattern>
+    <pattern>^[^-\s&lt;&gt;&amp;]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.InputDescription.InputId</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.InputDescription.NamePrefix</property>
     <min>1</min>
     <max>32</max>
-    <pattern>[^-\s&lt;&gt;&amp;]*</pattern>
+    <pattern>^[^-\s&lt;&gt;&amp;]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.InputLambdaProcessor.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.InputLambdaProcessorDescription.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.InputLambdaProcessorDescription.RoleARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.InputLambdaProcessorUpdate.ResourceARNUpdate</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.InputParallelism.Count</property>
@@ -943,19 +943,19 @@
     <property>Amazon.KinesisAnalyticsV2.Model.InputSchemaUpdate.RecordEncodingUpdate</property>
     <min>5</min>
     <max>5</max>
-    <pattern>UTF-8</pattern>
+    <pattern>^UTF-8$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.InputUpdate.InputId</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.InputUpdate.NamePrefixUpdate</property>
     <min>1</min>
     <max>32</max>
-    <pattern>[^-\s&lt;&gt;&amp;]*</pattern>
+    <pattern>^[^-\s&lt;&gt;&amp;]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.JSONMappingParameters.RecordRowPath</property>
@@ -967,139 +967,139 @@
     <property>Amazon.KinesisAnalyticsV2.Model.KinesisFirehoseInput.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.KinesisFirehoseInputDescription.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.KinesisFirehoseInputDescription.RoleARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.KinesisFirehoseInputUpdate.ResourceARNUpdate</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.KinesisFirehoseOutput.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.KinesisFirehoseOutputDescription.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.KinesisFirehoseOutputDescription.RoleARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.KinesisFirehoseOutputUpdate.ResourceARNUpdate</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.KinesisStreamsInput.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.KinesisStreamsInputDescription.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.KinesisStreamsInputDescription.RoleARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.KinesisStreamsInputUpdate.ResourceARNUpdate</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.KinesisStreamsOutput.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.KinesisStreamsOutputDescription.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.KinesisStreamsOutputDescription.RoleARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.KinesisStreamsOutputUpdate.ResourceARNUpdate</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.LambdaOutput.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.LambdaOutputDescription.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.LambdaOutputDescription.RoleARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.LambdaOutputUpdate.ResourceARNUpdate</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.MavenReference.ArtifactId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.MavenReference.GroupId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.MavenReference.Version</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.OperationFailureDetails.RollbackOperationId</property>
@@ -1110,31 +1110,31 @@
     <property>Amazon.KinesisAnalyticsV2.Model.Output.Name</property>
     <min>1</min>
     <max>32</max>
-    <pattern>[^-\s&lt;&gt;&amp;]*</pattern>
+    <pattern>^[^-\s&lt;&gt;&amp;]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.OutputDescription.Name</property>
     <min>1</min>
     <max>32</max>
-    <pattern>[^-\s&lt;&gt;&amp;]*</pattern>
+    <pattern>^[^-\s&lt;&gt;&amp;]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.OutputDescription.OutputId</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.OutputUpdate.NameUpdate</property>
     <min>1</min>
     <max>32</max>
-    <pattern>[^-\s&lt;&gt;&amp;]*</pattern>
+    <pattern>^[^-\s&lt;&gt;&amp;]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.OutputUpdate.OutputId</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.ParallelismConfiguration.Parallelism</property>
@@ -1168,7 +1168,7 @@
     <property>Amazon.KinesisAnalyticsV2.Model.PropertyGroup.PropertyGroupId</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.RecordColumn.Mapping</property>
@@ -1179,7 +1179,7 @@
     <property>Amazon.KinesisAnalyticsV2.Model.RecordColumn.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[^-\s&lt;&gt;&amp;]*</pattern>
+    <pattern>^[^-\s&lt;&gt;&amp;]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.RecordColumn.SqlType</property>
@@ -1195,7 +1195,7 @@
     <property>Amazon.KinesisAnalyticsV2.Model.ReferenceDataSourceDescription.ReferenceId</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.ReferenceDataSourceDescription.TableName</property>
@@ -1206,7 +1206,7 @@
     <property>Amazon.KinesisAnalyticsV2.Model.ReferenceDataSourceUpdate.ReferenceId</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.ReferenceDataSourceUpdate.TableNameUpdate</property>
@@ -1217,7 +1217,7 @@
     <property>Amazon.KinesisAnalyticsV2.Model.S3ApplicationCodeLocationDescription.BucketARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.S3ApplicationCodeLocationDescription.FileKey</property>
@@ -1233,7 +1233,7 @@
     <property>Amazon.KinesisAnalyticsV2.Model.S3Configuration.BucketARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.S3Configuration.FileKey</property>
@@ -1244,43 +1244,43 @@
     <property>Amazon.KinesisAnalyticsV2.Model.S3ContentBaseLocation.BasePath</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9/!-_.*'()]+</pattern>
+    <pattern>^[a-zA-Z0-9/!-_.*'()]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.S3ContentBaseLocation.BucketARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.S3ContentBaseLocationDescription.BasePath</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9/!-_.*'()]+</pattern>
+    <pattern>^[a-zA-Z0-9/!-_.*'()]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.S3ContentBaseLocationDescription.BucketARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.S3ContentBaseLocationUpdate.BasePathUpdate</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9/!-_.*'()]+</pattern>
+    <pattern>^[a-zA-Z0-9/!-_.*'()]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.S3ContentBaseLocationUpdate.BucketARNUpdate</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.S3ContentLocation.BucketARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.S3ContentLocation.FileKey</property>
@@ -1296,7 +1296,7 @@
     <property>Amazon.KinesisAnalyticsV2.Model.S3ContentLocationUpdate.BucketARNUpdate</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.S3ContentLocationUpdate.FileKeyUpdate</property>
@@ -1312,7 +1312,7 @@
     <property>Amazon.KinesisAnalyticsV2.Model.S3ReferenceDataSource.BucketARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.S3ReferenceDataSource.FileKey</property>
@@ -1323,7 +1323,7 @@
     <property>Amazon.KinesisAnalyticsV2.Model.S3ReferenceDataSourceDescription.BucketARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.S3ReferenceDataSourceDescription.FileKey</property>
@@ -1334,13 +1334,13 @@
     <property>Amazon.KinesisAnalyticsV2.Model.S3ReferenceDataSourceDescription.ReferenceRoleARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.S3ReferenceDataSourceUpdate.BucketARNUpdate</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.S3ReferenceDataSourceUpdate.FileKeyUpdate</property>
@@ -1356,19 +1356,19 @@
     <property>Amazon.KinesisAnalyticsV2.Model.SnapshotDetails.SnapshotName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.SourceSchema.RecordEncoding</property>
     <min>5</min>
     <max>5</max>
-    <pattern>UTF-8</pattern>
+    <pattern>^UTF-8$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.SqlRunConfiguration.InputId</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.Tag.Key</property>
@@ -1384,12 +1384,12 @@
     <property>Amazon.KinesisAnalyticsV2.Model.VpcConfigurationDescription.VpcConfigurationId</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.VpcConfigurationUpdate.VpcConfigurationId</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
 </property-value-rules>
