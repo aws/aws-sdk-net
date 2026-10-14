@@ -13149,6 +13149,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType I8gMetal24xl = new InstanceType("i8g.metal-24xl");
         /// <summary>
+        /// Constant I8gMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType I8gMetal48xl = new InstanceType("i8g.metal-48xl");
+        /// <summary>
         /// Constant I8gXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType I8gXlarge = new InstanceType("i8g.xlarge");
@@ -14705,6 +14709,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType M9gdLarge = new InstanceType("m9gd.large");
         /// <summary>
+        /// Constant M9gdMedium for InstanceType
+        /// </summary>
+        public static readonly InstanceType M9gdMedium = new InstanceType("m9gd.medium");
+        /// <summary>
         /// Constant M9gdMetal24xl for InstanceType
         /// </summary>
         public static readonly InstanceType M9gdMetal24xl = new InstanceType("m9gd.metal-24xl");
@@ -15697,6 +15705,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType R8gb2xlarge = new InstanceType("r8gb.2xlarge");
         /// <summary>
+        /// Constant R8gb48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8gb48xlarge = new InstanceType("r8gb.48xlarge");
+        /// <summary>
         /// Constant R8gb4xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R8gb4xlarge = new InstanceType("r8gb.4xlarge");
@@ -15716,6 +15728,10 @@ namespace Amazon.EC2
         /// Constant R8gbMetal24xl for InstanceType
         /// </summary>
         public static readonly InstanceType R8gbMetal24xl = new InstanceType("r8gb.metal-24xl");
+        /// <summary>
+        /// Constant R8gbMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8gbMetal48xl = new InstanceType("r8gb.metal-48xl");
         /// <summary>
         /// Constant R8gbXlarge for InstanceType
         /// </summary>
@@ -16381,6 +16397,22 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType T4gXlarge = new InstanceType("t4g.xlarge");
         /// <summary>
+        /// Constant T8iMedium for InstanceType
+        /// </summary>
+        public static readonly InstanceType T8iMedium = new InstanceType("t8i.medium");
+        /// <summary>
+        /// Constant T8iMicro for InstanceType
+        /// </summary>
+        public static readonly InstanceType T8iMicro = new InstanceType("t8i.micro");
+        /// <summary>
+        /// Constant T8iNano for InstanceType
+        /// </summary>
+        public static readonly InstanceType T8iNano = new InstanceType("t8i.nano");
+        /// <summary>
+        /// Constant T8iSmall for InstanceType
+        /// </summary>
+        public static readonly InstanceType T8iSmall = new InstanceType("t8i.small");
+        /// <summary>
         /// Constant Trn12xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType Trn12xlarge = new InstanceType("trn1.2xlarge");
@@ -16400,6 +16432,10 @@ namespace Amazon.EC2
         /// Constant Trn248xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType Trn248xlarge = new InstanceType("trn2.48xlarge");
+        /// <summary>
+        /// Constant Trn2u48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Trn2u48xlarge = new InstanceType("trn2u.48xlarge");
         /// <summary>
         /// Constant U12tb1112xlarge for InstanceType
         /// </summary>
