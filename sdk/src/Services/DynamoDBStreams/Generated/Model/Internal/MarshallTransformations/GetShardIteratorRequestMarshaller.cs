@@ -99,6 +99,12 @@ namespace Amazon.DynamoDBStreams.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.StreamArn);
             }
 
+            if(publicRequest.IsSetTimestamp())
+            {
+                context.Writer.WritePropertyName("Timestamp");
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.Timestamp.Value));
+            }
+
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK
