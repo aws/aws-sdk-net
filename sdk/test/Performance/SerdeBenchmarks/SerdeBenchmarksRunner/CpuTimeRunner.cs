@@ -40,7 +40,7 @@ public static class CpuTimeRunner
     /// Warmup is run first and discarded.
     /// </summary>
     // Run-wide defaults, settable from the CLI (see Program). A caller may still override per invocation.
-    public static int DefaultWarmupIterations = 1000;
+    public static int DefaultWarmupIterations = 100000;
     public static int DefaultMinIterations = 50000;
     public static double DefaultMinCpuSeconds = 5.0;
 
