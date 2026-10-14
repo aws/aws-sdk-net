@@ -90,6 +90,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     if(publicRequest.VpcOriginEndpointConfig.IsSetHTTPSPort())
                         xmlWriter.WriteElementString("HTTPSPort", StringUtils.FromInt(publicRequest.VpcOriginEndpointConfig.HTTPSPort.Value));
 
+                    if(publicRequest.VpcOriginEndpointConfig.IsSetIpAddressType())
+                        xmlWriter.WriteElementString("IpAddressType", StringUtils.FromString(publicRequest.VpcOriginEndpointConfig.IpAddressType));
+
                     if(publicRequest.VpcOriginEndpointConfig.IsSetName())
                         xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.VpcOriginEndpointConfig.Name));
 

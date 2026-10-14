@@ -2657,4 +2657,54 @@ namespace Amazon.CloudFront
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type VpcIpAddressType.
+    /// </summary>
+    public class VpcIpAddressType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Dualstack for VpcIpAddressType
+        /// </summary>
+        public static readonly VpcIpAddressType Dualstack = new VpcIpAddressType("dualstack");
+        /// <summary>
+        /// Constant Ipv4 for VpcIpAddressType
+        /// </summary>
+        public static readonly VpcIpAddressType Ipv4 = new VpcIpAddressType("ipv4");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VpcIpAddressType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VpcIpAddressType FindValue(string value)
+        {
+            return FindValue<VpcIpAddressType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VpcIpAddressType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }
