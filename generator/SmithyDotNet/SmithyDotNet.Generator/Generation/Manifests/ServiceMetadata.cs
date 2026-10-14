@@ -48,6 +48,14 @@ public record ServiceMetadata
     [JsonPropertyName("namespace")]
     public string? Namespace { get; init; }
 
+    /// <summary>
+    /// The <c>RegionEndpoint</c> field name the config falls back to when the environment supplies no
+    /// region (e.g. "USEast1"). Only iam sets it: as a partition-global service it still needs a region
+    /// to sign and resolve an endpoint, so a client built with no region configured must not fail.
+    /// </summary>
+    [JsonPropertyName("default-region")]
+    public string? DefaultRegion { get; init; }
+
     /// <summary>Free-form tags declared for the service.</summary>
     [JsonPropertyName("tags")]
     public IReadOnlyList<string> Tags { get; init; } = [];

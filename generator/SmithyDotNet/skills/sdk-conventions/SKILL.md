@@ -30,6 +30,8 @@ A **removed** line in generated output is a red flag — investigate it, do not 
   reflection API and existing marshallers invoke these by name
 - `[InternalsVisibleTo]` grants, from metadata.json `internals-visible-to` (DynamoDBv2 and S3 unit tests
   reach internals; an entry without its own `PublicKey=` gets the SDK's)
+- The config constructor's region fallback, from metadata.json `default-region` (iam only: a partition-global
+  service still needs a region to sign and resolve an endpoint when the environment supplies none)
 
 ## What Can Differ
 
