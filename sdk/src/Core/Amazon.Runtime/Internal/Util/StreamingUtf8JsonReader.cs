@@ -29,16 +29,21 @@ namespace Amazon.Runtime.Internal.Util
     public ref struct StreamingUtf8JsonReader
     {
         private Utf8JsonReader _reader;
+
         /// <summary>
-        /// The UTF8JsonReader attached to the instance. 
+        /// A copy of the underlying <see cref="Utf8JsonReader"/>, positioned on the current token.
+        /// Reading it fills the first buffer if the stream has not been read yet.
         /// </summary>
+        /// <remarks>
+        /// Each access copies the whole reader struct. Use it only for one-off checks that have no forwarding
+        /// member here, such as <see cref="Utf8JsonReader.IsFinalBlock"/> before the first <see cref="Read"/>
+        /// to detect an empty body. Per-token code should use the forwarding members of this struct
+        /// (<see cref="TokenType"/>, <see cref="GetString"/>, <see cref="TryGetInt32"/>, ...), which do not copy.
+        /// </remarks>
         public Utf8JsonReader Reader
         {
             get
             {
-                // Generated response unmarshallers check IsFinalBlock on this before the first Read() to detect an
-                // empty body, so the stream has to have been read by the time the underlying reader is observed.
-                // This copies the Utf8JsonReader: per-token code should use the members below instead.
                 if (!_hasReadFromStream)
                 {
                     ReadFirstBuffer();
