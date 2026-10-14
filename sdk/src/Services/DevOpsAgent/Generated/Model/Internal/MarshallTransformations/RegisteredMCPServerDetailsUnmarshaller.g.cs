@@ -67,6 +67,13 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("customHeaderNames", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.CustomHeaderNames = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

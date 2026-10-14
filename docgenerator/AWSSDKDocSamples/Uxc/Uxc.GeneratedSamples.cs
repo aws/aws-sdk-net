@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,14 +14,14 @@ namespace AWSSDKDocSamples.Amazon.Uxc.Generated
     {
         public void UxcGetAccountCustomizations()
         {
-            #region example-1
+            #region GetAccountCustomizations-1
 
             var client = new AmazonUxcClient();
-            var response = client.GetAccountCustomizations(new GetAccountCustomizationsRequest 
+            var response = client.GetAccountCustomizations(new GetAccountCustomizationsRequest
             {
             });
 
-            string accountColor = response.AccountColor;
+            AccountColor accountColor = response.AccountColor;
             List<string> visibleRegions = response.VisibleRegions;
             List<string> visibleServices = response.VisibleServices;
 
@@ -29,10 +30,10 @@ namespace AWSSDKDocSamples.Amazon.Uxc.Generated
 
         public void UxcListServices()
         {
-            #region example-1
+            #region ListServices-1
 
             var client = new AmazonUxcClient();
-            var response = client.ListServices(new ListServicesRequest 
+            var response = client.ListServices(new ListServicesRequest
             {
             });
 
@@ -44,10 +45,10 @@ namespace AWSSDKDocSamples.Amazon.Uxc.Generated
 
         public void UxcUpdateAccountCustomizations()
         {
-            #region example-1
+            #region UpdateAccountCustomizations-1
 
             var client = new AmazonUxcClient();
-            var response = client.UpdateAccountCustomizations(new UpdateAccountCustomizationsRequest 
+            var response = client.UpdateAccountCustomizations(new UpdateAccountCustomizationsRequest
             {
                 AccountColor = "green",
                 VisibleServices = new List<string> {
@@ -57,20 +58,17 @@ namespace AWSSDKDocSamples.Amazon.Uxc.Generated
                 }
             });
 
-            string accountColor = response.AccountColor;
+            AccountColor accountColor = response.AccountColor;
             List<string> visibleRegions = response.VisibleRegions;
             List<string> visibleServices = response.VisibleServices;
 
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

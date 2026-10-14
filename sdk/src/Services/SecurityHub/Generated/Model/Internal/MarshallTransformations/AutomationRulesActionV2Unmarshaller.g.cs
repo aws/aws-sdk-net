@@ -67,6 +67,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("ResourceFieldsUpdate", targetDepth, ref reader))
+                {
+                    var unmarshaller = AutomationRulesResourceFieldsUpdateV2Unmarshaller.Instance;
+                    unmarshalledObject.ResourceFieldsUpdate = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

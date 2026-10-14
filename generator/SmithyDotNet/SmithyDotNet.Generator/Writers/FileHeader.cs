@@ -81,6 +81,25 @@ public static class FileHeader
     ];
 
     /// <summary>
+    /// Added to <see cref="MarshallerUsings"/> for rpcv2Cbor marshallers.
+    /// </summary>
+    public static IReadOnlyList<string> CborMarshallerUsings { get; } =
+    [
+        "Amazon.Extensions.CborProtocol",
+        "Amazon.Extensions.CborProtocol.Internal",
+        "Amazon.Extensions.CborProtocol.Internal.Transform",
+    ];
+
+    /// <summary>
+    /// Added to <see cref="MarshallerUsings"/> for rpcv2Cbor unmarshallers.
+    /// </summary>
+    public static IReadOnlyList<string> CborUnmarshallerUsings { get; } =
+    [
+        "System.Formats.Cbor",
+        "Amazon.Extensions.CborProtocol.Internal.Transform",
+    ];
+
+    /// <summary>
     /// Usings for the exception (error-response) unmarshaller file. Carries
     /// <c>System.Globalization</c>, which the shared <see cref="ModelUsings"/> omit, to match the
     /// legacy generated output verbatim.

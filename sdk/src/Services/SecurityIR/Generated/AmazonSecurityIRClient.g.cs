@@ -984,6 +984,86 @@ namespace Amazon.SecurityIR
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns finding-lifecycle metrics for a membership over a date range.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFindingMetrics service method.</param>
+        /// <returns>The response from the GetFindingMetrics service method, as returned by SecurityIR.</returns>
+        /// <exception cref="Amazon.SecurityIR.Model.AccessDeniedException">
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ConflictException">
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.InternalServerException">
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.InvalidTokenException">
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ResourceNotFoundException">
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.SecurityIncidentResponseNotActiveException">
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ServiceQuotaExceededException">
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ThrottlingException">
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ValidationException">
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/GetFindingMetrics">REST API Reference for GetFindingMetrics Operation</seealso>
+        public virtual GetFindingMetricsResponse GetFindingMetrics(GetFindingMetricsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetFindingMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFindingMetricsResponseUnmarshaller.Instance;
+
+            return Invoke<GetFindingMetricsResponse>(request, options);
+        }
+#else
+        internal virtual GetFindingMetricsResponse GetFindingMetrics(GetFindingMetricsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetFindingMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFindingMetricsResponseUnmarshaller.Instance;
+
+            return Invoke<GetFindingMetricsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns finding-lifecycle metrics for a membership over a date range.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFindingMetrics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetFindingMetrics service method, as returned by SecurityIR.</returns>
+        /// <exception cref="Amazon.SecurityIR.Model.AccessDeniedException">
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ConflictException">
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.InternalServerException">
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.InvalidTokenException">
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ResourceNotFoundException">
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.SecurityIncidentResponseNotActiveException">
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ServiceQuotaExceededException">
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ThrottlingException">
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ValidationException">
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/GetFindingMetrics">REST API Reference for GetFindingMetrics Operation</seealso>
+        public virtual Task<GetFindingMetricsResponse> GetFindingMetricsAsync(GetFindingMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetFindingMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFindingMetricsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetFindingMetricsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Returns the attributes of a membership.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMembership service method.</param>

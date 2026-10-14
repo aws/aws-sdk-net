@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.SignerData.Generated
     {
         public void SignerDataGetRevocationStatus()
         {
-            #region example-1
+            #region GetRevocationStatus-1
 
             var client = new AmazonSignerDataClient();
-            var response = client.GetRevocationStatus(new GetRevocationStatusRequest 
+            var response = client.GetRevocationStatus(new GetRevocationStatusRequest
             {
                 CertificateHashes = new List<string> {
                     "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -24,7 +25,7 @@ namespace AWSSDKDocSamples.Amazon.SignerData.Generated
                 JobArn = "arn:aws:signer:us-east-1:123456789012:/signing-jobs/my-job-id",
                 PlatformId = "Notation-OCI-SHA384-ECDSA",
                 ProfileVersionArn = "arn:aws:signer:us-east-1:123456789012:/signing-profiles/my-profile/v1",
-                SignatureTimestamp = DateTime.UtcNow
+                SignatureTimestamp = new DateTime(2023, 11, 14, 22, 13, 20, DateTimeKind.Utc)
             });
 
             List<string> revokedEntities = response.RevokedEntities;
@@ -32,13 +33,10 @@ namespace AWSSDKDocSamples.Amazon.SignerData.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

@@ -47,5 +47,19 @@ namespace Amazon.DataZone.Model
         /// Checks to see if the S3 property is set.
         /// </summary>
         internal bool IsSetS3() => this.S3 != null;
+
+        /// <summary>
+        /// Gets and sets the property S3Files. 
+        /// <para>
+        /// The Amazon Simple Storage Service objects to import as the notebook's cells. One cell
+        /// is created for each object, in the order in which you list them.
+        /// </para>
+        /// </summary>
+        public S3FilesLocation S3Files { get; set; }
+
+        /// <summary>
+        /// Checks to see if the S3Files property is set.
+        /// </summary>
+        internal bool IsSetS3Files() => this.S3Files != null;
     }
 }

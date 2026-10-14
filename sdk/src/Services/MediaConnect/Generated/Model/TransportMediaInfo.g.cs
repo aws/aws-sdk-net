@@ -53,5 +53,18 @@ namespace Amazon.MediaConnect.Model
         /// Checks to see if the Programs property is set.
         /// </summary>
         internal bool IsSetPrograms() => this.Programs != null && (this.Programs.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property TsId. 
+        /// <para>
+        /// The transport stream ID (TSID) of the source, from the Program Association Table (PAT).
+        /// </para>
+        /// </summary>
+        public int? TsId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TsId property is set.
+        /// </summary>
+        internal bool IsSetTsId() => this.TsId.HasValue;
     }
 }

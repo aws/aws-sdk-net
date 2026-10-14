@@ -29,58 +29,77 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SchemaDefinition Object
     /// </summary>  
-    public class SchemaDefinitionUnmarshaller : IJsonUnmarshaller<SchemaDefinition, JsonUnmarshallerContext>
+    public class SchemaDefinitionUnmarshaller : ICborUnmarshaller<SchemaDefinition, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SchemaDefinition Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public SchemaDefinition Unmarshall(CborUnmarshallerContext context)
         {
             SchemaDefinition unmarshalledObject = new SchemaDefinition();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("allColumns", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<ColumnDefinition, ColumnDefinitionUnmarshaller>(ColumnDefinitionUnmarshaller.Instance);
-                    unmarshalledObject.AllColumns = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("clusteringKeys", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ClusteringKey, ClusteringKeyUnmarshaller>(ClusteringKeyUnmarshaller.Instance);
-                    unmarshalledObject.ClusteringKeys = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("partitionKeys", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<PartitionKey, PartitionKeyUnmarshaller>(PartitionKeyUnmarshaller.Instance);
-                    unmarshalledObject.PartitionKeys = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("staticColumns", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<StaticColumn, StaticColumnUnmarshaller>(StaticColumnUnmarshaller.Instance);
-                    unmarshalledObject.StaticColumns = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "allColumns":
+                        {
+                            context.AddPathSegment("AllColumns");
+                            var unmarshaller = new CborListUnmarshaller<ColumnDefinition, ColumnDefinitionUnmarshaller>(ColumnDefinitionUnmarshaller.Instance);
+                            unmarshalledObject.AllColumns = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "clusteringKeys":
+                        {
+                            context.AddPathSegment("ClusteringKeys");
+                            var unmarshaller = new CborListUnmarshaller<ClusteringKey, ClusteringKeyUnmarshaller>(ClusteringKeyUnmarshaller.Instance);
+                            unmarshalledObject.ClusteringKeys = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "partitionKeys":
+                        {
+                            context.AddPathSegment("PartitionKeys");
+                            var unmarshaller = new CborListUnmarshaller<PartitionKey, PartitionKeyUnmarshaller>(PartitionKeyUnmarshaller.Instance);
+                            unmarshalledObject.PartitionKeys = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "staticColumns":
+                        {
+                            context.AddPathSegment("StaticColumns");
+                            var unmarshaller = new CborListUnmarshaller<StaticColumn, StaticColumnUnmarshaller>(StaticColumnUnmarshaller.Instance);
+                            unmarshalledObject.StaticColumns = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

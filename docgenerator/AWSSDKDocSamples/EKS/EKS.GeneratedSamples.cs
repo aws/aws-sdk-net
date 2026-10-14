@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,14 +14,13 @@ namespace AWSSDKDocSamples.Amazon.EKS.Generated
     {
         public void EKSCreateCluster()
         {
-            #region to-create-a-new-cluster-1527868185648
+            #region CreateCluster-1
 
             var client = new AmazonEKSClient();
-            var response = client.CreateCluster(new CreateClusterRequest 
+            var response = client.CreateCluster(new CreateClusterRequest
             {
-                Version = "1.10",
-                Name = "prod",
                 ClientRequestToken = "1d2129a1-3d38-460a-9756-e5b91fddb951",
+                Name = "prod",
                 ResourcesVpcConfig = new VpcConfigRequest {
                     SecurityGroupIds = new List<string> {
                         "sg-6979fe18"
@@ -30,7 +30,8 @@ namespace AWSSDKDocSamples.Amazon.EKS.Generated
                         "subnet-e7e761ac"
                     }
                 },
-                RoleArn = "arn:aws:iam::012345678910:role/eks-service-role-AWSServiceRoleForAmazonEKS-J7ONKE3BQ4PI"
+                RoleArn = "arn:aws:iam::012345678910:role/eks-service-role-AWSServiceRoleForAmazonEKS-J7ONKE3BQ4PI",
+                Version = "1.10"
             });
 
 
@@ -39,10 +40,10 @@ namespace AWSSDKDocSamples.Amazon.EKS.Generated
 
         public void EKSDeleteCluster()
         {
-            #region to-delete-a-cluster-1527868641252
+            #region DeleteCluster-1
 
             var client = new AmazonEKSClient();
-            var response = client.DeleteCluster(new DeleteClusterRequest 
+            var response = client.DeleteCluster(new DeleteClusterRequest
             {
                 Name = "devel"
             });
@@ -53,10 +54,10 @@ namespace AWSSDKDocSamples.Amazon.EKS.Generated
 
         public void EKSDescribeCluster()
         {
-            #region to-describe-a-cluster-1527868708512
+            #region DescribeCluster-1
 
             var client = new AmazonEKSClient();
-            var response = client.DescribeCluster(new DescribeClusterRequest 
+            var response = client.DescribeCluster(new DescribeClusterRequest
             {
                 Name = "devel"
             });
@@ -68,10 +69,10 @@ namespace AWSSDKDocSamples.Amazon.EKS.Generated
 
         public void EKSListClusters()
         {
-            #region to-list-your-available-clusters-1527868801040
+            #region ListClusters-1
 
             var client = new AmazonEKSClient();
-            var response = client.ListClusters(new ListClustersRequest 
+            var response = client.ListClusters(new ListClustersRequest
             {
             });
 
@@ -82,10 +83,10 @@ namespace AWSSDKDocSamples.Amazon.EKS.Generated
 
         public void EKSListTagsForResource()
         {
-            #region to-list-tags-for-a-cluster-1568666903378
+            #region ListTagsForResource-1
 
             var client = new AmazonEKSClient();
-            var response = client.ListTagsForResource(new ListTagsForResourceRequest 
+            var response = client.ListTagsForResource(new ListTagsForResourceRequest
             {
                 ResourceArn = "arn:aws:eks:us-west-2:012345678910:cluster/beta"
             });
@@ -95,13 +96,10 @@ namespace AWSSDKDocSamples.Amazon.EKS.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

@@ -23,6 +23,7 @@ public sealed class JsonStructureUnmarshallerWriter(GenerationContext context, s
     public string Write(StructureShape structure, CancellationToken cancellationToken = default)
     {
         var className = context.ToDotNetName(structure.Id);
+        var unmarshallerClassName = context.StructureUnmarshallerName(structure.Id);
         var members = TypeMapper.ResolveMembers(structure, context);
         var writer = new CodeWriter();
 
@@ -33,11 +34,11 @@ public sealed class JsonStructureUnmarshallerWriter(GenerationContext context, s
         writer.OpenNamespace($"{context.Namespace}.Model.Internal.MarshallTransformations", () =>
         {
             WriteClassDocumentation(writer, className);
-            writer.OpenBlock($"public partial class {className}Unmarshaller : IJsonUnmarshaller<{className}, JsonUnmarshallerContext>", () =>
+            writer.OpenBlock($"public partial class {unmarshallerClassName} : IJsonUnmarshaller<{className}, JsonUnmarshallerContext>", () =>
             {
                 WriteUnmarshallMethod(writer, className, structure, members);
                 writer.WriteLine("");
-                WriteSingleton(writer, className);
+                MarshallerCommon.WriteUnmarshallerSingleton(writer, unmarshallerClassName);
             });
         });
         return writer.ToFormattedString(cancellationToken);
@@ -83,7 +84,7 @@ public sealed class JsonStructureUnmarshallerWriter(GenerationContext context, s
             // body loop (which the SEP guarantees is empty when a payload exists) and the header reads.
             if (payloadMember is not null)
             {
-                WritePayloadMember(writer, payloadMember);
+                MarshallerCommon.WriteEventPayloadMember(writer, payloadMember, "context, ref reader");
             }
             foreach (var member in headerMembers)
             {
@@ -113,31 +114,6 @@ public sealed class JsonStructureUnmarshallerWriter(GenerationContext context, s
         });
     }
 
-    // The @eventPayload member IS the message payload: a blob is the raw MemoryStream, a string is the
-    // stream read to end, a structure is deserialized by its own unmarshaller off the JSON reader.
-    private static void WritePayloadMember(CodeWriter writer, Member member)
-    {
-        if (member.Type.MarshalsAsString)
-        {
-            writer.OpenBlock("using (var sr = new StreamReader(context.Stream))", () =>
-            {
-                writer.WriteLine($"unmarshalledObject.{member.PropertyName} = sr.ReadToEnd();");
-            });
-        }
-        else if (member.Type.IsStructure)
-        {
-            writer.WriteLine($"unmarshalledObject.{member.PropertyName} = {member.Type.DotNetType}Unmarshaller.Instance.Unmarshall(context, ref reader);");
-        }
-        else if (member.Type.IsBlob)
-        {
-            writer.WriteLine($"unmarshalledObject.{member.PropertyName} = context.Stream as MemoryStream;");
-        }
-        else
-        {
-            throw new GeneratorException($"@eventPayload member '{member.PropertyName}' must target a blob, string, or structure shape, but was '{member.Type.DotNetType}'.");
-        }
-    }
-
     // A @eventHeader member is read from the event-message header via context.ResponseData. The accessor is
     // chosen by the target shape, symmetric with JsonStructureMarshallerWriter.WriteEventHeader (an enum
     // rides AsString via its implicit conversion).
@@ -163,13 +139,4 @@ public sealed class JsonStructureUnmarshallerWriter(GenerationContext context, s
         });
     }
 
-    private static void WriteSingleton(CodeWriter writer, string className)
-    {
-        writer.WriteLine($"private static {className}Unmarshaller _instance = new {className}Unmarshaller();");
-        writer.WriteLine();
-        writer.WriteLine("/// <summary>");
-        writer.WriteLine("/// Gets the singleton.");
-        writer.WriteLine("/// </summary>");
-        writer.WriteLine($"public static {className}Unmarshaller Instance => _instance;");
-    }
 }

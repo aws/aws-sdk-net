@@ -40,6 +40,8 @@ namespace Amazon.Resiliencehubv2.Model
         private List<AssociatedSystem> _associatedSystems = AWSConfigs.InitializeCollections ? new List<AssociatedSystem>() : null;
         private DateTime? _createdAt;
         private DependencyDiscoveryConfig _dependencyDiscovery;
+        private string _devOpsAgentSpaceArn;
+        private DevOpsAgentConnectionStatus _devOpsAgentStatus;
         private string _name;
         private int? _openFindingsCount;
         private string _organizationId;
@@ -163,6 +165,61 @@ namespace Amazon.Resiliencehubv2.Model
         internal bool IsSetDependencyDiscovery()
         {
             return this._dependencyDiscovery != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DevOpsAgentSpaceArn. 
+        /// <para>
+        /// The ARN of the DevOps Agent Agent Space linked to the service, when the service is
+        /// linked to one.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string DevOpsAgentSpaceArn
+        {
+            get { return this._devOpsAgentSpaceArn; }
+            set { this._devOpsAgentSpaceArn = value; }
+        }
+
+        // Check to see if DevOpsAgentSpaceArn property is set
+        internal bool IsSetDevOpsAgentSpaceArn()
+        {
+            return this._devOpsAgentSpaceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DevOpsAgentStatus. 
+        /// <para>
+        /// The DevOps Agent connection status for the service. Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// CONNECTING - The service is being connected to the Agent Space.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CONNECTED - The service is connected to the Agent Space.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DISCONNECTED - The service is not connected to an Agent Space.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// FAILED - The connection attempt failed.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public DevOpsAgentConnectionStatus DevOpsAgentStatus
+        {
+            get { return this._devOpsAgentStatus; }
+            set { this._devOpsAgentStatus = value; }
+        }
+
+        // Check to see if DevOpsAgentStatus property is set
+        internal bool IsSetDevOpsAgentStatus()
+        {
+            return this._devOpsAgentStatus != null;
         }
 
         /// <summary>

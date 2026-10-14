@@ -121,8 +121,7 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>UPDATING</c> -- Updates to the container fleet is being updated. A deployment
-        /// is in progress.
+        ///  <c>UPDATING</c> -- The container fleet is being updated. A deployment is in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>

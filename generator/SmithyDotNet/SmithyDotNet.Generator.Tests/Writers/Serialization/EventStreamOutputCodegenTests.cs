@@ -109,6 +109,28 @@ public class EventStreamOutputCodegenTests
         Assert.Contains("public ConverseStreamOutput(Stream stream, IEventStreamDecoder eventStreamDecoder) : base(stream, eventStreamDecoder)", _eventStreamClass);
     }
 
+    [Fact]
+    public void EventStreamClass_Cbor_DecodesEachMessageThroughACborContext()
+    {
+        var context = TestModels.Context("Codegen/rpcv2cbor-model.json");
+        var source = new EventStreamOutputWriter(context, ModelFileName).Write(context.Structures[context.ResponseEventStreams.Single().Id], TestContext.Current.CancellationToken);
+
+        Assert.Contains("var context = new CborUnmarshallerContext(stream, false, null);", source);
+        Assert.Contains("return new MetadataEventUnmarshaller().Unmarshall(context);", source);
+        Assert.Contains("new BrokenExceptionUnmarshaller().Unmarshall(context));", source);
+    }
+
+    [Fact]
+    public void ResponseUnmarshaller_BodyMemberNextToEventStream_Throws()
+    {
+        // The stream is the whole body; an unbound sibling (every sibling on awsJson) has nowhere to go.
+        var context = TestModels.Context("Codegen/EventStreams/event-structure-unmarshall-payload-model.json");
+        var operation = context.Operations.Single(o => o.Name == "Stream");
+
+        var ex = Assert.Throws<GeneratorException>(() => new JsonResponseUnmarshallerWriter(context, ModelFileName).Write(operation, TestContext.Current.CancellationToken));
+        Assert.Contains("Event stream member 'Stream' cannot coexist with body members (Marker)", ex.Message);
+    }
+
     // Strips all whitespace so brace-close assertions don't depend on the formatter's line breaks/indent.
     private static string Collapse(string source) =>
         System.Text.RegularExpressions.Regex.Replace(source, @"\s+", "");

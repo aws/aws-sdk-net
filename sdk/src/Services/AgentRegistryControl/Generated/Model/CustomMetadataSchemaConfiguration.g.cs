@@ -30,20 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AgentRegistryControl.Model
 {
     /// <summary>
-    /// Configuration that defines a typed metadata schema for a registry. Specify at least
-    /// one of a default schema or per-record-type schema overrides. You can provide both.
+    /// The custom metadata fields that records in the registry can carry. <c>defaultSchema</c>
+    /// defines the common attributes for every record type, and <c>recordTypeSchemaOverrides</c>
+    /// adds fields for individual record types.
     /// </summary>
     public partial class CustomMetadataSchemaConfiguration
     {
         /// <summary>
         /// Gets and sets the property DefaultSchema. 
         /// <para>
-        /// The default JSON Schema that applies to record types without a specific override.
-        /// Supported property types are <c>string</c>, <c>string</c> with an <c>enum</c> constraint,
-        /// <c>string</c> with a <c>uri</c> format, and <c>boolean</c>.
+        /// A JSON Schema with the common attributes: fields that records of every record type
+        /// can carry.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive = true, Min = 1, Max = 10240)]
+        [AWSProperty(Sensitive = true, Min = 1, Max = 16384)]
         public string DefaultSchema { get; set; }
 
         /// <summary>
@@ -54,10 +54,8 @@ namespace Amazon.AgentRegistryControl.Model
         /// <summary>
         /// Gets and sets the property RecordTypeSchemaOverrides. 
         /// <para>
-        /// A list of per-record-type schema overrides. When a record's type matches an override,
-        /// that override's schema is used instead of the default schema for validation. If you
-        /// don't specify an override for a record type, the default schema applies. If no default
-        /// schema exists, custom metadata on records of that type is rejected.
+        /// The fields for individual record types. Records of a record type can carry the common
+        /// attributes defined in <c>defaultSchema</c> plus that record type's fields.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -66,7 +64,7 @@ namespace Amazon.AgentRegistryControl.Model
         /// a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Max = 5)]
+        [AWSProperty(Max = 10)]
         public List<RecordTypeSchemaOverride> RecordTypeSchemaOverrides { get; set; } = AWSConfigs.InitializeCollections ? new List<RecordTypeSchemaOverride>() : null;
 
         /// <summary>

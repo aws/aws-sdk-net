@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.CostAndUsageReport.Generated
     {
         public void CostAndUsageReportDeleteReportDefinition()
         {
-            #region to-delete-a-report
+            #region DeleteReportDefinition-1
 
             var client = new AmazonCostAndUsageReportClient();
-            var response = client.DeleteReportDefinition(new DeleteReportDefinitionRequest 
+            var response = client.DeleteReportDefinition(new DeleteReportDefinitionRequest
             {
                 ReportName = "ExampleReport"
             });
@@ -27,10 +28,10 @@ namespace AWSSDKDocSamples.Amazon.CostAndUsageReport.Generated
 
         public void CostAndUsageReportDescribeReportDefinitions()
         {
-            #region to-retrieve-report-definitions
+            #region DescribeReportDefinitions-1
 
             var client = new AmazonCostAndUsageReportClient();
-            var response = client.DescribeReportDefinitions(new DescribeReportDefinitionsRequest 
+            var response = client.DescribeReportDefinitions(new DescribeReportDefinitionsRequest
             {
                 MaxResults = 5
             });
@@ -42,10 +43,10 @@ namespace AWSSDKDocSamples.Amazon.CostAndUsageReport.Generated
 
         public void CostAndUsageReportPutReportDefinition()
         {
-            #region to-create-a-report-definitions
+            #region PutReportDefinition-1
 
             var client = new AmazonCostAndUsageReportClient();
-            var response = client.PutReportDefinition(new PutReportDefinitionRequest 
+            var response = client.PutReportDefinition(new PutReportDefinitionRequest
             {
                 ReportDefinition = new ReportDefinition {
                     AdditionalArtifacts = new List<string> {
@@ -69,13 +70,10 @@ namespace AWSSDKDocSamples.Amazon.CostAndUsageReport.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

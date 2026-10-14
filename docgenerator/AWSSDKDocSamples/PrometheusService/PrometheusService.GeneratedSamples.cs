@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.PrometheusService.Generated
     {
         public void PrometheusServiceCreateScraper()
         {
-            #region example-1
+            #region CreateScraper-1
 
             var client = new AmazonPrometheusServiceClient();
-            var response = client.CreateScraper(new CreateScraperRequest 
+            var response = client.CreateScraper(new CreateScraperRequest
             {
                 Alias = "alias",
                 ClientToken = "token",
@@ -46,10 +47,10 @@ namespace AWSSDKDocSamples.Amazon.PrometheusService.Generated
 
         public void PrometheusServiceCreateScraper()
         {
-            #region example-2
+            #region CreateScraper-2
 
             var client = new AmazonPrometheusServiceClient();
-            var response = client.CreateScraper(new CreateScraperRequest 
+            var response = client.CreateScraper(new CreateScraperRequest
             {
                 Alias = "alias",
                 ClientToken = "token",
@@ -78,10 +79,10 @@ namespace AWSSDKDocSamples.Amazon.PrometheusService.Generated
 
         public void PrometheusServiceDeleteScraper()
         {
-            #region example-1
+            #region DeleteScraper-1
 
             var client = new AmazonPrometheusServiceClient();
-            var response = client.DeleteScraper(new DeleteScraperRequest 
+            var response = client.DeleteScraper(new DeleteScraperRequest
             {
                 ClientToken = "token",
                 ScraperId = "scraper-123"
@@ -95,10 +96,10 @@ namespace AWSSDKDocSamples.Amazon.PrometheusService.Generated
 
         public void PrometheusServiceDescribeScraper()
         {
-            #region example-1
+            #region DescribeScraper-1
 
             var client = new AmazonPrometheusServiceClient();
-            var response = client.DescribeScraper(new DescribeScraperRequest 
+            var response = client.DescribeScraper(new DescribeScraperRequest
             {
                 ScraperId = "scraper-123"
             });
@@ -110,10 +111,10 @@ namespace AWSSDKDocSamples.Amazon.PrometheusService.Generated
 
         public void PrometheusServiceGetDefaultScraperConfiguration()
         {
-            #region example-1
+            #region GetDefaultScraperConfiguration-1
 
             var client = new AmazonPrometheusServiceClient();
-            var response = client.GetDefaultScraperConfiguration(new GetDefaultScraperConfigurationRequest 
+            var response = client.GetDefaultScraperConfiguration(new GetDefaultScraperConfigurationRequest
             {
             });
 
@@ -124,10 +125,10 @@ namespace AWSSDKDocSamples.Amazon.PrometheusService.Generated
 
         public void PrometheusServiceListScrapers()
         {
-            #region example-1
+            #region ListScrapers-1
 
             var client = new AmazonPrometheusServiceClient();
-            var response = client.ListScrapers(new ListScrapersRequest 
+            var response = client.ListScrapers(new ListScrapersRequest
             {
                 MaxResults = 2,
                 NextToken = "previouslyGeneratedToken"
@@ -140,10 +141,10 @@ namespace AWSSDKDocSamples.Amazon.PrometheusService.Generated
 
         public void PrometheusServiceListScrapers()
         {
-            #region example-2
+            #region ListScrapers-2
 
             var client = new AmazonPrometheusServiceClient();
-            var response = client.ListScrapers(new ListScrapersRequest 
+            var response = client.ListScrapers(new ListScrapersRequest
             {
                 Filters = new Dictionary<string, List<string>> {
                     { "alias", new List<string> {
@@ -165,10 +166,10 @@ namespace AWSSDKDocSamples.Amazon.PrometheusService.Generated
 
         public void PrometheusServiceUpdateScraper()
         {
-            #region example-1
+            #region UpdateScraper-1
 
             var client = new AmazonPrometheusServiceClient();
-            var response = client.UpdateScraper(new UpdateScraperRequest 
+            var response = client.UpdateScraper(new UpdateScraperRequest
             {
                 Alias = "alias-update",
                 ClientToken = "token",
@@ -185,13 +186,10 @@ namespace AWSSDKDocSamples.Amazon.PrometheusService.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

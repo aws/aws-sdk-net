@@ -33,6 +33,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.RestJson
 {
@@ -46,7 +47,7 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestJson")]
-        public void RestJsonHttpPostWithNoModeledBodyRequest()
+        public async Task RestJsonHttpPostWithNoModeledBodyRequest()
         {
             // Arrange
             var request = new TestPostNoPayloadRequest
@@ -54,18 +55,25 @@ namespace AWSSDK.ProtocolTests.RestJson
             };
             var config = new AmazonRestJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new TestPostNoPayloadRequestMarshaller();
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.TestPostNoPayloadAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/no_payload", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.IsFalse(marshalledRequest.Headers.ContainsKey("Content-Type"));
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/no_payload", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.IsFalse(actualRequest.Headers.ContainsKey("Content-Type"));
         }
 
         /// <summary>
@@ -75,7 +83,7 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestJson")]
-        public void RestJsonHttpWithPostHeaderMemberNoModeledBodyRequest()
+        public async Task RestJsonHttpWithPostHeaderMemberNoModeledBodyRequest()
         {
             // Arrange
             var request = new TestPostNoPayloadRequest
@@ -84,19 +92,26 @@ namespace AWSSDK.ProtocolTests.RestJson
             };
             var config = new AmazonRestJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new TestPostNoPayloadRequestMarshaller();
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.TestPostNoPayloadAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/no_payload", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("t-12345".Replace(" ",""), marshalledRequest.Headers["X-Amz-Test-Id"].Replace(" ",""));
-            Assert.IsFalse(marshalledRequest.Headers.ContainsKey("Content-Type"));
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/no_payload", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("t-12345".Replace(" ",""), actualRequest.Headers["X-Amz-Test-Id"].Replace(" ",""));
+            Assert.IsFalse(actualRequest.Headers.ContainsKey("Content-Type"));
         }
 
     }

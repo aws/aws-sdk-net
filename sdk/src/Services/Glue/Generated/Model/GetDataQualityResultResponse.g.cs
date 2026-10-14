@@ -1,0 +1,267 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Glue.Model
+{
+    /// <summary>
+    /// This is the response object from the GetDataQualityResult operation.
+    /// </summary>
+    public partial class GetDataQualityResultResponse : AmazonWebServiceResponse
+    {
+        /// <summary>
+        /// Gets and sets the property AggregatedMetrics. 
+        /// <para>
+        ///  A summary of <c>DataQualityAggregatedMetrics</c> objects showing the total counts
+        /// of processed rows and rules, including their pass/fail statistics based on row-level
+        /// results. 
+        /// </para>
+        /// </summary>
+        public DataQualityAggregatedMetrics AggregatedMetrics { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AggregatedMetrics property is set.
+        /// </summary>
+        internal bool IsSetAggregatedMetrics() => this.AggregatedMetrics != null;
+
+        /// <summary>
+        /// Gets and sets the property AnalyzerResults. 
+        /// <para>
+        /// A list of <c>DataQualityAnalyzerResult</c> objects representing the results for each
+        /// analyzer.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 2000)]
+        public List<DataQualityAnalyzerResult> AnalyzerResults { get; set; } = AWSConfigs.InitializeCollections ? new List<DataQualityAnalyzerResult>() : null;
+
+        /// <summary>
+        /// Checks to see if the AnalyzerResults property is set.
+        /// </summary>
+        internal bool IsSetAnalyzerResults() => this.AnalyzerResults != null && (this.AnalyzerResults.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property CompletedOn. 
+        /// <para>
+        /// The date and time when the run for this data quality result was completed.
+        /// </para>
+        /// </summary>
+        public DateTime? CompletedOn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CompletedOn property is set.
+        /// </summary>
+        internal bool IsSetCompletedOn() => this.CompletedOn.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property DataSource. 
+        /// <para>
+        /// The table associated with the data quality result, if any.
+        /// </para>
+        /// </summary>
+        public DataSource DataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DataSource property is set.
+        /// </summary>
+        internal bool IsSetDataSource() => this.DataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property EvaluationContext. 
+        /// <para>
+        /// In the context of a job in Glue Studio, each node in the canvas is typically assigned
+        /// some sort of name and data quality nodes will have names. In the case of multiple
+        /// nodes, the <c>evaluationContext</c> can differentiate the nodes.
+        /// </para>
+        /// </summary>
+        public string EvaluationContext { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EvaluationContext property is set.
+        /// </summary>
+        internal bool IsSetEvaluationContext() => this.EvaluationContext != null;
+
+        /// <summary>
+        /// Gets and sets the property JobName. 
+        /// <para>
+        /// The job name associated with the data quality result, if any.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 255)]
+        public string JobName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the JobName property is set.
+        /// </summary>
+        internal bool IsSetJobName() => this.JobName != null;
+
+        /// <summary>
+        /// Gets and sets the property JobRunId. 
+        /// <para>
+        /// The job run ID associated with the data quality result, if any.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 255)]
+        public string JobRunId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the JobRunId property is set.
+        /// </summary>
+        internal bool IsSetJobRunId() => this.JobRunId != null;
+
+        /// <summary>
+        /// Gets and sets the property Observations. 
+        /// <para>
+        /// A list of <c>DataQualityObservation</c> objects representing the anomaly detection
+        /// observations generated after evaluating the rules and analyzers.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 50)]
+        public List<DataQualityObservation> Observations { get; set; } = AWSConfigs.InitializeCollections ? new List<DataQualityObservation>() : null;
+
+        /// <summary>
+        /// Checks to see if the Observations property is set.
+        /// </summary>
+        internal bool IsSetObservations() => this.Observations != null && (this.Observations.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property ProfileId. 
+        /// <para>
+        /// The Profile ID for the data quality result.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 255)]
+        public string ProfileId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ProfileId property is set.
+        /// </summary>
+        internal bool IsSetProfileId() => this.ProfileId != null;
+
+        /// <summary>
+        /// Gets and sets the property ResultId. 
+        /// <para>
+        /// A unique result ID for the data quality result.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 255)]
+        public string ResultId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ResultId property is set.
+        /// </summary>
+        internal bool IsSetResultId() => this.ResultId != null;
+
+        /// <summary>
+        /// Gets and sets the property RuleResults. 
+        /// <para>
+        /// A list of <c>DataQualityRuleResult</c> objects representing the results for each rule.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 2000)]
+        public List<DataQualityRuleResult> RuleResults { get; set; } = AWSConfigs.InitializeCollections ? new List<DataQualityRuleResult>() : null;
+
+        /// <summary>
+        /// Checks to see if the RuleResults property is set.
+        /// </summary>
+        internal bool IsSetRuleResults() => this.RuleResults != null && (this.RuleResults.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property RulesetEvaluationRunId. 
+        /// <para>
+        /// The unique run ID associated with the ruleset evaluation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 255)]
+        public string RulesetEvaluationRunId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RulesetEvaluationRunId property is set.
+        /// </summary>
+        internal bool IsSetRulesetEvaluationRunId() => this.RulesetEvaluationRunId != null;
+
+        /// <summary>
+        /// Gets and sets the property RulesetName. 
+        /// <para>
+        /// The name of the ruleset associated with the data quality result.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 255)]
+        public string RulesetName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RulesetName property is set.
+        /// </summary>
+        internal bool IsSetRulesetName() => this.RulesetName != null;
+
+        /// <summary>
+        /// Gets and sets the property Score. 
+        /// <para>
+        /// An aggregate data quality score. Represents the ratio of rules that passed to the
+        /// total number of rules.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 1)]
+        public double? Score { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Score property is set.
+        /// </summary>
+        internal bool IsSetScore() => this.Score.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property StartedOn. 
+        /// <para>
+        /// The date and time when the run for this data quality result started.
+        /// </para>
+        /// </summary>
+        public DateTime? StartedOn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StartedOn property is set.
+        /// </summary>
+        internal bool IsSetStartedOn() => this.StartedOn.HasValue;
+    }
+}

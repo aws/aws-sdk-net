@@ -21,7 +21,7 @@
     <property>Amazon.AWSMarketplaceMetering.Model.MeterUsageRequest.UsageDimension</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[\s\S]+</pattern>
+    <pattern>^[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSMarketplaceMetering.Model.MeterUsageRequest.UsageQuantity</property>
@@ -30,8 +30,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSMarketplaceMetering.Model.RegisterUsageRequest.Nonce</property>
+    <min>0</min>
     <max>255</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSMarketplaceMetering.Model.RegisterUsageRequest.ProductCode</property>
@@ -45,11 +46,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSMarketplaceMetering.Model.RegisterUsageResponse.Signature</property>
-    <pattern>[\s\S]+</pattern>
+    <pattern>^[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSMarketplaceMetering.Model.ResolveCustomerRequest.RegistrationToken</property>
-    <pattern>[\s\S]+</pattern>
+    <pattern>^[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSMarketplaceMetering.Model.ResolveCustomerResponse.CustomerAWSAccountId</property>
@@ -61,7 +62,7 @@
     <property>Amazon.AWSMarketplaceMetering.Model.ResolveCustomerResponse.CustomerIdentifier</property>
     <min>0</min>
     <max>255</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSMarketplaceMetering.Model.ResolveCustomerResponse.LicenseArn</property>
@@ -72,6 +73,12 @@
     <min>0</min>
     <max>255</max>
     <pattern>^[-a-zA-Z0-9/=:_.@]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSMarketplaceMetering.Model.Metadata.AgreementId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[A-Za-z0-9_/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSMarketplaceMetering.Model.Tag.Key</property>
@@ -100,13 +107,13 @@
     <property>Amazon.AWSMarketplaceMetering.Model.UsageRecord.CustomerIdentifier</property>
     <min>0</min>
     <max>255</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSMarketplaceMetering.Model.UsageRecord.Dimension</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[\s\S]+</pattern>
+    <pattern>^[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSMarketplaceMetering.Model.UsageRecord.LicenseArn</property>

@@ -76,6 +76,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Mtime);
             }
 
+            if(requestObject.IsSetObjectMetadata())
+            {
+                context.Writer.WritePropertyName("ObjectMetadata");
+                context.Writer.WriteStringValue(requestObject.ObjectMetadata);
+            }
+
             if(requestObject.IsSetObjectTags())
             {
                 context.Writer.WritePropertyName("ObjectTags");

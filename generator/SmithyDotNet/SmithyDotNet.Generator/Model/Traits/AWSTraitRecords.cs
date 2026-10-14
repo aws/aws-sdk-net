@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using SmithyDotNet.Generator.Model.Converters;
 
 namespace SmithyDotNet.Generator.Model.Traits;
 
@@ -24,6 +25,25 @@ public record AWSServiceTrait : TraitRecord
 
     [JsonPropertyName("docId")]
     public string? DocId { get; init; }
+}
+
+/// <remarks><see href="https://smithy.io/2.0/aws/aws-core.html#aws-api-clientendpointdiscovery-trait" /></remarks>
+public record ClientEndpointDiscoveryTrait : TraitRecord
+{
+    [JsonPropertyName("operation")]
+    [JsonConverter(typeof(ShapeIdConverter))]
+    public required ShapeId Operation { get; init; }
+
+    [JsonPropertyName("error")]
+    [JsonConverter(typeof(ShapeIdConverter))]
+    public ShapeId? Error { get; init; }
+}
+
+/// <remarks><see href="https://smithy.io/2.0/aws/aws-core.html#aws-api-clientdiscoveredendpoint-trait" /></remarks>
+public record ClientDiscoveredEndpointTrait : TraitRecord
+{
+    [JsonPropertyName("required")]
+    public bool Required { get; init; }
 }
 
 /// <remarks><see href="https://smithy.io/2.0/aws/aws-auth.html#aws-auth-sigv4-trait" /></remarks>

@@ -60,6 +60,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("HierarchyFilter", targetDepth, ref reader))
+                {
+                    var unmarshaller = HierarchyFilterUnmarshaller.Instance;
+                    unmarshalledObject.HierarchyFilter = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("NestedFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = NestedFilterUnmarshaller.Instance;

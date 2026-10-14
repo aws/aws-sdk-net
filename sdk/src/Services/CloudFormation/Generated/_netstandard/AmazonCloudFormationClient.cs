@@ -521,6 +521,11 @@ namespace Amazon.CloudFormation
         /// for troubleshooting a failed update rollback, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">Update
         /// rollback failed</a>.
         /// </para>
+        ///  
+        /// <para>
+        ///  <c>ForceRollback</c> and <c>ResourcesToSkip</c> are mutually exclusive. For details,
+        /// see <a>ContinueUpdateRollbackInput$ForceRollback</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ContinueUpdateRollback service method.</param>
         /// <param name="cancellationToken">

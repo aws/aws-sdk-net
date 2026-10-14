@@ -59,7 +59,10 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/EnumPayload";
-            request.Content = System.Text.Encoding.UTF8.GetBytes(publicRequest.Payload);
+            if (publicRequest.IsSetPayload())
+            {
+                request.Content = System.Text.Encoding.UTF8.GetBytes(publicRequest.Payload);
+            }
 
             return request;
         }

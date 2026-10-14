@@ -74,6 +74,20 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("HierarchyDropdown", targetDepth, ref reader))
+                {
+                    var unmarshaller = HierarchyFilterDropDownControlUnmarshaller.Instance;
+                    unmarshalledObject.HierarchyDropdown = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("HierarchyList", targetDepth, ref reader))
+                {
+                    var unmarshaller = HierarchyFilterListControlUnmarshaller.Instance;
+                    unmarshalledObject.HierarchyList = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("List", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterListControlUnmarshaller.Instance;

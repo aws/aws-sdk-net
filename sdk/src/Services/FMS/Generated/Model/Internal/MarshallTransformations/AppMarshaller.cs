@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// App Marshaller
     /// </summary>
-    public class AppMarshaller : IRequestMarshaller<App, JsonMarshallerContext> 
+    public class AppMarshaller : IRequestMarshaller<App, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,28 +45,26 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(App requestObject, JsonMarshallerContext context)
+        public void Marshall(App requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAppName())
-            {
-                context.Writer.WritePropertyName("AppName");
-                context.Writer.WriteStringValue(requestObject.AppName);
-            }
 
-            if(requestObject.IsSetPort())
+            if (requestObject.IsSetAppName())
             {
-                context.Writer.WritePropertyName("Port");
-                context.Writer.WriteNumberValue(requestObject.Port.Value);
+                context.Writer.WriteTextString("AppName");
+                context.Writer.WriteTextString(requestObject.AppName);
             }
-
-            if(requestObject.IsSetProtocol())
+            if (requestObject.IsSetPort())
             {
-                context.Writer.WritePropertyName("Protocol");
-                context.Writer.WriteStringValue(requestObject.Protocol);
+                context.Writer.WriteTextString("Port");
+                context.Writer.WriteInt64(requestObject.Port.Value);
             }
-
+            if (requestObject.IsSetProtocol())
+            {
+                context.Writer.WriteTextString("Protocol");
+                context.Writer.WriteTextString(requestObject.Protocol);
+            }
         }
 
         /// <summary>

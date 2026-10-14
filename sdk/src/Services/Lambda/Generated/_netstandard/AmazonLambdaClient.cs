@@ -61,6 +61,14 @@ namespace Amazon.Lambda
     /// </para>
     ///  
     /// <para>
+    /// Lambda Event Functions, previously known as Lambda functions, run your code in response
+    /// to events and API calls. Event Functions is a documentation name only. In this API,
+    /// the Amazon Web Services SDKs, and the CLI, Event Functions are still called <i>functions</i>,
+    /// for example in <c>CreateFunction</c> and <c>Invoke</c>. You don't need to change any
+    /// code.
+    /// </para>
+    ///  
+    /// <para>
     /// The <i>Lambda API Reference</i> provides information about each of the API methods,
     /// including details about the parameters in each API request and response. 
     /// </para>
@@ -626,8 +634,8 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>
-        /// for a Lambda function version. Use aliases to provide clients with a function identifier
-        /// that you can update to invoke a different version.
+        /// for a Lambda Event Function version. Use aliases to provide clients with a function
+        /// identifier that you can update to invoke a different version.
         /// 
         ///  
         /// <para>
@@ -689,7 +697,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Creates a capacity provider that manages compute resources for Lambda functions
+        /// Creates a capacity provider that manages compute resources for Lambda Event Functions
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCapacityProvider service method.</param>
         /// <param name="cancellationToken">
@@ -782,8 +790,8 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Creates a mapping between an event source and an Lambda function. Lambda reads items
-        /// from the event source and invokes the function.
+        /// Creates a mapping between an event source and an Lambda Event Function. Lambda reads
+        /// items from the event source and invokes the function.
         /// 
         ///  
         /// <para>
@@ -950,7 +958,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Creates a Lambda function. To create a function, you need a <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html">deployment
+        /// Creates a Lambda Event Function. To create a function, you need a <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html">deployment
         /// package</a> and an <a href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution
         /// role</a>. The deployment package is a .zip file archive or container image that contains
         /// your function code. The execution role grants the function permission to use Amazon
@@ -1142,7 +1150,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Deletes a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.
+        /// Deletes a Lambda Event Function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAlias service method.</param>
         /// <param name="cancellationToken">
@@ -1347,7 +1355,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Deletes a Lambda function. To delete a specific function version, use the <c>Qualifier</c>
+        /// Deletes a Lambda Event Function. To delete a specific function version, use the <c>Qualifier</c>
         /// parameter. Otherwise, all versions and aliases are deleted. This doesn't require the
         /// user to have explicit permissions for <a>DeleteAlias</a>.
         /// 
@@ -1396,7 +1404,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Deletes a Lambda function. To delete a specific function version, use the <c>Qualifier</c>
+        /// Deletes a Lambda Event Function. To delete a specific function version, use the <c>Qualifier</c>
         /// parameter. Otherwise, all versions and aliases are deleted. This doesn't require the
         /// user to have explicit permissions for <a>DeleteAlias</a>.
         /// 
@@ -1870,7 +1878,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Returns details about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.
+        /// Returns details about a Lambda Event Function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAlias service method.</param>
         /// <param name="cancellationToken">
@@ -2432,7 +2440,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Returns the version-specific settings of a Lambda function or version. The output
+        /// Returns the version-specific settings of a Lambda Event Function or version. The output
         /// includes only options that can vary between versions of a function. To modify these
         /// settings, use <a>UpdateFunctionConfiguration</a>.
         /// 
@@ -2471,7 +2479,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Returns the version-specific settings of a Lambda function or version. The output
+        /// Returns the version-specific settings of a Lambda Event Function or version. The output
         /// includes only options that can vary between versions of a function. To modify these
         /// settings, use <a>UpdateFunctionConfiguration</a>.
         /// 
@@ -3050,8 +3058,8 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Invokes a Lambda function. You can invoke a function synchronously (and wait for the
-        /// response), or asynchronously. By default, Lambda invokes your function synchronously
+        /// Invokes a Lambda Event Function. You can invoke a function synchronously (and wait
+        /// for the response), or asynchronously. By default, Lambda invokes your function synchronously
         /// (i.e. the<c>InvocationType</c> is <c>RequestResponse</c>). To invoke a function asynchronously,
         /// set <c>InvocationType</c> to <c>Event</c>. Lambda passes the <c>ClientContext</c>
         /// object to your function for synchronous invocations only.
@@ -3317,8 +3325,8 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Configure your Lambda functions to stream response payloads back to clients. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-response-streaming.html">Configuring
+        /// Configure your Lambda Event Functions to stream response payloads back to clients.
+        /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-response-streaming.html">Configuring
         /// a Lambda function to stream responses</a>.
         /// 
         ///  
@@ -3335,6 +3343,21 @@ namespace Amazon.Lambda
         /// </param>
         /// 
         /// <returns>The response from the InvokeWithResponseStream service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.CodeArtifactUserDeletedException">
+        /// The Lambda function couldn't be invoked because its code artifact user has been deleted.
+        /// Wait for Lambda to provision a new code artifact user, or update the function's code
+        /// package to recreate it.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.CodeArtifactUserFailedException">
+        /// The Lambda function couldn't be invoked because provisioning of its code artifact
+        /// user failed. Update the function's code package or check the Lambda function's <c>State</c>
+        /// and <c>StateReasonCode</c> for additional context.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.CodeArtifactUserPendingException">
+        /// The Lambda function couldn't be invoked because its code artifact user is still being
+        /// provisioned. Wait for the function's <c>State</c> to become <c>Active</c> and try
+        /// the request again.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.EC2AccessDeniedException">
         /// Need additional permissions to configure VPC settings.
         /// </exception>
@@ -3502,7 +3525,7 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">aliases</a>
-        /// for a Lambda function.
+        /// for a Lambda Event Function.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAliases service method.</param>
         /// <param name="cancellationToken">
@@ -3778,8 +3801,8 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Returns a list of Lambda functions, with the version-specific configuration of each.
-        /// Lambda returns up to 50 functions per call.
+        /// Returns a list of Lambda Event Functions, with the version-specific configuration
+        /// of each. Lambda returns up to 50 functions per call.
         /// 
         ///  
         /// <para>
@@ -3820,8 +3843,8 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Returns a list of Lambda functions, with the version-specific configuration of each.
-        /// Lambda returns up to 50 functions per call.
+        /// Returns a list of Lambda Event Functions, with the version-specific configuration
+        /// of each. Lambda returns up to 50 functions per call.
         /// 
         ///  
         /// <para>
@@ -5381,7 +5404,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Updates the configuration of a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.
+        /// Updates the configuration of a Lambda Event Function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAlias service method.</param>
         /// <param name="cancellationToken">
@@ -5711,8 +5734,9 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Updates a Lambda function's code. If code signing is enabled for the function, the
-        /// code package must be signed by a trusted publisher. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html">Configuring
+        /// Updates a Lambda Event Function's code. If code signing is enabled for the function,
+        /// the code package must be signed by a trusted publisher. For more information, see
+        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html">Configuring
         /// code signing for Lambda</a>.
         /// 
         ///  
@@ -5825,7 +5849,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Modify the version-specific settings of a Lambda function.
+        /// Modifies the version-specific settings of a Lambda Event Function.
         /// 
         ///  
         /// <para>

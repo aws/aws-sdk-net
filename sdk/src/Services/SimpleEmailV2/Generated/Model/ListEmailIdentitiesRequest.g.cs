@@ -42,7 +42,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property Filter. 
         /// <para>
         /// An object that contains filters to apply when listing email identities. You can filter
-        /// by identity name, identity type, or verification status.
+        /// by a substring of the identity name, by identity type, or by verification status.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

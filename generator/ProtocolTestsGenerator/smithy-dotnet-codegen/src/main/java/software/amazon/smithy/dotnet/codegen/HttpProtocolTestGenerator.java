@@ -48,7 +48,8 @@ public final class HttpProtocolTestGenerator implements Runnable {
     // Services whose request, response and error tests are generated to call the service client end-to-end
     // (await client.OperationAsync(request)) against a mocked HTTP layer.
     private static final Set<ShapeId> MOCKED_CLIENT_SERVICES = Set.of(
-            ShapeId.from("aws.protocoltests.json10#JsonRpc10")
+            ShapeId.from("aws.protocoltests.json10#JsonRpc10"),
+            ShapeId.from("aws.protocoltests.restjson#RestJson")
     );
     private final boolean useMockedClient;
     private final List<String> tagsToSkip = List.of("defaults" , "skip-legacy-conversion");
@@ -532,15 +533,14 @@ public final class HttpProtocolTestGenerator implements Runnable {
     }
 
     private void arrangeMockHttpResponse(HttpResponseTestCase httpResponseTestCase) {
-        writer.write("var mockResponse = new MockHttpResponse");
-        writer.write("{");
-        writer.write("    StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), $L),", httpResponseTestCase.getCode());
-        // this is only used for json protocols for now but future-proofing
-        if (this.marshallerType.equals("Cbor"))
-            writer.write("    Body = Convert.FromBase64String($S),", httpResponseTestCase.getBody());
-        else
-            writer.write("    Body = Encoding.ASCII.GetBytes($S),", httpResponseTestCase.getBody());
-        writer.write("};");
+        writer.openBlock("var mockResponse = new MockHttpResponse\n{","};",(Runnable) () -> {
+            writer.write("StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), $L),", httpResponseTestCase.getCode());
+            // this is only used for json protocols for now but future-proofing
+            if (this.marshallerType.equals("Cbor"))
+                writer.write("Body = Convert.FromBase64String($S),", httpResponseTestCase.getBody());
+            else
+                writer.write("Body = Encoding.ASCII.GetBytes($S),", httpResponseTestCase.getBody());
+        });
         for (var header : httpResponseTestCase.getHeaders().keySet()) {
             writer.write("mockResponse.Headers[$S] = $S;", header, httpResponseTestCase.getHeaders().get(header));
         }

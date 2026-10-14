@@ -1073,6 +1073,79 @@ namespace Amazon.Route53Domains
         }
         #endregion
         
+        #region  GetDomainPrices
+
+        internal virtual GetDomainPricesResponse GetDomainPrices(GetDomainPricesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDomainPricesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainPricesResponseUnmarshaller.Instance;
+
+            return Invoke<GetDomainPricesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the following prices for the specified domain:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Registration
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Transfer
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Owner change
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Renewal
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Restoration
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For most domains, the prices match the standard prices for the TLD that the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListPrices.html">ListPrices</a>
+        /// operation returns. For a premium domain, the registry sets the price individually.
+        /// Premium prices might differ from the standard prices and can change over time.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainPrices service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDomainPrices service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <c>AcceptDomainTransferFromAnotherAwsAccount</c>, the password might
+        /// be invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.TLDInMaintenanceException">
+        /// The top-level domain is currently undergoing maintenance and the request cannot be
+        /// processed. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain (TLD).
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainPrices">REST API Reference for GetDomainPrices Operation</seealso>
+        public virtual Task<GetDomainPricesResponse> GetDomainPricesAsync(GetDomainPricesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDomainPricesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainPricesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDomainPricesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetDomainSuggestions
 
         internal virtual GetDomainSuggestionsResponse GetDomainSuggestions(GetDomainSuggestionsRequest request)
@@ -1331,13 +1404,20 @@ namespace Amazon.Route53Domains
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Domain renewal
+        /// Renewal
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Domain restoration
+        /// Restoration
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The prices that <c>ListPrices</c> returns are the standard rates for a TLD. <c>ListPrices</c>
+        /// doesn't return registry premium prices, which apply to individual domain names rather
+        /// than to a TLD. To get accurate pricing for a specific domain name, including premium
+        /// prices, call <c>GetDomainPrices</c>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPrices service method.</param>
         /// <param name="cancellationToken">

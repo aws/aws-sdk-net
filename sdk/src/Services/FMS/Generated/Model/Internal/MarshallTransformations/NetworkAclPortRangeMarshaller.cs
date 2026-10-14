@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NetworkAclPortRange Marshaller
     /// </summary>
-    public class NetworkAclPortRangeMarshaller : IRequestMarshaller<NetworkAclPortRange, JsonMarshallerContext> 
+    public class NetworkAclPortRangeMarshaller : IRequestMarshaller<NetworkAclPortRange, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(NetworkAclPortRange requestObject, JsonMarshallerContext context)
+        public void Marshall(NetworkAclPortRange requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetFrom())
-            {
-                context.Writer.WritePropertyName("From");
-                context.Writer.WriteNumberValue(requestObject.From.Value);
-            }
 
-            if(requestObject.IsSetTo())
+            if (requestObject.IsSetFrom())
             {
-                context.Writer.WritePropertyName("To");
-                context.Writer.WriteNumberValue(requestObject.To.Value);
+                context.Writer.WriteTextString("From");
+                context.Writer.WriteInt32(requestObject.From.Value);
             }
-
+            if (requestObject.IsSetTo())
+            {
+                context.Writer.WriteTextString("To");
+                context.Writer.WriteInt32(requestObject.To.Value);
+            }
         }
 
         /// <summary>

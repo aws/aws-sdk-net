@@ -9,7 +9,9 @@
         { "target": "com.amazonaws.testpaginated#ListFunctions" },
         { "target": "com.amazonaws.testpaginated#ListSummaries" },
         { "target": "com.amazonaws.testpaginated#ListThings" },
-        { "target": "com.amazonaws.testpaginated#ListWidgets" }
+        { "target": "com.amazonaws.testpaginated#ListWidgets" },
+        { "target": "com.amazonaws.testpaginated#BatchGetWidgets" },
+        { "target": "com.amazonaws.testpaginated#ListRecords" }
       ],
       "traits": {
         "aws.api#service": {
@@ -263,6 +265,59 @@
         },
         "smithy.api#http": { "method": "GET", "uri": "/widgets" },
         "smithy.api#readonly": {}
+      }
+    },
+    "com.amazonaws.testpaginated#BatchGetWidgets": {
+      "type": "operation",
+      "input": { "target": "com.amazonaws.testpaginated#BatchGetWidgetsRequest" },
+      "output": { "target": "com.amazonaws.testpaginated#BatchGetWidgetsResponse" },
+      "traits": {
+        "smithy.api#http": { "method": "POST", "uri": "/widgets/batch" }
+      }
+    },
+    "com.amazonaws.testpaginated#BatchGetWidgetsRequest": {
+      "type": "structure",
+      "members": {
+        "requestItems": { "target": "com.amazonaws.testpaginated#UsageMap" },
+        "limit": { "target": "smithy.api#Integer" }
+      },
+      "traits": { "smithy.api#input": {} }
+    },
+    "com.amazonaws.testpaginated#BatchGetWidgetsResponse": {
+      "type": "structure",
+      "members": {
+        "unprocessedKeys": { "target": "com.amazonaws.testpaginated#UsageMap" }
+      },
+      "traits": { "smithy.api#output": {} }
+    },
+    "com.amazonaws.testpaginated#ListRecords": {
+      "type": "operation",
+      "input": { "target": "com.amazonaws.testpaginated#ListRecordsRequest" },
+      "output": { "target": "com.amazonaws.testpaginated#ListRecordsResponse" },
+      "traits": {
+        "smithy.api#http": { "method": "GET", "uri": "/records" }
+      }
+    },
+    "com.amazonaws.testpaginated#ListRecordsRequest": {
+      "type": "structure",
+      "members": {
+        "startName": { "target": "smithy.api#String" },
+        "startType": { "target": "com.amazonaws.testpaginated#RecordType" }
+      },
+      "traits": { "smithy.api#input": {} }
+    },
+    "com.amazonaws.testpaginated#ListRecordsResponse": {
+      "type": "structure",
+      "members": {
+        "nextName": { "target": "smithy.api#String" },
+        "nextType": { "target": "com.amazonaws.testpaginated#RecordType" }
+      },
+      "traits": { "smithy.api#output": {} }
+    },
+    "com.amazonaws.testpaginated#RecordType": {
+      "type": "enum",
+      "members": {
+        "A": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "A" } }
       }
     },
     "com.amazonaws.testpaginated#ListWidgetsRequest": {

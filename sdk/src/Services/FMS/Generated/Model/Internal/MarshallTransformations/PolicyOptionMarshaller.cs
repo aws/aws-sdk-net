@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PolicyOption Marshaller
     /// </summary>
-    public class PolicyOptionMarshaller : IRequestMarshaller<PolicyOption, JsonMarshallerContext> 
+    public class PolicyOptionMarshaller : IRequestMarshaller<PolicyOption, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,43 +45,41 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(PolicyOption requestObject, JsonMarshallerContext context)
+        public void Marshall(PolicyOption requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetNetworkAclCommonPolicy())
+
+            if (requestObject.IsSetNetworkAclCommonPolicy())
             {
-                context.Writer.WritePropertyName("NetworkAclCommonPolicy");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("NetworkAclCommonPolicy");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = NetworkAclCommonPolicyMarshaller.Instance;
                 marshaller.Marshall(requestObject.NetworkAclCommonPolicy, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetNetworkFirewallPolicy())
+            if (requestObject.IsSetNetworkFirewallPolicy())
             {
-                context.Writer.WritePropertyName("NetworkFirewallPolicy");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("NetworkFirewallPolicy");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = NetworkFirewallPolicyMarshaller.Instance;
                 marshaller.Marshall(requestObject.NetworkFirewallPolicy, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetThirdPartyFirewallPolicy())
+            if (requestObject.IsSetThirdPartyFirewallPolicy())
             {
-                context.Writer.WritePropertyName("ThirdPartyFirewallPolicy");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("ThirdPartyFirewallPolicy");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = ThirdPartyFirewallPolicyMarshaller.Instance;
                 marshaller.Marshall(requestObject.ThirdPartyFirewallPolicy, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
         }
 
         /// <summary>

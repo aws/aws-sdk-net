@@ -30,7 +30,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.CheckDomainAvailabilityRequest.IdnLangCode</property>
-    <pattern>|[A-Za-z]{2,3}</pattern>
+    <pattern>(|[A-Za-z]{2,3})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.CheckDomainTransferabilityRequest.AuthCode</property>
@@ -106,6 +106,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.GetDomainDetailResponse.DomainName</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Domains.Model.GetDomainPricesRequest.DomainName</property>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -189,7 +193,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.RegisterDomainRequest.IdnLangCode</property>
-    <pattern>|[A-Za-z]{2,3}</pattern>
+    <pattern>(|[A-Za-z]{2,3})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.RegisterDomainResponse.OperationId</property>
@@ -255,7 +259,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.TransferDomainRequest.IdnLangCode</property>
-    <pattern>|[A-Za-z]{2,3}</pattern>
+    <pattern>(|[A-Za-z]{2,3})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.TransferDomainResponse.OperationId</property>
@@ -336,6 +340,7 @@
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.Consent.MaxPrice</property>
     <min>0</min>
+    <max>2000000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.ContactDetail.AddressLine1</property>

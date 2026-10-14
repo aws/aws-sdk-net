@@ -60,16 +60,15 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
             return members;
         }
 
-        // The property keeps the input member's name (+ "Publisher"); the interface and event list are the union's.
+        // The property is the input member's property (+ "Publisher"); the interface and event list are the union's.
         var memberName = operation.Input.Members.First(member => member.Value.Target == stream.Id).Key;
-        var memberProperty = SdkNaming.ToUpperFirstCharacter(memberName);
         var eventClasses = stream.Events.Select(context.ToDotNetName).ToList();
         var publisher = new EventStreamPublisherInfo(stream.InterfaceName, eventClasses);
         return members
             // Clear HidesBaseMember: the "Publisher" suffix means a member named "equals" no longer
             // shadows object.Equals, so it must not keep the `new` modifier (CS0109).
-            .Select(member => member.PropertyName == memberProperty && member.Type.IsEventStream
-                ? member with { PropertyName = $"{memberProperty}Publisher", EventStreamPublisher = publisher, HidesBaseMember = false }
+            .Select(member => member.ModeledName == memberName && member.Type.IsEventStream
+                ? member with { PropertyName = $"{member.PropertyName}Publisher", EventStreamPublisher = publisher, HidesBaseMember = false }
                 : member)
             .OrderBy(member => member.PropertyName, StringComparer.Ordinal)
             .ToList();

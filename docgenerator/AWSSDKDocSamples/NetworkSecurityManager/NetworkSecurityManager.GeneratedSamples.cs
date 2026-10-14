@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
     {
         public void NetworkSecurityManagerCreateDeployment()
         {
-            #region example-1
+            #region CreateDeployment-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.CreateDeployment(new CreateDeploymentRequest 
+            var response = client.CreateDeployment(new CreateDeploymentRequest
             {
                 AssociatedPolicyList = new List<PolicyReference> {
                     new PolicyReference { PolicyIdentifier = "arn:aws:network-security-manager:us-east-1:123456789012:policy:xyz789" }
@@ -31,7 +32,6 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
                 IsPublished = false
             });
 
-            string version = response.Version;
             List<AssociatedPolicy> associatedPolicyList = response.AssociatedPolicyList;
             List<AssociatedScope> associatedScopeList = response.AssociatedScopeList;
             string deploymentArn = response.DeploymentArn;
@@ -39,45 +39,46 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
             string deploymentDescription = response.DeploymentDescription;
             string deploymentId = response.DeploymentId;
             string deploymentName = response.DeploymentName;
-            bool hasPublishedVersion = response.HasPublishedVersion;
-            bool isSnapshot = response.IsSnapshot;
-            string status = response.Status;
+            bool? hasPublishedVersion = response.HasPublishedVersion;
+            bool? isSnapshot = response.IsSnapshot;
+            EntityStatus status = response.Status;
             string updateToken = response.UpdateToken;
+            string version = response.Version;
 
             #endregion
         }
 
         public void NetworkSecurityManagerCreateDeploymentSnapshot()
         {
-            #region example-1
+            #region CreateDeploymentSnapshot-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.CreateDeploymentSnapshot(new CreateDeploymentSnapshotRequest 
+            var response = client.CreateDeploymentSnapshot(new CreateDeploymentSnapshotRequest
             {
                 ClientToken = "550e8400-e29b-41d4-a716-446655440014",
                 DeploymentIdentifier = "arn:aws:network-security-manager:us-east-1:123456789012:deployment:def456"
             });
 
-            string version = response.Version;
             List<AssociatedPolicy> associatedPolicyList = response.AssociatedPolicyList;
             List<AssociatedScope> associatedScopeList = response.AssociatedScopeList;
             string deploymentArn = response.DeploymentArn;
             DeploymentConfiguration deploymentConfiguration = response.DeploymentConfiguration;
             string deploymentId = response.DeploymentId;
             string deploymentName = response.DeploymentName;
-            bool isSnapshot = response.IsSnapshot;
-            string status = response.Status;
-            DateTime updatedAt = response.UpdatedAt;
+            bool? isSnapshot = response.IsSnapshot;
+            EntityStatus status = response.Status;
+            DateTime? updatedAt = response.UpdatedAt;
+            string version = response.Version;
 
             #endregion
         }
 
         public void NetworkSecurityManagerCreatePolicy()
         {
-            #region example-1
+            #region CreatePolicy-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.CreatePolicy(new CreatePolicyRequest 
+            var response = client.CreatePolicy(new CreatePolicyRequest
             {
                 AssociatedTemplateAndRuleList = new List<TemplateOrRuleReference> {
                     new TemplateOrRuleReference { TemplateIdentifier = "arn:aws:network-security-manager:us-east-1:123456789012:template:xyz789" }
@@ -98,58 +99,58 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
                 Priority = 1
             });
 
-            string version = response.Version;
             List<AssociatedTemplateOrRule> associatedTemplateAndRuleList = response.AssociatedTemplateAndRuleList;
-            string firewallType = response.FirewallType;
-            bool hasPublishedVersion = response.HasPublishedVersion;
-            bool isSnapshot = response.IsSnapshot;
+            PolicyFirewallType firewallType = response.FirewallType;
+            bool? hasPublishedVersion = response.HasPublishedVersion;
+            bool? isSnapshot = response.IsSnapshot;
             string policyArn = response.PolicyArn;
             PolicyConfiguration policyConfiguration = response.PolicyConfiguration;
             string policyDescription = response.PolicyDescription;
             string policyId = response.PolicyId;
             string policyName = response.PolicyName;
-            int priority = response.Priority;
-            string status = response.Status;
+            int? priority = response.Priority;
+            EntityStatus status = response.Status;
             string updateToken = response.UpdateToken;
+            string version = response.Version;
 
             #endregion
         }
 
         public void NetworkSecurityManagerCreatePolicySnapshot()
         {
-            #region example-1
+            #region CreatePolicySnapshot-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.CreatePolicySnapshot(new CreatePolicySnapshotRequest 
+            var response = client.CreatePolicySnapshot(new CreatePolicySnapshotRequest
             {
                 ClientToken = "550e8400-e29b-41d4-a716-446655440013",
                 PolicyIdentifier = "arn:aws:network-security-manager:us-east-1:123456789012:policy:xyz789"
             });
 
-            string version = response.Version;
             List<AssociatedTemplateOrRule> associatedTemplateAndRuleList = response.AssociatedTemplateAndRuleList;
-            string firewallType = response.FirewallType;
-            bool isSnapshot = response.IsSnapshot;
+            PolicyFirewallType firewallType = response.FirewallType;
+            bool? isSnapshot = response.IsSnapshot;
             string policyArn = response.PolicyArn;
             PolicyConfiguration policyConfiguration = response.PolicyConfiguration;
             string policyId = response.PolicyId;
             string policyName = response.PolicyName;
-            int priority = response.Priority;
-            string status = response.Status;
-            DateTime updatedAt = response.UpdatedAt;
+            int? priority = response.Priority;
+            EntityStatus status = response.Status;
+            DateTime? updatedAt = response.UpdatedAt;
+            string version = response.Version;
 
             #endregion
         }
 
         public void NetworkSecurityManagerCreateRule()
         {
-            #region example-1
+            #region CreateRule-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.CreateRule(new CreateRuleRequest 
+            var response = client.CreateRule(new CreateRuleRequest
             {
                 ClientToken = "550e8400-e29b-41d4-a716-446655440000",
-                Configuration = new JsonDocument {  },
+                Configuration = new global::Amazon.Runtime.Documents.Document(new Dictionary<string, global::Amazon.Runtime.Documents.Document>()),
                 FirewallType = "WAF",
                 IsPublished = false,
                 RuleDescription = "Blocks requests from known malicious IP addresses",
@@ -157,109 +158,108 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
                 RuleType = "INSPECTION"
             });
 
-            string version = response.Version;
-            JsonDocument configuration = response.Configuration;
-            string firewallType = response.FirewallType;
-            bool hasPublishedVersion = response.HasPublishedVersion;
-            bool isSnapshot = response.IsSnapshot;
+            global::Amazon.Runtime.Documents.Document configuration = response.Configuration;
+            RuleFirewallType firewallType = response.FirewallType;
+            bool? hasPublishedVersion = response.HasPublishedVersion;
+            bool? isSnapshot = response.IsSnapshot;
             string ruleArn = response.RuleArn;
             string ruleDescription = response.RuleDescription;
             string ruleId = response.RuleId;
             string ruleName = response.RuleName;
-            string ruleType = response.RuleType;
-            string status = response.Status;
+            RuleType ruleType = response.RuleType;
+            EntityStatus status = response.Status;
             string updateToken = response.UpdateToken;
+            string version = response.Version;
 
             #endregion
         }
 
         public void NetworkSecurityManagerCreateRuleSnapshot()
         {
-            #region example-1
+            #region CreateRuleSnapshot-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.CreateRuleSnapshot(new CreateRuleSnapshotRequest 
+            var response = client.CreateRuleSnapshot(new CreateRuleSnapshotRequest
             {
                 ClientToken = "550e8400-e29b-41d4-a716-446655440011",
                 RuleIdentifier = "arn:aws:network-security-manager:us-east-1:123456789012:rule:abc123"
             });
 
-            string version = response.Version;
-            JsonDocument configuration = response.Configuration;
-            string firewallType = response.FirewallType;
-            bool isSnapshot = response.IsSnapshot;
+            global::Amazon.Runtime.Documents.Document configuration = response.Configuration;
+            RuleFirewallType firewallType = response.FirewallType;
+            bool? isSnapshot = response.IsSnapshot;
             string ruleArn = response.RuleArn;
             string ruleId = response.RuleId;
             string ruleName = response.RuleName;
-            string ruleType = response.RuleType;
-            string status = response.Status;
-            DateTime updatedAt = response.UpdatedAt;
+            RuleType ruleType = response.RuleType;
+            EntityStatus status = response.Status;
+            DateTime? updatedAt = response.UpdatedAt;
+            string version = response.Version;
 
             #endregion
         }
 
         public void NetworkSecurityManagerCreateScope()
         {
-            #region example-1
+            #region CreateScope-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.CreateScope(new CreateScopeRequest 
+            var response = client.CreateScope(new CreateScopeRequest
             {
                 ClientToken = "550e8400-e29b-41d4-a716-446655440001",
                 IsPublished = true,
                 ScopeConfiguration = new ScopeConfiguration {
                     AccountFilter = new AccountFilter { IncludeAll = new Unit {  } },
                     ResourceScopes = new Dictionary<string, ResourceScope> {
-                        
                     }
                 },
                 ScopeDescription = "Scope covering all production web application resources",
                 ScopeName = "production-web-apps"
             });
 
-            string version = response.Version;
-            bool hasPublishedVersion = response.HasPublishedVersion;
-            bool isSnapshot = response.IsSnapshot;
+            bool? hasPublishedVersion = response.HasPublishedVersion;
+            bool? isSnapshot = response.IsSnapshot;
             string scopeArn = response.ScopeArn;
             ScopeConfiguration scopeConfiguration = response.ScopeConfiguration;
             string scopeDescription = response.ScopeDescription;
             string scopeId = response.ScopeId;
             string scopeName = response.ScopeName;
-            string status = response.Status;
+            EntityStatus status = response.Status;
             string updateToken = response.UpdateToken;
+            string version = response.Version;
 
             #endregion
         }
 
         public void NetworkSecurityManagerCreateScopeSnapshot()
         {
-            #region example-1
+            #region CreateScopeSnapshot-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.CreateScopeSnapshot(new CreateScopeSnapshotRequest 
+            var response = client.CreateScopeSnapshot(new CreateScopeSnapshotRequest
             {
                 ClientToken = "550e8400-e29b-41d4-a716-446655440010",
                 ScopeIdentifier = "arn:aws:network-security-manager:us-east-1:123456789012:scope:abc123"
             });
 
-            string version = response.Version;
-            bool isSnapshot = response.IsSnapshot;
+            bool? isSnapshot = response.IsSnapshot;
             string scopeArn = response.ScopeArn;
             ScopeConfiguration scopeConfiguration = response.ScopeConfiguration;
             string scopeId = response.ScopeId;
             string scopeName = response.ScopeName;
-            string status = response.Status;
-            DateTime updatedAt = response.UpdatedAt;
+            EntityStatus status = response.Status;
+            DateTime? updatedAt = response.UpdatedAt;
+            string version = response.Version;
 
             #endregion
         }
 
         public void NetworkSecurityManagerCreateTemplate()
         {
-            #region example-1
+            #region CreateTemplate-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.CreateTemplate(new CreateTemplateRequest 
+            var response = client.CreateTemplate(new CreateTemplateRequest
             {
                 AssociatedRuleList = new List<RuleReference> {
                     new RuleReference { RuleIdentifier = "arn:aws:network-security-manager:us-east-1:123456789012:rule:abc123" }
@@ -271,51 +271,51 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
                 TemplateName = "standard-waf-template"
             });
 
-            string version = response.Version;
             List<AssociatedRule> associatedRuleList = response.AssociatedRuleList;
-            string firewallType = response.FirewallType;
-            bool hasPublishedVersion = response.HasPublishedVersion;
-            bool isSnapshot = response.IsSnapshot;
-            string status = response.Status;
+            TemplateFirewallType firewallType = response.FirewallType;
+            bool? hasPublishedVersion = response.HasPublishedVersion;
+            bool? isSnapshot = response.IsSnapshot;
+            EntityStatus status = response.Status;
             string templateArn = response.TemplateArn;
             string templateDescription = response.TemplateDescription;
             string templateId = response.TemplateId;
             string templateName = response.TemplateName;
             string updateToken = response.UpdateToken;
+            string version = response.Version;
 
             #endregion
         }
 
         public void NetworkSecurityManagerCreateTemplateSnapshot()
         {
-            #region example-1
+            #region CreateTemplateSnapshot-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.CreateTemplateSnapshot(new CreateTemplateSnapshotRequest 
+            var response = client.CreateTemplateSnapshot(new CreateTemplateSnapshotRequest
             {
                 ClientToken = "550e8400-e29b-41d4-a716-446655440012",
                 TemplateIdentifier = "arn:aws:network-security-manager:us-east-1:123456789012:template:xyz789"
             });
 
-            string version = response.Version;
             List<AssociatedRule> associatedRuleList = response.AssociatedRuleList;
-            string firewallType = response.FirewallType;
-            bool isSnapshot = response.IsSnapshot;
-            string status = response.Status;
+            TemplateFirewallType firewallType = response.FirewallType;
+            bool? isSnapshot = response.IsSnapshot;
+            EntityStatus status = response.Status;
             string templateArn = response.TemplateArn;
             string templateId = response.TemplateId;
             string templateName = response.TemplateName;
-            DateTime updatedAt = response.UpdatedAt;
+            DateTime? updatedAt = response.UpdatedAt;
+            string version = response.Version;
 
             #endregion
         }
 
         public void NetworkSecurityManagerDeleteAdminAccount()
         {
-            #region example-1
+            #region DeleteAdminAccount-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.DeleteAdminAccount(new DeleteAdminAccountRequest 
+            var response = client.DeleteAdminAccount(new DeleteAdminAccountRequest
             {
                 AccountId = "234567890123"
             });
@@ -326,10 +326,10 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
 
         public void NetworkSecurityManagerDeleteDeployment()
         {
-            #region example-1
+            #region DeleteDeployment-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.DeleteDeployment(new DeleteDeploymentRequest 
+            var response = client.DeleteDeployment(new DeleteDeploymentRequest
             {
                 DeploymentIdentifier = "arn:aws:network-security-manager:us-east-1:123456789012:deployment:def456"
             });
@@ -340,10 +340,10 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
 
         public void NetworkSecurityManagerDeletePolicy()
         {
-            #region example-1
+            #region DeletePolicy-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.DeletePolicy(new DeletePolicyRequest 
+            var response = client.DeletePolicy(new DeletePolicyRequest
             {
                 PolicyIdentifier = "arn:aws:network-security-manager:us-east-1:123456789012:policy:xyz789"
             });
@@ -354,10 +354,10 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
 
         public void NetworkSecurityManagerDeleteRule()
         {
-            #region example-1
+            #region DeleteRule-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.DeleteRule(new DeleteRuleRequest 
+            var response = client.DeleteRule(new DeleteRuleRequest
             {
                 RuleIdentifier = "arn:aws:network-security-manager:us-east-1:123456789012:rule:abc123"
             });
@@ -368,10 +368,10 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
 
         public void NetworkSecurityManagerDeleteScope()
         {
-            #region example-1
+            #region DeleteScope-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.DeleteScope(new DeleteScopeRequest 
+            var response = client.DeleteScope(new DeleteScopeRequest
             {
                 ScopeIdentifier = "arn:aws:network-security-manager:us-east-1:123456789012:scope:abc123"
             });
@@ -382,10 +382,10 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
 
         public void NetworkSecurityManagerDeleteTemplate()
         {
-            #region example-1
+            #region DeleteTemplate-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.DeleteTemplate(new DeleteTemplateRequest 
+            var response = client.DeleteTemplate(new DeleteTemplateRequest
             {
                 TemplateIdentifier = "arn:aws:network-security-manager:us-east-1:123456789012:template:xyz789"
             });
@@ -396,10 +396,10 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
 
         public void NetworkSecurityManagerGenerateRuleConfiguration()
         {
-            #region example-1
+            #region GenerateRuleConfiguration-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.GenerateRuleConfiguration(new GenerateRuleConfigurationRequest 
+            var response = client.GenerateRuleConfiguration(new GenerateRuleConfigurationRequest
             {
                 ClientToken = "550e8400-e29b-41d4-a716-446655440015",
                 Prompt = "Create a rate limiting rule that blocks IP addresses sending more than 2000 requests in 5 minutes",
@@ -414,10 +414,10 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
 
         public void NetworkSecurityManagerGetAdminAccount()
         {
-            #region example-1
+            #region GetAdminAccount-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.GetAdminAccount(new GetAdminAccountRequest 
+            var response = client.GetAdminAccount(new GetAdminAccountRequest
             {
                 AccountId = "234567890123"
             });
@@ -429,15 +429,14 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
 
         public void NetworkSecurityManagerGetDeployment()
         {
-            #region example-1
+            #region GetDeployment-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.GetDeployment(new GetDeploymentRequest 
+            var response = client.GetDeployment(new GetDeploymentRequest
             {
                 DeploymentIdentifier = "arn:aws:network-security-manager:us-east-1:123456789012:deployment:def456"
             });
 
-            string version = response.Version;
             List<AssociatedPolicy> associatedPolicyList = response.AssociatedPolicyList;
             List<AssociatedScope> associatedScopeList = response.AssociatedScopeList;
             string deploymentArn = response.DeploymentArn;
@@ -446,146 +445,147 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
             string deploymentDescription = response.DeploymentDescription;
             string deploymentId = response.DeploymentId;
             string deploymentName = response.DeploymentName;
-            bool hasPublishedVersion = response.HasPublishedVersion;
-            bool isSnapshot = response.IsSnapshot;
-            string status = response.Status;
+            bool? hasPublishedVersion = response.HasPublishedVersion;
+            bool? isSnapshot = response.IsSnapshot;
+            EntityStatus status = response.Status;
             string updateToken = response.UpdateToken;
+            string version = response.Version;
 
             #endregion
         }
 
         public void NetworkSecurityManagerGetPolicy()
         {
-            #region example-1
+            #region GetPolicy-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.GetPolicy(new GetPolicyRequest 
+            var response = client.GetPolicy(new GetPolicyRequest
             {
                 PolicyIdentifier = "arn:aws:network-security-manager:us-east-1:123456789012:policy:xyz789"
             });
 
-            string version = response.Version;
             List<AssociatedTemplateOrRule> associatedTemplateAndRuleList = response.AssociatedTemplateAndRuleList;
-            string firewallType = response.FirewallType;
-            bool hasPublishedVersion = response.HasPublishedVersion;
-            bool isSnapshot = response.IsSnapshot;
+            PolicyFirewallType firewallType = response.FirewallType;
+            bool? hasPublishedVersion = response.HasPublishedVersion;
+            bool? isSnapshot = response.IsSnapshot;
             string policyArn = response.PolicyArn;
             PolicyConfiguration policyConfiguration = response.PolicyConfiguration;
             string policyDescription = response.PolicyDescription;
             string policyId = response.PolicyId;
             string policyName = response.PolicyName;
-            int priority = response.Priority;
-            string status = response.Status;
+            int? priority = response.Priority;
+            EntityStatus status = response.Status;
             string updateToken = response.UpdateToken;
+            string version = response.Version;
 
             #endregion
         }
 
         public void NetworkSecurityManagerGetRule()
         {
-            #region example-1
+            #region GetRule-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.GetRule(new GetRuleRequest 
+            var response = client.GetRule(new GetRuleRequest
             {
                 RuleIdentifier = "arn:aws:network-security-manager:us-east-1:123456789012:rule:abc123"
             });
 
-            string version = response.Version;
-            JsonDocument configuration = response.Configuration;
-            string firewallType = response.FirewallType;
-            bool hasPublishedVersion = response.HasPublishedVersion;
-            bool isSnapshot = response.IsSnapshot;
+            global::Amazon.Runtime.Documents.Document configuration = response.Configuration;
+            RuleFirewallType firewallType = response.FirewallType;
+            bool? hasPublishedVersion = response.HasPublishedVersion;
+            bool? isSnapshot = response.IsSnapshot;
             string ruleArn = response.RuleArn;
             string ruleDescription = response.RuleDescription;
             string ruleId = response.RuleId;
             string ruleName = response.RuleName;
-            string ruleType = response.RuleType;
-            string status = response.Status;
+            RuleType ruleType = response.RuleType;
+            EntityStatus status = response.Status;
             string updateToken = response.UpdateToken;
+            string version = response.Version;
 
             #endregion
         }
 
         public void NetworkSecurityManagerGetRule()
         {
-            #region example-2
+            #region GetRule-2
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.GetRule(new GetRuleRequest 
+            var response = client.GetRule(new GetRuleRequest
             {
                 RuleIdentifier = "arn:aws:network-security-manager:us-east-1:123456789012:rule:abc123:3"
             });
 
-            string version = response.Version;
-            JsonDocument configuration = response.Configuration;
-            string firewallType = response.FirewallType;
-            bool isSnapshot = response.IsSnapshot;
+            global::Amazon.Runtime.Documents.Document configuration = response.Configuration;
+            RuleFirewallType firewallType = response.FirewallType;
+            bool? isSnapshot = response.IsSnapshot;
             string ruleArn = response.RuleArn;
             string ruleDescription = response.RuleDescription;
             string ruleId = response.RuleId;
             string ruleName = response.RuleName;
-            string ruleType = response.RuleType;
-            string status = response.Status;
+            RuleType ruleType = response.RuleType;
+            EntityStatus status = response.Status;
+            string version = response.Version;
 
             #endregion
         }
 
         public void NetworkSecurityManagerGetScope()
         {
-            #region example-1
+            #region GetScope-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.GetScope(new GetScopeRequest 
+            var response = client.GetScope(new GetScopeRequest
             {
                 ScopeIdentifier = "arn:aws:network-security-manager:us-east-1:123456789012:scope:abc123"
             });
 
-            string version = response.Version;
-            bool hasPublishedVersion = response.HasPublishedVersion;
-            bool isSnapshot = response.IsSnapshot;
+            bool? hasPublishedVersion = response.HasPublishedVersion;
+            bool? isSnapshot = response.IsSnapshot;
             string scopeArn = response.ScopeArn;
             ScopeConfiguration scopeConfiguration = response.ScopeConfiguration;
             string scopeDescription = response.ScopeDescription;
             string scopeId = response.ScopeId;
             string scopeName = response.ScopeName;
-            string status = response.Status;
+            EntityStatus status = response.Status;
             string updateToken = response.UpdateToken;
+            string version = response.Version;
 
             #endregion
         }
 
         public void NetworkSecurityManagerGetTemplate()
         {
-            #region example-1
+            #region GetTemplate-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.GetTemplate(new GetTemplateRequest 
+            var response = client.GetTemplate(new GetTemplateRequest
             {
                 TemplateIdentifier = "arn:aws:network-security-manager:us-east-1:123456789012:template:xyz789"
             });
 
-            string version = response.Version;
             List<AssociatedRule> associatedRuleList = response.AssociatedRuleList;
-            string firewallType = response.FirewallType;
-            bool hasPublishedVersion = response.HasPublishedVersion;
-            bool isSnapshot = response.IsSnapshot;
-            string status = response.Status;
+            TemplateFirewallType firewallType = response.FirewallType;
+            bool? hasPublishedVersion = response.HasPublishedVersion;
+            bool? isSnapshot = response.IsSnapshot;
+            EntityStatus status = response.Status;
             string templateArn = response.TemplateArn;
             string templateDescription = response.TemplateDescription;
             string templateId = response.TemplateId;
             string templateName = response.TemplateName;
             string updateToken = response.UpdateToken;
+            string version = response.Version;
 
             #endregion
         }
 
         public void NetworkSecurityManagerListAdminAccounts()
         {
-            #region example-1
+            #region ListAdminAccounts-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.ListAdminAccounts(new ListAdminAccountsRequest 
+            var response = client.ListAdminAccounts(new ListAdminAccountsRequest
             {
                 MaxResults = 10
             });
@@ -597,10 +597,10 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
 
         public void NetworkSecurityManagerListAggregateResourceSynchronizationStatuses()
         {
-            #region example-1
+            #region ListAggregateResourceSynchronizationStatuses-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.ListAggregateResourceSynchronizationStatuses(new ListAggregateResourceSynchronizationStatusesRequest 
+            var response = client.ListAggregateResourceSynchronizationStatuses(new ListAggregateResourceSynchronizationStatusesRequest
             {
                 MaxResults = 10,
                 SynchronizationStatus = "IN_SYNC"
@@ -613,10 +613,10 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
 
         public void NetworkSecurityManagerListDeployments()
         {
-            #region example-1
+            #region ListDeployments-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.ListDeployments(new ListDeploymentsRequest 
+            var response = client.ListDeployments(new ListDeploymentsRequest
             {
                 MaxResults = 10,
                 Status = "ACTIVE"
@@ -629,10 +629,10 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
 
         public void NetworkSecurityManagerListDeploymentSnapshots()
         {
-            #region example-1
+            #region ListDeploymentSnapshots-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.ListDeploymentSnapshots(new ListDeploymentSnapshotsRequest 
+            var response = client.ListDeploymentSnapshots(new ListDeploymentSnapshotsRequest
             {
                 DeploymentIdentifier = "arn:aws:network-security-manager:us-east-1:123456789012:deployment:def456",
                 MaxResults = 10
@@ -645,10 +645,10 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
 
         public void NetworkSecurityManagerListPolicies()
         {
-            #region example-1
+            #region ListPolicies-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.ListPolicies(new ListPoliciesRequest 
+            var response = client.ListPolicies(new ListPoliciesRequest
             {
                 MaxResults = 10,
                 Status = "ACTIVE"
@@ -661,10 +661,10 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
 
         public void NetworkSecurityManagerListPolicySnapshots()
         {
-            #region example-1
+            #region ListPolicySnapshots-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.ListPolicySnapshots(new ListPolicySnapshotsRequest 
+            var response = client.ListPolicySnapshots(new ListPolicySnapshotsRequest
             {
                 MaxResults = 10,
                 PolicyIdentifier = "arn:aws:network-security-manager:us-east-1:123456789012:policy:xyz789"
@@ -677,10 +677,10 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
 
         public void NetworkSecurityManagerListResourceAssociations()
         {
-            #region example-1
+            #region ListResourceAssociations-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.ListResourceAssociations(new ListResourceAssociationsRequest 
+            var response = client.ListResourceAssociations(new ListResourceAssociationsRequest
             {
                 MaxResults = 10,
                 ResourceIdentifier = "arn:aws:network-security-manager:us-east-1:123456789012:rule:abc123"
@@ -693,10 +693,10 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
 
         public void NetworkSecurityManagerListResourceSynchronizationStatuses()
         {
-            #region example-1
+            #region ListResourceSynchronizationStatuses-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.ListResourceSynchronizationStatuses(new ListResourceSynchronizationStatusesRequest 
+            var response = client.ListResourceSynchronizationStatuses(new ListResourceSynchronizationStatusesRequest
             {
                 DeploymentIdentifier = "arn:aws:network-security-manager:us-east-1:123456789012:deployment:def456",
                 MaxResults = 10,
@@ -710,10 +710,10 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
 
         public void NetworkSecurityManagerListRules()
         {
-            #region example-1
+            #region ListRules-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.ListRules(new ListRulesRequest 
+            var response = client.ListRules(new ListRulesRequest
             {
                 MaxResults = 10,
                 Status = "ACTIVE"
@@ -726,10 +726,10 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
 
         public void NetworkSecurityManagerListRuleSnapshots()
         {
-            #region example-1
+            #region ListRuleSnapshots-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.ListRuleSnapshots(new ListRuleSnapshotsRequest 
+            var response = client.ListRuleSnapshots(new ListRuleSnapshotsRequest
             {
                 MaxResults = 10,
                 RuleIdentifier = "arn:aws:network-security-manager:us-east-1:123456789012:rule:abc123"
@@ -742,10 +742,10 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
 
         public void NetworkSecurityManagerListScopes()
         {
-            #region example-1
+            #region ListScopes-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.ListScopes(new ListScopesRequest 
+            var response = client.ListScopes(new ListScopesRequest
             {
                 MaxResults = 10,
                 Status = "ACTIVE"
@@ -759,10 +759,10 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
 
         public void NetworkSecurityManagerListScopeSnapshots()
         {
-            #region example-1
+            #region ListScopeSnapshots-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.ListScopeSnapshots(new ListScopeSnapshotsRequest 
+            var response = client.ListScopeSnapshots(new ListScopeSnapshotsRequest
             {
                 MaxResults = 10,
                 ScopeIdentifier = "arn:aws:network-security-manager:us-east-1:123456789012:scope:abc123"
@@ -775,10 +775,10 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
 
         public void NetworkSecurityManagerListTagsForResource()
         {
-            #region example-1
+            #region ListTagsForResource-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.ListTagsForResource(new ListTagsForResourceRequest 
+            var response = client.ListTagsForResource(new ListTagsForResourceRequest
             {
                 ResourceArn = "arn:aws:network-security-manager:us-east-1:123456789012:policy:xyz789"
             });
@@ -790,10 +790,10 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
 
         public void NetworkSecurityManagerListTemplates()
         {
-            #region example-1
+            #region ListTemplates-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.ListTemplates(new ListTemplatesRequest 
+            var response = client.ListTemplates(new ListTemplatesRequest
             {
                 MaxResults = 10,
                 Status = "ACTIVE"
@@ -806,10 +806,10 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
 
         public void NetworkSecurityManagerListTemplateSnapshots()
         {
-            #region example-1
+            #region ListTemplateSnapshots-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.ListTemplateSnapshots(new ListTemplateSnapshotsRequest 
+            var response = client.ListTemplateSnapshots(new ListTemplateSnapshotsRequest
             {
                 MaxResults = 10,
                 TemplateIdentifier = "arn:aws:network-security-manager:us-east-1:123456789012:template:xyz789"
@@ -822,10 +822,10 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
 
         public void NetworkSecurityManagerPutAdminAccount()
         {
-            #region example-1
+            #region PutAdminAccount-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.PutAdminAccount(new PutAdminAccountRequest 
+            var response = client.PutAdminAccount(new PutAdminAccountRequest
             {
                 AccountId = "234567890123",
                 AdminScope = new AdminScopeInput {
@@ -849,10 +849,10 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
 
         public void NetworkSecurityManagerTagResource()
         {
-            #region example-1
+            #region TagResource-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.TagResource(new TagResourceRequest 
+            var response = client.TagResource(new TagResourceRequest
             {
                 ResourceArn = "arn:aws:network-security-manager:us-east-1:123456789012:policy:xyz789",
                 Tags = new Dictionary<string, string> {
@@ -867,10 +867,10 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
 
         public void NetworkSecurityManagerUntagResource()
         {
-            #region example-1
+            #region UntagResource-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.UntagResource(new UntagResourceRequest 
+            var response = client.UntagResource(new UntagResourceRequest
             {
                 ResourceArn = "arn:aws:network-security-manager:us-east-1:123456789012:policy:xyz789",
                 TagKeys = new List<string> {
@@ -884,10 +884,10 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
 
         public void NetworkSecurityManagerUpdateDeployment()
         {
-            #region example-1
+            #region UpdateDeployment-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.UpdateDeployment(new UpdateDeploymentRequest 
+            var response = client.UpdateDeployment(new UpdateDeploymentRequest
             {
                 AssociatedPolicyList = new List<PolicyReference> {
                     new PolicyReference { PolicyIdentifier = "arn:aws:network-security-manager:us-east-1:123456789012:policy:xyz789" }
@@ -902,7 +902,6 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
                 UpdateToken = "f4a5b6c7-7d8e-4f9a-8b1c-1d2e3f4a5b6c"
             });
 
-            string version = response.Version;
             List<AssociatedPolicy> associatedPolicyList = response.AssociatedPolicyList;
             List<AssociatedScope> associatedScopeList = response.AssociatedScopeList;
             string deploymentArn = response.DeploymentArn;
@@ -911,21 +910,22 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
             string deploymentDescription = response.DeploymentDescription;
             string deploymentId = response.DeploymentId;
             string deploymentName = response.DeploymentName;
-            bool hasPublishedVersion = response.HasPublishedVersion;
-            bool isSnapshot = response.IsSnapshot;
-            string status = response.Status;
+            bool? hasPublishedVersion = response.HasPublishedVersion;
+            bool? isSnapshot = response.IsSnapshot;
+            EntityStatus status = response.Status;
             string updateToken = response.UpdateToken;
-            DateTime updatedAt = response.UpdatedAt;
+            DateTime? updatedAt = response.UpdatedAt;
+            string version = response.Version;
 
             #endregion
         }
 
         public void NetworkSecurityManagerUpdatePolicy()
         {
-            #region example-1
+            #region UpdatePolicy-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.UpdatePolicy(new UpdatePolicyRequest 
+            var response = client.UpdatePolicy(new UpdatePolicyRequest
             {
                 AssociatedTemplateAndRuleList = new List<TemplateOrRuleReference> {
                     new TemplateOrRuleReference { TemplateIdentifier = "arn:aws:network-security-manager:us-east-1:123456789012:template:xyz789" }
@@ -945,32 +945,32 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
                 UpdateToken = "e3f4a5b6-6c7d-4e8f-9a0b-0c1d2e3f4a5b"
             });
 
-            string version = response.Version;
             List<AssociatedTemplateOrRule> associatedTemplateAndRuleList = response.AssociatedTemplateAndRuleList;
-            string firewallType = response.FirewallType;
-            bool hasPublishedVersion = response.HasPublishedVersion;
-            bool isSnapshot = response.IsSnapshot;
+            PolicyFirewallType firewallType = response.FirewallType;
+            bool? hasPublishedVersion = response.HasPublishedVersion;
+            bool? isSnapshot = response.IsSnapshot;
             string policyArn = response.PolicyArn;
             PolicyConfiguration policyConfiguration = response.PolicyConfiguration;
             string policyDescription = response.PolicyDescription;
             string policyId = response.PolicyId;
             string policyName = response.PolicyName;
-            int priority = response.Priority;
-            string status = response.Status;
+            int? priority = response.Priority;
+            EntityStatus status = response.Status;
             string updateToken = response.UpdateToken;
-            DateTime updatedAt = response.UpdatedAt;
+            DateTime? updatedAt = response.UpdatedAt;
+            string version = response.Version;
 
             #endregion
         }
 
         public void NetworkSecurityManagerUpdateRule()
         {
-            #region example-1
+            #region UpdateRule-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.UpdateRule(new UpdateRuleRequest 
+            var response = client.UpdateRule(new UpdateRuleRequest
             {
-                Configuration = new JsonDocument {  },
+                Configuration = new global::Amazon.Runtime.Documents.Document(new Dictionary<string, global::Amazon.Runtime.Documents.Document>()),
                 IsPublished = true,
                 RuleDescription = "Blocks requests from known malicious IP addresses - updated list",
                 RuleIdentifier = "arn:aws:network-security-manager:us-east-1:123456789012:rule:abc123",
@@ -978,35 +978,34 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
                 UpdateToken = "c1d2e3f4-4a5b-4c6d-9e7f-8a9b0c1d2e3f"
             });
 
-            string version = response.Version;
-            JsonDocument configuration = response.Configuration;
-            string firewallType = response.FirewallType;
-            bool hasPublishedVersion = response.HasPublishedVersion;
-            bool isSnapshot = response.IsSnapshot;
+            global::Amazon.Runtime.Documents.Document configuration = response.Configuration;
+            RuleFirewallType firewallType = response.FirewallType;
+            bool? hasPublishedVersion = response.HasPublishedVersion;
+            bool? isSnapshot = response.IsSnapshot;
             string ruleArn = response.RuleArn;
             string ruleDescription = response.RuleDescription;
             string ruleId = response.RuleId;
             string ruleName = response.RuleName;
-            string ruleType = response.RuleType;
-            string status = response.Status;
+            RuleType ruleType = response.RuleType;
+            EntityStatus status = response.Status;
             string updateToken = response.UpdateToken;
-            DateTime updatedAt = response.UpdatedAt;
+            DateTime? updatedAt = response.UpdatedAt;
+            string version = response.Version;
 
             #endregion
         }
 
         public void NetworkSecurityManagerUpdateScope()
         {
-            #region example-1
+            #region UpdateScope-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.UpdateScope(new UpdateScopeRequest 
+            var response = client.UpdateScope(new UpdateScopeRequest
             {
                 IsPublished = true,
                 ScopeConfiguration = new ScopeConfiguration {
                     AccountFilter = new AccountFilter { IncludeAll = new Unit {  } },
                     ResourceScopes = new Dictionary<string, ResourceScope> {
-                        
                     }
                 },
                 ScopeDescription = "Scope covering all production web application resources in US East 1",
@@ -1014,27 +1013,27 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
                 UpdateToken = "b0c4d1e2-3f4a-4b5c-8d6e-7f8a9b0c1d2e"
             });
 
-            string version = response.Version;
-            bool hasPublishedVersion = response.HasPublishedVersion;
-            bool isSnapshot = response.IsSnapshot;
+            bool? hasPublishedVersion = response.HasPublishedVersion;
+            bool? isSnapshot = response.IsSnapshot;
             string scopeArn = response.ScopeArn;
             ScopeConfiguration scopeConfiguration = response.ScopeConfiguration;
             string scopeDescription = response.ScopeDescription;
             string scopeId = response.ScopeId;
             string scopeName = response.ScopeName;
-            string status = response.Status;
+            EntityStatus status = response.Status;
             string updateToken = response.UpdateToken;
-            DateTime updatedAt = response.UpdatedAt;
+            DateTime? updatedAt = response.UpdatedAt;
+            string version = response.Version;
 
             #endregion
         }
 
         public void NetworkSecurityManagerUpdateTemplate()
         {
-            #region example-1
+            #region UpdateTemplate-1
 
             var client = new AmazonNetworkSecurityManagerClient();
-            var response = client.UpdateTemplate(new UpdateTemplateRequest 
+            var response = client.UpdateTemplate(new UpdateTemplateRequest
             {
                 AssociatedRuleList = new List<RuleReference> {
                     new RuleReference { RuleIdentifier = "arn:aws:network-security-manager:us-east-1:123456789012:rule:abc123" }
@@ -1045,29 +1044,26 @@ namespace AWSSDKDocSamples.Amazon.NetworkSecurityManager.Generated
                 UpdateToken = "d2e3f4a5-5b6c-4d7e-8f9a-9b0c1d2e3f4a"
             });
 
-            string version = response.Version;
             List<AssociatedRule> associatedRuleList = response.AssociatedRuleList;
-            string firewallType = response.FirewallType;
-            bool hasPublishedVersion = response.HasPublishedVersion;
-            bool isSnapshot = response.IsSnapshot;
-            string status = response.Status;
+            TemplateFirewallType firewallType = response.FirewallType;
+            bool? hasPublishedVersion = response.HasPublishedVersion;
+            bool? isSnapshot = response.IsSnapshot;
+            EntityStatus status = response.Status;
             string templateArn = response.TemplateArn;
             string templateDescription = response.TemplateDescription;
             string templateId = response.TemplateId;
             string templateName = response.TemplateName;
             string updateToken = response.UpdateToken;
-            DateTime updatedAt = response.UpdatedAt;
+            DateTime? updatedAt = response.UpdatedAt;
+            string version = response.Version;
 
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

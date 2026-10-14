@@ -14,9 +14,8 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cognito-idp-2016-04-18.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -33,22 +32,18 @@ namespace Amazon.CognitoIdentityProvider
     public partial class AmazonCognitoIdentityProviderConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Cognito Identity Provider", "4.0.105.4");
+            InternalSDKUtils.BuildUserAgentString("Cognito Identity Provider", "4.0.106.2");
 
         private static readonly AmazonCognitoIdentityProviderEndpointResolver EndpointResolver =
             new AmazonCognitoIdentityProviderEndpointResolver();
 
         private string _userAgent = UserAgentString;
-        ///<summary>
+
+        /// <summary>
         /// The ServiceId, which is the unique identifier for a service.
-        ///</summary>
-        public static new string ServiceId
-        {
-            get
-            {
-                return "Cognito Identity Provider";
-            }
-        }
+        /// </summary>
+        public static new string ServiceId => "Cognito Identity Provider";
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -63,35 +58,17 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
-        public override string RegionEndpointServiceName
-        {
-            get
-            {
-                return "cognito-idp";
-            }
-        }
+        public override string RegionEndpointServiceName => "cognito-idp";
 
         /// <summary>
         /// Gets the ServiceVersion property.
         /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2016-04-18";
-            }
-        }
+        public override string ServiceVersion => "2016-04-18";
 
         /// <summary>
         /// Gets the value of UserAgent property.
         /// </summary>
-        public override string UserAgent
-        {
-            get
-            {
-                return _userAgent;
-            }
-        }
+        public override string UserAgent => _userAgent;
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.
@@ -113,7 +90,5 @@ namespace Amazon.CognitoIdentityProvider
             var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
             return EndpointResolver.GetEndpoint(executionContext);
         }
-
-
     }
 }

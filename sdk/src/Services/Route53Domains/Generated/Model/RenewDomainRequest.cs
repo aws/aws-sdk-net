@@ -45,9 +45,31 @@ namespace Amazon.Route53Domains.Model
     /// </summary>
     public partial class RenewDomainRequest : AmazonRoute53DomainsRequest
     {
+        private Consent _consent;
         private int? _currentExpiryYear;
         private string _domainName;
         private int? _durationInYears;
+
+        /// <summary>
+        /// Gets and sets the property Consent. 
+        /// <para>
+        /// Specifies the maximum price that you agree to pay to renew the domain name. This element
+        /// is required if the domain has registry premium pricing, and optional if the domain
+        /// is priced at the standard rate for its TLD. If you include it and the renewal price
+        /// is more than <c>MaxPrice</c>, the request fails.
+        /// </para>
+        /// </summary>
+        public Consent Consent
+        {
+            get { return this._consent; }
+            set { this._consent = value; }
+        }
+
+        // Check to see if Consent property is set
+        internal bool IsSetConsent()
+        {
+            return this._consent != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CurrentExpiryYear. 

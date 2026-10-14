@@ -51,10 +51,16 @@ namespace Amazon.CloudFormation.Model
     /// for troubleshooting a failed update rollback, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">Update
     /// rollback failed</a>.
     /// </para>
+    ///  
+    /// <para>
+    ///  <c>ForceRollback</c> and <c>ResourcesToSkip</c> are mutually exclusive. For details,
+    /// see <a>ContinueUpdateRollbackInput$ForceRollback</a>.
+    /// </para>
     /// </summary>
     public partial class ContinueUpdateRollbackRequest : AmazonCloudFormationRequest
     {
         private string _clientRequestToken;
+        private bool? _forceRollback;
         private List<string> _resourcesToSkip = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _roleARN;
         private string _stackName;
@@ -79,6 +85,50 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ForceRollback. 
+        /// <para>
+        /// Specifies whether CloudFormation forces the rollback to continue by skipping resources
+        /// currently in the <c>UPDATE_FAILED</c> state. Use this instead of listing each resource
+        /// individually in <c>ResourcesToSkip</c>. Only resources that entered the <c>UPDATE_FAILED</c>
+        /// state because a rollback failed are skipped. If you don't specify a value, the default
+        /// is <c>false</c> and CloudFormation doesn't skip any resources.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>ForceRollback</c> and <c>ResourcesToSkip</c> are mutually exclusive. Specifying
+        /// both in the same request returns a validation error.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// We recommend that you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">troubleshoot</a>
+        /// resources before skipping them. CloudFormation sets the status of the skipped resources
+        /// to <c>UPDATE_COMPLETE</c> and continues to roll back the stack, including resources
+        /// in nested stacks. After the rollback completes, the skipped resources no longer match
+        /// the resources in the stack template. Before performing another stack update, you must
+        /// update the stack or resources to be consistent with each other. If you don't, subsequent
+        /// stack updates might fail, and the stack will become unrecoverable.
+        /// </para>
+        ///  
+        /// <para>
+        /// Drift detection reports skipped resources as <c>NOT_CHECKED</c>. For guidance, see
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html">Continue
+        /// rolling back an update</a> in the <i>CloudFormation User Guide</i>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public bool? ForceRollback
+        {
+            get { return this._forceRollback; }
+            set { this._forceRollback = value; }
+        }
+
+        // Check to see if ForceRollback property is set
+        internal bool IsSetForceRollback()
+        {
+            return this._forceRollback.HasValue; 
         }
 
         /// <summary>

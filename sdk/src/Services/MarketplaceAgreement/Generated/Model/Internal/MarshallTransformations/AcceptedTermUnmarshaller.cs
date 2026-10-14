@@ -29,112 +29,149 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AcceptedTerm Object
     /// </summary>  
-    public class AcceptedTermUnmarshaller : IJsonUnmarshaller<AcceptedTerm, JsonUnmarshallerContext>
+    public class AcceptedTermUnmarshaller : ICborUnmarshaller<AcceptedTerm, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AcceptedTerm Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AcceptedTerm Unmarshall(CborUnmarshallerContext context)
         {
             AcceptedTerm unmarshalledObject = new AcceptedTerm();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("byolPricingTerm", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = ByolPricingTermUnmarshaller.Instance;
-                    unmarshalledObject.ByolPricingTerm = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("configurableUpfrontPricingTerm", targetDepth, ref reader))
-                {
-                    var unmarshaller = ConfigurableUpfrontPricingTermUnmarshaller.Instance;
-                    unmarshalledObject.ConfigurableUpfrontPricingTerm = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("fixedUpfrontPricingTerm", targetDepth, ref reader))
-                {
-                    var unmarshaller = FixedUpfrontPricingTermUnmarshaller.Instance;
-                    unmarshalledObject.FixedUpfrontPricingTerm = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("freeTrialPricingTerm", targetDepth, ref reader))
-                {
-                    var unmarshaller = FreeTrialPricingTermUnmarshaller.Instance;
-                    unmarshalledObject.FreeTrialPricingTerm = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("legalTerm", targetDepth, ref reader))
-                {
-                    var unmarshaller = LegalTermUnmarshaller.Instance;
-                    unmarshalledObject.LegalTerm = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("netPaymentTerm", targetDepth, ref reader))
-                {
-                    var unmarshaller = NetPaymentTermUnmarshaller.Instance;
-                    unmarshalledObject.NetPaymentTerm = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("paymentScheduleTerm", targetDepth, ref reader))
-                {
-                    var unmarshaller = PaymentScheduleTermUnmarshaller.Instance;
-                    unmarshalledObject.PaymentScheduleTerm = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("recurringPaymentTerm", targetDepth, ref reader))
-                {
-                    var unmarshaller = RecurringPaymentTermUnmarshaller.Instance;
-                    unmarshalledObject.RecurringPaymentTerm = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("renewalTerm", targetDepth, ref reader))
-                {
-                    var unmarshaller = RenewalTermUnmarshaller.Instance;
-                    unmarshalledObject.RenewalTerm = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("supportTerm", targetDepth, ref reader))
-                {
-                    var unmarshaller = SupportTermUnmarshaller.Instance;
-                    unmarshalledObject.SupportTerm = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("usageBasedPricingTerm", targetDepth, ref reader))
-                {
-                    var unmarshaller = UsageBasedPricingTermUnmarshaller.Instance;
-                    unmarshalledObject.UsageBasedPricingTerm = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("validityTerm", targetDepth, ref reader))
-                {
-                    var unmarshaller = ValidityTermUnmarshaller.Instance;
-                    unmarshalledObject.ValidityTerm = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("variablePaymentTerm", targetDepth, ref reader))
-                {
-                    var unmarshaller = VariablePaymentTermUnmarshaller.Instance;
-                    unmarshalledObject.VariablePaymentTerm = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "byolPricingTerm":
+                        {
+                            context.AddPathSegment("ByolPricingTerm");
+                            var unmarshaller = ByolPricingTermUnmarshaller.Instance;
+                            unmarshalledObject.ByolPricingTerm = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "configurableUpfrontPricingTerm":
+                        {
+                            context.AddPathSegment("ConfigurableUpfrontPricingTerm");
+                            var unmarshaller = ConfigurableUpfrontPricingTermUnmarshaller.Instance;
+                            unmarshalledObject.ConfigurableUpfrontPricingTerm = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "fixedUpfrontPricingTerm":
+                        {
+                            context.AddPathSegment("FixedUpfrontPricingTerm");
+                            var unmarshaller = FixedUpfrontPricingTermUnmarshaller.Instance;
+                            unmarshalledObject.FixedUpfrontPricingTerm = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "freeTrialPricingTerm":
+                        {
+                            context.AddPathSegment("FreeTrialPricingTerm");
+                            var unmarshaller = FreeTrialPricingTermUnmarshaller.Instance;
+                            unmarshalledObject.FreeTrialPricingTerm = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "legalTerm":
+                        {
+                            context.AddPathSegment("LegalTerm");
+                            var unmarshaller = LegalTermUnmarshaller.Instance;
+                            unmarshalledObject.LegalTerm = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "netPaymentTerm":
+                        {
+                            context.AddPathSegment("NetPaymentTerm");
+                            var unmarshaller = NetPaymentTermUnmarshaller.Instance;
+                            unmarshalledObject.NetPaymentTerm = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "paymentScheduleTerm":
+                        {
+                            context.AddPathSegment("PaymentScheduleTerm");
+                            var unmarshaller = PaymentScheduleTermUnmarshaller.Instance;
+                            unmarshalledObject.PaymentScheduleTerm = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "recurringPaymentTerm":
+                        {
+                            context.AddPathSegment("RecurringPaymentTerm");
+                            var unmarshaller = RecurringPaymentTermUnmarshaller.Instance;
+                            unmarshalledObject.RecurringPaymentTerm = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "renewalTerm":
+                        {
+                            context.AddPathSegment("RenewalTerm");
+                            var unmarshaller = RenewalTermUnmarshaller.Instance;
+                            unmarshalledObject.RenewalTerm = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "supportTerm":
+                        {
+                            context.AddPathSegment("SupportTerm");
+                            var unmarshaller = SupportTermUnmarshaller.Instance;
+                            unmarshalledObject.SupportTerm = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "usageBasedPricingTerm":
+                        {
+                            context.AddPathSegment("UsageBasedPricingTerm");
+                            var unmarshaller = UsageBasedPricingTermUnmarshaller.Instance;
+                            unmarshalledObject.UsageBasedPricingTerm = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "validityTerm":
+                        {
+                            context.AddPathSegment("ValidityTerm");
+                            var unmarshaller = ValidityTermUnmarshaller.Instance;
+                            unmarshalledObject.ValidityTerm = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "variablePaymentTerm":
+                        {
+                            context.AddPathSegment("VariablePaymentTerm");
+                            var unmarshaller = VariablePaymentTermUnmarshaller.Instance;
+                            unmarshalledObject.VariablePaymentTerm = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

@@ -33,6 +33,9 @@ public static class SdkTreeLayout
     /// <summary>sdk/test/Services/{Name} — the service test tree; the unit-test csproj lands under UnitTests/. For a test service this is also its source root (there is no sdk/src tree).</summary>
     public static string ServiceTestsRoot(string repoRoot, string serviceName) => Path.Combine(SdkRoot(repoRoot), "test", "Services", serviceName);
 
+    /// <summary>Root of the doc-sample tree the API reference builds from (<c>docgenerator/AWSSDKDocSamples</c>).</summary>
+    public static string DocSamplesRoot(string repoRoot) => Path.Combine(repoRoot, "docgenerator", "AWSSDKDocSamples");
+
     // Relative prefixes embedded in generated files. Forward-slash so the generated references are
     // byte-identical whether the generator runs on Windows or Linux.
 
@@ -44,6 +47,9 @@ public static class SdkTreeLayout
 
     /// <summary>From sdk/test/Services/{Name}/ up to sdk/src/ — a test service's Core reference crosses into the src tree.</summary>
     public const string SrcRootFromServiceTests = "../../../src";
+
+    /// <summary>From sdk/src/Services/{Name}/ (same depth from sdk/test/Services/{Name}/) to extensions/src/.</summary>
+    public const string ExtensionsRootFromServiceSource = "../../../../extensions/src";
 
     /// <summary>From sdk/test/Services/{Name}/UnitTests/ up to sdk/.</summary>
     public const string SdkRootFromUnitTests = "../../../..";

@@ -218,6 +218,19 @@ namespace Amazon.DevOpsAgent.Model
         internal bool IsSetPagerduty() => this.Pagerduty != null;
 
         /// <summary>
+        /// Gets and sets the property ReleaseManagement. 
+        /// <para>
+        /// Release management network environment configuration
+        /// </para>
+        /// </summary>
+        public ReleaseManagementConfiguration ReleaseManagement { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ReleaseManagement property is set.
+        /// </summary>
+        internal bool IsSetReleaseManagement() => this.ReleaseManagement != null;
+
+        /// <summary>
         /// Gets and sets the property Remoteagent. 
         /// <para>
         /// Remote A2A agent integration configuration (token-based auth).

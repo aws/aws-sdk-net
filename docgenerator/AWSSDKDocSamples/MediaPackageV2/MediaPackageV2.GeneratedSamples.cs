@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
     {
         public void MediaPackageV2CancelHarvestJob()
         {
-            #region example-1
+            #region CancelHarvestJob-1
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.CancelHarvestJob(new CancelHarvestJobRequest 
+            var response = client.CancelHarvestJob(new CancelHarvestJobRequest
             {
                 ChannelGroupName = "exampleChannelGroup",
                 ChannelName = "exampleChannelName",
@@ -30,10 +31,10 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 
         public void MediaPackageV2CreateChannel()
         {
-            #region example-1
+            #region CreateChannel-1
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.CreateChannel(new CreateChannelRequest 
+            var response = client.CreateChannel(new CreateChannelRequest
             {
                 ChannelGroupName = "exampleChannelGroup",
                 ChannelName = "exampleChannel",
@@ -48,12 +49,12 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             string arn = response.Arn;
             string channelGroupName = response.ChannelGroupName;
             string channelName = response.ChannelName;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string description = response.Description;
             string eTag = response.ETag;
             List<IngestEndpoint> ingestEndpoints = response.IngestEndpoints;
-            string inputType = response.InputType;
-            DateTime modifiedAt = response.ModifiedAt;
+            InputType inputType = response.InputType;
+            DateTime? modifiedAt = response.ModifiedAt;
             Dictionary<string, string> tags = response.Tags;
 
             #endregion
@@ -61,10 +62,10 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 
         public void MediaPackageV2CreateChannel()
         {
-            #region example-2
+            #region CreateChannel-2
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.CreateChannel(new CreateChannelRequest 
+            var response = client.CreateChannel(new CreateChannelRequest
             {
                 ChannelGroupName = "exampleChannelGroup",
                 ChannelName = "exampleCmafChannel",
@@ -76,23 +77,23 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             string arn = response.Arn;
             string channelGroupName = response.ChannelGroupName;
             string channelName = response.ChannelName;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string description = response.Description;
             string eTag = response.ETag;
             List<IngestEndpoint> ingestEndpoints = response.IngestEndpoints;
-            string inputType = response.InputType;
-            DateTime modifiedAt = response.ModifiedAt;
-            string outputLockingMode = response.OutputLockingMode;
+            InputType inputType = response.InputType;
+            DateTime? modifiedAt = response.ModifiedAt;
+            OutputLockingMode outputLockingMode = response.OutputLockingMode;
 
             #endregion
         }
 
         public void MediaPackageV2CreateChannelGroup()
         {
-            #region example-1
+            #region CreateChannelGroup-1
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.CreateChannelGroup(new CreateChannelGroupRequest 
+            var response = client.CreateChannelGroup(new CreateChannelGroupRequest
             {
                 ChannelGroupName = "exampleChannelGroup",
                 Description = "Description for exampleChannelGroup",
@@ -104,11 +105,11 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 
             string arn = response.Arn;
             string channelGroupName = response.ChannelGroupName;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string description = response.Description;
             string eTag = response.ETag;
             string egressDomain = response.EgressDomain;
-            DateTime modifiedAt = response.ModifiedAt;
+            DateTime? modifiedAt = response.ModifiedAt;
             Dictionary<string, string> tags = response.Tags;
 
             #endregion
@@ -116,10 +117,10 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 
         public void MediaPackageV2CreateHarvestJob()
         {
-            #region example-1
+            #region CreateHarvestJob-1
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.CreateHarvestJob(new CreateHarvestJobRequest 
+            var response = client.CreateHarvestJob(new CreateHarvestJobRequest
             {
                 ChannelGroupName = "exampleChannelGroup",
                 ChannelName = "exampleChannelName",
@@ -149,16 +150,16 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             string arn = response.Arn;
             string channelGroupName = response.ChannelGroupName;
             string channelName = response.ChannelName;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string description = response.Description;
             Destination destination = response.Destination;
             string eTag = response.ETag;
             string harvestJobName = response.HarvestJobName;
             HarvestedManifests harvestedManifests = response.HarvestedManifests;
-            DateTime modifiedAt = response.ModifiedAt;
+            DateTime? modifiedAt = response.ModifiedAt;
             string originEndpointName = response.OriginEndpointName;
             HarvesterScheduleConfiguration scheduleConfiguration = response.ScheduleConfiguration;
-            string status = response.Status;
+            HarvestJobStatus status = response.Status;
             Dictionary<string, string> tags = response.Tags;
 
             #endregion
@@ -166,10 +167,10 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 
         public void MediaPackageV2CreateOriginEndpoint()
         {
-            #region example-1
+            #region CreateOriginEndpoint-1
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.CreateOriginEndpoint(new CreateOriginEndpointRequest 
+            var response = client.CreateOriginEndpoint(new CreateOriginEndpointRequest
             {
                 ChannelGroupName = "exampleChannelGroup",
                 ChannelName = "exampleChannel",
@@ -257,30 +258,30 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             string arn = response.Arn;
             string channelGroupName = response.ChannelGroupName;
             string channelName = response.ChannelName;
-            string containerType = response.ContainerType;
-            DateTime createdAt = response.CreatedAt;
+            ContainerType containerType = response.ContainerType;
+            DateTime? createdAt = response.CreatedAt;
             string description = response.Description;
             string eTag = response.ETag;
             ForceEndpointErrorConfiguration forceEndpointErrorConfiguration = response.ForceEndpointErrorConfiguration;
             List<GetHlsManifestConfiguration> hlsManifests = response.HlsManifests;
             List<GetLowLatencyHlsManifestConfiguration> lowLatencyHlsManifests = response.LowLatencyHlsManifests;
-            DateTime modifiedAt = response.ModifiedAt;
+            DateTime? modifiedAt = response.ModifiedAt;
             string originEndpointName = response.OriginEndpointName;
             Segment segment = response.Segment;
-            int startoverWindowSeconds = response.StartoverWindowSeconds;
-            string streamNameOutputMode = response.StreamNameOutputMode;
+            int? startoverWindowSeconds = response.StartoverWindowSeconds;
+            StreamNameOutputMode streamNameOutputMode = response.StreamNameOutputMode;
             Dictionary<string, string> tags = response.Tags;
-            string uriSeparator = response.UriSeparator;
+            UriSeparator uriSeparator = response.UriSeparator;
 
             #endregion
         }
 
         public void MediaPackageV2CreateOriginEndpoint()
         {
-            #region example-2
+            #region CreateOriginEndpoint-2
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.CreateOriginEndpoint(new CreateOriginEndpointRequest 
+            var response = client.CreateOriginEndpoint(new CreateOriginEndpointRequest
             {
                 ChannelGroupName = "exampleChannelGroup",
                 ChannelName = "exampleChannel",
@@ -336,7 +337,7 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
                         }
                     },
                     new CreateDashManifestConfiguration {
-                        AvailabilityStartTimeConfiguration = new DashAvailabilityStartTimeConfiguration { FixedAvailabilityStartTime = new DateTime(2026, 4, 17, 11, 0, 0, DateTimeKind.Utc) },
+                        AvailabilityStartTimeConfiguration = new DashAvailabilityStartTimeConfiguration { FixedAvailabilityStartTime = new DateTime(2026, 4, 17, 23, 0, 0, DateTimeKind.Utc) },
                         BaseUrls = new List<DashBaseUrl> {
                             new DashBaseUrl {
                                 DvbPriority = 2,
@@ -468,29 +469,29 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             string arn = response.Arn;
             string channelGroupName = response.ChannelGroupName;
             string channelName = response.ChannelName;
-            string containerType = response.ContainerType;
-            DateTime createdAt = response.CreatedAt;
+            ContainerType containerType = response.ContainerType;
+            DateTime? createdAt = response.CreatedAt;
             List<GetDashManifestConfiguration> dashManifests = response.DashManifests;
             string eTag = response.ETag;
             ForceEndpointErrorConfiguration forceEndpointErrorConfiguration = response.ForceEndpointErrorConfiguration;
             List<GetHlsManifestConfiguration> hlsManifests = response.HlsManifests;
             List<GetLowLatencyHlsManifestConfiguration> lowLatencyHlsManifests = response.LowLatencyHlsManifests;
-            DateTime modifiedAt = response.ModifiedAt;
+            DateTime? modifiedAt = response.ModifiedAt;
             string originEndpointName = response.OriginEndpointName;
             Segment segment = response.Segment;
-            int startoverWindowSeconds = response.StartoverWindowSeconds;
+            int? startoverWindowSeconds = response.StartoverWindowSeconds;
             Dictionary<string, string> tags = response.Tags;
-            string uriSeparator = response.UriSeparator;
+            UriSeparator uriSeparator = response.UriSeparator;
 
             #endregion
         }
 
         public void MediaPackageV2CreateOriginEndpoint()
         {
-            #region example-3
+            #region CreateOriginEndpoint-3
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.CreateOriginEndpoint(new CreateOriginEndpointRequest 
+            var response = client.CreateOriginEndpoint(new CreateOriginEndpointRequest
             {
                 ChannelGroupName = "exampleChannelGroup",
                 ChannelName = "exampleChannel",
@@ -540,28 +541,28 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             string arn = response.Arn;
             string channelGroupName = response.ChannelGroupName;
             string channelName = response.ChannelName;
-            string containerType = response.ContainerType;
-            DateTime createdAt = response.CreatedAt;
+            ContainerType containerType = response.ContainerType;
+            DateTime? createdAt = response.CreatedAt;
             string description = response.Description;
             string eTag = response.ETag;
             ForceEndpointErrorConfiguration forceEndpointErrorConfiguration = response.ForceEndpointErrorConfiguration;
-            DateTime modifiedAt = response.ModifiedAt;
+            DateTime? modifiedAt = response.ModifiedAt;
             List<GetMssManifestConfiguration> mssManifests = response.MssManifests;
             string originEndpointName = response.OriginEndpointName;
             Segment segment = response.Segment;
-            int startoverWindowSeconds = response.StartoverWindowSeconds;
+            int? startoverWindowSeconds = response.StartoverWindowSeconds;
             Dictionary<string, string> tags = response.Tags;
-            string uriSeparator = response.UriSeparator;
+            UriSeparator uriSeparator = response.UriSeparator;
 
             #endregion
         }
 
         public void MediaPackageV2DeleteChannel()
         {
-            #region example-1
+            #region DeleteChannel-1
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.DeleteChannel(new DeleteChannelRequest 
+            var response = client.DeleteChannel(new DeleteChannelRequest
             {
                 ChannelGroupName = "exampleChannelGroup",
                 ChannelName = "exampleChannel"
@@ -573,10 +574,10 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 
         public void MediaPackageV2DeleteChannelGroup()
         {
-            #region example-1
+            #region DeleteChannelGroup-1
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.DeleteChannelGroup(new DeleteChannelGroupRequest 
+            var response = client.DeleteChannelGroup(new DeleteChannelGroupRequest
             {
                 ChannelGroupName = "exampleChannelGroup"
             });
@@ -587,10 +588,10 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 
         public void MediaPackageV2DeleteChannelPolicy()
         {
-            #region example-1
+            #region DeleteChannelPolicy-1
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.DeleteChannelPolicy(new DeleteChannelPolicyRequest 
+            var response = client.DeleteChannelPolicy(new DeleteChannelPolicyRequest
             {
                 ChannelGroupName = "exampleChannelGroup",
                 ChannelName = "exampleChannel"
@@ -602,10 +603,10 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 
         public void MediaPackageV2DeleteOriginEndpoint()
         {
-            #region example-1
+            #region DeleteOriginEndpoint-1
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.DeleteOriginEndpoint(new DeleteOriginEndpointRequest 
+            var response = client.DeleteOriginEndpoint(new DeleteOriginEndpointRequest
             {
                 ChannelGroupName = "exampleChannelGroup",
                 ChannelName = "exampleChannel",
@@ -618,10 +619,10 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 
         public void MediaPackageV2DeleteOriginEndpointPolicy()
         {
-            #region example-1
+            #region DeleteOriginEndpointPolicy-1
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.DeleteOriginEndpointPolicy(new DeleteOriginEndpointPolicyRequest 
+            var response = client.DeleteOriginEndpointPolicy(new DeleteOriginEndpointPolicyRequest
             {
                 ChannelGroupName = "exampleChannelGroup",
                 ChannelName = "exampleChannel",
@@ -634,10 +635,10 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 
         public void MediaPackageV2GetChannel()
         {
-            #region example-1
+            #region GetChannel-1
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.GetChannel(new GetChannelRequest 
+            var response = client.GetChannel(new GetChannelRequest
             {
                 ChannelGroupName = "exampleChannelGroup",
                 ChannelName = "exampleChannel"
@@ -646,12 +647,12 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             string arn = response.Arn;
             string channelGroupName = response.ChannelGroupName;
             string channelName = response.ChannelName;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string description = response.Description;
             string eTag = response.ETag;
             List<IngestEndpoint> ingestEndpoints = response.IngestEndpoints;
-            string inputType = response.InputType;
-            DateTime modifiedAt = response.ModifiedAt;
+            InputType inputType = response.InputType;
+            DateTime? modifiedAt = response.ModifiedAt;
             Dictionary<string, string> tags = response.Tags;
 
             #endregion
@@ -659,10 +660,10 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 
         public void MediaPackageV2GetChannel()
         {
-            #region example-2
+            #region GetChannel-2
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.GetChannel(new GetChannelRequest 
+            var response = client.GetChannel(new GetChannelRequest
             {
                 ChannelGroupName = "exampleChannelGroup",
                 ChannelName = "exampleCmafChannel"
@@ -671,13 +672,13 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             string arn = response.Arn;
             string channelGroupName = response.ChannelGroupName;
             string channelName = response.ChannelName;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string description = response.Description;
             string eTag = response.ETag;
             List<IngestEndpoint> ingestEndpoints = response.IngestEndpoints;
-            string inputType = response.InputType;
-            DateTime modifiedAt = response.ModifiedAt;
-            string outputLockingMode = response.OutputLockingMode;
+            InputType inputType = response.InputType;
+            DateTime? modifiedAt = response.ModifiedAt;
+            OutputLockingMode outputLockingMode = response.OutputLockingMode;
             Dictionary<string, string> tags = response.Tags;
 
             #endregion
@@ -685,21 +686,21 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 
         public void MediaPackageV2GetChannelGroup()
         {
-            #region example-1
+            #region GetChannelGroup-1
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.GetChannelGroup(new GetChannelGroupRequest 
+            var response = client.GetChannelGroup(new GetChannelGroupRequest
             {
                 ChannelGroupName = "exampleChannelGroup"
             });
 
             string arn = response.Arn;
             string channelGroupName = response.ChannelGroupName;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string description = response.Description;
             string eTag = response.ETag;
             string egressDomain = response.EgressDomain;
-            DateTime modifiedAt = response.ModifiedAt;
+            DateTime? modifiedAt = response.ModifiedAt;
             Dictionary<string, string> tags = response.Tags;
 
             #endregion
@@ -707,10 +708,10 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 
         public void MediaPackageV2GetChannelPolicy()
         {
-            #region example-1
+            #region GetChannelPolicy-1
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.GetChannelPolicy(new GetChannelPolicyRequest 
+            var response = client.GetChannelPolicy(new GetChannelPolicyRequest
             {
                 ChannelGroupName = "exampleChannelGroup",
                 ChannelName = "exampleChannel"
@@ -725,10 +726,10 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 
         public void MediaPackageV2GetHarvestJob()
         {
-            #region example-1
+            #region GetHarvestJob-1
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.GetHarvestJob(new GetHarvestJobRequest 
+            var response = client.GetHarvestJob(new GetHarvestJobRequest
             {
                 ChannelGroupName = "exampleChannelGroup",
                 ChannelName = "exampleChannelName",
@@ -739,16 +740,16 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             string arn = response.Arn;
             string channelGroupName = response.ChannelGroupName;
             string channelName = response.ChannelName;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string description = response.Description;
             Destination destination = response.Destination;
             string eTag = response.ETag;
             string harvestJobName = response.HarvestJobName;
             HarvestedManifests harvestedManifests = response.HarvestedManifests;
-            DateTime modifiedAt = response.ModifiedAt;
+            DateTime? modifiedAt = response.ModifiedAt;
             string originEndpointName = response.OriginEndpointName;
             HarvesterScheduleConfiguration scheduleConfiguration = response.ScheduleConfiguration;
-            string status = response.Status;
+            HarvestJobStatus status = response.Status;
             Dictionary<string, string> tags = response.Tags;
 
             #endregion
@@ -756,10 +757,10 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 
         public void MediaPackageV2GetOriginEndpoint()
         {
-            #region example-1
+            #region GetOriginEndpoint-1
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.GetOriginEndpoint(new GetOriginEndpointRequest 
+            var response = client.GetOriginEndpoint(new GetOriginEndpointRequest
             {
                 ChannelGroupName = "exampleChannelGroup",
                 ChannelName = "exampleChannel",
@@ -769,29 +770,29 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             string arn = response.Arn;
             string channelGroupName = response.ChannelGroupName;
             string channelName = response.ChannelName;
-            string containerType = response.ContainerType;
-            DateTime createdAt = response.CreatedAt;
+            ContainerType containerType = response.ContainerType;
+            DateTime? createdAt = response.CreatedAt;
             string description = response.Description;
             string eTag = response.ETag;
             ForceEndpointErrorConfiguration forceEndpointErrorConfiguration = response.ForceEndpointErrorConfiguration;
             List<GetHlsManifestConfiguration> hlsManifests = response.HlsManifests;
             List<GetLowLatencyHlsManifestConfiguration> lowLatencyHlsManifests = response.LowLatencyHlsManifests;
-            DateTime modifiedAt = response.ModifiedAt;
+            DateTime? modifiedAt = response.ModifiedAt;
             string originEndpointName = response.OriginEndpointName;
             Segment segment = response.Segment;
-            int startoverWindowSeconds = response.StartoverWindowSeconds;
+            int? startoverWindowSeconds = response.StartoverWindowSeconds;
             Dictionary<string, string> tags = response.Tags;
-            string uriSeparator = response.UriSeparator;
+            UriSeparator uriSeparator = response.UriSeparator;
 
             #endregion
         }
 
         public void MediaPackageV2GetOriginEndpoint()
         {
-            #region example-2
+            #region GetOriginEndpoint-2
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.GetOriginEndpoint(new GetOriginEndpointRequest 
+            var response = client.GetOriginEndpoint(new GetOriginEndpointRequest
             {
                 ChannelGroupName = "exampleChannelGroup",
                 ChannelName = "exampleChannel",
@@ -801,28 +802,28 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             string arn = response.Arn;
             string channelGroupName = response.ChannelGroupName;
             string channelName = response.ChannelName;
-            string containerType = response.ContainerType;
-            DateTime createdAt = response.CreatedAt;
+            ContainerType containerType = response.ContainerType;
+            DateTime? createdAt = response.CreatedAt;
             string description = response.Description;
             string eTag = response.ETag;
             ForceEndpointErrorConfiguration forceEndpointErrorConfiguration = response.ForceEndpointErrorConfiguration;
-            DateTime modifiedAt = response.ModifiedAt;
+            DateTime? modifiedAt = response.ModifiedAt;
             List<GetMssManifestConfiguration> mssManifests = response.MssManifests;
             string originEndpointName = response.OriginEndpointName;
             Segment segment = response.Segment;
-            int startoverWindowSeconds = response.StartoverWindowSeconds;
+            int? startoverWindowSeconds = response.StartoverWindowSeconds;
             Dictionary<string, string> tags = response.Tags;
-            string uriSeparator = response.UriSeparator;
+            UriSeparator uriSeparator = response.UriSeparator;
 
             #endregion
         }
 
         public void MediaPackageV2GetOriginEndpointPolicy()
         {
-            #region example-1
+            #region GetOriginEndpointPolicy-1
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.GetOriginEndpointPolicy(new GetOriginEndpointPolicyRequest 
+            var response = client.GetOriginEndpointPolicy(new GetOriginEndpointPolicyRequest
             {
                 ChannelGroupName = "exampleChannelGroup",
                 ChannelName = "exampleChannel",
@@ -839,10 +840,10 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 
         public void MediaPackageV2ListChannelGroups()
         {
-            #region example-1
+            #region ListChannelGroups-1
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.ListChannelGroups(new ListChannelGroupsRequest 
+            var response = client.ListChannelGroups(new ListChannelGroupsRequest
             {
             });
 
@@ -853,10 +854,10 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 
         public void MediaPackageV2ListChannels()
         {
-            #region example-1
+            #region ListChannels-1
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.ListChannels(new ListChannelsRequest 
+            var response = client.ListChannels(new ListChannelsRequest
             {
                 ChannelGroupName = "exampleChannelGroup"
             });
@@ -868,10 +869,10 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 
         public void MediaPackageV2ListHarvestJobs()
         {
-            #region example-1
+            #region ListHarvestJobs-1
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.ListHarvestJobs(new ListHarvestJobsRequest 
+            var response = client.ListHarvestJobs(new ListHarvestJobsRequest
             {
                 ChannelGroupName = "exampleChannelGroup"
             });
@@ -884,10 +885,10 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 
         public void MediaPackageV2ListHarvestJobs()
         {
-            #region example-2
+            #region ListHarvestJobs-2
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.ListHarvestJobs(new ListHarvestJobsRequest 
+            var response = client.ListHarvestJobs(new ListHarvestJobsRequest
             {
                 ChannelGroupName = "exampleChannelGroup",
                 ChannelName = "exampleChannelName"
@@ -901,10 +902,10 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 
         public void MediaPackageV2ListHarvestJobs()
         {
-            #region example-3
+            #region ListHarvestJobs-3
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.ListHarvestJobs(new ListHarvestJobsRequest 
+            var response = client.ListHarvestJobs(new ListHarvestJobsRequest
             {
                 ChannelGroupName = "exampleChannelGroup",
                 ChannelName = "exampleChannelName",
@@ -919,10 +920,10 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 
         public void MediaPackageV2ListHarvestJobs()
         {
-            #region example-4
+            #region ListHarvestJobs-4
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.ListHarvestJobs(new ListHarvestJobsRequest 
+            var response = client.ListHarvestJobs(new ListHarvestJobsRequest
             {
                 ChannelGroupName = "exampleChannelGroup",
                 ChannelName = "exampleChannelName",
@@ -938,10 +939,10 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 
         public void MediaPackageV2ListHarvestJobs()
         {
-            #region example-5
+            #region ListHarvestJobs-5
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.ListHarvestJobs(new ListHarvestJobsRequest 
+            var response = client.ListHarvestJobs(new ListHarvestJobsRequest
             {
                 ChannelGroupName = "exampleChannelGroup",
                 ChannelName = "exampleChannelName",
@@ -954,10 +955,10 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 
         public void MediaPackageV2ListOriginEndpoints()
         {
-            #region example-1
+            #region ListOriginEndpoints-1
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.ListOriginEndpoints(new ListOriginEndpointsRequest 
+            var response = client.ListOriginEndpoints(new ListOriginEndpointsRequest
             {
                 ChannelGroupName = "exampleChannelGroup",
                 ChannelName = "exampleChannel"
@@ -970,10 +971,10 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 
         public void MediaPackageV2ListTagsForResource()
         {
-            #region example-1
+            #region ListTagsForResource-1
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.ListTagsForResource(new ListTagsForResourceRequest 
+            var response = client.ListTagsForResource(new ListTagsForResourceRequest
             {
                 ResourceArn = "arn:aws:mediapackagev2:us-west-2:123456789012:channelGroup/exampleChannelGroup/channel/exampleChannel"
             });
@@ -985,10 +986,10 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 
         public void MediaPackageV2PutChannelPolicy()
         {
-            #region example-1
+            #region PutChannelPolicy-1
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.PutChannelPolicy(new PutChannelPolicyRequest 
+            var response = client.PutChannelPolicy(new PutChannelPolicyRequest
             {
                 ChannelGroupName = "exampleChannelGroup",
                 ChannelName = "exampleChannel",
@@ -1001,10 +1002,10 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 
         public void MediaPackageV2PutOriginEndpointPolicy()
         {
-            #region example-1
+            #region PutOriginEndpointPolicy-1
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.PutOriginEndpointPolicy(new PutOriginEndpointPolicyRequest 
+            var response = client.PutOriginEndpointPolicy(new PutOriginEndpointPolicyRequest
             {
                 ChannelGroupName = "exampleChannelGroup",
                 ChannelName = "exampleChannel",
@@ -1018,10 +1019,10 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 
         public void MediaPackageV2ResetChannelState()
         {
-            #region example-1
+            #region ResetChannelState-1
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.ResetChannelState(new ResetChannelStateRequest 
+            var response = client.ResetChannelState(new ResetChannelStateRequest
             {
                 ChannelGroupName = "exampleChannelGroup",
                 ChannelName = "exampleChannel"
@@ -1030,17 +1031,17 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             string arn = response.Arn;
             string channelGroupName = response.ChannelGroupName;
             string channelName = response.ChannelName;
-            DateTime resetAt = response.ResetAt;
+            DateTime? resetAt = response.ResetAt;
 
             #endregion
         }
 
         public void MediaPackageV2ResetOriginEndpointState()
         {
-            #region example-1
+            #region ResetOriginEndpointState-1
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.ResetOriginEndpointState(new ResetOriginEndpointStateRequest 
+            var response = client.ResetOriginEndpointState(new ResetOriginEndpointStateRequest
             {
                 ChannelGroupName = "exampleChannelGroup",
                 ChannelName = "exampleChannel",
@@ -1051,17 +1052,17 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             string channelGroupName = response.ChannelGroupName;
             string channelName = response.ChannelName;
             string originEndpointName = response.OriginEndpointName;
-            DateTime resetAt = response.ResetAt;
+            DateTime? resetAt = response.ResetAt;
 
             #endregion
         }
 
         public void MediaPackageV2TagResource()
         {
-            #region example-1
+            #region TagResource-1
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.TagResource(new TagResourceRequest 
+            var response = client.TagResource(new TagResourceRequest
             {
                 ResourceArn = "arn:aws:mediapackagev2:us-west-2:123456789012:channelGroup/exampleChannelGroup/channel/exampleChannel",
                 Tags = new Dictionary<string, string> {
@@ -1076,10 +1077,10 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 
         public void MediaPackageV2UntagResource()
         {
-            #region example-1
+            #region UntagResource-1
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.UntagResource(new UntagResourceRequest 
+            var response = client.UntagResource(new UntagResourceRequest
             {
                 ResourceArn = "arn:aws:mediapackagev2:us-west-2:123456789012:channelGroup/exampleChannelGroup/channel/exampleChannel",
                 TagKeys = new List<string> {
@@ -1094,10 +1095,10 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 
         public void MediaPackageV2UpdateChannel()
         {
-            #region example-1
+            #region UpdateChannel-1
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.UpdateChannel(new UpdateChannelRequest 
+            var response = client.UpdateChannel(new UpdateChannelRequest
             {
                 ChannelGroupName = "exampleChannelGroup",
                 ChannelName = "exampleChannel",
@@ -1107,12 +1108,12 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             string arn = response.Arn;
             string channelGroupName = response.ChannelGroupName;
             string channelName = response.ChannelName;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string description = response.Description;
             string eTag = response.ETag;
             List<IngestEndpoint> ingestEndpoints = response.IngestEndpoints;
-            string inputType = response.InputType;
-            DateTime modifiedAt = response.ModifiedAt;
+            InputType inputType = response.InputType;
+            DateTime? modifiedAt = response.ModifiedAt;
             Dictionary<string, string> tags = response.Tags;
 
             #endregion
@@ -1120,10 +1121,10 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 
         public void MediaPackageV2UpdateChannel()
         {
-            #region example-2
+            #region UpdateChannel-2
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.UpdateChannel(new UpdateChannelRequest 
+            var response = client.UpdateChannel(new UpdateChannelRequest
             {
                 ChannelGroupName = "exampleChannelGroup",
                 ChannelName = "exampleCmafChannel",
@@ -1133,13 +1134,13 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             string arn = response.Arn;
             string channelGroupName = response.ChannelGroupName;
             string channelName = response.ChannelName;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string description = response.Description;
             string eTag = response.ETag;
             List<IngestEndpoint> ingestEndpoints = response.IngestEndpoints;
-            string inputType = response.InputType;
-            DateTime modifiedAt = response.ModifiedAt;
-            string outputLockingMode = response.OutputLockingMode;
+            InputType inputType = response.InputType;
+            DateTime? modifiedAt = response.ModifiedAt;
+            OutputLockingMode outputLockingMode = response.OutputLockingMode;
             Dictionary<string, string> tags = response.Tags;
 
             #endregion
@@ -1147,10 +1148,10 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 
         public void MediaPackageV2UpdateChannelGroup()
         {
-            #region example-1
+            #region UpdateChannelGroup-1
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.UpdateChannelGroup(new UpdateChannelGroupRequest 
+            var response = client.UpdateChannelGroup(new UpdateChannelGroupRequest
             {
                 ChannelGroupName = "exampleChannelGroup",
                 Description = "Updated description for exampleChannelGroup"
@@ -1158,11 +1159,11 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 
             string arn = response.Arn;
             string channelGroupName = response.ChannelGroupName;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string description = response.Description;
             string eTag = response.ETag;
             string egressDomain = response.EgressDomain;
-            DateTime modifiedAt = response.ModifiedAt;
+            DateTime? modifiedAt = response.ModifiedAt;
             Dictionary<string, string> tags = response.Tags;
 
             #endregion
@@ -1170,10 +1171,10 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 
         public void MediaPackageV2UpdateOriginEndpoint()
         {
-            #region example-1
+            #region UpdateOriginEndpoint-1
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.UpdateOriginEndpoint(new UpdateOriginEndpointRequest 
+            var response = client.UpdateOriginEndpoint(new UpdateOriginEndpointRequest
             {
                 ChannelGroupName = "exampleChannelGroup",
                 ChannelName = "exampleChannel",
@@ -1257,29 +1258,29 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             string arn = response.Arn;
             string channelGroupName = response.ChannelGroupName;
             string channelName = response.ChannelName;
-            string containerType = response.ContainerType;
-            DateTime createdAt = response.CreatedAt;
+            ContainerType containerType = response.ContainerType;
+            DateTime? createdAt = response.CreatedAt;
             string description = response.Description;
             string eTag = response.ETag;
             ForceEndpointErrorConfiguration forceEndpointErrorConfiguration = response.ForceEndpointErrorConfiguration;
             List<GetHlsManifestConfiguration> hlsManifests = response.HlsManifests;
             List<GetLowLatencyHlsManifestConfiguration> lowLatencyHlsManifests = response.LowLatencyHlsManifests;
-            DateTime modifiedAt = response.ModifiedAt;
+            DateTime? modifiedAt = response.ModifiedAt;
             string originEndpointName = response.OriginEndpointName;
             Segment segment = response.Segment;
-            int startoverWindowSeconds = response.StartoverWindowSeconds;
+            int? startoverWindowSeconds = response.StartoverWindowSeconds;
             Dictionary<string, string> tags = response.Tags;
-            string uriSeparator = response.UriSeparator;
+            UriSeparator uriSeparator = response.UriSeparator;
 
             #endregion
         }
 
         public void MediaPackageV2UpdateOriginEndpoint()
         {
-            #region example-2
+            #region UpdateOriginEndpoint-2
 
             var client = new AmazonMediaPackageV2Client();
-            var response = client.UpdateOriginEndpoint(new UpdateOriginEndpointRequest 
+            var response = client.UpdateOriginEndpoint(new UpdateOriginEndpointRequest
             {
                 ChannelGroupName = "exampleChannelGroup",
                 ChannelName = "exampleChannel",
@@ -1330,29 +1331,26 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             string arn = response.Arn;
             string channelGroupName = response.ChannelGroupName;
             string channelName = response.ChannelName;
-            string containerType = response.ContainerType;
-            DateTime createdAt = response.CreatedAt;
+            ContainerType containerType = response.ContainerType;
+            DateTime? createdAt = response.CreatedAt;
             string description = response.Description;
             string eTag = response.ETag;
             ForceEndpointErrorConfiguration forceEndpointErrorConfiguration = response.ForceEndpointErrorConfiguration;
-            DateTime modifiedAt = response.ModifiedAt;
+            DateTime? modifiedAt = response.ModifiedAt;
             List<GetMssManifestConfiguration> mssManifests = response.MssManifests;
             string originEndpointName = response.OriginEndpointName;
             Segment segment = response.Segment;
-            int startoverWindowSeconds = response.StartoverWindowSeconds;
+            int? startoverWindowSeconds = response.StartoverWindowSeconds;
             Dictionary<string, string> tags = response.Tags;
-            string uriSeparator = response.UriSeparator;
+            UriSeparator uriSeparator = response.UriSeparator;
 
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

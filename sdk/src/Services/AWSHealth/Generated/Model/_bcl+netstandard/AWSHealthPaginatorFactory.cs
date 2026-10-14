@@ -91,5 +91,13 @@ namespace Amazon.AWSHealth.Model
         {
             return new DescribeEventTypesPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for DescribeServiceLifecycle operation
+        ///</summary>
+        public IDescribeServiceLifecyclePaginator DescribeServiceLifecycle(DescribeServiceLifecycleRequest request) 
+        {
+            return new DescribeServiceLifecyclePaginator(this.client, request);
+        }
     }
 }

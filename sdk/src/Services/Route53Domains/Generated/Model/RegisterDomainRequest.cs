@@ -81,6 +81,7 @@ namespace Amazon.Route53Domains.Model
         private ContactDetail _adminContact;
         private bool? _autoRenew;
         private ContactDetail _billingContact;
+        private Consent _consent;
         private string _domainName;
         private int? _durationInYears;
         private string _idnLangCode;
@@ -152,6 +153,27 @@ namespace Amazon.Route53Domains.Model
         internal bool IsSetBillingContact()
         {
             return this._billingContact != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Consent. 
+        /// <para>
+        /// Specifies the maximum price that you agree to pay to register the domain name. This
+        /// element is required if the domain has registry premium pricing, and optional if the
+        /// domain is priced at the standard rate for its TLD. If you include it and the registration
+        /// price is more than <c>MaxPrice</c>, the request fails.
+        /// </para>
+        /// </summary>
+        public Consent Consent
+        {
+            get { return this._consent; }
+            set { this._consent = value; }
+        }
+
+        // Check to see if Consent property is set
+        internal bool IsSetConsent()
+        {
+            return this._consent != null;
         }
 
         /// <summary>

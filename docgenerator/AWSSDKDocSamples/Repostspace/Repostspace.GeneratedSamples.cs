@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.Repostspace.Generated
     {
         public void RepostspaceBatchAddChannelRoleToAccessors()
         {
-            #region example-1
+            #region BatchAddChannelRoleToAccessors-1
 
             var client = new AmazonRepostspaceClient();
-            var response = client.BatchAddChannelRoleToAccessors(new BatchAddChannelRoleToAccessorsRequest 
+            var response = client.BatchAddChannelRoleToAccessors(new BatchAddChannelRoleToAccessorsRequest
             {
                 AccessorIds = new List<string> {
                     "12345678-1234-1234-1234-1234567890ab"
@@ -26,18 +27,18 @@ namespace AWSSDKDocSamples.Amazon.Repostspace.Generated
                 SpaceId = "SP1234567890abcdefghijkl"
             });
 
-            List<BatchError> errors = response.Errors;
             List<string> addedAccessorIds = response.AddedAccessorIds;
+            List<BatchError> errors = response.Errors;
 
             #endregion
         }
 
         public void RepostspaceBatchAddRole()
         {
-            #region example-1
+            #region BatchAddRole-1
 
             var client = new AmazonRepostspaceClient();
-            var response = client.BatchAddRole(new BatchAddRoleRequest 
+            var response = client.BatchAddRole(new BatchAddRoleRequest
             {
                 AccessorIds = new List<string> {
                     "12345678-1234-1234-1234-1234567890ab"
@@ -46,18 +47,18 @@ namespace AWSSDKDocSamples.Amazon.Repostspace.Generated
                 SpaceId = "SP1234567890abcdefghijkl"
             });
 
-            List<BatchError> errors = response.Errors;
             List<string> addedAccessorIds = response.AddedAccessorIds;
+            List<BatchError> errors = response.Errors;
 
             #endregion
         }
 
         public void RepostspaceBatchRemoveChannelRoleFromAccessors()
         {
-            #region example-1
+            #region BatchRemoveChannelRoleFromAccessors-1
 
             var client = new AmazonRepostspaceClient();
-            var response = client.BatchRemoveChannelRoleFromAccessors(new BatchRemoveChannelRoleFromAccessorsRequest 
+            var response = client.BatchRemoveChannelRoleFromAccessors(new BatchRemoveChannelRoleFromAccessorsRequest
             {
                 AccessorIds = new List<string> {
                     "12345678-1234-1234-1234-1234567890ab"
@@ -75,10 +76,10 @@ namespace AWSSDKDocSamples.Amazon.Repostspace.Generated
 
         public void RepostspaceBatchRemoveRole()
         {
-            #region example-1
+            #region BatchRemoveRole-1
 
             var client = new AmazonRepostspaceClient();
-            var response = client.BatchRemoveRole(new BatchRemoveRoleRequest 
+            var response = client.BatchRemoveRole(new BatchRemoveRoleRequest
             {
                 AccessorIds = new List<string> {
                     "12345678-1234-1234-1234-1234567890ab"
@@ -95,10 +96,10 @@ namespace AWSSDKDocSamples.Amazon.Repostspace.Generated
 
         public void RepostspaceCreateChannel()
         {
-            #region example-1
+            #region CreateChannel-1
 
             var client = new AmazonRepostspaceClient();
-            var response = client.CreateChannel(new CreateChannelRequest 
+            var response = client.CreateChannel(new CreateChannelRequest
             {
                 ChannelDescription = "Useful channel description",
                 ChannelName = "My First Channel",
@@ -112,10 +113,10 @@ namespace AWSSDKDocSamples.Amazon.Repostspace.Generated
 
         public void RepostspaceGetChannel()
         {
-            #region example-1
+            #region GetChannel-1
 
             var client = new AmazonRepostspaceClient();
-            var response = client.GetChannel(new GetChannelRequest 
+            var response = client.GetChannel(new GetChannelRequest
             {
                 ChannelId = "WS1234567890abcdefghijkl",
                 SpaceId = "SP1234567890abcdefghijkl"
@@ -125,8 +126,8 @@ namespace AWSSDKDocSamples.Amazon.Repostspace.Generated
             string channelId = response.ChannelId;
             string channelName = response.ChannelName;
             Dictionary<string, List<string>> channelRoles = response.ChannelRoles;
-            string channelStatus = response.ChannelStatus;
-            DateTime createDateTime = response.CreateDateTime;
+            ChannelStatus channelStatus = response.ChannelStatus;
+            DateTime? createDateTime = response.CreateDateTime;
             string spaceId = response.SpaceId;
 
             #endregion
@@ -134,10 +135,10 @@ namespace AWSSDKDocSamples.Amazon.Repostspace.Generated
 
         public void RepostspaceListChannels()
         {
-            #region example-1
+            #region ListChannels-1
 
             var client = new AmazonRepostspaceClient();
-            var response = client.ListChannels(new ListChannelsRequest 
+            var response = client.ListChannels(new ListChannelsRequest
             {
                 SpaceId = "SP1234567890abcdefghijkl"
             });
@@ -149,10 +150,10 @@ namespace AWSSDKDocSamples.Amazon.Repostspace.Generated
 
         public void RepostspaceUpdateChannel()
         {
-            #region example-1
+            #region UpdateChannel-1
 
             var client = new AmazonRepostspaceClient();
-            var response = client.UpdateChannel(new UpdateChannelRequest 
+            var response = client.UpdateChannel(new UpdateChannelRequest
             {
                 ChannelDescription = "Better channel description",
                 ChannelId = "WS1234567890abcdefghijkl",
@@ -164,13 +165,10 @@ namespace AWSSDKDocSamples.Amazon.Repostspace.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

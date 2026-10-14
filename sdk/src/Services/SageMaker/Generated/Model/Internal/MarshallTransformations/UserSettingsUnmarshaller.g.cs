@@ -1,0 +1,192 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.SageMaker.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for UserSettings Object
+    /// </summary>
+    public partial class UserSettingsUnmarshaller : IJsonUnmarshaller<UserSettings, JsonUnmarshallerContext>
+    {
+        /// <summary>
+        /// Unmarshall the response from the service to the response class.
+        /// </summary>
+        /// <returns>The unmarshalled object</returns>
+        public UserSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        {
+            var unmarshalledObject = new UserSettings();
+            if (context.IsEmptyResponse) return null;
+
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) return null;
+
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth, ref reader))
+            {
+                if (context.TestExpression("AutoMountHomeEFS", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AutoMountHomeEFS = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("CanvasAppSettings", targetDepth, ref reader))
+                {
+                    var unmarshaller = CanvasAppSettingsUnmarshaller.Instance;
+                    unmarshalledObject.CanvasAppSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("CodeEditorAppSettings", targetDepth, ref reader))
+                {
+                    var unmarshaller = CodeEditorAppSettingsUnmarshaller.Instance;
+                    unmarshalledObject.CodeEditorAppSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("CustomFileSystemConfigs", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<CustomFileSystemConfig, CustomFileSystemConfigUnmarshaller>(CustomFileSystemConfigUnmarshaller.Instance);
+                    unmarshalledObject.CustomFileSystemConfigs = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("CustomPosixUserConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = CustomPosixUserConfigUnmarshaller.Instance;
+                    unmarshalledObject.CustomPosixUserConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("DefaultLandingUri", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DefaultLandingUri = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("ExecutionRole", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExecutionRole = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("JupyterLabAppSettings", targetDepth, ref reader))
+                {
+                    var unmarshaller = JupyterLabAppSettingsUnmarshaller.Instance;
+                    unmarshalledObject.JupyterLabAppSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("JupyterServerAppSettings", targetDepth, ref reader))
+                {
+                    var unmarshaller = JupyterServerAppSettingsUnmarshaller.Instance;
+                    unmarshalledObject.JupyterServerAppSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("KernelGatewayAppSettings", targetDepth, ref reader))
+                {
+                    var unmarshaller = KernelGatewayAppSettingsUnmarshaller.Instance;
+                    unmarshalledObject.KernelGatewayAppSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("RSessionAppSettings", targetDepth, ref reader))
+                {
+                    var unmarshaller = RSessionAppSettingsUnmarshaller.Instance;
+                    unmarshalledObject.RSessionAppSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("RStudioServerProAppSettings", targetDepth, ref reader))
+                {
+                    var unmarshaller = RStudioServerProAppSettingsUnmarshaller.Instance;
+                    unmarshalledObject.RStudioServerProAppSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("SecurityGroups", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SecurityGroups = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("SharingSettings", targetDepth, ref reader))
+                {
+                    var unmarshaller = SharingSettingsUnmarshaller.Instance;
+                    unmarshalledObject.SharingSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("SpaceStorageSettings", targetDepth, ref reader))
+                {
+                    var unmarshaller = DefaultSpaceStorageSettingsUnmarshaller.Instance;
+                    unmarshalledObject.SpaceStorageSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("StudioWebPortal", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StudioWebPortal = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("StudioWebPortalSettings", targetDepth, ref reader))
+                {
+                    var unmarshaller = StudioWebPortalSettingsUnmarshaller.Instance;
+                    unmarshalledObject.StudioWebPortalSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("TensorBoardAppSettings", targetDepth, ref reader))
+                {
+                    var unmarshaller = TensorBoardAppSettingsUnmarshaller.Instance;
+                    unmarshalledObject.TensorBoardAppSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+            }
+            return unmarshalledObject;
+        }
+
+        private static UserSettingsUnmarshaller _instance = new UserSettingsUnmarshaller();
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static UserSettingsUnmarshaller Instance => _instance;
+    }
+}

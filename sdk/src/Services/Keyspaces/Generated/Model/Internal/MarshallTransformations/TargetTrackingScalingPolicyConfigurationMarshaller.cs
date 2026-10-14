@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TargetTrackingScalingPolicyConfiguration Marshaller
     /// </summary>
-    public class TargetTrackingScalingPolicyConfigurationMarshaller : IRequestMarshaller<TargetTrackingScalingPolicyConfiguration, JsonMarshallerContext> 
+    public class TargetTrackingScalingPolicyConfigurationMarshaller : IRequestMarshaller<TargetTrackingScalingPolicyConfiguration, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,41 +45,31 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TargetTrackingScalingPolicyConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(TargetTrackingScalingPolicyConfiguration requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetDisableScaleIn())
-            {
-                context.Writer.WritePropertyName("disableScaleIn");
-                context.Writer.WriteBooleanValue(requestObject.DisableScaleIn.Value);
-            }
 
-            if(requestObject.IsSetScaleInCooldown())
+            if (requestObject.IsSetDisableScaleIn())
             {
-                context.Writer.WritePropertyName("scaleInCooldown");
-                context.Writer.WriteNumberValue(requestObject.ScaleInCooldown.Value);
+                context.Writer.WriteTextString("disableScaleIn");
+                context.Writer.WriteBoolean(requestObject.DisableScaleIn.Value);
             }
-
-            if(requestObject.IsSetScaleOutCooldown())
+            if (requestObject.IsSetScaleInCooldown())
             {
-                context.Writer.WritePropertyName("scaleOutCooldown");
-                context.Writer.WriteNumberValue(requestObject.ScaleOutCooldown.Value);
+                context.Writer.WriteTextString("scaleInCooldown");
+                context.Writer.WriteInt32(requestObject.ScaleInCooldown.Value);
             }
-
-            if(requestObject.IsSetTargetValue())
+            if (requestObject.IsSetScaleOutCooldown())
             {
-                context.Writer.WritePropertyName("targetValue");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.TargetValue.Value))
-                {
-                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.TargetValue.Value));
-                }
-                else
-                {
-                    context.Writer.WriteNumberValue(requestObject.TargetValue.Value);
-                }
+                context.Writer.WriteTextString("scaleOutCooldown");
+                context.Writer.WriteInt32(requestObject.ScaleOutCooldown.Value);
             }
-
+            if (requestObject.IsSetTargetValue())
+            {
+                context.Writer.WriteTextString("targetValue");
+                context.Writer.WriteOptimizedNumber(requestObject.TargetValue.Value);
+            }
         }
 
         /// <summary>

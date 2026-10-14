@@ -1,0 +1,192 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+using System.Buffers;
+
+using Amazon.SageMaker.Model;
+using System.Globalization;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// CreateDomain Request Marshaller
+    /// </summary>
+    public partial class CreateDomainRequestMarshaller : IMarshaller<IRequest, CreateDomainRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    {
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((CreateDomainRequest)input);
+        }
+
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(CreateDomainRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SageMaker");
+            string target = "SageMaker.CreateDomain";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-24";
+            request.HttpMethod = "POST";
+
+            request.ResourcePath = "/";
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using var writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetAppNetworkAccessType())
+            {
+                context.Writer.WritePropertyName("AppNetworkAccessType");
+                context.Writer.WriteStringValue(publicRequest.AppNetworkAccessType);
+            }
+            if (publicRequest.IsSetAppSecurityGroupManagement())
+            {
+                context.Writer.WritePropertyName("AppSecurityGroupManagement");
+                context.Writer.WriteStringValue(publicRequest.AppSecurityGroupManagement);
+            }
+            if (publicRequest.IsSetAuthMode())
+            {
+                context.Writer.WritePropertyName("AuthMode");
+                context.Writer.WriteStringValue(publicRequest.AuthMode);
+            }
+            if (publicRequest.IsSetDefaultSpaceSettings())
+            {
+                context.Writer.WritePropertyName("DefaultSpaceSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DefaultSpaceSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DefaultSpaceSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetDefaultUserSettings())
+            {
+                context.Writer.WritePropertyName("DefaultUserSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UserSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DefaultUserSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetDomainName())
+            {
+                context.Writer.WritePropertyName("DomainName");
+                context.Writer.WriteStringValue(publicRequest.DomainName);
+            }
+            if (publicRequest.IsSetDomainSettings())
+            {
+                context.Writer.WritePropertyName("DomainSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DomainSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DomainSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetHomeEfsFileSystemCreation())
+            {
+                context.Writer.WritePropertyName("HomeEfsFileSystemCreation");
+                context.Writer.WriteStringValue(publicRequest.HomeEfsFileSystemCreation);
+            }
+            if (publicRequest.IsSetHomeEfsFileSystemKmsKeyId())
+            {
+                context.Writer.WritePropertyName("HomeEfsFileSystemKmsKeyId");
+                context.Writer.WriteStringValue(publicRequest.HomeEfsFileSystemKmsKeyId);
+            }
+            if (publicRequest.IsSetKmsKeyId())
+            {
+                context.Writer.WritePropertyName("KmsKeyId");
+                context.Writer.WriteStringValue(publicRequest.KmsKeyId);
+            }
+            if (publicRequest.IsSetSubnetIds())
+            {
+                context.Writer.WritePropertyName("SubnetIds");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestSubnetIdsListValue in publicRequest.SubnetIds)
+                {
+                    context.Writer.WriteStringValue(publicRequestSubnetIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetTagPropagation())
+            {
+                context.Writer.WritePropertyName("TagPropagation");
+                context.Writer.WriteStringValue(publicRequest.TagPropagation);
+            }
+            if (publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetVpcId())
+            {
+                context.Writer.WritePropertyName("VpcId");
+                context.Writer.WriteStringValue(publicRequest.VpcId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETFRAMEWORK
+            request.Content = memoryStream.ToArray();
+#endif
+
+            return request;
+        }
+
+        private static readonly CreateDomainRequestMarshaller _instance = new();
+
+        internal static CreateDomainRequestMarshaller GetInstance() => _instance;
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static CreateDomainRequestMarshaller Instance => _instance;
+    }
+}

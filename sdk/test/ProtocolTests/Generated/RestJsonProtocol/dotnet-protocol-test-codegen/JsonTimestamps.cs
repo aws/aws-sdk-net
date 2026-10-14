@@ -34,6 +34,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.RestJson
 {
@@ -47,7 +48,7 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestJson")]
-        public void RestJsonJsonTimestampsRequest()
+        public async Task RestJsonJsonTimestampsRequest()
         {
             // Arrange
             var request = new JsonTimestampsRequest
@@ -56,20 +57,27 @@ namespace AWSSDK.ProtocolTests.RestJson
             };
             var config = new AmazonRestJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new JsonTimestampsRequestMarshaller();
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.JsonTimestampsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\n    \"normal\": 1398796238\n}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/JsonTimestamps", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/json".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/JsonTimestamps", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/json".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
         }
 
         /// <summary>
@@ -80,7 +88,7 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestJson")]
-        public void RestJsonJsonTimestampsWithDateTimeFormatRequest()
+        public async Task RestJsonJsonTimestampsWithDateTimeFormatRequest()
         {
             // Arrange
             var request = new JsonTimestampsRequest
@@ -89,20 +97,27 @@ namespace AWSSDK.ProtocolTests.RestJson
             };
             var config = new AmazonRestJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new JsonTimestampsRequestMarshaller();
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.JsonTimestampsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\n    \"dateTime\": \"2014-04-29T18:30:38Z\"\n}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/JsonTimestamps", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/json".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/JsonTimestamps", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/json".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
         }
 
         /// <summary>
@@ -113,7 +128,7 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestJson")]
-        public void RestJsonJsonTimestampsWithDateTimeOnTargetFormatRequest()
+        public async Task RestJsonJsonTimestampsWithDateTimeOnTargetFormatRequest()
         {
             // Arrange
             var request = new JsonTimestampsRequest
@@ -122,20 +137,27 @@ namespace AWSSDK.ProtocolTests.RestJson
             };
             var config = new AmazonRestJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new JsonTimestampsRequestMarshaller();
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.JsonTimestampsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\n    \"dateTimeOnTarget\": \"2014-04-29T18:30:38Z\"\n}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/JsonTimestamps", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/json".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/JsonTimestamps", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/json".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
         }
 
         /// <summary>
@@ -145,7 +167,7 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestJson")]
-        public void RestJsonJsonTimestampsWithEpochSecondsFormatRequest()
+        public async Task RestJsonJsonTimestampsWithEpochSecondsFormatRequest()
         {
             // Arrange
             var request = new JsonTimestampsRequest
@@ -154,20 +176,27 @@ namespace AWSSDK.ProtocolTests.RestJson
             };
             var config = new AmazonRestJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new JsonTimestampsRequestMarshaller();
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.JsonTimestampsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\n    \"epochSeconds\": 1398796238\n}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/JsonTimestamps", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/json".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/JsonTimestamps", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/json".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
         }
 
         /// <summary>
@@ -178,7 +207,7 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestJson")]
-        public void RestJsonJsonTimestampsWithEpochSecondsOnTargetFormatRequest()
+        public async Task RestJsonJsonTimestampsWithEpochSecondsOnTargetFormatRequest()
         {
             // Arrange
             var request = new JsonTimestampsRequest
@@ -187,20 +216,27 @@ namespace AWSSDK.ProtocolTests.RestJson
             };
             var config = new AmazonRestJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new JsonTimestampsRequestMarshaller();
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.JsonTimestampsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\n    \"epochSecondsOnTarget\": 1398796238\n}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/JsonTimestamps", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/json".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/JsonTimestamps", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/json".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
         }
 
         /// <summary>
@@ -210,7 +246,7 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestJson")]
-        public void RestJsonJsonTimestampsWithHttpDateFormatRequest()
+        public async Task RestJsonJsonTimestampsWithHttpDateFormatRequest()
         {
             // Arrange
             var request = new JsonTimestampsRequest
@@ -219,20 +255,27 @@ namespace AWSSDK.ProtocolTests.RestJson
             };
             var config = new AmazonRestJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new JsonTimestampsRequestMarshaller();
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.JsonTimestampsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\n    \"httpDate\": \"Tue, 29 Apr 2014 18:30:38 GMT\"\n}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/JsonTimestamps", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/json".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/JsonTimestamps", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/json".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
         }
 
         /// <summary>
@@ -243,7 +286,7 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestJson")]
-        public void RestJsonJsonTimestampsWithHttpDateOnTargetFormatRequest()
+        public async Task RestJsonJsonTimestampsWithHttpDateOnTargetFormatRequest()
         {
             // Arrange
             var request = new JsonTimestampsRequest
@@ -252,20 +295,27 @@ namespace AWSSDK.ProtocolTests.RestJson
             };
             var config = new AmazonRestJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new JsonTimestampsRequestMarshaller();
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.JsonTimestampsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\n    \"httpDateOnTarget\": \"Tue, 29 Apr 2014 18:30:38 GMT\"\n}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/JsonTimestamps", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/json".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/JsonTimestamps", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/json".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
         }
 
         /// <summary>
@@ -275,27 +325,34 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestJson")]
-        public void RestJsonJsonTimestampsResponse()
+        public async Task RestJsonJsonTimestampsResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/json";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"normal\": 1398796238\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonRestJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\n    \"normal\": 1398796238\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/json";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new JsonTimestampsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.JsonTimestampsAsync(new JsonTimestampsRequest()).ConfigureAwait(false);
             var expectedResponse = new JsonTimestampsResponse
             {
                 Normal = ProtocolTestConstants.epoch.AddSeconds(1398796238),
             };
 
             // Assert
-            var actualResponse = (JsonTimestampsResponse)unmarshalledResponse;
             Comparer.CompareObjects<JsonTimestampsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -306,27 +363,34 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestJson")]
-        public void RestJsonJsonTimestampsWithDateTimeFormatResponse()
+        public async Task RestJsonJsonTimestampsWithDateTimeFormatResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/json";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"dateTime\": \"2014-04-29T18:30:38Z\"\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonRestJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\n    \"dateTime\": \"2014-04-29T18:30:38Z\"\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/json";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new JsonTimestampsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.JsonTimestampsAsync(new JsonTimestampsRequest()).ConfigureAwait(false);
             var expectedResponse = new JsonTimestampsResponse
             {
                 DateTime = ProtocolTestConstants.epoch.AddSeconds(1398796238),
             };
 
             // Assert
-            var actualResponse = (JsonTimestampsResponse)unmarshalledResponse;
             Comparer.CompareObjects<JsonTimestampsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -337,27 +401,34 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestJson")]
-        public void RestJsonJsonTimestampsWithDateTimeOnTargetFormatResponse()
+        public async Task RestJsonJsonTimestampsWithDateTimeOnTargetFormatResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/json";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"dateTimeOnTarget\": \"2014-04-29T18:30:38Z\"\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonRestJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\n    \"dateTimeOnTarget\": \"2014-04-29T18:30:38Z\"\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/json";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new JsonTimestampsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.JsonTimestampsAsync(new JsonTimestampsRequest()).ConfigureAwait(false);
             var expectedResponse = new JsonTimestampsResponse
             {
                 DateTimeOnTarget = ProtocolTestConstants.epoch.AddSeconds(1398796238),
             };
 
             // Assert
-            var actualResponse = (JsonTimestampsResponse)unmarshalledResponse;
             Comparer.CompareObjects<JsonTimestampsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -367,27 +438,34 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestJson")]
-        public void RestJsonJsonTimestampsWithEpochSecondsFormatResponse()
+        public async Task RestJsonJsonTimestampsWithEpochSecondsFormatResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/json";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"epochSeconds\": 1398796238\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonRestJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\n    \"epochSeconds\": 1398796238\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/json";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new JsonTimestampsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.JsonTimestampsAsync(new JsonTimestampsRequest()).ConfigureAwait(false);
             var expectedResponse = new JsonTimestampsResponse
             {
                 EpochSeconds = ProtocolTestConstants.epoch.AddSeconds(1398796238),
             };
 
             // Assert
-            var actualResponse = (JsonTimestampsResponse)unmarshalledResponse;
             Comparer.CompareObjects<JsonTimestampsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -398,27 +476,34 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestJson")]
-        public void RestJsonJsonTimestampsWithEpochSecondsOnTargetFormatResponse()
+        public async Task RestJsonJsonTimestampsWithEpochSecondsOnTargetFormatResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/json";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"epochSecondsOnTarget\": 1398796238\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonRestJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\n    \"epochSecondsOnTarget\": 1398796238\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/json";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new JsonTimestampsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.JsonTimestampsAsync(new JsonTimestampsRequest()).ConfigureAwait(false);
             var expectedResponse = new JsonTimestampsResponse
             {
                 EpochSecondsOnTarget = ProtocolTestConstants.epoch.AddSeconds(1398796238),
             };
 
             // Assert
-            var actualResponse = (JsonTimestampsResponse)unmarshalledResponse;
             Comparer.CompareObjects<JsonTimestampsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -428,27 +513,34 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestJson")]
-        public void RestJsonJsonTimestampsWithHttpDateFormatResponse()
+        public async Task RestJsonJsonTimestampsWithHttpDateFormatResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/json";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"httpDate\": \"Tue, 29 Apr 2014 18:30:38 GMT\"\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonRestJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\n    \"httpDate\": \"Tue, 29 Apr 2014 18:30:38 GMT\"\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/json";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new JsonTimestampsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.JsonTimestampsAsync(new JsonTimestampsRequest()).ConfigureAwait(false);
             var expectedResponse = new JsonTimestampsResponse
             {
                 HttpDate = ProtocolTestConstants.epoch.AddSeconds(1398796238),
             };
 
             // Assert
-            var actualResponse = (JsonTimestampsResponse)unmarshalledResponse;
             Comparer.CompareObjects<JsonTimestampsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -459,27 +551,34 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestJson")]
-        public void RestJsonJsonTimestampsWithHttpDateOnTargetFormatResponse()
+        public async Task RestJsonJsonTimestampsWithHttpDateOnTargetFormatResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/json";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"httpDateOnTarget\": \"Tue, 29 Apr 2014 18:30:38 GMT\"\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonRestJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\n    \"httpDateOnTarget\": \"Tue, 29 Apr 2014 18:30:38 GMT\"\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/json";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new JsonTimestampsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.JsonTimestampsAsync(new JsonTimestampsRequest()).ConfigureAwait(false);
             var expectedResponse = new JsonTimestampsResponse
             {
                 HttpDateOnTarget = ProtocolTestConstants.epoch.AddSeconds(1398796238),
             };
 
             // Assert
-            var actualResponse = (JsonTimestampsResponse)unmarshalledResponse;
             Comparer.CompareObjects<JsonTimestampsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
     }

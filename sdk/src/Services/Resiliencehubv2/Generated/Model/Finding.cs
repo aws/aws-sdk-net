@@ -39,6 +39,7 @@ namespace Amazon.Resiliencehubv2.Model
         private FailureCategory _failureCategory;
         private string _findingId;
         private List<InfrastructureAndCodeRecommendation> _infrastructureAndCodeRecommendations = AWSConfigs.InitializeCollections ? new List<InfrastructureAndCodeRecommendation>() : null;
+        private string _investigationDeepLink;
         private string _name;
         private List<ObservabilityRecommendation> _observabilityRecommendations = AWSConfigs.InitializeCollections ? new List<ObservabilityRecommendation>() : null;
         private PolicyComponent _policyComponent;
@@ -143,6 +144,25 @@ namespace Amazon.Resiliencehubv2.Model
         internal bool IsSetInfrastructureAndCodeRecommendations()
         {
             return this._infrastructureAndCodeRecommendations != null && (this._infrastructureAndCodeRecommendations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InvestigationDeepLink. 
+        /// <para>
+        /// A deep link to an interactive DevOps Agent investigation seeded with this finding.
+        /// This value is null until DevOps Agent creates an investigation.
+        /// </para>
+        /// </summary>
+        public string InvestigationDeepLink
+        {
+            get { return this._investigationDeepLink; }
+            set { this._investigationDeepLink = value; }
+        }
+
+        // Check to see if InvestigationDeepLink property is set
+        internal bool IsSetInvestigationDeepLink()
+        {
+            return this._investigationDeepLink != null;
         }
 
         /// <summary>

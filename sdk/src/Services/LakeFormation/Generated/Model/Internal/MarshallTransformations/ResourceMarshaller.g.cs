@@ -122,6 +122,17 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetRLSPolicy())
+            {
+                context.Writer.WritePropertyName("RLSPolicy");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RLSPolicyResourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.RLSPolicy, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetTable())
             {
                 context.Writer.WritePropertyName("Table");

@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RegionScope Marshaller
     /// </summary>
-    public class RegionScopeMarshaller : IRequestMarshaller<RegionScope, JsonMarshallerContext> 
+    public class RegionScopeMarshaller : IRequestMarshaller<RegionScope, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,27 +45,26 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RegionScope requestObject, JsonMarshallerContext context)
+        public void Marshall(RegionScope requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAllRegionsEnabled())
-            {
-                context.Writer.WritePropertyName("AllRegionsEnabled");
-                context.Writer.WriteBooleanValue(requestObject.AllRegionsEnabled.Value);
-            }
 
-            if(requestObject.IsSetRegions())
+            if (requestObject.IsSetAllRegionsEnabled())
             {
-                context.Writer.WritePropertyName("Regions");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("AllRegionsEnabled");
+                context.Writer.WriteBoolean(requestObject.AllRegionsEnabled.Value);
+            }
+            if (requestObject.IsSetRegions())
+            {
+                context.Writer.WriteTextString("Regions");
+                context.Writer.WriteStartArray(requestObject.Regions.Count);
                 foreach(var requestObjectRegionsListValue in requestObject.Regions)
                 {
-                        context.Writer.WriteStringValue(requestObjectRegionsListValue);
+                        context.Writer.WriteTextString(requestObjectRegionsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
         }
 
         /// <summary>

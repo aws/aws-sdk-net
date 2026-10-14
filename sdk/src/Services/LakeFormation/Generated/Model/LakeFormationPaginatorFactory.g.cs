@@ -97,6 +97,22 @@ namespace Amazon.LakeFormation.Model
         }
 
         /// <summary>
+        /// Paginator for ListRLSPolicies operation
+        /// </summary>
+        public IListRLSPoliciesPaginator ListRLSPolicies(ListRLSPoliciesRequest request)
+        {
+            return new ListRLSPoliciesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRLSPolicyAttachments operation
+        /// </summary>
+        public IListRLSPolicyAttachmentsPaginator ListRLSPolicyAttachments(ListRLSPolicyAttachmentsRequest request)
+        {
+            return new ListRLSPolicyAttachmentsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListResources operation
         /// </summary>
         public IListResourcesPaginator ListResources(ListResourcesRequest request)

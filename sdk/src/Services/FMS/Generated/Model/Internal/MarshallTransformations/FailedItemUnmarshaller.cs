@@ -29,46 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for FailedItem Object
     /// </summary>  
-    public class FailedItemUnmarshaller : IJsonUnmarshaller<FailedItem, JsonUnmarshallerContext>
+    public class FailedItemUnmarshaller : ICborUnmarshaller<FailedItem, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FailedItem Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public FailedItem Unmarshall(CborUnmarshallerContext context)
         {
             FailedItem unmarshalledObject = new FailedItem();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("Reason", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("URI", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.URI = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Reason":
+                        {
+                            context.AddPathSegment("Reason");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "URI":
+                        {
+                            context.AddPathSegment("URI");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.URI = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

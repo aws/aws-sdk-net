@@ -1151,6 +1151,11 @@ namespace Amazon.SecurityAgent
         public static readonly Provider GITLAB = new Provider("GITLAB");
 
         /// <summary>
+        /// Constant JIRA for Provider
+        /// </summary>
+        public static readonly Provider JIRA = new Provider("JIRA");
+
+        /// <summary>
         /// Constructs a custom Provider for a value not among the defined constants.
         /// </summary>
         public Provider(string value) : base(value) { }
@@ -1185,6 +1190,11 @@ namespace Amazon.SecurityAgent
         /// Constant DOCUMENTATION for ProviderType
         /// </summary>
         public static readonly ProviderType DOCUMENTATION = new ProviderType("DOCUMENTATION");
+
+        /// <summary>
+        /// Constant ISSUE_TRACKING for ProviderType
+        /// </summary>
+        public static readonly ProviderType ISSUE_TRACKING = new ProviderType("ISSUE_TRACKING");
 
         /// <summary>
         /// Constant SOURCE_CODE for ProviderType
@@ -1272,6 +1282,11 @@ namespace Amazon.SecurityAgent
         /// Constant DOCUMENT for ResourceType
         /// </summary>
         public static readonly ResourceType DOCUMENT = new ResourceType("DOCUMENT");
+
+        /// <summary>
+        /// Constant PROJECT for ResourceType
+        /// </summary>
+        public static readonly ResourceType PROJECT = new ResourceType("PROJECT");
 
         /// <summary>
         /// Constructs a custom ResourceType for a value not among the defined constants.
@@ -2047,6 +2062,47 @@ namespace Amazon.SecurityAgent
     }
 
     /// <summary>
+    /// Constants used for properties of type TestScopeType.
+    /// </summary>
+    public class TestScopeType : ConstantClass
+    {
+        /// <summary>
+        /// Constant GENERATIVE_AI_APP for TestScopeType
+        /// </summary>
+        public static readonly TestScopeType GENERATIVE_AI_APP = new TestScopeType("GENERATIVE_AI_APP");
+
+        /// <summary>
+        /// Constant WEB_APP for TestScopeType
+        /// </summary>
+        public static readonly TestScopeType WEB_APP = new TestScopeType("WEB_APP");
+
+        /// <summary>
+        /// Constructs a custom TestScopeType for a value not among the defined constants.
+        /// </summary>
+        public TestScopeType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TestScopeType FindValue(string value)
+        {
+            return FindValue<TestScopeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TestScopeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ThreatActor.
     /// </summary>
     public class ThreatActor : ConstantClass
@@ -2184,6 +2240,134 @@ namespace Amazon.SecurityAgent
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ThreatStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TriggerEvent.
+    /// </summary>
+    public class TriggerEvent : ConstantClass
+    {
+        /// <summary>
+        /// Constant PULL_REQUEST_DRAFT for TriggerEvent
+        /// </summary>
+        public static readonly TriggerEvent PULL_REQUEST_DRAFT = new TriggerEvent("PULL_REQUEST_DRAFT");
+
+        /// <summary>
+        /// Constant PULL_REQUEST_LABEL_ADDED for TriggerEvent
+        /// </summary>
+        public static readonly TriggerEvent PULL_REQUEST_LABEL_ADDED = new TriggerEvent("PULL_REQUEST_LABEL_ADDED");
+
+        /// <summary>
+        /// Constant PULL_REQUEST_READY_FOR_REVIEW for TriggerEvent
+        /// </summary>
+        public static readonly TriggerEvent PULL_REQUEST_READY_FOR_REVIEW = new TriggerEvent("PULL_REQUEST_READY_FOR_REVIEW");
+
+        /// <summary>
+        /// Constructs a custom TriggerEvent for a value not among the defined constants.
+        /// </summary>
+        public TriggerEvent(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TriggerEvent FindValue(string value)
+        {
+            return FindValue<TriggerEvent>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TriggerEvent(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TriggerFilterMatchMode.
+    /// </summary>
+    public class TriggerFilterMatchMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant EXCLUDE for TriggerFilterMatchMode
+        /// </summary>
+        public static readonly TriggerFilterMatchMode EXCLUDE = new TriggerFilterMatchMode("EXCLUDE");
+
+        /// <summary>
+        /// Constant INCLUDE for TriggerFilterMatchMode
+        /// </summary>
+        public static readonly TriggerFilterMatchMode INCLUDE = new TriggerFilterMatchMode("INCLUDE");
+
+        /// <summary>
+        /// Constructs a custom TriggerFilterMatchMode for a value not among the defined constants.
+        /// </summary>
+        public TriggerFilterMatchMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TriggerFilterMatchMode FindValue(string value)
+        {
+            return FindValue<TriggerFilterMatchMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TriggerFilterMatchMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TriggerFilterType.
+    /// </summary>
+    public class TriggerFilterType : ConstantClass
+    {
+        /// <summary>
+        /// Constant LABEL for TriggerFilterType
+        /// </summary>
+        public static readonly TriggerFilterType LABEL = new TriggerFilterType("LABEL");
+
+        /// <summary>
+        /// Constant TARGET_BRANCH for TriggerFilterType
+        /// </summary>
+        public static readonly TriggerFilterType TARGET_BRANCH = new TriggerFilterType("TARGET_BRANCH");
+
+        /// <summary>
+        /// Constructs a custom TriggerFilterType for a value not among the defined constants.
+        /// </summary>
+        public TriggerFilterType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TriggerFilterType FindValue(string value)
+        {
+            return FindValue<TriggerFilterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TriggerFilterType(string value)
         {
             return FindValue(value);
         }

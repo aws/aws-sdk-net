@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+  <doc>
+    <members>
+      <member name="M:Amazon.DocDBElastic.IAmazonDocDBElastic.CopyClusterSnapshot(Amazon.DocDBElastic.Model.CopyClusterSnapshotRequest)" />
+      <member name="M:Amazon.DocDBElastic.AmazonDocDBElasticClient.CopyClusterSnapshot(Amazon.DocDBElastic.Model.CopyClusterSnapshotRequest)" />
+      <member name="T:Amazon.DocDBElastic.Model.CopyClusterSnapshotRequest" />
+      <member name="T:Amazon.DocDBElastic.Model.CopyClusterSnapshotResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          update applied
+        </para>
+        <code title="Basic Copy Cluster Snapshot Example" source=".\AWSSDKDocSamples\DocDBElastic\DocDBElastic.GeneratedSamples.cs" region="CopyClusterSnapshot-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.DocDBElastic.IAmazonDocDBElastic.StartCluster(Amazon.DocDBElastic.Model.StartClusterRequest)" />
+      <member name="M:Amazon.DocDBElastic.AmazonDocDBElasticClient.StartCluster(Amazon.DocDBElastic.Model.StartClusterRequest)" />
+      <member name="T:Amazon.DocDBElastic.Model.StartClusterRequest" />
+      <member name="T:Amazon.DocDBElastic.Model.StartClusterResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          update applied
+        </para>
+        <code title="Basic Start Cluster Example" source=".\AWSSDKDocSamples\DocDBElastic\DocDBElastic.GeneratedSamples.cs" region="StartCluster-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.DocDBElastic.IAmazonDocDBElastic.StopCluster(Amazon.DocDBElastic.Model.StopClusterRequest)" />
+      <member name="M:Amazon.DocDBElastic.AmazonDocDBElasticClient.StopCluster(Amazon.DocDBElastic.Model.StopClusterRequest)" />
+      <member name="T:Amazon.DocDBElastic.Model.StopClusterRequest" />
+      <member name="T:Amazon.DocDBElastic.Model.StopClusterResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          update applied
+        </para>
+        <code title="Basic Stop Cluster Example" source=".\AWSSDKDocSamples\DocDBElastic\DocDBElastic.GeneratedSamples.cs" region="StopCluster-1" />
+      </example>
+    </value>
+  </doc>
+</docs>

@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VariablePaymentTermConfiguration Marshaller
     /// </summary>
-    public class VariablePaymentTermConfigurationMarshaller : IRequestMarshaller<VariablePaymentTermConfiguration, JsonMarshallerContext> 
+    public class VariablePaymentTermConfigurationMarshaller : IRequestMarshaller<VariablePaymentTermConfiguration, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(VariablePaymentTermConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(VariablePaymentTermConfiguration requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetExpirationDuration())
-            {
-                context.Writer.WritePropertyName("expirationDuration");
-                context.Writer.WriteStringValue(requestObject.ExpirationDuration);
-            }
 
-            if(requestObject.IsSetPaymentRequestApprovalStrategy())
+            if (requestObject.IsSetExpirationDuration())
             {
-                context.Writer.WritePropertyName("paymentRequestApprovalStrategy");
-                context.Writer.WriteStringValue(requestObject.PaymentRequestApprovalStrategy);
+                context.Writer.WriteTextString("expirationDuration");
+                context.Writer.WriteTextString(requestObject.ExpirationDuration);
             }
-
+            if (requestObject.IsSetPaymentRequestApprovalStrategy())
+            {
+                context.Writer.WriteTextString("paymentRequestApprovalStrategy");
+                context.Writer.WriteTextString(requestObject.PaymentRequestApprovalStrategy);
+            }
         }
 
         /// <summary>

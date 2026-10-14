@@ -97,7 +97,7 @@ namespace Amazon.GameLift.Model
     /// <para>
     ///  <b>gameSessionProperties</b> -- A set of key-value pairs that can store custom data
     /// in a game session. For example: <c>{"Key": "difficulty", "Value": "novice"}</c>. The
-    /// filter expression must specify the <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameProperty">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameProperty</a>
+    /// filter expression must specify the <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameProperty.html">GameProperty</a>
     /// -- a <c>Key</c> and a string <c>Value</c> to search for the game sessions.
     /// </para>
     ///  

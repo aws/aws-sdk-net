@@ -63,6 +63,26 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAccountName() => this.AccountName != null;
 
         /// <summary>
+        /// Gets and sets the property CriticalitySources. 
+        /// <para>
+        /// The sources of criticalities determined from a resource.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 3)]
+        public List<CriticalitySource> CriticalitySources { get; set; } = AWSConfigs.InitializeCollections ? new List<CriticalitySource>() : null;
+
+        /// <summary>
+        /// Checks to see if the CriticalitySources property is set.
+        /// </summary>
+        internal bool IsSetCriticalitySources() => this.CriticalitySources != null && (this.CriticalitySources.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property DiscoveryType. 
         /// <para>
         /// Specifies how the resource was discovered. If the value is <c>Managed</c>, the resource
@@ -165,6 +185,19 @@ namespace Amazon.SecurityHub.Model
         /// Checks to see if the ResourceCreationTimeDt property is set.
         /// </summary>
         internal bool IsSetResourceCreationTimeDt() => this.ResourceCreationTimeDt != null;
+
+        /// <summary>
+        /// Gets and sets the property ResourceCriticality. 
+        /// <para>
+        /// The criticality assigned to a resource.
+        /// </para>
+        /// </summary>
+        public ResourceCriticality ResourceCriticality { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ResourceCriticality property is set.
+        /// </summary>
+        internal bool IsSetResourceCriticality() => this.ResourceCriticality != null;
 
         /// <summary>
         /// Gets and sets the property ResourceDetailCaptureTimeDt. 

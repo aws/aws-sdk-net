@@ -1724,6 +1724,10 @@ namespace Amazon.GuardDuty
         /// Constant EKS_ADDON_MANAGEMENT for FeatureAdditionalConfiguration
         /// </summary>
         public static readonly FeatureAdditionalConfiguration EKS_ADDON_MANAGEMENT = new FeatureAdditionalConfiguration("EKS_ADDON_MANAGEMENT");
+        /// <summary>
+        /// Constant RDS_DATA_RISK for FeatureAdditionalConfiguration
+        /// </summary>
+        public static readonly FeatureAdditionalConfiguration RDS_DATA_RISK = new FeatureAdditionalConfiguration("RDS_DATA_RISK");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -3648,6 +3652,10 @@ namespace Amazon.GuardDuty
         /// Constant EKS_ADDON_MANAGEMENT for OrgFeatureAdditionalConfiguration
         /// </summary>
         public static readonly OrgFeatureAdditionalConfiguration EKS_ADDON_MANAGEMENT = new OrgFeatureAdditionalConfiguration("EKS_ADDON_MANAGEMENT");
+        /// <summary>
+        /// Constant RDS_DATA_RISK for OrgFeatureAdditionalConfiguration
+        /// </summary>
+        public static readonly OrgFeatureAdditionalConfiguration RDS_DATA_RISK = new OrgFeatureAdditionalConfiguration("RDS_DATA_RISK");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -5258,6 +5266,22 @@ namespace Amazon.GuardDuty
         /// Constant LAMBDA_NETWORK_LOGS for UsageFeature
         /// </summary>
         public static readonly UsageFeature LAMBDA_NETWORK_LOGS = new UsageFeature("LAMBDA_NETWORK_LOGS");
+        /// <summary>
+        /// Constant RDS_DATA_ACTIVITY_DBI_PROTECTION_LIMITLESS for UsageFeature
+        /// </summary>
+        public static readonly UsageFeature RDS_DATA_ACTIVITY_DBI_PROTECTION_LIMITLESS = new UsageFeature("RDS_DATA_ACTIVITY_DBI_PROTECTION_LIMITLESS");
+        /// <summary>
+        /// Constant RDS_DATA_ACTIVITY_DBI_PROTECTION_PROVISIONED for UsageFeature
+        /// </summary>
+        public static readonly UsageFeature RDS_DATA_ACTIVITY_DBI_PROTECTION_PROVISIONED = new UsageFeature("RDS_DATA_ACTIVITY_DBI_PROTECTION_PROVISIONED");
+        /// <summary>
+        /// Constant RDS_DATA_ACTIVITY_DBI_PROTECTION_SERVERLESS for UsageFeature
+        /// </summary>
+        public static readonly UsageFeature RDS_DATA_ACTIVITY_DBI_PROTECTION_SERVERLESS = new UsageFeature("RDS_DATA_ACTIVITY_DBI_PROTECTION_SERVERLESS");
+        /// <summary>
+        /// Constant RDS_DBI_PROTECTION_LIMITLESS for UsageFeature
+        /// </summary>
+        public static readonly UsageFeature RDS_DBI_PROTECTION_LIMITLESS = new UsageFeature("RDS_DBI_PROTECTION_LIMITLESS");
         /// <summary>
         /// Constant RDS_DBI_PROTECTION_PROVISIONED for UsageFeature
         /// </summary>

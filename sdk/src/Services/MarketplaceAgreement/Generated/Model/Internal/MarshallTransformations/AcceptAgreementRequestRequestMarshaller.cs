@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
 {
@@ -59,52 +58,58 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
         public IRequest Marshall(AcceptAgreementRequestRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MarketplaceAgreement");
-            string target = "AWSMPCommerceService_v20200301.AcceptAgreementRequest";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/AWSMPCommerceService_v20200301/operation/AcceptAgreementRequest";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-03-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetAgreementRequestId())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("agreementRequestId");
-                context.Writer.WriteStringValue(publicRequest.AgreementRequestId);
-            }
-
-            if(publicRequest.IsSetPurchaseOrders())
-            {
-                context.Writer.WritePropertyName("purchaseOrders");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestPurchaseOrdersListValue in publicRequest.PurchaseOrders)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAgreementRequestId())
                 {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = PurchaseOrderMarshaller.Instance;
-                    marshaller.Marshall(publicRequestPurchaseOrdersListValue, context);
-
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteTextString("agreementRequestId");
+                    context.Writer.WriteTextString(publicRequest.AgreementRequestId);
                 }
-                context.Writer.WriteEndArray();
-            }
+                if (publicRequest.IsSetPurchaseOrders())
+                {
+                    context.Writer.WriteTextString("purchaseOrders");
+                    context.Writer.WriteStartArray(publicRequest.PurchaseOrders.Count);
+                    foreach(var publicRequestPurchaseOrdersListValue in publicRequest.PurchaseOrders)
+                    {
+                        context.Writer.WriteStartMap(null);
 
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
+                        var marshaller = PurchaseOrderMarshaller.Instance;
+                        marshaller.Marshall(publicRequestPurchaseOrdersListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                writer.WriteEndMap();
+#if !NETFRAMEWORK
+                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
+                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
+                // avoiding the default-size rent followed by a resize+return.
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
+                request.Content = writer.Encode();
 #endif
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
             
-
-
             return request;
         }
         private static AcceptAgreementRequestRequestMarshaller _instance = new AcceptAgreementRequestRequestMarshaller();        

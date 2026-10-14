@@ -148,6 +148,16 @@ namespace Amazon.Connect.Model
         IListContactEvaluationsPaginator ListContactEvaluations(ListContactEvaluationsRequest request);
 
         /// <summary>
+        /// Paginator for ListContactFlowAliases operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListContactFlowAliasesPaginator ListContactFlowAliases(ListContactFlowAliasesRequest request);
+
+        /// <summary>
         /// Paginator for ListContactFlowModuleAliases operation
         ///</summary>
         [AWSPaginator(

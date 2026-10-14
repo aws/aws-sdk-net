@@ -43,7 +43,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Bucket. 
         /// <para>
-        /// An Amazon S3 bucket identifier. Thename of the S3 bucket.
+        /// An Amazon S3 bucket identifier. The name of the S3 bucket.
         /// </para>
         ///  <note> 
         /// <para>

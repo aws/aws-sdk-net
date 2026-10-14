@@ -5360,6 +5360,68 @@ namespace Amazon.Deadline
 
         #endregion
         
+        #region  ListMemberships
+
+
+        /// <summary>
+        /// Lists the Deadline Cloud resource memberships associated with a specified IAM Identity
+        /// Center principal, optionally filtered by the requested resource types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMemberships service method.</param>
+        /// 
+        /// <returns>The response from the ListMemberships service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListMemberships">REST API Reference for ListMemberships Operation</seealso>
+        ListMembershipsResponse ListMemberships(ListMembershipsRequest request);
+
+
+
+        /// <summary>
+        /// Lists the Deadline Cloud resource memberships associated with a specified IAM Identity
+        /// Center principal, optionally filtered by the requested resource types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMemberships service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMemberships service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListMemberships">REST API Reference for ListMemberships Operation</seealso>
+        Task<ListMembershipsResponse> ListMembershipsAsync(ListMembershipsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListMeteredProducts
 
 

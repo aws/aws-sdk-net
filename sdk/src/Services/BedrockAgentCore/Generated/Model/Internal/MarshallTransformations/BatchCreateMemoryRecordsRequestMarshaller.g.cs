@@ -84,6 +84,16 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if (publicRequest.IsSetRecordExpirySpecification())
+            {
+                context.Writer.WritePropertyName("recordExpirySpecification");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RecordExpirySpecificationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RecordExpirySpecification, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetRecords())
             {
                 context.Writer.WritePropertyName("records");

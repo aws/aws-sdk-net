@@ -49,9 +49,8 @@ The `dataTypeSwap` customization (keyed by modeled shape name, then emitted memb
 emitted .NET type and optionally names the marshaller method and unmarshaller instance generated code calls
 for it; an omitted one keeps the modeled conversion, as in C2J.
 
-`CustomizationTransform` validates each entry after `shapeModifiers`, so a member renamed by `emitPropertyName`
-is named by its new name, as in C2J. Nothing is stored on the model: `ResolveMembers` looks the entry up by
-`structure.Id.Name` and member name, and `ResolveType` folds it into the `TypeDescriptor`: `DotNetType` is the swapped type, `IsNullableValueType` describes the swapped type, and
+A member renamed by `emitPropertyName` is named by its new name, as in C2J. Nothing is stored on the model:
+`ResolveMembers` looks the entry up by `structure.Id.Name` and the member's `CustomizationsModel.EmittedName`, and `ResolveType` folds it into the `TypeDescriptor`: `DotNetType` is the swapped type, `IsNullableValueType` describes the swapped type, and
 `MarshallerOverride` / `UnmarshallerOverride` carry the conversion (see marshalling → Data Type Swaps).
 `Target` stays the modeled shape.
 

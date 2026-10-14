@@ -308,7 +308,7 @@
     <property>Amazon.DevOpsAgent.Model.EnableOperatorAppRequest.OperatorAppRoleArn</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^arn:aws:iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.EnableOperatorAppResponse.AgentSpaceId</property>
@@ -761,7 +761,7 @@
     <property>Amazon.DevOpsAgent.Model.RegisterServiceRequest.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[\p{L}\p{N}\p{P}\p{S}\p{Z}]+$</pattern>
+    <pattern>^[\p{L}\p{N} _-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.RegisterServiceRequest.PrivateConnectionName</property>
@@ -1045,13 +1045,13 @@
     <property>Amazon.DevOpsAgent.Model.AWSConfiguration.AgentElevatedRoleArn</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^arn:aws:iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.AWSConfiguration.AssumableRoleArn</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^arn:aws:iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.AgentSpace.AgentSpaceId</property>
@@ -1184,6 +1184,11 @@
     <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.CronSchedule.Expression</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.DatadogServiceDetails.Description</property>
     <max>500</max>
     <pattern>^[\p{L}\p{N}\p{P}\p{S}\p{Z}]+$</pattern>
@@ -1229,16 +1234,28 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.GitHubConfiguration.ReleaseManagementAssociationId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.GitHubConfiguration.RuntimeRoleArn</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^arn:aws:iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.GitLabConfiguration.ReleaseManagementAssociationId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.GitLabConfiguration.RuntimeRoleArn</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^arn:aws:iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.GitLabDetails.TargetUrl</property>
@@ -1280,7 +1297,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.MCPServerAuthorizationDiscoveryConfig.ReturnToEndpoint</property>
-    <pattern>^https://[a-zA-Z0-9.-]*\.(console\.(aws|aws-dev)|awsc-(integ|preprod)\.aws)\.amazon\.com(/.*)?$</pattern>
+    <pattern>^https://([a-zA-Z0-9.-]*\.(console\.(aws|aws-dev)|awsc-(integ|preprod)\.aws)\.amazon\.com|[a-zA-Z0-9-]+\.aidevops(-beta|-gamma)?\.global\.app\.aws)(/.*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.MCPServerBearerTokenConfig.AuthorizationHeader</property>
@@ -1357,7 +1374,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.MCPServerOAuth3LOConfig.ReturnToEndpoint</property>
-    <pattern>^https://[a-zA-Z0-9.-]*\.(console\.(aws|aws-dev)|awsc-(integ|preprod)\.aws)\.amazon\.com(/.*)?$</pattern>
+    <pattern>^https://([a-zA-Z0-9.-]*\.(console\.(aws|aws-dev)|awsc-(integ|preprod)\.aws)\.amazon\.com|[a-zA-Z0-9-]+\.aidevops(-beta|-gamma)?\.global\.app\.aws)(/.*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.MCPServerOAuthClientCredentialsConfig.ClientId</property>
@@ -1385,7 +1402,7 @@
     <property>Amazon.DevOpsAgent.Model.MCPServerSigV4AuthorizationConfig.McpRoleArn</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^arn:aws:iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.MCPServerSigV4AuthorizationConfig.Region</property>
@@ -1425,6 +1442,11 @@
     <min>1</min>
     <max>128</max>
     <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.MonthlyRecurrence.DayOfMonth</property>
+    <min>1</min>
+    <max>31</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.NewRelicApiKeyConfig.AccountId</property>
@@ -1494,6 +1516,18 @@
     <pattern>^vpc-(([0-9a-z]{8})|([0-9a-z]{17}))$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.PrivateNetworkAccess.PrivateConnectionName</property>
+    <min>3</min>
+    <max>30</max>
+    <pattern>^[a-z0-9]([a-z0-9-]*[a-z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.PrivateNetworkAccess.RuntimeRoleArn</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.Recommendation.RankPosition</property>
     <min>1</min>
   </property-value-rule>
@@ -1542,7 +1576,7 @@
     <property>Amazon.DevOpsAgent.Model.RegisteredAzureIdentityDetails.WebIdentityRoleArn</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^arn:aws:iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.RegisteredGrafanaServerDetails.Endpoint</property>
@@ -1571,7 +1605,7 @@
     <property>Amazon.DevOpsAgent.Model.RegisteredMCPServerSigV4Details.McpRoleArn</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^arn:aws:iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.RegisteredMCPServerSigV4Details.Name</property>
@@ -1645,7 +1679,7 @@
     <property>Amazon.DevOpsAgent.Model.RegisteredRemoteAgentSigV4Details.RoleArn</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^arn:aws:iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.RegisteredRemoteAgentSigV4Details.Service</property>
@@ -1680,6 +1714,12 @@
     <min>1</min>
     <max>255</max>
     <pattern>^https://[a-zA-Z0-9]([a-zA-Z0-9.-]*[a-zA-Z0-9])\.service-now\.com/?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.ReleaseManagementConfiguration.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\p{L}\p{N}\p{P}\p{S}\p{Z}]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.RemoteAgentAPIKeyConfig.ApiKeyHeader</property>
@@ -1755,7 +1795,7 @@
     <property>Amazon.DevOpsAgent.Model.RemoteAgentSigV4AuthorizationConfig.RoleArn</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^arn:aws:iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.RemoteAgentSigV4AuthorizationConfig.Service</property>
@@ -1845,7 +1885,7 @@
     <property>Amazon.DevOpsAgent.Model.SlackBidirectionalConfiguration.RoleArn</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^arn:aws:iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.SlackChannel.ChannelId</property>
@@ -1865,19 +1905,31 @@
     <property>Amazon.DevOpsAgent.Model.SourceAwsConfiguration.AgentElevatedRoleArn</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^arn:aws:iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.SourceAwsConfiguration.AssumableRoleArn</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^arn:aws:iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.TaskFilter.PrimaryTaskId</property>
     <min>1</min>
     <max>128</max>
     <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.TimeRangeSchedule.StartAfter</property>
+    <min>5</min>
+    <max>5</max>
+    <pattern>^([01]\d|2[0-3]):[0-5]\d$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.TimeRangeSchedule.StartBefore</property>
+    <min>5</min>
+    <max>5</max>
+    <pattern>^([01]\d|2[0-3]):[0-5]\d$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.Trigger.AgentSpaceId</property>

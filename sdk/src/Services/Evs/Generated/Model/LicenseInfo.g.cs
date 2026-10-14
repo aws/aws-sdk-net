@@ -1,0 +1,69 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Evs.Model
+{
+    /// <summary>
+    /// The license information that Amazon EVS requires to create an environment. Amazon
+    /// EVS requires two license keys: a VCF solution key and a vSAN license key.
+    /// </summary>
+    public partial class LicenseInfo
+    {
+        /// <summary>
+        /// Gets and sets the property SolutionKey. 
+        /// <para>
+        ///  The VCF solution key. This license unlocks VMware VCF product features, including
+        /// vSphere, NSX, SDDC Manager, and vCenter Server. The VCF solution key must meet the
+        /// instance-type-specific minimum core requirements.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Sensitive = true)]
+        public string SolutionKey { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SolutionKey property is set.
+        /// </summary>
+        internal bool IsSetSolutionKey() => this.SolutionKey != null;
+
+        /// <summary>
+        /// Gets and sets the property VsanKey. 
+        /// <para>
+        ///  The VSAN license key. This license unlocks vSAN features. The vSAN license key must
+        /// meet the instance-type-specific minimum capacity requirements.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Sensitive = true)]
+        public string VsanKey { get; set; }
+
+        /// <summary>
+        /// Checks to see if the VsanKey property is set.
+        /// </summary>
+        internal bool IsSetVsanKey() => this.VsanKey != null;
+    }
+}

@@ -61,7 +61,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property EncryptionKeyArn. 
         /// <para>
-        /// Customer-managed KMS key. Defaults to AWS-owned key. Not updatable after creation.
+        /// Customer-managed KMS key. Defaults to Amazon Web Services-owned key. Not updatable
+        /// after creation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

@@ -2408,6 +2408,42 @@ namespace Amazon.BedrockAgentCore
     }
 
     /// <summary>
+    /// Constants used for properties of type RecordExpiryAction.
+    /// </summary>
+    public class RecordExpiryAction : ConstantClass
+    {
+        /// <summary>
+        /// Constant REMOVE for RecordExpiryAction
+        /// </summary>
+        public static readonly RecordExpiryAction REMOVE = new RecordExpiryAction("REMOVE");
+
+        /// <summary>
+        /// Constructs a custom RecordExpiryAction for a value not among the defined constants.
+        /// </summary>
+        public RecordExpiryAction(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecordExpiryAction FindValue(string value)
+        {
+            return FindValue<RecordExpiryAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecordExpiryAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type RegistryRecordStatus.
     /// </summary>
     public class RegistryRecordStatus : ConstantClass

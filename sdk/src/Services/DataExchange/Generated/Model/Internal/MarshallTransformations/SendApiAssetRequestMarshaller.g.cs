@@ -103,7 +103,10 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             }
 
             request.ResourcePath = "/v1";
-            request.Content = System.Text.Encoding.UTF8.GetBytes(publicRequest.Body);
+            if (publicRequest.IsSetBody())
+            {
+                request.Content = System.Text.Encoding.UTF8.GetBytes(publicRequest.Body);
+            }
 
             request.UseQueryString = true;
 

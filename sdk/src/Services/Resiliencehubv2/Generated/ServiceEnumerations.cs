@@ -839,6 +839,234 @@ namespace Amazon.Resiliencehubv2
 
 
     /// <summary>
+    /// Constants used for properties of type DevOpsAgentConfidence.
+    /// </summary>
+    public class DevOpsAgentConfidence : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIGH for DevOpsAgentConfidence
+        /// </summary>
+        public static readonly DevOpsAgentConfidence HIGH = new DevOpsAgentConfidence("HIGH");
+        /// <summary>
+        /// Constant LOW for DevOpsAgentConfidence
+        /// </summary>
+        public static readonly DevOpsAgentConfidence LOW = new DevOpsAgentConfidence("LOW");
+        /// <summary>
+        /// Constant MEDIUM for DevOpsAgentConfidence
+        /// </summary>
+        public static readonly DevOpsAgentConfidence MEDIUM = new DevOpsAgentConfidence("MEDIUM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DevOpsAgentConfidence(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DevOpsAgentConfidence FindValue(string value)
+        {
+            return FindValue<DevOpsAgentConfidence>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DevOpsAgentConfidence(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DevOpsAgentConnectionStatus.
+    /// </summary>
+    public class DevOpsAgentConnectionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONNECTED for DevOpsAgentConnectionStatus
+        /// </summary>
+        public static readonly DevOpsAgentConnectionStatus CONNECTED = new DevOpsAgentConnectionStatus("CONNECTED");
+        /// <summary>
+        /// Constant CONNECTING for DevOpsAgentConnectionStatus
+        /// </summary>
+        public static readonly DevOpsAgentConnectionStatus CONNECTING = new DevOpsAgentConnectionStatus("CONNECTING");
+        /// <summary>
+        /// Constant DISCONNECTED for DevOpsAgentConnectionStatus
+        /// </summary>
+        public static readonly DevOpsAgentConnectionStatus DISCONNECTED = new DevOpsAgentConnectionStatus("DISCONNECTED");
+        /// <summary>
+        /// Constant FAILED for DevOpsAgentConnectionStatus
+        /// </summary>
+        public static readonly DevOpsAgentConnectionStatus FAILED = new DevOpsAgentConnectionStatus("FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DevOpsAgentConnectionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DevOpsAgentConnectionStatus FindValue(string value)
+        {
+            return FindValue<DevOpsAgentConnectionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DevOpsAgentConnectionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DevOpsAgentInvestigationStatus.
+    /// </summary>
+    public class DevOpsAgentInvestigationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELED for DevOpsAgentInvestigationStatus
+        /// </summary>
+        public static readonly DevOpsAgentInvestigationStatus CANCELED = new DevOpsAgentInvestigationStatus("CANCELED");
+        /// <summary>
+        /// Constant COMPLETED for DevOpsAgentInvestigationStatus
+        /// </summary>
+        public static readonly DevOpsAgentInvestigationStatus COMPLETED = new DevOpsAgentInvestigationStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for DevOpsAgentInvestigationStatus
+        /// </summary>
+        public static readonly DevOpsAgentInvestigationStatus FAILED = new DevOpsAgentInvestigationStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for DevOpsAgentInvestigationStatus
+        /// </summary>
+        public static readonly DevOpsAgentInvestigationStatus IN_PROGRESS = new DevOpsAgentInvestigationStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant PENDING for DevOpsAgentInvestigationStatus
+        /// </summary>
+        public static readonly DevOpsAgentInvestigationStatus PENDING = new DevOpsAgentInvestigationStatus("PENDING");
+        /// <summary>
+        /// Constant TIMED_OUT for DevOpsAgentInvestigationStatus
+        /// </summary>
+        public static readonly DevOpsAgentInvestigationStatus TIMED_OUT = new DevOpsAgentInvestigationStatus("TIMED_OUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DevOpsAgentInvestigationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DevOpsAgentInvestigationStatus FindValue(string value)
+        {
+            return FindValue<DevOpsAgentInvestigationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DevOpsAgentInvestigationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DevOpsAgentVerdict.
+    /// </summary>
+    public class DevOpsAgentVerdict : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAIL for DevOpsAgentVerdict
+        /// </summary>
+        public static readonly DevOpsAgentVerdict FAIL = new DevOpsAgentVerdict("FAIL");
+        /// <summary>
+        /// Constant PASS for DevOpsAgentVerdict
+        /// </summary>
+        public static readonly DevOpsAgentVerdict PASS = new DevOpsAgentVerdict("PASS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DevOpsAgentVerdict(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DevOpsAgentVerdict FindValue(string value)
+        {
+            return FindValue<DevOpsAgentVerdict>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DevOpsAgentVerdict(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EksLabelSelectorOperator.
     /// </summary>
     public class EksLabelSelectorOperator : ConstantClass

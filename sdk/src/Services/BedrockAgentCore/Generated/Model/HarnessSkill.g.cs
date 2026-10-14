@@ -37,7 +37,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property AwsSkills. 
         /// <para>
-        /// AWS Skills baked into the Harness's underlying Runtime.
+        /// Amazon Web Services Skills baked into the Harness's underlying Runtime.
         /// </para>
         /// </summary>
         public HarnessSkillAwsSkillsSource AwsSkills { get; set; }

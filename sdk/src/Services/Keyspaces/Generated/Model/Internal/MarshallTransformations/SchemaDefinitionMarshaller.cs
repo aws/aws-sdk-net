@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SchemaDefinition Marshaller
     /// </summary>
-    public class SchemaDefinitionMarshaller : IRequestMarshaller<SchemaDefinition, JsonMarshallerContext> 
+    public class SchemaDefinitionMarshaller : IRequestMarshaller<SchemaDefinition, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,74 +45,71 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SchemaDefinition requestObject, JsonMarshallerContext context)
+        public void Marshall(SchemaDefinition requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAllColumns())
+
+            if (requestObject.IsSetAllColumns())
             {
-                context.Writer.WritePropertyName("allColumns");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("allColumns");
+                context.Writer.WriteStartArray(requestObject.AllColumns.Count);
                 foreach(var requestObjectAllColumnsListValue in requestObject.AllColumns)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = ColumnDefinitionMarshaller.Instance;
                     marshaller.Marshall(requestObjectAllColumnsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetClusteringKeys())
+            if (requestObject.IsSetClusteringKeys())
             {
-                context.Writer.WritePropertyName("clusteringKeys");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("clusteringKeys");
+                context.Writer.WriteStartArray(requestObject.ClusteringKeys.Count);
                 foreach(var requestObjectClusteringKeysListValue in requestObject.ClusteringKeys)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = ClusteringKeyMarshaller.Instance;
                     marshaller.Marshall(requestObjectClusteringKeysListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetPartitionKeys())
+            if (requestObject.IsSetPartitionKeys())
             {
-                context.Writer.WritePropertyName("partitionKeys");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("partitionKeys");
+                context.Writer.WriteStartArray(requestObject.PartitionKeys.Count);
                 foreach(var requestObjectPartitionKeysListValue in requestObject.PartitionKeys)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = PartitionKeyMarshaller.Instance;
                     marshaller.Marshall(requestObjectPartitionKeysListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetStaticColumns())
+            if (requestObject.IsSetStaticColumns())
             {
-                context.Writer.WritePropertyName("staticColumns");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("staticColumns");
+                context.Writer.WriteStartArray(requestObject.StaticColumns.Count);
                 foreach(var requestObjectStaticColumnsListValue in requestObject.StaticColumns)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = StaticColumnMarshaller.Instance;
                     marshaller.Marshall(requestObjectStaticColumnsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
         }
 
         /// <summary>

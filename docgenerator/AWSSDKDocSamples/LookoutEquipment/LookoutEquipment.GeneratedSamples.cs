@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,31 @@ namespace AWSSDKDocSamples.Amazon.LookoutEquipment.Generated
     {
         public void LookoutEquipmentCreateRetrainingScheduler()
         {
-            #region creates-a-retraining-scheduler-with-manual-promote-mode-1694018486212
+            #region CreateRetrainingScheduler-1
 
             var client = new AmazonLookoutEquipmentClient();
-            var response = client.CreateRetrainingScheduler(new CreateRetrainingSchedulerRequest 
+            var response = client.CreateRetrainingScheduler(new CreateRetrainingSchedulerRequest
+            {
+                ClientToken = "sample-client-token",
+                LookbackWindow = "P360D",
+                ModelName = "sample-model",
+                RetrainingFrequency = "P1M",
+                RetrainingStartDate = new DateTime(2024, 1, 1, 0, 0, 0, DateTimeKind.Utc)
+            });
+
+            string modelArn = response.ModelArn;
+            string modelName = response.ModelName;
+            RetrainingSchedulerStatus status = response.Status;
+
+            #endregion
+        }
+
+        public void LookoutEquipmentCreateRetrainingScheduler()
+        {
+            #region CreateRetrainingScheduler-2
+
+            var client = new AmazonLookoutEquipmentClient();
+            var response = client.CreateRetrainingScheduler(new CreateRetrainingSchedulerRequest
             {
                 ClientToken = "sample-client-token",
                 LookbackWindow = "P360D",
@@ -27,38 +49,17 @@ namespace AWSSDKDocSamples.Amazon.LookoutEquipment.Generated
 
             string modelArn = response.ModelArn;
             string modelName = response.ModelName;
-            string status = response.Status;
-
-            #endregion
-        }
-
-        public void LookoutEquipmentCreateRetrainingScheduler()
-        {
-            #region creates-a-retraining-scheduler-with-a-specific-start-date-1694018790519
-
-            var client = new AmazonLookoutEquipmentClient();
-            var response = client.CreateRetrainingScheduler(new CreateRetrainingSchedulerRequest 
-            {
-                ClientToken = "sample-client-token",
-                LookbackWindow = "P360D",
-                ModelName = "sample-model",
-                RetrainingFrequency = "P1M",
-                RetrainingStartDate = new DateTime(2024, 1, 1, 12, 0, 0, DateTimeKind.Utc)
-            });
-
-            string modelArn = response.ModelArn;
-            string modelName = response.ModelName;
-            string status = response.Status;
+            RetrainingSchedulerStatus status = response.Status;
 
             #endregion
         }
 
         public void LookoutEquipmentDeleteRetrainingScheduler()
         {
-            #region deletes-a-retraining-scheduler-1694019240097
+            #region DeleteRetrainingScheduler-1
 
             var client = new AmazonLookoutEquipmentClient();
-            var response = client.DeleteRetrainingScheduler(new DeleteRetrainingSchedulerRequest 
+            var response = client.DeleteRetrainingScheduler(new DeleteRetrainingSchedulerRequest
             {
                 ModelName = "sample-model"
             });
@@ -69,33 +70,33 @@ namespace AWSSDKDocSamples.Amazon.LookoutEquipment.Generated
 
         public void LookoutEquipmentDescribeRetrainingScheduler()
         {
-            #region describes-a-retraining-scheduler-1694019344252
+            #region DescribeRetrainingScheduler-1
 
             var client = new AmazonLookoutEquipmentClient();
-            var response = client.DescribeRetrainingScheduler(new DescribeRetrainingSchedulerRequest 
+            var response = client.DescribeRetrainingScheduler(new DescribeRetrainingSchedulerRequest
             {
                 ModelName = "sample-model"
             });
 
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string lookbackWindow = response.LookbackWindow;
             string modelArn = response.ModelArn;
             string modelName = response.ModelName;
-            string promoteMode = response.PromoteMode;
+            ModelPromoteMode promoteMode = response.PromoteMode;
             string retrainingFrequency = response.RetrainingFrequency;
-            DateTime retrainingStartDate = response.RetrainingStartDate;
-            string status = response.Status;
-            DateTime updatedAt = response.UpdatedAt;
+            DateTime? retrainingStartDate = response.RetrainingStartDate;
+            RetrainingSchedulerStatus status = response.Status;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void LookoutEquipmentListRetrainingSchedulers()
         {
-            #region listing-retraining-schedulers-1694016740503
+            #region ListRetrainingSchedulers-1
 
             var client = new AmazonLookoutEquipmentClient();
-            var response = client.ListRetrainingSchedulers(new ListRetrainingSchedulersRequest 
+            var response = client.ListRetrainingSchedulers(new ListRetrainingSchedulersRequest
             {
                 MaxResults = 50
             });
@@ -107,44 +108,44 @@ namespace AWSSDKDocSamples.Amazon.LookoutEquipment.Generated
 
         public void LookoutEquipmentStartRetrainingScheduler()
         {
-            #region starts-a-retraining-scheduler-1694019629413
+            #region StartRetrainingScheduler-1
 
             var client = new AmazonLookoutEquipmentClient();
-            var response = client.StartRetrainingScheduler(new StartRetrainingSchedulerRequest 
+            var response = client.StartRetrainingScheduler(new StartRetrainingSchedulerRequest
             {
                 ModelName = "sample-model"
             });
 
             string modelArn = response.ModelArn;
             string modelName = response.ModelName;
-            string status = response.Status;
+            RetrainingSchedulerStatus status = response.Status;
 
             #endregion
         }
 
         public void LookoutEquipmentStopRetrainingScheduler()
         {
-            #region stops-a-retraining-scheduler-1694019734149
+            #region StopRetrainingScheduler-1
 
             var client = new AmazonLookoutEquipmentClient();
-            var response = client.StopRetrainingScheduler(new StopRetrainingSchedulerRequest 
+            var response = client.StopRetrainingScheduler(new StopRetrainingSchedulerRequest
             {
                 ModelName = "sample-model"
             });
 
             string modelArn = response.ModelArn;
             string modelName = response.ModelName;
-            string status = response.Status;
+            RetrainingSchedulerStatus status = response.Status;
 
             #endregion
         }
 
         public void LookoutEquipmentUpdateModel()
         {
-            #region updates-a-model-1694020683458
+            #region UpdateModel-1
 
             var client = new AmazonLookoutEquipmentClient();
-            var response = client.UpdateModel(new UpdateModelRequest 
+            var response = client.UpdateModel(new UpdateModelRequest
             {
                 LabelsInputConfiguration = new LabelsInputConfiguration { LabelGroupName = "sample-label-group" },
                 ModelName = "sample-model"
@@ -156,27 +157,24 @@ namespace AWSSDKDocSamples.Amazon.LookoutEquipment.Generated
 
         public void LookoutEquipmentUpdateRetrainingScheduler()
         {
-            #region updates-a-retraining-scheduler-1694019840918
+            #region UpdateRetrainingScheduler-1
 
             var client = new AmazonLookoutEquipmentClient();
-            var response = client.UpdateRetrainingScheduler(new UpdateRetrainingSchedulerRequest 
+            var response = client.UpdateRetrainingScheduler(new UpdateRetrainingSchedulerRequest
             {
                 ModelName = "sample-model",
                 RetrainingFrequency = "P1Y",
-                RetrainingStartDate = new DateTime(2024, 1, 1, 12, 0, 0, DateTimeKind.Utc)
+                RetrainingStartDate = new DateTime(2024, 1, 1, 0, 0, 0, DateTimeKind.Utc)
             });
 
 
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

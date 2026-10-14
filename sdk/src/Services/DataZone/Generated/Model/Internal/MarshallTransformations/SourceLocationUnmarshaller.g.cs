@@ -59,6 +59,13 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.S3 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("s3Files", targetDepth, ref reader))
+                {
+                    var unmarshaller = S3FilesLocationUnmarshaller.Instance;
+                    unmarshalledObject.S3Files = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

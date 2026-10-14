@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// The configuration for an AWS Lambda hook target.
+    /// The configuration for an Amazon Web Services Lambda hook target.
     /// </summary>
     public partial class HarnessHookLambdaTarget
     {

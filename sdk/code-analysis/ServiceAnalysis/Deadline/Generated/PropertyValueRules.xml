@@ -1559,6 +1559,39 @@
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.ListMembershipsRequest.IdentityCenterRegion</property>
+    <min>1</min>
+    <max>25</max>
+    <pattern>[a-z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListMembershipsRequest.IdentityStoreId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListMembershipsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListMembershipsRequest.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListMembershipsRequest.PrincipalId</property>
+    <min>1</min>
+    <max>47</max>
+    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListMembershipsResponse.NextToken</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.ListMeteredProductsRequest.LicenseEndpointId</property>
     <pattern>le-[0-9a-f]{32}</pattern>
   </property-value-rule>

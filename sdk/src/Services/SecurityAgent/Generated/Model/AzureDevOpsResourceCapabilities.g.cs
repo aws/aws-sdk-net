@@ -59,5 +59,27 @@ namespace Amazon.SecurityAgent.Model
         /// Checks to see if the RemediateCode property is set.
         /// </summary>
         internal bool IsSetRemediateCode() => this.RemediateCode.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property TriggerFilterGroups. 
+        /// <para>
+        /// The filter groups that control which pull request events start an automatic code review
+        /// when <c>leaveComments</c> is enabled. A review starts when any group matches. If you
+        /// omit this, a review starts on <c>PULL_REQUEST_READY_FOR_REVIEW</c> events.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 5)]
+        public List<TriggerFilterGroup> TriggerFilterGroups { get; set; } = AWSConfigs.InitializeCollections ? new List<TriggerFilterGroup>() : null;
+
+        /// <summary>
+        /// Checks to see if the TriggerFilterGroups property is set.
+        /// </summary>
+        internal bool IsSetTriggerFilterGroups() => this.TriggerFilterGroups != null && (this.TriggerFilterGroups.Count > 0 || !AWSConfigs.InitializeCollections);
     }
 }

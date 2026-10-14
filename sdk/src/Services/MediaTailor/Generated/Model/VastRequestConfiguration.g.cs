@@ -54,6 +54,22 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetBody() => this.Body != null;
 
         /// <summary>
+        /// Gets and sets the property Cache. 
+        /// <para>
+        /// The optional response-caching configuration for the function. When present, MediaTailor
+        /// caches the responses that the function receives from the HTTP endpoint, within the
+        /// time-to-live (TTL) bounds that you specify. Omit this configuration to disable response
+        /// caching.
+        /// </para>
+        /// </summary>
+        public HttpRequestCacheConfiguration Cache { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Cache property is set.
+        /// </summary>
+        internal bool IsSetCache() => this.Cache != null;
+
+        /// <summary>
         /// Gets and sets the property Headers. 
         /// <para>
         /// A map of HTTP header names to expression values. MediaTailor evaluates each header

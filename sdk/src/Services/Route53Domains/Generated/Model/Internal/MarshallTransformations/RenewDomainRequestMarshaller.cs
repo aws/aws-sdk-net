@@ -75,6 +75,17 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetConsent())
+            {
+                context.Writer.WritePropertyName("Consent");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ConsentMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Consent, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetCurrentExpiryYear())
             {
                 context.Writer.WritePropertyName("CurrentExpiryYear");

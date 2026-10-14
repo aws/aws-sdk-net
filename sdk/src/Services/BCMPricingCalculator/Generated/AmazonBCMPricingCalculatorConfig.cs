@@ -14,9 +14,8 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the bcm-pricing-calculator-2024-06-19.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -33,22 +32,18 @@ namespace Amazon.BCMPricingCalculator
     public partial class AmazonBCMPricingCalculatorConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("BCM Pricing Calculator", "4.0.102.8");
+            InternalSDKUtils.BuildUserAgentString("BCM Pricing Calculator", "4.0.102.10");
 
         private static readonly AmazonBCMPricingCalculatorEndpointResolver EndpointResolver =
             new AmazonBCMPricingCalculatorEndpointResolver();
 
         private string _userAgent = UserAgentString;
-        ///<summary>
+
+        /// <summary>
         /// The ServiceId, which is the unique identifier for a service.
-        ///</summary>
-        public static new string ServiceId
-        {
-            get
-            {
-                return "BCM Pricing Calculator";
-            }
-        }
+        /// </summary>
+        public static new string ServiceId => "BCM Pricing Calculator";
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -63,35 +58,17 @@ namespace Amazon.BCMPricingCalculator
         /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
-        public override string RegionEndpointServiceName
-        {
-            get
-            {
-                return "bcm-pricing-calculator";
-            }
-        }
+        public override string RegionEndpointServiceName => "bcm-pricing-calculator";
 
         /// <summary>
         /// Gets the ServiceVersion property.
         /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2024-06-19";
-            }
-        }
+        public override string ServiceVersion => "2024-06-19";
 
         /// <summary>
         /// Gets the value of UserAgent property.
         /// </summary>
-        public override string UserAgent
-        {
-            get
-            {
-                return _userAgent;
-            }
-        }
+        public override string UserAgent => _userAgent;
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.
@@ -113,7 +90,5 @@ namespace Amazon.BCMPricingCalculator
             var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
             return EndpointResolver.GetEndpoint(executionContext);
         }
-
-
     }
 }

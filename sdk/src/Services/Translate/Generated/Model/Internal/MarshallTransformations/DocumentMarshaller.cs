@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Translate.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Document Marshaller
     /// </summary>
-    public class DocumentMarshaller : IRequestMarshaller<Document, JsonMarshallerContext> 
+    public class DocumentMarshaller : IRequestMarshaller<Document, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Document requestObject, JsonMarshallerContext context)
+        public void Marshall(Document requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetContent())
-            {
-                context.Writer.WritePropertyName("Content");
-                StringUtils.WriteBase64StringValue(context.Writer, requestObject.Content);
-            }
 
-            if(requestObject.IsSetContentType())
+            if (requestObject.IsSetContent())
             {
-                context.Writer.WritePropertyName("ContentType");
-                context.Writer.WriteStringValue(requestObject.ContentType);
+                context.Writer.WriteTextString("Content");
+                context.Writer.WriteByteString(requestObject.Content);
             }
-
+            if (requestObject.IsSetContentType())
+            {
+                context.Writer.WriteTextString("ContentType");
+                context.Writer.WriteTextString(requestObject.ContentType);
+            }
         }
 
         /// <summary>

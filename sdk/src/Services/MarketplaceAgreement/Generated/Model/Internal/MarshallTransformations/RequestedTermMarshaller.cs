@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RequestedTerm Marshaller
     /// </summary>
-    public class RequestedTermMarshaller : IRequestMarshaller<RequestedTerm, JsonMarshallerContext> 
+    public class RequestedTermMarshaller : IRequestMarshaller<RequestedTerm, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,27 +45,26 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RequestedTerm requestObject, JsonMarshallerContext context)
+        public void Marshall(RequestedTerm requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetConfiguration())
+
+            if (requestObject.IsSetConfiguration())
             {
-                context.Writer.WritePropertyName("configuration");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("configuration");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = RequestedTermConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Configuration, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetId())
+            if (requestObject.IsSetId())
             {
-                context.Writer.WritePropertyName("id");
-                context.Writer.WriteStringValue(requestObject.Id);
+                context.Writer.WriteTextString("id");
+                context.Writer.WriteTextString(requestObject.Id);
             }
-
         }
 
         /// <summary>

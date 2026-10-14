@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleDBv2.Generated
     {
         public void SimpleDBv2GetExport()
         {
-            #region example-1
+            #region GetExport-1
 
             var client = new AmazonSimpleDBv2Client();
-            var response = client.GetExport(new GetExportRequest 
+            var response = client.GetExport(new GetExportRequest
             {
                 ExportArn = "arn:aws:sdb:us-east-1:123456789012:export/abc123"
             });
@@ -24,9 +25,9 @@ namespace AWSSDKDocSamples.Amazon.SimpleDBv2.Generated
             string clientToken = response.ClientToken;
             string domainName = response.DomainName;
             string exportArn = response.ExportArn;
-            DateTime exportDataCutoffTime = response.ExportDataCutoffTime;
-            string exportStatus = response.ExportStatus;
-            DateTime requestedAt = response.RequestedAt;
+            DateTime? exportDataCutoffTime = response.ExportDataCutoffTime;
+            ExportStatus exportStatus = response.ExportStatus;
+            DateTime? requestedAt = response.RequestedAt;
             string s3Bucket = response.S3Bucket;
 
             #endregion
@@ -34,10 +35,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleDBv2.Generated
 
         public void SimpleDBv2ListExports()
         {
-            #region example-1
+            #region ListExports-1
 
             var client = new AmazonSimpleDBv2Client();
-            var response = client.ListExports(new ListExportsRequest 
+            var response = client.ListExports(new ListExportsRequest
             {
             });
 
@@ -48,10 +49,10 @@ namespace AWSSDKDocSamples.Amazon.SimpleDBv2.Generated
 
         public void SimpleDBv2StartDomainExport()
         {
-            #region example-1
+            #region StartDomainExport-1
 
             var client = new AmazonSimpleDBv2Client();
-            var response = client.StartDomainExport(new StartDomainExportRequest 
+            var response = client.StartDomainExport(new StartDomainExportRequest
             {
                 DomainName = "my-domain",
                 S3Bucket = "my-export-bucket"
@@ -59,18 +60,15 @@ namespace AWSSDKDocSamples.Amazon.SimpleDBv2.Generated
 
             string clientToken = response.ClientToken;
             string exportArn = response.ExportArn;
-            DateTime requestedAt = response.RequestedAt;
+            DateTime? requestedAt = response.RequestedAt;
 
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

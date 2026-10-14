@@ -67,6 +67,13 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("color", targetDepth, ref reader))
+                {
+                    var unmarshaller = ColorInformationUnmarshaller.Instance;
+                    unmarshalledObject.Color = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("frameRate", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

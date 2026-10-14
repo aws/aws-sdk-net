@@ -59,10 +59,6 @@ namespace AWSSDK.ProtocolTests.Utils
             ContentType = response.ContentType;
             if (ContentType == null && _headers.TryGetValue("Content-Type", out var contentType))
                 ContentType = contentType;
-            if (ContentType != null && !_headers.ContainsKey("Content-Type"))
-                _headers["Content-Type"] = ContentType;
-            if (!_headers.ContainsKey("Content-Length"))
-                _headers["Content-Length"] = _body.Length.ToString();
 
             ResponseBody = new MockHttpResponseBody(_body);
         }

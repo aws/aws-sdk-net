@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EncryptionSpecification Marshaller
     /// </summary>
-    public class EncryptionSpecificationMarshaller : IRequestMarshaller<EncryptionSpecification, JsonMarshallerContext> 
+    public class EncryptionSpecificationMarshaller : IRequestMarshaller<EncryptionSpecification, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EncryptionSpecification requestObject, JsonMarshallerContext context)
+        public void Marshall(EncryptionSpecification requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetKmsKeyIdentifier())
-            {
-                context.Writer.WritePropertyName("kmsKeyIdentifier");
-                context.Writer.WriteStringValue(requestObject.KmsKeyIdentifier);
-            }
 
-            if(requestObject.IsSetType())
+            if (requestObject.IsSetKmsKeyIdentifier())
             {
-                context.Writer.WritePropertyName("type");
-                context.Writer.WriteStringValue(requestObject.Type);
+                context.Writer.WriteTextString("kmsKeyIdentifier");
+                context.Writer.WriteTextString(requestObject.KmsKeyIdentifier);
             }
-
+            if (requestObject.IsSetType())
+            {
+                context.Writer.WriteTextString("type");
+                context.Writer.WriteTextString(requestObject.Type);
+            }
         }
 
         /// <summary>

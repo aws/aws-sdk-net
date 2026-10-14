@@ -34,6 +34,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.RestJson
 {
@@ -47,7 +48,7 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestJson")]
-        public void PostUnionWithJsonNameRequest1Request()
+        public async Task PostUnionWithJsonNameRequest1Request()
         {
             // Arrange
             var request = new PostUnionWithJsonNameRequest
@@ -58,20 +59,27 @@ namespace AWSSDK.ProtocolTests.RestJson
             };
             var config = new AmazonRestJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new PostUnionWithJsonNameRequestMarshaller();
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.PostUnionWithJsonNameAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\n    \"value\": {\n        \"FOO\": \"hi\"\n    }\n}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/PostUnionWithJsonName", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/json".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/PostUnionWithJsonName", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/json".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
         }
 
         /// <summary>
@@ -81,7 +89,7 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestJson")]
-        public void PostUnionWithJsonNameRequest2Request()
+        public async Task PostUnionWithJsonNameRequest2Request()
         {
             // Arrange
             var request = new PostUnionWithJsonNameRequest
@@ -92,20 +100,27 @@ namespace AWSSDK.ProtocolTests.RestJson
             };
             var config = new AmazonRestJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new PostUnionWithJsonNameRequestMarshaller();
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.PostUnionWithJsonNameAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\n    \"value\": {\n        \"_baz\": \"hi\"\n    }\n}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/PostUnionWithJsonName", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/json".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/PostUnionWithJsonName", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/json".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
         }
 
         /// <summary>
@@ -115,7 +130,7 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestJson")]
-        public void PostUnionWithJsonNameRequest3Request()
+        public async Task PostUnionWithJsonNameRequest3Request()
         {
             // Arrange
             var request = new PostUnionWithJsonNameRequest
@@ -126,20 +141,27 @@ namespace AWSSDK.ProtocolTests.RestJson
             };
             var config = new AmazonRestJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new PostUnionWithJsonNameRequestMarshaller();
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.PostUnionWithJsonNameAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\n    \"value\": {\n        \"bar\": \"hi\"\n    }\n}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/PostUnionWithJsonName", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/json".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/PostUnionWithJsonName", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/json".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
         }
 
         /// <summary>
@@ -149,18 +171,26 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestJson")]
-        public void PostUnionWithJsonNameResponse1Response()
+        public async Task PostUnionWithJsonNameResponse1Response()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/json";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"value\": {\n        \"FOO\": \"hi\"\n    }\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonRestJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\n    \"value\": {\n        \"FOO\": \"hi\"\n    }\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/json";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new PostUnionWithJsonNameResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.PostUnionWithJsonNameAsync(new PostUnionWithJsonNameRequest()).ConfigureAwait(false);
             var expectedResponse = new PostUnionWithJsonNameResponse
             {
                 Value = new UnionWithJsonName{
@@ -169,9 +199,8 @@ namespace AWSSDK.ProtocolTests.RestJson
             };
 
             // Assert
-            var actualResponse = (PostUnionWithJsonNameResponse)unmarshalledResponse;
             Comparer.CompareObjects<PostUnionWithJsonNameResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -181,18 +210,26 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestJson")]
-        public void PostUnionWithJsonNameResponse2Response()
+        public async Task PostUnionWithJsonNameResponse2Response()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/json";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"value\": {\n        \"_baz\": \"hi\"\n    }\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonRestJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\n    \"value\": {\n        \"_baz\": \"hi\"\n    }\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/json";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new PostUnionWithJsonNameResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.PostUnionWithJsonNameAsync(new PostUnionWithJsonNameRequest()).ConfigureAwait(false);
             var expectedResponse = new PostUnionWithJsonNameResponse
             {
                 Value = new UnionWithJsonName{
@@ -201,9 +238,8 @@ namespace AWSSDK.ProtocolTests.RestJson
             };
 
             // Assert
-            var actualResponse = (PostUnionWithJsonNameResponse)unmarshalledResponse;
             Comparer.CompareObjects<PostUnionWithJsonNameResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -213,18 +249,26 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestJson")]
-        public void PostUnionWithJsonNameResponse3Response()
+        public async Task PostUnionWithJsonNameResponse3Response()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/json";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"value\": {\n        \"bar\": \"hi\"\n    }\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonRestJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\n    \"value\": {\n        \"bar\": \"hi\"\n    }\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/json";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new PostUnionWithJsonNameResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.PostUnionWithJsonNameAsync(new PostUnionWithJsonNameRequest()).ConfigureAwait(false);
             var expectedResponse = new PostUnionWithJsonNameResponse
             {
                 Value = new UnionWithJsonName{
@@ -233,9 +277,8 @@ namespace AWSSDK.ProtocolTests.RestJson
             };
 
             // Assert
-            var actualResponse = (PostUnionWithJsonNameResponse)unmarshalledResponse;
             Comparer.CompareObjects<PostUnionWithJsonNameResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
     }

@@ -38,6 +38,7 @@ namespace Amazon.Transfer.Model
         private string _description;
         private List<WorkflowStep> _onExceptionSteps = AWSConfigs.InitializeCollections ? new List<WorkflowStep>() : null;
         private List<WorkflowStep> _steps = AWSConfigs.InitializeCollections ? new List<WorkflowStep>() : null;
+        private List<string> _structuredLogDestinations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _workflowId;
 
@@ -126,6 +127,44 @@ namespace Amazon.Transfer.Model
         internal bool IsSetSteps()
         {
             return this._steps != null && (this._steps.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StructuredLogDestinations. 
+        /// <para>
+        /// Specifies the log groups to which your workflow logs are sent.
+        /// </para>
+        ///  
+        /// <para>
+        /// To specify a log group, you must provide the ARN for an existing log group. In this
+        /// case, the format of the log group is as follows:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>arn:partition:logs:region-name:amazon-account-id:log-group:log-group-name:*</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, <c>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</c> 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<string> StructuredLogDestinations
+        {
+            get { return this._structuredLogDestinations; }
+            set { this._structuredLogDestinations = value; }
+        }
+
+        // Check to see if StructuredLogDestinations property is set
+        internal bool IsSetStructuredLogDestinations()
+        {
+            return this._structuredLogDestinations != null && (this._structuredLogDestinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

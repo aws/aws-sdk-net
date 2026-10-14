@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
 {
@@ -59,89 +58,88 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListAgreementInvoiceLineItemsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MarketplaceAgreement");
-            string target = "AWSMPCommerceService_v20200301.ListAgreementInvoiceLineItems";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/AWSMPCommerceService_v20200301/operation/ListAgreementInvoiceLineItems";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-03-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAfterIssuedTime())
+                {
+                    context.Writer.WriteTextString("afterIssuedTime");
+                    context.Writer.WriteDateTime(publicRequest.AfterIssuedTime.Value);
+                }
+                if (publicRequest.IsSetAgreementId())
+                {
+                    context.Writer.WriteTextString("agreementId");
+                    context.Writer.WriteTextString(publicRequest.AgreementId);
+                }
+                if (publicRequest.IsSetBeforeIssuedTime())
+                {
+                    context.Writer.WriteTextString("beforeIssuedTime");
+                    context.Writer.WriteDateTime(publicRequest.BeforeIssuedTime.Value);
+                }
+                if (publicRequest.IsSetGroupBy())
+                {
+                    context.Writer.WriteTextString("groupBy");
+                    context.Writer.WriteTextString(publicRequest.GroupBy);
+                }
+                if (publicRequest.IsSetInvoiceBillingPeriod())
+                {
+                    context.Writer.WriteTextString("invoiceBillingPeriod");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = InvoiceBillingPeriodMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.InvoiceBillingPeriod, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetInvoiceId())
+                {
+                    context.Writer.WriteTextString("invoiceId");
+                    context.Writer.WriteTextString(publicRequest.InvoiceId);
+                }
+                if (publicRequest.IsSetInvoiceType())
+                {
+                    context.Writer.WriteTextString("invoiceType");
+                    context.Writer.WriteTextString(publicRequest.InvoiceType);
+                }
+                if (publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WriteTextString("maxResults");
+                    context.Writer.WriteInt32(publicRequest.MaxResults.Value);
+                }
+                if (publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WriteTextString("nextToken");
+                    context.Writer.WriteTextString(publicRequest.NextToken);
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
+                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
+                // avoiding the default-size rent followed by a resize+return.
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetAfterIssuedTime())
-            {
-                context.Writer.WritePropertyName("afterIssuedTime");
-                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.AfterIssuedTime.Value));
             }
-
-            if(publicRequest.IsSetAgreementId())
+            finally
             {
-                context.Writer.WritePropertyName("agreementId");
-                context.Writer.WriteStringValue(publicRequest.AgreementId);
+                CborWriterPool.Return(writer);
             }
-
-            if(publicRequest.IsSetBeforeIssuedTime())
-            {
-                context.Writer.WritePropertyName("beforeIssuedTime");
-                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.BeforeIssuedTime.Value));
-            }
-
-            if(publicRequest.IsSetGroupBy())
-            {
-                context.Writer.WritePropertyName("groupBy");
-                context.Writer.WriteStringValue(publicRequest.GroupBy);
-            }
-
-            if(publicRequest.IsSetInvoiceBillingPeriod())
-            {
-                context.Writer.WritePropertyName("invoiceBillingPeriod");
-                context.Writer.WriteStartObject();
-
-                var marshaller = InvoiceBillingPeriodMarshaller.Instance;
-                marshaller.Marshall(publicRequest.InvoiceBillingPeriod, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetInvoiceId())
-            {
-                context.Writer.WritePropertyName("invoiceId");
-                context.Writer.WriteStringValue(publicRequest.InvoiceId);
-            }
-
-            if(publicRequest.IsSetInvoiceType())
-            {
-                context.Writer.WritePropertyName("invoiceType");
-                context.Writer.WriteStringValue(publicRequest.InvoiceType);
-            }
-
-            if(publicRequest.IsSetMaxResults())
-            {
-                context.Writer.WritePropertyName("maxResults");
-                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
-            }
-
-            if(publicRequest.IsSetNextToken())
-            {
-                context.Writer.WritePropertyName("nextToken");
-                context.Writer.WriteStringValue(publicRequest.NextToken);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
             
-
-
             return request;
         }
         private static ListAgreementInvoiceLineItemsRequestMarshaller _instance = new ListAgreementInvoiceLineItemsRequestMarshaller();        

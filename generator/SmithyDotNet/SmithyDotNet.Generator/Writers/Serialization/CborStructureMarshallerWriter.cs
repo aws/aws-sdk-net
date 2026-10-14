@@ -1,0 +1,68 @@
+using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Model.Shapes;
+
+namespace SmithyDotNet.Generator.Writers.Serialization;
+
+/// <summary>
+/// rpcv2Cbor structure marshaller: writes the members into the map the caller opened. A request event-stream
+/// event uses the same class; its <c>@eventHeader</c>/<c>@eventPayload</c> members go to the message, not the
+/// map (see <see cref="MarshallerCommon.WriteEventPayload"/>).
+/// </summary>
+public sealed class CborStructureMarshallerWriter(GenerationContext context, string modelFileName)
+{
+    public string Write(StructureShape structure, CancellationToken cancellationToken = default)
+    {
+        var className = context.ToDotNetName(structure.Id);
+        var marshallerClassName = context.StructureMarshallerName(structure.Id);
+        var members = TypeMapper.ResolveMembers(structure, context);
+        var writer = new CodeWriter();
+
+        FileHeader.WriteLicense(writer, modelFileName);
+        FileHeader.WriteUsings(writer, FileHeader.ModelUsings);
+        writer.WriteLine($"using {context.Namespace}.Model;");
+        FileHeader.WriteUsings(writer, FileHeader.MarshallerUsings, false);
+        FileHeader.WriteUsings(writer, FileHeader.CborMarshallerUsings);
+        FileHeader.WritePragma(writer, FileHeader.MarshallerWarnings);
+
+        writer.OpenNamespace($"{context.Namespace}.Model.Internal.MarshallTransformations", () =>
+        {
+            writer.WriteLine("/// <summary>");
+            writer.WriteLine($"/// {className} Marshaller");
+            writer.WriteLine("/// </summary>");
+            writer.OpenBlock($"public partial class {marshallerClassName} : IRequestMarshaller<{className}, CborMarshallerContext>", () =>
+            {
+                writer.WriteLine("/// <summary>");
+                writer.WriteLine("/// Marshall the structure from the request object to the service");
+                writer.WriteLine("/// </summary>");
+                writer.OpenBlock($"public void Marshall({className} requestObject, CborMarshallerContext context)", () =>
+                {
+                    writer.WriteLine("if (requestObject == null) return;");
+                    writer.WriteLine("");
+                    for (int i = 0; i < members.Count; i++)
+                    {
+                        var member = members[i];
+                        if (member.IsEventPayload)
+                        {
+                            MarshallerCommon.WriteEventPayload(writer, member);
+                        }
+                        else if (member.IsEventHeader)
+                        {
+                            MarshallerCommon.WriteEventHeader(writer, member);
+                        }
+                        else
+                        {
+                            CborBodyMemberMarshaller.WriteBodyMember(writer, member, "requestObject");
+                        }
+                        if (i < members.Count - 1)
+                        {
+                            writer.WriteLine("");
+                        }
+                    }
+                });
+                writer.WriteLine("");
+                MarshallerCommon.WriteStructureMarshallerSingleton(writer, marshallerClassName);
+            });
+        });
+        return writer.ToFormattedString(cancellationToken);
+    }
+}

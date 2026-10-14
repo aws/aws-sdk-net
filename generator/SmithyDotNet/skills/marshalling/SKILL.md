@@ -15,9 +15,21 @@ Under `Generated/Model/Internal/MarshallTransformations/`, all `partial`:
 |---|---|---|
 | `{Operation}RequestMarshaller.cs` | `IMarshaller<IRequest, {Operation}Request>` | |
 | `{Operation}ResponseUnmarshaller.cs` | `JsonResponseUnmarshaller` (or protocol equivalent) | Dispatches errors |
-| `{Shape}Marshaller.cs` | `IRequestMarshaller<{Shape}, JsonMarshallerContext>` | Nested structures in the request path |
-| `{Shape}Unmarshaller.cs` | `IJsonUnmarshaller<{Shape}, JsonUnmarshallerContext>` | Nested structures in the response path |
-| `{Exception}Unmarshaller.cs` | `IJsonErrorResponseUnmarshaller<{Exception}, JsonUnmarshallerContext>` | |
+| `{Shape}Marshaller.cs` | `IRequestMarshaller<{Shape}, JsonMarshallerContext>` (or protocol equivalent) | Nested structures in the request path |
+| `{Shape}Unmarshaller.cs` | `IJsonUnmarshaller<{Shape}, JsonUnmarshallerContext>` (or protocol equivalent) | Nested structures in the response path |
+| `{Exception}Unmarshaller.cs` | `IJsonErrorResponseUnmarshaller<{Exception}, JsonUnmarshallerContext>` (or protocol equivalent) | |
+| `{Operation}EndpointDiscoveryMarshaller.cs` | `IMarshaller<EndpointDiscoveryDataBase, {Operation}Request>` | Endpoint discovery only; see `sdk-conventions` |
+
+An operation output already named `{Operation}Response` that a member also targets is typed with the
+`{Operation}Response` class itself (no separate model class); its structure unmarshaller is
+`{Shape}StructureUnmarshaller`, since `{Shape}Unmarshaller` is the operation's response unmarshaller.
+No C2J service has this shape, so there is no parity target.
+
+Structure (un)marshaller class names come only from `GenerationContext.StructureMarshallerName` /
+`StructureUnmarshallerName`. `TypeDescriptor.MarshallerName` / `UnmarshallerName` carry them for a
+structure target; writers read those (or the context, when declaring the class or naming the file)
+and never compose `{Shape}Marshaller` / `{Shape}Unmarshaller` themselves, so a naming rule needs no
+per-protocol code.
 
 Structure marshallers expose `public readonly static {Shape}Marshaller Instance = new {Shape}Marshaller();`.
 Operation marshallers/unmarshallers expose a `private static` instance behind a public `Instance` property.
@@ -145,9 +157,9 @@ route by trait:
 ### `@httpPayload` (request)
 
 A `@httpPayload` member IS the entire body: no wrapping object/property name, no other member in the body
-(Smithy: all others are header/query/label). No `IsSet` guard (matches C2J).
+(Smithy: all others are header/query/label). No `IsSet` guard (matches C2J), except string/enum.
 
-- **String** → `text/plain` (or the target's `@mediaType` value when present), no writer scaffold: `request.Content = System.Text.Encoding.UTF8.GetBytes(publicRequest.{Prop});`
+- **String** (enum too) → `text/plain` (or the target's `@mediaType` value when present), no writer scaffold: `if (publicRequest.IsSet{Prop}()) { request.Content = System.Text.Encoding.UTF8.GetBytes(publicRequest.{Prop}); }`. The guard diverges from C2J, whose unguarded `GetBytes` throws on an unset optional payload (DOTNET-8852).
 - **Structure** (a union too) → `application/json`; the scaffold, then the target's marshaller as the body object (`WriteStartObject` → `{Type}Marshaller.Instance.Marshall(publicRequest.{Prop}, context)` → `WriteEndObject`).
 - **Document** → `application/json`; the scaffold, then `Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(writer, publicRequest.{Prop});` with NO `WriteStartObject`/`WriteEndObject` wrapping (the document is the whole JSON value). No C2J precedent.
 - **Blob** (`MemoryStream`, or `Stream` when `@streaming`) → `application/octet-stream` (or the target's `@mediaType` value; overrides the top `application/json`). Always assigns `request.ContentStream = publicRequest.{Prop} ?? new MemoryStream();` first and ends with the Content-Type override, except when the input also has an `@httpHeader("Content-Type")` member: that header is emitted before the blob block and must win, so the blob's type moves to the top `Content-Type` line and the trailing override is dropped (restJson1 `TestPayloadBlob`). The Content-Length handling in between branches on the operation's `aws.auth#unsignedPayload` and the blob's `@requiresLength` (C2J parity):
@@ -262,7 +274,8 @@ members still get marshallers.
   event's `@eventPayload` member: a blob payload → `application/octet-stream`, a string payload →
   `text/plain`, both read from `context.Request.Content`; a structure payload or an implicit body →
   `application/json` from the JSON writer's stream. (C2J emits `text/plain` for a structure payload too,
-  but the event marshaller writes it as JSON, so JSON is kept here.) CBOR is not handled: restJson1 only.
+  but the event marshaller writes it as JSON, so JSON is kept here.) On rpcv2Cbor the class derives from
+  `CborEventStreamPublisher` and the body is a CBOR map (`application/cbor`).
 - The request member becomes a `Func<Task<I{Union}Event>> {Member}Publisher` property (keeps any modeled
   `[AWSProperty]`/`[Obsolete]`, no `IsSet`). The request marshaller wires it:
   `request.EventStreamPublisher = new {Union}PublisherMarshaller(publicRequest.{Member}Publisher)` with
@@ -363,6 +376,9 @@ writer gets swaps by reusing those helpers; an omitted override keeps the modele
   query member is checked with `== null`, since its type may not be a string.
 - Unmarshal (`JsonBodyMemberUnmarshaller.ScalarUnmarshaller`): `var unmarshaller = {Unmarshaller}.Instance;`,
   emitted verbatim.
+- CBOR body: `WriteInt64({Marshaller}(x))` for the epoch-millis marshaller, else `WriteTextString`; reads use
+  `Cbor{Unmarshaller}.Instance` (as C2J). The wire type stays the modeled one, so a swap on a string member
+  (the runtime cannot read a text string as another type) or a namespace-qualified name fails loud.
 - A response header swap that names an `Unmarshaller` fails loud (not supported yet).
 
 ## Error Dispatch
@@ -397,9 +413,34 @@ Core handles the `__type` difference transparently, so the generator only varies
 Every one of those decisions is gated on `GenerationContext.UsesHttpBindings`; `AwsJsonCodegenTests`
 pins the emitted code and the JSONRPC10/JsonProtocol protocol tests verify it end to end.
 
+An event stream must be the input's or output's only member: Core has no initial-request/response message, so
+siblings fail loud. The publisher's `Content-Type` replaces the x-amz-json one. The rest is the restJson1 path.
+
+## rpcv2Cbor
+
+Spec: [Smithy RPC v2 CBOR](https://smithy.io/2.0/additional-specs/protocols/smithy-rpc-v2-cbor.html). Every
+operation is `POST service/{ServiceShapeName}/operation/{OperationName}` with `smithy-protocol: rpc-v2-cbor`,
+`Accept: application/cbor`, and a CBOR map body with `Content-Type: application/cbor` unless the input is
+`Unit`. HTTP binding traits, `@jsonName` and `@timestampFormat` are ignored: keys are member names and
+timestamps are tag 1. The output is wire-compatible with C2J's CBOR templates and formatted like the JSON
+writers' output; the `Cbor*` writers mirror the JSON ones and are pinned by `RpcV2CborCodegenTests`.
+
+A `@sparse` element writes CBOR null per the spec; C2J writes `{}` for a null structure element in a sparse
+list, but no CBOR service model uses `@sparse`. Documents and streaming blobs are rejected by
+`UnsupportedTraitValidator`.
+
+Event streams follow the awsJson rules, plus `Accept: application/vnd.amazon.eventstream` for an output stream.
+Each event is a CBOR map decoded without its message headers, so a response `@eventHeader` fails loud.
+
+## awsQueryCompatible
+
+Service trait for awsJson1.0 and rpcv2Cbor services that moved off awsQuery
+([spec](https://smithy.io/2.0/aws/protocols/aws-query-protocol.html#aws-protocols-awsquerycompatible-trait)): the
+request announces query mode and errors still dispatch on the shape name, not the rewritten query error code.
+
 ## Other Protocols (not yet implemented)
 
-restXml, awsQuery, ec2Query and rpcv2Cbor: the target output is defined by the C2J templates
+restXml, awsQuery and ec2Query: the target output is defined by the C2J templates
 (`generator/ServiceClientGeneratorLib/Generators/Marshallers/*.tt`). awsQuery/ec2Query route via an
 `Action={Operation}` param with URL-encoded bodies; restXml keeps the HTTP binding traits with an XML
 body (`@xmlName`/`@xmlFlattened`/`@xmlAttribute`/`@xmlNamespace`) and, per the Smithy spec, defaults

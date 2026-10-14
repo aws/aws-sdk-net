@@ -275,6 +275,40 @@ namespace AWSSDKDocSamples.Amazon.Deadline.Generated
             #endregion
         }
 
+        public void DeadlineListMemberships()
+        {
+            #region example-1
+
+            var client = new AmazonDeadlineClient();
+            var response = client.ListMemberships(new ListMembershipsRequest 
+            {
+                IdentityCenterRegion = "us-east-1",
+                IdentityStoreId = "d-1234567890",
+                PrincipalId = "12345678-1234-1234-1234-123456789abc",
+                ResourceTypes = new List<string> {
+                    "QUEUE",
+                    "JOB"
+                }
+            });
+
+
+            #endregion
+        }
+
+        public void DeadlineListMemberships()
+        {
+            #region example-2
+
+            var client = new AmazonDeadlineClient();
+            var response = client.ListMemberships(new ListMembershipsRequest 
+            {
+                PrincipalId = "12345678-1234-1234-1234-123456789abc"
+            });
+
+
+            #endregion
+        }
+
         public void DeadlineListVolumes()
         {
             #region example-1

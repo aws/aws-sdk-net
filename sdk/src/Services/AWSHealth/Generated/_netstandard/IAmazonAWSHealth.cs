@@ -587,6 +587,28 @@ namespace Amazon.AWSHealth
 
         #endregion
                 
+        #region  DescribeServiceLifecycle
+
+
+
+        /// <summary>
+        /// Returns lifecycle information for Amazon Web Services services, including end-of-life
+        /// dates, version recommendations, and lifecycle events.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServiceLifecycle service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeServiceLifecycle service method, as returned by AWSHealth.</returns>
+        /// <exception cref="Amazon.AWSHealth.Model.InvalidPaginationTokenException">
+        /// The specified pagination token (<c>nextToken</c>) is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeServiceLifecycle">REST API Reference for DescribeServiceLifecycle Operation</seealso>
+        Task<DescribeServiceLifecycleResponse> DescribeServiceLifecycleAsync(DescribeServiceLifecycleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DisableHealthServiceAccessForOrganization
 
 

@@ -1,0 +1,107 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+using System.Buffers;
+
+using Amazon.KinesisAnalytics.Model;
+using System.Globalization;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// DeleteApplicationOutput Request Marshaller
+    /// </summary>
+    public partial class DeleteApplicationOutputRequestMarshaller : IMarshaller<IRequest, DeleteApplicationOutputRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    {
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((DeleteApplicationOutputRequest)input);
+        }
+
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(DeleteApplicationOutputRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.KinesisAnalytics");
+            string target = "KinesisAnalytics_20150814.DeleteApplicationOutput";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-08-14";
+            request.HttpMethod = "POST";
+
+            request.ResourcePath = "/";
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using var writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetApplicationName())
+            {
+                context.Writer.WritePropertyName("ApplicationName");
+                context.Writer.WriteStringValue(publicRequest.ApplicationName);
+            }
+            if (publicRequest.IsSetCurrentApplicationVersionId())
+            {
+                context.Writer.WritePropertyName("CurrentApplicationVersionId");
+                context.Writer.WriteNumberValue(publicRequest.CurrentApplicationVersionId.Value);
+            }
+            if (publicRequest.IsSetOutputId())
+            {
+                context.Writer.WritePropertyName("OutputId");
+                context.Writer.WriteStringValue(publicRequest.OutputId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETFRAMEWORK
+            request.Content = memoryStream.ToArray();
+#endif
+
+            return request;
+        }
+
+        private static readonly DeleteApplicationOutputRequestMarshaller _instance = new();
+
+        internal static DeleteApplicationOutputRequestMarshaller GetInstance() => _instance;
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static DeleteApplicationOutputRequestMarshaller Instance => _instance;
+    }
+}

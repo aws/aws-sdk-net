@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,24 +14,24 @@ namespace AWSSDKDocSamples.Amazon.FreeTier.Generated
     {
         public void FreeTierGetAccountActivity()
         {
-            #region example-1
+            #region GetAccountActivity-1
 
             var client = new AmazonFreeTierClient();
-            var response = client.GetAccountActivity(new GetAccountActivityRequest 
+            var response = client.GetAccountActivity(new GetAccountActivityRequest
             {
                 ActivityId = "d622f48bf4014286a2686ab10cacfb2e",
                 LanguageCode = "en-US"
             });
 
             string activityId = response.ActivityId;
-            DateTime completedAt = response.CompletedAt;
+            DateTime? completedAt = response.CompletedAt;
             string description = response.Description;
-            int estimatedTimeToCompleteInMinutes = response.EstimatedTimeToCompleteInMinutes;
-            DateTime expiresAt = response.ExpiresAt;
+            int? estimatedTimeToCompleteInMinutes = response.EstimatedTimeToCompleteInMinutes;
+            DateTime? expiresAt = response.ExpiresAt;
             string instructionsUrl = response.InstructionsUrl;
             ActivityReward reward = response.Reward;
-            DateTime startedAt = response.StartedAt;
-            string status = response.Status;
+            DateTime? startedAt = response.StartedAt;
+            ActivityStatus status = response.Status;
             string title = response.Title;
 
             #endregion
@@ -38,28 +39,28 @@ namespace AWSSDKDocSamples.Amazon.FreeTier.Generated
 
         public void FreeTierGetAccountPlanState()
         {
-            #region example-1
+            #region GetAccountPlanState-1
 
             var client = new AmazonFreeTierClient();
-            var response = client.GetAccountPlanState(new GetAccountPlanStateRequest 
+            var response = client.GetAccountPlanState(new GetAccountPlanStateRequest
             {
             });
 
             string accountId = response.AccountId;
-            DateTime accountPlanExpirationDate = response.AccountPlanExpirationDate;
+            DateTime? accountPlanExpirationDate = response.AccountPlanExpirationDate;
             MonetaryAmount accountPlanRemainingCredits = response.AccountPlanRemainingCredits;
-            string accountPlanStatus = response.AccountPlanStatus;
-            string accountPlanType = response.AccountPlanType;
+            AccountPlanStatus accountPlanStatus = response.AccountPlanStatus;
+            AccountPlanType accountPlanType = response.AccountPlanType;
 
             #endregion
         }
 
         public void FreeTierGetAccountPlanState()
         {
-            #region example-2
+            #region GetAccountPlanState-2
 
             var client = new AmazonFreeTierClient();
-            var response = client.GetAccountPlanState(new GetAccountPlanStateRequest 
+            var response = client.GetAccountPlanState(new GetAccountPlanStateRequest
             {
             });
 
@@ -69,10 +70,10 @@ namespace AWSSDKDocSamples.Amazon.FreeTier.Generated
 
         public void FreeTierGetAccountPlanState()
         {
-            #region example-3
+            #region GetAccountPlanState-3
 
             var client = new AmazonFreeTierClient();
-            var response = client.GetAccountPlanState(new GetAccountPlanStateRequest 
+            var response = client.GetAccountPlanState(new GetAccountPlanStateRequest
             {
             });
 
@@ -82,10 +83,10 @@ namespace AWSSDKDocSamples.Amazon.FreeTier.Generated
 
         public void FreeTierGetAccountPlanState()
         {
-            #region example-4
+            #region GetAccountPlanState-4
 
             var client = new AmazonFreeTierClient();
-            var response = client.GetAccountPlanState(new GetAccountPlanStateRequest 
+            var response = client.GetAccountPlanState(new GetAccountPlanStateRequest
             {
             });
 
@@ -95,10 +96,10 @@ namespace AWSSDKDocSamples.Amazon.FreeTier.Generated
 
         public void FreeTierGetAccountPlanState()
         {
-            #region example-5
+            #region GetAccountPlanState-5
 
             var client = new AmazonFreeTierClient();
-            var response = client.GetAccountPlanState(new GetAccountPlanStateRequest 
+            var response = client.GetAccountPlanState(new GetAccountPlanStateRequest
             {
             });
 
@@ -108,10 +109,10 @@ namespace AWSSDKDocSamples.Amazon.FreeTier.Generated
 
         public void FreeTierListAccountActivities()
         {
-            #region example-1
+            #region ListAccountActivities-1
 
             var client = new AmazonFreeTierClient();
-            var response = client.ListAccountActivities(new ListAccountActivitiesRequest 
+            var response = client.ListAccountActivities(new ListAccountActivitiesRequest
             {
                 FilterActivityStatuses = new List<string> {
                     "COMPLETED"
@@ -128,27 +129,27 @@ namespace AWSSDKDocSamples.Amazon.FreeTier.Generated
 
         public void FreeTierUpgradeAccountPlan()
         {
-            #region example-1
+            #region UpgradeAccountPlan-1
 
             var client = new AmazonFreeTierClient();
-            var response = client.UpgradeAccountPlan(new UpgradeAccountPlanRequest 
+            var response = client.UpgradeAccountPlan(new UpgradeAccountPlanRequest
             {
                 AccountPlanType = "PAID"
             });
 
             string accountId = response.AccountId;
-            string accountPlanStatus = response.AccountPlanStatus;
-            string accountPlanType = response.AccountPlanType;
+            AccountPlanStatus accountPlanStatus = response.AccountPlanStatus;
+            AccountPlanType accountPlanType = response.AccountPlanType;
 
             #endregion
         }
 
         public void FreeTierUpgradeAccountPlan()
         {
-            #region example-2
+            #region UpgradeAccountPlan-2
 
             var client = new AmazonFreeTierClient();
-            var response = client.UpgradeAccountPlan(new UpgradeAccountPlanRequest 
+            var response = client.UpgradeAccountPlan(new UpgradeAccountPlanRequest
             {
                 AccountPlanType = "PAID"
             });
@@ -159,10 +160,10 @@ namespace AWSSDKDocSamples.Amazon.FreeTier.Generated
 
         public void FreeTierUpgradeAccountPlan()
         {
-            #region example-3
+            #region UpgradeAccountPlan-3
 
             var client = new AmazonFreeTierClient();
-            var response = client.UpgradeAccountPlan(new UpgradeAccountPlanRequest 
+            var response = client.UpgradeAccountPlan(new UpgradeAccountPlanRequest
             {
                 AccountPlanType = "FREE"
             });
@@ -173,10 +174,10 @@ namespace AWSSDKDocSamples.Amazon.FreeTier.Generated
 
         public void FreeTierUpgradeAccountPlan()
         {
-            #region example-4
+            #region UpgradeAccountPlan-4
 
             var client = new AmazonFreeTierClient();
-            var response = client.UpgradeAccountPlan(new UpgradeAccountPlanRequest 
+            var response = client.UpgradeAccountPlan(new UpgradeAccountPlanRequest
             {
                 AccountPlanType = "PAID"
             });
@@ -187,10 +188,10 @@ namespace AWSSDKDocSamples.Amazon.FreeTier.Generated
 
         public void FreeTierUpgradeAccountPlan()
         {
-            #region example-5
+            #region UpgradeAccountPlan-5
 
             var client = new AmazonFreeTierClient();
-            var response = client.UpgradeAccountPlan(new UpgradeAccountPlanRequest 
+            var response = client.UpgradeAccountPlan(new UpgradeAccountPlanRequest
             {
                 AccountPlanType = "PAID"
             });
@@ -201,10 +202,10 @@ namespace AWSSDKDocSamples.Amazon.FreeTier.Generated
 
         public void FreeTierUpgradeAccountPlan()
         {
-            #region example-6
+            #region UpgradeAccountPlan-6
 
             var client = new AmazonFreeTierClient();
-            var response = client.UpgradeAccountPlan(new UpgradeAccountPlanRequest 
+            var response = client.UpgradeAccountPlan(new UpgradeAccountPlanRequest
             {
                 AccountPlanType = "PAID"
             });
@@ -213,13 +214,10 @@ namespace AWSSDKDocSamples.Amazon.FreeTier.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

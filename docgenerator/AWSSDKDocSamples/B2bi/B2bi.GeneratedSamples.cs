@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,67 +14,67 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
     {
         public void B2biCreateCapability()
         {
-            #region example-1
+            #region CreateCapability-1
 
             var client = new AmazonB2biClient();
-            var response = client.CreateCapability(new CreateCapabilityRequest 
+            var response = client.CreateCapability(new CreateCapabilityRequest
             {
-                Name = "b2biexample",
-                Type = "edi",
                 ClientToken = "foo",
                 Configuration = new CapabilityConfiguration { Edi = new EdiConfiguration {
-                    Type = new EdiType { X12Details = new X12Details {
-                        Version = "VERSION_4010",
-                        TransactionSet = "X12_110"
-                    } },
                     InputLocation = new S3Location {
-                        Key = "input/",
-                        BucketName = "test-bucket"
+                        BucketName = "test-bucket",
+                        Key = "input/"
                     },
                     OutputLocation = new S3Location {
-                        Key = "output/",
-                        BucketName = "test-bucket"
+                        BucketName = "test-bucket",
+                        Key = "output/"
                     },
-                    TransformerId = "tr-9a893cf536df4658b"
+                    TransformerId = "tr-9a893cf536df4658b",
+                    Type = new EdiType { X12Details = new X12Details {
+                        TransactionSet = "X12_110",
+                        Version = "VERSION_4010"
+                    } }
                 } },
                 InstructionsDocuments = new List<S3Location> {
                     new S3Location {
-                        Key = "instructiondoc.txt",
-                        BucketName = "test-bucket"
+                        BucketName = "test-bucket",
+                        Key = "instructiondoc.txt"
                     }
                 },
+                Name = "b2biexample",
                 Tags = new List<Tag> {
                     new Tag {
                         Key = "capabilityKey1",
                         Value = "capabilityValue1"
                     }
-                }
+                },
+                Type = "edi"
             });
 
-            string name = response.Name;
-            string type = response.Type;
             string capabilityArn = response.CapabilityArn;
             string capabilityId = response.CapabilityId;
             CapabilityConfiguration configuration = response.Configuration;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             List<S3Location> instructionsDocuments = response.InstructionsDocuments;
+            string name = response.Name;
+            CapabilityType type = response.Type;
 
             #endregion
         }
 
         public void B2biCreatePartnership()
         {
-            #region example-1
+            #region CreatePartnership-1
 
             var client = new AmazonB2biClient();
-            var response = client.CreatePartnership(new CreatePartnershipRequest 
+            var response = client.CreatePartnership(new CreatePartnershipRequest
             {
-                Name = "b2bipartner",
                 Capabilities = new List<string> {
                     "ca-963a8121e4fc4e348"
                 },
                 ClientToken = "foo",
                 Email = "john@example.com",
+                Name = "b2bipartner",
                 Phone = "5555555555",
                 ProfileId = "p-60fbc37c87f04fce9",
                 Tags = new List<Tag> {
@@ -84,10 +85,10 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
                 }
             });
 
-            string name = response.Name;
             List<string> capabilities = response.Capabilities;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string email = response.Email;
+            string name = response.Name;
             string partnershipArn = response.PartnershipArn;
             string partnershipId = response.PartnershipId;
             string phone = response.Phone;
@@ -99,16 +100,16 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
 
         public void B2biCreateProfile()
         {
-            #region example-1
+            #region CreateProfile-1
 
             var client = new AmazonB2biClient();
-            var response = client.CreateProfile(new CreateProfileRequest 
+            var response = client.CreateProfile(new CreateProfileRequest
             {
-                Name = "Shipping Profile",
                 BusinessName = "John's Shipping",
                 ClientToken = "foo",
                 Email = "john@example.com",
                 Logging = "ENABLED",
+                Name = "Shipping Profile",
                 Phone = "5555555555",
                 Tags = new List<Tag> {
                     new Tag {
@@ -118,12 +119,12 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
                 }
             });
 
-            string name = response.Name;
             string businessName = response.BusinessName;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string email = response.Email;
             string logGroupName = response.LogGroupName;
-            string logging = response.Logging;
+            Logging logging = response.Logging;
+            string name = response.Name;
             string phone = response.Phone;
             string profileArn = response.ProfileArn;
             string profileId = response.ProfileId;
@@ -133,19 +134,19 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
 
         public void B2biCreateStarterMappingTemplate()
         {
-            #region example-1
+            #region CreateStarterMappingTemplate-1
 
             var client = new AmazonB2biClient();
-            var response = client.CreateStarterMappingTemplate(new CreateStarterMappingTemplateRequest 
+            var response = client.CreateStarterMappingTemplate(new CreateStarterMappingTemplateRequest
             {
                 MappingType = "JSONATA",
                 OutputSampleLocation = new S3Location {
-                    Key = "output-sample-key",
-                    BucketName = "output-sample-bucket"
+                    BucketName = "output-sample-bucket",
+                    Key = "output-sample-key"
                 },
                 TemplateDetails = new TemplateDetails { X12 = new X12Details {
-                    Version = "VERSION_4010",
-                    TransactionSet = "X12_110"
+                    TransactionSet = "X12_110",
+                    Version = "VERSION_4010"
                 } }
             });
 
@@ -156,12 +157,11 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
 
         public void B2biCreateTransformer()
         {
-            #region example-1
+            #region CreateTransformer-1
 
             var client = new AmazonB2biClient();
-            var response = client.CreateTransformer(new CreateTransformerRequest 
+            var response = client.CreateTransformer(new CreateTransformerRequest
             {
-                Name = "transformX12",
                 ClientToken = "foo",
                 InputConversion = new InputConversion {
                     AdvancedOptions = new AdvancedOptions { X12 = new X12AdvancedOptions {
@@ -192,8 +192,8 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
                         } }
                     } },
                     FormatOptions = new FormatOptions { X12 = new X12Details {
-                        Version = "VERSION_4010",
-                        TransactionSet = "X12_110"
+                        TransactionSet = "X12_110",
+                        Version = "VERSION_4010"
                     } },
                     FromFormat = "X12"
                 },
@@ -201,6 +201,7 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
                     Template = "{}",
                     TemplateLanguage = "JSONATA"
                 },
+                Name = "transformX12",
                 SampleDocuments = new SampleDocuments {
                     BucketName = "test-bucket",
                     Keys = new List<SampleDocumentKeys> {
@@ -215,12 +216,12 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
                 }
             });
 
-            string name = response.Name;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             InputConversion inputConversion = response.InputConversion;
             Mapping mapping = response.Mapping;
+            string name = response.Name;
             SampleDocuments sampleDocuments = response.SampleDocuments;
-            string status = response.Status;
+            TransformerStatus status = response.Status;
             string transformerArn = response.TransformerArn;
             string transformerId = response.TransformerId;
 
@@ -229,10 +230,10 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
 
         public void B2biDeleteCapability()
         {
-            #region example-1
+            #region DeleteCapability-1
 
             var client = new AmazonB2biClient();
-            var response = client.DeleteCapability(new DeleteCapabilityRequest 
+            var response = client.DeleteCapability(new DeleteCapabilityRequest
             {
                 CapabilityId = "ca-963a8121e4fc4e348"
             });
@@ -243,10 +244,10 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
 
         public void B2biDeletePartnership()
         {
-            #region example-1
+            #region DeletePartnership-1
 
             var client = new AmazonB2biClient();
-            var response = client.DeletePartnership(new DeletePartnershipRequest 
+            var response = client.DeletePartnership(new DeletePartnershipRequest
             {
                 PartnershipId = "ps-219fa02f5b4242af8"
             });
@@ -257,10 +258,10 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
 
         public void B2biDeleteProfile()
         {
-            #region example-1
+            #region DeleteProfile-1
 
             var client = new AmazonB2biClient();
-            var response = client.DeleteProfile(new DeleteProfileRequest 
+            var response = client.DeleteProfile(new DeleteProfileRequest
             {
                 ProfileId = "p-60fbc37c87f04fce9"
             });
@@ -271,10 +272,10 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
 
         public void B2biDeleteTransformer()
         {
-            #region example-1
+            #region DeleteTransformer-1
 
             var client = new AmazonB2biClient();
-            var response = client.DeleteTransformer(new DeleteTransformerRequest 
+            var response = client.DeleteTransformer(new DeleteTransformerRequest
             {
                 TransformerId = "tr-974c129999f84d8c9"
             });
@@ -285,17 +286,17 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
 
         public void B2biGenerateMapping()
         {
-            #region example-1
+            #region GenerateMapping-1
 
             var client = new AmazonB2biClient();
-            var response = client.GenerateMapping(new GenerateMappingRequest 
+            var response = client.GenerateMapping(new GenerateMappingRequest
             {
                 InputFileContent = "Sample input file content",
                 MappingType = "JSONATA",
                 OutputFileContent = "Sample output file content"
             });
 
-            float mappingAccuracy = response.MappingAccuracy;
+            float? mappingAccuracy = response.MappingAccuracy;
             string mappingTemplate = response.MappingTemplate;
 
             #endregion
@@ -303,41 +304,41 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
 
         public void B2biGetCapability()
         {
-            #region example-1
+            #region GetCapability-1
 
             var client = new AmazonB2biClient();
-            var response = client.GetCapability(new GetCapabilityRequest 
+            var response = client.GetCapability(new GetCapabilityRequest
             {
                 CapabilityId = "ca-963a8121e4fc4e348"
             });
 
-            string name = response.Name;
-            string type = response.Type;
             string capabilityArn = response.CapabilityArn;
             string capabilityId = response.CapabilityId;
             CapabilityConfiguration configuration = response.Configuration;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             List<S3Location> instructionsDocuments = response.InstructionsDocuments;
-            DateTime modifiedAt = response.ModifiedAt;
+            DateTime? modifiedAt = response.ModifiedAt;
+            string name = response.Name;
+            CapabilityType type = response.Type;
 
             #endregion
         }
 
         public void B2biGetPartnership()
         {
-            #region example-1
+            #region GetPartnership-1
 
             var client = new AmazonB2biClient();
-            var response = client.GetPartnership(new GetPartnershipRequest 
+            var response = client.GetPartnership(new GetPartnershipRequest
             {
                 PartnershipId = "ps-219fa02f5b4242af8"
             });
 
-            string name = response.Name;
             List<string> capabilities = response.Capabilities;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string email = response.Email;
-            DateTime modifiedAt = response.ModifiedAt;
+            DateTime? modifiedAt = response.ModifiedAt;
+            string name = response.Name;
             string partnershipArn = response.PartnershipArn;
             string partnershipId = response.PartnershipId;
             string phone = response.Phone;
@@ -349,20 +350,20 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
 
         public void B2biGetProfile()
         {
-            #region example-1
+            #region GetProfile-1
 
             var client = new AmazonB2biClient();
-            var response = client.GetProfile(new GetProfileRequest 
+            var response = client.GetProfile(new GetProfileRequest
             {
                 ProfileId = "p-60fbc37c87f04fce9"
             });
 
-            string name = response.Name;
             string businessName = response.BusinessName;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string email = response.Email;
             string logGroupName = response.LogGroupName;
-            string logging = response.Logging;
+            Logging logging = response.Logging;
+            string name = response.Name;
             string phone = response.Phone;
             string profileArn = response.ProfileArn;
             string profileId = response.ProfileId;
@@ -372,20 +373,20 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
 
         public void B2biGetTransformer()
         {
-            #region example-1
+            #region GetTransformer-1
 
             var client = new AmazonB2biClient();
-            var response = client.GetTransformer(new GetTransformerRequest 
+            var response = client.GetTransformer(new GetTransformerRequest
             {
                 TransformerId = "tr-974c129999f84d8c9"
             });
 
-            string name = response.Name;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             InputConversion inputConversion = response.InputConversion;
             Mapping mapping = response.Mapping;
+            string name = response.Name;
             SampleDocuments sampleDocuments = response.SampleDocuments;
-            string status = response.Status;
+            TransformerStatus status = response.Status;
             string transformerArn = response.TransformerArn;
             string transformerId = response.TransformerId;
 
@@ -394,10 +395,10 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
 
         public void B2biGetTransformerJob()
         {
-            #region example-1
+            #region GetTransformerJob-1
 
             var client = new AmazonB2biClient();
-            var response = client.GetTransformerJob(new GetTransformerJobRequest 
+            var response = client.GetTransformerJob(new GetTransformerJobRequest
             {
                 TransformerId = "tr-974c129999f84d8c9",
                 TransformerJobId = "tj-vpYxfV7yQOqjMSYllEslLw"
@@ -405,17 +406,17 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
 
             string message = response.Message;
             List<S3Location> outputFiles = response.OutputFiles;
-            string status = response.Status;
+            TransformerJobStatus status = response.Status;
 
             #endregion
         }
 
         public void B2biListCapabilities()
         {
-            #region example-1
+            #region ListCapabilities-1
 
             var client = new AmazonB2biClient();
-            var response = client.ListCapabilities(new ListCapabilitiesRequest 
+            var response = client.ListCapabilities(new ListCapabilitiesRequest
             {
                 MaxResults = 50,
                 NextToken = "foo"
@@ -429,10 +430,10 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
 
         public void B2biListPartnerships()
         {
-            #region example-1
+            #region ListPartnerships-1
 
             var client = new AmazonB2biClient();
-            var response = client.ListPartnerships(new ListPartnershipsRequest 
+            var response = client.ListPartnerships(new ListPartnershipsRequest
             {
                 MaxResults = 50,
                 NextToken = "foo",
@@ -447,10 +448,10 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
 
         public void B2biListProfiles()
         {
-            #region example-1
+            #region ListProfiles-1
 
             var client = new AmazonB2biClient();
-            var response = client.ListProfiles(new ListProfilesRequest 
+            var response = client.ListProfiles(new ListProfilesRequest
             {
                 MaxResults = 50,
                 NextToken = "foo"
@@ -464,10 +465,10 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
 
         public void B2biListTagsForResource()
         {
-            #region example-1
+            #region ListTagsForResource-1
 
             var client = new AmazonB2biClient();
-            var response = client.ListTagsForResource(new ListTagsForResourceRequest 
+            var response = client.ListTagsForResource(new ListTagsForResourceRequest
             {
                 ResourceARN = "arn:aws:b2bi:us-west-2:123456789012:profile/p-60fbc37c87f04fce9"
             });
@@ -479,10 +480,10 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
 
         public void B2biListTransformers()
         {
-            #region example-1
+            #region ListTransformers-1
 
             var client = new AmazonB2biClient();
-            var response = client.ListTransformers(new ListTransformersRequest 
+            var response = client.ListTransformers(new ListTransformersRequest
             {
                 MaxResults = 50,
                 NextToken = "foo"
@@ -496,19 +497,19 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
 
         public void B2biStartTransformerJob()
         {
-            #region example-1
+            #region StartTransformerJob-1
 
             var client = new AmazonB2biClient();
-            var response = client.StartTransformerJob(new StartTransformerJobRequest 
+            var response = client.StartTransformerJob(new StartTransformerJobRequest
             {
                 ClientToken = "foo",
                 InputFile = new S3Location {
-                    Key = "input/inputFile.txt",
-                    BucketName = "test-bucket"
+                    BucketName = "test-bucket",
+                    Key = "input/inputFile.txt"
                 },
                 OutputLocation = new S3Location {
-                    Key = "output/",
-                    BucketName = "test-bucket"
+                    BucketName = "test-bucket",
+                    Key = "output/"
                 },
                 TransformerId = "tr-974c129999f84d8c9"
             });
@@ -520,10 +521,10 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
 
         public void B2biTagResource()
         {
-            #region example-1
+            #region TagResource-1
 
             var client = new AmazonB2biClient();
-            var response = client.TagResource(new TagResourceRequest 
+            var response = client.TagResource(new TagResourceRequest
             {
                 ResourceARN = "arn:aws:b2bi:us-west-2:123456789012:profile/p-60fbc37c87f04fce9",
                 Tags = new List<Tag> {
@@ -540,10 +541,10 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
 
         public void B2biTestConversion()
         {
-            #region example-1
+            #region TestConversion-1
 
             var client = new AmazonB2biClient();
-            var response = client.TestConversion(new TestConversionRequest 
+            var response = client.TestConversion(new TestConversionRequest
             {
                 Source = new ConversionSource {
                     FileFormat = "JSON",
@@ -576,8 +577,8 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
                     } } } },
                     FileFormat = "X12",
                     FormatDetails = new ConversionTargetFormatDetails { X12 = new X12Details {
-                        Version = "VERSION_4010",
-                        TransactionSet = "X12_110"
+                        TransactionSet = "X12_110",
+                        Version = "VERSION_4010"
                     } }
                 }
             });
@@ -590,10 +591,10 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
 
         public void B2biTestMapping()
         {
-            #region example-1
+            #region TestMapping-1
 
             var client = new AmazonB2biClient();
-            var response = client.TestMapping(new TestMappingRequest 
+            var response = client.TestMapping(new TestMappingRequest
             {
                 FileFormat = "JSON",
                 InputFileContent = "Sample file content",
@@ -607,19 +608,19 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
 
         public void B2biTestParsing()
         {
-            #region example-1
+            #region TestParsing-1
 
             var client = new AmazonB2biClient();
-            var response = client.TestParsing(new TestParsingRequest 
+            var response = client.TestParsing(new TestParsingRequest
             {
                 EdiType = new EdiType { X12Details = new X12Details {
-                    Version = "VERSION_4010",
-                    TransactionSet = "X12_110"
+                    TransactionSet = "X12_110",
+                    Version = "VERSION_4010"
                 } },
                 FileFormat = "JSON",
                 InputFile = new S3Location {
-                    Key = "sampleFile.txt",
-                    BucketName = "test-bucket"
+                    BucketName = "test-bucket",
+                    Key = "sampleFile.txt"
                 }
             });
 
@@ -630,20 +631,20 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
 
         public void B2biTestParsing()
         {
-            #region example-2
+            #region TestParsing-2
 
             var client = new AmazonB2biClient();
-            var response = client.TestParsing(new TestParsingRequest 
+            var response = client.TestParsing(new TestParsingRequest
             {
                 AdvancedOptions = new AdvancedOptions { X12 = new X12AdvancedOptions { SplitOptions = new X12SplitOptions { SplitBy = "NONE" } } },
                 EdiType = new EdiType { X12Details = new X12Details {
-                    Version = "VERSION_4010",
-                    TransactionSet = "X12_110"
+                    TransactionSet = "X12_110",
+                    Version = "VERSION_4010"
                 } },
                 FileFormat = "JSON",
                 InputFile = new S3Location {
-                    Key = "sampleFile.txt",
-                    BucketName = "test-bucket"
+                    BucketName = "test-bucket",
+                    Key = "sampleFile.txt"
                 }
             });
 
@@ -654,20 +655,20 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
 
         public void B2biTestParsing()
         {
-            #region example-3
+            #region TestParsing-3
 
             var client = new AmazonB2biClient();
-            var response = client.TestParsing(new TestParsingRequest 
+            var response = client.TestParsing(new TestParsingRequest
             {
                 AdvancedOptions = new AdvancedOptions { X12 = new X12AdvancedOptions { SplitOptions = new X12SplitOptions { SplitBy = "TRANSACTION" } } },
                 EdiType = new EdiType { X12Details = new X12Details {
-                    Version = "VERSION_4010",
-                    TransactionSet = "X12_110"
+                    TransactionSet = "X12_110",
+                    Version = "VERSION_4010"
                 } },
                 FileFormat = "JSON",
                 InputFile = new S3Location {
-                    Key = "sampleFile.txt",
-                    BucketName = "test-bucket"
+                    BucketName = "test-bucket",
+                    Key = "sampleFile.txt"
                 }
             });
 
@@ -679,10 +680,10 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
 
         public void B2biTestParsing()
         {
-            #region example-4
+            #region TestParsing-4
 
             var client = new AmazonB2biClient();
-            var response = client.TestParsing(new TestParsingRequest 
+            var response = client.TestParsing(new TestParsingRequest
             {
                 AdvancedOptions = new AdvancedOptions { X12 = new X12AdvancedOptions { ValidationOptions = new X12ValidationOptions { ValidationRules = new List<X12ValidationRule> {
                     new X12ValidationRule { CodeListValidationRule = new X12CodeListValidationRule {
@@ -709,13 +710,13 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
                     } }
                 } } } },
                 EdiType = new EdiType { X12Details = new X12Details {
-                    Version = "VERSION_4010",
-                    TransactionSet = "X12_110"
+                    TransactionSet = "X12_110",
+                    Version = "VERSION_4010"
                 } },
                 FileFormat = "JSON",
                 InputFile = new S3Location {
-                    Key = "sampleFile.txt",
-                    BucketName = "test-bucket"
+                    BucketName = "test-bucket",
+                    Key = "sampleFile.txt"
                 }
             });
 
@@ -727,10 +728,10 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
 
         public void B2biUntagResource()
         {
-            #region example-1
+            #region UntagResource-1
 
             var client = new AmazonB2biClient();
-            var response = client.UntagResource(new UntagResourceRequest 
+            var response = client.UntagResource(new UntagResourceRequest
             {
                 ResourceARN = "arn:aws:b2bi:us-west-2:123456789012:profile/p-60fbc37c87f04fce9",
                 TagKeys = new List<string> {
@@ -744,67 +745,67 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
 
         public void B2biUpdateCapability()
         {
-            #region example-1
+            #region UpdateCapability-1
 
             var client = new AmazonB2biClient();
-            var response = client.UpdateCapability(new UpdateCapabilityRequest 
+            var response = client.UpdateCapability(new UpdateCapabilityRequest
             {
-                Name = "b2biexample",
                 CapabilityId = "ca-963a8121e4fc4e348",
                 Configuration = new CapabilityConfiguration { Edi = new EdiConfiguration {
-                    Type = new EdiType { X12Details = new X12Details {
-                        Version = "VERSION_4010",
-                        TransactionSet = "X12_110"
-                    } },
                     InputLocation = new S3Location {
-                        Key = "input/",
-                        BucketName = "test-bucket"
+                        BucketName = "test-bucket",
+                        Key = "input/"
                     },
                     OutputLocation = new S3Location {
-                        Key = "output/",
-                        BucketName = "test-bucket"
+                        BucketName = "test-bucket",
+                        Key = "output/"
                     },
-                    TransformerId = "tr-9a893cf536df4658b"
+                    TransformerId = "tr-9a893cf536df4658b",
+                    Type = new EdiType { X12Details = new X12Details {
+                        TransactionSet = "X12_110",
+                        Version = "VERSION_4010"
+                    } }
                 } },
                 InstructionsDocuments = new List<S3Location> {
                     new S3Location {
-                        Key = "instructiondoc.txt",
-                        BucketName = "test-bucket"
+                        BucketName = "test-bucket",
+                        Key = "instructiondoc.txt"
                     }
-                }
+                },
+                Name = "b2biexample"
             });
 
-            string name = response.Name;
-            string type = response.Type;
             string capabilityArn = response.CapabilityArn;
             string capabilityId = response.CapabilityId;
             CapabilityConfiguration configuration = response.Configuration;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             List<S3Location> instructionsDocuments = response.InstructionsDocuments;
-            DateTime modifiedAt = response.ModifiedAt;
+            DateTime? modifiedAt = response.ModifiedAt;
+            string name = response.Name;
+            CapabilityType type = response.Type;
 
             #endregion
         }
 
         public void B2biUpdatePartnership()
         {
-            #region example-1
+            #region UpdatePartnership-1
 
             var client = new AmazonB2biClient();
-            var response = client.UpdatePartnership(new UpdatePartnershipRequest 
+            var response = client.UpdatePartnership(new UpdatePartnershipRequest
             {
-                Name = "b2bipartner",
                 Capabilities = new List<string> {
                     "ca-963a8121e4fc4e348"
                 },
+                Name = "b2bipartner",
                 PartnershipId = "ps-219fa02f5b4242af8"
             });
 
-            string name = response.Name;
             List<string> capabilities = response.Capabilities;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string email = response.Email;
-            DateTime modifiedAt = response.ModifiedAt;
+            DateTime? modifiedAt = response.ModifiedAt;
+            string name = response.Name;
             string partnershipArn = response.PartnershipArn;
             string partnershipId = response.PartnershipId;
             string phone = response.Phone;
@@ -816,25 +817,25 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
 
         public void B2biUpdateProfile()
         {
-            #region example-1
+            #region UpdateProfile-1
 
             var client = new AmazonB2biClient();
-            var response = client.UpdateProfile(new UpdateProfileRequest 
+            var response = client.UpdateProfile(new UpdateProfileRequest
             {
-                Name = "Shipping Profile",
                 BusinessName = "John's Shipping",
                 Email = "john@example.com",
+                Name = "Shipping Profile",
                 Phone = "5555555555",
                 ProfileId = "p-60fbc37c87f04fce9"
             });
 
-            string name = response.Name;
             string businessName = response.BusinessName;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string email = response.Email;
             string logGroupName = response.LogGroupName;
-            string logging = response.Logging;
-            DateTime modifiedAt = response.ModifiedAt;
+            Logging logging = response.Logging;
+            DateTime? modifiedAt = response.ModifiedAt;
+            string name = response.Name;
             string phone = response.Phone;
             string profileArn = response.ProfileArn;
             string profileId = response.ProfileId;
@@ -844,12 +845,11 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
 
         public void B2biUpdateTransformer()
         {
-            #region example-1
+            #region UpdateTransformer-1
 
             var client = new AmazonB2biClient();
-            var response = client.UpdateTransformer(new UpdateTransformerRequest 
+            var response = client.UpdateTransformer(new UpdateTransformerRequest
             {
-                Name = "transformX12",
                 InputConversion = new InputConversion {
                     AdvancedOptions = new AdvancedOptions { X12 = new X12AdvancedOptions {
                         SplitOptions = new X12SplitOptions { SplitBy = "NONE" },
@@ -879,8 +879,8 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
                         } }
                     } },
                     FormatOptions = new FormatOptions { X12 = new X12Details {
-                        Version = "VERSION_4010",
-                        TransactionSet = "X12_110"
+                        TransactionSet = "X12_110",
+                        Version = "VERSION_4010"
                     } },
                     FromFormat = "X12"
                 },
@@ -888,6 +888,7 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
                     Template = "{}",
                     TemplateLanguage = "JSONATA"
                 },
+                Name = "transformX12",
                 SampleDocuments = new SampleDocuments {
                     BucketName = "test-bucket",
                     Keys = new List<SampleDocumentKeys> {
@@ -898,26 +899,23 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
                 TransformerId = "tr-974c129999f84d8c9"
             });
 
-            string name = response.Name;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             InputConversion inputConversion = response.InputConversion;
             Mapping mapping = response.Mapping;
-            DateTime modifiedAt = response.ModifiedAt;
+            DateTime? modifiedAt = response.ModifiedAt;
+            string name = response.Name;
             SampleDocuments sampleDocuments = response.SampleDocuments;
-            string status = response.Status;
+            TransformerStatus status = response.Status;
             string transformerArn = response.TransformerArn;
             string transformerId = response.TransformerId;
 
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

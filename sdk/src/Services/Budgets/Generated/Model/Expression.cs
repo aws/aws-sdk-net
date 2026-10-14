@@ -39,6 +39,7 @@ namespace Amazon.Budgets.Model
         private ExpressionDimensionValues _dimensions;
         private Expression _not;
         private List<Expression> _or = AWSConfigs.InitializeCollections ? new List<Expression>() : null;
+        private ProductAttributeValues _productAttributes;
         private TagValues _tags;
 
         /// <summary>
@@ -139,6 +140,24 @@ namespace Amazon.Budgets.Model
         internal bool IsSetOr()
         {
             return this._or != null && (this._or.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProductAttributes. 
+        /// <para>
+        /// The filter that limits results based on the values of specific product attributes.
+        /// </para>
+        /// </summary>
+        public ProductAttributeValues ProductAttributes
+        {
+            get { return this._productAttributes; }
+            set { this._productAttributes = value; }
+        }
+
+        // Check to see if ProductAttributes property is set
+        internal bool IsSetProductAttributes()
+        {
+            return this._productAttributes != null;
         }
 
         /// <summary>

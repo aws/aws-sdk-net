@@ -1,0 +1,130 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.PCS.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.PCS.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// UpdateClusterSlurmConfigurationRequest Marshaller
+    /// </summary>
+    public partial class UpdateClusterSlurmConfigurationRequestMarshaller : IRequestMarshaller<UpdateClusterSlurmConfigurationRequest, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(UpdateClusterSlurmConfigurationRequest requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetAccounting())
+            {
+                context.Writer.WritePropertyName("accounting");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdateAccountingRequestMarshaller.Instance;
+                marshaller.Marshall(requestObject.Accounting, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetCgroupCustomSettings())
+            {
+                context.Writer.WritePropertyName("cgroupCustomSettings");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectCgroupCustomSettingsListValue in requestObject.CgroupCustomSettings)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CgroupCustomSettingMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCgroupCustomSettingsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetScaleDownIdleTimeInSeconds())
+            {
+                context.Writer.WritePropertyName("scaleDownIdleTimeInSeconds");
+                context.Writer.WriteNumberValue(requestObject.ScaleDownIdleTimeInSeconds.Value);
+            }
+
+            if (requestObject.IsSetSlurmCustomSettings())
+            {
+                context.Writer.WritePropertyName("slurmCustomSettings");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectSlurmCustomSettingsListValue in requestObject.SlurmCustomSettings)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SlurmCustomSettingMarshaller.Instance;
+                    marshaller.Marshall(requestObjectSlurmCustomSettingsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetSlurmRest())
+            {
+                context.Writer.WritePropertyName("slurmRest");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdateSlurmRestRequestMarshaller.Instance;
+                marshaller.Marshall(requestObject.SlurmRest, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetSlurmdbdCustomSettings())
+            {
+                context.Writer.WritePropertyName("slurmdbdCustomSettings");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectSlurmdbdCustomSettingsListValue in requestObject.SlurmdbdCustomSettings)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SlurmdbdCustomSettingMarshaller.Instance;
+                    marshaller.Marshall(requestObjectSlurmdbdCustomSettingsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static UpdateClusterSlurmConfigurationRequestMarshaller Instance = new UpdateClusterSlurmConfigurationRequestMarshaller();
+    }
+}

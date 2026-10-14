@@ -14,9 +14,8 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the verifiedpermissions-2021-12-01.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -33,22 +32,18 @@ namespace Amazon.VerifiedPermissions
     public partial class AmazonVerifiedPermissionsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("VerifiedPermissions", "4.0.100.15");
+            InternalSDKUtils.BuildUserAgentString("VerifiedPermissions", "4.0.100.17");
 
         private static readonly AmazonVerifiedPermissionsEndpointResolver EndpointResolver =
             new AmazonVerifiedPermissionsEndpointResolver();
 
         private string _userAgent = UserAgentString;
-        ///<summary>
+
+        /// <summary>
         /// The ServiceId, which is the unique identifier for a service.
-        ///</summary>
-        public static new string ServiceId
-        {
-            get
-            {
-                return "VerifiedPermissions";
-            }
-        }
+        /// </summary>
+        public static new string ServiceId => "VerifiedPermissions";
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -63,35 +58,17 @@ namespace Amazon.VerifiedPermissions
         /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
-        public override string RegionEndpointServiceName
-        {
-            get
-            {
-                return "verifiedpermissions";
-            }
-        }
+        public override string RegionEndpointServiceName => "verifiedpermissions";
 
         /// <summary>
         /// Gets the ServiceVersion property.
         /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2021-12-01";
-            }
-        }
+        public override string ServiceVersion => "2021-12-01";
 
         /// <summary>
         /// Gets the value of UserAgent property.
         /// </summary>
-        public override string UserAgent
-        {
-            get
-            {
-                return _userAgent;
-            }
-        }
+        public override string UserAgent => _userAgent;
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.
@@ -113,7 +90,5 @@ namespace Amazon.VerifiedPermissions
             var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
             return EndpointResolver.GetEndpoint(executionContext);
         }
-
-
     }
 }

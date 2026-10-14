@@ -50,6 +50,17 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("expression");
                 context.Writer.WriteStringValue(requestObject.Expression);
             }
+
+            if (requestObject.IsSetSpec())
+            {
+                context.Writer.WritePropertyName("spec");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ScheduleSpecMarshaller.Instance;
+                marshaller.Marshall(requestObject.Spec, context);
+
+                context.Writer.WriteEndObject();
+            }
         }
 
         /// <summary>

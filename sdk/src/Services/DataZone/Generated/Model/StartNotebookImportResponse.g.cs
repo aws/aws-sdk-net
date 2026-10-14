@@ -152,5 +152,18 @@ namespace Amazon.DataZone.Model
         /// Checks to see if the Status property is set.
         /// </summary>
         internal bool IsSetStatus() => this.Status != null;
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of the imported notebook.
+        /// </para>
+        /// </summary>
+        public NotebookType Type { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Type property is set.
+        /// </summary>
+        internal bool IsSetType() => this.Type != null;
     }
 }

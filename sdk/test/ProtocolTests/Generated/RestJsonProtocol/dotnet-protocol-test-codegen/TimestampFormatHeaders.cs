@@ -34,6 +34,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.RestJson
 {
@@ -47,7 +48,7 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestJson")]
-        public void RestJsonTimestampFormatHeadersRequest()
+        public async Task RestJsonTimestampFormatHeadersRequest()
         {
             // Arrange
             var request = new TimestampFormatHeadersRequest
@@ -62,24 +63,31 @@ namespace AWSSDK.ProtocolTests.RestJson
             };
             var config = new AmazonRestJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new TimestampFormatHeadersRequestMarshaller();
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.TimestampFormatHeadersAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/TimestampFormatHeaders", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("Mon, 16 Dec 2019 23:48:18 GMT".Replace(" ",""), marshalledRequest.Headers["X-defaultFormat"].Replace(" ",""));
-            Assert.AreEqual("2019-12-16T23:48:18Z".Replace(" ",""), marshalledRequest.Headers["X-memberDateTime"].Replace(" ",""));
-            Assert.AreEqual("1576540098".Replace(" ",""), marshalledRequest.Headers["X-memberEpochSeconds"].Replace(" ",""));
-            Assert.AreEqual("Mon, 16 Dec 2019 23:48:18 GMT".Replace(" ",""), marshalledRequest.Headers["X-memberHttpDate"].Replace(" ",""));
-            Assert.AreEqual("2019-12-16T23:48:18Z".Replace(" ",""), marshalledRequest.Headers["X-targetDateTime"].Replace(" ",""));
-            Assert.AreEqual("1576540098".Replace(" ",""), marshalledRequest.Headers["X-targetEpochSeconds"].Replace(" ",""));
-            Assert.AreEqual("Mon, 16 Dec 2019 23:48:18 GMT".Replace(" ",""), marshalledRequest.Headers["X-targetHttpDate"].Replace(" ",""));
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/TimestampFormatHeaders", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("Mon, 16 Dec 2019 23:48:18 GMT".Replace(" ",""), actualRequest.Headers["X-defaultFormat"].Replace(" ",""));
+            Assert.AreEqual("2019-12-16T23:48:18Z".Replace(" ",""), actualRequest.Headers["X-memberDateTime"].Replace(" ",""));
+            Assert.AreEqual("1576540098".Replace(" ",""), actualRequest.Headers["X-memberEpochSeconds"].Replace(" ",""));
+            Assert.AreEqual("Mon, 16 Dec 2019 23:48:18 GMT".Replace(" ",""), actualRequest.Headers["X-memberHttpDate"].Replace(" ",""));
+            Assert.AreEqual("2019-12-16T23:48:18Z".Replace(" ",""), actualRequest.Headers["X-targetDateTime"].Replace(" ",""));
+            Assert.AreEqual("1576540098".Replace(" ",""), actualRequest.Headers["X-targetEpochSeconds"].Replace(" ",""));
+            Assert.AreEqual("Mon, 16 Dec 2019 23:48:18 GMT".Replace(" ",""), actualRequest.Headers["X-targetHttpDate"].Replace(" ",""));
         }
 
         /// <summary>
@@ -89,24 +97,32 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestJson")]
-        public void RestJsonTimestampFormatHeadersResponse()
+        public async Task RestJsonTimestampFormatHeadersResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["X-defaultFormat"] = "Mon, 16 Dec 2019 23:48:18 GMT";
-            webResponseData.Headers["X-memberDateTime"] = "2019-12-16T23:48:18Z";
-            webResponseData.Headers["X-memberEpochSeconds"] = "1576540098";
-            webResponseData.Headers["X-memberHttpDate"] = "Mon, 16 Dec 2019 23:48:18 GMT";
-            webResponseData.Headers["X-targetDateTime"] = "2019-12-16T23:48:18Z";
-            webResponseData.Headers["X-targetEpochSeconds"] = "1576540098";
-            webResponseData.Headers["X-targetHttpDate"] = "Mon, 16 Dec 2019 23:48:18 GMT";
-            byte[] bytes = Encoding.ASCII.GetBytes("");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonRestJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes(""),
+            };
+            mockResponse.Headers["X-defaultFormat"] = "Mon, 16 Dec 2019 23:48:18 GMT";
+            mockResponse.Headers["X-memberDateTime"] = "2019-12-16T23:48:18Z";
+            mockResponse.Headers["X-memberEpochSeconds"] = "1576540098";
+            mockResponse.Headers["X-memberHttpDate"] = "Mon, 16 Dec 2019 23:48:18 GMT";
+            mockResponse.Headers["X-targetDateTime"] = "2019-12-16T23:48:18Z";
+            mockResponse.Headers["X-targetEpochSeconds"] = "1576540098";
+            mockResponse.Headers["X-targetHttpDate"] = "Mon, 16 Dec 2019 23:48:18 GMT";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new TimestampFormatHeadersResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.TimestampFormatHeadersAsync(new TimestampFormatHeadersRequest()).ConfigureAwait(false);
             var expectedResponse = new TimestampFormatHeadersResponse
             {
                 MemberEpochSeconds = ProtocolTestConstants.epoch.AddSeconds(1576540098),
@@ -119,9 +135,8 @@ namespace AWSSDK.ProtocolTests.RestJson
             };
 
             // Assert
-            var actualResponse = (TimestampFormatHeadersResponse)unmarshalledResponse;
             Comparer.CompareObjects<TimestampFormatHeadersResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
     }

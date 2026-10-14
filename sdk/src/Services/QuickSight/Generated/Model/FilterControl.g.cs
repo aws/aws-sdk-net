@@ -82,6 +82,36 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDropdown() => this.Dropdown != null;
 
         /// <summary>
+        /// Gets and sets the property HierarchyDropdown. 
+        /// <para>
+        /// A control from a hierarchy filter that displays the hierarchy as a dropdown list.
+        /// You can expand a value to see and select the values beneath it, and select either
+        /// a single value or multiple values.
+        /// </para>
+        /// </summary>
+        public HierarchyFilterDropDownControl HierarchyDropdown { get; set; }
+
+        /// <summary>
+        /// Checks to see if the HierarchyDropdown property is set.
+        /// </summary>
+        internal bool IsSetHierarchyDropdown() => this.HierarchyDropdown != null;
+
+        /// <summary>
+        /// Gets and sets the property HierarchyList. 
+        /// <para>
+        /// A control from a hierarchy filter that displays the hierarchy as a list. You can expand
+        /// a value to see and select the values beneath it, and select either a single value
+        /// or multiple values.
+        /// </para>
+        /// </summary>
+        public HierarchyFilterListControl HierarchyList { get; set; }
+
+        /// <summary>
+        /// Checks to see if the HierarchyList property is set.
+        /// </summary>
+        internal bool IsSetHierarchyList() => this.HierarchyList != null;
+
+        /// <summary>
         /// Gets and sets the property List. 
         /// <para>
         /// A control to display a list of buttons or boxes. This is used to select either a single

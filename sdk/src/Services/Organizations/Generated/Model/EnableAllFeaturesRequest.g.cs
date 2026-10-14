@@ -1,0 +1,60 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Organizations.Model
+{
+    /// <summary>
+    /// Container for the parameters to the EnableAllFeatures operation. Enables all features
+    /// in an organization. This enables the use of organization policies that can restrict
+    /// the services and actions that can be called in each account. Until you enable all
+    /// features, you have access only to consolidated billing, and you can't use any of the
+    /// advanced account administration features that Organizations supports. For more information,
+    /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
+    /// all features in your organization</a> in the <i>Organizations User Guide</i>. <important>
+    /// <para> This operation is required only for organizations that were created explicitly
+    /// with only the consolidated billing features enabled. Calling this operation sends
+    /// a handshake to every invited account in the organization. The feature set change can
+    /// be finalized and the additional features enabled only after all administrators in
+    /// the invited accounts approve the change by accepting the handshake. </para> </important>
+    /// <para> After you enable all features, you can separately enable or disable individual
+    /// policy types in a root using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>.
+    /// To see the status of policy types in a root, use <a>ListRoots</a>. </para> <para>
+    /// After all invited member accounts accept the handshake, you finalize the feature set
+    /// change by accepting the handshake that contains <c>"Action": "ENABLE_ALL_FEATURES"</c>.
+    /// This completes the change. </para> <para> After you enable all features in your organization,
+    /// the management account in the organization can apply policies on all member accounts.
+    /// These policies can restrict what users and even administrators in those accounts can
+    /// do. The management account can apply policies that prevent accounts from leaving the
+    /// organization. Ensure that your account administrators are aware of this. </para> <para>
+    /// You can only call this operation from the management account. </para>
+    /// </summary>
+    public partial class EnableAllFeaturesRequest : AmazonOrganizationsRequest
+    {
+    }
+}

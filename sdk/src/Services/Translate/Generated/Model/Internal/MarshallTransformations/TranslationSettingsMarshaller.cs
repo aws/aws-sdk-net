@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Translate.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TranslationSettings Marshaller
     /// </summary>
-    public class TranslationSettingsMarshaller : IRequestMarshaller<TranslationSettings, JsonMarshallerContext> 
+    public class TranslationSettingsMarshaller : IRequestMarshaller<TranslationSettings, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,28 +45,26 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TranslationSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(TranslationSettings requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetBrevity())
-            {
-                context.Writer.WritePropertyName("Brevity");
-                context.Writer.WriteStringValue(requestObject.Brevity);
-            }
 
-            if(requestObject.IsSetFormality())
+            if (requestObject.IsSetBrevity())
             {
-                context.Writer.WritePropertyName("Formality");
-                context.Writer.WriteStringValue(requestObject.Formality);
+                context.Writer.WriteTextString("Brevity");
+                context.Writer.WriteTextString(requestObject.Brevity);
             }
-
-            if(requestObject.IsSetProfanity())
+            if (requestObject.IsSetFormality())
             {
-                context.Writer.WritePropertyName("Profanity");
-                context.Writer.WriteStringValue(requestObject.Profanity);
+                context.Writer.WriteTextString("Formality");
+                context.Writer.WriteTextString(requestObject.Formality);
             }
-
+            if (requestObject.IsSetProfanity())
+            {
+                context.Writer.WriteTextString("Profanity");
+                context.Writer.WriteTextString(requestObject.Profanity);
+            }
         }
 
         /// <summary>

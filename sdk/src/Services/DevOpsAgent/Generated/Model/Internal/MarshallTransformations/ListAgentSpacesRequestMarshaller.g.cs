@@ -57,6 +57,11 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2026-01-01";
             request.HttpMethod = "POST";
 
+            if (publicRequest.IsSetIncludedData())
+            {
+                request.Parameters.Add("includedData", StringUtils.FromString(publicRequest.IncludedData));
+            }
+
             if (publicRequest.IsSetMaxResults())
             {
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults.Value));

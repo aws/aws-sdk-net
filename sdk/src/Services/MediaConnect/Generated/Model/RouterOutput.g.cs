@@ -348,7 +348,33 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property Tier. 
         /// <para>
-        /// The tier level of the router output.
+        /// The tier level for the router output. The tier sets the maximum bitrate, in Mbps,
+        /// for the router output. Valid values include the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>OUTPUT_20</c> – 20 Mbps
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>OUTPUT_50</c> – 50 Mbps
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>OUTPUT_100</c> – 100 Mbps
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>OUTPUT_250</c> – 250 Mbps
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>OUTPUT_500</c> – 500 Mbps
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The 250 Mbps and 500 Mbps tiers are high-bitrate tiers that support TR-07 (JPEG XS)
+        /// workflows.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

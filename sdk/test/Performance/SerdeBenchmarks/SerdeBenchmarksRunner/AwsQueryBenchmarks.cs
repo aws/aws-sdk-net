@@ -13,17 +13,18 @@
  * permissions and limitations under the License.
  */
 
-using System.Text;
 using Amazon.QueryDataPlane.Model;
 using Amazon.QueryDataPlane.Model.Internal.MarshallTransformations;
 using Amazon.Runtime.Internal.Transform;
 using BenchmarkDotNet.Attributes;
+using Fixtures = AWSSDK.Benchmarks.Serde.ModelFixtures.AwsQuery;
 
 namespace AWSSDK.Benchmarks.Serde;
 
 /// <summary>
 /// BenchmarkDotNet benchmarks for AWS Query protocol serialization/deserialization.
-/// 10 test cases: PutMetricData Baseline/S/M/L, GetMetricDataRequest S/M/L, GetMetricDataResponse S/M/L.
+/// 10 test cases: PutMetricData Baseline/S/M/L, GetMetricDataRequest S/M/L, GetMetricDataResponse S/M/L,
+/// with payloads from the shared benchmark models.
 /// </summary>
 [MemoryDiagnoser]
 [Config(typeof(SerdeBenchmarkConfig))]
@@ -43,18 +44,18 @@ public class AwsQueryBenchmarks
     [GlobalSetup]
     public void Setup()
     {
-        _putMetricBaseline = new PutMetricDataRequest { Namespace = "AWS/Benchmark" };
-        _putMetricS = new PutMetricDataRequest { Namespace = "AWS/Benchmark", MetricData = CreateMetricDatumList(1) };
-        _putMetricM = new PutMetricDataRequest { Namespace = "AWS/Benchmark", MetricData = CreateMetricDatumList(10) };
-        _putMetricL = new PutMetricDataRequest { Namespace = "AWS/Benchmark", MetricData = CreateMetricDatumList(100) };
+        _putMetricBaseline = Fixtures.PutMetricDataRequest_Baseline();
+        _putMetricS = Fixtures.PutMetricDataRequest_S();
+        _putMetricM = Fixtures.PutMetricDataRequest_M();
+        _putMetricL = Fixtures.PutMetricDataRequest_L();
 
-        _getMetricReqS = CreateGetMetricDataRequest(1);
-        _getMetricReqM = CreateGetMetricDataRequest(10);
-        _getMetricReqL = CreateGetMetricDataRequest(100);
+        _getMetricReqS = Fixtures.GetMetricDataRequest_S();
+        _getMetricReqM = Fixtures.GetMetricDataRequest_M();
+        _getMetricReqL = Fixtures.GetMetricDataRequest_L();
 
-        _getMetricRespSBytes = Encoding.UTF8.GetBytes(BuildGetMetricDataResponseXml(1, 10));
-        _getMetricRespMBytes = Encoding.UTF8.GetBytes(BuildGetMetricDataResponseXml(10, 100));
-        _getMetricRespLBytes = Encoding.UTF8.GetBytes(BuildGetMetricDataResponseXml(100, 1000));
+        _getMetricRespSBytes = Fixtures.GetMetricDataResponse_S;
+        _getMetricRespMBytes = Fixtures.GetMetricDataResponse_M;
+        _getMetricRespLBytes = Fixtures.GetMetricDataResponse_L;
     }
 
     // --- PutMetricData Request ---
@@ -79,70 +80,5 @@ public class AwsQueryBenchmarks
         var wr = new WebResponseData { ContentType = "text/xml", Headers = { { "x-amzn-RequestId", "test-id" }, { "Content-Length", bytes.Length.ToString() }, { "Content-Type", "text/xml" } } };
         using var ctx = new XmlUnmarshallerContext(stream, false, wr);
         GetMetricDataResponseUnmarshaller.Instance.Unmarshall(ctx);
-    }
-
-    private static GetMetricDataRequest CreateGetMetricDataRequest(int queryCount)
-    {
-        return new GetMetricDataRequest
-        {
-            StartTime = new DateTime(2024, 1, 1, 0, 0, 0, DateTimeKind.Utc),
-            EndTime = new DateTime(2024, 1, 2, 0, 0, 0, DateTimeKind.Utc),
-            MetricDataQueries = CreateMetricDataQueryList(queryCount)
-        };
-    }
-
-    private static List<MetricDatum> CreateMetricDatumList(int count)
-    {
-        var list = new List<MetricDatum>();
-        for (int i = 0; i < count; i++)
-        {
-            list.Add(new MetricDatum
-            {
-                MetricName = $"BenchmarkMetric_{i}", Value = 42.0 + i, Unit = "Count",
-                Timestamp = new DateTime(2024, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddMinutes(i),
-                Dimensions = new List<Dimension> { new() { Name = "Environment", Value = "Production" }, new() { Name = "Service", Value = "BenchmarkService" } },
-                StatisticValues = new StatisticSet { Maximum = 100.0 + i, Minimum = 1.0 + i, SampleCount = 10.0, Sum = 500.0 + i * 10 }
-            });
-        }
-        return list;
-    }
-
-    private static List<MetricDataQuery> CreateMetricDataQueryList(int count)
-    {
-        var list = new List<MetricDataQuery>();
-        for (int i = 0; i < count; i++)
-        {
-            list.Add(new MetricDataQuery
-            {
-                Id = $"q{i}", ReturnData = true,
-                MetricStat = new MetricStat
-                {
-                    Period = 300, Stat = "Average",
-                    Metric = new Metric
-                    {
-                        MetricName = $"BenchmarkMetric_{i}", Namespace = "AWS/Benchmark",
-                        Dimensions = new List<Dimension> { new() { Name = "Environment", Value = "Production" }, new() { Name = "Service", Value = "BenchmarkService" } }
-                    }
-                }
-            });
-        }
-        return list;
-    }
-
-    private static string BuildGetMetricDataResponseXml(int resultCount, int valuesPerResult)
-    {
-        var sb = new StringBuilder();
-        sb.Append("<GetMetricDataResponse xmlns=\"https://awsquerydataplane.amazonaws.com\">");
-        sb.Append("<GetMetricDataResult><MetricDataResults>");
-        for (int r = 0; r < resultCount; r++)
-        {
-            sb.Append($"<member><Id>q{r}</Id><Label>BenchmarkMetric_{r}</Label><StatusCode>Complete</StatusCode><Timestamps>");
-            for (int v = 0; v < valuesPerResult; v++) sb.Append($"<member>2024-01-01T{v / 60:D2}:{v % 60:D2}:00Z</member>");
-            sb.Append("</Timestamps><Values>");
-            for (int v = 0; v < valuesPerResult; v++) sb.Append($"<member>{42.0 + v}</member>");
-            sb.Append("</Values></member>");
-        }
-        sb.Append("</MetricDataResults></GetMetricDataResult></GetMetricDataResponse>");
-        return sb.ToString();
     }
 }

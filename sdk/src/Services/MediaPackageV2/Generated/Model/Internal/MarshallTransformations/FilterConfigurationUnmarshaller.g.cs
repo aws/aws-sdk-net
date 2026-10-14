@@ -81,6 +81,13 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("Multiview", targetDepth, ref reader))
+                {
+                    var unmarshaller = MultiviewFilterConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.Multiview = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("Start", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

@@ -1,0 +1,259 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Glue.Model
+{
+    /// <summary>
+    /// This is the response object from the GetDataQualityRuleRecommendationRun operation.
+    /// </summary>
+    public partial class GetDataQualityRuleRecommendationRunResponse : AmazonWebServiceResponse
+    {
+        /// <summary>
+        /// Gets and sets the property AdditionalRunOptions. 
+        /// <para>
+        /// Additional run options you can specify for a recommendation run.
+        /// </para>
+        /// </summary>
+        public DataQualityRuleRecommendationRunAdditionalRunOptions AdditionalRunOptions { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AdditionalRunOptions property is set.
+        /// </summary>
+        internal bool IsSetAdditionalRunOptions() => this.AdditionalRunOptions != null;
+
+        /// <summary>
+        /// Gets and sets the property CompletedOn. 
+        /// <para>
+        /// The date and time when this run was completed.
+        /// </para>
+        /// </summary>
+        public DateTime? CompletedOn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CompletedOn property is set.
+        /// </summary>
+        internal bool IsSetCompletedOn() => this.CompletedOn.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property CreatedRulesetName. 
+        /// <para>
+        /// The name of the ruleset that was created by the run.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 255)]
+        public string CreatedRulesetName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreatedRulesetName property is set.
+        /// </summary>
+        internal bool IsSetCreatedRulesetName() => this.CreatedRulesetName != null;
+
+        /// <summary>
+        /// Gets and sets the property DataQualitySecurityConfiguration. 
+        /// <para>
+        /// The name of the security configuration created with the data quality encryption option.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 255)]
+        public string DataQualitySecurityConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DataQualitySecurityConfiguration property is set.
+        /// </summary>
+        internal bool IsSetDataQualitySecurityConfiguration() => this.DataQualitySecurityConfiguration != null;
+
+        /// <summary>
+        /// Gets and sets the property DataSource. 
+        /// <para>
+        /// The data source (an Glue table) associated with this run.
+        /// </para>
+        /// </summary>
+        public DataSource DataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DataSource property is set.
+        /// </summary>
+        internal bool IsSetDataSource() => this.DataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property ErrorString. 
+        /// <para>
+        /// The error strings that are associated with the run.
+        /// </para>
+        /// </summary>
+        public string ErrorString { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ErrorString property is set.
+        /// </summary>
+        internal bool IsSetErrorString() => this.ErrorString != null;
+
+        /// <summary>
+        /// Gets and sets the property ExecutionTime. 
+        /// <para>
+        /// The amount of time (in seconds) that the run consumed resources.
+        /// </para>
+        /// </summary>
+        public int? ExecutionTime { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExecutionTime property is set.
+        /// </summary>
+        internal bool IsSetExecutionTime() => this.ExecutionTime.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedOn. 
+        /// <para>
+        /// A timestamp. The last point in time when this data quality rule recommendation run
+        /// was modified.
+        /// </para>
+        /// </summary>
+        public DateTime? LastModifiedOn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LastModifiedOn property is set.
+        /// </summary>
+        internal bool IsSetLastModifiedOn() => this.LastModifiedOn.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property NumberOfWorkers. 
+        /// <para>
+        /// The number of <c>G.1X</c> workers to be used in the run. The default is 5.
+        /// </para>
+        /// </summary>
+        public int? NumberOfWorkers { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NumberOfWorkers property is set.
+        /// </summary>
+        internal bool IsSetNumberOfWorkers() => this.NumberOfWorkers.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property RecommendationMode. 
+        /// <para>
+        /// The mode that Glue Data Quality uses to recommend rules.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default is <c>BASIC</c>.
+        /// </para>
+        /// </summary>
+        public RecommendationMode RecommendationMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RecommendationMode property is set.
+        /// </summary>
+        internal bool IsSetRecommendationMode() => this.RecommendationMode != null;
+
+        /// <summary>
+        /// Gets and sets the property RecommendedRuleset. 
+        /// <para>
+        /// When a start rule recommendation run completes, it creates a recommended ruleset (a
+        /// set of rules). This member has those rules in Data Quality Definition Language (DQDL)
+        /// format.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 65536)]
+        public string RecommendedRuleset { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RecommendedRuleset property is set.
+        /// </summary>
+        internal bool IsSetRecommendedRuleset() => this.RecommendedRuleset != null;
+
+        /// <summary>
+        /// Gets and sets the property Role. 
+        /// <para>
+        /// The IAM role that Glue assumes to access resources for the run.
+        /// </para>
+        /// </summary>
+        public string Role { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Role property is set.
+        /// </summary>
+        internal bool IsSetRole() => this.Role != null;
+
+        /// <summary>
+        /// Gets and sets the property RunId. 
+        /// <para>
+        /// The unique run identifier associated with this run.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 255)]
+        public string RunId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RunId property is set.
+        /// </summary>
+        internal bool IsSetRunId() => this.RunId != null;
+
+        /// <summary>
+        /// Gets and sets the property StartedOn. 
+        /// <para>
+        /// The date and time when this run started.
+        /// </para>
+        /// </summary>
+        public DateTime? StartedOn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StartedOn property is set.
+        /// </summary>
+        internal bool IsSetStartedOn() => this.StartedOn.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status for this run.
+        /// </para>
+        /// </summary>
+        public TaskStatusType Status { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Status property is set.
+        /// </summary>
+        internal bool IsSetStatus() => this.Status != null;
+
+        /// <summary>
+        /// Gets and sets the property Timeout. 
+        /// <para>
+        /// The timeout for a run in minutes. This is the maximum time that a run can consume
+        /// resources before it is terminated and enters <c>TIMEOUT</c> status. The default is
+        /// 2,880 minutes (48 hours).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1)]
+        public int? Timeout { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Timeout property is set.
+        /// </summary>
+        internal bool IsSetTimeout() => this.Timeout.HasValue;
+    }
+}

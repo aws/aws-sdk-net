@@ -36,6 +36,20 @@ namespace Amazon.EKS.Model
     public partial class CapabilityConfigurationRequest
     {
         /// <summary>
+        /// Gets and sets the property Ack. 
+        /// <para>
+        /// Configuration settings specific to ACK (Amazon Web Services Controllers for Kubernetes)
+        /// capabilities. This field is only used when creating or updating an ACK capability.
+        /// </para>
+        /// </summary>
+        public AckConfigRequest Ack { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Ack property is set.
+        /// </summary>
+        internal bool IsSetAck() => this.Ack != null;
+
+        /// <summary>
         /// Gets and sets the property ArgoCd. 
         /// <para>
         /// Configuration settings specific to Argo CD capabilities. This field is only used when

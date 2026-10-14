@@ -274,12 +274,12 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Enhanced mode – You can specify multiple NameNodes for HDFS High Availability (HA)
-        /// configurations.
+        ///  <b>Enhanced mode</b> – You can specify multiple NameNodes for HDFS High Availability
+        /// (HA) configurations.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Basic mode – You can specify only one NameNode.
+        ///  <b>Basic mode</b> – You can specify only one NameNode.
         /// </para>
         ///  </li> </ul>
         /// <para />

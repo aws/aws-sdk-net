@@ -69,6 +69,21 @@ public class SharedOperationStructureTests : IDisposable
     }
 
     [Fact]
+    public void ResponseNamedOutputReferencedThroughMember_ReusesWrapperWithDistinctStructureUnmarshaller()
+    {
+        // GetSummaryResponse is GetSummary's output, already named like its wrapper, and GetItemOutput.summary
+        // targets it: the wrapper doubles as the model class, and the structure unmarshaller can't take
+        // GetSummaryResponseUnmarshaller from the operation.
+        AssertWritten("GetSummaryResponse.g.cs");
+        AssertWritten("GetSummaryResponseUnmarshaller.g.cs");
+        AssertWritten("GetSummaryResponseStructureUnmarshaller.g.cs");
+
+        var marshalling = Path.Combine(_outputDir, "Generated", "Model", "Internal", "MarshallTransformations");
+        Assert.Contains("public partial class GetSummaryResponseStructureUnmarshaller : IJsonUnmarshaller<GetSummaryResponse, JsonUnmarshallerContext>", File.ReadAllText(Path.Combine(marshalling, "GetSummaryResponseStructureUnmarshaller.g.cs")));
+        Assert.Contains("GetSummaryResponseStructureUnmarshaller.Instance", File.ReadAllText(Path.Combine(marshalling, "GetItemResponseUnmarshaller.g.cs")));
+    }
+
+    [Fact]
     public void TraitedInputOutputShapes_NeverGetStandaloneClasses()
     {
         // @input/@output-traited shapes are wrapper-only by construction, referenced or not.

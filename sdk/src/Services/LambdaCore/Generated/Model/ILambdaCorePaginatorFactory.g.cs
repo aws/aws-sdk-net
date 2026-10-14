@@ -33,6 +33,12 @@ namespace Amazon.LambdaCore.Model
     public interface ILambdaCorePaginatorFactory
     {
         /// <summary>
+        /// Paginator for ListNetworkConnectorVersions operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxItems", OutputToken = ["NextMarker"])]
+        IListNetworkConnectorVersionsPaginator ListNetworkConnectorVersions(ListNetworkConnectorVersionsRequest request);
+
+        /// <summary>
         /// Paginator for ListNetworkConnectors operation
         /// </summary>
         [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxItems", OutputToken = ["NextMarker"])]

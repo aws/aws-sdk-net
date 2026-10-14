@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DateTimeRange Marshaller
     /// </summary>
-    public class DateTimeRangeMarshaller : IRequestMarshaller<DateTimeRange, JsonMarshallerContext> 
+    public class DateTimeRangeMarshaller : IRequestMarshaller<DateTimeRange, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DateTimeRange requestObject, JsonMarshallerContext context)
+        public void Marshall(DateTimeRange requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetFrom())
-            {
-                context.Writer.WritePropertyName("from");
-                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.From.Value));
-            }
 
-            if(requestObject.IsSetTo())
+            if (requestObject.IsSetFrom())
             {
-                context.Writer.WritePropertyName("to");
-                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.To.Value));
+                context.Writer.WriteTextString("from");
+                context.Writer.WriteDateTime(requestObject.From.Value);
             }
-
+            if (requestObject.IsSetTo())
+            {
+                context.Writer.WriteTextString("to");
+                context.Writer.WriteDateTime(requestObject.To.Value);
+            }
         }
 
         /// <summary>

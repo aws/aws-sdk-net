@@ -148,6 +148,16 @@ namespace Amazon.Deadline.Model
         IListLimitsPaginator ListLimits(ListLimitsRequest request);
 
         /// <summary>
+        /// Paginator for ListMemberships operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListMembershipsPaginator ListMemberships(ListMembershipsRequest request);
+
+        /// <summary>
         /// Paginator for ListMeteredProducts operation
         ///</summary>
         [AWSPaginator(

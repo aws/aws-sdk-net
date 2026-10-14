@@ -10,13 +10,13 @@
     <property>Amazon.Rekognition.Model.AssociateFacesRequest.CollectionId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.AssociateFacesRequest.UserId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.\-:]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.AssociateFacesRequest.UserMatchThreshold</property>
@@ -32,7 +32,7 @@
     <property>Amazon.Rekognition.Model.CopyProjectVersionRequest.DestinationProjectArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.CopyProjectVersionRequest.KmsKeyId</property>
@@ -44,31 +44,31 @@
     <property>Amazon.Rekognition.Model.CopyProjectVersionRequest.SourceProjectArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.CopyProjectVersionRequest.SourceProjectVersionArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.CopyProjectVersionRequest.VersionName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.CopyProjectVersionResponse.ProjectVersionArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.CreateCollectionRequest.CollectionId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.CreateCollectionResponse.StatusCode</property>
@@ -78,13 +78,13 @@
     <property>Amazon.Rekognition.Model.CreateDatasetRequest.ProjectArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.CreateDatasetResponse.DatasetArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/dataset\/(train|test)\/[0-9]+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/dataset\/(train|test)\/[0-9]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.CreateFaceLivenessSessionRequest.ClientRequestToken</property>
@@ -102,19 +102,19 @@
     <property>Amazon.Rekognition.Model.CreateFaceLivenessSessionResponse.SessionId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.CreateProjectRequest.ProjectName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.CreateProjectResponse.ProjectArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.CreateProjectVersionRequest.KmsKeyId</property>
@@ -126,25 +126,25 @@
     <property>Amazon.Rekognition.Model.CreateProjectVersionRequest.ProjectArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.CreateProjectVersionRequest.VersionDescription</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9-_. ()':,;?]+</pattern>
+    <pattern>^[a-zA-Z0-9-_. ()':,;?]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.CreateProjectVersionRequest.VersionName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.CreateProjectVersionResponse.ProjectVersionArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.CreateStreamProcessorRequest.KmsKeyId</property>
@@ -156,15 +156,15 @@
     <property>Amazon.Rekognition.Model.CreateStreamProcessorRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.CreateStreamProcessorRequest.RoleArn</property>
-    <pattern>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.CreateStreamProcessorResponse.StreamProcessorArn</property>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:streamprocessor\/.+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:streamprocessor\/.+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.CreateUserRequest.ClientRequestToken</property>
@@ -176,19 +176,19 @@
     <property>Amazon.Rekognition.Model.CreateUserRequest.CollectionId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.CreateUserRequest.UserId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.\-:]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DeleteCollectionRequest.CollectionId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DeleteCollectionResponse.StatusCode</property>
@@ -198,48 +198,49 @@
     <property>Amazon.Rekognition.Model.DeleteDatasetRequest.DatasetArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/dataset\/(train|test)\/[0-9]+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/dataset\/(train|test)\/[0-9]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DeleteFacesRequest.CollectionId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DeleteProjectRequest.ProjectArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DeleteProjectPolicyRequest.PolicyName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DeleteProjectPolicyRequest.PolicyRevisionId</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[0-9A-Fa-f]+</pattern>
+    <pattern>^[0-9A-Fa-f]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DeleteProjectPolicyRequest.ProjectArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DeleteProjectVersionRequest.ProjectVersionArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DeleteStreamProcessorRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DeleteUserRequest.ClientRequestToken</property>
@@ -251,19 +252,19 @@
     <property>Amazon.Rekognition.Model.DeleteUserRequest.CollectionId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DeleteUserRequest.UserId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.\-:]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DescribeCollectionRequest.CollectionId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DescribeCollectionResponse.FaceCount</property>
@@ -277,20 +278,7 @@
     <property>Amazon.Rekognition.Model.DescribeDatasetRequest.DatasetArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/dataset\/(train|test)\/[0-9]+$)</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Rekognition.Model.DescribeProjectsRequest.MaxResults</property>
-    <min>1</min>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Rekognition.Model.DescribeProjectsRequest.NextToken</property>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Rekognition.Model.DescribeProjectsResponse.NextToken</property>
-    <max>1024</max>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/dataset\/(train|test)\/[0-9]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DescribeProjectVersionsRequest.MaxResults</property>
@@ -299,23 +287,40 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DescribeProjectVersionsRequest.NextToken</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DescribeProjectVersionsRequest.ProjectArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DescribeProjectVersionsResponse.NextToken</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.DescribeProjectsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.DescribeProjectsRequest.NextToken</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.DescribeProjectsResponse.NextToken</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DescribeStreamProcessorRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DescribeStreamProcessorResponse.KmsKeyId</property>
@@ -327,15 +332,15 @@
     <property>Amazon.Rekognition.Model.DescribeStreamProcessorResponse.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DescribeStreamProcessorResponse.RoleArn</property>
-    <pattern>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DescribeStreamProcessorResponse.StreamProcessorArn</property>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:streamprocessor\/.+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:streamprocessor\/.+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DetectCustomLabelsRequest.MaxResults</property>
@@ -350,7 +355,7 @@
     <property>Amazon.Rekognition.Model.DetectCustomLabelsRequest.ProjectVersionArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DetectLabelsRequest.MaxLabels</property>
@@ -370,13 +375,13 @@
     <property>Amazon.Rekognition.Model.DetectModerationLabelsRequest.ProjectVersion</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DetectModerationLabelsResponse.ProjectVersion</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DisassociateFacesRequest.ClientRequestToken</property>
@@ -388,17 +393,17 @@
     <property>Amazon.Rekognition.Model.DisassociateFacesRequest.CollectionId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DisassociateFacesRequest.UserId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.\-:]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.GetCelebrityInfoRequest.Id</property>
-    <pattern>[0-9A-Za-z]*</pattern>
+    <pattern>^[0-9A-Za-z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.GetCelebrityRecognitionRequest.JobId</property>
@@ -412,6 +417,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.GetCelebrityRecognitionRequest.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -424,10 +430,11 @@
     <property>Amazon.Rekognition.Model.GetCelebrityRecognitionResponse.JobTag</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9_.\-:+=\/]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-:+=\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.GetCelebrityRecognitionResponse.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -442,6 +449,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.GetContentModerationRequest.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -454,10 +462,11 @@
     <property>Amazon.Rekognition.Model.GetContentModerationResponse.JobTag</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9_.\-:+=\/]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-:+=\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.GetContentModerationResponse.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -472,6 +481,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.GetFaceDetectionRequest.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -484,17 +494,18 @@
     <property>Amazon.Rekognition.Model.GetFaceDetectionResponse.JobTag</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9_.\-:+=\/]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-:+=\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.GetFaceDetectionResponse.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.GetFaceLivenessSessionResultsRequest.SessionId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.GetFaceLivenessSessionResultsResponse.Confidence</property>
@@ -505,7 +516,7 @@
     <property>Amazon.Rekognition.Model.GetFaceLivenessSessionResultsResponse.SessionId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.GetFaceSearchRequest.JobId</property>
@@ -519,6 +530,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.GetFaceSearchRequest.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -531,10 +543,11 @@
     <property>Amazon.Rekognition.Model.GetFaceSearchResponse.JobTag</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9_.\-:+=\/]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-:+=\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.GetFaceSearchResponse.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -549,6 +562,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.GetLabelDetectionRequest.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -561,10 +575,11 @@
     <property>Amazon.Rekognition.Model.GetLabelDetectionResponse.JobTag</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9_.\-:+=\/]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-:+=\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.GetLabelDetectionResponse.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -583,7 +598,7 @@
     <property>Amazon.Rekognition.Model.GetMediaAnalysisJobResponse.JobName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.GetMediaAnalysisJobResponse.KmsKeyId</property>
@@ -603,6 +618,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.GetPersonTrackingRequest.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -615,10 +631,11 @@
     <property>Amazon.Rekognition.Model.GetPersonTrackingResponse.JobTag</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9_.\-:+=\/]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-:+=\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.GetPersonTrackingResponse.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -633,6 +650,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.GetSegmentDetectionRequest.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -645,10 +663,11 @@
     <property>Amazon.Rekognition.Model.GetSegmentDetectionResponse.JobTag</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9_.\-:+=\/]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-:+=\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.GetSegmentDetectionResponse.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -663,6 +682,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.GetTextDetectionRequest.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -675,23 +695,24 @@
     <property>Amazon.Rekognition.Model.GetTextDetectionResponse.JobTag</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9_.\-:+=\/]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-:+=\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.GetTextDetectionResponse.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.IndexFacesRequest.CollectionId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.IndexFacesRequest.ExternalImageId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.\-:]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.IndexFacesRequest.MaxFaces</property>
@@ -704,17 +725,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ListCollectionsRequest.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ListCollectionsResponse.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ListDatasetEntriesRequest.DatasetArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/dataset\/(train|test)\/[0-9]+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/dataset\/(train|test)\/[0-9]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ListDatasetEntriesRequest.MaxResults</property>
@@ -723,6 +746,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ListDatasetEntriesRequest.NextToken</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -733,13 +757,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ListDatasetEntriesResponse.NextToken</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ListDatasetLabelsRequest.DatasetArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/dataset\/(train|test)\/[0-9]+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/dataset\/(train|test)\/[0-9]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ListDatasetLabelsRequest.MaxResults</property>
@@ -748,17 +773,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ListDatasetLabelsRequest.NextToken</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ListDatasetLabelsResponse.NextToken</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ListFacesRequest.CollectionId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ListFacesRequest.MaxResults</property>
@@ -767,13 +794,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ListFacesRequest.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ListFacesRequest.UserId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.\-:]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ListMediaAnalysisJobsRequest.MaxResults</property>
@@ -782,10 +810,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ListMediaAnalysisJobsRequest.NextToken</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ListMediaAnalysisJobsResponse.NextToken</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -795,16 +825,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ListProjectPoliciesRequest.NextToken</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ListProjectPoliciesRequest.ProjectArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ListProjectPoliciesResponse.NextToken</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -813,10 +845,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ListStreamProcessorsRequest.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ListStreamProcessorsResponse.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -828,7 +862,7 @@
     <property>Amazon.Rekognition.Model.ListUsersRequest.CollectionId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ListUsersRequest.MaxResults</property>
@@ -837,49 +871,53 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ListUsersRequest.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ListUsersResponse.NextToken</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.PutProjectPolicyRequest.PolicyDocument</property>
     <min>1</min>
     <max>2000</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.PutProjectPolicyRequest.PolicyName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.PutProjectPolicyRequest.PolicyRevisionId</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[0-9A-Fa-f]+</pattern>
+    <pattern>^[0-9A-Fa-f]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.PutProjectPolicyRequest.ProjectArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.PutProjectPolicyResponse.PolicyRevisionId</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[0-9A-Fa-f]+</pattern>
+    <pattern>^[0-9A-Fa-f]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.SearchFacesRequest.CollectionId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.SearchFacesRequest.FaceId</property>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.SearchFacesRequest.FaceMatchThreshold</property>
@@ -893,13 +931,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.SearchFacesResponse.SearchedFaceId</property>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.SearchFacesByImageRequest.CollectionId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.SearchFacesByImageRequest.FaceMatchThreshold</property>
@@ -920,11 +958,11 @@
     <property>Amazon.Rekognition.Model.SearchUsersRequest.CollectionId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.SearchUsersRequest.FaceId</property>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.SearchUsersRequest.MaxUsers</property>
@@ -935,7 +973,7 @@
     <property>Amazon.Rekognition.Model.SearchUsersRequest.UserId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.\-:]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.SearchUsersRequest.UserMatchThreshold</property>
@@ -946,7 +984,7 @@
     <property>Amazon.Rekognition.Model.SearchUsersByImageRequest.CollectionId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.SearchUsersByImageRequest.MaxUsers</property>
@@ -968,7 +1006,7 @@
     <property>Amazon.Rekognition.Model.StartCelebrityRecognitionRequest.JobTag</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9_.\-:+=\/]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-:+=\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.StartCelebrityRecognitionResponse.JobId</property>
@@ -986,7 +1024,7 @@
     <property>Amazon.Rekognition.Model.StartContentModerationRequest.JobTag</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9_.\-:+=\/]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-:+=\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.StartContentModerationRequest.MinConfidence</property>
@@ -1009,7 +1047,7 @@
     <property>Amazon.Rekognition.Model.StartFaceDetectionRequest.JobTag</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9_.\-:+=\/]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-:+=\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.StartFaceDetectionResponse.JobId</property>
@@ -1027,7 +1065,7 @@
     <property>Amazon.Rekognition.Model.StartFaceSearchRequest.CollectionId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.StartFaceSearchRequest.FaceMatchThreshold</property>
@@ -1038,7 +1076,7 @@
     <property>Amazon.Rekognition.Model.StartFaceSearchRequest.JobTag</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9_.\-:+=\/]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-:+=\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.StartFaceSearchResponse.JobId</property>
@@ -1056,7 +1094,7 @@
     <property>Amazon.Rekognition.Model.StartLabelDetectionRequest.JobTag</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9_.\-:+=\/]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-:+=\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.StartLabelDetectionRequest.MinConfidence</property>
@@ -1079,7 +1117,7 @@
     <property>Amazon.Rekognition.Model.StartMediaAnalysisJobRequest.JobName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.StartMediaAnalysisJobRequest.KmsKeyId</property>
@@ -1103,7 +1141,7 @@
     <property>Amazon.Rekognition.Model.StartPersonTrackingRequest.JobTag</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9_.\-:+=\/]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-:+=\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.StartPersonTrackingResponse.JobId</property>
@@ -1123,7 +1161,7 @@
     <property>Amazon.Rekognition.Model.StartProjectVersionRequest.ProjectVersionArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.StartSegmentDetectionRequest.ClientRequestToken</property>
@@ -1135,7 +1173,7 @@
     <property>Amazon.Rekognition.Model.StartSegmentDetectionRequest.JobTag</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9_.\-:+=\/]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-:+=\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.StartSegmentDetectionResponse.JobId</property>
@@ -1147,7 +1185,7 @@
     <property>Amazon.Rekognition.Model.StartStreamProcessorRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.StartTextDetectionRequest.ClientRequestToken</property>
@@ -1159,7 +1197,7 @@
     <property>Amazon.Rekognition.Model.StartTextDetectionRequest.JobTag</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9_.\-:+=\/]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-:+=\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.StartTextDetectionResponse.JobId</property>
@@ -1171,13 +1209,13 @@
     <property>Amazon.Rekognition.Model.StopProjectVersionRequest.ProjectVersionArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.StopStreamProcessorRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.TagResourceRequest.ResourceArn</property>
@@ -1193,13 +1231,13 @@
     <property>Amazon.Rekognition.Model.UpdateDatasetEntriesRequest.DatasetArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/dataset\/(train|test)\/[0-9]+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/dataset\/(train|test)\/[0-9]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.UpdateStreamProcessorRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.AgeRange.High</property>
@@ -1211,7 +1249,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.AssociatedFace.FaceId</property>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.AudioMetadata.DurationMillis</property>
@@ -1247,7 +1285,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.Celebrity.Id</property>
-    <pattern>[0-9A-Za-z]*</pattern>
+    <pattern>^[0-9A-Za-z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.Celebrity.MatchConfidence</property>
@@ -1261,7 +1299,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.CelebrityDetail.Id</property>
-    <pattern>[0-9A-Za-z]*</pattern>
+    <pattern>^[0-9A-Za-z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.Challenge.Version</property>
@@ -1270,17 +1308,17 @@
     <pattern>^(0|[1-9]\d{0,2})\.(0|[1-9]\d{0,2})\.(0|[1-9]\d{0,2})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.CompareFacesMatch.Similarity</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.ComparedFace.Confidence</property>
     <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ComparedSourceImageFace.Confidence</property>
-    <min>0</min>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Rekognition.Model.CompareFacesMatch.Similarity</property>
     <min>0</min>
     <max>100</max>
   </property-value-rule>
@@ -1322,12 +1360,12 @@
     <max>4</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Rekognition.Model.CustomizationFeatureContentModerationConfig.ConfidenceThreshold</property>
+    <property>Amazon.Rekognition.Model.CustomLabel.Confidence</property>
     <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Rekognition.Model.CustomLabel.Confidence</property>
+    <property>Amazon.Rekognition.Model.CustomizationFeatureContentModerationConfig.ConfidenceThreshold</property>
     <min>0</min>
     <max>100</max>
   </property-value-rule>
@@ -1340,7 +1378,7 @@
     <property>Amazon.Rekognition.Model.DatasetLabelDescription.LabelName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>.{1,}</pattern>
+    <pattern>^.{1,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DatasetLabelStats.BoundingBoxCount</property>
@@ -1354,13 +1392,13 @@
     <property>Amazon.Rekognition.Model.DatasetMetadata.DatasetArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/dataset\/(train|test)\/[0-9]+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/dataset\/(train|test)\/[0-9]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DatasetSource.DatasetArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/dataset\/(train|test)\/[0-9]+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/dataset\/(train|test)\/[0-9]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DatasetStats.ErrorEntries</property>
@@ -1379,6 +1417,11 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.DetectLabelsImagePropertiesSettings.MaxDominantColors</property>
+    <min>0</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.DetectionFilter.MinBoundingBoxHeight</property>
     <min>0</min>
     <max>1</max>
@@ -1394,19 +1437,14 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Rekognition.Model.DetectLabelsImagePropertiesSettings.MaxDominantColors</property>
-    <min>0</min>
-    <max>20</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Rekognition.Model.DisassociatedFace.FaceId</property>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DistributeDataset.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/dataset\/(train|test)\/[0-9]+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/dataset\/(train|test)\/[0-9]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DominantColor.Blue</property>
@@ -1451,12 +1489,12 @@
     <max>180</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Rekognition.Model.Eyeglasses.Confidence</property>
+    <property>Amazon.Rekognition.Model.EyeOpen.Confidence</property>
     <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Rekognition.Model.EyeOpen.Confidence</property>
+    <property>Amazon.Rekognition.Model.Eyeglasses.Confidence</property>
     <min>0</min>
     <max>100</max>
   </property-value-rule>
@@ -1469,25 +1507,25 @@
     <property>Amazon.Rekognition.Model.Face.ExternalImageId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.\-:]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.Face.FaceId</property>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.Face.ImageId</property>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.Face.IndexFacesModelVersion</property>
-    <pattern>[0-9\.]+</pattern>
+    <pattern>^[0-9\.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.Face.UserId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.\-:]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.FaceDetail.Confidence</property>
@@ -1508,7 +1546,7 @@
     <property>Amazon.Rekognition.Model.FaceSearchSettings.CollectionId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.FaceSearchSettings.FaceMatchThreshold</property>
@@ -1527,21 +1565,24 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.HumanLoopActivationOutput.HumanLoopActivationConditionsEvaluationResults</property>
+    <min>0</min>
     <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.HumanLoopActivationOutput.HumanLoopArn</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.HumanLoopConfig.FlowDefinitionArn</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.HumanLoopConfig.HumanLoopName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-z0-9](-*[a-z0-9])*</pattern>
+    <pattern>^[a-z0-9](-*[a-z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.Image.Bytes</property>
@@ -1555,11 +1596,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.KinesisDataStream.Arn</property>
-    <pattern>(^arn:([a-z\d-]+):kinesis:([a-z\d-]+):\d{12}:.+$)</pattern>
+    <pattern>^(^arn:([a-z\d-]+):kinesis:([a-z\d-]+):\d{12}:.+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.KinesisVideoStream.Arn</property>
-    <pattern>(^arn:([a-z\d-]+):kinesisvideo:([a-z\d-]+):\d{12}:.+$)</pattern>
+    <pattern>^(^arn:([a-z\d-]+):kinesisvideo:([a-z\d-]+):\d{12}:.+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.KinesisVideoStreamStartSelector.FragmentNumber</property>
@@ -1592,18 +1633,19 @@
     <property>Amazon.Rekognition.Model.LivenessOutputConfig.S3Bucket</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[0-9A-Za-z\.\-_]*</pattern>
+    <pattern>^[0-9A-Za-z\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.LivenessOutputConfig.S3KeyPrefix</property>
+    <min>0</min>
     <max>950</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.MatchedUser.UserId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.\-:]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.MediaAnalysisDetectModerationLabelsConfig.MinConfidence</property>
@@ -1614,7 +1656,7 @@
     <property>Amazon.Rekognition.Model.MediaAnalysisDetectModerationLabelsConfig.ProjectVersion</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.MediaAnalysisJobDescription.JobId</property>
@@ -1626,7 +1668,7 @@
     <property>Amazon.Rekognition.Model.MediaAnalysisJobDescription.JobName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.MediaAnalysisJobDescription.KmsKeyId</property>
@@ -1638,12 +1680,13 @@
     <property>Amazon.Rekognition.Model.MediaAnalysisOutputConfig.S3Bucket</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[0-9A-Za-z\.\-_]*</pattern>
+    <pattern>^[0-9A-Za-z\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.MediaAnalysisOutputConfig.S3KeyPrefix</property>
+    <min>0</min>
     <max>800</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ModerationLabel.Confidence</property>
@@ -1666,20 +1709,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.NotificationChannel.RoleArn</property>
-    <pattern>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.NotificationChannel.SNSTopicArn</property>
-    <pattern>(^arn:aws:sns:.*:\w{12}:.+$)</pattern>
+    <pattern>^(^arn:aws:sns:.*:\w{12}:.+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.OutputConfig.S3Bucket</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[0-9A-Za-z\.\-_]*</pattern>
+    <pattern>^[0-9A-Za-z\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.OutputConfig.S3KeyPrefix</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -1701,30 +1745,31 @@
     <property>Amazon.Rekognition.Model.ProjectDescription.ProjectArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ProjectPolicy.PolicyDocument</property>
     <min>1</min>
     <max>2000</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ProjectPolicy.PolicyName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ProjectPolicy.PolicyRevisionId</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[0-9A-Fa-f]+</pattern>
+    <pattern>^[0-9A-Fa-f]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ProjectPolicy.ProjectArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ProjectVersionDescription.BillableTrainingTimeInSeconds</property>
@@ -1748,19 +1793,19 @@
     <property>Amazon.Rekognition.Model.ProjectVersionDescription.ProjectVersionArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ProjectVersionDescription.SourceProjectVersionArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
+    <pattern>^(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ProjectVersionDescription.VersionDescription</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9-_. ()':,;?]+</pattern>
+    <pattern>^[a-zA-Z0-9-_. ()':,;?]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ProtectiveEquipmentBodyPart.Confidence</property>
@@ -1785,17 +1830,18 @@
     <property>Amazon.Rekognition.Model.S3Destination.Bucket</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[0-9A-Za-z\.\-_]*</pattern>
+    <pattern>^[0-9A-Za-z\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.S3Destination.KeyPrefix</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.S3Object.Bucket</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[0-9A-Za-z\.\-_]*</pattern>
+    <pattern>^[0-9A-Za-z\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.S3Object.Name</property>
@@ -1809,13 +1855,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.SearchedFace.FaceId</property>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.SearchedUser.UserId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.\-:]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.SegmentDetection.DurationFrames</property>
@@ -1871,11 +1917,11 @@
     <property>Amazon.Rekognition.Model.StreamProcessor.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.StreamProcessorNotificationChannel.SNSTopicArn</property>
-    <pattern>(^arn:aws:sns:.*:\w{12}:.+$)</pattern>
+    <pattern>^(^arn:aws:sns:.*:\w{12}:.+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.Sunglasses.Confidence</property>
@@ -1907,39 +1953,39 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.UnsuccessfulFaceAssociation.FaceId</property>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.UnsuccessfulFaceAssociation.UserId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.\-:]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.UnsuccessfulFaceDeletion.FaceId</property>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.UnsuccessfulFaceDeletion.UserId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.\-:]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.UnsuccessfulFaceDisassociation.FaceId</property>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.UnsuccessfulFaceDisassociation.UserId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.\-:]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.User.UserId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.\-:]+</pattern>
+    <pattern>^[a-zA-Z0-9_.\-:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.UserMatch.Similarity</property>

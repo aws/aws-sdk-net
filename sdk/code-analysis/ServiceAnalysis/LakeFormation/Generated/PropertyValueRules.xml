@@ -24,6 +24,11 @@
     <max>100000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LakeFormation.Model.AttachRLSPolicyRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LakeFormation.Model.BatchGrantPermissionsRequest.CatalogId</property>
     <min>1</min>
     <max>255</max>
@@ -73,6 +78,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LakeFormation.Model.CreateLakeFormationIdentityCenterConfigurationRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.CreateRLSPolicyRequest.FilterExpression</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.CreateRLSPolicyRequest.Name</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -144,6 +159,11 @@
     <pattern>^[\p{L}\p{N}\p{P}]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LakeFormation.Model.DeleteRLSPolicyRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LakeFormation.Model.DescribeLakeFormationIdentityCenterConfigurationRequest.CatalogId</property>
     <min>1</min>
     <max>255</max>
@@ -158,6 +178,11 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[\p{L}\p{N}\p{P}]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.DetachRLSPolicyRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LakeFormation.Model.ExtendTransactionRequest.TransactionId</property>
@@ -256,6 +281,11 @@
     <property>Amazon.LakeFormation.Model.GetQueryStatisticsRequest.QueryId</property>
     <min>36</min>
     <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.GetRLSPolicyRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LakeFormation.Model.GetResourceLFTagsRequest.CatalogId</property>
@@ -387,6 +417,21 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LakeFormation.Model.ListRLSPoliciesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.ListRLSPolicyAttachmentsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.ListRLSPolicyAttachmentsRequest.PolicyName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LakeFormation.Model.ListResourcesRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -516,6 +561,16 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LakeFormation.Model.UpdateRLSPolicyRequest.FilterExpression</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.UpdateRLSPolicyRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LakeFormation.Model.UpdateResourceRequest.ExpectedResourceOwnerAccount</property>
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
@@ -584,6 +639,16 @@
     <property>Amazon.LakeFormation.Model.CatalogResource.Id</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.Column.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.Column.Type</property>
+    <min>0</min>
+    <max>131072</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LakeFormation.Model.ColumnLFTag.Name</property>
@@ -775,6 +840,41 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LakeFormation.Model.QuerySessionContext.QueryId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.RLSPolicy.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.RLSPolicy.FilterExpression</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.RLSPolicy.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.RLSPolicyAttachment.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.RLSPolicyAttachment.PolicyName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.RLSPolicyResource.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.RLSPolicyResource.Name</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>

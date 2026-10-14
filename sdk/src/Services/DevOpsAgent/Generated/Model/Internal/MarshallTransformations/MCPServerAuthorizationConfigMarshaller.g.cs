@@ -78,6 +78,17 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetCustomHeaders())
+            {
+                context.Writer.WritePropertyName("customHeaders");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MCPServerCustomHeadersConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomHeaders, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetOAuth3LO())
             {
                 context.Writer.WritePropertyName("oAuth3LO");

@@ -30,14 +30,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AgentRegistryControl.Model
 {
     /// <summary>
-    /// A schema override for a specific record type within a custom metadata schema configuration.
+    /// The custom metadata fields for one record type, in addition to the common attributes
+    /// defined in <c>defaultSchema</c>.
     /// </summary>
     public partial class RecordTypeSchemaOverride
     {
         /// <summary>
         /// Gets and sets the property RecordType. 
         /// <para>
-        /// The record type that this schema override applies to.
+        /// The record type these fields apply to.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -51,11 +52,10 @@ namespace Amazon.AgentRegistryControl.Model
         /// <summary>
         /// Gets and sets the property Schema. 
         /// <para>
-        /// The JSON Schema for the specified record type. Must follow the same structural rules
-        /// as the default schema.
+        /// A JSON Schema with the fields for this record type.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Sensitive = true, Min = 1, Max = 10240)]
+        [AWSProperty(Required = true, Sensitive = true, Min = 1, Max = 16384)]
         public string Schema { get; set; }
 
         /// <summary>

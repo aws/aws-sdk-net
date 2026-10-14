@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+  <doc>
+    <members>
+      <member name="M:Amazon.DirectoryServiceData.IAmazonDirectoryServiceData.AddGroupMember(Amazon.DirectoryServiceData.Model.AddGroupMemberRequest)" />
+      <member name="M:Amazon.DirectoryServiceData.AmazonDirectoryServiceDataClient.AddGroupMember(Amazon.DirectoryServiceData.Model.AddGroupMemberRequest)" />
+      <member name="T:Amazon.DirectoryServiceData.Model.AddGroupMemberRequest" />
+      <member name="T:Amazon.DirectoryServiceData.Model.AddGroupMemberResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following command adds an existing user to the Marketing group in the europe.example.com domain.
+        </para>
+        <code title="To add a member to the Marketing group" source=".\AWSSDKDocSamples\DirectoryServiceData\DirectoryServiceData.GeneratedSamples.cs" region="AddGroupMember-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.DirectoryServiceData.IAmazonDirectoryServiceData.CreateGroup(Amazon.DirectoryServiceData.Model.CreateGroupRequest)" />
+      <member name="M:Amazon.DirectoryServiceData.AmazonDirectoryServiceDataClient.CreateGroup(Amazon.DirectoryServiceData.Model.CreateGroupRequest)" />
+      <member name="T:Amazon.DirectoryServiceData.Model.CreateGroupRequest" />
+      <member name="T:Amazon.DirectoryServiceData.Model.CreateGroupResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following command creates a distribution list group named AcctngMail.
+        </para>
+        <code title="To create a group" source=".\AWSSDKDocSamples\DirectoryServiceData\DirectoryServiceData.GeneratedSamples.cs" region="CreateGroup-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.DirectoryServiceData.IAmazonDirectoryServiceData.CreateUser(Amazon.DirectoryServiceData.Model.CreateUserRequest)" />
+      <member name="M:Amazon.DirectoryServiceData.AmazonDirectoryServiceDataClient.CreateUser(Amazon.DirectoryServiceData.Model.CreateUserRequest)" />
+      <member name="T:Amazon.DirectoryServiceData.Model.CreateUserRequest" />
+      <member name="T:Amazon.DirectoryServiceData.Model.CreateUserResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following command
+        </para>
+        <code title="To create a new user in the directory" source=".\AWSSDKDocSamples\DirectoryServiceData\DirectoryServiceData.GeneratedSamples.cs" region="CreateUser-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.DirectoryServiceData.IAmazonDirectoryServiceData.DeleteGroup(Amazon.DirectoryServiceData.Model.DeleteGroupRequest)" />
+      <member name="M:Amazon.DirectoryServiceData.AmazonDirectoryServiceDataClient.DeleteGroup(Amazon.DirectoryServiceData.Model.DeleteGroupRequest)" />
+      <member name="T:Amazon.DirectoryServiceData.Model.DeleteGroupRequest" />
+      <member name="T:Amazon.DirectoryServiceData.Model.DeleteGroupResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following command deletes the marketing group from the specified directory.
+        </para>
+        <code title="To delete a group" source=".\AWSSDKDocSamples\DirectoryServiceData\DirectoryServiceData.GeneratedSamples.cs" region="DeleteGroup-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.DirectoryServiceData.IAmazonDirectoryServiceData.DeleteUser(Amazon.DirectoryServiceData.Model.DeleteUserRequest)" />
+      <member name="M:Amazon.DirectoryServiceData.AmazonDirectoryServiceDataClient.DeleteUser(Amazon.DirectoryServiceData.Model.DeleteUserRequest)" />
+      <member name="T:Amazon.DirectoryServiceData.Model.DeleteUserRequest" />
+      <member name="T:Amazon.DirectoryServiceData.Model.DeleteUserResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following command deletes a group from the directory.
+        </para>
+        <code title="To delete a user" source=".\AWSSDKDocSamples\DirectoryServiceData\DirectoryServiceData.GeneratedSamples.cs" region="DeleteUser-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.DirectoryServiceData.IAmazonDirectoryServiceData.DescribeGroup(Amazon.DirectoryServiceData.Model.DescribeGroupRequest)" />
+      <member name="M:Amazon.DirectoryServiceData.AmazonDirectoryServiceDataClient.DescribeGroup(Amazon.DirectoryServiceData.Model.DescribeGroupRequest)" />
+      <member name="T:Amazon.DirectoryServiceData.Model.DescribeGroupRequest" />
+      <member name="T:Amazon.DirectoryServiceData.Model.DescribeGroupResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following command returns the mapped attributes for a group along with the display name, description, and GUID for the group.
+        </para>
+        <code title="To return the attributes of a group" source=".\AWSSDKDocSamples\DirectoryServiceData\DirectoryServiceData.GeneratedSamples.cs" region="DescribeGroup-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.DirectoryServiceData.IAmazonDirectoryServiceData.DescribeUser(Amazon.DirectoryServiceData.Model.DescribeUserRequest)" />
+      <member name="M:Amazon.DirectoryServiceData.AmazonDirectoryServiceDataClient.DescribeUser(Amazon.DirectoryServiceData.Model.DescribeUserRequest)" />
+      <member name="T:Amazon.DirectoryServiceData.Model.DescribeUserRequest" />
+      <member name="T:Amazon.DirectoryServiceData.Model.DescribeUserResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following command returns the mapped attributes for a user along with the department, manager, IP phone, and date the user last set a password.
+        </para>
+        <code title="To return the attributes of a user" source=".\AWSSDKDocSamples\DirectoryServiceData\DirectoryServiceData.GeneratedSamples.cs" region="DescribeUser-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.DirectoryServiceData.IAmazonDirectoryServiceData.DisableUser(Amazon.DirectoryServiceData.Model.DisableUserRequest)" />
+      <member name="M:Amazon.DirectoryServiceData.AmazonDirectoryServiceDataClient.DisableUser(Amazon.DirectoryServiceData.Model.DisableUserRequest)" />
+      <member name="T:Amazon.DirectoryServiceData.Model.DisableUserRequest" />
+      <member name="T:Amazon.DirectoryServiceData.Model.DisableUserResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following command disables the account for twhitlock.
+        </para>
+        <code title="To disable a user account" source=".\AWSSDKDocSamples\DirectoryServiceData\DirectoryServiceData.GeneratedSamples.cs" region="DisableUser-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.DirectoryServiceData.IAmazonDirectoryServiceData.ListGroupMembers(Amazon.DirectoryServiceData.Model.ListGroupMembersRequest)" />
+      <member name="M:Amazon.DirectoryServiceData.AmazonDirectoryServiceDataClient.ListGroupMembers(Amazon.DirectoryServiceData.Model.ListGroupMembersRequest)" />
+      <member name="T:Amazon.DirectoryServiceData.Model.ListGroupMembersRequest" />
+      <member name="T:Amazon.DirectoryServiceData.Model.ListGroupMembersResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following command lists Marketing users in the trusted domain example.local.
+        </para>
+        <code title="To list members of a group" source=".\AWSSDKDocSamples\DirectoryServiceData\DirectoryServiceData.GeneratedSamples.cs" region="ListGroupMembers-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.DirectoryServiceData.IAmazonDirectoryServiceData.ListGroups(Amazon.DirectoryServiceData.Model.ListGroupsRequest)" />
+      <member name="M:Amazon.DirectoryServiceData.AmazonDirectoryServiceDataClient.ListGroups(Amazon.DirectoryServiceData.Model.ListGroupsRequest)" />
+      <member name="T:Amazon.DirectoryServiceData.Model.ListGroupsRequest" />
+      <member name="T:Amazon.DirectoryServiceData.Model.ListGroupsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following command lists the name and default attributes for groups on the examplecorp.com domain.
+        </para>
+        <code title="To list domain groups" source=".\AWSSDKDocSamples\DirectoryServiceData\DirectoryServiceData.GeneratedSamples.cs" region="ListGroups-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.DirectoryServiceData.IAmazonDirectoryServiceData.ListGroupsForMember(Amazon.DirectoryServiceData.Model.ListGroupsForMemberRequest)" />
+      <member name="M:Amazon.DirectoryServiceData.AmazonDirectoryServiceDataClient.ListGroupsForMember(Amazon.DirectoryServiceData.Model.ListGroupsForMemberRequest)" />
+      <member name="T:Amazon.DirectoryServiceData.Model.ListGroupsForMemberRequest" />
+      <member name="T:Amazon.DirectoryServiceData.Model.ListGroupsForMemberResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following command
+        </para>
+        <code title="To list groups for a member" source=".\AWSSDKDocSamples\DirectoryServiceData\DirectoryServiceData.GeneratedSamples.cs" region="ListGroupsForMember-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.DirectoryServiceData.IAmazonDirectoryServiceData.ListUsers(Amazon.DirectoryServiceData.Model.ListUsersRequest)" />
+      <member name="M:Amazon.DirectoryServiceData.AmazonDirectoryServiceDataClient.ListUsers(Amazon.DirectoryServiceData.Model.ListUsersRequest)" />
+      <member name="T:Amazon.DirectoryServiceData.Model.ListUsersRequest" />
+      <member name="T:Amazon.DirectoryServiceData.Model.ListUsersResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following command lists users on the examplecorp.com domain.
+        </para>
+        <code title="To list users in a realm" source=".\AWSSDKDocSamples\DirectoryServiceData\DirectoryServiceData.GeneratedSamples.cs" region="ListUsers-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.DirectoryServiceData.IAmazonDirectoryServiceData.RemoveGroupMember(Amazon.DirectoryServiceData.Model.RemoveGroupMemberRequest)" />
+      <member name="M:Amazon.DirectoryServiceData.AmazonDirectoryServiceDataClient.RemoveGroupMember(Amazon.DirectoryServiceData.Model.RemoveGroupMemberRequest)" />
+      <member name="T:Amazon.DirectoryServiceData.Model.RemoveGroupMemberRequest" />
+      <member name="T:Amazon.DirectoryServiceData.Model.RemoveGroupMemberResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following command removes the specified member from the example.local domain.
+        </para>
+        <code title="To remove a member from a group" source=".\AWSSDKDocSamples\DirectoryServiceData\DirectoryServiceData.GeneratedSamples.cs" region="RemoveGroupMember-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.DirectoryServiceData.IAmazonDirectoryServiceData.SearchGroups(Amazon.DirectoryServiceData.Model.SearchGroupsRequest)" />
+      <member name="M:Amazon.DirectoryServiceData.AmazonDirectoryServiceDataClient.SearchGroups(Amazon.DirectoryServiceData.Model.SearchGroupsRequest)" />
+      <member name="T:Amazon.DirectoryServiceData.Model.SearchGroupsRequest" />
+      <member name="T:Amazon.DirectoryServiceData.Model.SearchGroupsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following command searches the examplecorp.com domain for groups with the GroupType security.
+        </para>
+        <code title="To search for groups" source=".\AWSSDKDocSamples\DirectoryServiceData\DirectoryServiceData.GeneratedSamples.cs" region="SearchGroups-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.DirectoryServiceData.IAmazonDirectoryServiceData.SearchUsers(Amazon.DirectoryServiceData.Model.SearchUsersRequest)" />
+      <member name="M:Amazon.DirectoryServiceData.AmazonDirectoryServiceDataClient.SearchUsers(Amazon.DirectoryServiceData.Model.SearchUsersRequest)" />
+      <member name="T:Amazon.DirectoryServiceData.Model.SearchUsersRequest" />
+      <member name="T:Amazon.DirectoryServiceData.Model.SearchUsersResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following command searches for users in the domain based on the SearchAttributes.
+        </para>
+        <code title="To search for users" source=".\AWSSDKDocSamples\DirectoryServiceData\DirectoryServiceData.GeneratedSamples.cs" region="SearchUsers-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.DirectoryServiceData.IAmazonDirectoryServiceData.UpdateGroup(Amazon.DirectoryServiceData.Model.UpdateGroupRequest)" />
+      <member name="M:Amazon.DirectoryServiceData.AmazonDirectoryServiceDataClient.UpdateGroup(Amazon.DirectoryServiceData.Model.UpdateGroupRequest)" />
+      <member name="T:Amazon.DirectoryServiceData.Model.UpdateGroupRequest" />
+      <member name="T:Amazon.DirectoryServiceData.Model.UpdateGroupResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following command updates the preferred language and country attributes for the GuestsLocal group.
+        </para>
+        <code title="To update a group" source=".\AWSSDKDocSamples\DirectoryServiceData\DirectoryServiceData.GeneratedSamples.cs" region="UpdateGroup-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.DirectoryServiceData.IAmazonDirectoryServiceData.UpdateUser(Amazon.DirectoryServiceData.Model.UpdateUserRequest)" />
+      <member name="M:Amazon.DirectoryServiceData.AmazonDirectoryServiceDataClient.UpdateUser(Amazon.DirectoryServiceData.Model.UpdateUserRequest)" />
+      <member name="T:Amazon.DirectoryServiceData.Model.UpdateUserRequest" />
+      <member name="T:Amazon.DirectoryServiceData.Model.UpdateUserResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following command
+        </para>
+        <code title="To update user attributes" source=".\AWSSDKDocSamples\DirectoryServiceData\DirectoryServiceData.GeneratedSamples.cs" region="UpdateUser-1" />
+      </example>
+    </value>
+  </doc>
+</docs>

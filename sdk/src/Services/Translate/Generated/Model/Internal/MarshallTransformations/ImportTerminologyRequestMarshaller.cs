@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Translate.Model.Internal.MarshallTransformations
 {
@@ -59,86 +58,88 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         public IRequest Marshall(ImportTerminologyRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Translate");
-            string target = "AWSShineFrontendService_20170701.ImportTerminology";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/AWSShineFrontendService_20170701/operation/ImportTerminology";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetDescription())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.WriteStringValue(publicRequest.Description);
-            }
-
-            if(publicRequest.IsSetEncryptionKey())
-            {
-                context.Writer.WritePropertyName("EncryptionKey");
-                context.Writer.WriteStartObject();
-
-                var marshaller = EncryptionKeyMarshaller.Instance;
-                marshaller.Marshall(publicRequest.EncryptionKey, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetMergeStrategy())
-            {
-                context.Writer.WritePropertyName("MergeStrategy");
-                context.Writer.WriteStringValue(publicRequest.MergeStrategy);
-            }
-
-            if(publicRequest.IsSetName())
-            {
-                context.Writer.WritePropertyName("Name");
-                context.Writer.WriteStringValue(publicRequest.Name);
-            }
-
-            if(publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetDescription())
                 {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = TagMarshaller.Instance;
-                    marshaller.Marshall(publicRequestTagsListValue, context);
-
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteTextString("Description");
+                    context.Writer.WriteTextString(publicRequest.Description);
                 }
-                context.Writer.WriteEndArray();
-            }
+                if (publicRequest.IsSetEncryptionKey())
+                {
+                    context.Writer.WriteTextString("EncryptionKey");
+                    context.Writer.WriteStartMap(null);
 
-            if(publicRequest.IsSetTerminologyData())
-            {
-                context.Writer.WritePropertyName("TerminologyData");
-                context.Writer.WriteStartObject();
+                    var marshaller = EncryptionKeyMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EncryptionKey, context);
 
-                var marshaller = TerminologyDataMarshaller.Instance;
-                marshaller.Marshall(publicRequest.TerminologyData, context);
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetMergeStrategy())
+                {
+                    context.Writer.WriteTextString("MergeStrategy");
+                    context.Writer.WriteTextString(publicRequest.MergeStrategy);
+                }
+                if (publicRequest.IsSetName())
+                {
+                    context.Writer.WriteTextString("Name");
+                    context.Writer.WriteTextString(publicRequest.Name);
+                }
+                if (publicRequest.IsSetTags())
+                {
+                    context.Writer.WriteTextString("Tags");
+                    context.Writer.WriteStartArray(publicRequest.Tags.Count);
+                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteStartMap(null);
 
-                context.Writer.WriteEndObject();
-            }
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
 
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetTerminologyData())
+                {
+                    context.Writer.WriteTextString("TerminologyData");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = TerminologyDataMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TerminologyData, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                writer.WriteEndMap();
+#if !NETFRAMEWORK
+                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
+                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
+                // avoiding the default-size rent followed by a resize+return.
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
+                request.Content = writer.Encode();
 #endif
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
             
-
-
             return request;
         }
         private static ImportTerminologyRequestMarshaller _instance = new ImportTerminologyRequestMarshaller();        

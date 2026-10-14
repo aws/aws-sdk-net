@@ -29,70 +29,93 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeConnections.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ResourceSyncAttempt Object
     /// </summary>  
-    public class ResourceSyncAttemptUnmarshaller : IJsonUnmarshaller<ResourceSyncAttempt, JsonUnmarshallerContext>
+    public class ResourceSyncAttemptUnmarshaller : ICborUnmarshaller<ResourceSyncAttempt, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ResourceSyncAttempt Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ResourceSyncAttempt Unmarshall(CborUnmarshallerContext context)
         {
             ResourceSyncAttempt unmarshalledObject = new ResourceSyncAttempt();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("Events", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<ResourceSyncEvent, ResourceSyncEventUnmarshaller>(ResourceSyncEventUnmarshaller.Instance);
-                    unmarshalledObject.Events = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("InitialRevision", targetDepth, ref reader))
-                {
-                    var unmarshaller = RevisionUnmarshaller.Instance;
-                    unmarshalledObject.InitialRevision = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("StartedAt", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartedAt = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Target", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Target = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TargetRevision", targetDepth, ref reader))
-                {
-                    var unmarshaller = RevisionUnmarshaller.Instance;
-                    unmarshalledObject.TargetRevision = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Events":
+                        {
+                            context.AddPathSegment("Events");
+                            var unmarshaller = new CborListUnmarshaller<ResourceSyncEvent, ResourceSyncEventUnmarshaller>(ResourceSyncEventUnmarshaller.Instance);
+                            unmarshalledObject.Events = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "InitialRevision":
+                        {
+                            context.AddPathSegment("InitialRevision");
+                            var unmarshaller = RevisionUnmarshaller.Instance;
+                            unmarshalledObject.InitialRevision = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "StartedAt":
+                        {
+                            context.AddPathSegment("StartedAt");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.StartedAt = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Status":
+                        {
+                            context.AddPathSegment("Status");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Target":
+                        {
+                            context.AddPathSegment("Target");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Target = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "TargetRevision":
+                        {
+                            context.AddPathSegment("TargetRevision");
+                            var unmarshaller = RevisionUnmarshaller.Instance;
+                            unmarshalledObject.TargetRevision = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

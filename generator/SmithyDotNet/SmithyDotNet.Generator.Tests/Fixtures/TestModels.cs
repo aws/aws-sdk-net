@@ -1,5 +1,6 @@
 using System.Text.Json;
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Converters;
 using SmithyDotNet.Generator.Model.Shapes;
@@ -9,7 +10,8 @@ namespace SmithyDotNet.Generator.Tests;
 /// <summary>
 /// Loads test models from <c>TestData</c>. Every model lives in its own file there: real service
 /// extracts at the root, auth-scenario models under <c>Auth/</c>, models driving codegen tests
-/// under <c>Codegen/</c>, and models driving model-loading/resolution tests under <c>Model/</c>.
+/// under <c>Codegen/</c>, customization-transform models under <c>Customizations/</c>, and models driving
+/// model-loading/resolution tests under <c>Model/</c>.
 /// </summary>
 internal static class TestModels
 {
@@ -29,6 +31,14 @@ internal static class TestModels
 
     public static GenerationContext Context(SmithyModel model) =>
         new(new ServiceIndex(model), TestManifests.Example());
+
+    /// <summary>Applies <paramref name="customizations"/> to <paramref name="model"/> in BatchGenerator's order, then builds the context.</summary>
+    public static GenerationContext Context(SmithyModel model, CustomizationsModel customizations)
+    {
+        CustomizationTransform.Apply(model, customizations);
+        CustomizationTransform.Validate(model, customizations);
+        return new(new ServiceIndex(model), TestManifests.Example(), customizations: customizations);
+    }
 
     // A shape read on its own has no dictionary key to take its id from.
     public static Shape DeserializeShape(string json) =>

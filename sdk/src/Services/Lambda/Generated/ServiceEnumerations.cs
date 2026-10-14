@@ -1163,6 +1163,10 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly KafkaSchemaRegistryAuthType CLIENT_CERTIFICATE_TLS_AUTH = new KafkaSchemaRegistryAuthType("CLIENT_CERTIFICATE_TLS_AUTH");
         /// <summary>
+        /// Constant OAUTHBEARER_AUTH for KafkaSchemaRegistryAuthType
+        /// </summary>
+        public static readonly KafkaSchemaRegistryAuthType OAUTHBEARER_AUTH = new KafkaSchemaRegistryAuthType("OAUTHBEARER_AUTH");
+        /// <summary>
         /// Constant SERVER_ROOT_CA_CERTIFICATE for KafkaSchemaRegistryAuthType
         /// </summary>
         public static readonly KafkaSchemaRegistryAuthType SERVER_ROOT_CA_CERTIFICATE = new KafkaSchemaRegistryAuthType("SERVER_ROOT_CA_CERTIFICATE");
@@ -2508,6 +2512,34 @@ namespace Amazon.Lambda
         /// Constant CLIENT_CERTIFICATE_TLS_AUTH for SourceAccessType
         /// </summary>
         public static readonly SourceAccessType CLIENT_CERTIFICATE_TLS_AUTH = new SourceAccessType("CLIENT_CERTIFICATE_TLS_AUTH");
+        /// <summary>
+        /// Constant IAM_AUTH for SourceAccessType
+        /// </summary>
+        public static readonly SourceAccessType IAM_AUTH = new SourceAccessType("IAM_AUTH");
+        /// <summary>
+        /// Constant IAM_OAUTHBEARER_AUTH for SourceAccessType
+        /// </summary>
+        public static readonly SourceAccessType IAM_OAUTHBEARER_AUTH = new SourceAccessType("IAM_OAUTHBEARER_AUTH");
+        /// <summary>
+        /// Constant OAUTHBEARER_AUDIENCE for SourceAccessType
+        /// </summary>
+        public static readonly SourceAccessType OAUTHBEARER_AUDIENCE = new SourceAccessType("OAUTHBEARER_AUDIENCE");
+        /// <summary>
+        /// Constant OAUTHBEARER_AUTH for SourceAccessType
+        /// </summary>
+        public static readonly SourceAccessType OAUTHBEARER_AUTH = new SourceAccessType("OAUTHBEARER_AUTH");
+        /// <summary>
+        /// Constant OAUTHBEARER_IDENTITY_POOL for SourceAccessType
+        /// </summary>
+        public static readonly SourceAccessType OAUTHBEARER_IDENTITY_POOL = new SourceAccessType("OAUTHBEARER_IDENTITY_POOL");
+        /// <summary>
+        /// Constant OAUTHBEARER_LOGICAL_CLUSTER for SourceAccessType
+        /// </summary>
+        public static readonly SourceAccessType OAUTHBEARER_LOGICAL_CLUSTER = new SourceAccessType("OAUTHBEARER_LOGICAL_CLUSTER");
+        /// <summary>
+        /// Constant OAUTHBEARER_SCOPE for SourceAccessType
+        /// </summary>
+        public static readonly SourceAccessType OAUTHBEARER_SCOPE = new SourceAccessType("OAUTHBEARER_SCOPE");
         /// <summary>
         /// Constant SASL_SCRAM_256_AUTH for SourceAccessType
         /// </summary>

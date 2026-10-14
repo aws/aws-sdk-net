@@ -74,6 +74,16 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetRecordExpirySpecification())
+            {
+                context.Writer.WritePropertyName("recordExpirySpecification");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RecordExpirySpecificationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RecordExpirySpecification, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetRecords())
             {
                 context.Writer.WritePropertyName("records");

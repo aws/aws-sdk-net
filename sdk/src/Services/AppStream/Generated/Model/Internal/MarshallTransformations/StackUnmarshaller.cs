@@ -166,6 +166,14 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                             context.PopPathSegment();
                             break;
                         }
+                    case "StorageConnectorAuthentication":
+                        {
+                            context.AddPathSegment("StorageConnectorAuthentication");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.StorageConnectorAuthentication = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
                     case "StorageConnectors":
                         {
                             context.AddPathSegment("StorageConnectors");

@@ -3,7 +3,6 @@ using Amazon.S3;
 using AWSSDK_DotNet.CommonTest.Utils;
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
@@ -45,7 +44,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// Phase 3. Phase 1 is repeated again with an assert to prove that Phase 2 added the said capacity.
         /// </summary>
         [Fact]
-        public async Task S3CapacityManagerIntegrationTest()
+        public void S3CapacityManagerIntegrationTest()
         {
             int TotalRequests = 500;
             int RetryRequests = 100;
@@ -85,7 +84,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }))
                 {
                     retryFlag = true;
-                    await FailureRetryRequests(TotalRequests, RetryRequests, ExtraRequests, client);
+                    FailureRetryRequests(TotalRequests, RetryRequests, ExtraRequests, client);
                     retryFlag = false;
                     requestCount = 0;
                     for (int i = 0; i < TotalRequests; i++)
@@ -94,7 +93,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     }
                     retryFlag = true;
                     requestCount = 0;
-                    await FailureRetryRequests(TotalRequests, RetryRequests, ExtraRequests, client);
+                    FailureRetryRequests(TotalRequests, RetryRequests, ExtraRequests, client);
                 }
             }
         }
@@ -129,13 +128,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
-        private static async Task FailureRetryRequests(int totalRequests, int retryRequests, int extraRequests, AmazonS3Client client)
+        private static void FailureRetryRequests(int totalRequests, int retryRequests, int extraRequests, AmazonS3Client client)
         {
             for (int i = 0; i < totalRequests; i++)
             {
                 try
                 {
-                    var response = await client.ListObjectsAsync("CapacityManagerTests");
+                    var response = client.ListObjects("CapacityManagerTests");
                 }
                 catch (Exception)
                 {

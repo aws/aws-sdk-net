@@ -2595,6 +2595,16 @@ namespace Amazon.EKS
         public static readonly UpdateParamType DesiredSize = new UpdateParamType("DesiredSize");
 
         /// <summary>
+        /// Constant DisabledServices for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType DisabledServices = new UpdateParamType("DisabledServices");
+
+        /// <summary>
+        /// Constant EnableCrossNamespace for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType EnableCrossNamespace = new UpdateParamType("EnableCrossNamespace");
+
+        /// <summary>
         /// Constant EncryptionConfig for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType EncryptionConfig = new UpdateParamType("EncryptionConfig");

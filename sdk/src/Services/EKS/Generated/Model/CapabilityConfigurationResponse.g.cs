@@ -35,6 +35,21 @@ namespace Amazon.EKS.Model
     public partial class CapabilityConfigurationResponse
     {
         /// <summary>
+        /// Gets and sets the property Ack. 
+        /// <para>
+        /// Configuration settings for an ACK (Amazon Web Services Controllers for Kubernetes)
+        /// capability, including the cross-namespace reference setting and the list of disabled
+        /// services.
+        /// </para>
+        /// </summary>
+        public AckConfigResponse Ack { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Ack property is set.
+        /// </summary>
+        internal bool IsSetAck() => this.Ack != null;
+
+        /// <summary>
         /// Gets and sets the property ArgoCd. 
         /// <para>
         /// Configuration settings for an Argo CD capability, including the server URL and other

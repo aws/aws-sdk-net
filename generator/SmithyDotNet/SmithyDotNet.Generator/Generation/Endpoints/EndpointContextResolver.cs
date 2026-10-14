@@ -1,3 +1,4 @@
+using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Generation.Operations;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Traits;
@@ -66,7 +67,7 @@ public static class EndpointContextResolver
     /// Per-operation assignments, in operation order. Operations contributing nothing are omitted so the
     /// resolver emits no empty block for them.
     /// </summary>
-    public static List<OperationEndpointContext> ResolveOperations(IReadOnlyList<Operation> operations, ServiceIndex index)
+    public static List<OperationEndpointContext> ResolveOperations(IReadOnlyList<Operation> operations, ServiceIndex index, CustomizationsModel customizations)
     {
         var resolved = new List<OperationEndpointContext>();
 
@@ -86,7 +87,7 @@ public static class EndpointContextResolver
             {
                 foreach (var (name, parameter) in pathParams)
                 {
-                    var accessor = JmesPathCompiler.Compile(parameter.Path, operation.Input, index, $"Operation '{operation.Name}' endpoint parameter '{name}'");
+                    var accessor = JmesPathCompiler.Compile(parameter.Path, operation.Input, index, customizations, $"Operation '{operation.Name}' endpoint parameter '{name}'");
                     fromRequest.Add(new EndpointAssignment(name, $"request.{accessor}"));
                 }
             }
@@ -95,7 +96,7 @@ public static class EndpointContextResolver
             {
                 if (member.GetContextParam() is { } contextParam)
                 {
-                    fromRequest.Add(new EndpointAssignment(contextParam.Name, $"request.{SdkNaming.ToUpperFirstCharacter(memberName)}"));
+                    fromRequest.Add(new EndpointAssignment(contextParam.Name, $"request.{customizations.PropertyName(operation.Input.Id.Name, memberName)}"));
                 }
             }
 

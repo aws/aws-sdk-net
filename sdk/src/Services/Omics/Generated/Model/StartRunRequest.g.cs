@@ -329,8 +329,11 @@ namespace Amazon.Omics.Model
         internal bool IsSetScratchStorageMode() => this.ScratchStorageMode != null;
 
         /// <summary>
-        /// Gets and sets the property SessionPolicy. Optional inline policy json for scoping
-        /// down permissions via a session policy on the IAM role provided in the roleArn parameter.
+        /// Gets and sets the property SessionPolicy. 
+        /// <para>
+        /// Optional inline policy json for scoping down permissions via a session policy on the
+        /// IAM role provided in the roleArn parameter.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 2048)]
         public string SessionPolicy { get; set; }

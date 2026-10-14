@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
 {
@@ -59,86 +58,88 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateAgreementRequestRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MarketplaceAgreement");
-            string target = "AWSMPCommerceService_v20200301.CreateAgreementRequest";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/AWSMPCommerceService_v20200301/operation/CreateAgreementRequest";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-03-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetAgreementProposalIdentifier())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("agreementProposalIdentifier");
-                context.Writer.WriteStringValue(publicRequest.AgreementProposalIdentifier);
-            }
-
-            if(publicRequest.IsSetClientToken())
-            {
-                context.Writer.WritePropertyName("clientToken");
-                context.Writer.WriteStringValue(publicRequest.ClientToken);
-            }
-
-            else if(!(publicRequest.IsSetClientToken()))
-            {
-                context.Writer.WritePropertyName("clientToken");
-                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
-            }
-            if(publicRequest.IsSetIntent())
-            {
-                context.Writer.WritePropertyName("intent");
-                context.Writer.WriteStringValue(publicRequest.Intent);
-            }
-
-            if(publicRequest.IsSetRequestedTerms())
-            {
-                context.Writer.WritePropertyName("requestedTerms");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestRequestedTermsListValue in publicRequest.RequestedTerms)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAgreementProposalIdentifier())
                 {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = RequestedTermMarshaller.Instance;
-                    marshaller.Marshall(publicRequestRequestedTermsListValue, context);
-
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteTextString("agreementProposalIdentifier");
+                    context.Writer.WriteTextString(publicRequest.AgreementProposalIdentifier);
                 }
-                context.Writer.WriteEndArray();
-            }
+                if (publicRequest.IsSetClientToken())
+                {
+                    context.Writer.WriteTextString("clientToken");
+                    context.Writer.WriteTextString(publicRequest.ClientToken);
+                }
+                else if (!(publicRequest.IsSetClientToken()))
+                {
+                    context.Writer.WriteTextString("clientToken");
+                    context.Writer.WriteTextString(Guid.NewGuid().ToString());
+                }
+                if (publicRequest.IsSetIntent())
+                {
+                    context.Writer.WriteTextString("intent");
+                    context.Writer.WriteTextString(publicRequest.Intent);
+                }
+                if (publicRequest.IsSetRequestedTerms())
+                {
+                    context.Writer.WriteTextString("requestedTerms");
+                    context.Writer.WriteStartArray(publicRequest.RequestedTerms.Count);
+                    foreach(var publicRequestRequestedTermsListValue in publicRequest.RequestedTerms)
+                    {
+                        context.Writer.WriteStartMap(null);
 
-            if(publicRequest.IsSetSourceAgreementIdentifier())
-            {
-                context.Writer.WritePropertyName("sourceAgreementIdentifier");
-                context.Writer.WriteStringValue(publicRequest.SourceAgreementIdentifier);
-            }
+                        var marshaller = RequestedTermMarshaller.Instance;
+                        marshaller.Marshall(publicRequestRequestedTermsListValue, context);
 
-            if(publicRequest.IsSetTaxConfiguration())
-            {
-                context.Writer.WritePropertyName("taxConfiguration");
-                context.Writer.WriteStartObject();
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetSourceAgreementIdentifier())
+                {
+                    context.Writer.WriteTextString("sourceAgreementIdentifier");
+                    context.Writer.WriteTextString(publicRequest.SourceAgreementIdentifier);
+                }
+                if (publicRequest.IsSetTaxConfiguration())
+                {
+                    context.Writer.WriteTextString("taxConfiguration");
+                    context.Writer.WriteStartMap(null);
 
-                var marshaller = TaxConfigurationMarshaller.Instance;
-                marshaller.Marshall(publicRequest.TaxConfiguration, context);
+                    var marshaller = TaxConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TaxConfiguration, context);
 
-                context.Writer.WriteEndObject();
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
+                    context.Writer.WriteEndMap();
+                }
+                writer.WriteEndMap();
+#if !NETFRAMEWORK
+                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
+                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
+                // avoiding the default-size rent followed by a resize+return.
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
+                request.Content = writer.Encode();
 #endif
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
             
-
-
             return request;
         }
         private static CreateAgreementRequestRequestMarshaller _instance = new CreateAgreementRequestRequestMarshaller();        

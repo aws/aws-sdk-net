@@ -59,7 +59,7 @@ namespace Amazon.GameLift.Model
     /// on player attributes. A rule might specify minimum requirements for individual players,
     /// teams, or entire matches. For example, a rule might require each player to meet a
     /// certain skill level, each team to have at least one player in a certain role, or the
-    /// match to have a minimum average skill level. or may describe an entire group--such
+    /// match to have a minimum average skill level, or may describe an entire group--such
     /// as all teams must be evenly matched or have at least one player in a certain role.
     /// 
     /// </para>

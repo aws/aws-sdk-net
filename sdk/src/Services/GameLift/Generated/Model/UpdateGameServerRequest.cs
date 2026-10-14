@@ -49,7 +49,7 @@ namespace Amazon.GameLift.Model
     /// To update the game server's utilization status from <c>AVAILABLE</c> (when the game
     /// server is available to be claimed) to <c>UTILIZED</c> (when the game server is currently
     /// hosting games). Identify the game server and game server group and specify the new
-    /// utilization status. You can't change the status from to <c>UTILIZED</c> to <c>AVAILABLE</c>
+    /// utilization status. You can't change the status from <c>UTILIZED</c> to <c>AVAILABLE</c>
     /// .
     /// </para>
     ///  </li> <li> 
@@ -170,7 +170,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Indicates if the game server is available or is currently hosting gameplay. You can
         /// update a game server status from <c>AVAILABLE</c> to <c>UTILIZED</c>, but you can't
-        /// change a the status from <c>UTILIZED</c> to <c>AVAILABLE</c>.
+        /// change the status from <c>UTILIZED</c> to <c>AVAILABLE</c>.
         /// </para>
         /// </summary>
         public GameServerUtilizationStatus UtilizationStatus

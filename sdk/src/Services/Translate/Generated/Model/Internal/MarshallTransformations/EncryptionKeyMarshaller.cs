@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Translate.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EncryptionKey Marshaller
     /// </summary>
-    public class EncryptionKeyMarshaller : IRequestMarshaller<EncryptionKey, JsonMarshallerContext> 
+    public class EncryptionKeyMarshaller : IRequestMarshaller<EncryptionKey, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EncryptionKey requestObject, JsonMarshallerContext context)
+        public void Marshall(EncryptionKey requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetId())
-            {
-                context.Writer.WritePropertyName("Id");
-                context.Writer.WriteStringValue(requestObject.Id);
-            }
 
-            if(requestObject.IsSetType())
+            if (requestObject.IsSetId())
             {
-                context.Writer.WritePropertyName("Type");
-                context.Writer.WriteStringValue(requestObject.Type);
+                context.Writer.WriteTextString("Id");
+                context.Writer.WriteTextString(requestObject.Id);
             }
-
+            if (requestObject.IsSetType())
+            {
+                context.Writer.WriteTextString("Type");
+                context.Writer.WriteTextString(requestObject.Type);
+            }
         }
 
         /// <summary>

@@ -34,6 +34,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.RestJson
 {
@@ -49,7 +50,7 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestJson")]
-        public void RestJsonNoInputAndOutputRequest()
+        public async Task RestJsonNoInputAndOutputRequest()
         {
             // Arrange
             var request = new NoInputAndOutputRequest
@@ -57,17 +58,24 @@ namespace AWSSDK.ProtocolTests.RestJson
             };
             var config = new AmazonRestJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new NoInputAndOutputRequestMarshaller();
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.NoInputAndOutputAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/NoInputAndOutputOutput", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/NoInputAndOutputOutput", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
         }
 
         /// <summary>
@@ -78,26 +86,33 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestJson")]
-        public void RestJsonNoInputAndOutputWithJsonResponse()
+        public async Task RestJsonNoInputAndOutputWithJsonResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/json";
-            byte[] bytes = Encoding.ASCII.GetBytes("{}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonRestJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/json";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new NoInputAndOutputResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.NoInputAndOutputAsync(new NoInputAndOutputRequest()).ConfigureAwait(false);
             var expectedResponse = new NoInputAndOutputResponse
             {
             };
 
             // Assert
-            var actualResponse = (NoInputAndOutputResponse)unmarshalledResponse;
             Comparer.CompareObjects<NoInputAndOutputResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -109,25 +124,32 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestJson")]
-        public void RestJsonNoInputAndOutputNoPayloadResponse()
+        public async Task RestJsonNoInputAndOutputNoPayloadResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            byte[] bytes = Encoding.ASCII.GetBytes("");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonRestJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes(""),
+            };
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new NoInputAndOutputResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.NoInputAndOutputAsync(new NoInputAndOutputRequest()).ConfigureAwait(false);
             var expectedResponse = new NoInputAndOutputResponse
             {
             };
 
             // Assert
-            var actualResponse = (NoInputAndOutputResponse)unmarshalledResponse;
             Comparer.CompareObjects<NoInputAndOutputResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
     }

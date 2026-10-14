@@ -31,8 +31,8 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// An Amazon GameLift Servers compute resource for hosting your game servers. Computes
-    /// in an Amazon GameLift Servers fleet differs depending on the fleet's compute type
-    /// property as follows: 
+    /// in an Amazon GameLift Servers fleet differ depending on the fleet's compute type property
+    /// as follows: 
     /// 
     ///  <ul> <li> 
     /// <para>

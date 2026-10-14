@@ -45,6 +45,17 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetAck())
+            {
+                context.Writer.WritePropertyName("ack");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdateAckConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.Ack, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetArgoCd())
             {
                 context.Writer.WritePropertyName("argoCd");

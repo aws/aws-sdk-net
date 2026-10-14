@@ -7,20 +7,6 @@ namespace SmithyDotNet.Generator.Tests.Model;
 public class AWSTraitTests(CloudTrailModelFixture fixture)
 {
     [Fact]
-    public void IsRestJson1_ReturnsTrueForCloudTrailService()
-    {
-        var shape = fixture.DeserializeShape("com.amazonaws.cloudtraildata#CloudTrailDataService");
-        Assert.True(shape.IsRestJson1());
-    }
-
-    [Fact]
-    public void IsRestJson1_ReturnsFalseForNonServiceShape()
-    {
-        var shape = fixture.DeserializeShape("com.amazonaws.cloudtraildata#AuditEvent");
-        Assert.False(shape.IsRestJson1());
-    }
-
-    [Fact]
     public void GetAWSService_ReturnsSdkIdAndEndpointPrefix()
     {
         var shape = fixture.DeserializeShape("com.amazonaws.cloudtraildata#CloudTrailDataService");

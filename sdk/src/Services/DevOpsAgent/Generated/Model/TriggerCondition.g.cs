@@ -30,14 +30,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsAgent.Model
 {
     /// <summary>
-    /// Defines the firing condition for a Trigger
+    /// Defines how a Trigger fires.
     /// </summary>
     public partial class TriggerCondition
     {
         /// <summary>
         /// Gets and sets the property Schedule. 
         /// <para>
-        /// Time-based firing condition
+        /// Schedule-based firing condition. On CreateTrigger supply exactly one of the schedule
+        /// condition's expression or spec.
         /// </para>
         /// </summary>
         public ScheduleCondition Schedule { get; set; }

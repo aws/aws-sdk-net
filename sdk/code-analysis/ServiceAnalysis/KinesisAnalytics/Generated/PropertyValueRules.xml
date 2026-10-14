@@ -4,7 +4,7 @@
     <property>Amazon.KinesisAnalytics.Model.AddApplicationCloudWatchLoggingOptionRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.AddApplicationCloudWatchLoggingOptionRequest.CurrentApplicationVersionId</property>
@@ -15,7 +15,7 @@
     <property>Amazon.KinesisAnalytics.Model.AddApplicationInputRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.AddApplicationInputRequest.CurrentApplicationVersionId</property>
@@ -26,7 +26,7 @@
     <property>Amazon.KinesisAnalytics.Model.AddApplicationInputProcessingConfigurationRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.AddApplicationInputProcessingConfigurationRequest.CurrentApplicationVersionId</property>
@@ -37,13 +37,13 @@
     <property>Amazon.KinesisAnalytics.Model.AddApplicationInputProcessingConfigurationRequest.InputId</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.AddApplicationOutputRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.AddApplicationOutputRequest.CurrentApplicationVersionId</property>
@@ -54,7 +54,7 @@
     <property>Amazon.KinesisAnalytics.Model.AddApplicationReferenceDataSourceRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.AddApplicationReferenceDataSourceRequest.CurrentApplicationVersionId</property>
@@ -75,25 +75,25 @@
     <property>Amazon.KinesisAnalytics.Model.CreateApplicationRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.DeleteApplicationRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.DeleteApplicationCloudWatchLoggingOptionRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.DeleteApplicationCloudWatchLoggingOptionRequest.CloudWatchLoggingOptionId</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.DeleteApplicationCloudWatchLoggingOptionRequest.CurrentApplicationVersionId</property>
@@ -104,7 +104,7 @@
     <property>Amazon.KinesisAnalytics.Model.DeleteApplicationInputProcessingConfigurationRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.DeleteApplicationInputProcessingConfigurationRequest.CurrentApplicationVersionId</property>
@@ -115,13 +115,13 @@
     <property>Amazon.KinesisAnalytics.Model.DeleteApplicationInputProcessingConfigurationRequest.InputId</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.DeleteApplicationOutputRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.DeleteApplicationOutputRequest.CurrentApplicationVersionId</property>
@@ -132,13 +132,13 @@
     <property>Amazon.KinesisAnalytics.Model.DeleteApplicationOutputRequest.OutputId</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.DeleteApplicationReferenceDataSourceRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.DeleteApplicationReferenceDataSourceRequest.CurrentApplicationVersionId</property>
@@ -149,31 +149,31 @@
     <property>Amazon.KinesisAnalytics.Model.DeleteApplicationReferenceDataSourceRequest.ReferenceId</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.DescribeApplicationRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.DiscoverInputSchemaRequest.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.DiscoverInputSchemaRequest.RoleARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.ListApplicationsRequest.ExclusiveStartApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.ListApplicationsRequest.Limit</property>
@@ -189,13 +189,13 @@
     <property>Amazon.KinesisAnalytics.Model.StartApplicationRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.StopApplicationRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.TagResourceRequest.ResourceARN</property>
@@ -211,7 +211,7 @@
     <property>Amazon.KinesisAnalytics.Model.UpdateApplicationRequest.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.UpdateApplicationRequest.CurrentApplicationVersionId</property>
@@ -222,7 +222,7 @@
     <property>Amazon.KinesisAnalytics.Model.ApplicationDetail.ApplicationARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.ApplicationDetail.ApplicationCode</property>
@@ -238,7 +238,7 @@
     <property>Amazon.KinesisAnalytics.Model.ApplicationDetail.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.ApplicationDetail.ApplicationVersionId</property>
@@ -249,66 +249,18 @@
     <property>Amazon.KinesisAnalytics.Model.ApplicationSummary.ApplicationARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.ApplicationSummary.ApplicationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.ApplicationUpdate.ApplicationCodeUpdate</property>
     <min>0</min>
     <max>102400</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.KinesisAnalytics.Model.CloudWatchLoggingOption.LogStreamARN</property>
-    <min>1</min>
-    <max>2048</max>
-    <pattern>arn:.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.KinesisAnalytics.Model.CloudWatchLoggingOption.RoleARN</property>
-    <min>1</min>
-    <max>2048</max>
-    <pattern>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.KinesisAnalytics.Model.CloudWatchLoggingOptionDescription.CloudWatchLoggingOptionId</property>
-    <min>1</min>
-    <max>50</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.KinesisAnalytics.Model.CloudWatchLoggingOptionDescription.LogStreamARN</property>
-    <min>1</min>
-    <max>2048</max>
-    <pattern>arn:.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.KinesisAnalytics.Model.CloudWatchLoggingOptionDescription.RoleARN</property>
-    <min>1</min>
-    <max>2048</max>
-    <pattern>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.KinesisAnalytics.Model.CloudWatchLoggingOptionUpdate.CloudWatchLoggingOptionId</property>
-    <min>1</min>
-    <max>50</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.KinesisAnalytics.Model.CloudWatchLoggingOptionUpdate.LogStreamARNUpdate</property>
-    <min>1</min>
-    <max>2048</max>
-    <pattern>arn:.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.KinesisAnalytics.Model.CloudWatchLoggingOptionUpdate.RoleARNUpdate</property>
-    <min>1</min>
-    <max>2048</max>
-    <pattern>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.CSVMappingParameters.RecordColumnDelimiter</property>
@@ -319,6 +271,54 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KinesisAnalytics.Model.CloudWatchLoggingOption.LogStreamARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalytics.Model.CloudWatchLoggingOption.RoleARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalytics.Model.CloudWatchLoggingOptionDescription.CloudWatchLoggingOptionId</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalytics.Model.CloudWatchLoggingOptionDescription.LogStreamARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalytics.Model.CloudWatchLoggingOptionDescription.RoleARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalytics.Model.CloudWatchLoggingOptionUpdate.CloudWatchLoggingOptionId</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalytics.Model.CloudWatchLoggingOptionUpdate.LogStreamARNUpdate</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalytics.Model.CloudWatchLoggingOptionUpdate.RoleARNUpdate</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.Input.NamePrefix</property>
     <min>1</min>
     <max>32</max>
@@ -327,13 +327,13 @@
     <property>Amazon.KinesisAnalytics.Model.InputConfiguration.Id</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.InputDescription.InputId</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.InputDescription.NamePrefix</property>
@@ -344,37 +344,37 @@
     <property>Amazon.KinesisAnalytics.Model.InputLambdaProcessor.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.InputLambdaProcessor.RoleARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.InputLambdaProcessorDescription.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.InputLambdaProcessorDescription.RoleARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.InputLambdaProcessorUpdate.ResourceARNUpdate</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.InputLambdaProcessorUpdate.RoleARNUpdate</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.InputParallelism.Count</property>
@@ -388,13 +388,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.InputSchemaUpdate.RecordEncodingUpdate</property>
-    <pattern>UTF-8</pattern>
+    <pattern>^UTF-8$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.InputUpdate.InputId</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.InputUpdate.NamePrefixUpdate</property>
@@ -409,181 +409,181 @@
     <property>Amazon.KinesisAnalytics.Model.KinesisFirehoseInput.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.KinesisFirehoseInput.RoleARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.KinesisFirehoseInputDescription.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.KinesisFirehoseInputDescription.RoleARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.KinesisFirehoseInputUpdate.ResourceARNUpdate</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.KinesisFirehoseInputUpdate.RoleARNUpdate</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.KinesisFirehoseOutput.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.KinesisFirehoseOutput.RoleARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.KinesisFirehoseOutputDescription.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.KinesisFirehoseOutputDescription.RoleARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.KinesisFirehoseOutputUpdate.ResourceARNUpdate</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.KinesisFirehoseOutputUpdate.RoleARNUpdate</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.KinesisStreamsInput.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.KinesisStreamsInput.RoleARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.KinesisStreamsInputDescription.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.KinesisStreamsInputDescription.RoleARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.KinesisStreamsInputUpdate.ResourceARNUpdate</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.KinesisStreamsInputUpdate.RoleARNUpdate</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.KinesisStreamsOutput.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.KinesisStreamsOutput.RoleARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.KinesisStreamsOutputDescription.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.KinesisStreamsOutputDescription.RoleARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.KinesisStreamsOutputUpdate.ResourceARNUpdate</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.KinesisStreamsOutputUpdate.RoleARNUpdate</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.LambdaOutput.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.LambdaOutput.RoleARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.LambdaOutputDescription.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.LambdaOutputDescription.RoleARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.LambdaOutputUpdate.ResourceARNUpdate</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.LambdaOutputUpdate.RoleARNUpdate</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.Output.Name</property>
@@ -599,7 +599,7 @@
     <property>Amazon.KinesisAnalytics.Model.OutputDescription.OutputId</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.OutputUpdate.NameUpdate</property>
@@ -610,7 +610,7 @@
     <property>Amazon.KinesisAnalytics.Model.OutputUpdate.OutputId</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.RecordColumn.SqlType</property>
@@ -625,7 +625,7 @@
     <property>Amazon.KinesisAnalytics.Model.ReferenceDataSourceDescription.ReferenceId</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.ReferenceDataSourceDescription.TableName</property>
@@ -636,7 +636,7 @@
     <property>Amazon.KinesisAnalytics.Model.ReferenceDataSourceUpdate.ReferenceId</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.ReferenceDataSourceUpdate.TableNameUpdate</property>
@@ -647,7 +647,7 @@
     <property>Amazon.KinesisAnalytics.Model.S3Configuration.BucketARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.S3Configuration.FileKey</property>
@@ -658,13 +658,13 @@
     <property>Amazon.KinesisAnalytics.Model.S3Configuration.RoleARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.S3ReferenceDataSource.BucketARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.S3ReferenceDataSource.FileKey</property>
@@ -675,13 +675,13 @@
     <property>Amazon.KinesisAnalytics.Model.S3ReferenceDataSource.ReferenceRoleARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.S3ReferenceDataSourceDescription.BucketARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.S3ReferenceDataSourceDescription.FileKey</property>
@@ -692,13 +692,13 @@
     <property>Amazon.KinesisAnalytics.Model.S3ReferenceDataSourceDescription.ReferenceRoleARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.S3ReferenceDataSourceUpdate.BucketARNUpdate</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.S3ReferenceDataSourceUpdate.FileKeyUpdate</property>
@@ -709,11 +709,11 @@
     <property>Amazon.KinesisAnalytics.Model.S3ReferenceDataSourceUpdate.ReferenceRoleARNUpdate</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.SourceSchema.RecordEncoding</property>
-    <pattern>UTF-8</pattern>
+    <pattern>^UTF-8$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.Tag.Key</property>

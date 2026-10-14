@@ -1,0 +1,43 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Organizations.Model
+{
+    /// <summary>
+    /// Container for the parameters to the DeleteOrganization operation. Deletes the organization.
+    /// You can delete an organization only by using credentials from the management account.
+    /// The organization must be empty of member accounts. <para> When an organization is
+    /// deleted, Organizations logs a membership event in CloudTrail. The event is an <c>AccountDepartedOrganization</c>
+    /// event with <c>departureMethod:LEFT</c> and <c>departureTime</c>. This event is available
+    /// only in the management account's event history. </para>
+    /// </summary>
+    public partial class DeleteOrganizationRequest : AmazonOrganizationsRequest
+    {
+    }
+}

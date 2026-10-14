@@ -1,0 +1,95 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.MWAAServerless.Model
+{
+    /// <summary>
+    /// Container for the parameters to the ListWorkflowRuns operation. Lists all runs for
+    /// a specified workflow, with optional pagination and filtering support.
+    /// </summary>
+    public partial class ListWorkflowRunsRequest : AmazonMWAAServerlessRequest
+    {
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of workflow runs to return in a single response.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 100)]
+        public int? MaxResults { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MaxResults property is set.
+        /// </summary>
+        internal bool IsSetMaxResults() => this.MaxResults.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The pagination token you need to use to retrieve the next set of results. This value
+        /// is returned from a previous call to <c>ListWorkflowRuns</c>.
+        /// </para>
+        /// </summary>
+        public string NextToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NextToken property is set.
+        /// </summary>
+        internal bool IsSetNextToken() => this.NextToken != null;
+
+        /// <summary>
+        /// Gets and sets the property WorkflowArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the workflow for which you want a list of runs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 2048)]
+        public string WorkflowArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the WorkflowArn property is set.
+        /// </summary>
+        internal bool IsSetWorkflowArn() => this.WorkflowArn != null;
+
+        /// <summary>
+        /// Gets and sets the property WorkflowVersion. 
+        /// <para>
+        /// Optional. The specific version of the workflow for which you want a list of runs.
+        /// If not specified, runs for all versions are returned.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2048)]
+        public string WorkflowVersion { get; set; }
+
+        /// <summary>
+        /// Checks to see if the WorkflowVersion property is set.
+        /// </summary>
+        internal bool IsSetWorkflowVersion() => this.WorkflowVersion != null;
+    }
+}

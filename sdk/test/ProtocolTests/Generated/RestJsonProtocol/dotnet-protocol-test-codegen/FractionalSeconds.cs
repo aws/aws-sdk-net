@@ -34,6 +34,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.RestJson
 {
@@ -48,26 +49,33 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestJson")]
-        public void RestJsonDateTimeWithFractionalSecondsResponse()
+        public async Task RestJsonDateTimeWithFractionalSecondsResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            byte[] bytes = Encoding.ASCII.GetBytes("      {\n          \"datetime\": \"2000-01-02T20:34:56.123Z\"\n      }\n");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonRestJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("      {\n          \"datetime\": \"2000-01-02T20:34:56.123Z\"\n      }\n"),
+            };
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new FractionalSecondsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.FractionalSecondsAsync(new FractionalSecondsRequest()).ConfigureAwait(false);
             var expectedResponse = new FractionalSecondsResponse
             {
                 Datetime = ProtocolTestConstants.epoch.AddSeconds(9.46845296123E8),
             };
 
             // Assert
-            var actualResponse = (FractionalSecondsResponse)unmarshalledResponse;
             Comparer.CompareObjects<FractionalSecondsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
     }

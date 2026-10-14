@@ -13,31 +13,23 @@
  * permissions and limitations under the License.
  */
 
-using System.Formats.Cbor;
 using Amazon.Extensions.CborProtocol.Internal.Transform;
 using Amazon.RpcCborDataPlane.Model;
 using Amazon.RpcCborDataPlane.Model.Internal.MarshallTransformations;
 using Amazon.Runtime.Internal.Transform;
 using BenchmarkDotNet.Attributes;
-using AV = Amazon.RpcCborDataPlane.Model.AttributeValue;
+using Fixtures = AWSSDK.Benchmarks.Serde.ModelFixtures.RpcV2Cbor;
 
 namespace AWSSDK.Benchmarks.Serde;
 
 /// <summary>
 /// BenchmarkDotNet benchmarks for Smithy RPC V2 CBOR protocol serialization/deserialization.
-/// 19 test cases covering GetItem responses and PutItem requests with various payload sizes.
+/// 19 test cases covering GetItem responses and PutItem requests, with payloads from the shared benchmark models.
 /// </summary>
 [MemoryDiagnoser]
 [Config(typeof(SerdeBenchmarkConfig))]
 public class RpcV2CborBenchmarks
 {
-    static AV S(string val) => new AV { S = val };
-    static AV N(double val) => new AV { N = val.ToString() };
-    static AV BOOL(bool val) => new AV { BOOL = val };
-    static AV L(List<AV> val) => new AV { L = val };
-    static AV M(Dictionary<string, AV> val) => new AV { M = val };
-    static AV B(MemoryStream val) => new AV { B = val };
-
     private byte[] _getItemBaselineBytes = null!;
     private byte[] _getItemSBytes = null!;
     private byte[] _getItemMBytes = null!;
@@ -61,55 +53,25 @@ public class RpcV2CborBenchmarks
     [GlobalSetup]
     public void Setup()
     {
-        _getItemBaselineBytes = BuildCborGetItemResponse(0);
-        _getItemSBytes = BuildCborGetItemResponse(5);
-        _getItemMBytes = BuildCborGetItemResponse(20);
-        _getItemLBytes = BuildCborGetItemResponse(50);
-        _getItemBinarySBytes = BuildCborGetItemBinaryResponse(TestDataHelpers.SmallBinarySize);
-        _getItemBinaryMBytes = BuildCborGetItemBinaryResponse(TestDataHelpers.MediumBinarySize);
-        _getItemBinaryLBytes = BuildCborGetItemBinaryResponse(TestDataHelpers.LargeBinarySize);
-        _putItemBaseline = new PutItemRequest { TableName = "TestTable", Item = TestDataHelpers.CreateBaselineItem<AV>(S) };
-        _putItemBinaryS = new PutItemRequest { TableName = "TestTable", Item = TestDataHelpers.CreateBinaryItem<AV>(S, B, TestDataHelpers.SmallBinarySize) };
-        _putItemBinaryM = new PutItemRequest { TableName = "TestTable", Item = TestDataHelpers.CreateBinaryItem<AV>(S, B, TestDataHelpers.MediumBinarySize) };
-        _putItemBinaryL = new PutItemRequest { TableName = "TestTable", Item = TestDataHelpers.CreateBinaryItem<AV>(S, B, TestDataHelpers.LargeBinarySize) };
-        _putItemMixedS = new PutItemRequest { TableName = "TestTable", Item = TestDataHelpers.CreateSmallItem<AV>(S, N, BOOL) };
-        _putItemMixedM = new PutItemRequest { TableName = "TestTable", Item = TestDataHelpers.CreateMediumItem<AV>(S, N, BOOL, L, M) };
-        _putItemMixedL = new PutItemRequest { TableName = "TestTable", Item = TestDataHelpers.CreateLargeItem<AV>(S, N, BOOL, L, M) };
-        _putItemNestedM = new PutItemRequest { TableName = "TestTable", Item = TestDataHelpers.CreateNestedItem<AV>(S, M, TestDataHelpers.MediumNestingDepth) };
-        _putItemNestedL = new PutItemRequest { TableName = "TestTable", Item = TestDataHelpers.CreateNestedItem<AV>(S, M, TestDataHelpers.LargeNestingDepth) };
-        _putItemShallowS = new PutItemRequest { TableName = "TestTable", Item = TestDataHelpers.CreateShallowMapItem<AV>(S, TestDataHelpers.SmallShallowMapKeys) };
-        _putItemShallowM = new PutItemRequest { TableName = "TestTable", Item = TestDataHelpers.CreateShallowMapItem<AV>(S, TestDataHelpers.MediumShallowMapKeys) };
-        _putItemShallowL = new PutItemRequest { TableName = "TestTable", Item = TestDataHelpers.CreateShallowMapItem<AV>(S, TestDataHelpers.LargeShallowMapKeys) };
-    }
-
-    private static byte[] BuildCborGetItemResponse(int attributeCount)
-    {
-        var writer = new CborWriter();
-        writer.WriteStartMap(attributeCount > 0 ? 1 : 0);
-        if (attributeCount > 0)
-        {
-            writer.WriteTextString("Item");
-            writer.WriteStartMap(attributeCount);
-            for (int i = 0; i < attributeCount; i++)
-            {
-                writer.WriteTextString($"attr_{i}");
-                writer.WriteStartMap(1); writer.WriteTextString("S"); writer.WriteTextString($"value-{i}-{new string('x', 20)}"); writer.WriteEndMap();
-            }
-            writer.WriteEndMap();
-        }
-        writer.WriteEndMap();
-        return writer.Encode();
-    }
-
-    private static byte[] BuildCborGetItemBinaryResponse(int binarySize)
-    {
-        var data = new byte[binarySize]; Random.Shared.NextBytes(data);
-        var writer = new CborWriter();
-        writer.WriteStartMap(1); writer.WriteTextString("Item"); writer.WriteStartMap(2);
-        writer.WriteTextString("pk"); writer.WriteStartMap(1); writer.WriteTextString("S"); writer.WriteTextString("binary-item"); writer.WriteEndMap();
-        writer.WriteTextString("data"); writer.WriteStartMap(1); writer.WriteTextString("B"); writer.WriteByteString(data); writer.WriteEndMap();
-        writer.WriteEndMap(); writer.WriteEndMap();
-        return writer.Encode();
+        _getItemBaselineBytes = Fixtures.GetItemOutput_Baseline;
+        _getItemSBytes = Fixtures.GetItemOutput_S;
+        _getItemMBytes = Fixtures.GetItemOutput_M;
+        _getItemLBytes = Fixtures.GetItemOutput_L;
+        _getItemBinarySBytes = Fixtures.GetItemOutputBinary_S;
+        _getItemBinaryMBytes = Fixtures.GetItemOutputBinary_M;
+        _getItemBinaryLBytes = Fixtures.GetItemOutputBinary_L;
+        _putItemBaseline = Fixtures.PutItemRequest_Baseline();
+        _putItemBinaryS = Fixtures.PutItemRequest_BinaryData_S();
+        _putItemBinaryM = Fixtures.PutItemRequest_BinaryData_M();
+        _putItemBinaryL = Fixtures.PutItemRequest_BinaryData_L();
+        _putItemMixedS = Fixtures.PutItemRequest_MixedItem_S();
+        _putItemMixedM = Fixtures.PutItemRequest_MixedItem_M();
+        _putItemMixedL = Fixtures.PutItemRequest_MixedItem_L();
+        _putItemNestedM = Fixtures.PutItemRequest_Nested_M();
+        _putItemNestedL = Fixtures.PutItemRequest_Nested_L();
+        _putItemShallowS = Fixtures.PutItemRequest_ShallowMap_S();
+        _putItemShallowM = Fixtures.PutItemRequest_ShallowMap_M();
+        _putItemShallowL = Fixtures.PutItemRequest_ShallowMap_L();
     }
 
     private void UnmarshallCbor(byte[] bytes)

@@ -74,6 +74,13 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("releaseManagementAssociationId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReleaseManagementAssociationId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("repoId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

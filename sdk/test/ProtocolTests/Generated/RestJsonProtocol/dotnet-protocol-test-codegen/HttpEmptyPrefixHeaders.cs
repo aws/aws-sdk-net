@@ -34,6 +34,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.RestJson
 {
@@ -47,7 +48,7 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestJson")]
-        public void RestJsonHttpEmptyPrefixHeadersRequestClientRequest()
+        public async Task RestJsonHttpEmptyPrefixHeadersRequestClientRequest()
         {
             // Arrange
             var request = new HttpEmptyPrefixHeadersRequest
@@ -62,19 +63,26 @@ namespace AWSSDK.ProtocolTests.RestJson
             };
             var config = new AmazonRestJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new HttpEmptyPrefixHeadersRequestMarshaller();
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.HttpEmptyPrefixHeadersAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            Assert.AreEqual("GET", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/HttpEmptyPrefixHeaders", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("There".Replace(" ",""), marshalledRequest.Headers["hello"].Replace(" ",""));
-            Assert.AreEqual("Foo".Replace(" ",""), marshalledRequest.Headers["x-foo"].Replace(" ",""));
+            Assert.AreEqual("GET", actualRequest.Method);
+            Assert.AreEqual("/HttpEmptyPrefixHeaders", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("There".Replace(" ",""), actualRequest.Headers["hello"].Replace(" ",""));
+            Assert.AreEqual("Foo".Replace(" ",""), actualRequest.Headers["x-foo"].Replace(" ",""));
         }
 
         /// <summary>
@@ -85,19 +93,27 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestJson")]
-        public void RestJsonHttpEmptyPrefixHeadersResponseClientResponse()
+        public async Task RestJsonHttpEmptyPrefixHeadersResponseClientResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["hello"] = "There";
-            webResponseData.Headers["x-foo"] = "Foo";
-            byte[] bytes = Encoding.ASCII.GetBytes("");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonRestJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes(""),
+            };
+            mockResponse.Headers["hello"] = "There";
+            mockResponse.Headers["x-foo"] = "Foo";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new HttpEmptyPrefixHeadersResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.HttpEmptyPrefixHeadersAsync(new HttpEmptyPrefixHeadersRequest()).ConfigureAwait(false);
             var expectedResponse = new HttpEmptyPrefixHeadersResponse
             {
                 PrefixHeaders = new Dictionary<string, string>()
@@ -110,9 +126,8 @@ namespace AWSSDK.ProtocolTests.RestJson
             };
 
             // Assert
-            var actualResponse = (HttpEmptyPrefixHeadersResponse)unmarshalledResponse;
             Comparer.CompareObjects<HttpEmptyPrefixHeadersResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
     }

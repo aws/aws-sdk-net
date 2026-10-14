@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,13 +14,13 @@ namespace AWSSDKDocSamples.Amazon.Mgn.Generated
     {
         public void MgnCreateNetworkMigrationDefinition()
         {
-            #region example-1
+            #region CreateNetworkMigrationDefinition-1
 
             var client = new AmazonMgnClient();
-            var response = client.CreateNetworkMigrationDefinition(new CreateNetworkMigrationDefinitionRequest 
+            var response = client.CreateNetworkMigrationDefinition(new CreateNetworkMigrationDefinitionRequest
             {
-                Name = "network1",
                 Description = "network 1 description",
+                Name = "network1",
                 SourceConfigurations = new List<SourceConfiguration> {
                     new SourceConfiguration {
                         SourceEnvironment = "NSX",
@@ -41,25 +42,25 @@ namespace AWSSDKDocSamples.Amazon.Mgn.Generated
                 }
             });
 
-            string name = response.Name;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string description = response.Description;
+            string name = response.Name;
             string networkMigrationDefinitionID = response.NetworkMigrationDefinitionID;
             List<SourceConfiguration> sourceConfigurations = response.SourceConfigurations;
             Dictionary<string, string> tags = response.Tags;
             TargetNetwork targetNetwork = response.TargetNetwork;
             TargetS3Configuration targets3Configuration = response.TargetS3Configuration;
-            DateTime updatedAt = response.UpdatedAt;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void MgnDeleteNetworkMigrationDefinition()
         {
-            #region example-1
+            #region DeleteNetworkMigrationDefinition-1
 
             var client = new AmazonMgnClient();
-            var response = client.DeleteNetworkMigrationDefinition(new DeleteNetworkMigrationDefinitionRequest 
+            var response = client.DeleteNetworkMigrationDefinition(new DeleteNetworkMigrationDefinitionRequest
             {
                 NetworkMigrationDefinitionID = "nmd-01234567891234567"
             });
@@ -70,33 +71,33 @@ namespace AWSSDKDocSamples.Amazon.Mgn.Generated
 
         public void MgnGetNetworkMigrationDefinition()
         {
-            #region example-1
+            #region GetNetworkMigrationDefinition-1
 
             var client = new AmazonMgnClient();
-            var response = client.GetNetworkMigrationDefinition(new GetNetworkMigrationDefinitionRequest 
+            var response = client.GetNetworkMigrationDefinition(new GetNetworkMigrationDefinitionRequest
             {
                 NetworkMigrationDefinitionID = "nmd-01234567891234567"
             });
 
-            string name = response.Name;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string description = response.Description;
+            string name = response.Name;
             string networkMigrationDefinitionID = response.NetworkMigrationDefinitionID;
             List<SourceConfiguration> sourceConfigurations = response.SourceConfigurations;
             Dictionary<string, string> tags = response.Tags;
             TargetNetwork targetNetwork = response.TargetNetwork;
             TargetS3Configuration targets3Configuration = response.TargetS3Configuration;
-            DateTime updatedAt = response.UpdatedAt;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void MgnGetNetworkMigrationMapperSegmentConstruct()
         {
-            #region example-1
+            #region GetNetworkMigrationMapperSegmentConstruct-1
 
             var client = new AmazonMgnClient();
-            var response = client.GetNetworkMigrationMapperSegmentConstruct(new GetNetworkMigrationMapperSegmentConstructRequest 
+            var response = client.GetNetworkMigrationMapperSegmentConstruct(new GetNetworkMigrationMapperSegmentConstructRequest
             {
                 ConstructID = "abc45678-abcd-abcd-efab-012345678abc",
                 NetworkMigrationDefinitionID = "nmd-01234567891234567",
@@ -111,10 +112,10 @@ namespace AWSSDKDocSamples.Amazon.Mgn.Generated
 
         public void MgnListImportFileEnrichments()
         {
-            #region example-1
+            #region ListImportFileEnrichments-1
 
             var client = new AmazonMgnClient();
-            var response = client.ListImportFileEnrichments(new ListImportFileEnrichmentsRequest 
+            var response = client.ListImportFileEnrichments(new ListImportFileEnrichmentsRequest
             {
                 Filters = new ListImportFileEnrichmentsFilters { JobIDs = new List<string> {
                     "01234567-abcd-abcd-efab-0123456789ab"
@@ -130,10 +131,10 @@ namespace AWSSDKDocSamples.Amazon.Mgn.Generated
 
         public void MgnListNetworkMigrationAnalyses()
         {
-            #region example-1
+            #region ListNetworkMigrationAnalyses-1
 
             var client = new AmazonMgnClient();
-            var response = client.ListNetworkMigrationAnalyses(new ListNetworkMigrationAnalysesRequest 
+            var response = client.ListNetworkMigrationAnalyses(new ListNetworkMigrationAnalysesRequest
             {
                 NetworkMigrationDefinitionID = "nmd-01234567891234567",
                 NetworkMigrationExecutionID = "01234567-abcd-abcd-abcd-0123456789ab"
@@ -147,10 +148,10 @@ namespace AWSSDKDocSamples.Amazon.Mgn.Generated
 
         public void MgnListNetworkMigrationAnalysisResults()
         {
-            #region example-1
+            #region ListNetworkMigrationAnalysisResults-1
 
             var client = new AmazonMgnClient();
-            var response = client.ListNetworkMigrationAnalysisResults(new ListNetworkMigrationAnalysisResultsRequest 
+            var response = client.ListNetworkMigrationAnalysisResults(new ListNetworkMigrationAnalysisResultsRequest
             {
                 NetworkMigrationDefinitionID = "nmd-01234567891234567",
                 NetworkMigrationExecutionID = "01234567-abcd-abcd-abcd-0123456789ab"
@@ -164,10 +165,10 @@ namespace AWSSDKDocSamples.Amazon.Mgn.Generated
 
         public void MgnListNetworkMigrationCodeGenerations()
         {
-            #region example-1
+            #region ListNetworkMigrationCodeGenerations-1
 
             var client = new AmazonMgnClient();
-            var response = client.ListNetworkMigrationCodeGenerations(new ListNetworkMigrationCodeGenerationsRequest 
+            var response = client.ListNetworkMigrationCodeGenerations(new ListNetworkMigrationCodeGenerationsRequest
             {
                 NetworkMigrationDefinitionID = "nmd-01234567891234567",
                 NetworkMigrationExecutionID = "01234567-abcd-abcd-abcd-0123456789ab"
@@ -181,10 +182,10 @@ namespace AWSSDKDocSamples.Amazon.Mgn.Generated
 
         public void MgnListNetworkMigrationCodeGenerationSegments()
         {
-            #region example-1
+            #region ListNetworkMigrationCodeGenerationSegments-1
 
             var client = new AmazonMgnClient();
-            var response = client.ListNetworkMigrationCodeGenerationSegments(new ListNetworkMigrationCodeGenerationSegmentsRequest 
+            var response = client.ListNetworkMigrationCodeGenerationSegments(new ListNetworkMigrationCodeGenerationSegmentsRequest
             {
                 NetworkMigrationDefinitionID = "nmd-01234567891234567",
                 NetworkMigrationExecutionID = "01234567-abcd-abcd-abcd-0123456789ab"
@@ -198,10 +199,10 @@ namespace AWSSDKDocSamples.Amazon.Mgn.Generated
 
         public void MgnListNetworkMigrationDefinitions()
         {
-            #region example-1
+            #region ListNetworkMigrationDefinitions-1
 
             var client = new AmazonMgnClient();
-            var response = client.ListNetworkMigrationDefinitions(new ListNetworkMigrationDefinitionsRequest 
+            var response = client.ListNetworkMigrationDefinitions(new ListNetworkMigrationDefinitionsRequest
             {
                 Filters = new ListNetworkMigrationDefinitionsRequestFilters { NetworkMigrationDefinitionIDs = new List<string> {
                     "nmd-01234567891234567"
@@ -216,10 +217,10 @@ namespace AWSSDKDocSamples.Amazon.Mgn.Generated
 
         public void MgnListNetworkMigrationDeployedStacks()
         {
-            #region example-1
+            #region ListNetworkMigrationDeployedStacks-1
 
             var client = new AmazonMgnClient();
-            var response = client.ListNetworkMigrationDeployedStacks(new ListNetworkMigrationDeployedStacksRequest 
+            var response = client.ListNetworkMigrationDeployedStacks(new ListNetworkMigrationDeployedStacksRequest
             {
                 NetworkMigrationDefinitionID = "nmd-01234567891234567",
                 NetworkMigrationExecutionID = "01234567-abcd-abcd-abcd-0123456789ab"
@@ -233,10 +234,10 @@ namespace AWSSDKDocSamples.Amazon.Mgn.Generated
 
         public void MgnListNetworkMigrationDeployments()
         {
-            #region example-1
+            #region ListNetworkMigrationDeployments-1
 
             var client = new AmazonMgnClient();
-            var response = client.ListNetworkMigrationDeployments(new ListNetworkMigrationDeploymentsRequest 
+            var response = client.ListNetworkMigrationDeployments(new ListNetworkMigrationDeploymentsRequest
             {
                 NetworkMigrationDefinitionID = "nmd-01234567891234567",
                 NetworkMigrationExecutionID = "01234567-abcd-abcd-abcd-0123456789ab"
@@ -250,10 +251,10 @@ namespace AWSSDKDocSamples.Amazon.Mgn.Generated
 
         public void MgnListNetworkMigrationExecutions()
         {
-            #region example-1
+            #region ListNetworkMigrationExecutions-1
 
             var client = new AmazonMgnClient();
-            var response = client.ListNetworkMigrationExecutions(new ListNetworkMigrationExecutionsRequest 
+            var response = client.ListNetworkMigrationExecutions(new ListNetworkMigrationExecutionsRequest
             {
                 NetworkMigrationDefinitionID = "nmd-01234567891234567"
             });
@@ -266,10 +267,10 @@ namespace AWSSDKDocSamples.Amazon.Mgn.Generated
 
         public void MgnListNetworkMigrationMapperSegmentConstructs()
         {
-            #region example-1
+            #region ListNetworkMigrationMapperSegmentConstructs-1
 
             var client = new AmazonMgnClient();
-            var response = client.ListNetworkMigrationMapperSegmentConstructs(new ListNetworkMigrationMapperSegmentConstructsRequest 
+            var response = client.ListNetworkMigrationMapperSegmentConstructs(new ListNetworkMigrationMapperSegmentConstructsRequest
             {
                 NetworkMigrationDefinitionID = "nmd-01234567891234567",
                 NetworkMigrationExecutionID = "01234567-abcd-abcd-abcd-0123456789ab",
@@ -284,10 +285,10 @@ namespace AWSSDKDocSamples.Amazon.Mgn.Generated
 
         public void MgnListNetworkMigrationMapperSegmentConstructs()
         {
-            #region example-2
+            #region ListNetworkMigrationMapperSegmentConstructs-2
 
             var client = new AmazonMgnClient();
-            var response = client.ListNetworkMigrationMapperSegmentConstructs(new ListNetworkMigrationMapperSegmentConstructsRequest 
+            var response = client.ListNetworkMigrationMapperSegmentConstructs(new ListNetworkMigrationMapperSegmentConstructsRequest
             {
                 NetworkMigrationDefinitionID = "nmd-01234567891234567",
                 NetworkMigrationExecutionID = "01234567-abcd-abcd-abcd-0123456789ab",
@@ -302,10 +303,10 @@ namespace AWSSDKDocSamples.Amazon.Mgn.Generated
 
         public void MgnListNetworkMigrationMapperSegments()
         {
-            #region example-1
+            #region ListNetworkMigrationMapperSegments-1
 
             var client = new AmazonMgnClient();
-            var response = client.ListNetworkMigrationMapperSegments(new ListNetworkMigrationMapperSegmentsRequest 
+            var response = client.ListNetworkMigrationMapperSegments(new ListNetworkMigrationMapperSegmentsRequest
             {
                 NetworkMigrationDefinitionID = "nmd-01234567891234567",
                 NetworkMigrationExecutionID = "01234567-abcd-abcd-abcd-0123456789ab"
@@ -319,10 +320,10 @@ namespace AWSSDKDocSamples.Amazon.Mgn.Generated
 
         public void MgnListNetworkMigrationMappings()
         {
-            #region example-1
+            #region ListNetworkMigrationMappings-1
 
             var client = new AmazonMgnClient();
-            var response = client.ListNetworkMigrationMappings(new ListNetworkMigrationMappingsRequest 
+            var response = client.ListNetworkMigrationMappings(new ListNetworkMigrationMappingsRequest
             {
                 NetworkMigrationDefinitionID = "nmd-01234567891234567",
                 NetworkMigrationExecutionID = "01234567-abcd-abcd-abcd-0123456789ab"
@@ -336,10 +337,10 @@ namespace AWSSDKDocSamples.Amazon.Mgn.Generated
 
         public void MgnListNetworkMigrationMappingUpdates()
         {
-            #region example-1
+            #region ListNetworkMigrationMappingUpdates-1
 
             var client = new AmazonMgnClient();
-            var response = client.ListNetworkMigrationMappingUpdates(new ListNetworkMigrationMappingUpdatesRequest 
+            var response = client.ListNetworkMigrationMappingUpdates(new ListNetworkMigrationMappingUpdatesRequest
             {
                 NetworkMigrationDefinitionID = "nmd-01234567891234567",
                 NetworkMigrationExecutionID = "01234567-abcd-abcd-abcd-0123456789ab"
@@ -353,10 +354,10 @@ namespace AWSSDKDocSamples.Amazon.Mgn.Generated
 
         public void MgnStartImportFileEnrichment()
         {
-            #region example-1
+            #region StartImportFileEnrichment-1
 
             var client = new AmazonMgnClient();
-            var response = client.StartImportFileEnrichment(new StartImportFileEnrichmentRequest 
+            var response = client.StartImportFileEnrichment(new StartImportFileEnrichmentRequest
             {
                 IpAssignmentStrategy = "STATIC",
                 S3BucketSource = new EnrichmentSourceS3Configuration {
@@ -378,10 +379,10 @@ namespace AWSSDKDocSamples.Amazon.Mgn.Generated
 
         public void MgnStartNetworkMigrationAnalysis()
         {
-            #region example-1
+            #region StartNetworkMigrationAnalysis-1
 
             var client = new AmazonMgnClient();
-            var response = client.StartNetworkMigrationAnalysis(new StartNetworkMigrationAnalysisRequest 
+            var response = client.StartNetworkMigrationAnalysis(new StartNetworkMigrationAnalysisRequest
             {
                 NetworkMigrationDefinitionID = "nmd-01234567891234567",
                 NetworkMigrationExecutionID = "01234567-abcd-abcd-abcd-0123456789ab"
@@ -394,10 +395,10 @@ namespace AWSSDKDocSamples.Amazon.Mgn.Generated
 
         public void MgnStartNetworkMigrationCodeGeneration()
         {
-            #region example-1
+            #region StartNetworkMigrationCodeGeneration-1
 
             var client = new AmazonMgnClient();
-            var response = client.StartNetworkMigrationCodeGeneration(new StartNetworkMigrationCodeGenerationRequest 
+            var response = client.StartNetworkMigrationCodeGeneration(new StartNetworkMigrationCodeGenerationRequest
             {
                 NetworkMigrationDefinitionID = "nmd-01234567891234567",
                 NetworkMigrationExecutionID = "01234567-abcd-abcd-abcd-0123456789ab"
@@ -410,10 +411,10 @@ namespace AWSSDKDocSamples.Amazon.Mgn.Generated
 
         public void MgnStartNetworkMigrationDeployment()
         {
-            #region example-1
+            #region StartNetworkMigrationDeployment-1
 
             var client = new AmazonMgnClient();
-            var response = client.StartNetworkMigrationDeployment(new StartNetworkMigrationDeploymentRequest 
+            var response = client.StartNetworkMigrationDeployment(new StartNetworkMigrationDeploymentRequest
             {
                 NetworkMigrationDefinitionID = "nmd-01234567891234567",
                 NetworkMigrationExecutionID = "01234567-abcd-abcd-abcd-0123456789ab"
@@ -426,10 +427,10 @@ namespace AWSSDKDocSamples.Amazon.Mgn.Generated
 
         public void MgnStartNetworkMigrationMapping()
         {
-            #region example-1
+            #region StartNetworkMigrationMapping-1
 
             var client = new AmazonMgnClient();
-            var response = client.StartNetworkMigrationMapping(new StartNetworkMigrationMappingRequest 
+            var response = client.StartNetworkMigrationMapping(new StartNetworkMigrationMappingRequest
             {
                 NetworkMigrationDefinitionID = "nmd-01234567891234567",
                 NetworkMigrationExecutionID = "01234567-abcd-abcd-abcd-0123456789ab"
@@ -442,10 +443,10 @@ namespace AWSSDKDocSamples.Amazon.Mgn.Generated
 
         public void MgnStartNetworkMigrationMappingUpdate()
         {
-            #region example-1
+            #region StartNetworkMigrationMappingUpdate-1
 
             var client = new AmazonMgnClient();
-            var response = client.StartNetworkMigrationMappingUpdate(new StartNetworkMigrationMappingUpdateRequest 
+            var response = client.StartNetworkMigrationMappingUpdate(new StartNetworkMigrationMappingUpdateRequest
             {
                 Constructs = new List<StartNetworkMigrationMappingUpdateConstruct> {
                     new StartNetworkMigrationMappingUpdateConstruct {
@@ -478,13 +479,13 @@ namespace AWSSDKDocSamples.Amazon.Mgn.Generated
 
         public void MgnUpdateNetworkMigrationDefinition()
         {
-            #region example-1
+            #region UpdateNetworkMigrationDefinition-1
 
             var client = new AmazonMgnClient();
-            var response = client.UpdateNetworkMigrationDefinition(new UpdateNetworkMigrationDefinitionRequest 
+            var response = client.UpdateNetworkMigrationDefinition(new UpdateNetworkMigrationDefinitionRequest
             {
-                Name = "network1",
                 Description = "network 1 description",
+                Name = "network1",
                 NetworkMigrationDefinitionID = "nmd-01234567891234567",
                 SourceConfigurations = new List<SourceConfiguration> {
                     new SourceConfiguration {
@@ -506,54 +507,51 @@ namespace AWSSDKDocSamples.Amazon.Mgn.Generated
                 }
             });
 
-            string name = response.Name;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string description = response.Description;
+            string name = response.Name;
             string networkMigrationDefinitionID = response.NetworkMigrationDefinitionID;
             List<SourceConfiguration> sourceConfigurations = response.SourceConfigurations;
             Dictionary<string, string> tags = response.Tags;
             TargetNetwork targetNetwork = response.TargetNetwork;
             TargetS3Configuration targets3Configuration = response.TargetS3Configuration;
-            DateTime updatedAt = response.UpdatedAt;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void MgnUpdateNetworkMigrationMapperSegment()
         {
-            #region example-1
+            #region UpdateNetworkMigrationMapperSegment-1
 
             var client = new AmazonMgnClient();
-            var response = client.UpdateNetworkMigrationMapperSegment(new UpdateNetworkMigrationMapperSegmentRequest 
+            var response = client.UpdateNetworkMigrationMapperSegment(new UpdateNetworkMigrationMapperSegmentRequest
             {
                 NetworkMigrationDefinitionID = "nmd-01234567891234567",
                 NetworkMigrationExecutionID = "01234567-abcd-abcd-abcd-0123456789ab",
                 SegmentID = "12345678-abcd-abcd-efab-0123456789ab"
             });
 
-            string name = response.Name;
             Checksum checksum = response.Checksum;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string description = response.Description;
             string jobid = response.JobID;
             string logicalid = response.LogicalID;
+            string name = response.Name;
             string networkMigrationDefinitionID = response.NetworkMigrationDefinitionID;
             string networkMigrationExecutionID = response.NetworkMigrationExecutionID;
             S3Configuration outputs3Configuration = response.OutputS3Configuration;
             string segmentid = response.SegmentID;
-            string segmentType = response.SegmentType;
-            DateTime updatedAt = response.UpdatedAt;
+            NetworkMigrationMapperSegmentType segmentType = response.SegmentType;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

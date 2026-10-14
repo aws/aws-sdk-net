@@ -102,6 +102,13 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("RLSPolicy", targetDepth, ref reader))
+                {
+                    var unmarshaller = RLSPolicyResourceUnmarshaller.Instance;
+                    unmarshalledObject.RLSPolicy = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("Table", targetDepth, ref reader))
                 {
                     var unmarshaller = TableResourceUnmarshaller.Instance;

@@ -146,6 +146,12 @@
     <pattern>^https?://(?:www.)?[a-zA-Z0-9@:._+~#=-]{2,256}\.[a-z]{2,6}\b(?:[-a-zA-Z0-9@:%_+.~#?&amp;/=]{0,2048})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityIR.Model.GetFindingMetricsRequest.MembershipId</property>
+    <min>12</min>
+    <max>34</max>
+    <pattern>^m-[a-z0-9]{10,32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityIR.Model.GetMembershipRequest.MembershipId</property>
     <min>12</min>
     <max>34</max>

@@ -59,6 +59,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.OcsfFindingCriteria = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("ResourceCriteria", targetDepth, ref reader))
+                {
+                    var unmarshaller = ResourcesFiltersUnmarshaller.Instance;
+                    unmarshalledObject.ResourceCriteria = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -27,6 +27,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.CreateStateMachineRequest.VersionDescription</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -41,6 +42,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.CreateStateMachineAliasRequest.Description</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -111,6 +113,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.DescribeExecutionResponse.Input</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
@@ -125,10 +128,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.DescribeExecutionResponse.Output</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.DescribeExecutionResponse.RedriveStatusReason</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
@@ -191,6 +196,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.DescribeStateMachineResponse.Description</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -215,6 +221,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.DescribeStateMachineAliasResponse.Description</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -269,6 +276,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.GetActivityTaskResponse.Input</property>
+    <min>0</min>
     <max>1048576</max>
   </property-value-rule>
   <property-value-rule>
@@ -377,21 +385,6 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.StepFunctions.Model.ListStateMachinesRequest.MaxResults</property>
-    <min>0</min>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.StepFunctions.Model.ListStateMachinesRequest.NextToken</property>
-    <min>1</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.StepFunctions.Model.ListStateMachinesResponse.NextToken</property>
-    <min>1</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.StepFunctions.Model.ListStateMachineVersionsRequest.MaxResults</property>
     <min>0</min>
     <max>1000</max>
@@ -412,12 +405,28 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StepFunctions.Model.ListStateMachinesRequest.MaxResults</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.ListStateMachinesRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.ListStateMachinesResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StepFunctions.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.PublishStateMachineVersionRequest.Description</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -434,7 +443,7 @@
     <property>Amazon.StepFunctions.Model.RedriveExecutionRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[!-~]+</pattern>
+    <pattern>^[!-~]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.RedriveExecutionRequest.ExecutionArn</property>
@@ -463,6 +472,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.SendTaskSuccessRequest.Output</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
@@ -472,6 +482,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.StartExecutionRequest.Input</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
@@ -496,6 +507,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.StartSyncExecutionRequest.Input</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
@@ -530,6 +542,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.StartSyncExecutionResponse.Input</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
@@ -539,6 +552,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.StartSyncExecutionResponse.Output</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
@@ -573,6 +587,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.TestStateRequest.Context</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
@@ -582,6 +597,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.TestStateRequest.Input</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
@@ -596,6 +612,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.TestStateRequest.Variables</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
@@ -615,6 +632,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.TestStateResponse.Output</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
@@ -657,6 +675,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.UpdateStateMachineRequest.VersionDescription</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -666,6 +685,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.UpdateStateMachineAliasRequest.Description</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -704,15 +724,6 @@
     <max>80</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.StepFunctions.Model.ActivityScheduledEventDetails.Input</property>
-    <max>262144</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.StepFunctions.Model.ActivityScheduledEventDetails.Resource</property>
-    <min>1</min>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.StepFunctions.Model.ActivityScheduleFailedEventDetails.Cause</property>
     <min>0</min>
     <max>32768</max>
@@ -723,11 +734,23 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StepFunctions.Model.ActivityScheduledEventDetails.Input</property>
+    <min>0</min>
+    <max>262144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.ActivityScheduledEventDetails.Resource</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StepFunctions.Model.ActivityStartedEventDetails.WorkerName</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.ActivitySucceededEventDetails.Output</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
@@ -839,6 +862,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.ExecutionStartedEventDetails.Input</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
@@ -858,6 +882,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.ExecutionSucceededEventDetails.Output</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
@@ -872,42 +897,52 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.InspectionData.AfterArguments</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.InspectionData.AfterInputPath</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.InspectionData.AfterItemBatcher</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.InspectionData.AfterItemSelector</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.InspectionData.AfterItemsPath</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.InspectionData.AfterItemsPointer</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.InspectionData.AfterParameters</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.InspectionData.AfterResultPath</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.InspectionData.AfterResultSelector</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.InspectionData.Input</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
@@ -916,6 +951,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.InspectionData.Result</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
@@ -929,6 +965,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.InspectionData.Variables</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
@@ -954,15 +991,6 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.StepFunctions.Model.LambdaFunctionScheduledEventDetails.Input</property>
-    <max>262144</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.StepFunctions.Model.LambdaFunctionScheduledEventDetails.Resource</property>
-    <min>1</min>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.StepFunctions.Model.LambdaFunctionScheduleFailedEventDetails.Cause</property>
     <min>0</min>
     <max>32768</max>
@@ -970,6 +998,16 @@
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.LambdaFunctionScheduleFailedEventDetails.Error</property>
     <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.LambdaFunctionScheduledEventDetails.Input</property>
+    <min>0</min>
+    <max>262144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.LambdaFunctionScheduledEventDetails.Resource</property>
+    <min>1</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -984,6 +1022,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.LambdaFunctionSucceededEventDetails.Output</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
@@ -1120,6 +1159,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.MockInput.Result</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
@@ -1139,6 +1179,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.StateEnteredEventDetails.Input</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
@@ -1153,6 +1194,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.StateExitedEventDetails.Output</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
@@ -1231,16 +1273,6 @@
     <max>80</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.StepFunctions.Model.TaskStartedEventDetails.Resource</property>
-    <min>1</min>
-    <max>80</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.StepFunctions.Model.TaskStartedEventDetails.ResourceType</property>
-    <min>1</min>
-    <max>80</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.StepFunctions.Model.TaskStartFailedEventDetails.Cause</property>
     <min>0</min>
     <max>32768</max>
@@ -1257,6 +1289,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.TaskStartFailedEventDetails.ResourceType</property>
+    <min>1</min>
+    <max>80</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.TaskStartedEventDetails.Resource</property>
+    <min>1</min>
+    <max>80</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.TaskStartedEventDetails.ResourceType</property>
     <min>1</min>
     <max>80</max>
   </property-value-rule>
@@ -1282,6 +1324,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.TaskSubmittedEventDetails.Output</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
@@ -1296,6 +1339,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.TaskSucceededEventDetails.Output</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
@@ -1335,6 +1379,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.TestStateConfiguration.MapItemReaderData</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>

@@ -40,8 +40,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// An object that contains filters to apply when listing tenants. You can filter by tenant
-        /// name or sending status.
+        /// An object that contains filters to apply when listing tenants. You can filter by a
+        /// substring of the tenant name or by sending status.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

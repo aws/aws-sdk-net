@@ -1,0 +1,695 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using Amazon.Runtime;
+
+namespace Amazon.Evs
+{
+    /// <summary>
+    /// Constants used for properties of type CheckResult.
+    /// </summary>
+    public class CheckResult : ConstantClass
+    {
+        /// <summary>
+        /// Constant FAILED for CheckResult
+        /// </summary>
+        public static readonly CheckResult FAILED = new CheckResult("FAILED");
+
+        /// <summary>
+        /// Constant PASSED for CheckResult
+        /// </summary>
+        public static readonly CheckResult PASSED = new CheckResult("PASSED");
+
+        /// <summary>
+        /// Constant UNKNOWN for CheckResult
+        /// </summary>
+        public static readonly CheckResult UNKNOWN = new CheckResult("UNKNOWN");
+
+        /// <summary>
+        /// Constructs a custom CheckResult for a value not among the defined constants.
+        /// </summary>
+        public CheckResult(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CheckResult FindValue(string value)
+        {
+            return FindValue<CheckResult>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CheckResult(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type CheckType.
+    /// </summary>
+    public class CheckType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONNECTOR_HEALTH for CheckType
+        /// </summary>
+        public static readonly CheckType CONNECTOR_HEALTH = new CheckType("CONNECTOR_HEALTH");
+
+        /// <summary>
+        /// Constant HOST_COUNT for CheckType
+        /// </summary>
+        public static readonly CheckType HOST_COUNT = new CheckType("HOST_COUNT");
+
+        /// <summary>
+        /// Constant KEY_COVERAGE for CheckType
+        /// </summary>
+        public static readonly CheckType KEY_COVERAGE = new CheckType("KEY_COVERAGE");
+
+        /// <summary>
+        /// Constant KEY_REUSE for CheckType
+        /// </summary>
+        public static readonly CheckType KEY_REUSE = new CheckType("KEY_REUSE");
+
+        /// <summary>
+        /// Constant OPERATIONS_MANAGER_REACHABILITY for CheckType
+        /// </summary>
+        public static readonly CheckType OPERATIONS_MANAGER_REACHABILITY = new CheckType("OPERATIONS_MANAGER_REACHABILITY");
+
+        /// <summary>
+        /// Constant REACHABILITY for CheckType
+        /// </summary>
+        public static readonly CheckType REACHABILITY = new CheckType("REACHABILITY");
+
+        /// <summary>
+        /// Constant SDDC_MANAGER_HOST_COUNT for CheckType
+        /// </summary>
+        public static readonly CheckType SDDC_MANAGER_HOST_COUNT = new CheckType("SDDC_MANAGER_HOST_COUNT");
+
+        /// <summary>
+        /// Constant SDDC_MANAGER_KEY_COVERAGE for CheckType
+        /// </summary>
+        public static readonly CheckType SDDC_MANAGER_KEY_COVERAGE = new CheckType("SDDC_MANAGER_KEY_COVERAGE");
+
+        /// <summary>
+        /// Constant SDDC_MANAGER_KEY_REUSE for CheckType
+        /// </summary>
+        public static readonly CheckType SDDC_MANAGER_KEY_REUSE = new CheckType("SDDC_MANAGER_KEY_REUSE");
+
+        /// <summary>
+        /// Constant SDDC_MANAGER_REACHABILITY for CheckType
+        /// </summary>
+        public static readonly CheckType SDDC_MANAGER_REACHABILITY = new CheckType("SDDC_MANAGER_REACHABILITY");
+
+        /// <summary>
+        /// Constant VCENTER_REACHABILITY for CheckType
+        /// </summary>
+        public static readonly CheckType VCENTER_REACHABILITY = new CheckType("VCENTER_REACHABILITY");
+
+        /// <summary>
+        /// Constant VCENTER_VM_EVENT for CheckType
+        /// </summary>
+        public static readonly CheckType VCENTER_VM_EVENT = new CheckType("VCENTER_VM_EVENT");
+
+        /// <summary>
+        /// Constant VCENTER_VM_SYNC for CheckType
+        /// </summary>
+        public static readonly CheckType VCENTER_VM_SYNC = new CheckType("VCENTER_VM_SYNC");
+
+        /// <summary>
+        /// Constructs a custom CheckType for a value not among the defined constants.
+        /// </summary>
+        public CheckType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CheckType FindValue(string value)
+        {
+            return FindValue<CheckType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CheckType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ConnectorState.
+    /// </summary>
+    public class ConnectorState : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for ConnectorState
+        /// </summary>
+        public static readonly ConnectorState ACTIVE = new ConnectorState("ACTIVE");
+
+        /// <summary>
+        /// Constant CREATE_FAILED for ConnectorState
+        /// </summary>
+        public static readonly ConnectorState CREATE_FAILED = new ConnectorState("CREATE_FAILED");
+
+        /// <summary>
+        /// Constant CREATING for ConnectorState
+        /// </summary>
+        public static readonly ConnectorState CREATING = new ConnectorState("CREATING");
+
+        /// <summary>
+        /// Constant DELETED for ConnectorState
+        /// </summary>
+        public static readonly ConnectorState DELETED = new ConnectorState("DELETED");
+
+        /// <summary>
+        /// Constant DELETING for ConnectorState
+        /// </summary>
+        public static readonly ConnectorState DELETING = new ConnectorState("DELETING");
+
+        /// <summary>
+        /// Constant UPDATE_FAILED for ConnectorState
+        /// </summary>
+        public static readonly ConnectorState UPDATE_FAILED = new ConnectorState("UPDATE_FAILED");
+
+        /// <summary>
+        /// Constant UPDATING for ConnectorState
+        /// </summary>
+        public static readonly ConnectorState UPDATING = new ConnectorState("UPDATING");
+
+        /// <summary>
+        /// Constructs a custom ConnectorState for a value not among the defined constants.
+        /// </summary>
+        public ConnectorState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectorState FindValue(string value)
+        {
+            return FindValue<ConnectorState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectorState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ConnectorType.
+    /// </summary>
+    public class ConnectorType : ConstantClass
+    {
+        /// <summary>
+        /// Constant OPERATIONS_MANAGER for ConnectorType
+        /// </summary>
+        public static readonly ConnectorType OPERATIONS_MANAGER = new ConnectorType("OPERATIONS_MANAGER");
+
+        /// <summary>
+        /// Constant SDDC_MANAGER for ConnectorType
+        /// </summary>
+        public static readonly ConnectorType SDDC_MANAGER = new ConnectorType("SDDC_MANAGER");
+
+        /// <summary>
+        /// Constant VCENTER for ConnectorType
+        /// </summary>
+        public static readonly ConnectorType VCENTER = new ConnectorType("VCENTER");
+
+        /// <summary>
+        /// Constructs a custom ConnectorType for a value not among the defined constants.
+        /// </summary>
+        public ConnectorType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectorType FindValue(string value)
+        {
+            return FindValue<ConnectorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EntitlementStatus.
+    /// </summary>
+    public class EntitlementStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant AT_RISK for EntitlementStatus
+        /// </summary>
+        public static readonly EntitlementStatus AT_RISK = new EntitlementStatus("AT_RISK");
+
+        /// <summary>
+        /// Constant CREATED for EntitlementStatus
+        /// </summary>
+        public static readonly EntitlementStatus CREATED = new EntitlementStatus("CREATED");
+
+        /// <summary>
+        /// Constant CREATE_FAILED for EntitlementStatus
+        /// </summary>
+        public static readonly EntitlementStatus CREATE_FAILED = new EntitlementStatus("CREATE_FAILED");
+
+        /// <summary>
+        /// Constant CREATING for EntitlementStatus
+        /// </summary>
+        public static readonly EntitlementStatus CREATING = new EntitlementStatus("CREATING");
+
+        /// <summary>
+        /// Constant DELETED for EntitlementStatus
+        /// </summary>
+        public static readonly EntitlementStatus DELETED = new EntitlementStatus("DELETED");
+
+        /// <summary>
+        /// Constant ENTITLEMENT_REMOVED for EntitlementStatus
+        /// </summary>
+        public static readonly EntitlementStatus ENTITLEMENT_REMOVED = new EntitlementStatus("ENTITLEMENT_REMOVED");
+
+        /// <summary>
+        /// Constructs a custom EntitlementStatus for a value not among the defined constants.
+        /// </summary>
+        public EntitlementStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EntitlementStatus FindValue(string value)
+        {
+            return FindValue<EntitlementStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EntitlementStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EntitlementType.
+    /// </summary>
+    public class EntitlementType : ConstantClass
+    {
+        /// <summary>
+        /// Constant WINDOWS_SERVER for EntitlementType
+        /// </summary>
+        public static readonly EntitlementType WINDOWS_SERVER = new EntitlementType("WINDOWS_SERVER");
+
+        /// <summary>
+        /// Constructs a custom EntitlementType for a value not among the defined constants.
+        /// </summary>
+        public EntitlementType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EntitlementType FindValue(string value)
+        {
+            return FindValue<EntitlementType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EntitlementType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EnvironmentState.
+    /// </summary>
+    public class EnvironmentState : ConstantClass
+    {
+        /// <summary>
+        /// Constant CREATED for EnvironmentState
+        /// </summary>
+        public static readonly EnvironmentState CREATED = new EnvironmentState("CREATED");
+
+        /// <summary>
+        /// Constant CREATE_FAILED for EnvironmentState
+        /// </summary>
+        public static readonly EnvironmentState CREATE_FAILED = new EnvironmentState("CREATE_FAILED");
+
+        /// <summary>
+        /// Constant CREATING for EnvironmentState
+        /// </summary>
+        public static readonly EnvironmentState CREATING = new EnvironmentState("CREATING");
+
+        /// <summary>
+        /// Constant DELETED for EnvironmentState
+        /// </summary>
+        public static readonly EnvironmentState DELETED = new EnvironmentState("DELETED");
+
+        /// <summary>
+        /// Constant DELETING for EnvironmentState
+        /// </summary>
+        public static readonly EnvironmentState DELETING = new EnvironmentState("DELETING");
+
+        /// <summary>
+        /// Constructs a custom EnvironmentState for a value not among the defined constants.
+        /// </summary>
+        public EnvironmentState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EnvironmentState FindValue(string value)
+        {
+            return FindValue<EnvironmentState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EnvironmentState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type HostState.
+    /// </summary>
+    public class HostState : ConstantClass
+    {
+        /// <summary>
+        /// Constant CREATED for HostState
+        /// </summary>
+        public static readonly HostState CREATED = new HostState("CREATED");
+
+        /// <summary>
+        /// Constant CREATE_FAILED for HostState
+        /// </summary>
+        public static readonly HostState CREATE_FAILED = new HostState("CREATE_FAILED");
+
+        /// <summary>
+        /// Constant CREATING for HostState
+        /// </summary>
+        public static readonly HostState CREATING = new HostState("CREATING");
+
+        /// <summary>
+        /// Constant DELETED for HostState
+        /// </summary>
+        public static readonly HostState DELETED = new HostState("DELETED");
+
+        /// <summary>
+        /// Constant DELETING for HostState
+        /// </summary>
+        public static readonly HostState DELETING = new HostState("DELETING");
+
+        /// <summary>
+        /// Constant UPDATE_FAILED for HostState
+        /// </summary>
+        public static readonly HostState UPDATE_FAILED = new HostState("UPDATE_FAILED");
+
+        /// <summary>
+        /// Constant UPDATING for HostState
+        /// </summary>
+        public static readonly HostState UPDATING = new HostState("UPDATING");
+
+        /// <summary>
+        /// Constructs a custom HostState for a value not among the defined constants.
+        /// </summary>
+        public HostState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HostState FindValue(string value)
+        {
+            return FindValue<HostState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HostState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type InstanceType.
+    /// </summary>
+    public class InstanceType : ConstantClass
+    {
+        /// <summary>
+        /// Constant I4iMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType I4iMetal = new InstanceType("i4i.metal");
+
+        /// <summary>
+        /// Constant I7iMetal24xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType I7iMetal24xl = new InstanceType("i7i.metal-24xl");
+
+        /// <summary>
+        /// Constant I7iMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType I7iMetal48xl = new InstanceType("i7i.metal-48xl");
+
+        /// <summary>
+        /// Constructs a custom InstanceType for a value not among the defined constants.
+        /// </summary>
+        public InstanceType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceType FindValue(string value)
+        {
+            return FindValue<InstanceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ValidationExceptionReason.
+    /// </summary>
+    public class ValidationExceptionReason : ConstantClass
+    {
+        /// <summary>
+        /// Constant CannotParse for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason CannotParse = new ValidationExceptionReason("cannotParse");
+
+        /// <summary>
+        /// Constant FieldValidationFailed for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason FieldValidationFailed = new ValidationExceptionReason("fieldValidationFailed");
+
+        /// <summary>
+        /// Constant Other for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason Other = new ValidationExceptionReason("other");
+
+        /// <summary>
+        /// Constant UnknownOperation for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason UnknownOperation = new ValidationExceptionReason("unknownOperation");
+
+        /// <summary>
+        /// Constructs a custom ValidationExceptionReason for a value not among the defined constants.
+        /// </summary>
+        public ValidationExceptionReason(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ValidationExceptionReason FindValue(string value)
+        {
+            return FindValue<ValidationExceptionReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ValidationExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type VcfVersion.
+    /// </summary>
+    public class VcfVersion : ConstantClass
+    {
+        /// <summary>
+        /// Constant SELF_DEPLOYED for VcfVersion
+        /// </summary>
+        public static readonly VcfVersion SELF_DEPLOYED = new VcfVersion("SELF_DEPLOYED");
+
+        /// <summary>
+        /// Constant VCF521 for VcfVersion
+        /// </summary>
+        public static readonly VcfVersion VCF521 = new VcfVersion("VCF-5.2.1");
+
+        /// <summary>
+        /// Constant VCF522 for VcfVersion
+        /// </summary>
+        public static readonly VcfVersion VCF522 = new VcfVersion("VCF-5.2.2");
+
+        /// <summary>
+        /// Constructs a custom VcfVersion for a value not among the defined constants.
+        /// </summary>
+        public VcfVersion(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VcfVersion FindValue(string value)
+        {
+            return FindValue<VcfVersion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VcfVersion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type VlanState.
+    /// </summary>
+    public class VlanState : ConstantClass
+    {
+        /// <summary>
+        /// Constant CREATED for VlanState
+        /// </summary>
+        public static readonly VlanState CREATED = new VlanState("CREATED");
+
+        /// <summary>
+        /// Constant CREATE_FAILED for VlanState
+        /// </summary>
+        public static readonly VlanState CREATE_FAILED = new VlanState("CREATE_FAILED");
+
+        /// <summary>
+        /// Constant CREATING for VlanState
+        /// </summary>
+        public static readonly VlanState CREATING = new VlanState("CREATING");
+
+        /// <summary>
+        /// Constant DELETED for VlanState
+        /// </summary>
+        public static readonly VlanState DELETED = new VlanState("DELETED");
+
+        /// <summary>
+        /// Constant DELETING for VlanState
+        /// </summary>
+        public static readonly VlanState DELETING = new VlanState("DELETING");
+
+        /// <summary>
+        /// Constructs a custom VlanState for a value not among the defined constants.
+        /// </summary>
+        public VlanState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VlanState FindValue(string value)
+        {
+            return FindValue<VlanState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VlanState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+}

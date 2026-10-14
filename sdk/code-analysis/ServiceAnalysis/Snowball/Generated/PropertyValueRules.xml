@@ -4,13 +4,13 @@
     <property>Amazon.Snowball.Model.CancelClusterRequest.ClusterId</property>
     <min>39</min>
     <max>39</max>
-    <pattern>CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.CancelJobRequest.JobId</property>
     <min>39</min>
     <max>39</max>
-    <pattern>(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.CreateAddressResponse.AddressId</property>
@@ -22,7 +22,7 @@
     <property>Amazon.Snowball.Model.CreateClusterRequest.AddressId</property>
     <min>40</min>
     <max>40</max>
-    <pattern>ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.CreateClusterRequest.Description</property>
@@ -34,7 +34,7 @@
     <property>Amazon.Snowball.Model.CreateClusterRequest.ForwardingAddressId</property>
     <min>40</min>
     <max>40</max>
-    <pattern>ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.CreateClusterRequest.InitialClusterSize</property>
@@ -43,31 +43,33 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.CreateClusterRequest.KmsKeyARN</property>
+    <min>0</min>
     <max>255</max>
-    <pattern>arn:aws.*:kms:.*:[0-9]{12}:key/.*</pattern>
+    <pattern>^arn:aws.*:kms:.*:[0-9]{12}:key/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.CreateClusterRequest.RoleARN</property>
+    <min>0</min>
     <max>255</max>
-    <pattern>arn:aws.*:iam::[0-9]{12}:role/.*</pattern>
+    <pattern>^arn:aws.*:iam::[0-9]{12}:role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.CreateClusterResponse.ClusterId</property>
     <min>39</min>
     <max>39</max>
-    <pattern>CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.CreateJobRequest.AddressId</property>
     <min>40</min>
     <max>40</max>
-    <pattern>ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.CreateJobRequest.ClusterId</property>
     <min>39</min>
     <max>39</max>
-    <pattern>CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.CreateJobRequest.Description</property>
@@ -79,47 +81,49 @@
     <property>Amazon.Snowball.Model.CreateJobRequest.ForwardingAddressId</property>
     <min>40</min>
     <max>40</max>
-    <pattern>ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.CreateJobRequest.KmsKeyARN</property>
+    <min>0</min>
     <max>255</max>
-    <pattern>arn:aws.*:kms:.*:[0-9]{12}:key/.*</pattern>
+    <pattern>^arn:aws.*:kms:.*:[0-9]{12}:key/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.CreateJobRequest.LongTermPricingId</property>
     <min>41</min>
     <max>41</max>
-    <pattern>LTPID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^LTPID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.CreateJobRequest.RoleARN</property>
+    <min>0</min>
     <max>255</max>
-    <pattern>arn:aws.*:iam::[0-9]{12}:role/.*</pattern>
+    <pattern>^arn:aws.*:iam::[0-9]{12}:role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.CreateJobResponse.JobId</property>
     <min>39</min>
     <max>39</max>
-    <pattern>(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.CreateLongTermPricingResponse.LongTermPricingId</property>
     <min>41</min>
     <max>41</max>
-    <pattern>LTPID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^LTPID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.CreateReturnShippingLabelRequest.JobId</property>
     <min>39</min>
     <max>39</max>
-    <pattern>(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.DescribeAddressRequest.AddressId</property>
     <min>40</min>
     <max>40</max>
-    <pattern>ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.DescribeAddressesRequest.MaxResults</property>
@@ -142,19 +146,19 @@
     <property>Amazon.Snowball.Model.DescribeClusterRequest.ClusterId</property>
     <min>39</min>
     <max>39</max>
-    <pattern>CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.DescribeJobRequest.JobId</property>
     <min>39</min>
     <max>39</max>
-    <pattern>(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.DescribeReturnShippingLabelRequest.JobId</property>
     <min>39</min>
     <max>39</max>
-    <pattern>(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.DescribeReturnShippingLabelResponse.ReturnShippingLabelURI</property>
@@ -166,7 +170,7 @@
     <property>Amazon.Snowball.Model.GetJobManifestRequest.JobId</property>
     <min>39</min>
     <max>39</max>
-    <pattern>(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.GetJobManifestResponse.ManifestURI</property>
@@ -178,7 +182,7 @@
     <property>Amazon.Snowball.Model.GetJobUnlockCodeRequest.JobId</property>
     <min>39</min>
     <max>39</max>
-    <pattern>(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.GetJobUnlockCodeResponse.UnlockCode</property>
@@ -190,7 +194,7 @@
     <property>Amazon.Snowball.Model.GetSoftwareUpdatesRequest.JobId</property>
     <min>39</min>
     <max>39</max>
-    <pattern>(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.GetSoftwareUpdatesResponse.UpdatesURI</property>
@@ -202,7 +206,7 @@
     <property>Amazon.Snowball.Model.ListClusterJobsRequest.ClusterId</property>
     <min>39</min>
     <max>39</max>
-    <pattern>CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.ListClusterJobsRequest.MaxResults</property>
@@ -327,13 +331,13 @@
     <property>Amazon.Snowball.Model.UpdateClusterRequest.AddressId</property>
     <min>40</min>
     <max>40</max>
-    <pattern>ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.UpdateClusterRequest.ClusterId</property>
     <min>39</min>
     <max>39</max>
-    <pattern>CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.UpdateClusterRequest.Description</property>
@@ -345,18 +349,19 @@
     <property>Amazon.Snowball.Model.UpdateClusterRequest.ForwardingAddressId</property>
     <min>40</min>
     <max>40</max>
-    <pattern>ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.UpdateClusterRequest.RoleARN</property>
+    <min>0</min>
     <max>255</max>
-    <pattern>arn:aws.*:iam::[0-9]{12}:role/.*</pattern>
+    <pattern>^arn:aws.*:iam::[0-9]{12}:role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.UpdateJobRequest.AddressId</property>
     <min>40</min>
     <max>40</max>
-    <pattern>ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.UpdateJobRequest.Description</property>
@@ -368,42 +373,43 @@
     <property>Amazon.Snowball.Model.UpdateJobRequest.ForwardingAddressId</property>
     <min>40</min>
     <max>40</max>
-    <pattern>ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.UpdateJobRequest.JobId</property>
     <min>39</min>
     <max>39</max>
-    <pattern>(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.UpdateJobRequest.RoleARN</property>
+    <min>0</min>
     <max>255</max>
-    <pattern>arn:aws.*:iam::[0-9]{12}:role/.*</pattern>
+    <pattern>^arn:aws.*:iam::[0-9]{12}:role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.UpdateJobShipmentStateRequest.JobId</property>
     <min>39</min>
     <max>39</max>
-    <pattern>(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.UpdateLongTermPricingRequest.LongTermPricingId</property>
     <min>41</min>
     <max>41</max>
-    <pattern>LTPID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^LTPID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.UpdateLongTermPricingRequest.ReplacementJob</property>
     <min>39</min>
     <max>39</max>
-    <pattern>(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.Address.AddressId</property>
     <min>40</min>
     <max>40</max>
-    <pattern>ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.Address.City</property>
@@ -493,7 +499,7 @@
     <property>Amazon.Snowball.Model.ClusterMetadata.AddressId</property>
     <min>40</min>
     <max>40</max>
-    <pattern>ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.ClusterMetadata.ClusterId</property>
@@ -511,17 +517,19 @@
     <property>Amazon.Snowball.Model.ClusterMetadata.ForwardingAddressId</property>
     <min>40</min>
     <max>40</max>
-    <pattern>ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.ClusterMetadata.KmsKeyARN</property>
+    <min>0</min>
     <max>255</max>
-    <pattern>arn:aws.*:kms:.*:[0-9]{12}:key/.*</pattern>
+    <pattern>^arn:aws.*:kms:.*:[0-9]{12}:key/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.ClusterMetadata.RoleARN</property>
+    <min>0</min>
     <max>255</max>
-    <pattern>arn:aws.*:iam::[0-9]{12}:role/.*</pattern>
+    <pattern>^arn:aws.*:iam::[0-9]{12}:role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.CompatibleImage.AmiId</property>
@@ -542,18 +550,6 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Snowball.Model.Ec2AmiResource.AmiId</property>
-    <min>12</min>
-    <max>21</max>
-    <pattern>(ami-[0-9a-f]{8})|(ami-[0-9a-f]{17})</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Snowball.Model.Ec2AmiResource.SnowballAmiId</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Snowball.Model.EKSOnDeviceServiceConfiguration.EKSAnywhereVersion</property>
     <min>1</min>
     <max>1024</max>
@@ -566,15 +562,28 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Snowball.Model.Ec2AmiResource.AmiId</property>
+    <min>12</min>
+    <max>21</max>
+    <pattern>^(ami-[0-9a-f]{8})|(ami-[0-9a-f]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Snowball.Model.Ec2AmiResource.SnowballAmiId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Snowball.Model.EventTriggerDefinition.EventResourceARN</property>
+    <min>0</min>
     <max>255</max>
-    <pattern>arn:aws.*:*</pattern>
+    <pattern>^arn:aws.*:*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.INDTaxDocuments.GSTIN</property>
     <min>15</min>
     <max>15</max>
-    <pattern>\d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}[Z]{1}[A-Z\d]{1}</pattern>
+    <pattern>^\d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}[Z]{1}[A-Z\d]{1}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.InvalidResourceException.ResourceType</property>
@@ -616,7 +625,7 @@
     <property>Amazon.Snowball.Model.JobMetadata.AddressId</property>
     <min>40</min>
     <max>40</max>
-    <pattern>ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.JobMetadata.ClusterId</property>
@@ -634,7 +643,7 @@
     <property>Amazon.Snowball.Model.JobMetadata.ForwardingAddressId</property>
     <min>40</min>
     <max>40</max>
-    <pattern>ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.JobMetadata.JobId</property>
@@ -644,19 +653,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.JobMetadata.KmsKeyARN</property>
+    <min>0</min>
     <max>255</max>
-    <pattern>arn:aws.*:kms:.*:[0-9]{12}:key/.*</pattern>
+    <pattern>^arn:aws.*:kms:.*:[0-9]{12}:key/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.JobMetadata.LongTermPricingId</property>
     <min>41</min>
     <max>41</max>
-    <pattern>LTPID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^LTPID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.JobMetadata.RoleARN</property>
+    <min>0</min>
     <max>255</max>
-    <pattern>arn:aws.*:iam::[0-9]{12}:role/.*</pattern>
+    <pattern>^arn:aws.*:iam::[0-9]{12}:role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.JobMetadata.SnowballId</property>
@@ -678,20 +689,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.LambdaResource.LambdaArn</property>
+    <min>0</min>
     <max>255</max>
-    <pattern>arn:aws.*:*</pattern>
+    <pattern>^arn:aws.*:*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.LongTermPricingListEntry.CurrentActiveJob</property>
     <min>39</min>
     <max>39</max>
-    <pattern>(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.LongTermPricingListEntry.LongTermPricingId</property>
     <min>41</min>
     <max>41</max>
-    <pattern>LTPID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^LTPID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.LongTermPricingListEntry.LongTermPricingStatus</property>
@@ -703,7 +715,7 @@
     <property>Amazon.Snowball.Model.LongTermPricingListEntry.ReplacementJob</property>
     <min>39</min>
     <max>39</max>
-    <pattern>(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.NFSOnDeviceServiceConfiguration.StorageLimit</property>
@@ -711,19 +723,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.Notification.DevicePickupSnsTopicARN</property>
+    <min>0</min>
     <max>255</max>
-    <pattern>arn:aws.*:sns:.*:[0-9]{12}:.*</pattern>
+    <pattern>^arn:aws.*:sns:.*:[0-9]{12}:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.Notification.SnsTopicARN</property>
+    <min>0</min>
     <max>255</max>
-    <pattern>arn:aws.*:sns:.*:[0-9]{12}:.*</pattern>
+    <pattern>^arn:aws.*:sns:.*:[0-9]{12}:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.PickupDetails.DevicePickupId</property>
     <min>40</min>
     <max>40</max>
-    <pattern>DPID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^DPID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.PickupDetails.Email</property>
@@ -771,8 +785,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.S3Resource.BucketArn</property>
+    <min>0</min>
     <max>255</max>
-    <pattern>arn:aws.*:*</pattern>
+    <pattern>^arn:aws.*:*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.ServiceVersion.Version</property>

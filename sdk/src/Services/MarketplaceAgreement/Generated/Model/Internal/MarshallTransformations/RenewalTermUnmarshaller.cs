@@ -29,82 +29,109 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RenewalTerm Object
     /// </summary>  
-    public class RenewalTermUnmarshaller : IJsonUnmarshaller<RenewalTerm, JsonUnmarshallerContext>
+    public class RenewalTermUnmarshaller : ICborUnmarshaller<RenewalTerm, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RenewalTerm Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RenewalTerm Unmarshall(CborUnmarshallerContext context)
         {
             RenewalTerm unmarshalledObject = new RenewalTerm();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("adjustmentDeadline", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AdjustmentDeadline = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("configuration", targetDepth, ref reader))
-                {
-                    var unmarshaller = RenewalTermConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Configuration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("id", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("lockoutPeriod", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LockoutPeriod = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("maxRenewals", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaxRenewals = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("priceIncrease", targetDepth, ref reader))
-                {
-                    var unmarshaller = PriceIncreaseUnmarshaller.Instance;
-                    unmarshalledObject.PriceIncrease = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("termTemplates", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<TermTemplate, TermTemplateUnmarshaller>(TermTemplateUnmarshaller.Instance);
-                    unmarshalledObject.TermTemplates = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "adjustmentDeadline":
+                        {
+                            context.AddPathSegment("AdjustmentDeadline");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.AdjustmentDeadline = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "configuration":
+                        {
+                            context.AddPathSegment("Configuration");
+                            var unmarshaller = RenewalTermConfigurationUnmarshaller.Instance;
+                            unmarshalledObject.Configuration = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "id":
+                        {
+                            context.AddPathSegment("Id");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "lockoutPeriod":
+                        {
+                            context.AddPathSegment("LockoutPeriod");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.LockoutPeriod = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "maxRenewals":
+                        {
+                            context.AddPathSegment("MaxRenewals");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.MaxRenewals = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "priceIncrease":
+                        {
+                            context.AddPathSegment("PriceIncrease");
+                            var unmarshaller = PriceIncreaseUnmarshaller.Instance;
+                            unmarshalledObject.PriceIncrease = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "termTemplates":
+                        {
+                            context.AddPathSegment("TermTemplates");
+                            var unmarshaller = new CborListUnmarshaller<TermTemplate, TermTemplateUnmarshaller>(TermTemplateUnmarshaller.Instance);
+                            unmarshalledObject.TermTemplates = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "type":
+                        {
+                            context.AddPathSegment("Type");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

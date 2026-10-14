@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
 {
@@ -59,48 +58,53 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
         public IRequest Marshall(AcceptAgreementPaymentRequestRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MarketplaceAgreement");
-            string target = "AWSMPCommerceService_v20200301.AcceptAgreementPaymentRequest";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/AWSMPCommerceService_v20200301/operation/AcceptAgreementPaymentRequest";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-03-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAgreementId())
+                {
+                    context.Writer.WriteTextString("agreementId");
+                    context.Writer.WriteTextString(publicRequest.AgreementId);
+                }
+                if (publicRequest.IsSetPaymentRequestId())
+                {
+                    context.Writer.WriteTextString("paymentRequestId");
+                    context.Writer.WriteTextString(publicRequest.PaymentRequestId);
+                }
+                if (publicRequest.IsSetPurchaseOrderReference())
+                {
+                    context.Writer.WriteTextString("purchaseOrderReference");
+                    context.Writer.WriteTextString(publicRequest.PurchaseOrderReference);
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
+                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
+                // avoiding the default-size rent followed by a resize+return.
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetAgreementId())
-            {
-                context.Writer.WritePropertyName("agreementId");
-                context.Writer.WriteStringValue(publicRequest.AgreementId);
             }
-
-            if(publicRequest.IsSetPaymentRequestId())
+            finally
             {
-                context.Writer.WritePropertyName("paymentRequestId");
-                context.Writer.WriteStringValue(publicRequest.PaymentRequestId);
+                CborWriterPool.Return(writer);
             }
-
-            if(publicRequest.IsSetPurchaseOrderReference())
-            {
-                context.Writer.WritePropertyName("purchaseOrderReference");
-                context.Writer.WriteStringValue(publicRequest.PurchaseOrderReference);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
             
-
-
             return request;
         }
         private static AcceptAgreementPaymentRequestRequestMarshaller _instance = new AcceptAgreementPaymentRequestRequestMarshaller();        

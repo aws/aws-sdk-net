@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,14 +14,13 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
     {
         public void CloudDirectoryAddFacetToObject()
         {
-            #region to-add-a-facet-to-an-object-1507568792747
+            #region AddFacetToObject-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.AddFacetToObject(new AddFacetToObjectRequest 
+            var response = client.AddFacetToObject(new AddFacetToObjectRequest
             {
                 DirectoryArn = "arn:aws:clouddirectory:us-west-2:45132example:directory/AYb8AOV81kHNgdj8mAO3dNY",
                 ObjectAttributeList = new List<AttributeKeyAndValue> {
-                    
                 },
                 ObjectReference = new ObjectReference { Selector = "$AQGG_ADlfNZBzYHY_JgDt3TWmspn1fxfQmSQaaVKSbvEiQ" },
                 SchemaFacet = new SchemaFacet {
@@ -35,10 +35,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryApplySchema()
         {
-            #region to-apply-a-schema-1507061899015
+            #region ApplySchema-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.ApplySchema(new ApplySchemaRequest 
+            var response = client.ApplySchema(new ApplySchemaRequest
             {
                 DirectoryArn = "arn:aws:clouddirectory:us-west-2:45132example:directory/AfMr4qym1kZTvwqOafAYfqI",
                 PublishedSchemaArn = "arn:aws:clouddirectory:us-west-2:45132example:schema/published/org/1"
@@ -52,10 +52,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryAttachObject()
         {
-            #region to-attach-an-object-1507060976164
+            #region AttachObject-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.AttachObject(new AttachObjectRequest 
+            var response = client.AttachObject(new AttachObjectRequest
             {
                 ChildReference = new ObjectReference { Selector = "$AQGG_ADlfNZBzYHY_JgDt3TWSvfuEnDqTdmeCuTs6YBNUA" },
                 DirectoryArn = "arn:aws:clouddirectory:us-west-2:45132example:directory/AYb8AOV81kHNgdj8mAO3dNY",
@@ -70,10 +70,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryAttachPolicy()
         {
-            #region to-attach-a-policy-to-an-object-1508268194724
+            #region AttachPolicy-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.AttachPolicy(new AttachPolicyRequest 
+            var response = client.AttachPolicy(new AttachPolicyRequest
             {
                 DirectoryArn = "arn:aws:clouddirectory:us-west-2:45132example:directory/AYb8AOV81kHNgdj8mAO3dNY",
                 ObjectReference = new ObjectReference { Selector = "$AQGG_ADlfNZBzYHY_JgDt3TWQoovm1s3Ts2v0NKrzdVnPw" },
@@ -86,10 +86,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryAttachToIndex()
         {
-            #region to-attach-a-index-to-an-object-1506532855758
+            #region AttachToIndex-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.AttachToIndex(new AttachToIndexRequest 
+            var response = client.AttachToIndex(new AttachToIndexRequest
             {
                 DirectoryArn = "arn:aws:clouddirectory:us-west-2:45132example:directory/AYb8AOV81kHNgdj8mAO3dNY",
                 IndexReference = new ObjectReference { Selector = "$AQGG_ADlfNZBzYHY_JgDt3TW45F26R1HTY2z-stwKBte_Q" },
@@ -103,10 +103,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryAttachTypedLink()
         {
-            #region to-attach-a-typed-link-to-an-object-1506559900588
+            #region AttachTypedLink-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.AttachTypedLink(new AttachTypedLinkRequest 
+            var response = client.AttachTypedLink(new AttachTypedLinkRequest
             {
                 Attributes = new List<AttributeNameAndValue> {
                     new AttributeNameAndValue {
@@ -130,15 +130,14 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryBatchRead()
         {
-            #region to-run-a-batch-read-command-1506123433380
+            #region BatchRead-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.BatchRead(new BatchReadRequest 
+            var response = client.BatchRead(new BatchReadRequest
             {
                 ConsistencyLevel = "EVENTUAL",
                 DirectoryArn = "arn:aws:clouddirectory:us-west-2:45132example:directory/AYb8AOV81kHNgdj8mAO3dNY",
                 Operations = new List<BatchReadOperation> {
-                    
                 }
             });
 
@@ -149,14 +148,13 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryBatchWrite()
         {
-            #region to-run-a-batch-write-command-1506122878964
+            #region BatchWrite-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.BatchWrite(new BatchWriteRequest 
+            var response = client.BatchWrite(new BatchWriteRequest
             {
                 DirectoryArn = "arn:aws:clouddirectory:us-west-2:45132example:directory/AYb8AOV81kHNgdj8mAO3dNY",
                 Operations = new List<BatchWriteOperation> {
-                    
                 }
             });
 
@@ -167,10 +165,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryCreateDirectory()
         {
-            #region to-create-a-new-cloud-directory-1506119878996
+            #region CreateDirectory-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.CreateDirectory(new CreateDirectoryRequest 
+            var response = client.CreateDirectory(new CreateDirectoryRequest
             {
                 Name = "ExampleCD",
                 SchemaArn = "arn:aws:clouddirectory:us-west-2:45132example:schema/published/person/1"
@@ -186,10 +184,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryCreateFacet()
         {
-            #region to-create-a-facet-1506112442334
+            #region CreateFacet-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.CreateFacet(new CreateFacetRequest 
+            var response = client.CreateFacet(new CreateFacetRequest
             {
                 Name = "node1",
                 ObjectType = "NODE",
@@ -202,16 +200,15 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryCreateIndex()
         {
-            #region to-create-an-index-1505339563796
+            #region CreateIndex-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.CreateIndex(new CreateIndexRequest 
+            var response = client.CreateIndex(new CreateIndexRequest
             {
                 DirectoryArn = "arn:aws:clouddirectory:us-west-2:45132example:directory/AXQXDXvdgkOWktRXV4HnRa8",
                 IsUnique = true,
                 LinkName = "Examplelink",
                 OrderedIndexedAttributeList = new List<AttributeKey> {
-                    
                 },
                 ParentReference = new ObjectReference {  }
             });
@@ -223,10 +220,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryCreateObject()
         {
-            #region to-create-an-object-1494010287120
+            #region CreateObject-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.CreateObject(new CreateObjectRequest 
+            var response = client.CreateObject(new CreateObjectRequest
             {
                 DirectoryArn = "arn:aws:clouddirectory:us-west-2:45132example:directory/AXQXDXvdgkOWktRXV4HnRa8",
                 SchemaFacets = new List<SchemaFacet> {
@@ -244,10 +241,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryCreateSchema()
         {
-            #region to-create-a-schema-1506530911949
+            #region CreateSchema-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.CreateSchema(new CreateSchemaRequest 
+            var response = client.CreateSchema(new CreateSchemaRequest
             {
                 Name = "Customers"
             });
@@ -259,10 +256,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryCreateTypedLinkFacet()
         {
-            #region to-create-a-typed-link-facet-1506127699199
+            #region CreateTypedLinkFacet-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.CreateTypedLinkFacet(new CreateTypedLinkFacetRequest 
+            var response = client.CreateTypedLinkFacet(new CreateTypedLinkFacetRequest
             {
                 Facet = new TypedLinkFacet {
                     Attributes = new List<TypedLinkAttributeDefinition> {
@@ -286,10 +283,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryDeleteDirectory()
         {
-            #region to-delete-a-directory-1507570867859
+            #region DeleteDirectory-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.DeleteDirectory(new DeleteDirectoryRequest 
+            var response = client.DeleteDirectory(new DeleteDirectoryRequest
             {
                 DirectoryArn = "arn:aws:clouddirectory:us-west-2:45132example:directory/AXQXDXvdgkOWktRXV4HnRa8"
             });
@@ -301,10 +298,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryDeleteFacet()
         {
-            #region to-delete-a-facet-1507573383449
+            #region DeleteFacet-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.DeleteFacet(new DeleteFacetRequest 
+            var response = client.DeleteFacet(new DeleteFacetRequest
             {
                 Name = "Organization",
                 SchemaArn = "arn:aws:clouddirectory:us-west-2:45132example:schema/development/exampleorgtest"
@@ -316,10 +313,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryDeleteObject()
         {
-            #region to-delete-an-object-1507574607158
+            #region DeleteObject-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.DeleteObject(new DeleteObjectRequest 
+            var response = client.DeleteObject(new DeleteObjectRequest
             {
                 DirectoryArn = "arn:aws:clouddirectory:us-west-2:45132example:directory/AfMr4qym1kZTvwqOafAYfqI",
                 ObjectReference = new ObjectReference { Selector = "$AQHzK-KsptZGU78KjmnwGH6i8H-voMZDSNCqfx-fRUcBFg" }
@@ -331,10 +328,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryDeleteSchema()
         {
-            #region to-delete-a-schema-1507575230059
+            #region DeleteSchema-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.DeleteSchema(new DeleteSchemaRequest 
+            var response = client.DeleteSchema(new DeleteSchemaRequest
             {
                 SchemaArn = "arn:aws:clouddirectory:us-west-2:45132example:schema/development/exampleorgtest"
             });
@@ -346,10 +343,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryDeleteTypedLinkFacet()
         {
-            #region to-delete-a-typed-link-facet-1507576290714
+            #region DeleteTypedLinkFacet-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.DeleteTypedLinkFacet(new DeleteTypedLinkFacetRequest 
+            var response = client.DeleteTypedLinkFacet(new DeleteTypedLinkFacetRequest
             {
                 Name = "ExampleFacet",
                 SchemaArn = "arn:aws:clouddirectory:us-west-2:45132example:schema/development/typedlinkschematest"
@@ -361,10 +358,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryDetachFromIndex()
         {
-            #region to-detach-an-object-from-an-index-1507579662964
+            #region DetachFromIndex-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.DetachFromIndex(new DetachFromIndexRequest 
+            var response = client.DetachFromIndex(new DetachFromIndexRequest
             {
                 DirectoryArn = "arn:aws:clouddirectory:us-west-2:45132example:directory/AYb8AOV81kHNgdj8mAO3dNY",
                 IndexReference = new ObjectReference { Selector = "$AQGG_ADlfNZBzYHY_JgDt3TW45F26R1HTY2z-stwKBte_Q" },
@@ -378,10 +375,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryDetachObject()
         {
-            #region to-detach-an-object-from-its-parent-object-1508196401149
+            #region DetachObject-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.DetachObject(new DetachObjectRequest 
+            var response = client.DetachObject(new DetachObjectRequest
             {
                 DirectoryArn = "arn:aws:clouddirectory:us-west-2:45132example:directory/AYb8AOV81kHNgdj8mAO3dNY",
                 LinkName = "link2",
@@ -395,10 +392,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryDetachPolicy()
         {
-            #region to-detach-a-policy-from-an-object-1508268395318
+            #region DetachPolicy-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.DetachPolicy(new DetachPolicyRequest 
+            var response = client.DetachPolicy(new DetachPolicyRequest
             {
                 DirectoryArn = "arn:aws:clouddirectory:us-west-2:45132example:directory/AYb8AOV81kHNgdj8mAO3dNY",
                 ObjectReference = new ObjectReference { Selector = "$AQGG_ADlfNZBzYHY_JgDt3TWQoovm1s3Ts2v0NKrzdVnPw" },
@@ -411,10 +408,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryDetachTypedLink()
         {
-            #region to-detach-a-typed-link-from-an-object-1506540145856
+            #region DetachTypedLink-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.DetachTypedLink(new DetachTypedLinkRequest 
+            var response = client.DetachTypedLink(new DetachTypedLinkRequest
             {
                 DirectoryArn = "arn:aws:clouddirectory:us-west-2:45132example:directory/AYb8AOV81kHNgdj8mAO3dNY",
                 TypedLinkSpecifier = new TypedLinkSpecifier {
@@ -439,10 +436,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryDisableDirectory()
         {
-            #region to-disable-a-directory-1507253386265
+            #region DisableDirectory-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.DisableDirectory(new DisableDirectoryRequest 
+            var response = client.DisableDirectory(new DisableDirectoryRequest
             {
                 DirectoryArn = "arn:aws:clouddirectory:us-west-2:45132example:directory/AXQXDXvdgkOWktRXV4HnRa8"
             });
@@ -454,10 +451,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryEnableDirectory()
         {
-            #region to-enable-a-disabled-directory-1507253506378
+            #region EnableDirectory-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.EnableDirectory(new EnableDirectoryRequest 
+            var response = client.EnableDirectory(new EnableDirectoryRequest
             {
                 DirectoryArn = "arn:aws:clouddirectory:us-west-2:45132example:directory/AXQXDXvdgkOWktRXV4HnRa8"
             });
@@ -469,10 +466,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryGetDirectory()
         {
-            #region to-get-information-about-a-directory-1507235667410
+            #region GetDirectory-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.GetDirectory(new GetDirectoryRequest 
+            var response = client.GetDirectory(new GetDirectoryRequest
             {
                 DirectoryArn = "arn:aws:clouddirectory:us-west-2:45132example:directory/AYb8AOV81kHNgdj8mAO3dNY"
             });
@@ -484,10 +481,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryGetFacet()
         {
-            #region to-get-information-about-a-facet-1507234748374
+            #region GetFacet-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.GetFacet(new GetFacetRequest 
+            var response = client.GetFacet(new GetFacetRequest
             {
                 Name = "node2",
                 SchemaArn = "arn:aws:clouddirectory:us-west-2:45132example:directory/AYb8AOV81kHNgdj8mAO3dNY/schema/org/1"
@@ -500,10 +497,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryGetObjectInformation()
         {
-            #region to-get-information-about-an-object-1507228370573
+            #region GetObjectInformation-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.GetObjectInformation(new GetObjectInformationRequest 
+            var response = client.GetObjectInformation(new GetObjectInformationRequest
             {
                 ConsistencyLevel = "SERIALIZABLE",
                 DirectoryArn = "arn:aws:clouddirectory:us-west-2:45132example:directory/AYb8AOV81kHNgdj8mAO3dNY",
@@ -518,10 +515,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryGetSchemaAsJson()
         {
-            #region to-get-schema-information-and-display-it-in-json-format-1507249604181
+            #region GetSchemaAsJson-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.GetSchemaAsJson(new GetSchemaAsJsonRequest 
+            var response = client.GetSchemaAsJson(new GetSchemaAsJsonRequest
             {
                 SchemaArn = "arn:aws:clouddirectory:us-west-2:45132example:directory/AYb8AOV81kHNgdj8mAO3dNY/schema/org/1"
             });
@@ -534,10 +531,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryGetTypedLinkFacetInformation()
         {
-            #region to-get-information-about-a-typed-link-facet-1507251423121
+            #region GetTypedLinkFacetInformation-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.GetTypedLinkFacetInformation(new GetTypedLinkFacetInformationRequest 
+            var response = client.GetTypedLinkFacetInformation(new GetTypedLinkFacetInformationRequest
             {
                 Name = "exampletypedlink8",
                 SchemaArn = "arn:aws:clouddirectory:us-west-2:45132example:directory/AYb8AOV81kHNgdj8mAO3dNY/schema/org/1"
@@ -550,10 +547,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryListAppliedSchemaArns()
         {
-            #region to-list-applied-schema-arns-for-a-specified-directory-1508194900072
+            #region ListAppliedSchemaArns-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.ListAppliedSchemaArns(new ListAppliedSchemaArnsRequest 
+            var response = client.ListAppliedSchemaArns(new ListAppliedSchemaArnsRequest
             {
                 DirectoryArn = "arn:aws:clouddirectory:us-west-2:45132example:directory/AYb8AOV81kHNgdj8mAO3dNY"
             });
@@ -565,10 +562,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryListAttachedIndices()
         {
-            #region to-list-the-indices-attached-to-an-object-1507579868633
+            #region ListAttachedIndices-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.ListAttachedIndices(new ListAttachedIndicesRequest 
+            var response = client.ListAttachedIndices(new ListAttachedIndicesRequest
             {
                 DirectoryArn = "arn:aws:clouddirectory:us-west-2:45132example:directory/AYb8AOV81kHNgdj8mAO3dNY",
                 TargetReference = new ObjectReference { Selector = "$AQGG_ADlfNZBzYHY_JgDt3TWcU7IARvOTeaR09zme1sVsw" }
@@ -581,10 +578,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryListDevelopmentSchemaArns()
         {
-            #region to-list-the-development-schema-arns-1508262502911
+            #region ListDevelopmentSchemaArns-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.ListDevelopmentSchemaArns(new ListDevelopmentSchemaArnsRequest 
+            var response = client.ListDevelopmentSchemaArns(new ListDevelopmentSchemaArnsRequest
             {
             });
 
@@ -595,10 +592,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryListDirectories()
         {
-            #region to-list-all-directories-in-your-aws-account-1508262706411
+            #region ListDirectories-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.ListDirectories(new ListDirectoriesRequest 
+            var response = client.ListDirectories(new ListDirectoriesRequest
             {
             });
 
@@ -609,10 +606,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryListFacetAttributes()
         {
-            #region to-list-facet-attributes-1508275015421
+            #region ListFacetAttributes-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.ListFacetAttributes(new ListFacetAttributesRequest 
+            var response = client.ListFacetAttributes(new ListFacetAttributesRequest
             {
                 Name = "Organization",
                 SchemaArn = "arn:aws:clouddirectory:us-west-2:45132example:directory/AYb8AOV81kHNgdj8mAO3dNY/schema/org/1"
@@ -626,10 +623,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryListFacetNames()
         {
-            #region to-list-facet-names-1508275974689
+            #region ListFacetNames-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.ListFacetNames(new ListFacetNamesRequest 
+            var response = client.ListFacetNames(new ListFacetNamesRequest
             {
                 SchemaArn = "arn:aws:clouddirectory:us-west-2:45132example:directory/AYb8AOV81kHNgdj8mAO3dNY/schema/org/1"
             });
@@ -641,10 +638,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryListIncomingTypedLinks()
         {
-            #region to-list-incoming-typed-links-1508276145750
+            #region ListIncomingTypedLinks-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.ListIncomingTypedLinks(new ListIncomingTypedLinksRequest 
+            var response = client.ListIncomingTypedLinks(new ListIncomingTypedLinksRequest
             {
                 DirectoryArn = "arn:aws:clouddirectory:us-west-2:45132example:directory/AYb8AOV81kHNgdj8mAO3dNY",
                 ObjectReference = new ObjectReference { Selector = "$AQGG_ADlfNZBzYHY_JgDt3TWcU7IARvOTeaR09zme1sVsw" }
@@ -658,10 +655,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryListIndex()
         {
-            #region to-list-an-index-1508281185950
+            #region ListIndex-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.ListIndex(new ListIndexRequest 
+            var response = client.ListIndex(new ListIndexRequest
             {
                 DirectoryArn = "arn:aws:clouddirectory:us-west-2:45132example:directory/AYb8AOV81kHNgdj8mAO3dNY",
                 IndexReference = new ObjectReference { Selector = "$AQGG_ADlfNZBzYHY_JgDt3TW45F26R1HTY2z-stwKBte_Q" }
@@ -674,10 +671,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryListObjectAttributes()
         {
-            #region to-list-object-attributes-1508281422770
+            #region ListObjectAttributes-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.ListObjectAttributes(new ListObjectAttributesRequest 
+            var response = client.ListObjectAttributes(new ListObjectAttributesRequest
             {
                 DirectoryArn = "arn:aws:clouddirectory:us-west-2:45132example:directory/AYb8AOV81kHNgdj8mAO3dNY",
                 ObjectReference = new ObjectReference { Selector = "$AQGG_ADlfNZBzYHY_JgDt3TW45F26R1HTY2z-stwKBte_Q" }
@@ -690,10 +687,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
 
         public void CloudDirectoryListObjectChildren()
         {
-            #region to-list-an-objects-children-1508281694794
+            #region ListObjectChildren-1
 
             var client = new AmazonCloudDirectoryClient();
-            var response = client.ListObjectChildren(new ListObjectChildrenRequest 
+            var response = client.ListObjectChildren(new ListObjectChildrenRequest
             {
                 DirectoryArn = "arn:aws:clouddirectory:us-west-2:45132example:directory/AYb8AOV81kHNgdj8mAO3dNY",
                 ObjectReference = new ObjectReference { Selector = "$AQGG_ADlfNZBzYHY_JgDt3TWcU7IARvOTeaR09zme1sVsw" }
@@ -704,13 +701,10 @@ namespace AWSSDKDocSamples.Amazon.CloudDirectory.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Domains.Model
 {
     /// <summary>
-    /// Information about the domain price associated with a TLD.
+    /// Information about the prices associated with a TLD or a domain name.
     /// </summary>
     public partial class DomainPrice
     {
@@ -62,7 +62,7 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the TLD for which the prices apply.
+        /// The TLD or domain name that the prices apply to.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

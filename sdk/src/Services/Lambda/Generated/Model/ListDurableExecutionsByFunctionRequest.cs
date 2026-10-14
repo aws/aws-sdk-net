@@ -128,8 +128,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Qualifier. 
         /// <para>
-        /// The function version or alias. If not specified, lists executions for the $LATEST
-        /// version.
+        /// The function version to filter executions by. If you don't specify a qualifier, this
+        /// operation returns executions across all versions of the Lambda function.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

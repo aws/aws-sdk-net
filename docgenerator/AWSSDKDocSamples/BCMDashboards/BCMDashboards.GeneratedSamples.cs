@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,13 +14,13 @@ namespace AWSSDKDocSamples.Amazon.BCMDashboards.Generated
     {
         public void BCMDashboardsCreateDashboard()
         {
-            #region example-1
+            #region CreateDashboard-1
 
             var client = new AmazonBCMDashboardsClient();
-            var response = client.CreateDashboard(new CreateDashboardRequest 
+            var response = client.CreateDashboard(new CreateDashboardRequest
             {
-                Name = "cost-dashboards",
                 Description = "Dashboard for tracking costs",
+                Name = "cost-dashboards",
                 Widgets = new List<Widget> {
                     new Widget {
                         Configs = new List<WidgetConfig> {
@@ -31,8 +32,8 @@ namespace AWSSDKDocSamples.Amazon.BCMDashboards.Generated
                                     Granularity = "MONTHLY",
                                     GroupBy = new List<GroupDefinition> {
                                         new GroupDefinition {
-                                            Type = "DIMENSION",
-                                            Key = "SERVICE"
+                                            Key = "SERVICE",
+                                            Type = "DIMENSION"
                                         }
                                     },
                                     Metrics = new List<string> {
@@ -65,10 +66,10 @@ namespace AWSSDKDocSamples.Amazon.BCMDashboards.Generated
 
         public void BCMDashboardsDeleteDashboard()
         {
-            #region example-1
+            #region DeleteDashboard-1
 
             var client = new AmazonBCMDashboardsClient();
-            var response = client.DeleteDashboard(new DeleteDashboardRequest 
+            var response = client.DeleteDashboard(new DeleteDashboardRequest
             {
                 Arn = "arn:aws:bcm-dashboards::123456789012:dashboard/abcd1234-ab12-12ab-1ab2-abcd1234efgh"
             });
@@ -80,20 +81,20 @@ namespace AWSSDKDocSamples.Amazon.BCMDashboards.Generated
 
         public void BCMDashboardsGetDashboard()
         {
-            #region example-1
+            #region GetDashboard-1
 
             var client = new AmazonBCMDashboardsClient();
-            var response = client.GetDashboard(new GetDashboardRequest 
+            var response = client.GetDashboard(new GetDashboardRequest
             {
                 Arn = "arn:aws:bcm-dashboards::123456789012:dashboard/abcd1234-ab12-12ab-1ab2-abcd1234efgh"
             });
 
-            string name = response.Name;
-            string type = response.Type;
             string arn = response.Arn;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string description = response.Description;
-            DateTime updatedAt = response.UpdatedAt;
+            string name = response.Name;
+            DashboardType type = response.Type;
+            DateTime? updatedAt = response.UpdatedAt;
             List<Widget> widgets = response.Widgets;
 
             #endregion
@@ -101,10 +102,10 @@ namespace AWSSDKDocSamples.Amazon.BCMDashboards.Generated
 
         public void BCMDashboardsGetResourcePolicy()
         {
-            #region example-1
+            #region GetResourcePolicy-1
 
             var client = new AmazonBCMDashboardsClient();
-            var response = client.GetResourcePolicy(new GetResourcePolicyRequest 
+            var response = client.GetResourcePolicy(new GetResourcePolicyRequest
             {
                 ResourceArn = "arn:aws:bcm-dashboards::123456789012:dashboard/abcd1234-ab12-12ab-1ab2-abcd1234efgh"
             });
@@ -117,10 +118,10 @@ namespace AWSSDKDocSamples.Amazon.BCMDashboards.Generated
 
         public void BCMDashboardsListDashboards()
         {
-            #region example-1
+            #region ListDashboards-1
 
             var client = new AmazonBCMDashboardsClient();
-            var response = client.ListDashboards(new ListDashboardsRequest 
+            var response = client.ListDashboards(new ListDashboardsRequest
             {
             });
 
@@ -131,10 +132,10 @@ namespace AWSSDKDocSamples.Amazon.BCMDashboards.Generated
 
         public void BCMDashboardsListTagsForResource()
         {
-            #region example-1
+            #region ListTagsForResource-1
 
             var client = new AmazonBCMDashboardsClient();
-            var response = client.ListTagsForResource(new ListTagsForResourceRequest 
+            var response = client.ListTagsForResource(new ListTagsForResourceRequest
             {
                 ResourceArn = "arn:aws:bcm-dashboards::123456789012:dashboard/abcd1234-ab12-12ab-1ab2-abcd1234efgh"
             });
@@ -146,10 +147,10 @@ namespace AWSSDKDocSamples.Amazon.BCMDashboards.Generated
 
         public void BCMDashboardsTagResource()
         {
-            #region example-1
+            #region TagResource-1
 
             var client = new AmazonBCMDashboardsClient();
-            var response = client.TagResource(new TagResourceRequest 
+            var response = client.TagResource(new TagResourceRequest
             {
                 ResourceArn = "arn:aws:bcm-dashboards::123456789012:dashboard/abcd1234-ab12-12ab-1ab2-abcd1234efgh",
                 ResourceTags = new List<ResourceTag> {
@@ -166,10 +167,10 @@ namespace AWSSDKDocSamples.Amazon.BCMDashboards.Generated
 
         public void BCMDashboardsUntagResource()
         {
-            #region example-1
+            #region UntagResource-1
 
             var client = new AmazonBCMDashboardsClient();
-            var response = client.UntagResource(new UntagResourceRequest 
+            var response = client.UntagResource(new UntagResourceRequest
             {
                 ResourceArn = "arn:aws:bcm-dashboards::123456789012:dashboard/abcd1234-ab12-12ab-1ab2-abcd1234efgh",
                 ResourceTagKeys = new List<string> {
@@ -183,14 +184,14 @@ namespace AWSSDKDocSamples.Amazon.BCMDashboards.Generated
 
         public void BCMDashboardsUpdateDashboard()
         {
-            #region example-1
+            #region UpdateDashboard-1
 
             var client = new AmazonBCMDashboardsClient();
-            var response = client.UpdateDashboard(new UpdateDashboardRequest 
+            var response = client.UpdateDashboard(new UpdateDashboardRequest
             {
-                Name = "cost-dashboards-updated",
                 Arn = "arn:aws:bcm-dashboards::123456789012:dashboard/abcd1234-ab12-12ab-1ab2-abcd1234efgh",
                 Description = "Dashboard for tracking costs version 2",
+                Name = "cost-dashboards-updated",
                 Widgets = new List<Widget> {
                     new Widget {
                         Configs = new List<WidgetConfig> {
@@ -202,8 +203,8 @@ namespace AWSSDKDocSamples.Amazon.BCMDashboards.Generated
                                     Granularity = "MONTHLY",
                                     GroupBy = new List<GroupDefinition> {
                                         new GroupDefinition {
-                                            Type = "DIMENSION",
-                                            Key = "SERVICE"
+                                            Key = "SERVICE",
+                                            Type = "DIMENSION"
                                         }
                                     },
                                     Metrics = new List<string> {
@@ -234,13 +235,10 @@ namespace AWSSDKDocSamples.Amazon.BCMDashboards.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

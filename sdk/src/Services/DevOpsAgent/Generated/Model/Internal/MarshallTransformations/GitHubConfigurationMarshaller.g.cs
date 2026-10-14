@@ -63,6 +63,12 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.OwnerType);
             }
 
+            if (requestObject.IsSetReleaseManagementAssociationId())
+            {
+                context.Writer.WritePropertyName("releaseManagementAssociationId");
+                context.Writer.WriteStringValue(requestObject.ReleaseManagementAssociationId);
+            }
+
             if (requestObject.IsSetRepoId())
             {
                 context.Writer.WritePropertyName("repoId");

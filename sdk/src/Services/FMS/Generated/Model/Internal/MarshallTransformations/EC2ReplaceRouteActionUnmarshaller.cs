@@ -29,70 +29,93 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for EC2ReplaceRouteAction Object
     /// </summary>  
-    public class EC2ReplaceRouteActionUnmarshaller : IJsonUnmarshaller<EC2ReplaceRouteAction, JsonUnmarshallerContext>
+    public class EC2ReplaceRouteActionUnmarshaller : ICborUnmarshaller<EC2ReplaceRouteAction, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public EC2ReplaceRouteAction Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public EC2ReplaceRouteAction Unmarshall(CborUnmarshallerContext context)
         {
             EC2ReplaceRouteAction unmarshalledObject = new EC2ReplaceRouteAction();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("Description", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("DestinationCidrBlock", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DestinationCidrBlock = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("DestinationIpv6CidrBlock", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DestinationIpv6CidrBlock = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("DestinationPrefixListId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DestinationPrefixListId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("GatewayId", targetDepth, ref reader))
-                {
-                    var unmarshaller = ActionTargetUnmarshaller.Instance;
-                    unmarshalledObject.GatewayId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RouteTableId", targetDepth, ref reader))
-                {
-                    var unmarshaller = ActionTargetUnmarshaller.Instance;
-                    unmarshalledObject.RouteTableId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Description":
+                        {
+                            context.AddPathSegment("Description");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "DestinationCidrBlock":
+                        {
+                            context.AddPathSegment("DestinationCidrBlock");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.DestinationCidrBlock = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "DestinationIpv6CidrBlock":
+                        {
+                            context.AddPathSegment("DestinationIpv6CidrBlock");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.DestinationIpv6CidrBlock = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "DestinationPrefixListId":
+                        {
+                            context.AddPathSegment("DestinationPrefixListId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.DestinationPrefixListId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "GatewayId":
+                        {
+                            context.AddPathSegment("GatewayId");
+                            var unmarshaller = ActionTargetUnmarshaller.Instance;
+                            unmarshalledObject.GatewayId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "RouteTableId":
+                        {
+                            context.AddPathSegment("RouteTableId");
+                            var unmarshaller = ActionTargetUnmarshaller.Instance;
+                            unmarshalledObject.RouteTableId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

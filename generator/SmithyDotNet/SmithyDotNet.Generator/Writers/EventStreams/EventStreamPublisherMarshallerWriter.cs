@@ -1,5 +1,6 @@
 using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Generation.EventStreams;
+using SmithyDotNet.Generator.Generation.Protocols;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
@@ -16,14 +17,16 @@ namespace SmithyDotNet.Generator.Writers.EventStreams;
 public sealed class EventStreamPublisherMarshallerWriter(GenerationContext context, string modelFileName)
 {
     // A union member that isn't an @error is an event: its wire name (the :event-type header) is the
-    // member name verbatim, its marshaller is {EventClass}Marshaller, and its payload kind picks the
-    // wire :content-type.
-    private readonly record struct Event(string WireName, string EventClass, PayloadKind Payload);
+    // member name verbatim, its marshaller is the event structure's (GenerationContext.StructureMarshallerName),
+    // and its payload kind picks the wire :content-type.
+    private readonly record struct Event(string WireName, string EventClass, string Marshaller, PayloadKind Payload);
+
+    private bool Cbor => context.Protocol == AWSProtocol.RpcV2Cbor;
 
     // The event's wire :content-type and payload source. A blob/string @eventPayload is the raw body the
     // event marshaller wrote to context.Request.Content; anything else (a structure payload or an implicit
-    // body) is the JSON the marshaller wrote through the writer.
-    private enum PayloadKind { Json, Blob, String }
+    // body) is the protocol's encoding the marshaller wrote through the writer.
+    private enum PayloadKind { Body, Blob, String }
 
     public string Write(RequestEventStream stream, CancellationToken cancellationToken = default)
     {
@@ -36,7 +39,7 @@ public sealed class EventStreamPublisherMarshallerWriter(GenerationContext conte
         var events = union.Members
             .Where(member => !context.Resolve(member.Value.Target).IsError())
             .OrderBy(member => member.Key, StringComparer.Ordinal)
-            .Select(member => new Event(member.Key, context.ToDotNetName(member.Value.Target), PayloadOf(member.Value.Target)))
+            .Select(member => new Event(member.Key, context.ToDotNetName(member.Value.Target), context.StructureMarshallerName(member.Value.Target), PayloadOf(member.Value.Target)))
             .ToList();
 
         // Without this the loop below emits no branch and the trailing `else` doesn't compile.
@@ -47,7 +50,13 @@ public sealed class EventStreamPublisherMarshallerWriter(GenerationContext conte
 
         var writer = new CodeWriter();
         FileHeader.WriteLicense(writer, modelFileName);
-        FileHeader.WriteUsings(writer, FileHeader.EventStreamPublisherUsings);
+        FileHeader.WriteUsings(writer, FileHeader.EventStreamPublisherUsings, emitTrailingNewLine: !Cbor);
+        if (Cbor)
+        {
+            writer.WriteLine("using Amazon.Extensions.CborProtocol.Internal;");
+            writer.WriteLine("using Amazon.Extensions.CborProtocol.Internal.EventStreams;");
+            writer.WriteLine();
+        }
         FileHeader.WritePragma(writer, FileHeader.MarshallerWarnings);
 
         writer.OpenNamespace($"{context.Namespace}.Model.Internal.MarshallTransformations", () =>
@@ -55,7 +64,9 @@ public sealed class EventStreamPublisherMarshallerWriter(GenerationContext conte
             writer.WriteLine("/// <summary>");
             writer.WriteLine("/// Marshals the service events for the event stream to the low level IEventStreamMessage.");
             writer.WriteLine("/// </summary>");
-            writer.OpenBlock($"public partial class {streamName}PublisherMarshaller : EventStreamPublisher", () =>
+            // The CBOR base class adds CreateCborMarshallerContext (the extension's counterpart of CreateJsonMarshallerContext).
+            var baseClass = Cbor ? "CborEventStreamPublisher" : "EventStreamPublisher";
+            writer.OpenBlock($"public partial class {streamName}PublisherMarshaller : {baseClass}", () =>
             {
                 writer.WriteLine($"Func<Task<I{streamName}Event>> _publisher;");
                 writer.WriteLine();
@@ -80,7 +91,7 @@ public sealed class EventStreamPublisherMarshallerWriter(GenerationContext conte
         });
     }
 
-    private static void WriteNextEvent(CodeWriter writer, List<Event> events)
+    private void WriteNextEvent(CodeWriter writer, List<Event> events)
     {
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Gets the next service event provided by the consumer of the SDK and converts it to a IEventStreamMessage.");
@@ -100,7 +111,14 @@ public sealed class EventStreamPublisherMarshallerWriter(GenerationContext conte
             for (var i = 0; i < events.Count; i++)
             {
                 var keyword = i == 0 ? "if" : "else if";
-                WriteEventBranch(writer, keyword, events[i]);
+                if (Cbor)
+                {
+                    WriteCborEventBranch(writer, keyword, events[i]);
+                }
+                else
+                {
+                    WriteJsonEventBranch(writer, keyword, events[i]);
+                }
             }
 
             writer.OpenBlock("else", () =>
@@ -113,29 +131,53 @@ public sealed class EventStreamPublisherMarshallerWriter(GenerationContext conte
     }
 
     // The JSON writer block runs for every event (matching C2J) so @eventHeader members land in
-    // context.Request.EventHeaders; the payload source is then chosen by kind. CBOR is not handled — the
-    // generator is restJson1 only.
-    private static void WriteEventBranch(CodeWriter writer, string keyword, Event evnt)
+    // context.Request.EventHeaders; the payload source is then chosen by kind.
+    private static void WriteJsonEventBranch(CodeWriter writer, string keyword, Event evnt)
     {
         writer.OpenBlock($"{keyword} (evnt is {evnt.EventClass})", () =>
         {
             writer.WriteLine("var memoryStream = new MemoryStream();");
             writer.WriteLine("var context = CreateJsonMarshallerContext(memoryStream);");
             writer.WriteLine("context.Writer.WriteStartObject();");
-            writer.WriteLine($"{evnt.EventClass}Marshaller.Instance.Marshall(({evnt.EventClass})evnt, context);");
+            writer.WriteLine($"{evnt.Marshaller}.Instance.Marshall(({evnt.EventClass})evnt, context);");
             writer.WriteLine("eventHeaders = context.Request.EventHeaders;");
             writer.WriteLine("context.Writer.WriteEndObject();");
             writer.WriteLine("context.Writer.Flush();");
             writer.WriteLine();
             writer.WriteLine($"eventType = {CodeWriter.Literal(evnt.WireName)};");
-            WritePayload(writer, evnt.Payload);
+            WritePayload(writer, evnt.Payload, "application/json", "memoryStream.ToArray()");
         });
     }
 
-    // Blob/string payloads are the raw body the event marshaller placed in context.Request.Content; the JSON
-    // memoryStream is discarded for them (it holds only the empty {} the writer block emitted). A structure
-    // payload or an implicit body is the JSON itself.
-    private static void WritePayload(CodeWriter writer, PayloadKind payload)
+    // Same shape over a pooled CborWriter (C2J EventStreamPublisherMarshaller.tt's Cbor branch): the map is
+    // the event body, encoded once the marshaller has run.
+    private static void WriteCborEventBranch(CodeWriter writer, string keyword, Event evnt)
+    {
+        writer.OpenBlock($"{keyword} (evnt is {evnt.EventClass})", () =>
+        {
+            writer.WriteLine("var writer = CborWriterPool.Rent();");
+            writer.OpenBlock("try", () =>
+            {
+                writer.WriteLine("var context = CreateCborMarshallerContext(writer);");
+                writer.WriteLine("context.Writer.WriteStartMap(null);");
+                writer.WriteLine($"{evnt.Marshaller}.Instance.Marshall(({evnt.EventClass})evnt, context);");
+                writer.WriteLine("eventHeaders = context.Request.EventHeaders;");
+                writer.WriteLine("context.Writer.WriteEndMap();");
+                writer.WriteLine();
+                writer.WriteLine($"eventType = {CodeWriter.Literal(evnt.WireName)};");
+                WritePayload(writer, evnt.Payload, "application/cbor", "writer.Encode()");
+            });
+            writer.OpenBlock("finally", () =>
+            {
+                writer.WriteLine("CborWriterPool.Return(writer);");
+            });
+        });
+    }
+
+    // Blob/string payloads are the raw body the event marshaller placed in context.Request.Content; the
+    // protocol's writer output is discarded for them (it holds only the empty object the branch opened). A
+    // structure payload or an implicit body is that output itself.
+    private static void WritePayload(CodeWriter writer, PayloadKind payload, string bodyContentType, string body)
     {
         switch (payload)
         {
@@ -148,30 +190,30 @@ public sealed class EventStreamPublisherMarshallerWriter(GenerationContext conte
                 writer.WriteLine("eventPayload = context.Request.Content;");
                 break;
             default:
-                writer.WriteLine("""contentType = "application/json";""");
-                writer.WriteLine("eventPayload = memoryStream.ToArray();");
+                writer.WriteLine($"""contentType = "{bodyContentType}";""");
+                writer.WriteLine($"eventPayload = {body};");
                 break;
         }
     }
 
     // The wire :content-type follows the event's explicit @eventPayload member. Only blob and string are sent
     // as a raw body (octet-stream / text/plain); a structure payload and the no-payload (implicit body) case
-    // stay JSON. Mirrors C2J, except C2J's dead text/plain branch for a structure payload — no service models
-    // one — is kept as JSON here to match what the event marshaller actually writes.
+    // stay the protocol's body. Mirrors C2J, except a structure payload is kept as the body (C2J says text/plain)
+    // to match what the event marshaller actually writes.
     private PayloadKind PayloadOf(ShapeId eventId)
     {
         var eventStructure = (StructureShape)context.Resolve(eventId);
         var payload = eventStructure.Members.Values.FirstOrDefault(member => member.IsEventPayload());
         if (payload is null)
         {
-            return PayloadKind.Json;
+            return PayloadKind.Body;
         }
 
         return context.Resolve(payload.Target) switch
         {
             BlobShape => PayloadKind.Blob,
             StringShape or EnumShape => PayloadKind.String,
-            _ => PayloadKind.Json,
+            _ => PayloadKind.Body,
         };
     }
 }

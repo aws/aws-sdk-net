@@ -39,6 +39,7 @@ namespace Amazon.Resiliencehubv2.Model
         private string _clientToken;
         private DependencyDiscoveryInput _dependencyDiscovery;
         private string _description;
+        private DevOpsAgentConfiguration _devOpsAgentConfiguration;
         private string _kmsKeyId;
         private string _name;
         private PermissionModel _permissionModel;
@@ -116,6 +117,25 @@ namespace Amazon.Resiliencehubv2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DevOpsAgentConfiguration. 
+        /// <para>
+        /// The optional DevOps Agent integration configuration to apply to the new service. If
+        /// you omit this field, the new service has no DevOps Agent integration.
+        /// </para>
+        /// </summary>
+        public DevOpsAgentConfiguration DevOpsAgentConfiguration
+        {
+            get { return this._devOpsAgentConfiguration; }
+            set { this._devOpsAgentConfiguration = value; }
+        }
+
+        // Check to see if DevOpsAgentConfiguration property is set
+        internal bool IsSetDevOpsAgentConfiguration()
+        {
+            return this._devOpsAgentConfiguration != null;
         }
 
         /// <summary>

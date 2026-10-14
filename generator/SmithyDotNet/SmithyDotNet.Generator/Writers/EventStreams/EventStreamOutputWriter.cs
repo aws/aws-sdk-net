@@ -1,4 +1,5 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Protocols;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
 using SmithyDotNet.Generator.Writers.Shapes;
@@ -24,8 +25,27 @@ public sealed class EventStreamOutputWriter(GenerationContext context, string mo
     // stream SEP). `HandlerName` is that name upper-cased for the C# `{HandlerName}Received` member.
     private readonly record struct Entry(string WireName, string HandlerName, string TypeName, string Unmarshaller);
 
-    private const string ReaderLine =
-        "var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);";
+    // JSON gets a header-aware context from Core; CBOR builds one over the raw payload with no response data,
+    // as C2J does (Core's header-aware constructor is internal to it), so a CBOR event cannot read @eventHeader members.
+    // TODO: the JSON reader fills its buffer from context.Stream before the event unmarshaller runs, so a blob
+    // @eventPayload comes back as a MemoryStream positioned past the first 4 KB (ToArray() still returns everything,
+    // Read/CopyTo do not) and a string payload reads empty. V3 built no reader here and was correct; C2J emits the
+    // same code and Polly/SageMakerRuntime ship it. Skip the reader for raw-payload events once eventStreamTests run.
+    private static readonly string[] JsonContextLines =
+    [
+        "var context = EventStreamUtils.ConvertMessageToJsonContext(payload);",
+        "var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);",
+    ];
+
+    private static readonly string[] CborContextLines =
+    [
+        "var stream = EventStreamUtils.ConvertMessageToStream(payload);",
+        "var context = new CborUnmarshallerContext(stream, false, null);",
+    ];
+
+    private bool Cbor => context.Protocol == AWSProtocol.RpcV2Cbor;
+    private string[] ContextLines => Cbor ? CborContextLines : JsonContextLines;
+    private string UnmarshallArguments => Cbor ? "context" : "context, ref reader";
 
     public string Write(StructureShape eventStream, CancellationToken cancellationToken = default)
     {
@@ -49,7 +69,7 @@ public sealed class EventStreamOutputWriter(GenerationContext context, string mo
             else
             {
                 var eventType = context.ToDotNetName(member.Target);
-                events.Add(new Entry(memberName, handlerName, eventType, $"{eventType}Unmarshaller"));
+                events.Add(new Entry(memberName, handlerName, eventType, context.StructureUnmarshallerName(member.Target)));
             }
         }
 
@@ -86,7 +106,12 @@ public sealed class EventStreamOutputWriter(GenerationContext context, string mo
     {
         FileHeader.WriteUsings(writer, FileHeader.ModelUsings);
         FileHeader.WriteUsings(writer, FileHeader.EventStreamOutputUsings, emitTrailingNewLine: false);
+        if (Cbor)
+        {
+            writer.WriteLine("using Amazon.Extensions.CborProtocol.Internal.Transform;");
+        }
         writer.WriteLine($"using {context.Namespace}.Model.Internal.MarshallTransformations;");
+
         // A union named EventStream (the protocol test client) yields an I{Union}Event marker in this very
         // namespace that shadows the runtime's IEventStreamEvent, so refer to it through an alias no shape name can hit.
         writer.WriteLine("using RuntimeEvent = Amazon.Runtime.EventStreams.IEventStreamEvent;");
@@ -102,7 +127,7 @@ public sealed class EventStreamOutputWriter(GenerationContext context, string mo
         writer.WriteLine("""[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1063", Justification = "IDisposable is a transient interface from IEventOutputStream. Users need to be able to call Dispose.")]""");
     }
 
-    private static void WriteEventMapping(CodeWriter writer, List<Entry> events)
+    private void WriteEventMapping(CodeWriter writer, List<Entry> events)
     {
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// The mapping of event message to a generator function to construct the matching EventStream event.");
@@ -118,12 +143,12 @@ public sealed class EventStreamOutputWriter(GenerationContext context, string mo
             writer.WriteLine("},");
             foreach (var ev in events)
             {
-                WriteMessageEntry(writer, ev.WireName, $"return new {ev.Unmarshaller}().Unmarshall(context, ref reader);");
+                WriteMessageEntry(writer, ev.WireName, $"return new {ev.Unmarshaller}().Unmarshall({UnmarshallArguments});");
             }
         });
     }
 
-    private static void WriteExceptionMapping(CodeWriter writer, List<Entry> exceptions, string exceptionType)
+    private void WriteExceptionMapping(CodeWriter writer, List<Entry> exceptions, string exceptionType)
     {
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// The mapping of event message to a generator function to construct the matching EventStream Exception");
@@ -132,22 +157,24 @@ public sealed class EventStreamOutputWriter(GenerationContext context, string mo
         {
             foreach (var ex in exceptions)
             {
-                WriteMessageEntry(writer, ex.WireName, $"return new {exceptionType}(Encoding.UTF8.GetString(payload.Payload), new {ex.Unmarshaller}().Unmarshall(context, ref reader));");
+                WriteMessageEntry(writer, ex.WireName, $"return new {exceptionType}(Encoding.UTF8.GetString(payload.Payload), new {ex.Unmarshaller}().Unmarshall({UnmarshallArguments}));");
             }
         });
     }
 
     // One dictionary element: the element's own `{ }` wraps `"name", payload => { <body> }`, and the
     // element is closed with `},`. The lambda gets its own block because the body is multi-statement.
-    private static void WriteMessageEntry(CodeWriter writer, string name, string returnStatement)
+    private void WriteMessageEntry(CodeWriter writer, string name, string returnStatement)
     {
         writer.WriteLine("{");
         writer.Indent(() =>
         {
             writer.OpenBlock($"{CodeWriter.Literal(name)}, payload =>", () =>
             {
-                writer.WriteLine("var context = EventStreamUtils.ConvertMessageToJsonContext(payload);");
-                writer.WriteLine(ReaderLine);
+                foreach (var line in ContextLines)
+                {
+                    writer.WriteLine(line);
+                }
                 writer.WriteLine(returnStatement);
             });
         });
@@ -202,15 +229,15 @@ public sealed class EventStreamOutputWriter(GenerationContext context, string mo
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Construct an instance");
         writer.WriteLine("/// </summary>");
-        writer.OpenBlock($"public {className}(Stream stream) : this (stream, null)", () => { });
+        writer.OpenBlock($"public {className}(Stream stream) : this(stream, null)", () => { });
         writer.WriteLine();
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Construct an instance");
         writer.WriteLine("/// </summary>");
         writer.OpenBlock($"public {className}(Stream stream, IEventStreamDecoder eventStreamDecoder) : base(stream, eventStreamDecoder)", () =>
         {
-            writer.WriteLine("base.EventReceived += (sender,args) => EventReceived?.Invoke(this, args);");
-            writer.WriteLine("base.ExceptionReceived += (sender,args) => ExceptionReceived?.Invoke(this, args);");
+            writer.WriteLine("base.EventReceived += (sender, args) => EventReceived?.Invoke(this, args);");
+            writer.WriteLine("base.ExceptionReceived += (sender, args) => ExceptionReceived?.Invoke(this, args);");
             writer.WriteLine();
             writer.WriteLine("//Mapping the generic Event to more specific Events");
             writer.OpenBlock("Decoder.MessageReceived += (sender, args) =>", "};", () =>
@@ -231,7 +258,7 @@ public sealed class EventStreamOutputWriter(GenerationContext context, string mo
 
                 // The chain always starts with the initial response, then each event in model order.
                 var chain = new List<string> { "RaiseEvent(InitialResponseReceived, ev)" };
-                chain.AddRange(events.Select(ev => $"RaiseEvent({ev.HandlerName}Received,ev)"));
+                chain.AddRange(events.Select(ev => $"RaiseEvent({ev.HandlerName}Received, ev)"));
                 writer.WriteLine("var _ =");
                 for (var i = 0; i < chain.Count; i++)
                 {

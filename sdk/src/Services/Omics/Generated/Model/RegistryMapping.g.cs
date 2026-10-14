@@ -37,6 +37,27 @@ namespace Amazon.Omics.Model
     public partial class RegistryMapping
     {
         /// <summary>
+        /// Gets and sets the property CredentialArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that
+        /// holds the credentials for the upstream registry. You must specify this value when
+        /// Amazon Elastic Container Registry (Amazon ECR) doesn't support pull through cache
+        /// for the upstream registry. HealthOmics supports only some of these registries. The
+        /// workflow role must have permission to call the <c>secretsmanager:GetSecretValue</c>
+        /// operation on the secret. For more information about the supported registries, see
+        /// <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-ecr.html">Container
+        /// images</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 20, Max = 2048)]
+        public string CredentialArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CredentialArn property is set.
+        /// </summary>
+        internal bool IsSetCredentialArn() => this.CredentialArn != null;
+
+        /// <summary>
         /// Gets and sets the property EcrAccountId. 
         /// <para>
         /// Account ID of the account that owns the upstream container image.
@@ -56,7 +77,7 @@ namespace Amazon.Omics.Model
         /// The repository prefix to use in the ECR private repository.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 1, Max = 256)]
+        [AWSProperty(Required = true, Min = 1, Max = 256)]
         public string EcrRepositoryPrefix { get; set; }
 
         /// <summary>
@@ -70,7 +91,7 @@ namespace Amazon.Omics.Model
         /// The URI of the upstream registry.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 1, Max = 750)]
+        [AWSProperty(Required = true, Min = 1, Max = 750)]
         public string UpstreamRegistryUrl { get; set; }
 
         /// <summary>

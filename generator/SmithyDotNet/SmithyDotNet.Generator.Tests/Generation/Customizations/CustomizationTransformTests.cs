@@ -1,418 +1,248 @@
-using System.Text.Json;
-using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
-using SmithyDotNet.Generator.Writers.Serialization;
-using SmithyDotNet.Generator.Writers.Service;
-using SmithyDotNet.Generator.Writers.Shapes;
 using Xunit;
 
 namespace SmithyDotNet.Generator.Tests.Generation.Customizations;
 
 /// <summary>
-/// Covers the customizations loader (unknown hooks fail loudly) and <see cref="CustomizationTransform"/> (renames pin the wire name, stale entries throw).
+/// Covers <see cref="CustomizationTransform"/> hook by hook against <c>Customizations/customizations-model.json</c>:
+/// hooks move into the model as traits, renames keep the wire name, stale entries throw.
 /// </summary>
 public class CustomizationTransformTests
 {
-    private static CustomizationsModel Rename(string shape, string member, string newName) => new()
+    private static SmithyModel Model() => TestModels.Load("Customizations/customizations-model.json");
+
+    private static SmithyModel Apply(CustomizationsModel customizations)
     {
-        ShapeModifiers =
-        {
-            [shape] = new ShapeModifier { Modify = [new() { [member] = new PropertyModifier { EmitPropertyName = newName } }] },
-        },
-    };
-
-    private static CustomizationsModel LoadFiles(params string[] contents)
-    {
-        var directory = Directory.CreateTempSubdirectory("customizations-");
-        try
-        {
-            var paths = contents.Select((json, i) =>
-            {
-                var path = Path.Combine(directory.FullName, $"svc.customizations.{i}.json");
-                File.WriteAllText(path, json);
-                return path;
-            }).ToList();
-
-            return CustomizationsModel.Load(paths);
-        }
-        finally
-        {
-            directory.Delete(recursive: true);
-        }
-    }
-
-    [Fact]
-    public void Load_UnsupportedHook_Throws()
-    {
-        var ex = Assert.Throws<GeneratorException>(() => LoadFiles("""{ "runtimePipelineOverride": {} }"""));
-        Assert.Contains("runtimePipelineOverride", ex.Message);
-    }
-
-    [Fact]
-    public void Load_UnsupportedNestedHook_Throws()
-    {
-        var ex = Assert.Throws<GeneratorException>(() => LoadFiles("""{ "shapeModifiers": { "Thing": { "modify": [{ "m": { "unsupportedHook": "x" } }] } } }"""));
-        Assert.Contains("unsupportedHook", ex.Message);
-    }
-
-    [Fact]
-    public void Load_EmitIsSetProperties_MergesAcrossFiles()
-    {
-        var model = LoadFiles(
-            """{ "emitIsSetProperties": { "AttributeValue": ["BOOL", "M"] } }""",
-            """{ "emitIsSetProperties": { "QueryInput": ["Limit"] } }""");
-
-        Assert.Equal(["BOOL", "M"], model.EmitIsSetProperties["AttributeValue"]);
-        Assert.Equal(["Limit"], model.EmitIsSetProperties["QueryInput"]);
-        Assert.Equal(2, model.EmitIsSetProperties.Count);
-    }
-
-    // C2J's Member name is already the emitPropertyName by the time it checks emitIsSetProperties
-    // (Shape.Members), so a renamed member is listed under its new name and the modeled name is stale.
-    private static CustomizationsModel RenameAndEmitIsSet(string listedName) => new()
-    {
-        ShapeModifiers = Rename("QueryInput", "limit", "MaxItems").ShapeModifiers,
-        EmitIsSetProperties = { ["QueryInput"] = [listedName] },
-    };
-
-    private static StructureShape LimitInput() =>
-        new() { Members = { ["limit"] = new MemberShape { Target = ShapeId.Parse("smithy.api#Integer") } } };
-
-    [Fact]
-    public void Validate_EmitIsSetProperties_RenamedMember_ListedByNewName_Passes()
-    {
-        ApplyAndValidate(ModelWith("QueryInput", LimitInput()), RenameAndEmitIsSet("MaxItems"));
-    }
-
-    [Fact]
-    public void Validate_EmitIsSetProperties_RenamedMember_ListedByModeledName_Throws()
-    {
-        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(ModelWith("QueryInput", LimitInput()), RenameAndEmitIsSet("limit")));
-        Assert.Contains("lists member 'limit', which the shape does not have", ex.Message);
-    }
-
-    [Theory]
-    [InlineData("NoSuchShape", "Limit", "does not match any shape")]
-    [InlineData("QueryInput", "limit", "which the shape does not have")]
-    public void Validate_EmitIsSetProperties_StaleReference_Throws(string shape, string member, string expectedInMessage)
-    {
-        var structure = new StructureShape { Members = { ["Limit"] = new MemberShape { Target = ShapeId.Parse("smithy.api#Integer") } } };
-
-        var ex = Assert.Throws<GeneratorException>(() =>
-            CustomizationTransform.Validate(ModelWith("QueryInput", structure), new CustomizationsModel { EmitIsSetProperties = { [shape] = [member] } }));
-        Assert.Contains($"emitIsSetProperties['{shape}']", ex.Message);
-        Assert.Contains(expectedInMessage, ex.Message);
-    }
-
-    [Fact]
-    public void Validate_EmitIsSetProperties_NonStructureShape_Throws()
-    {
-        var ex = Assert.Throws<GeneratorException>(() =>
-            CustomizationTransform.Validate(ModelWith("Thing", new StringShape()), new CustomizationsModel { EmitIsSetProperties = { ["Thing"] = ["x"] } }));
-        Assert.Contains("only structures and unions", ex.Message);
-    }
-
-    [Fact]
-    public void Load_EmitIsSetProperties_SameShapeInTwoFiles_Throws()
-    {
-        var ex = Assert.Throws<GeneratorException>(() => LoadFiles(
-            """{ "emitIsSetProperties": { "QueryInput": ["Limit"] } }""",
-            """{ "emitIsSetProperties": { "QueryInput": ["Select"] } }"""));
-        Assert.Contains("emitIsSetProperties['QueryInput']", ex.Message);
-    }
-
-    [Fact]
-    public void Load_CombinesShapeModifiersAcrossFiles()
-    {
-        var merged = LoadFiles(
-            """{ "shapeModifiers": { "Thing": { "modify": [] } } }""",
-            """{ "shapeModifiers": { "Other": { "modify": [] } } }""");
-
-        Assert.Equal(["Other", "Thing"], merged.ShapeModifiers.Keys.Order());
-    }
-
-    [Fact]
-    public void Load_SameShapeInTwoFiles_Throws()
-    {
-        var ex = Assert.Throws<GeneratorException>(() => LoadFiles(
-            """{ "shapeModifiers": { "Thing": { "modify": [] } } }""",
-            """{ "shapeModifiers": { "Thing": { "modify": [] } } }"""));
-        Assert.Contains("more than one customizations file", ex.Message);
-    }
-
-    [Fact]
-    public void Apply_UnsupportedShapeType_Throws()
-    {
-        var model = new SmithyModel
-        {
-            Version = "2.0",
-            Shapes = new() { ["com.example#Thing"] = new StringShape() },
-        };
-
-        var ex = Assert.Throws<GeneratorException>(() => CustomizationTransform.Apply(model, Rename("Thing", "payload", "Payload")));
-        Assert.Contains("only structures and enums", ex.Message);
-    }
-
-    [Theory]
-    [InlineData("NoSuchShape", "created", "CreatedAt", "NoSuchShape")]
-    [InlineData("DoScalarsRequest", "noSuchMember", "X", "noSuchMember")]
-    [InlineData("DoScalarsRequest", "created", "Expiry", "already has")]
-    [InlineData("DoScalarsRequest", "created", "createdAt", "verbatim")]
-    public void Apply_StaleReference_Throws(string shape, string member, string newName, string expectedInMessage)
-    {
-        var ex = Assert.Throws<GeneratorException>(() => CustomizationTransform.Apply(TestModels.Load("Codegen/codegen-model.json"), Rename(shape, member, newName)));
-        Assert.Contains(expectedInMessage, ex.Message);
-    }
-
-    [Fact]
-    public void Apply_AmbiguousShapeName_Throws()
-    {
-        var model = new SmithyModel
-        {
-            Version = "2.0",
-            Shapes = new()
-            {
-                ["com.a#Thing"] = new StructureShape(),
-                ["com.b#Thing"] = new StructureShape(),
-            },
-        };
-
-        var ex = Assert.Throws<GeneratorException>(() => CustomizationTransform.Apply(model, Rename("Thing", "payload", "Payload")));
-        Assert.Contains("com.a#Thing, com.b#Thing", ex.Message);
-    }
-
-    [Fact]
-    public void Apply_KeepsExistingJsonName()
-    {
-        var member = new MemberShape { Target = ShapeId.Parse("smithy.api#String") };
-        member.SetJsonName("wireName");
-
-        var model = new SmithyModel
-        {
-            Version = "2.0",
-            Shapes = new() { ["com.example#Thing"] = new StructureShape { Members = { ["payload"] = member } } },
-        };
-
-        CustomizationTransform.Apply(model, Rename("Thing", "payload", "PayloadStream"));
-        var thing = Assert.IsType<StructureShape>(model.Shapes["com.example#Thing"]);
-        Assert.Equal("wireName", thing.Members["PayloadStream"].GetJsonName());
-    }
-
-    // Mirrors the restjson protocol-test customization: "0"/"1" wire values derive constant names
-    // that are not valid identifiers, so the customization names them (entries keyed by wire value).
-    [Fact]
-    public void Codegen_RenamedEnumValues_EmitCustomizedConstantNames()
-    {
-        var customizations = new CustomizationsModel
-        {
-            ShapeModifiers =
-            {
-                ["InstanceType"] = new ShapeModifier
-                {
-                    Modify =
-                    [
-                        new() { ["0"] = new PropertyModifier { EmitPropertyName = "Num_0" } },
-                        new() { ["1"] = new PropertyModifier { EmitPropertyName = "Num_1" } },
-                    ],
-                },
-            },
-        };
-        var model = TestModels.Load("Codegen/codegen-model.json");
+        var model = Model();
         CustomizationTransform.Apply(model, customizations);
-        var context = new GenerationContext(new ServiceIndex(model), TestManifests.Example(), customizations: customizations);
-
-        var enums = new ServiceEnumerationsWriter(context, "scalars.json").Write(TestContext.Current.CancellationToken);
-        Assert.Contains("""public static readonly InstanceType Num_0 = new InstanceType("0");""", enums);
-        Assert.Contains("""public static readonly InstanceType Num_1 = new InstanceType("1");""", enums);
+        return model;
     }
 
-    // deprecatedMessage only supplies the [Obsolete] text; C2J gates the attribute on the model's
-    // deprecated flag, so a message on a not-already-deprecated target must not create a deprecation.
-    [Fact]
-    public void Apply_DeprecatedMessage_OnAlreadyDeprecatedMember_SetsMessageAndKeepsSince()
+    private static void ApplyAndValidate(CustomizationsModel customizations)
     {
-        var member = DeprecatedMember(since: "2020-01-01");
-        var model = ModelWith("Thing", new StructureShape { Members = { ["payload"] = member } });
-
-        CustomizationTransform.Apply(model, MemberDeprecation("Thing", "payload", "Use PayloadV2."));
-
-        Assert.Equal("Use PayloadV2.", member.GetDeprecated()?.Message);
-        Assert.Equal("2020-01-01", member.GetDeprecated()?.Since);
-    }
-
-    [Fact]
-    public void Apply_DeprecatedMessage_OnNonDeprecatedMember_DoesNotCreateDeprecation()
-    {
-        var member = new MemberShape { Target = ShapeId.Parse("smithy.api#String") };
-        var model = ModelWith("Thing", new StructureShape { Members = { ["payload"] = member } });
-
-        CustomizationTransform.Apply(model, MemberDeprecation("Thing", "payload", "Ignored."));
-
-        Assert.Null(member.GetDeprecated());
-    }
-
-    [Fact]
-    public void Apply_ShapeDeprecatedMessage_OnDeprecatedStringShape_SetsMessageWithoutThrowing()
-    {
-        var stringShape = Deprecated(new StringShape());
-        var model = ModelWith("LegacyId", stringShape);
-
-        CustomizationTransform.Apply(model, new CustomizationsModel
-        {
-            ShapeModifiers = { ["LegacyId"] = new ShapeModifier { DeprecatedMessage = "Use LegacyIdV2." } },
-        });
-
-        Assert.Equal("Use LegacyIdV2.", stringShape.GetDeprecated()?.Message);
-    }
-
-    [Fact]
-    public void Apply_MemberModificationsOnNonStructure_Throws()
-    {
-        var model = ModelWith("LegacyId", new StringShape());
-        var customizations = new CustomizationsModel
-        {
-            ShapeModifiers = { ["LegacyId"] = new ShapeModifier { Modify = [new() { ["x"] = new PropertyModifier { EmitPropertyName = "X" } }] } },
-        };
-
-        var ex = Assert.Throws<GeneratorException>(() => CustomizationTransform.Apply(model, customizations));
-        Assert.Contains("only structures and enums", ex.Message);
-    }
-
-    [Fact]
-    public void Apply_OperationModifier_OnNonOperation_Throws()
-    {
-        var model = ModelWith("Thing", new StructureShape());
-        var customizations = new CustomizationsModel
-        {
-            OperationModifiers = { ["Thing"] = new OperationModifier { DeprecatedMessage = "x" } },
-        };
-
-        var ex = Assert.Throws<GeneratorException>(() => CustomizationTransform.Apply(model, customizations));
-        Assert.Contains("not an operation", ex.Message);
-    }
-
-    // End-to-end: the customized message replaces the model's in the emitted [Obsolete]. The
-    // @deprecated -> [Obsolete] wire is the same BuildObsolete call at every level, so one proves it.
-    [Fact]
-    public void Codegen_OperationDeprecatedMessage_ReplacesMessageOnClientMethods()
-    {
-        var model = TestModels.Load("Codegen/codegen-model.json");
-        CustomizationTransform.Apply(model, new CustomizationsModel
-        {
-            OperationModifiers = { ["DoHeaderOnly"] = new OperationModifier { DeprecatedMessage = "Use DoHeaderOnlyV2." } },
-        });
-        var context = TestModels.Context(model);
-
-        var output = new ClientClassWriter(context, "example-2023-01-01.normal.json").Write(TestContext.Current.CancellationToken);
-        Assert.Contains("""[Obsolete("Use DoHeaderOnlyV2.")]""", output);
-        Assert.DoesNotContain("This operation is deprecated.", output);
-    }
-
-    // The entry fields (Type, Marshaller, Unmarshaller) are capitalized, unlike every other hook's; Unmarshaller may be omitted.
-    [Fact]
-    public void Load_DataTypeSwap_ParsesEntry()
-    {
-        var customizations = LoadFiles("""{ "dataTypeSwap": { "Spend": { "Amount": { "Type": "decimal?", "Marshaller": "M" } } } }""");
-
-        Assert.Equal(new DataTypeSwap { Type = "decimal?", Marshaller = "M" }, customizations.DataTypeSwaps["Spend"]["Amount"]);
-    }
-
-    [Fact]
-    public void Validate_DataTypeSwapOnMissingMember_Throws()
-    {
-        var model = ModelWith("Thing", new StructureShape { Members = { ["payload"] = new MemberShape { Target = ShapeId.Parse("smithy.api#String") } } });
-
-        var ex = Assert.Throws<GeneratorException>(() => CustomizationTransform.Validate(model, Swap("Thing", "missing")));
-        Assert.Contains("missing", ex.Message);
-    }
-
-    // `required` only checks the key is present, so an explicit null or blank Type reaches Validate.
-    [Theory]
-    [InlineData("null")]
-    [InlineData("\" \"")]
-    public void Validate_DataTypeSwapWithoutType_Throws(string type)
-    {
-        var model = ModelWith("Thing", new StructureShape { Members = { ["payload"] = new MemberShape { Target = ShapeId.Parse("smithy.api#String") } } });
-        var customizations = LoadFiles($$"""{ "dataTypeSwap": { "Thing": { "payload": { "Type": {{type}} } } } }""");
-
-        var ex = Assert.Throws<GeneratorException>(() => CustomizationTransform.Validate(model, customizations));
-        Assert.Contains("Type", ex.Message);
-    }
-
-    // C2J keys a swap by the emitted property name, so a renamed member is named by its new name.
-    [Fact]
-    public void Validate_DataTypeSwapOnRenamedMember_UsesEmittedName()
-    {
-        var model = ModelWith("Thing", new StructureShape { Members = { ["payload"] = new MemberShape { Target = ShapeId.Parse("smithy.api#String") } } });
-        var customizations = Swap("Thing", "PayloadV2");
-        customizations.ShapeModifiers["Thing"] = new ShapeModifier { Modify = [new() { ["payload"] = new PropertyModifier { EmitPropertyName = "PayloadV2" } }] };
-
-        ApplyAndValidate(model, customizations);
-    }
-
-    [Fact]
-    public void Validate_DataTypeSwapXmlOnlyField_Throws()
-    {
-        var model = ModelWith("Thing", new StructureShape { Members = { ["payload"] = new MemberShape { Target = ShapeId.Parse("smithy.api#String") } } });
-        var customizations = new CustomizationsModel { DataTypeSwaps = { ["Thing"] = new() { ["payload"] = new DataTypeSwap { Type = "List<string>", IsFlattened = true } } } };
-
-        var ex = Assert.Throws<GeneratorException>(() => CustomizationTransform.Validate(model, customizations));
-        Assert.Contains("isFlattened", ex.Message);
-    }
-
-    private static void ApplyAndValidate(SmithyModel model, CustomizationsModel customizations)
-    {
+        var model = Model();
         CustomizationTransform.Apply(model, customizations);
         CustomizationTransform.Validate(model, customizations);
     }
 
-    private static CustomizationsModel Swap(string shape, string member) => new()
-    {
-        DataTypeSwaps = { [shape] = new() { [member] = new DataTypeSwap { Type = "DateTime?", Marshaller = "M", Unmarshaller = "U" } } },
-    };
+    private static StructureShape Structure(SmithyModel model, string name) =>
+        Assert.IsType<StructureShape>(model.Shapes[$"com.example#{name}"]);
 
-    private static SmithyModel ModelWith(string bareName, Shape shape) => new()
+    private static CustomizationsModel Substitute(string key, string newName)
     {
-        Version = "2.0",
-        Shapes = new() { [$"com.example#{bareName}"] = shape },
-    };
-
-    private static T Deprecated<T>(T shape) where T : Shape
-    {
-        shape.Traits["smithy.api#deprecated"] = JsonSerializer.SerializeToElement(new { });
-        return shape;
+        var customizations = new CustomizationsModel();
+        customizations.ShapeSubstitutions[key] = new ShapeSubstitution { RenamedShapeName = newName };
+        return customizations;
     }
 
-    private static MemberShape DeprecatedMember(string? since = null)
+    private static CustomizationsModel Deprecate(string shape, string member, string message)
     {
-        var member = new MemberShape { Target = ShapeId.Parse("smithy.api#String") };
-        member.Traits["smithy.api#deprecated"] = since is null
-            ? JsonSerializer.SerializeToElement(new { })
-            : JsonSerializer.SerializeToElement(new { since });
-        return member;
+        var customizations = new CustomizationsModel();
+        customizations.ShapeModifiers[shape] = TestCustomizations.Modify(member, new PropertyModifier { DeprecatedMessage = message });
+        return customizations;
     }
 
-    private static CustomizationsModel MemberDeprecation(string shape, string member, string message) => new()
+    // shapeSubstitutions
+
+    // The error AccessDenied emits AccessDeniedException, so renaming it to Grant doesn't clash with the Grant structure.
+    [Theory]
+    [InlineData("Bucket", "S3Bucket")]
+    [InlineData("AccessDenied", "Grant")]
+    public void ShapeSubstitution_RenamesViaServiceRename(string shape, string newName)
     {
-        ShapeModifiers = { [shape] = new ShapeModifier { Modify = [new() { [member] = new PropertyModifier { DeprecatedMessage = message } }] } },
-    };
+        var model = Apply(Substitute(shape, newName));
+
+        Assert.Equal(newName, new ServiceIndex(model).ToDotNetName(ShapeId.Parse($"com.example#{shape}")));
+        Assert.True(model.Shapes.ContainsKey($"com.example#{shape}"));
+    }
+
+    // Every hook keys a shape by its modeled name, unlike C2J, which rekeys a renamed structure.
+    [Fact]
+    public void ShapeSubstitution_OtherHooksUseModeledName()
+    {
+        var customizations = Substitute("Bucket", "S3Bucket");
+        customizations.ShapeSubstitutions["StorageClass"] = new ShapeSubstitution { RenamedShapeName = "S3StorageClass" };
+        customizations.ShapeModifiers["Bucket"] = TestCustomizations.RenameMember("name", "BucketName");
+        customizations.ShapeModifiers["StorageClass"] = new ShapeModifier { DeprecatedMessage = "Old." };
+
+        var model = Apply(customizations);
+
+        Assert.Contains("name", Structure(model, "Bucket").Members.Keys);
+        Assert.Equal("BucketName", customizations.PropertyName("Bucket", "name"));
+        Assert.Equal("Old.", model.Shapes["com.example#StorageClass"]?.GetDeprecated()?.Message);
+    }
 
     [Fact]
-    public void Codegen_RenamedMember_EmitsNewPropertyAndOriginalWireName()
+    public void MemberSubstitution_SplitsSharedTargetAndDropsOriginal()
     {
-        var model = TestModels.Load("Codegen/codegen-model.json");
-        CustomizationTransform.Apply(model, Rename("DoScalarsRequest", "created", "CreatedAt"));
-        var context = TestModels.Context(model);
+        var customizations = Substitute("PermissionInput$action", "PermissionInputActionEnum");
+        customizations.ShapeSubstitutions["PermissionOutput$action"] = new ShapeSubstitution { RenamedShapeName = "PermissionOutputActionEnum" };
 
-        var requestId = ShapeId.Parse("com.example#DoScalarsRequest");
-        var structure = new StructureWriter(context, "scalars.json").Write(context.Structures[requestId], TestContext.Current.CancellationToken);
-        Assert.Contains("public DateTime? CreatedAt", structure);
+        var model = Apply(customizations);
 
-        var marshaller = new JsonRequestMarshallerWriter(context, "scalars.json").Write(context.Operations.Single(o => o.Name == "DoScalars"), TestContext.Current.CancellationToken);
-        Assert.Contains("if (publicRequest.IsSetCreatedAt())", marshaller);
-        Assert.Contains("""context.Writer.WritePropertyName("created");""", marshaller);
+        Assert.Equal(ShapeId.Parse("com.example#PermissionInputActionEnum"), Structure(model, "PermissionInput").Members["action"].Target);
+        Assert.Equal(ShapeId.Parse("com.example#PermissionOutputActionEnum"), Structure(model, "PermissionOutput").Members["action"].Target);
+        Assert.Equal(ShapeId.Parse("com.example#PermissionInputActionEnum"), Assert.IsType<EnumShape>(model.Shapes["com.example#PermissionInputActionEnum"]).Id);
+        Assert.False(model.Shapes.ContainsKey("com.example#Action"));
+    }
+
+    [Fact]
+    public void MemberSubstitution_KeepsOriginalStillTargeted()
+    {
+        var model = Apply(Substitute("PermissionInput$action", "PermissionInputActionEnum"));
+
+        Assert.True(model.Shapes.ContainsKey("com.example#Action"));
+        Assert.True(model.Shapes.ContainsKey("com.example#PermissionInputActionEnum"));
+    }
+
+    [Theory]
+    // `required` only checks the JSON key is present, so a blank renameShape reaches Apply.
+    [InlineData("Bucket", " ", "shapeSubstitutions['Bucket'] must specify a non-empty 'renameShape'")]
+    [InlineData("Holder$bucket", " ", "shapeSubstitutions['Holder$bucket'] must specify a non-empty 'renameShape'")]
+    // The model renames Moved itself; even an identical rename means the customization is stale.
+    [InlineData("Moved", "Other", "already renames it to 'MovedAway'")]
+    [InlineData("Moved", "MovedAway", "already renames it to 'MovedAway'")]
+    // The error Throttled emits ThrottledException, so the clash check compares generated type names.
+    [InlineData("Grant", "S3Grant", "which 'com.example#S3Grant' is already emitted as")]
+    [InlineData("Bucket", "ThrottledException", "which 'com.example#Throttled' is already emitted as")]
+    [InlineData("PermissionInput$missing", "Copy", "does not name a structure member")]
+    [InlineData("PermissionInput$principal", "Copy", "duplicating a structure is not supported")]
+    [InlineData("PermissionInput$action", "Taken", "already emitted as")]
+    [InlineData("PermissionInput$action", "Moved", "'com.example#Moved' is already a shape in the model")]
+    public void ShapeSubstitution_Invalid_Throws(string key, string newName, string expectedInMessage)
+    {
+        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(Substitute(key, newName)));
+        Assert.Contains(expectedInMessage, ex.Message);
+    }
+
+    // shapeModifiers
+
+    // deprecatedMessage only supplies the [Obsolete] text; C2J gates the attribute on the model's
+    // deprecated flag, so a message on a not-already-deprecated target must not create a deprecation.
+    [Fact]
+    public void ShapeModifiers_DeprecatedMessage_OnDeprecatedShape_SetsMessage()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ShapeModifiers["LegacyId"] = new ShapeModifier { DeprecatedMessage = "Use LegacyIdV2." };
+
+        var model = Apply(customizations);
+
+        Assert.Equal("Use LegacyIdV2.", model.Shapes["com.example#LegacyId"]?.GetDeprecated()?.Message);
+    }
+
+    [Fact]
+    public void ShapeModifiers_DeprecatedMessage_OnDeprecatedMember_SetsMessageAndKeepsSince()
+    {
+        var model = Apply(Deprecate("Bucket", "created", "Use CreatedAt."));
+
+        var deprecated = Structure(model, "Bucket").Members["created"].GetDeprecated();
+        Assert.Equal("Use CreatedAt.", deprecated?.Message);
+        Assert.Equal("2020-01-01", deprecated?.Since);
+    }
+
+    [Fact]
+    public void ShapeModifiers_DeprecatedMessage_OnNonDeprecatedMember_DoesNotCreateDeprecation()
+    {
+        var model = Apply(Deprecate("Bucket", "name", "Ignored."));
+
+        Assert.Null(Structure(model, "Bucket").Members["name"].GetDeprecated());
+    }
+
+    [Theory]
+    [InlineData("NoSuchShape", "name", "X", "shapeModifiers['NoSuchShape'] does not match any shape")]
+    // Hooks are keyed by the modeled name; the service's rename of Moved doesn't make MovedAway a key.
+    [InlineData("MovedAway", "x", "X", "does not match any shape")]
+    [InlineData("Dup", "name", "X", "com.example#Dup, com.other#Dup")]
+    [InlineData("LegacyId", "x", "X", "only structures and enums")]
+    [InlineData("Bucket", "noSuchMember", "X", "which the shape does not have")]
+    // Compared by emitted name: 'arn' and a rename to 'Arn' both emit 'Arn'.
+    [InlineData("Bucket", "name", "Arn", "which the shape already has")]
+    [InlineData("Bucket", "name", "arn", "which the shape already has")]
+    // C2J sends a renamed event under its new name, which the service wouldn't recognize; no service renames one.
+    [InlineData("InputStream", "chunk", "Piece", "renames event 'chunk' of an event stream")]
+    public void ShapeModifiers_InvalidRename_Throws(string shape, string member, string newName, string expectedInMessage)
+    {
+        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(TestCustomizations.Rename(shape, member, newName)));
+        Assert.Contains(expectedInMessage, ex.Message);
+    }
+
+    [Fact]
+    public void ShapeModifiers_TwoMembersRenamedToOneName_Throws()
+    {
+        var customizations = TestCustomizations.Rename("Bucket", "name", "Same");
+        customizations.ShapeModifiers["Bucket"].Modify.Add(new Dictionary<string, PropertyModifier> { ["arn"] = new PropertyModifier { EmitPropertyName = "Same" } });
+
+        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
+        Assert.Contains("which the shape already has", ex.Message);
+    }
+
+    // operationModifiers and paginators
+
+    [Fact]
+    public void OperationModifiers_OnNonOperation_Throws()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.OperationModifiers["Bucket"] = new OperationModifier { DeprecatedMessage = "x" };
+
+        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
+        Assert.Contains("not an operation", ex.Message);
+    }
+
+    [Fact]
+    public void Paginators_OnNonOperation_Throws()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.Paginators["Bucket"] = new PaginatorCustomization();
+
+        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
+        Assert.Contains("not an operation", ex.Message);
+    }
+
+    // emitIsSetProperties
+
+    [Theory]
+    [InlineData("NoSuchShape", "name", "emitIsSetProperties['NoSuchShape'] does not match any shape")]
+    [InlineData("LegacyId", "x", "only structures and unions")]
+    [InlineData("Bucket", "noSuchMember", "emitIsSetProperties['Bucket'] lists member 'noSuchMember', which the shape does not have")]
+    // Members match by exact emitted name, so the modeled 'name' is not found as 'Name'.
+    [InlineData("Bucket", "Name", "lists member 'Name', which the shape does not have")]
+    public void EmitIsSetProperties_Invalid_Throws(string shape, string member, string expectedInMessage)
+    {
+        var customizations = new CustomizationsModel();
+        customizations.EmitIsSetProperties[shape] = [member];
+
+        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
+        Assert.Contains(expectedInMessage, ex.Message);
+    }
+
+    // C2J checks emitIsSetProperties against Shape.Members, whose names are already the emitted ones, so a
+    // renamed member is listed under its new name and the modeled one is stale.
+    [Fact]
+    public void EmitIsSetProperties_RenamedMemberListedByModeledName_Throws()
+    {
+        var customizations = TestCustomizations.Rename("Bucket", "name", "BucketName");
+        customizations.EmitIsSetProperties["Bucket"] = ["name"];
+
+        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
+        Assert.Contains("lists member 'name', which the shape does not have", ex.Message);
+    }
+
+    // dataTypeSwap
+
+    [Theory]
+    [InlineData("missing", "int?", null, "swaps member 'missing', which the shape does not have")]
+    // `required` only checks the JSON key is present, so a blank Type reaches Validate.
+    [InlineData("name", " ", null, "without a 'Type'")]
+    [InlineData("name", "List<string>", true, "isFlattened")]
+    public void DataTypeSwap_Invalid_Throws(string member, string type, bool? isFlattened, string expectedInMessage)
+    {
+        var customizations = new CustomizationsModel();
+        customizations.DataTypeSwaps["Bucket"] = new Dictionary<string, DataTypeSwap> { [member] = new DataTypeSwap { Type = type, IsFlattened = isFlattened } };
+
+        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
+        Assert.Contains(expectedInMessage, ex.Message);
     }
 }

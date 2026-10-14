@@ -90,6 +90,16 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.WriteTextString("OperatingSystem");
                     context.Writer.WriteTextString(publicRequest.OperatingSystem);
                 }
+                if (publicRequest.IsSetRemoveAttributes())
+                {
+                    context.Writer.WriteTextString("RemoveAttributes");
+                    context.Writer.WriteStartArray(publicRequest.RemoveAttributes.Count);
+                    foreach(var publicRequestRemoveAttributesListValue in publicRequest.RemoveAttributes)
+                    {
+                            context.Writer.WriteTextString(publicRequestRemoveAttributesListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
                 if (publicRequest.IsSetSourceVersionNumber())
                 {
                     context.Writer.WriteTextString("SourceVersionNumber");

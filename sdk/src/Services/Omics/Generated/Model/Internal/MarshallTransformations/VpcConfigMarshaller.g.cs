@@ -66,6 +66,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 }
                 context.Writer.WriteEndArray();
             }
+
+            if (requestObject.IsSetVpcOwnerAccountId())
+            {
+                context.Writer.WritePropertyName("vpcOwnerAccountId");
+                context.Writer.WriteStringValue(requestObject.VpcOwnerAccountId);
+            }
         }
 
         /// <summary>

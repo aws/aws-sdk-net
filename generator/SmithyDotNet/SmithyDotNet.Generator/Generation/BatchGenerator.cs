@@ -1,3 +1,4 @@
+using System.Collections.Concurrent;
 using System.Runtime.ExceptionServices;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -24,9 +25,9 @@ public sealed record MigratedServicesFile
 
 /// <summary>
 /// Generates every service listed in <c>generator/ServiceModels/_smithy-migrated-services.json</c>
-/// into the real SDK tree, wiping each service's stale generated trees first so leftover C2J output
-/// (plain <c>.cs</c> names, <c>_bcl/</c>/<c>_netstandard/</c>) can't collide with the <c>.g.cs</c>
-/// output as duplicate types.
+/// into the real SDK tree, then removes whatever else was left in each service's generated trees so
+/// leftover C2J output (plain <c>.cs</c> names, <c>_bcl/</c>/<c>_netstandard/</c>) can't collide with
+/// the <c>.g.cs</c> output as duplicate types.
 /// </summary>
 public sealed class BatchGenerator(string repoRoot)
 {
@@ -38,6 +39,9 @@ public sealed class BatchGenerator(string repoRoot)
     private readonly string _modelsRoot = SdkTreeLayout.ModelsRoot(repoRoot);
     private readonly string _testModelsRoot = SdkTreeLayout.TestModelsRoot(repoRoot);
     private readonly string _sdkRoot = SdkTreeLayout.SdkRoot(repoRoot);
+
+    // A case-insensitive volume treats the old-cased entry of a renamed file as the written file; compare paths like it does.
+    private readonly StringComparer _pathComparer = Directory.Exists(SdkTreeLayout.SdkRoot(repoRoot).ToUpperInvariant()) ? StringComparer.OrdinalIgnoreCase : StringComparer.Ordinal;
 
     /// <summary>
     /// Runs the batch generation. Returns the generated ServiceFolderNames (empty when the control
@@ -64,32 +68,32 @@ public sealed class BatchGenerator(string repoRoot)
         var discovered = DiscoverModels(ct);
         var matched = MatchListedServices(migrated, discovered);
 
-        var generated = new List<string>(matched.Count);
+        // Each service writes to its own roots (and its own files in the shared doc-samples tree) and
+        // ServiceGenerator's trackers are concurrent, so no shared state needs guarding.
+        var generated = new ConcurrentBag<string>();
+        ForEachParallel(matched, ct, service =>
+        {
+            GenerateService(service, versionManifest, defaultConfigurationModes, ct);
+            generated.Add(service.Name);
+        });
+
+        return generated.ToList();
+    }
+
+    // The work is CPU-bound (mostly the Roslyn formatter), so one worker per core: at two per core the threads
+    // mostly contended on Roslyn's trivia cache lock. Parallel.ForEach wraps worker exceptions; the first is
+    // rethrown with its original stack trace so Program's catch filter reports a clean error instead of an
+    // unhandled AggregateException.
+    private static void ForEachParallel<T>(IEnumerable<T> items, CancellationToken ct, Action<T> body)
+    {
         try
         {
-            // Mirrors the C2J generator's parallelism. Each service writes to disjoint roots and
-            // ServiceGenerator's trackers are concurrent, so no shared state needs guarding.
-            Parallel.ForEach(
-                matched,
-                new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount * 2, CancellationToken = ct },
-                service =>
-                {
-                    GenerateService(service, versionManifest, defaultConfigurationModes, ct);
-                    lock (generated)
-                    {
-                        generated.Add(service.Name);
-                    }
-                });
+            Parallel.ForEach(items, new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount, CancellationToken = ct }, body);
         }
         catch (AggregateException ex)
         {
-            // Parallel.ForEach wraps worker exceptions; rethrow the first (preserving its original
-            // stack trace) so Program's catch filter reports it as a clean error instead of an
-            // unhandled AggregateException.
             ExceptionDispatchInfo.Throw(ex.InnerExceptions[0]);
         }
-
-        return generated;
     }
 
     private static IReadOnlyList<string> LoadControlFile(string path)
@@ -116,8 +120,9 @@ public sealed class BatchGenerator(string repoRoot)
     // C2J's versioned api/docs/endpoints split). A model has to be parsed to learn its name, so a
     // model this generator can't yet handle is skipped here rather than aborting the batch;
     // MatchListedServices below still fails loudly if that model belongs to a service actually
-    // listed in the control file.
-    private Dictionary<string, DiscoveredModel> DiscoverModels(CancellationToken ct)
+    // listed in the control file. The models are parsed in parallel: there are more of them than
+    // listed services, and sequentially they took ~4 s before the first service could start.
+    private IReadOnlyDictionary<string, DiscoveredModel> DiscoverModels(CancellationToken ct)
     {
         if (!Directory.Exists(_modelsRoot))
         {
@@ -130,15 +135,13 @@ public sealed class BatchGenerator(string repoRoot)
             modelDirectories = modelDirectories.Concat(Directory.EnumerateDirectories(_testModelsRoot));
         }
 
-        var discovered = new Dictionary<string, DiscoveredModel>(StringComparer.OrdinalIgnoreCase);
-        foreach (var directory in modelDirectories)
+        var discovered = new ConcurrentDictionary<string, DiscoveredModel>(StringComparer.OrdinalIgnoreCase);
+        ForEachParallel(modelDirectories, ct, directory =>
         {
-            ct.ThrowIfCancellationRequested();
-
             var modelPath = Path.Combine(directory, SdkTreeLayout.SmithyModelFileName);
             if (!File.Exists(modelPath))
             {
-                continue;
+                return;
             }
 
             SmithyModel model;
@@ -149,7 +152,7 @@ public sealed class BatchGenerator(string repoRoot)
             catch (Exception ex) when (ex is not OperationCanceledException)
             {
                 Log.Warn($"Skipping '{modelPath}': failed to load ({ex.Message}).");
-                continue;
+                return;
             }
 
             // Past parsing, a failure is a repo error, not a model this generator can't handle
@@ -173,7 +176,7 @@ public sealed class BatchGenerator(string repoRoot)
             {
                 throw new GeneratorException($"Service '{name}' resolves from both '{discovered[name].ModelPath}' and '{modelPath}'.");
             }
-        }
+        });
 
         return discovered;
     }
@@ -190,7 +193,7 @@ public sealed class BatchGenerator(string repoRoot)
     // Every listed service must resolve to exactly one discovered model (mirroring the C2J
     // generator's typo guard). A discovered model that isn't listed is informational only — C2J
     // still owns that service.
-    private static List<DiscoveredModel> MatchListedServices(IReadOnlyList<string> listed, Dictionary<string, DiscoveredModel> discovered)
+    private static List<DiscoveredModel> MatchListedServices(IReadOnlyList<string> listed, IReadOnlyDictionary<string, DiscoveredModel> discovered)
     {
         var unmatched = listed.Where(name => !discovered.ContainsKey(name)).ToList();
         if (unmatched.Count > 0)
@@ -225,21 +228,37 @@ public sealed class BatchGenerator(string repoRoot)
 
             var index = new ServiceIndex(service.Model);
 
-            // Everything that can fail without writing a file happens before the wipe, so a missing
-            // version entry can't leave a service wiped-but-not-regenerated.
+            // Everything that can fail without writing a file happens before any file is touched.
             var context = new GenerationContext(index, versionManifest, service.Metadata, customizations);
-            UnsupportedTraitValidator.Validate(index);
+            UnsupportedTraitValidator.Validate(index, context.Protocol);
 
-            // Test services have no _sdk-versions.json entry; they get the default assembly version, matching C2J.
-            var serviceFileVersion = service.IsTestService
-                ? versionManifest.DefaultAssemblyVersion ?? throw new GeneratorException($"'{versionManifest.SourcePath}' has no 'DefaultAssemblyVersion' for test service '{context.ServiceName}'.")
-                : versionManifest.GetServiceVersion(context.ServiceName);
+            var serviceFileVersion = versionManifest.GetServiceVersion(context.ServiceName);
             var generator = new ServiceGenerator(context, Path.GetFileName(service.ModelPath), serviceFileVersion, defaultConfigurationModes);
 
-            WipeStaleOutput(service.Name, sourceRoot, codeAnalysisRoot, testsRoot, service.IsTestService);
+            // Built first so a bad example fails the service before anything is written, but written only once
+            // the service's code has generated. Test services never ship samples.
+            IReadOnlyList<(string Path, string Contents)> docSamples = service.IsTestService ? [] : generator.BuildDocSamples();
+
+            var generatedTrees = GeneratedTrees(sourceRoot, codeAnalysisRoot, testsRoot, service.IsTestService);
+            var stale = generatedTrees.Where(Directory.Exists).SelectMany(tree => Directory.EnumerateFiles(tree, "*", SearchOption.AllDirectories)).ToHashSet(_pathComparer);
 
             var written = generator.Generate(sourceRoot, codeAnalysisRoot, testsRoot, ct);
             Log.Info($"Generated {written.Count} files for {service.Name} under '{Relative(sourceRoot)}'.");
+
+            var docSamplesRoot = SdkTreeLayout.DocSamplesRoot(repoRoot);
+            foreach (var (path, contents) in docSamples)
+            {
+                // Never formatted: the samples .cs holds placeholders like <binary data> the formatter would mangle.
+                ServiceGenerator.WriteFile(Path.Combine(docSamplesRoot, path), contents, format: false, ct);
+            }
+
+            if (docSamples.Count > 0)
+            {
+                Log.Info($"Generated {docSamples.Count} doc sample files for {service.Name} under '{Relative(docSamplesRoot)}'.");
+            }
+
+            stale.ExceptWith(generator.WrittenFiles);
+            RemoveStaleOutput(service.Name, sourceRoot, generatedTrees, stale);
         }
         catch (GeneratorException ex)
         {
@@ -248,32 +267,39 @@ public sealed class BatchGenerator(string repoRoot)
         }
     }
 
-    // Deletion is the destructive step, so every tree/file actually removed is logged. Only the
-    // generated trees and the superseded C2J solution file are touched — never Custom/ or anything
-    // hand-written.
-    private void WipeStaleOutput(string serviceName, string sourceRoot, string codeAnalysisRoot, string testsRoot, bool isTestService)
-    {
-        // Test services have no code-analysis tree (and sourceRoot == testsRoot), so only the two generated trees under the test root are wiped.
-        string[] staleTrees = isTestService
-            ?
-            [
-                Path.Combine(testsRoot, "Generated"),
-                Path.Combine(testsRoot, "UnitTests", "Generated"),
-            ]
-            :
-            [
-                Path.Combine(sourceRoot, "Generated"),
-                Path.Combine(codeAnalysisRoot, "Generated"),
-                Path.Combine(testsRoot, "UnitTests", "Generated"),
-            ];
+    // The trees this generator owns outright: anything in them it didn't just generate is stale. Test services
+    // have no code-analysis tree (and sourceRoot == testsRoot), so only the two under the test root.
+    private static string[] GeneratedTrees(string sourceRoot, string codeAnalysisRoot, string testsRoot, bool isTestService) => isTestService
+        ?
+        [
+            Path.Combine(testsRoot, "Generated"),
+            Path.Combine(testsRoot, "UnitTests", "Generated"),
+        ]
+        :
+        [
+            Path.Combine(sourceRoot, "Generated"),
+            Path.Combine(codeAnalysisRoot, "Generated"),
+            Path.Combine(testsRoot, "UnitTests", "Generated"),
+        ];
 
-        foreach (var tree in staleTrees)
+    // Deletion is the destructive step, so it runs only after the service generated, and what is removed is
+    // logged. Only the generated trees and the superseded C2J solution file are touched — never Custom/ or
+    // anything hand-written.
+    private void RemoveStaleOutput(string serviceName, string sourceRoot, string[] generatedTrees, HashSet<string> stale)
+    {
+        foreach (var file in stale)
         {
-            if (Directory.Exists(tree))
-            {
-                Directory.Delete(tree, recursive: true);
-                Log.Info($"[{serviceName}] Deleted stale tree '{Relative(tree)}'.");
-            }
+            File.Delete(file);
+        }
+
+        if (stale.Count > 0)
+        {
+            Log.Info($"[{serviceName}] Deleted {stale.Count} stale generated file(s).");
+        }
+
+        foreach (var tree in generatedTrees.Where(Directory.Exists))
+        {
+            DeleteEmptyDirectories(tree);
         }
 
         // The solution writer emits {Name}.slnx, which never overwrites the differently-named C2J
@@ -284,6 +310,20 @@ public sealed class BatchGenerator(string repoRoot)
         {
             File.Delete(staleSolution);
             Log.Info($"[{serviceName}] Deleted stale C2J solution '{Relative(staleSolution)}'.");
+        }
+    }
+
+    // Directories a stale C2J layout left behind (_bcl/, _netstandard/) empty out once their files go.
+    private static void DeleteEmptyDirectories(string directory)
+    {
+        foreach (var child in Directory.EnumerateDirectories(directory))
+        {
+            DeleteEmptyDirectories(child);
+        }
+
+        if (!Directory.EnumerateFileSystemEntries(directory).Any())
+        {
+            Directory.Delete(directory);
         }
     }
 

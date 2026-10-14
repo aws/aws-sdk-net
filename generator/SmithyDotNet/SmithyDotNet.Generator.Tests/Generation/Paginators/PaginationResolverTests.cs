@@ -1,5 +1,6 @@
 using System.Text.Json;
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Generation.Operations;
 using SmithyDotNet.Generator.Generation.Paginators;
 using SmithyDotNet.Generator.Model;
@@ -19,12 +20,10 @@ public class PaginationResolverTests
         // service-level defaults, so this also proves operation values win over the defaults.
         var op = Resolve("ListThings");
 
-        Assert.Equal("NextToken", op.InputTokenProperty);
-        Assert.Equal("NextToken", op.OutputTokenProperty);
+        Assert.Equal(["NextToken"], op.InputTokenProperties);
+        Assert.Equal(["NextToken"], op.OutputTokenProperties);
         Assert.Equal("MaxResults", op.PageSizeProperty);
-        Assert.Equal("Things", op.ItemsProperty);
-        Assert.Equal("Things", op.ItemsPath);
-        Assert.Equal("Thing", op.ItemsElementType);
+        Assert.Equal([new PaginatedResultKey("Things", "Things", "Thing")], op.ResultKeys);
     }
 
     [Fact]
@@ -32,11 +31,10 @@ public class PaginationResolverTests
     {
         var op = Resolve("ListWidgets");
 
-        Assert.Equal("NextToken", op.InputTokenProperty);
-        Assert.Equal("NextToken", op.OutputTokenProperty);
+        Assert.Equal(["NextToken"], op.InputTokenProperties);
+        Assert.Equal(["NextToken"], op.OutputTokenProperties);
         Assert.Equal("MaxItems", op.PageSizeProperty);
-        Assert.Null(op.ItemsProperty);
-        Assert.Null(op.ItemsElementType);
+        Assert.Empty(op.ResultKeys);
     }
 
     [Fact]
@@ -44,11 +42,9 @@ public class PaginationResolverTests
     {
         var op = Resolve("ListSummaries");
 
-        Assert.Equal("Marker", op.InputTokenProperty);
-        Assert.Equal("SummaryList.NextMarker", op.OutputTokenProperty);
-        Assert.Equal("Items", op.ItemsProperty);
-        Assert.Equal("SummaryList.Items", op.ItemsPath);
-        Assert.Equal("Summary", op.ItemsElementType);
+        Assert.Equal(["Marker"], op.InputTokenProperties);
+        Assert.Equal(["SummaryList.NextMarker"], op.OutputTokenProperties);
+        Assert.Equal([new PaginatedResultKey("Items", "SummaryList.Items", "Summary")], op.ResultKeys);
     }
 
     [Fact]
@@ -56,10 +52,9 @@ public class PaginationResolverTests
     {
         var op = Resolve("GetUsage");
 
-        Assert.Equal("Position", op.InputTokenProperty);
-        Assert.Equal("Position", op.OutputTokenProperty);
-        Assert.Null(op.ItemsProperty);
-        Assert.Null(op.ItemsElementType);
+        Assert.Equal(["Position"], op.InputTokenProperties);
+        Assert.Equal(["Position"], op.OutputTokenProperties);
+        Assert.Empty(op.ResultKeys);
     }
 
     [Fact]
@@ -69,11 +64,10 @@ public class PaginationResolverTests
         // service shape's @paginated trait.
         var op = Resolve("ListFunctions");
 
-        Assert.Equal("Marker", op.InputTokenProperty);
-        Assert.Equal("NextMarker", op.OutputTokenProperty);
+        Assert.Equal(["Marker"], op.InputTokenProperties);
+        Assert.Equal(["NextMarker"], op.OutputTokenProperties);
         Assert.Equal("MaxItems", op.PageSizeProperty);
-        Assert.Equal("Functions", op.ItemsProperty);
-        Assert.Equal("Function", op.ItemsElementType);
+        Assert.Equal([new PaginatedResultKey("Functions", "Functions", "Function")], op.ResultKeys);
     }
 
     [Fact]
@@ -82,10 +76,9 @@ public class PaginationResolverTests
         var (index, _) = LoadPaginatedModel();
         var op = MakeOperation("""{ "inputToken": "nextToken", "outputToken": "nextToken", "items": "choices" }""");
 
-        var result = PaginationResolver.Resolve([op], index).Single();
+        var result = PaginationResolver.Resolve([op], index, new CustomizationsModel()).Single();
 
-        Assert.Equal("Choices", result.ItemsProperty);
-        Assert.Equal("TestUnion", result.ItemsElementType);
+        Assert.Equal([new PaginatedResultKey("Choices", "Choices", "TestUnion")], result.ResultKeys);
     }
 
     [Fact]
@@ -96,10 +89,9 @@ public class PaginationResolverTests
         // "matrix" is a list of lists, which has no flattened enumerable
         var op = MakeOperation("""{ "inputToken": "nextToken", "outputToken": "nextToken", "items": "matrix" }""");
 
-        var result = PaginationResolver.Resolve([op], index).Single();
+        var result = PaginationResolver.Resolve([op], index, new CustomizationsModel()).Single();
 
-        Assert.Null(result.ItemsProperty);
-        Assert.Null(result.ItemsElementType);
+        Assert.Empty(result.ResultKeys);
     }
 
     [Fact]
@@ -112,10 +104,9 @@ public class PaginationResolverTests
         var (index, _) = LoadPaginatedModel();
         var op = MakeOperation("""{ "inputToken": "nextToken", "outputToken": "nextToken", "items": "statuses" }""");
 
-        var result = PaginationResolver.Resolve([op], index).Single();
+        var result = PaginationResolver.Resolve([op], index, new CustomizationsModel()).Single();
 
-        Assert.Equal("Statuses", result.ItemsProperty);
-        Assert.Equal("string", result.ItemsElementType);
+        Assert.Equal([new PaginatedResultKey("Statuses", "Statuses", "string")], result.ResultKeys);
     }
 
     [Fact]
@@ -127,17 +118,16 @@ public class PaginationResolverTests
         var (index, _) = LoadPaginatedModel();
         var op = MakeOperation("""{ "inputToken": "nextToken", "outputToken": "nextToken", "items": "counts" }""");
 
-        var result = PaginationResolver.Resolve([op], index).Single();
-        Assert.Equal("Counts", result.ItemsProperty);
-        Assert.Equal("int", result.ItemsElementType);
+        var result = PaginationResolver.Resolve([op], index, new CustomizationsModel()).Single();
+        Assert.Equal([new PaginatedResultKey("Counts", "Counts", "int")], result.ResultKeys);
     }
 
     [Theory]
     [InlineData("""{ "inputToken": "missing", "outputToken": "nextToken" }""", "inputToken member 'missing' not found")]
     [InlineData("""{ "inputToken": "nextToken", "outputToken": "missing" }""", "outputToken member 'missing' not found")]
     [InlineData("""{ "inputToken": "nextToken", "outputToken": "nextToken", "items": "missing" }""", "items member 'missing' not found")]
-    [InlineData("""{ "inputToken": "maxItems", "outputToken": "nextToken" }""", "inputToken 'maxItems' targets")]
-    [InlineData("""{ "inputToken": "nextToken", "outputToken": "things" }""", "outputToken 'things' targets")]
+    [InlineData("""{ "inputToken": "maxItems", "outputToken": "nextToken" }""", "both be strings or both be maps")]
+    [InlineData("""{ "inputToken": "nextToken", "outputToken": "things" }""", "both be strings or both be maps")]
     [InlineData("""{ "inputToken": "nextToken", "outputToken": "nextToken", "items": "nextToken" }""", "expected list or map")]
     [InlineData("""{ "inputToken": "nextToken", "outputToken": "nextToken.deeper" }""", "outputToken member 'deeper' not found")]
     public void Throws_OnInvalidPaginatedTrait(string traitJson, string expectedError)
@@ -145,8 +135,28 @@ public class PaginationResolverTests
         var (index, _) = LoadPaginatedModel();
         var op = MakeOperation(traitJson);
 
-        var ex = Assert.Throws<GeneratorException>(() => PaginationResolver.Resolve([op], index));
+        var ex = Assert.Throws<GeneratorException>(() => PaginationResolver.Resolve([op], index, new CustomizationsModel()));
         Assert.Contains(expectedError, ex.Message);
+    }
+
+    [Fact]
+    public void Throws_OnHttp2OnlyPaginatedOperation()
+    {
+        var (index, _) = LoadPaginatedModel();
+        var op = MakeOperation("""{ "inputToken": "nextToken", "outputToken": "nextToken" }""") with { RequiresHttp2 = true };
+
+        var ex = Assert.Throws<GeneratorException>(() => PaginationResolver.Resolve([op], index, new CustomizationsModel()));
+        Assert.Contains("'TestOp' requires HTTP/2", ex.Message);
+    }
+
+    // Paginator traits name modeled members; imagebuilder and inspector2 rename their items member "responses".
+    [Fact]
+    public void Resolves_RenamedItemsMember_ToNewProperty()
+    {
+        var context = TestModels.Context(TestModels.Load("Model/paginated-model.json"), TestCustomizations.Rename("ListThingsResponse", "things", "aggregations"));
+
+        var paginated = context.PaginatedOperations.Single(p => p.Operation.Name == "ListThings");
+        Assert.Equal([new PaginatedResultKey("Aggregations", "Aggregations", "Thing")], paginated.ResultKeys);
     }
 
     [Fact]
@@ -167,6 +177,39 @@ public class PaginationResolverTests
         Assert.Equal("b", trait.OutputToken);
         Assert.Equal("c", trait.Items);
         Assert.Equal("d", trait.PageSize);
+    }
+
+    [Fact]
+    public void Customization_AddsResultKeysAfterModeledItems()
+    {
+        var (index, _) = LoadPaginatedModel();
+        var op = MakeOperation("""{ "inputToken": "nextToken", "outputToken": "nextToken", "items": "things" }""");
+        var customizations = new CustomizationsModel { Paginators = { ["TestOp"] = new() { Items = ["counts"] } } };
+
+        var result = PaginationResolver.Resolve([op], index, customizations).Single();
+
+        Assert.Equal([new PaginatedResultKey("Things", "Things", "Thing"), new PaginatedResultKey("Counts", "Counts", "int")], result.ResultKeys);
+    }
+
+    [Fact]
+    public void Throws_WhenTokenCountsDiffer()
+    {
+        var (index, ops) = LoadPaginatedModel();
+        var customizations = new CustomizationsModel { Paginators = { ["ListRecords"] = new() { InputToken = ["startName"], OutputToken = ["nextName", "nextType"] } } };
+
+        var ex = Assert.Throws<GeneratorException>(() => PaginationResolver.Resolve(ops, index, customizations));
+        Assert.Contains("same number of entries", ex.Message);
+    }
+
+    [Fact]
+    public void Throws_WhenCustomizationRepeatsModeledField()
+    {
+        var (index, _) = LoadPaginatedModel();
+        var op = MakeOperation("""{ "inputToken": "nextToken", "outputToken": "nextToken", "pageSize": "maxItems" }""");
+        var customizations = new CustomizationsModel { Paginators = { ["TestOp"] = new() { PageSize = "maxItems" } } };
+
+        var ex = Assert.Throws<GeneratorException>(() => PaginationResolver.Resolve([op], index, customizations));
+        Assert.Contains("@paginated now models", ex.Message);
     }
 
     // ModelFileName only feeds the license-header comment.
@@ -201,10 +244,47 @@ public class PaginationResolverTests
         Assert.Contains("return new ListThingsPaginator(this.client, request);", classCode);
     }
 
+    [Fact]
+    public void Codegen_Customizations()
+    {
+        var token = TestContext.Current.CancellationToken;
+        var customizations = new CustomizationsModel
+        {
+            Paginators =
+            {
+                ["ListWidgets"] = new() { Items = ["widgets", "statuses"] },
+                ["BatchGetWidgets"] = new() { InputToken = ["requestItems"], OutputToken = ["unprocessedKeys"], PageSize = "limit" },
+                ["ListRecords"] = new() { InputToken = ["startName", "startType"], OutputToken = ["nextName", "nextType"] },
+            },
+            OperationModifiers = { ["ListWidgets"] = new() { StopPaginationOnSameToken = true } },
+        };
+
+        var context = new GenerationContext(new ServiceIndex(TestModels.Load("Model/paginated-model.json")), TestManifests.Example(), customizations: customizations);
+        var listWidgets = context.PaginatedOperations.Single(p => p.Operation.Name == "ListWidgets");
+        var batchGetWidgets = context.PaginatedOperations.Single(p => p.Operation.Name == "BatchGetWidgets");
+        var listRecords = context.PaginatedOperations.Single(p => p.Operation.Name == "ListRecords");
+
+        var factoryCode = new PaginatorFactoryInterfaceWriter(context, ModelFileName).Write(token);
+        var interfaceCode = new PaginatorInterfaceWriter(context, ModelFileName).Write(listWidgets, token);
+        var sameTokenClass = new PaginatorClassWriter(context, ModelFileName).Write(listWidgets, token);
+        var mapTokenClass = new PaginatorClassWriter(context, ModelFileName).Write(batchGetWidgets, token);
+        var multiTokenClass = new PaginatorClassWriter(context, ModelFileName).Write(listRecords, token);
+
+        Assert.Contains("IPaginatedEnumerable<Widget> Widgets { get; }", interfaceCode);
+        Assert.Contains("IPaginatedEnumerable<string> Statuses { get; }", interfaceCode);
+        Assert.Contains("while (nextToken != _request.NextToken);", sameTokenClass);
+        Assert.Contains("""[AWSPaginator(InputToken = ["RequestItems"], LimitKey = "Limit", OutputToken = ["UnprocessedKeys"])]""", factoryCode);
+        Assert.Contains("while (nextToken?.Count > 0);", mapTokenClass);
+        Assert.Contains("""[AWSPaginator(InputToken = ["StartName", "StartType"], OutputToken = ["NextName", "NextType"])]""", factoryCode);
+        Assert.Contains("_request.StartType = startType;", multiTokenClass);
+        Assert.Contains("startType = response.NextType;", multiTokenClass);
+        Assert.Contains("while (!string.IsNullOrEmpty(startName));", multiTokenClass);
+    }
+
     private static PaginatedOperation Resolve(string operationName)
     {
         var (index, ops) = LoadPaginatedModel();
-        return PaginationResolver.Resolve(ops, index).Single(p => p.Operation.Name == operationName);
+        return PaginationResolver.Resolve(ops, index, new CustomizationsModel()).Single(p => p.Operation.Name == operationName);
     }
 
     private static (ServiceIndex Index, List<Operation> Operations) LoadPaginatedModel()
@@ -215,7 +295,7 @@ public class PaginationResolverTests
         {
             var input = index.Shapes[opShape.Input] as StructureShape ?? new StructureShape();
             var output = index.Shapes[opShape.Output] as StructureShape ?? new StructureShape();
-            ops.Add(new Operation(opShape.Id.Name, opShape, input, output, [], RequiresHttp2: false));
+            ops.Add(new Operation(opShape.Id.Name, opShape, input, output, [], RequiresHttp2: false, HasOutputEventStream: false));
         }
         return (index, ops);
     }
@@ -235,7 +315,7 @@ public class PaginationResolverTests
             ["statuses"] = new() { Target = new ShapeId("com.amazonaws.testpaginated", "StatusList") },
             ["counts"] = new() { Target = new ShapeId("com.amazonaws.testpaginated", "CountList") },
         };
-        var structure = new StructureShape { Members = members };
+        var structure = new StructureShape { Id = new ShapeId("com.amazonaws.testpaginated", "TestOpIO"), Members = members };
 
         var opShape = new OperationShape
         {
@@ -245,6 +325,6 @@ public class PaginationResolverTests
             },
         };
 
-        return new Operation("TestOp", opShape, structure, structure, [], RequiresHttp2: false);
+        return new Operation("TestOp", opShape, structure, structure, [], RequiresHttp2: false, HasOutputEventStream: false);
     }
 }

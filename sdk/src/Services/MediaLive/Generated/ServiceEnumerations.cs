@@ -3339,6 +3339,10 @@ namespace Amazon.MediaLive
         /// </summary>
         public static readonly CloudWatchAlarmTemplateTargetResourceType CLOUDFRONT_DISTRIBUTION = new CloudWatchAlarmTemplateTargetResourceType("CLOUDFRONT_DISTRIBUTION");
         /// <summary>
+        /// Constant ELEMENTAL_INFERENCE_FEED for CloudWatchAlarmTemplateTargetResourceType
+        /// </summary>
+        public static readonly CloudWatchAlarmTemplateTargetResourceType ELEMENTAL_INFERENCE_FEED = new CloudWatchAlarmTemplateTargetResourceType("ELEMENTAL_INFERENCE_FEED");
+        /// <summary>
         /// Constant MEDIACONNECT_FLOW for CloudWatchAlarmTemplateTargetResourceType
         /// </summary>
         public static readonly CloudWatchAlarmTemplateTargetResourceType MEDIACONNECT_FLOW = new CloudWatchAlarmTemplateTargetResourceType("MEDIACONNECT_FLOW");

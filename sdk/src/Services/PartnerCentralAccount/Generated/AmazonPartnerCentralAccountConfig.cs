@@ -14,9 +14,8 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the partnercentral-account-2025-04-04.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -33,22 +32,18 @@ namespace Amazon.PartnerCentralAccount
     public partial class AmazonPartnerCentralAccountConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("PartnerCentral Account", "4.0.102.8");
+            InternalSDKUtils.BuildUserAgentString("PartnerCentral Account", "4.0.102.10");
 
         private static readonly AmazonPartnerCentralAccountEndpointResolver EndpointResolver =
             new AmazonPartnerCentralAccountEndpointResolver();
 
         private string _userAgent = UserAgentString;
-        ///<summary>
+
+        /// <summary>
         /// The ServiceId, which is the unique identifier for a service.
-        ///</summary>
-        public static new string ServiceId
-        {
-            get
-            {
-                return "PartnerCentral Account";
-            }
-        }
+        /// </summary>
+        public static new string ServiceId => "PartnerCentral Account";
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -63,35 +58,17 @@ namespace Amazon.PartnerCentralAccount
         /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
-        public override string RegionEndpointServiceName
-        {
-            get
-            {
-                return "partnercentral-account";
-            }
-        }
+        public override string RegionEndpointServiceName => "partnercentral-account";
 
         /// <summary>
         /// Gets the ServiceVersion property.
         /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2025-04-04";
-            }
-        }
+        public override string ServiceVersion => "2025-04-04";
 
         /// <summary>
         /// Gets the value of UserAgent property.
         /// </summary>
-        public override string UserAgent
-        {
-            get
-            {
-                return _userAgent;
-            }
-        }
+        public override string UserAgent => _userAgent;
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.
@@ -113,7 +90,5 @@ namespace Amazon.PartnerCentralAccount
             var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
             return EndpointResolver.GetEndpoint(executionContext);
         }
-
-
     }
 }

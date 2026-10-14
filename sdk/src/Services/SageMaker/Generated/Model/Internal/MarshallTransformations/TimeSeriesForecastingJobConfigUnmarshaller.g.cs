@@ -1,0 +1,129 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.SageMaker.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for TimeSeriesForecastingJobConfig Object
+    /// </summary>
+    public partial class TimeSeriesForecastingJobConfigUnmarshaller : IJsonUnmarshaller<TimeSeriesForecastingJobConfig, JsonUnmarshallerContext>
+    {
+        /// <summary>
+        /// Unmarshall the response from the service to the response class.
+        /// </summary>
+        /// <returns>The unmarshalled object</returns>
+        public TimeSeriesForecastingJobConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        {
+            var unmarshalledObject = new TimeSeriesForecastingJobConfig();
+            if (context.IsEmptyResponse) return null;
+
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) return null;
+
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth, ref reader))
+            {
+                if (context.TestExpression("CandidateGenerationConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = CandidateGenerationConfigUnmarshaller.Instance;
+                    unmarshalledObject.CandidateGenerationConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("CompletionCriteria", targetDepth, ref reader))
+                {
+                    var unmarshaller = AutoMLJobCompletionCriteriaUnmarshaller.Instance;
+                    unmarshalledObject.CompletionCriteria = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("FeatureSpecificationS3Uri", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FeatureSpecificationS3Uri = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("ForecastFrequency", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ForecastFrequency = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("ForecastHorizon", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.ForecastHorizon = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("ForecastQuantiles", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ForecastQuantiles = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("HolidayConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<HolidayConfigAttributes, HolidayConfigAttributesUnmarshaller>(HolidayConfigAttributesUnmarshaller.Instance);
+                    unmarshalledObject.HolidayConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("TimeSeriesConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = TimeSeriesConfigUnmarshaller.Instance;
+                    unmarshalledObject.TimeSeriesConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("Transformations", targetDepth, ref reader))
+                {
+                    var unmarshaller = TimeSeriesTransformationsUnmarshaller.Instance;
+                    unmarshalledObject.Transformations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+            }
+            return unmarshalledObject;
+        }
+
+        private static TimeSeriesForecastingJobConfigUnmarshaller _instance = new TimeSeriesForecastingJobConfigUnmarshaller();
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static TimeSeriesForecastingJobConfigUnmarshaller Instance => _instance;
+    }
+}

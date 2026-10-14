@@ -60,6 +60,12 @@ namespace SmithyDotNet.Generator.Writers;
 /// modeled conversion, or null.</param>
 /// <param name="UnmarshallerOverride">The <c>dataTypeSwap</c> unmarshaller the writers use instead of the
 /// modeled one, or null.</param>
+/// <param name="MarshallerName">The generated marshaller class for a structure target (see
+/// <see cref="GenerationContext.StructureMarshallerName"/>); null for any other target. Non-null whenever
+/// <see cref="IsStructure"/> is.</param>
+/// <param name="UnmarshallerName">The generated unmarshaller class for a structure target (see
+/// <see cref="GenerationContext.StructureUnmarshallerName"/>); null for any other target. Non-null whenever
+/// <see cref="IsStructure"/> is.</param>
 public sealed record TypeDescriptor(
     string DotNetType,
     Shape Target,
@@ -80,7 +86,9 @@ public sealed record TypeDescriptor(
     bool IsSparse = false,
     string? MediaType = null,
     string? MarshallerOverride = null,
-    string? UnmarshallerOverride = null)
+    string? UnmarshallerOverride = null,
+    string? MarshallerName = null,
+    string? UnmarshallerName = null)
 {
     /// <summary>
     /// True for a scalar — <c>string</c>, an enum (its ConstantClass marshals as a string), or a
@@ -189,11 +197,13 @@ public static class TypeMapper
         foreach (var (memberName, member) in structure.Members)
         {
             var target = context.Resolve(member.Target);
-            var propertyName = SdkNaming.ToUpperFirstCharacter(memberName);
 
-            // Member-level hooks are keyed by the member's current (post-rename) name; CustomizationTransform
-            // has already validated the entries.
-            var swap = context.Customizations.DataTypeSwapFor(structure.Id.Name, memberName);
+            // Keyed by the structure's modeled name (even if renameShape renamed it), then the member's emitted name,
+            // as in C2J; CustomizationTransform has already validated the entries.
+            var shapeName = structure.Id.Name;
+            var propertyName = context.Customizations.PropertyName(shapeName, memberName);
+            var emittedName = context.Customizations.EmittedName(shapeName, memberName);
+            var swap = context.Customizations.DataTypeSwapFor(shapeName, emittedName);
 
             resolved.Add(new Member(
                 PropertyName: propertyName,
@@ -204,7 +214,7 @@ public static class TypeMapper
                 Obsolete: BuildObsolete(member),
                 Documentation: member.GetDocumentation() ?? string.Empty,
                 ModeledName: memberName,
-                EmitIsSetProperties: context.Customizations.EmitIsSet(structure.Id.Name, memberName),
+                EmitIsSetProperties: context.Customizations.EmitIsSet(shapeName, emittedName),
                 // awsJson1.x ignores @jsonName (not in its supported traits); the wire name is the member name.
                 JsonName: context.UsesHttpBindings ? member.GetJsonName() : null,
                 // Any structure can model a member named "Equals" — it hides object.Equals(object).
@@ -268,7 +278,9 @@ public static class TypeMapper
             IsSparse: isSparse,
             MediaType: target.GetMediaType(),
             MarshallerOverride: swap?.Marshaller,
-            UnmarshallerOverride: swap?.Unmarshaller);
+            UnmarshallerOverride: swap?.Unmarshaller,
+            MarshallerName: target is StructureShape ? context.StructureMarshallerName(target.Id) : null,
+            UnmarshallerName: target is StructureShape ? context.StructureUnmarshallerName(target.Id) : null);
     }
 
     /// <summary>
@@ -397,7 +409,7 @@ public static class TypeMapper
     /// nullable (<c>List&lt;bool?&gt;</c>, matching C2J). Everything else maps as in member position
     /// via <see cref="MapType"/>.
     /// </summary>
-    private static string MapCollectionValueType(Shape target, GenerationContext context, bool isSparse) =>
+    internal static string MapCollectionValueType(Shape target, GenerationContext context, bool isSparse) =>
         MapScalarElement(target, isSparse) ?? MapType(target, context);
 
     /// <summary>
@@ -499,23 +511,23 @@ public static class TypeMapper
         // Required even when the model marks it @required.
         if (member.IsRequired() && !member.IsIdempotencyToken())
         {
-            parts.Add("Required=true");
+            parts.Add("Required = true");
         }
 
         if (target.IsSensitive())
         {
-            parts.Add("Sensitive=true");
+            parts.Add("Sensitive = true");
         }
 
         var (min, max) = ResolveBounds(member, target);
         if (min is not null)
         {
-            parts.Add($"Min={min}");
+            parts.Add($"Min = {min}");
         }
 
         if (max is not null)
         {
-            parts.Add($"Max={max}");
+            parts.Add($"Max = {max}");
         }
 
         if (parts.Count == 0)

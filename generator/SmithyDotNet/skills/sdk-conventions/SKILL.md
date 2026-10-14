@@ -31,7 +31,8 @@ A **removed** line in generated output is a red flag — investigate it, do not 
 
 ## What Can Differ
 
-- Whitespace, indentation, blank lines (Roslyn formatter handles this)
+- Whitespace, indentation, blank lines (the Roslyn formatter runs on every C# file whose raw output differs
+  from the file on disk; emitting exact spacing lets a run skip it)
 - File names — prefer `{TypeName}.g.cs` to distinguish generated files
 - Backing fields and other private helpers (the generator omits them — see Property Pattern below)
 - `using` directive order
@@ -73,7 +74,7 @@ name to a writer, check the shipping SDK for which of the two it follows.
 - **Shape names** → PascalCase class names (Smithy shape names are already PascalCase). The service
   `rename` map wins when it has an entry for the shape; error codes still use the shape name
 - **Member names** → PascalCase property names. Smithy uses camelCase (`eventData`), .NET uses PascalCase (`EventData`)
-- The conversion: capitalize the first letter of the Smithy member name
+- The conversion: capitalize the first letter of the Smithy member name, or of its `emitPropertyName` (see Customizations)
 - **Acronyms** are preserved as-is from the Smithy model. Example: `eventID` → `EventID` (not `EventId`)
 - A response member named `ContentLength` is **omitted** from the response class —
   `AmazonWebServiceResponse` already declares it — but the response unmarshaller still assigns the
@@ -110,6 +111,44 @@ A structure that doubles as an operation input/output normally gets only its
 code references the shape through a member (directly or as a list/map element), the standalone
 class is emitted too, because member properties are typed with the plain class name (C2J parity:
 drs `SourceServer` has one, kinesis `EnhancedMonitoringOutput` does not).
+
+## Doc Samples
+
+`DocSamplesWriter` and `DocSampleMetadataWriter` emit
+`docgenerator/AWSSDKDocSamples/{ServiceName}/{ServiceName}.GeneratedSamples.cs` and
+`{ServiceName}.GeneratedSamples.extra.xml` from `smithy.api#examples`, rendering values as C2J's
+`Example.cs` does but with the SDK's types, so a copied sample compiles once placeholders like `<data>` are
+filled in. Both are written unformatted
+(`BatchGenerator` passes `format: false`): the samples file is never compiled and can hold placeholders like
+`<binary data>` that the Roslyn formatter would mangle. A service with no examples, or S3 (its samples are
+hand-written), gets no files, so an existing sample file stays as it is; examples the model lacks but C2J
+had are a model gap. Example keys are matched to member property names ignoring case, so, as in C2J, a
+member renamed by `emitPropertyName` (beyond case) drops out of the sample. The samples are built before
+anything is written, so a bad example fails the service before anything is deleted, and written only once
+its code has generated.
+
+Differences from C2J:
+
+- Region ids are `{Operation}-{n}` (the trait has no example id). They only link an `.extra.xml` entry to
+  its code. Each is unique, unlike C2J's repeated `example-1`, which made the docs build (it takes the
+  first matching `#region`) show the first sample's code for every later one.
+- Keys are written ordinal-sorted; examples.json's order is sorted for about 92% of objects.
+- Which examples exist, and their order within an operation, follow the trait.
+- examples.json `comments` (C2J's `// comment` after an assignment) are lost: the trait has no such field.
+- Response locals are typed as the response properties are (`int?`, `Stream`, the enum's class); C2J used
+  non-nullable scalars, `MemoryStream` and `string`. Locals that are C# keywords are escaped (`@event`).
+- A timestamp prints its 24-hour time and milliseconds, and a number is read as epoch seconds (or
+  `DateTime.UtcNow` if it's out of range); C2J printed a 12-hour hour, dropped milliseconds and wrote
+  `DateTime.UtcNow` for any number. A fractional `float` gets `f`.
+- A request event stream is omitted: its `Func` publisher property can't be written from example data.
+- A document value renders as `global::Amazon.Runtime.Documents.Document` with its content, using its
+  collection initializer; C2J rendered an empty initializer of a class that doesn't exist.
+- String literals are fully C# escaped, and titles and documentation escape `&`, `<` and `>` (titles also
+  `"`) and drop characters XML 1.0 can't carry; C2J escaped only quotes, so a backslash, newline or `&`
+  produced broken code or XML.
+- The writers' own layout follows `CodeWriter` (platform newlines, 2-space XML indent); documentation text
+  is written as it is. The docs build parses the XML and left-justifies each region, so the rendered docs
+  don't change.
 
 ## Event Streams
 
@@ -219,11 +258,31 @@ internal bool IsSetAuditEvents() => this.AuditEvents != null && (this.AuditEvent
 ## Customizations (`*.customizations.json`)
 
 The .NET-owned override layer (not part of the shared, upstream Smithy model). A hook with a Smithy
-trait equivalent (a rename pins `@jsonName`) is folded into the model in-memory by
+trait equivalent (`deprecatedMessage`, `renameShape`), or a structural edit (a member-keyed `renameShape`), is folded into the model in-memory by
 `CustomizationTransform.Apply` before the `ServiceIndex` is built; every other hook is checked by
-`CustomizationTransform.Validate` and read from `GenerationContext.Customizations` by shape and member
+`CustomizationTransform` and read from `GenerationContext.Customizations` by shape and member
 name where the member is resolved (`TypeMapper.ResolveMembers`), never stored on a shape. An unknown
 hook key fails deserialization (fail-closed) rather than silently diverging from C2J.
+
+`shapeSubstitutions.renameShape` is applied first, as an entry in the service's `rename` map (the shape ID
+is unchanged, so targets still resolve). Every hook keys a renamed shape by its modeled name. C2J keys a renamed
+structure by its new name, so S3's entries for its renamed structures must be rekeyed on migration. Wire error codes
+keep the modeled name. A model that already renames the shape fails.
+A Smithy-only `"Structure$member"` key instead copies that member's target under the new name (QApps: one
+`Action` enum is C2J's `PermissionInputActionEnum` and `PermissionOutputActionEnum`); the original is dropped once
+nothing targets it.
+
+`emitPropertyName` renames only the C# property, so the member keeps its modeled name and with it its wire
+name on every protocol. `CustomizationsModel.PropertyName` is used wherever a member's C# name is derived.
+As in C2J, the name's first letter is upper-cased (iot's `marker` is `Marker`) and
+`emitIsSetProperties`/`dataTypeSwap` list a renamed member under its new name.
+`paginators.{Operation}` supplies what `@paginated` lacks but the shipped paginator has: `pageSize` (PowerShell reads
+`LimitKey`); `inputToken`/`outputToken` arrays, which make a trait-less operation paginated — map tokens loop while entries
+remain (DynamoDB `BatchGetItem`), several tokens page together (Route 53 `ListResourceRecordSets`); `items` (dotted paths)
+added to the modeled one. A field the trait already has fails generation.
+`operationModifiers.{Operation}.stopPaginationOnSameToken` stops on a repeated token (CloudWatch Logs `GetLogEvents`).
+Unlike the C2J-inherited hooks above, `paginators` names members as the model does (like `@paginated`), not by their
+emitted name.
 
 - What Smithy supports today is whatever `Generation/Customizations/CustomizationsModel.cs` parses;
   each hook's per-level behavior lives on that record, its `Apply`/`Validate` step, and its lookup.
@@ -327,7 +386,22 @@ Must expose:
 - **Async method** (all targets): `public virtual Task<{Op}Response> {Op}Async(...)` per operation
 - **HTTP/2 operations** are the exception: the whole operation is wrapped in `#if NET8_0_OR_GREATER`, since C2J omits h2 operations on .NET Framework and pre-net8 netstandard.
 - `DetermineServiceOperationEndpoint` implementation
-- `CustomizeRuntimePipeline` override
+- `CustomizeRuntimePipeline` override: first the `runtimePipelineOverride` customization's handlers, in file order (each
+  under its `condition`, if any), then the endpoint-resolver swap and auth scheme handler. The handler classes are hand-written under the service's `Custom/`.
 - `ServiceMetadata` property override
 
 Use `#if NETFRAMEWORK` directives to include sync methods only for .NET Framework targets. Both sync and async methods are `public virtual` on the client class.
+
+## Endpoint Discovery
+
+`aws.api#clientEndpointDiscovery` is legacy: only dynamodb, timestream-query and timestream-write use it, and new
+services use endpoint rule sets (Endpoints 2.0) instead. Matching C2J, each operation with
+`aws.api#clientDiscoveredEndpoint` (except the discovery operation itself) gets an
+`{Op}EndpointDiscoveryMarshaller.g.cs` and sets `options.EndpointDiscoveryMarshaller` and `options.EndpointOperation`;
+the client overrides `EndpointOperation` to call the discovery operation.
+
+Anything those three services don't model fails generation (discovery ids, discovery input, swapped
+endpoint members, ...); see `EndpointDiscoveryResolver` and `ClientClassWriter.WriteEndpointOperation`.
+
+C2J's `{BaseName}EndpointDiscoveryMarshallingTests.cs` is not generated: with no discovery ids it only checks the
+`required` flag against the C2J model, which the Smithy trait replaces.

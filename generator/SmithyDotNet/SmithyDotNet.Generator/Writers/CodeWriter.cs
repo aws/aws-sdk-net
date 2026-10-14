@@ -9,9 +9,10 @@ namespace SmithyDotNet.Generator.Writers;
 /// <summary>
 /// Buffered C# source writer with brace-block and namespace helpers.
 /// <para />
-/// Internally appends to a <see cref="StringBuilder"/>; <see cref="ToFormattedString"/>
-/// runs the buffer through the Roslyn formatter so callers don't have to
-/// manage indentation or blank-line placement precisely.
+/// Internally appends to a <see cref="StringBuilder"/>. C# output goes through the Roslyn formatter
+/// (<see cref="Format"/>) when it is written, so callers don't have to manage indentation or blank-line
+/// placement precisely; output that is already formatted skips that step, so the writers emit exact
+/// spacing where they can.
 /// </summary>
 public class CodeWriter
 {
@@ -21,15 +22,22 @@ public class CodeWriter
     private int _indent;
     private string _indentUnit = IndentUnit;
 
+    // Lexes /// comments as plain comments rather than parsing their XML: the formatter indents both the same
+    // (output is identical) and skips the XML parse.
+    private static readonly CSharpParseOptions ParseOptions = new(documentationMode: DocumentationMode.None);
+    private static readonly AdhocWorkspace Workspace = new();
+
     /// <summary>
     /// Appends <paramref name="line"/> at the current indent followed by a newline.
-    /// An empty argument emits a blank line (no indent). The indent unit is four
-    /// spaces for C# and two spaces inside an <see cref="OpenXmlBlock(string, Action)"/>.
+    /// An empty argument emits a blank line (no indent), and a preprocessor directive other than
+    /// <c>#region</c>/<c>#endregion</c> starts at column 0, where the formatter places them. The indent unit is
+    /// four spaces for C# and two spaces inside an <see cref="OpenXmlBlock(string, Action)"/>.
     /// </summary>
     public CodeWriter WriteLine(string line = "")
     {
-        if (line.Length == 0)
+        if (line.Length == 0 || (line[0] == '#' && !line.StartsWith("#region", StringComparison.Ordinal) && !line.StartsWith("#endregion", StringComparison.Ordinal)))
         {
+            _buffer.Append(line);
             _buffer.AppendLine();
             return this;
         }
@@ -208,22 +216,22 @@ public class CodeWriter
     }
 
     /// <summary>
-    /// Returns the raw buffered content verbatim, without running it through the Roslyn formatter.
-    /// Use for non-C# output (e.g. XML nuspec files) where the writer manages its own indentation
-    /// and the C# formatter would corrupt the markup.
+    /// Returns the raw buffered content verbatim. Use for non-C# output (e.g. XML nuspec files) where the
+    /// writer manages its own indentation and the C# formatter would corrupt the markup.
     /// </summary>
     public string ToRawString() => _buffer.ToString();
 
     /// <summary>
-    /// Returns the buffered source after running it through the Roslyn formatter.
+    /// Returns the buffered C# source. <c>ServiceGenerator</c> formats it when it writes the file (see
+    /// <see cref="Format"/>), where a file that hasn't changed can skip the step.
+    /// TODO: same as ToRawString now; fold both into ToString() when fewer PRs touch the writers.
     /// </summary>
-    public string ToFormattedString(CancellationToken cancellationToken = default)
-    {
-        var source = _buffer.ToString();
-        var tree = CSharpSyntaxTree.ParseText(source, cancellationToken: cancellationToken);
+    public string ToFormattedString(CancellationToken cancellationToken = default) => _buffer.ToString();
 
-        using var workspace = new AdhocWorkspace();
-        var formatted = Formatter.Format(tree.GetRoot(cancellationToken), workspace, cancellationToken: cancellationToken);
-        return formatted.ToFullString();
+    /// <summary>Runs <paramref name="source"/> through the Roslyn formatter.</summary>
+    public static string Format(string source, CancellationToken cancellationToken = default)
+    {
+        var tree = CSharpSyntaxTree.ParseText(source, ParseOptions, cancellationToken: cancellationToken);
+        return Formatter.Format(tree.GetRoot(cancellationToken), Workspace, cancellationToken: cancellationToken).ToFullString();
     }
 }

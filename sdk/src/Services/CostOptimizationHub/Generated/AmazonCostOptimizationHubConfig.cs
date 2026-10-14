@@ -14,9 +14,8 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cost-optimization-hub-2022-07-26.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -33,22 +32,18 @@ namespace Amazon.CostOptimizationHub
     public partial class AmazonCostOptimizationHubConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Cost Optimization Hub", "4.0.100.15");
+            InternalSDKUtils.BuildUserAgentString("Cost Optimization Hub", "4.0.100.17");
 
         private static readonly AmazonCostOptimizationHubEndpointResolver EndpointResolver =
             new AmazonCostOptimizationHubEndpointResolver();
 
         private string _userAgent = UserAgentString;
-        ///<summary>
+
+        /// <summary>
         /// The ServiceId, which is the unique identifier for a service.
-        ///</summary>
-        public static new string ServiceId
-        {
-            get
-            {
-                return "Cost Optimization Hub";
-            }
-        }
+        /// </summary>
+        public static new string ServiceId => "Cost Optimization Hub";
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -63,35 +58,17 @@ namespace Amazon.CostOptimizationHub
         /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
-        public override string RegionEndpointServiceName
-        {
-            get
-            {
-                return "cost-optimization-hub";
-            }
-        }
+        public override string RegionEndpointServiceName => "cost-optimization-hub";
 
         /// <summary>
         /// Gets the ServiceVersion property.
         /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2022-07-26";
-            }
-        }
+        public override string ServiceVersion => "2022-07-26";
 
         /// <summary>
         /// Gets the value of UserAgent property.
         /// </summary>
-        public override string UserAgent
-        {
-            get
-            {
-                return _userAgent;
-            }
-        }
+        public override string UserAgent => _userAgent;
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.
@@ -113,7 +90,5 @@ namespace Amazon.CostOptimizationHub
             var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
             return EndpointResolver.GetEndpoint(executionContext);
         }
-
-
     }
 }

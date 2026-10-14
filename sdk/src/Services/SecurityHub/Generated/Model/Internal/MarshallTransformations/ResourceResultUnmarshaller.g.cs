@@ -67,6 +67,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("CriticalitySources", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<CriticalitySource, CriticalitySourceUnmarshaller>(CriticalitySourceUnmarshaller.Instance);
+                    unmarshalledObject.CriticalitySources = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("DiscoveryType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -113,6 +120,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceCreationTimeDt = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("ResourceCriticality", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceCriticality = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 

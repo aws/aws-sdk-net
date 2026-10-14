@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.SageMakerFeatureStoreRuntime.Generated
     {
         public void SageMakerFeatureStoreRuntimeBatchWriteRecord()
         {
-            #region batch-write-record-example-1
+            #region BatchWriteRecord-1
 
             var client = new AmazonSageMakerFeatureStoreRuntimeClient();
-            var response = client.BatchWriteRecord(new BatchWriteRecordRequest 
+            var response = client.BatchWriteRecord(new BatchWriteRecordRequest
             {
                 Entries = new List<BatchWriteRecordEntry> {
                     new BatchWriteRecordEntry {
@@ -43,10 +44,10 @@ namespace AWSSDKDocSamples.Amazon.SageMakerFeatureStoreRuntime.Generated
 
         public void SageMakerFeatureStoreRuntimeListRecords()
         {
-            #region list-records-example-1
+            #region ListRecords-1
 
             var client = new AmazonSageMakerFeatureStoreRuntimeClient();
-            var response = client.ListRecords(new ListRecordsRequest 
+            var response = client.ListRecords(new ListRecordsRequest
             {
                 FeatureGroupName = "my-feature-group",
                 MaxResults = 10
@@ -60,10 +61,10 @@ namespace AWSSDKDocSamples.Amazon.SageMakerFeatureStoreRuntime.Generated
 
         public void SageMakerFeatureStoreRuntimeUpdateRecord()
         {
-            #region update-record-example-1
+            #region UpdateRecord-1
 
             var client = new AmazonSageMakerFeatureStoreRuntimeClient();
-            var response = client.UpdateRecord(new UpdateRecordRequest 
+            var response = client.UpdateRecord(new UpdateRecordRequest
             {
                 FeatureGroupName = "my-feature-group",
                 Features = new List<FeatureValue> {
@@ -89,10 +90,10 @@ namespace AWSSDKDocSamples.Amazon.SageMakerFeatureStoreRuntime.Generated
 
         public void SageMakerFeatureStoreRuntimeUpdateRecord()
         {
-            #region update-record-example-2
+            #region UpdateRecord-2
 
             var client = new AmazonSageMakerFeatureStoreRuntimeClient();
-            var response = client.UpdateRecord(new UpdateRecordRequest 
+            var response = client.UpdateRecord(new UpdateRecordRequest
             {
                 FeatureGroupName = "my-feature-group",
                 Features = new List<FeatureValue> {
@@ -116,13 +117,10 @@ namespace AWSSDKDocSamples.Amazon.SageMakerFeatureStoreRuntime.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

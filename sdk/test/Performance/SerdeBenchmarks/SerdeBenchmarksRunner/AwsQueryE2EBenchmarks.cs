@@ -18,12 +18,14 @@ using Amazon.QueryDataPlane;
 using Amazon.QueryDataPlane.Model;
 using Amazon.Runtime;
 using BenchmarkDotNet.Attributes;
+using Fixtures = AWSSDK.Benchmarks.Serde.ModelFixtures.AwsQuery;
 
 namespace AWSSDK.Benchmarks.Serde;
 
 /// <summary>
 /// E2E benchmarks for AWS Query protocol (CloudWatch-like operations).
-/// Full SDK client pipeline with mocked HTTP.
+/// Full SDK client pipeline with mocked HTTP, with payloads from the shared benchmark models:
+/// each GetMetricData round trip pairs the model request and response of the same size.
 /// </summary>
 [MemoryDiagnoser]
 [Config(typeof(E2EBenchmarkConfig))]
@@ -41,26 +43,8 @@ public class AwsQueryE2EBenchmarks
     internal GetMetricDataRequest _getMetricDataRequestS = null!;
     internal GetMetricDataRequest _getMetricDataRequestM = null!;
 
-    private static readonly byte[] HealthcheckResponse = Encoding.UTF8.GetBytes(
-        "<HealthcheckResponse xmlns=\"https://query.amazonaws.com/doc/2024-01-01/\"><HealthcheckResult/><ResponseMetadata><RequestId>test-id</RequestId></ResponseMetadata></HealthcheckResponse>");
     private static readonly byte[] PutMetricResponse = Encoding.UTF8.GetBytes(
-        "<PutMetricDataResponse xmlns=\"https://query.amazonaws.com/doc/2024-01-01/\"><PutMetricDataResult/><ResponseMetadata><RequestId>test-id</RequestId></ResponseMetadata></PutMetricDataResponse>");
-    private static readonly byte[] GetMetricResponseS = Encoding.UTF8.GetBytes(BuildGetMetricXml(5));
-    private static readonly byte[] GetMetricResponseM = Encoding.UTF8.GetBytes(BuildGetMetricXml(50));
-
-    private static string BuildGetMetricXml(int datapoints)
-    {
-        var sb = new StringBuilder("<GetMetricDataResponse xmlns=\"https://query.amazonaws.com/doc/2024-01-01/\"><GetMetricDataResult><MetricDataResults><member><Id>m1</Id><Label>CPUUtilization</Label><Values>");
-        for (int i = 0; i < datapoints; i++) sb.Append($"<member>{42.0 + i * 0.1}</member>");
-        sb.Append("</Values><Timestamps>");
-        for (int i = 0; i < datapoints; i++)
-        {
-            var ts = new DateTime(2024, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddMinutes(i * 5);
-            sb.Append($"<member>{ts:yyyy-MM-ddTHH:mm:ssZ}</member>");
-        }
-        sb.Append("</Timestamps></member></MetricDataResults></GetMetricDataResult><ResponseMetadata><RequestId>test-id</RequestId></ResponseMetadata></GetMetricDataResponse>");
-        return sb.ToString();
-    }
+        "<PutMetricDataResponse xmlns=\"https://awsquerydataplane.amazonaws.com\"><PutMetricDataResult/><ResponseMetadata><RequestId>test-id</RequestId></ResponseMetadata></PutMetricDataResponse>");
 
     internal AmazonQueryDataPlaneClient CreateClient(byte[] responseBody)
     {
@@ -73,36 +57,20 @@ public class AwsQueryE2EBenchmarks
         return new AmazonQueryDataPlaneClient(new BasicAWSCredentials("AKID", "SECRET"), config);
     }
 
-    private static List<MetricDatum> CreateMetricData(int count)
-    {
-        var data = new List<MetricDatum>();
-        for (int i = 0; i < count; i++)
-            data.Add(new MetricDatum { MetricName = $"Metric{i}", Value = 42.0 + i, Unit = "Count" });
-        return data;
-    }
-
-    private static List<MetricDataQuery> CreateQueries(int count)
-    {
-        var queries = new List<MetricDataQuery>();
-        for (int i = 0; i < count; i++)
-            queries.Add(new MetricDataQuery { Id = $"m{i}", MetricStat = new MetricStat { Metric = new Amazon.QueryDataPlane.Model.Metric { MetricName = $"CPU{i}", Namespace = "AWS/EC2" }, Period = 300, Stat = "Average" } });
-        return queries;
-    }
-
     [GlobalSetup]
     public void Setup()
     {
-        _healthcheckClient = CreateClient(HealthcheckResponse);
+        _healthcheckClient = CreateClient(Fixtures.HealthcheckResponse_Example);
         _putClientS = CreateClient(PutMetricResponse);
         _putClientM = CreateClient(PutMetricResponse);
-        _getClientS = CreateClient(GetMetricResponseS);
-        _getClientM = CreateClient(GetMetricResponseM);
+        _getClientS = CreateClient(Fixtures.GetMetricDataResponse_S);
+        _getClientM = CreateClient(Fixtures.GetMetricDataResponse_M);
 
-        _healthcheckRequest = new HealthcheckRequest();
-        _putMetricDataS = new PutMetricDataRequest { Namespace = "Test", MetricData = CreateMetricData(3) };
-        _putMetricDataM = new PutMetricDataRequest { Namespace = "Test", MetricData = CreateMetricData(20) };
-        _getMetricDataRequestS = new GetMetricDataRequest { StartTime = DateTime.UtcNow.AddHours(-1), EndTime = DateTime.UtcNow, MetricDataQueries = CreateQueries(1) };
-        _getMetricDataRequestM = new GetMetricDataRequest { StartTime = DateTime.UtcNow.AddHours(-1), EndTime = DateTime.UtcNow, MetricDataQueries = CreateQueries(5) };
+        _healthcheckRequest = Fixtures.HealthcheckRequest_Example();
+        _putMetricDataS = Fixtures.PutMetricDataRequest_S();
+        _putMetricDataM = Fixtures.PutMetricDataRequest_M();
+        _getMetricDataRequestS = Fixtures.GetMetricDataRequest_S();
+        _getMetricDataRequestM = Fixtures.GetMetricDataRequest_M();
     }
 
     [Benchmark] public async Task awsQuery_e2e_Healthcheck() => await _healthcheckClient.HealthcheckAsync(_healthcheckRequest);

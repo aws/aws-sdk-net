@@ -62,6 +62,12 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.AccountTargeting = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("devOpsAgentInvestigation", targetDepth, ref reader))
+                {
+                    var unmarshaller = DevOpsAgentInvestigationUnmarshaller.Instance;
+                    unmarshalledObject.DevOpsAgentInvestigation = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("endedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

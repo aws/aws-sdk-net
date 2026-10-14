@@ -57,6 +57,11 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2026-01-01";
             request.HttpMethod = "GET";
 
+            if (publicRequest.IsSetIncludedData())
+            {
+                request.Parameters.Add("includedData", StringUtils.FromString(publicRequest.IncludedData));
+            }
+
             if (!publicRequest.IsSetAgentSpaceId())
             {
                 throw new AmazonDevOpsAgentException("Request object does not have required field AgentSpaceId set");
@@ -64,6 +69,8 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
             request.AddPathResource("{agentSpaceId}", StringUtils.FromString(publicRequest.AgentSpaceId));
 
             request.ResourcePath = "/v1/agentspaces/{agentSpaceId}";
+
+            request.UseQueryString = true;
 
             request.HostPrefix = $"cp.";
 

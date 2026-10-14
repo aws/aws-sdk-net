@@ -38,8 +38,8 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// The policy is evaluated when a player tries to create a new game session. On receiving
     /// a <c>CreateGameSession</c> request, Amazon GameLift Servers checks that the player
-    /// (identified by <c>CreatorId</c>) has created fewer than game session limit in the
-    /// specified time period.
+    /// (identified by <c>CreatorId</c>) has created fewer than the game session limit in
+    /// the specified time period.
     /// </para>
     /// </summary>
     public partial class GameSessionCreationLimitPolicy
@@ -58,8 +58,8 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// The policy evaluates when a player tries to create a new game session. On receiving
         /// a <c>CreateGameSession</c> request, Amazon GameLift Servers checks that the player
-        /// (identified by <c>CreatorId</c>) has created fewer than game session limit in the
-        /// specified time period.
+        /// (identified by <c>CreatorId</c>) has created fewer than the game session limit in
+        /// the specified time period.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

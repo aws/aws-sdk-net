@@ -79,16 +79,33 @@ namespace Amazon.Runtime.Internal
         {
             var requestContext = executionContext.RequestContext;
             var httpErrorResponse = exception.Response;
+            var cancellationToken = requestContext.CancellationToken;
 
-            // If 404 was suppressed and successfully unmarshalled,
-            // don't rethrow the original exception.
-            if (HandleSuppressed404(executionContext, httpErrorResponse))
-                return false;
-
-            using(httpErrorResponse.ResponseBody)
+            // Error bodies are read synchronously; abort the response on cancellation so a stalled read
+            // doesn't block forever (aws/aws-sdk-net#4534).
+            using (cancellationToken.Register(httpErrorResponse.ResponseBody.Dispose))
             {
-                var responseStream = await httpErrorResponse.ResponseBody.OpenResponseAsync().ConfigureAwait(false);
-                return HandleExceptionStream(requestContext, httpErrorResponse, exception, responseStream);
+                try
+                {
+                    // If 404 was suppressed and successfully unmarshalled,
+                    // don't rethrow the original exception.
+                    if (HandleSuppressed404(executionContext, httpErrorResponse))
+                        return false;
+
+                    using (httpErrorResponse.ResponseBody)
+                    {
+                        var responseStream = await httpErrorResponse.ResponseBody.OpenResponseAsync().ConfigureAwait(false);
+                        return HandleExceptionStream(requestContext, httpErrorResponse, exception, responseStream);
+                    }
+                }
+                catch (Exception e) when (cancellationToken.IsCancellationRequested && !(e is OperationCanceledException))
+                {
+#if NET8_0_OR_GREATER
+                    throw new System.Threading.Tasks.TaskCanceledException(e.Message, e, cancellationToken);
+#else
+                    throw new System.Threading.Tasks.TaskCanceledException(e.Message, e);
+#endif
+                }
             }
         }
 

@@ -68,6 +68,12 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                     unmarshalledObject.DomainName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("Price", targetDepth, ref reader))
+                {
+                    var unmarshaller = PriceWithCurrencyUnmarshaller.Instance;
+                    unmarshalledObject.Price = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

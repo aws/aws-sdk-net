@@ -18,12 +18,16 @@ using Amazon.RestXmlDataPlane;
 using Amazon.RestXmlDataPlane.Model;
 using Amazon.Runtime;
 using BenchmarkDotNet.Attributes;
+using Fixtures = AWSSDK.Benchmarks.Serde.ModelFixtures.RestXml;
 
 namespace AWSSDK.Benchmarks.Serde;
 
 /// <summary>
 /// E2E benchmarks for REST XML protocol (S3-like operations).
-/// Full SDK client pipeline with mocked HTTP.
+/// Full SDK client pipeline with mocked HTTP, with payloads from the shared benchmark models
+/// (CopyObject uses the Baseline case). The models define CloudWatch operations only for awsQuery,
+/// so the PutMetricData/GetMetricData cases use those requests re-targeted to REST XML and those
+/// responses re-encoded as REST XML.
 /// </summary>
 [MemoryDiagnoser]
 [Config(typeof(E2EBenchmarkConfig))]
@@ -49,33 +53,11 @@ public class RestXmlE2EBenchmarks
     internal GetMetricDataRequest _getMetricDataS = null!;
     internal GetMetricDataRequest _getMetricDataM = null!;
 
-    private static readonly byte[] CopyResponse = Encoding.UTF8.GetBytes(
-        "<?xml version=\"1.0\" encoding=\"UTF-8\"?><CopyObjectResult><ETag>\"d41d8cd98f00b204e9800998ecf8427e\"</ETag><LastModified>2024-01-01T00:00:00Z</LastModified></CopyObjectResult>");
     private static readonly byte[] EmptyXml = Encoding.UTF8.GetBytes("<?xml version=\"1.0\" encoding=\"UTF-8\"?><Response/>");
-    // S3 object body sizes match the shared benchmark model (payloads/ObjectBody_{S,M,L}): 1 / 1000 / 256000 bytes.
-    private static readonly byte[] GetObjectS = new byte[1];
-    private static readonly byte[] GetObjectM = new byte[1000];
-    private static readonly byte[] GetObjectL = new byte[256000];
-    private static readonly byte[] GetMetricResponseS = Encoding.UTF8.GetBytes(BuildGetMetricXml(5));
-    private static readonly byte[] GetMetricResponseM = Encoding.UTF8.GetBytes(BuildGetMetricXml(50));
 
-    private static string BuildGetMetricXml(int datapoints)
+    internal AmazonRestXmlDataPlaneClient CreateClient(byte[] responseBody, IReadOnlyDictionary<string, string>? headers = null, string contentType = "application/xml")
     {
-        var sb = new StringBuilder("<?xml version=\"1.0\" encoding=\"UTF-8\"?><GetMetricDataResponse><GetMetricDataResult><MetricDataResults><member><Id>m1</Id><Label>CPUUtilization</Label><Values>");
-        for (int i = 0; i < datapoints; i++) sb.Append($"<member>{42.0 + i * 0.1}</member>");
-        sb.Append("</Values><Timestamps>");
-        for (int i = 0; i < datapoints; i++)
-        {
-            var ts = new DateTime(2024, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddMinutes(i * 5);
-            sb.Append($"<member>{ts:yyyy-MM-ddTHH:mm:ssZ}</member>");
-        }
-        sb.Append("</Timestamps></member></MetricDataResults></GetMetricDataResult></GetMetricDataResponse>");
-        return sb.ToString();
-    }
-
-    internal AmazonRestXmlDataPlaneClient CreateClient(byte[] responseBody, string contentType = "application/xml")
-    {
-        var handler = new MockHttpHandler(responseBody, contentType);
+        var handler = new MockHttpHandler(responseBody, contentType, responseHeaders: headers?.ToDictionary(kv => kv.Key, kv => kv.Value));
         var config = new AmazonRestXmlDataPlaneConfig
         {
             RegionEndpoint = Amazon.RegionEndpoint.USWest2,
@@ -87,45 +69,25 @@ public class RestXmlE2EBenchmarks
     [GlobalSetup]
     public void Setup()
     {
-        Random.Shared.NextBytes(GetObjectS);
-        Random.Shared.NextBytes(GetObjectM);
-        Random.Shared.NextBytes(GetObjectL);
-
-        _copyClient = CreateClient(CopyResponse);
+        _copyClient = CreateClient(Fixtures.CopyObjectOutput_Baseline, Fixtures.CopyObjectOutput_Baseline_Headers);
         _putClient = CreateClient(EmptyXml);
-        _getClientS = CreateClient(GetObjectS, "application/octet-stream");
-        _getClientM = CreateClient(GetObjectM, "application/octet-stream");
-        _getClientL = CreateClient(GetObjectL, "application/octet-stream");
+        _getClientS = CreateClient(Fixtures.GetObject_S, Fixtures.GetObject_S_Headers, "application/octet-stream");
+        _getClientM = CreateClient(Fixtures.GetObject_M, Fixtures.GetObject_M_Headers, "application/octet-stream");
+        _getClientL = CreateClient(Fixtures.GetObject_L, Fixtures.GetObject_L_Headers, "application/octet-stream");
         _putMetricClientS = CreateClient(EmptyXml);
         _putMetricClientM = CreateClient(EmptyXml);
-        _getMetricClientS = CreateClient(GetMetricResponseS);
-        _getMetricClientM = CreateClient(GetMetricResponseM);
+        _getMetricClientS = CreateClient(Fixtures.GetMetricDataResponse_S);
+        _getMetricClientM = CreateClient(Fixtures.GetMetricDataResponse_M);
 
-        _copyObjectRequest = new CopyObjectRequest { Bucket = "b", Key = "k", CopySource = "src/k" };
-        _putObjectS = new PutObjectRequest { Bucket = "b", Key = "k", ContentType = "application/octet-stream", Body = new MemoryStream(new byte[1]) };
-        _putObjectM = new PutObjectRequest { Bucket = "b", Key = "k", ContentType = "application/octet-stream", Body = new MemoryStream(new byte[1000]) };
-        _putObjectL = new PutObjectRequest { Bucket = "b", Key = "k", ContentType = "application/octet-stream", Body = new MemoryStream(new byte[256000]) };
-        _getObjectRequest = new GetObjectRequest { Bucket = "b", Key = "k" };
-        _putMetricDataS = new PutMetricDataRequest { Namespace = "Test", MetricData = CreateMetricData(3) };
-        _putMetricDataM = new PutMetricDataRequest { Namespace = "Test", MetricData = CreateMetricData(20) };
-        _getMetricDataS = new GetMetricDataRequest { StartTime = DateTime.UtcNow.AddHours(-1), EndTime = DateTime.UtcNow, MetricDataQueries = CreateQueries(1) };
-        _getMetricDataM = new GetMetricDataRequest { StartTime = DateTime.UtcNow.AddHours(-1), EndTime = DateTime.UtcNow, MetricDataQueries = CreateQueries(5) };
-    }
-
-    private static List<MetricDatum> CreateMetricData(int count)
-    {
-        var data = new List<MetricDatum>();
-        for (int i = 0; i < count; i++)
-            data.Add(new MetricDatum { MetricName = $"Metric{i}", Value = 42.0 + i, Unit = "Count" });
-        return data;
-    }
-
-    private static List<MetricDataQuery> CreateQueries(int count)
-    {
-        var queries = new List<MetricDataQuery>();
-        for (int i = 0; i < count; i++)
-            queries.Add(new MetricDataQuery { Id = $"m{i}", MetricStat = new MetricStat { Metric = new Amazon.RestXmlDataPlane.Model.Metric { MetricName = $"CPU{i}", Namespace = "AWS/EC2" }, Period = 300, Stat = "Average" } });
-        return queries;
+        _copyObjectRequest = Fixtures.CopyObjectRequest_Baseline();
+        _putObjectS = Fixtures.PutObject_S();
+        _putObjectM = Fixtures.PutObject_M();
+        _putObjectL = Fixtures.PutObject_L();
+        _getObjectRequest = new GetObjectRequest { Bucket = "test-bucket", Key = "test-key" };
+        _putMetricDataS = Fixtures.PutMetricDataRequest_S();
+        _putMetricDataM = Fixtures.PutMetricDataRequest_M();
+        _getMetricDataS = Fixtures.GetMetricDataRequest_S();
+        _getMetricDataM = Fixtures.GetMetricDataRequest_M();
     }
 
     [Benchmark] public async Task restXml_e2e_CopyObject() => await _copyClient.CopyObjectAsync(_copyObjectRequest);

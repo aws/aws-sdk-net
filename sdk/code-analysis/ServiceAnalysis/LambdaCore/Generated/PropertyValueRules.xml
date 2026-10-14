@@ -9,7 +9,7 @@
     <property>Amazon.LambdaCore.Model.CreateNetworkConnectorRequest.Name</property>
     <min>1</min>
     <max>140</max>
-    <pattern>^(arn:aws[a-zA-Z-]*:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:network-connector:[a-zA-Z0-9-_]+(:[1-9]|[1-9][0-9]+)?)|[a-zA-Z0-9_-]{1,64}$</pattern>
+    <pattern>^(arn:aws[a-zA-Z-]*:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:network-connector:[a-zA-Z0-9-_]+(:[1-9][0-9]*)?)|[a-zA-Z0-9_-]{1,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LambdaCore.Model.CreateNetworkConnectorRequest.OperatorRole</property>
@@ -21,7 +21,7 @@
     <property>Amazon.LambdaCore.Model.CreateNetworkConnectorResponse.Arn</property>
     <min>1</min>
     <max>140</max>
-    <pattern>^(arn:aws[a-zA-Z-]*:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:network-connector:[a-zA-Z0-9-_]+(:[1-9]|[1-9][0-9]+)?)$</pattern>
+    <pattern>^(arn:aws[a-zA-Z-]*:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:network-connector:[a-zA-Z0-9-_]+(:[1-9][0-9]*)?)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LambdaCore.Model.CreateNetworkConnectorResponse.Id</property>
@@ -32,13 +32,23 @@
     <property>Amazon.LambdaCore.Model.CreateNetworkConnectorResponse.Name</property>
     <min>1</min>
     <max>140</max>
-    <pattern>^(arn:aws[a-zA-Z-]*:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:network-connector:[a-zA-Z0-9-_]+(:[1-9]|[1-9][0-9]+)?)|[a-zA-Z0-9_-]{1,64}$</pattern>
+    <pattern>^(arn:aws[a-zA-Z-]*:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:network-connector:[a-zA-Z0-9-_]+(:[1-9][0-9]*)?)|[a-zA-Z0-9_-]{1,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LambdaCore.Model.CreateNetworkConnectorResponse.OperatorRole</property>
     <min>0</min>
     <max>10000</max>
     <pattern>^arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LambdaCore.Model.CreateNetworkConnectorResponse.Version</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LambdaCore.Model.CreateNetworkConnectorResponse.VersionArn</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>^(arn:aws[a-zA-Z-]*:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:network-connector:[a-zA-Z0-9-_]+(:[1-9][0-9]*)?)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LambdaCore.Model.DeleteNetworkConnectorRequest.Identifier</property>
@@ -49,7 +59,7 @@
     <property>Amazon.LambdaCore.Model.DeleteNetworkConnectorResponse.Arn</property>
     <min>1</min>
     <max>140</max>
-    <pattern>^(arn:aws[a-zA-Z-]*:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:network-connector:[a-zA-Z0-9-_]+(:[1-9]|[1-9][0-9]+)?)$</pattern>
+    <pattern>^(arn:aws[a-zA-Z-]*:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:network-connector:[a-zA-Z0-9-_]+(:[1-9][0-9]*)?)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LambdaCore.Model.DeleteNetworkConnectorResponse.Id</property>
@@ -60,13 +70,23 @@
     <property>Amazon.LambdaCore.Model.DeleteNetworkConnectorResponse.Name</property>
     <min>1</min>
     <max>140</max>
-    <pattern>^(arn:aws[a-zA-Z-]*:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:network-connector:[a-zA-Z0-9-_]+(:[1-9]|[1-9][0-9]+)?)|[a-zA-Z0-9_-]{1,64}$</pattern>
+    <pattern>^(arn:aws[a-zA-Z-]*:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:network-connector:[a-zA-Z0-9-_]+(:[1-9][0-9]*)?)|[a-zA-Z0-9_-]{1,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LambdaCore.Model.DeleteNetworkConnectorResponse.OperatorRole</property>
     <min>0</min>
     <max>10000</max>
     <pattern>^arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LambdaCore.Model.DeleteNetworkConnectorResponse.Version</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LambdaCore.Model.DeleteNetworkConnectorResponse.VersionArn</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>^(arn:aws[a-zA-Z-]*:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:network-connector:[a-zA-Z0-9-_]+(:[1-9][0-9]*)?)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LambdaCore.Model.GetNetworkConnectorRequest.Identifier</property>
@@ -77,7 +97,7 @@
     <property>Amazon.LambdaCore.Model.GetNetworkConnectorResponse.Arn</property>
     <min>1</min>
     <max>140</max>
-    <pattern>^(arn:aws[a-zA-Z-]*:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:network-connector:[a-zA-Z0-9-_]+(:[1-9]|[1-9][0-9]+)?)$</pattern>
+    <pattern>^(arn:aws[a-zA-Z-]*:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:network-connector:[a-zA-Z0-9-_]+(:[1-9][0-9]*)?)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LambdaCore.Model.GetNetworkConnectorResponse.Id</property>
@@ -85,10 +105,20 @@
     <max>140</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LambdaCore.Model.GetNetworkConnectorResponse.LatestVersion</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LambdaCore.Model.GetNetworkConnectorResponse.LatestVersionArn</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>^(arn:aws[a-zA-Z-]*:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:network-connector:[a-zA-Z0-9-_]+(:[1-9][0-9]*)?)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LambdaCore.Model.GetNetworkConnectorResponse.Name</property>
     <min>1</min>
     <max>140</max>
-    <pattern>^(arn:aws[a-zA-Z-]*:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:network-connector:[a-zA-Z0-9-_]+(:[1-9]|[1-9][0-9]+)?)|[a-zA-Z0-9_-]{1,64}$</pattern>
+    <pattern>^(arn:aws[a-zA-Z-]*:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:network-connector:[a-zA-Z0-9-_]+(:[1-9][0-9]*)?)|[a-zA-Z0-9_-]{1,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LambdaCore.Model.GetNetworkConnectorResponse.OperatorRole</property>
@@ -98,7 +128,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LambdaCore.Model.GetNetworkConnectorResponse.Version</property>
-    <min>0</min>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LambdaCore.Model.GetNetworkConnectorResponse.VersionArn</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>^(arn:aws[a-zA-Z-]*:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:network-connector:[a-zA-Z0-9-_]+(:[1-9][0-9]*)?)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LambdaCore.Model.ListNetworkConnectorVersionsRequest.Identifier</property>
+    <min>1</min>
+    <max>140</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LambdaCore.Model.ListNetworkConnectorVersionsRequest.MaxItems</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LambdaCore.Model.ListNetworkConnectorsRequest.MaxItems</property>
@@ -125,7 +171,7 @@
     <property>Amazon.LambdaCore.Model.UpdateNetworkConnectorResponse.Arn</property>
     <min>1</min>
     <max>140</max>
-    <pattern>^(arn:aws[a-zA-Z-]*:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:network-connector:[a-zA-Z0-9-_]+(:[1-9]|[1-9][0-9]+)?)$</pattern>
+    <pattern>^(arn:aws[a-zA-Z-]*:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:network-connector:[a-zA-Z0-9-_]+(:[1-9][0-9]*)?)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LambdaCore.Model.UpdateNetworkConnectorResponse.Id</property>
@@ -136,7 +182,7 @@
     <property>Amazon.LambdaCore.Model.UpdateNetworkConnectorResponse.Name</property>
     <min>1</min>
     <max>140</max>
-    <pattern>^(arn:aws[a-zA-Z-]*:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:network-connector:[a-zA-Z0-9-_]+(:[1-9]|[1-9][0-9]+)?)|[a-zA-Z0-9_-]{1,64}$</pattern>
+    <pattern>^(arn:aws[a-zA-Z-]*:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:network-connector:[a-zA-Z0-9-_]+(:[1-9][0-9]*)?)|[a-zA-Z0-9_-]{1,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LambdaCore.Model.UpdateNetworkConnectorResponse.OperatorRole</property>
@@ -145,10 +191,20 @@
     <pattern>^arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LambdaCore.Model.UpdateNetworkConnectorResponse.Version</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LambdaCore.Model.UpdateNetworkConnectorResponse.VersionArn</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>^(arn:aws[a-zA-Z-]*:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:network-connector:[a-zA-Z0-9-_]+(:[1-9][0-9]*)?)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LambdaCore.Model.NetworkConnectorSummary.Arn</property>
     <min>1</min>
     <max>140</max>
-    <pattern>^(arn:aws[a-zA-Z-]*:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:network-connector:[a-zA-Z0-9-_]+(:[1-9]|[1-9][0-9]+)?)$</pattern>
+    <pattern>^(arn:aws[a-zA-Z-]*:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:network-connector:[a-zA-Z0-9-_]+(:[1-9][0-9]*)?)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LambdaCore.Model.NetworkConnectorSummary.Id</property>
@@ -156,9 +212,46 @@
     <max>140</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LambdaCore.Model.NetworkConnectorSummary.LatestVersion</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LambdaCore.Model.NetworkConnectorSummary.LatestVersionArn</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>^(arn:aws[a-zA-Z-]*:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:network-connector:[a-zA-Z0-9-_]+(:[1-9][0-9]*)?)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LambdaCore.Model.NetworkConnectorSummary.Name</property>
     <min>1</min>
     <max>140</max>
-    <pattern>^(arn:aws[a-zA-Z-]*:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:network-connector:[a-zA-Z0-9-_]+(:[1-9]|[1-9][0-9]+)?)|[a-zA-Z0-9_-]{1,64}$</pattern>
+    <pattern>^(arn:aws[a-zA-Z-]*:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:network-connector:[a-zA-Z0-9-_]+(:[1-9][0-9]*)?)|[a-zA-Z0-9_-]{1,64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LambdaCore.Model.NetworkConnectorVersionSummary.Arn</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>^(arn:aws[a-zA-Z-]*:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:network-connector:[a-zA-Z0-9-_]+(:[1-9][0-9]*)?)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LambdaCore.Model.NetworkConnectorVersionSummary.Id</property>
+    <min>1</min>
+    <max>140</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LambdaCore.Model.NetworkConnectorVersionSummary.Name</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>^(arn:aws[a-zA-Z-]*:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:network-connector:[a-zA-Z0-9-_]+(:[1-9][0-9]*)?)|[a-zA-Z0-9_-]{1,64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LambdaCore.Model.NetworkConnectorVersionSummary.Version</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LambdaCore.Model.NetworkConnectorVersionSummary.VersionArn</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>^(arn:aws[a-zA-Z-]*:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:network-connector:[a-zA-Z0-9-_]+(:[1-9][0-9]*)?)$</pattern>
   </property-value-rule>
 </property-value-rules>

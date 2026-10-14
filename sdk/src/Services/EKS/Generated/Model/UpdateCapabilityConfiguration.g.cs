@@ -36,6 +36,20 @@ namespace Amazon.EKS.Model
     public partial class UpdateCapabilityConfiguration
     {
         /// <summary>
+        /// Gets and sets the property Ack. 
+        /// <para>
+        /// Configuration updates specific to ACK (Amazon Web Services Controllers for Kubernetes)
+        /// capabilities.
+        /// </para>
+        /// </summary>
+        public UpdateAckConfig Ack { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Ack property is set.
+        /// </summary>
+        internal bool IsSetAck() => this.Ack != null;
+
+        /// <summary>
         /// Gets and sets the property ArgoCd. 
         /// <para>
         /// Configuration updates specific to Argo CD capabilities.

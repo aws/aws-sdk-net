@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.TrustedAdvisor.Generated
     {
         public void TrustedAdvisorBatchUpdateRecommendationResourceExclusion()
         {
-            #region example-1
+            #region BatchUpdateRecommendationResourceExclusion-1
 
             var client = new AmazonTrustedAdvisorClient();
-            var response = client.BatchUpdateRecommendationResourceExclusion(new BatchUpdateRecommendationResourceExclusionRequest 
+            var response = client.BatchUpdateRecommendationResourceExclusion(new BatchUpdateRecommendationResourceExclusionRequest
             {
                 RecommendationResourceExclusions = new List<RecommendationResourceExclusion> {
                     new RecommendationResourceExclusion {
@@ -33,10 +34,10 @@ namespace AWSSDKDocSamples.Amazon.TrustedAdvisor.Generated
 
         public void TrustedAdvisorGetOrganizationRecommendation()
         {
-            #region example-1
+            #region GetOrganizationRecommendation-1
 
             var client = new AmazonTrustedAdvisorClient();
-            var response = client.GetOrganizationRecommendation(new GetOrganizationRecommendationRequest 
+            var response = client.GetOrganizationRecommendation(new GetOrganizationRecommendationRequest
             {
                 OrganizationRecommendationIdentifier = "arn:aws:trustedadvisor:::organization-recommendation/9534ec9b-bf3a-44e8-8213-2ed68b39d9d5"
             });
@@ -48,10 +49,10 @@ namespace AWSSDKDocSamples.Amazon.TrustedAdvisor.Generated
 
         public void TrustedAdvisorGetRecommendation()
         {
-            #region example-1
+            #region GetRecommendation-1
 
             var client = new AmazonTrustedAdvisorClient();
-            var response = client.GetRecommendation(new GetRecommendationRequest 
+            var response = client.GetRecommendation(new GetRecommendationRequest
             {
                 RecommendationIdentifier = "arn:aws:trustedadvisor::000000000000:recommendation/55fa4d2e-bbb7-491a-833b-5773e9589578"
             });
@@ -63,10 +64,10 @@ namespace AWSSDKDocSamples.Amazon.TrustedAdvisor.Generated
 
         public void TrustedAdvisorListChecks()
         {
-            #region example-1
+            #region ListChecks-1
 
             var client = new AmazonTrustedAdvisorClient();
-            var response = client.ListChecks(new ListChecksRequest 
+            var response = client.ListChecks(new ListChecksRequest
             {
             });
 
@@ -78,10 +79,10 @@ namespace AWSSDKDocSamples.Amazon.TrustedAdvisor.Generated
 
         public void TrustedAdvisorListOrganizationRecommendationAccounts()
         {
-            #region example-1
+            #region ListOrganizationRecommendationAccounts-1
 
             var client = new AmazonTrustedAdvisorClient();
-            var response = client.ListOrganizationRecommendationAccounts(new ListOrganizationRecommendationAccountsRequest 
+            var response = client.ListOrganizationRecommendationAccounts(new ListOrganizationRecommendationAccountsRequest
             {
                 OrganizationRecommendationIdentifier = "arn:aws:trustedadvisor:::organization-recommendation/9534ec9b-bf3a-44e8-8213-2ed68b39d9d5"
             });
@@ -94,10 +95,10 @@ namespace AWSSDKDocSamples.Amazon.TrustedAdvisor.Generated
 
         public void TrustedAdvisorListOrganizationRecommendationResources()
         {
-            #region example-1
+            #region ListOrganizationRecommendationResources-1
 
             var client = new AmazonTrustedAdvisorClient();
-            var response = client.ListOrganizationRecommendationResources(new ListOrganizationRecommendationResourcesRequest 
+            var response = client.ListOrganizationRecommendationResources(new ListOrganizationRecommendationResourcesRequest
             {
                 OrganizationRecommendationIdentifier = "arn:aws:trustedadvisor:::organization-recommendation/5a694939-2e54-45a2-ae72-730598fa89d0"
             });
@@ -110,10 +111,10 @@ namespace AWSSDKDocSamples.Amazon.TrustedAdvisor.Generated
 
         public void TrustedAdvisorListOrganizationRecommendations()
         {
-            #region example-1
+            #region ListOrganizationRecommendations-1
 
             var client = new AmazonTrustedAdvisorClient();
-            var response = client.ListOrganizationRecommendations(new ListOrganizationRecommendationsRequest 
+            var response = client.ListOrganizationRecommendations(new ListOrganizationRecommendationsRequest
             {
             });
 
@@ -125,10 +126,10 @@ namespace AWSSDKDocSamples.Amazon.TrustedAdvisor.Generated
 
         public void TrustedAdvisorListOrganizationRecommendations()
         {
-            #region example-2
+            #region ListOrganizationRecommendations-2
 
             var client = new AmazonTrustedAdvisorClient();
-            var response = client.ListOrganizationRecommendations(new ListOrganizationRecommendationsRequest 
+            var response = client.ListOrganizationRecommendations(new ListOrganizationRecommendationsRequest
             {
                 MaxResults = 100,
                 Pillar = "security"
@@ -142,10 +143,10 @@ namespace AWSSDKDocSamples.Amazon.TrustedAdvisor.Generated
 
         public void TrustedAdvisorListOrganizationRecommendations()
         {
-            #region example-3
+            #region ListOrganizationRecommendations-3
 
             var client = new AmazonTrustedAdvisorClient();
-            var response = client.ListOrganizationRecommendations(new ListOrganizationRecommendationsRequest 
+            var response = client.ListOrganizationRecommendations(new ListOrganizationRecommendationsRequest
             {
                 MaxResults = 100,
                 NextToken = "<REDACTED>",
@@ -159,10 +160,10 @@ namespace AWSSDKDocSamples.Amazon.TrustedAdvisor.Generated
 
         public void TrustedAdvisorListRecommendationResources()
         {
-            #region example-1
+            #region ListRecommendationResources-1
 
             var client = new AmazonTrustedAdvisorClient();
-            var response = client.ListRecommendationResources(new ListRecommendationResourcesRequest 
+            var response = client.ListRecommendationResources(new ListRecommendationResourcesRequest
             {
                 RecommendationIdentifier = "arn:aws:trustedadvisor::000000000000:recommendation/55fa4d2e-bbb7-491a-833b-5773e9589578"
             });
@@ -175,10 +176,10 @@ namespace AWSSDKDocSamples.Amazon.TrustedAdvisor.Generated
 
         public void TrustedAdvisorListRecommendations()
         {
-            #region example-1
+            #region ListRecommendations-1
 
             var client = new AmazonTrustedAdvisorClient();
-            var response = client.ListRecommendations(new ListRecommendationsRequest 
+            var response = client.ListRecommendations(new ListRecommendationsRequest
             {
             });
 
@@ -190,10 +191,10 @@ namespace AWSSDKDocSamples.Amazon.TrustedAdvisor.Generated
 
         public void TrustedAdvisorListRecommendations()
         {
-            #region example-2
+            #region ListRecommendations-2
 
             var client = new AmazonTrustedAdvisorClient();
-            var response = client.ListRecommendations(new ListRecommendationsRequest 
+            var response = client.ListRecommendations(new ListRecommendationsRequest
             {
                 AwsService = "iam",
                 MaxResults = 100
@@ -207,10 +208,10 @@ namespace AWSSDKDocSamples.Amazon.TrustedAdvisor.Generated
 
         public void TrustedAdvisorListRecommendations()
         {
-            #region example-3
+            #region ListRecommendations-3
 
             var client = new AmazonTrustedAdvisorClient();
-            var response = client.ListRecommendations(new ListRecommendationsRequest 
+            var response = client.ListRecommendations(new ListRecommendationsRequest
             {
                 AwsService = "rds",
                 MaxResults = 100,
@@ -224,10 +225,10 @@ namespace AWSSDKDocSamples.Amazon.TrustedAdvisor.Generated
 
         public void TrustedAdvisorListRecommendationsForResource()
         {
-            #region example-1
+            #region ListRecommendationsForResource-1
 
             var client = new AmazonTrustedAdvisorClient();
-            var response = client.ListRecommendationsForResource(new ListRecommendationsForResourceRequest 
+            var response = client.ListRecommendationsForResource(new ListRecommendationsForResourceRequest
             {
                 AwsResourceArn = "arn:aws:ec2:us-east-1:000000000000:instance/i-0abcd1234efgh5678"
             });
@@ -240,10 +241,10 @@ namespace AWSSDKDocSamples.Amazon.TrustedAdvisor.Generated
 
         public void TrustedAdvisorUpdateOrganizationRecommendationLifecycle()
         {
-            #region example-1
+            #region UpdateOrganizationRecommendationLifecycle-1
 
             var client = new AmazonTrustedAdvisorClient();
-            var response = client.UpdateOrganizationRecommendationLifecycle(new UpdateOrganizationRecommendationLifecycleRequest 
+            var response = client.UpdateOrganizationRecommendationLifecycle(new UpdateOrganizationRecommendationLifecycleRequest
             {
                 LifecycleStage = "dismissed",
                 OrganizationRecommendationIdentifier = "arn:aws:trustedadvisor:::organization-recommendation/96b5e5ca-7930-444c-90c6-06d386128100",
@@ -257,10 +258,10 @@ namespace AWSSDKDocSamples.Amazon.TrustedAdvisor.Generated
 
         public void TrustedAdvisorUpdateRecommendationLifecycle()
         {
-            #region example-1
+            #region UpdateRecommendationLifecycle-1
 
             var client = new AmazonTrustedAdvisorClient();
-            var response = client.UpdateRecommendationLifecycle(new UpdateRecommendationLifecycleRequest 
+            var response = client.UpdateRecommendationLifecycle(new UpdateRecommendationLifecycleRequest
             {
                 LifecycleStage = "resolved",
                 RecommendationIdentifier = "arn:aws:trustedadvisor::000000000000:recommendation/861c9c6e-f169-405a-8b59-537a8caccd7a",
@@ -272,13 +273,10 @@ namespace AWSSDKDocSamples.Amazon.TrustedAdvisor.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

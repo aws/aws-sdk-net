@@ -211,6 +211,44 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.Deadline.IAmazonDeadline.ListMemberships(Amazon.Deadline.Model.ListMembershipsRequest)" />
+            <member name="M:Amazon.Deadline.AmazonDeadlineClient.ListMemberships(Amazon.Deadline.Model.ListMembershipsRequest)" />
+            <member name="T:Amazon.Deadline.Model.ListMembershipsRequest" />
+            <member name="T:Amazon.Deadline.Model.ListMembershipsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List memberships using a cross-region identity store"
+                    source=".\AWSSDKDocSamples\Deadline\Deadline.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Deadline.IAmazonDeadline.ListMemberships(Amazon.Deadline.Model.ListMembershipsRequest)" />
+            <member name="M:Amazon.Deadline.AmazonDeadlineClient.ListMemberships(Amazon.Deadline.Model.ListMembershipsRequest)" />
+            <member name="T:Amazon.Deadline.Model.ListMembershipsRequest" />
+            <member name="T:Amazon.Deadline.Model.ListMembershipsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List a Monitor user's memberships of every resource type"
+                    source=".\AWSSDKDocSamples\Deadline\Deadline.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Deadline.IAmazonDeadline.ListVolumes(Amazon.Deadline.Model.ListVolumesRequest)" />
             <member name="M:Amazon.Deadline.AmazonDeadlineClient.ListVolumes(Amazon.Deadline.Model.ListVolumesRequest)" />
             <member name="T:Amazon.Deadline.Model.ListVolumesRequest" />

@@ -1,0 +1,163 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.Glue.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.Glue.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// ViewDefinitionInput Marshaller
+    /// </summary>
+    public partial class ViewDefinitionInputMarshaller : IRequestMarshaller<ViewDefinitionInput, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(ViewDefinitionInput requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetDefiner())
+            {
+                context.Writer.WritePropertyName("Definer");
+                context.Writer.WriteStringValue(requestObject.Definer);
+            }
+
+            if (requestObject.IsSetIsManaged())
+            {
+                context.Writer.WritePropertyName("IsManaged");
+                context.Writer.WriteBooleanValue(requestObject.IsManaged.Value);
+            }
+
+            if (requestObject.IsSetIsProtected())
+            {
+                context.Writer.WritePropertyName("IsProtected");
+                context.Writer.WriteBooleanValue(requestObject.IsProtected.Value);
+            }
+
+            if (requestObject.IsSetLastRefreshType())
+            {
+                context.Writer.WritePropertyName("LastRefreshType");
+                context.Writer.WriteStringValue(requestObject.LastRefreshType);
+            }
+
+            if (requestObject.IsSetRefreshSeconds())
+            {
+                context.Writer.WritePropertyName("RefreshSeconds");
+                context.Writer.WriteNumberValue(requestObject.RefreshSeconds.Value);
+            }
+
+            if (requestObject.IsSetRepresentations())
+            {
+                context.Writer.WritePropertyName("Representations");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectRepresentationsListValue in requestObject.Representations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ViewRepresentationInputMarshaller.Instance;
+                    marshaller.Marshall(requestObjectRepresentationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetSparkPipelineInfo())
+            {
+                context.Writer.WritePropertyName("SparkPipelineInfo");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectSparkPipelineInfoKvp in requestObject.SparkPipelineInfo)
+                {
+                    context.Writer.WritePropertyName(requestObjectSparkPipelineInfoKvp.Key);
+                    var requestObjectSparkPipelineInfoValue = requestObjectSparkPipelineInfoKvp.Value;
+                    context.Writer.WriteStringValue(requestObjectSparkPipelineInfoValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetSubObjectVersionIds())
+            {
+                context.Writer.WritePropertyName("SubObjectVersionIds");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectSubObjectVersionIdsListValue in requestObject.SubObjectVersionIds)
+                {
+                    context.Writer.WriteNumberValue(requestObjectSubObjectVersionIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetSubObjects())
+            {
+                context.Writer.WritePropertyName("SubObjects");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectSubObjectsListValue in requestObject.SubObjects)
+                {
+                    context.Writer.WriteStringValue(requestObjectSubObjectsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetSubObjectsStatistics())
+            {
+                context.Writer.WritePropertyName("SubObjectsStatistics");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectSubObjectsStatisticsListValue in requestObject.SubObjectsStatistics)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SubObjectStatisticsMarshaller.Instance;
+                    marshaller.Marshall(requestObjectSubObjectsStatisticsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetViewVersionId())
+            {
+                context.Writer.WritePropertyName("ViewVersionId");
+                context.Writer.WriteNumberValue(requestObject.ViewVersionId.Value);
+            }
+
+            if (requestObject.IsSetViewVersionToken())
+            {
+                context.Writer.WritePropertyName("ViewVersionToken");
+                context.Writer.WriteStringValue(requestObject.ViewVersionToken);
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static ViewDefinitionInputMarshaller Instance = new ViewDefinitionInputMarshaller();
+    }
+}

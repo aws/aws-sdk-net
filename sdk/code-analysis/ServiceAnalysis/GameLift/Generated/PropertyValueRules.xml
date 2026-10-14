@@ -2657,6 +2657,10 @@
     <pattern>^\d+\.\d+\.\d+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.GameServerContainerDefinition.Vcpu</property>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.GameServerContainerDefinitionInput.ContainerName</property>
     <min>1</min>
     <max>128</max>
@@ -2672,6 +2676,10 @@
     <property>Amazon.GameLift.Model.GameServerContainerDefinitionInput.ServerSdkVersion</property>
     <max>128</max>
     <pattern>^\d+\.\d+\.\d+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.GameServerContainerDefinitionInput.Vcpu</property>
+    <max>10</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.GameServerContainerGroupCounts.ACTIVE</property>

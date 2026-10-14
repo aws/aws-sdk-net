@@ -4,103 +4,103 @@
     <property>Amazon.CloudControlApi.Model.CancelResourceRequestRequest.RequestToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[-A-Za-z0-9+/=]+</pattern>
+    <pattern>^[-A-Za-z0-9+/=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.CreateResourceRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[-A-Za-z0-9+/=]+</pattern>
+    <pattern>^[-A-Za-z0-9+/=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.CreateResourceRequest.DesiredState</property>
     <min>1</min>
     <max>262144</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.CreateResourceRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.+:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:.+:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.CreateResourceRequest.TypeName</property>
     <min>10</min>
     <max>196</max>
-    <pattern>[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}</pattern>
+    <pattern>^[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.CreateResourceRequest.TypeVersionId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-]+</pattern>
+    <pattern>^[A-Za-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.DeleteResourceRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[-A-Za-z0-9+/=]+</pattern>
+    <pattern>^[-A-Za-z0-9+/=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.DeleteResourceRequest.Identifier</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>.+</pattern>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.DeleteResourceRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.+:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:.+:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.DeleteResourceRequest.TypeName</property>
     <min>10</min>
     <max>196</max>
-    <pattern>[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}</pattern>
+    <pattern>^[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.DeleteResourceRequest.TypeVersionId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-]+</pattern>
+    <pattern>^[A-Za-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.GetResourceRequest.Identifier</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>.+</pattern>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.GetResourceRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.+:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:.+:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.GetResourceRequest.TypeName</property>
     <min>10</min>
     <max>196</max>
-    <pattern>[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}</pattern>
+    <pattern>^[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.GetResourceRequest.TypeVersionId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-]+</pattern>
+    <pattern>^[A-Za-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.GetResourceResponse.TypeName</property>
     <min>10</min>
     <max>196</max>
-    <pattern>[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}</pattern>
+    <pattern>^[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.GetResourceRequestStatusRequest.RequestToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[-A-Za-z0-9+/=]+</pattern>
+    <pattern>^[-A-Za-z0-9+/=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.ListResourceRequestsRequest.MaxResults</property>
@@ -111,13 +111,13 @@
     <property>Amazon.CloudControlApi.Model.ListResourceRequestsRequest.NextToken</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[-A-Za-z0-9+/=]+</pattern>
+    <pattern>^[-A-Za-z0-9+/=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.ListResourceRequestsResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[-A-Za-z0-9+/=]+</pattern>
+    <pattern>^[-A-Za-z0-9+/=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.ListResourcesRequest.MaxResults</property>
@@ -128,168 +128,168 @@
     <property>Amazon.CloudControlApi.Model.ListResourcesRequest.NextToken</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>.+</pattern>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.ListResourcesRequest.ResourceModel</property>
     <min>1</min>
     <max>262144</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.ListResourcesRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.+:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:.+:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.ListResourcesRequest.TypeName</property>
     <min>10</min>
     <max>196</max>
-    <pattern>[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}</pattern>
+    <pattern>^[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.ListResourcesRequest.TypeVersionId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-]+</pattern>
+    <pattern>^[A-Za-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.ListResourcesResponse.NextToken</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>.+</pattern>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.ListResourcesResponse.TypeName</property>
     <min>10</min>
     <max>196</max>
-    <pattern>[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}</pattern>
+    <pattern>^[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.UpdateResourceRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[-A-Za-z0-9+/=]+</pattern>
+    <pattern>^[-A-Za-z0-9+/=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.UpdateResourceRequest.Identifier</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>.+</pattern>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.UpdateResourceRequest.PatchDocument</property>
     <min>1</min>
     <max>262144</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.UpdateResourceRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.+:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:.+:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.UpdateResourceRequest.TypeName</property>
     <min>10</min>
     <max>196</max>
-    <pattern>[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}</pattern>
+    <pattern>^[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.UpdateResourceRequest.TypeVersionId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-]+</pattern>
+    <pattern>^[A-Za-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.HookProgressEvent.FailureMode</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[-A-Za-z_]+</pattern>
+    <pattern>^[-A-Za-z_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.HookProgressEvent.HookStatus</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[-A-Za-z_]+</pattern>
+    <pattern>^[-A-Za-z_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.HookProgressEvent.HookStatusMessage</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.HookProgressEvent.HookTypeArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws.*:.+:.*:.*:.+</pattern>
+    <pattern>^arn:aws.*:.+:.*:.*:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.HookProgressEvent.HookTypeName</property>
     <min>10</min>
     <max>196</max>
-    <pattern>[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}</pattern>
+    <pattern>^[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.HookProgressEvent.HookTypeVersionId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-]+</pattern>
+    <pattern>^[A-Za-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.HookProgressEvent.InvocationPoint</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[-A-Za-z_]+</pattern>
+    <pattern>^[-A-Za-z_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.ProgressEvent.HooksRequestToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[-A-Za-z0-9+/=]+</pattern>
+    <pattern>^[-A-Za-z0-9+/=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.ProgressEvent.Identifier</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>.+</pattern>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.ProgressEvent.RequestToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[-A-Za-z0-9+/=]+</pattern>
+    <pattern>^[-A-Za-z0-9+/=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.ProgressEvent.ResourceModel</property>
     <min>1</min>
     <max>262144</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.ProgressEvent.StatusMessage</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.ProgressEvent.TypeName</property>
     <min>10</min>
     <max>196</max>
-    <pattern>[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}</pattern>
+    <pattern>^[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.ResourceDescription.Identifier</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>.+</pattern>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.ResourceDescription.Properties</property>
     <min>1</min>
     <max>262144</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
 </property-value-rules>

@@ -200,8 +200,13 @@ namespace Amazon.EMRServerless.Model
         /// <summary>
         /// Gets and sets the property ExecutionTimeoutMinutes. 
         /// <para>
-        /// Returns the job run timeout value from the <c>StartJobRun</c> call. If no timeout
-        /// was specified, then it returns the default timeout of 720 minutes.
+        /// Returns the job run timeout value from the <c>StartJobRun</c> call. If you didn't
+        /// specify a timeout, this value defaults to 720 minutes.
+        /// </para>
+        ///  
+        /// <para>
+        /// For BATCH mode job runs, the maximum value is 10080 minutes (7 days) starting with
+        /// Amazon EMR release 7.11.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 0, Max = 1000000)]

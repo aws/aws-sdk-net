@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
     {
         public void AppConfigCreateApplication()
         {
-            #region to-create-an-application-1632264511615
+            #region CreateApplication-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.CreateApplication(new CreateApplicationRequest 
+            var response = client.CreateApplication(new CreateApplicationRequest
             {
                 Description = "An application used for creating an example.",
                 Name = "example-application"
@@ -31,10 +32,10 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
 
         public void AppConfigCreateConfigurationProfile()
         {
-            #region to-create-a-configuration-profile-1632264580336
+            #region CreateConfigurationProfile-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.CreateConfigurationProfile(new CreateConfigurationProfileRequest 
+            var response = client.CreateConfigurationProfile(new CreateConfigurationProfileRequest
             {
                 ApplicationId = "339ohji",
                 LocationUri = "ssm-parameter://Example-Parameter",
@@ -53,10 +54,10 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
 
         public void AppConfigCreateDeploymentStrategy()
         {
-            #region to-create-a-deployment-strategy-1632264783812
+            #region CreateDeploymentStrategy-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.CreateDeploymentStrategy(new CreateDeploymentStrategyRequest 
+            var response = client.CreateDeploymentStrategy(new CreateDeploymentStrategyRequest
             {
                 DeploymentDurationInMinutes = 15,
                 GrowthFactor = 25,
@@ -64,23 +65,23 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
                 ReplicateTo = "SSM_DOCUMENT"
             });
 
-            int deploymentDurationInMinutes = response.DeploymentDurationInMinutes;
-            int finalBakeTimeInMinutes = response.FinalBakeTimeInMinutes;
-            float growthFactor = response.GrowthFactor;
-            string growthType = response.GrowthType;
+            int? deploymentDurationInMinutes = response.DeploymentDurationInMinutes;
+            int? finalBakeTimeInMinutes = response.FinalBakeTimeInMinutes;
+            float? growthFactor = response.GrowthFactor;
+            GrowthType growthType = response.GrowthType;
             string id = response.Id;
             string name = response.Name;
-            string replicateTo = response.ReplicateTo;
+            ReplicateTo replicateTo = response.ReplicateTo;
 
             #endregion
         }
 
         public void AppConfigCreateEnvironment()
         {
-            #region to-create-an-environment-1632265124975
+            #region CreateEnvironment-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.CreateEnvironment(new CreateEnvironmentRequest 
+            var response = client.CreateEnvironment(new CreateEnvironmentRequest
             {
                 ApplicationId = "339ohji",
                 Name = "Example-Environment"
@@ -89,17 +90,17 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
             string applicationId = response.ApplicationId;
             string id = response.Id;
             string name = response.Name;
-            string state = response.State;
+            EnvironmentState state = response.State;
 
             #endregion
         }
 
         public void AppConfigCreateExperimentDefinition()
         {
-            #region to-create-an-experiment-definition-1632264511615
+            #region CreateExperimentDefinition-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.CreateExperimentDefinition(new CreateExperimentDefinitionRequest 
+            var response = client.CreateExperimentDefinition(new CreateExperimentDefinitionRequest
             {
                 ApplicationIdentifier = "339ohji",
                 AudienceRule = "(eq $country \"US\")",
@@ -123,24 +124,24 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
             string audienceRule = response.AudienceRule;
             string configurationProfileId = response.ConfigurationProfileId;
             Treatment control = response.Control;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string environmentId = response.EnvironmentId;
             string flagKey = response.FlagKey;
             string id = response.Id;
             string name = response.Name;
-            string status = response.Status;
+            ExperimentDefinitionStatus status = response.Status;
             List<Treatment> treatments = response.Treatments;
-            DateTime updatedAt = response.UpdatedAt;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void AppConfigCreateHostedConfigurationVersion()
         {
-            #region to-create-a-hosted-configuration-version-1632265196980
+            #region CreateHostedConfigurationVersion-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.CreateHostedConfigurationVersion(new CreateHostedConfigurationVersionRequest 
+            var response = client.CreateHostedConfigurationVersion(new CreateHostedConfigurationVersionRequest
             {
                 ApplicationId = "339ohji",
                 ConfigurationProfileId = "ur8hx2f",
@@ -152,17 +153,17 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
             string applicationId = response.ApplicationId;
             string configurationProfileId = response.ConfigurationProfileId;
             string contentType = response.ContentType;
-            int versionNumber = response.VersionNumber;
+            int? versionNumber = response.VersionNumber;
 
             #endregion
         }
 
         public void AppConfigDeleteApplication()
         {
-            #region to-delete-an-application-1632265343951
+            #region DeleteApplication-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.DeleteApplication(new DeleteApplicationRequest 
+            var response = client.DeleteApplication(new DeleteApplicationRequest
             {
                 ApplicationId = "339ohji"
             });
@@ -173,10 +174,10 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
 
         public void AppConfigDeleteConfigurationProfile()
         {
-            #region to-delete-a-configuration-profile-1632265401308
+            #region DeleteConfigurationProfile-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.DeleteConfigurationProfile(new DeleteConfigurationProfileRequest 
+            var response = client.DeleteConfigurationProfile(new DeleteConfigurationProfileRequest
             {
                 ApplicationId = "339ohji",
                 ConfigurationProfileId = "ur8hx2f"
@@ -188,10 +189,10 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
 
         public void AppConfigDeleteDeploymentStrategy()
         {
-            #region to-delete-a-deployment-strategy-1632265473708
+            #region DeleteDeploymentStrategy-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.DeleteDeploymentStrategy(new DeleteDeploymentStrategyRequest 
+            var response = client.DeleteDeploymentStrategy(new DeleteDeploymentStrategyRequest
             {
                 DeploymentStrategyId = "1225qzk"
             });
@@ -202,10 +203,10 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
 
         public void AppConfigDeleteEnvironment()
         {
-            #region to-delete-an-environment-1632265641044
+            #region DeleteEnvironment-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.DeleteEnvironment(new DeleteEnvironmentRequest 
+            var response = client.DeleteEnvironment(new DeleteEnvironmentRequest
             {
                 ApplicationId = "339ohji",
                 EnvironmentId = "54j1r29"
@@ -217,10 +218,10 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
 
         public void AppConfigDeleteExperimentDefinition()
         {
-            #region to-delete-an-experiment-definition-1632264511619
+            #region DeleteExperimentDefinition-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.DeleteExperimentDefinition(new DeleteExperimentDefinitionRequest 
+            var response = client.DeleteExperimentDefinition(new DeleteExperimentDefinitionRequest
             {
                 ApplicationIdentifier = "339ohji",
                 ExperimentDefinitionIdentifier = "bsxyd7k"
@@ -232,10 +233,10 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
 
         public void AppConfigDeleteHostedConfigurationVersion()
         {
-            #region to-delete-a-hosted-configuration-version-1632265720740
+            #region DeleteHostedConfigurationVersion-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.DeleteHostedConfigurationVersion(new DeleteHostedConfigurationVersionRequest 
+            var response = client.DeleteHostedConfigurationVersion(new DeleteHostedConfigurationVersionRequest
             {
                 ApplicationId = "339ohji",
                 ConfigurationProfileId = "ur8hx2f",
@@ -248,10 +249,10 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
 
         public void AppConfigGetApplication()
         {
-            #region to-list-details-of-an-application-1632265864702
+            #region GetApplication-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.GetApplication(new GetApplicationRequest 
+            var response = client.GetApplication(new GetApplicationRequest
             {
                 ApplicationId = "339ohji"
             });
@@ -264,10 +265,10 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
 
         public void AppConfigGetConfiguration()
         {
-            #region to-retrieve-configuration-details-1632265954314
+            #region GetConfiguration-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.GetConfiguration(new GetConfigurationRequest 
+            var response = client.GetConfiguration(new GetConfigurationRequest
             {
                 Application = "example-application",
                 ClientId = "example-id",
@@ -283,10 +284,10 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
 
         public void AppConfigGetConfigurationProfile()
         {
-            #region to-retrieve-configuration-profile-details-1632266081013
+            #region GetConfigurationProfile-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.GetConfigurationProfile(new GetConfigurationProfileRequest 
+            var response = client.GetConfigurationProfile(new GetConfigurationProfileRequest
             {
                 ApplicationId = "339ohji",
                 ConfigurationProfileId = "ur8hx2f"
@@ -301,66 +302,33 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
             #endregion
         }
 
-        public void AppConfigGetDeployment()
-        {
-            #region to-retrieve-deployment-details-1633976766883
-
-            var client = new AmazonAppConfigClient();
-            var response = client.GetDeployment(new GetDeploymentRequest 
-            {
-                ApplicationId = "339ohji",
-                DeploymentNumber = 1,
-                EnvironmentId = "54j1r29"
-            });
-
-            string applicationId = response.ApplicationId;
-            DateTime completedAt = response.CompletedAt;
-            string configurationLocationUri = response.ConfigurationLocationUri;
-            string configurationName = response.ConfigurationName;
-            string configurationProfileId = response.ConfigurationProfileId;
-            string configurationVersion = response.ConfigurationVersion;
-            int deploymentDurationInMinutes = response.DeploymentDurationInMinutes;
-            int deploymentNumber = response.DeploymentNumber;
-            string deploymentStrategyId = response.DeploymentStrategyId;
-            string environmentId = response.EnvironmentId;
-            List<DeploymentEvent> eventLog = response.EventLog;
-            int finalBakeTimeInMinutes = response.FinalBakeTimeInMinutes;
-            float growthFactor = response.GrowthFactor;
-            string growthType = response.GrowthType;
-            float percentageComplete = response.PercentageComplete;
-            DateTime startedAt = response.StartedAt;
-            string state = response.State;
-
-            #endregion
-        }
-
         public void AppConfigGetDeploymentStrategy()
         {
-            #region to-retrieve-details-of-a-deployment-strategy-1632266385805
+            #region GetDeploymentStrategy-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.GetDeploymentStrategy(new GetDeploymentStrategyRequest 
+            var response = client.GetDeploymentStrategy(new GetDeploymentStrategyRequest
             {
                 DeploymentStrategyId = "1225qzk"
             });
 
-            int deploymentDurationInMinutes = response.DeploymentDurationInMinutes;
-            int finalBakeTimeInMinutes = response.FinalBakeTimeInMinutes;
-            float growthFactor = response.GrowthFactor;
-            string growthType = response.GrowthType;
+            int? deploymentDurationInMinutes = response.DeploymentDurationInMinutes;
+            int? finalBakeTimeInMinutes = response.FinalBakeTimeInMinutes;
+            float? growthFactor = response.GrowthFactor;
+            GrowthType growthType = response.GrowthType;
             string id = response.Id;
             string name = response.Name;
-            string replicateTo = response.ReplicateTo;
+            ReplicateTo replicateTo = response.ReplicateTo;
 
             #endregion
         }
 
         public void AppConfigGetEnvironment()
         {
-            #region to-retrieve-environment-details-1632266924806
+            #region GetEnvironment-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.GetEnvironment(new GetEnvironmentRequest 
+            var response = client.GetEnvironment(new GetEnvironmentRequest
             {
                 ApplicationId = "339ohji",
                 EnvironmentId = "54j1r29"
@@ -369,17 +337,17 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
             string applicationId = response.ApplicationId;
             string id = response.Id;
             string name = response.Name;
-            string state = response.State;
+            EnvironmentState state = response.State;
 
             #endregion
         }
 
         public void AppConfigGetExperimentDefinition()
         {
-            #region to-get-an-experiment-definition-1632264511616
+            #region GetExperimentDefinition-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.GetExperimentDefinition(new GetExperimentDefinitionRequest 
+            var response = client.GetExperimentDefinition(new GetExperimentDefinitionRequest
             {
                 ApplicationIdentifier = "339ohji",
                 ExperimentDefinitionIdentifier = "bsxyd7k"
@@ -389,24 +357,24 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
             string audienceRule = response.AudienceRule;
             string configurationProfileId = response.ConfigurationProfileId;
             Treatment control = response.Control;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string environmentId = response.EnvironmentId;
             string flagKey = response.FlagKey;
             string id = response.Id;
             string name = response.Name;
-            string status = response.Status;
+            ExperimentDefinitionStatus status = response.Status;
             List<Treatment> treatments = response.Treatments;
-            DateTime updatedAt = response.UpdatedAt;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void AppConfigGetExperimentRun()
         {
-            #region to-get-an-experiment-run-1632264511621
+            #region GetExperimentRun-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.GetExperimentRun(new GetExperimentRunRequest 
+            var response = client.GetExperimentRun(new GetExperimentRunRequest
             {
                 ApplicationIdentifier = "339ohji",
                 ExperimentDefinitionIdentifier = "bsxyd7k",
@@ -416,21 +384,21 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
             string applicationId = response.ApplicationId;
             string experimentDefinitionId = response.ExperimentDefinitionId;
             ExperimentDefinitionSnapshot experimentDefinitionSnapshot = response.ExperimentDefinitionSnapshot;
-            float exposurePercentage = response.ExposurePercentage;
-            int run = response.Run;
-            DateTime startedAt = response.StartedAt;
-            string status = response.Status;
-            DateTime updatedAt = response.UpdatedAt;
+            float? exposurePercentage = response.ExposurePercentage;
+            int? run = response.Run;
+            DateTime? startedAt = response.StartedAt;
+            ExperimentRunStatus status = response.Status;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void AppConfigGetHostedConfigurationVersion()
         {
-            #region to-retrieve-hosted-configuration-details-1632267003527
+            #region GetHostedConfigurationVersion-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.GetHostedConfigurationVersion(new GetHostedConfigurationVersionRequest 
+            var response = client.GetHostedConfigurationVersion(new GetHostedConfigurationVersionRequest
             {
                 ApplicationId = "339ohji",
                 ConfigurationProfileId = "ur8hx2f",
@@ -440,17 +408,17 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
             string applicationId = response.ApplicationId;
             string configurationProfileId = response.ConfigurationProfileId;
             string contentType = response.ContentType;
-            int versionNumber = response.VersionNumber;
+            int? versionNumber = response.VersionNumber;
 
             #endregion
         }
 
         public void AppConfigListApplications()
         {
-            #region to-list-the-available-applications-1632267111131
+            #region ListApplications-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.ListApplications(new ListApplicationsRequest 
+            var response = client.ListApplications(new ListApplicationsRequest
             {
             });
 
@@ -461,10 +429,10 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
 
         public void AppConfigListConfigurationProfiles()
         {
-            #region to-list-the-available-configuration-profiles-1632267193265
+            #region ListConfigurationProfiles-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.ListConfigurationProfiles(new ListConfigurationProfilesRequest 
+            var response = client.ListConfigurationProfiles(new ListConfigurationProfilesRequest
             {
                 ApplicationId = "339ohji"
             });
@@ -474,28 +442,12 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
             #endregion
         }
 
-        public void AppConfigListDeployments()
-        {
-            #region to-list-the-available-deployments-1632267282025
-
-            var client = new AmazonAppConfigClient();
-            var response = client.ListDeployments(new ListDeploymentsRequest 
-            {
-                ApplicationId = "339ohji",
-                EnvironmentId = "54j1r29"
-            });
-
-            List<DeploymentSummary> items = response.Items;
-
-            #endregion
-        }
-
         public void AppConfigListDeploymentStrategies()
         {
-            #region to-list-the-available-deployment-strategies-1632267364180
+            #region ListDeploymentStrategies-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.ListDeploymentStrategies(new ListDeploymentStrategiesRequest 
+            var response = client.ListDeploymentStrategies(new ListDeploymentStrategiesRequest
             {
             });
 
@@ -506,10 +458,10 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
 
         public void AppConfigListEnvironments()
         {
-            #region to-list-the-available-environments-1632267474389
+            #region ListEnvironments-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.ListEnvironments(new ListEnvironmentsRequest 
+            var response = client.ListEnvironments(new ListEnvironmentsRequest
             {
                 ApplicationId = "339ohji"
             });
@@ -521,10 +473,10 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
 
         public void AppConfigListExperimentDefinitions()
         {
-            #region to-list-experiment-definitions-1632264511617
+            #region ListExperimentDefinitions-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.ListExperimentDefinitions(new ListExperimentDefinitionsRequest 
+            var response = client.ListExperimentDefinitions(new ListExperimentDefinitionsRequest
             {
                 ApplicationIdentifier = "339ohji"
             });
@@ -536,10 +488,10 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
 
         public void AppConfigListExperimentRunEvents()
         {
-            #region to-list-experiment-run-events-1632264511625
+            #region ListExperimentRunEvents-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.ListExperimentRunEvents(new ListExperimentRunEventsRequest 
+            var response = client.ListExperimentRunEvents(new ListExperimentRunEventsRequest
             {
                 ApplicationIdentifier = "339ohji",
                 ExperimentDefinitionIdentifier = "bsxyd7k",
@@ -553,10 +505,10 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
 
         public void AppConfigListExperimentRuns()
         {
-            #region to-list-experiment-runs-1632264511622
+            #region ListExperimentRuns-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.ListExperimentRuns(new ListExperimentRunsRequest 
+            var response = client.ListExperimentRuns(new ListExperimentRunsRequest
             {
                 ApplicationIdentifier = "339ohji",
                 ExperimentDefinitionIdentifier = "bsxyd7k"
@@ -569,10 +521,10 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
 
         public void AppConfigListHostedConfigurationVersions()
         {
-            #region to-list-the-available-hosted-configuration-versions-1632267647667
+            #region ListHostedConfigurationVersions-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.ListHostedConfigurationVersions(new ListHostedConfigurationVersionsRequest 
+            var response = client.ListHostedConfigurationVersions(new ListHostedConfigurationVersionsRequest
             {
                 ApplicationId = "339ohji",
                 ConfigurationProfileId = "ur8hx2f"
@@ -585,10 +537,10 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
 
         public void AppConfigListTagsForResource()
         {
-            #region to-list-the-tags-of-an-application-1632328796560
+            #region ListTagsForResource-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.ListTagsForResource(new ListTagsForResourceRequest 
+            var response = client.ListTagsForResource(new ListTagsForResourceRequest
             {
                 ResourceArn = "arn:aws:appconfig:us-east-1:111122223333:application/339ohji"
             });
@@ -598,50 +550,12 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
             #endregion
         }
 
-        public void AppConfigStartDeployment()
-        {
-            #region to-start-a-configuration-deployment-1632328956790
-
-            var client = new AmazonAppConfigClient();
-            var response = client.StartDeployment(new StartDeploymentRequest 
-            {
-                ApplicationId = "339ohji",
-                ConfigurationProfileId = "ur8hx2f",
-                ConfigurationVersion = "1",
-                DeploymentStrategyId = "1225qzk",
-                Description = "",
-                EnvironmentId = "54j1r29",
-                Tags = new Dictionary<string, string> {
-                    
-                }
-            });
-
-            string applicationId = response.ApplicationId;
-            string configurationLocationUri = response.ConfigurationLocationUri;
-            string configurationName = response.ConfigurationName;
-            string configurationProfileId = response.ConfigurationProfileId;
-            string configurationVersion = response.ConfigurationVersion;
-            int deploymentDurationInMinutes = response.DeploymentDurationInMinutes;
-            int deploymentNumber = response.DeploymentNumber;
-            string deploymentStrategyId = response.DeploymentStrategyId;
-            string environmentId = response.EnvironmentId;
-            List<DeploymentEvent> eventLog = response.EventLog;
-            int finalBakeTimeInMinutes = response.FinalBakeTimeInMinutes;
-            float growthFactor = response.GrowthFactor;
-            string growthType = response.GrowthType;
-            float percentageComplete = response.PercentageComplete;
-            DateTime startedAt = response.StartedAt;
-            string state = response.State;
-
-            #endregion
-        }
-
         public void AppConfigStartExperimentRun()
         {
-            #region to-start-an-experiment-run-1632264511620
+            #region StartExperimentRun-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.StartExperimentRun(new StartExperimentRunRequest 
+            var response = client.StartExperimentRun(new StartExperimentRunRequest
             {
                 ApplicationIdentifier = "339ohji",
                 ExperimentDefinitionIdentifier = "bsxyd7k",
@@ -651,42 +565,42 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
             string applicationId = response.ApplicationId;
             string experimentDefinitionId = response.ExperimentDefinitionId;
             ExperimentDefinitionSnapshot experimentDefinitionSnapshot = response.ExperimentDefinitionSnapshot;
-            float exposurePercentage = response.ExposurePercentage;
-            int run = response.Run;
-            DateTime startedAt = response.StartedAt;
-            string status = response.Status;
-            DateTime updatedAt = response.UpdatedAt;
+            float? exposurePercentage = response.ExposurePercentage;
+            int? run = response.Run;
+            DateTime? startedAt = response.StartedAt;
+            ExperimentRunStatus status = response.Status;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void AppConfigStopDeployment()
         {
-            #region to-stop-configuration-deployment-1632329139126
+            #region StopDeployment-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.StopDeployment(new StopDeploymentRequest 
+            var response = client.StopDeployment(new StopDeploymentRequest
             {
                 ApplicationId = "339ohji",
                 DeploymentNumber = 2,
                 EnvironmentId = "54j1r29"
             });
 
-            int deploymentDurationInMinutes = response.DeploymentDurationInMinutes;
-            int deploymentNumber = response.DeploymentNumber;
-            int finalBakeTimeInMinutes = response.FinalBakeTimeInMinutes;
-            float growthFactor = response.GrowthFactor;
-            float percentageComplete = response.PercentageComplete;
+            int? deploymentDurationInMinutes = response.DeploymentDurationInMinutes;
+            int? deploymentNumber = response.DeploymentNumber;
+            int? finalBakeTimeInMinutes = response.FinalBakeTimeInMinutes;
+            float? growthFactor = response.GrowthFactor;
+            float? percentageComplete = response.PercentageComplete;
 
             #endregion
         }
 
         public void AppConfigStopExperimentRun()
         {
-            #region to-stop-an-experiment-run-1632264511624
+            #region StopExperimentRun-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.StopExperimentRun(new StopExperimentRunRequest 
+            var response = client.StopExperimentRun(new StopExperimentRunRequest
             {
                 ApplicationIdentifier = "339ohji",
                 ExperimentDefinitionIdentifier = "bsxyd7k",
@@ -698,25 +612,25 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
             });
 
             string applicationId = response.ApplicationId;
-            DateTime endedAt = response.EndedAt;
+            DateTime? endedAt = response.EndedAt;
             string experimentDefinitionId = response.ExperimentDefinitionId;
             ExperimentDefinitionSnapshot experimentDefinitionSnapshot = response.ExperimentDefinitionSnapshot;
-            float exposurePercentage = response.ExposurePercentage;
+            float? exposurePercentage = response.ExposurePercentage;
             ExperimentRunResult result = response.Result;
-            int run = response.Run;
-            DateTime startedAt = response.StartedAt;
-            string status = response.Status;
-            DateTime updatedAt = response.UpdatedAt;
+            int? run = response.Run;
+            DateTime? startedAt = response.StartedAt;
+            ExperimentRunStatus status = response.Status;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void AppConfigTagResource()
         {
-            #region to-tag-an-application-1632330350645
+            #region TagResource-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.TagResource(new TagResourceRequest 
+            var response = client.TagResource(new TagResourceRequest
             {
                 ResourceArn = "arn:aws:appconfig:us-east-1:111122223333:application/339ohji",
                 Tags = new Dictionary<string, string> {
@@ -730,10 +644,10 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
 
         public void AppConfigUntagResource()
         {
-            #region to-remove-a-tag-from-an-application-1632330429881
+            #region UntagResource-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.UntagResource(new UntagResourceRequest 
+            var response = client.UntagResource(new UntagResourceRequest
             {
                 ResourceArn = "arn:aws:appconfig:us-east-1:111122223333:application/339ohji",
                 TagKeys = new List<string> {
@@ -747,10 +661,10 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
 
         public void AppConfigUpdateApplication()
         {
-            #region to-update-an-application-1632330585893
+            #region UpdateApplication-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.UpdateApplication(new UpdateApplicationRequest 
+            var response = client.UpdateApplication(new UpdateApplicationRequest
             {
                 ApplicationId = "339ohji",
                 Description = "",
@@ -766,10 +680,10 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
 
         public void AppConfigUpdateConfigurationProfile()
         {
-            #region to-update-a-configuration-profile-1632330721974
+            #region UpdateConfigurationProfile-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.UpdateConfigurationProfile(new UpdateConfigurationProfileRequest 
+            var response = client.UpdateConfigurationProfile(new UpdateConfigurationProfileRequest
             {
                 ApplicationId = "339ohji",
                 ConfigurationProfileId = "ur8hx2f",
@@ -788,32 +702,32 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
 
         public void AppConfigUpdateDeploymentStrategy()
         {
-            #region to-update-a-deployment-strategy-1632330896602
+            #region UpdateDeploymentStrategy-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.UpdateDeploymentStrategy(new UpdateDeploymentStrategyRequest 
+            var response = client.UpdateDeploymentStrategy(new UpdateDeploymentStrategyRequest
             {
                 DeploymentStrategyId = "1225qzk",
                 FinalBakeTimeInMinutes = 20
             });
 
-            int deploymentDurationInMinutes = response.DeploymentDurationInMinutes;
-            int finalBakeTimeInMinutes = response.FinalBakeTimeInMinutes;
-            float growthFactor = response.GrowthFactor;
-            string growthType = response.GrowthType;
+            int? deploymentDurationInMinutes = response.DeploymentDurationInMinutes;
+            int? finalBakeTimeInMinutes = response.FinalBakeTimeInMinutes;
+            float? growthFactor = response.GrowthFactor;
+            GrowthType growthType = response.GrowthType;
             string id = response.Id;
             string name = response.Name;
-            string replicateTo = response.ReplicateTo;
+            ReplicateTo replicateTo = response.ReplicateTo;
 
             #endregion
         }
 
         public void AppConfigUpdateEnvironment()
         {
-            #region to-update-an-environment-1632331382428
+            #region UpdateEnvironment-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.UpdateEnvironment(new UpdateEnvironmentRequest 
+            var response = client.UpdateEnvironment(new UpdateEnvironmentRequest
             {
                 ApplicationId = "339ohji",
                 Description = "An environment for examples.",
@@ -824,17 +738,17 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
             string description = response.Description;
             string id = response.Id;
             string name = response.Name;
-            string state = response.State;
+            EnvironmentState state = response.State;
 
             #endregion
         }
 
         public void AppConfigUpdateExperimentDefinition()
         {
-            #region to-update-an-experiment-definition-1632264511618
+            #region UpdateExperimentDefinition-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.UpdateExperimentDefinition(new UpdateExperimentDefinitionRequest 
+            var response = client.UpdateExperimentDefinition(new UpdateExperimentDefinitionRequest
             {
                 ApplicationIdentifier = "339ohji",
                 AudienceRule = "(eq $country \"US\")",
@@ -846,25 +760,25 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
             string audienceRule = response.AudienceRule;
             string configurationProfileId = response.ConfigurationProfileId;
             Treatment control = response.Control;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string environmentId = response.EnvironmentId;
             string flagKey = response.FlagKey;
             string hypothesis = response.Hypothesis;
             string id = response.Id;
             string name = response.Name;
-            string status = response.Status;
+            ExperimentDefinitionStatus status = response.Status;
             List<Treatment> treatments = response.Treatments;
-            DateTime updatedAt = response.UpdatedAt;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void AppConfigUpdateExperimentRun()
         {
-            #region to-update-an-experiment-run-1632264511623
+            #region UpdateExperimentRun-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.UpdateExperimentRun(new UpdateExperimentRunRequest 
+            var response = client.UpdateExperimentRun(new UpdateExperimentRunRequest
             {
                 ApplicationIdentifier = "339ohji",
                 ExperimentDefinitionIdentifier = "bsxyd7k",
@@ -875,21 +789,21 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
             string applicationId = response.ApplicationId;
             string experimentDefinitionId = response.ExperimentDefinitionId;
             ExperimentDefinitionSnapshot experimentDefinitionSnapshot = response.ExperimentDefinitionSnapshot;
-            float exposurePercentage = response.ExposurePercentage;
-            int run = response.Run;
-            DateTime startedAt = response.StartedAt;
-            string status = response.Status;
-            DateTime updatedAt = response.UpdatedAt;
+            float? exposurePercentage = response.ExposurePercentage;
+            int? run = response.Run;
+            DateTime? startedAt = response.StartedAt;
+            ExperimentRunStatus status = response.Status;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void AppConfigValidateConfiguration()
         {
-            #region to-validate-a-configuration-1632331491365
+            #region ValidateConfiguration-1
 
             var client = new AmazonAppConfigClient();
-            var response = client.ValidateConfiguration(new ValidateConfigurationRequest 
+            var response = client.ValidateConfiguration(new ValidateConfigurationRequest
             {
                 ApplicationId = "abc1234",
                 ConfigurationProfileId = "ur8hx2f",
@@ -900,13 +814,10 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

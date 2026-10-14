@@ -29,132 +29,177 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
 using Amazon.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for GetTable operation
     /// </summary>  
-    public class GetTableResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetTableResponseUnmarshaller : CborResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(CborUnmarshallerContext context)
         {
             GetTableResponse response = new GetTableResponse();
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
-            context.Read(ref reader);
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            context.AddPathSegment("GetTable");
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
             {
-                if (context.TestExpression("capacitySpecification", targetDepth, ref reader))
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = CapacitySpecificationSummaryUnmarshaller.Instance;
-                    response.CapacitySpecification = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("cdcSpecification", targetDepth, ref reader))
-                {
-                    var unmarshaller = CdcSpecificationSummaryUnmarshaller.Instance;
-                    response.CdcSpecification = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("clientSideTimestamps", targetDepth, ref reader))
-                {
-                    var unmarshaller = ClientSideTimestampsUnmarshaller.Instance;
-                    response.ClientSideTimestamps = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("comment", targetDepth, ref reader))
-                {
-                    var unmarshaller = CommentUnmarshaller.Instance;
-                    response.Comment = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("creationTimestamp", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.CreationTimestamp = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("defaultTimeToLive", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    response.DefaultTimeToLive = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("encryptionSpecification", targetDepth, ref reader))
-                {
-                    var unmarshaller = EncryptionSpecificationUnmarshaller.Instance;
-                    response.EncryptionSpecification = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("keyspaceName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.KeyspaceName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("latestStreamArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.LatestStreamArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("pointInTimeRecovery", targetDepth, ref reader))
-                {
-                    var unmarshaller = PointInTimeRecoverySummaryUnmarshaller.Instance;
-                    response.PointInTimeRecovery = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("replicaSpecifications", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ReplicaSpecificationSummary, ReplicaSpecificationSummaryUnmarshaller>(ReplicaSpecificationSummaryUnmarshaller.Instance);
-                    response.ReplicaSpecifications = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("resourceArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ResourceArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("schemaDefinition", targetDepth, ref reader))
-                {
-                    var unmarshaller = SchemaDefinitionUnmarshaller.Instance;
-                    response.SchemaDefinition = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("tableName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.TableName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ttl", targetDepth, ref reader))
-                {
-                    var unmarshaller = TimeToLiveUnmarshaller.Instance;
-                    response.Ttl = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("warmThroughputSpecification", targetDepth, ref reader))
-                {
-                    var unmarshaller = WarmThroughputSpecificationSummaryUnmarshaller.Instance;
-                    response.WarmThroughputSpecification = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "capacitySpecification":
+                        {
+                            context.AddPathSegment("CapacitySpecification");
+                            var unmarshaller = CapacitySpecificationSummaryUnmarshaller.Instance;
+                            response.CapacitySpecification = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "cdcSpecification":
+                        {
+                            context.AddPathSegment("CdcSpecification");
+                            var unmarshaller = CdcSpecificationSummaryUnmarshaller.Instance;
+                            response.CdcSpecification = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "clientSideTimestamps":
+                        {
+                            context.AddPathSegment("ClientSideTimestamps");
+                            var unmarshaller = ClientSideTimestampsUnmarshaller.Instance;
+                            response.ClientSideTimestamps = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "comment":
+                        {
+                            context.AddPathSegment("Comment");
+                            var unmarshaller = CommentUnmarshaller.Instance;
+                            response.Comment = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "creationTimestamp":
+                        {
+                            context.AddPathSegment("CreationTimestamp");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            response.CreationTimestamp = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "defaultTimeToLive":
+                        {
+                            context.AddPathSegment("DefaultTimeToLive");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            response.DefaultTimeToLive = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "encryptionSpecification":
+                        {
+                            context.AddPathSegment("EncryptionSpecification");
+                            var unmarshaller = EncryptionSpecificationUnmarshaller.Instance;
+                            response.EncryptionSpecification = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "keyspaceName":
+                        {
+                            context.AddPathSegment("KeyspaceName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            response.KeyspaceName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "latestStreamArn":
+                        {
+                            context.AddPathSegment("LatestStreamArn");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            response.LatestStreamArn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "pointInTimeRecovery":
+                        {
+                            context.AddPathSegment("PointInTimeRecovery");
+                            var unmarshaller = PointInTimeRecoverySummaryUnmarshaller.Instance;
+                            response.PointInTimeRecovery = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "replicaSpecifications":
+                        {
+                            context.AddPathSegment("ReplicaSpecifications");
+                            var unmarshaller = new CborListUnmarshaller<ReplicaSpecificationSummary, ReplicaSpecificationSummaryUnmarshaller>(ReplicaSpecificationSummaryUnmarshaller.Instance);
+                            response.ReplicaSpecifications = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "resourceArn":
+                        {
+                            context.AddPathSegment("ResourceArn");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            response.ResourceArn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "schemaDefinition":
+                        {
+                            context.AddPathSegment("SchemaDefinition");
+                            var unmarshaller = SchemaDefinitionUnmarshaller.Instance;
+                            response.SchemaDefinition = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "status":
+                        {
+                            context.AddPathSegment("Status");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            response.Status = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "tableName":
+                        {
+                            context.AddPathSegment("TableName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            response.TableName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ttl":
+                        {
+                            context.AddPathSegment("Ttl");
+                            var unmarshaller = TimeToLiveUnmarshaller.Instance;
+                            response.Ttl = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "warmThroughputSpecification":
+                        {
+                            context.AddPathSegment("WarmThroughputSpecification");
+                            var unmarshaller = WarmThroughputSpecificationSummaryUnmarshaller.Instance;
+                            response.WarmThroughputSpecification = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
+            context.PopPathSegment();
 
             return response;
         }
@@ -166,38 +211,36 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         /// <param name="innerException"></param>
         /// <param name="statusCode"></param>
         /// <returns></returns>
-        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(CborUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
+            var errorResponse = CborErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
+            using (var contextCopy = new CborUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
-                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
                 {
-                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
-                    return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
                 {
-                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                 {
-                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonKeyspacesException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

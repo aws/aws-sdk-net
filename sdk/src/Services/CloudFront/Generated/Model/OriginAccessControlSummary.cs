@@ -139,6 +139,12 @@ namespace Amazon.CloudFront.Model
         /// header, CloudFront doesn't sign the origin request, but instead passes along the <c>Authorization</c>
         /// header that it received in the viewer request.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>always-amz-auth</c> – CloudFront signs all origin requests with Amazon authentication
+        /// headers, and forwards the viewer's <c>Authorization</c> header to the origin if one
+        /// is present. This value is only valid with Lambda-Web origins.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]

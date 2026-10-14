@@ -62,7 +62,10 @@ namespace Amazon.LambdaCore.Model
         internal bool IsSetConfiguration() => this.Configuration != null;
 
         /// <summary>
-        /// Gets and sets the property Id.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The unique identifier of the network connector.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 140)]
         public string Id { get; set; }
@@ -153,5 +156,36 @@ namespace Amazon.LambdaCore.Model
         /// Checks to see if the State property is set.
         /// </summary>
         internal bool IsSetState() => this.State != null;
+
+        /// <summary>
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// The version number of the connector version resulting from this update. A configuration
+        /// change creates a new, incremented version; a no-op update returns the current version
+        /// number.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1)]
+        public long? Version { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Version property is set.
+        /// </summary>
+        internal bool IsSetVersion() => this.Version.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property VersionArn. 
+        /// <para>
+        /// The qualified ARN of the connector version resulting from this update, including the
+        /// immutable version suffix.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 140)]
+        public string VersionArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the VersionArn property is set.
+        /// </summary>
+        internal bool IsSetVersionArn() => this.VersionArn != null;
     }
 }

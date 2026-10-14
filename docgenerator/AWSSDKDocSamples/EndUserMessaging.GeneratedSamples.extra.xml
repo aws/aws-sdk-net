@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.EndUserMessaging.IAmazonEndUserMessaging.CreateBrandProfile(Amazon.EndUserMessaging.Model.CreateBrandProfileRequest)" />
+            <member name="M:Amazon.EndUserMessaging.AmazonEndUserMessagingClient.CreateBrandProfile(Amazon.EndUserMessaging.Model.CreateBrandProfileRequest)" />
+            <member name="T:Amazon.EndUserMessaging.Model.CreateBrandProfileRequest" />
+            <member name="T:Amazon.EndUserMessaging.Model.CreateBrandProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Create a brand profile"
+                    source=".\AWSSDKDocSamples\EndUserMessaging\EndUserMessaging.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EndUserMessaging.IAmazonEndUserMessaging.CreateBrandProfileAttributes(Amazon.EndUserMessaging.Model.CreateBrandProfileAttributesRequest)" />
+            <member name="M:Amazon.EndUserMessaging.AmazonEndUserMessagingClient.CreateBrandProfileAttributes(Amazon.EndUserMessaging.Model.CreateBrandProfileAttributesRequest)" />
+            <member name="T:Amazon.EndUserMessaging.Model.CreateBrandProfileAttributesRequest" />
+            <member name="T:Amazon.EndUserMessaging.Model.CreateBrandProfileAttributesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Create a text attribute on a brand profile"
+                    source=".\AWSSDKDocSamples\EndUserMessaging\EndUserMessaging.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EndUserMessaging.IAmazonEndUserMessaging.CreateBrandProfileFromRegistration(Amazon.EndUserMessaging.Model.CreateBrandProfileFromRegistrationRequest)" />
+            <member name="M:Amazon.EndUserMessaging.AmazonEndUserMessagingClient.CreateBrandProfileFromRegistration(Amazon.EndUserMessaging.Model.CreateBrandProfileFromRegistrationRequest)" />
+            <member name="T:Amazon.EndUserMessaging.Model.CreateBrandProfileFromRegistrationRequest" />
+            <member name="T:Amazon.EndUserMessaging.Model.CreateBrandProfileFromRegistrationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Create a brand profile from a registration"
+                    source=".\AWSSDKDocSamples\EndUserMessaging\EndUserMessaging.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EndUserMessaging.IAmazonEndUserMessaging.CreateNotifyCodeConfiguration(Amazon.EndUserMessaging.Model.CreateNotifyCodeConfigurationRequest)" />
+            <member name="M:Amazon.EndUserMessaging.AmazonEndUserMessagingClient.CreateNotifyCodeConfiguration(Amazon.EndUserMessaging.Model.CreateNotifyCodeConfigurationRequest)" />
+            <member name="T:Amazon.EndUserMessaging.Model.CreateNotifyCodeConfigurationRequest" />
+            <member name="T:Amazon.EndUserMessaging.Model.CreateNotifyCodeConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Create a notify code configuration"
+                    source=".\AWSSDKDocSamples\EndUserMessaging\EndUserMessaging.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EndUserMessaging.IAmazonEndUserMessaging.CreateRegistrationsFromBrandProfile(Amazon.EndUserMessaging.Model.CreateRegistrationsFromBrandProfileRequest)" />
+            <member name="M:Amazon.EndUserMessaging.AmazonEndUserMessagingClient.CreateRegistrationsFromBrandProfile(Amazon.EndUserMessaging.Model.CreateRegistrationsFromBrandProfileRequest)" />
+            <member name="T:Amazon.EndUserMessaging.Model.CreateRegistrationsFromBrandProfileRequest" />
+            <member name="T:Amazon.EndUserMessaging.Model.CreateRegistrationsFromBrandProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Create draft registrations from a brand profile"
+                    source=".\AWSSDKDocSamples\EndUserMessaging\EndUserMessaging.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EndUserMessaging.IAmazonEndUserMessaging.DeleteBrandProfile(Amazon.EndUserMessaging.Model.DeleteBrandProfileRequest)" />
+            <member name="M:Amazon.EndUserMessaging.AmazonEndUserMessagingClient.DeleteBrandProfile(Amazon.EndUserMessaging.Model.DeleteBrandProfileRequest)" />
+            <member name="T:Amazon.EndUserMessaging.Model.DeleteBrandProfileRequest" />
+            <member name="T:Amazon.EndUserMessaging.Model.DeleteBrandProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Delete a brand profile"
+                    source=".\AWSSDKDocSamples\EndUserMessaging\EndUserMessaging.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EndUserMessaging.IAmazonEndUserMessaging.DeleteBrandProfileAttribute(Amazon.EndUserMessaging.Model.DeleteBrandProfileAttributeRequest)" />
+            <member name="M:Amazon.EndUserMessaging.AmazonEndUserMessagingClient.DeleteBrandProfileAttribute(Amazon.EndUserMessaging.Model.DeleteBrandProfileAttributeRequest)" />
+            <member name="T:Amazon.EndUserMessaging.Model.DeleteBrandProfileAttributeRequest" />
+            <member name="T:Amazon.EndUserMessaging.Model.DeleteBrandProfileAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Delete a brand profile attribute"
+                    source=".\AWSSDKDocSamples\EndUserMessaging\EndUserMessaging.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EndUserMessaging.IAmazonEndUserMessaging.DeleteNotifyCodeConfiguration(Amazon.EndUserMessaging.Model.DeleteNotifyCodeConfigurationRequest)" />
+            <member name="M:Amazon.EndUserMessaging.AmazonEndUserMessagingClient.DeleteNotifyCodeConfiguration(Amazon.EndUserMessaging.Model.DeleteNotifyCodeConfigurationRequest)" />
+            <member name="T:Amazon.EndUserMessaging.Model.DeleteNotifyCodeConfigurationRequest" />
+            <member name="T:Amazon.EndUserMessaging.Model.DeleteNotifyCodeConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Delete a notify code configuration"
+                    source=".\AWSSDKDocSamples\EndUserMessaging\EndUserMessaging.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EndUserMessaging.IAmazonEndUserMessaging.GetBrandProfile(Amazon.EndUserMessaging.Model.GetBrandProfileRequest)" />
+            <member name="M:Amazon.EndUserMessaging.AmazonEndUserMessagingClient.GetBrandProfile(Amazon.EndUserMessaging.Model.GetBrandProfileRequest)" />
+            <member name="T:Amazon.EndUserMessaging.Model.GetBrandProfileRequest" />
+            <member name="T:Amazon.EndUserMessaging.Model.GetBrandProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get a brand profile"
+                    source=".\AWSSDKDocSamples\EndUserMessaging\EndUserMessaging.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EndUserMessaging.IAmazonEndUserMessaging.GetBrandProfileAttribute(Amazon.EndUserMessaging.Model.GetBrandProfileAttributeRequest)" />
+            <member name="M:Amazon.EndUserMessaging.AmazonEndUserMessagingClient.GetBrandProfileAttribute(Amazon.EndUserMessaging.Model.GetBrandProfileAttributeRequest)" />
+            <member name="T:Amazon.EndUserMessaging.Model.GetBrandProfileAttributeRequest" />
+            <member name="T:Amazon.EndUserMessaging.Model.GetBrandProfileAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get a brand profile attribute"
+                    source=".\AWSSDKDocSamples\EndUserMessaging\EndUserMessaging.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EndUserMessaging.IAmazonEndUserMessaging.GetJob(Amazon.EndUserMessaging.Model.GetJobRequest)" />
+            <member name="M:Amazon.EndUserMessaging.AmazonEndUserMessagingClient.GetJob(Amazon.EndUserMessaging.Model.GetJobRequest)" />
+            <member name="T:Amazon.EndUserMessaging.Model.GetJobRequest" />
+            <member name="T:Amazon.EndUserMessaging.Model.GetJobResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get an async job"
+                    source=".\AWSSDKDocSamples\EndUserMessaging\EndUserMessaging.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EndUserMessaging.IAmazonEndUserMessaging.GetNotifyCodeConfiguration(Amazon.EndUserMessaging.Model.GetNotifyCodeConfigurationRequest)" />
+            <member name="M:Amazon.EndUserMessaging.AmazonEndUserMessagingClient.GetNotifyCodeConfiguration(Amazon.EndUserMessaging.Model.GetNotifyCodeConfigurationRequest)" />
+            <member name="T:Amazon.EndUserMessaging.Model.GetNotifyCodeConfigurationRequest" />
+            <member name="T:Amazon.EndUserMessaging.Model.GetNotifyCodeConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get a notify code configuration"
+                    source=".\AWSSDKDocSamples\EndUserMessaging\EndUserMessaging.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EndUserMessaging.IAmazonEndUserMessaging.ListBrandProfileAttributes(Amazon.EndUserMessaging.Model.ListBrandProfileAttributesRequest)" />
+            <member name="M:Amazon.EndUserMessaging.AmazonEndUserMessagingClient.ListBrandProfileAttributes(Amazon.EndUserMessaging.Model.ListBrandProfileAttributesRequest)" />
+            <member name="T:Amazon.EndUserMessaging.Model.ListBrandProfileAttributesRequest" />
+            <member name="T:Amazon.EndUserMessaging.Model.ListBrandProfileAttributesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List brand profile attributes"
+                    source=".\AWSSDKDocSamples\EndUserMessaging\EndUserMessaging.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EndUserMessaging.IAmazonEndUserMessaging.ListBrandProfiles(Amazon.EndUserMessaging.Model.ListBrandProfilesRequest)" />
+            <member name="M:Amazon.EndUserMessaging.AmazonEndUserMessagingClient.ListBrandProfiles(Amazon.EndUserMessaging.Model.ListBrandProfilesRequest)" />
+            <member name="T:Amazon.EndUserMessaging.Model.ListBrandProfilesRequest" />
+            <member name="T:Amazon.EndUserMessaging.Model.ListBrandProfilesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List brand profiles"
+                    source=".\AWSSDKDocSamples\EndUserMessaging\EndUserMessaging.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EndUserMessaging.IAmazonEndUserMessaging.ListJobs(Amazon.EndUserMessaging.Model.ListJobsRequest)" />
+            <member name="M:Amazon.EndUserMessaging.AmazonEndUserMessagingClient.ListJobs(Amazon.EndUserMessaging.Model.ListJobsRequest)" />
+            <member name="T:Amazon.EndUserMessaging.Model.ListJobsRequest" />
+            <member name="T:Amazon.EndUserMessaging.Model.ListJobsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List async jobs"
+                    source=".\AWSSDKDocSamples\EndUserMessaging\EndUserMessaging.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EndUserMessaging.IAmazonEndUserMessaging.ListNotifyCodeConfigurations(Amazon.EndUserMessaging.Model.ListNotifyCodeConfigurationsRequest)" />
+            <member name="M:Amazon.EndUserMessaging.AmazonEndUserMessagingClient.ListNotifyCodeConfigurations(Amazon.EndUserMessaging.Model.ListNotifyCodeConfigurationsRequest)" />
+            <member name="T:Amazon.EndUserMessaging.Model.ListNotifyCodeConfigurationsRequest" />
+            <member name="T:Amazon.EndUserMessaging.Model.ListNotifyCodeConfigurationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List notify code configurations"
+                    source=".\AWSSDKDocSamples\EndUserMessaging\EndUserMessaging.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EndUserMessaging.IAmazonEndUserMessaging.ListRegistrationsFromBrandProfile(Amazon.EndUserMessaging.Model.ListRegistrationsFromBrandProfileRequest)" />
+            <member name="M:Amazon.EndUserMessaging.AmazonEndUserMessagingClient.ListRegistrationsFromBrandProfile(Amazon.EndUserMessaging.Model.ListRegistrationsFromBrandProfileRequest)" />
+            <member name="T:Amazon.EndUserMessaging.Model.ListRegistrationsFromBrandProfileRequest" />
+            <member name="T:Amazon.EndUserMessaging.Model.ListRegistrationsFromBrandProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List registrations created from a brand profile"
+                    source=".\AWSSDKDocSamples\EndUserMessaging\EndUserMessaging.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EndUserMessaging.IAmazonEndUserMessaging.ListTagsForResource(Amazon.EndUserMessaging.Model.ListTagsForResourceRequest)" />
+            <member name="M:Amazon.EndUserMessaging.AmazonEndUserMessagingClient.ListTagsForResource(Amazon.EndUserMessaging.Model.ListTagsForResourceRequest)" />
+            <member name="T:Amazon.EndUserMessaging.Model.ListTagsForResourceRequest" />
+            <member name="T:Amazon.EndUserMessaging.Model.ListTagsForResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List tags on a resource"
+                    source=".\AWSSDKDocSamples\EndUserMessaging\EndUserMessaging.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EndUserMessaging.IAmazonEndUserMessaging.SendNotifyCodeVerification(Amazon.EndUserMessaging.Model.SendNotifyCodeVerificationRequest)" />
+            <member name="M:Amazon.EndUserMessaging.AmazonEndUserMessagingClient.SendNotifyCodeVerification(Amazon.EndUserMessaging.Model.SendNotifyCodeVerificationRequest)" />
+            <member name="T:Amazon.EndUserMessaging.Model.SendNotifyCodeVerificationRequest" />
+            <member name="T:Amazon.EndUserMessaging.Model.SendNotifyCodeVerificationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Send a one-time passcode over SMS"
+                    source=".\AWSSDKDocSamples\EndUserMessaging\EndUserMessaging.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EndUserMessaging.IAmazonEndUserMessaging.TagResource(Amazon.EndUserMessaging.Model.TagResourceRequest)" />
+            <member name="M:Amazon.EndUserMessaging.AmazonEndUserMessagingClient.TagResource(Amazon.EndUserMessaging.Model.TagResourceRequest)" />
+            <member name="T:Amazon.EndUserMessaging.Model.TagResourceRequest" />
+            <member name="T:Amazon.EndUserMessaging.Model.TagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Tag a resource"
+                    source=".\AWSSDKDocSamples\EndUserMessaging\EndUserMessaging.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EndUserMessaging.IAmazonEndUserMessaging.UntagResource(Amazon.EndUserMessaging.Model.UntagResourceRequest)" />
+            <member name="M:Amazon.EndUserMessaging.AmazonEndUserMessagingClient.UntagResource(Amazon.EndUserMessaging.Model.UntagResourceRequest)" />
+            <member name="T:Amazon.EndUserMessaging.Model.UntagResourceRequest" />
+            <member name="T:Amazon.EndUserMessaging.Model.UntagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Remove tags from a resource"
+                    source=".\AWSSDKDocSamples\EndUserMessaging\EndUserMessaging.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EndUserMessaging.IAmazonEndUserMessaging.UpdateBrandProfile(Amazon.EndUserMessaging.Model.UpdateBrandProfileRequest)" />
+            <member name="M:Amazon.EndUserMessaging.AmazonEndUserMessagingClient.UpdateBrandProfile(Amazon.EndUserMessaging.Model.UpdateBrandProfileRequest)" />
+            <member name="T:Amazon.EndUserMessaging.Model.UpdateBrandProfileRequest" />
+            <member name="T:Amazon.EndUserMessaging.Model.UpdateBrandProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update a brand profile name"
+                    source=".\AWSSDKDocSamples\EndUserMessaging\EndUserMessaging.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EndUserMessaging.IAmazonEndUserMessaging.UpdateBrandProfileAttribute(Amazon.EndUserMessaging.Model.UpdateBrandProfileAttributeRequest)" />
+            <member name="M:Amazon.EndUserMessaging.AmazonEndUserMessagingClient.UpdateBrandProfileAttribute(Amazon.EndUserMessaging.Model.UpdateBrandProfileAttributeRequest)" />
+            <member name="T:Amazon.EndUserMessaging.Model.UpdateBrandProfileAttributeRequest" />
+            <member name="T:Amazon.EndUserMessaging.Model.UpdateBrandProfileAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update a brand profile attribute value"
+                    source=".\AWSSDKDocSamples\EndUserMessaging\EndUserMessaging.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EndUserMessaging.IAmazonEndUserMessaging.UpdateBrandProfileFromRegistration(Amazon.EndUserMessaging.Model.UpdateBrandProfileFromRegistrationRequest)" />
+            <member name="M:Amazon.EndUserMessaging.AmazonEndUserMessagingClient.UpdateBrandProfileFromRegistration(Amazon.EndUserMessaging.Model.UpdateBrandProfileFromRegistrationRequest)" />
+            <member name="T:Amazon.EndUserMessaging.Model.UpdateBrandProfileFromRegistrationRequest" />
+            <member name="T:Amazon.EndUserMessaging.Model.UpdateBrandProfileFromRegistrationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update a brand profile from a registration"
+                    source=".\AWSSDKDocSamples\EndUserMessaging\EndUserMessaging.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EndUserMessaging.IAmazonEndUserMessaging.UpdateNotifyCodeConfiguration(Amazon.EndUserMessaging.Model.UpdateNotifyCodeConfigurationRequest)" />
+            <member name="M:Amazon.EndUserMessaging.AmazonEndUserMessagingClient.UpdateNotifyCodeConfiguration(Amazon.EndUserMessaging.Model.UpdateNotifyCodeConfigurationRequest)" />
+            <member name="T:Amazon.EndUserMessaging.Model.UpdateNotifyCodeConfigurationRequest" />
+            <member name="T:Amazon.EndUserMessaging.Model.UpdateNotifyCodeConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update a notify code configuration"
+                    source=".\AWSSDKDocSamples\EndUserMessaging\EndUserMessaging.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EndUserMessaging.IAmazonEndUserMessaging.UpdateRegistrationsFromBrandProfile(Amazon.EndUserMessaging.Model.UpdateRegistrationsFromBrandProfileRequest)" />
+            <member name="M:Amazon.EndUserMessaging.AmazonEndUserMessagingClient.UpdateRegistrationsFromBrandProfile(Amazon.EndUserMessaging.Model.UpdateRegistrationsFromBrandProfileRequest)" />
+            <member name="T:Amazon.EndUserMessaging.Model.UpdateRegistrationsFromBrandProfileRequest" />
+            <member name="T:Amazon.EndUserMessaging.Model.UpdateRegistrationsFromBrandProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update registrations from a brand profile"
+                    source=".\AWSSDKDocSamples\EndUserMessaging\EndUserMessaging.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EndUserMessaging.IAmazonEndUserMessaging.ValidateNotifyCodeVerification(Amazon.EndUserMessaging.Model.ValidateNotifyCodeVerificationRequest)" />
+            <member name="M:Amazon.EndUserMessaging.AmazonEndUserMessagingClient.ValidateNotifyCodeVerification(Amazon.EndUserMessaging.Model.ValidateNotifyCodeVerificationRequest)" />
+            <member name="T:Amazon.EndUserMessaging.Model.ValidateNotifyCodeVerificationRequest" />
+            <member name="T:Amazon.EndUserMessaging.Model.ValidateNotifyCodeVerificationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Validate a submitted one-time passcode"
+                    source=".\AWSSDKDocSamples\EndUserMessaging\EndUserMessaging.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>

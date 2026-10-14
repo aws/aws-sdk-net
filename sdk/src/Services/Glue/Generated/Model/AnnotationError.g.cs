@@ -1,0 +1,79 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Glue.Model
+{
+    /// <summary>
+    /// A failed annotation.
+    /// </summary>
+    public partial class AnnotationError
+    {
+        /// <summary>
+        /// Gets and sets the property FailureReason. 
+        /// <para>
+        /// The reason why the annotation failed.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 2048)]
+        public string FailureReason { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FailureReason property is set.
+        /// </summary>
+        internal bool IsSetFailureReason() => this.FailureReason != null;
+
+        /// <summary>
+        /// Gets and sets the property ProfileId. 
+        /// <para>
+        /// The Profile ID for the failed annotation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 255)]
+        public string ProfileId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ProfileId property is set.
+        /// </summary>
+        internal bool IsSetProfileId() => this.ProfileId != null;
+
+        /// <summary>
+        /// Gets and sets the property StatisticId. 
+        /// <para>
+        /// The Statistic ID for the failed annotation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 255)]
+        public string StatisticId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StatisticId property is set.
+        /// </summary>
+        internal bool IsSetStatisticId() => this.StatisticId != null;
+    }
+}

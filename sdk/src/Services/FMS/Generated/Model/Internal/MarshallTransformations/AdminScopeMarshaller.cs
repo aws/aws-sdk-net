@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AdminScope Marshaller
     /// </summary>
-    public class AdminScopeMarshaller : IRequestMarshaller<AdminScope, JsonMarshallerContext> 
+    public class AdminScopeMarshaller : IRequestMarshaller<AdminScope, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,54 +45,51 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AdminScope requestObject, JsonMarshallerContext context)
+        public void Marshall(AdminScope requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAccountScope())
+
+            if (requestObject.IsSetAccountScope())
             {
-                context.Writer.WritePropertyName("AccountScope");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("AccountScope");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = AccountScopeMarshaller.Instance;
                 marshaller.Marshall(requestObject.AccountScope, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetOrganizationalUnitScope())
+            if (requestObject.IsSetOrganizationalUnitScope())
             {
-                context.Writer.WritePropertyName("OrganizationalUnitScope");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("OrganizationalUnitScope");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = OrganizationalUnitScopeMarshaller.Instance;
                 marshaller.Marshall(requestObject.OrganizationalUnitScope, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetPolicyTypeScope())
+            if (requestObject.IsSetPolicyTypeScope())
             {
-                context.Writer.WritePropertyName("PolicyTypeScope");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("PolicyTypeScope");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = PolicyTypeScopeMarshaller.Instance;
                 marshaller.Marshall(requestObject.PolicyTypeScope, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetRegionScope())
+            if (requestObject.IsSetRegionScope())
             {
-                context.Writer.WritePropertyName("RegionScope");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("RegionScope");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = RegionScopeMarshaller.Instance;
                 marshaller.Marshall(requestObject.RegionScope, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
         }
 
         /// <summary>

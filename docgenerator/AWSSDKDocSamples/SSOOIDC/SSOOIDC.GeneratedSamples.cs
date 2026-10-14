@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.SSOOIDC.Generated
     {
         public void SSOOIDCCreateToken()
         {
-            #region create-token-for-device-code
+            #region CreateToken-1
 
             var client = new AmazonSSOOIDCClient();
-            var response = client.CreateToken(new CreateTokenRequest 
+            var response = client.CreateToken(new CreateTokenRequest
             {
                 ClientId = "_yzkThXVzLWVhc3QtMQEXAMPLECLIENTID",
                 ClientSecret = "VERYLONGSECRETeyJraWQiOiJrZXktMTU2NDAyODA5OSIsImFsZyI6IkhTMzg0In0",
@@ -25,7 +26,7 @@ namespace AWSSDKDocSamples.Amazon.SSOOIDC.Generated
             });
 
             string accessToken = response.AccessToken;
-            int expiresIn = response.ExpiresIn;
+            int? expiresIn = response.ExpiresIn;
             string refreshToken = response.RefreshToken;
             string tokenType = response.TokenType;
 
@@ -34,10 +35,10 @@ namespace AWSSDKDocSamples.Amazon.SSOOIDC.Generated
 
         public void SSOOIDCCreateToken()
         {
-            #region create-token-for-refresh-token
+            #region CreateToken-2
 
             var client = new AmazonSSOOIDCClient();
-            var response = client.CreateToken(new CreateTokenRequest 
+            var response = client.CreateToken(new CreateTokenRequest
             {
                 ClientId = "_yzkThXVzLWVhc3QtMQEXAMPLECLIENTID",
                 ClientSecret = "VERYLONGSECRETeyJraWQiOiJrZXktMTU2NDAyODA5OSIsImFsZyI6IkhTMzg0In0",
@@ -49,7 +50,7 @@ namespace AWSSDKDocSamples.Amazon.SSOOIDC.Generated
             });
 
             string accessToken = response.AccessToken;
-            int expiresIn = response.ExpiresIn;
+            int? expiresIn = response.ExpiresIn;
             string refreshToken = response.RefreshToken;
             string tokenType = response.TokenType;
 
@@ -58,10 +59,10 @@ namespace AWSSDKDocSamples.Amazon.SSOOIDC.Generated
 
         public void SSOOIDCCreateTokenWithIAM()
         {
-            #region create-token-with-iam-for-auth-code
+            #region CreateTokenWithIAM-1
 
             var client = new AmazonSSOOIDCClient();
-            var response = client.CreateTokenWithIAM(new CreateTokenWithIAMRequest 
+            var response = client.CreateTokenWithIAM(new CreateTokenWithIAMRequest
             {
                 ClientId = "arn:aws:sso::123456789012:application/ssoins-111111111111/apl-222222222222",
                 Code = "yJraWQiOiJrZXktMTU2Njk2ODA4OCIsImFsZyI6IkhTMzg0In0EXAMPLEAUTHCODE",
@@ -76,7 +77,7 @@ namespace AWSSDKDocSamples.Amazon.SSOOIDC.Generated
 
             string accessToken = response.AccessToken;
             AwsAdditionalDetails awsAdditionalDetails = response.AwsAdditionalDetails;
-            int expiresIn = response.ExpiresIn;
+            int? expiresIn = response.ExpiresIn;
             string idToken = response.IdToken;
             string issuedTokenType = response.IssuedTokenType;
             string refreshToken = response.RefreshToken;
@@ -88,32 +89,10 @@ namespace AWSSDKDocSamples.Amazon.SSOOIDC.Generated
 
         public void SSOOIDCCreateTokenWithIAM()
         {
-            #region create-token-with-iam-for-refresh-token
+            #region CreateTokenWithIAM-2
 
             var client = new AmazonSSOOIDCClient();
-            var response = client.CreateTokenWithIAM(new CreateTokenWithIAMRequest 
-            {
-                ClientId = "arn:aws:sso::123456789012:application/ssoins-111111111111/apl-222222222222",
-                GrantType = "refresh_token",
-                RefreshToken = "aorvJYubGpU6i91YnH7Mfo-AT2fIVa1zCfA_Rvq9yjVKIP3onFmmykuQ7E93y2I-9Nyj-A_sVvMufaLNL0bqnDRtgAkc0:MGUCMFrRsktMRVlWaOR70XGMFGLL0SlcCw4DiYveIiOVx1uK9BbD0gvAddsW3UTLozXKMgIxAJ3qxUvjpnlLIOaaKOoa/FuNgqJVvr9GMwDtnAtlh9iZzAkEXAMPLEREFRESHTOKEN"
-            });
-
-            string accessToken = response.AccessToken;
-            int expiresIn = response.ExpiresIn;
-            string issuedTokenType = response.IssuedTokenType;
-            string refreshToken = response.RefreshToken;
-            List<string> scope = response.Scope;
-            string tokenType = response.TokenType;
-
-            #endregion
-        }
-
-        public void SSOOIDCCreateTokenWithIAM()
-        {
-            #region create-token-with-iam-for-jwt-bearer
-
-            var client = new AmazonSSOOIDCClient();
-            var response = client.CreateTokenWithIAM(new CreateTokenWithIAMRequest 
+            var response = client.CreateTokenWithIAM(new CreateTokenWithIAMRequest
             {
                 Assertion = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjFMVE16YWtpaGlSbGFfOHoyQkVKVlhlV01xbyJ9.eyJ2ZXIiOiIyLjAiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vOTEyMjA0MGQtNmM2Ny00YzViLWIxMTItMzZhMzA0YjY2ZGFkL3YyLjAiLCJzdWIiOiJBQUFBQUFBQUFBQUFBQUFBQUFBQUFJa3pxRlZyU2FTYUZIeTc4MmJidGFRIiwiYXVkIjoiNmNiMDQwMTgtYTNmNS00NmE3LWI5OTUtOTQwYzc4ZjVhZWYzIiwiZXhwIjoxNTM2MzYxNDExLCJpYXQiOjE1MzYyNzQ3MTEsIm5iZiI6MTUzNjI3NDcxMSwibmFtZSI6IkFiZSBMaW5jb2xuIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiQWJlTGlAbWljcm9zb2Z0LmNvbSIsIm9pZCI6IjAwMDAwMDAwLTAwMDAtMDAwMC02NmYzLTMzMzJlY2E3ZWE4MSIsInRpZCI6IjkxMjIwNDBkLTZjNjctNGM1Yi1iMTEyLTM2YTMwNGI2NmRhZCIsIm5vbmNlIjoiMTIzNTIzIiwiYWlvIjoiRGYyVVZYTDFpeCFsTUNXTVNPSkJjRmF0emNHZnZGR2hqS3Y4cTVnMHg3MzJkUjVNQjVCaXN2R1FPN1lXQnlqZDhpUURMcSFlR2JJRGFreXA1bW5PcmNkcUhlWVNubHRlcFFtUnA2QUlaOGpZIn0.1AFWW-Ck5nROwSlltm7GzZvDwUkqvhSQpm55TQsmVo9Y59cLhRXpvB8n-55HCr9Z6G_31_UbeUkoz612I2j_Sm9FFShSDDjoaLQr54CreGIJvjtmS3EkK9a7SJBbcpL1MpUtlfygow39tFjY7EVNW9plWUvRrTgVk7lYLprvfzw-CIqw3gHC-T7IK_m_xkr08INERBtaecwhTeN4chPC4W3jdmw_lIxzC48YoQ0dB1L9-ImX98Egypfrlbm0IBL5spFzL6JDZIRRJOu8vecJvj1mq-IUhGt0MacxX8jdxYLP-KUu2d9MbNKpCKJuZ7p8gwTL5B7NlUdh_dmSviPWrw",
                 ClientId = "arn:aws:sso::123456789012:application/ssoins-111111111111/apl-222222222222",
@@ -122,7 +101,7 @@ namespace AWSSDKDocSamples.Amazon.SSOOIDC.Generated
 
             string accessToken = response.AccessToken;
             AwsAdditionalDetails awsAdditionalDetails = response.AwsAdditionalDetails;
-            int expiresIn = response.ExpiresIn;
+            int? expiresIn = response.ExpiresIn;
             string idToken = response.IdToken;
             string issuedTokenType = response.IssuedTokenType;
             string refreshToken = response.RefreshToken;
@@ -134,10 +113,32 @@ namespace AWSSDKDocSamples.Amazon.SSOOIDC.Generated
 
         public void SSOOIDCCreateTokenWithIAM()
         {
-            #region create-token-with-iam-for-token-exchange
+            #region CreateTokenWithIAM-3
 
             var client = new AmazonSSOOIDCClient();
-            var response = client.CreateTokenWithIAM(new CreateTokenWithIAMRequest 
+            var response = client.CreateTokenWithIAM(new CreateTokenWithIAMRequest
+            {
+                ClientId = "arn:aws:sso::123456789012:application/ssoins-111111111111/apl-222222222222",
+                GrantType = "refresh_token",
+                RefreshToken = "aorvJYubGpU6i91YnH7Mfo-AT2fIVa1zCfA_Rvq9yjVKIP3onFmmykuQ7E93y2I-9Nyj-A_sVvMufaLNL0bqnDRtgAkc0:MGUCMFrRsktMRVlWaOR70XGMFGLL0SlcCw4DiYveIiOVx1uK9BbD0gvAddsW3UTLozXKMgIxAJ3qxUvjpnlLIOaaKOoa/FuNgqJVvr9GMwDtnAtlh9iZzAkEXAMPLEREFRESHTOKEN"
+            });
+
+            string accessToken = response.AccessToken;
+            int? expiresIn = response.ExpiresIn;
+            string issuedTokenType = response.IssuedTokenType;
+            string refreshToken = response.RefreshToken;
+            List<string> scope = response.Scope;
+            string tokenType = response.TokenType;
+
+            #endregion
+        }
+
+        public void SSOOIDCCreateTokenWithIAM()
+        {
+            #region CreateTokenWithIAM-4
+
+            var client = new AmazonSSOOIDCClient();
+            var response = client.CreateTokenWithIAM(new CreateTokenWithIAMRequest
             {
                 ClientId = "arn:aws:sso::123456789012:application/ssoins-111111111111/apl-222222222222",
                 GrantType = "urn:ietf:params:oauth:grant-type:token-exchange",
@@ -148,7 +149,7 @@ namespace AWSSDKDocSamples.Amazon.SSOOIDC.Generated
 
             string accessToken = response.AccessToken;
             AwsAdditionalDetails awsAdditionalDetails = response.AwsAdditionalDetails;
-            int expiresIn = response.ExpiresIn;
+            int? expiresIn = response.ExpiresIn;
             string idToken = response.IdToken;
             string issuedTokenType = response.IssuedTokenType;
             List<string> scope = response.Scope;
@@ -159,10 +160,10 @@ namespace AWSSDKDocSamples.Amazon.SSOOIDC.Generated
 
         public void SSOOIDCRegisterClient()
         {
-            #region register-client
+            #region RegisterClient-1
 
             var client = new AmazonSSOOIDCClient();
-            var response = client.RegisterClient(new RegisterClientRequest 
+            var response = client.RegisterClient(new RegisterClientRequest
             {
                 ClientName = "My IDE Plugin",
                 ClientType = "public",
@@ -182,19 +183,19 @@ namespace AWSSDKDocSamples.Amazon.SSOOIDC.Generated
             });
 
             string clientId = response.ClientId;
-            long clientIdIssuedAt = response.ClientIdIssuedAt;
+            long? clientIdIssuedAt = response.ClientIdIssuedAt;
             string clientSecret = response.ClientSecret;
-            long clientSecretExpiresAt = response.ClientSecretExpiresAt;
+            long? clientSecretExpiresAt = response.ClientSecretExpiresAt;
 
             #endregion
         }
 
         public void SSOOIDCStartDeviceAuthorization()
         {
-            #region start-device-authorization
+            #region StartDeviceAuthorization-1
 
             var client = new AmazonSSOOIDCClient();
-            var response = client.StartDeviceAuthorization(new StartDeviceAuthorizationRequest 
+            var response = client.StartDeviceAuthorization(new StartDeviceAuthorizationRequest
             {
                 ClientId = "_yzkThXVzLWVhc3QtMQEXAMPLECLIENTID",
                 ClientSecret = "VERYLONGSECRETeyJraWQiOiJrZXktMTU2NDAyODA5OSIsImFsZyI6IkhTMzg0In0",
@@ -202,8 +203,8 @@ namespace AWSSDKDocSamples.Amazon.SSOOIDC.Generated
             });
 
             string deviceCode = response.DeviceCode;
-            int expiresIn = response.ExpiresIn;
-            int interval = response.Interval;
+            int? expiresIn = response.ExpiresIn;
+            int? interval = response.Interval;
             string userCode = response.UserCode;
             string verificationUri = response.VerificationUri;
             string verificationUriComplete = response.VerificationUriComplete;
@@ -211,13 +212,10 @@ namespace AWSSDKDocSamples.Amazon.SSOOIDC.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

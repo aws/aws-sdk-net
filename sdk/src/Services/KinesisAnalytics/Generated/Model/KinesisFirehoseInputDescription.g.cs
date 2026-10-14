@@ -1,0 +1,66 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.KinesisAnalytics.Model
+{
+    /// <summary>
+    /// Describes the Amazon Kinesis Firehose delivery stream that is configured as the streaming
+    /// source in the application input configuration.
+    /// </summary>
+    public partial class KinesisFirehoseInputDescription
+    {
+        /// <summary>
+        /// Gets and sets the property ResourceARN. 
+        /// <para>
+        /// Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery stream.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2048)]
+        public string ResourceARN { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ResourceARN property is set.
+        /// </summary>
+        internal bool IsSetResourceARN() => this.ResourceARN != null;
+
+        /// <summary>
+        /// Gets and sets the property RoleARN. 
+        /// <para>
+        /// ARN of the IAM role that Amazon Kinesis Analytics assumes to access the stream.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2048)]
+        public string RoleARN { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RoleARN property is set.
+        /// </summary>
+        internal bool IsSetRoleARN() => this.RoleARN != null;
+    }
+}

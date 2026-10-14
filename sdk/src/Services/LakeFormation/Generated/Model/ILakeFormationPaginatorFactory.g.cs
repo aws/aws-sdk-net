@@ -81,6 +81,18 @@ namespace Amazon.LakeFormation.Model
         IListPermissionsPaginator ListPermissions(ListPermissionsRequest request);
 
         /// <summary>
+        /// Paginator for ListRLSPolicies operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListRLSPoliciesPaginator ListRLSPolicies(ListRLSPoliciesRequest request);
+
+        /// <summary>
+        /// Paginator for ListRLSPolicyAttachments operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListRLSPolicyAttachmentsPaginator ListRLSPolicyAttachments(ListRLSPolicyAttachmentsRequest request);
+
+        /// <summary>
         /// Paginator for ListResources operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.CognitoIdentityProvider.Generated
     {
         public void CognitoIdentityProviderAdminCreateUser()
         {
-            #region an-admincreateuser-request-for-for-a-test-user-named-john-1689980900481
+            #region AdminCreateUser-1
 
             var client = new AmazonCognitoIdentityProviderClient();
-            var response = client.AdminCreateUser(new AdminCreateUserRequest 
+            var response = client.AdminCreateUser(new AdminCreateUserRequest
             {
                 DesiredDeliveryMediums = new List<string> {
                     "SMS"
@@ -48,10 +49,10 @@ namespace AWSSDKDocSamples.Amazon.CognitoIdentityProvider.Generated
 
         public void CognitoIdentityProviderCreateUserPool()
         {
-            #region example-user-pool-with-email-and-username-sign-in-1689722835145
+            #region CreateUserPool-1
 
             var client = new AmazonCognitoIdentityProviderClient();
-            var response = client.CreateUserPool(new CreateUserPoolRequest 
+            var response = client.CreateUserPool(new CreateUserPoolRequest
             {
                 AccountRecoverySetting = new AccountRecoverySettingType { RecoveryMechanisms = new List<RecoveryOptionType> {
                     new RecoveryOptionType {
@@ -169,10 +170,10 @@ namespace AWSSDKDocSamples.Amazon.CognitoIdentityProvider.Generated
 
         public void CognitoIdentityProviderCreateUserPoolClient()
         {
-            #region example-user-pool-app-client-with-email-and-username-sign-in-1689885750745
+            #region CreateUserPoolClient-1
 
             var client = new AmazonCognitoIdentityProviderClient();
-            var response = client.CreateUserPoolClient(new CreateUserPoolClientRequest 
+            var response = client.CreateUserPoolClient(new CreateUserPoolClientRequest
             {
                 AccessTokenValidity = 6,
                 AllowedOAuthFlows = new List<string> {
@@ -236,10 +237,10 @@ namespace AWSSDKDocSamples.Amazon.CognitoIdentityProvider.Generated
 
         public void CognitoIdentityProviderCreateUserPoolReplica()
         {
-            #region example-create-a-replica-of-a-user-pool-in-a-new-region-1745281038615
+            #region CreateUserPoolReplica-1
 
             var client = new AmazonCognitoIdentityProviderClient();
-            var response = client.CreateUserPoolReplica(new CreateUserPoolReplicaRequest 
+            var response = client.CreateUserPoolReplica(new CreateUserPoolReplicaRequest
             {
                 RegionName = "ap-south-1",
                 UserPoolId = "us-east-1_abcd12345"
@@ -252,10 +253,10 @@ namespace AWSSDKDocSamples.Amazon.CognitoIdentityProvider.Generated
 
         public void CognitoIdentityProviderDeleteUserPoolReplica()
         {
-            #region example-delete-a-user-pool-replica-1745281451065
+            #region DeleteUserPoolReplica-1
 
             var client = new AmazonCognitoIdentityProviderClient();
-            var response = client.DeleteUserPoolReplica(new DeleteUserPoolReplicaRequest 
+            var response = client.DeleteUserPoolReplica(new DeleteUserPoolReplicaRequest
             {
                 RegionName = "us-east-2",
                 UserPoolId = "us-west-2_abcd12345"
@@ -268,10 +269,10 @@ namespace AWSSDKDocSamples.Amazon.CognitoIdentityProvider.Generated
 
         public void CognitoIdentityProviderGetClientToken()
         {
-            #region example-get-a-client-token-1782432000000
+            #region GetClientToken-1
 
             var client = new AmazonCognitoIdentityProviderClient();
-            var response = client.GetClientToken(new GetClientTokenRequest 
+            var response = client.GetClientToken(new GetClientTokenRequest
             {
                 ClientId = "1example23456789",
                 Scopes = new List<string> {
@@ -287,10 +288,10 @@ namespace AWSSDKDocSamples.Amazon.CognitoIdentityProvider.Generated
 
         public void CognitoIdentityProviderGetProvisionedLimit()
         {
-            #region example-get-a-provisioned-limit-1782432000000
+            #region GetProvisionedLimit-1
 
             var client = new AmazonCognitoIdentityProviderClient();
-            var response = client.GetProvisionedLimit(new GetProvisionedLimitRequest 
+            var response = client.GetProvisionedLimit(new GetProvisionedLimitRequest
             {
                 LimitDefinition = new LimitDefinitionType {
                     Attributes = new Dictionary<string, string> {
@@ -307,10 +308,10 @@ namespace AWSSDKDocSamples.Amazon.CognitoIdentityProvider.Generated
 
         public void CognitoIdentityProviderInitiateAuth()
         {
-            #region example-username-and-password-sign-in-for-a-user-who-has-totp-mfa-1689887395219
+            #region InitiateAuth-1
 
             var client = new AmazonCognitoIdentityProviderClient();
-            var response = client.InitiateAuth(new InitiateAuthRequest 
+            var response = client.InitiateAuth(new InitiateAuthRequest
             {
                 AnalyticsMetadata = new AnalyticsMetadataType { AnalyticsEndpointId = "d70b2ba36a8c4dc5a04a0451a31a1e12" },
                 AuthFlow = "USER_PASSWORD_AUTH",
@@ -329,7 +330,7 @@ namespace AWSSDKDocSamples.Amazon.CognitoIdentityProvider.Generated
                 }
             });
 
-            string challengeName = response.ChallengeName;
+            ChallengeNameType challengeName = response.ChallengeName;
             Dictionary<string, string> challengeParameters = response.ChallengeParameters;
             string session = response.Session;
 
@@ -338,10 +339,10 @@ namespace AWSSDKDocSamples.Amazon.CognitoIdentityProvider.Generated
 
         public void CognitoIdentityProviderListUserPoolReplicas()
         {
-            #region example-list-the-replicas-of-a-user-pool-1745281209294
+            #region ListUserPoolReplicas-1
 
             var client = new AmazonCognitoIdentityProviderClient();
-            var response = client.ListUserPoolReplicas(new ListUserPoolReplicasRequest 
+            var response = client.ListUserPoolReplicas(new ListUserPoolReplicasRequest
             {
                 UserPoolId = "eu-north-1_abcd12345"
             });
@@ -353,10 +354,10 @@ namespace AWSSDKDocSamples.Amazon.CognitoIdentityProvider.Generated
 
         public void CognitoIdentityProviderListUsers()
         {
-            #region a-listusers-request-for-the-next-3-users-whose-email-address-starts-with-testuser-1689977648246
+            #region ListUsers-1
 
             var client = new AmazonCognitoIdentityProviderClient();
-            var response = client.ListUsers(new ListUsersRequest 
+            var response = client.ListUsers(new ListUsersRequest
             {
                 AttributesToGet = new List<string> {
                     "email",
@@ -376,10 +377,10 @@ namespace AWSSDKDocSamples.Amazon.CognitoIdentityProvider.Generated
 
         public void CognitoIdentityProviderUpdateProvisionedLimit()
         {
-            #region example-update-a-provisioned-limit-1782432000000
+            #region UpdateProvisionedLimit-1
 
             var client = new AmazonCognitoIdentityProviderClient();
-            var response = client.UpdateProvisionedLimit(new UpdateProvisionedLimitRequest 
+            var response = client.UpdateProvisionedLimit(new UpdateProvisionedLimitRequest
             {
                 LimitDefinition = new LimitDefinitionType {
                     Attributes = new Dictionary<string, string> {
@@ -397,10 +398,10 @@ namespace AWSSDKDocSamples.Amazon.CognitoIdentityProvider.Generated
 
         public void CognitoIdentityProviderUpdateUserPoolReplica()
         {
-            #region example-update-a-user-pool-replica-1745281323439
+            #region UpdateUserPoolReplica-1
 
             var client = new AmazonCognitoIdentityProviderClient();
-            var response = client.UpdateUserPoolReplica(new UpdateUserPoolReplicaRequest 
+            var response = client.UpdateUserPoolReplica(new UpdateUserPoolReplicaRequest
             {
                 RegionName = "us-east-1",
                 Status = "ACTIVE",
@@ -412,13 +413,10 @@ namespace AWSSDKDocSamples.Amazon.CognitoIdentityProvider.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

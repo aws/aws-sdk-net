@@ -134,6 +134,14 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                             context.PopPathSegment();
                             break;
                         }
+                    case "Vcpu":
+                        {
+                            context.AddPathSegment("Vcpu");
+                            var unmarshaller = CborNullableDoubleUnmarshaller.Instance;
+                            unmarshalledObject.Vcpu = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
                     default:
                         reader.SkipValue();
                         break;

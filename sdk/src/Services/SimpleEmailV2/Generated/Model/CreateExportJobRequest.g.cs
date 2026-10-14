@@ -31,8 +31,14 @@ namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateExportJob operation. Creates an export job
-    /// for a data source and destination. <para> You can execute this operation no more than
-    /// once per second. </para>
+    /// for a data source and destination. <para> Export jobs run asynchronously. This operation
+    /// returns a <c>JobId</c>. Call <c>GetExportJob</c> with that ID until <c>JobStatus</c>
+    /// is <c>COMPLETED</c>, <c>FAILED</c>, or <c>CANCELLED</c>. When the status is <c>COMPLETED</c>,
+    /// download the export file from the pre-signed URL in <c>ExportDestination.S3Url</c>.
+    /// When the status is <c>FAILED</c>, see <c>FailureInfo</c>. To store a copy in your
+    /// own bucket, upload the downloaded file to your bucket. Do not include <c>S3Url</c>
+    /// in the request. </para> <para> You can execute this operation no more than once per
+    /// second. </para>
     /// </summary>
     public partial class CreateExportJobRequest : AmazonSimpleEmailServiceV2Request
     {
@@ -53,7 +59,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property ExportDestination. 
         /// <para>
-        /// The destination for the export job.
+        /// The destination for the export job. Specify only <c>DataFormat</c>. Do not include
+        /// <c>S3Url</c> in this request. SES writes the export file to a location that it manages
+        /// and returns the download URL in <c>GetExportJob</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

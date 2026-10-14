@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NetworkAclIcmpTypeCode Marshaller
     /// </summary>
-    public class NetworkAclIcmpTypeCodeMarshaller : IRequestMarshaller<NetworkAclIcmpTypeCode, JsonMarshallerContext> 
+    public class NetworkAclIcmpTypeCodeMarshaller : IRequestMarshaller<NetworkAclIcmpTypeCode, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(NetworkAclIcmpTypeCode requestObject, JsonMarshallerContext context)
+        public void Marshall(NetworkAclIcmpTypeCode requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetCode())
-            {
-                context.Writer.WritePropertyName("Code");
-                context.Writer.WriteNumberValue(requestObject.Code.Value);
-            }
 
-            if(requestObject.IsSetType())
+            if (requestObject.IsSetCode())
             {
-                context.Writer.WritePropertyName("Type");
-                context.Writer.WriteNumberValue(requestObject.Type.Value);
+                context.Writer.WriteTextString("Code");
+                context.Writer.WriteInt32(requestObject.Code.Value);
             }
-
+            if (requestObject.IsSetType())
+            {
+                context.Writer.WriteTextString("Type");
+                context.Writer.WriteInt32(requestObject.Type.Value);
+            }
         }
 
         /// <summary>

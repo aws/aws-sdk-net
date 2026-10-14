@@ -144,6 +144,13 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("linkedIssue", targetDepth, ref reader))
+                {
+                    var unmarshaller = LinkedIssueUnmarshaller.Instance;
+                    unmarshalledObject.LinkedIssue = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -176,6 +183,13 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Reasoning = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("remediationCode", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RemediationCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 

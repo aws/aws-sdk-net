@@ -34,7 +34,16 @@
             "SimpleArn": { "type": "string", "required": false },
             "TableKeys": { "type": "stringArray", "required": false },
             "InnerNames": { "type": "stringArray", "required": false },
-            "FlatNames": { "type": "stringArray", "required": false }
+            "FlatNames": { "type": "stringArray", "required": false },
+            "ForcePathStyle": { "type": "boolean", "builtIn": "AWS::S3::ForcePathStyle", "required": false },
+            "Accelerate": { "type": "boolean", "builtIn": "AWS::S3::Accelerate", "required": false },
+            "UseArnRegion": { "type": "boolean", "builtIn": "AWS::S3::UseArnRegion", "required": false },
+            "UseControlArnRegion": { "type": "boolean", "builtIn": "AWS::S3Control::UseArnRegion", "required": false },
+            "DisableMultiRegionAccessPoints": { "type": "boolean", "builtIn": "AWS::S3::DisableMultiRegionAccessPoints", "required": false },
+            "UseS3GlobalEndpoint": { "type": "boolean", "builtIn": "AWS::S3::UseGlobalEndpoint", "required": false },
+            "UseGlobalEndpoint": { "type": "boolean", "builtIn": "AWS::STS::UseGlobalEndpoint", "required": false },
+            "AccountId": { "type": "string", "builtIn": "AWS::Auth::AccountId", "required": false },
+            "AccountIdEndpointMode": { "type": "string", "builtIn": "AWS::Auth::AccountIdEndpointMode", "required": false }
           },
           "rules": [
             {

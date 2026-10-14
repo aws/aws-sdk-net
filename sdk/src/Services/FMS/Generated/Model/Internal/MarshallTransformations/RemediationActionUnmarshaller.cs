@@ -29,112 +29,149 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RemediationAction Object
     /// </summary>  
-    public class RemediationActionUnmarshaller : IJsonUnmarshaller<RemediationAction, JsonUnmarshallerContext>
+    public class RemediationActionUnmarshaller : ICborUnmarshaller<RemediationAction, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RemediationAction Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RemediationAction Unmarshall(CborUnmarshallerContext context)
         {
             RemediationAction unmarshalledObject = new RemediationAction();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("CreateNetworkAclAction", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = CreateNetworkAclActionUnmarshaller.Instance;
-                    unmarshalledObject.CreateNetworkAclAction = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("CreateNetworkAclEntriesAction", targetDepth, ref reader))
-                {
-                    var unmarshaller = CreateNetworkAclEntriesActionUnmarshaller.Instance;
-                    unmarshalledObject.CreateNetworkAclEntriesAction = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("DeleteNetworkAclEntriesAction", targetDepth, ref reader))
-                {
-                    var unmarshaller = DeleteNetworkAclEntriesActionUnmarshaller.Instance;
-                    unmarshalledObject.DeleteNetworkAclEntriesAction = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Description", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("EC2AssociateRouteTableAction", targetDepth, ref reader))
-                {
-                    var unmarshaller = EC2AssociateRouteTableActionUnmarshaller.Instance;
-                    unmarshalledObject.EC2AssociateRouteTableAction = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("EC2CopyRouteTableAction", targetDepth, ref reader))
-                {
-                    var unmarshaller = EC2CopyRouteTableActionUnmarshaller.Instance;
-                    unmarshalledObject.EC2CopyRouteTableAction = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("EC2CreateRouteAction", targetDepth, ref reader))
-                {
-                    var unmarshaller = EC2CreateRouteActionUnmarshaller.Instance;
-                    unmarshalledObject.EC2CreateRouteAction = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("EC2CreateRouteTableAction", targetDepth, ref reader))
-                {
-                    var unmarshaller = EC2CreateRouteTableActionUnmarshaller.Instance;
-                    unmarshalledObject.EC2CreateRouteTableAction = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("EC2DeleteRouteAction", targetDepth, ref reader))
-                {
-                    var unmarshaller = EC2DeleteRouteActionUnmarshaller.Instance;
-                    unmarshalledObject.EC2DeleteRouteAction = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("EC2ReplaceRouteAction", targetDepth, ref reader))
-                {
-                    var unmarshaller = EC2ReplaceRouteActionUnmarshaller.Instance;
-                    unmarshalledObject.EC2ReplaceRouteAction = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("EC2ReplaceRouteTableAssociationAction", targetDepth, ref reader))
-                {
-                    var unmarshaller = EC2ReplaceRouteTableAssociationActionUnmarshaller.Instance;
-                    unmarshalledObject.EC2ReplaceRouteTableAssociationAction = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("FMSPolicyUpdateFirewallCreationConfigAction", targetDepth, ref reader))
-                {
-                    var unmarshaller = FMSPolicyUpdateFirewallCreationConfigActionUnmarshaller.Instance;
-                    unmarshalledObject.FMSPolicyUpdateFirewallCreationConfigAction = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ReplaceNetworkAclAssociationAction", targetDepth, ref reader))
-                {
-                    var unmarshaller = ReplaceNetworkAclAssociationActionUnmarshaller.Instance;
-                    unmarshalledObject.ReplaceNetworkAclAssociationAction = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "CreateNetworkAclAction":
+                        {
+                            context.AddPathSegment("CreateNetworkAclAction");
+                            var unmarshaller = CreateNetworkAclActionUnmarshaller.Instance;
+                            unmarshalledObject.CreateNetworkAclAction = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "CreateNetworkAclEntriesAction":
+                        {
+                            context.AddPathSegment("CreateNetworkAclEntriesAction");
+                            var unmarshaller = CreateNetworkAclEntriesActionUnmarshaller.Instance;
+                            unmarshalledObject.CreateNetworkAclEntriesAction = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "DeleteNetworkAclEntriesAction":
+                        {
+                            context.AddPathSegment("DeleteNetworkAclEntriesAction");
+                            var unmarshaller = DeleteNetworkAclEntriesActionUnmarshaller.Instance;
+                            unmarshalledObject.DeleteNetworkAclEntriesAction = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Description":
+                        {
+                            context.AddPathSegment("Description");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "EC2AssociateRouteTableAction":
+                        {
+                            context.AddPathSegment("EC2AssociateRouteTableAction");
+                            var unmarshaller = EC2AssociateRouteTableActionUnmarshaller.Instance;
+                            unmarshalledObject.EC2AssociateRouteTableAction = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "EC2CopyRouteTableAction":
+                        {
+                            context.AddPathSegment("EC2CopyRouteTableAction");
+                            var unmarshaller = EC2CopyRouteTableActionUnmarshaller.Instance;
+                            unmarshalledObject.EC2CopyRouteTableAction = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "EC2CreateRouteAction":
+                        {
+                            context.AddPathSegment("EC2CreateRouteAction");
+                            var unmarshaller = EC2CreateRouteActionUnmarshaller.Instance;
+                            unmarshalledObject.EC2CreateRouteAction = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "EC2CreateRouteTableAction":
+                        {
+                            context.AddPathSegment("EC2CreateRouteTableAction");
+                            var unmarshaller = EC2CreateRouteTableActionUnmarshaller.Instance;
+                            unmarshalledObject.EC2CreateRouteTableAction = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "EC2DeleteRouteAction":
+                        {
+                            context.AddPathSegment("EC2DeleteRouteAction");
+                            var unmarshaller = EC2DeleteRouteActionUnmarshaller.Instance;
+                            unmarshalledObject.EC2DeleteRouteAction = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "EC2ReplaceRouteAction":
+                        {
+                            context.AddPathSegment("EC2ReplaceRouteAction");
+                            var unmarshaller = EC2ReplaceRouteActionUnmarshaller.Instance;
+                            unmarshalledObject.EC2ReplaceRouteAction = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "EC2ReplaceRouteTableAssociationAction":
+                        {
+                            context.AddPathSegment("EC2ReplaceRouteTableAssociationAction");
+                            var unmarshaller = EC2ReplaceRouteTableAssociationActionUnmarshaller.Instance;
+                            unmarshalledObject.EC2ReplaceRouteTableAssociationAction = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "FMSPolicyUpdateFirewallCreationConfigAction":
+                        {
+                            context.AddPathSegment("FMSPolicyUpdateFirewallCreationConfigAction");
+                            var unmarshaller = FMSPolicyUpdateFirewallCreationConfigActionUnmarshaller.Instance;
+                            unmarshalledObject.FMSPolicyUpdateFirewallCreationConfigAction = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ReplaceNetworkAclAssociationAction":
+                        {
+                            context.AddPathSegment("ReplaceNetworkAclAssociationAction");
+                            var unmarshaller = ReplaceNetworkAclAssociationActionUnmarshaller.Instance;
+                            unmarshalledObject.ReplaceNetworkAclAssociationAction = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

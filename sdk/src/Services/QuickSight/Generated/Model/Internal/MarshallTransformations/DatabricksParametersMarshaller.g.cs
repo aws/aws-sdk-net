@@ -45,10 +45,27 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetAuthenticationType())
+            {
+                context.Writer.WritePropertyName("AuthenticationType");
+                context.Writer.WriteStringValue(requestObject.AuthenticationType);
+            }
+
             if (requestObject.IsSetHost())
             {
                 context.Writer.WritePropertyName("Host");
                 context.Writer.WriteStringValue(requestObject.Host);
+            }
+
+            if (requestObject.IsSetOAuthParameters())
+            {
+                context.Writer.WritePropertyName("OAuthParameters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OAuthParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.OAuthParameters, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if (requestObject.IsSetPort())

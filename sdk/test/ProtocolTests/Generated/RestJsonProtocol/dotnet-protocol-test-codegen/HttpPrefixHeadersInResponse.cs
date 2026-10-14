@@ -34,6 +34,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.RestJson
 {
@@ -47,19 +48,27 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestJson")]
-        public void HttpPrefixHeadersResponseResponse()
+        public async Task HttpPrefixHeadersResponseResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["hello"] = "Hello";
-            webResponseData.Headers["x-foo"] = "Foo";
-            byte[] bytes = Encoding.ASCII.GetBytes("");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonRestJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes(""),
+            };
+            mockResponse.Headers["hello"] = "Hello";
+            mockResponse.Headers["x-foo"] = "Foo";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new HttpPrefixHeadersInResponseResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.HttpPrefixHeadersInResponseAsync(new HttpPrefixHeadersInResponseRequest()).ConfigureAwait(false);
             var expectedResponse = new HttpPrefixHeadersInResponseResponse
             {
                 PrefixHeaders = new Dictionary<string, string>()
@@ -71,9 +80,8 @@ namespace AWSSDK.ProtocolTests.RestJson
             };
 
             // Assert
-            var actualResponse = (HttpPrefixHeadersInResponseResponse)unmarshalledResponse;
             Comparer.CompareObjects<HttpPrefixHeadersInResponseResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
     }

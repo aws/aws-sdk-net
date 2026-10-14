@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PurchaseOrder Marshaller
     /// </summary>
-    public class PurchaseOrderMarshaller : IRequestMarshaller<PurchaseOrder, JsonMarshallerContext> 
+    public class PurchaseOrderMarshaller : IRequestMarshaller<PurchaseOrder, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,34 +45,31 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(PurchaseOrder requestObject, JsonMarshallerContext context)
+        public void Marshall(PurchaseOrder requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAgreementId())
-            {
-                context.Writer.WritePropertyName("agreementId");
-                context.Writer.WriteStringValue(requestObject.AgreementId);
-            }
 
-            if(requestObject.IsSetChargeId())
+            if (requestObject.IsSetAgreementId())
             {
-                context.Writer.WritePropertyName("chargeId");
-                context.Writer.WriteStringValue(requestObject.ChargeId);
+                context.Writer.WriteTextString("agreementId");
+                context.Writer.WriteTextString(requestObject.AgreementId);
             }
-
-            if(requestObject.IsSetChargeRevision())
+            if (requestObject.IsSetChargeId())
             {
-                context.Writer.WritePropertyName("chargeRevision");
-                context.Writer.WriteNumberValue(requestObject.ChargeRevision.Value);
+                context.Writer.WriteTextString("chargeId");
+                context.Writer.WriteTextString(requestObject.ChargeId);
             }
-
-            if(requestObject.IsSetPurchaseOrderReference())
+            if (requestObject.IsSetChargeRevision())
             {
-                context.Writer.WritePropertyName("purchaseOrderReference");
-                context.Writer.WriteStringValue(requestObject.PurchaseOrderReference);
+                context.Writer.WriteTextString("chargeRevision");
+                context.Writer.WriteInt64(requestObject.ChargeRevision.Value);
             }
-
+            if (requestObject.IsSetPurchaseOrderReference())
+            {
+                context.Writer.WriteTextString("purchaseOrderReference");
+                context.Writer.WriteTextString(requestObject.PurchaseOrderReference);
+            }
         }
 
         /// <summary>

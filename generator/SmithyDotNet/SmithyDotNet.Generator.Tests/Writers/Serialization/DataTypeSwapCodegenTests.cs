@@ -172,6 +172,23 @@ public class DataTypeSwapCodegenTests
         Assert.Contains("RequestId", ex.Message);
     }
 
+    // Member hooks key a renamed structure by its modeled name.
+    [Fact]
+    public void RenamedStructure_HooksKeyedByModeledName_Apply()
+    {
+        var context = Context(new CustomizationsModel
+        {
+            ShapeSubstitutions = { ["Widget"] = new ShapeSubstitution { RenamedShapeName = "Gadget" } },
+            DataTypeSwaps = { ["Widget"] = new() { ["createdAt"] = IsoSwap } },
+            EmitIsSetProperties = { ["Widget"] = ["retries"] },
+        });
+
+        var structure = new StructureWriter(context, ModelFileName).Write(context.Structures[WidgetId], TestContext.Current.CancellationToken);
+        Assert.Contains("public partial class Gadget", structure);
+        Assert.Contains("public DateTime? CreatedAt { get; set; }", structure);
+        Assert.Contains("public bool IsRetriesSet", structure);
+    }
+
     private static GenerationContext Context(CustomizationsModel customizations)
     {
         var model = TestModels.Load("Codegen/datatypeswap-model.json");

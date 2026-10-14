@@ -13,31 +13,23 @@
  * permissions and limitations under the License.
  */
 
-using System.Text;
 using Amazon.JsonRpc10DataPlane.Model;
 using Amazon.JsonRpc10DataPlane.Model.Internal.MarshallTransformations;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal.Transform;
 using BenchmarkDotNet.Attributes;
-using AV = Amazon.JsonRpc10DataPlane.Model.AttributeValue;
+using Fixtures = AWSSDK.Benchmarks.Serde.ModelFixtures.AwsJson10;
 
 namespace AWSSDK.Benchmarks.Serde;
 
 /// <summary>
 /// BenchmarkDotNet benchmarks for AWS JSON 1.0 protocol serialization/deserialization.
-/// 22 test cases covering Healthcheck, GetItem, PutItem with various payload sizes.
+/// 22 test cases covering Healthcheck, GetItem, PutItem, with payloads from the shared benchmark models.
 /// </summary>
 [MemoryDiagnoser]
 [Config(typeof(SerdeBenchmarkConfig))]
 public class AwsJson10Benchmarks
 {
-    static AV S(string val) => new AV { S = val };
-    static AV N(double val) => new AV { N = val.ToString() };
-    static AV BOOL(bool val) => new AV { BOOL = val };
-    static AV L(List<AV> val) => new AV { L = val };
-    static AV M(Dictionary<string, AV> val) => new AV { M = val };
-    static AV B(MemoryStream val) => new AV { B = val };
-
     private HealthcheckRequest _healthcheckRequest = null!;
     private byte[] _healthcheckResponseBytes = null!;
     private GetItemRequest _getItemBaseline = null!;
@@ -68,44 +60,31 @@ public class AwsJson10Benchmarks
     [GlobalSetup]
     public void Setup()
     {
-        _healthcheckRequest = new HealthcheckRequest();
-        _healthcheckResponseBytes = Encoding.UTF8.GetBytes("{\"ok\":\"OK\"}");
-        _getItemBaseline = new GetItemRequest { TableName = "TestTable", Key = TestDataHelpers.CreateBaselineItem<AV>(S) };
-        _getItemOutputBaselineBytes = Encoding.UTF8.GetBytes("{}");
-        _getItemOutputSBytes = Encoding.UTF8.GetBytes(BuildGetItemJson(5));
-        _getItemOutputMBytes = Encoding.UTF8.GetBytes(BuildGetItemJson(20));
-        _getItemOutputLBytes = Encoding.UTF8.GetBytes(BuildGetItemJson(50));
-        _getItemOutputBinarySBytes = Encoding.UTF8.GetBytes(BuildBinaryGetItemJson(TestDataHelpers.SmallBinarySize));
-        _getItemOutputBinaryMBytes = Encoding.UTF8.GetBytes(BuildBinaryGetItemJson(TestDataHelpers.MediumBinarySize));
-        _getItemOutputBinaryLBytes = Encoding.UTF8.GetBytes(BuildBinaryGetItemJson(TestDataHelpers.LargeBinarySize));
-        _putItemBaseline = new PutItemRequest { TableName = "TestTable", Item = TestDataHelpers.CreateBaselineItem<AV>(S) };
-        _putItemBinaryS = new PutItemRequest { TableName = "TestTable", Item = TestDataHelpers.CreateBinaryItem<AV>(S, B, TestDataHelpers.SmallBinarySize) };
-        _putItemBinaryM = new PutItemRequest { TableName = "TestTable", Item = TestDataHelpers.CreateBinaryItem<AV>(S, B, TestDataHelpers.MediumBinarySize) };
-        _putItemBinaryL = new PutItemRequest { TableName = "TestTable", Item = TestDataHelpers.CreateBinaryItem<AV>(S, B, TestDataHelpers.LargeBinarySize) };
-        _putItemMixedS = new PutItemRequest { TableName = "TestTable", Item = TestDataHelpers.CreateSmallItem<AV>(S, N, BOOL) };
-        _putItemMixedM = new PutItemRequest { TableName = "TestTable", Item = TestDataHelpers.CreateMediumItem<AV>(S, N, BOOL, L, M) };
-        _putItemMixedL = new PutItemRequest { TableName = "TestTable", Item = TestDataHelpers.CreateLargeItem<AV>(S, N, BOOL, L, M) };
-        _putItemNestedM = new PutItemRequest { TableName = "TestTable", Item = TestDataHelpers.CreateNestedItem<AV>(S, M, TestDataHelpers.MediumNestingDepth) };
-        _putItemNestedL = new PutItemRequest { TableName = "TestTable", Item = TestDataHelpers.CreateNestedItem<AV>(S, M, TestDataHelpers.LargeNestingDepth) };
-        _putItemShallowS = new PutItemRequest { TableName = "TestTable", Item = TestDataHelpers.CreateShallowMapItem<AV>(S, TestDataHelpers.SmallShallowMapKeys) };
-        _putItemShallowM = new PutItemRequest { TableName = "TestTable", Item = TestDataHelpers.CreateShallowMapItem<AV>(S, TestDataHelpers.MediumShallowMapKeys) };
-        _putItemShallowL = new PutItemRequest { TableName = "TestTable", Item = TestDataHelpers.CreateShallowMapItem<AV>(S, TestDataHelpers.LargeShallowMapKeys) };
+        _healthcheckRequest = Fixtures.HealthcheckRequest_Example();
+        _healthcheckResponseBytes = Fixtures.HealthcheckResponse_Example;
+        _getItemBaseline = Fixtures.GetItemInput_Baseline();
+        _getItemOutputBaselineBytes = Fixtures.GetItemOutput_Baseline;
+        _getItemOutputSBytes = Fixtures.GetItemOutput_S;
+        _getItemOutputMBytes = Fixtures.GetItemOutput_M;
+        _getItemOutputLBytes = Fixtures.GetItemOutput_L;
+        _getItemOutputBinarySBytes = Fixtures.GetItemOutputBinary_S;
+        _getItemOutputBinaryMBytes = Fixtures.GetItemOutputBinary_M;
+        _getItemOutputBinaryLBytes = Fixtures.GetItemOutputBinary_L;
+        _putItemBaseline = Fixtures.PutItemRequest_Baseline();
+        _putItemBinaryS = Fixtures.PutItemRequest_BinaryData_S();
+        _putItemBinaryM = Fixtures.PutItemRequest_BinaryData_M();
+        _putItemBinaryL = Fixtures.PutItemRequest_BinaryData_L();
+        _putItemMixedS = Fixtures.PutItemRequest_MixedItem_S();
+        _putItemMixedM = Fixtures.PutItemRequest_MixedItem_M();
+        _putItemMixedL = Fixtures.PutItemRequest_MixedItem_L();
+        _putItemNestedM = Fixtures.PutItemRequest_Nested_M();
+        _putItemNestedL = Fixtures.PutItemRequest_Nested_L();
+        _putItemShallowS = Fixtures.PutItemRequest_ShallowMap_S();
+        _putItemShallowM = Fixtures.PutItemRequest_ShallowMap_M();
+        _putItemShallowL = Fixtures.PutItemRequest_ShallowMap_L();
 
         _healthcheckUnmarshaller = GetUnmarshallerInstance(typeof(HealthcheckResponseUnmarshaller));
         _getItemUnmarshaller = GetUnmarshallerInstance(typeof(GetItemResponseUnmarshaller));
-    }
-
-    private static string BuildGetItemJson(int attrCount)
-    {
-        var sb = new StringBuilder("{\"Item\":{");
-        for (int i = 0; i < attrCount; i++) { if (i > 0) sb.Append(','); sb.Append($"\"attr_{i}\":{{\"S\":\"value-{i}-{new string('x', 20)}\"}}"); }
-        sb.Append("}}"); return sb.ToString();
-    }
-
-    private static string BuildBinaryGetItemJson(int binarySize)
-    {
-        var data = new byte[binarySize]; Random.Shared.NextBytes(data);
-        return $"{{\"Item\":{{\"pk\":{{\"S\":\"binary-item\"}},\"data\":{{\"B\":\"{Convert.ToBase64String(data)}\"}}}}}}";
     }
 
     private static IResponseUnmarshaller<AmazonWebServiceResponse, UnmarshallerContext> GetUnmarshallerInstance(Type unmarshallerType)

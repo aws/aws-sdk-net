@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+  <doc>
+    <members>
+      <member name="M:Amazon.CloudFrontKeyValueStore.IAmazonCloudFrontKeyValueStore.DeleteKey(Amazon.CloudFrontKeyValueStore.Model.DeleteKeyRequest)" />
+      <member name="M:Amazon.CloudFrontKeyValueStore.AmazonCloudFrontKeyValueStoreClient.DeleteKey(Amazon.CloudFrontKeyValueStore.Model.DeleteKeyRequest)" />
+      <member name="T:Amazon.CloudFrontKeyValueStore.Model.DeleteKeyRequest" />
+      <member name="T:Amazon.CloudFrontKeyValueStore.Model.DeleteKeyResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Delete 'key1' from the key value store with ARN 'arn:aws:cloudfront::123456789012:key-value-store/327284aa-bcd5-499f-a3ff-26b9a9d31b58'" source=".\AWSSDKDocSamples\CloudFrontKeyValueStore\CloudFrontKeyValueStore.GeneratedSamples.cs" region="DeleteKey-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.CloudFrontKeyValueStore.IAmazonCloudFrontKeyValueStore.DescribeKeyValueStore(Amazon.CloudFrontKeyValueStore.Model.DescribeKeyValueStoreRequest)" />
+      <member name="M:Amazon.CloudFrontKeyValueStore.AmazonCloudFrontKeyValueStoreClient.DescribeKeyValueStore(Amazon.CloudFrontKeyValueStore.Model.DescribeKeyValueStoreRequest)" />
+      <member name="T:Amazon.CloudFrontKeyValueStore.Model.DescribeKeyValueStoreRequest" />
+      <member name="T:Amazon.CloudFrontKeyValueStore.Model.DescribeKeyValueStoreResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Describe the key value store with ARN 'arn:aws:cloudfront::123456789012:key-value-store/327284aa-bcd5-499f-a3ff-26b9a9d31b58'" source=".\AWSSDKDocSamples\CloudFrontKeyValueStore\CloudFrontKeyValueStore.GeneratedSamples.cs" region="DescribeKeyValueStore-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.CloudFrontKeyValueStore.IAmazonCloudFrontKeyValueStore.DescribeKeyValueStore(Amazon.CloudFrontKeyValueStore.Model.DescribeKeyValueStoreRequest)" />
+      <member name="M:Amazon.CloudFrontKeyValueStore.AmazonCloudFrontKeyValueStoreClient.DescribeKeyValueStore(Amazon.CloudFrontKeyValueStore.Model.DescribeKeyValueStoreRequest)" />
+      <member name="T:Amazon.CloudFrontKeyValueStore.Model.DescribeKeyValueStoreRequest" />
+      <member name="T:Amazon.CloudFrontKeyValueStore.Model.DescribeKeyValueStoreResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Describe the key value store with ARN 'arn:aws:cloudfront::123456789012:key-value-store/327284aa-bcd5-499f-a3ff-1234a9d35678'" source=".\AWSSDKDocSamples\CloudFrontKeyValueStore\CloudFrontKeyValueStore.GeneratedSamples.cs" region="DescribeKeyValueStore-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.CloudFrontKeyValueStore.IAmazonCloudFrontKeyValueStore.GetKey(Amazon.CloudFrontKeyValueStore.Model.GetKeyRequest)" />
+      <member name="M:Amazon.CloudFrontKeyValueStore.AmazonCloudFrontKeyValueStoreClient.GetKey(Amazon.CloudFrontKeyValueStore.Model.GetKeyRequest)" />
+      <member name="T:Amazon.CloudFrontKeyValueStore.Model.GetKeyRequest" />
+      <member name="T:Amazon.CloudFrontKeyValueStore.Model.GetKeyResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Get 'key1' from the key value store with ARN 'arn:aws:cloudfront::123456789012:key-value-store/327284aa-bcd5-499f-a3ff-26b9a9d31b58'" source=".\AWSSDKDocSamples\CloudFrontKeyValueStore\CloudFrontKeyValueStore.GeneratedSamples.cs" region="GetKey-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.CloudFrontKeyValueStore.IAmazonCloudFrontKeyValueStore.ListKeys(Amazon.CloudFrontKeyValueStore.Model.ListKeysRequest)" />
+      <member name="M:Amazon.CloudFrontKeyValueStore.AmazonCloudFrontKeyValueStoreClient.ListKeys(Amazon.CloudFrontKeyValueStore.Model.ListKeysRequest)" />
+      <member name="T:Amazon.CloudFrontKeyValueStore.Model.ListKeysRequest" />
+      <member name="T:Amazon.CloudFrontKeyValueStore.Model.ListKeysResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="List keys in the key value store with ARN 'arn:aws:cloudfront::123456789012:key-value-store/327284aa-bcd5-499f-a3ff-26b9a9d31b58'" source=".\AWSSDKDocSamples\CloudFrontKeyValueStore\CloudFrontKeyValueStore.GeneratedSamples.cs" region="ListKeys-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.CloudFrontKeyValueStore.IAmazonCloudFrontKeyValueStore.ListKeys(Amazon.CloudFrontKeyValueStore.Model.ListKeysRequest)" />
+      <member name="M:Amazon.CloudFrontKeyValueStore.AmazonCloudFrontKeyValueStoreClient.ListKeys(Amazon.CloudFrontKeyValueStore.Model.ListKeysRequest)" />
+      <member name="T:Amazon.CloudFrontKeyValueStore.Model.ListKeysRequest" />
+      <member name="T:Amazon.CloudFrontKeyValueStore.Model.ListKeysResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="List the next page in the key value store with ARN 'arn:aws:cloudfront::123456789012:key-value-store/327284aa-bcd5-499f-a3ff-26b9a9d31b58'" source=".\AWSSDKDocSamples\CloudFrontKeyValueStore\CloudFrontKeyValueStore.GeneratedSamples.cs" region="ListKeys-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.CloudFrontKeyValueStore.IAmazonCloudFrontKeyValueStore.PutKey(Amazon.CloudFrontKeyValueStore.Model.PutKeyRequest)" />
+      <member name="M:Amazon.CloudFrontKeyValueStore.AmazonCloudFrontKeyValueStoreClient.PutKey(Amazon.CloudFrontKeyValueStore.Model.PutKeyRequest)" />
+      <member name="T:Amazon.CloudFrontKeyValueStore.Model.PutKeyRequest" />
+      <member name="T:Amazon.CloudFrontKeyValueStore.Model.PutKeyResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Put 'key1' with 'value1' into the key value store with ARN 'arn:aws:cloudfront::123456789012:key-value-store/327284aa-bcd5-499f-a3ff-26b9a9d31b58'" source=".\AWSSDKDocSamples\CloudFrontKeyValueStore\CloudFrontKeyValueStore.GeneratedSamples.cs" region="PutKey-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.CloudFrontKeyValueStore.IAmazonCloudFrontKeyValueStore.UpdateKeys(Amazon.CloudFrontKeyValueStore.Model.UpdateKeysRequest)" />
+      <member name="M:Amazon.CloudFrontKeyValueStore.AmazonCloudFrontKeyValueStoreClient.UpdateKeys(Amazon.CloudFrontKeyValueStore.Model.UpdateKeysRequest)" />
+      <member name="T:Amazon.CloudFrontKeyValueStore.Model.UpdateKeysRequest" />
+      <member name="T:Amazon.CloudFrontKeyValueStore.Model.UpdateKeysResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Put 2 keys into the key value store with ARN 'arn:aws:cloudfront::123456789012:key-value-store/327284aa-bcd5-499f-a3ff-26b9a9d31b58'" source=".\AWSSDKDocSamples\CloudFrontKeyValueStore\CloudFrontKeyValueStore.GeneratedSamples.cs" region="UpdateKeys-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.CloudFrontKeyValueStore.IAmazonCloudFrontKeyValueStore.UpdateKeys(Amazon.CloudFrontKeyValueStore.Model.UpdateKeysRequest)" />
+      <member name="M:Amazon.CloudFrontKeyValueStore.AmazonCloudFrontKeyValueStoreClient.UpdateKeys(Amazon.CloudFrontKeyValueStore.Model.UpdateKeysRequest)" />
+      <member name="T:Amazon.CloudFrontKeyValueStore.Model.UpdateKeysRequest" />
+      <member name="T:Amazon.CloudFrontKeyValueStore.Model.UpdateKeysResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Delete 2 keys from the key value store with ARN 'arn:aws:cloudfront::123456789012:key-value-store/327284aa-bcd5-499f-a3ff-26b9a9d31b58'" source=".\AWSSDKDocSamples\CloudFrontKeyValueStore\CloudFrontKeyValueStore.GeneratedSamples.cs" region="UpdateKeys-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.CloudFrontKeyValueStore.IAmazonCloudFrontKeyValueStore.UpdateKeys(Amazon.CloudFrontKeyValueStore.Model.UpdateKeysRequest)" />
+      <member name="M:Amazon.CloudFrontKeyValueStore.AmazonCloudFrontKeyValueStoreClient.UpdateKeys(Amazon.CloudFrontKeyValueStore.Model.UpdateKeysRequest)" />
+      <member name="T:Amazon.CloudFrontKeyValueStore.Model.UpdateKeysRequest" />
+      <member name="T:Amazon.CloudFrontKeyValueStore.Model.UpdateKeysResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Put 2 keys into and delete 1 key from the key value store with ARN 'arn:aws:cloudfront::123456789012:key-value-store/327284aa-bcd5-499f-a3ff-26b9a9d31b58'" source=".\AWSSDKDocSamples\CloudFrontKeyValueStore\CloudFrontKeyValueStore.GeneratedSamples.cs" region="UpdateKeys-3" />
+      </example>
+    </value>
+  </doc>
+</docs>

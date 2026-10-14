@@ -29,70 +29,93 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ExpectedRoute Object
     /// </summary>  
-    public class ExpectedRouteUnmarshaller : IJsonUnmarshaller<ExpectedRoute, JsonUnmarshallerContext>
+    public class ExpectedRouteUnmarshaller : ICborUnmarshaller<ExpectedRoute, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ExpectedRoute Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ExpectedRoute Unmarshall(CborUnmarshallerContext context)
         {
             ExpectedRoute unmarshalledObject = new ExpectedRoute();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("AllowedTargets", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AllowedTargets = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ContributingSubnets", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ContributingSubnets = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("IpV4Cidr", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IpV4Cidr = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("IpV6Cidr", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IpV6Cidr = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("PrefixListId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PrefixListId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RouteTableId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RouteTableId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "AllowedTargets":
+                        {
+                            context.AddPathSegment("AllowedTargets");
+                            var unmarshaller = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance);
+                            unmarshalledObject.AllowedTargets = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ContributingSubnets":
+                        {
+                            context.AddPathSegment("ContributingSubnets");
+                            var unmarshaller = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance);
+                            unmarshalledObject.ContributingSubnets = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "IpV4Cidr":
+                        {
+                            context.AddPathSegment("IpV4Cidr");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.IpV4Cidr = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "IpV6Cidr":
+                        {
+                            context.AddPathSegment("IpV6Cidr");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.IpV6Cidr = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "PrefixListId":
+                        {
+                            context.AddPathSegment("PrefixListId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.PrefixListId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "RouteTableId":
+                        {
+                            context.AddPathSegment("RouteTableId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.RouteTableId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

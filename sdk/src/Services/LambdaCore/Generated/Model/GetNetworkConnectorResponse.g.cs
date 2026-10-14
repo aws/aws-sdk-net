@@ -62,7 +62,10 @@ namespace Amazon.LambdaCore.Model
         internal bool IsSetConfiguration() => this.Configuration != null;
 
         /// <summary>
-        /// Gets and sets the property Id.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The unique identifier of the network connector.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 140)]
         public string Id { get; set; }
@@ -125,6 +128,39 @@ namespace Amazon.LambdaCore.Model
         /// Checks to see if the LastUpdateStatusReasonCode property is set.
         /// </summary>
         internal bool IsSetLastUpdateStatusReasonCode() => this.LastUpdateStatusReasonCode != null;
+
+        /// <summary>
+        /// Gets and sets the property LatestVersion. 
+        /// <para>
+        /// The version number of the connector's latest active version. Each configuration update
+        /// creates a new immutable version; this attribute exposes the most recent one. This
+        /// field is returned only on a standard (unqualified) request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1)]
+        public long? LatestVersion { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LatestVersion property is set.
+        /// </summary>
+        internal bool IsSetLatestVersion() => this.LatestVersion.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property LatestVersionArn. 
+        /// <para>
+        /// The qualified ARN of the connector's latest active version, including the immutable
+        /// version suffix. This field is returned only on a standard (unqualified) request; when
+        /// you supply a version-qualified identifier it is not returned, and <c>VersionArn</c>
+        /// is returned instead.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 140)]
+        public string LatestVersionArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LatestVersionArn property is set.
+        /// </summary>
+        internal bool IsSetLatestVersionArn() => this.LatestVersionArn != null;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -199,15 +235,35 @@ namespace Amazon.LambdaCore.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version number of the connector configuration, incremented on each update.
+        /// The version number of the network connector. On a standard (unqualified) request,
+        /// this is the connector's current version; each configuration update increments it.
+        /// When you supply a version-qualified identifier, this is the specific version you requested.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 0)]
+        [AWSProperty(Min = 1)]
         public long? Version { get; set; }
 
         /// <summary>
         /// Checks to see if the Version property is set.
         /// </summary>
         internal bool IsSetVersion() => this.Version.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property VersionArn. 
+        /// <para>
+        /// The qualified ARN of the specific connector version returned by this request, including
+        /// the immutable version suffix. This is populated only when you supply a version-qualified
+        /// identifier. On a standard (unqualified) request, this field is not populated; the
+        /// connector's latest active version is returned instead through the <c>LatestVersionArn</c>
+        /// and <c>LatestVersion</c> fields described below.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 140)]
+        public string VersionArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the VersionArn property is set.
+        /// </summary>
+        internal bool IsSetVersionArn() => this.VersionArn != null;
     }
 }

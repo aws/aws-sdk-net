@@ -59,6 +59,13 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.Expression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("spec", targetDepth, ref reader))
+                {
+                    var unmarshaller = ScheduleSpecUnmarshaller.Instance;
+                    unmarshalledObject.Spec = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

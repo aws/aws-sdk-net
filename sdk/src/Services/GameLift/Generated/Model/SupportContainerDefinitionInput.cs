@@ -89,10 +89,6 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  
         /// <para>
-        /// .
-        /// </para>
-        ///  
-        /// <para>
         /// You can use dependencies to establish a startup/shutdown sequence across the container
         /// group. For example, you might specify that <i>ContainerB</i> has a <c>START</c> dependency
         /// on <i>ContainerA</i>. This dependency means that <i>ContainerB</i> can't start until
@@ -255,8 +251,8 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a>TotalMemoryLimitMebibytes<code/>
-        /// 
+        ///  <b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a>
+        /// <c>TotalMemoryLimitMebibytes</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=1024000)]
@@ -303,8 +299,8 @@ namespace Amazon.GameLift.Model
         /// A set of ports that Amazon GameLift Servers can assign to processes in a container.
         /// The container port configuration must have enough ports for each container process
         /// that accepts inbound traffic connections. A container port configuration can have
-        /// can have one or more container port ranges. Each range specifies starting and ending
-        /// values as well as the supported network protocol.
+        /// one or more container port ranges. Each range specifies starting and ending values
+        /// as well as the supported network protocol.
         /// </para>
         ///  
         /// <para>
@@ -329,13 +325,13 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Vcpu. 
         /// <para>
         /// The number of vCPU units to reserve for this container. The container can use more
-        /// resources when needed, if available. If you don't reserve CPU units for this container,
-        /// it shares the container group's total vCPU limit. 
+        /// resources when needed, if available. If you don't reserve vCPU units for this container,
+        /// it shares the container group's total vCPU limit.
         /// </para>
         ///  
         /// <para>
         ///  <b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a>
-        /// TotalCpuLimit 
+        /// TotalVcpuLimit 
         /// </para>
         /// </summary>
         [AWSProperty(Max=10)]

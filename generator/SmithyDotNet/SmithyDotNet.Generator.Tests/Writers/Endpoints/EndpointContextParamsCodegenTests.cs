@@ -80,7 +80,7 @@ public class EndpointContextParamsCodegenTests
         Assert.Contains("result.TerminalList = request.Aliases?.Select(element => element);", block);
         Assert.Contains("result.TerminalMap = request.RequestItems?.Values.Select(element => element);", block);
         Assert.Contains("result.Flattened = request.AliasGroups?.SelectMany(element => element).Where(element => element != null);", block);
-        // C2J emits "new [] {"; the Roslyn formatter normalizes it to "new[] {".
+        // C2J emits "new[] {"; the SDK files have the formatted "new[] {".
         Assert.Contains(
             "result.FlatNames = request.TransactItems?.Select(element => new[] { element?.ConditionCheck?.TableName, element?.Put?.TableName })?.SelectMany(element => element).Where(element => element != null);",
             block);
@@ -206,6 +206,17 @@ public class EndpointContextParamsCodegenTests
           }
         }
         """;
+
+    [Theory]
+    [InlineData("DoContextParamRequest", "endpointId", "Target", "DoContextParam", "request.Target")]
+    [InlineData("CreationParameters", "tableName", "TableId", "DoOperationPath", "request.CreationParameters?.TableId")]
+    public void RenamedMember_ReadsNewProperty(string shape, string member, string newName, string operation, string expected)
+    {
+        var context = TestModels.Context(TestModels.Load("Codegen/endpoint-context-params-model.json"), TestCustomizations.Rename(shape, member, newName));
+
+        var assignments = context.OperationEndpointContexts.Single(o => o.OperationName == operation).RequestAssignments;
+        Assert.Contains(assignments, assignment => assignment.Expression == expected);
+    }
 
     private static SmithyModel ProbeModel(string path = "nested.name", string clientParamType = "string")
     {

@@ -64,7 +64,7 @@ namespace Amazon.Lambda.Model
         /// The result data from the successful callback operation. Maximum size is 256 KB.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=262144)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1048576)]
         public MemoryStream Result
         {
             get { return this._result; }

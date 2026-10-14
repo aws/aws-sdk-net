@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TaxConfiguration Marshaller
     /// </summary>
-    public class TaxConfigurationMarshaller : IRequestMarshaller<TaxConfiguration, JsonMarshallerContext> 
+    public class TaxConfigurationMarshaller : IRequestMarshaller<TaxConfiguration, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,16 +45,16 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TaxConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(TaxConfiguration requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetTaxEstimation())
-            {
-                context.Writer.WritePropertyName("taxEstimation");
-                context.Writer.WriteStringValue(requestObject.TaxEstimation);
-            }
 
+            if (requestObject.IsSetTaxEstimation())
+            {
+                context.Writer.WriteTextString("taxEstimation");
+                context.Writer.WriteTextString(requestObject.TaxEstimation);
+            }
         }
 
         /// <summary>

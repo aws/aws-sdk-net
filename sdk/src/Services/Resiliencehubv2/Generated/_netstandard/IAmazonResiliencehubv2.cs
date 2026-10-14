@@ -1033,6 +1033,9 @@ namespace Amazon.Resiliencehubv2
         /// <exception cref="Amazon.Resiliencehubv2.Model.ResourceNotFoundException">
         /// Resource not found.
         /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ServiceQuotaExceededException">
+        /// Service quota exceeded.
+        /// </exception>
         /// <exception cref="Amazon.Resiliencehubv2.Model.ValidationException">
         /// Validation error — invalid input parameters.
         /// </exception>
@@ -1065,6 +1068,9 @@ namespace Amazon.Resiliencehubv2
         /// </exception>
         /// <exception cref="Amazon.Resiliencehubv2.Model.ResourceNotFoundException">
         /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ServiceQuotaExceededException">
+        /// Service quota exceeded.
         /// </exception>
         /// <exception cref="Amazon.Resiliencehubv2.Model.ValidationException">
         /// Validation error — invalid input parameters.

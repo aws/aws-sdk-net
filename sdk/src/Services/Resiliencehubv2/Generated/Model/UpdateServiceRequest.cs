@@ -38,6 +38,7 @@ namespace Amazon.Resiliencehubv2.Model
         private List<AssociatedSystem> _associatedSystems = AWSConfigs.InitializeCollections ? new List<AssociatedSystem>() : null;
         private DependencyDiscoveryInput _dependencyDiscovery;
         private string _description;
+        private DevOpsAgentConfiguration _devOpsAgentConfiguration;
         private PermissionModel _permissionModel;
         private string _policyArn;
         private List<string> _regions = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -97,6 +98,25 @@ namespace Amazon.Resiliencehubv2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DevOpsAgentConfiguration. 
+        /// <para>
+        /// The optional DevOps Agent integration configuration to set, replace, or disconnect
+        /// for the service. If you omit this field, the existing DevOps Agent linkage stays unchanged.
+        /// </para>
+        /// </summary>
+        public DevOpsAgentConfiguration DevOpsAgentConfiguration
+        {
+            get { return this._devOpsAgentConfiguration; }
+            set { this._devOpsAgentConfiguration = value; }
+        }
+
+        // Check to see if DevOpsAgentConfiguration property is set
+        internal bool IsSetDevOpsAgentConfiguration()
+        {
+            return this._devOpsAgentConfiguration != null;
         }
 
         /// <summary>

@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TimeToLive Marshaller
     /// </summary>
-    public class TimeToLiveMarshaller : IRequestMarshaller<TimeToLive, JsonMarshallerContext> 
+    public class TimeToLiveMarshaller : IRequestMarshaller<TimeToLive, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,16 +45,16 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TimeToLive requestObject, JsonMarshallerContext context)
+        public void Marshall(TimeToLive requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetStatus())
-            {
-                context.Writer.WritePropertyName("status");
-                context.Writer.WriteStringValue(requestObject.Status);
-            }
 
+            if (requestObject.IsSetStatus())
+            {
+                context.Writer.WriteTextString("status");
+                context.Writer.WriteTextString(requestObject.Status);
+            }
         }
 
         /// <summary>

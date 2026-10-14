@@ -36,6 +36,9 @@ namespace Amazon.Runtime.Internal.Util
         {
             get
             {
+                // Generated response unmarshallers check IsFinalBlock on this before the first Read() to detect an
+                // empty body, so the stream has to have been read by the time the underlying reader is observed.
+                ReadFirstBuffer();
                 return _reader;
             }
         }
@@ -116,9 +119,10 @@ namespace Amazon.Runtime.Internal.Util
 
         private Stream _stream;
         private byte[] _buffer;
+        private bool _hasReadFromStream;
 
         /// <summary>
-        /// Initializes a new instance of the StreamingUtf8JsonReader. Upon initialization the reader will read from the stream and fill the buffer.
+        /// Initializes a new instance of the StreamingUtf8JsonReader. The stream is not read until the first call to <see cref="Read"/>, which fills the buffer.
         /// If a UTF8 BOM is present in the stream, it will be skipped. Unless <see cref="AWSConfigs.StreamingUtf8JsonReaderBufferSize"/> is set, the default
         /// buffer size for buffering data from the stream will be 4096. You can also use the constructor that accepts bufferSize to change this value.
         /// </summary>
@@ -128,7 +132,7 @@ namespace Amazon.Runtime.Internal.Util
         }
 
         /// <summary>
-        /// Initializes a new instance of the StreamingUtf8JsonReader. Upon initialization the reader will read from the stream and fill the buffer.
+        /// Initializes a new instance of the StreamingUtf8JsonReader. The stream is not read until the first call to <see cref="Read"/>, which fills the buffer.
         /// If a UTF8 BOM is present in the stream, it will be skipped.
         /// </summary>
         /// <param name="stream">the stream containing the data</param>
@@ -140,7 +144,7 @@ namespace Amazon.Runtime.Internal.Util
 
         /// <summary>
         /// Initializes a new instance of the StreamingUtf8JsonReader with a custom maximum JSON depth.
-        /// Upon initialization the reader will read from the stream and fill the buffer.
+        /// The stream is not read until the first call to <see cref="Read"/>, which fills the buffer.
         /// If a UTF8 BOM is present in the stream, it will be skipped.
         /// </summary>
         /// <param name="stream">the stream containing the data</param>
@@ -154,23 +158,17 @@ namespace Amazon.Runtime.Internal.Util
 
             _stream = stream;
             _buffer = ArrayPool<byte>.Shared.Rent(bufferSize);
-            int utf8BomLength = JsonConstants.Utf8Bom.Length;
-            Debug.Assert(_buffer.Length >= utf8BomLength);
-
-            int bytesRead = FillBuffer(stream, ref _buffer, 0, _buffer.Length);
-            int start = 0;
-            if (_buffer.AsSpan().StartsWith(JsonConstants.Utf8Bom))
-            {
-                start += utf8BomLength;
-                bytesRead -= utf8BomLength;
-            }
+            Debug.Assert(_buffer.Length >= JsonConstants.Utf8Bom.Length);
 
             var options = new JsonReaderOptions
             {
                 AllowTrailingCommas = true,
                 MaxDepth = maxDepth
             };
-            _reader = new Utf8JsonReader(_buffer.AsSpan(start, bytesRead), isFinalBlock: bytesRead == 0, new JsonReaderState(options));
+            // The stream is first read on the first Read(), not here. Generated code constructs this reader before
+            // it knows whether the body is JSON: an event stream event whose payload is a raw blob or string hands
+            // context.Stream to the caller as-is, and reading here would leave that stream positioned past the first buffer.
+            _reader = new Utf8JsonReader(ReadOnlySpan<byte>.Empty, isFinalBlock: false, new JsonReaderState(options));
         }
 
         /// <summary>
@@ -179,6 +177,8 @@ namespace Amazon.Runtime.Internal.Util
         /// <returns>true if there is more data, false otherwise.</returns>
         public bool Read()
         {
+            ReadFirstBuffer();
+
             // hasMoreData can return false if the value starts in one buffer and leaks into the next buffer
             bool hasMoreData = _reader.Read();
 
@@ -196,6 +196,23 @@ namespace Amazon.Runtime.Internal.Util
             }
 
             return hasMoreData;
+        }
+
+        private void ReadFirstBuffer()
+        {
+            if (_hasReadFromStream)
+                return;
+            _hasReadFromStream = true;
+
+            int bytesRead = FillBuffer(_stream, ref _buffer, 0, _buffer.Length);
+            int start = 0;
+            if (_buffer.AsSpan(0, bytesRead).StartsWith(JsonConstants.Utf8Bom))
+            {
+                start = JsonConstants.Utf8Bom.Length;
+                bytesRead -= start;
+            }
+
+            _reader = new Utf8JsonReader(_buffer.AsSpan(start, bytesRead), isFinalBlock: bytesRead == 0, _reader.CurrentState);
         }
 
         private static void GetMoreBytesFromStream(Stream stream, ref byte[] buffer, ref Utf8JsonReader reader)

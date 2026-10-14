@@ -31,7 +31,7 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateFunctionConfiguration operation.
-    /// Modify the version-specific settings of a Lambda function.
+    /// Modifies the version-specific settings of a Lambda Event Function.
     /// 
     ///  
     /// <para>

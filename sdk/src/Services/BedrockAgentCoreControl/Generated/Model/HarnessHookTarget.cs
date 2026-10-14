@@ -60,8 +60,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Lambda. 
         /// <para>
-        /// A Lambda hook target that invokes an AWS Lambda function synchronously and waits for
-        /// its response.
+        /// A Lambda hook target that invokes an Amazon Web Services Lambda function synchronously
+        /// and waits for its response.
         /// </para>
         /// </summary>
         public HarnessHookLambdaTarget Lambda

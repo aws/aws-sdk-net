@@ -101,6 +101,13 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("siteUrl", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SiteUrl = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("targetUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

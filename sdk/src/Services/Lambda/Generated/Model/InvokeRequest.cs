@@ -31,8 +31,8 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the Invoke operation.
-    /// Invokes a Lambda function. You can invoke a function synchronously (and wait for the
-    /// response), or asynchronously. By default, Lambda invokes your function synchronously
+    /// Invokes a Lambda Event Function. You can invoke a function synchronously (and wait
+    /// for the response), or asynchronously. By default, Lambda invokes your function synchronously
     /// (i.e. the<c>InvocationType</c> is <c>RequestResponse</c>). To invoke a function asynchronously,
     /// set <c>InvocationType</c> to <c>Event</c>. Lambda passes the <c>ClientContext</c>
     /// object to your function for synchronous invocations only.

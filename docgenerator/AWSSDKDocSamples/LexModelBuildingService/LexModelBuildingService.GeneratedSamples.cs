@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,38 +14,38 @@ namespace AWSSDKDocSamples.Amazon.LexModelBuildingService.Generated
     {
         public void LexModelBuildingServiceGetBot()
         {
-            #region to-get-information-about-a-bot-1494431724188
+            #region GetBot-1
 
             var client = new AmazonLexModelBuildingServiceClient();
-            var response = client.GetBot(new GetBotRequest 
+            var response = client.GetBot(new GetBotRequest
             {
                 Name = "DocOrderPizza",
                 VersionOrAlias = "$LATEST"
             });
 
-            string version = response.Version;
-            string name = response.Name;
             Statement abortStatement = response.AbortStatement;
             string checksum = response.Checksum;
-            bool childDirected = response.ChildDirected;
+            bool? childDirected = response.ChildDirected;
             Prompt clarificationPrompt = response.ClarificationPrompt;
-            DateTime createdDate = response.CreatedDate;
+            DateTime? createdDate = response.CreatedDate;
             string description = response.Description;
-            int idleSessionTTLInSeconds = response.IdleSessionTTLInSeconds;
+            int? idleSessionTTLInSeconds = response.IdleSessionTTLInSeconds;
             List<Intent> intents = response.Intents;
-            DateTime lastUpdatedDate = response.LastUpdatedDate;
-            string locale = response.Locale;
-            string status = response.Status;
+            DateTime? lastUpdatedDate = response.LastUpdatedDate;
+            Locale locale = response.Locale;
+            string name = response.Name;
+            Status status = response.Status;
+            string version = response.Version;
 
             #endregion
         }
 
         public void LexModelBuildingServiceGetBots()
         {
-            #region to-get-a-list-of-bots-1494432220036
+            #region GetBots-1
 
             var client = new AmazonLexModelBuildingServiceClient();
-            var response = client.GetBots(new GetBotsRequest 
+            var response = client.GetBots(new GetBotsRequest
             {
                 MaxResults = 5,
                 NextToken = ""
@@ -57,37 +58,37 @@ namespace AWSSDKDocSamples.Amazon.LexModelBuildingService.Generated
 
         public void LexModelBuildingServiceGetIntent()
         {
-            #region to-get-a-information-about-an-intent-1494432574147
+            #region GetIntent-1
 
             var client = new AmazonLexModelBuildingServiceClient();
-            var response = client.GetIntent(new GetIntentRequest 
+            var response = client.GetIntent(new GetIntentRequest
             {
-                Version = "$LATEST",
-                Name = "DocOrderPizza"
+                Name = "DocOrderPizza",
+                Version = "$LATEST"
             });
 
-            string version = response.Version;
-            string name = response.Name;
             string checksum = response.Checksum;
             Statement conclusionStatement = response.ConclusionStatement;
             Prompt confirmationPrompt = response.ConfirmationPrompt;
-            DateTime createdDate = response.CreatedDate;
+            DateTime? createdDate = response.CreatedDate;
             string description = response.Description;
             FulfillmentActivity fulfillmentActivity = response.FulfillmentActivity;
-            DateTime lastUpdatedDate = response.LastUpdatedDate;
+            DateTime? lastUpdatedDate = response.LastUpdatedDate;
+            string name = response.Name;
             Statement rejectionStatement = response.RejectionStatement;
             List<string> sampleUtterances = response.SampleUtterances;
             List<Slot> slots = response.Slots;
+            string version = response.Version;
 
             #endregion
         }
 
         public void LexModelBuildingServiceGetIntents()
         {
-            #region to-get-a-list-of-intents-1494432416363
+            #region GetIntents-1
 
             var client = new AmazonLexModelBuildingServiceClient();
-            var response = client.GetIntents(new GetIntentsRequest 
+            var response = client.GetIntents(new GetIntentsRequest
             {
                 MaxResults = 10,
                 NextToken = ""
@@ -100,32 +101,32 @@ namespace AWSSDKDocSamples.Amazon.LexModelBuildingService.Generated
 
         public void LexModelBuildingServiceGetSlotType()
         {
-            #region to-get-information-about-a-slot-type-1494432961004
+            #region GetSlotType-1
 
             var client = new AmazonLexModelBuildingServiceClient();
-            var response = client.GetSlotType(new GetSlotTypeRequest 
+            var response = client.GetSlotType(new GetSlotTypeRequest
             {
-                Version = "$LATEST",
-                Name = "DocPizzaCrustType"
+                Name = "DocPizzaCrustType",
+                Version = "$LATEST"
             });
 
-            string version = response.Version;
-            string name = response.Name;
             string checksum = response.Checksum;
-            DateTime createdDate = response.CreatedDate;
+            DateTime? createdDate = response.CreatedDate;
             string description = response.Description;
             List<EnumerationValue> enumerationValues = response.EnumerationValues;
-            DateTime lastUpdatedDate = response.LastUpdatedDate;
+            DateTime? lastUpdatedDate = response.LastUpdatedDate;
+            string name = response.Name;
+            string version = response.Version;
 
             #endregion
         }
 
         public void LexModelBuildingServiceGetSlotTypes()
         {
-            #region to-get-a-list-of-slot-types-1494432757458
+            #region GetSlotTypes-1
 
             var client = new AmazonLexModelBuildingServiceClient();
-            var response = client.GetSlotTypes(new GetSlotTypesRequest 
+            var response = client.GetSlotTypes(new GetSlotTypesRequest
             {
                 MaxResults = 10,
                 NextToken = ""
@@ -138,12 +139,11 @@ namespace AWSSDKDocSamples.Amazon.LexModelBuildingService.Generated
 
         public void LexModelBuildingServicePutBot()
         {
-            #region to-create-a-bot-1494360003886
+            #region PutBot-1
 
             var client = new AmazonLexModelBuildingServiceClient();
-            var response = client.PutBot(new PutBotRequest 
+            var response = client.PutBot(new PutBotRequest
             {
-                Name = "DocOrderPizzaBot",
                 AbortStatement = new Statement { Messages = new List<Message> {
                     new Message {
                         Content = "I don't understand. Can you try again?",
@@ -177,34 +177,34 @@ namespace AWSSDKDocSamples.Amazon.LexModelBuildingService.Generated
                     }
                 },
                 Locale = "en-US",
+                Name = "DocOrderPizzaBot",
                 ProcessBehavior = "SAVE"
             });
 
-            string version = response.Version;
-            string name = response.Name;
             Statement abortStatement = response.AbortStatement;
             string checksum = response.Checksum;
-            bool childDirected = response.ChildDirected;
+            bool? childDirected = response.ChildDirected;
             Prompt clarificationPrompt = response.ClarificationPrompt;
-            DateTime createdDate = response.CreatedDate;
+            DateTime? createdDate = response.CreatedDate;
             string description = response.Description;
-            int idleSessionTTLInSeconds = response.IdleSessionTTLInSeconds;
+            int? idleSessionTTLInSeconds = response.IdleSessionTTLInSeconds;
             List<Intent> intents = response.Intents;
-            DateTime lastUpdatedDate = response.LastUpdatedDate;
-            string locale = response.Locale;
-            string status = response.Status;
+            DateTime? lastUpdatedDate = response.LastUpdatedDate;
+            Locale locale = response.Locale;
+            string name = response.Name;
+            Status status = response.Status;
+            string version = response.Version;
 
             #endregion
         }
 
         public void LexModelBuildingServicePutIntent()
         {
-            #region to-create-an-intent-1494358144659
+            #region PutIntent-1
 
             var client = new AmazonLexModelBuildingServiceClient();
-            var response = client.PutIntent(new PutIntentRequest 
+            var response = client.PutIntent(new PutIntentRequest
             {
-                Name = "DocOrderPizza",
                 ConclusionStatement = new Statement {
                     Messages = new List<Message> {
                         new Message {
@@ -229,6 +229,7 @@ namespace AWSSDKDocSamples.Amazon.LexModelBuildingService.Generated
                 },
                 Description = "Order a pizza from a local pizzeria.",
                 FulfillmentActivity = new FulfillmentActivity { Type = "ReturnIntent" },
+                Name = "DocOrderPizza",
                 RejectionStatement = new Statement { Messages = new List<Message> {
                     new Message {
                         Content = "Ok, I'll cancel your order.",
@@ -247,8 +248,8 @@ namespace AWSSDKDocSamples.Amazon.LexModelBuildingService.Generated
                 },
                 Slots = new List<Slot> {
                     new Slot {
-                        Name = "Type",
                         Description = "The type of pizza to order.",
+                        Name = "Type",
                         Priority = 1,
                         SampleUtterances = new List<string> {
                             "Get me a {Type} pizza.",
@@ -277,8 +278,8 @@ namespace AWSSDKDocSamples.Amazon.LexModelBuildingService.Generated
                         }
                     },
                     new Slot {
-                        Name = "Crust",
                         Description = "The type of pizza crust to order.",
+                        Name = "Crust",
                         Priority = 2,
                         SampleUtterances = new List<string> {
                             "Make it a {Crust} crust.",
@@ -302,8 +303,8 @@ namespace AWSSDKDocSamples.Amazon.LexModelBuildingService.Generated
                         }
                     },
                     new Slot {
-                        Name = "Sauce",
                         Description = "The type of sauce to use on the pizza.",
+                        Name = "Sauce",
                         Priority = 3,
                         SampleUtterances = new List<string> {
                             "Make it {Sauce} sauce.",
@@ -329,55 +330,52 @@ namespace AWSSDKDocSamples.Amazon.LexModelBuildingService.Generated
                 }
             });
 
-            string version = response.Version;
-            string name = response.Name;
             string checksum = response.Checksum;
             Statement conclusionStatement = response.ConclusionStatement;
             Prompt confirmationPrompt = response.ConfirmationPrompt;
-            DateTime createdDate = response.CreatedDate;
+            DateTime? createdDate = response.CreatedDate;
             string description = response.Description;
             FulfillmentActivity fulfillmentActivity = response.FulfillmentActivity;
-            DateTime lastUpdatedDate = response.LastUpdatedDate;
+            DateTime? lastUpdatedDate = response.LastUpdatedDate;
+            string name = response.Name;
             Statement rejectionStatement = response.RejectionStatement;
             List<string> sampleUtterances = response.SampleUtterances;
             List<Slot> slots = response.Slots;
+            string version = response.Version;
 
             #endregion
         }
 
         public void LexModelBuildingServicePutSlotType()
         {
-            #region to-create-a-slot-type-1494357262258
+            #region PutSlotType-1
 
             var client = new AmazonLexModelBuildingServiceClient();
-            var response = client.PutSlotType(new PutSlotTypeRequest 
+            var response = client.PutSlotType(new PutSlotTypeRequest
             {
-                Name = "PizzaSauceType",
                 Description = "Available pizza sauces",
                 EnumerationValues = new List<EnumerationValue> {
                     new EnumerationValue { Value = "red" },
                     new EnumerationValue { Value = "white" }
-                }
+                },
+                Name = "PizzaSauceType"
             });
 
-            string version = response.Version;
-            string name = response.Name;
             string checksum = response.Checksum;
-            DateTime createdDate = response.CreatedDate;
+            DateTime? createdDate = response.CreatedDate;
             string description = response.Description;
             List<EnumerationValue> enumerationValues = response.EnumerationValues;
-            DateTime lastUpdatedDate = response.LastUpdatedDate;
+            DateTime? lastUpdatedDate = response.LastUpdatedDate;
+            string name = response.Name;
+            string version = response.Version;
 
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

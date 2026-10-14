@@ -2008,9 +2008,19 @@ namespace Amazon.MediaConnect
         public static readonly RouterInputTier INPUT_20 = new RouterInputTier("INPUT_20");
 
         /// <summary>
+        /// Constant INPUT_250 for RouterInputTier
+        /// </summary>
+        public static readonly RouterInputTier INPUT_250 = new RouterInputTier("INPUT_250");
+
+        /// <summary>
         /// Constant INPUT_50 for RouterInputTier
         /// </summary>
         public static readonly RouterInputTier INPUT_50 = new RouterInputTier("INPUT_50");
+
+        /// <summary>
+        /// Constant INPUT_500 for RouterInputTier
+        /// </summary>
+        public static readonly RouterInputTier INPUT_500 = new RouterInputTier("INPUT_500");
 
         /// <summary>
         /// Constructs a custom RouterInputTier for a value not among the defined constants.
@@ -2436,9 +2446,19 @@ namespace Amazon.MediaConnect
         public static readonly RouterOutputTier OUTPUT_20 = new RouterOutputTier("OUTPUT_20");
 
         /// <summary>
+        /// Constant OUTPUT_250 for RouterOutputTier
+        /// </summary>
+        public static readonly RouterOutputTier OUTPUT_250 = new RouterOutputTier("OUTPUT_250");
+
+        /// <summary>
         /// Constant OUTPUT_50 for RouterOutputTier
         /// </summary>
         public static readonly RouterOutputTier OUTPUT_50 = new RouterOutputTier("OUTPUT_50");
+
+        /// <summary>
+        /// Constant OUTPUT_500 for RouterOutputTier
+        /// </summary>
+        public static readonly RouterOutputTier OUTPUT_500 = new RouterOutputTier("OUTPUT_500");
 
         /// <summary>
         /// Constructs a custom RouterOutputTier for a value not among the defined constants.
@@ -2895,6 +2915,299 @@ namespace Amazon.MediaConnect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TlsEncryptionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type VideoColorimetry.
+    /// </summary>
+    public class VideoColorimetry : ConstantClass
+    {
+        /// <summary>
+        /// Constant BT2020 for VideoColorimetry
+        /// </summary>
+        public static readonly VideoColorimetry BT2020 = new VideoColorimetry("BT2020");
+
+        /// <summary>
+        /// Constant BT470BG for VideoColorimetry
+        /// </summary>
+        public static readonly VideoColorimetry BT470BG = new VideoColorimetry("BT470BG");
+
+        /// <summary>
+        /// Constant BT470M for VideoColorimetry
+        /// </summary>
+        public static readonly VideoColorimetry BT470M = new VideoColorimetry("BT470M");
+
+        /// <summary>
+        /// Constant BT601 for VideoColorimetry
+        /// </summary>
+        public static readonly VideoColorimetry BT601 = new VideoColorimetry("BT601");
+
+        /// <summary>
+        /// Constant BT709 for VideoColorimetry
+        /// </summary>
+        public static readonly VideoColorimetry BT709 = new VideoColorimetry("BT709");
+
+        /// <summary>
+        /// Constant GENERIC_FILM for VideoColorimetry
+        /// </summary>
+        public static readonly VideoColorimetry GENERIC_FILM = new VideoColorimetry("GENERIC_FILM");
+
+        /// <summary>
+        /// Constant SMPTE240M for VideoColorimetry
+        /// </summary>
+        public static readonly VideoColorimetry SMPTE240M = new VideoColorimetry("SMPTE240M");
+
+        /// <summary>
+        /// Constant SMPTE428 for VideoColorimetry
+        /// </summary>
+        public static readonly VideoColorimetry SMPTE428 = new VideoColorimetry("SMPTE428");
+
+        /// <summary>
+        /// Constant SMPTE431 for VideoColorimetry
+        /// </summary>
+        public static readonly VideoColorimetry SMPTE431 = new VideoColorimetry("SMPTE431");
+
+        /// <summary>
+        /// Constant SMPTE432 for VideoColorimetry
+        /// </summary>
+        public static readonly VideoColorimetry SMPTE432 = new VideoColorimetry("SMPTE432");
+
+        /// <summary>
+        /// Constructs a custom VideoColorimetry for a value not among the defined constants.
+        /// </summary>
+        public VideoColorimetry(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VideoColorimetry FindValue(string value)
+        {
+            return FindValue<VideoColorimetry>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VideoColorimetry(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type VideoMatrixCoefficients.
+    /// </summary>
+    public class VideoMatrixCoefficients : ConstantClass
+    {
+        /// <summary>
+        /// Constant BT2020_CL for VideoMatrixCoefficients
+        /// </summary>
+        public static readonly VideoMatrixCoefficients BT2020_CL = new VideoMatrixCoefficients("BT2020_CL");
+
+        /// <summary>
+        /// Constant BT2020_NCL for VideoMatrixCoefficients
+        /// </summary>
+        public static readonly VideoMatrixCoefficients BT2020_NCL = new VideoMatrixCoefficients("BT2020_NCL");
+
+        /// <summary>
+        /// Constant BT2100_ICTCP for VideoMatrixCoefficients
+        /// </summary>
+        public static readonly VideoMatrixCoefficients BT2100_ICTCP = new VideoMatrixCoefficients("BT2100_ICTCP");
+
+        /// <summary>
+        /// Constant BT470BG for VideoMatrixCoefficients
+        /// </summary>
+        public static readonly VideoMatrixCoefficients BT470BG = new VideoMatrixCoefficients("BT470BG");
+
+        /// <summary>
+        /// Constant BT601 for VideoMatrixCoefficients
+        /// </summary>
+        public static readonly VideoMatrixCoefficients BT601 = new VideoMatrixCoefficients("BT601");
+
+        /// <summary>
+        /// Constant BT709 for VideoMatrixCoefficients
+        /// </summary>
+        public static readonly VideoMatrixCoefficients BT709 = new VideoMatrixCoefficients("BT709");
+
+        /// <summary>
+        /// Constant CHROMATICITY_DERIVED_CL for VideoMatrixCoefficients
+        /// </summary>
+        public static readonly VideoMatrixCoefficients CHROMATICITY_DERIVED_CL = new VideoMatrixCoefficients("CHROMATICITY_DERIVED_CL");
+
+        /// <summary>
+        /// Constant CHROMATICITY_DERIVED_NCL for VideoMatrixCoefficients
+        /// </summary>
+        public static readonly VideoMatrixCoefficients CHROMATICITY_DERIVED_NCL = new VideoMatrixCoefficients("CHROMATICITY_DERIVED_NCL");
+
+        /// <summary>
+        /// Constant FCC for VideoMatrixCoefficients
+        /// </summary>
+        public static readonly VideoMatrixCoefficients FCC = new VideoMatrixCoefficients("FCC");
+
+        /// <summary>
+        /// Constant IDENTITY for VideoMatrixCoefficients
+        /// </summary>
+        public static readonly VideoMatrixCoefficients IDENTITY = new VideoMatrixCoefficients("IDENTITY");
+
+        /// <summary>
+        /// Constant IPT_C2 for VideoMatrixCoefficients
+        /// </summary>
+        public static readonly VideoMatrixCoefficients IPT_C2 = new VideoMatrixCoefficients("IPT_C2");
+
+        /// <summary>
+        /// Constant SMPTE2085 for VideoMatrixCoefficients
+        /// </summary>
+        public static readonly VideoMatrixCoefficients SMPTE2085 = new VideoMatrixCoefficients("SMPTE2085");
+
+        /// <summary>
+        /// Constant SMPTE240M for VideoMatrixCoefficients
+        /// </summary>
+        public static readonly VideoMatrixCoefficients SMPTE240M = new VideoMatrixCoefficients("SMPTE240M");
+
+        /// <summary>
+        /// Constant YCGCO for VideoMatrixCoefficients
+        /// </summary>
+        public static readonly VideoMatrixCoefficients YCGCO = new VideoMatrixCoefficients("YCGCO");
+
+        /// <summary>
+        /// Constructs a custom VideoMatrixCoefficients for a value not among the defined constants.
+        /// </summary>
+        public VideoMatrixCoefficients(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VideoMatrixCoefficients FindValue(string value)
+        {
+            return FindValue<VideoMatrixCoefficients>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VideoMatrixCoefficients(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type VideoTransferCharacteristics.
+    /// </summary>
+    public class VideoTransferCharacteristics : ConstantClass
+    {
+        /// <summary>
+        /// Constant BT1361_ECG for VideoTransferCharacteristics
+        /// </summary>
+        public static readonly VideoTransferCharacteristics BT1361_ECG = new VideoTransferCharacteristics("BT1361_ECG");
+
+        /// <summary>
+        /// Constant BT2020_10 for VideoTransferCharacteristics
+        /// </summary>
+        public static readonly VideoTransferCharacteristics BT2020_10 = new VideoTransferCharacteristics("BT2020_10");
+
+        /// <summary>
+        /// Constant BT2020_12 for VideoTransferCharacteristics
+        /// </summary>
+        public static readonly VideoTransferCharacteristics BT2020_12 = new VideoTransferCharacteristics("BT2020_12");
+
+        /// <summary>
+        /// Constant BT2100_HLG for VideoTransferCharacteristics
+        /// </summary>
+        public static readonly VideoTransferCharacteristics BT2100_HLG = new VideoTransferCharacteristics("BT2100_HLG");
+
+        /// <summary>
+        /// Constant BT2100_PQ for VideoTransferCharacteristics
+        /// </summary>
+        public static readonly VideoTransferCharacteristics BT2100_PQ = new VideoTransferCharacteristics("BT2100_PQ");
+
+        /// <summary>
+        /// Constant BT470BG for VideoTransferCharacteristics
+        /// </summary>
+        public static readonly VideoTransferCharacteristics BT470BG = new VideoTransferCharacteristics("BT470BG");
+
+        /// <summary>
+        /// Constant BT470M for VideoTransferCharacteristics
+        /// </summary>
+        public static readonly VideoTransferCharacteristics BT470M = new VideoTransferCharacteristics("BT470M");
+
+        /// <summary>
+        /// Constant BT601 for VideoTransferCharacteristics
+        /// </summary>
+        public static readonly VideoTransferCharacteristics BT601 = new VideoTransferCharacteristics("BT601");
+
+        /// <summary>
+        /// Constant BT709 for VideoTransferCharacteristics
+        /// </summary>
+        public static readonly VideoTransferCharacteristics BT709 = new VideoTransferCharacteristics("BT709");
+
+        /// <summary>
+        /// Constant IEC61966_2_1 for VideoTransferCharacteristics
+        /// </summary>
+        public static readonly VideoTransferCharacteristics IEC61966_2_1 = new VideoTransferCharacteristics("IEC61966_2_1");
+
+        /// <summary>
+        /// Constant IEC61966_2_4 for VideoTransferCharacteristics
+        /// </summary>
+        public static readonly VideoTransferCharacteristics IEC61966_2_4 = new VideoTransferCharacteristics("IEC61966_2_4");
+
+        /// <summary>
+        /// Constant LINEAR for VideoTransferCharacteristics
+        /// </summary>
+        public static readonly VideoTransferCharacteristics LINEAR = new VideoTransferCharacteristics("LINEAR");
+
+        /// <summary>
+        /// Constant LOG100 for VideoTransferCharacteristics
+        /// </summary>
+        public static readonly VideoTransferCharacteristics LOG100 = new VideoTransferCharacteristics("LOG100");
+
+        /// <summary>
+        /// Constant LOG316 for VideoTransferCharacteristics
+        /// </summary>
+        public static readonly VideoTransferCharacteristics LOG316 = new VideoTransferCharacteristics("LOG316");
+
+        /// <summary>
+        /// Constant SMPTE240M for VideoTransferCharacteristics
+        /// </summary>
+        public static readonly VideoTransferCharacteristics SMPTE240M = new VideoTransferCharacteristics("SMPTE240M");
+
+        /// <summary>
+        /// Constant SMPTE428 for VideoTransferCharacteristics
+        /// </summary>
+        public static readonly VideoTransferCharacteristics SMPTE428 = new VideoTransferCharacteristics("SMPTE428");
+
+        /// <summary>
+        /// Constructs a custom VideoTransferCharacteristics for a value not among the defined constants.
+        /// </summary>
+        public VideoTransferCharacteristics(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VideoTransferCharacteristics FindValue(string value)
+        {
+            return FindValue<VideoTransferCharacteristics>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VideoTransferCharacteristics(string value)
         {
             return FindValue(value);
         }

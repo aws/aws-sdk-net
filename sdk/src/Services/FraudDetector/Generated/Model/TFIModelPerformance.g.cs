@@ -1,0 +1,65 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.FraudDetector.Model
+{
+    /// <summary>
+    /// The Transaction Fraud Insights (TFI) model performance score.
+    /// </summary>
+    public partial class TFIModelPerformance
+    {
+        /// <summary>
+        /// Gets and sets the property Auc. 
+        /// <para>
+        ///  The area under the curve (auc). This summarizes the total positive rate (tpr) and
+        /// false positive rate (FPR) across all possible model score thresholds. 
+        /// </para>
+        /// </summary>
+        public float? Auc { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Auc property is set.
+        /// </summary>
+        internal bool IsSetAuc() => this.Auc.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property UncertaintyRange. 
+        /// <para>
+        ///  Indicates the range of area under curve (auc) expected from the TFI model. A range
+        /// greater than 0.1 indicates higher model uncertainity. 
+        /// </para>
+        /// </summary>
+        public UncertaintyRange UncertaintyRange { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UncertaintyRange property is set.
+        /// </summary>
+        internal bool IsSetUncertaintyRange() => this.UncertaintyRange != null;
+    }
+}

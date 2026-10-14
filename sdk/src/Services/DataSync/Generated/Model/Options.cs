@@ -53,6 +53,7 @@ namespace Amazon.DataSync.Model
         private Gid _gid;
         private LogLevel _logLevel;
         private Mtime _mtime;
+        private ObjectMetadata _objectMetadata;
         private ObjectTags _objectTags;
         private OverwriteMode _overwriteMode;
         private PosixPermissions _posixPermissions;
@@ -245,6 +246,31 @@ namespace Amazon.DataSync.Model
         internal bool IsSetMtime()
         {
             return this._mtime != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectMetadata. 
+        /// <para>
+        /// Specifies whether you want DataSync to <c>PRESERVE</c> object metadata (default behavior)
+        /// when transferring between object storage systems. If you want your DataSync task to
+        /// ignore object metadata, specify the <c>NONE</c> value.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Even if you specify <c>NONE</c>, metadata for the last modified time is still preserved.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ObjectMetadata ObjectMetadata
+        {
+            get { return this._objectMetadata; }
+            set { this._objectMetadata = value; }
+        }
+
+        // Check to see if ObjectMetadata property is set
+        internal bool IsSetObjectMetadata()
+        {
+            return this._objectMetadata != null;
         }
 
         /// <summary>

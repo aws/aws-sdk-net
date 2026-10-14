@@ -83,4 +83,22 @@ public class AwsJsonCodegenTests
         Assert.Contains("""context.TestExpression("reason", targetDepth, ref reader)""", source);
         Assert.DoesNotContain("IsHeaderPresent", source);
     }
+
+    // awsJson ignores @jsonName, so the wire name must come from the member itself (swf's renamed domainInfos).
+    [Fact]
+    public void RenamedMember_KeepsModeledWireName()
+    {
+        var customizations = TestCustomizations.Rename("DoScalarsRequest", "note", "Remark");
+        customizations.ShapeModifiers["DoScalarsResponse"] = TestCustomizations.RenameMember("name", "Title");
+        var context = TestModels.Context(TestModels.Load("Codegen/awsjson11-model.json"), customizations);
+        var operation = context.Operations.Single(o => o.Name == "DoScalars");
+
+        var marshaller = RequestMarshaller(context, "DoScalars");
+        Assert.Contains("if (publicRequest.IsSetRemark())", marshaller);
+        Assert.Contains("""context.Writer.WritePropertyName("note");""", marshaller);
+
+        var unmarshaller = new JsonResponseUnmarshallerWriter(context, ModelFileName).Write(operation, TestContext.Current.CancellationToken);
+        Assert.Contains("""context.TestExpression("name", targetDepth, ref reader)""", unmarshaller);
+        Assert.Contains("unmarshalledObject.Title = unmarshaller.Unmarshall(context, ref reader);", unmarshaller);
+    }
 }

@@ -33,16 +33,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         var members = TypeMapper.ResolveMembers(operation.Input, context);
 
         var partitioned = PartitionMembers(operation.Input, members, httpBindings);
-
-        // The client takes the first encoding it supports, so unsupported entries are skipped rather
-        // than rejected. gzip is the whole supported set: it's emitted verbatim as an enum member and
-        // CompressionEncodingAlgorithm has only NONE and gzip.
-        var compression = operation.Shape.GetRequestCompression();
-        var compressionEncoding = compression?.Encodings.FirstOrDefault(encoding => encoding == "gzip");
-        if (compression is not null && compressionEncoding is null)
-        {
-            throw new GeneratorException($"Operation '{operation.Name}' requests compression encodings '{string.Join(", ", compression.Encodings)}'; only 'gzip' is supported.");
-        }
+        var compressionEncoding = MarshallerCommon.CompressionEncoding(operation);
 
         // Smithy forbids the combination: the compressed length isn't known until the whole stream
         // has been read, which is exactly what @requiresLength rules out.
@@ -62,25 +53,14 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             WriteMarshallerDocumentation(writer, operation.Name);
             writer.OpenBlock($"public partial class {className}Marshaller : IMarshaller<IRequest, {className}>, IMarshaller<IRequest, AmazonWebServiceRequest>", () =>
             {
-                WriteBaseMarshallMethod(writer, className);
+                MarshallerCommon.WriteBaseMarshallMethod(writer, className);
                 writer.WriteLine("");
                 WriteTypedMarshallMethod(writer, className, operation, httpTrait, partitioned, hostPrefix, compressionEncoding);
                 writer.WriteLine("");
-                WriteSingleton(writer, className);
+                MarshallerCommon.WriteRequestMarshallerSingleton(writer, className);
             });
         });
         return writer.ToFormattedString(cancellationToken);
-    }
-
-    private void WriteBaseMarshallMethod(CodeWriter writer, string className)
-    {
-        writer.WriteLine("/// <summary>");
-        writer.WriteLine("/// Marshall the request object to the HTTP request.");
-        writer.WriteLine("/// </summary>");
-        writer.OpenBlock($"public IRequest Marshall(AmazonWebServiceRequest input)", () =>
-        {
-            writer.WriteLine($"return this.Marshall(({className})input);");
-        });
     }
 
     private void WriteTypedMarshallMethod(
@@ -123,19 +103,20 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             }
             else
             {
-                // awsJson1.x routes on X-Amz-Target and always sends a JSON body (see below), so the
-                // Content-Type is unconditional. Same two-statement shape as C2J.
+                // awsJson1.x routes on X-Amz-Target and always sends a JSON body (see below) unless an input
+                // event stream replaces it, in which case WriteEventStreamPublisher sets the Content-Type.
+                // Same two-statement shape as C2J.
                 writer.WriteLine($"""string target = "{context.ServiceShapeName}.{operation.Name}";""");
                 writer.WriteLine("""request.Headers["X-Amz-Target"] = target;""");
-                if (!String.IsNullOrEmpty(context.Customizations.OverrideContentType))
+                if (partitioned.PayloadMember is not { Type.IsEventStream: true })
                 {
-                    writer.WriteLine($"""request.Headers["Content-Type"] = "{context.Customizations.OverrideContentType}";""");
-                }
-                else
-                {
-                    writer.WriteLine($"""request.Headers["Content-Type"] = "application/x-amz-json-{JsonVersion(context.Protocol)}";""");
+                    var contentType = string.IsNullOrEmpty(context.Customizations.OverrideContentType)
+                        ? $"application/x-amz-json-{JsonVersion(context.Protocol)}"
+                        : context.Customizations.OverrideContentType;
+                    writer.WriteLine($"""request.Headers["Content-Type"] = "{contentType}";""");
                 }
             }
+
             writer.WriteLine($"""request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "{context.ApiVersion}";""");
             writer.WriteLine($"""request.HttpMethod = "{httpTrait.Method}";""");
             writer.WriteLine("");
@@ -155,6 +136,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
                 WritePrefixHeadersMember(writer, prefixHeaders.Member, prefixHeaders.Prefix);
             }
             WriteHeaderMembers(writer, partitioned.HeaderMembers);
+            AwsQueryCompatibleMarshalling.WriteQueryModeHeader(writer, context);
             WriteResourcePath(writer, httpTrait, partitioned.LabelMembers);
 
             // A @httpPayload member IS the whole body, so it replaces (never coexists with) normal
@@ -205,40 +187,12 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
 
             if (!string.IsNullOrEmpty(hostPrefix))
             {
-                WriteHostPrefix(writer, hostPrefix, partitioned.HostLabelMembers);
+                MarshallerCommon.WriteHostPrefix(writer, context.BaseName, hostPrefix, partitioned.HostLabelMembers);
                 writer.WriteLine("");
             }
 
             writer.WriteLine("return request;");
         });
-    }
-
-    private void WriteHostPrefix(CodeWriter writer, string hostPrefix, List<Member> hostLabelMembers)
-    {
-        if (hostLabelMembers.Count > 0)
-        {
-            writer.OpenBlock("var hostPrefixLabels = new", "};", () =>
-            {
-                foreach (var member in hostLabelMembers)
-                {
-                    writer.WriteLine($"{member.ModeledName} = StringUtils.FromString(publicRequest.{member.PropertyName}),");
-                }
-            });
-            writer.WriteLine("");
-
-            foreach (var member in hostLabelMembers)
-            {
-                writer.OpenBlock($"if (!HostPrefixUtils.IsValidLabelValue(hostPrefixLabels.{member.ModeledName}))", () =>
-                {
-                    writer.WriteLine($"""throw new Amazon{context.BaseName}Exception("{member.ModeledName} can only contain alphanumeric characters and dashes and must be between 1 and 63 characters long.");""");
-                });
-            }
-            writer.WriteLine("");
-        }
-
-        // {label} -> {hostPrefixLabels.label}; a prefix with no labels stays literal.
-        var interpolated = hostPrefix.Replace("{", "{hostPrefixLabels.");
-        writer.WriteLine($"""request.HostPrefix = $"{interpolated}";""");
     }
 
     private static string JsonVersion(AWSProtocol protocol) => protocol switch
@@ -612,7 +566,12 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
     {
         if (payload.Type.MarshalsAsString)
         {
-            writer.WriteLine($"request.Content = System.Text.Encoding.UTF8.GetBytes(publicRequest.{payload.PropertyName});");
+            // Diverges from C2J, which leaves this unguarded: GetBytes throws on null, so an unset
+            // optional payload must send an empty body instead of failing before the request is sent.
+            writer.OpenBlock($"if (publicRequest.IsSet{payload.PropertyName}())", () =>
+            {
+                writer.WriteLine($"request.Content = System.Text.Encoding.UTF8.GetBytes(publicRequest.{payload.PropertyName});");
+            });
             return;
         }
 
@@ -623,7 +582,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
                 writer.WriteLine("var context = new JsonMarshallerContext(request, writer);");
                 writer.WriteLine("context.Writer.WriteStartObject();");
                 writer.WriteLine("");
-                writer.WriteLine($"var marshaller = {payload.Type.DotNetType}Marshaller.Instance;");
+                writer.WriteLine($"var marshaller = {payload.Type.MarshallerName}.Instance;");
                 writer.WriteLine($"marshaller.Marshall(publicRequest.{payload.PropertyName}, context);");
                 writer.WriteLine("");
                 writer.WriteLine("context.Writer.WriteEndObject();");
@@ -722,7 +681,8 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
     }
 
     // With httpBindings false (awsJson1.x) every member is a body member and the binding traits are
-    // ignored, as the protocol requires; @hostLabel is not an HTTP binding and still applies.
+    // ignored, as the protocol requires; @hostLabel is not an HTTP binding and still applies. An input
+    // event stream is the payload on either protocol.
     private static PartitionedMembers PartitionMembers(StructureShape input, List<Member> members, bool httpBindings)
     {
         var queryMembers = new List<(Member Member, string QueryName)>();
@@ -741,15 +701,32 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             var httpHeader = memberShape.GetHttpHeader();
             var httpPrefixHeaders = memberShape.GetHttpPrefixHeaders();
 
-            // Anywhere else the publisher is never wired and the body path emits a marshaller that doesn't exist.
-            if (member.Type.IsEventStream && !memberShape.IsHttpPayload())
+            if (member.Type.IsEventStream)
             {
-                throw new GeneratorException($"Event stream member '{member.PropertyName}' must be bound with @httpPayload.");
+                // Anywhere else the publisher is never wired and the body path emits a marshaller that doesn't exist.
+                if (httpBindings && !memberShape.IsHttpPayload())
+                {
+                    throw new GeneratorException($"Event stream member '{member.PropertyName}' must be bound with @httpPayload.");
+                }
+
+                // awsJson has no bindings, so the stream can only be the whole body: the other members would have
+                // to travel as an initial-request message, which Core cannot emit.
+                if (!httpBindings && members.Count > 1)
+                {
+                    throw new GeneratorException($"Event stream member '{member.PropertyName}' has sibling input members, which is not supported.");
+                }
             }
 
             if (!httpBindings)
             {
-                bodyMembers.Add(member);
+                if (member.Type.IsEventStream)
+                {
+                    payloadMember = member;
+                }
+                else
+                {
+                    bodyMembers.Add(member);
+                }
             }
             else if (httpQuery is not null)
             {
@@ -831,18 +808,6 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         writer.WriteLine("/// <summary>");
         writer.WriteLine($"/// {operationName} Request Marshaller");
         writer.WriteLine("/// </summary>");
-    }
-
-    private static void WriteSingleton(CodeWriter writer, string className)
-    {
-        writer.WriteLine($"private static readonly {className}Marshaller _instance = new();");
-        writer.WriteLine("");
-        writer.WriteLine($"internal static {className}Marshaller GetInstance() => _instance;");
-        writer.WriteLine("");
-        writer.WriteLine("/// <summary>");
-        writer.WriteLine("/// Gets the singleton.");
-        writer.WriteLine("/// </summary>");
-        writer.WriteLine($"public static {className}Marshaller Instance => _instance;");
     }
 
     private void WriteUsings(CodeWriter writer)

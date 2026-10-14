@@ -170,7 +170,10 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 	else if (payload?.Shape.IsString == true)
 	{
 #>
-			request.Content = System.Text.Encoding.UTF8.GetBytes(publicRequest.<#= payload.PropertyName #>);
+			if (publicRequest.IsSet<#= payload.PropertyName #>())
+			{
+				request.Content = System.Text.Encoding.UTF8.GetBytes(publicRequest.<#= payload.PropertyName #>);
+			}
 <#
 	}
     else if (payload?.IsMemoryStream == true)

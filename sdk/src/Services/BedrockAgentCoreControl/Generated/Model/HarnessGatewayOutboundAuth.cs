@@ -79,6 +79,11 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <para>
         /// Use OAuth credentials for outbound authentication to the gateway.
         /// </para>
+        ///  
+        /// <para>
+        /// The <c>AUTHORIZATION_CODE</c> grant type is not supported for outbound authentication
+        /// from a harness to an AgentCore Gateway, even when <c>defaultReturnUrl</c> is specified.
+        /// </para>
         /// </summary>
         public OAuthCredentialProvider Oauth
         {

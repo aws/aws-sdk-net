@@ -4,7 +4,7 @@
     <property>Amazon.RedshiftServerless.Model.CreateCustomDomainAssociationRequest.CustomDomainCertificateArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
+    <pattern>.*arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.CreateCustomDomainAssociationRequest.CustomDomainName</property>
@@ -22,7 +22,7 @@
     <property>Amazon.RedshiftServerless.Model.CreateCustomDomainAssociationResponse.CustomDomainCertificateArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
+    <pattern>.*arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.CreateCustomDomainAssociationResponse.CustomDomainName</property>
@@ -40,7 +40,7 @@
     <property>Amazon.RedshiftServerless.Model.CreateEndpointAccessRequest.OwnerAccount</property>
     <min>1</min>
     <max>12</max>
-    <pattern>(\d{12})</pattern>
+    <pattern>.*(\d{12}).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.CreateNamespaceRequest.NamespaceName</property>
@@ -156,7 +156,7 @@
     <property>Amazon.RedshiftServerless.Model.GetCustomDomainAssociationResponse.CustomDomainCertificateArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
+    <pattern>.*arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.GetCustomDomainAssociationResponse.CustomDomainName</property>
@@ -208,7 +208,7 @@
     <property>Amazon.RedshiftServerless.Model.ListCustomDomainAssociationsRequest.CustomDomainCertificateArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
+    <pattern>.*arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.ListCustomDomainAssociationsRequest.CustomDomainName</property>
@@ -240,7 +240,7 @@
     <property>Amazon.RedshiftServerless.Model.ListEndpointAccessRequest.OwnerAccount</property>
     <min>1</min>
     <max>12</max>
-    <pattern>(\d{12})</pattern>
+    <pattern>.*(\d{12}).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.ListManagedWorkgroupsRequest.MaxResults</property>
@@ -413,7 +413,7 @@
     <property>Amazon.RedshiftServerless.Model.ListWorkgroupsRequest.OwnerAccount</property>
     <min>1</min>
     <max>12</max>
-    <pattern>(\d{12})</pattern>
+    <pattern>.*(\d{12}).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.RestoreFromRecoveryPointRequest.NamespaceName</property>
@@ -453,7 +453,7 @@
     <property>Amazon.RedshiftServerless.Model.UpdateCustomDomainAssociationRequest.CustomDomainCertificateArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
+    <pattern>.*arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.UpdateCustomDomainAssociationRequest.CustomDomainName</property>
@@ -471,7 +471,7 @@
     <property>Amazon.RedshiftServerless.Model.UpdateCustomDomainAssociationResponse.CustomDomainCertificateArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
+    <pattern>.*arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.UpdateCustomDomainAssociationResponse.CustomDomainName</property>
@@ -535,7 +535,7 @@
     <property>Amazon.RedshiftServerless.Model.Association.CustomDomainCertificateArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
+    <pattern>.*arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.Association.CustomDomainName</property>
@@ -679,7 +679,7 @@
     <property>Amazon.RedshiftServerless.Model.Workgroup.CustomDomainCertificateArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
+    <pattern>.*arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.Workgroup.CustomDomainName</property>

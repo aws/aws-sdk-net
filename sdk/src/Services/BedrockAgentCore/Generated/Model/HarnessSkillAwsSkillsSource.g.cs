@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Passed to show that AWS Skills should be included.
+    /// Passed to show that Amazon Web Services Skills should be included.
     /// </summary>
     public partial class HarnessSkillAwsSkillsSource
     {

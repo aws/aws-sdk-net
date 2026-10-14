@@ -36,7 +36,7 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     /// Removes a VPC peering connection. To delete the connection, you must have a valid
-    /// authorization for the VPC peering connection that you want to delete.. 
+    /// authorization for the VPC peering connection that you want to delete. 
     /// </para>
     ///  
     /// <para>

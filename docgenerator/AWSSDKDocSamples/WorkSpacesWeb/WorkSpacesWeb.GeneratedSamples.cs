@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.WorkSpacesWeb.Generated
     {
         public void WorkSpacesWebAssociateSessionLogger()
         {
-            #region example-1
+            #region AssociateSessionLogger-1
 
             var client = new AmazonWorkSpacesWebClient();
-            var response = client.AssociateSessionLogger(new AssociateSessionLoggerRequest 
+            var response = client.AssociateSessionLogger(new AssociateSessionLoggerRequest
             {
                 PortalArn = "arn:aws:workspaces-web:us-west-2:123456789012:portal/12345678-1234-1234-1234-123456789012",
                 SessionLoggerArn = "arn:aws:workspaces-web:us-west-2:123456789012:sessionLogger/11111111-1111-1111-1111-111111111111"
@@ -30,10 +31,10 @@ namespace AWSSDKDocSamples.Amazon.WorkSpacesWeb.Generated
 
         public void WorkSpacesWebCreateSessionLogger()
         {
-            #region example-1
+            #region CreateSessionLogger-1
 
             var client = new AmazonWorkSpacesWebClient();
-            var response = client.CreateSessionLogger(new CreateSessionLoggerRequest 
+            var response = client.CreateSessionLogger(new CreateSessionLoggerRequest
             {
                 DisplayName = "Session Logger with All Events",
                 EventFilter = new EventFilter { All = new Unit {  } },
@@ -53,10 +54,10 @@ namespace AWSSDKDocSamples.Amazon.WorkSpacesWeb.Generated
 
         public void WorkSpacesWebCreateSessionLogger()
         {
-            #region example-2
+            #region CreateSessionLogger-2
 
             var client = new AmazonWorkSpacesWebClient();
-            var response = client.CreateSessionLogger(new CreateSessionLoggerRequest 
+            var response = client.CreateSessionLogger(new CreateSessionLoggerRequest
             {
                 AdditionalEncryptionContext = new Dictionary<string, string> {
                     { "EncryptionContextKey", "EncryptionContextValue" }
@@ -95,10 +96,10 @@ namespace AWSSDKDocSamples.Amazon.WorkSpacesWeb.Generated
 
         public void WorkSpacesWebDeleteSessionLogger()
         {
-            #region example-1
+            #region DeleteSessionLogger-1
 
             var client = new AmazonWorkSpacesWebClient();
-            var response = client.DeleteSessionLogger(new DeleteSessionLoggerRequest 
+            var response = client.DeleteSessionLogger(new DeleteSessionLoggerRequest
             {
                 SessionLoggerArn = "arn:aws:workspaces-web:us-west-2:123456789012:sessionLogger/12345678-1234-1234-1234-123456789012"
             });
@@ -109,10 +110,10 @@ namespace AWSSDKDocSamples.Amazon.WorkSpacesWeb.Generated
 
         public void WorkSpacesWebDisassociateSessionLogger()
         {
-            #region example-1
+            #region DisassociateSessionLogger-1
 
             var client = new AmazonWorkSpacesWebClient();
-            var response = client.DisassociateSessionLogger(new DisassociateSessionLoggerRequest 
+            var response = client.DisassociateSessionLogger(new DisassociateSessionLoggerRequest
             {
                 PortalArn = "arn:aws:workspaces-web:us-west-2:123456789012:portal/12345678-1234-1234-1234-123456789012"
             });
@@ -123,10 +124,10 @@ namespace AWSSDKDocSamples.Amazon.WorkSpacesWeb.Generated
 
         public void WorkSpacesWebGetSessionLogger()
         {
-            #region example-1
+            #region GetSessionLogger-1
 
             var client = new AmazonWorkSpacesWebClient();
-            var response = client.GetSessionLogger(new GetSessionLoggerRequest 
+            var response = client.GetSessionLogger(new GetSessionLoggerRequest
             {
                 SessionLoggerArn = "arn:aws:workspaces-web:us-west-2:123456789012:sessionLogger/12345678-1234-1234-1234-123456789012"
             });
@@ -138,10 +139,10 @@ namespace AWSSDKDocSamples.Amazon.WorkSpacesWeb.Generated
 
         public void WorkSpacesWebGetSessionLogger()
         {
-            #region example-2
+            #region GetSessionLogger-2
 
             var client = new AmazonWorkSpacesWebClient();
-            var response = client.GetSessionLogger(new GetSessionLoggerRequest 
+            var response = client.GetSessionLogger(new GetSessionLoggerRequest
             {
                 SessionLoggerArn = "arn:aws:workspaces-web:us-west-2:123456789012:sessionLogger/87654321-4321-4321-4321-210987654321"
             });
@@ -153,10 +154,10 @@ namespace AWSSDKDocSamples.Amazon.WorkSpacesWeb.Generated
 
         public void WorkSpacesWebListSessionLoggers()
         {
-            #region example-1
+            #region ListSessionLoggers-1
 
             var client = new AmazonWorkSpacesWebClient();
-            var response = client.ListSessionLoggers(new ListSessionLoggersRequest 
+            var response = client.ListSessionLoggers(new ListSessionLoggersRequest
             {
             });
 
@@ -167,10 +168,10 @@ namespace AWSSDKDocSamples.Amazon.WorkSpacesWeb.Generated
 
         public void WorkSpacesWebListSessionLoggers()
         {
-            #region example-2
+            #region ListSessionLoggers-2
 
             var client = new AmazonWorkSpacesWebClient();
-            var response = client.ListSessionLoggers(new ListSessionLoggersRequest 
+            var response = client.ListSessionLoggers(new ListSessionLoggersRequest
             {
                 MaxResults = 1,
                 NextToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
@@ -184,10 +185,10 @@ namespace AWSSDKDocSamples.Amazon.WorkSpacesWeb.Generated
 
         public void WorkSpacesWebUpdateSessionLogger()
         {
-            #region example-1
+            #region UpdateSessionLogger-1
 
             var client = new AmazonWorkSpacesWebClient();
-            var response = client.UpdateSessionLogger(new UpdateSessionLoggerRequest 
+            var response = client.UpdateSessionLogger(new UpdateSessionLoggerRequest
             {
                 EventFilter = new EventFilter { Include = new List<string> {
                     "SessionStart",
@@ -205,10 +206,10 @@ namespace AWSSDKDocSamples.Amazon.WorkSpacesWeb.Generated
 
         public void WorkSpacesWebUpdateSessionLogger()
         {
-            #region example-2
+            #region UpdateSessionLogger-2
 
             var client = new AmazonWorkSpacesWebClient();
-            var response = client.UpdateSessionLogger(new UpdateSessionLoggerRequest 
+            var response = client.UpdateSessionLogger(new UpdateSessionLoggerRequest
             {
                 LogConfiguration = new LogConfiguration { S3 = new S3LogConfiguration {
                     Bucket = "updated-my-session-logs-bucket-2",
@@ -225,13 +226,10 @@ namespace AWSSDKDocSamples.Amazon.WorkSpacesWeb.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

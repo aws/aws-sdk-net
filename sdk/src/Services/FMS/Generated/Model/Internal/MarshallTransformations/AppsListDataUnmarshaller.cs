@@ -29,76 +29,101 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AppsListData Object
     /// </summary>  
-    public class AppsListDataUnmarshaller : IJsonUnmarshaller<AppsListData, JsonUnmarshallerContext>
+    public class AppsListDataUnmarshaller : ICborUnmarshaller<AppsListData, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AppsListData Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AppsListData Unmarshall(CborUnmarshallerContext context)
         {
             AppsListData unmarshalledObject = new AppsListData();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("AppsList", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<App, AppUnmarshaller>(AppUnmarshaller.Instance);
-                    unmarshalledObject.AppsList = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("CreateTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("LastUpdateTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdateTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ListId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ListId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ListName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ListName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ListUpdateToken", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ListUpdateToken = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("PreviousAppsList", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, List<App>, StringUnmarshaller, JsonListUnmarshaller<App,AppUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<App, AppUnmarshaller>(AppUnmarshaller.Instance));
-                    unmarshalledObject.PreviousAppsList = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "AppsList":
+                        {
+                            context.AddPathSegment("AppsList");
+                            var unmarshaller = new CborListUnmarshaller<App, AppUnmarshaller>(AppUnmarshaller.Instance);
+                            unmarshalledObject.AppsList = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "CreateTime":
+                        {
+                            context.AddPathSegment("CreateTime");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "LastUpdateTime":
+                        {
+                            context.AddPathSegment("LastUpdateTime");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.LastUpdateTime = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ListId":
+                        {
+                            context.AddPathSegment("ListId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ListId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ListName":
+                        {
+                            context.AddPathSegment("ListName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ListName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ListUpdateToken":
+                        {
+                            context.AddPathSegment("ListUpdateToken");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ListUpdateToken = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "PreviousAppsList":
+                        {
+                            context.AddPathSegment("PreviousAppsList");
+                            var unmarshaller = new CborDictionaryUnmarshaller<string, List<App>, CborStringUnmarshaller, CborListUnmarshaller<App, AppUnmarshaller>>(CborStringUnmarshaller.Instance, new CborListUnmarshaller<App, AppUnmarshaller>(AppUnmarshaller.Instance));
+                            unmarshalledObject.PreviousAppsList = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

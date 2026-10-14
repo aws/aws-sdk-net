@@ -42,6 +42,20 @@ namespace Amazon.EMRServerless.Model
     public partial class GetResourceDashboardRequest : AmazonEMRServerlessRequest
     {
         /// <summary>
+        /// Gets and sets the property AccessSystemProfileLogs. 
+        /// <para>
+        /// Allows access to system profile logs for Lake Formation-enabled sessions. Default
+        /// is false.
+        /// </para>
+        /// </summary>
+        public bool? AccessSystemProfileLogs { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AccessSystemProfileLogs property is set.
+        /// </summary>
+        internal bool IsSetAccessSystemProfileLogs() => this.AccessSystemProfileLogs.HasValue;
+
+        /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
         /// The ID of the application that the resource belongs to.

@@ -20,7 +20,7 @@ public sealed class StandaloneGenerator(StandaloneOptions options)
         // The writers that read the manifest (AssemblyInfo, nuspec, code analysis) are skipped in
         // standalone mode, so an empty one satisfies the constructor.
         var context = new GenerationContext(index, new SdkVersionManifest());
-        UnsupportedTraitValidator.Validate(index);
+        UnsupportedTraitValidator.Validate(index, context.Protocol);
 
         var generator = new ServiceGenerator(context, Path.GetFileName(options.ModelPath), options.Version, DefaultConfigurationManifest.LoadEmbedded(), options);
         Log.Info($"Generating {context.AssemblyName} into '{options.OutputDirectory}'.");
@@ -38,7 +38,7 @@ public sealed class StandaloneGenerator(StandaloneOptions options)
             }
         }
 
-        // Same reason as BatchGenerator.WipeStaleOutput: leftover files from an earlier model would
+        // Same reason BatchGenerator removes stale output: leftover files from an earlier model would
         // compile as duplicate types. Only the generated tree is touched.
         var generated = Path.Combine(options.OutputDirectory, "Generated");
         if (Directory.Exists(generated))

@@ -14,6 +14,7 @@
  */
 
 using System;
+using Amazon.Runtime.Telemetry.Metrics.NoOp;
 using Amazon.Util;
 
 namespace Amazon.Runtime.Telemetry.Metrics
@@ -46,6 +47,9 @@ namespace Amazon.Runtime.Telemetry.Metrics
         /// <param name="initialAttributes">The attributes associated with the metric.</param>
         public static void AddMonotonicCounterValue(IRequestContext requestContext, string metricName, string unit, long value = 1, Attributes initialAttributes = null)
         {
+            if (requestContext.ClientConfig.TelemetryProvider.MeterProvider is NoOpMeterProvider)
+                return;
+
             var serviceId = requestContext.ClientConfig.ServiceId;
 
             if (initialAttributes == null)
@@ -71,9 +75,12 @@ namespace Amazon.Runtime.Telemetry.Metrics
         /// <param name="requestContext">The request context object.</param>
         /// <param name="metricName">The name of the metric to record.</param>
         /// <param name="initialAttributes">The attributes associated with the metric.</param>
-        /// <returns>A disposable object that records the duration when disposed.</returns>
+        /// <returns>A disposable object that records the duration when disposed, or null when no meter provider is registered.</returns>
         public static IDisposable MeasureDuration(IRequestContext requestContext, string metricName, Attributes initialAttributes = null)
         {
+            if (requestContext.ClientConfig.TelemetryProvider.MeterProvider is NoOpMeterProvider)
+                return null;
+
             if (initialAttributes == null)
                 initialAttributes = new Attributes();
 
@@ -89,9 +96,12 @@ namespace Amazon.Runtime.Telemetry.Metrics
         /// <param name="config">The client configuration object.</param>
         /// <param name="metricName">The name of the metric to record.</param>
         /// <param name="attributes">The attributes associated with the metric.</param>
-        /// <returns>A disposable object that records the duration when disposed.</returns>
+        /// <returns>A disposable object that records the duration when disposed, or null when no meter provider is registered.</returns>
         public static IDisposable MeasureDuration(IClientConfig config, string metricName, Attributes attributes = null)
         {
+            if (config.TelemetryProvider.MeterProvider is NoOpMeterProvider)
+                return null;
+
             var serviceId = config.ServiceId;
 
             if (attributes == null)

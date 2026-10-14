@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Translate.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ParallelDataConfig Marshaller
     /// </summary>
-    public class ParallelDataConfigMarshaller : IRequestMarshaller<ParallelDataConfig, JsonMarshallerContext> 
+    public class ParallelDataConfigMarshaller : IRequestMarshaller<ParallelDataConfig, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ParallelDataConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(ParallelDataConfig requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetFormat())
-            {
-                context.Writer.WritePropertyName("Format");
-                context.Writer.WriteStringValue(requestObject.Format);
-            }
 
-            if(requestObject.IsSetS3Uri())
+            if (requestObject.IsSetFormat())
             {
-                context.Writer.WritePropertyName("S3Uri");
-                context.Writer.WriteStringValue(requestObject.S3Uri);
+                context.Writer.WriteTextString("Format");
+                context.Writer.WriteTextString(requestObject.Format);
             }
-
+            if (requestObject.IsSetS3Uri())
+            {
+                context.Writer.WriteTextString("S3Uri");
+                context.Writer.WriteTextString(requestObject.S3Uri);
+            }
         }
 
         /// <summary>

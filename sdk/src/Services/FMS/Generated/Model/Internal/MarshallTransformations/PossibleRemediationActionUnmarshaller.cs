@@ -29,52 +29,69 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PossibleRemediationAction Object
     /// </summary>  
-    public class PossibleRemediationActionUnmarshaller : IJsonUnmarshaller<PossibleRemediationAction, JsonUnmarshallerContext>
+    public class PossibleRemediationActionUnmarshaller : ICborUnmarshaller<PossibleRemediationAction, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PossibleRemediationAction Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public PossibleRemediationAction Unmarshall(CborUnmarshallerContext context)
         {
             PossibleRemediationAction unmarshalledObject = new PossibleRemediationAction();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("Description", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("IsDefaultAction", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsDefaultAction = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("OrderedRemediationActions", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<RemediationActionWithOrder, RemediationActionWithOrderUnmarshaller>(RemediationActionWithOrderUnmarshaller.Instance);
-                    unmarshalledObject.OrderedRemediationActions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Description":
+                        {
+                            context.AddPathSegment("Description");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "IsDefaultAction":
+                        {
+                            context.AddPathSegment("IsDefaultAction");
+                            var unmarshaller = CborNullableBoolUnmarshaller.Instance;
+                            unmarshalledObject.IsDefaultAction = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "OrderedRemediationActions":
+                        {
+                            context.AddPathSegment("OrderedRemediationActions");
+                            var unmarshaller = new CborListUnmarshaller<RemediationActionWithOrder, RemediationActionWithOrderUnmarshaller>(RemediationActionWithOrderUnmarshaller.Instance);
+                            unmarshalledObject.OrderedRemediationActions = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

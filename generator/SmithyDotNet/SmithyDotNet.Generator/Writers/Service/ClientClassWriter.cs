@@ -1,5 +1,7 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Generation.Operations;
+using SmithyDotNet.Generator.Model.Shapes;
 
 namespace SmithyDotNet.Generator.Writers.Service;
 
@@ -14,9 +16,7 @@ namespace SmithyDotNet.Generator.Writers.Service;
 /// <c>Amazon{Service}Metadata</c>, and the <c>Amazon{Service}EndpointResolver</c> /
 /// <c>Amazon{Service}AuthSchemeHandler</c>. This writer emits only the client class.
 /// <para />
-/// <c>CustomizeRuntimePipeline</c> emits the base handler set. Per-service pipeline handlers
-/// (e.g. S3, EC2, SQS) come from <c>{service}.customizations.json</c>
-/// (<c>runtimePipelineOverride.overrides</c>), which the Smithy model does not carry.
+/// <c>CustomizeRuntimePipeline</c> emits the service's <c>runtimePipelineOverride</c> handlers, then the base handler set.
 /// </summary>
 public sealed class ClientClassWriter(GenerationContext context, string modelFileName)
 {
@@ -76,6 +76,11 @@ public sealed class ClientClassWriter(GenerationContext context, string modelFil
 
                 WriteOverrides(writer);
                 WriteDispose(writer);
+
+                if (context.EndpointDiscoveryOperation is { } discoveryOperation)
+                {
+                    WriteEndpointOperation(writer, discoveryOperation);
+                }
 
                 foreach (var operation in context.Operations)
                 {
@@ -223,10 +228,30 @@ public sealed class ClientClassWriter(GenerationContext context, string modelFil
         writer.WriteLine("/// <param name=\"pipeline\">Runtime pipeline for the current client.</param>");
         writer.OpenBlock("protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)", () =>
         {
-            // Base handler set, emitted for every service. Per-service extra handlers (e.g. S3,
-            // EC2, SQS) come from {service}.customizations.json (runtimePipelineOverride.overrides),
-            // which the Smithy model does not carry. The endpoint-resolver swap exists only for
-            // services with an endpoint rule set (test services have none), matching C2J.
+            foreach (var entry in context.Customizations.RuntimePipelineOverride?.Overrides ?? [])
+            {
+                var method = entry.Operation switch
+                {
+                    PipelineOverride.AddBefore => "AddHandlerBefore",
+                    PipelineOverride.AddAfter => "AddHandlerAfter",
+                    PipelineOverride.Replace => "ReplaceHandler",
+                    _ => throw new GeneratorException($"Pipeline override operation '{entry.Operation}' is not supported."),
+                };
+                var call = $"pipeline.{method}<{entry.TargetType}>(new {entry.NewType}({entry.ConstructorInput}));";
+
+                // As in C2J, an empty condition means none.
+                if (string.IsNullOrEmpty(entry.Condition))
+                {
+                    writer.WriteLine(call);
+                }
+                else
+                {
+                    writer.OpenBlock($"if ({entry.Condition})", () => writer.WriteLine(call));
+                }
+            }
+
+            // The endpoint-resolver swap exists only for services with an endpoint rule set (test
+            // services have none), matching C2J.
             if (context.HasEndpointRuleSet)
             {
                 writer.WriteLine("pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();");
@@ -260,6 +285,68 @@ public sealed class ClientClassWriter(GenerationContext context, string modelFil
             writer.WriteLine("base.Dispose(disposing);");
         });
         writer.WriteLine();
+    }
+
+    // Core calls this on an endpoint cache miss or refresh (C2J ServiceClientsNetStandard.tt). It shares the
+    // discovery operation's HTTP/2 guard, since it calls that operation.
+    private void WriteEndpointOperation(CodeWriter writer, Operation discoveryOperation)
+    {
+        var endpoints = DiscoveryMember(TypeMapper.ResolveMembers(discoveryOperation.Output, context), discoveryOperation.Output, "Endpoints");
+        var endpointShape = endpoints.Type.ListElement?.Target as StructureShape
+            ?? throw new GeneratorException($"Endpoint discovery: '{discoveryOperation.Output.Id.Name}.Endpoints' is not a list of structures.");
+
+        // Passed straight to Core's DiscoveryEndpoint(string, long), so a dataTypeSwap here could not compile.
+        var endpointMembers = TypeMapper.ResolveMembers(endpointShape, context);
+        var address = DiscoveryMember(endpointMembers, endpointShape, "Address", "string").PropertyName;
+        var cachePeriod = DiscoveryMember(endpointMembers, endpointShape, "CachePeriodInMinutes", "long?").PropertyName;
+
+        if (discoveryOperation.RequiresHttp2)
+        {
+            writer.WriteLine("#if NET8_0_OR_GREATER");
+        }
+
+        writer.WriteLine("/// <summary>");
+        writer.WriteLine("/// Resolve endpoint for service api request.");
+        writer.WriteLine("/// </summary>");
+        writer.OpenBlock("protected override IEnumerable<DiscoveryEndpointBase> EndpointOperation(EndpointOperationContextBase context)", () =>
+        {
+            writer.OpenBlock("return EndpointDiscoveryResolver.ResolveEndpoints(context, () =>", "});", () =>
+            {
+                writer.WriteLine($"var response = {discoveryOperation.Name}(new {discoveryOperation.Name}Request());");
+                writer.OpenBlock($"if (response.HttpStatusCode != HttpStatusCode.OK || response.{endpoints.PropertyName} == null)", () =>
+                {
+                    writer.WriteLine("return null;");
+                });
+                writer.WriteLine();
+                writer.WriteLine("var endpoints = new List<DiscoveryEndpointBase>();");
+                writer.OpenBlock($"foreach (var endpoint in response.{endpoints.PropertyName})", () =>
+                {
+                    writer.WriteLine($"endpoints.Add(new DiscoveryEndpoint(endpoint.{address}, endpoint.{cachePeriod}.GetValueOrDefault()));");
+                });
+                writer.WriteLine();
+                writer.WriteLine("return endpoints;");
+            });
+        });
+
+        if (discoveryOperation.RequiresHttp2)
+        {
+            writer.WriteLine("#endif");
+        }
+        writer.WriteLine();
+    }
+
+    // The Smithy spec fixes these member names, which a rename doesn't change.
+    private static Member DiscoveryMember(List<Member> members, StructureShape shape, string name, string? requiredType = null)
+    {
+        var member = members.FirstOrDefault(m => m.ModeledName == name)
+            ?? throw new GeneratorException($"Endpoint discovery: '{shape.Id.Name}' has no '{name}' member.");
+
+        if (requiredType is not null && member.Type.DotNetType != requiredType)
+        {
+            throw new GeneratorException($"Endpoint discovery: '{shape.Id.Name}.{name}' is '{member.Type.DotNetType}', but must be '{requiredType}'.");
+        }
+
+        return member;
     }
 
     private void WriteOperation(CodeWriter writer, Operation operation)
@@ -326,11 +413,16 @@ public sealed class ClientClassWriter(GenerationContext context, string modelFil
         writer.WriteLine();
     }
 
-    private static void WriteInvokeOptions(CodeWriter writer, Operation operation)
+    private void WriteInvokeOptions(CodeWriter writer, Operation operation)
     {
         writer.WriteLine("var options = new Amazon.Runtime.Internal.InvokeOptions();");
         writer.WriteLine($"options.RequestMarshaller = {operation.Name}RequestMarshaller.Instance;");
         writer.WriteLine($"options.ResponseUnmarshaller = {operation.Name}ResponseUnmarshaller.Instance;");
+        if (context.DiscoveredOperations.ContainsKey(operation.Shape.Id))
+        {
+            writer.WriteLine($"options.EndpointDiscoveryMarshaller = {operation.Name}EndpointDiscoveryMarshaller.Instance;");
+            writer.WriteLine("options.EndpointOperation = EndpointOperation;");
+        }
         writer.WriteLine();
     }
 

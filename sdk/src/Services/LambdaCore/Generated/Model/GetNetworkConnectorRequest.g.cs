@@ -41,7 +41,13 @@ namespace Amazon.LambdaCore.Model
     public partial class GetNetworkConnectorRequest : AmazonLambdaCoreRequest
     {
         /// <summary>
-        /// Gets and sets the property Identifier.
+        /// Gets and sets the property Identifier. 
+        /// <para>
+        /// The identifier of the network connector to retrieve. You can specify the connector
+        /// ID, name, or ARN. Provide an unqualified ARN (or an ID or name) to retrieve the connector's
+        /// latest version, or a version-qualified ARN — one that includes the immutable version
+        /// suffix — to retrieve a specific historical version.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 140)]
         public string Identifier { get; set; }

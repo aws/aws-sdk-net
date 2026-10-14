@@ -133,6 +133,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListContactFlowAliases operation
+        ///</summary>
+        public IListContactFlowAliasesPaginator ListContactFlowAliases(ListContactFlowAliasesRequest request) 
+        {
+            return new ListContactFlowAliasesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListContactFlowModuleAliases operation
         ///</summary>
         public IListContactFlowModuleAliasesPaginator ListContactFlowModuleAliases(ListContactFlowModuleAliasesRequest request) 

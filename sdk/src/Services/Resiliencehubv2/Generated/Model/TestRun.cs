@@ -36,6 +36,7 @@ namespace Amazon.Resiliencehubv2.Model
     public partial class TestRun
     {
         private AccountTargeting _accountTargeting;
+        private DevOpsAgentInvestigation _devOpsAgentInvestigation;
         private DateTime? _endedAt;
         private string _errorMessage;
         private int? _eventCount;
@@ -75,6 +76,25 @@ namespace Amazon.Resiliencehubv2.Model
         internal bool IsSetAccountTargeting()
         {
             return this._accountTargeting != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DevOpsAgentInvestigation. 
+        /// <para>
+        /// The DevOps Agent investigation result for the test run, present when the integration
+        /// is enabled for the service.
+        /// </para>
+        /// </summary>
+        public DevOpsAgentInvestigation DevOpsAgentInvestigation
+        {
+            get { return this._devOpsAgentInvestigation; }
+            set { this._devOpsAgentInvestigation = value; }
+        }
+
+        // Check to see if DevOpsAgentInvestigation property is set
+        internal bool IsSetDevOpsAgentInvestigation()
+        {
+            return this._devOpsAgentInvestigation != null;
         }
 
         /// <summary>

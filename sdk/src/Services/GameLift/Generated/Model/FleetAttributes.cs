@@ -636,8 +636,8 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DOWNLOADING/VALIDATING/BUILDING -- Amazon GameLift Servers is download the game server
-        /// build, running install scripts, and then validating the build files. When complete,
+        /// DOWNLOADING/VALIDATING/BUILDING -- Amazon GameLift Servers is downloading the game
+        /// server build, running install scripts, and then validating the build files. When complete,
         /// Amazon GameLift Servers launches a fleet instance. 
         /// </para>
         ///  </li> <li> 

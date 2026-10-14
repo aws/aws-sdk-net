@@ -1,10 +1,12 @@
 using SmithyDotNet.Generator.Generation.Auth;
 using SmithyDotNet.Generator.Generation.Customizations;
+using SmithyDotNet.Generator.Generation.EndpointDiscovery;
 using SmithyDotNet.Generator.Generation.Endpoints;
 using SmithyDotNet.Generator.Generation.EventStreams;
 using SmithyDotNet.Generator.Generation.Manifests;
 using SmithyDotNet.Generator.Generation.Operations;
 using SmithyDotNet.Generator.Generation.Paginators;
+using SmithyDotNet.Generator.Generation.ProjectFiles;
 using SmithyDotNet.Generator.Generation.Protocols;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
@@ -128,6 +130,9 @@ public class GenerationContext
     /// </summary>
     public bool UsesHttpBindings { get; }
 
+    /// <summary>Whether the service carries <c>aws.protocols#awsQueryCompatible</c>: the request sends <c>x-amzn-query-mode</c> and error dispatch runs before the query error code overwrites the shape name.</summary>
+    public bool IsAwsQueryCompatible { get; }
+
     /// <summary>
     /// The service shape's name (e.g. <c>Kinesis_20131202</c>). awsJson1.x routes requests with it:
     /// <c>X-Amz-Target: {ServiceShapeName}.{OperationName}</c>. C2J equivalent: <c>targetPrefix</c>.
@@ -137,7 +142,20 @@ public class GenerationContext
     /// <summary>All operations with their input/output/error shapes resolved.</summary>
     public IReadOnlyList<Operation> Operations { get; }
 
-    /// <summary>Operations carrying <c>@paginated</c>, with token/items members resolved to .NET property names. Sorted by operation name.</summary>
+    /// <summary>
+    /// The operation the client calls to discover endpoints (<c>aws.api#clientEndpointDiscovery</c>), or
+    /// <c>null</c> when the service doesn't use endpoint discovery.
+    /// </summary>
+    public Operation? EndpointDiscoveryOperation { get; }
+
+    /// <summary>
+    /// Operations carrying <c>aws.api#clientDiscoveredEndpoint</c>, by shape ID, to whether they require a discovered
+    /// endpoint. Empty without an <see cref="EndpointDiscoveryOperation"/>, and never holds that operation itself,
+    /// which C2J skips too.
+    /// </summary>
+    public IReadOnlyDictionary<ShapeId, bool> DiscoveredOperations { get; }
+
+    /// <summary>Operations carrying <c>@paginated</c> or a <c>paginators</c> customization, with token/items members resolved to .NET property names. Sorted by operation name.</summary>
     public IReadOnlyList<PaginatedOperation> PaginatedOperations { get; }
 
     /// <summary>Whether the service has any paginated operations.</summary>
@@ -154,6 +172,15 @@ public class GenerationContext
 
     /// <summary>Reachable structures that carry the <c>@error</c> trait, keyed by shape ID. Sorted by shape ID for deterministic output.</summary>
     public IReadOnlyDictionary<ShapeId, StructureShape> Errors { get; }
+
+    /// <summary>
+    /// Operation outputs already named <c>{Op}Response</c>. The <c>{Op}Response</c> class is then also the
+    /// shape's model class, so a member targeting the shape is typed with it and its structure unmarshaller needs a name
+    /// distinct from the operation's response unmarshaller (see <see cref="StructureUnmarshallerName"/>).
+    /// </summary>
+    /// <remarks>TODO: an input named <c>{Op}Request</c> that a member targets collides the same way (model class and marshaller); no model has one yet.
+    /// Its marshaller rule goes in <see cref="StructureMarshallerName"/>.</remarks>
+    public IReadOnlySet<ShapeId> ResponseNamedOutputs { get; }
 
     /// <summary>
     /// The service's <c>enum</c> shapes (<see cref="ServiceIndex.AllEnums"/>: reachable ones plus
@@ -184,9 +211,9 @@ public class GenerationContext
     public SdkVersionManifest Manifest { get; }
 
     /// <summary>
-    /// The service's customizations, for hooks applied at generation time (enum constant names,
-    /// and later code injection / pipeline overrides). Structure-shaped hooks never surface here —
-    /// <see cref="CustomizationTransform"/> merges them into the model before the index is built.
+    /// The service's customizations, for hooks applied at generation time (enum constant names, member
+    /// renames, runtime pipeline overrides, and later code injection). Hooks with a Smithy trait equivalent never
+    /// surface here — <see cref="CustomizationTransform"/> merges them into the model before the index is built.
     /// </summary>
     public CustomizationsModel Customizations { get; }
 
@@ -194,6 +221,9 @@ public class GenerationContext
     /// The name of the Assembly for the service, without the dll suffix i.e. AWSSDK.CloudTrailData.
     /// </summary>
     public string AssemblyName { get; }
+
+    /// <summary>The <c>AWSSDK.Extensions.*</c> packages the service depends on; rpcv2Cbor's runtime lives in CborProtocol.</summary>
+    public IReadOnlyList<SdkExtension> ExtensionDependencies { get; }
 
     // TODO: Accept SmithyModel for shapes not reachable from operations (e.g. shared error shapes).
     // TODO: Add enum values to AWSProtocol as protocols are implemented.
@@ -242,15 +272,18 @@ public class GenerationContext
         Protocol = ProtocolResolver.Resolve(index.Service, SdkId);
         // TODO: restXml also honors the HTTP binding traits; add it here when that protocol lands.
         UsesHttpBindings = Protocol == AWSProtocol.RestJson1;
+        IsAwsQueryCompatible = index.Service.HasAwsQueryCompatible();
         ServiceShapeName = index.ServiceId.Name;
         Operations = OperationResolver.Resolve(index, Protocol);
+        EndpointDiscoveryOperation = EndpointDiscoveryResolver.ResolveDiscoveryOperation(Operations, index);
+        DiscoveredOperations = EndpointDiscoveryResolver.ResolveDiscoveredOperations(Operations, EndpointDiscoveryOperation);
         ServiceAuthSchemes = ModeledAuth.ServiceSchemes(index.Service);
         SupportsSigV4 = AuthSchemeMapping.ContainsSigV4(ServiceAuthSchemes);
         OperationsWithModeledAuth = ModeledAuth.OperationOverrides(Operations);
-        PaginatedOperations = PaginationResolver.Resolve(Operations, index);
+        PaginatedOperations = PaginationResolver.Resolve(Operations, index, Customizations);
         RequestEventStreams = EventStreamResolver.ResolveRequestStreams(Operations, index);
         ResponseEventStreams = EventStreamResolver.ResolveResponseStreams(Operations, index);
-        OperationEndpointContexts = EndpointContextResolver.ResolveOperations(Operations, index);
+        OperationEndpointContexts = EndpointContextResolver.ResolveOperations(Operations, index, Customizations);
 
         var structures = new Dictionary<ShapeId, StructureShape>();
         var errors = new Dictionary<ShapeId, StructureShape>();
@@ -284,12 +317,18 @@ public class GenerationContext
 
         Structures = structures;
         Errors = errors;
+        ResponseNamedOutputs = Operations
+            .Where(o => ToDotNetName(o.Shape.Output) == $"{o.Name}Response")
+            .Select(o => o.Shape.Output)
+            .ToHashSet();
 
         // Ordered by shape name for stable output. AllEnums already scopes the set: reachable
         // enums plus same-namespace orphans, matching C2J's *ExceptionReason enums.
         Enums = index.AllEnums
             .OrderBy(e => e.Id.Name, StringComparer.Ordinal)
             .ToList();
+
+        ExtensionDependencies = Protocol == AWSProtocol.RpcV2Cbor ? [SdkExtension.CborProtocol] : [];
     }
 
     /// <summary>
@@ -344,5 +383,19 @@ public class GenerationContext
     /// into the model.
     /// </remarks>
     public string ToDotNetName(ShapeId shapeId) => _index.ToDotNetName(shapeId);
+
+    /// <summary>
+    /// The generated unmarshaller class for a structure: <c>{Name}Unmarshaller</c>, or
+    /// <c>{Name}StructureUnmarshaller</c> for a <see cref="ResponseNamedOutputs"/> shape, whose
+    /// <c>{Name}Unmarshaller</c> is the operation's response unmarshaller.
+    /// </summary>
+    public string StructureUnmarshallerName(ShapeId shapeId) =>
+        ResponseNamedOutputs.Contains(shapeId) ? $"{ToDotNetName(shapeId)}StructureUnmarshaller" : $"{ToDotNetName(shapeId)}Unmarshaller";
+
+    /// <summary>
+    /// The generated marshaller class for a structure: <c>{Name}Marshaller</c>. The single source for
+    /// the name; writers read it from here or <see cref="Writers.TypeDescriptor.MarshallerName"/>.
+    /// </summary>
+    public string StructureMarshallerName(ShapeId shapeId) => $"{ToDotNetName(shapeId)}Marshaller";
 
 }

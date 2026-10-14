@@ -1197,5 +1197,95 @@ public class CborStreamReaderTests : IClassFixture<BufferSizeConfigFixture>
 
         reader.ReadEndArray();
     }
-}
 
+    [Fact]
+    public void ValuesStraddlingChunkBoundaries_AreReadWithoutThrowing()
+    {
+        // With a 100-byte buffer, many of these strings, integers, doubles and map headers straddle the end
+        // of a chunk. The reader should refill ahead of them rather than fail the read and retry it.
+        var writer = new CborWriter();
+        writer.WriteStartMap(200);
+        for (int i = 0; i < 200; i++)
+        {
+            writer.WriteTextString("key-" + i);
+            writer.WriteStartMap(3);
+            writer.WriteTextString("s");
+            writer.WriteTextString(new string((char)('a' + i % 26), i % 40));
+            writer.WriteTextString("n");
+            writer.WriteInt64(1L << (i % 60));
+            writer.WriteTextString("d");
+            writer.WriteDouble(i + 0.25);
+            writer.WriteEndMap();
+        }
+        writer.WriteEndMap();
+
+        int thrownOnThisThread = 0;
+        int testThreadId = Environment.CurrentManagedThreadId;
+        EventHandler<System.Runtime.ExceptionServices.FirstChanceExceptionEventArgs> handler = (_, _) =>
+        {
+            if (Environment.CurrentManagedThreadId == testThreadId)
+                thrownOnThisThread++;
+        };
+
+        AppDomain.CurrentDomain.FirstChanceException += handler;
+        try
+        {
+            using var reader = new CborStreamReader(new MemoryStream(writer.Encode()));
+            reader.ReadStartMap();
+            for (int i = 0; i < 200; i++)
+            {
+                Assert.Equal("key-" + i, reader.ReadTextString());
+                reader.ReadStartMap();
+                Assert.Equal("s", reader.ReadTextString());
+                Assert.Equal(new string((char)('a' + i % 26), i % 40), reader.ReadTextString());
+                Assert.Equal("n", reader.ReadTextString());
+                Assert.Equal(1L << (i % 60), reader.ReadInt64());
+                Assert.Equal("d", reader.ReadTextString());
+                Assert.Equal(i + 0.25, reader.ReadDouble());
+                reader.ReadEndMap();
+            }
+            reader.ReadEndMap();
+            Assert.Equal(CborReaderState.Finished, reader.PeekState());
+        }
+        finally
+        {
+            AppDomain.CurrentDomain.FirstChanceException -= handler;
+        }
+
+        Assert.Equal(0, thrownOnThisThread);
+    }
+
+    [Fact]
+    public void IndefiniteLengthMap_ReaderKeepsTrackingContainerAtEndOfStream()
+    {
+        var writer = new CborWriter();
+        writer.WriteStartMap(null); // indefinite length: closed by a 0xFF break byte
+        writer.WriteTextString("key");
+        writer.WriteTextString("twelve chars");
+        writer.WriteEndMap();
+
+        using var reader = new CborStreamReader(new MemoryStream(writer.Encode()));
+        reader.ReadStartMap();
+        reader.ReadTextString();
+        reader.ReadTextString();
+
+        Assert.Equal(CborReaderState.EndMap, reader.PeekState());
+        Assert.Equal(1, reader.CurrentDepth);
+    }
+
+    [Fact]
+    public void CorruptArrayHeader_DeclaringHugeLength_DoesNotGrowBufferToDeclaredLength()
+    {
+        // 0x9A = array with a 4-byte length: 100,000,000 elements, followed by only 3 bytes of body.
+        var bytes = new byte[] { 0x9A, 0x05, 0xF5, 0xE1, 0x00, 0x01, 0x02, 0x03 };
+        using var reader = new CborStreamReader(new MemoryStream(bytes));
+
+        Assert.Throws<CborContentException>(() => reader.ReadStartArray());
+
+        // The buffer grows only as received bytes arrive, so a header can't force a ~100 MB allocation.
+        var buffer = (byte[])typeof(CborStreamReader)
+            .GetField("_buffer", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)!
+            .GetValue(reader)!;
+        Assert.True(buffer.Length <= 1024 * 1024, $"Read buffer grew to {buffer.Length} bytes for an 8-byte stream.");
+    }
+}

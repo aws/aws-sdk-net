@@ -14,6 +14,8 @@
  */
 
 using System;
+using System.Threading;
+using System.Threading.Tasks;
 using Amazon.Runtime.EventStreams;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Telemetry;
@@ -65,7 +67,7 @@ namespace Amazon.Runtime.Internal
         /// <param name="executionContext">The execution context, it contains the
         /// request and response context.</param>
         /// <returns>A task that represents the asynchronous operation.</returns>
-        public override async System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
+        public override async Task<T> InvokeAsync<T>(IExecutionContext executionContext)
         {
             await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
             // Unmarshall the response
@@ -80,7 +82,7 @@ namespace Amazon.Runtime.Internal
         /// <param name="executionContext">The execution context, it contains the
         /// request and response context.</param>
         /// <returns>A task that represents the asynchronous operation.</returns>
-        public override async System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
+        public override async Task<T> InvokeAsync<T>(IExecutionContext executionContext)
         {
             await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
             // Unmarshall the response
@@ -153,7 +155,7 @@ namespace Amazon.Runtime.Internal
         /// <param name="executionContext">
         /// The execution context, it contains the request and response context.
         /// </param>
-        private async System.Threading.Tasks.Task UnmarshallAsync(IExecutionContext executionContext)
+        private async Task UnmarshallAsync(IExecutionContext executionContext)
         {
             var requestContext = executionContext.RequestContext;
             var responseContext = executionContext.ResponseContext;
@@ -161,8 +163,15 @@ namespace Amazon.Runtime.Internal
             using (requestContext.Metrics.StartEvent(Metric.ResponseProcessingTime))
             {
                 var unmarshaller = requestContext.Unmarshaller;
+                var cancellationToken = requestContext.CancellationToken;
+                var abortRegistration = default(CancellationTokenRegistration);
                 try
                 {
+                    // HttpClient stops observing the token once headers arrive; abort the response on cancellation
+                    // so a stalled synchronous body read doesn't block forever (aws/aws-sdk-net#4534).
+                    if (!unmarshaller.HasStreamingProperty)
+                        abortRegistration = cancellationToken.Register(responseContext.HttpResponse.ResponseBody.Dispose);
+
                     var readEntireResponse = _supportsResponseLogging &&
                         (requestContext.ClientConfig.LogResponse
                         || AWSConfigs.LoggingConfig.LogResponses != ResponseLoggingOption.Never);
@@ -179,8 +188,18 @@ namespace Amazon.Runtime.Internal
                     var response = UnmarshallResponse(context, requestContext);
                     responseContext.Response = response;
                 }
+                catch (Exception e) when (cancellationToken.IsCancellationRequested && !(e is OperationCanceledException))
+                {
+                    // Body read failed because we aborted it; match what HttpClient throws for pre-header cancellation.
+#if NET8_0_OR_GREATER
+                    throw new TaskCanceledException(e.Message, e, cancellationToken);
+#else
+                    throw new TaskCanceledException(e.Message, e);
+#endif
+                }
                 finally
                 {
+                    abortRegistration.Dispose();
                     if (!unmarshaller.HasStreamingProperty)
                         responseContext.HttpResponse.ResponseBody.Dispose();
                 }

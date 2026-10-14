@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PolicyTypeScope Marshaller
     /// </summary>
-    public class PolicyTypeScopeMarshaller : IRequestMarshaller<PolicyTypeScope, JsonMarshallerContext> 
+    public class PolicyTypeScopeMarshaller : IRequestMarshaller<PolicyTypeScope, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,27 +45,26 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(PolicyTypeScope requestObject, JsonMarshallerContext context)
+        public void Marshall(PolicyTypeScope requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAllPolicyTypesEnabled())
-            {
-                context.Writer.WritePropertyName("AllPolicyTypesEnabled");
-                context.Writer.WriteBooleanValue(requestObject.AllPolicyTypesEnabled.Value);
-            }
 
-            if(requestObject.IsSetPolicyTypes())
+            if (requestObject.IsSetAllPolicyTypesEnabled())
             {
-                context.Writer.WritePropertyName("PolicyTypes");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("AllPolicyTypesEnabled");
+                context.Writer.WriteBoolean(requestObject.AllPolicyTypesEnabled.Value);
+            }
+            if (requestObject.IsSetPolicyTypes())
+            {
+                context.Writer.WriteTextString("PolicyTypes");
+                context.Writer.WriteStartArray(requestObject.PolicyTypes.Count);
                 foreach(var requestObjectPolicyTypesListValue in requestObject.PolicyTypes)
                 {
-                        context.Writer.WriteStringValue(requestObjectPolicyTypesListValue);
+                        context.Writer.WriteTextString(requestObjectPolicyTypesListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
         }
 
         /// <summary>

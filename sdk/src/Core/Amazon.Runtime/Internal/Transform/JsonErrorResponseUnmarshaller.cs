@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -40,8 +40,15 @@ namespace Amazon.Runtime.Internal.Transform
         {
             ErrorResponse response;
 
-            // we cannot use context.Peek() because the stream used by streamreader has been read to completion by the 
-            // streamingutf8jsonreader. Since responseBody will be populated, we use that instead.
+            string type;
+            string message;
+            string code;
+            string requestId = null;
+            GetValuesFromJsonIfPossible(context, ref reader, out type, out message, out code);
+
+            // The reader does not touch the stream until its first Read(), so only now has the start of the body been
+            // buffered into context.ResponseBody. A body that starts with '<' is an XML error document (an XML body
+            // fails the JSON read above without consuming anything but the first buffer): unmarshall it as XML.
             for (int i = 0; i < context.ResponseBody.Length; i++)
             {
                 if (context.ResponseBody[i] == 32) // skip whitespace
@@ -62,12 +69,6 @@ namespace Amazon.Runtime.Internal.Transform
                         break;
                 }
             }
-
-            string type;
-            string message;
-            string code;
-            string requestId = null;
-            GetValuesFromJsonIfPossible(context, ref reader, out type, out message, out code);
 
             // If an error code was not found, check for the x-amzn-ErrorType header. 
             // This header is returned by rest-json services.

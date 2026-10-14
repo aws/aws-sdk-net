@@ -76,7 +76,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property ExportDestination. 
         /// <para>
-        /// The destination of the export job.
+        /// The destination of the export job. When <c>JobStatus</c> is <c>COMPLETED</c>, this
+        /// object includes <c>S3Url</c>, a pre-signed URL that you use to download the export
+        /// file.
         /// </para>
         /// </summary>
         public ExportDestination ExportDestination { get; set; }

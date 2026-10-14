@@ -31,8 +31,8 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the InvokeWithResponseStream operation.
-    /// Configure your Lambda functions to stream response payloads back to clients. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-response-streaming.html">Configuring
+    /// Configure your Lambda Event Functions to stream response payloads back to clients.
+    /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-response-streaming.html">Configuring
     /// a Lambda function to stream responses</a>.
     /// 
     ///  

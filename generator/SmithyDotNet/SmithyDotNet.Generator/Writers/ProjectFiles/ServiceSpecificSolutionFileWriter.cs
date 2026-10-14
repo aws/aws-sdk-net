@@ -24,10 +24,10 @@ public class ServiceSpecificSolutionFileWriter(GenerationContext context)
         writer.OpenXmlBlock("Solution", () =>
         {
             AddCoreProjects(writer);
-            AddServiceDependencyProjects(writer, serviceDirectory);
+            var serviceDependencies = AddServiceDependencyProjects(writer, serviceDirectory);
             AddCurrentService(writer);
             AddTestProjects(writer);
-            AddTestDependencyProjects(writer, serviceDirectory);
+            AddTestDependencyProjects(writer, serviceDirectory, serviceDependencies);
         });
         return writer.ToRawString();
     }
@@ -50,7 +50,7 @@ public class ServiceSpecificSolutionFileWriter(GenerationContext context)
 
     // resolve test dependencies from the core unit-tests' csproj that lives in
     // sdk/test/UnitTests/AWSSDK.UnitTests.Core.csproj
-    private void AddTestDependencyProjects(CodeWriter writer, string serviceDirectory)
+    private void AddTestDependencyProjects(CodeWriter writer, string serviceDirectory, IReadOnlyList<string> serviceDependencies)
     {
         var unitTestsCoreProjectPath = FindUnitTestsCoreProject(serviceDirectory);
         var dependencies = new List<string>();
@@ -61,7 +61,8 @@ public class ServiceSpecificSolutionFileWriter(GenerationContext context)
         }
         writer.WriteXmlBlock("""<Folder Name="/TestDependencies/">""", "Folder", () =>
         {
-            foreach(var dependency in dependencies)
+            // As in C2J, a project already under /Services/ isn't listed again; a repeated path makes the slnx invalid.
+            foreach(var dependency in dependencies.Except(serviceDependencies))
             {
                 writer.WriteLine($"""<Project Path="{dependency}" />""");
             }
@@ -101,23 +102,29 @@ public class ServiceSpecificSolutionFileWriter(GenerationContext context)
         });
     }
 
-    // TODO: make this method smarter so that it handles services that depend on extensions
-    // such as CloudWatch depending on Extensions.Cbor.
     private void AddCoreProjects(CodeWriter writer)
     {
         writer.WriteXmlBlock("""<Folder Name="/Core/">""", "Folder", () =>
         {
             writer.WriteLine($"""<Project Path="{Utils.PathCombineAlt(SdkTreeLayout.SrcRootFromServiceSource, "Core", "AWSSDK.Core.NetFramework.csproj")}" />""");
             writer.WriteLine($"""<Project Path="{Utils.PathCombineAlt(SdkTreeLayout.SrcRootFromServiceSource, "Core", "AWSSDK.Core.NetStandard.csproj")}" />""");
+
+            foreach (var extension in context.ExtensionDependencies)
+            {
+                foreach (var project in extension.Projects)
+                {
+                    writer.WriteLine($"""<Project Path="{project.Path}" />""");
+                }
+            }
         });
     }
 
     // Scans the service's NetFramework/NetStandard csproj files for project references that aren't
     // Core (or the service itself), and lists the resulting service dependencies under
     // <Folder Name="/Services/">. Extension dependencies belong in the Core folder, not here, so they
-    // are excluded. CloudTrailData references only Core, so this emits the empty self-closing folder.
-    // Ported from SolutionFileCreator.AddProjectDependencies in the C2J generator.
-    private void AddServiceDependencyProjects(CodeWriter writer, string serviceDirectory)
+    // are excluded. A service without dependencies (CloudTrailData) gets the empty self-closing folder.
+    // Returns them so the test dependencies can skip them. Ported from SolutionFileCreator.AddProjectDependencies in the C2J generator.
+    private List<string> AddServiceDependencyProjects(CodeWriter writer, string serviceDirectory)
     {
         var serviceName = new DirectoryInfo(serviceDirectory).Name;
 
@@ -138,7 +145,7 @@ public class ServiceSpecificSolutionFileWriter(GenerationContext context)
         if (serviceDependencies.Count == 0)
         {
             writer.WriteLine("""<Folder Name="/Services/" />""");
-            return;
+            return serviceDependencies;
         }
 
         writer.WriteXmlBlock("""<Folder Name="/Services/">""", "Folder", () =>
@@ -148,6 +155,7 @@ public class ServiceSpecificSolutionFileWriter(GenerationContext context)
                 writer.WriteLine($"""<Project Path="{dependency}" />""");
             }
         });
+        return serviceDependencies;
     }
 
     /// <summary>

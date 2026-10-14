@@ -36,6 +36,21 @@ public class ServiceProjectFileWriterTests
         Assert.DoesNotContain("System.Configuration", _netStandard);
     }
 
+    [Fact]
+    public void RpcV2CborReferencesCborExtension()
+    {
+        var writer = new ServiceProjectFileWriter(TestModels.Context("Codegen/rpcv2cbor-model.json"));
+        const string cborNetFramework = """<ProjectReference Include="../../../../extensions/src/AWSSDK.Extensions.CborProtocol/AWSSDK.Extensions.CborProtocol.NetFramework.csproj"/>""";
+        const string cborNetStandard = """<ProjectReference Include="../../../../extensions/src/AWSSDK.Extensions.CborProtocol/AWSSDK.Extensions.CborProtocol.NetStandard.csproj"/>""";
+
+        Assert.Contains(cborNetFramework, writer.WriteNetFramework());
+        Assert.Contains(cborNetStandard, writer.WriteNetStandard());
+
+        var unified = writer.WriteUnified();
+        Assert.Contains(cborNetFramework, unified);
+        Assert.Contains(cborNetStandard, unified);
+    }
+
     // The generated source is single-file (#if NETFRAMEWORK), so no platform folder excludes.
     [Fact]
     public void DoesNotExcludePlatformFolders()
@@ -121,6 +136,19 @@ public class ServiceProjectFileWriterTests
         Assert.Contains("<PackageReadmeFile>nuget-readme.md</PackageReadmeFile>", _unified);
     }
 
+    // The unified csproj packs itself, so its Version is the package version.
+    [Fact]
+    public void UnifiedVersionCarriesPreviewLabel()
+    {
+        var serviceVersions = new Dictionary<string, ServiceVersion>();
+        serviceVersions["CloudTrailData"] = new ServiceVersion { Version = "4.0.100.3", InPreview = true };
+        var manifest = new SdkVersionManifest { CoreVersion = "4.0.100.3", PreviewLabel = "preview", ServiceVersions = serviceVersions };
+
+        var unified = new ServiceProjectFileWriter(new GenerationContext(_fixture.Index, manifest, _fixture.Context.Metadata)).WriteUnified();
+
+        Assert.Contains("<Version>4.0.100.3-preview</Version>", unified);
+    }
+
     // Both target families are present, each with the Core reference scoped by framework identifier.
     [Fact]
     public void UnifiedMultiTargetsWithConditionalCoreReferences()
@@ -151,6 +179,48 @@ public class ServiceProjectFileWriterTests
 
         // NetStandard declares no reference-dependencies, so it gets no framework references at all.
         Assert.DoesNotContain("System.Net.Http", writer.WriteNetStandard());
+    }
+
+    // A service's dependencies (Glacier's custom code calls SQS and SNS) are referenced in metadata order, before Core, as in C2J.
+    [Theory]
+    [InlineData("NetFramework")]
+    [InlineData("NetStandard")]
+    public void ServiceDependenciesAreReferencedBeforeCore(string variant)
+    {
+        var metadata = new ServiceMetadata { Dependencies = ["SQS", "SimpleNotificationService"] };
+        var writer = new ServiceProjectFileWriter(new GenerationContext(_fixture.Index, _fixture.Context.Manifest, metadata));
+        var csproj = variant == "NetFramework" ? writer.WriteNetFramework() : writer.WriteNetStandard();
+
+        var sqs = csproj.IndexOf($"""<ProjectReference Include="../../Services/SQS/AWSSDK.SQS.{variant}.csproj"/>""", StringComparison.Ordinal);
+        var sns = csproj.IndexOf($"""<ProjectReference Include="../../Services/SimpleNotificationService/AWSSDK.SimpleNotificationService.{variant}.csproj"/>""", StringComparison.Ordinal);
+        var core = csproj.IndexOf($"""<ProjectReference Include="../../Core/AWSSDK.Core.{variant}.csproj"/>""", StringComparison.Ordinal);
+        Assert.True(0 <= sqs && sqs < sns && sns < core);
+    }
+
+    // As in C2J, packages with targets go under a condition on those (sorted) targets; one without goes in a plain ItemGroup.
+    [Fact]
+    public void NugetDependenciesAreAddedToTheirVariant()
+    {
+        var metadata = new ServiceMetadata
+        {
+            NugetDependencies = new NugetDependencies
+            {
+                NetStandard = [new NugetDependency { Name = "Ns.Pkg", Version = "2.0.0", Targets = ["netstandard2.0", "netcoreapp3.1"] }],
+                NetFramework = [new NugetDependency { Name = "Fx.Pkg", Version = "1.0.0" }],
+            },
+        };
+        var writer = new ServiceProjectFileWriter(new GenerationContext(_fixture.Index, _fixture.Context.Manifest, metadata));
+
+        var netStandard = writer.WriteNetStandard();
+        var condition = netStandard.IndexOf("""<ItemGroup Condition="'$(TargetFramework)'=='netcoreapp3.1' Or '$(TargetFramework)'=='netstandard2.0'">""", StringComparison.Ordinal);
+        Assert.True(0 <= condition && condition < netStandard.IndexOf("""<PackageReference Include="Ns.Pkg" Version="2.0.0"/>""", StringComparison.Ordinal));
+        Assert.DoesNotContain("Fx.Pkg", netStandard);
+
+        var netFramework = writer.WriteNetFramework();
+        var package = netFramework.IndexOf("""<PackageReference Include="Fx.Pkg" Version="1.0.0"/>""", StringComparison.Ordinal);
+        Assert.True(package >= 0);
+        Assert.StartsWith("<ItemGroup>", netFramework[netFramework.LastIndexOf("<ItemGroup", package, StringComparison.Ordinal)..]);
+        Assert.DoesNotContain("Ns.Pkg", netFramework);
     }
 
     // A service that opts out of NetStandard drops the non-Framework target, define, and Core reference.

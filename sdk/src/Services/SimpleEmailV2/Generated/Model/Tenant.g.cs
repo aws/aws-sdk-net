@@ -50,8 +50,21 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property SendingStatus. 
         /// <para>
-        /// The status of sending capability for the tenant.
+        /// The status of sending capability for the tenant:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ENABLED</c> – Sending is allowed for the tenant.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DISABLED</c> – Sending is prevented for the tenant.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>REINSTATED</c> – Sending is allowed even if there are active reputation findings.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public SendingStatus SendingStatus { get; set; }
 

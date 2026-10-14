@@ -48,6 +48,16 @@ namespace Amazon.DevOpsAgent.Model
         internal bool IsSetMonthlyAccountEvaluationHours() => this.MonthlyAccountEvaluationHours != null;
 
         /// <summary>
+        /// Gets and sets the property MonthlyAccountGraderHours.
+        /// </summary>
+        public UsageMetric MonthlyAccountGraderHours { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MonthlyAccountGraderHours property is set.
+        /// </summary>
+        internal bool IsSetMonthlyAccountGraderHours() => this.MonthlyAccountGraderHours != null;
+
+        /// <summary>
         /// Gets and sets the property MonthlyAccountInvestigationHours. 
         /// <para>
         /// Monthly investigation hours usage and limit for an account

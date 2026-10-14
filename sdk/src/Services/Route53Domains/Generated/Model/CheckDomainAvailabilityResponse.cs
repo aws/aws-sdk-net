@@ -35,6 +35,7 @@ namespace Amazon.Route53Domains.Model
     public partial class CheckDomainAvailabilityResponse : AmazonWebServiceResponse
     {
         private DomainAvailability _availability;
+        private PriceWithCurrency _price;
 
         /// <summary>
         /// Gets and sets the property Availability. 
@@ -105,6 +106,31 @@ namespace Amazon.Route53Domains.Model
         internal bool IsSetAvailability()
         {
             return this._availability != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Price. 
+        /// <para>
+        /// The price to register the domain name, in the currency that <c>Currency</c> specifies.
+        /// If the domain has registry premium pricing, this price is different from the standard
+        /// rate for the TLD that <c>ListPrices</c> returns. Use <c>PriceType</c> to determine
+        /// which rate applies.
+        /// </para>
+        ///  
+        /// <para>
+        /// This element is returned only when <c>Availability</c> is <c>AVAILABLE</c>.
+        /// </para>
+        /// </summary>
+        public PriceWithCurrency Price
+        {
+            get { return this._price; }
+            set { this._price = value; }
+        }
+
+        // Check to see if Price property is set
+        internal bool IsSetPrice()
+        {
+            return this._price != null;
         }
 
     }

@@ -31,7 +31,7 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// A container's dependency on another container in the same container group. The dependency
-    /// impacts how the dependent container is able to start or shut down based the status
+    /// impacts how the dependent container is able to start or shut down based on the status
     /// of the other container.
     /// 
     ///  

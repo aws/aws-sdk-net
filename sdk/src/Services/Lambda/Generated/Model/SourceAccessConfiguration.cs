@@ -96,6 +96,53 @@ namespace Amazon.Lambda.Model
         /// ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS
         /// encryption of your Apache Kafka brokers. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>OAUTHBEARER_AUTH</c> – (Self-managed Apache Kafka) The Secrets Manager ARN of
+        /// your secret key containing the OAuth 2.0 credentials that Lambda uses for SASL/OAUTHBEARER
+        /// authentication with your Apache Kafka brokers. For the contents of the secret, see
+        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-cluster-auth.html#smaa-auth-oauth-secret">Configuring
+        /// the OAuth secret</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>OAUTHBEARER_SCOPE</c> – (Self-managed Apache Kafka) The OAuth 2.0 scope that Lambda
+        /// requests when it acquires an access token. The <c>URI</c> field holds the scope value,
+        /// not a secret ARN. This type requires <c>OAUTHBEARER_AUTH</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>OAUTHBEARER_AUDIENCE</c> – (Self-managed Apache Kafka) The OAuth 2.0 audience
+        /// that Lambda requests when it acquires an access token. The <c>URI</c> field holds
+        /// the audience value, not a secret ARN. This type requires either <c>OAUTHBEARER_AUTH</c>
+        /// or <c>IAM_OAUTHBEARER_AUTH</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>OAUTHBEARER_LOGICAL_CLUSTER</c> – (Self-managed Apache Kafka) The logical cluster
+        /// identifier that Lambda sends to a Confluent Cloud broker. The <c>URI</c> field holds
+        /// the identifier, not a secret ARN. This type requires <c>OAUTHBEARER_AUTH</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>OAUTHBEARER_IDENTITY_POOL</c> – (Self-managed Apache Kafka) The identity pool
+        /// identifier that Lambda sends to a Confluent Cloud broker. The <c>URI</c> field holds
+        /// the identifier, not a secret ARN. This type requires <c>OAUTHBEARER_AUTH</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>IAM_AUTH</c> – (Self-managed Apache Kafka) Authenticate with Identity and Access
+        /// Management (IAM). Your function's execution role signs each connection, so there is
+        /// no secret to provide. Omit the <c>URI</c> field for this type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>IAM_OAUTHBEARER_AUTH</c> – (Self-managed Apache Kafka) Authenticate with an Amazon
+        /// Web Services web identity token over SASL/OAUTHBEARER. Lambda requests the token for
+        /// your function's execution role, so there is no secret to provide. Omit the <c>URI</c>
+        /// field for this type. This type requires <c>OAUTHBEARER_AUDIENCE</c> and does not support
+        /// the other <c>OAUTHBEARER</c> types.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public SourceAccessType Type

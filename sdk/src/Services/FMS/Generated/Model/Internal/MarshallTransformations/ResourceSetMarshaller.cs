@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResourceSet Marshaller
     /// </summary>
-    public class ResourceSetMarshaller : IRequestMarshaller<ResourceSet, JsonMarshallerContext> 
+    public class ResourceSetMarshaller : IRequestMarshaller<ResourceSet, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,57 +45,51 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ResourceSet requestObject, JsonMarshallerContext context)
+        public void Marshall(ResourceSet requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetDescription())
-            {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.WriteStringValue(requestObject.Description);
-            }
 
-            if(requestObject.IsSetId())
+            if (requestObject.IsSetDescription())
             {
-                context.Writer.WritePropertyName("Id");
-                context.Writer.WriteStringValue(requestObject.Id);
+                context.Writer.WriteTextString("Description");
+                context.Writer.WriteTextString(requestObject.Description);
             }
-
-            if(requestObject.IsSetLastUpdateTime())
+            if (requestObject.IsSetId())
             {
-                context.Writer.WritePropertyName("LastUpdateTime");
-                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.LastUpdateTime.Value));
+                context.Writer.WriteTextString("Id");
+                context.Writer.WriteTextString(requestObject.Id);
             }
-
-            if(requestObject.IsSetName())
+            if (requestObject.IsSetLastUpdateTime())
             {
-                context.Writer.WritePropertyName("Name");
-                context.Writer.WriteStringValue(requestObject.Name);
+                context.Writer.WriteTextString("LastUpdateTime");
+                context.Writer.WriteDateTime(requestObject.LastUpdateTime.Value);
             }
-
-            if(requestObject.IsSetResourceSetStatus())
+            if (requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("ResourceSetStatus");
-                context.Writer.WriteStringValue(requestObject.ResourceSetStatus);
+                context.Writer.WriteTextString("Name");
+                context.Writer.WriteTextString(requestObject.Name);
             }
-
-            if(requestObject.IsSetResourceTypeList())
+            if (requestObject.IsSetResourceSetStatus())
             {
-                context.Writer.WritePropertyName("ResourceTypeList");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("ResourceSetStatus");
+                context.Writer.WriteTextString(requestObject.ResourceSetStatus);
+            }
+            if (requestObject.IsSetResourceTypeList())
+            {
+                context.Writer.WriteTextString("ResourceTypeList");
+                context.Writer.WriteStartArray(requestObject.ResourceTypeList.Count);
                 foreach(var requestObjectResourceTypeListListValue in requestObject.ResourceTypeList)
                 {
-                        context.Writer.WriteStringValue(requestObjectResourceTypeListListValue);
+                        context.Writer.WriteTextString(requestObjectResourceTypeListListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetUpdateToken())
+            if (requestObject.IsSetUpdateToken())
             {
-                context.Writer.WritePropertyName("UpdateToken");
-                context.Writer.WriteStringValue(requestObject.UpdateToken);
+                context.Writer.WriteTextString("UpdateToken");
+                context.Writer.WriteTextString(requestObject.UpdateToken);
             }
-
         }
 
         /// <summary>

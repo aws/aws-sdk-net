@@ -42,7 +42,7 @@ public static class JsonBodyMemberMarshaller
                 writer.WriteLine($"""context.Writer.WritePropertyName("{member.JsonName ?? member.ModeledName}");""");
                 writer.WriteLine("context.Writer.WriteStartObject();");
                 writer.WriteLine("");
-                writer.WriteLine($"var marshaller = {member.Type.DotNetType}Marshaller.Instance;");
+                writer.WriteLine($"var marshaller = {member.Type.MarshallerName}.Instance;");
                 writer.WriteLine($"marshaller.Marshall({objectVar}.{member.PropertyName}, context);");
                 writer.WriteLine("");
                 writer.WriteLine("context.Writer.WriteEndObject();");
@@ -97,7 +97,7 @@ public static class JsonBodyMemberMarshaller
         {
             writer.WriteLine("context.Writer.WriteStartObject();");
             writer.WriteLine("");
-            writer.WriteLine($"var marshaller = {type.DotNetType}Marshaller.Instance;");
+            writer.WriteLine($"var marshaller = {type.MarshallerName}.Instance;");
             writer.WriteLine($"marshaller.Marshall({valueExpr}, context);");
             writer.WriteLine("");
             writer.WriteLine("context.Writer.WriteEndObject();");

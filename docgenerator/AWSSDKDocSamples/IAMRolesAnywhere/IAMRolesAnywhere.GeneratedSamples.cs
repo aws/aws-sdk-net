@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.IAMRolesAnywhere.Generated
     {
         public void IAMRolesAnywhereDeleteAttributeMapping()
         {
-            #region example-1
+            #region DeleteAttributeMapping-1
 
             var client = new AmazonIAMRolesAnywhereClient();
-            var response = client.DeleteAttributeMapping(new DeleteAttributeMappingRequest 
+            var response = client.DeleteAttributeMapping(new DeleteAttributeMappingRequest
             {
                 CertificateField = "x509Subject",
                 ProfileId = "00000000-0000-0000-0000-000000000000",
@@ -32,10 +33,10 @@ namespace AWSSDKDocSamples.Amazon.IAMRolesAnywhere.Generated
 
         public void IAMRolesAnywherePutAttributeMapping()
         {
-            #region example-1
+            #region PutAttributeMapping-1
 
             var client = new AmazonIAMRolesAnywhereClient();
-            var response = client.PutAttributeMapping(new PutAttributeMappingRequest 
+            var response = client.PutAttributeMapping(new PutAttributeMappingRequest
             {
                 CertificateField = "x509Subject",
                 MappingRules = new List<MappingRule> {
@@ -51,10 +52,10 @@ namespace AWSSDKDocSamples.Amazon.IAMRolesAnywhere.Generated
 
         public void IAMRolesAnywherePutNotificationSettings()
         {
-            #region example-1
+            #region PutNotificationSettings-1
 
             var client = new AmazonIAMRolesAnywhereClient();
-            var response = client.PutNotificationSettings(new PutNotificationSettingsRequest 
+            var response = client.PutNotificationSettings(new PutNotificationSettingsRequest
             {
                 NotificationSettings = new List<NotificationSetting> {
                     new NotificationSetting {
@@ -73,10 +74,10 @@ namespace AWSSDKDocSamples.Amazon.IAMRolesAnywhere.Generated
 
         public void IAMRolesAnywhereResetNotificationSettings()
         {
-            #region example-1
+            #region ResetNotificationSettings-1
 
             var client = new AmazonIAMRolesAnywhereClient();
-            var response = client.ResetNotificationSettings(new ResetNotificationSettingsRequest 
+            var response = client.ResetNotificationSettings(new ResetNotificationSettingsRequest
             {
                 NotificationSettingKeys = new List<NotificationSettingKey> {
                     new NotificationSettingKey { Event = "END_ENTITY_CERTIFICATE_EXPIRY" }
@@ -89,13 +90,10 @@ namespace AWSSDKDocSamples.Amazon.IAMRolesAnywhere.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

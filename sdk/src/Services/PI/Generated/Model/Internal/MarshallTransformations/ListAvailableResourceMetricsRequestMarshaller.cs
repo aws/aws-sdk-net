@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PI.Model.Internal.MarshallTransformations
 {
@@ -59,65 +58,68 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListAvailableResourceMetricsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.PI");
-            string target = "PerformanceInsightsv20180227.ListAvailableResourceMetrics";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/PerformanceInsightsv20180227/operation/ListAvailableResourceMetrics";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-02-27";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetIdentifier())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("Identifier");
-                context.Writer.WriteStringValue(publicRequest.Identifier);
-            }
-
-            if(publicRequest.IsSetMaxResults())
-            {
-                context.Writer.WritePropertyName("MaxResults");
-                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
-            }
-
-            if(publicRequest.IsSetMetricTypes())
-            {
-                context.Writer.WritePropertyName("MetricTypes");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestMetricTypesListValue in publicRequest.MetricTypes)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetIdentifier())
                 {
-                        context.Writer.WriteStringValue(publicRequestMetricTypesListValue);
+                    context.Writer.WriteTextString("Identifier");
+                    context.Writer.WriteTextString(publicRequest.Identifier);
                 }
-                context.Writer.WriteEndArray();
-            }
-
-            if(publicRequest.IsSetNextToken())
-            {
-                context.Writer.WritePropertyName("NextToken");
-                context.Writer.WriteStringValue(publicRequest.NextToken);
-            }
-
-            if(publicRequest.IsSetServiceType())
-            {
-                context.Writer.WritePropertyName("ServiceType");
-                context.Writer.WriteStringValue(publicRequest.ServiceType);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
+                if (publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WriteTextString("MaxResults");
+                    context.Writer.WriteInt32(publicRequest.MaxResults.Value);
+                }
+                if (publicRequest.IsSetMetricTypes())
+                {
+                    context.Writer.WriteTextString("MetricTypes");
+                    context.Writer.WriteStartArray(publicRequest.MetricTypes.Count);
+                    foreach(var publicRequestMetricTypesListValue in publicRequest.MetricTypes)
+                    {
+                            context.Writer.WriteTextString(publicRequestMetricTypesListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WriteTextString("NextToken");
+                    context.Writer.WriteTextString(publicRequest.NextToken);
+                }
+                if (publicRequest.IsSetServiceType())
+                {
+                    context.Writer.WriteTextString("ServiceType");
+                    context.Writer.WriteTextString(publicRequest.ServiceType);
+                }
+                writer.WriteEndMap();
+#if !NETFRAMEWORK
+                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
+                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
+                // avoiding the default-size rent followed by a resize+return.
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
+                request.Content = writer.Encode();
 #endif
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
             
-
-
             return request;
         }
         private static ListAvailableResourceMetricsRequestMarshaller _instance = new ListAvailableResourceMetricsRequestMarshaller();        

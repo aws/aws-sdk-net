@@ -319,6 +319,11 @@ namespace Amazon.SecurityHub
         public static readonly AutomationRulesActionTypeV2 FINDING_FIELDS_UPDATE = new AutomationRulesActionTypeV2("FINDING_FIELDS_UPDATE");
 
         /// <summary>
+        /// Constant RESOURCE_FIELDS_UPDATE for AutomationRulesActionTypeV2
+        /// </summary>
+        public static readonly AutomationRulesActionTypeV2 RESOURCE_FIELDS_UPDATE = new AutomationRulesActionTypeV2("RESOURCE_FIELDS_UPDATE");
+
+        /// <summary>
         /// Constructs a custom AutomationRulesActionTypeV2 for a value not among the defined constants.
         /// </summary>
         public AutomationRulesActionTypeV2(string value) : base(value) { }
@@ -887,6 +892,52 @@ namespace Amazon.SecurityHub
     }
 
     /// <summary>
+    /// Constants used for properties of type CriticalitySourceType.
+    /// </summary>
+    public class CriticalitySourceType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AutomationRule for CriticalitySourceType
+        /// </summary>
+        public static readonly CriticalitySourceType AutomationRule = new CriticalitySourceType("AutomationRule");
+
+        /// <summary>
+        /// Constant ResourceName for CriticalitySourceType
+        /// </summary>
+        public static readonly CriticalitySourceType ResourceName = new CriticalitySourceType("ResourceName");
+
+        /// <summary>
+        /// Constant TagInference for CriticalitySourceType
+        /// </summary>
+        public static readonly CriticalitySourceType TagInference = new CriticalitySourceType("TagInference");
+
+        /// <summary>
+        /// Constructs a custom CriticalitySourceType for a value not among the defined constants.
+        /// </summary>
+        public CriticalitySourceType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CriticalitySourceType FindValue(string value)
+        {
+            return FindValue<CriticalitySourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CriticalitySourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type CspmConnectorProviderName.
     /// </summary>
     public class CspmConnectorProviderName : ConstantClass
@@ -1209,6 +1260,241 @@ namespace Amazon.SecurityHub
     }
 
     /// <summary>
+    /// Constants used for properties of type ExportDataType.
+    /// </summary>
+    public class ExportDataType : ConstantClass
+    {
+        /// <summary>
+        /// Constant FINDINGS for ExportDataType
+        /// </summary>
+        public static readonly ExportDataType FINDINGS = new ExportDataType("FINDINGS");
+
+        /// <summary>
+        /// Constructs a custom ExportDataType for a value not among the defined constants.
+        /// </summary>
+        public ExportDataType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExportDataType FindValue(string value)
+        {
+            return FindValue<ExportDataType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExportDataType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ExportFailureCode.
+    /// </summary>
+    public class ExportFailureCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACCESS_DENIED for ExportFailureCode
+        /// </summary>
+        public static readonly ExportFailureCode ACCESS_DENIED = new ExportFailureCode("ACCESS_DENIED");
+
+        /// <summary>
+        /// Constant INTERNAL_ERROR for ExportFailureCode
+        /// </summary>
+        public static readonly ExportFailureCode INTERNAL_ERROR = new ExportFailureCode("INTERNAL_ERROR");
+
+        /// <summary>
+        /// Constant RESOURCE_NOT_FOUND for ExportFailureCode
+        /// </summary>
+        public static readonly ExportFailureCode RESOURCE_NOT_FOUND = new ExportFailureCode("RESOURCE_NOT_FOUND");
+
+        /// <summary>
+        /// Constructs a custom ExportFailureCode for a value not among the defined constants.
+        /// </summary>
+        public ExportFailureCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExportFailureCode FindValue(string value)
+        {
+            return FindValue<ExportFailureCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExportFailureCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ExportStatus.
+    /// </summary>
+    public class ExportStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant CANCELLED for ExportStatus
+        /// </summary>
+        public static readonly ExportStatus CANCELLED = new ExportStatus("CANCELLED");
+
+        /// <summary>
+        /// Constant FAILED for ExportStatus
+        /// </summary>
+        public static readonly ExportStatus FAILED = new ExportStatus("FAILED");
+
+        /// <summary>
+        /// Constant RUNNING for ExportStatus
+        /// </summary>
+        public static readonly ExportStatus RUNNING = new ExportStatus("RUNNING");
+
+        /// <summary>
+        /// Constant SUCCEEDED for ExportStatus
+        /// </summary>
+        public static readonly ExportStatus SUCCEEDED = new ExportStatus("SUCCEEDED");
+
+        /// <summary>
+        /// Constructs a custom ExportStatus for a value not among the defined constants.
+        /// </summary>
+        public ExportStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExportStatus FindValue(string value)
+        {
+            return FindValue<ExportStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExportStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ExposureImpact.
+    /// </summary>
+    public class ExposureImpact : ConstantClass
+    {
+        /// <summary>
+        /// Constant Reduces for ExposureImpact
+        /// </summary>
+        public static readonly ExposureImpact Reduces = new ExposureImpact("Reduces");
+
+        /// <summary>
+        /// Constant Resolves for ExposureImpact
+        /// </summary>
+        public static readonly ExposureImpact Resolves = new ExposureImpact("Resolves");
+
+        /// <summary>
+        /// Constant Unchanged for ExposureImpact
+        /// </summary>
+        public static readonly ExposureImpact Unchanged = new ExposureImpact("Unchanged");
+
+        /// <summary>
+        /// Constructs a custom ExposureImpact for a value not among the defined constants.
+        /// </summary>
+        public ExposureImpact(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExposureImpact FindValue(string value)
+        {
+            return FindValue<ExposureImpact>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExposureImpact(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ExposureSeverity.
+    /// </summary>
+    public class ExposureSeverity : ConstantClass
+    {
+        /// <summary>
+        /// Constant Critical for ExposureSeverity
+        /// </summary>
+        public static readonly ExposureSeverity Critical = new ExposureSeverity("Critical");
+
+        /// <summary>
+        /// Constant High for ExposureSeverity
+        /// </summary>
+        public static readonly ExposureSeverity High = new ExposureSeverity("High");
+
+        /// <summary>
+        /// Constant Informational for ExposureSeverity
+        /// </summary>
+        public static readonly ExposureSeverity Informational = new ExposureSeverity("Informational");
+
+        /// <summary>
+        /// Constant Low for ExposureSeverity
+        /// </summary>
+        public static readonly ExposureSeverity Low = new ExposureSeverity("Low");
+
+        /// <summary>
+        /// Constant Medium for ExposureSeverity
+        /// </summary>
+        public static readonly ExposureSeverity Medium = new ExposureSeverity("Medium");
+
+        /// <summary>
+        /// Constructs a custom ExposureSeverity for a value not among the defined constants.
+        /// </summary>
+        public ExposureSeverity(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExposureSeverity FindValue(string value)
+        {
+            return FindValue<ExposureSeverity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExposureSeverity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type FeatureName.
     /// </summary>
     public class FeatureName : ConstantClass
@@ -1321,6 +1607,623 @@ namespace Amazon.SecurityHub
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FindingHistoryUpdateSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FindingsExportFormat.
+    /// </summary>
+    public class FindingsExportFormat : ConstantClass
+    {
+        /// <summary>
+        /// Constant CSV for FindingsExportFormat
+        /// </summary>
+        public static readonly FindingsExportFormat CSV = new FindingsExportFormat("CSV");
+
+        /// <summary>
+        /// Constant OCSF_JSON for FindingsExportFormat
+        /// </summary>
+        public static readonly FindingsExportFormat OCSF_JSON = new FindingsExportFormat("OCSF_JSON");
+
+        /// <summary>
+        /// Constructs a custom FindingsExportFormat for a value not among the defined constants.
+        /// </summary>
+        public FindingsExportFormat(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FindingsExportFormat FindValue(string value)
+        {
+            return FindValue<FindingsExportFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FindingsExportFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FindingsSelectableField.
+    /// </summary>
+    public class FindingsSelectableField : ConstantClass
+    {
+        /// <summary>
+        /// Constant Activity_id for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField Activity_id = new FindingsSelectableField("activity_id");
+
+        /// <summary>
+        /// Constant Activity_name for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField Activity_name = new FindingsSelectableField("activity_name");
+
+        /// <summary>
+        /// Constant Class_name for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField Class_name = new FindingsSelectableField("class_name");
+
+        /// <summary>
+        /// Constant CloudAccountName for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField CloudAccountName = new FindingsSelectableField("cloud.account.name");
+
+        /// <summary>
+        /// Constant CloudAccountUid for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField CloudAccountUid = new FindingsSelectableField("cloud.account.uid");
+
+        /// <summary>
+        /// Constant CloudProvider for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField CloudProvider = new FindingsSelectableField("cloud.provider");
+
+        /// <summary>
+        /// Constant CloudRegion for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField CloudRegion = new FindingsSelectableField("cloud.region");
+
+        /// <summary>
+        /// Constant Comment for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField Comment = new FindingsSelectableField("comment");
+
+        /// <summary>
+        /// Constant ComplianceAssessmentsCategory for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField ComplianceAssessmentsCategory = new FindingsSelectableField("compliance.assessments.category");
+
+        /// <summary>
+        /// Constant ComplianceAssessmentsMeets_criteria for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField ComplianceAssessmentsMeets_criteria = new FindingsSelectableField("compliance.assessments.meets_criteria");
+
+        /// <summary>
+        /// Constant ComplianceAssessmentsName for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField ComplianceAssessmentsName = new FindingsSelectableField("compliance.assessments.name");
+
+        /// <summary>
+        /// Constant ComplianceControl for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField ComplianceControl = new FindingsSelectableField("compliance.control");
+
+        /// <summary>
+        /// Constant ComplianceControl_parameters for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField ComplianceControl_parameters = new FindingsSelectableField("compliance.control_parameters");
+
+        /// <summary>
+        /// Constant ComplianceStandards for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField ComplianceStandards = new FindingsSelectableField("compliance.standards");
+
+        /// <summary>
+        /// Constant ComplianceStatus for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField ComplianceStatus = new FindingsSelectableField("compliance.status");
+
+        /// <summary>
+        /// Constant ComplianceStatus_id for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField ComplianceStatus_id = new FindingsSelectableField("compliance.status_id");
+
+        /// <summary>
+        /// Constant Confidence_score for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField Confidence_score = new FindingsSelectableField("confidence_score");
+
+        /// <summary>
+        /// Constant DatabucketEncryption_detailsAlgorithm for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField DatabucketEncryption_detailsAlgorithm = new FindingsSelectableField("databucket.encryption_details.algorithm");
+
+        /// <summary>
+        /// Constant DatabucketEncryption_detailsKey_uid for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField DatabucketEncryption_detailsKey_uid = new FindingsSelectableField("databucket.encryption_details.key_uid");
+
+        /// <summary>
+        /// Constant DatabucketFileData_classificationsClassifier_detailsType for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField DatabucketFileData_classificationsClassifier_detailsType = new FindingsSelectableField("databucket.file.data_classifications.classifier_details.type");
+
+        /// <summary>
+        /// Constant DatabucketTags for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField DatabucketTags = new FindingsSelectableField("databucket.tags");
+
+        /// <summary>
+        /// Constant EvidencesActorUserAccountUid for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField EvidencesActorUserAccountUid = new FindingsSelectableField("evidences.actor.user.account.uid");
+
+        /// <summary>
+        /// Constant EvidencesApiOperation for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField EvidencesApiOperation = new FindingsSelectableField("evidences.api.operation");
+
+        /// <summary>
+        /// Constant EvidencesApiResponseCode for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField EvidencesApiResponseCode = new FindingsSelectableField("evidences.api.response.code");
+
+        /// <summary>
+        /// Constant EvidencesApiResponseError_message for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField EvidencesApiResponseError_message = new FindingsSelectableField("evidences.api.response.error_message");
+
+        /// <summary>
+        /// Constant EvidencesApiServiceName for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField EvidencesApiServiceName = new FindingsSelectableField("evidences.api.service.name");
+
+        /// <summary>
+        /// Constant EvidencesConnection_infoDirection for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField EvidencesConnection_infoDirection = new FindingsSelectableField("evidences.connection_info.direction");
+
+        /// <summary>
+        /// Constant EvidencesConnection_infoProtocol_name for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField EvidencesConnection_infoProtocol_name = new FindingsSelectableField("evidences.connection_info.protocol_name");
+
+        /// <summary>
+        /// Constant EvidencesDst_endpointAutonomous_systemName for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField EvidencesDst_endpointAutonomous_systemName = new FindingsSelectableField("evidences.dst_endpoint.autonomous_system.name");
+
+        /// <summary>
+        /// Constant EvidencesDst_endpointAutonomous_systemNumber for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField EvidencesDst_endpointAutonomous_systemNumber = new FindingsSelectableField("evidences.dst_endpoint.autonomous_system.number");
+
+        /// <summary>
+        /// Constant EvidencesDst_endpointIp for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField EvidencesDst_endpointIp = new FindingsSelectableField("evidences.dst_endpoint.ip");
+
+        /// <summary>
+        /// Constant EvidencesDst_endpointLocationCity for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField EvidencesDst_endpointLocationCity = new FindingsSelectableField("evidences.dst_endpoint.location.city");
+
+        /// <summary>
+        /// Constant EvidencesDst_endpointLocationCountry for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField EvidencesDst_endpointLocationCountry = new FindingsSelectableField("evidences.dst_endpoint.location.country");
+
+        /// <summary>
+        /// Constant EvidencesDst_endpointPort for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField EvidencesDst_endpointPort = new FindingsSelectableField("evidences.dst_endpoint.port");
+
+        /// <summary>
+        /// Constant EvidencesSrc_endpointAutonomous_systemName for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField EvidencesSrc_endpointAutonomous_systemName = new FindingsSelectableField("evidences.src_endpoint.autonomous_system.name");
+
+        /// <summary>
+        /// Constant EvidencesSrc_endpointAutonomous_systemNumber for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField EvidencesSrc_endpointAutonomous_systemNumber = new FindingsSelectableField("evidences.src_endpoint.autonomous_system.number");
+
+        /// <summary>
+        /// Constant EvidencesSrc_endpointHostname for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField EvidencesSrc_endpointHostname = new FindingsSelectableField("evidences.src_endpoint.hostname");
+
+        /// <summary>
+        /// Constant EvidencesSrc_endpointIp for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField EvidencesSrc_endpointIp = new FindingsSelectableField("evidences.src_endpoint.ip");
+
+        /// <summary>
+        /// Constant EvidencesSrc_endpointLocationCity for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField EvidencesSrc_endpointLocationCity = new FindingsSelectableField("evidences.src_endpoint.location.city");
+
+        /// <summary>
+        /// Constant EvidencesSrc_endpointLocationCountry for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField EvidencesSrc_endpointLocationCountry = new FindingsSelectableField("evidences.src_endpoint.location.country");
+
+        /// <summary>
+        /// Constant EvidencesSrc_endpointPort for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField EvidencesSrc_endpointPort = new FindingsSelectableField("evidences.src_endpoint.port");
+
+        /// <summary>
+        /// Constant Finding_infoAnalyticName for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField Finding_infoAnalyticName = new FindingsSelectableField("finding_info.analytic.name");
+
+        /// <summary>
+        /// Constant Finding_infoCreated_time_dt for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField Finding_infoCreated_time_dt = new FindingsSelectableField("finding_info.created_time_dt");
+
+        /// <summary>
+        /// Constant Finding_infoDesc for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField Finding_infoDesc = new FindingsSelectableField("finding_info.desc");
+
+        /// <summary>
+        /// Constant Finding_infoFirst_seen_time_dt for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField Finding_infoFirst_seen_time_dt = new FindingsSelectableField("finding_info.first_seen_time_dt");
+
+        /// <summary>
+        /// Constant Finding_infoLast_seen_time_dt for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField Finding_infoLast_seen_time_dt = new FindingsSelectableField("finding_info.last_seen_time_dt");
+
+        /// <summary>
+        /// Constant Finding_infoModified_time_dt for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField Finding_infoModified_time_dt = new FindingsSelectableField("finding_info.modified_time_dt");
+
+        /// <summary>
+        /// Constant Finding_infoRelated_eventsProductUid for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField Finding_infoRelated_eventsProductUid = new FindingsSelectableField("finding_info.related_events.product.uid");
+
+        /// <summary>
+        /// Constant Finding_infoRelated_eventsTitle for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField Finding_infoRelated_eventsTitle = new FindingsSelectableField("finding_info.related_events.title");
+
+        /// <summary>
+        /// Constant Finding_infoRelated_eventsTraitsCategory for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField Finding_infoRelated_eventsTraitsCategory = new FindingsSelectableField("finding_info.related_events.traits.category");
+
+        /// <summary>
+        /// Constant Finding_infoRelated_eventsUid for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField Finding_infoRelated_eventsUid = new FindingsSelectableField("finding_info.related_events.uid");
+
+        /// <summary>
+        /// Constant Finding_infoRelated_events_count for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField Finding_infoRelated_events_count = new FindingsSelectableField("finding_info.related_events_count");
+
+        /// <summary>
+        /// Constant Finding_infoSrc_url for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField Finding_infoSrc_url = new FindingsSelectableField("finding_info.src_url");
+
+        /// <summary>
+        /// Constant Finding_infoTags for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField Finding_infoTags = new FindingsSelectableField("finding_info.tags");
+
+        /// <summary>
+        /// Constant Finding_infoTitle for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField Finding_infoTitle = new FindingsSelectableField("finding_info.title");
+
+        /// <summary>
+        /// Constant Finding_infoTypes for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField Finding_infoTypes = new FindingsSelectableField("finding_info.types");
+
+        /// <summary>
+        /// Constant Finding_infoUid for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField Finding_infoUid = new FindingsSelectableField("finding_info.uid");
+
+        /// <summary>
+        /// Constant MalwareName for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField MalwareName = new FindingsSelectableField("malware.name");
+
+        /// <summary>
+        /// Constant MalwareSeverity for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField MalwareSeverity = new FindingsSelectableField("malware.severity");
+
+        /// <summary>
+        /// Constant Malware_scan_infoUid for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField Malware_scan_infoUid = new FindingsSelectableField("malware_scan_info.uid");
+
+        /// <summary>
+        /// Constant MetadataProductFeatureUid for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField MetadataProductFeatureUid = new FindingsSelectableField("metadata.product.feature.uid");
+
+        /// <summary>
+        /// Constant MetadataProductName for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField MetadataProductName = new FindingsSelectableField("metadata.product.name");
+
+        /// <summary>
+        /// Constant MetadataProductUid for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField MetadataProductUid = new FindingsSelectableField("metadata.product.uid");
+
+        /// <summary>
+        /// Constant MetadataProductVendor_name for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField MetadataProductVendor_name = new FindingsSelectableField("metadata.product.vendor_name");
+
+        /// <summary>
+        /// Constant MetadataUid for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField MetadataUid = new FindingsSelectableField("metadata.uid");
+
+        /// <summary>
+        /// Constant RemediationDesc for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField RemediationDesc = new FindingsSelectableField("remediation.desc");
+
+        /// <summary>
+        /// Constant RemediationReferences for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField RemediationReferences = new FindingsSelectableField("remediation.references");
+
+        /// <summary>
+        /// Constant ResourcesCloud_functionLayersUid_alt for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField ResourcesCloud_functionLayersUid_alt = new FindingsSelectableField("resources.cloud_function.layers.uid_alt");
+
+        /// <summary>
+        /// Constant ResourcesCloud_functionRuntime for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField ResourcesCloud_functionRuntime = new FindingsSelectableField("resources.cloud_function.runtime");
+
+        /// <summary>
+        /// Constant ResourcesCloud_functionUserUid for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField ResourcesCloud_functionUserUid = new FindingsSelectableField("resources.cloud_function.user.uid");
+
+        /// <summary>
+        /// Constant ResourcesCloud_partition for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField ResourcesCloud_partition = new FindingsSelectableField("resources.cloud_partition");
+
+        /// <summary>
+        /// Constant ResourcesDeviceEncryption_detailsKey_uid for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField ResourcesDeviceEncryption_detailsKey_uid = new FindingsSelectableField("resources.device.encryption_details.key_uid");
+
+        /// <summary>
+        /// Constant ResourcesDeviceImageUid for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField ResourcesDeviceImageUid = new FindingsSelectableField("resources.device.image.uid");
+
+        /// <summary>
+        /// Constant ResourcesImageArchitecture for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField ResourcesImageArchitecture = new FindingsSelectableField("resources.image.architecture");
+
+        /// <summary>
+        /// Constant ResourcesImageCreated_time_dt for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField ResourcesImageCreated_time_dt = new FindingsSelectableField("resources.image.created_time_dt");
+
+        /// <summary>
+        /// Constant ResourcesImageIn_use_count for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField ResourcesImageIn_use_count = new FindingsSelectableField("resources.image.in_use_count");
+
+        /// <summary>
+        /// Constant ResourcesImageLast_used_time_dt for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField ResourcesImageLast_used_time_dt = new FindingsSelectableField("resources.image.last_used_time_dt");
+
+        /// <summary>
+        /// Constant ResourcesImageRegistry_uid for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField ResourcesImageRegistry_uid = new FindingsSelectableField("resources.image.registry_uid");
+
+        /// <summary>
+        /// Constant ResourcesImageRepository_name for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField ResourcesImageRepository_name = new FindingsSelectableField("resources.image.repository_name");
+
+        /// <summary>
+        /// Constant ResourcesImageUid for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField ResourcesImageUid = new FindingsSelectableField("resources.image.uid");
+
+        /// <summary>
+        /// Constant ResourcesModified_time_dt for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField ResourcesModified_time_dt = new FindingsSelectableField("resources.modified_time_dt");
+
+        /// <summary>
+        /// Constant ResourcesName for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField ResourcesName = new FindingsSelectableField("resources.name");
+
+        /// <summary>
+        /// Constant ResourcesOwnerAccountName for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField ResourcesOwnerAccountName = new FindingsSelectableField("resources.owner.account.name");
+
+        /// <summary>
+        /// Constant ResourcesOwnerAccountUid for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField ResourcesOwnerAccountUid = new FindingsSelectableField("resources.owner.account.uid");
+
+        /// <summary>
+        /// Constant ResourcesOwnerOrgUid for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField ResourcesOwnerOrgUid = new FindingsSelectableField("resources.owner.org.uid");
+
+        /// <summary>
+        /// Constant ResourcesProvider for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField ResourcesProvider = new FindingsSelectableField("resources.provider");
+
+        /// <summary>
+        /// Constant ResourcesRegion for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField ResourcesRegion = new FindingsSelectableField("resources.region");
+
+        /// <summary>
+        /// Constant ResourcesSubnet_infoUid for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField ResourcesSubnet_infoUid = new FindingsSelectableField("resources.subnet_info.uid");
+
+        /// <summary>
+        /// Constant ResourcesTags for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField ResourcesTags = new FindingsSelectableField("resources.tags");
+
+        /// <summary>
+        /// Constant ResourcesType for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField ResourcesType = new FindingsSelectableField("resources.type");
+
+        /// <summary>
+        /// Constant ResourcesUid for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField ResourcesUid = new FindingsSelectableField("resources.uid");
+
+        /// <summary>
+        /// Constant ResourcesVpc_uid for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField ResourcesVpc_uid = new FindingsSelectableField("resources.vpc_uid");
+
+        /// <summary>
+        /// Constant Severity for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField Severity = new FindingsSelectableField("severity");
+
+        /// <summary>
+        /// Constant Severity_id for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField Severity_id = new FindingsSelectableField("severity_id");
+
+        /// <summary>
+        /// Constant Status for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField Status = new FindingsSelectableField("status");
+
+        /// <summary>
+        /// Constant Status_id for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField Status_id = new FindingsSelectableField("status_id");
+
+        /// <summary>
+        /// Constant Vendor_attributesSeverity for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField Vendor_attributesSeverity = new FindingsSelectableField("vendor_attributes.severity");
+
+        /// <summary>
+        /// Constant Vendor_attributesSeverity_id for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField Vendor_attributesSeverity_id = new FindingsSelectableField("vendor_attributes.severity_id");
+
+        /// <summary>
+        /// Constant VulnerabilitiesAffected_codeFilePath for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField VulnerabilitiesAffected_codeFilePath = new FindingsSelectableField("vulnerabilities.affected_code.file.path");
+
+        /// <summary>
+        /// Constant VulnerabilitiesAffected_packagesName for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField VulnerabilitiesAffected_packagesName = new FindingsSelectableField("vulnerabilities.affected_packages.name");
+
+        /// <summary>
+        /// Constant VulnerabilitiesCveCvssBase_score for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField VulnerabilitiesCveCvssBase_score = new FindingsSelectableField("vulnerabilities.cve.cvss.base_score");
+
+        /// <summary>
+        /// Constant VulnerabilitiesCveCvssVendor_name for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField VulnerabilitiesCveCvssVendor_name = new FindingsSelectableField("vulnerabilities.cve.cvss.vendor_name");
+
+        /// <summary>
+        /// Constant VulnerabilitiesCveCvssVersion for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField VulnerabilitiesCveCvssVersion = new FindingsSelectableField("vulnerabilities.cve.cvss.version");
+
+        /// <summary>
+        /// Constant VulnerabilitiesCveEpssScore for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField VulnerabilitiesCveEpssScore = new FindingsSelectableField("vulnerabilities.cve.epss.score");
+
+        /// <summary>
+        /// Constant VulnerabilitiesCveUid for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField VulnerabilitiesCveUid = new FindingsSelectableField("vulnerabilities.cve.uid");
+
+        /// <summary>
+        /// Constant VulnerabilitiesFix_coverage for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField VulnerabilitiesFix_coverage = new FindingsSelectableField("vulnerabilities.fix_coverage");
+
+        /// <summary>
+        /// Constant VulnerabilitiesIs_exploit_available for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField VulnerabilitiesIs_exploit_available = new FindingsSelectableField("vulnerabilities.is_exploit_available");
+
+        /// <summary>
+        /// Constant VulnerabilitiesIs_fix_available for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField VulnerabilitiesIs_fix_available = new FindingsSelectableField("vulnerabilities.is_fix_available");
+
+        /// <summary>
+        /// Constant VulnerabilitiesRelated_vulnerabilities for FindingsSelectableField
+        /// </summary>
+        public static readonly FindingsSelectableField VulnerabilitiesRelated_vulnerabilities = new FindingsSelectableField("vulnerabilities.related_vulnerabilities");
+
+        /// <summary>
+        /// Constructs a custom FindingsSelectableField for a value not among the defined constants.
+        /// </summary>
+        public FindingsSelectableField(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FindingsSelectableField FindValue(string value)
+        {
+            return FindValue<FindingsSelectableField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FindingsSelectableField(string value)
         {
             return FindValue(value);
         }
@@ -1631,6 +2534,16 @@ namespace Amazon.SecurityHub
         public static readonly GroupByField Finding_infoTypes = new GroupByField("finding_info.types");
 
         /// <summary>
+        /// Constant Impact for GroupByField
+        /// </summary>
+        public static readonly GroupByField Impact = new GroupByField("impact");
+
+        /// <summary>
+        /// Constant Likelihood for GroupByField
+        /// </summary>
+        public static readonly GroupByField Likelihood = new GroupByField("likelihood");
+
+        /// <summary>
         /// Constant MetadataProductName for GroupByField
         /// </summary>
         public static readonly GroupByField MetadataProductName = new GroupByField("metadata.product.name");
@@ -1649,6 +2562,11 @@ namespace Amazon.SecurityHub
         /// Constant ResourcesCloud_partition for GroupByField
         /// </summary>
         public static readonly GroupByField ResourcesCloud_partition = new GroupByField("resources.cloud_partition");
+
+        /// <summary>
+        /// Constant ResourcesCriticality for GroupByField
+        /// </summary>
+        public static readonly GroupByField ResourcesCriticality = new GroupByField("resources.criticality");
 
         /// <summary>
         /// Constant ResourcesName for GroupByField
@@ -1736,6 +2654,82 @@ namespace Amazon.SecurityHub
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GroupByField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type GuidanceFormat.
+    /// </summary>
+    public class GuidanceFormat : ConstantClass
+    {
+        /// <summary>
+        /// Constant All for GuidanceFormat
+        /// </summary>
+        public static readonly GuidanceFormat All = new GuidanceFormat("All");
+
+        /// <summary>
+        /// Constant AwsCli for GuidanceFormat
+        /// </summary>
+        public static readonly GuidanceFormat AwsCli = new GuidanceFormat("AwsCli");
+
+        /// <summary>
+        /// Constant Cdk for GuidanceFormat
+        /// </summary>
+        public static readonly GuidanceFormat Cdk = new GuidanceFormat("Cdk");
+
+        /// <summary>
+        /// Constant Cli for GuidanceFormat
+        /// </summary>
+        public static readonly GuidanceFormat Cli = new GuidanceFormat("Cli");
+
+        /// <summary>
+        /// Constant CloudFormation for GuidanceFormat
+        /// </summary>
+        public static readonly GuidanceFormat CloudFormation = new GuidanceFormat("CloudFormation");
+
+        /// <summary>
+        /// Constant IaC for GuidanceFormat
+        /// </summary>
+        public static readonly GuidanceFormat IaC = new GuidanceFormat("IaC");
+
+        /// <summary>
+        /// Constant Python for GuidanceFormat
+        /// </summary>
+        public static readonly GuidanceFormat Python = new GuidanceFormat("Python");
+
+        /// <summary>
+        /// Constant Template for GuidanceFormat
+        /// </summary>
+        public static readonly GuidanceFormat Template = new GuidanceFormat("Template");
+
+        /// <summary>
+        /// Constant Terraform for GuidanceFormat
+        /// </summary>
+        public static readonly GuidanceFormat Terraform = new GuidanceFormat("Terraform");
+
+        /// <summary>
+        /// Constructs a custom GuidanceFormat for a value not among the defined constants.
+        /// </summary>
+        public GuidanceFormat(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuidanceFormat FindValue(string value)
+        {
+            return FindValue<GuidanceFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuidanceFormat(string value)
         {
             return FindValue(value);
         }
@@ -2649,6 +3643,16 @@ namespace Amazon.SecurityHub
         public static readonly OcsfStringField Finding_infoUid = new OcsfStringField("finding_info.uid");
 
         /// <summary>
+        /// Constant Impact for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Impact = new OcsfStringField("impact");
+
+        /// <summary>
+        /// Constant Likelihood for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Likelihood = new OcsfStringField("likelihood");
+
+        /// <summary>
         /// Constant MalwareName for OcsfStringField
         /// </summary>
         public static readonly OcsfStringField MalwareName = new OcsfStringField("malware.name");
@@ -2712,6 +3716,11 @@ namespace Amazon.SecurityHub
         /// Constant ResourcesCloud_partition for OcsfStringField
         /// </summary>
         public static readonly OcsfStringField ResourcesCloud_partition = new OcsfStringField("resources.cloud_partition");
+
+        /// <summary>
+        /// Constant ResourcesCriticality for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesCriticality = new OcsfStringField("resources.criticality");
 
         /// <summary>
         /// Constant ResourcesDeviceEncryption_detailsKey_uid for OcsfStringField
@@ -3218,6 +4227,164 @@ namespace Amazon.SecurityHub
     }
 
     /// <summary>
+    /// Constants used for properties of type RemediationPriority.
+    /// </summary>
+    public class RemediationPriority : ConstantClass
+    {
+        /// <summary>
+        /// Constant Critical for RemediationPriority
+        /// </summary>
+        public static readonly RemediationPriority Critical = new RemediationPriority("Critical");
+
+        /// <summary>
+        /// Constant High for RemediationPriority
+        /// </summary>
+        public static readonly RemediationPriority High = new RemediationPriority("High");
+
+        /// <summary>
+        /// Constant Low for RemediationPriority
+        /// </summary>
+        public static readonly RemediationPriority Low = new RemediationPriority("Low");
+
+        /// <summary>
+        /// Constant Medium for RemediationPriority
+        /// </summary>
+        public static readonly RemediationPriority Medium = new RemediationPriority("Medium");
+
+        /// <summary>
+        /// Constructs a custom RemediationPriority for a value not among the defined constants.
+        /// </summary>
+        public RemediationPriority(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RemediationPriority FindValue(string value)
+        {
+            return FindValue<RemediationPriority>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RemediationPriority(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RemediationStatus.
+    /// </summary>
+    public class RemediationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant New for RemediationStatus
+        /// </summary>
+        public static readonly RemediationStatus New = new RemediationStatus("New");
+
+        /// <summary>
+        /// Constant Resolved for RemediationStatus
+        /// </summary>
+        public static readonly RemediationStatus Resolved = new RemediationStatus("Resolved");
+
+        /// <summary>
+        /// Constant Updated for RemediationStatus
+        /// </summary>
+        public static readonly RemediationStatus Updated = new RemediationStatus("Updated");
+
+        /// <summary>
+        /// Constructs a custom RemediationStatus for a value not among the defined constants.
+        /// </summary>
+        public RemediationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RemediationStatus FindValue(string value)
+        {
+            return FindValue<RemediationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RemediationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RemediationStringField.
+    /// </summary>
+    public class RemediationStringField : ConstantClass
+    {
+        /// <summary>
+        /// Constant Priority for RemediationStringField
+        /// </summary>
+        public static readonly RemediationStringField Priority = new RemediationStringField("Priority");
+
+        /// <summary>
+        /// Constant ResourceCloudProvider for RemediationStringField
+        /// </summary>
+        public static readonly RemediationStringField ResourceCloudProvider = new RemediationStringField("Resource.CloudProvider");
+
+        /// <summary>
+        /// Constant ResourceId for RemediationStringField
+        /// </summary>
+        public static readonly RemediationStringField ResourceId = new RemediationStringField("Resource.Id");
+
+        /// <summary>
+        /// Constant ResourceResourceOwnerAccountId for RemediationStringField
+        /// </summary>
+        public static readonly RemediationStringField ResourceResourceOwnerAccountId = new RemediationStringField("Resource.ResourceOwnerAccountId");
+
+        /// <summary>
+        /// Constant ResourceType for RemediationStringField
+        /// </summary>
+        public static readonly RemediationStringField ResourceType = new RemediationStringField("Resource.Type");
+
+        /// <summary>
+        /// Constant Status for RemediationStringField
+        /// </summary>
+        public static readonly RemediationStringField Status = new RemediationStringField("Status");
+
+        /// <summary>
+        /// Constructs a custom RemediationStringField for a value not among the defined constants.
+        /// </summary>
+        public RemediationStringField(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RemediationStringField FindValue(string value)
+        {
+            return FindValue<RemediationStringField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RemediationStringField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ResourceCategory.
     /// </summary>
     public class ResourceCategory : ConstantClass
@@ -3294,6 +4461,62 @@ namespace Amazon.SecurityHub
     }
 
     /// <summary>
+    /// Constants used for properties of type ResourceCriticality.
+    /// </summary>
+    public class ResourceCriticality : ConstantClass
+    {
+        /// <summary>
+        /// Constant High for ResourceCriticality
+        /// </summary>
+        public static readonly ResourceCriticality High = new ResourceCriticality("High");
+
+        /// <summary>
+        /// Constant Low for ResourceCriticality
+        /// </summary>
+        public static readonly ResourceCriticality Low = new ResourceCriticality("Low");
+
+        /// <summary>
+        /// Constant Medium for ResourceCriticality
+        /// </summary>
+        public static readonly ResourceCriticality Medium = new ResourceCriticality("Medium");
+
+        /// <summary>
+        /// Constant Unknown for ResourceCriticality
+        /// </summary>
+        public static readonly ResourceCriticality Unknown = new ResourceCriticality("Unknown");
+
+        /// <summary>
+        /// Constant VeryHigh for ResourceCriticality
+        /// </summary>
+        public static readonly ResourceCriticality VeryHigh = new ResourceCriticality("Very High");
+
+        /// <summary>
+        /// Constructs a custom ResourceCriticality for a value not among the defined constants.
+        /// </summary>
+        public ResourceCriticality(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceCriticality FindValue(string value)
+        {
+            return FindValue<ResourceCriticality>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceCriticality(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ResourceGroupByField.
     /// </summary>
     public class ResourceGroupByField : ConstantClass
@@ -3332,6 +4555,11 @@ namespace Amazon.SecurityHub
         /// Constant ResourceCloudPartition for ResourceGroupByField
         /// </summary>
         public static readonly ResourceGroupByField ResourceCloudPartition = new ResourceGroupByField("ResourceCloudPartition");
+
+        /// <summary>
+        /// Constant ResourceCriticality for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField ResourceCriticality = new ResourceGroupByField("ResourceCriticality");
 
         /// <summary>
         /// Constant ResourceInfoAIDetailsCanonicalId for ResourceGroupByField
@@ -3727,6 +4955,11 @@ namespace Amazon.SecurityHub
         /// Constant ResourceCloudPartition for ResourcesStringField
         /// </summary>
         public static readonly ResourcesStringField ResourceCloudPartition = new ResourcesStringField("ResourceCloudPartition");
+
+        /// <summary>
+        /// Constant ResourceCriticality for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField ResourceCriticality = new ResourcesStringField("ResourceCriticality");
 
         /// <summary>
         /// Constant ResourceGuid for ResourcesStringField

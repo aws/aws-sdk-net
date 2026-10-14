@@ -87,6 +87,13 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.GitlabRepository = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("jiraProject", targetDepth, ref reader))
+                {
+                    var unmarshaller = JiraProjectMetadataUnmarshaller.Instance;
+                    unmarshalledObject.JiraProject = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -29,124 +29,165 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Translate.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TextTranslationJobProperties Object
     /// </summary>  
-    public class TextTranslationJobPropertiesUnmarshaller : IJsonUnmarshaller<TextTranslationJobProperties, JsonUnmarshallerContext>
+    public class TextTranslationJobPropertiesUnmarshaller : ICborUnmarshaller<TextTranslationJobProperties, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TextTranslationJobProperties Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public TextTranslationJobProperties Unmarshall(CborUnmarshallerContext context)
         {
             TextTranslationJobProperties unmarshalledObject = new TextTranslationJobProperties();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("DataAccessRoleArn", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataAccessRoleArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("EndTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("InputDataConfig", targetDepth, ref reader))
-                {
-                    var unmarshaller = InputDataConfigUnmarshaller.Instance;
-                    unmarshalledObject.InputDataConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("JobDetails", targetDepth, ref reader))
-                {
-                    var unmarshaller = JobDetailsUnmarshaller.Instance;
-                    unmarshalledObject.JobDetails = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("JobId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.JobId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("JobName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.JobName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("JobStatus", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.JobStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Message", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Message = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("OutputDataConfig", targetDepth, ref reader))
-                {
-                    var unmarshaller = OutputDataConfigUnmarshaller.Instance;
-                    unmarshalledObject.OutputDataConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ParallelDataNames", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ParallelDataNames = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Settings", targetDepth, ref reader))
-                {
-                    var unmarshaller = TranslationSettingsUnmarshaller.Instance;
-                    unmarshalledObject.Settings = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SourceLanguageCode", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceLanguageCode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SubmittedTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.SubmittedTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TargetLanguageCodes", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.TargetLanguageCodes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TerminologyNames", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.TerminologyNames = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "DataAccessRoleArn":
+                        {
+                            context.AddPathSegment("DataAccessRoleArn");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.DataAccessRoleArn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "EndTime":
+                        {
+                            context.AddPathSegment("EndTime");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "InputDataConfig":
+                        {
+                            context.AddPathSegment("InputDataConfig");
+                            var unmarshaller = InputDataConfigUnmarshaller.Instance;
+                            unmarshalledObject.InputDataConfig = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "JobDetails":
+                        {
+                            context.AddPathSegment("JobDetails");
+                            var unmarshaller = JobDetailsUnmarshaller.Instance;
+                            unmarshalledObject.JobDetails = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "JobId":
+                        {
+                            context.AddPathSegment("JobId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.JobId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "JobName":
+                        {
+                            context.AddPathSegment("JobName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.JobName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "JobStatus":
+                        {
+                            context.AddPathSegment("JobStatus");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.JobStatus = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Message":
+                        {
+                            context.AddPathSegment("Message");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Message = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "OutputDataConfig":
+                        {
+                            context.AddPathSegment("OutputDataConfig");
+                            var unmarshaller = OutputDataConfigUnmarshaller.Instance;
+                            unmarshalledObject.OutputDataConfig = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ParallelDataNames":
+                        {
+                            context.AddPathSegment("ParallelDataNames");
+                            var unmarshaller = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance);
+                            unmarshalledObject.ParallelDataNames = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Settings":
+                        {
+                            context.AddPathSegment("Settings");
+                            var unmarshaller = TranslationSettingsUnmarshaller.Instance;
+                            unmarshalledObject.Settings = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "SourceLanguageCode":
+                        {
+                            context.AddPathSegment("SourceLanguageCode");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.SourceLanguageCode = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "SubmittedTime":
+                        {
+                            context.AddPathSegment("SubmittedTime");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.SubmittedTime = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "TargetLanguageCodes":
+                        {
+                            context.AddPathSegment("TargetLanguageCodes");
+                            var unmarshaller = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance);
+                            unmarshalledObject.TargetLanguageCodes = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "TerminologyNames":
+                        {
+                            context.AddPathSegment("TerminologyNames");
+                            var unmarshaller = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance);
+                            unmarshalledObject.TerminologyNames = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NetworkAclEntrySet Marshaller
     /// </summary>
-    public class NetworkAclEntrySetMarshaller : IRequestMarshaller<NetworkAclEntrySet, JsonMarshallerContext> 
+    public class NetworkAclEntrySetMarshaller : IRequestMarshaller<NetworkAclEntrySet, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,54 +45,51 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(NetworkAclEntrySet requestObject, JsonMarshallerContext context)
+        public void Marshall(NetworkAclEntrySet requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetFirstEntries())
+
+            if (requestObject.IsSetFirstEntries())
             {
-                context.Writer.WritePropertyName("FirstEntries");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("FirstEntries");
+                context.Writer.WriteStartArray(requestObject.FirstEntries.Count);
                 foreach(var requestObjectFirstEntriesListValue in requestObject.FirstEntries)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = NetworkAclEntryMarshaller.Instance;
                     marshaller.Marshall(requestObjectFirstEntriesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetForceRemediateForFirstEntries())
+            if (requestObject.IsSetForceRemediateForFirstEntries())
             {
-                context.Writer.WritePropertyName("ForceRemediateForFirstEntries");
-                context.Writer.WriteBooleanValue(requestObject.ForceRemediateForFirstEntries.Value);
+                context.Writer.WriteTextString("ForceRemediateForFirstEntries");
+                context.Writer.WriteBoolean(requestObject.ForceRemediateForFirstEntries.Value);
             }
-
-            if(requestObject.IsSetForceRemediateForLastEntries())
+            if (requestObject.IsSetForceRemediateForLastEntries())
             {
-                context.Writer.WritePropertyName("ForceRemediateForLastEntries");
-                context.Writer.WriteBooleanValue(requestObject.ForceRemediateForLastEntries.Value);
+                context.Writer.WriteTextString("ForceRemediateForLastEntries");
+                context.Writer.WriteBoolean(requestObject.ForceRemediateForLastEntries.Value);
             }
-
-            if(requestObject.IsSetLastEntries())
+            if (requestObject.IsSetLastEntries())
             {
-                context.Writer.WritePropertyName("LastEntries");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("LastEntries");
+                context.Writer.WriteStartArray(requestObject.LastEntries.Count);
                 foreach(var requestObjectLastEntriesListValue in requestObject.LastEntries)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = NetworkAclEntryMarshaller.Instance;
                     marshaller.Marshall(requestObjectLastEntriesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
         }
 
         /// <summary>

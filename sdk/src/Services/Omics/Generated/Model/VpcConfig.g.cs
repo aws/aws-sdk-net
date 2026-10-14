@@ -73,5 +73,20 @@ namespace Amazon.Omics.Model
         /// Checks to see if the SubnetIds property is set.
         /// </summary>
         internal bool IsSetSubnetIds() => this.SubnetIds != null && (this.SubnetIds.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property VpcOwnerAccountId. 
+        /// <para>
+        /// The Amazon Web Services account ID of the cross-account VPC owner for RAM-shared VPC
+        /// configurations.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 12, Max = 12)]
+        public string VpcOwnerAccountId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the VpcOwnerAccountId property is set.
+        /// </summary>
+        internal bool IsSetVpcOwnerAccountId() => this.VpcOwnerAccountId != null;
     }
 }

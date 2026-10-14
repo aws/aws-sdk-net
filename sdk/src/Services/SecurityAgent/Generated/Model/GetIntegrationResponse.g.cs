@@ -131,6 +131,19 @@ namespace Amazon.SecurityAgent.Model
         internal bool IsSetProviderType() => this.ProviderType != null;
 
         /// <summary>
+        /// Gets and sets the property SiteUrl. 
+        /// <para>
+        /// The Atlassian Cloud site URL for Atlassian integrations.
+        /// </para>
+        /// </summary>
+        public string SiteUrl { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SiteUrl property is set.
+        /// </summary>
+        internal bool IsSetSiteUrl() => this.SiteUrl != null;
+
+        /// <summary>
         /// Gets and sets the property TargetUrl. 
         /// <para>
         /// The HTTPS URL of the customer self-hosted instance, such as a GitHub Enterprise Server

@@ -53,6 +53,13 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("ack", targetDepth, ref reader))
+                {
+                    var unmarshaller = AckConfigResponseUnmarshaller.Instance;
+                    unmarshalledObject.Ack = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("argoCd", targetDepth, ref reader))
                 {
                     var unmarshaller = ArgoCdConfigResponseUnmarshaller.Instance;

@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CapacitySpecification Marshaller
     /// </summary>
-    public class CapacitySpecificationMarshaller : IRequestMarshaller<CapacitySpecification, JsonMarshallerContext> 
+    public class CapacitySpecificationMarshaller : IRequestMarshaller<CapacitySpecification, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,28 +45,26 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CapacitySpecification requestObject, JsonMarshallerContext context)
+        public void Marshall(CapacitySpecification requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetReadCapacityUnits())
-            {
-                context.Writer.WritePropertyName("readCapacityUnits");
-                context.Writer.WriteNumberValue(requestObject.ReadCapacityUnits.Value);
-            }
 
-            if(requestObject.IsSetThroughputMode())
+            if (requestObject.IsSetReadCapacityUnits())
             {
-                context.Writer.WritePropertyName("throughputMode");
-                context.Writer.WriteStringValue(requestObject.ThroughputMode);
+                context.Writer.WriteTextString("readCapacityUnits");
+                context.Writer.WriteInt64(requestObject.ReadCapacityUnits.Value);
             }
-
-            if(requestObject.IsSetWriteCapacityUnits())
+            if (requestObject.IsSetThroughputMode())
             {
-                context.Writer.WritePropertyName("writeCapacityUnits");
-                context.Writer.WriteNumberValue(requestObject.WriteCapacityUnits.Value);
+                context.Writer.WriteTextString("throughputMode");
+                context.Writer.WriteTextString(requestObject.ThroughputMode);
             }
-
+            if (requestObject.IsSetWriteCapacityUnits())
+            {
+                context.Writer.WriteTextString("writeCapacityUnits");
+                context.Writer.WriteInt64(requestObject.WriteCapacityUnits.Value);
+            }
         }
 
         /// <summary>

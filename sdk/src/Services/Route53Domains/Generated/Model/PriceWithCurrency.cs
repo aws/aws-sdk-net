@@ -36,6 +36,7 @@ namespace Amazon.Route53Domains.Model
     {
         private string _currency;
         private double? _price;
+        private PriceType _priceType;
 
         /// <summary>
         /// Gets and sets the property Currency. 
@@ -73,6 +74,27 @@ namespace Amazon.Route53Domains.Model
         internal bool IsSetPrice()
         {
             return this._price.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PriceType. 
+        /// <para>
+        /// Indicates whether the domain has standard or premium pricing. A value of <c>STANDARD</c>
+        /// means the domain is priced at the regular rate for its TLD. A value of <c>REGISTRY_PREMIUM</c>
+        /// means the domain has registry premium pricing, which may be different than the standard
+        /// rate.
+        /// </para>
+        /// </summary>
+        public PriceType PriceType
+        {
+            get { return this._priceType; }
+            set { this._priceType = value; }
+        }
+
+        // Check to see if PriceType property is set
+        internal bool IsSetPriceType()
+        {
+            return this._priceType != null;
         }
 
     }

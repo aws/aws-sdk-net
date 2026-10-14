@@ -640,7 +640,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property PlayerGatewayMode. 
         /// <para>
         /// Configures player gateway for your fleet. Player gateway provides benefits such as
-        /// DDoS protection by rate limiting and validating traﬃc before it reaches game servers,
+        /// DDoS protection by rate limiting and validating traffic before it reaches game servers,
         /// hiding game server IP addresses from players, and providing updated endpoints when
         /// relay endpoints become unhealthy. Note, player gateway is only available for fleets
         /// using server SDK 5.x or later game server builds.
@@ -713,7 +713,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property RuntimeConfiguration. 
         /// <para>
         /// Instructions for how to launch and run server processes on the fleet. Set runtime
-        /// configuration for managed EC2 fleets. For an Anywhere fleets, set this parameter only
+        /// configuration for managed EC2 fleets. For an Anywhere fleet, set this parameter only
         /// if the fleet is running the Amazon GameLift Servers Agent. The runtime configuration
         /// defines one or more server process configurations. Each server process identifies
         /// a game executable or Realtime script file and the number of processes to run concurrently.
@@ -805,7 +805,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// A list of labels to assign to the new fleet resource. Tags are developer-defined key-value
-        /// pairs. Tagging Amazon Web Services resources are useful for resource management, access
+        /// pairs. Tagging Amazon Web Services resources is useful for resource management, access
         /// management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
         /// Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>

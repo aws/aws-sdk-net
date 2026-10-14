@@ -64,6 +64,20 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetCodec() => this.Codec != null;
 
         /// <summary>
+        /// Gets and sets the property Color. 
+        /// <para>
+        ///  The color signaling of the video stream. Used when the <c>streamType</c> is <c>Video</c>.
+        /// 
+        /// </para>
+        /// </summary>
+        public ColorInformation Color { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Color property is set.
+        /// </summary>
+        internal bool IsSetColor() => this.Color != null;
+
+        /// <summary>
         /// Gets and sets the property FrameRate. 
         /// <para>
         ///  The number of video frames displayed per second. Used when the <c>streamType</c>

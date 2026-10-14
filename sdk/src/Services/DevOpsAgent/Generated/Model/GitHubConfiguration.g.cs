@@ -73,6 +73,21 @@ namespace Amazon.DevOpsAgent.Model
         internal bool IsSetOwnerType() => this.OwnerType != null;
 
         /// <summary>
+        /// Gets and sets the property ReleaseManagementAssociationId. 
+        /// <para>
+        /// The identifier of the release management association that this repository maps to
+        /// for automatic verification testing.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 255)]
+        public string ReleaseManagementAssociationId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ReleaseManagementAssociationId property is set.
+        /// </summary>
+        internal bool IsSetReleaseManagementAssociationId() => this.ReleaseManagementAssociationId != null;
+
+        /// <summary>
         /// Gets and sets the property RepoId. 
         /// <para>
         /// Associated Github repo ID

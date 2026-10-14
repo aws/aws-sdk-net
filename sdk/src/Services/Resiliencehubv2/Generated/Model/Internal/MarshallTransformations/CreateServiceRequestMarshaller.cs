@@ -112,6 +112,17 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
 
+            if(publicRequest.IsSetDevOpsAgentConfiguration())
+            {
+                context.Writer.WritePropertyName("devOpsAgentConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DevOpsAgentConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DevOpsAgentConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("kmsKeyId");

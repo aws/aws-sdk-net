@@ -42,7 +42,7 @@ namespace Amazon.GameLift.Model
     ///  <note> 
     /// <para>
     /// A managed fleet's runtime environment, which depends on the fleet's Amazon Machine
-    /// Image {AMI} version, can't be updated. You must create a new fleet. As a best practice,
+    /// Image (AMI) version, can't be updated. You must create a new fleet. As a best practice,
     /// we recommend replacing your managed fleets every 30 days to maintain a secure and
     /// up-to-date runtime environment for your hosted game servers. For guidance, see <a
     /// href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/security-best-practices.html">
@@ -105,7 +105,7 @@ namespace Amazon.GameLift.Model
     /// a new deployment of fleet resources using the deployment configuration provided. A
     /// deployment replaces existing fleet instances with new instances that are deployed
     /// with the updated fleet properties. The fleet is placed in <c>UPDATING</c> status until
-    /// the deployment is complete, then return to <c>ACTIVE</c>. 
+    /// the deployment is complete, then returns to <c>ACTIVE</c>. 
     /// </para>
     ///  
     /// <para>

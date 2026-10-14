@@ -50,6 +50,17 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("s3");
                 context.Writer.WriteStringValue(requestObject.S3);
             }
+
+            if (requestObject.IsSetS3Files())
+            {
+                context.Writer.WritePropertyName("s3Files");
+                context.Writer.WriteStartObject();
+
+                var marshaller = S3FilesLocationMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3Files, context);
+
+                context.Writer.WriteEndObject();
+            }
         }
 
         /// <summary>

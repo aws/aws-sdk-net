@@ -83,6 +83,11 @@ namespace Amazon.AppIntegrationsService
         public static readonly AuthType API_KEY = new AuthType("API_KEY");
 
         /// <summary>
+        /// Constant CONNECT_JWT for AuthType
+        /// </summary>
+        public static readonly AuthType CONNECT_JWT = new AuthType("CONNECT_JWT");
+
+        /// <summary>
         /// Constructs a custom AuthType for a value not among the defined constants.
         /// </summary>
         public AuthType(string value) : base(value) { }

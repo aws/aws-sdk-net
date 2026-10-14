@@ -9,7 +9,7 @@
     <property>Amazon.CodeCommit.Model.AssociateApprovalRuleTemplateWithRepositoryRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.BatchAssociateApprovalRuleTemplateWithRepositoriesRequest.ApprovalRuleTemplateName</property>
@@ -20,7 +20,7 @@
     <property>Amazon.CodeCommit.Model.BatchDescribeMergeConflictsRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.BatchDisassociateApprovalRuleTemplateFromRepositoriesRequest.ApprovalRuleTemplateName</property>
@@ -31,7 +31,7 @@
     <property>Amazon.CodeCommit.Model.BatchGetCommitsRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.CreateApprovalRuleTemplateRequest.ApprovalRuleTemplateContent</property>
@@ -57,7 +57,7 @@
     <property>Amazon.CodeCommit.Model.CreateBranchRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.CreateCommitRequest.BranchName</property>
@@ -68,14 +68,16 @@
     <property>Amazon.CodeCommit.Model.CreateCommitRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.CreatePullRequestRequest.Description</property>
+    <min>0</min>
     <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.CreatePullRequestRequest.Title</property>
+    <min>0</min>
     <max>150</max>
   </property-value-rule>
   <property-value-rule>
@@ -94,19 +96,20 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.CreateRepositoryRequest.RepositoryDescription</property>
+    <min>0</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.CreateRepositoryRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.CreateUnreferencedMergeCommitRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.DeleteApprovalRuleTemplateRequest.ApprovalRuleTemplateName</property>
@@ -122,7 +125,7 @@
     <property>Amazon.CodeCommit.Model.DeleteBranchRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.DeleteFileRequest.BranchName</property>
@@ -133,7 +136,7 @@
     <property>Amazon.CodeCommit.Model.DeleteFileRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.DeletePullRequestApprovalRuleRequest.ApprovalRuleName</property>
@@ -144,13 +147,13 @@
     <property>Amazon.CodeCommit.Model.DeleteRepositoryRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.DescribeMergeConflictsRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.DisassociateApprovalRuleTemplateFromRepositoryRequest.ApprovalRuleTemplateName</property>
@@ -161,7 +164,7 @@
     <property>Amazon.CodeCommit.Model.DisassociateApprovalRuleTemplateFromRepositoryRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.GetApprovalRuleTemplateRequest.ApprovalRuleTemplateName</property>
@@ -172,13 +175,13 @@
     <property>Amazon.CodeCommit.Model.GetBlobRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.GetBlobDifferencesRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.GetBranchRequest.BranchName</property>
@@ -189,101 +192,102 @@
     <property>Amazon.CodeCommit.Model.GetBranchRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.GetCommentsForComparedCommitRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.GetCommentsForPullRequestRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.GetCommitRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.GetDifferencesRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.GetFileRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.GetFileResponse.FileContent</property>
+    <min>0</min>
     <max>6291456</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.GetFolderRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.GetMergeCommitRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.GetMergeConflictsRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.GetMergeOptionsRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.GetRepositoryRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.GetRepositoryTriggersRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.ListAssociatedApprovalRuleTemplatesForRepositoryRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.ListBranchesRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.ListFileCommitHistoryRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.ListPullRequestsRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.ListRepositoriesForApprovalRuleTemplateRequest.ApprovalRuleTemplateName</property>
@@ -294,7 +298,7 @@
     <property>Amazon.CodeCommit.Model.MergeBranchesByFastForwardRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.MergeBranchesByFastForwardRequest.TargetBranch</property>
@@ -305,7 +309,7 @@
     <property>Amazon.CodeCommit.Model.MergeBranchesBySquashRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.MergeBranchesBySquashRequest.TargetBranch</property>
@@ -316,7 +320,7 @@
     <property>Amazon.CodeCommit.Model.MergeBranchesByThreeWayRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.MergeBranchesByThreeWayRequest.TargetBranch</property>
@@ -327,43 +331,43 @@
     <property>Amazon.CodeCommit.Model.MergePullRequestByFastForwardRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.MergePullRequestBySquashRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.MergePullRequestByThreeWayRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.PostCommentForComparedCommitRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.PostCommentForComparedCommitResponse.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.PostCommentForPullRequestRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.PostCommentForPullRequestResponse.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.PutFileRequest.BranchName</property>
@@ -372,25 +376,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.PutFileRequest.FileContent</property>
+    <min>0</min>
     <max>6291456</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.PutFileRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.PutRepositoryTriggersRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.TestRepositoryTriggersRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.UpdateApprovalRuleTemplateContentRequest.ApprovalRuleTemplateName</property>
@@ -431,7 +436,7 @@
     <property>Amazon.CodeCommit.Model.UpdateDefaultBranchRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.UpdatePullRequestApprovalRuleContentRequest.ApprovalRuleName</property>
@@ -445,21 +450,24 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.UpdatePullRequestDescriptionRequest.Description</property>
+    <min>0</min>
     <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.UpdatePullRequestTitleRequest.Title</property>
+    <min>0</min>
     <max>150</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.UpdateRepositoryDescriptionRequest.RepositoryDescription</property>
+    <min>0</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.UpdateRepositoryDescriptionRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.UpdateRepositoryEncryptionKeyRequest.KmsKeyId</property>
@@ -469,7 +477,7 @@
     <property>Amazon.CodeCommit.Model.UpdateRepositoryEncryptionKeyRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.UpdateRepositoryEncryptionKeyResponse.KmsKeyId</property>
@@ -483,13 +491,13 @@
     <property>Amazon.CodeCommit.Model.UpdateRepositoryNameRequest.NewName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.UpdateRepositoryNameRequest.OldName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.ApprovalRule.ApprovalRuleContent</property>
@@ -530,19 +538,19 @@
     <property>Amazon.CodeCommit.Model.BatchAssociateApprovalRuleTemplateWithRepositoriesError.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.BatchDisassociateApprovalRuleTemplateFromRepositoriesError.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.BatchGetRepositoriesError.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.BranchInfo.BranchName</property>
@@ -553,13 +561,13 @@
     <property>Amazon.CodeCommit.Model.CommentsForComparedCommit.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.CommentsForPullRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.OriginApprovalRuleTemplate.ApprovalRuleTemplateName</property>
@@ -568,42 +576,46 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.PullRequest.Description</property>
+    <min>0</min>
     <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.PullRequest.Title</property>
+    <min>0</min>
     <max>150</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.PullRequestCreatedEventMetadata.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.PullRequestMergedStateChangedEventMetadata.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.PullRequestSourceReferenceUpdatedEventMetadata.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.PullRequestTarget.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.PutFileEntry.FileContent</property>
+    <min>0</min>
     <max>6291456</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.ReplaceContentEntry.Content</property>
+    <min>0</min>
     <max>6291456</max>
   </property-value-rule>
   <property-value-rule>
@@ -617,24 +629,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.RepositoryMetadata.RepositoryDescription</property>
+    <min>0</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.RepositoryMetadata.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.RepositoryNameIdPair.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.Target.RepositoryName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[\w\.-]+</pattern>
+    <pattern>^[\w\.-]+$</pattern>
   </property-value-rule>
 </property-value-rules>

@@ -642,7 +642,8 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  
         /// <para>
-        ///  <c>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</c> 
+        ///  <c>arn:partition:logs:region-name:amazon-account-id:log-group:log-group-name:*</c>
+        /// 
         /// </para>
         ///  
         /// <para>

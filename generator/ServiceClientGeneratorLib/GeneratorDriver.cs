@@ -523,6 +523,8 @@ namespace ServiceClientGenerator
             //}
         }
 
+        private static readonly ConcurrentDictionary<ServiceModel, HashSet<string>> _referredShapes = new ConcurrentDictionary<ServiceModel, HashSet<string>>();
+
         /// <summary>
         /// Checks if the shape is referred directly by another shape
         /// </summary>
@@ -531,31 +533,31 @@ namespace ServiceClientGenerator
         /// <returns>If the shape is a member of a structure or is a list or map</returns>
         private static bool IsShapeReferred(string shapeName, ServiceModel serviceModel)
         {
-            foreach (var shape in serviceModel.Shapes)
+            var referred = _referredShapes.GetOrAdd(serviceModel, model =>
             {
-                if (shape.IsStructure)
+                var set = new HashSet<string>();
+                foreach (var shape in model.Shapes)
                 {
-                    foreach (var member in shape.Members)
+                    if (shape.IsStructure)
                     {
-                        if (member.Shape.Name == shapeName)
+                        foreach (var member in shape.Members)
                         {
-                            return true;
+                            set.Add(member.Shape.Name);
                         }
                     }
+                    else if (shape.IsList)
+                    {
+                        set.Add(shape.ListShape.Name);
+                    }
+                    else if (shape.IsMap)
+                    {
+                        set.Add(shape.ValueShape.Name);
+                        set.Add(shape.KeyShape.Name);
+                    }
                 }
-                else if (shape.IsList && shape.ListShape.Name == shapeName)
-                {
-                    return true;
-                }
-                else if (shape.IsMap &&
-                    (shape.ValueShape.Name == shapeName || shape.KeyShape.Name == shapeName))
-                {
-                    return true;
-                }
-
-            }
-
-            return false;
+                return set;
+            });
+            return referred.Contains(shapeName);
         }
 
         /// <summary>

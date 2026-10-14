@@ -62,6 +62,19 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetFindingFieldsUpdate() => this.FindingFieldsUpdate != null;
 
         /// <summary>
+        /// Gets and sets the property ResourceFieldsUpdate. 
+        /// <para>
+        /// The changes to be applied to resource fields when an automation rule is triggered.
+        /// </para>
+        /// </summary>
+        public AutomationRulesResourceFieldsUpdateV2 ResourceFieldsUpdate { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ResourceFieldsUpdate property is set.
+        /// </summary>
+        internal bool IsSetResourceFieldsUpdate() => this.ResourceFieldsUpdate != null;
+
+        /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
         /// The category of action to be executed by the automation rule.

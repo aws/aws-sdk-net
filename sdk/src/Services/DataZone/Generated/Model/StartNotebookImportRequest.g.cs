@@ -111,8 +111,8 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property SourceLocation. 
         /// <para>
-        /// The source location of the notebook to import. This specifies the Amazon Simple Storage
-        /// Service URI of the notebook file.
+        /// The source location of the notebook to import. Specify either a single Amazon Simple
+        /// Storage Service URI, or a list of objects to import as the notebook's cells.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -122,5 +122,18 @@ namespace Amazon.DataZone.Model
         /// Checks to see if the SourceLocation property is set.
         /// </summary>
         internal bool IsSetSourceLocation() => this.SourceLocation != null;
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of the notebook to import. If not specified, defaults to <c>DATA</c>.
+        /// </para>
+        /// </summary>
+        public NotebookType Type { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Type property is set.
+        /// </summary>
+        internal bool IsSetType() => this.Type != null;
     }
 }

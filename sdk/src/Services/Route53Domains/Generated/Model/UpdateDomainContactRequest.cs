@@ -91,8 +91,8 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property Consent. 
         /// <para>
-        ///  Customer's consent for the owner change request. Required if the domain is not free
-        /// (consent price is more than $0.00).
+        ///  The maximum amount that you agree to pay for the owner change. Required if the domain
+        /// is not free (consent price is more than USD $0.00).
         /// </para>
         /// </summary>
         public Consent Consent

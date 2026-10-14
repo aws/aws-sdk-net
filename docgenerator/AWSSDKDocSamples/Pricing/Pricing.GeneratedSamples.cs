@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.Pricing.Generated
     {
         public void PricingDescribeServices()
         {
-            #region example-1
+            #region DescribeServices-1
 
             var client = new AmazonPricingClient();
-            var response = client.DescribeServices(new DescribeServicesRequest 
+            var response = client.DescribeServices(new DescribeServicesRequest
             {
                 FormatVersion = "aws_v1",
                 MaxResults = 1,
@@ -32,10 +33,10 @@ namespace AWSSDKDocSamples.Amazon.Pricing.Generated
 
         public void PricingGetAttributeValues()
         {
-            #region example-1
+            #region GetAttributeValues-1
 
             var client = new AmazonPricingClient();
-            var response = client.GetAttributeValues(new GetAttributeValuesRequest 
+            var response = client.GetAttributeValues(new GetAttributeValuesRequest
             {
                 AttributeName = "volumeType",
                 MaxResults = 2,
@@ -48,13 +49,10 @@ namespace AWSSDKDocSamples.Amazon.Pricing.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

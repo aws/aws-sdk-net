@@ -4,7 +4,7 @@
     <property>Amazon.WorkMail.Model.AssociateDelegateToResourceRequest.EntityId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.AssociateDelegateToResourceRequest.OrganizationId</property>
@@ -16,19 +16,19 @@
     <property>Amazon.WorkMail.Model.AssociateDelegateToResourceRequest.ResourceId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.AssociateMemberToGroupRequest.GroupId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.AssociateMemberToGroupRequest.MemberId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.AssociateMemberToGroupRequest.OrganizationId</property>
@@ -40,7 +40,7 @@
     <property>Amazon.WorkMail.Model.AssumeImpersonationRoleRequest.ImpersonationRoleId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.AssumeImpersonationRoleRequest.OrganizationId</property>
@@ -52,19 +52,19 @@
     <property>Amazon.WorkMail.Model.AssumeImpersonationRoleResponse.Token</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[\x21-\x7e]+</pattern>
+    <pattern>^[\x21-\x7e]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.CancelMailboxExportJobRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\x21-\x7e]+</pattern>
+    <pattern>^[\x21-\x7e]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.CancelMailboxExportJobRequest.JobId</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[A-Za-z0-9-]+</pattern>
+    <pattern>^[A-Za-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.CancelMailboxExportJobRequest.OrganizationId</property>
@@ -76,7 +76,7 @@
     <property>Amazon.WorkMail.Model.CreateAliasRequest.Alias</property>
     <min>1</min>
     <max>254</max>
-    <pattern>[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z-]{2,}</pattern>
+    <pattern>^[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z-]{2,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.CreateAliasRequest.EntityId</property>
@@ -93,13 +93,13 @@
     <property>Amazon.WorkMail.Model.CreateAvailabilityConfigurationRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\x21-\x7e]+</pattern>
+    <pattern>^[\x21-\x7e]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.CreateAvailabilityConfigurationRequest.DomainName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9.-]+</pattern>
+    <pattern>^[a-zA-Z0-9.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.CreateAvailabilityConfigurationRequest.OrganizationId</property>
@@ -111,7 +111,7 @@
     <property>Amazon.WorkMail.Model.CreateGroupRequest.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.CreateGroupRequest.OrganizationId</property>
@@ -128,7 +128,7 @@
     <property>Amazon.WorkMail.Model.CreateIdentityCenterApplicationRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\x21-\x7e]+</pattern>
+    <pattern>^[\x21-\x7e]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.CreateIdentityCenterApplicationRequest.InstanceArn</property>
@@ -152,19 +152,19 @@
     <property>Amazon.WorkMail.Model.CreateImpersonationRoleRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\x21-\x7e]+</pattern>
+    <pattern>^[\x21-\x7e]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.CreateImpersonationRoleRequest.Description</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[^\x00-\x09\x0B\x0C\x0E-\x1F\x7F\x3C\x3E\x5C]+</pattern>
+    <pattern>^[^\x00-\x09\x0B\x0C\x0E-\x1F\x7F\x3C\x3E\x5C]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.CreateImpersonationRoleRequest.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[^\x00-\x1F\x7F\x3C\x3E\x5C]+</pattern>
+    <pattern>^[^\x00-\x1F\x7F\x3C\x3E\x5C]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.CreateImpersonationRoleRequest.OrganizationId</property>
@@ -176,25 +176,25 @@
     <property>Amazon.WorkMail.Model.CreateImpersonationRoleResponse.ImpersonationRoleId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.CreateMobileDeviceAccessRuleRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\x21-\x7e]+</pattern>
+    <pattern>^[\x21-\x7e]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.CreateMobileDeviceAccessRuleRequest.Description</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[\S\s]+</pattern>
+    <pattern>^[\S\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.CreateMobileDeviceAccessRuleRequest.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\S\s]+</pattern>
+    <pattern>^[\S\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.CreateMobileDeviceAccessRuleRequest.OrganizationId</property>
@@ -206,19 +206,19 @@
     <property>Amazon.WorkMail.Model.CreateMobileDeviceAccessRuleResponse.MobileDeviceAccessRuleId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.CreateOrganizationRequest.Alias</property>
     <min>1</min>
     <max>62</max>
-    <pattern>^(?!d-)([\da-zA-Z]+)([-][\da-zA-Z]+)*</pattern>
+    <pattern>^(?!d-)([\da-zA-Z]+)([-][\da-zA-Z]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.CreateOrganizationRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\x21-\x7e]+</pattern>
+    <pattern>^[\x21-\x7e]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.CreateOrganizationRequest.DirectoryId</property>
@@ -230,7 +230,7 @@
     <property>Amazon.WorkMail.Model.CreateOrganizationRequest.KmsKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws:kms:[a-z0-9-]*:[a-z0-9-]+:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
+    <pattern>^arn:aws:kms:[a-z0-9-]*:[a-z0-9-]+:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.CreateOrganizationResponse.OrganizationId</property>
@@ -247,7 +247,7 @@
     <property>Amazon.WorkMail.Model.CreateResourceRequest.Name</property>
     <min>1</min>
     <max>20</max>
-    <pattern>[\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9-]{2,})?</pattern>
+    <pattern>^[\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9-]{2,})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.CreateResourceRequest.OrganizationId</property>
@@ -263,10 +263,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.CreateUserRequest.DisplayName</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.CreateUserRequest.FirstName</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -277,13 +279,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.CreateUserRequest.LastName</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.CreateUserRequest.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9-]{2,})?</pattern>
+    <pattern>^[\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9-]{2,})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.CreateUserRequest.OrganizationId</property>
@@ -293,8 +296,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.CreateUserRequest.Password</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.CreateUserResponse.UserId</property>
@@ -305,7 +309,7 @@
     <property>Amazon.WorkMail.Model.DeleteAccessControlRuleRequest.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DeleteAccessControlRuleRequest.OrganizationId</property>
@@ -317,7 +321,7 @@
     <property>Amazon.WorkMail.Model.DeleteAliasRequest.Alias</property>
     <min>1</min>
     <max>254</max>
-    <pattern>[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z-]{2,}</pattern>
+    <pattern>^[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z-]{2,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DeleteAliasRequest.EntityId</property>
@@ -334,7 +338,7 @@
     <property>Amazon.WorkMail.Model.DeleteAvailabilityConfigurationRequest.DomainName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9.-]+</pattern>
+    <pattern>^[a-zA-Z0-9.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DeleteAvailabilityConfigurationRequest.OrganizationId</property>
@@ -352,7 +356,7 @@
     <property>Amazon.WorkMail.Model.DeleteGroupRequest.GroupId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DeleteGroupRequest.OrganizationId</property>
@@ -376,7 +380,7 @@
     <property>Amazon.WorkMail.Model.DeleteImpersonationRoleRequest.ImpersonationRoleId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DeleteImpersonationRoleRequest.OrganizationId</property>
@@ -388,13 +392,13 @@
     <property>Amazon.WorkMail.Model.DeleteMailboxPermissionsRequest.EntityId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DeleteMailboxPermissionsRequest.GranteeId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DeleteMailboxPermissionsRequest.OrganizationId</property>
@@ -406,7 +410,7 @@
     <property>Amazon.WorkMail.Model.DeleteMobileDeviceAccessOverrideRequest.DeviceId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>[A-Za-z0-9]+</pattern>
+    <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DeleteMobileDeviceAccessOverrideRequest.OrganizationId</property>
@@ -418,13 +422,13 @@
     <property>Amazon.WorkMail.Model.DeleteMobileDeviceAccessOverrideRequest.UserId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DeleteMobileDeviceAccessRuleRequest.MobileDeviceAccessRuleId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DeleteMobileDeviceAccessRuleRequest.OrganizationId</property>
@@ -436,7 +440,7 @@
     <property>Amazon.WorkMail.Model.DeleteOrganizationRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\x21-\x7e]+</pattern>
+    <pattern>^[\x21-\x7e]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DeleteOrganizationRequest.OrganizationId</property>
@@ -452,6 +456,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DeleteOrganizationResponse.State</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -464,7 +469,7 @@
     <property>Amazon.WorkMail.Model.DeletePersonalAccessTokenRequest.PersonalAccessTokenId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DeleteResourceRequest.OrganizationId</property>
@@ -476,13 +481,13 @@
     <property>Amazon.WorkMail.Model.DeleteResourceRequest.ResourceId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DeleteRetentionPolicyRequest.Id</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DeleteRetentionPolicyRequest.OrganizationId</property>
@@ -500,13 +505,13 @@
     <property>Amazon.WorkMail.Model.DeleteUserRequest.UserId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DeregisterFromWorkMailRequest.EntityId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DeregisterFromWorkMailRequest.OrganizationId</property>
@@ -518,7 +523,7 @@
     <property>Amazon.WorkMail.Model.DeregisterMailDomainRequest.DomainName</property>
     <min>3</min>
     <max>209</max>
-    <pattern>[a-zA-Z0-9.-]+</pattern>
+    <pattern>^[a-zA-Z0-9.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DeregisterMailDomainRequest.OrganizationId</property>
@@ -536,19 +541,19 @@
     <property>Amazon.WorkMail.Model.DescribeEmailMonitoringConfigurationResponse.LogGroupArn</property>
     <min>47</min>
     <max>562</max>
-    <pattern>arn:aws:logs:[a-z\-0-9]*:[0-9]{12}:log-group:([\.\-_/#A-Za-z0-9]+):\*$</pattern>
+    <pattern>^arn:aws:logs:[a-z\-0-9]*:[0-9]{12}:log-group:([\.\-_/#A-Za-z0-9]+):\*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeEmailMonitoringConfigurationResponse.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws:iam:[a-z0-9-]*:[a-z0-9-]+:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
+    <pattern>^arn:aws:iam:[a-z0-9-]*:[a-z0-9-]+:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeEntityRequest.Email</property>
     <min>1</min>
     <max>254</max>
-    <pattern>[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z-]{2,}</pattern>
+    <pattern>^[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z-]{2,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeEntityRequest.OrganizationId</property>
@@ -563,13 +568,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeEntityResponse.Name</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeGroupRequest.GroupId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeGroupRequest.OrganizationId</property>
@@ -581,7 +587,7 @@
     <property>Amazon.WorkMail.Model.DescribeGroupResponse.Email</property>
     <min>1</min>
     <max>254</max>
-    <pattern>[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z-]{2,}</pattern>
+    <pattern>^[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z-]{2,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeGroupResponse.GroupId</property>
@@ -592,7 +598,7 @@
     <property>Amazon.WorkMail.Model.DescribeGroupResponse.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeIdentityProviderConfigurationRequest.OrganizationId</property>
@@ -610,7 +616,7 @@
     <property>Amazon.WorkMail.Model.DescribeMailboxExportJobRequest.JobId</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[A-Za-z0-9-]+</pattern>
+    <pattern>^[A-Za-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeMailboxExportJobRequest.OrganizationId</property>
@@ -622,7 +628,7 @@
     <property>Amazon.WorkMail.Model.DescribeMailboxExportJobResponse.Description</property>
     <min>0</min>
     <max>1023</max>
-    <pattern>[\S\s]*</pattern>
+    <pattern>^[\S\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeMailboxExportJobResponse.EntityId</property>
@@ -633,7 +639,7 @@
     <property>Amazon.WorkMail.Model.DescribeMailboxExportJobResponse.ErrorInfo</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S\s]*</pattern>
+    <pattern>^[\S\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeMailboxExportJobResponse.EstimatedProgress</property>
@@ -644,31 +650,31 @@
     <property>Amazon.WorkMail.Model.DescribeMailboxExportJobResponse.KmsKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws:kms:[a-z0-9-]*:[a-z0-9-]+:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
+    <pattern>^arn:aws:kms:[a-z0-9-]*:[a-z0-9-]+:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeMailboxExportJobResponse.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws:iam:[a-z0-9-]*:[a-z0-9-]+:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
+    <pattern>^arn:aws:iam:[a-z0-9-]*:[a-z0-9-]+:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeMailboxExportJobResponse.S3BucketName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[A-Za-z0-9.-]+</pattern>
+    <pattern>^[A-Za-z0-9.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeMailboxExportJobResponse.S3Path</property>
     <min>1</min>
     <max>1023</max>
-    <pattern>[A-Za-z0-9!_.*'()/-]+</pattern>
+    <pattern>^[A-Za-z0-9!_.*'()/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeMailboxExportJobResponse.S3Prefix</property>
     <min>1</min>
     <max>1023</max>
-    <pattern>[A-Za-z0-9!_.*'()/-]+</pattern>
+    <pattern>^[A-Za-z0-9!_.*'()/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeOrganizationRequest.OrganizationId</property>
@@ -677,31 +683,35 @@
     <pattern>^m-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.WorkMail.Model.DescribeOrganizationResponse.Alias</property>
-    <min>1</min>
-    <max>62</max>
-    <pattern>^(?!d-)([\da-zA-Z]+)([-][\da-zA-Z]+)*</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeOrganizationResponse.ARN</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:aws:workmail:[a-z0-9-]*:[a-z0-9-]+:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
+    <pattern>^arn:aws:workmail:[a-z0-9-]*:[a-z0-9-]+:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.DescribeOrganizationResponse.Alias</property>
+    <min>1</min>
+    <max>62</max>
+    <pattern>^(?!d-)([\da-zA-Z]+)([-][\da-zA-Z]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeOrganizationResponse.DefaultMailDomain</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeOrganizationResponse.DirectoryId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeOrganizationResponse.DirectoryType</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeOrganizationResponse.ErrorMessage</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -717,6 +727,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeOrganizationResponse.State</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -729,7 +740,7 @@
     <property>Amazon.WorkMail.Model.DescribeResourceRequest.ResourceId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeResourceResponse.Description</property>
@@ -740,13 +751,13 @@
     <property>Amazon.WorkMail.Model.DescribeResourceResponse.Email</property>
     <min>1</min>
     <max>254</max>
-    <pattern>[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z-]{2,}</pattern>
+    <pattern>^[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z-]{2,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeResourceResponse.Name</property>
     <min>1</min>
     <max>20</max>
-    <pattern>[\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9-]{2,})?</pattern>
+    <pattern>^[\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9-]{2,})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeResourceResponse.ResourceId</property>
@@ -764,36 +775,42 @@
     <property>Amazon.WorkMail.Model.DescribeUserRequest.UserId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeUserResponse.City</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeUserResponse.Company</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeUserResponse.Country</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeUserResponse.Department</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeUserResponse.DisplayName</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeUserResponse.Email</property>
     <min>1</min>
     <max>254</max>
-    <pattern>[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z-]{2,}</pattern>
+    <pattern>^[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z-]{2,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeUserResponse.FirstName</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -810,32 +827,38 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeUserResponse.Initials</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeUserResponse.JobTitle</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeUserResponse.LastName</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeUserResponse.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9-]{2,})?</pattern>
+    <pattern>^[\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9-]{2,})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeUserResponse.Office</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeUserResponse.Street</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeUserResponse.Telephone</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -845,13 +868,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeUserResponse.ZipCode</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DisassociateDelegateFromResourceRequest.EntityId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DisassociateDelegateFromResourceRequest.OrganizationId</property>
@@ -863,19 +887,19 @@
     <property>Amazon.WorkMail.Model.DisassociateDelegateFromResourceRequest.ResourceId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DisassociateMemberFromGroupRequest.GroupId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DisassociateMemberFromGroupRequest.MemberId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DisassociateMemberFromGroupRequest.OrganizationId</property>
@@ -887,13 +911,13 @@
     <property>Amazon.WorkMail.Model.GetAccessControlEffectRequest.Action</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z]+</pattern>
+    <pattern>^[a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.GetAccessControlEffectRequest.ImpersonationRoleId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.GetAccessControlEffectRequest.IpAddress</property>
@@ -920,25 +944,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.GetDefaultRetentionPolicyResponse.Description</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.GetDefaultRetentionPolicyResponse.Id</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.GetDefaultRetentionPolicyResponse.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.GetImpersonationRoleRequest.ImpersonationRoleId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.GetImpersonationRoleRequest.OrganizationId</property>
@@ -950,25 +975,25 @@
     <property>Amazon.WorkMail.Model.GetImpersonationRoleResponse.Description</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[^\x00-\x09\x0B\x0C\x0E-\x1F\x7F\x3C\x3E\x5C]+</pattern>
+    <pattern>^[^\x00-\x09\x0B\x0C\x0E-\x1F\x7F\x3C\x3E\x5C]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.GetImpersonationRoleResponse.ImpersonationRoleId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.GetImpersonationRoleResponse.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[^\x00-\x1F\x7F\x3C\x3E\x5C]+</pattern>
+    <pattern>^[^\x00-\x1F\x7F\x3C\x3E\x5C]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.GetImpersonationRoleEffectRequest.ImpersonationRoleId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.GetImpersonationRoleEffectRequest.OrganizationId</property>
@@ -980,7 +1005,19 @@
     <property>Amazon.WorkMail.Model.GetImpersonationRoleEffectRequest.TargetUser</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetMailDomainRequest.DomainName</property>
+    <min>3</min>
+    <max>209</max>
+    <pattern>^[a-zA-Z0-9.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetMailDomainRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.GetMailboxDetailsRequest.OrganizationId</property>
@@ -992,7 +1029,7 @@
     <property>Amazon.WorkMail.Model.GetMailboxDetailsRequest.UserId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.GetMailboxDetailsResponse.MailboxQuota</property>
@@ -1003,40 +1040,28 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.WorkMail.Model.GetMailDomainRequest.DomainName</property>
-    <min>3</min>
-    <max>209</max>
-    <pattern>[a-zA-Z0-9.-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.GetMailDomainRequest.OrganizationId</property>
-    <min>34</min>
-    <max>34</max>
-    <pattern>^m-[0-9a-f]{32}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.WorkMail.Model.GetMobileDeviceAccessEffectRequest.DeviceModel</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.GetMobileDeviceAccessEffectRequest.DeviceOperatingSystem</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.GetMobileDeviceAccessEffectRequest.DeviceType</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.GetMobileDeviceAccessEffectRequest.DeviceUserAgent</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.GetMobileDeviceAccessEffectRequest.OrganizationId</property>
@@ -1048,7 +1073,7 @@
     <property>Amazon.WorkMail.Model.GetMobileDeviceAccessOverrideRequest.DeviceId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>[A-Za-z0-9]+</pattern>
+    <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.GetMobileDeviceAccessOverrideRequest.OrganizationId</property>
@@ -1060,19 +1085,19 @@
     <property>Amazon.WorkMail.Model.GetMobileDeviceAccessOverrideRequest.UserId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.GetMobileDeviceAccessOverrideResponse.Description</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[\S\s]+</pattern>
+    <pattern>^[\S\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.GetMobileDeviceAccessOverrideResponse.DeviceId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>[A-Za-z0-9]+</pattern>
+    <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.GetMobileDeviceAccessOverrideResponse.UserId</property>
@@ -1089,19 +1114,19 @@
     <property>Amazon.WorkMail.Model.GetPersonalAccessTokenMetadataRequest.PersonalAccessTokenId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.GetPersonalAccessTokenMetadataResponse.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[^\x00-\x1F\x7F\x3C\x3E\x5C]+</pattern>
+    <pattern>^[^\x00-\x1F\x7F\x3C\x3E\x5C]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.GetPersonalAccessTokenMetadataResponse.PersonalAccessTokenId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.GetPersonalAccessTokenMetadataResponse.UserId</property>
@@ -1128,7 +1153,7 @@
     <property>Amazon.WorkMail.Model.ListAliasesRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+    <pattern>^[\S\s]*|[a-zA-Z0-9/+=]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListAliasesRequest.OrganizationId</property>
@@ -1140,7 +1165,7 @@
     <property>Amazon.WorkMail.Model.ListAliasesResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+    <pattern>^[\S\s]*|[a-zA-Z0-9/+=]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListAvailabilityConfigurationsRequest.MaxResults</property>
@@ -1151,7 +1176,7 @@
     <property>Amazon.WorkMail.Model.ListAvailabilityConfigurationsRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+    <pattern>^[\S\s]*|[a-zA-Z0-9/+=]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListAvailabilityConfigurationsRequest.OrganizationId</property>
@@ -1163,13 +1188,13 @@
     <property>Amazon.WorkMail.Model.ListAvailabilityConfigurationsResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+    <pattern>^[\S\s]*|[a-zA-Z0-9/+=]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListGroupMembersRequest.GroupId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListGroupMembersRequest.MaxResults</property>
@@ -1180,7 +1205,7 @@
     <property>Amazon.WorkMail.Model.ListGroupMembersRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+    <pattern>^[\S\s]*|[a-zA-Z0-9/+=]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListGroupMembersRequest.OrganizationId</property>
@@ -1192,7 +1217,7 @@
     <property>Amazon.WorkMail.Model.ListGroupMembersResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+    <pattern>^[\S\s]*|[a-zA-Z0-9/+=]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListGroupsRequest.MaxResults</property>
@@ -1203,7 +1228,7 @@
     <property>Amazon.WorkMail.Model.ListGroupsRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+    <pattern>^[\S\s]*|[a-zA-Z0-9/+=]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListGroupsRequest.OrganizationId</property>
@@ -1215,13 +1240,13 @@
     <property>Amazon.WorkMail.Model.ListGroupsResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+    <pattern>^[\S\s]*|[a-zA-Z0-9/+=]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListGroupsForEntityRequest.EntityId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListGroupsForEntityRequest.MaxResults</property>
@@ -1232,7 +1257,7 @@
     <property>Amazon.WorkMail.Model.ListGroupsForEntityRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+    <pattern>^[\S\s]*|[a-zA-Z0-9/+=]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListGroupsForEntityRequest.OrganizationId</property>
@@ -1244,7 +1269,7 @@
     <property>Amazon.WorkMail.Model.ListGroupsForEntityResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+    <pattern>^[\S\s]*|[a-zA-Z0-9/+=]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListImpersonationRolesRequest.MaxResults</property>
@@ -1255,7 +1280,7 @@
     <property>Amazon.WorkMail.Model.ListImpersonationRolesRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+    <pattern>^[\S\s]*|[a-zA-Z0-9/+=]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListImpersonationRolesRequest.OrganizationId</property>
@@ -1267,59 +1292,7 @@
     <property>Amazon.WorkMail.Model.ListImpersonationRolesResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.ListMailboxExportJobsRequest.MaxResults</property>
-    <min>1</min>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.ListMailboxExportJobsRequest.NextToken</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.ListMailboxExportJobsRequest.OrganizationId</property>
-    <min>34</min>
-    <max>34</max>
-    <pattern>^m-[0-9a-f]{32}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.ListMailboxExportJobsResponse.NextToken</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.ListMailboxPermissionsRequest.EntityId</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.ListMailboxPermissionsRequest.MaxResults</property>
-    <min>1</min>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.ListMailboxPermissionsRequest.NextToken</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.ListMailboxPermissionsRequest.OrganizationId</property>
-    <min>34</min>
-    <max>34</max>
-    <pattern>^m-[0-9a-f]{32}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.ListMailboxPermissionsResponse.NextToken</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+    <pattern>^[\S\s]*|[a-zA-Z0-9/+=]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListMailDomainsRequest.MaxResults</property>
@@ -1330,7 +1303,7 @@
     <property>Amazon.WorkMail.Model.ListMailDomainsRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+    <pattern>^[\S\s]*|[a-zA-Z0-9/+=]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListMailDomainsRequest.OrganizationId</property>
@@ -1342,13 +1315,65 @@
     <property>Amazon.WorkMail.Model.ListMailDomainsResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+    <pattern>^[\S\s]*|[a-zA-Z0-9/+=]{1,1024}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListMailboxExportJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListMailboxExportJobsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[\S\s]*|[a-zA-Z0-9/+=]{1,1024}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListMailboxExportJobsRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListMailboxExportJobsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[\S\s]*|[a-zA-Z0-9/+=]{1,1024}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListMailboxPermissionsRequest.EntityId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListMailboxPermissionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListMailboxPermissionsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[\S\s]*|[a-zA-Z0-9/+=]{1,1024}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListMailboxPermissionsRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListMailboxPermissionsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[\S\s]*|[a-zA-Z0-9/+=]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListMobileDeviceAccessOverridesRequest.DeviceId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>[A-Za-z0-9]+</pattern>
+    <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListMobileDeviceAccessOverridesRequest.MaxResults</property>
@@ -1359,7 +1384,7 @@
     <property>Amazon.WorkMail.Model.ListMobileDeviceAccessOverridesRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+    <pattern>^[\S\s]*|[a-zA-Z0-9/+=]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListMobileDeviceAccessOverridesRequest.OrganizationId</property>
@@ -1371,13 +1396,13 @@
     <property>Amazon.WorkMail.Model.ListMobileDeviceAccessOverridesRequest.UserId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListMobileDeviceAccessOverridesResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+    <pattern>^[\S\s]*|[a-zA-Z0-9/+=]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListMobileDeviceAccessRulesRequest.OrganizationId</property>
@@ -1394,13 +1419,13 @@
     <property>Amazon.WorkMail.Model.ListOrganizationsRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+    <pattern>^[\S\s]*|[a-zA-Z0-9/+=]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListOrganizationsResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+    <pattern>^[\S\s]*|[a-zA-Z0-9/+=]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListPersonalAccessTokensRequest.MaxResults</property>
@@ -1411,7 +1436,7 @@
     <property>Amazon.WorkMail.Model.ListPersonalAccessTokensRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+    <pattern>^[\S\s]*|[a-zA-Z0-9/+=]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListPersonalAccessTokensRequest.OrganizationId</property>
@@ -1423,13 +1448,13 @@
     <property>Amazon.WorkMail.Model.ListPersonalAccessTokensRequest.UserId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListPersonalAccessTokensResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+    <pattern>^[\S\s]*|[a-zA-Z0-9/+=]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListResourceDelegatesRequest.MaxResults</property>
@@ -1440,7 +1465,7 @@
     <property>Amazon.WorkMail.Model.ListResourceDelegatesRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+    <pattern>^[\S\s]*|[a-zA-Z0-9/+=]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListResourceDelegatesRequest.OrganizationId</property>
@@ -1452,13 +1477,13 @@
     <property>Amazon.WorkMail.Model.ListResourceDelegatesRequest.ResourceId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListResourceDelegatesResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+    <pattern>^[\S\s]*|[a-zA-Z0-9/+=]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListResourcesRequest.MaxResults</property>
@@ -1469,7 +1494,7 @@
     <property>Amazon.WorkMail.Model.ListResourcesRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+    <pattern>^[\S\s]*|[a-zA-Z0-9/+=]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListResourcesRequest.OrganizationId</property>
@@ -1481,13 +1506,13 @@
     <property>Amazon.WorkMail.Model.ListResourcesResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+    <pattern>^[\S\s]*|[a-zA-Z0-9/+=]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListTagsForResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:aws:workmail:[a-z0-9-]*:[a-z0-9-]+:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
+    <pattern>^arn:aws:workmail:[a-z0-9-]*:[a-z0-9-]+:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListUsersRequest.MaxResults</property>
@@ -1498,7 +1523,7 @@
     <property>Amazon.WorkMail.Model.ListUsersRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+    <pattern>^[\S\s]*|[a-zA-Z0-9/+=]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListUsersRequest.OrganizationId</property>
@@ -1510,19 +1535,19 @@
     <property>Amazon.WorkMail.Model.ListUsersResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+    <pattern>^[\S\s]*|[a-zA-Z0-9/+=]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.PutAccessControlRuleRequest.Description</property>
     <min>0</min>
     <max>255</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.PutAccessControlRuleRequest.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.PutAccessControlRuleRequest.OrganizationId</property>
@@ -1534,7 +1559,7 @@
     <property>Amazon.WorkMail.Model.PutEmailMonitoringConfigurationRequest.LogGroupArn</property>
     <min>47</min>
     <max>562</max>
-    <pattern>arn:aws:logs:[a-z\-0-9]*:[0-9]{12}:log-group:([\.\-_/#A-Za-z0-9]+):\*$</pattern>
+    <pattern>^arn:aws:logs:[a-z\-0-9]*:[0-9]{12}:log-group:([\.\-_/#A-Za-z0-9]+):\*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.PutEmailMonitoringConfigurationRequest.OrganizationId</property>
@@ -1546,7 +1571,7 @@
     <property>Amazon.WorkMail.Model.PutEmailMonitoringConfigurationRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws:iam:[a-z0-9-]*:[a-z0-9-]+:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
+    <pattern>^arn:aws:iam:[a-z0-9-]*:[a-z0-9-]+:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.PutIdentityProviderConfigurationRequest.OrganizationId</property>
@@ -1564,13 +1589,13 @@
     <property>Amazon.WorkMail.Model.PutMailboxPermissionsRequest.EntityId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.PutMailboxPermissionsRequest.GranteeId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.PutMailboxPermissionsRequest.OrganizationId</property>
@@ -1582,13 +1607,13 @@
     <property>Amazon.WorkMail.Model.PutMobileDeviceAccessOverrideRequest.Description</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[\S\s]+</pattern>
+    <pattern>^[\S\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.PutMobileDeviceAccessOverrideRequest.DeviceId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>[A-Za-z0-9]+</pattern>
+    <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.PutMobileDeviceAccessOverrideRequest.OrganizationId</property>
@@ -1600,24 +1625,25 @@
     <property>Amazon.WorkMail.Model.PutMobileDeviceAccessOverrideRequest.UserId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.PutRetentionPolicyRequest.Description</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[\w\d\s\S\-!?=,.;:'_]+</pattern>
+    <pattern>^[\w\d\s\S\-!?=,.;:'_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.PutRetentionPolicyRequest.Id</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.PutRetentionPolicyRequest.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.PutRetentionPolicyRequest.OrganizationId</property>
@@ -1629,13 +1655,13 @@
     <property>Amazon.WorkMail.Model.RegisterMailDomainRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\x21-\x7e]+</pattern>
+    <pattern>^[\x21-\x7e]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.RegisterMailDomainRequest.DomainName</property>
     <min>3</min>
     <max>209</max>
-    <pattern>[a-zA-Z0-9.-]+</pattern>
+    <pattern>^[a-zA-Z0-9.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.RegisterMailDomainRequest.OrganizationId</property>
@@ -1647,13 +1673,13 @@
     <property>Amazon.WorkMail.Model.RegisterToWorkMailRequest.Email</property>
     <min>1</min>
     <max>254</max>
-    <pattern>[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z-]{2,}</pattern>
+    <pattern>^[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z-]{2,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.RegisterToWorkMailRequest.EntityId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.RegisterToWorkMailRequest.OrganizationId</property>
@@ -1669,8 +1695,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ResetPasswordRequest.Password</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ResetPasswordRequest.UserId</property>
@@ -1681,25 +1708,25 @@
     <property>Amazon.WorkMail.Model.StartMailboxExportJobRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\x21-\x7e]+</pattern>
+    <pattern>^[\x21-\x7e]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.StartMailboxExportJobRequest.Description</property>
     <min>0</min>
     <max>1023</max>
-    <pattern>[\S\s]*</pattern>
+    <pattern>^[\S\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.StartMailboxExportJobRequest.EntityId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.StartMailboxExportJobRequest.KmsKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws:kms:[a-z0-9-]*:[a-z0-9-]+:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
+    <pattern>^arn:aws:kms:[a-z0-9-]*:[a-z0-9-]+:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.StartMailboxExportJobRequest.OrganizationId</property>
@@ -1711,37 +1738,37 @@
     <property>Amazon.WorkMail.Model.StartMailboxExportJobRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws:iam:[a-z0-9-]*:[a-z0-9-]+:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
+    <pattern>^arn:aws:iam:[a-z0-9-]*:[a-z0-9-]+:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.StartMailboxExportJobRequest.S3BucketName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[A-Za-z0-9.-]+</pattern>
+    <pattern>^[A-Za-z0-9.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.StartMailboxExportJobRequest.S3Prefix</property>
     <min>1</min>
     <max>1023</max>
-    <pattern>[A-Za-z0-9!_.*'()/-]+</pattern>
+    <pattern>^[A-Za-z0-9!_.*'()/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.StartMailboxExportJobResponse.JobId</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[A-Za-z0-9-]+</pattern>
+    <pattern>^[A-Za-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.TagResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:aws:workmail:[a-z0-9-]*:[a-z0-9-]+:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
+    <pattern>^arn:aws:workmail:[a-z0-9-]*:[a-z0-9-]+:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.TestAvailabilityConfigurationRequest.DomainName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9.-]+</pattern>
+    <pattern>^[a-zA-Z0-9.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.TestAvailabilityConfigurationRequest.OrganizationId</property>
@@ -1751,19 +1778,20 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.TestAvailabilityConfigurationResponse.FailureReason</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.UntagResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:aws:workmail:[a-z0-9-]*:[a-z0-9-]+:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
+    <pattern>^arn:aws:workmail:[a-z0-9-]*:[a-z0-9-]+:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.UpdateAvailabilityConfigurationRequest.DomainName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9.-]+</pattern>
+    <pattern>^[a-zA-Z0-9.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.UpdateAvailabilityConfigurationRequest.OrganizationId</property>
@@ -1775,7 +1803,7 @@
     <property>Amazon.WorkMail.Model.UpdateDefaultMailDomainRequest.DomainName</property>
     <min>3</min>
     <max>209</max>
-    <pattern>[a-zA-Z0-9.-]+</pattern>
+    <pattern>^[a-zA-Z0-9.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.UpdateDefaultMailDomainRequest.OrganizationId</property>
@@ -1787,7 +1815,7 @@
     <property>Amazon.WorkMail.Model.UpdateGroupRequest.GroupId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.UpdateGroupRequest.OrganizationId</property>
@@ -1799,19 +1827,19 @@
     <property>Amazon.WorkMail.Model.UpdateImpersonationRoleRequest.Description</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[^\x00-\x09\x0B\x0C\x0E-\x1F\x7F\x3C\x3E\x5C]+</pattern>
+    <pattern>^[^\x00-\x09\x0B\x0C\x0E-\x1F\x7F\x3C\x3E\x5C]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.UpdateImpersonationRoleRequest.ImpersonationRoleId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.UpdateImpersonationRoleRequest.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[^\x00-\x1F\x7F\x3C\x3E\x5C]+</pattern>
+    <pattern>^[^\x00-\x1F\x7F\x3C\x3E\x5C]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.UpdateImpersonationRoleRequest.OrganizationId</property>
@@ -1833,25 +1861,25 @@
     <property>Amazon.WorkMail.Model.UpdateMailboxQuotaRequest.UserId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.UpdateMobileDeviceAccessRuleRequest.Description</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[\S\s]+</pattern>
+    <pattern>^[\S\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.UpdateMobileDeviceAccessRuleRequest.MobileDeviceAccessRuleId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.UpdateMobileDeviceAccessRuleRequest.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\S\s]+</pattern>
+    <pattern>^[\S\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.UpdateMobileDeviceAccessRuleRequest.OrganizationId</property>
@@ -1863,13 +1891,13 @@
     <property>Amazon.WorkMail.Model.UpdatePrimaryEmailAddressRequest.Email</property>
     <min>1</min>
     <max>254</max>
-    <pattern>[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z-]{2,}</pattern>
+    <pattern>^[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z-]{2,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.UpdatePrimaryEmailAddressRequest.EntityId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.UpdatePrimaryEmailAddressRequest.OrganizationId</property>
@@ -1886,7 +1914,7 @@
     <property>Amazon.WorkMail.Model.UpdateResourceRequest.Name</property>
     <min>1</min>
     <max>20</max>
-    <pattern>[\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9-]{2,})?</pattern>
+    <pattern>^[\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9-]{2,})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.UpdateResourceRequest.OrganizationId</property>
@@ -1898,30 +1926,36 @@
     <property>Amazon.WorkMail.Model.UpdateResourceRequest.ResourceId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.UpdateUserRequest.City</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.UpdateUserRequest.Company</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.UpdateUserRequest.Country</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.UpdateUserRequest.Department</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.UpdateUserRequest.DisplayName</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.UpdateUserRequest.FirstName</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -1932,18 +1966,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.UpdateUserRequest.Initials</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.UpdateUserRequest.JobTitle</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.UpdateUserRequest.LastName</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.UpdateUserRequest.Office</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -1954,82 +1992,92 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.UpdateUserRequest.Street</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.UpdateUserRequest.Telephone</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.UpdateUserRequest.UserId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+    <pattern>^[a-zA-Z0-9._%+@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.UpdateUserRequest.ZipCode</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.AccessControlRule.Description</property>
     <min>0</min>
     <max>255</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.AccessControlRule.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.AvailabilityConfiguration.DomainName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9.-]+</pattern>
+    <pattern>^[a-zA-Z0-9.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.Delegate.Id</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DnsRecord.Hostname</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DnsRecord.Type</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DnsRecord.Value</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.Domain.DomainName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9.-]+</pattern>
+    <pattern>^[a-zA-Z0-9.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.Domain.HostedZoneId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>[^/\\]*</pattern>
+    <pattern>^[^/\\]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.EwsAvailabilityProvider.EwsEndpoint</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>https?://[A-Za-z0-9.-]+(:[0-9]+)?/.*</pattern>
+    <pattern>^https?://[A-Za-z0-9.-]+(:[0-9]+)?/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.EwsAvailabilityProvider.EwsPassword</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.EwsAvailabilityProvider.EwsUsername</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.FolderConfiguration.Period</property>
@@ -2040,7 +2088,7 @@
     <property>Amazon.WorkMail.Model.Group.Email</property>
     <min>1</min>
     <max>254</max>
-    <pattern>[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z-]{2,}</pattern>
+    <pattern>^[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z-]{2,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.Group.Id</property>
@@ -2051,7 +2099,7 @@
     <property>Amazon.WorkMail.Model.Group.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.GroupIdentifier.GroupId</property>
@@ -2062,7 +2110,7 @@
     <property>Amazon.WorkMail.Model.GroupIdentifier.GroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.IdentityCenterConfiguration.ApplicationArn</property>
@@ -2080,72 +2128,78 @@
     <property>Amazon.WorkMail.Model.ImpersonationMatchedRule.ImpersonationRuleId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ImpersonationMatchedRule.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[^\x00-\x1F\x7F\x3C\x3E\x5C]+</pattern>
+    <pattern>^[^\x00-\x1F\x7F\x3C\x3E\x5C]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ImpersonationRole.ImpersonationRoleId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ImpersonationRole.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[^\x00-\x1F\x7F\x3C\x3E\x5C]+</pattern>
+    <pattern>^[^\x00-\x1F\x7F\x3C\x3E\x5C]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ImpersonationRule.Description</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[^\x00-\x09\x0B\x0C\x0E-\x1F\x7F\x3C\x3E\x5C]+</pattern>
+    <pattern>^[^\x00-\x09\x0B\x0C\x0E-\x1F\x7F\x3C\x3E\x5C]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ImpersonationRule.ImpersonationRuleId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ImpersonationRule.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[^\x00-\x1F\x7F\x3C\x3E\x5C]+</pattern>
+    <pattern>^[^\x00-\x1F\x7F\x3C\x3E\x5C]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.LambdaAvailabilityProvider.LambdaArn</property>
     <min>49</min>
     <max>256</max>
-    <pattern>arn:aws:lambda:[a-z]{2}-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9\-_\.]+(:(\$LATEST|[a-zA-Z0-9\-_]+))?</pattern>
+    <pattern>^arn:aws:lambda:[a-z]{2}-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9\-_\.]+(:(\$LATEST|[a-zA-Z0-9\-_]+))?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListGroupsFilters.NamePrefix</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListGroupsFilters.PrimaryEmailPrefix</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListGroupsForEntityFilters.GroupNamePrefix</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListResourcesFilters.NamePrefix</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListResourcesFilters.PrimaryEmailPrefix</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListUsersFilters.DisplayNamePrefix</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -2156,17 +2210,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListUsersFilters.PrimaryEmailPrefix</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListUsersFilters.UsernamePrefix</property>
+    <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.MailDomainSummary.DomainName</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.MailboxExportJob.Description</property>
     <min>0</min>
     <max>1023</max>
-    <pattern>[\S\s]*</pattern>
+    <pattern>^[\S\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.MailboxExportJob.EntityId</property>
@@ -2182,57 +2244,53 @@
     <property>Amazon.WorkMail.Model.MailboxExportJob.JobId</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[A-Za-z0-9-]+</pattern>
+    <pattern>^[A-Za-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.MailboxExportJob.S3BucketName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[A-Za-z0-9.-]+</pattern>
+    <pattern>^[A-Za-z0-9.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.MailboxExportJob.S3Path</property>
     <min>1</min>
     <max>1023</max>
-    <pattern>[A-Za-z0-9!_.*'()/-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WorkMail.Model.MailDomainSummary.DomainName</property>
-    <min>3</min>
-    <max>255</max>
-    <pattern>[a-zA-Z0-9.-]+</pattern>
+    <pattern>^[A-Za-z0-9!_.*'()/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.Member.Id</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.Member.Name</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.MobileDeviceAccessMatchedRule.MobileDeviceAccessRuleId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.MobileDeviceAccessMatchedRule.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\S\s]+</pattern>
+    <pattern>^[\S\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.MobileDeviceAccessOverride.Description</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[\S\s]+</pattern>
+    <pattern>^[\S\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.MobileDeviceAccessOverride.DeviceId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>[A-Za-z0-9]+</pattern>
+    <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.MobileDeviceAccessOverride.UserId</property>
@@ -2243,34 +2301,35 @@
     <property>Amazon.WorkMail.Model.MobileDeviceAccessRule.Description</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[\S\s]+</pattern>
+    <pattern>^[\S\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.MobileDeviceAccessRule.MobileDeviceAccessRuleId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.MobileDeviceAccessRule.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\S\s]+</pattern>
+    <pattern>^[\S\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.OrganizationSummary.Alias</property>
     <min>1</min>
     <max>62</max>
-    <pattern>^(?!d-)([\da-zA-Z]+)([-][\da-zA-Z]+)*</pattern>
+    <pattern>^(?!d-)([\da-zA-Z]+)([-][\da-zA-Z]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.OrganizationSummary.DefaultMailDomain</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9.-]+</pattern>
+    <pattern>^[a-zA-Z0-9.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.OrganizationSummary.ErrorMessage</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -2281,6 +2340,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.OrganizationSummary.State</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -2297,13 +2357,13 @@
     <property>Amazon.WorkMail.Model.PersonalAccessTokenSummary.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[^\x00-\x1F\x7F\x3C\x3E\x5C]+</pattern>
+    <pattern>^[^\x00-\x1F\x7F\x3C\x3E\x5C]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.PersonalAccessTokenSummary.PersonalAccessTokenId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.PersonalAccessTokenSummary.UserId</property>
@@ -2312,13 +2372,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.RedactedEwsAvailabilityProvider.EwsEndpoint</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>https?://[A-Za-z0-9.-]+(:[0-9]+)?/.*</pattern>
+    <pattern>^https?://[A-Za-z0-9.-]+(:[0-9]+)?/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.RedactedEwsAvailabilityProvider.EwsUsername</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.Resource.Description</property>
@@ -2329,7 +2391,7 @@
     <property>Amazon.WorkMail.Model.Resource.Email</property>
     <min>1</min>
     <max>254</max>
-    <pattern>[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z-]{2,}</pattern>
+    <pattern>^[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z-]{2,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.Resource.Id</property>
@@ -2340,7 +2402,7 @@
     <property>Amazon.WorkMail.Model.Resource.Name</property>
     <min>1</min>
     <max>20</max>
-    <pattern>[\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9-]{2,})?</pattern>
+    <pattern>^[\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9-]{2,})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.Tag.Key</property>
@@ -2354,13 +2416,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.User.DisplayName</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.User.Email</property>
     <min>1</min>
     <max>254</max>
-    <pattern>[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z-]{2,}</pattern>
+    <pattern>^[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z-]{2,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.User.Id</property>
@@ -2383,6 +2446,6 @@
     <property>Amazon.WorkMail.Model.User.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9-]{2,})?</pattern>
+    <pattern>^[\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9-]{2,})?$</pattern>
   </property-value-rule>
 </property-value-rules>

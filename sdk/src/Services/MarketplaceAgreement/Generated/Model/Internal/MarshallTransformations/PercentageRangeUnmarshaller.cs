@@ -29,52 +29,69 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PercentageRange Object
     /// </summary>  
-    public class PercentageRangeUnmarshaller : IJsonUnmarshaller<PercentageRange, JsonUnmarshallerContext>
+    public class PercentageRangeUnmarshaller : ICborUnmarshaller<PercentageRange, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PercentageRange Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public PercentageRange Unmarshall(CborUnmarshallerContext context)
         {
             PercentageRange unmarshalledObject = new PercentageRange();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("defaultValue", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DefaultValue = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("maxValue", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MaxValue = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("minValue", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MinValue = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "defaultValue":
+                        {
+                            context.AddPathSegment("DefaultValue");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.DefaultValue = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "maxValue":
+                        {
+                            context.AddPathSegment("MaxValue");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.MaxValue = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "minValue":
+                        {
+                            context.AddPathSegment("MinValue");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.MinValue = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

@@ -1,12 +1,15 @@
 using System.Collections.Concurrent;
 using SmithyDotNet.Generator.Generation.Manifests;
+using SmithyDotNet.Generator.Generation.Protocols;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
 using SmithyDotNet.Generator.Writers;
 using SmithyDotNet.Generator.Writers.CodeAnalysis;
+using SmithyDotNet.Generator.Writers.EndpointDiscovery;
 using SmithyDotNet.Generator.Writers.Endpoints;
 using SmithyDotNet.Generator.Writers.EventStreams;
+using SmithyDotNet.Generator.Writers.Examples;
 using SmithyDotNet.Generator.Writers.NuGet;
 using SmithyDotNet.Generator.Writers.Paginators;
 using SmithyDotNet.Generator.Writers.ProjectFiles;
@@ -25,6 +28,14 @@ namespace SmithyDotNet.Generator.Generation;
 /// </summary>
 public sealed class ServiceGenerator(GenerationContext context, string modelFileName, string serviceFileVersion, IReadOnlyList<ResolvedDefaultConfigurationMode> defaultConfigurationModes, StandaloneOptions? standalone = null)
 {
+    private readonly ConcurrentBag<string> _writtenFiles = [];
+
+    /// <summary>
+    /// The full path of every file <see cref="Generate"/> produced under all three roots, whether or not it had
+    /// to be rewritten. <see cref="BatchGenerator"/> removes anything else left in the generated trees.
+    /// </summary>
+    public IReadOnlyCollection<string> WrittenFiles => _writtenFiles;
+
     /// <summary>
     /// Generates every file for the service and writes it under <paramref name="outputPath"/>.
     /// Returns the relative paths written under <paramref name="outputPath"/>, for logging and tests.
@@ -64,7 +75,11 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
                 throw new GeneratorException($"Two writers produced the same output path: '{relativePath}'.");
             }
 
-            WriteFile(root, relativePath, contents);
+            // Only C# goes through the Roslyn formatter; the csproj, nuspec, slnx, xml and readme output is written
+            // as the writer produced it. (The writers return raw text either way, see CodeWriter.ToFormattedString.)
+            var fullPath = Path.Combine(root, relativePath);
+            _writtenFiles.Add(fullPath);
+            WriteFile(fullPath, contents, format: relativePath.EndsWith(".cs", StringComparison.Ordinal), cancellationToken);
         }
 
         void Emit(string relativePath, string contents) => EmitUnder(outputPath, written, relativePath, contents);
@@ -182,11 +197,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         }
 
         var operationWriter = new OperationWriter(context, modelFileName);
-        var requestMarshaller = new JsonRequestMarshallerWriter(context, modelFileName);
-        var responseUnmarshaller = new JsonResponseUnmarshallerWriter(context, modelFileName);
-        var structureMarshaller = new JsonStructureMarshallerWriter(context, modelFileName);
-        var structureUnmarshaller = new JsonStructureUnmarshallerWriter(context, modelFileName);
-        var exceptionUnmarshallerWriter = new JsonExceptionUnmarshallerWriter(context, modelFileName);
+        var endpointDiscoveryMarshallerWriter = new EndpointDiscoveryMarshallerWriter(context, modelFileName);
         var nuspecWriter = new NuspecWriter(context);
         var serviceProjectFileWriter = new ServiceProjectFileWriter(context);
 
@@ -256,14 +267,38 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
 
             Emit(Path.Combine(model, $"{operation.Name}Request.g.cs"), operationWriter.WriteRequest(operation, cancellationToken));
             Emit(Path.Combine(model, $"{operation.Name}Response.g.cs"), operationWriter.WriteResponse(operation, cancellationToken));
-            Emit(Path.Combine(marshalling, $"{operation.Name}RequestMarshaller.g.cs"), requestMarshaller.Write(operation, cancellationToken));
-            Emit(Path.Combine(marshalling, $"{operation.Name}ResponseUnmarshaller.g.cs"), responseUnmarshaller.Write(operation, cancellationToken));
+            var requestMarshallerCode = context.Protocol switch
+            {
+                AWSProtocol.RpcV2Cbor => new CborRequestMarshallerWriter(context, modelFileName).Write(operation, cancellationToken),
+                _ => new JsonRequestMarshallerWriter(context, modelFileName).Write(operation, cancellationToken),
+            };
+
+            Emit(Path.Combine(marshalling, $"{operation.Name}RequestMarshaller.g.cs"), requestMarshallerCode);
+
+            var responseUnmarshallerCode = context.Protocol switch
+            {
+                AWSProtocol.RpcV2Cbor => new CborResponseUnmarshallerWriter(context, modelFileName).Write(operation, cancellationToken),
+                _ => new JsonResponseUnmarshallerWriter(context, modelFileName).Write(operation, cancellationToken),
+            };
+
+            Emit(Path.Combine(marshalling, $"{operation.Name}ResponseUnmarshaller.g.cs"), responseUnmarshallerCode);
+
+            if (context.DiscoveredOperations.TryGetValue(operation.Shape.Id, out var discoveryRequired))
+            {
+                Emit(Path.Combine(marshalling, $"{operation.Name}EndpointDiscoveryMarshaller.g.cs"), endpointDiscoveryMarshallerWriter.Write(operation, discoveryRequired, cancellationToken));
+            }
 
             foreach (var structure in ReferencedStructures(operation.Input))
             {
                 if (marshalledStructures.Add(structure.Id))
                 {
-                    Emit(Path.Combine(marshalling, $"{context.ToDotNetName(structure.Id)}Marshaller.g.cs"), structureMarshaller.Write(structure, cancellationToken));
+                    var structureMarshallerCode = context.Protocol switch
+                    {
+                        AWSProtocol.RpcV2Cbor => new CborStructureMarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
+                        _ => new JsonStructureMarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
+                    };
+
+                    Emit(Path.Combine(marshalling, $"{context.StructureMarshallerName(structure.Id)}.g.cs"), structureMarshallerCode);
                 }
             }
 
@@ -280,7 +315,13 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
 
                 if (unmarshalledStructures.Add(structure.Id))
                 {
-                    Emit(Path.Combine(marshalling, $"{context.ToDotNetName(structure.Id)}Unmarshaller.g.cs"), structureUnmarshaller.Write(structure, cancellationToken));
+                    var structureUnmarshallerCode = context.Protocol switch
+                    {
+                        AWSProtocol.RpcV2Cbor => new CborStructureUnmarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
+                        _ => new JsonStructureUnmarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
+                    };
+
+                    Emit(Path.Combine(marshalling, $"{context.StructureUnmarshallerName(structure.Id)}.g.cs"), structureUnmarshallerCode);
                 }
             }
         }
@@ -291,7 +332,13 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         foreach (var errorShape in context.Errors.Values)
         {
             var name = ExceptionWriter.ToExceptionName(context.ToDotNetName(errorShape.Id));
-            Emit(Path.Combine(marshalling, $"{name}Unmarshaller.g.cs"), exceptionUnmarshallerWriter.Write(errorShape, cancellationToken));
+            var exceptionUnmarshallerCode = context.Protocol switch
+            {
+                AWSProtocol.RpcV2Cbor => new CborExceptionUnmarshallerWriter(context, modelFileName).Write(errorShape, cancellationToken),
+                _ => new JsonExceptionUnmarshallerWriter(context, modelFileName).Write(errorShape, cancellationToken),
+            };
+
+            Emit(Path.Combine(marshalling, $"{name}Unmarshaller.g.cs"), exceptionUnmarshallerCode);
 
             // An exception's rich members can target structures (directly, or as list/map
             // elements); the exception unmarshaller deserializes them, so those nested
@@ -302,7 +349,13 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             {
                 if (unmarshalledStructures.Add(structure.Id))
                 {
-                    Emit(Path.Combine(marshalling, $"{context.ToDotNetName(structure.Id)}Unmarshaller.g.cs"), structureUnmarshaller.Write(structure, cancellationToken));
+                    var structureUnmarshallerCode = context.Protocol switch
+                    {
+                        AWSProtocol.RpcV2Cbor => new CborStructureUnmarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
+                        _ => new JsonStructureUnmarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
+                    };
+
+                    Emit(Path.Combine(marshalling, $"{context.StructureUnmarshallerName(structure.Id)}.g.cs"), structureUnmarshallerCode);
                 }
             }
         }
@@ -375,6 +428,12 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
                 continue;
             }
 
+            // Already emitted: the {Op}Response wrapper is this shape's class.
+            if (context.ResponseNamedOutputs.Contains(structure.Id))
+            {
+                continue;
+            }
+
             // Emitted above as the EnumerableEventOutputStream subclass instead.
             if (context.ResponseEventStreams.Any(stream => stream.Id == structure.Id))
             {
@@ -408,6 +467,26 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         }
 
         return written.Keys.ToList();
+    }
+
+    /// <summary>
+    /// Builds the API reference samples, <c>{Service}/{Service}.GeneratedSamples.cs</c> and
+    /// <c>{Service}.GeneratedSamples.extra.xml</c>, with paths relative to the shared
+    /// <c>docgenerator/AWSSDKDocSamples</c> tree; none when the service has no examples.
+    /// </summary>
+    public IReadOnlyList<(string Path, string Contents)> BuildDocSamples()
+    {
+        var samples = DocSamplesWriter.Collect(context);
+        if (samples.Count == 0)
+        {
+            return [];
+        }
+
+        return
+        [
+            (Path.Combine(context.ServiceName, $"{context.ServiceName}.GeneratedSamples.cs"), new DocSamplesWriter(context).Write(samples)),
+            ($"{context.ServiceName}.GeneratedSamples.extra.xml", new DocSampleMetadataWriter(context).Write(samples)),
+        ];
     }
 
     // Every structure transitively referenced from a request or response (directly or as a list/map
@@ -465,10 +544,35 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         _ => id,
     };
 
-    private static void WriteFile(string outputPath, string relativePath, string contents)
+    /// <summary>
+    /// Writes <paramref name="contents"/> to <paramref name="fullPath"/> unless the file already holds it, running
+    /// C# through the Roslyn formatter first. The formatter is most of a generator run, so it is skipped when
+    /// the raw output already matches the file: that file came out of the formatter (it is idempotent), so
+    /// formatting again would change nothing. An unchanged file is also left untouched on disk.
+    /// </summary>
+    internal static void WriteFile(string fullPath, string contents, bool format, CancellationToken cancellationToken = default)
     {
-        var fullPath = Path.Combine(outputPath, relativePath);
-        Directory.CreateDirectory(Path.GetDirectoryName(fullPath) ?? outputPath);
+        // Line endings differ between a CRLF checkout and the LF the writers emit; git
+        // normalizes them, so they are not a content difference.
+        // TODO: remove once .gitattributes fixes the line ending of generated files.
+        static bool SameContent(string a, string b) => a.Replace("\r\n", "\n") == b.Replace("\r\n", "\n");
+
+        var existing = File.Exists(fullPath) ? File.ReadAllText(fullPath) : null;
+        if (existing is not null && SameContent(existing, contents))
+        {
+            return;
+        }
+
+        if (format)
+        {
+            contents = CodeWriter.Format(contents, cancellationToken);
+            if (existing is not null && SameContent(existing, contents))
+            {
+                return;
+            }
+        }
+
+        Directory.CreateDirectory(Path.GetDirectoryName(fullPath) ?? throw new GeneratorException($"'{fullPath}' has no parent directory."));
         File.WriteAllText(fullPath, contents);
     }
 }

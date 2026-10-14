@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NetworkAclEntry Marshaller
     /// </summary>
-    public class NetworkAclEntryMarshaller : IRequestMarshaller<NetworkAclEntry, JsonMarshallerContext> 
+    public class NetworkAclEntryMarshaller : IRequestMarshaller<NetworkAclEntry, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,62 +45,56 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(NetworkAclEntry requestObject, JsonMarshallerContext context)
+        public void Marshall(NetworkAclEntry requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetCidrBlock())
-            {
-                context.Writer.WritePropertyName("CidrBlock");
-                context.Writer.WriteStringValue(requestObject.CidrBlock);
-            }
 
-            if(requestObject.IsSetEgress())
+            if (requestObject.IsSetCidrBlock())
             {
-                context.Writer.WritePropertyName("Egress");
-                context.Writer.WriteBooleanValue(requestObject.Egress.Value);
+                context.Writer.WriteTextString("CidrBlock");
+                context.Writer.WriteTextString(requestObject.CidrBlock);
             }
-
-            if(requestObject.IsSetIcmpTypeCode())
+            if (requestObject.IsSetEgress())
             {
-                context.Writer.WritePropertyName("IcmpTypeCode");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("Egress");
+                context.Writer.WriteBoolean(requestObject.Egress.Value);
+            }
+            if (requestObject.IsSetIcmpTypeCode())
+            {
+                context.Writer.WriteTextString("IcmpTypeCode");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = NetworkAclIcmpTypeCodeMarshaller.Instance;
                 marshaller.Marshall(requestObject.IcmpTypeCode, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetIpv6CidrBlock())
+            if (requestObject.IsSetIpv6CidrBlock())
             {
-                context.Writer.WritePropertyName("Ipv6CidrBlock");
-                context.Writer.WriteStringValue(requestObject.Ipv6CidrBlock);
+                context.Writer.WriteTextString("Ipv6CidrBlock");
+                context.Writer.WriteTextString(requestObject.Ipv6CidrBlock);
             }
-
-            if(requestObject.IsSetPortRange())
+            if (requestObject.IsSetPortRange())
             {
-                context.Writer.WritePropertyName("PortRange");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("PortRange");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = NetworkAclPortRangeMarshaller.Instance;
                 marshaller.Marshall(requestObject.PortRange, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetProtocol())
+            if (requestObject.IsSetProtocol())
             {
-                context.Writer.WritePropertyName("Protocol");
-                context.Writer.WriteStringValue(requestObject.Protocol);
+                context.Writer.WriteTextString("Protocol");
+                context.Writer.WriteTextString(requestObject.Protocol);
             }
-
-            if(requestObject.IsSetRuleAction())
+            if (requestObject.IsSetRuleAction())
             {
-                context.Writer.WritePropertyName("RuleAction");
-                context.Writer.WriteStringValue(requestObject.RuleAction);
+                context.Writer.WriteTextString("RuleAction");
+                context.Writer.WriteTextString(requestObject.RuleAction);
             }
-
         }
 
         /// <summary>

@@ -69,6 +69,17 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ManifestFilter);
             }
 
+            if (requestObject.IsSetMultiview())
+            {
+                context.Writer.WritePropertyName("Multiview");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MultiviewFilterConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Multiview, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetStart())
             {
                 context.Writer.WritePropertyName("Start");

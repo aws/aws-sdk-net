@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Translate.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OutputDataConfig Marshaller
     /// </summary>
-    public class OutputDataConfigMarshaller : IRequestMarshaller<OutputDataConfig, JsonMarshallerContext> 
+    public class OutputDataConfigMarshaller : IRequestMarshaller<OutputDataConfig, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,27 +45,26 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(OutputDataConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(OutputDataConfig requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetEncryptionKey())
+
+            if (requestObject.IsSetEncryptionKey())
             {
-                context.Writer.WritePropertyName("EncryptionKey");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("EncryptionKey");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = EncryptionKeyMarshaller.Instance;
                 marshaller.Marshall(requestObject.EncryptionKey, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetS3Uri())
+            if (requestObject.IsSetS3Uri())
             {
-                context.Writer.WritePropertyName("S3Uri");
-                context.Writer.WriteStringValue(requestObject.S3Uri);
+                context.Writer.WriteTextString("S3Uri");
+                context.Writer.WriteTextString(requestObject.S3Uri);
             }
-
         }
 
         /// <summary>

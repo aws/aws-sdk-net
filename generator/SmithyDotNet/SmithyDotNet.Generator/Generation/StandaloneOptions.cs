@@ -8,7 +8,8 @@ namespace SmithyDotNet.Generator.Generation;
 public sealed record StandaloneOptions
 {
     // TODO: the generated code needs a minimum Core version (e.g. for PooledContentStream), which a floating version only meets by resolving to the latest.
-    // When the generator is packaged as a tool, snapshot CoreVersion from _sdk-versions.json at pack time and use that as the default.
+    // When the generator is packaged as a tool, snapshot CoreVersion and the AWSSDK.Extensions.* versions from _sdk-versions.json at pack time.
+    // The extensions are versioned independently of Core, so they always float for now.
     public const string DefaultCoreVersion = "4.*";
     public const string DefaultVersion = "1.0.0.0";
 

@@ -1,0 +1,84 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.VerifiedPermissions.Model
+{
+    /// <summary>
+    /// Container for the parameters to the GetIdentitySource operation. Retrieves the details
+    /// about the specified identity source.
+    /// </summary>
+    public partial class GetIdentitySourceRequest : AmazonVerifiedPermissionsRequest
+    {
+        /// <summary>
+        /// Gets and sets the property IdentitySourceId. 
+        /// <para>
+        /// Specifies the ID of the identity source you want information about.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 200)]
+        public string IdentitySourceId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IdentitySourceId property is set.
+        /// </summary>
+        internal bool IsSetIdentitySourceId() => this.IdentitySourceId != null;
+
+        /// <summary>
+        /// Gets and sets the property PolicyStoreId. 
+        /// <para>
+        /// Specifies the ID of the policy store that contains the identity source you want information
+        /// about.
+        /// </para>
+        ///  
+        /// <para>
+        /// To specify a policy store, use its ID or alias name. When using an alias name, prefix
+        /// it with <c>policy-store-alias/</c>. For example:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ID: <c>PSEXAMPLEabcdefg111111</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Alias name: <c>policy-store-alias/example-policy-store</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To view aliases, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 200)]
+        public string PolicyStoreId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PolicyStoreId property is set.
+        /// </summary>
+        internal bool IsSetPolicyStoreId() => this.PolicyStoreId != null;
+    }
+}

@@ -150,6 +150,11 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     context.Writer.WriteTextString("RedirectURL");
                     context.Writer.WriteTextString(publicRequest.RedirectURL);
                 }
+                if (publicRequest.IsSetStorageConnectorAuthentication())
+                {
+                    context.Writer.WriteTextString("StorageConnectorAuthentication");
+                    context.Writer.WriteTextString(publicRequest.StorageConnectorAuthentication);
+                }
                 if (publicRequest.IsSetStorageConnectors())
                 {
                     context.Writer.WriteTextString("StorageConnectors");

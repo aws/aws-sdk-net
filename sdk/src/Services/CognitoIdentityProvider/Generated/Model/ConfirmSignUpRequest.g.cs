@@ -1,0 +1,254 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.CognitoIdentityProvider.Model
+{
+    /// <summary>
+    /// Container for the parameters to the ConfirmSignUp operation. Confirms the account
+    /// of a new user. This public API operation submits a code that Amazon Cognito sent to
+    /// your user when they signed up in your user pool. After your user enters their code,
+    /// they confirm ownership of the email address or phone number that they provided, and
+    /// their user account becomes active. Depending on your user pool configuration, your
+    /// users will receive their confirmation code in an email or SMS message. <para> Local
+    /// users who signed up in your user pool are the only type of user who can confirm sign-up
+    /// with a code. Users who federate through an external identity provider (IdP) have already
+    /// been confirmed by their IdP. </para> <note> <para> Amazon Cognito doesn't evaluate
+    /// Identity and Access Management (IAM) policies in requests for this API operation.
+    /// For this operation, you can't use IAM credentials to authorize requests, and you can't
+    /// grant IAM permissions in policies. For more information about authorization models
+    /// in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+    /// the Amazon Cognito user pools API and user pool endpoints</a>. </para> </note>
+    /// </summary>
+    public partial class ConfirmSignUpRequest : AmazonCognitoIdentityProviderRequest
+    {
+        /// <summary>
+        /// Gets and sets the property AnalyticsMetadata. 
+        /// <para>
+        /// Information that supports analytics outcomes with Amazon Pinpoint, including the user's
+        /// endpoint ID. The endpoint ID is a destination for Amazon Pinpoint push notifications,
+        /// for example a device identifier, email address, or phone number.
+        /// </para>
+        /// </summary>
+        public AnalyticsMetadataType AnalyticsMetadata { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AnalyticsMetadata property is set.
+        /// </summary>
+        internal bool IsSetAnalyticsMetadata() => this.AnalyticsMetadata != null;
+
+        /// <summary>
+        /// Gets and sets the property ClientId. 
+        /// <para>
+        /// The ID of the app client associated with the user pool.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Sensitive = true, Min = 1, Max = 128)]
+        public string ClientId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ClientId property is set.
+        /// </summary>
+        internal bool IsSetClientId() => this.ClientId != null;
+
+        /// <summary>
+        /// Gets and sets the property ClientMetadata. 
+        /// <para>
+        /// A map of custom key-value pairs that you can provide as input for any custom workflows
+        /// that this action triggers. You create custom workflows by assigning Lambda functions
+        /// to user pool triggers.
+        /// </para>
+        ///  
+        /// <para>
+        /// When Amazon Cognito invokes any of these functions, it passes a JSON payload, which
+        /// the function receives as input. This payload contains a <c>clientMetadata</c> attribute
+        /// that provides the data that you assigned to the ClientMetadata parameter in your request.
+        /// In your function code, you can process the <c>clientMetadata</c> value to enhance
+        /// your workflow for your specific needs.
+        /// </para>
+        ///  
+        /// <para>
+        /// To review the Lambda trigger types that Amazon Cognito invokes at runtime with API
+        /// requests, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event">
+        /// Connecting API actions to Lambda triggers</a> in the <i>Amazon Cognito Developer Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you use the <c>ClientMetadata</c> parameter, note that Amazon Cognito won't do
+        /// the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Store the <c>ClientMetadata</c> value. This data is available only to Lambda triggers
+        /// that are assigned to a user pool to support custom workflows. If your user pool configuration
+        /// doesn't include triggers, the <c>ClientMetadata</c> parameter serves no purpose.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Validate the <c>ClientMetadata</c> value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Encrypt the <c>ClientMetadata</c> value. Don't send sensitive information in this
+        /// parameter.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, string> ClientMetadata { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Checks to see if the ClientMetadata property is set.
+        /// </summary>
+        internal bool IsSetClientMetadata() => this.ClientMetadata != null && (this.ClientMetadata.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property ConfirmationCode. 
+        /// <para>
+        /// The confirmation code that your user pool sent in response to the <c>SignUp</c> request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 2048)]
+        public string ConfirmationCode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ConfirmationCode property is set.
+        /// </summary>
+        internal bool IsSetConfirmationCode() => this.ConfirmationCode != null;
+
+        /// <summary>
+        /// Gets and sets the property ForceAliasCreation. 
+        /// <para>
+        /// When <c>true</c>, forces user confirmation despite any existing aliases. Defaults
+        /// to <c>false</c>. A value of <c>true</c> migrates the alias from an existing user to
+        /// the new user if an existing user already has the phone number or email address as
+        /// an alias.
+        /// </para>
+        ///  
+        /// <para>
+        /// Say, for example, that an existing user has an <c>email</c> attribute of <c>bob@example.com</c>
+        /// and email is an alias in your user pool. If the new user also has an email of <c>bob@example.com</c>
+        /// and your <c>ConfirmSignUp</c> response sets <c>ForceAliasCreation</c> to <c>true</c>,
+        /// the new user can sign in with a username of <c>bob@example.com</c> and the existing
+        /// user can no longer do so.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <c>false</c> and an attribute belongs to an existing alias, this request returns
+        /// an <b>AliasExistsException</b> error.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about sign-in aliases, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases">Customizing
+        /// sign-in attributes</a>.
+        /// </para>
+        /// </summary>
+        public bool? ForceAliasCreation { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ForceAliasCreation property is set.
+        /// </summary>
+        internal bool IsSetForceAliasCreation() => this.ForceAliasCreation.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property SecretHash. 
+        /// <para>
+        /// A keyed-hash message authentication code (HMAC) calculated using the secret key of
+        /// a user pool client and username plus the client ID in the message. For more information
+        /// about <c>SecretHash</c>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+        /// secret hash values</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true, Min = 1, Max = 128)]
+        public string SecretHash { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SecretHash property is set.
+        /// </summary>
+        internal bool IsSetSecretHash() => this.SecretHash != null;
+
+        /// <summary>
+        /// Gets and sets the property Session. 
+        /// <para>
+        /// The optional session ID from a <c>SignUp</c> API request. You can sign in a user directly
+        /// from the sign-up process with the <c>USER_AUTH</c> authentication flow.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true, Min = 20, Max = 4096)]
+        public string Session { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Session property is set.
+        /// </summary>
+        internal bool IsSetSession() => this.Session != null;
+
+        /// <summary>
+        /// Gets and sets the property UserContextData. 
+        /// <para>
+        /// Contextual data about your user session like the device fingerprint, IP address, or
+        /// location. Amazon Cognito threat protection evaluates the risk of an authentication
+        /// event based on the context that your app generates and passes to Amazon Cognito when
+        /// it makes API requests.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html">Collecting
+        /// data for threat protection in applications</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true)]
+        public UserContextDataType UserContextData { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UserContextData property is set.
+        /// </summary>
+        internal bool IsSetUserContextData() => this.UserContextData != null;
+
+        /// <summary>
+        /// Gets and sets the property Username. 
+        /// <para>
+        /// The name of the user that you want to query or modify. The value of this parameter
+        /// is typically your user's username, but it can be any of their alias attributes. If
+        /// <c>username</c> isn't an alias attribute in your user pool, this value must be the
+        /// <c>sub</c> of a local user or the username of a user from a third-party IdP.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Sensitive = true, Min = 1, Max = 128)]
+        public string Username { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Username property is set.
+        /// </summary>
+        internal bool IsSetUsername() => this.Username != null;
+    }
+}

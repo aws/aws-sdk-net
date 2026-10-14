@@ -18,12 +18,14 @@ using Amazon.JsonRpc10DataPlane;
 using Amazon.JsonRpc10DataPlane.Model;
 using Amazon.Runtime;
 using BenchmarkDotNet.Attributes;
+using Fixtures = AWSSDK.Benchmarks.Serde.ModelFixtures.AwsJson10;
 
 namespace AWSSDK.Benchmarks.Serde;
 
 /// <summary>
 /// E2E benchmarks for AWS JSON 1.0 protocol (DynamoDB-like operations).
-/// Full SDK client pipeline with mocked HTTP.
+/// Full SDK client pipeline with mocked HTTP, with payloads from the shared benchmark models:
+/// PutItem S/M/L use the MixedItem cases, GetItem S/M/L the GetItemOutput cases.
 /// </summary>
 [MemoryDiagnoser]
 [Config(typeof(E2EBenchmarkConfig))]
@@ -42,21 +44,6 @@ public class AwsJson10E2EBenchmarks
     private HealthcheckRequest _healthcheckRequest = null!;
 
     private static readonly byte[] EmptyJson = Encoding.UTF8.GetBytes("{}");
-    private static readonly byte[] GetItemResponseS = Encoding.UTF8.GetBytes(BuildGetItemJson(5));
-    private static readonly byte[] GetItemResponseM = Encoding.UTF8.GetBytes(BuildGetItemJson(20));
-    private static readonly byte[] GetItemResponseL = Encoding.UTF8.GetBytes(BuildGetItemJson(50));
-
-    private static string BuildGetItemJson(int attrCount)
-    {
-        var sb = new StringBuilder("{\"Item\":{");
-        for (int i = 0; i < attrCount; i++)
-        {
-            if (i > 0) sb.Append(',');
-            sb.Append($"\"attr_{i}\":{{\"S\":\"value-{i}-{new string('x', 20)}\"}}");
-        }
-        sb.Append("}}");
-        return sb.ToString();
-    }
 
     private AmazonJsonRpc10DataPlaneClient CreateClient(byte[] responseBody)
     {
@@ -69,22 +56,20 @@ public class AwsJson10E2EBenchmarks
         return new AmazonJsonRpc10DataPlaneClient(new BasicAWSCredentials("AKID", "SECRET"), config);
     }
 
-    private static AttributeValue S(string v) => new AttributeValue { S = v };
-
     [GlobalSetup]
     public void Setup()
     {
-        _healthcheckClient = CreateClient(EmptyJson);
+        _healthcheckClient = CreateClient(Fixtures.HealthcheckResponse_Example);
         _putClient = CreateClient(EmptyJson);
-        _getClientS = CreateClient(GetItemResponseS);
-        _getClientM = CreateClient(GetItemResponseM);
-        _getClientL = CreateClient(GetItemResponseL);
+        _getClientS = CreateClient(Fixtures.GetItemOutput_S);
+        _getClientM = CreateClient(Fixtures.GetItemOutput_M);
+        _getClientL = CreateClient(Fixtures.GetItemOutput_L);
 
-        _healthcheckRequest = new HealthcheckRequest();
-        _putItemS = new PutItemRequest { TableName = "T", Item = TestDataHelpers.CreateSmallItem<AttributeValue>(S, n => new AttributeValue { N = n.ToString() }, b => new AttributeValue { BOOL = b }) };
-        _putItemM = new PutItemRequest { TableName = "T", Item = TestDataHelpers.CreateMediumItem<AttributeValue>(S, n => new AttributeValue { N = n.ToString() }, b => new AttributeValue { BOOL = b }, l => new AttributeValue { L = l }, m => new AttributeValue { M = m }) };
-        _putItemL = new PutItemRequest { TableName = "T", Item = TestDataHelpers.CreateLargeItem<AttributeValue>(S, n => new AttributeValue { N = n.ToString() }, b => new AttributeValue { BOOL = b }, l => new AttributeValue { L = l }, m => new AttributeValue { M = m }) };
-        _getItemRequest = new GetItemRequest { TableName = "T", Key = TestDataHelpers.CreateBaselineItem<AttributeValue>(S) };
+        _healthcheckRequest = Fixtures.HealthcheckRequest_Example();
+        _putItemS = Fixtures.PutItemRequest_MixedItem_S();
+        _putItemM = Fixtures.PutItemRequest_MixedItem_M();
+        _putItemL = Fixtures.PutItemRequest_MixedItem_L();
+        _getItemRequest = Fixtures.GetItemInput_Baseline();
     }
 
     [Benchmark] public async Task awsJson10_e2e_Healthcheck() => await _healthcheckClient.HealthcheckAsync(_healthcheckRequest);

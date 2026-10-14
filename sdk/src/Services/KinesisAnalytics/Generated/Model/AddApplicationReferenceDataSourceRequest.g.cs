@@ -1,0 +1,101 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.KinesisAnalytics.Model
+{
+    /// <summary>
+    /// Container for the parameters to the AddApplicationReferenceDataSource operation. <note>
+    /// <para> This documentation is for version 1 of the Amazon Kinesis Data Analytics API,
+    /// which only supports SQL applications. Version 2 of the API supports SQL and Java applications.
+    /// For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon
+    /// Kinesis Data Analytics API V2 Documentation</a>. </para> </note> <para> Adds a reference
+    /// data source to an existing application. </para> <para> Amazon Kinesis Analytics reads
+    /// reference data (that is, an Amazon S3 object) and creates an in-application table
+    /// within your application. In the request, you provide the source (S3 bucket name and
+    /// object key name), name of the in-application table to create, and the necessary mapping
+    /// information that describes how data in Amazon S3 object maps to columns in the resulting
+    /// in-application table. </para> <para> For conceptual information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+    /// Application Input</a>. For the limits on data sources you can add to your application,
+    /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
+    /// </para> <para> This operation requires permissions to perform the <c>kinesisanalytics:AddApplicationOutput</c>
+    /// action. </para>
+    /// </summary>
+    public partial class AddApplicationReferenceDataSourceRequest : AmazonKinesisAnalyticsRequest
+    {
+        /// <summary>
+        /// Gets and sets the property ApplicationName. 
+        /// <para>
+        /// Name of an existing application.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 128)]
+        public string ApplicationName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ApplicationName property is set.
+        /// </summary>
+        internal bool IsSetApplicationName() => this.ApplicationName != null;
+
+        /// <summary>
+        /// Gets and sets the property CurrentApplicationVersionId. 
+        /// <para>
+        /// Version of the application for which you are adding the reference data source. You
+        /// can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
+        /// operation to get the current application version. If the version specified is not
+        /// the current version, the <c>ConcurrentModificationException</c> is returned.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 999999999)]
+        public long? CurrentApplicationVersionId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CurrentApplicationVersionId property is set.
+        /// </summary>
+        internal bool IsSetCurrentApplicationVersionId() => this.CurrentApplicationVersionId.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property ReferenceDataSource. 
+        /// <para>
+        /// The reference data source can be an object in your Amazon S3 bucket. Amazon Kinesis
+        /// Analytics reads the object and copies the data into the in-application table that
+        /// is created. You provide an S3 bucket, object key name, and the resulting in-application
+        /// table that is created. You must also provide an IAM role with the necessary permissions
+        /// that Amazon Kinesis Analytics can assume to read the object from your S3 bucket on
+        /// your behalf.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public ReferenceDataSource ReferenceDataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ReferenceDataSource property is set.
+        /// </summary>
+        internal bool IsSetReferenceDataSource() => this.ReferenceDataSource != null;
+    }
+}

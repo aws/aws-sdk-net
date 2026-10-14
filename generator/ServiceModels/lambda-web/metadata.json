@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "Lambda Web Functions GA launch. Lambda Web Functions enable customers to run web applications and API backends",
+  "generate-client-constructors": true
+}
