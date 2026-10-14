@@ -40,6 +40,7 @@ namespace Amazon.GuardDuty.Model
         private string _associatedAttackSequenceArn;
         private double? _confidence;
         private string _createdAt;
+        private string _customDetectionRuleName;
         private string _description;
         private string _id;
         private string _partition;
@@ -143,6 +144,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomDetectionRuleName. 
+        /// <para>
+        /// The name of the custom detection rule that generated this finding.
+        /// </para>
+        /// </summary>
+        public string CustomDetectionRuleName
+        {
+            get { return this._customDetectionRuleName; }
+            set { this._customDetectionRuleName = value; }
+        }
+
+        // Check to see if CustomDetectionRuleName property is set
+        internal bool IsSetCustomDetectionRuleName()
+        {
+            return this._customDetectionRuleName != null;
         }
 
         /// <summary>

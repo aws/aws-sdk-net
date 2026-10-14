@@ -42,6 +42,7 @@ namespace Amazon.GuardDuty.Model
         private RuleLanguage _language;
         private string _name;
         private string _ruleId;
+        private DetectionRuleRuntimeMonitoringDetails _runtimeMonitoringDetails;
         private RuleSchema _schema;
         private string _service;
         private DetectionRuleSeverity _severity;
@@ -198,6 +199,25 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetRuleId()
         {
             return this._ruleId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuntimeMonitoringDetails. 
+        /// <para>
+        /// Runtime Monitoring-specific details for the rule, including the platforms on which
+        /// the rule can run and the minimum GuardDuty agent version required on each.
+        /// </para>
+        /// </summary>
+        public DetectionRuleRuntimeMonitoringDetails RuntimeMonitoringDetails
+        {
+            get { return this._runtimeMonitoringDetails; }
+            set { this._runtimeMonitoringDetails = value; }
+        }
+
+        // Check to see if RuntimeMonitoringDetails property is set
+        internal bool IsSetRuntimeMonitoringDetails()
+        {
+            return this._runtimeMonitoringDetails != null;
         }
 
         /// <summary>

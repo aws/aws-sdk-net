@@ -104,6 +104,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.RuleId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("runtimeMonitoringDetails", targetDepth, ref reader))
+                {
+                    var unmarshaller = DetectionRuleRuntimeMonitoringDetailsUnmarshaller.Instance;
+                    unmarshalledObject.RuntimeMonitoringDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("schema", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

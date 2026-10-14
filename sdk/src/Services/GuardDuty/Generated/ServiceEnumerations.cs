@@ -1132,6 +1132,10 @@ namespace Amazon.GuardDuty
         /// Constant CloudTrailManagementEvent for DetectionRuleDataSource
         /// </summary>
         public static readonly DetectionRuleDataSource CloudTrailManagementEvent = new DetectionRuleDataSource("CloudTrailManagementEvent");
+        /// <summary>
+        /// Constant RuntimeMonitoring for DetectionRuleDataSource
+        /// </summary>
+        public static readonly DetectionRuleDataSource RuntimeMonitoring = new DetectionRuleDataSource("RuntimeMonitoring");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
