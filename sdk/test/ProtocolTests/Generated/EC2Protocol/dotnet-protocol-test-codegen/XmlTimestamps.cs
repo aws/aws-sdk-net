@@ -32,6 +32,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.AwsEc2
 {
@@ -45,27 +46,34 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("AwsEc2")]
-        public void Ec2XmlTimestampsResponse()
+        public async Task Ec2XmlTimestampsResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "text/xml;charset=UTF-8";
-            byte[] bytes = Encoding.ASCII.GetBytes("<XmlTimestampsResponse xmlns=\"https://example.com/\">\n    <normal>2014-04-29T18:30:38Z</normal>\n    <requestId>requestid</requestId>\n</XmlTimestampsResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonEC2ProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonEC2ProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("<XmlTimestampsResponse xmlns=\"https://example.com/\">\n    <normal>2014-04-29T18:30:38Z</normal>\n    <requestId>requestid</requestId>\n</XmlTimestampsResponse>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "text/xml;charset=UTF-8";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new XmlTimestampsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.XmlTimestampsAsync(new XmlTimestampsRequest()).ConfigureAwait(false);
             var expectedResponse = new XmlTimestampsResponse
             {
                 Normal = ProtocolTestConstants.epoch.AddSeconds(1398796238),
             };
 
             // Assert
-            var actualResponse = (XmlTimestampsResponse)unmarshalledResponse;
             Comparer.CompareObjects<XmlTimestampsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -76,27 +84,34 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("AwsEc2")]
-        public void Ec2XmlTimestampsWithDateTimeFormatResponse()
+        public async Task Ec2XmlTimestampsWithDateTimeFormatResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "text/xml;charset=UTF-8";
-            byte[] bytes = Encoding.ASCII.GetBytes("<XmlTimestampsResponse xmlns=\"https://example.com/\">\n    <dateTime>2014-04-29T18:30:38Z</dateTime>\n    <requestId>requestid</requestId>\n</XmlTimestampsResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonEC2ProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonEC2ProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("<XmlTimestampsResponse xmlns=\"https://example.com/\">\n    <dateTime>2014-04-29T18:30:38Z</dateTime>\n    <requestId>requestid</requestId>\n</XmlTimestampsResponse>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "text/xml;charset=UTF-8";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new XmlTimestampsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.XmlTimestampsAsync(new XmlTimestampsRequest()).ConfigureAwait(false);
             var expectedResponse = new XmlTimestampsResponse
             {
                 DateTime = ProtocolTestConstants.epoch.AddSeconds(1398796238),
             };
 
             // Assert
-            var actualResponse = (XmlTimestampsResponse)unmarshalledResponse;
             Comparer.CompareObjects<XmlTimestampsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -107,27 +122,34 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("AwsEc2")]
-        public void Ec2XmlTimestampsWithDateTimeOnTargetFormatResponse()
+        public async Task Ec2XmlTimestampsWithDateTimeOnTargetFormatResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "text/xml;charset=UTF-8";
-            byte[] bytes = Encoding.ASCII.GetBytes("<XmlTimestampsResponse xmlns=\"https://example.com/\">\n    <dateTimeOnTarget>2014-04-29T18:30:38Z</dateTimeOnTarget>\n    <requestId>requestid</requestId>\n</XmlTimestampsResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonEC2ProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonEC2ProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("<XmlTimestampsResponse xmlns=\"https://example.com/\">\n    <dateTimeOnTarget>2014-04-29T18:30:38Z</dateTimeOnTarget>\n    <requestId>requestid</requestId>\n</XmlTimestampsResponse>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "text/xml;charset=UTF-8";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new XmlTimestampsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.XmlTimestampsAsync(new XmlTimestampsRequest()).ConfigureAwait(false);
             var expectedResponse = new XmlTimestampsResponse
             {
                 DateTimeOnTarget = ProtocolTestConstants.epoch.AddSeconds(1398796238),
             };
 
             // Assert
-            var actualResponse = (XmlTimestampsResponse)unmarshalledResponse;
             Comparer.CompareObjects<XmlTimestampsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -137,27 +159,34 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("AwsEc2")]
-        public void Ec2XmlTimestampsWithEpochSecondsFormatResponse()
+        public async Task Ec2XmlTimestampsWithEpochSecondsFormatResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "text/xml;charset=UTF-8";
-            byte[] bytes = Encoding.ASCII.GetBytes("<XmlTimestampsResponse xmlns=\"https://example.com/\">\n    <epochSeconds>1398796238</epochSeconds>\n    <requestId>requestid</requestId>\n</XmlTimestampsResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonEC2ProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonEC2ProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("<XmlTimestampsResponse xmlns=\"https://example.com/\">\n    <epochSeconds>1398796238</epochSeconds>\n    <requestId>requestid</requestId>\n</XmlTimestampsResponse>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "text/xml;charset=UTF-8";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new XmlTimestampsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.XmlTimestampsAsync(new XmlTimestampsRequest()).ConfigureAwait(false);
             var expectedResponse = new XmlTimestampsResponse
             {
                 EpochSeconds = ProtocolTestConstants.epoch.AddSeconds(1398796238),
             };
 
             // Assert
-            var actualResponse = (XmlTimestampsResponse)unmarshalledResponse;
             Comparer.CompareObjects<XmlTimestampsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -168,27 +197,34 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("AwsEc2")]
-        public void Ec2XmlTimestampsWithEpochSecondsOnTargetFormatResponse()
+        public async Task Ec2XmlTimestampsWithEpochSecondsOnTargetFormatResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "text/xml;charset=UTF-8";
-            byte[] bytes = Encoding.ASCII.GetBytes("<XmlTimestampsResponse xmlns=\"https://example.com/\">\n    <epochSecondsOnTarget>1398796238</epochSecondsOnTarget>\n    <requestId>requestid</requestId>\n</XmlTimestampsResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonEC2ProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonEC2ProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("<XmlTimestampsResponse xmlns=\"https://example.com/\">\n    <epochSecondsOnTarget>1398796238</epochSecondsOnTarget>\n    <requestId>requestid</requestId>\n</XmlTimestampsResponse>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "text/xml;charset=UTF-8";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new XmlTimestampsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.XmlTimestampsAsync(new XmlTimestampsRequest()).ConfigureAwait(false);
             var expectedResponse = new XmlTimestampsResponse
             {
                 EpochSecondsOnTarget = ProtocolTestConstants.epoch.AddSeconds(1398796238),
             };
 
             // Assert
-            var actualResponse = (XmlTimestampsResponse)unmarshalledResponse;
             Comparer.CompareObjects<XmlTimestampsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -198,27 +234,34 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("AwsEc2")]
-        public void Ec2XmlTimestampsWithHttpDateFormatResponse()
+        public async Task Ec2XmlTimestampsWithHttpDateFormatResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "text/xml;charset=UTF-8";
-            byte[] bytes = Encoding.ASCII.GetBytes("<XmlTimestampsResponse xmlns=\"https://example.com/\">\n    <httpDate>Tue, 29 Apr 2014 18:30:38 GMT</httpDate>\n    <requestId>requestid</requestId>\n</XmlTimestampsResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonEC2ProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonEC2ProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("<XmlTimestampsResponse xmlns=\"https://example.com/\">\n    <httpDate>Tue, 29 Apr 2014 18:30:38 GMT</httpDate>\n    <requestId>requestid</requestId>\n</XmlTimestampsResponse>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "text/xml;charset=UTF-8";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new XmlTimestampsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.XmlTimestampsAsync(new XmlTimestampsRequest()).ConfigureAwait(false);
             var expectedResponse = new XmlTimestampsResponse
             {
                 HttpDate = ProtocolTestConstants.epoch.AddSeconds(1398796238),
             };
 
             // Assert
-            var actualResponse = (XmlTimestampsResponse)unmarshalledResponse;
             Comparer.CompareObjects<XmlTimestampsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -229,27 +272,34 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("AwsEc2")]
-        public void Ec2XmlTimestampsWithHttpDateOnTargetFormatResponse()
+        public async Task Ec2XmlTimestampsWithHttpDateOnTargetFormatResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "text/xml;charset=UTF-8";
-            byte[] bytes = Encoding.ASCII.GetBytes("<XmlTimestampsResponse xmlns=\"https://example.com/\">\n    <httpDateOnTarget>Tue, 29 Apr 2014 18:30:38 GMT</httpDateOnTarget>\n    <requestId>requestid</requestId>\n</XmlTimestampsResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonEC2ProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonEC2ProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("<XmlTimestampsResponse xmlns=\"https://example.com/\">\n    <httpDateOnTarget>Tue, 29 Apr 2014 18:30:38 GMT</httpDateOnTarget>\n    <requestId>requestid</requestId>\n</XmlTimestampsResponse>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "text/xml;charset=UTF-8";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new XmlTimestampsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.XmlTimestampsAsync(new XmlTimestampsRequest()).ConfigureAwait(false);
             var expectedResponse = new XmlTimestampsResponse
             {
                 HttpDateOnTarget = ProtocolTestConstants.epoch.AddSeconds(1398796238),
             };
 
             // Assert
-            var actualResponse = (XmlTimestampsResponse)unmarshalledResponse;
             Comparer.CompareObjects<XmlTimestampsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
     }

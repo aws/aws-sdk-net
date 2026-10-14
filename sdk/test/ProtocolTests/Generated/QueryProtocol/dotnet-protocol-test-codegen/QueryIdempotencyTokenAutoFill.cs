@@ -30,8 +30,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.AwsQuery
 {
@@ -45,7 +45,7 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("AwsQuery")]
-        public void QueryProtocolIdempotencyTokenAutoFillIsSetRequest()
+        public async Task QueryProtocolIdempotencyTokenAutoFillIsSetRequest()
         {
             // Arrange
             var request = new QueryIdempotencyTokenAutoFillRequest
@@ -54,25 +54,28 @@ namespace AWSSDK.ProtocolTests.AwsQuery
             };
             var config = new AmazonQueryProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new QueryIdempotencyTokenAutoFillRequestMarshaller();
+            using var client = new AmazonQueryProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.QueryIdempotencyTokenAutoFillAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=QueryIdempotencyTokenAutoFill&Version=2020-01-08&token=00000000-0000-4000-8000-000000000123");
-            foreach(var queryParam in expectedParams.Keys)
-            {
-               Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
-               Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
-            }
-
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8",marshalledRequest.Headers["Content-Type"]);
+            var expectedBody = "Action=QueryIdempotencyTokenAutoFill&Version=2020-01-08&token=00000000-0000-4000-8000-000000000123";
+            QueryTestUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8", actualRequest.Headers["Content-Type"]);
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
     }

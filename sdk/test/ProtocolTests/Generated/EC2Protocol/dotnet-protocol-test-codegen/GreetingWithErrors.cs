@@ -32,6 +32,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.AwsEc2
 {
@@ -46,27 +47,34 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("AwsEc2")]
-        public void Ec2GreetingWithErrorsResponse()
+        public async Task Ec2GreetingWithErrorsResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "text/xml;charset=UTF-8";
-            byte[] bytes = Encoding.ASCII.GetBytes("<GreetingWithErrorsResponse xmlns=\"https://example.com/\">\n    <greeting>Hello</greeting>\n    <requestId>requestid</requestId>\n</GreetingWithErrorsResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonEC2ProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonEC2ProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("<GreetingWithErrorsResponse xmlns=\"https://example.com/\">\n    <greeting>Hello</greeting>\n    <requestId>requestid</requestId>\n</GreetingWithErrorsResponse>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "text/xml;charset=UTF-8";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new GreetingWithErrorsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.GreetingWithErrorsAsync(new GreetingWithErrorsRequest()).ConfigureAwait(false);
             var expectedResponse = new GreetingWithErrorsResponse
             {
                 Greeting = "Hello",
             };
 
             // Assert
-            var actualResponse = (GreetingWithErrorsResponse)unmarshalledResponse;
             Comparer.CompareObjects<GreetingWithErrorsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -76,40 +84,58 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestCategory("ProtocolTest")]
         [TestCategory("ErrorTest")]
         [TestCategory("AwsEc2")]
-        public void Ec2InvalidGreetingErrorErrorResponse()
+        public async Task Ec2InvalidGreetingErrorErrorResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400);
-            webResponseData.Headers["Content-Type"] = "text/xml;charset=UTF-8";
-            byte[] bytes = Encoding.ASCII.GetBytes("<Response>\n    <Errors>\n        <Error>\n            <Code>InvalidGreeting</Code>\n            <Message>Hi</Message>\n        </Error>\n    </Errors>\n    <RequestID>foo-id</RequestID>\n</Response>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonEC2ProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonEC2ProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400),
+                Body = Encoding.ASCII.GetBytes("<Response>\n    <Errors>\n        <Error>\n            <Code>InvalidGreeting</Code>\n            <Message>Hi</Message>\n        </Error>\n    </Errors>\n    <RequestID>foo-id</RequestID>\n</Response>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "text/xml;charset=UTF-8";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
+
             // Act
-            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400));
+            var errorResponse = await Assert.ThrowsExactlyAsync<InvalidGreetingException>(() => client.GreetingWithErrorsAsync(new GreetingWithErrorsRequest())).ConfigureAwait(false);
+
             // Assert
-            Assert.IsInstanceOfType(errorResponse, typeof(InvalidGreetingException));
-            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400));
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400), errorResponse.StatusCode);
         }
 
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("ErrorTest")]
         [TestCategory("AwsEc2")]
-        public void Ec2ComplexErrorErrorResponse()
+        public async Task Ec2ComplexErrorErrorResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400);
-            webResponseData.Headers["Content-Type"] = "text/xml;charset=UTF-8";
-            byte[] bytes = Encoding.ASCII.GetBytes("<Response>\n    <Errors>\n        <Error>\n            <Code>ComplexError</Code>\n            <Message>Hi</Message>\n            <TopLevel>Top level</TopLevel>\n            <Nested>\n                <Foo>bar</Foo>\n            </Nested>\n        </Error>\n    </Errors>\n    <RequestID>foo-id</RequestID>\n</Response>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonEC2ProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonEC2ProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400),
+                Body = Encoding.ASCII.GetBytes("<Response>\n    <Errors>\n        <Error>\n            <Code>ComplexError</Code>\n            <Message>Hi</Message>\n            <TopLevel>Top level</TopLevel>\n            <Nested>\n                <Foo>bar</Foo>\n            </Nested>\n        </Error>\n    </Errors>\n    <RequestID>foo-id</RequestID>\n</Response>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "text/xml;charset=UTF-8";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
+
             // Act
-            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400));
+            var errorResponse = await Assert.ThrowsExactlyAsync<ComplexErrorException>(() => client.GreetingWithErrorsAsync(new GreetingWithErrorsRequest())).ConfigureAwait(false);
+
             // Assert
-            Assert.IsInstanceOfType(errorResponse, typeof(ComplexErrorException));
-            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400));
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400), errorResponse.StatusCode);
         }
 
     }

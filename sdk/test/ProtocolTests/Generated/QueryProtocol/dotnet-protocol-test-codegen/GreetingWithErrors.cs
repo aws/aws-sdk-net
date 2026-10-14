@@ -32,6 +32,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.AwsQuery
 {
@@ -46,27 +47,34 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("AwsQuery")]
-        public void QueryGreetingWithErrorsResponse()
+        public async Task QueryGreetingWithErrorsResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "text/xml";
-            byte[] bytes = Encoding.ASCII.GetBytes("<GreetingWithErrorsResponse xmlns=\"https://example.com/\">\n    <GreetingWithErrorsResult>\n        <greeting>Hello</greeting>\n    </GreetingWithErrorsResult>\n</GreetingWithErrorsResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonQueryProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonQueryProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("<GreetingWithErrorsResponse xmlns=\"https://example.com/\">\n    <GreetingWithErrorsResult>\n        <greeting>Hello</greeting>\n    </GreetingWithErrorsResult>\n</GreetingWithErrorsResponse>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "text/xml";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new GreetingWithErrorsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.GreetingWithErrorsAsync(new GreetingWithErrorsRequest()).ConfigureAwait(false);
             var expectedResponse = new GreetingWithErrorsResponse
             {
                 Greeting = "Hello",
             };
 
             // Assert
-            var actualResponse = (GreetingWithErrorsResponse)unmarshalledResponse;
             Comparer.CompareObjects<GreetingWithErrorsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -76,40 +84,58 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("ProtocolTest")]
         [TestCategory("ErrorTest")]
         [TestCategory("AwsQuery")]
-        public void QueryInvalidGreetingErrorErrorResponse()
+        public async Task QueryInvalidGreetingErrorErrorResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400);
-            webResponseData.Headers["Content-Type"] = "text/xml";
-            byte[] bytes = Encoding.ASCII.GetBytes("<ErrorResponse>\n   <Error>\n      <Type>Sender</Type>\n      <Code>InvalidGreeting</Code>\n      <Message>Hi</Message>\n   </Error>\n   <RequestId>foo-id</RequestId>\n</ErrorResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonQueryProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonQueryProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400),
+                Body = Encoding.ASCII.GetBytes("<ErrorResponse>\n   <Error>\n      <Type>Sender</Type>\n      <Code>InvalidGreeting</Code>\n      <Message>Hi</Message>\n   </Error>\n   <RequestId>foo-id</RequestId>\n</ErrorResponse>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "text/xml";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
+
             // Act
-            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400));
+            var errorResponse = await Assert.ThrowsExactlyAsync<InvalidGreetingException>(() => client.GreetingWithErrorsAsync(new GreetingWithErrorsRequest())).ConfigureAwait(false);
+
             // Assert
-            Assert.IsInstanceOfType(errorResponse, typeof(InvalidGreetingException));
-            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400));
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400), errorResponse.StatusCode);
         }
 
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("ErrorTest")]
         [TestCategory("AwsQuery")]
-        public void QueryComplexErrorErrorResponse()
+        public async Task QueryComplexErrorErrorResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400);
-            webResponseData.Headers["Content-Type"] = "text/xml";
-            byte[] bytes = Encoding.ASCII.GetBytes("<ErrorResponse>\n   <Error>\n      <Type>Sender</Type>\n      <Code>ComplexError</Code>\n      <TopLevel>Top level</TopLevel>\n      <Nested>\n          <Foo>bar</Foo>\n      </Nested>\n   </Error>\n   <RequestId>foo-id</RequestId>\n</ErrorResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonQueryProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonQueryProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400),
+                Body = Encoding.ASCII.GetBytes("<ErrorResponse>\n   <Error>\n      <Type>Sender</Type>\n      <Code>ComplexError</Code>\n      <TopLevel>Top level</TopLevel>\n      <Nested>\n          <Foo>bar</Foo>\n      </Nested>\n   </Error>\n   <RequestId>foo-id</RequestId>\n</ErrorResponse>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "text/xml";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
+
             // Act
-            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400));
+            var errorResponse = await Assert.ThrowsExactlyAsync<ComplexErrorException>(() => client.GreetingWithErrorsAsync(new GreetingWithErrorsRequest())).ConfigureAwait(false);
+
             // Assert
-            Assert.IsInstanceOfType(errorResponse, typeof(ComplexErrorException));
-            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400));
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400), errorResponse.StatusCode);
         }
 
         /// <summary>
@@ -119,20 +145,29 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("ProtocolTest")]
         [TestCategory("ErrorTest")]
         [TestCategory("AwsQuery")]
-        public void QueryCustomizedErrorErrorResponse()
+        public async Task QueryCustomizedErrorErrorResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 402);
-            webResponseData.Headers["Content-Type"] = "text/xml";
-            byte[] bytes = Encoding.ASCII.GetBytes("<ErrorResponse>\n   <Error>\n      <Type>Sender</Type>\n      <Code>Customized</Code>\n      <Message>Hi</Message>\n   </Error>\n   <RequestId>foo-id</RequestId>\n</ErrorResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonQueryProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonQueryProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 402),
+                Body = Encoding.ASCII.GetBytes("<ErrorResponse>\n   <Error>\n      <Type>Sender</Type>\n      <Code>Customized</Code>\n      <Message>Hi</Message>\n   </Error>\n   <RequestId>foo-id</RequestId>\n</ErrorResponse>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "text/xml";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
+
             // Act
-            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 402));
+            var errorResponse = await Assert.ThrowsExactlyAsync<CustomCodeErrorException>(() => client.GreetingWithErrorsAsync(new GreetingWithErrorsRequest())).ConfigureAwait(false);
+
             // Assert
-            Assert.IsInstanceOfType(errorResponse, typeof(CustomCodeErrorException));
-            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 402));
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 402), errorResponse.StatusCode);
         }
 
     }

@@ -30,8 +30,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.AwsQuery
 {
@@ -47,7 +47,7 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("AwsQuery")]
-        public void AwsQueryEndpointTraitWithHostLabelRequest()
+        public async Task AwsQueryEndpointTraitWithHostLabelRequest()
         {
             // Arrange
             var request = new EndpointWithHostLabelOperationRequest
@@ -56,26 +56,28 @@ namespace AWSSDK.ProtocolTests.AwsQuery
             };
             var config = new AmazonQueryProtocolConfig
             {
-              ServiceURL = "https://example.com/"
+              ServiceURL = "https://example.com/",
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new EndpointWithHostLabelOperationRequestMarshaller();
+            using var client = new AmazonQueryProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.EndpointWithHostLabelOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=EndpointWithHostLabelOperation&Version=2020-01-08&label=bar");
-            foreach(var queryParam in expectedParams.Keys)
-            {
-               Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
-               Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
-            }
-
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("foo.bar.example.com", actualUri.Host);
-            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8",marshalledRequest.Headers["Content-Type"]);
+            var expectedBody = "Action=EndpointWithHostLabelOperation&Version=2020-01-08&label=bar";
+            QueryTestUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("foo.bar.example.com", actualRequest.RequestUri.Host);
+            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8", actualRequest.Headers["Content-Type"]);
         }
 
     }

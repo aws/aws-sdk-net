@@ -30,8 +30,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.AwsQuery
 {
@@ -45,7 +45,7 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("AwsQuery")]
-        public void QuerySimpleInputParamsStringsRequest()
+        public async Task QuerySimpleInputParamsStringsRequest()
         {
             // Arrange
             var request = new SimpleInputParamsRequest
@@ -55,25 +55,28 @@ namespace AWSSDK.ProtocolTests.AwsQuery
             };
             var config = new AmazonQueryProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new SimpleInputParamsRequestMarshaller();
+            using var client = new AmazonQueryProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.SimpleInputParamsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&Foo=val1&Bar=val2");
-            foreach(var queryParam in expectedParams.Keys)
-            {
-               Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
-               Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
-            }
-
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8",marshalledRequest.Headers["Content-Type"]);
+            var expectedBody = "Action=SimpleInputParams&Version=2020-01-08&Foo=val1&Bar=val2";
+            QueryTestUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8", actualRequest.Headers["Content-Type"]);
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -83,7 +86,7 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("AwsQuery")]
-        public void QuerySimpleInputParamsStringAndBooleanTrueRequest()
+        public async Task QuerySimpleInputParamsStringAndBooleanTrueRequest()
         {
             // Arrange
             var request = new SimpleInputParamsRequest
@@ -93,25 +96,28 @@ namespace AWSSDK.ProtocolTests.AwsQuery
             };
             var config = new AmazonQueryProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new SimpleInputParamsRequestMarshaller();
+            using var client = new AmazonQueryProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.SimpleInputParamsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&Foo=val1&Baz=true");
-            foreach(var queryParam in expectedParams.Keys)
-            {
-               Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
-               Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
-            }
-
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8",marshalledRequest.Headers["Content-Type"]);
+            var expectedBody = "Action=SimpleInputParams&Version=2020-01-08&Foo=val1&Baz=true";
+            QueryTestUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8", actualRequest.Headers["Content-Type"]);
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -121,7 +127,7 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("AwsQuery")]
-        public void QuerySimpleInputParamsStringsAndBooleanFalseRequest()
+        public async Task QuerySimpleInputParamsStringsAndBooleanFalseRequest()
         {
             // Arrange
             var request = new SimpleInputParamsRequest
@@ -130,25 +136,28 @@ namespace AWSSDK.ProtocolTests.AwsQuery
             };
             var config = new AmazonQueryProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new SimpleInputParamsRequestMarshaller();
+            using var client = new AmazonQueryProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.SimpleInputParamsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&Baz=false");
-            foreach(var queryParam in expectedParams.Keys)
-            {
-               Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
-               Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
-            }
-
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8",marshalledRequest.Headers["Content-Type"]);
+            var expectedBody = "Action=SimpleInputParams&Version=2020-01-08&Baz=false";
+            QueryTestUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8", actualRequest.Headers["Content-Type"]);
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -158,7 +167,7 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("AwsQuery")]
-        public void QuerySimpleInputParamsIntegerRequest()
+        public async Task QuerySimpleInputParamsIntegerRequest()
         {
             // Arrange
             var request = new SimpleInputParamsRequest
@@ -167,25 +176,28 @@ namespace AWSSDK.ProtocolTests.AwsQuery
             };
             var config = new AmazonQueryProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new SimpleInputParamsRequestMarshaller();
+            using var client = new AmazonQueryProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.SimpleInputParamsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&Bam=10");
-            foreach(var queryParam in expectedParams.Keys)
-            {
-               Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
-               Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
-            }
-
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8",marshalledRequest.Headers["Content-Type"]);
+            var expectedBody = "Action=SimpleInputParams&Version=2020-01-08&Bam=10";
+            QueryTestUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8", actualRequest.Headers["Content-Type"]);
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -195,7 +207,7 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("AwsQuery")]
-        public void QuerySimpleInputParamsFloatRequest()
+        public async Task QuerySimpleInputParamsFloatRequest()
         {
             // Arrange
             var request = new SimpleInputParamsRequest
@@ -204,25 +216,28 @@ namespace AWSSDK.ProtocolTests.AwsQuery
             };
             var config = new AmazonQueryProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new SimpleInputParamsRequestMarshaller();
+            using var client = new AmazonQueryProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.SimpleInputParamsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&Boo=10.8");
-            foreach(var queryParam in expectedParams.Keys)
-            {
-               Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
-               Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
-            }
-
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8",marshalledRequest.Headers["Content-Type"]);
+            var expectedBody = "Action=SimpleInputParams&Version=2020-01-08&Boo=10.8";
+            QueryTestUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8", actualRequest.Headers["Content-Type"]);
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -232,7 +247,7 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("AwsQuery")]
-        public void QuerySimpleInputParamsBlobRequest()
+        public async Task QuerySimpleInputParamsBlobRequest()
         {
             // Arrange
             var request = new SimpleInputParamsRequest
@@ -241,25 +256,28 @@ namespace AWSSDK.ProtocolTests.AwsQuery
             };
             var config = new AmazonQueryProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new SimpleInputParamsRequestMarshaller();
+            using var client = new AmazonQueryProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.SimpleInputParamsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&Qux=dmFsdWU%3D");
-            foreach(var queryParam in expectedParams.Keys)
-            {
-               Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
-               Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
-            }
-
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8",marshalledRequest.Headers["Content-Type"]);
+            var expectedBody = "Action=SimpleInputParams&Version=2020-01-08&Qux=dmFsdWU%3D";
+            QueryTestUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8", actualRequest.Headers["Content-Type"]);
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -269,7 +287,7 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("AwsQuery")]
-        public void QueryEnumsRequest()
+        public async Task QueryEnumsRequest()
         {
             // Arrange
             var request = new SimpleInputParamsRequest
@@ -278,25 +296,28 @@ namespace AWSSDK.ProtocolTests.AwsQuery
             };
             var config = new AmazonQueryProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new SimpleInputParamsRequestMarshaller();
+            using var client = new AmazonQueryProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.SimpleInputParamsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&FooEnum=Foo");
-            foreach(var queryParam in expectedParams.Keys)
-            {
-               Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
-               Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
-            }
-
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8",marshalledRequest.Headers["Content-Type"]);
+            var expectedBody = "Action=SimpleInputParams&Version=2020-01-08&FooEnum=Foo";
+            QueryTestUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8", actualRequest.Headers["Content-Type"]);
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -306,7 +327,7 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("AwsQuery")]
-        public void QueryIntEnumsRequest()
+        public async Task QueryIntEnumsRequest()
         {
             // Arrange
             var request = new SimpleInputParamsRequest
@@ -315,25 +336,28 @@ namespace AWSSDK.ProtocolTests.AwsQuery
             };
             var config = new AmazonQueryProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new SimpleInputParamsRequestMarshaller();
+            using var client = new AmazonQueryProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.SimpleInputParamsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&IntegerEnum=1");
-            foreach(var queryParam in expectedParams.Keys)
-            {
-               Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
-               Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
-            }
-
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8",marshalledRequest.Headers["Content-Type"]);
+            var expectedBody = "Action=SimpleInputParams&Version=2020-01-08&IntegerEnum=1";
+            QueryTestUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8", actualRequest.Headers["Content-Type"]);
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -343,7 +367,7 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("AwsQuery")]
-        public void AwsQuerySupportsNaNFloatInputsRequest()
+        public async Task AwsQuerySupportsNaNFloatInputsRequest()
         {
             // Arrange
             var request = new SimpleInputParamsRequest
@@ -353,25 +377,28 @@ namespace AWSSDK.ProtocolTests.AwsQuery
             };
             var config = new AmazonQueryProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new SimpleInputParamsRequestMarshaller();
+            using var client = new AmazonQueryProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.SimpleInputParamsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&FloatValue=NaN&Boo=NaN");
-            foreach(var queryParam in expectedParams.Keys)
-            {
-               Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
-               Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
-            }
-
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8",marshalledRequest.Headers["Content-Type"]);
+            var expectedBody = "Action=SimpleInputParams&Version=2020-01-08&FloatValue=NaN&Boo=NaN";
+            QueryTestUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8", actualRequest.Headers["Content-Type"]);
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -381,7 +408,7 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("AwsQuery")]
-        public void AwsQuerySupportsInfinityFloatInputsRequest()
+        public async Task AwsQuerySupportsInfinityFloatInputsRequest()
         {
             // Arrange
             var request = new SimpleInputParamsRequest
@@ -391,25 +418,28 @@ namespace AWSSDK.ProtocolTests.AwsQuery
             };
             var config = new AmazonQueryProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new SimpleInputParamsRequestMarshaller();
+            using var client = new AmazonQueryProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.SimpleInputParamsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&FloatValue=Infinity&Boo=Infinity");
-            foreach(var queryParam in expectedParams.Keys)
-            {
-               Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
-               Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
-            }
-
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8",marshalledRequest.Headers["Content-Type"]);
+            var expectedBody = "Action=SimpleInputParams&Version=2020-01-08&FloatValue=Infinity&Boo=Infinity";
+            QueryTestUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8", actualRequest.Headers["Content-Type"]);
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
         /// <summary>
@@ -419,7 +449,7 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("AwsQuery")]
-        public void AwsQuerySupportsNegativeInfinityFloatInputsRequest()
+        public async Task AwsQuerySupportsNegativeInfinityFloatInputsRequest()
         {
             // Arrange
             var request = new SimpleInputParamsRequest
@@ -429,25 +459,28 @@ namespace AWSSDK.ProtocolTests.AwsQuery
             };
             var config = new AmazonQueryProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new SimpleInputParamsRequestMarshaller();
+            using var client = new AmazonQueryProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.SimpleInputParamsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&FloatValue=-Infinity&Boo=-Infinity");
-            foreach(var queryParam in expectedParams.Keys)
-            {
-               Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
-               Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
-            }
-
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8",marshalledRequest.Headers["Content-Type"]);
+            var expectedBody = "Action=SimpleInputParams&Version=2020-01-08&FloatValue=-Infinity&Boo=-Infinity";
+            QueryTestUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8", actualRequest.Headers["Content-Type"]);
+            Assert.IsTrue(actualRequest.Headers.ContainsKey("Content-Length"));
         }
 
     }
