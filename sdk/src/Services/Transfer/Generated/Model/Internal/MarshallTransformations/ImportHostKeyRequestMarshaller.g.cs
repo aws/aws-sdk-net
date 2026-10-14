@@ -80,10 +80,20 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("HostKeyBody");
                 context.Writer.WriteStringValue(publicRequest.HostKeyBody);
             }
+            if (publicRequest.IsSetKmsKey())
+            {
+                context.Writer.WritePropertyName("KmsKey");
+                context.Writer.WriteStringValue(publicRequest.KmsKey);
+            }
             if (publicRequest.IsSetServerId())
             {
                 context.Writer.WritePropertyName("ServerId");
                 context.Writer.WriteStringValue(publicRequest.ServerId);
+            }
+            if (publicRequest.IsSetStorageType())
+            {
+                context.Writer.WritePropertyName("StorageType");
+                context.Writer.WriteStringValue(publicRequest.StorageType);
             }
             if (publicRequest.IsSetTags())
             {

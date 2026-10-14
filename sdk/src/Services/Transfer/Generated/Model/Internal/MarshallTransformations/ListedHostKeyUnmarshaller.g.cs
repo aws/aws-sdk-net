@@ -88,6 +88,20 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("SecretId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SecretId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("StorageType", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StorageType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

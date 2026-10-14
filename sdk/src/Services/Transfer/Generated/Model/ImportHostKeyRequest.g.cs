@@ -68,6 +68,24 @@ namespace Amazon.Transfer.Model
         internal bool IsSetHostKeyBody() => this.HostKeyBody != null;
 
         /// <summary>
+        /// Gets and sets the property KmsKey. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the KMS key used to encrypt the Secrets Manager
+        /// secret that stores the host key. If you specify a customer managed key, its key policy
+        /// must allow the <c>AWSServiceRoleForTransfer</c> service-linked role to decrypt the
+        /// secret. If you don't specify a value, Transfer Family uses the Amazon Web Services
+        /// managed key for Secrets Manager.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 20, Max = 1600)]
+        public string KmsKey { get; set; }
+
+        /// <summary>
+        /// Checks to see if the KmsKey property is set.
+        /// </summary>
+        internal bool IsSetKmsKey() => this.KmsKey != null;
+
+        /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
         /// The identifier of the server that contains the host key that you are importing.
@@ -80,6 +98,21 @@ namespace Amazon.Transfer.Model
         /// Checks to see if the ServerId property is set.
         /// </summary>
         internal bool IsSetServerId() => this.ServerId != null;
+
+        /// <summary>
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        /// Specifies whether the host key is stored by Transfer Family (<c>SERVICE_MANAGED</c>)
+        /// or in Secrets Manager (<c>SECRETS_MANAGER</c>). When you specify <c>SECRETS_MANAGER</c>,
+        /// Transfer Family stores the private host key material in an Secrets Manager secret.
+        /// </para>
+        /// </summary>
+        public HostKeyStorageType StorageType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StorageType property is set.
+        /// </summary>
+        internal bool IsSetStorageType() => this.StorageType != null;
 
         /// <summary>
         /// Gets and sets the property Tags. 

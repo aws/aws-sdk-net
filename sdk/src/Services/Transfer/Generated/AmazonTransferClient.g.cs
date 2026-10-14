@@ -6137,8 +6137,17 @@ namespace Amazon.Transfer
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Updates the description for the host key that's specified by the <c>ServerId</c> and
-        /// <c>HostKeyId</c> parameters.
+        /// Updates the host key that's specified by the <c>ServerId</c> and <c>HostKeyId</c>
+        /// parameters. You can update the description of the host key, change where the host
+        /// key is stored by specifying the <c>StorageType</c>, and specify the KMS key used to
+        /// encrypt the host key when it's stored in Secrets Manager.
+        /// 
+        ///  
+        /// <para>
+        /// To change a host key's storage type from <c>SERVICE_MANAGED</c> to <c>SECRETS_MANAGER</c>,
+        /// you must have the <c>transfer:ExportHostKey</c> permission. <c>transfer:ExportHostKey</c>
+        /// is a permission-only action that has no corresponding API operation.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateHostKey service method.</param>
         /// <returns>The response from the UpdateHostKey service method, as returned by Transfer.</returns>
@@ -6180,8 +6189,17 @@ namespace Amazon.Transfer
 #endif
 
         /// <summary>
-        /// Updates the description for the host key that's specified by the <c>ServerId</c> and
-        /// <c>HostKeyId</c> parameters.
+        /// Updates the host key that's specified by the <c>ServerId</c> and <c>HostKeyId</c>
+        /// parameters. You can update the description of the host key, change where the host
+        /// key is stored by specifying the <c>StorageType</c>, and specify the KMS key used to
+        /// encrypt the host key when it's stored in Secrets Manager.
+        /// 
+        ///  
+        /// <para>
+        /// To change a host key's storage type from <c>SERVICE_MANAGED</c> to <c>SECRETS_MANAGER</c>,
+        /// you must have the <c>transfer:ExportHostKey</c> permission. <c>transfer:ExportHostKey</c>
+        /// is a permission-only action that has no corresponding API operation.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateHostKey service method.</param>
         /// <param name="cancellationToken">

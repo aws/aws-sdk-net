@@ -104,6 +104,35 @@ namespace Amazon.Transfer.Model
         internal bool IsSetHostKeyId() => this.HostKeyId != null;
 
         /// <summary>
+        /// Gets and sets the property SecretId. 
+        /// <para>
+        /// The ARN of the Secrets Manager secret that stores the host key material, when <c>StorageType</c>
+        /// is <c>SECRETS_MANAGER</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2048)]
+        public string SecretId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SecretId property is set.
+        /// </summary>
+        internal bool IsSetSecretId() => this.SecretId != null;
+
+        /// <summary>
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        /// Specifies whether the host key is stored by Transfer Family (<c>SERVICE_MANAGED</c>)
+        /// or in Secrets Manager (<c>SECRETS_MANAGER</c>).
+        /// </para>
+        /// </summary>
+        public HostKeyStorageType StorageType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StorageType property is set.
+        /// </summary>
+        internal bool IsSetStorageType() => this.StorageType != null;
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// Key-value pairs that can be used to group and search for host keys.

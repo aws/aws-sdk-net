@@ -509,6 +509,12 @@
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Transfer.Model.ImportHostKeyRequest.KmsKey</property>
+    <min>20</min>
+    <max>1600</max>
+    <pattern>^arn:\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Transfer.Model.ImportHostKeyRequest.ServerId</property>
     <min>19</min>
     <max>19</max>
@@ -1186,6 +1192,12 @@
     <pattern>^hostkey-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Transfer.Model.UpdateHostKeyRequest.KmsKey</property>
+    <min>20</min>
+    <max>1600</max>
+    <pattern>^arn:\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Transfer.Model.UpdateHostKeyRequest.ServerId</property>
     <min>19</min>
     <max>19</max>
@@ -1675,6 +1687,11 @@
     <pattern>^hostkey-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Transfer.Model.DescribedHostKey.SecretId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedIdentityCenterConfig.ApplicationArn</property>
     <min>10</min>
     <max>1224</max>
@@ -2040,6 +2057,11 @@
     <min>25</min>
     <max>25</max>
     <pattern>^hostkey-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.ListedHostKey.SecretId</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListedProfile.Arn</property>

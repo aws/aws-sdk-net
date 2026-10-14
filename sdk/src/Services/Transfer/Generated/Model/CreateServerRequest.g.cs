@@ -240,6 +240,21 @@ namespace Amazon.Transfer.Model
         internal bool IsSetHostKey() => this.HostKey != null;
 
         /// <summary>
+        /// Gets and sets the property HostKeyStorageType. 
+        /// <para>
+        /// Specifies whether the host key is stored by Transfer Family (<c>SERVICE_MANAGED</c>)
+        /// or in Secrets Manager (<c>SECRETS_MANAGER</c>). When you specify <c>SECRETS_MANAGER</c>,
+        /// Transfer Family stores the private host key material in an Secrets Manager secret.
+        /// </para>
+        /// </summary>
+        public HostKeyStorageType HostKeyStorageType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the HostKeyStorageType property is set.
+        /// </summary>
+        internal bool IsSetHostKeyStorageType() => this.HostKeyStorageType != null;
+
+        /// <summary>
         /// Gets and sets the property IdentityProviderDetails. 
         /// <para>
         /// Required when <c>IdentityProviderType</c> is set to <c>AWS_DIRECTORY_SERVICE</c>,

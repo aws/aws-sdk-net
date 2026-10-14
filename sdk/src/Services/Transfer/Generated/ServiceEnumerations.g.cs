@@ -907,6 +907,47 @@ namespace Amazon.Transfer
     }
 
     /// <summary>
+    /// Constants used for properties of type HostKeyStorageType.
+    /// </summary>
+    public class HostKeyStorageType : ConstantClass
+    {
+        /// <summary>
+        /// Constant SECRETS_MANAGER for HostKeyStorageType
+        /// </summary>
+        public static readonly HostKeyStorageType SECRETS_MANAGER = new HostKeyStorageType("SECRETS_MANAGER");
+
+        /// <summary>
+        /// Constant SERVICE_MANAGED for HostKeyStorageType
+        /// </summary>
+        public static readonly HostKeyStorageType SERVICE_MANAGED = new HostKeyStorageType("SERVICE_MANAGED");
+
+        /// <summary>
+        /// Constructs a custom HostKeyStorageType for a value not among the defined constants.
+        /// </summary>
+        public HostKeyStorageType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HostKeyStorageType FindValue(string value)
+        {
+            return FindValue<HostKeyStorageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HostKeyStorageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type IdentityProviderType.
     /// </summary>
     public class IdentityProviderType : ConstantClass

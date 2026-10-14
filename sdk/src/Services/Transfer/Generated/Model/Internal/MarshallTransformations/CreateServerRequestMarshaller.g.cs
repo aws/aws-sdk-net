@@ -100,6 +100,11 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("HostKey");
                 context.Writer.WriteStringValue(publicRequest.HostKey);
             }
+            if (publicRequest.IsSetHostKeyStorageType())
+            {
+                context.Writer.WritePropertyName("HostKeyStorageType");
+                context.Writer.WriteStringValue(publicRequest.HostKeyStorageType);
+            }
             if (publicRequest.IsSetIdentityProviderDetails())
             {
                 context.Writer.WritePropertyName("IdentityProviderDetails");
