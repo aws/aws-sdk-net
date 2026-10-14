@@ -37,8 +37,19 @@ namespace Amazon.ARCRegionswitch.Model
         /// <summary>
         /// Gets and sets the property Behavior. 
         /// <para>
-        /// The behavior for a global database, that is, only allow switchover or also allow failover.
+        /// The default behavior for the Aurora global database execution block. Valid values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>switchoverOnly</c> - Calls <c>SwitchoverGlobalCluster</c> for a zero-data-loss
+        /// switchover during graceful execution.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>failover</c> - Calls <c>FailoverGlobalCluster</c> with <c>AllowDataLoss</c> set
+        /// to <c>true</c>. This operation might cause data loss, including during graceful execution.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required = true)]
         public GlobalAuroraDefaultBehavior Behavior { get; set; }
@@ -125,7 +136,8 @@ namespace Amazon.ARCRegionswitch.Model
         /// <summary>
         /// Gets and sets the property Ungraceful. 
         /// <para>
-        /// The settings for ungraceful execution.
+        /// The behavior to use when the plan runs in ungraceful mode. If you omit this value,
+        /// Region switch uses the value of <c>behavior</c>.
         /// </para>
         /// </summary>
         public GlobalAuroraUngraceful Ungraceful { get; set; }
