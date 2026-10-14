@@ -53,10 +53,10 @@ namespace Amazon.Organizations.Internal
 
             var refs = new Dictionary<string, object>()
             {
-                ["Region"] = parameters["Region"],
                 ["UseDualStack"] = parameters["UseDualStack"],
                 ["UseFIPS"] = parameters["UseFIPS"],
                 ["Endpoint"] = parameters["Endpoint"],
+                ["Region"] = parameters["Region"],
             };
             if (IsSet(refs["Endpoint"]))
             {
@@ -74,127 +74,81 @@ namespace Amazon.Organizations.Internal
             {
                 if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
                 {
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
-                    {
-                        return new Endpoint("https://organizations.us-east-1.amazonaws.com", InterpolateJson(@"{
-                                                    ""authSchemes"": [
-                                                        {
-                                                            ""name"": ""sigv4"",
-                                                            ""signingName"": ""organizations"",
-                                                            ""signingRegion"": ""us-east-1""
-                                                        }
-                                                    ]
-                                                }", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
-                    {
-                        return new Endpoint("https://organizations-fips.us-east-1.amazonaws.com", InterpolateJson(@"{
-                                                    ""authSchemes"": [
-                                                        {
-                                                            ""name"": ""sigv4"",
-                                                            ""signingName"": ""organizations"",
-                                                            ""signingRegion"": ""us-east-1""
-                                                        }
-                                                    ]
-                                                }", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-cn") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
-                    {
-                        return new Endpoint("https://organizations.cn-northwest-1.amazonaws.com.cn", InterpolateJson(@"{
-                                                    ""authSchemes"": [
-                                                        {
-                                                            ""name"": ""sigv4"",
-                                                            ""signingName"": ""organizations"",
-                                                            ""signingRegion"": ""cn-northwest-1""
-                                                        }
-                                                    ]
-                                                }", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
-                    {
-                        return new Endpoint("https://organizations.us-gov-west-1.amazonaws.com", InterpolateJson(@"{
-                                                    ""authSchemes"": [
-                                                        {
-                                                            ""name"": ""sigv4"",
-                                                            ""signingName"": ""organizations"",
-                                                            ""signingRegion"": ""us-gov-west-1""
-                                                        }
-                                                    ]
-                                                }", refs), InterpolateJson(@"", refs));
-                    }
                     if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov") && Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
                     {
                         return new Endpoint("https://organizations.us-gov-west-1.amazonaws.com", InterpolateJson(@"{
-                                                    ""authSchemes"": [
-                                                        {
-                                                            ""name"": ""sigv4"",
-                                                            ""signingName"": ""organizations"",
-                                                            ""signingRegion"": ""us-gov-west-1""
-                                                        }
-                                                    ]
-                                                }", refs), InterpolateJson(@"", refs));
+                                                            ""authSchemes"": [
+                                                                {
+                                                                    ""name"": ""sigv4"",
+                                                                    ""signingRegion"": ""us-gov-west-1""
+                                                                }
+                                                            ]
+                                                        }", refs), InterpolateJson(@"", refs));
                     }
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
+                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov") && Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
                     {
-                        return new Endpoint("https://organizations.us-iso-east-1.c2s.ic.gov", InterpolateJson(@"{
-                                                    ""authSchemes"": [
-                                                        {
-                                                            ""name"": ""sigv4"",
-                                                            ""signingName"": ""organizations"",
-                                                            ""signingRegion"": ""us-iso-east-1""
-                                                        }
-                                                    ]
-                                                }", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso-b") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
-                    {
-                        return new Endpoint("https://organizations.us-isob-east-1.sc2s.sgov.gov", InterpolateJson(@"{
-                                                    ""authSchemes"": [
-                                                        {
-                                                            ""name"": ""sigv4"",
-                                                            ""signingName"": ""organizations"",
-                                                            ""signingRegion"": ""us-isob-east-1""
-                                                        }
-                                                    ]
-                                                }", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso-f") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
-                    {
-                        return new Endpoint("https://organizations.us-isof-south-1.csp.hci.ic.gov", InterpolateJson(@"{
-                                                    ""authSchemes"": [
-                                                        {
-                                                            ""name"": ""sigv4"",
-                                                            ""signingName"": ""organizations"",
-                                                            ""signingRegion"": ""us-isof-south-1""
-                                                        }
-                                                    ]
-                                                }", refs), InterpolateJson(@"", refs));
+                        return new Endpoint("https://organizations.us-gov-west-1.api.aws", InterpolateJson(@"{
+                                                            ""authSchemes"": [
+                                                                {
+                                                                    ""name"": ""sigv4"",
+                                                                    ""signingRegion"": ""us-gov-west-1""
+                                                                }
+                                                            ]
+                                                        }", refs), InterpolateJson(@"", refs));
                     }
                     if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
                     {
                         if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
                         {
-                            return new Endpoint(Interpolate(@"https://organizations-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            return new Endpoint(Interpolate(@"https://organizations-fips.{PartitionResult#implicitGlobalRegion}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{
+                                                                            ""authSchemes"": [
+                                                                                {
+                                                                                    ""name"": ""sigv4"",
+                                                                                    ""signingRegion"": ""{PartitionResult#implicitGlobalRegion}""
+                                                                                }
+                                                                            ]
+                                                                        }", refs), InterpolateJson(@"", refs));
                         }
                         throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
                     }
-                    if (Equals(refs["UseFIPS"], true))
+                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
                     {
                         if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
                         {
-                            return new Endpoint(Interpolate(@"https://organizations-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            return new Endpoint(Interpolate(@"https://organizations-fips.{PartitionResult#implicitGlobalRegion}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"{
+                                                                            ""authSchemes"": [
+                                                                                {
+                                                                                    ""name"": ""sigv4"",
+                                                                                    ""signingRegion"": ""{PartitionResult#implicitGlobalRegion}""
+                                                                                }
+                                                                            ]
+                                                                        }", refs), InterpolateJson(@"", refs));
                         }
                         throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
                     }
-                    if (Equals(refs["UseDualStack"], true))
+                    if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
                     {
                         if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
                         {
-                            return new Endpoint(Interpolate(@"https://organizations.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            return new Endpoint(Interpolate(@"https://organizations.{PartitionResult#implicitGlobalRegion}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{
+                                                                            ""authSchemes"": [
+                                                                                {
+                                                                                    ""name"": ""sigv4"",
+                                                                                    ""signingRegion"": ""{PartitionResult#implicitGlobalRegion}""
+                                                                                }
+                                                                            ]
+                                                                        }", refs), InterpolateJson(@"", refs));
                         }
                         throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
                     }
-                    return new Endpoint(Interpolate(@"https://organizations.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    return new Endpoint(Interpolate(@"https://organizations.{PartitionResult#implicitGlobalRegion}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"{
+                                                            ""authSchemes"": [
+                                                                {
+                                                                    ""name"": ""sigv4"",
+                                                                    ""signingRegion"": ""{PartitionResult#implicitGlobalRegion}""
+                                                                }
+                                                            ]
+                                                        }", refs), InterpolateJson(@"", refs));
                 }
             }
             throw new AmazonClientException("Invalid Configuration: Missing Region");
