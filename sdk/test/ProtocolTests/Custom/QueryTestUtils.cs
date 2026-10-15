@@ -32,7 +32,11 @@ namespace AWSSDK.ProtocolTests.Utils
         /// </summary>
         public static void AssertBody(byte[] actualBodyBytes, string expectedBody)
         {
-            var actualBody = Encoding.UTF8.GetString(actualBodyBytes ?? Array.Empty<byte>());
+            if (actualBodyBytes == null)
+            {
+                Assert.Fail("Expected a request body but none was sent (actualBodyBytes was null).");
+            }
+            var actualBody = Encoding.UTF8.GetString(actualBodyBytes);
             var expectedParams = ConvertBodyToParameters(expectedBody);
             var actualParams = ConvertBodyToParameters(actualBody);
             foreach (var queryParam in expectedParams.Keys)
