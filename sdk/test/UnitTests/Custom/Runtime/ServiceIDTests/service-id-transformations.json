@@ -545,16 +545,6 @@
     "service_envvar_name": "AWS_ENDPOINT_URL_EVENTBRIDGE"
   },
   {
-    "service_id": "finspace",
-    "services_section_name": "finspace",
-    "service_envvar_name": "AWS_ENDPOINT_URL_FINSPACE"
-  },
-  {
-    "service_id": "finspace data",
-    "services_section_name": "finspace_data",
-    "service_envvar_name": "AWS_ENDPOINT_URL_FINSPACE_DATA"
-  },
-  {
     "service_id": "Firehose",
     "services_section_name": "firehose",
     "service_envvar_name": "AWS_ENDPOINT_URL_FIREHOSE"

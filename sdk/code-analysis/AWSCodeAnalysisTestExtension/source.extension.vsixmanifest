@@ -259,10 +259,6 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.EMRServerless.CodeAnalysis" Path="|AWSSDK.EMRServerless.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.EventBridge.CodeAnalysis" Path="|AWSSDK.EventBridge.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.EventBridge.CodeAnalysis" Path="|AWSSDK.EventBridge.CodeAnalysis|"/>
-    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Finspace.CodeAnalysis" Path="|AWSSDK.Finspace.CodeAnalysis|"/>
-    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Finspace.CodeAnalysis" Path="|AWSSDK.Finspace.CodeAnalysis|"/>
-    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.FinSpaceData.CodeAnalysis" Path="|AWSSDK.FinSpaceData.CodeAnalysis|"/>
-    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.FinSpaceData.CodeAnalysis" Path="|AWSSDK.FinSpaceData.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.FIS.CodeAnalysis" Path="|AWSSDK.FIS.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.FIS.CodeAnalysis" Path="|AWSSDK.FIS.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.FMS.CodeAnalysis" Path="|AWSSDK.FMS.CodeAnalysis|"/>
@@ -621,8 +617,6 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.TimestreamQuery.CodeAnalysis" Path="|AWSSDK.TimestreamQuery.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.TimestreamWrite.CodeAnalysis" Path="|AWSSDK.TimestreamWrite.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.TimestreamWrite.CodeAnalysis" Path="|AWSSDK.TimestreamWrite.CodeAnalysis|"/>
-    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Tnb.CodeAnalysis" Path="|AWSSDK.Tnb.CodeAnalysis|"/>
-    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Tnb.CodeAnalysis" Path="|AWSSDK.Tnb.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.TranscribeService.CodeAnalysis" Path="|AWSSDK.TranscribeService.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.TranscribeService.CodeAnalysis" Path="|AWSSDK.TranscribeService.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Transfer.CodeAnalysis" Path="|AWSSDK.Transfer.CodeAnalysis|"/>

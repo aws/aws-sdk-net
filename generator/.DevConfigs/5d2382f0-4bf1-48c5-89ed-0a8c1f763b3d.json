@@ -1,0 +1,25 @@
+{
+    "services": [
+        {
+            "serviceName": "Finspace",
+            "type": "removal",
+            "changeLogMessages": [
+                "Amazon FinSpace has been removed from the SDK because it has been discontinued."
+            ]
+        },
+        {
+            "serviceName": "FinSpaceData",
+            "type": "removal",
+            "changeLogMessages": [
+                "Amazon FinSpace Data has been removed from the SDK because it has been discontinued."
+            ]
+        },
+        {
+            "serviceName": "Tnb",
+            "type": "removal",
+            "changeLogMessages": [
+                "AWS Telco Network Builder has been removed from the SDK because it has been discontinued."
+            ]
+        }
+    ]
+}

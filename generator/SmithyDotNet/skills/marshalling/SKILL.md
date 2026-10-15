@@ -70,9 +70,8 @@ read into `GenerationContext.Customizations.OverrideContentType`) hard-codes the
 `request.Headers["Content-Type"] = "{value}";`. On restJson1 it replaces the per-operation value
 (including the blob-payload default) but is still skipped for input event streams and GET/DELETE; it's
 emitted even for body-less operations. On awsJson it replaces only the versioned Content-Type;
-`X-Amz-Target` is unchanged. A handful of restJson1 services use it to send
-`application/x-amz-json-1.1` instead of the default `application/json` (finspace, finspace-data,
-lex.v2), matching C2J.
+`X-Amz-Target` is unchanged. lex.v2 uses it to send `application/x-amz-json-1.1`
+instead of the default `application/json`, matching C2J.
 
 ## Member Placement
 
