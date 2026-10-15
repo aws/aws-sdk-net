@@ -32,6 +32,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -47,7 +48,7 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestXml")]
-        public void InputAndOutputWithStringHeadersRequest()
+        public async Task InputAndOutputWithStringHeadersRequest()
         {
             // Arrange
             var request = new InputAndOutputWithHeadersRequest
@@ -68,20 +69,27 @@ namespace AWSSDK.ProtocolTests.RestXml
             };
             var config = new AmazonRestXmlProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new InputAndOutputWithHeadersRequestMarshaller();
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.InputAndOutputWithHeadersAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/InputAndOutputWithHeaders", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("Hello".Replace(" ",""), marshalledRequest.Headers["X-String"].Replace(" ",""));
-            Assert.AreEqual("a, b, c".Replace(" ",""), marshalledRequest.Headers["X-StringList"].Replace(" ",""));
-            Assert.AreEqual("a, b, c".Replace(" ",""), marshalledRequest.Headers["X-StringSet"].Replace(" ",""));
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/InputAndOutputWithHeaders", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("Hello".Replace(" ",""), actualRequest.Headers["X-String"].Replace(" ",""));
+            Assert.AreEqual("a, b, c".Replace(" ",""), actualRequest.Headers["X-StringList"].Replace(" ",""));
+            Assert.AreEqual("a, b, c".Replace(" ",""), actualRequest.Headers["X-StringSet"].Replace(" ",""));
         }
 
         /// <summary>
@@ -91,7 +99,7 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestXml")]
-        public void InputAndOutputWithNumericHeadersRequest()
+        public async Task InputAndOutputWithNumericHeadersRequest()
         {
             // Arrange
             var request = new InputAndOutputWithHeadersRequest
@@ -111,24 +119,31 @@ namespace AWSSDK.ProtocolTests.RestXml
             };
             var config = new AmazonRestXmlProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new InputAndOutputWithHeadersRequestMarshaller();
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.InputAndOutputWithHeadersAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/InputAndOutputWithHeaders", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("1".Replace(" ",""), marshalledRequest.Headers["X-Byte"].Replace(" ",""));
-            Assert.AreEqual("1.1".Replace(" ",""), marshalledRequest.Headers["X-Double"].Replace(" ",""));
-            Assert.AreEqual("1.1".Replace(" ",""), marshalledRequest.Headers["X-Float"].Replace(" ",""));
-            Assert.AreEqual("123".Replace(" ",""), marshalledRequest.Headers["X-Integer"].Replace(" ",""));
-            Assert.AreEqual("1, 2, 3".Replace(" ",""), marshalledRequest.Headers["X-IntegerList"].Replace(" ",""));
-            Assert.AreEqual("123".Replace(" ",""), marshalledRequest.Headers["X-Long"].Replace(" ",""));
-            Assert.AreEqual("123".Replace(" ",""), marshalledRequest.Headers["X-Short"].Replace(" ",""));
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/InputAndOutputWithHeaders", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("1".Replace(" ",""), actualRequest.Headers["X-Byte"].Replace(" ",""));
+            Assert.AreEqual("1.1".Replace(" ",""), actualRequest.Headers["X-Double"].Replace(" ",""));
+            Assert.AreEqual("1.1".Replace(" ",""), actualRequest.Headers["X-Float"].Replace(" ",""));
+            Assert.AreEqual("123".Replace(" ",""), actualRequest.Headers["X-Integer"].Replace(" ",""));
+            Assert.AreEqual("1, 2, 3".Replace(" ",""), actualRequest.Headers["X-IntegerList"].Replace(" ",""));
+            Assert.AreEqual("123".Replace(" ",""), actualRequest.Headers["X-Long"].Replace(" ",""));
+            Assert.AreEqual("123".Replace(" ",""), actualRequest.Headers["X-Short"].Replace(" ",""));
         }
 
         /// <summary>
@@ -138,7 +153,7 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestXml")]
-        public void InputAndOutputWithBooleanHeadersRequest()
+        public async Task InputAndOutputWithBooleanHeadersRequest()
         {
             // Arrange
             var request = new InputAndOutputWithHeadersRequest
@@ -154,20 +169,27 @@ namespace AWSSDK.ProtocolTests.RestXml
             };
             var config = new AmazonRestXmlProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new InputAndOutputWithHeadersRequestMarshaller();
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.InputAndOutputWithHeadersAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/InputAndOutputWithHeaders", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("true".Replace(" ",""), marshalledRequest.Headers["X-Boolean1"].Replace(" ",""));
-            Assert.AreEqual("false".Replace(" ",""), marshalledRequest.Headers["X-Boolean2"].Replace(" ",""));
-            Assert.AreEqual("true, false, true".Replace(" ",""), marshalledRequest.Headers["X-BooleanList"].Replace(" ",""));
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/InputAndOutputWithHeaders", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("true".Replace(" ",""), actualRequest.Headers["X-Boolean1"].Replace(" ",""));
+            Assert.AreEqual("false".Replace(" ",""), actualRequest.Headers["X-Boolean2"].Replace(" ",""));
+            Assert.AreEqual("true, false, true".Replace(" ",""), actualRequest.Headers["X-BooleanList"].Replace(" ",""));
         }
 
         /// <summary>
@@ -177,7 +199,7 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestXml")]
-        public void InputAndOutputWithTimestampHeadersRequest()
+        public async Task InputAndOutputWithTimestampHeadersRequest()
         {
             // Arrange
             var request = new InputAndOutputWithHeadersRequest
@@ -190,18 +212,25 @@ namespace AWSSDK.ProtocolTests.RestXml
             };
             var config = new AmazonRestXmlProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new InputAndOutputWithHeadersRequestMarshaller();
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.InputAndOutputWithHeadersAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/InputAndOutputWithHeaders", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("Mon, 16 Dec 2019 23:48:18 GMT, Mon, 16 Dec 2019 23:48:18 GMT".Replace(" ",""), marshalledRequest.Headers["X-TimestampList"].Replace(" ",""));
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/InputAndOutputWithHeaders", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("Mon, 16 Dec 2019 23:48:18 GMT, Mon, 16 Dec 2019 23:48:18 GMT".Replace(" ",""), actualRequest.Headers["X-TimestampList"].Replace(" ",""));
         }
 
         /// <summary>
@@ -211,7 +240,7 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestXml")]
-        public void InputAndOutputWithEnumHeadersRequest()
+        public async Task InputAndOutputWithEnumHeadersRequest()
         {
             // Arrange
             var request = new InputAndOutputWithHeadersRequest
@@ -226,19 +255,26 @@ namespace AWSSDK.ProtocolTests.RestXml
             };
             var config = new AmazonRestXmlProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new InputAndOutputWithHeadersRequestMarshaller();
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.InputAndOutputWithHeadersAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/InputAndOutputWithHeaders", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("Foo".Replace(" ",""), marshalledRequest.Headers["X-Enum"].Replace(" ",""));
-            Assert.AreEqual("Foo, Bar, Baz".Replace(" ",""), marshalledRequest.Headers["X-EnumList"].Replace(" ",""));
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/InputAndOutputWithHeaders", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("Foo".Replace(" ",""), actualRequest.Headers["X-Enum"].Replace(" ",""));
+            Assert.AreEqual("Foo, Bar, Baz".Replace(" ",""), actualRequest.Headers["X-EnumList"].Replace(" ",""));
         }
 
         /// <summary>
@@ -248,7 +284,7 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestXml")]
-        public void RestXmlSupportsNaNFloatHeaderInputsRequest()
+        public async Task RestXmlSupportsNaNFloatHeaderInputsRequest()
         {
             // Arrange
             var request = new InputAndOutputWithHeadersRequest
@@ -258,19 +294,26 @@ namespace AWSSDK.ProtocolTests.RestXml
             };
             var config = new AmazonRestXmlProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new InputAndOutputWithHeadersRequestMarshaller();
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.InputAndOutputWithHeadersAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/InputAndOutputWithHeaders", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("NaN".Replace(" ",""), marshalledRequest.Headers["X-Double"].Replace(" ",""));
-            Assert.AreEqual("NaN".Replace(" ",""), marshalledRequest.Headers["X-Float"].Replace(" ",""));
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/InputAndOutputWithHeaders", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("NaN".Replace(" ",""), actualRequest.Headers["X-Double"].Replace(" ",""));
+            Assert.AreEqual("NaN".Replace(" ",""), actualRequest.Headers["X-Float"].Replace(" ",""));
         }
 
         /// <summary>
@@ -280,7 +323,7 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestXml")]
-        public void RestXmlSupportsInfinityFloatHeaderInputsRequest()
+        public async Task RestXmlSupportsInfinityFloatHeaderInputsRequest()
         {
             // Arrange
             var request = new InputAndOutputWithHeadersRequest
@@ -290,19 +333,26 @@ namespace AWSSDK.ProtocolTests.RestXml
             };
             var config = new AmazonRestXmlProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new InputAndOutputWithHeadersRequestMarshaller();
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.InputAndOutputWithHeadersAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/InputAndOutputWithHeaders", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("Infinity".Replace(" ",""), marshalledRequest.Headers["X-Double"].Replace(" ",""));
-            Assert.AreEqual("Infinity".Replace(" ",""), marshalledRequest.Headers["X-Float"].Replace(" ",""));
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/InputAndOutputWithHeaders", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("Infinity".Replace(" ",""), actualRequest.Headers["X-Double"].Replace(" ",""));
+            Assert.AreEqual("Infinity".Replace(" ",""), actualRequest.Headers["X-Float"].Replace(" ",""));
         }
 
         /// <summary>
@@ -312,7 +362,7 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestXml")]
-        public void RestXmlSupportsNegativeInfinityFloatHeaderInputsRequest()
+        public async Task RestXmlSupportsNegativeInfinityFloatHeaderInputsRequest()
         {
             // Arrange
             var request = new InputAndOutputWithHeadersRequest
@@ -322,19 +372,26 @@ namespace AWSSDK.ProtocolTests.RestXml
             };
             var config = new AmazonRestXmlProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new InputAndOutputWithHeadersRequestMarshaller();
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.InputAndOutputWithHeadersAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/InputAndOutputWithHeaders", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("-Infinity".Replace(" ",""), marshalledRequest.Headers["X-Double"].Replace(" ",""));
-            Assert.AreEqual("-Infinity".Replace(" ",""), marshalledRequest.Headers["X-Float"].Replace(" ",""));
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/InputAndOutputWithHeaders", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("-Infinity".Replace(" ",""), actualRequest.Headers["X-Double"].Replace(" ",""));
+            Assert.AreEqual("-Infinity".Replace(" ",""), actualRequest.Headers["X-Float"].Replace(" ",""));
         }
 
         /// <summary>
@@ -344,20 +401,28 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestXml")]
-        public void InputAndOutputWithStringHeadersResponse()
+        public async Task InputAndOutputWithStringHeadersResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["X-String"] = "Hello";
-            webResponseData.Headers["X-StringList"] = "a, b, c";
-            webResponseData.Headers["X-StringSet"] = "a, b, c";
-            byte[] bytes = Encoding.ASCII.GetBytes("");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonRestXmlProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes(""),
+            };
+            mockResponse.Headers["X-String"] = "Hello";
+            mockResponse.Headers["X-StringList"] = "a, b, c";
+            mockResponse.Headers["X-StringSet"] = "a, b, c";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new InputAndOutputWithHeadersResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.InputAndOutputWithHeadersAsync(new InputAndOutputWithHeadersRequest()).ConfigureAwait(false);
             var expectedResponse = new InputAndOutputWithHeadersResponse
             {
                 HeaderString = "Hello",
@@ -376,9 +441,8 @@ namespace AWSSDK.ProtocolTests.RestXml
             };
 
             // Assert
-            var actualResponse = (InputAndOutputWithHeadersResponse)unmarshalledResponse;
             Comparer.CompareObjects<InputAndOutputWithHeadersResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -388,24 +452,32 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestXml")]
-        public void InputAndOutputWithNumericHeadersResponse()
+        public async Task InputAndOutputWithNumericHeadersResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["X-Byte"] = "1";
-            webResponseData.Headers["X-Double"] = "1.1";
-            webResponseData.Headers["X-Float"] = "1.1";
-            webResponseData.Headers["X-Integer"] = "123";
-            webResponseData.Headers["X-IntegerList"] = "1, 2, 3";
-            webResponseData.Headers["X-Long"] = "123";
-            webResponseData.Headers["X-Short"] = "123";
-            byte[] bytes = Encoding.ASCII.GetBytes("");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonRestXmlProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes(""),
+            };
+            mockResponse.Headers["X-Byte"] = "1";
+            mockResponse.Headers["X-Double"] = "1.1";
+            mockResponse.Headers["X-Float"] = "1.1";
+            mockResponse.Headers["X-Integer"] = "123";
+            mockResponse.Headers["X-IntegerList"] = "1, 2, 3";
+            mockResponse.Headers["X-Long"] = "123";
+            mockResponse.Headers["X-Short"] = "123";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new InputAndOutputWithHeadersResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.InputAndOutputWithHeadersAsync(new InputAndOutputWithHeadersRequest()).ConfigureAwait(false);
             var expectedResponse = new InputAndOutputWithHeadersResponse
             {
                 HeaderByte = 1,
@@ -423,9 +495,8 @@ namespace AWSSDK.ProtocolTests.RestXml
             };
 
             // Assert
-            var actualResponse = (InputAndOutputWithHeadersResponse)unmarshalledResponse;
             Comparer.CompareObjects<InputAndOutputWithHeadersResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -435,20 +506,28 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestXml")]
-        public void InputAndOutputWithBooleanHeadersResponse()
+        public async Task InputAndOutputWithBooleanHeadersResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["X-Boolean1"] = "true";
-            webResponseData.Headers["X-Boolean2"] = "false";
-            webResponseData.Headers["X-BooleanList"] = "true, false, true";
-            byte[] bytes = Encoding.ASCII.GetBytes("");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonRestXmlProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes(""),
+            };
+            mockResponse.Headers["X-Boolean1"] = "true";
+            mockResponse.Headers["X-Boolean2"] = "false";
+            mockResponse.Headers["X-BooleanList"] = "true, false, true";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new InputAndOutputWithHeadersResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.InputAndOutputWithHeadersAsync(new InputAndOutputWithHeadersRequest()).ConfigureAwait(false);
             var expectedResponse = new InputAndOutputWithHeadersResponse
             {
                 HeaderTrueBool = true,
@@ -462,9 +541,8 @@ namespace AWSSDK.ProtocolTests.RestXml
             };
 
             // Assert
-            var actualResponse = (InputAndOutputWithHeadersResponse)unmarshalledResponse;
             Comparer.CompareObjects<InputAndOutputWithHeadersResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -474,18 +552,26 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestXml")]
-        public void InputAndOutputWithTimestampHeadersResponse()
+        public async Task InputAndOutputWithTimestampHeadersResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["X-TimestampList"] = "Mon, 16 Dec 2019 23:48:18 GMT, Mon, 16 Dec 2019 23:48:18 GMT";
-            byte[] bytes = Encoding.ASCII.GetBytes("");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonRestXmlProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes(""),
+            };
+            mockResponse.Headers["X-TimestampList"] = "Mon, 16 Dec 2019 23:48:18 GMT, Mon, 16 Dec 2019 23:48:18 GMT";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new InputAndOutputWithHeadersResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.InputAndOutputWithHeadersAsync(new InputAndOutputWithHeadersRequest()).ConfigureAwait(false);
             var expectedResponse = new InputAndOutputWithHeadersResponse
             {
                 HeaderTimestampList =  new List<DateTime>()
@@ -496,9 +582,8 @@ namespace AWSSDK.ProtocolTests.RestXml
             };
 
             // Assert
-            var actualResponse = (InputAndOutputWithHeadersResponse)unmarshalledResponse;
             Comparer.CompareObjects<InputAndOutputWithHeadersResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -508,19 +593,27 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestXml")]
-        public void InputAndOutputWithEnumHeadersResponse()
+        public async Task InputAndOutputWithEnumHeadersResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["X-Enum"] = "Foo";
-            webResponseData.Headers["X-EnumList"] = "Foo, Bar, Baz";
-            byte[] bytes = Encoding.ASCII.GetBytes("");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonRestXmlProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes(""),
+            };
+            mockResponse.Headers["X-Enum"] = "Foo";
+            mockResponse.Headers["X-EnumList"] = "Foo, Bar, Baz";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new InputAndOutputWithHeadersResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.InputAndOutputWithHeadersAsync(new InputAndOutputWithHeadersRequest()).ConfigureAwait(false);
             var expectedResponse = new InputAndOutputWithHeadersResponse
             {
                 HeaderEnum = "Foo",
@@ -533,9 +626,8 @@ namespace AWSSDK.ProtocolTests.RestXml
             };
 
             // Assert
-            var actualResponse = (InputAndOutputWithHeadersResponse)unmarshalledResponse;
             Comparer.CompareObjects<InputAndOutputWithHeadersResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -545,19 +637,27 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestXml")]
-        public void RestXmlSupportsNaNFloatHeaderOutputsResponse()
+        public async Task RestXmlSupportsNaNFloatHeaderOutputsResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["X-Double"] = "NaN";
-            webResponseData.Headers["X-Float"] = "NaN";
-            byte[] bytes = Encoding.ASCII.GetBytes("");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonRestXmlProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes(""),
+            };
+            mockResponse.Headers["X-Double"] = "NaN";
+            mockResponse.Headers["X-Float"] = "NaN";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new InputAndOutputWithHeadersResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.InputAndOutputWithHeadersAsync(new InputAndOutputWithHeadersRequest()).ConfigureAwait(false);
             var expectedResponse = new InputAndOutputWithHeadersResponse
             {
                 HeaderFloat = float.NaN,
@@ -565,9 +665,8 @@ namespace AWSSDK.ProtocolTests.RestXml
             };
 
             // Assert
-            var actualResponse = (InputAndOutputWithHeadersResponse)unmarshalledResponse;
             Comparer.CompareObjects<InputAndOutputWithHeadersResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -577,19 +676,27 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestXml")]
-        public void RestXmlSupportsInfinityFloatHeaderOutputsResponse()
+        public async Task RestXmlSupportsInfinityFloatHeaderOutputsResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["X-Double"] = "Infinity";
-            webResponseData.Headers["X-Float"] = "Infinity";
-            byte[] bytes = Encoding.ASCII.GetBytes("");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonRestXmlProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes(""),
+            };
+            mockResponse.Headers["X-Double"] = "Infinity";
+            mockResponse.Headers["X-Float"] = "Infinity";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new InputAndOutputWithHeadersResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.InputAndOutputWithHeadersAsync(new InputAndOutputWithHeadersRequest()).ConfigureAwait(false);
             var expectedResponse = new InputAndOutputWithHeadersResponse
             {
                 HeaderFloat = float.PositiveInfinity,
@@ -597,9 +704,8 @@ namespace AWSSDK.ProtocolTests.RestXml
             };
 
             // Assert
-            var actualResponse = (InputAndOutputWithHeadersResponse)unmarshalledResponse;
             Comparer.CompareObjects<InputAndOutputWithHeadersResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -609,19 +715,27 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestXml")]
-        public void RestXmlSupportsNegativeInfinityFloatHeaderOutputsResponse()
+        public async Task RestXmlSupportsNegativeInfinityFloatHeaderOutputsResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["X-Double"] = "-Infinity";
-            webResponseData.Headers["X-Float"] = "-Infinity";
-            byte[] bytes = Encoding.ASCII.GetBytes("");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonRestXmlProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes(""),
+            };
+            mockResponse.Headers["X-Double"] = "-Infinity";
+            mockResponse.Headers["X-Float"] = "-Infinity";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new InputAndOutputWithHeadersResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.InputAndOutputWithHeadersAsync(new InputAndOutputWithHeadersRequest()).ConfigureAwait(false);
             var expectedResponse = new InputAndOutputWithHeadersResponse
             {
                 HeaderFloat = float.NegativeInfinity,
@@ -629,9 +743,8 @@ namespace AWSSDK.ProtocolTests.RestXml
             };
 
             // Assert
-            var actualResponse = (InputAndOutputWithHeadersResponse)unmarshalledResponse;
             Comparer.CompareObjects<InputAndOutputWithHeadersResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
     }

@@ -31,6 +31,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -48,7 +49,7 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestXml")]
-        public void RestXmlEndpointTraitWithHostLabelRequest()
+        public async Task RestXmlEndpointTraitWithHostLabelRequest()
         {
             // Arrange
             var request = new EndpointWithHostLabelOperationRequest
@@ -57,20 +58,27 @@ namespace AWSSDK.ProtocolTests.RestXml
             };
             var config = new AmazonRestXmlProtocolConfig
             {
-              ServiceURL = "https://example.com/"
+              ServiceURL = "https://example.com/",
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new EndpointWithHostLabelOperationRequestMarshaller();
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.EndpointWithHostLabelOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "<EndpointWithHostLabelOperationRequest>\n    <label>bar</label>\n</EndpointWithHostLabelOperationRequest>\n";
-            XmlTestUtils.AssertBody(marshalledRequest,expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/EndpointWithHostLabelOperation", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("foo.bar.example.com", actualUri.Host);
+            XmlTestUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/EndpointWithHostLabelOperation", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("foo.bar.example.com", actualRequest.RequestUri.Host);
         }
 
     }

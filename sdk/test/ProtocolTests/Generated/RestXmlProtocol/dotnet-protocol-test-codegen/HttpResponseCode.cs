@@ -32,6 +32,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -47,27 +48,34 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestXml")]
-        public void RestXmlHttpResponseCodeResponse()
+        public async Task RestXmlHttpResponseCodeResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 201);
-            webResponseData.Headers["Content-Type"] = "application/xml";
-            byte[] bytes = Encoding.ASCII.GetBytes("");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonRestXmlProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 201),
+                Body = Encoding.ASCII.GetBytes(""),
+            };
+            mockResponse.Headers["Content-Type"] = "application/xml";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new HttpResponseCodeResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.HttpResponseCodeAsync(new HttpResponseCodeRequest()).ConfigureAwait(false);
             var expectedResponse = new HttpResponseCodeResponse
             {
                 Status = 201,
             };
 
             // Assert
-            var actualResponse = (HttpResponseCodeResponse)unmarshalledResponse;
             Comparer.CompareObjects<HttpResponseCodeResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 201), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 201), actualResponse.HttpStatusCode);
         }
 
     }

@@ -32,6 +32,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -47,7 +48,7 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestXml")]
-        public void XmlTimestampsRequest()
+        public async Task XmlTimestampsRequest()
         {
             // Arrange
             var request = new XmlTimestampsRequest
@@ -56,20 +57,27 @@ namespace AWSSDK.ProtocolTests.RestXml
             };
             var config = new AmazonRestXmlProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new XmlTimestampsRequestMarshaller();
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.XmlTimestampsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "<XmlTimestampsRequest>\n    <normal>2014-04-29T18:30:38Z</normal>\n</XmlTimestampsRequest>\n";
-            XmlTestUtils.AssertBody(marshalledRequest,expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/XmlTimestamps", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/xml".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+            XmlTestUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/XmlTimestamps", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/xml".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
         }
 
         /// <summary>
@@ -80,7 +88,7 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestXml")]
-        public void XmlTimestampsWithDateTimeFormatRequest()
+        public async Task XmlTimestampsWithDateTimeFormatRequest()
         {
             // Arrange
             var request = new XmlTimestampsRequest
@@ -89,20 +97,27 @@ namespace AWSSDK.ProtocolTests.RestXml
             };
             var config = new AmazonRestXmlProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new XmlTimestampsRequestMarshaller();
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.XmlTimestampsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "<XmlTimestampsRequest>\n    <dateTime>2014-04-29T18:30:38Z</dateTime>\n</XmlTimestampsRequest>\n";
-            XmlTestUtils.AssertBody(marshalledRequest,expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/XmlTimestamps", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/xml".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+            XmlTestUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/XmlTimestamps", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/xml".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
         }
 
         /// <summary>
@@ -113,7 +128,7 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestXml")]
-        public void XmlTimestampsWithDateTimeOnTargetFormatRequest()
+        public async Task XmlTimestampsWithDateTimeOnTargetFormatRequest()
         {
             // Arrange
             var request = new XmlTimestampsRequest
@@ -122,20 +137,27 @@ namespace AWSSDK.ProtocolTests.RestXml
             };
             var config = new AmazonRestXmlProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new XmlTimestampsRequestMarshaller();
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.XmlTimestampsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "<XmlTimestampsRequest>\n    <dateTimeOnTarget>2014-04-29T18:30:38Z</dateTimeOnTarget>\n</XmlTimestampsRequest>\n";
-            XmlTestUtils.AssertBody(marshalledRequest,expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/XmlTimestamps", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/xml".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+            XmlTestUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/XmlTimestamps", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/xml".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
         }
 
         /// <summary>
@@ -145,7 +167,7 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestXml")]
-        public void XmlTimestampsWithEpochSecondsFormatRequest()
+        public async Task XmlTimestampsWithEpochSecondsFormatRequest()
         {
             // Arrange
             var request = new XmlTimestampsRequest
@@ -154,20 +176,27 @@ namespace AWSSDK.ProtocolTests.RestXml
             };
             var config = new AmazonRestXmlProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new XmlTimestampsRequestMarshaller();
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.XmlTimestampsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "<XmlTimestampsRequest>\n    <epochSeconds>1398796238</epochSeconds>\n</XmlTimestampsRequest>\n";
-            XmlTestUtils.AssertBody(marshalledRequest,expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/XmlTimestamps", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/xml".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+            XmlTestUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/XmlTimestamps", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/xml".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
         }
 
         /// <summary>
@@ -178,7 +207,7 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestXml")]
-        public void XmlTimestampsWithEpochSecondsOnTargetFormatRequest()
+        public async Task XmlTimestampsWithEpochSecondsOnTargetFormatRequest()
         {
             // Arrange
             var request = new XmlTimestampsRequest
@@ -187,20 +216,27 @@ namespace AWSSDK.ProtocolTests.RestXml
             };
             var config = new AmazonRestXmlProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new XmlTimestampsRequestMarshaller();
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.XmlTimestampsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "<XmlTimestampsRequest>\n    <epochSecondsOnTarget>1398796238</epochSecondsOnTarget>\n</XmlTimestampsRequest>\n";
-            XmlTestUtils.AssertBody(marshalledRequest,expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/XmlTimestamps", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/xml".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+            XmlTestUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/XmlTimestamps", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/xml".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
         }
 
         /// <summary>
@@ -210,7 +246,7 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestXml")]
-        public void XmlTimestampsWithHttpDateFormatRequest()
+        public async Task XmlTimestampsWithHttpDateFormatRequest()
         {
             // Arrange
             var request = new XmlTimestampsRequest
@@ -219,20 +255,27 @@ namespace AWSSDK.ProtocolTests.RestXml
             };
             var config = new AmazonRestXmlProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new XmlTimestampsRequestMarshaller();
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.XmlTimestampsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "<XmlTimestampsRequest>\n    <httpDate>Tue, 29 Apr 2014 18:30:38 GMT</httpDate>\n</XmlTimestampsRequest>\n";
-            XmlTestUtils.AssertBody(marshalledRequest,expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/XmlTimestamps", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/xml".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+            XmlTestUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/XmlTimestamps", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/xml".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
         }
 
         /// <summary>
@@ -243,7 +286,7 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestXml")]
-        public void XmlTimestampsWithHttpDateOnTargetFormatRequest()
+        public async Task XmlTimestampsWithHttpDateOnTargetFormatRequest()
         {
             // Arrange
             var request = new XmlTimestampsRequest
@@ -252,20 +295,27 @@ namespace AWSSDK.ProtocolTests.RestXml
             };
             var config = new AmazonRestXmlProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new XmlTimestampsRequestMarshaller();
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.XmlTimestampsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "<XmlTimestampsRequest>\n    <httpDateOnTarget>Tue, 29 Apr 2014 18:30:38 GMT</httpDateOnTarget>\n</XmlTimestampsRequest>\n";
-            XmlTestUtils.AssertBody(marshalledRequest,expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/XmlTimestamps", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/xml".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+            XmlTestUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/XmlTimestamps", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/xml".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
         }
 
         /// <summary>
@@ -275,27 +325,34 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestXml")]
-        public void XmlTimestampsResponse()
+        public async Task XmlTimestampsResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/xml";
-            byte[] bytes = Encoding.ASCII.GetBytes("<XmlTimestampsResponse>\n    <normal>2014-04-29T18:30:38Z</normal>\n</XmlTimestampsResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonRestXmlProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("<XmlTimestampsResponse>\n    <normal>2014-04-29T18:30:38Z</normal>\n</XmlTimestampsResponse>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/xml";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new XmlTimestampsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.XmlTimestampsAsync(new XmlTimestampsRequest()).ConfigureAwait(false);
             var expectedResponse = new XmlTimestampsResponse
             {
                 Normal = ProtocolTestConstants.epoch.AddSeconds(1398796238),
             };
 
             // Assert
-            var actualResponse = (XmlTimestampsResponse)unmarshalledResponse;
             Comparer.CompareObjects<XmlTimestampsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -306,27 +363,34 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestXml")]
-        public void XmlTimestampsWithDateTimeFormatResponse()
+        public async Task XmlTimestampsWithDateTimeFormatResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/xml";
-            byte[] bytes = Encoding.ASCII.GetBytes("<XmlTimestampsResponse>\n    <dateTime>2014-04-29T18:30:38Z</dateTime>\n</XmlTimestampsResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonRestXmlProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("<XmlTimestampsResponse>\n    <dateTime>2014-04-29T18:30:38Z</dateTime>\n</XmlTimestampsResponse>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/xml";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new XmlTimestampsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.XmlTimestampsAsync(new XmlTimestampsRequest()).ConfigureAwait(false);
             var expectedResponse = new XmlTimestampsResponse
             {
                 DateTime = ProtocolTestConstants.epoch.AddSeconds(1398796238),
             };
 
             // Assert
-            var actualResponse = (XmlTimestampsResponse)unmarshalledResponse;
             Comparer.CompareObjects<XmlTimestampsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -337,27 +401,34 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestXml")]
-        public void XmlTimestampsWithDateTimeOnTargetFormatResponse()
+        public async Task XmlTimestampsWithDateTimeOnTargetFormatResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/xml";
-            byte[] bytes = Encoding.ASCII.GetBytes("<XmlTimestampsResponse>\n    <dateTimeOnTarget>2014-04-29T18:30:38Z</dateTimeOnTarget>\n</XmlTimestampsResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonRestXmlProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("<XmlTimestampsResponse>\n    <dateTimeOnTarget>2014-04-29T18:30:38Z</dateTimeOnTarget>\n</XmlTimestampsResponse>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/xml";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new XmlTimestampsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.XmlTimestampsAsync(new XmlTimestampsRequest()).ConfigureAwait(false);
             var expectedResponse = new XmlTimestampsResponse
             {
                 DateTimeOnTarget = ProtocolTestConstants.epoch.AddSeconds(1398796238),
             };
 
             // Assert
-            var actualResponse = (XmlTimestampsResponse)unmarshalledResponse;
             Comparer.CompareObjects<XmlTimestampsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -367,27 +438,34 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestXml")]
-        public void XmlTimestampsWithEpochSecondsFormatResponse()
+        public async Task XmlTimestampsWithEpochSecondsFormatResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/xml";
-            byte[] bytes = Encoding.ASCII.GetBytes("<XmlTimestampsResponse>\n    <epochSeconds>1398796238</epochSeconds>\n</XmlTimestampsResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonRestXmlProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("<XmlTimestampsResponse>\n    <epochSeconds>1398796238</epochSeconds>\n</XmlTimestampsResponse>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/xml";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new XmlTimestampsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.XmlTimestampsAsync(new XmlTimestampsRequest()).ConfigureAwait(false);
             var expectedResponse = new XmlTimestampsResponse
             {
                 EpochSeconds = ProtocolTestConstants.epoch.AddSeconds(1398796238),
             };
 
             // Assert
-            var actualResponse = (XmlTimestampsResponse)unmarshalledResponse;
             Comparer.CompareObjects<XmlTimestampsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -398,27 +476,34 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestXml")]
-        public void XmlTimestampsWithEpochSecondsOnTargetFormatResponse()
+        public async Task XmlTimestampsWithEpochSecondsOnTargetFormatResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/xml";
-            byte[] bytes = Encoding.ASCII.GetBytes("<XmlTimestampsResponse>\n    <epochSecondsOnTarget>1398796238</epochSecondsOnTarget>\n</XmlTimestampsResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonRestXmlProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("<XmlTimestampsResponse>\n    <epochSecondsOnTarget>1398796238</epochSecondsOnTarget>\n</XmlTimestampsResponse>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/xml";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new XmlTimestampsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.XmlTimestampsAsync(new XmlTimestampsRequest()).ConfigureAwait(false);
             var expectedResponse = new XmlTimestampsResponse
             {
                 EpochSecondsOnTarget = ProtocolTestConstants.epoch.AddSeconds(1398796238),
             };
 
             // Assert
-            var actualResponse = (XmlTimestampsResponse)unmarshalledResponse;
             Comparer.CompareObjects<XmlTimestampsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -428,27 +513,34 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestXml")]
-        public void XmlTimestampsWithHttpDateFormatResponse()
+        public async Task XmlTimestampsWithHttpDateFormatResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/xml";
-            byte[] bytes = Encoding.ASCII.GetBytes("<XmlTimestampsResponse>\n    <httpDate>Tue, 29 Apr 2014 18:30:38 GMT</httpDate>\n</XmlTimestampsResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonRestXmlProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("<XmlTimestampsResponse>\n    <httpDate>Tue, 29 Apr 2014 18:30:38 GMT</httpDate>\n</XmlTimestampsResponse>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/xml";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new XmlTimestampsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.XmlTimestampsAsync(new XmlTimestampsRequest()).ConfigureAwait(false);
             var expectedResponse = new XmlTimestampsResponse
             {
                 HttpDate = ProtocolTestConstants.epoch.AddSeconds(1398796238),
             };
 
             // Assert
-            var actualResponse = (XmlTimestampsResponse)unmarshalledResponse;
             Comparer.CompareObjects<XmlTimestampsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -459,27 +551,34 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestXml")]
-        public void XmlTimestampsWithHttpDateOnTargetFormatResponse()
+        public async Task XmlTimestampsWithHttpDateOnTargetFormatResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/xml";
-            byte[] bytes = Encoding.ASCII.GetBytes("<XmlTimestampsResponse>\n    <httpDateOnTarget>Tue, 29 Apr 2014 18:30:38 GMT</httpDateOnTarget>\n</XmlTimestampsResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonRestXmlProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("<XmlTimestampsResponse>\n    <httpDateOnTarget>Tue, 29 Apr 2014 18:30:38 GMT</httpDateOnTarget>\n</XmlTimestampsResponse>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/xml";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new XmlTimestampsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.XmlTimestampsAsync(new XmlTimestampsRequest()).ConfigureAwait(false);
             var expectedResponse = new XmlTimestampsResponse
             {
                 HttpDateOnTarget = ProtocolTestConstants.epoch.AddSeconds(1398796238),
             };
 
             // Assert
-            var actualResponse = (XmlTimestampsResponse)unmarshalledResponse;
             Comparer.CompareObjects<XmlTimestampsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
     }

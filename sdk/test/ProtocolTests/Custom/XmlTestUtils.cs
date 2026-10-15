@@ -27,6 +27,28 @@ namespace AWSSDK.ProtocolTests.Utils
 {
     internal static class XmlTestUtils
     {
+        /// <summary>
+        /// Asserts that the XML body the SDK sent is structurally equal to the expected body. Used by the
+        /// mocked-client request tests, where the captured request only exposes the raw body bytes.
+        /// </summary>
+        public static void AssertBody(byte[] actualBodyBytes, string expectedBody)
+        {
+            if (actualBodyBytes == null)
+            {
+                Assert.Fail("Expected a request body but none was sent (actualBodyBytes was null).");
+            }
+            var actualBody = Encoding.UTF8.GetString(actualBodyBytes);
+            //if it's a raw string, just compare raw string values
+            if (!actualBody.StartsWith("<"))
+            {
+                Assert.AreEqual(expectedBody, actualBody);
+                return;
+            }
+            XDocument actualDoc = XDocument.Parse(actualBody);
+            XDocument expectedDoc = XDocument.Parse(expectedBody);
+            Assert.IsTrue(AreDocumentsEqual(expectedDoc, actualDoc));
+        }
+
         public static void AssertBody(IRequest actualRequest, string expectedBody)
         {
             string actualBody;

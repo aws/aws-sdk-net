@@ -52,7 +52,9 @@ public final class HttpProtocolTestGenerator implements Runnable {
             ShapeId.from("aws.protocoltests.restjson#RestJson"),
             ShapeId.from("aws.protocoltests.json#JsonProtocol"),
             ShapeId.from("aws.protocoltests.query#AwsQuery"),
-            ShapeId.from("aws.protocoltests.ec2#AwsEc2")
+            ShapeId.from("aws.protocoltests.ec2#AwsEc2"),
+            ShapeId.from("aws.protocoltests.restxml#RestXml"),
+            ShapeId.from("aws.protocoltests.restxml.xmlns#RestXmlWithNamespace")
     );
     private final boolean useMockedClient;
     private final List<String> tagsToSkip = List.of("defaults" , "skip-legacy-conversion");
@@ -299,8 +301,8 @@ public final class HttpProtocolTestGenerator implements Runnable {
                          });
                          """);
         } else {
-            // Query (XML) responses are read by the XML unmarshaller, which rejects a "{}" JSON body
-            // and throws on an empty body ("Root element is missing"). A minimal well-formed XML
+            // XML responses (Query, EC2 and REST XML) are read by the XML unmarshaller, which rejects a "{}"
+            // JSON body and throws on an empty body ("Root element is missing"). A minimal well-formed XML
             // document with an unrecognized root unmarshalls into an empty response without error.
             writer.write("""
                          var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
@@ -368,8 +370,11 @@ public final class HttpProtocolTestGenerator implements Runnable {
         } else if (httpRequestTestCase.getProtocol().getName().equals("awsQuery") || httpRequestTestCase.getProtocol().getName().equals("ec2Query")) {
             writer.write("var expectedBody = $S;", httpRequestTestCase.getBody());
             writer.write("QueryTestUtils.AssertBody(actualRequest.Body, expectedBody);");
+        } else if (httpRequestTestCase.getProtocol().getName().equals("restXml")) {
+            writer.write("var expectedBody = $S;", httpRequestTestCase.getBody());
+            writer.write("XmlTestUtils.AssertBody(actualRequest.Body, expectedBody);");
         } else {
-            throw new CodegenException("Mocked client request tests are only supported for JSON and Query protocols.");
+            throw new CodegenException("Mocked client request tests are only supported for JSON, Query and REST XML protocols.");
         }
     }
 
