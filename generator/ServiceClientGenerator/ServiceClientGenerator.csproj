@@ -8,6 +8,7 @@
     <Title>AWSSDK_ServiceClientGenerator</Title>
     <Product>AWSSDK_ServiceClientGenerator</Product>
     <Copyright>Copyright © 2014</Copyright>
+	<RollForward>Major</RollForward>
 	  
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
