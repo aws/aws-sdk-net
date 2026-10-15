@@ -19,6 +19,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Globalization;
+using System.Security.Cryptography;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Endpoints;
@@ -58,6 +59,8 @@ namespace Amazon.Runtime.Internal.Auth
         public const string UnsignedPayloadWithTrailer = "STREAMING-UNSIGNED-PAYLOAD-TRAILER";
 
         internal const SigningAlgorithm SignerAlgorithm = SigningAlgorithm.HmacSHA256;
+        // Must match SignerAlgorithm; used where the HMAC is created through IncrementalHash.
+        internal static readonly HashAlgorithmName SignerHashAlgorithm = HashAlgorithmName.SHA256;
 
         // If this set is updated to include new headers, the SigV4a signer (in "AWSSDK.Extensions.CrtIntegration\CrtAWS4aSigner.cs") may need to
         // be updated as well.
@@ -450,30 +453,46 @@ namespace Amazon.Runtime.Internal.Auth
                                                          RequestMetrics metrics)
         {
             var dateStamp = FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateFormat);
-            var scope = string.Format(CultureInfo.InvariantCulture, "{0}/{1}/{2}/{3}", dateStamp, region, service, Terminator);
+            var scope = $"{dateStamp}/{region}/{service}/{Terminator}";
 
-            var stringToSignBuilder = new StringBuilder();
-            stringToSignBuilder.AppendFormat(CultureInfo.InvariantCulture, "{0}-{1}\n{2}\n{3}\n",
-                                      Scheme,
-                                      Algorithm,
-                                      FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateTimeFormat),
-                                      scope);
-
-            var canonicalRequestHashBytes = ComputeHash(canonicalRequest);
-            stringToSignBuilder.Append(AWSSDKUtils.ToHex(canonicalRequestHashBytes, true));
+            var canonicalRequestHash = AWSSDKUtils.ToHex(ComputeHash(canonicalRequest), true);
+            var stringToSign = $"{AWS4AlgorithmTag}\n{FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateTimeFormat)}\n{scope}\n{canonicalRequestHash}";
 
             if (metrics != null)
-                metrics.AddProperty(Metric.StringToSign, stringToSignBuilder);
+                metrics.AddProperty(Metric.StringToSign, stringToSign);
 
             var key = GetSigningKey(awsSecretAccessKey,
                                     region,
                                     dateStamp,
                                     service);
 
-            var stringToSign = stringToSignBuilder.ToString();
+#if NET8_0_OR_GREATER
+            var signature = ComputeSignatureHmac(key, stringToSign);
+#else
             var signature = ComputeKeyedHash(SignerAlgorithm, key, stringToSign);
+#endif
             return new AWS4SigningResult(awsAccessKey, awsSecretAccessKey, signedAt, signedHeaders, scope, key, signature);
         }
+
+#if NET8_0_OR_GREATER
+        // HMACSHA256.HashData creates and frees a native HMAC context on every call. The signing key is cached
+        // (see GetSigningKey), so each thread keeps one HMAC context and reuses it while the key is the same array.
+        [ThreadStatic] private static IncrementalHash _signatureHmac;
+        [ThreadStatic] private static byte[] _signatureHmacKey;
+
+        private static byte[] ComputeSignatureHmac(byte[] key, string stringToSign)
+        {
+            if (_signatureHmac == null || !ReferenceEquals(_signatureHmacKey, key))
+            {
+                _signatureHmac?.Dispose();
+                _signatureHmac = IncrementalHash.CreateHMAC(SignerHashAlgorithm, key);
+                _signatureHmacKey = key;
+            }
+
+            _signatureHmac.AppendData(Encoding.UTF8.GetBytes(stringToSign));
+            return _signatureHmac.GetHashAndReset();
+        }
+#endif
 
         /// <summary>
         /// Returns the signing key for the supplied scope, deriving and caching it on first use.

@@ -38,6 +38,7 @@ namespace AWSSDK.UnitTests
             {
                 Environment.SetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_FUNCTION_NAME, lambdaFunctionName);
                 Environment.SetEnvironmentVariable(EnvironmentVariables._X_AMZN_TRACE_ID, traceId);
+                Marshaller.ClearLambdaFunctionNameCache();
 
                 var config = new AmazonS3Config
                 {
@@ -61,6 +62,7 @@ namespace AWSSDK.UnitTests
             {
                 Environment.SetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_FUNCTION_NAME, savedLambdaFunctionName);
                 Environment.SetEnvironmentVariable(EnvironmentVariables._X_AMZN_TRACE_ID, savedTraceId);
+                Marshaller.ClearLambdaFunctionNameCache();
             }
         }
 

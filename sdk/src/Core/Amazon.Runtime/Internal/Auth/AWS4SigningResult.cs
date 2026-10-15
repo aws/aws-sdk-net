@@ -89,13 +89,8 @@ namespace Amazon.Runtime.Internal.Auth
         {
             get
             {
-                var authorizationHeader = new StringBuilder()
-                    .Append(AWS4Signer.AWS4AlgorithmTag)
-                    .AppendFormat(" {0}={1}/{2},", AWS4Signer.Credential, AccessKeyId, Scope)
-                    .AppendFormat(" {0}={1},", AWS4Signer.SignedHeaders, SignedHeaders)
-                    .AppendFormat(" {0}={1}", AWS4Signer.Signature, Signature);
-
-                return authorizationHeader.ToString();
+                return $"{AWS4Signer.AWS4AlgorithmTag} {AWS4Signer.Credential}={AccessKeyId}/{Scope}, " +
+                       $"{AWS4Signer.SignedHeaders}={SignedHeaders}, {AWS4Signer.Signature}={Signature}";
             }
         }
 
@@ -106,14 +101,13 @@ namespace Amazon.Runtime.Internal.Auth
         {
             get
             {
-                var authParams = new StringBuilder()
-                    .AppendFormat("{0}={1}", AWSSDKUtils.UrlEncode(HeaderKeys.XAmzAlgorithm, false), AWSSDKUtils.UrlEncode(AWS4Signer.AWS4AlgorithmTag, false))
-                    .AppendFormat("&{0}={1}", AWSSDKUtils.UrlEncode(HeaderKeys.XAmzCredential, false), AWSSDKUtils.UrlEncode(string.Format(CultureInfo.InvariantCulture, "{0}/{1}", AccessKeyId, Scope), false))
-                    .AppendFormat("&{0}={1}", AWSSDKUtils.UrlEncode(HeaderKeys.XAmzDateHeader, false), AWSSDKUtils.UrlEncode(ISO8601DateTime, false))
-                    .AppendFormat("&{0}={1}", AWSSDKUtils.UrlEncode(HeaderKeys.XAmzSignedHeadersHeader, false), AWSSDKUtils.UrlEncode(SignedHeaders, false))
-                    .AppendFormat("&{0}={1}", AWSSDKUtils.UrlEncode(HeaderKeys.XAmzSignature, false), AWSSDKUtils.UrlEncode(Signature, false));
+                static string Encode(string value) => AWSSDKUtils.UrlEncode(value, false);
 
-                return authParams.ToString();
+                return $"{Encode(HeaderKeys.XAmzAlgorithm)}={Encode(AWS4Signer.AWS4AlgorithmTag)}" +
+                       $"&{Encode(HeaderKeys.XAmzCredential)}={Encode($"{AccessKeyId}/{Scope}")}" +
+                       $"&{Encode(HeaderKeys.XAmzDateHeader)}={Encode(ISO8601DateTime)}" +
+                       $"&{Encode(HeaderKeys.XAmzSignedHeadersHeader)}={Encode(SignedHeaders)}" +
+                       $"&{Encode(HeaderKeys.XAmzSignature)}={Encode(Signature)}";
             }
         }
     }

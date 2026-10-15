@@ -136,8 +136,7 @@ namespace Amazon.Runtime.Internal
         {
             if (!headers.ContainsKey(HeaderKeys.XAmznTraceIdHeader))
             {
-                var lambdaFunctionName = Environment.GetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_FUNCTION_NAME);
-                if (!string.IsNullOrEmpty(lambdaFunctionName))
+                if (!string.IsNullOrEmpty(LambdaFunctionName))
                 {
                     string amznTraceId;
                     if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_MAX_CONCURRENCY)))
@@ -157,6 +156,18 @@ namespace Amazon.Runtime.Internal
                 }
             }
         }
+
+        // The Lambda function name does not change during the life of the process, so it is read once
+        // rather than on every request. The trace id (_X_AMZN_TRACE_ID) changes per invocation and is still read per request.
+        private static string _lambdaFunctionName;
+
+        private static string LambdaFunctionName =>
+            _lambdaFunctionName ??= Environment.GetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_FUNCTION_NAME) ?? string.Empty;
+
+        /// <summary>
+        /// Clears the cached Lambda function name so the next request reads the environment variable again. Used by tests.
+        /// </summary>
+        internal static void ClearLambdaFunctionNameCache() => _lambdaFunctionName = null;
 
         private static void UpdateUserAgentDetails(IRequestContext requestContext)
         {

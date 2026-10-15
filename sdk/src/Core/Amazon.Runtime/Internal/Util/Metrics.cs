@@ -121,6 +121,10 @@ namespace Amazon.Runtime.Internal.Util
 
         #region Internal methods
 
+        // With metrics disabled, the only timing that is read is the CSM attempt latency (CSMCallAttemptHandler),
+        // so the rest are not tracked.
+        private bool IsTimingSkipped(Metric metric) => !IsEnabled && metric != Metric.CSMAttemptLatency;
+
         /// <summary>
         /// Starts timing an event. Logs an exception if an event
         /// of the same type was started but not stopped.
@@ -129,6 +133,9 @@ namespace Amazon.Runtime.Internal.Util
         /// <returns></returns>
         public TimingEvent StartEvent(Metric metric)
         {
+            if (IsTimingSkipped(metric))
+                return TimingEvent.Disabled;
+
             lock (metricsLock)
             {
                 if (inFlightTimings.ContainsKey(metric))
@@ -145,6 +152,9 @@ namespace Amazon.Runtime.Internal.Util
         /// <returns></returns>
         public Timing StopEvent(Metric metric)
         {
+            if (IsTimingSkipped(metric))
+                return new Timing();
+
             Timing timing;
             lock (metricsLock)
             {
@@ -486,6 +496,11 @@ namespace Amazon.Runtime.Internal.Util
             this.metric = metric;
         }
 
+        /// <summary>
+        /// Shared, already-disposed instance returned when the event is not being timed.
+        /// </summary>
+        internal static readonly TimingEvent Disabled = new TimingEvent(null, default) { disposed = true };
+
         #region Dispose Pattern Implementation
 
         /// <summary>
@@ -512,14 +527,6 @@ namespace Amazon.Runtime.Internal.Util
         {
             this.Dispose(true);
             GC.SuppressFinalize(this);
-        }
-
-        /// <summary>
-        /// The destructor for the client class.
-        /// </summary>
-        ~TimingEvent()
-        {
-            this.Dispose(false);
         }
 
         #endregion
