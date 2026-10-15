@@ -501,13 +501,21 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             var valueExpr = greedy ? $"publicRequest.{member.PropertyName}.TrimStart('/')" : $"publicRequest.{member.PropertyName}";
             var conversion = StringConversion(member, valueExpr, QueryLabelTimestampDefault) ?? throw new GeneratorException($"Unsupported label member type '{member.Type.DotNetType}' (member: {member.PropertyName}).");
 
-            writer.OpenBlock($"if (!publicRequest.IsSet{member.PropertyName}())", () =>
-            {
-                writer.WriteLine($"""throw new Amazon{context.BaseName}Exception("Request object does not have required field {member.PropertyName} set");""");
-            });
-
             var pathTemplate = greedy ? "{" + member.ModeledName + "+}" : "{" + member.ModeledName + "}";
-            writer.WriteLine($"""request.AddPathResource("{pathTemplate}", {conversion});""");
+            if (context.Customizations.SkipUriPropertyValidation.Contains(member.PropertyName))
+            {
+                writer.WriteLine($"""request.AddPathResource("{pathTemplate}", publicRequest.IsSet{member.PropertyName}() ? {conversion} : string.Empty);""");
+            }
+            else
+            {
+                writer.OpenBlock($"if (!publicRequest.IsSet{member.PropertyName}())", () =>
+                {
+                    writer.WriteLine($"""throw new Amazon{context.BaseName}Exception("Request object does not have required field {member.PropertyName} set");""");
+                });
+
+                writer.WriteLine($"""request.AddPathResource("{pathTemplate}", {conversion});""");
+            }
+
             writer.WriteLine("");
         }
 

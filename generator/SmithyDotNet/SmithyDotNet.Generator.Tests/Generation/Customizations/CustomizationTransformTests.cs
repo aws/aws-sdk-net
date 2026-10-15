@@ -354,4 +354,35 @@ public class CustomizationTransformTests
 
         ApplyAndValidate(customizations);
     }
+
+    // generateUnmarshaller
+
+    [Theory]
+    [InlineData("NoSuchShape", "generateUnmarshaller['NoSuchShape'] does not match any shape")]
+    [InlineData("LegacyId", "generateUnmarshaller['LegacyId'] targets a shape that is not a structure")]
+    [InlineData("Dup", "generateUnmarshaller['Dup'] matches more than one shape")]
+    public void GenerateUnmarshaller_Invalid_Throws(string shape, string expectedInMessage)
+    {
+        var customizations = new CustomizationsModel();
+        customizations.GenerateUnmarshaller.Add(shape);
+
+        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
+        Assert.Contains(expectedInMessage, ex.Message);
+    }
+
+    // skipUriPropertyValidation
+
+    [Theory]
+    // PermissionInput's action is an @httpLabel, so this fails on the name rather than on a model with no labels.
+    [InlineData("Missing")]
+    // Bucket's name is a member but not an @httpLabel.
+    [InlineData("Name")]
+    public void SkipUriPropertyValidation_NotALabelProperty_Throws(string propertyName)
+    {
+        var customizations = new CustomizationsModel();
+        customizations.SkipUriPropertyValidation.Add(propertyName);
+
+        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
+        Assert.Contains($"skipUriPropertyValidation['{propertyName}'] is not the property of any @httpLabel member.", ex.Message);
+    }
 }

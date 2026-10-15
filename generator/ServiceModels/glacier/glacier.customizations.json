@@ -98,6 +98,5 @@
                 "Unmarshaller": "Amazon.Runtime.Internal.Transform.NullableDateTimeUnmarshaller"
             }
 		}
-	},
-	"generateComplexException" : true
+	}
 }

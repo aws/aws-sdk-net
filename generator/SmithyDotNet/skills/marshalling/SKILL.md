@@ -25,6 +25,10 @@ An operation output already named `{Operation}Response` that a member also targe
 `{Shape}StructureUnmarshaller`, since `{Shape}Unmarshaller` is the operation's response unmarshaller.
 No C2J service has this shape, so there is no parity target.
 
+A structure named in the `generateUnmarshaller` customization also gets a `{Shape}Unmarshaller`,
+though only requests use it (mobileanalytics `Event`, `Session`). Its nested structures need their own
+entries.
+
 Structure (un)marshaller class names come only from `GenerationContext.StructureMarshallerName` /
 `StructureUnmarshallerName`. `TypeDescriptor.MarshallerName` / `UnmarshallerName` carry them for a
 structure target; writers read those (or the context, when declaring the class or naming the file)
@@ -93,6 +97,10 @@ Every query/header/label member is `IsSet`-guarded. A `@required` query member (
 excepted) first throws `Amazon{BaseName}Exception("Request object does not have required field {Prop} set")`
 when unset: `string.IsNullOrEmpty` for a string/enum, `== null` for anything else. Body members get no
 required check.
+
+A label whose property is listed in the `skipUriPropertyValidation` customization gets no required check
+and is sent empty when unset: `request.AddPathResource("{name}", publicRequest.IsSetProp() ? <conversion> : string.Empty)`.
+Glacier lists `AccountId`, which its `ProcessRequestHandler` then replaces with `-` (the caller's account).
 
 List query/header bindings accept `list<string>`/`list<enum>` (an enum element is a plain `string`, see
 type-mapping) and value-type element lists (int, long, bool, double, float, timestamp, intEnum), matching

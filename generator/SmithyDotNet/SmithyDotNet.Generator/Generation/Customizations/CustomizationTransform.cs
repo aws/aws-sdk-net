@@ -194,6 +194,34 @@ public static class CustomizationTransform
                 FindSingleShape(model, className, $"simpleConstructors['{className}']");
             }
         }
+
+        foreach (var name in customizations.GenerateUnmarshaller)
+        {
+            if (FindSingleShape(model, name, $"generateUnmarshaller['{name}']") is not StructureShape)
+            {
+                throw new GeneratorException($"generateUnmarshaller['{name}'] targets a shape that is not a structure.");
+            }
+        }
+
+        foreach (var propertyName in customizations.SkipUriPropertyValidation)
+        {
+            var found = false;
+            foreach (var structure in model.Shapes.Values.OfType<StructureShape>())
+            {
+                foreach (var (memberName, member) in structure.Members)
+                {
+                    if (member.IsHttpLabel() && customizations.PropertyName(structure.Id.Name, memberName) == propertyName)
+                    {
+                        found = true;
+                    }
+                }
+            }
+
+            if (!found)
+            {
+                throw new GeneratorException($"skipUriPropertyValidation['{propertyName}'] is not the property of any @httpLabel member.");
+            }
+        }
     }
 
     private static bool ModelHasShape<T>(SmithyModel model, string bareName) where T : Shape =>

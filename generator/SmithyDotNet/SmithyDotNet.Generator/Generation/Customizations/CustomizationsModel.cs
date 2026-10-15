@@ -90,6 +90,17 @@ public sealed record CustomizationsModel
         SimpleConstructors is { } constructors && constructors.Constructors.TryGetValue(className, out var entry) ? entry.Forms : null;
 
     /// <summary>
+    /// Property names of path labels that are sent empty when unset instead of failing the request; glacier's
+    /// ProcessRequestHandler then fills in its "-" (current account) default.
+    /// </summary>
+    [JsonPropertyName("skipUriPropertyValidation")]
+    public List<string> SkipUriPropertyValidation { get; init; } = [];
+
+    /// <summary>Structures that get an unmarshaller though no response returns them.</summary>
+    [JsonPropertyName("generateUnmarshaller")]
+    public List<string> GenerateUnmarshaller { get; init; } = [];
+
+    /// <summary>
     /// The <c>emitPropertyName</c> of modeled member <paramref name="memberName"/>, or the modeled name when it isn't
     /// renamed. C2J keys <c>emitIsSetProperties</c> and <c>dataTypeSwap</c> by this name.
     /// </summary>
@@ -123,6 +134,8 @@ public sealed record CustomizationsModel
         var simpleMethods = new Dictionary<string, SimpleMethodForms>();
         var simpleConstructors = new Dictionary<string, SimpleConstructorForms>();
         string? overrideContentType = null;
+        var skipUriPropertyValidation = new List<string>();
+        var generateUnmarshaller = new List<string>();
 
         foreach (var path in paths)
         {
@@ -245,6 +258,9 @@ public sealed record CustomizationsModel
                     throw new GeneratorException($"'{path}': simpleConstructors['{className}'] appears in more than one customizations file; merging is not supported yet.");
                 }
             }
+
+            skipUriPropertyValidation.AddRange(file.SkipUriPropertyValidation);
+            generateUnmarshaller.AddRange(file.GenerateUnmarshaller);
         }
 
         return new CustomizationsModel
@@ -259,7 +275,9 @@ public sealed record CustomizationsModel
             NoArgOverloads = noArgOverloads,
             SimpleMethods = simpleMethods.Count > 0 ? new SimpleMethodsCustomization { Operations = simpleMethods } : null,
             SimpleConstructors = simpleConstructors.Count > 0 ? new SimpleConstructorsCustomization { Constructors = simpleConstructors } : null,
-            OverrideContentType = overrideContentType
+            OverrideContentType = overrideContentType,
+            SkipUriPropertyValidation = skipUriPropertyValidation,
+            GenerateUnmarshaller = generateUnmarshaller,
         };
     }
 }

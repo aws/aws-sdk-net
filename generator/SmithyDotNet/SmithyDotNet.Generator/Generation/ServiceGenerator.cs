@@ -266,6 +266,22 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         var marshalledStructures = new HashSet<ShapeId>();
         var unmarshalledStructures = new HashSet<ShapeId>();
 
+        void EmitStructureUnmarshaller(StructureShape structure)
+        {
+            if (!unmarshalledStructures.Add(structure.Id))
+            {
+                return;
+            }
+
+            var structureUnmarshallerCode = context.Protocol switch
+            {
+                AWSProtocol.RpcV2Cbor => new CborStructureUnmarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
+                _ => new JsonStructureUnmarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
+            };
+
+            Emit(Path.Combine(marshalling, $"{context.StructureUnmarshallerName(structure.Id)}.g.cs"), structureUnmarshallerCode);
+        }
+
         foreach (var operation in context.Operations)
         {
             // smithy.api#Unit as an operation input/output means "no value" — it is not a model
@@ -328,16 +344,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
                     continue;
                 }
 
-                if (unmarshalledStructures.Add(structure.Id))
-                {
-                    var structureUnmarshallerCode = context.Protocol switch
-                    {
-                        AWSProtocol.RpcV2Cbor => new CborStructureUnmarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
-                        _ => new JsonStructureUnmarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
-                    };
-
-                    Emit(Path.Combine(marshalling, $"{context.StructureUnmarshallerName(structure.Id)}.g.cs"), structureUnmarshallerCode);
-                }
+                EmitStructureUnmarshaller(structure);
             }
         }
 
@@ -362,17 +369,14 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             // so a structure also reachable from an output isn't emitted twice.
             foreach (var structure in ReferencedStructures(errorShape))
             {
-                if (unmarshalledStructures.Add(structure.Id))
-                {
-                    var structureUnmarshallerCode = context.Protocol switch
-                    {
-                        AWSProtocol.RpcV2Cbor => new CborStructureUnmarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
-                        _ => new JsonStructureUnmarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
-                    };
-
-                    Emit(Path.Combine(marshalling, $"{context.StructureUnmarshallerName(structure.Id)}.g.cs"), structureUnmarshallerCode);
-                }
+                EmitStructureUnmarshaller(structure);
             }
+        }
+
+        // Structures only requests use, whose unmarshallers C2J still ships as public types.
+        foreach (var structure in context.Structures.Values.Where(structure => context.Customizations.GenerateUnmarshaller.Contains(structure.Id.Name)))
+        {
+            EmitStructureUnmarshaller(structure);
         }
 
         // Every service gets an auth resolver: a service that models no auth falls back to noAuth, so

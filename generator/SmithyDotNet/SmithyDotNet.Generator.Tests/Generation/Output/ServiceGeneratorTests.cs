@@ -1,4 +1,5 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Generation.ProjectFiles;
 using Xunit;
 
@@ -100,6 +101,21 @@ public class ServiceGeneratorTests : IDisposable
         AssertFileExists(marshalling, "AuditEventMarshaller.g.cs");
         AssertFileExists(marshalling, "AuditEventResultEntryUnmarshaller.g.cs");
         AssertFileExists(marshalling, "ResultErrorEntryUnmarshaller.g.cs");
+    }
+
+    [Fact]
+    public void GenerateUnmarshaller_EmitsUnmarshallerForRequestOnlyStructure()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.GenerateUnmarshaller.Add("AuditEvent");
+        var context = new GenerationContext(_fixture.Index, _fixture.Context.Manifest, _fixture.Context.Metadata, customizations);
+        var outputDir = Path.Combine(_outputDir, "customized");
+        var generator = new ServiceGenerator(context, ModelFileName, ServiceFileVersion, _fixture.DefaultConfigurationModes);
+        var written = generator.Generate(outputDir, Path.Combine(outputDir, "code-analysis"), testsOutputPath: null, TestContext.Current.CancellationToken);
+
+        var unmarshaller = Path.Combine("Generated", "Model", "Internal", "MarshallTransformations", "AuditEventUnmarshaller.g.cs");
+        Assert.DoesNotContain(unmarshaller, _written);
+        Assert.Contains(unmarshaller, written);
     }
 
     [Fact]

@@ -1,6 +1,5 @@
 {
   "noArgOverloads": [
     "ListDomains"
-  ],
-  "generateComplexException" : true
+  ]
 }

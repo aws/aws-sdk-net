@@ -90,7 +90,7 @@
     "com.example#PermissionInput": {
       "type": "structure",
       "members": {
-        "action": { "target": "com.example#Action" },
+        "action": { "target": "com.example#Action", "traits": { "smithy.api#httpLabel": {} } },
         "principal": { "target": "com.example#Principal" }
       }
     },

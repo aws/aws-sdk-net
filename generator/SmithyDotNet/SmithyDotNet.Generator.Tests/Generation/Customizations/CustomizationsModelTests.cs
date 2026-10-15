@@ -182,6 +182,17 @@ public class CustomizationsModelTests
         Assert.Contains("overrideContentType appears in more than one customizations file", ex.Message);
     }
 
+    [Fact]
+    public void Load_SkipUriPropertyValidationAndGenerateUnmarshaller_CombineAcrossFiles()
+    {
+        var model = LoadFiles(
+            """{ "skipUriPropertyValidation": ["AccountId"], "generateUnmarshaller": ["Event"] }""",
+            """{ "generateUnmarshaller": ["Session"] }""");
+
+        Assert.Equal(["AccountId"], model.SkipUriPropertyValidation);
+        Assert.Equal(["Event", "Session"], model.GenerateUnmarshaller);
+    }
+
     // The entry fields (Type, Marshaller, Unmarshaller) are capitalized, unlike every other hook's; Unmarshaller may be omitted.
     [Fact]
     public void Load_DataTypeSwap_ParsesEntry()
