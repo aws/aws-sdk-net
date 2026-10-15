@@ -38,12 +38,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // Query GSI1
             var gsi1Filter = new QueryFilter("UserName", QueryOperator.Equal, "alice");
             gsi1Filter.AddCondition("Timestamp", QueryOperator.GreaterThan, 1000);
-            var items = await compositeHashRangeTable.Query(new QueryOperationConfig
+            var items = await Extensions.WaitForItemsAsync(() => compositeHashRangeTable.Query(new QueryOperationConfig
             {
                 IndexName = "GSI1",
                 Filter = gsi1Filter
-            }).GetRemainingAsync();
-            Assert.Equal(1, items.Count);
+            }).GetRemainingAsync(), 1);
             Assert.True(items.All(d => d["UserName"].AsString() == "alice"));
 
             var req1 = new QueryDocumentOperationRequest
@@ -56,8 +55,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     ExpressionStatement = "#U = :v"
                 }
             };
-            items = await compositeHashRangeTable.Query(req1).GetRemainingAsync();
-            Assert.Equal(2, items.Count);
+            items = await Extensions.WaitForItemsAsync(() => compositeHashRangeTable.Query(req1).GetRemainingAsync(), 2);
             Assert.True(items.All(d => d["UserName"].AsString() == "alice"));
 
             var req2 = new QueryDocumentOperationRequest
@@ -70,8 +68,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     ExpressionStatement = "#U = :v AND #T > :v2"
                 }
             };
-            items = await compositeHashRangeTable.Query(req2).GetRemainingAsync();
-            Assert.Equal(1, items.Count);
+            items = await Extensions.WaitForItemsAsync(() => compositeHashRangeTable.Query(req2).GetRemainingAsync(), 1);
             Assert.Equal(1002, items[0]["Timestamp"].AsInt());
 
             // 3) ProjectionExpression + Select specific attributes (GSI1, project OrderId)
@@ -91,8 +88,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 },
                 Select = SelectValues.SpecificAttributes
             };
-            items = await compositeHashRangeTable.Query(req3).GetRemainingAsync();
-            Assert.Equal(2, items.Count);
+            items = await Extensions.WaitForItemsAsync(() => compositeHashRangeTable.Query(req3).GetRemainingAsync(), 2);
             Assert.Equal(1, items[0].Count);
             Assert.True(items[0].ContainsKey("OrderId"));
 
@@ -116,12 +112,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // Query GSI2: UserName + OrderId + Timestamp
             var gsi2Filter = new QueryFilter("OrderId", QueryOperator.Equal, "order-100");
             gsi2Filter.AddCondition("UserName", QueryOperator.Equal, "bob"); ;
-            items = await compositeHashRangeTable.Query(new QueryOperationConfig
+            items = await Extensions.WaitForItemsAsync(() => compositeHashRangeTable.Query(new QueryOperationConfig
             {
                 IndexName = "GSI2",
                 Filter = gsi2Filter
-            }).GetRemainingAsync();
-            Assert.Equal(2, items.Count);
+            }).GetRemainingAsync(), 2);
             Assert.True(items.All(d => d["UserName"].AsString() == "bob"));
             Assert.True(items.All(d => d["OrderId"].AsString() == "order-100"));
 
@@ -135,8 +130,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     ExpressionStatement = "#O = :o AND #U = :u"
                 }
             };
-            items = await compositeHashRangeTable.Query(reqGsi2).GetRemainingAsync();
-            Assert.Equal(2, items.Count);
+            items = await Extensions.WaitForItemsAsync(() => compositeHashRangeTable.Query(reqGsi2).GetRemainingAsync(), 2);
             Assert.True(items.All(d => d["UserName"].AsString() == "bob"));
             Assert.True(items.All(d => d["OrderId"].AsString() == "order-100"));
 
@@ -144,12 +138,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             gsi2Filter2.AddCondition("UserName", QueryOperator.Equal, "bob");
             gsi2Filter2.AddCondition("Timestamp", QueryOperator.GreaterThan, 1000);
 
-            items = await compositeHashRangeTable.Query(new QueryOperationConfig
+            items = await Extensions.WaitForItemsAsync(() => compositeHashRangeTable.Query(new QueryOperationConfig
             {
                 IndexName = "GSI2",
                 Filter = gsi2Filter2
-            }).GetRemainingAsync();
-            Assert.Equal(1, items.Count);
+            }).GetRemainingAsync(), 1);
             Assert.Equal("order-100", items[0]["OrderId"].AsString());
 
             var reqGsi2Filter = new QueryDocumentOperationRequest
@@ -162,20 +155,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     ExpressionStatement = "#O = :o AND #U = :u AND #T > :t"
                 }
             };
-            items = await compositeHashRangeTable.Query(reqGsi2Filter).GetRemainingAsync();
-            Assert.Equal(1, items.Count);
+            items = await Extensions.WaitForItemsAsync(() => compositeHashRangeTable.Query(reqGsi2Filter).GetRemainingAsync(), 1);
             Assert.Equal("order-100", items[0]["OrderId"].AsString());
 
             // Query GSI3: UserName + Region + Status + Category
             var gsi3Filter = new QueryFilter("Region", QueryOperator.Equal, "us-west-1");
             gsi3Filter.AddCondition("UserName", QueryOperator.Equal, "bob");
             gsi3Filter.AddCondition("Status", QueryOperator.Equal, "delivered");
-            items = await compositeHashRangeTable.Query(new QueryOperationConfig
+            items = await Extensions.WaitForItemsAsync(() => compositeHashRangeTable.Query(new QueryOperationConfig
             {
                 IndexName = "GSI3",
                 Filter = gsi3Filter
-            }).GetRemainingAsync();
-            Assert.Equal(1, items.Count);
+            }).GetRemainingAsync(), 1);
             Assert.Equal(21, items[0]["Id"].AsInt());
 
             var reqGsi3 = new QueryDocumentOperationRequest
@@ -188,8 +179,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     ExpressionStatement = "#R = :r AND #U = :u AND #S = :s"
                 }
             };
-            items = await compositeHashRangeTable.Query(reqGsi3).GetRemainingAsync();
-            Assert.Equal(1, items.Count);
+            items = await Extensions.WaitForItemsAsync(() => compositeHashRangeTable.Query(reqGsi3).GetRemainingAsync(), 1);
             Assert.Equal(21, items[0]["Id"].AsInt());
 
             // Query GSI3 with all 4 keys: Region + UserName + Status + Category
@@ -197,12 +187,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             gsi3Filter4Keys.AddCondition("UserName", QueryOperator.Equal, "bob");
             gsi3Filter4Keys.AddCondition("Status", QueryOperator.Equal, "delivered");
             gsi3Filter4Keys.AddCondition("Category", QueryOperator.Equal, "electronics");
-            items = await compositeHashRangeTable.Query(new QueryOperationConfig
+            items = await Extensions.WaitForItemsAsync(() => compositeHashRangeTable.Query(new QueryOperationConfig
             {
                 IndexName = "GSI3",
                 Filter = gsi3Filter4Keys
-            }).GetRemainingAsync();
-            Assert.Equal(1, items.Count);
+            }).GetRemainingAsync(), 1);
             Assert.Equal(21, items[0]["Id"].AsInt());
 
             var reqGsi3FourKeys = new QueryDocumentOperationRequest
@@ -215,8 +204,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     ExpressionStatement = "#R = :r AND #U = :u AND #S = :s AND #C = :c"
                 }
             };
-            items = await compositeHashRangeTable.Query(reqGsi3FourKeys).GetRemainingAsync();
-            Assert.Equal(1, items.Count);
+            items = await Extensions.WaitForItemsAsync(() => compositeHashRangeTable.Query(reqGsi3FourKeys).GetRemainingAsync(), 1);
             Assert.Equal(21, items[0]["Id"].AsInt());
 
             // Query GSI4 with all 8 keys: Id + UserName + OrderId + Region (HASH) + Status + Category + Amount + Priority (RANGE)
@@ -228,12 +216,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             gsi4Filter.AddCondition("Category", QueryOperator.Equal, "electronics");
             gsi4Filter.AddCondition("Amount", QueryOperator.Equal, 85);
             gsi4Filter.AddCondition("Priority", QueryOperator.Equal, 3);
-            items = await compositeHashRangeTable.Query(new QueryOperationConfig
+            items = await Extensions.WaitForItemsAsync(() => compositeHashRangeTable.Query(new QueryOperationConfig
             {
                 IndexName = "GSI4",
                 Filter = gsi4Filter
-            }).GetRemainingAsync();
-            Assert.Equal(1, items.Count);
+            }).GetRemainingAsync(), 1);
             Assert.Equal(21, items[0]["Id"].AsInt());
 
             var reqGsi4 = new QueryDocumentOperationRequest
@@ -254,8 +241,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     ExpressionStatement = "#I = :i AND #U = :u AND #O = :o AND #R = :r AND #S = :s AND #C = :c AND #A = :a AND #P = :p"
                 }
             };
-            items = await compositeHashRangeTable.Query(reqGsi4).GetRemainingAsync();
-            Assert.Equal(1, items.Count);
+            items = await Extensions.WaitForItemsAsync(() => compositeHashRangeTable.Query(reqGsi4).GetRemainingAsync(), 1);
             Assert.Equal(21, items[0]["Id"].AsInt());
 
             // GSI4 with rightmost range key using GreaterThan
@@ -277,8 +263,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     ExpressionStatement = "#I = :i AND #U = :u AND #O = :o AND #R = :r AND #S = :s AND #C = :c AND #A = :a AND #P > :p"
                 }
             };
-            items = await compositeHashRangeTable.Query(reqGsi4GreaterThan).GetRemainingAsync();
-            Assert.Equal(1, items.Count);
+            items = await Extensions.WaitForItemsAsync(() => compositeHashRangeTable.Query(reqGsi4GreaterThan).GetRemainingAsync(), 1);
 
             // GSI3 with rightmost range key using BeginsWith
             var reqGsi3BeginsWith = new QueryDocumentOperationRequest
@@ -291,8 +276,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     ExpressionStatement = "#U = :u AND #R = :r AND #S = :s AND begins_with(#C, :c)"
                 }
             };
-            items = await compositeHashRangeTable.Query(reqGsi3BeginsWith).GetRemainingAsync();
-            Assert.Equal(1, items.Count);
+            items = await Extensions.WaitForItemsAsync(() => compositeHashRangeTable.Query(reqGsi3BeginsWith).GetRemainingAsync(), 1);
 
             // GSI4 with partial range keys and LessThan on rightmost
             var reqGsi4Partial = new QueryDocumentOperationRequest
@@ -313,8 +297,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     ExpressionStatement = "#I = :i AND #U = :u AND #O = :o AND #R = :r AND #S = :s AND #C = :c AND #A < :a"
                 }
             };
-            items = await compositeHashRangeTable.Query(reqGsi4Partial).GetRemainingAsync();
-            Assert.Equal(1, items.Count);
+            items = await Extensions.WaitForItemsAsync(() => compositeHashRangeTable.Query(reqGsi4Partial).GetRemainingAsync(), 1);
         }
     }
 }

@@ -409,7 +409,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             await hashTable.UpdateItemAsync(doc2);
 
             // Scan the hash-key table
-            var items = await hashTable.Scan(new ScanFilter()).GetRemainingAsync();
+            var items = await hashTable.Scan(new ScanOperationConfig { ConsistentRead = true }).GetRemainingAsync();
             Assert.Equal(2, items.Count);
 
             // Scan by pages
@@ -422,23 +422,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             }
             Assert.Equal(2, items.Count);
 
-            // GSI updates are eventually consistent; wait until both items are indexed before querying.
-            await UtilityMethods.WaitUntilAsync(async () =>
-            {
-                var indexed = await hashTable.Scan(new ScanOperationConfig { IndexName = "GlobalIndex" }).GetRemainingAsync();
-                return indexed.Count >= 2;
-            }, sleepSeconds: 1, maxWaitSeconds: 30);
-
             // Query against GlobalIndex
             var queryFilter = new QueryFilter("Company", QueryOperator.Equal, "CloudsAreGrate");
             queryFilter.AddCondition("Price", QueryOperator.GreaterThan, 100);
-            search = hashTable.Query(new QueryOperationConfig
+            items = await Extensions.WaitForItemsAsync(() => hashTable.Query(new QueryOperationConfig
             {
                 IndexName = "GlobalIndex",
                 Filter = queryFilter
-            });
-            items = await search.GetRemainingAsync();
-            Assert.Equal(1, items.Count);
+            }).GetRemainingAsync(), 1);
 
             // Scan for specific tag
             var scanFilter = new ScanFilter();
@@ -583,6 +574,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             // Batch-get all items
             var batchGet = hashTable.CreateBatchGet();
+            batchGet.ConsistentRead = true;
             foreach (var id in ids)
             {
                 batchGet.AddKey(id);

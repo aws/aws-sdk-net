@@ -285,6 +285,20 @@ command line: as global properties they propagate into the SDK's `ProjectReferen
 - After swapping a source file back and forth, `dotnet test` can build against a stale SDK assembly.
   Use `--no-incremental` when verifying that a fix is load-bearing.
 
+### Integration tests (`sdk/test/Services/DynamoDBv2/IntegrationTests`)
+
+- One fixture per test class creates GUID-prefixed tables; xUnit runs a class's tests sequentially, so
+  tests in a class share tables but never run concurrently with each other.
+- GSI reads are eventually consistent and have no `ConsistentRead`. Assert GSI results through
+  `Extensions.WaitForItemsAsync`, not a one-shot read and not a single pre-wait on a GSI scan: a later
+  read can still hit a replica that lags. Base-table and LSI reads right after a write set
+  `ConsistentRead = true` instead.
+- A `TransactGetItems` issued a few milliseconds after a `TransactWriteItems` on the same items can be
+  cancelled with `TransactionConflict`, even when that write was itself cancelled. DynamoDB still holds
+  the item locks briefly after responding, and the SDK does not retry `TransactionCanceledException`
+  by design. The window is a few milliseconds, so this shows up as a rare `TransactionCanceledException`
+  in a test that otherwise passes, not as a failure you can reproduce locally.
+
 ## Attribute casing (AttributeCasing / CaseMode)
 
 How `[DynamoDBTable]` decides DynamoDB attribute-name casing, and the `AttributeCasing` / `CaseMode`

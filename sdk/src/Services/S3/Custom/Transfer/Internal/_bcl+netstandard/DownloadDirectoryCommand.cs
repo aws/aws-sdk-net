@@ -88,7 +88,7 @@ namespace Amazon.S3.Transfer.Internal
 
                 // Step 5: Build response
                 _logger.DebugFormat("DownloadDirectoryCommand.ExecuteAsync: Completed - ObjectsDownloaded={0}, ObjectsFailed={1}",
-                    _numberOfFilesDownloaded, _errors.Count);
+                    _numberOfFilesSuccessfullyDownloaded, _errors.Count);
 
                 var response = BuildResponse();
                 FireTransferCompletedEvent(response);
@@ -300,7 +300,7 @@ namespace Amazon.S3.Transfer.Internal
             .ConfigureAwait(false);
 
             _logger.DebugFormat("DownloadDirectoryCommand.ExecuteParallelDownloadsAsync: Task pool completed - ObjectsDownloaded={0}, ObjectsFailed={1}",
-                _numberOfFilesDownloaded, _errors.Count);
+                _numberOfFilesSuccessfullyDownloaded, _errors.Count);
         }
 
         /// <summary>
@@ -390,6 +390,11 @@ namespace Amazon.S3.Transfer.Internal
             }
 
             await command.ExecuteAsync(cancellationToken).ConfigureAwait(false);
+
+            // Counted here rather than in the progress callback: GetObjectResponse raises
+            // WriteObjectProgressEvent on a background thread, so the IsCompleted event may
+            // arrive after BuildResponse() has already run.
+            Interlocked.Increment(ref _numberOfFilesSuccessfullyDownloaded);
         }
 
         /// <summary>
@@ -399,12 +404,12 @@ namespace Amazon.S3.Transfer.Internal
         {
             return new TransferUtilityDownloadDirectoryResponse
             {
-                ObjectsDownloaded = _numberOfFilesDownloaded,
+                ObjectsDownloaded = _numberOfFilesSuccessfullyDownloaded,
                 ObjectsFailed = _errors.Count,
                 Errors = _errors.ToList(),
                 Result = _errors.Count == 0
                     ? DirectoryResult.Success
-                    : (_numberOfFilesDownloaded > 0
+                    : (_numberOfFilesSuccessfullyDownloaded > 0
                         ? DirectoryResult.PartialSuccess
                         : DirectoryResult.Failure)
             };

@@ -96,20 +96,20 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.Equal(retrieved.Age, 24);
 
             // Scan for all items
-            var employees = await context.ScanAsync<T>(new List<ScanCondition>()).GetRemainingAsync();
+            var employees = await context.ScanAsync<T>(new List<ScanCondition>(), new ScanConfig { ConsistentRead = true }).GetRemainingAsync();
             Assert.Equal(4, employees.Count);
 
             // Query for items with Hash-Key = dianeName
-            employees = await context.QueryAsync<T>(dianeName).GetNextSetAsync();
+            employees = await context.QueryAsync<T>(dianeName, new QueryConfig { ConsistentRead = true }).GetNextSetAsync();
             Assert.Equal(2, employees.Count);
 
             // Query for items with Hash-Key = dianeName and Range-Key > 30
-            employees = await context.QueryAsync<T>(dianeName, QueryOperator.GreaterThan, new object[] { 30 }).GetNextSetAsync();
+            employees = await context.QueryAsync<T>(dianeName, QueryOperator.GreaterThan, new object[] { 30 }, new QueryConfig { ConsistentRead = true }).GetNextSetAsync();
             Assert.Equal(1, employees.Count);
 
             // Index Query
             // Query local index for items with Hash-Key = dianeName
-            employees = await context.QueryAsync<T>(dianeName, new QueryConfig { IndexName = "LocalIndex" }).GetNextSetAsync();
+            employees = await context.QueryAsync<T>(dianeName, new QueryConfig { IndexName = "LocalIndex", ConsistentRead = true }).GetNextSetAsync();
             Assert.Equal(2, employees.Count);
 
             // Query local index for items with Hash-Key = dianeName and Range-Key = "Eva"
@@ -117,23 +117,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 dianeName,
                 QueryOperator.Equal,
                 new object[] { "Eva" },
-                new QueryConfig { IndexName = "LocalIndex" }
+                new QueryConfig { IndexName = "LocalIndex", ConsistentRead = true }
             ).GetNextSetAsync();
             Assert.Equal(2, employees.Count);
 
-            // GSI updates are eventually consistent; wait until all 4 employees are indexed before querying.
-            await UtilityMethods.WaitUntilAsync(async () =>
-            {
-                var indexed = await context.ScanAsync<T>(new List<ScanCondition>(), new ScanConfig { IndexName = "GlobalIndex" }).GetRemainingAsync();
-                return indexed.Count >= 4;
-            }, sleepSeconds: 1, maxWaitSeconds: 30);
-
             // Query global index for item with Hash-Key (Company) = "Big River"
-            employees = await context.QueryAsync<T>("Big River", new QueryConfig { IndexName = "GlobalIndex" }).GetNextSetAsync();
-            Assert.Equal(2, employees.Count);
+            employees = await Extensions.WaitForItemsAsync(() => context.QueryAsync<T>("Big River", new QueryConfig { IndexName = "GlobalIndex" }).GetRemainingAsync(), 2);
 
             // Query global index for item with Hash-Key (Company) = "Big River", with QueryFilter for CurrentStatus = Status.Active
-            employees = await context.QueryAsync<T>("Big River",
+            employees = await Extensions.WaitForItemsAsync(() => context.QueryAsync<T>("Big River",
                 new QueryConfig
                 {
                     IndexName = "GlobalIndex",
@@ -141,14 +133,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     {
                         new ScanCondition("CurrentStatus", ScanOperator.Equal, Status.Active)
                     }
-                }).GetNextSetAsync();
-            Assert.Equal(1, employees.Count);
+                }).GetRemainingAsync(), 1);
 
             // Index Scan
             // Scan local index for items with Hash-Key = dianeName
             employees = await context.ScanAsync<T>(
                 new List<ScanCondition> { new ScanCondition("Name", ScanOperator.Equal, dianeName) },
-                new ScanConfig { IndexName = "LocalIndex" }).GetRemainingAsync();
+                new ScanConfig { IndexName = "LocalIndex", ConsistentRead = true }).GetRemainingAsync();
             Assert.Equal(2, employees.Count);
 
             // Scan local index for items with Hash-Key = dianeName and Range-Key = "Eva"
@@ -158,17 +149,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     new ScanCondition("Name", ScanOperator.Equal, dianeName),
                     new ScanCondition("ManagerName", ScanOperator.Equal, "Eva")
                 },
-                new ScanConfig { IndexName = "LocalIndex" }).GetRemainingAsync();
+                new ScanConfig { IndexName = "LocalIndex", ConsistentRead = true }).GetRemainingAsync();
             Assert.Equal(2, employees.Count);
 
             // Scan global index for item with Hash-Key (Company) = "Big River"
-            employees = await context.ScanAsync<T>(
+            employees = await Extensions.WaitForItemsAsync(() => context.ScanAsync<T>(
                 new List<ScanCondition> { new ScanCondition("CompanyName", ScanOperator.Equal, "Big River") },
-                new ScanConfig { IndexName = "GlobalIndex" }).GetRemainingAsync();
-            Assert.Equal(2, employees.Count);
+                new ScanConfig { IndexName = "GlobalIndex" }).GetRemainingAsync(), 2);
 
             // Scan global index for item with Hash-Key (Company) = "Big River", with QueryFilter for CurrentStatus = Status.Active
-            employees = await context.ScanAsync<T>(
+            employees = await Extensions.WaitForItemsAsync(() => context.ScanAsync<T>(
                 new List<ScanCondition>
                 {
                     new ScanCondition("CompanyName", ScanOperator.Equal, "Big River"),
@@ -177,8 +167,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 new ScanConfig
                 {
                     IndexName = "GlobalIndex"
-                }).GetRemainingAsync();
-            Assert.Equal(1, employees.Count);
+                }).GetRemainingAsync(), 1);
         }
 
         internal static async Task TestEmptyStringsHelper(DynamoDBContext context)
@@ -480,27 +469,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.NotNull(product);
                 Assert.Equal(firstId, product.Id);
 
-                // GSI updates are eventually consistent; wait until all 2 products are indexed before querying.
-                await UtilityMethods.WaitUntilAsync(async () =>
-                {
-                    var indexed = await context.ScanAsync<Product>(new List<ScanCondition>(), new ScanConfig { IndexName = "GlobalIndex" }).GetRemainingAsync();
-                    return indexed.Count >= 2;
-                }, sleepSeconds: 1, maxWaitSeconds: 30);
-
                 // Query GlobalIndex
-                products = await context.QueryAsync<Product>(
+                products = await Extensions.WaitForItemsAsync(() => context.QueryAsync<Product>(
                     product.CompanyName, // Hash-key for the index is Company
                     QueryOperator.GreaterThan, // Range-key for the index is Price, so the
                     new object[] { 90 }, // condition is against a numerical value
                     new QueryConfig // Configure the index to use
                     {
                         IndexName = "GlobalIndex",
-                    })
-                    .GetNextSetAsync();
-                Assert.Equal(2, products.Count());
+                    }).GetRemainingAsync(), 2);
 
                 // Query GlobalIndex with an additional non-key condition
-                products = await context.QueryAsync<Product>(
+                products = await Extensions.WaitForItemsAsync(() => context.QueryAsync<Product>(
                     product.CompanyName, // Hash-key for the index is Company
                     QueryOperator.GreaterThan, // Range-key for the index is Price, so the
                     new object[] { 90 }, // condition is against a numerical value
@@ -511,9 +491,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         {
                             new ScanCondition("TagSet", ScanOperator.Contains, "1.0")
                         }
-                    })
-                    .GetNextSetAsync();
-                Assert.Equal(1, products.Count());
+                    }).GetRemainingAsync(), 1);
 
                 // Delete first product
                 await context.DeleteAsync<Product>(firstId);
@@ -521,7 +499,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.Null(product);
 
                 // Scan the table
-                products = await context.ScanAsync<Product>(new List<ScanCondition>()).GetRemainingAsync();
+                products = await context.ScanAsync<Product>(new List<ScanCondition>(), new ScanConfig { ConsistentRead = true }).GetRemainingAsync();
                 Assert.Equal(1, products.Count());
 
                 // Scan the table with consistent read
