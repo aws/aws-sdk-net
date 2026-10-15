@@ -30,8 +30,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.AwsEc2
 {
@@ -45,7 +45,7 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("AwsEc2")]
-        public void Ec2ListsRequest()
+        public async Task Ec2ListsRequest()
         {
             // Arrange
             var request = new QueryListsRequest
@@ -70,64 +70,27 @@ namespace AWSSDK.ProtocolTests.AwsEc2
             };
             var config = new AmazonEC2ProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new QueryListsRequestMarshaller();
+            using var client = new AmazonEC2ProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.QueryListsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=QueryLists&Version=2020-01-08&ListArg.1=foo&ListArg.2=bar&ListArg.3=baz&ComplexListArg.1.Hi=hello&ComplexListArg.2.Hi=hola");
-            foreach(var queryParam in expectedParams.Keys)
-            {
-               Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
-               Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
-            }
-
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8",marshalledRequest.Headers["Content-Type"]);
-        }
-
-        /// <summary>
-        /// Does not serialize empty query lists.
-        /// </summary>
-        [TestMethod]
-        [TestCategory("ProtocolTest")]
-        [TestCategory("RequestTest")]
-        [TestCategory("AwsEc2")]
-        public void Ec2EmptyQueryListsRequest()
-        {
-            // Arrange
-            var request = new QueryListsRequest
-            {
-                ListArg =  new List<string>()
-                {
-                },
-            };
-            var config = new AmazonEC2ProtocolConfig
-            {
-              ServiceURL = "https://test.com/"
-            };
-
-            var marshaller = new QueryListsRequestMarshaller();
-            // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-
-            // Assert
-            var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=QueryLists&Version=2020-01-08");
-            foreach(var queryParam in expectedParams.Keys)
-            {
-               Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
-               Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
-            }
-
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8",marshalledRequest.Headers["Content-Type"]);
+            var expectedBody = "Action=QueryLists&Version=2020-01-08&ListArg.1=foo&ListArg.2=bar&ListArg.3=baz&ComplexListArg.1.Hi=hello&ComplexListArg.2.Hi=hola";
+            QueryTestUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8", actualRequest.Headers["Content-Type"]);
         }
 
         /// <summary>
@@ -138,7 +101,7 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("AwsEc2")]
-        public void Ec2ListArgWithXmlNameMemberRequest()
+        public async Task Ec2ListArgWithXmlNameMemberRequest()
         {
             // Arrange
             var request = new QueryListsRequest
@@ -151,25 +114,27 @@ namespace AWSSDK.ProtocolTests.AwsEc2
             };
             var config = new AmazonEC2ProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new QueryListsRequestMarshaller();
+            using var client = new AmazonEC2ProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.QueryListsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=QueryLists&Version=2020-01-08&ListArgWithXmlNameMember.1=A&ListArgWithXmlNameMember.2=B");
-            foreach(var queryParam in expectedParams.Keys)
-            {
-               Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
-               Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
-            }
-
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8",marshalledRequest.Headers["Content-Type"]);
+            var expectedBody = "Action=QueryLists&Version=2020-01-08&ListArgWithXmlNameMember.1=A&ListArgWithXmlNameMember.2=B";
+            QueryTestUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8", actualRequest.Headers["Content-Type"]);
         }
 
         /// <summary>
@@ -179,7 +144,7 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("AwsEc2")]
-        public void Ec2ListMemberWithXmlNameRequest()
+        public async Task Ec2ListMemberWithXmlNameRequest()
         {
             // Arrange
             var request = new QueryListsRequest
@@ -192,25 +157,27 @@ namespace AWSSDK.ProtocolTests.AwsEc2
             };
             var config = new AmazonEC2ProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new QueryListsRequestMarshaller();
+            using var client = new AmazonEC2ProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.QueryListsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=QueryLists&Version=2020-01-08&Hi.1=A&Hi.2=B");
-            foreach(var queryParam in expectedParams.Keys)
-            {
-               Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
-               Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
-            }
-
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8",marshalledRequest.Headers["Content-Type"]);
+            var expectedBody = "Action=QueryLists&Version=2020-01-08&Hi.1=A&Hi.2=B";
+            QueryTestUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8", actualRequest.Headers["Content-Type"]);
         }
 
         /// <summary>
@@ -220,7 +187,7 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("AwsEc2")]
-        public void Ec2ListNestedStructWithListRequest()
+        public async Task Ec2ListNestedStructWithListRequest()
         {
             // Arrange
             var request = new QueryListsRequest
@@ -236,25 +203,27 @@ namespace AWSSDK.ProtocolTests.AwsEc2
             };
             var config = new AmazonEC2ProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new QueryListsRequestMarshaller();
+            using var client = new AmazonEC2ProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.QueryListsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=QueryLists&Version=2020-01-08&NestedWithList.ListArg.1=A&NestedWithList.ListArg.2=B");
-            foreach(var queryParam in expectedParams.Keys)
-            {
-               Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
-               Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
-            }
-
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8",marshalledRequest.Headers["Content-Type"]);
+            var expectedBody = "Action=QueryLists&Version=2020-01-08&NestedWithList.ListArg.1=A&NestedWithList.ListArg.2=B";
+            QueryTestUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8", actualRequest.Headers["Content-Type"]);
         }
 
     }

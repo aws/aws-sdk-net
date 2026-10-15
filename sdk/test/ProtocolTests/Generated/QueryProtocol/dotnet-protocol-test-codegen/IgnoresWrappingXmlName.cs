@@ -32,6 +32,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.AwsQuery
 {
@@ -45,27 +46,34 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("AwsQuery")]
-        public void QueryIgnoresWrappingXmlNameResponse()
+        public async Task QueryIgnoresWrappingXmlNameResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "text/xml";
-            byte[] bytes = Encoding.ASCII.GetBytes("<IgnoresWrappingXmlNameResponse xmlns=\"https://example.com/\">\n    <IgnoresWrappingXmlNameResult>\n        <foo>bar</foo>\n    </IgnoresWrappingXmlNameResult>\n</IgnoresWrappingXmlNameResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonQueryProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonQueryProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("<IgnoresWrappingXmlNameResponse xmlns=\"https://example.com/\">\n    <IgnoresWrappingXmlNameResult>\n        <foo>bar</foo>\n    </IgnoresWrappingXmlNameResult>\n</IgnoresWrappingXmlNameResponse>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "text/xml";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new IgnoresWrappingXmlNameResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.IgnoresWrappingXmlNameAsync(new IgnoresWrappingXmlNameRequest()).ConfigureAwait(false);
             var expectedResponse = new IgnoresWrappingXmlNameResponse
             {
                 Foo = "bar",
             };
 
             // Assert
-            var actualResponse = (IgnoresWrappingXmlNameResponse)unmarshalledResponse;
             Comparer.CompareObjects<IgnoresWrappingXmlNameResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
     }

@@ -32,6 +32,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.AwsEc2
 {
@@ -46,27 +47,34 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("AwsEc2")]
-        public void Ec2QueryDateTimeWithNegativeOffsetResponse()
+        public async Task Ec2QueryDateTimeWithNegativeOffsetResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "text/xml;charset=UTF-8";
-            byte[] bytes = Encoding.ASCII.GetBytes("<DatetimeOffsetsResponse xmlns=\"https://example.com/\">\n    <datetime>2019-12-16T22:48:18-01:00</datetime>\n    <requestId>requestid</requestId>\n</DatetimeOffsetsResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonEC2ProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonEC2ProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("<DatetimeOffsetsResponse xmlns=\"https://example.com/\">\n    <datetime>2019-12-16T22:48:18-01:00</datetime>\n    <requestId>requestid</requestId>\n</DatetimeOffsetsResponse>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "text/xml;charset=UTF-8";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new DatetimeOffsetsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.DatetimeOffsetsAsync(new DatetimeOffsetsRequest()).ConfigureAwait(false);
             var expectedResponse = new DatetimeOffsetsResponse
             {
                 Datetime = ProtocolTestConstants.epoch.AddSeconds(1576540098),
             };
 
             // Assert
-            var actualResponse = (DatetimeOffsetsResponse)unmarshalledResponse;
             Comparer.CompareObjects<DatetimeOffsetsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -77,27 +85,34 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("AwsEc2")]
-        public void Ec2QueryDateTimeWithPositiveOffsetResponse()
+        public async Task Ec2QueryDateTimeWithPositiveOffsetResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "text/xml;charset=UTF-8";
-            byte[] bytes = Encoding.ASCII.GetBytes("<DatetimeOffsetsResponse xmlns=\"https://example.com/\">\n    <datetime>2019-12-17T00:48:18+01:00</datetime>\n    <requestId>requestid</requestId>\n</DatetimeOffsetsResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonEC2ProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonEC2ProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("<DatetimeOffsetsResponse xmlns=\"https://example.com/\">\n    <datetime>2019-12-17T00:48:18+01:00</datetime>\n    <requestId>requestid</requestId>\n</DatetimeOffsetsResponse>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "text/xml;charset=UTF-8";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new DatetimeOffsetsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.DatetimeOffsetsAsync(new DatetimeOffsetsRequest()).ConfigureAwait(false);
             var expectedResponse = new DatetimeOffsetsResponse
             {
                 Datetime = ProtocolTestConstants.epoch.AddSeconds(1576540098),
             };
 
             // Assert
-            var actualResponse = (DatetimeOffsetsResponse)unmarshalledResponse;
             Comparer.CompareObjects<DatetimeOffsetsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
     }
