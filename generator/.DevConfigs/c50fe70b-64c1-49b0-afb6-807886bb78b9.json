@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Reduced per-request CPU overhead in the request pipeline: skip request metrics timing when metrics are disabled, read the Lambda function name once per process, reuse the HMAC context for the SigV4 signature, build signing strings without StringBuilder, and copy response headers once."
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  }
+}
