@@ -14,7 +14,20 @@ namespace AWSSDK.UnitTests
     public class SSOTokenManagerRefreshTests
     {
         [TestMethod]
-        public async Task GetTokenAsync_RefreshFails_RetriesOncePerCooldownBeforeAndAfterExpiry()
+        public Task GetTokenAsync_RefreshFails_RetriesOncePerCooldownBeforeAndAfterExpiry()
+        {
+            return AssertRetriesOncePerCooldown((tokenManager, options) => tokenManager.GetTokenAsync(options));
+        }
+
+#if NETFRAMEWORK
+        [TestMethod]
+        public Task GetToken_RefreshFails_RetriesOncePerCooldownBeforeAndAfterExpiry()
+        {
+            return AssertRetriesOncePerCooldown((tokenManager, options) => Task.Run(() => tokenManager.GetToken(options)));
+        }
+#endif
+
+        private static async Task AssertRetriesOncePerCooldown(Func<SSOTokenManager, SSOTokenManagerGetTokenOptions, Task<SsoToken>> getToken)
         {
             var token = new SsoToken
             {
@@ -27,15 +40,24 @@ namespace AWSSDK.UnitTests
                 StartUrl = "https://example.awsapps.com/start",
                 Session = Guid.NewGuid().ToString()
             };
+            var attempts = 0;
+            GetSsoTokenResponse NextRefresh() => ++attempts < 5
+                ? throw new AmazonClientException("Refresh failed")
+                : new GetSsoTokenResponse { AccessToken = "refreshed-token", ExpiresAt = DateTime.UtcNow.AddHours(1) };
+
             var fileCache = new Mock<ISSOTokenFileCache>();
             fileCache.Setup(x => x.TryGetSsoTokenAsync(It.IsAny<SSOTokenManagerGetTokenOptions>(), It.IsAny<string>(), It.IsAny<CancellationToken>()))
                      .ReturnsAsync(new TryResponse<SsoToken> { Success = true, Value = token });
-            var attempts = 0;
             var oidcClient = new Mock<ICoreAmazonSSOOIDC>();
             oidcClient.Setup(x => x.RefreshTokenAsync(It.IsAny<GetSsoTokenResponse>()))
-                      .Returns(() => ++attempts < 5
-                          ? throw new AmazonClientException("Refresh failed")
-                          : Task.FromResult(new GetSsoTokenResponse { AccessToken = "refreshed-token", ExpiresAt = DateTime.UtcNow.AddHours(1) }));
+                      .Returns(() => Task.FromResult(NextRefresh()));
+#if NETFRAMEWORK
+            var cachedToken = token;
+            fileCache.Setup(x => x.TryGetSsoToken(It.IsAny<SSOTokenManagerGetTokenOptions>(), It.IsAny<string>(), out cachedToken))
+                     .Returns(true);
+            oidcClient.Setup(x => x.RefreshToken(It.IsAny<GetSsoTokenResponse>()))
+                      .Returns(NextRefresh);
+#endif
             var tokenManager = new SSOTokenManager(oidcClient.Object, fileCache.Object);
             var options = new SSOTokenManagerGetTokenOptions
             {
@@ -50,7 +72,7 @@ namespace AWSSDK.UnitTests
                 Task<SsoToken> GetTokenAt(int secondsLater)
                 {
                     AWSConfigs.ManualClockCorrection = TimeSpan.FromSeconds(secondsLater);
-                    return tokenManager.GetTokenAsync(options);
+                    return getToken(tokenManager, options);
                 }
 
                 foreach (var (secondsLater, expectedAttempts) in new[] { (0, 1), (0, 1), (31, 2), (62, 3) })
