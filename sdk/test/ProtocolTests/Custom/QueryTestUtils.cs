@@ -40,6 +40,9 @@ namespace AWSSDK.ProtocolTests.Utils
                 Assert.IsTrue(actualParams.Keys.Contains(queryParam), $"Expected query parameter '{queryParam}' was not found in the request body.");
                 Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam]), WebUtility.UrlDecode(actualParams[queryParam]));
             }
+            // Ensure the SDK didn't send any query parameters beyond the expected set.
+            var extraParams = actualParams.Keys.Except(expectedParams.Keys).ToList();
+            Assert.IsFalse(extraParams.Any(), $"Request body contained unexpected query parameter(s): {string.Join(", ", extraParams)}.");
         }
 
         // Once support for nested structures are added this will most likely have to be updated.

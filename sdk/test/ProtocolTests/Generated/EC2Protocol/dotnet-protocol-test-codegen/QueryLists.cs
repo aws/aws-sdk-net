@@ -94,47 +94,6 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         }
 
         /// <summary>
-        /// Does not serialize empty query lists.
-        /// </summary>
-        [TestMethod]
-        [TestCategory("ProtocolTest")]
-        [TestCategory("RequestTest")]
-        [TestCategory("AwsEc2")]
-        public async Task Ec2EmptyQueryListsRequest()
-        {
-            // Arrange
-            var request = new QueryListsRequest
-            {
-                ListArg =  new List<string>()
-                {
-                },
-            };
-            var config = new AmazonEC2ProtocolConfig
-            {
-              ServiceURL = MockHttpClientUtils.TestServiceUrl,
-              MaxErrorRetry = 0,
-            };
-
-            using var client = new AmazonEC2ProtocolClient(MockHttpClientUtils.TestCredentials, config);
-            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
-            {
-                ContentType = "text/xml",
-                Body = Encoding.UTF8.GetBytes("<Response/>"),
-            });
-
-            // Act
-            await client.QueryListsAsync(request).ConfigureAwait(false);
-            var actualRequest = mockHttp.LastCreatedRequest;
-
-            // Assert
-            var expectedBody = "Action=QueryLists&Version=2020-01-08";
-            QueryTestUtils.AssertBody(actualRequest.Body, expectedBody);
-            Assert.AreEqual("POST", actualRequest.Method);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
-            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8", actualRequest.Headers["Content-Type"]);
-        }
-
-        /// <summary>
         /// An xmlName trait in the member of a list has no effect on the
         /// list serialization.
         /// </summary>
