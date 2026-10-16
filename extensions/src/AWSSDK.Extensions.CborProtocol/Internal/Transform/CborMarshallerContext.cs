@@ -29,10 +29,22 @@ namespace Amazon.Extensions.CborProtocol.Internal.Transform
     {
         public CborWriter Writer { get; private set; }
 
+        /// <summary>
+        /// The direct-to-buffer writer used by marshallers migrated to the streaming serialize path.
+        /// Null when the context was created with a stock <see cref="CborWriter"/>.
+        /// </summary>
+        public CborContentWriter ContentWriter { get; private set; }
+
         public CborMarshallerContext(IRequest request, CborWriter writer)
             : base(request)
         {
             Writer = writer;
+        }
+
+        public CborMarshallerContext(IRequest request, CborContentWriter contentWriter)
+            : base(request)
+        {
+            ContentWriter = contentWriter;
         }
     }
 }
