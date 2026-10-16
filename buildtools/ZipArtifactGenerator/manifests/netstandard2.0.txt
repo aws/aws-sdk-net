@@ -60,6 +60,8 @@ extensions\LoggingILoggerAdaptor\Microsoft.Extensions.Logging.Abstractions.dll
 extensions\LoggingILoggerAdaptor\System.Buffers.dll
 extensions\LoggingILoggerAdaptor\System.Memory.dll
 extensions\LoggingILoggerAdaptor\System.Numerics.Vectors.dll
+extensions\LoggingILoggerAdaptor\System.Formats.Asn1.dll
+extensions\LoggingILoggerAdaptor\System.IO.Hashing.dll
 extensions\LoggingILoggerAdaptor\System.Runtime.CompilerServices.Unsafe.dll
 extensions\LoggingILoggerAdaptor\System.Text.Encodings.Web.dll
 extensions\LoggingILoggerAdaptor\System.Text.Json.dll
@@ -69,6 +71,8 @@ extensions\LoggingLog4NetAdaptor\log4net.dll
 extensions\LoggingLog4NetAdaptor\Microsoft.Bcl.AsyncInterfaces.dll
 extensions\LoggingLog4NetAdaptor\System.Buffers.dll
 extensions\LoggingLog4NetAdaptor\System.Configuration.ConfigurationManager.dll
+extensions\LoggingLog4NetAdaptor\System.Formats.Asn1.dll
+extensions\LoggingLog4NetAdaptor\System.IO.Hashing.dll
 extensions\LoggingLog4NetAdaptor\System.Memory.dll
 extensions\LoggingLog4NetAdaptor\System.Numerics.Vectors.dll
 extensions\LoggingLog4NetAdaptor\System.Runtime.CompilerServices.Unsafe.dll
@@ -86,6 +90,8 @@ extensions\NETCoreSetup\Microsoft.Extensions.DependencyInjection.Abstractions.dl
 extensions\NETCoreSetup\Microsoft.Extensions.Logging.Abstractions.dll
 extensions\NETCoreSetup\Microsoft.Extensions.Primitives.dll
 extensions\NETCoreSetup\System.Buffers.dll
+extensions\NETCoreSetup\System.Formats.Asn1.dll
+extensions\NETCoreSetup\System.IO.Hashing.dll
 extensions\NETCoreSetup\System.Memory.dll
 extensions\NETCoreSetup\System.Numerics.Vectors.dll
 extensions\NETCoreSetup\System.Runtime.CompilerServices.Unsafe.dll
