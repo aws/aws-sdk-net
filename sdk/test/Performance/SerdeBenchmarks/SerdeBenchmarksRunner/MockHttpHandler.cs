@@ -65,11 +65,34 @@ public class MockHttpHandler : HttpMessageHandler
 
         return response;
     }
+
+    /// <summary>The canned response as raw HTTP/1.1 bytes, for the fixture server in the https transport.</summary>
+    public byte[] BuildRawResponse()
+    {
+        var sb = new System.Text.StringBuilder();
+        sb.Append($"HTTP/1.1 {(int)_statusCode} {_statusCode}\r\n");
+        sb.Append($"Content-Type: {_contentType}\r\n");
+        sb.Append($"Content-Length: {_responseBody.Length}\r\n");
+        foreach (var h in _responseHeaders)
+        {
+            if (h.Key.Equals("Content-Length", StringComparison.OrdinalIgnoreCase) || h.Key.Equals("Content-Type", StringComparison.OrdinalIgnoreCase)) continue;
+            sb.Append($"{h.Key}: {h.Value}\r\n");
+        }
+        if (!_responseHeaders.ContainsKey("x-amzn-RequestId")) sb.Append("x-amzn-RequestId: benchmark-request-id\r\n");
+        sb.Append("\r\n");
+        var head = System.Text.Encoding.ASCII.GetBytes(sb.ToString());
+        var all = new byte[head.Length + _responseBody.Length];
+        head.CopyTo(all, 0);
+        _responseBody.CopyTo(all, head.Length);
+        return all;
+    }
 }
 
 /// <summary>
 /// HttpClientFactory that creates an HttpClient backed by a MockHttpHandler.
 /// Inject via ClientConfig.HttpClientFactory to bypass real HTTP.
+/// With --cpu-time --transport https, the client instead sends the calls to the fixture server
+/// (see <see cref="HttpsLoopback"/>), which serves the handler's canned response.
 /// </summary>
 public class MockHttpClientFactory : HttpClientFactory
 {
@@ -77,7 +100,9 @@ public class MockHttpClientFactory : HttpClientFactory
 
     public MockHttpClientFactory(MockHttpHandler handler)
     {
-        _client = new HttpClient(handler);
+        _client = BenchmarkTransport.Kind == BenchmarkTransportKind.Https
+            ? HttpsLoopback.CreateClient(handler)
+            : new HttpClient(handler);
     }
 
     public override HttpClient CreateHttpClient(IClientConfig clientConfig) => _client;
