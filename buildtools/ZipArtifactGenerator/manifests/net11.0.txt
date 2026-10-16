@@ -14,4 +14,5 @@ extensions\CrtIntegration\System.IO.Hashing.dll
 extensions\EC2DecryptPassword\AWSSDK.Extensions.EC2.DecryptPassword.dll
 extensions\EC2DecryptPassword\System.IO.Hashing.dll
 extensions\NETCoreSetup\AWSSDK.Extensions.NETCore.Setup.dll
+extensions\NETCoreSetup\System.IO.Hashing.dll
 extensions\Numerics\AWSSDK.Extensions.Numerics.dll
