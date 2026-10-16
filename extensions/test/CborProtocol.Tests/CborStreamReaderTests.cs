@@ -1280,7 +1280,18 @@ public class CborStreamReaderTests : IClassFixture<BufferSizeConfigFixture>
         var bytes = new byte[] { 0x9A, 0x05, 0xF5, 0xE1, 0x00, 0x01, 0x02, 0x03 };
         using var reader = new CborStreamReader(new MemoryStream(bytes));
 
+#if NET11_0_OR_GREATER
+        // The incremental reader validates element counts lazily: the array header is well-formed, so
+        // ReadStartArray returns the declared count and the content error surfaces once the body runs out.
+        reader.ReadStartArray();
+        Assert.Throws<CborContentException>(() =>
+        {
+            for (int i = 0; i < 100_000_000; i++)
+                reader.ReadInt32();
+        });
+#else
         Assert.Throws<CborContentException>(() => reader.ReadStartArray());
+#endif
 
         // The buffer grows only as received bytes arrive, so a header can't force a ~100 MB allocation.
         var buffer = (byte[])typeof(CborStreamReader)

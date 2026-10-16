@@ -41,7 +41,11 @@
     </Otherwise>
   </Choose>  	
 
-  <ItemGroup>
+  <!-- net11.0 ships the incremental CborReader APIs (SlideData / NeedsMoreData); other targets stay on the stable package. -->
+  <ItemGroup Condition="$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) == '.NETCoreApp' And $([MSBuild]::VersionGreaterThanOrEquals($([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)')), '11.0'))">
+    <PackageReference Include="System.Formats.Cbor" Version="11.0.0-rc.2.26504.105" />
+  </ItemGroup>
+  <ItemGroup Condition="!($([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) == '.NETCoreApp' And $([MSBuild]::VersionGreaterThanOrEquals($([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)')), '11.0')))">
     <PackageReference Include="System.Formats.Cbor" Version="9.0.5" />
   </ItemGroup>
 
