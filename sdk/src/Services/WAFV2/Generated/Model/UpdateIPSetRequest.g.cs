@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the wafv2-2019-07-29.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -22,83 +22,38 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 using System.Net;
-
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618,CS1570
+
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateIPSet operation.
-    /// Updates the specified <a>IPSet</a>. 
-    /// 
-    ///  <note> 
-    /// <para>
-    /// This operation completely replaces the mutable specifications that you already have
-    /// for the IP set with the ones that you provide to this call. 
-    /// </para>
-    ///  
-    /// <para>
-    /// To modify an IP set, do the following: 
-    /// </para>
-    ///  <ol> <li> 
-    /// <para>
-    /// Retrieve it by calling <a>GetIPSet</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Update its settings as needed
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Provide the complete IP set specification to this call
-    /// </para>
-    ///  </li> </ol> </note> 
-    /// <para>
-    ///  <b>Temporary inconsistencies during updates</b> 
-    /// </para>
-    ///  
-    /// <para>
-    /// When you create or change a web ACL or other WAF resources, the changes take a small
-    /// amount of time to propagate to all areas where the resources are stored. The propagation
-    /// time can be from a few seconds to a number of minutes. 
-    /// </para>
-    ///  
-    /// <para>
-    /// The following are examples of the temporary inconsistencies that you might notice
-    /// during change propagation: 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// After you create a web ACL, if you try to associate it with a resource, you might
-    /// get an exception indicating that the web ACL is unavailable. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// After you add a rule group to a web ACL, the new rule group rules might be in effect
-    /// in one area where the web ACL is used and not in another.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// After you change a rule action setting, you might see the old action in some places
-    /// and the new action in others. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
+    /// Container for the parameters to the UpdateIPSet operation. Updates the specified <a>IPSet</a>.
+    /// <note> <para> This operation completely replaces the mutable specifications that you
+    /// already have for the IP set with the ones that you provide to this call. </para> <para>
+    /// To modify an IP set, do the following: </para> <ol> <li> <para> Retrieve it by calling
+    /// <a>GetIPSet</a> </para> </li> <li> <para> Update its settings as needed </para> </li>
+    /// <li> <para> Provide the complete IP set specification to this call </para> </li> </ol>
+    /// </note> <para> <b>Temporary inconsistencies during updates</b> </para> <para> When
+    /// you create or change a web ACL or other WAF resources, the changes take a small amount
+    /// of time to propagate to all areas where the resources are stored. The propagation
+    /// time can be from a few seconds to a number of minutes. </para> <para> The following
+    /// are examples of the temporary inconsistencies that you might notice during change
+    /// propagation: </para> <ul> <li> <para> After you create a web ACL, if you try to associate
+    /// it with a resource, you might get an exception indicating that the web ACL is unavailable.
+    /// </para> </li> <li> <para> After you add a rule group to a web ACL, the new rule group
+    /// rules might be in effect in one area where the web ACL is used and not in another.
+    /// </para> </li> <li> <para> After you change a rule action setting, you might see the
+    /// old action in some places and the new action in others. </para> </li> <li> <para>
     /// After you add an IP address to an IP set that is in use in a blocking rule, the new
-    /// address might be blocked in one area while still allowed in another.
-    /// </para>
-    ///  </li> </ul>
+    /// address might be blocked in one area while still allowed in another. </para> </li>
+    /// </ul>
     /// </summary>
     public partial class UpdateIPSetRequest : AmazonWAFV2Request
     {
-        private List<string> _addresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
-        private string _description;
-        private string _id;
-        private string _lockToken;
-        private string _name;
-        private Scope _scope;
+        private List<string> _Addresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Addresses. 
@@ -159,17 +114,14 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  </li> </ul>
         /// <para />
-        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
-        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
-        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true)]
-        public List<string> Addresses
-        {
-            get { return this._addresses; }
-            set { this._addresses = value; }
-        }
+        [AWSProperty(Required = true)]
+        public List<string> Addresses { get => this._Addresses; set => this._Addresses = value; }
 
         /// <summary>
         /// This property is set to true if the property <seealso cref="Addresses"/>
@@ -186,21 +138,14 @@ namespace Amazon.WAFV2.Model
         /// </returns>
         public bool IsAddressesSet
         {
-            get
-            {
-                return Amazon.Util.Internal.InternalSDKUtils.GetIsSet(this._addresses);
-            }
-            set
-            {
-                Amazon.Util.Internal.InternalSDKUtils.SetIsSet(value, ref this._addresses);
-            }
+            get => Amazon.Util.Internal.InternalSDKUtils.GetIsSet(this._Addresses);
+            set => Amazon.Util.Internal.InternalSDKUtils.SetIsSet(value, ref this._Addresses);
         }
 
-        // Check to see if Addresses property is set
-        internal bool IsSetAddresses()
-        {
-            return this.IsAddressesSet; 
-        }
+        /// <summary>
+        /// Checks to see if the Addresses property is set.
+        /// </summary>
+        internal bool IsSetAddresses() => this.IsAddressesSet;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -208,18 +153,13 @@ namespace Amazon.WAFV2.Model
         /// A description of the IP set that helps with identification. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
-        public string Description
-        {
-            get { return this._description; }
-            set { this._description = value; }
-        }
+        [AWSProperty(Min = 1, Max = 256)]
+        public string Description { get; set; }
 
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
-        {
-            return this._description != null;
-        }
+        /// <summary>
+        /// Checks to see if the Description property is set.
+        /// </summary>
+        internal bool IsSetDescription() => this.Description != null;
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -228,18 +168,13 @@ namespace Amazon.WAFV2.Model
         /// list commands. You provide it to operations like update and delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=36)]
-        public string Id
-        {
-            get { return this._id; }
-            set { this._id = value; }
-        }
+        [AWSProperty(Required = true, Min = 1, Max = 36)]
+        public string Id { get; set; }
 
-        // Check to see if Id property is set
-        internal bool IsSetId()
-        {
-            return this._id != null;
-        }
+        /// <summary>
+        /// Checks to see if the Id property is set.
+        /// </summary>
+        internal bool IsSetId() => this.Id != null;
 
         /// <summary>
         /// Gets and sets the property LockToken. 
@@ -253,18 +188,13 @@ namespace Amazon.WAFV2.Model
         /// <c>get</c>, and use the new token returned by that operation. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=36)]
-        public string LockToken
-        {
-            get { return this._lockToken; }
-            set { this._lockToken = value; }
-        }
+        [AWSProperty(Required = true, Min = 1, Max = 36)]
+        public string LockToken { get; set; }
 
-        // Check to see if LockToken property is set
-        internal bool IsSetLockToken()
-        {
-            return this._lockToken != null;
-        }
+        /// <summary>
+        /// Checks to see if the LockToken property is set.
+        /// </summary>
+        internal bool IsSetLockToken() => this.LockToken != null;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -273,18 +203,13 @@ namespace Amazon.WAFV2.Model
         /// it.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
-        public string Name
-        {
-            get { return this._name; }
-            set { this._name = value; }
-        }
+        [AWSProperty(Required = true, Min = 1, Max = 128)]
+        public string Name { get; set; }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this._name != null;
-        }
+        /// <summary>
+        /// Checks to see if the Name property is set.
+        /// </summary>
+        internal bool IsSetName() => this.Name != null;
 
         /// <summary>
         /// Gets and sets the property Scope. 
@@ -308,18 +233,12 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public Scope Scope
-        {
-            get { return this._scope; }
-            set { this._scope = value; }
-        }
+        [AWSProperty(Required = true)]
+        public Scope Scope { get; set; }
 
-        // Check to see if Scope property is set
-        internal bool IsSetScope()
-        {
-            return this._scope != null;
-        }
-
+        /// <summary>
+        /// Checks to see if the Scope property is set.
+        /// </summary>
+        internal bool IsSetScope() => this.Scope != null;
     }
 }
