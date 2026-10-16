@@ -10,6 +10,8 @@ extensions\CborProtocol\System.Runtime.CompilerServices.Unsafe.dll
 extensions\CborProtocol\System.Text.Encodings.Web.dll
 extensions\CborProtocol\System.Text.Json.dll
 extensions\CborProtocol\System.Threading.Tasks.Extensions.dll
+extensions\CborProtocol\System.Formats.Asn1.dll
+extensions\CborProtocol\System.IO.Hashing.dll
 extensions\CloudFrontSigners\AWSSDK.Extensions.CloudFront.Signers.dll
 extensions\CloudFrontSigners\BouncyCastle.Cryptography.dll
 extensions\CloudFrontSigners\Microsoft.Bcl.AsyncInterfaces.dll
@@ -20,6 +22,8 @@ extensions\CloudFrontSigners\System.Runtime.CompilerServices.Unsafe.dll
 extensions\CloudFrontSigners\System.Text.Encodings.Web.dll
 extensions\CloudFrontSigners\System.Text.Json.dll
 extensions\CloudFrontSigners\System.Threading.Tasks.Extensions.dll
+extensions\CloudFrontSigners\System.Formats.Asn1.dll
+extensions\CloudFrontSigners\System.IO.Hashing.dll
 extensions\CrtIntegration\aws-crt-auth.dll
 extensions\CrtIntegration\aws-crt-checksums.dll
 extensions\CrtIntegration\aws-crt-http.dll
@@ -35,6 +39,8 @@ extensions\CrtIntegration\System.Runtime.Loader.dll
 extensions\CrtIntegration\System.Text.Encodings.Web.dll
 extensions\CrtIntegration\System.Text.Json.dll
 extensions\CrtIntegration\System.Threading.Tasks.Extensions.dll
+extensions\CrtIntegration\System.Formats.Asn1.dll
+extensions\CrtIntegration\System.IO.Hashing.dll
 extensions\EC2DecryptPassword\AWSSDK.Extensions.EC2.DecryptPassword.dll
 extensions\EC2DecryptPassword\BouncyCastle.Cryptography.dll
 extensions\EC2DecryptPassword\Microsoft.Bcl.AsyncInterfaces.dll
@@ -45,6 +51,8 @@ extensions\EC2DecryptPassword\System.Runtime.CompilerServices.Unsafe.dll
 extensions\EC2DecryptPassword\System.Text.Encodings.Web.dll
 extensions\EC2DecryptPassword\System.Text.Json.dll
 extensions\EC2DecryptPassword\System.Threading.Tasks.Extensions.dll
+extensions\EC2DecryptPassword\System.Formats.Asn1.dll
+extensions\EC2DecryptPassword\System.IO.Hashing.dll
 extensions\LoggingILoggerAdaptor\AWSSDK.Extensions.Logging.ILoggerAdaptor.dll
 extensions\LoggingILoggerAdaptor\Microsoft.Bcl.AsyncInterfaces.dll
 extensions\LoggingILoggerAdaptor\Microsoft.Extensions.DependencyInjection.Abstractions.dll
@@ -93,3 +101,5 @@ System.Runtime.CompilerServices.Unsafe.dll
 System.Text.Encodings.Web.dll
 System.Text.Json.dll
 System.Threading.Tasks.Extensions.dll
+System.Formats.Asn1.dll
+System.IO.Hashing.dll

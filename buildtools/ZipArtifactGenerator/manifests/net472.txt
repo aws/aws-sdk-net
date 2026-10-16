@@ -3,7 +3,9 @@ extensions\CborProtocol\AWSSDK.Extensions.CborProtocol.dll
 extensions\CborProtocol\Microsoft.Bcl.AsyncInterfaces.dll
 extensions\CborProtocol\Microsoft.Bcl.HashCode.dll
 extensions\CborProtocol\System.Buffers.dll
+extensions\CborProtocol\System.Formats.Asn1.dll
 extensions\CborProtocol\System.Formats.Cbor.dll
+extensions\CborProtocol\System.IO.Hashing.dll
 extensions\CborProtocol\System.Memory.dll
 extensions\CborProtocol\System.Numerics.Vectors.dll
 extensions\CborProtocol\System.Runtime.CompilerServices.Unsafe.dll
@@ -15,6 +17,8 @@ extensions\CloudFrontSigners\AWSSDK.Extensions.CloudFront.Signers.dll
 extensions\CloudFrontSigners\BouncyCastle.Cryptography.dll
 extensions\CloudFrontSigners\Microsoft.Bcl.AsyncInterfaces.dll
 extensions\CloudFrontSigners\System.Buffers.dll
+extensions\CloudFrontSigners\System.Formats.Asn1.dll
+extensions\CloudFrontSigners\System.IO.Hashing.dll
 extensions\CloudFrontSigners\System.Memory.dll
 extensions\CloudFrontSigners\System.Numerics.Vectors.dll
 extensions\CloudFrontSigners\System.Runtime.CompilerServices.Unsafe.dll
@@ -29,6 +33,8 @@ extensions\CrtIntegration\aws-crt.dll
 extensions\CrtIntegration\AWSSDK.Extensions.CrtIntegration.dll
 extensions\CrtIntegration\Microsoft.Bcl.AsyncInterfaces.dll
 extensions\CrtIntegration\System.Buffers.dll
+extensions\CrtIntegration\System.Formats.Asn1.dll
+extensions\CrtIntegration\System.IO.Hashing.dll
 extensions\CrtIntegration\System.Memory.dll
 extensions\CrtIntegration\System.Numerics.Vectors.dll
 extensions\CrtIntegration\System.Runtime.CompilerServices.Unsafe.dll
@@ -40,6 +46,8 @@ extensions\EC2DecryptPassword\AWSSDK.Extensions.EC2.DecryptPassword.dll
 extensions\EC2DecryptPassword\BouncyCastle.Cryptography.dll
 extensions\EC2DecryptPassword\Microsoft.Bcl.AsyncInterfaces.dll
 extensions\EC2DecryptPassword\System.Buffers.dll
+extensions\EC2DecryptPassword\System.Formats.Asn1.dll
+extensions\EC2DecryptPassword\System.IO.Hashing.dll
 extensions\EC2DecryptPassword\System.Memory.dll
 extensions\EC2DecryptPassword\System.Numerics.Vectors.dll
 extensions\EC2DecryptPassword\System.Runtime.CompilerServices.Unsafe.dll
@@ -50,6 +58,8 @@ extensions\EC2DecryptPassword\System.ValueTuple.dll
 extensions\Numerics\AWSSDK.Extensions.Numerics.dll
 Microsoft.Bcl.AsyncInterfaces.dll
 System.Buffers.dll
+System.Formats.Asn1.dll
+System.IO.Hashing.dll
 System.Memory.dll
 System.Numerics.Vectors.dll
 System.Runtime.CompilerServices.Unsafe.dll
