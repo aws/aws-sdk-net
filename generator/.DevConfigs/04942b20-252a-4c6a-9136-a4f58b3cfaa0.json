@@ -1,6 +1,6 @@
 {
   "core": {
-    "updateMinimum": false,
+    "updateMinimum": true,
     "type": "patch",
     "changeLogMessages": [
       "Breaking Change: Removed support .NET Core 3.1",
