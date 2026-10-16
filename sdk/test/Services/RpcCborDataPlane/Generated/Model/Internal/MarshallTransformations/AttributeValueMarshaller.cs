@@ -50,94 +50,117 @@ namespace Amazon.RpcCborDataPlane.Model.Internal.MarshallTransformations
             if (requestObject == null)
                 return;
 
+            var writer = context.ContentWriter;
             if (requestObject.IsSetB())
             {
-                context.Writer.WriteTextString("B");
-                context.Writer.WriteByteString(requestObject.B);
+                writer.WriteTextString("B");
+                writer.WriteByteString(requestObject.B);
             }
             if (requestObject.IsSetBOOL())
             {
-                context.Writer.WriteTextString("BOOL");
-                context.Writer.WriteBoolean(requestObject.BOOL.Value);
+                writer.WriteTextString("BOOL");
+                writer.WriteBoolean(requestObject.BOOL.Value);
             }
             if (requestObject.IsSetBS())
             {
-                context.Writer.WriteTextString("BS");
-                context.Writer.WriteStartArray(requestObject.BS.Count);
+                writer.WriteTextString("BS");
+                writer.WriteStartArray(requestObject.BS.Count);
                 foreach(var requestObjectBSListValue in requestObject.BS)
                 {
-                    context.Writer.WriteByteString(requestObjectBSListValue);
+                    writer.WriteByteString(requestObjectBSListValue);
                 }
-                context.Writer.WriteEndArray();
+                writer.WriteEndArray();
             }
             if (requestObject.IsSetL())
             {
-                context.Writer.WriteTextString("L");
-                context.Writer.WriteStartArray(requestObject.L.Count);
+                writer.WriteTextString("L");
+                writer.WriteStartArray(requestObject.L.Count);
                 foreach(var requestObjectLListValue in requestObject.L)
                 {
-                    context.Writer.WriteStartMap(null);
+                    writer.WriteStartMap(AttributeValueMarshaller.Instance.CountSetMembers(requestObjectLListValue));
 
                     var marshaller = AttributeValueMarshaller.Instance;
                     marshaller.Marshall(requestObjectLListValue, context);
 
-                    context.Writer.WriteEndMap();
+                    writer.WriteEndMap();
                 }
-                context.Writer.WriteEndArray();
+                writer.WriteEndArray();
             }
             if (requestObject.IsSetM())
             {
-                context.Writer.WriteTextString("M");
-                context.Writer.WriteStartMap(null);
+                writer.WriteTextString("M");
+                writer.WriteStartMap(requestObject.M.Count);
                 foreach (var requestObjectMKvp in requestObject.M)
                 {
-                    context.Writer.WriteTextString(requestObjectMKvp.Key);
+                    writer.WriteTextString(requestObjectMKvp.Key);
                     var requestObjectMValue = requestObjectMKvp.Value;
 
-                    context.Writer.WriteStartMap(null);
+                    writer.WriteStartMap(AttributeValueMarshaller.Instance.CountSetMembers(requestObjectMValue));
 
                     var marshaller = AttributeValueMarshaller.Instance;
                     marshaller.Marshall(requestObjectMValue, context);
 
-                    context.Writer.WriteEndMap();
+                    writer.WriteEndMap();
                 }
-                context.Writer.WriteEndMap();
+                writer.WriteEndMap();
             }
             if (requestObject.IsSetN())
             {
-                context.Writer.WriteTextString("N");
-                context.Writer.WriteTextString(requestObject.N);
+                writer.WriteTextString("N");
+                writer.WriteTextString(requestObject.N);
             }
             if (requestObject.IsSetNS())
             {
-                context.Writer.WriteTextString("NS");
-                context.Writer.WriteStartArray(requestObject.NS.Count);
+                writer.WriteTextString("NS");
+                writer.WriteStartArray(requestObject.NS.Count);
                 foreach(var requestObjectNSListValue in requestObject.NS)
                 {
-                        context.Writer.WriteTextString(requestObjectNSListValue);
+                        writer.WriteTextString(requestObjectNSListValue);
                 }
-                context.Writer.WriteEndArray();
+                writer.WriteEndArray();
             }
             if (requestObject.IsSetNULL())
             {
-                context.Writer.WriteTextString("NULL");
-                context.Writer.WriteBoolean(requestObject.NULL.Value);
+                writer.WriteTextString("NULL");
+                writer.WriteBoolean(requestObject.NULL.Value);
             }
             if (requestObject.IsSetS())
             {
-                context.Writer.WriteTextString("S");
-                context.Writer.WriteTextString(requestObject.S);
+                writer.WriteTextString("S");
+                writer.WriteTextString(requestObject.S);
             }
             if (requestObject.IsSetSS())
             {
-                context.Writer.WriteTextString("SS");
-                context.Writer.WriteStartArray(requestObject.SS.Count);
+                writer.WriteTextString("SS");
+                writer.WriteStartArray(requestObject.SS.Count);
                 foreach(var requestObjectSSListValue in requestObject.SS)
                 {
-                        context.Writer.WriteTextString(requestObjectSSListValue);
+                        writer.WriteTextString(requestObjectSSListValue);
                 }
-                context.Writer.WriteEndArray();
+                writer.WriteEndArray();
             }
+        }
+
+        /// <summary>
+        /// Counts the set members this marshaller would write, so a caller can open a definite-length CBOR map.
+        /// Must stay in lockstep with <see cref="Marshall"/>.
+        /// </summary>
+        public int CountSetMembers(AttributeValue requestObject)
+        {
+            if (requestObject == null)
+                return 0;
+            int count = 0;
+            if (requestObject.IsSetB()) count++;
+            if (requestObject.IsSetBOOL()) count++;
+            if (requestObject.IsSetBS()) count++;
+            if (requestObject.IsSetL()) count++;
+            if (requestObject.IsSetM()) count++;
+            if (requestObject.IsSetN()) count++;
+            if (requestObject.IsSetNS()) count++;
+            if (requestObject.IsSetNULL()) count++;
+            if (requestObject.IsSetS()) count++;
+            if (requestObject.IsSetSS()) count++;
+            return count;
         }
 
         /// <summary>

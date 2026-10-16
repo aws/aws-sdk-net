@@ -65,6 +65,131 @@ namespace Amazon.RpcCborDataPlane.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "1999-12-31";
             request.HttpMethod = "POST";
 
+#if !NETFRAMEWORK
+            // Stream straight into a pooled buffer via the direct CBOR writer (no internal buffer, no Encode copy).
+            request.ContentStream = new PooledContentStream();
+            var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+            var writer = new CborContentWriter(bufferWriter);
+
+            int rootCount = 0;
+            if (publicRequest.IsSetConditionalOperator()) rootCount++;
+            if (publicRequest.IsSetConditionExpression()) rootCount++;
+            if (publicRequest.IsSetExpected()) rootCount++;
+            if (publicRequest.IsSetExpressionAttributeNames()) rootCount++;
+            if (publicRequest.IsSetExpressionAttributeValues()) rootCount++;
+            if (publicRequest.IsSetItem()) rootCount++;
+            if (publicRequest.IsSetReturnConsumedCapacity()) rootCount++;
+            if (publicRequest.IsSetReturnItemCollectionMetrics()) rootCount++;
+            if (publicRequest.IsSetReturnValues()) rootCount++;
+            if (publicRequest.IsSetReturnValuesOnConditionCheckFailure()) rootCount++;
+            if (publicRequest.IsSetTableName()) rootCount++;
+
+            writer.WriteStartMap(rootCount);
+            var context = new CborMarshallerContext(request, writer);
+            if (publicRequest.IsSetConditionalOperator())
+            {
+                writer.WriteTextString("ConditionalOperator");
+                writer.WriteTextString(publicRequest.ConditionalOperator);
+            }
+            if (publicRequest.IsSetConditionExpression())
+            {
+                writer.WriteTextString("ConditionExpression");
+                writer.WriteTextString(publicRequest.ConditionExpression);
+            }
+            if (publicRequest.IsSetExpected())
+            {
+                writer.WriteTextString("Expected");
+                writer.WriteStartMap(publicRequest.Expected.Count);
+                foreach (var publicRequestExpectedKvp in publicRequest.Expected)
+                {
+                    writer.WriteTextString(publicRequestExpectedKvp.Key);
+                    var publicRequestExpectedValue = publicRequestExpectedKvp.Value;
+
+                    writer.WriteStartMap(ExpectedAttributeValueMarshaller.Instance.CountSetMembers(publicRequestExpectedValue));
+
+                    var marshaller = ExpectedAttributeValueMarshaller.Instance;
+                    marshaller.Marshall(publicRequestExpectedValue, context);
+
+                    writer.WriteEndMap();
+                }
+                writer.WriteEndMap();
+            }
+            if (publicRequest.IsSetExpressionAttributeNames())
+            {
+                writer.WriteTextString("ExpressionAttributeNames");
+                writer.WriteStartMap(publicRequest.ExpressionAttributeNames.Count);
+                foreach (var publicRequestExpressionAttributeNamesKvp in publicRequest.ExpressionAttributeNames)
+                {
+                    writer.WriteTextString(publicRequestExpressionAttributeNamesKvp.Key);
+                    var publicRequestExpressionAttributeNamesValue = publicRequestExpressionAttributeNamesKvp.Value;
+
+                        writer.WriteTextString(publicRequestExpressionAttributeNamesValue);
+                }
+                writer.WriteEndMap();
+            }
+            if (publicRequest.IsSetExpressionAttributeValues())
+            {
+                writer.WriteTextString("ExpressionAttributeValues");
+                writer.WriteStartMap(publicRequest.ExpressionAttributeValues.Count);
+                foreach (var publicRequestExpressionAttributeValuesKvp in publicRequest.ExpressionAttributeValues)
+                {
+                    writer.WriteTextString(publicRequestExpressionAttributeValuesKvp.Key);
+                    var publicRequestExpressionAttributeValuesValue = publicRequestExpressionAttributeValuesKvp.Value;
+
+                    writer.WriteStartMap(AttributeValueMarshaller.Instance.CountSetMembers(publicRequestExpressionAttributeValuesValue));
+
+                    var marshaller = AttributeValueMarshaller.Instance;
+                    marshaller.Marshall(publicRequestExpressionAttributeValuesValue, context);
+
+                    writer.WriteEndMap();
+                }
+                writer.WriteEndMap();
+            }
+            if (publicRequest.IsSetItem())
+            {
+                writer.WriteTextString("Item");
+                writer.WriteStartMap(publicRequest.Item.Count);
+                foreach (var publicRequestItemKvp in publicRequest.Item)
+                {
+                    writer.WriteTextString(publicRequestItemKvp.Key);
+                    var publicRequestItemValue = publicRequestItemKvp.Value;
+
+                    writer.WriteStartMap(AttributeValueMarshaller.Instance.CountSetMembers(publicRequestItemValue));
+
+                    var marshaller = AttributeValueMarshaller.Instance;
+                    marshaller.Marshall(publicRequestItemValue, context);
+
+                    writer.WriteEndMap();
+                }
+                writer.WriteEndMap();
+            }
+            if (publicRequest.IsSetReturnConsumedCapacity())
+            {
+                writer.WriteTextString("ReturnConsumedCapacity");
+                writer.WriteTextString(publicRequest.ReturnConsumedCapacity);
+            }
+            if (publicRequest.IsSetReturnItemCollectionMetrics())
+            {
+                writer.WriteTextString("ReturnItemCollectionMetrics");
+                writer.WriteTextString(publicRequest.ReturnItemCollectionMetrics);
+            }
+            if (publicRequest.IsSetReturnValues())
+            {
+                writer.WriteTextString("ReturnValues");
+                writer.WriteTextString(publicRequest.ReturnValues);
+            }
+            if (publicRequest.IsSetReturnValuesOnConditionCheckFailure())
+            {
+                writer.WriteTextString("ReturnValuesOnConditionCheckFailure");
+                writer.WriteTextString(publicRequest.ReturnValuesOnConditionCheckFailure);
+            }
+            if (publicRequest.IsSetTableName())
+            {
+                writer.WriteTextString("TableName");
+                writer.WriteTextString(publicRequest.TableName);
+            }
+            writer.WriteEndMap();
+#else
             var writer = CborWriterPool.Rent();
             try
             {
@@ -173,24 +298,13 @@ namespace Amazon.RpcCborDataPlane.Model.Internal.MarshallTransformations
                     context.Writer.WriteTextString(publicRequest.TableName);
                 }
                 writer.WriteEndMap();
-#if !NETFRAMEWORK
-                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
-                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
-                // avoiding the default-size rent followed by a resize+return.
-                var encodedLength = writer.BytesWritten;
-                request.ContentStream = new PooledContentStream(encodedLength);
-                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
-                var span = bufferWriter.GetSpan(encodedLength);
-                var bytesWritten = writer.Encode(span);
-                bufferWriter.Advance(bytesWritten);
-#else
                 request.Content = writer.Encode();
-#endif
             }
             finally
             {
                 CborWriterPool.Return(writer);
             }
+#endif
             
             return request;
         }

@@ -50,41 +50,58 @@ namespace Amazon.RpcCborDataPlane.Model.Internal.MarshallTransformations
             if (requestObject == null)
                 return;
 
+            var writer = context.ContentWriter;
             if (requestObject.IsSetAttributeValueList())
             {
-                context.Writer.WriteTextString("AttributeValueList");
-                context.Writer.WriteStartArray(requestObject.AttributeValueList.Count);
+                writer.WriteTextString("AttributeValueList");
+                writer.WriteStartArray(requestObject.AttributeValueList.Count);
                 foreach(var requestObjectAttributeValueListListValue in requestObject.AttributeValueList)
                 {
-                    context.Writer.WriteStartMap(null);
+                    writer.WriteStartMap(AttributeValueMarshaller.Instance.CountSetMembers(requestObjectAttributeValueListListValue));
 
                     var marshaller = AttributeValueMarshaller.Instance;
                     marshaller.Marshall(requestObjectAttributeValueListListValue, context);
 
-                    context.Writer.WriteEndMap();
+                    writer.WriteEndMap();
                 }
-                context.Writer.WriteEndArray();
+                writer.WriteEndArray();
             }
             if (requestObject.IsSetComparisonOperator())
             {
-                context.Writer.WriteTextString("ComparisonOperator");
-                context.Writer.WriteTextString(requestObject.ComparisonOperator);
+                writer.WriteTextString("ComparisonOperator");
+                writer.WriteTextString(requestObject.ComparisonOperator);
             }
             if (requestObject.IsSetExists())
             {
-                context.Writer.WriteTextString("Exists");
-                context.Writer.WriteBoolean(requestObject.Exists.Value);
+                writer.WriteTextString("Exists");
+                writer.WriteBoolean(requestObject.Exists.Value);
             }
             if (requestObject.IsSetValue())
             {
-                context.Writer.WriteTextString("Value");
-                context.Writer.WriteStartMap(null);
+                writer.WriteTextString("Value");
+                writer.WriteStartMap(AttributeValueMarshaller.Instance.CountSetMembers(requestObject.Value));
 
                 var marshaller = AttributeValueMarshaller.Instance;
                 marshaller.Marshall(requestObject.Value, context);
 
-                context.Writer.WriteEndMap();
+                writer.WriteEndMap();
             }
+        }
+
+        /// <summary>
+        /// Counts the set members this marshaller would write, so a caller can open a definite-length CBOR map.
+        /// Must stay in lockstep with <see cref="Marshall"/>.
+        /// </summary>
+        public int CountSetMembers(ExpectedAttributeValue requestObject)
+        {
+            if (requestObject == null)
+                return 0;
+            int count = 0;
+            if (requestObject.IsSetAttributeValueList()) count++;
+            if (requestObject.IsSetComparisonOperator()) count++;
+            if (requestObject.IsSetExists()) count++;
+            if (requestObject.IsSetValue()) count++;
+            return count;
         }
 
         /// <summary>
