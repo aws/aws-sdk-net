@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the workdocs-2016-05-01.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -22,11 +22,11 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 using System.Net;
-
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618,CS1570
+
 namespace Amazon.WorkDocs.Model
 {
     /// <summary>
@@ -34,10 +34,6 @@ namespace Amazon.WorkDocs.Model
     /// </summary>
     public partial class DescribeUsersResponse : AmazonWebServiceResponse
     {
-        private string _marker;
-        private long? _totalNumberOfUsers;
-        private List<User> _users = AWSConfigs.InitializeCollections ? new List<User>() : null;
-
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
@@ -45,18 +41,13 @@ namespace Amazon.WorkDocs.Model
         /// results, the string is empty.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
-        public string Marker
-        {
-            get { return this._marker; }
-            set { this._marker = value; }
-        }
+        [AWSProperty(Min = 1, Max = 2048)]
+        public string Marker { get; set; }
 
-        // Check to see if Marker property is set
-        internal bool IsSetMarker()
-        {
-            return this._marker != null;
-        }
+        /// <summary>
+        /// Checks to see if the Marker property is set.
+        /// </summary>
+        internal bool IsSetMarker() => this.Marker != null;
 
         /// <summary>
         /// Gets and sets the property TotalNumberOfUsers. 
@@ -65,17 +56,12 @@ namespace Amazon.WorkDocs.Model
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated")]
-        public long? TotalNumberOfUsers
-        {
-            get { return this._totalNumberOfUsers; }
-            set { this._totalNumberOfUsers = value; }
-        }
+        public long? TotalNumberOfUsers { get; set; }
 
-        // Check to see if TotalNumberOfUsers property is set
-        internal bool IsSetTotalNumberOfUsers()
-        {
-            return this._totalNumberOfUsers.HasValue; 
-        }
+        /// <summary>
+        /// Checks to see if the TotalNumberOfUsers property is set.
+        /// </summary>
+        internal bool IsSetTotalNumberOfUsers() => this.TotalNumberOfUsers.HasValue;
 
         /// <summary>
         /// Gets and sets the property Users. 
@@ -83,22 +69,17 @@ namespace Amazon.WorkDocs.Model
         /// The users.
         /// </para>
         /// <para />
-        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
-        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
-        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public List<User> Users
-        {
-            get { return this._users; }
-            set { this._users = value; }
-        }
+        public List<User> Users { get; set; } = AWSConfigs.InitializeCollections ? new List<User>() : null;
 
-        // Check to see if Users property is set
-        internal bool IsSetUsers()
-        {
-            return this._users != null && (this._users.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
+        /// <summary>
+        /// Checks to see if the Users property is set.
+        /// </summary>
+        internal bool IsSetUsers() => this.Users != null && (this.Users.Count > 0 || !AWSConfigs.InitializeCollections);
     }
 }

@@ -14,29 +14,28 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ecr-2015-09-21.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
+
 namespace Amazon.ECR.Model
 {
     /// <summary>
-    /// Base class for DescribeImageScanFindings paginators.
+    /// Paginator for the DescribeImageScanFindings operation
     /// </summary>
     internal sealed partial class DescribeImageScanFindingsPaginator : IPaginator<DescribeImageScanFindingsResponse>, IDescribeImageScanFindingsPaginator
     {
         private readonly IAmazonECR _client;
         private readonly DescribeImageScanFindingsRequest _request;
         private int _isPaginatorInUse = 0;
-        
+
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
@@ -45,13 +44,13 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Enumerable containing all of the Findings
         /// </summary>
-        public IPaginatedEnumerable<ImageScanFinding> Findings => 
+        public IPaginatedEnumerable<ImageScanFinding> Findings =>
             new PaginatedResultKeyResponse<DescribeImageScanFindingsResponse, ImageScanFinding>(this, (i) => i.ImageScanFindings.Findings ?? new List<ImageScanFinding>());
 
         /// <summary>
         /// Enumerable containing all of the EnhancedFindings
         /// </summary>
-        public IPaginatedEnumerable<EnhancedImageScanFinding> EnhancedFindings => 
+        public IPaginatedEnumerable<EnhancedImageScanFinding> EnhancedFindings =>
             new PaginatedResultKeyResponse<DescribeImageScanFindingsResponse, EnhancedImageScanFinding>(this, (i) => i.ImageScanFindings.EnhancedFindings ?? new List<EnhancedImageScanFinding>());
 
         internal DescribeImageScanFindingsPaginator(IAmazonECR client, DescribeImageScanFindingsRequest request)
@@ -59,7 +58,7 @@ namespace Amazon.ECR.Model
             this._client = client;
             this._request = request;
         }
-#if BCL
+#if NETFRAMEWORK
         IEnumerable<DescribeImageScanFindingsResponse> IPaginator<DescribeImageScanFindingsResponse>.Paginate()
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)

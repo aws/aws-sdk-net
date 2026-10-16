@@ -1,0 +1,25 @@
+{
+  "services": [
+    {
+      "serviceName": "ECR",
+      "type": "patch",
+      "changeLogMessages": [
+        "ECR is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "WAFV2",
+      "type": "patch",
+      "changeLogMessages": [
+        "WAFV2 is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "WorkDocs",
+      "type": "patch",
+      "changeLogMessages": [
+        "WorkDocs is now generated from its Smithy model. `DeactivatingLastSystemUserException` and `UnauthorizedOperationException` now expose the `Code` property that the service returns in error responses."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+    "paginators": {
+        "DescribeImageScanFindings": {
+            "items": [
+                "imageScanFindings.findings",
+                "imageScanFindings.enhancedFindings"
+            ]
+        }
+    }
+}

@@ -14,29 +14,28 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the workdocs-2016-05-01.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
+
 namespace Amazon.WorkDocs.Model
 {
     /// <summary>
-    /// Base class for DescribeFolderContents paginators.
+    /// Paginator for the DescribeFolderContents operation
     /// </summary>
     internal sealed partial class DescribeFolderContentsPaginator : IPaginator<DescribeFolderContentsResponse>, IDescribeFolderContentsPaginator
     {
         private readonly IAmazonWorkDocs _client;
         private readonly DescribeFolderContentsRequest _request;
         private int _isPaginatorInUse = 0;
-        
+
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
@@ -45,13 +44,13 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Enumerable containing all of the Folders
         /// </summary>
-        public IPaginatedEnumerable<FolderMetadata> Folders => 
+        public IPaginatedEnumerable<FolderMetadata> Folders =>
             new PaginatedResultKeyResponse<DescribeFolderContentsResponse, FolderMetadata>(this, (i) => i.Folders ?? new List<FolderMetadata>());
 
         /// <summary>
         /// Enumerable containing all of the Documents
         /// </summary>
-        public IPaginatedEnumerable<DocumentMetadata> Documents => 
+        public IPaginatedEnumerable<DocumentMetadata> Documents =>
             new PaginatedResultKeyResponse<DescribeFolderContentsResponse, DocumentMetadata>(this, (i) => i.Documents ?? new List<DocumentMetadata>());
 
         internal DescribeFolderContentsPaginator(IAmazonWorkDocs client, DescribeFolderContentsRequest request)
@@ -59,7 +58,7 @@ namespace Amazon.WorkDocs.Model
             this._client = client;
             this._request = request;
         }
-#if BCL
+#if NETFRAMEWORK
         IEnumerable<DescribeFolderContentsResponse> IPaginator<DescribeFolderContentsResponse>.Paginate()
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
@@ -67,16 +66,16 @@ namespace Amazon.WorkDocs.Model
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
-            var marker = _request.Marker;
+            var nextToken = _request.Marker;
             DescribeFolderContentsResponse response;
             do
             {
-                _request.Marker = marker;
+                _request.Marker = nextToken;
                 response = _client.DescribeFolderContents(_request);
-                marker = response.Marker;
+                nextToken = response.Marker;
                 yield return response;
             }
-            while (!string.IsNullOrEmpty(marker));
+            while (!string.IsNullOrEmpty(nextToken));
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
@@ -87,17 +86,17 @@ namespace Amazon.WorkDocs.Model
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
-            var marker = _request.Marker;
+            var nextToken = _request.Marker;
             DescribeFolderContentsResponse response;
             do
             {
-                _request.Marker = marker;
+                _request.Marker = nextToken;
                 response = await _client.DescribeFolderContentsAsync(_request, cancellationToken).ConfigureAwait(false);
-                marker = response.Marker;
+                nextToken = response.Marker;
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;
             }
-            while (!string.IsNullOrEmpty(marker));
+            while (!string.IsNullOrEmpty(nextToken));
         }
 #endif
     }
