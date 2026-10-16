@@ -31,6 +31,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -50,7 +51,7 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestXml")]
-        public void RestXmlEndpointTraitWithHostLabelAndHttpBindingRequest()
+        public async Task RestXmlEndpointTraitWithHostLabelAndHttpBindingRequest()
         {
             // Arrange
             var request = new EndpointWithHostLabelHeaderOperationRequest
@@ -59,19 +60,26 @@ namespace AWSSDK.ProtocolTests.RestXml
             };
             var config = new AmazonRestXmlProtocolConfig
             {
-              ServiceURL = "https://example.com/"
+              ServiceURL = "https://example.com/",
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new EndpointWithHostLabelHeaderOperationRequestMarshaller();
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.EndpointWithHostLabelHeaderOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/EndpointWithHostLabelHeaderOperation", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("bar.example.com", actualUri.Host);
-            Assert.AreEqual("bar".Replace(" ",""), marshalledRequest.Headers["X-Amz-Account-Id"].Replace(" ",""));
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/EndpointWithHostLabelHeaderOperation", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("bar.example.com", actualRequest.RequestUri.Host);
+            Assert.AreEqual("bar".Replace(" ",""), actualRequest.Headers["X-Amz-Account-Id"].Replace(" ",""));
         }
 
     }

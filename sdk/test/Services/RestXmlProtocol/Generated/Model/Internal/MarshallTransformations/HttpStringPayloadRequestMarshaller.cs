@@ -60,7 +60,10 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
             request.ResourcePath = "/StringPayload";
 
-            request.Content = Encoding.UTF8.GetBytes(StringUtils.FromString(publicRequest.Payload));
+            if (publicRequest.IsSetPayload())
+            {
+                request.Content = Encoding.UTF8.GetBytes(StringUtils.FromString(publicRequest.Payload));
+            }
             request.Headers["Content-Type"] = "text/plain";
             PostMarshallCustomization(request, publicRequest);
             return request;
