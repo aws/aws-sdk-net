@@ -27,8 +27,167 @@ namespace Amazon.Extensions.CborProtocol.Internal
     /// the entire payload into memory at once. This class wraps <see cref="CborReader"/>
     /// to provide streaming capabilities while maintaining the same reading interface.
     /// </summary>
+    /// <remarks>
+    /// On net11.0 and later this is backed by the incremental <see cref="CborReader"/> APIs
+    /// (<c>SlideData</c> plus the <c>NeedsMoreData</c> state), which let the reader signal when it needs
+    /// the next chunk and retain its parsing state across chunk boundaries. On earlier targets the
+    /// incremental APIs are unavailable, so the reader buffers data itself and recovers from mid-item
+    /// boundaries by catching the reader's exceptions, refilling, and retrying.
+    /// </remarks>
     public class CborStreamReader : IDisposable
     {
+#if NET11_0_OR_GREATER
+        private static readonly ILogger _logger = Logger.GetLogger(typeof(CborStreamReader));
+        private readonly Stream _stream;
+        private byte[] _buffer;
+        private CborReader _internalCborReader;
+
+        /// <summary>
+        /// Total bytes handed to the reader by the most recent <c>SlideData</c> call. The reader consumes
+        /// from the front of this window, so the unconsumed bytes are the tail of <c>_buffer[0.._slidLength]</c>.
+        /// </summary>
+        private int _slidLength;
+
+        /// <summary>
+        /// Set once a read from the underlying stream returns no data, so later fills mark the final block.
+        /// </summary>
+        private bool _streamExhausted;
+
+        private bool _hasReadFromStream;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CborStreamReader"/> class that reads CBOR data
+        /// from the specified stream.
+        /// </summary>
+        /// <param name="stream">The input stream containing CBOR-formatted data.
+        /// The stream must be readable and remain open for the lifetime of the reader.</param>
+        /// <exception cref="ArgumentNullException">Thrown when the stream parameter is null.</exception>
+        public CborStreamReader(Stream stream)
+        {
+            _stream = stream ?? throw new ArgumentNullException(nameof(stream));
+            _buffer = ArrayPool<byte>.Shared.Rent(AWSConfigs.CborReaderInitialBufferSize);
+
+            // Incremental reading requires Lax conformance: stricter modes reject a non-final block.
+            // The stream is read lazily on the first CBOR read (see ExecuteRead); an event stream
+            // response hands the stream on undecoded, so reading here would consume its first frames.
+            _internalCborReader = new CborReader(
+                ReadOnlyMemory<byte>.Empty,
+                new CborReaderOptions { ConformanceMode = CborConformanceMode.Lax, AllowMultipleRootLevelValues = true },
+                isFinalBlock: false);
+        }
+
+        /// <summary>
+        /// Pulls the next chunk from the stream and hands it to the reader via <c>SlideData</c>, preserving
+        /// any bytes the reader has not yet consumed. Grows the buffer when the unconsumed bytes already fill it.
+        /// </summary>
+        private void Fill()
+        {
+            int unconsumed = _internalCborReader.BytesRemaining;
+
+            // The reader consumes from the front of the last slid window, so the unconsumed bytes are the tail
+            // of _buffer[0.._slidLength]. Move them to the front, then read new bytes after them. SlideData then
+            // takes the leftover plus the new bytes as one contiguous block, so the reader never sees a split item.
+            if (unconsumed > 0)
+            {
+                Buffer.BlockCopy(_buffer, _slidLength - unconsumed, _buffer, 0, unconsumed);
+            }
+
+            if (unconsumed == _buffer.Length)
+            {
+                var grown = ArrayPool<byte>.Shared.Rent(_buffer.Length * 2);
+                Buffer.BlockCopy(_buffer, 0, grown, 0, unconsumed);
+                ArrayPool<byte>.Shared.Return(_buffer);
+                _buffer = grown;
+            }
+
+            int read = _stream.Read(_buffer, unconsumed, _buffer.Length - unconsumed);
+            if (read == 0)
+                _streamExhausted = true;
+
+            _slidLength = unconsumed + read;
+            _internalCborReader.SlideData(new ReadOnlyMemory<byte>(_buffer, 0, _slidLength), isFinalBlock: _streamExhausted);
+
+            _logger.DebugFormat("Buffer refilled: read {0} byte(s), total in buffer now: {1}.", read, _slidLength);
+        }
+
+        /// <summary>
+        /// Executes a CBOR read operation, feeding the reader more data whenever it reports
+        /// <see cref="CborReaderState.NeedsMoreData"/> and retrying once more data arrives if an atomic
+        /// operation (for example <c>SkipValue</c> over a subtree, or a long string) runs past the end of
+        /// the buffered chunk. Both the incremental state and buffer position are preserved across
+        /// <c>SlideData</c>, so a retry resumes rather than restarts. A content error raised after the
+        /// stream is exhausted is a genuine malformed/truncated payload and is allowed to propagate.
+        /// </summary>
+        /// <typeparam name="T">The return type of the CBOR read operation.</typeparam>
+        /// <param name="readOperation">A delegate representing the read operation to execute. It receives this
+        /// <see cref="CborStreamReader"/> and the internal <see cref="CborReader"/> as arguments so the delegates
+        /// passed here don't capture state and are cached by the compiler instead of allocated per call.</param>
+        private T ExecuteRead<T>(Func<CborStreamReader, CborReader, T> readOperation)
+        {
+            if (!_hasReadFromStream)
+            {
+                _hasReadFromStream = true;
+                Fill();
+            }
+
+            while (true)
+            {
+                while (_internalCborReader.PeekState() == CborReaderState.NeedsMoreData && !_streamExhausted)
+                {
+                    Fill();
+                }
+
+                try
+                {
+                    return readOperation(this, _internalCborReader);
+                }
+                catch (CborContentException) when (!_streamExhausted)
+                {
+                    // An atomic operation reached the end of the buffered chunk mid-item. The reader keeps
+                    // its position, so pull the next chunk and retry from where it left off.
+                    Fill();
+                }
+                catch (InvalidOperationException ex)
+                {
+                    // The incremental reader raises InvalidOperationException for structural misuse, such as
+                    // ending the wrong container type or reading a value as the wrong major type on a malformed
+                    // payload. Surface it as a content error so callers see the same exception as on other targets.
+                    throw new CborContentException(ex.Message, ex);
+                }
+            }
+        }
+
+        public int? ReadStartMap() => ExecuteRead(static (_, r) => r.ReadStartMap());
+        public int? ReadStartArray() => ExecuteRead(static (_, r) => r.ReadStartArray());
+        public void ReadEndMap() => ExecuteRead(static (_, r) => { r.ReadEndMap(); return true; });
+        public void ReadEndArray() => ExecuteRead(static (_, r) => { r.ReadEndArray(); return true; });
+
+        public CborReaderState PeekState() => ExecuteRead(static (_, r) => r.PeekState());
+
+        public string ReadTextString() => ExecuteRead(static (_, r) => r.ReadTextString());
+        public byte[] ReadByteString() => ExecuteRead(static (_, r) => r.ReadByteString());
+        public int ReadInt32() => ExecuteRead(static (_, r) => r.ReadInt32());
+        public long ReadInt64() => ExecuteRead(static (_, r) => r.ReadInt64());
+        public ulong ReadUInt64() => ExecuteRead(static (_, r) => r.ReadUInt64());
+        public decimal ReadDecimal() => ExecuteRead(static (_, r) => r.ReadDecimal());
+        public double ReadDouble() => ExecuteRead(static (_, r) => r.ReadDouble());
+        public bool ReadBoolean() => ExecuteRead(static (_, r) => r.ReadBoolean());
+        public float ReadSingle() => ExecuteRead(static (_, r) => r.ReadSingle());
+        public void ReadNull() => ExecuteRead(static (_, r) => { r.ReadNull(); return true; });
+        public void SkipValue() => ExecuteRead(static (_, r) => { r.SkipValue(); return true; });
+        public CborTag ReadTag() => ExecuteRead(static (_, r) => r.ReadTag());
+
+        public int CurrentDepth => _internalCborReader.CurrentDepth;
+
+        public void Dispose()
+        {
+            if (_buffer != null)
+            {
+                ArrayPool<byte>.Shared.Return(_buffer);
+                _buffer = null;
+            }
+        }
+#else
         /// <summary>
         /// Represents a single container frame (map or array) within the nesting stack
         /// of the <see cref="CborStreamReader"/>. This is a struct kept in an array-backed
@@ -638,5 +797,6 @@ namespace Amazon.Extensions.CborProtocol.Internal
                 _buffer = null;
             }
         }
+#endif
     }
 }
