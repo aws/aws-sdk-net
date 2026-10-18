@@ -87,6 +87,6 @@
     <PackageReference Include="System.Text.Json" Version="$(SystemTextJsonVersion)" />
   </ItemGroup>
   <ItemGroup>
-	  <PackageReference Include="System.IO.Hashing" Version="11.0.0-preview.7.26381.103" />
+	  <PackageReference Include="System.IO.Hashing" Version="11.0.0-rc.2.26504.105" />
   </ItemGroup>
 </Project>
