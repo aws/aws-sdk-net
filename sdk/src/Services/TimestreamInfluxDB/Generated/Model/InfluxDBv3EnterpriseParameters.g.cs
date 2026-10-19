@@ -809,6 +809,34 @@ namespace Amazon.TimestreamInfluxDB.Model
         internal bool IsSetRetentionCheckInterval() => this.RetentionCheckInterval != null;
 
         /// <summary>
+        /// Gets and sets the property SnapshotDuration. 
+        /// <para>
+        /// The time-based trigger that controls how often the ingester creates snapshots. This
+        /// value is also used on query nodes as the bucket rotation interval for the replica
+        /// buffer.
+        /// </para>
+        /// </summary>
+        public Duration SnapshotDuration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SnapshotDuration property is set.
+        /// </summary>
+        internal bool IsSetSnapshotDuration() => this.SnapshotDuration != null;
+
+        /// <summary>
+        /// Gets and sets the property SnapshotSize. 
+        /// <para>
+        /// The maximum size of the active snapshot bucket before it is rotated for snapshotting.
+        /// </para>
+        /// </summary>
+        public PercentOrAbsoluteLong SnapshotSize { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SnapshotSize property is set.
+        /// </summary>
+        internal bool IsSetSnapshotSize() => this.SnapshotSize != null;
+
+        /// <summary>
         /// Gets and sets the property SnapshottedWalFilesToKeep. 
         /// <para>
         /// Specifies the number of snapshotted WAL files to retain in the object store. Flushing
@@ -863,6 +891,36 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// Checks to see if the TableIndexCacheMaxEntries property is set.
         /// </summary>
         internal bool IsSetTableIndexCacheMaxEntries() => this.TableIndexCacheMaxEntries.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property UpgradePachaTree. 
+        /// <para>
+        /// Specifies whether to migrate the cluster from the Parquet storage engine to PachaTree.
+        /// This action cannot be reversed. To create a new cluster on Parquet, set this to false.
+        /// </para>
+        /// </summary>
+        public bool? UpgradePachaTree { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpgradePachaTree property is set.
+        /// </summary>
+        internal bool IsSetUpgradePachaTree() => this.UpgradePachaTree.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property WalBufferSize. 
+        /// <para>
+        /// The maximum size, in bytes, of the in-memory WAL buffer before a flush is triggered
+        /// regardless of the flush interval. Increase this value if WAL files are flushed before
+        /// the interval elapses.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 1073741824)]
+        public long? WalBufferSize { get; set; }
+
+        /// <summary>
+        /// Checks to see if the WalBufferSize property is set.
+        /// </summary>
+        internal bool IsSetWalBufferSize() => this.WalBufferSize.HasValue;
 
         /// <summary>
         /// Gets and sets the property WalMaxWriteBufferSize. 

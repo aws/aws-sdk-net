@@ -382,6 +382,20 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("snapshotDuration", targetDepth, ref reader))
+                {
+                    var unmarshaller = DurationUnmarshaller.Instance;
+                    unmarshalledObject.SnapshotDuration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("snapshotSize", targetDepth, ref reader))
+                {
+                    var unmarshaller = PercentOrAbsoluteLongUnmarshaller.Instance;
+                    unmarshalledObject.SnapshotSize = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("snapshottedWalFilesToKeep", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
@@ -400,6 +414,20 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TableIndexCacheMaxEntries = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("upgradePachaTree", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.UpgradePachaTree = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("walBufferSize", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.WalBufferSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
