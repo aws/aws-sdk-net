@@ -74,6 +74,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetAssociatedResourceArn())
                 request.Parameters.Add("associatedResourceArn", StringUtils.FromString(publicRequest.AssociatedResourceArn));
             
+            if (publicRequest.IsSetUrlContentDisposition())
+                request.Parameters.Add("urlContentDisposition", StringUtils.FromString(publicRequest.UrlContentDisposition));
+            
             if (publicRequest.IsSetUrlExpiryInSeconds())
                 request.Parameters.Add("urlExpiryInSeconds", StringUtils.FromInt(publicRequest.UrlExpiryInSeconds));
             request.ResourcePath = "/attached-files/{InstanceId}/{FileId}";

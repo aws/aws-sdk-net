@@ -2361,6 +2361,56 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type ContentDisposition.
+    /// </summary>
+    public class ContentDisposition : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ATTACHMENT for ContentDisposition
+        /// </summary>
+        public static readonly ContentDisposition ATTACHMENT = new ContentDisposition("ATTACHMENT");
+        /// <summary>
+        /// Constant INLINE for ContentDisposition
+        /// </summary>
+        public static readonly ContentDisposition INLINE = new ContentDisposition("INLINE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContentDisposition(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContentDisposition FindValue(string value)
+        {
+            return FindValue<ContentDisposition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContentDisposition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CurrentMetricName.
     /// </summary>
     public class CurrentMetricName : ConstantClass
@@ -4686,6 +4736,10 @@ namespace Amazon.Connect
         /// Constant APPROVED for FileStatusType
         /// </summary>
         public static readonly FileStatusType APPROVED = new FileStatusType("APPROVED");
+        /// <summary>
+        /// Constant DRAFTING for FileStatusType
+        /// </summary>
+        public static readonly FileStatusType DRAFTING = new FileStatusType("DRAFTING");
         /// <summary>
         /// Constant FAILED for FileStatusType
         /// </summary>

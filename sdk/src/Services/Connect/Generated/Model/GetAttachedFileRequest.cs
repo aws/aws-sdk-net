@@ -40,6 +40,7 @@ namespace Amazon.Connect.Model
         private string _associatedResourceArn;
         private string _fileId;
         private string _instanceId;
+        private ContentDisposition _urlContentDisposition;
         private int? _urlExpiryInSeconds;
 
         /// <summary>
@@ -105,6 +106,34 @@ namespace Amazon.Connect.Model
         internal bool IsSetInstanceId()
         {
             return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UrlContentDisposition. 
+        /// <para>
+        /// Specifies how a browser handles the file at the pre-signed URL. The valid values are
+        /// the following:
+        /// </para>
+        ///  <dl> <dt>INLINE</dt> <dd> 
+        /// <para>
+        /// Displays the file in the browser.
+        /// </para>
+        ///  </dd> <dt>ATTACHMENT</dt> <dd> 
+        /// <para>
+        /// Downloads the file. This is the default.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        public ContentDisposition UrlContentDisposition
+        {
+            get { return this._urlContentDisposition; }
+            set { this._urlContentDisposition = value; }
+        }
+
+        // Check to see if UrlContentDisposition property is set
+        internal bool IsSetUrlContentDisposition()
+        {
+            return this._urlContentDisposition != null;
         }
 
         /// <summary>
