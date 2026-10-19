@@ -1,0 +1,139 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.WAFV2.Model
+{
+    /// <summary>
+    /// Part of the response from <a>GetSampledRequests</a>. This is a complex type that appears
+    /// as <c>Request</c> in the response syntax. <c>HTTPRequest</c> contains information
+    /// about one of the web requests.
+    /// </summary>
+    public partial class HTTPRequest
+    {
+        /// <summary>
+        /// Gets and sets the property ClientIP. 
+        /// <para>
+        /// The IP address that the request originated from. If the web ACL is associated with
+        /// a CloudFront distribution, this is the value of one of the following fields in CloudFront
+        /// access logs:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>c-ip</c>, if the viewer did not use an HTTP proxy or a load balancer to send the
+        /// request
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>x-forwarded-for</c>, if the viewer did use an HTTP proxy or a load balancer to
+        /// send the request
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string ClientIP { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ClientIP property is set.
+        /// </summary>
+        internal bool IsSetClientIP() => this.ClientIP != null;
+
+        /// <summary>
+        /// Gets and sets the property Country. 
+        /// <para>
+        /// The two-letter country code for the country that the request originated from. For
+        /// a current list of country codes, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO
+        /// 3166-1 alpha-2</a>.
+        /// </para>
+        /// </summary>
+        public string Country { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Country property is set.
+        /// </summary>
+        internal bool IsSetCountry() => this.Country != null;
+
+        /// <summary>
+        /// Gets and sets the property HTTPVersion. 
+        /// <para>
+        /// The HTTP version specified in the sampled web request, for example, <c>HTTP/1.1</c>.
+        /// </para>
+        /// </summary>
+        public string HTTPVersion { get; set; }
+
+        /// <summary>
+        /// Checks to see if the HTTPVersion property is set.
+        /// </summary>
+        internal bool IsSetHTTPVersion() => this.HTTPVersion != null;
+
+        /// <summary>
+        /// Gets and sets the property Headers. 
+        /// <para>
+        /// A complex type that contains the name and value for each header in the sampled web
+        /// request.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<HTTPHeader> Headers { get; set; } = AWSConfigs.InitializeCollections ? new List<HTTPHeader>() : null;
+
+        /// <summary>
+        /// Checks to see if the Headers property is set.
+        /// </summary>
+        internal bool IsSetHeaders() => this.Headers != null && (this.Headers.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property Method. 
+        /// <para>
+        /// The HTTP method specified in the sampled web request. 
+        /// </para>
+        /// </summary>
+        public string Method { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Method property is set.
+        /// </summary>
+        internal bool IsSetMethod() => this.Method != null;
+
+        /// <summary>
+        /// Gets and sets the property URI. 
+        /// <para>
+        /// The URI path of the request, which identifies the resource, for example, <c>/images/daily-ad.jpg</c>.
+        /// </para>
+        /// </summary>
+        public string URI { get; set; }
+
+        /// <summary>
+        /// Checks to see if the URI property is set.
+        /// </summary>
+        internal bool IsSetURI() => this.URI != null;
+    }
+}

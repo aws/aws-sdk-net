@@ -1,0 +1,84 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.WAFV2.Model
+{
+    /// <summary>
+    /// The name of the field in the request payload that contains your customer's password.
+    /// 
+    /// 
+    ///  
+    /// <para>
+    /// This data type is used in the <c>RequestInspection</c> and <c>RequestInspectionACFP</c>
+    /// data types. 
+    /// </para>
+    /// </summary>
+    public partial class PasswordField
+    {
+        /// <summary>
+        /// Gets and sets the property Identifier. 
+        /// <para>
+        /// The name of the password field. 
+        /// </para>
+        ///  
+        /// <para>
+        /// How you specify this depends on the request inspection payload type.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For JSON payloads, specify the field name in JSON pointer syntax. For information
+        /// about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation
+        /// <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, for the JSON payload <c>{ "form": { "password": "THE_PASSWORD" } }</c>,
+        /// the password field specification is <c>/form/password</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For form encoded payload types, use the HTML form names.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, for an HTML form with the input element named <c>password1</c>, the password
+        /// field specification is <c>password1</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 512)]
+        public string Identifier { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Identifier property is set.
+        /// </summary>
+        internal bool IsSetIdentifier() => this.Identifier != null;
+    }
+}

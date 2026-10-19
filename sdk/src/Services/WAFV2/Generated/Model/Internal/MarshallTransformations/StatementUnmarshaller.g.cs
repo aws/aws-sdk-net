@@ -1,0 +1,178 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.WAFV2.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for Statement Object
+    /// </summary>
+    public partial class StatementUnmarshaller : IJsonUnmarshaller<Statement, JsonUnmarshallerContext>
+    {
+        /// <summary>
+        /// Unmarshall the response from the service to the response class.
+        /// </summary>
+        /// <returns>The unmarshalled object</returns>
+        public Statement Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        {
+            var unmarshalledObject = new Statement();
+            if (context.IsEmptyResponse) return null;
+
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) return null;
+
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth, ref reader))
+            {
+                if (context.TestExpression("AndStatement", targetDepth, ref reader))
+                {
+                    var unmarshaller = AndStatementUnmarshaller.Instance;
+                    unmarshalledObject.AndStatement = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("AsnMatchStatement", targetDepth, ref reader))
+                {
+                    var unmarshaller = AsnMatchStatementUnmarshaller.Instance;
+                    unmarshalledObject.AsnMatchStatement = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("ByteMatchStatement", targetDepth, ref reader))
+                {
+                    var unmarshaller = ByteMatchStatementUnmarshaller.Instance;
+                    unmarshalledObject.ByteMatchStatement = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("GeoMatchStatement", targetDepth, ref reader))
+                {
+                    var unmarshaller = GeoMatchStatementUnmarshaller.Instance;
+                    unmarshalledObject.GeoMatchStatement = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("IPSetReferenceStatement", targetDepth, ref reader))
+                {
+                    var unmarshaller = IPSetReferenceStatementUnmarshaller.Instance;
+                    unmarshalledObject.IPSetReferenceStatement = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("LabelMatchStatement", targetDepth, ref reader))
+                {
+                    var unmarshaller = LabelMatchStatementUnmarshaller.Instance;
+                    unmarshalledObject.LabelMatchStatement = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("ManagedRuleGroupStatement", targetDepth, ref reader))
+                {
+                    var unmarshaller = ManagedRuleGroupStatementUnmarshaller.Instance;
+                    unmarshalledObject.ManagedRuleGroupStatement = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("NotStatement", targetDepth, ref reader))
+                {
+                    var unmarshaller = NotStatementUnmarshaller.Instance;
+                    unmarshalledObject.NotStatement = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("OrStatement", targetDepth, ref reader))
+                {
+                    var unmarshaller = OrStatementUnmarshaller.Instance;
+                    unmarshalledObject.OrStatement = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("RateBasedStatement", targetDepth, ref reader))
+                {
+                    var unmarshaller = RateBasedStatementUnmarshaller.Instance;
+                    unmarshalledObject.RateBasedStatement = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("RegexMatchStatement", targetDepth, ref reader))
+                {
+                    var unmarshaller = RegexMatchStatementUnmarshaller.Instance;
+                    unmarshalledObject.RegexMatchStatement = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("RegexPatternSetReferenceStatement", targetDepth, ref reader))
+                {
+                    var unmarshaller = RegexPatternSetReferenceStatementUnmarshaller.Instance;
+                    unmarshalledObject.RegexPatternSetReferenceStatement = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("RuleGroupReferenceStatement", targetDepth, ref reader))
+                {
+                    var unmarshaller = RuleGroupReferenceStatementUnmarshaller.Instance;
+                    unmarshalledObject.RuleGroupReferenceStatement = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("SizeConstraintStatement", targetDepth, ref reader))
+                {
+                    var unmarshaller = SizeConstraintStatementUnmarshaller.Instance;
+                    unmarshalledObject.SizeConstraintStatement = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("SqliMatchStatement", targetDepth, ref reader))
+                {
+                    var unmarshaller = SqliMatchStatementUnmarshaller.Instance;
+                    unmarshalledObject.SqliMatchStatement = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("XssMatchStatement", targetDepth, ref reader))
+                {
+                    var unmarshaller = XssMatchStatementUnmarshaller.Instance;
+                    unmarshalledObject.XssMatchStatement = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+            }
+            return unmarshalledObject;
+        }
+
+        private static StatementUnmarshaller _instance = new StatementUnmarshaller();
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static StatementUnmarshaller Instance => _instance;
+    }
+}
