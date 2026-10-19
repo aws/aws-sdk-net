@@ -131,6 +131,19 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetPolicyConfiguration() => this.PolicyConfiguration != null;
 
         /// <summary>
+        /// Gets and sets the property RetrievalInstructionConfiguration. 
+        /// <para>
+        /// A retrieval instruction to apply to this request.
+        /// </para>
+        /// </summary>
+        public AgenticRetrieveInstructionConfiguration RetrievalInstructionConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RetrievalInstructionConfiguration property is set.
+        /// </summary>
+        internal bool IsSetRetrievalInstructionConfiguration() => this.RetrievalInstructionConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property Retrievers. 
         /// <para>
         /// The list of retrievers to use for agentic retrieval.

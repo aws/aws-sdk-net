@@ -60,6 +60,13 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("appliedInstruction", targetDepth, ref reader))
+                {
+                    var unmarshaller = AgenticRetrieveAppliedInstructionUnmarshaller.Instance;
+                    unmarshalledObject.AppliedInstruction = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("failures", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AgenticRetrieveFailure, AgenticRetrieveFailureUnmarshaller>(AgenticRetrieveFailureUnmarshaller.Instance);

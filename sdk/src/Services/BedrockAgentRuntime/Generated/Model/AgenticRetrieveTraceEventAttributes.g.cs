@@ -54,6 +54,20 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetActions() => this.Actions != null && (this.Actions.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property AppliedInstruction. 
+        /// <para>
+        /// The agent reports the retrieval instruction applied to this request on the first planning
+        /// step.
+        /// </para>
+        /// </summary>
+        public AgenticRetrieveAppliedInstruction AppliedInstruction { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AppliedInstruction property is set.
+        /// </summary>
+        internal bool IsSetAppliedInstruction() => this.AppliedInstruction != null;
+
+        /// <summary>
         /// Gets and sets the property Failures. 
         /// <para>
         /// Failures that occurred during this step.

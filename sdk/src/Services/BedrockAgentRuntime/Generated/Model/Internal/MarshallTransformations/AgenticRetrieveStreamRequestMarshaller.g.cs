@@ -123,6 +123,16 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+            if (publicRequest.IsSetRetrievalInstructionConfiguration())
+            {
+                context.Writer.WritePropertyName("retrievalInstructionConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AgenticRetrieveInstructionConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RetrievalInstructionConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetRetrievers())
             {
                 context.Writer.WritePropertyName("retrievers");
