@@ -52,6 +52,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.DestinationArn);
             }
 
+            if(requestObject.IsSetExpectedBucketOwner())
+            {
+                context.Writer.WritePropertyName("expectedBucketOwner");
+                context.Writer.WriteStringValue(requestObject.ExpectedBucketOwner);
+            }
+
             if(requestObject.IsSetKmsKeyArn())
             {
                 context.Writer.WritePropertyName("kmsKeyArn");

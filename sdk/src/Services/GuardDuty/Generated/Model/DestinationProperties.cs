@@ -36,6 +36,7 @@ namespace Amazon.GuardDuty.Model
     public partial class DestinationProperties
     {
         private string _destinationArn;
+        private string _expectedBucketOwner;
         private string _kmsKeyArn;
 
         /// <summary>
@@ -59,6 +60,48 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetDestinationArn()
         {
             return this._destinationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The 12-digit Amazon Web Services account ID of the account that owns the Amazon S3
+        /// bucket specified in the <c>DestinationArn</c> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you provide this value, GuardDuty verifies that the specified account owns the
+        /// bucket before it exports findings. If the account ID doesn't match the actual owner
+        /// of the bucket, GuardDuty doesn't export findings to that bucket. This helps prevent
+        /// GuardDuty from exporting your findings to a bucket that a different Amazon Web Services
+        /// account owns (for example, if the original bucket was deleted and its name was later
+        /// claimed by another account). If you don't specify this value, GuardDuty doesn't perform
+        /// this verification. GuardDuty strongly recommends that you provide the expected bucket
+        /// owner when possible.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you update a publishing destination, omitting this field leaves the currently
+        /// stored value unchanged. This field appears in the response only if it was provided
+        /// when the publishing destination was created or updated.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_exportfindings.html#guardduty-exportfindings-expected-bucket-owner">Verifying
+        /// the Amazon S3 bucket owner</a> in the <i>Amazon GuardDuty User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string ExpectedBucketOwner
+        {
+            get { return this._expectedBucketOwner; }
+            set { this._expectedBucketOwner = value; }
+        }
+
+        // Check to see if ExpectedBucketOwner property is set
+        internal bool IsSetExpectedBucketOwner()
+        {
+            return this._expectedBucketOwner != null;
         }
 
         /// <summary>
