@@ -44,6 +44,7 @@ namespace Amazon.CodeDeploy.Model
         private string _deploymentGroupId;
         private string _deploymentGroupName;
         private DeploymentStyle _deploymentStyle;
+        private EC2DeploymentOptions _ec2DeploymentOptions;
         private List<EC2TagFilter> _ec2TagFilters = AWSConfigs.InitializeCollections ? new List<EC2TagFilter>() : null;
         private EC2TagSet _ec2TagSet;
         private List<ECSService> _ecsServices = AWSConfigs.InitializeCollections ? new List<ECSService>() : null;
@@ -247,6 +248,21 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetDeploymentStyle()
         {
             return this._deploymentStyle != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ec2DeploymentOptions.
+        /// </summary>
+        public EC2DeploymentOptions Ec2DeploymentOptions
+        {
+            get { return this._ec2DeploymentOptions; }
+            set { this._ec2DeploymentOptions = value; }
+        }
+
+        // Check to see if Ec2DeploymentOptions property is set
+        internal bool IsSetEc2DeploymentOptions()
+        {
+            return this._ec2DeploymentOptions != null;
         }
 
         /// <summary>

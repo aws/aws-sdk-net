@@ -131,6 +131,10 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 {
                     return InvalidAutoScalingGroupExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidAutoScalingGroupProcessToSuspendException"))
+                {
+                    return InvalidAutoScalingGroupProcessToSuspendExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidComputePlatformException"))
                 {
                     return InvalidComputePlatformExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

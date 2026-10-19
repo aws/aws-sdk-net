@@ -152,6 +152,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ec2DeploymentOptions", targetDepth, ref reader))
+                {
+                    var unmarshaller = EC2DeploymentOptionsUnmarshaller.Instance;
+                    unmarshalledObject.Ec2DeploymentOptions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("errorInformation", targetDepth, ref reader))
                 {
                     var unmarshaller = ErrorInformationUnmarshaller.Instance;
