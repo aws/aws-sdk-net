@@ -31,8 +31,8 @@ namespace Amazon.CodeCommit.Model
 {
     /// <summary>
     /// A valid Amazon Resource Name (ARN) for an CodeCommit resource is required. For a list
-    /// of valid resources in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
-    /// Resources and Operations</a> in the CodeCommit User Guide.
+    /// of valid resources in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">
+    /// CodeCommit Resources and Operations</a> in the CodeCommit User Guide.
     /// </summary>
 #if !NETSTANDARD
     [Serializable]

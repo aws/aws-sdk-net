@@ -78,8 +78,8 @@ namespace Amazon.ManagedGrafana.Model
         ///  
         /// <para>
         /// For more information about prefix lists, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/managed-prefix-lists.html">Group
-        /// CIDR blocks using managed prefix lists</a>in the <i>Amazon Virtual Private Cloud User
-        /// Guide</i>.
+        /// CIDR blocks using managed prefix lists</a>in the <i> Amazon Virtual Private Cloud
+        /// User Guide</i>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -111,7 +111,7 @@ namespace Amazon.ManagedGrafana.Model
         ///  
         /// <para>
         /// For more information about creating an interface VPC endpoint, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/VPC-endpoints">Interface
-        /// VPC endpoints</a> in the <i>Amazon Managed Grafana User Guide</i>.
+        /// VPC endpoints</a> in the <i> Amazon Managed Grafana User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>

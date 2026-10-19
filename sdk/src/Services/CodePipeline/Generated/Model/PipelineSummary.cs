@@ -100,7 +100,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property PipelineType. 
         /// <para>
-        /// CodePipeline provides the following pipeline types, which differ in characteristics
+        ///  CodePipeline provides the following pipeline types, which differ in characteristics
         /// and price, so that you can tailor your pipeline features and cost to the needs of
         /// your applications.
         /// </para>

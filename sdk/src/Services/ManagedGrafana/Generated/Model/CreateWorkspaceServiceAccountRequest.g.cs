@@ -38,9 +38,9 @@ namespace Amazon.ManagedGrafana.Model
     /// calls. <para> You can only create service accounts for workspaces that are compatible
     /// with Grafana version 9 and above. </para> <note> <para> For more information about
     /// service accounts, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/service-accounts.html">Service
-    /// accounts</a> in the <i>Amazon Managed Grafana User Guide</i>. </para> <para> For more
-    /// information about the Grafana HTTP APIs, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">Using
-    /// Grafana HTTP APIs</a> in the <i>Amazon Managed Grafana User Guide</i>. </para> </note>
+    /// accounts</a> in the <i> Amazon Managed Grafana User Guide</i>. </para> <para> For
+    /// more information about the Grafana HTTP APIs, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">Using
+    /// Grafana HTTP APIs</a> in the <i> Amazon Managed Grafana User Guide</i>. </para> </note>
     /// </summary>
     public partial class CreateWorkspaceServiceAccountRequest : AmazonManagedGrafanaRequest
     {
@@ -52,7 +52,7 @@ namespace Amazon.ManagedGrafana.Model
         ///  <note> 
         /// <para>
         /// For more information about the roles and the permissions each has, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Grafana-user-roles.html">User
-        /// roles</a> in the <i>Amazon Managed Grafana User Guide</i>.
+        /// roles</a> in the <i> Amazon Managed Grafana User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>

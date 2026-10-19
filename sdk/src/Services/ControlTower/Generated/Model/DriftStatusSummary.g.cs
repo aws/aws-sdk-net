@@ -34,7 +34,7 @@ namespace Amazon.ControlTower.Model
     /// 
     ///  
     /// <para>
-    /// Amazon Web Services Control Tower expects the enabled control configuration to include
+    ///  Amazon Web Services Control Tower expects the enabled control configuration to include
     /// all supported and governed Regions. If the enabled control differs from the expected
     /// configuration, it is defined to be in a state of drift. You can repair this drift
     /// by resetting the enabled control.

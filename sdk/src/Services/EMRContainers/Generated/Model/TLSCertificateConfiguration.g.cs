@@ -50,8 +50,8 @@ namespace Amazon.EMRContainers.Model
         /// <summary>
         /// Gets and sets the property PrivateCertificateSecretArn. 
         /// <para>
-        /// Secrets Manager ARN that contains the private TLS certificate contents, used for communication
-        /// between the user job and the system job.
+        ///  Secrets Manager ARN that contains the private TLS certificate contents, used for
+        /// communication between the user job and the system job.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 3, Max = 2048)]
@@ -65,7 +65,7 @@ namespace Amazon.EMRContainers.Model
         /// <summary>
         /// Gets and sets the property PublicCertificateSecretArn. 
         /// <para>
-        /// Secrets Manager ARN that contains the public TLS certificate contents, used for communication
+        ///  Secrets Manager ARN that contains the public TLS certificate contents, used for communication
         /// between the user job and the system job.
         /// </para>
         /// </summary>

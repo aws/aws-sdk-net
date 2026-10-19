@@ -104,7 +104,7 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The following special characters aren't accepted: <c>&lt;>^#~$</c> 
+        /// The following special characters aren't accepted: <c>&lt;&gt;^#~$</c> 
         /// </para>
         ///  </note>
         /// </summary>

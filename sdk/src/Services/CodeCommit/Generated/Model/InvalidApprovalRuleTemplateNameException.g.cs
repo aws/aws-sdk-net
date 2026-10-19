@@ -33,7 +33,7 @@ namespace Amazon.CodeCommit.Model
     /// The name of the approval rule template is not valid. Template names must be between
     /// 1 and 100 valid characters in length. For more information about limits in CodeCommit,
     /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a>
-    /// in the <i>CodeCommit User Guide</i>.
+    /// in the <i> CodeCommit User Guide</i>.
     /// </summary>
 #if !NETSTANDARD
     [Serializable]

@@ -35,8 +35,8 @@ namespace Amazon.CodePipeline.Model
     /// for a test result before allowing the run to enter the deployment stage. For more
     /// information about conditions, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/stage-conditions.html">Stage
     /// conditions</a> and <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts-how-it-works-conditions.html">How
-    /// do stage conditions work?</a>. For more information about rules, see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/rule-reference.html">CodePipeline
-    /// rule reference</a>.
+    /// do stage conditions work?</a>. For more information about rules, see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/rule-reference.html">
+    /// CodePipeline rule reference</a>.
     /// </summary>
     public partial class RuleDeclaration
     {

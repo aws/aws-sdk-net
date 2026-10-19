@@ -130,9 +130,9 @@ namespace Amazon.ManagedGrafana.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information on the role and permissions needed, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon
-        /// Managed Grafana permissions and policies for Amazon Web Services data sources and
-        /// notification channels</a> 
+        /// For more information on the role and permissions needed, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">
+        /// Amazon Managed Grafana permissions and policies for Amazon Web Services data sources
+        /// and notification channels</a> 
         /// </para>
         ///  <note> 
         /// <para>

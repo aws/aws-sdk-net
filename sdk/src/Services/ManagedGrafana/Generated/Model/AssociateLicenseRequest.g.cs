@@ -62,7 +62,7 @@ namespace Amazon.ManagedGrafana.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+        ///  Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
         /// </para>
         ///  </note>
         /// </summary>

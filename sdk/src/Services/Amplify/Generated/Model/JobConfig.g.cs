@@ -37,7 +37,7 @@ namespace Amazon.Amplify.Model
     /// Use <c>JobConfig</c> to apply configuration to jobs, such as customizing the build
     /// instance size when you create or update an Amplify app. For more information about
     /// customizable build instances, see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/custom-build-instance.html">Custom
-    /// build instances</a> in the <i>Amplify User Guide</i>.
+    /// build instances</a> in the <i> Amplify User Guide</i>.
     /// </para>
     /// </summary>
     public partial class JobConfig

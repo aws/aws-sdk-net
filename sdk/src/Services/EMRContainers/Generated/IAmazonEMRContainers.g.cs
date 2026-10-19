@@ -30,16 +30,16 @@ namespace Amazon.EMRContainers
     /// <summary>
     /// <para>Interface for accessing EMRContainers</para>
     ///
-    /// Amazon EMR on EKS provides a deployment option for Amazon EMR that allows you to run
-    /// open-source big data frameworks on Amazon Elastic Kubernetes Service (Amazon EKS).
+    /// Amazon EMR on EKS provides a deployment option for Amazon EMR that allows you to
+    /// run open-source big data frameworks on Amazon Elastic Kubernetes Service (Amazon EKS).
     /// With this deployment option, you can focus on running analytics workloads while Amazon
     /// EMR on EKS builds, configures, and manages containers for open-source applications.
     /// For more information about Amazon EMR on EKS concepts and tasks, see <a href="https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/emr-eks.html">What
-    /// is Amazon EMR on EKS</a>.
+    /// is Amazon EMR on EKS </a>.
     /// 
     ///  
     /// <para>
-    ///  <i>Amazon EMR containers</i> is the API name for Amazon EMR on EKS. The <c>emr-containers</c>
+    ///  <i> Amazon EMR containers</i> is the API name for Amazon EMR on EKS. The <c>emr-containers</c>
     /// prefix is used in the following scenarios: 
     /// </para>
     ///  <ul> <li> 
@@ -51,13 +51,13 @@ namespace Amazon.EMRContainers
     /// <para>
     /// It is the prefix before IAM policy actions for Amazon EMR on EKS. For example, <c>"Action":
     /// [ "emr-containers:StartJobRun"]</c>. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-actions">Policy
-    /// actions for Amazon EMR on EKS</a>.
+    /// actions for Amazon EMR on EKS </a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// It is the prefix used in Amazon EMR on EKS service endpoints. For example, <c>emr-containers.us-east-2.amazonaws.com</c>.
-    /// For more information, see <a href="https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/service-quotas.html#service-endpoints">Amazon
-    /// EMR on EKSService Endpoints</a>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/service-quotas.html#service-endpoints">
+    /// Amazon EMR on EKSService Endpoints</a>.
     /// </para>
     ///  </li> </ul>
     /// </summary>

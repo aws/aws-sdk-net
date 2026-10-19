@@ -43,8 +43,8 @@ namespace Amazon.ControlTower
     /// for the lifetime of your application.
     /// </para>
     ///
-    /// Amazon Web Services Control Tower offers application programming interface (API) operations
-    /// that support programmatic interaction with these types of resources:
+    /// Amazon Web Services Control Tower offers application programming interface (API)
+    /// operations that support programmatic interaction with these types of resources:
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -209,7 +209,7 @@ namespace Amazon.ControlTower
     ///  </li> </ul> </li> </ul> 
     /// <para>
     /// For more information about these types of resources, see the <a href="https://docs.aws.amazon.com/controltower/latest/userguide/what-is-control-tower.html">
-    /// <i>Amazon Web Services Control Tower User Guide</i> </a>.
+    /// <i> Amazon Web Services Control Tower User Guide</i> </a>.
     /// </para>
     ///  
     /// <para>
@@ -258,7 +258,7 @@ namespace Amazon.ControlTower
     /// Web Services Region for each control. You can find the <c>controlIdentifier</c> for
     /// each Region and control in the <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-metadata-tables.html">Tables
     /// of control metadata</a> or the <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-region-tables.html">Control
-    /// availability by Region tables</a> in the <i>Amazon Web Services Control Tower Controls
+    /// availability by Region tables</a> in the <i> Amazon Web Services Control Tower Controls
     /// Reference Guide</i>.
     /// </para>
     ///  
@@ -266,8 +266,8 @@ namespace Amazon.ControlTower
     /// A quick-reference list of control identifers for the Amazon Web Services Control Tower
     /// legacy <i>Strongly recommended</i> and <i>Elective</i> controls is given in <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-identifiers.html.html">Resource
     /// identifiers for APIs and controls</a> in the <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-identifiers.html">
-    /// <i>Amazon Web Services Control Tower Controls Reference Guide</i> </a>. Remember that
-    /// <i>Mandatory</i> controls cannot be added or removed.
+    /// <i> Amazon Web Services Control Tower Controls Reference Guide</i> </a>. Remember
+    /// that <i>Mandatory</i> controls cannot be added or removed.
     /// </para>
     ///  <note> 
     /// <para>
@@ -295,7 +295,7 @@ namespace Amazon.ControlTower
     ///  </li> </ul> 
     /// <para>
     /// You can find the <c>{CONTROL_CATALOG_OPAQUE_ID}</c> in the <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/all-global-identifiers.html">
-    /// <i>Amazon Web Services Control Tower Controls Reference Guide</i> </a>, or in the
+    /// <i> Amazon Web Services Control Tower Controls Reference Guide</i> </a>, or in the
     /// Amazon Web Services Control Tower console, on the <b>Control details</b> page.
     /// </para>
     ///  
@@ -351,9 +351,9 @@ namespace Amazon.ControlTower
     /// <para>
     /// You can apply the <c>AWSControlTowerBaseline</c> baseline to an organizational unit
     /// (OU) as a way to register the OU with Amazon Web Services Control Tower, programmatically.
-    /// For a general overview of this capability, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/2024-all.html#baseline-apis">Amazon
-    /// Web Services Control Tower supports APIs for OU registration and configuration with
-    /// baselines</a>.
+    /// For a general overview of this capability, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/2024-all.html#baseline-apis">
+    /// Amazon Web Services Control Tower supports APIs for OU registration and configuration
+    /// with baselines</a>.
     /// </para>
     ///  
     /// <para>
@@ -458,7 +458,7 @@ namespace Amazon.ControlTower
     /// </para>
     ///  
     /// <para>
-    /// Amazon Web Services Control Tower supports Amazon Web Services CloudTrail, a service
+    ///  Amazon Web Services Control Tower supports Amazon Web Services CloudTrail, a service
     /// that records Amazon Web Services API calls for your Amazon Web Services account and
     /// delivers log files to an Amazon S3 bucket. By using information collected by CloudTrail,
     /// you can determine which requests the Amazon Web Services Control Tower service received,

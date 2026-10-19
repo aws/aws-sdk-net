@@ -221,10 +221,10 @@ namespace Amazon.Amplify.Model
         /// </para>
         ///  </dd> <dt>AWAITING_APP_CNAME</dt> <dd> 
         /// <para>
-        /// Amplify is waiting for CNAME records corresponding to subdomains to be propagated.
+        ///  Amplify is waiting for CNAME records corresponding to subdomains to be propagated.
         /// If your custom domain is on Route 53, Amplify handles this for you automatically.
         /// For more information about custom domains, see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/custom-domains.html">Setting
-        /// up custom domains</a> in the <i>Amplify Hosting User Guide</i>. 
+        /// up custom domains</a> in the <i> Amplify Hosting User Guide</i>. 
         /// </para>
         ///  </dd> <dt>UPDATE_COMPLETE</dt> <dd> 
         /// <para>
