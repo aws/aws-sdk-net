@@ -209,6 +209,11 @@
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.XRay.Model.CloudWatchLogsConfiguration.SpansLogGroupKmsKeyId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.XRay.Model.IndexingRule.Name</property>
     <min>1</min>
     <max>32</max>

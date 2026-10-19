@@ -38,6 +38,20 @@ namespace Amazon.XRay.Model
     public partial class UpdateTraceSegmentDestinationRequest : AmazonXRayRequest
     {
         /// <summary>
+        /// Gets and sets the property CloudWatchLogsConfiguration. 
+        /// <para>
+        ///  Specifies settings for the CloudWatch Logs log groups that X-Ray creates for Transaction
+        /// Search. Specify this only when <c>Destination</c> is <c>CloudWatchLogs</c>. 
+        /// </para>
+        /// </summary>
+        public CloudWatchLogsConfiguration CloudWatchLogsConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CloudWatchLogsConfiguration property is set.
+        /// </summary>
+        internal bool IsSetCloudWatchLogsConfiguration() => this.CloudWatchLogsConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
         ///  The configured destination of trace segments. 
