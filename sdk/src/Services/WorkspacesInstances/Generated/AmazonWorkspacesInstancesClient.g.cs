@@ -1100,6 +1100,140 @@ namespace Amazon.WorkspacesInstances
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Modifies the size, volume type, IOPS (input/output operations per second), or throughput
+        /// of a volume. When you modify a volume, you must specify at least one of these parameters.
+        /// You can modify a volume only after any previous modification for that volume has finished.
+        /// 
+        ///  
+        /// <para>
+        /// To track the progress of a modification, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVolumesModifications.html">DescribeVolumesModifications</a>
+        /// operation. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-modifications.html">Monitor
+        /// the progress of Amazon EBS volume modifications</a> in the <i>Amazon EBS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// After you increase the size of a volume, you must extend the partition and file system
+        /// to use the new storage capacity. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/recognize-expanded-volume-linux.html">Extend
+        /// the file system after resizing an Amazon EBS volume</a> in the <i>Amazon EBS User
+        /// Guide</i>, which covers both <a href="https://docs.aws.amazon.com/ebs/latest/userguide/recognize-expanded-volume-linux.html#extend-linux">Linux</a>
+        /// and <a href="https://docs.aws.amazon.com/ebs/latest/userguide/recognize-expanded-volume-linux.html#extend-windows">Windows</a>
+        /// instances.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVolume service method.</param>
+        /// <returns>The response from the ModifyVolume service method, as returned by WorkspacesInstances.</returns>
+        /// <exception cref="Amazon.WorkspacesInstances.Model.AccessDeniedException">
+        /// Indicates insufficient permissions to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.WorkspacesInstances.Model.ConflictException">
+        /// Signals a conflict with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkspacesInstances.Model.InternalServerException">
+        /// Indicates an unexpected server-side error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.WorkspacesInstances.Model.ResourceNotFoundException">
+        /// Indicates the requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkspacesInstances.Model.ServiceQuotaExceededException">
+        /// Indicates that a service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkspacesInstances.Model.ThrottlingException">
+        /// Indicates the request rate has exceeded limits.
+        /// </exception>
+        /// <exception cref="Amazon.WorkspacesInstances.Model.ValidationException">
+        /// Indicates invalid input parameters in the request.
+        /// </exception>
+        /// <exception cref="Amazon.WorkspacesInstances.Model.VolumeModificationRateExceededException">
+        /// The volume has a previous modification that is still in progress, or has reached the
+        /// limit of four modifications in a rolling 24-hour period. Wait for the current modification
+        /// to finish, or wait until the time indicated in the error message, and then retry the
+        /// request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-instances-2022-07-26/ModifyVolume">REST API Reference for ModifyVolume Operation</seealso>
+        public virtual ModifyVolumeResponse ModifyVolume(ModifyVolumeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyVolumeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVolumeResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVolumeResponse>(request, options);
+        }
+#else
+        internal virtual ModifyVolumeResponse ModifyVolume(ModifyVolumeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyVolumeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVolumeResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVolumeResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Modifies the size, volume type, IOPS (input/output operations per second), or throughput
+        /// of a volume. When you modify a volume, you must specify at least one of these parameters.
+        /// You can modify a volume only after any previous modification for that volume has finished.
+        /// 
+        ///  
+        /// <para>
+        /// To track the progress of a modification, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVolumesModifications.html">DescribeVolumesModifications</a>
+        /// operation. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-modifications.html">Monitor
+        /// the progress of Amazon EBS volume modifications</a> in the <i>Amazon EBS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// After you increase the size of a volume, you must extend the partition and file system
+        /// to use the new storage capacity. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/recognize-expanded-volume-linux.html">Extend
+        /// the file system after resizing an Amazon EBS volume</a> in the <i>Amazon EBS User
+        /// Guide</i>, which covers both <a href="https://docs.aws.amazon.com/ebs/latest/userguide/recognize-expanded-volume-linux.html#extend-linux">Linux</a>
+        /// and <a href="https://docs.aws.amazon.com/ebs/latest/userguide/recognize-expanded-volume-linux.html#extend-windows">Windows</a>
+        /// instances.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVolume service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ModifyVolume service method, as returned by WorkspacesInstances.</returns>
+        /// <exception cref="Amazon.WorkspacesInstances.Model.AccessDeniedException">
+        /// Indicates insufficient permissions to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.WorkspacesInstances.Model.ConflictException">
+        /// Signals a conflict with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkspacesInstances.Model.InternalServerException">
+        /// Indicates an unexpected server-side error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.WorkspacesInstances.Model.ResourceNotFoundException">
+        /// Indicates the requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkspacesInstances.Model.ServiceQuotaExceededException">
+        /// Indicates that a service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkspacesInstances.Model.ThrottlingException">
+        /// Indicates the request rate has exceeded limits.
+        /// </exception>
+        /// <exception cref="Amazon.WorkspacesInstances.Model.ValidationException">
+        /// Indicates invalid input parameters in the request.
+        /// </exception>
+        /// <exception cref="Amazon.WorkspacesInstances.Model.VolumeModificationRateExceededException">
+        /// The volume has a previous modification that is still in progress, or has reached the
+        /// limit of four modifications in a rolling 24-hour period. Wait for the current modification
+        /// to finish, or wait until the time indicated in the error message, and then retry the
+        /// request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-instances-2022-07-26/ModifyVolume">REST API Reference for ModifyVolume Operation</seealso>
+        public virtual Task<ModifyVolumeResponse> ModifyVolumeAsync(ModifyVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyVolumeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVolumeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyVolumeResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Adds tags to a WorkSpace Instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>

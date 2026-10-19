@@ -110,7 +110,7 @@ namespace Amazon.WorkspacesInstances.Model
         /// Volume size in gigabytes.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 0)]
+        [AWSProperty(Min = 1, Max = 16384)]
         public int? SizeInGB { get; set; }
 
         /// <summary>

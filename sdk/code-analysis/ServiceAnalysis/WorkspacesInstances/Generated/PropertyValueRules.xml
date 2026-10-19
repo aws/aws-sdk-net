@@ -37,7 +37,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.CreateVolumeRequest.SizeInGB</property>
-    <min>0</min>
+    <min>1</min>
+    <max>16384</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.CreateVolumeRequest.SnapshotId</property>
@@ -150,6 +151,45 @@
     <property>Amazon.WorkspacesInstances.Model.ListWorkspaceInstancesResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkspacesInstances.Model.ModifyVolumeRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\x20-\x7E]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkspacesInstances.Model.ModifyVolumeRequest.Iops</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkspacesInstances.Model.ModifyVolumeRequest.SizeInGB</property>
+    <min>1</min>
+    <max>16384</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkspacesInstances.Model.ModifyVolumeRequest.Throughput</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkspacesInstances.Model.ModifyVolumeRequest.VolumeId</property>
+    <pattern>^vol-[0-9a-zA-Z]{1,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkspacesInstances.Model.ModifyVolumeResponse.TargetIops</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkspacesInstances.Model.ModifyVolumeResponse.TargetSize</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkspacesInstances.Model.ModifyVolumeResponse.TargetThroughput</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkspacesInstances.Model.ModifyVolumeResponse.VolumeId</property>
+    <pattern>^vol-[0-9a-zA-Z]{1,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.TagResourceRequest.WorkspaceInstanceId</property>
