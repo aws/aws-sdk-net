@@ -87,6 +87,17 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.NextToken);
             }
 
+            if(publicRequest.IsSetResourceArns())
+            {
+                context.Writer.WritePropertyName("resourceArns");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestResourceArnsListValue in publicRequest.ResourceArns)
+                {
+                        context.Writer.WriteStringValue(publicRequestResourceArnsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK

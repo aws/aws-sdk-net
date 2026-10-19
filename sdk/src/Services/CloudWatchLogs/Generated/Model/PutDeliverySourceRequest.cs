@@ -210,7 +210,16 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// For Amazon ECS, the valid value is <c>ACTION_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// For Entity Resolution, the valid value is <c>WORKFLOW_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon EventBridge Event Bus (Custom), the valid values are <c>INFO_LOGS</c> and
+        /// <c>ERROR_LOGS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -228,7 +237,7 @@ namespace Amazon.CloudWatchLogs.Model
         ///  </li> <li> 
         /// <para>
         /// For PCS, the valid values are <c>PCS_SCHEDULER_LOGS</c>, <c>PCS_JOBCOMP_LOGS</c>,
-        /// and <c>PCS_SCHEDULER_AUDIT_LOGS</c>.
+        /// <c>PCS_SCHEDULER_AUDIT_LOGS</c>, and <c>PCS_SCALING_LOGS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
