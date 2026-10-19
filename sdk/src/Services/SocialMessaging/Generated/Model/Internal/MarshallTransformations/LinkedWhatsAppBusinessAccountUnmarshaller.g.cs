@@ -67,6 +67,20 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("directSendEnforcementStatus", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DirectSendEnforcementStatus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("directSendEnforcementStatusExpiresAt", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.DirectSendEnforcementStatusExpiresAt = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("eventDestinations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<WhatsAppBusinessAccountEventDestination, WhatsAppBusinessAccountEventDestinationUnmarshaller>(WhatsAppBusinessAccountEventDestinationUnmarshaller.Instance);
