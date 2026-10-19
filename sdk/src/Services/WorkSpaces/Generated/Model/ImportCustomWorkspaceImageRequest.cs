@@ -43,6 +43,7 @@ namespace Amazon.WorkSpaces.Model
         private string _imageDescription;
         private string _imageName;
         private ImageSourceIdentifier _imageSource;
+        private ImageValidationMode _imageValidationMode;
         private string _infrastructureConfigurationArn;
         private OSVersion _osVersion;
         private Platform _platform;
@@ -123,6 +124,24 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetImageSource()
         {
             return this._imageSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageValidationMode. 
+        /// <para>
+        /// The image validation mode for the WorkSpace image import.
+        /// </para>
+        /// </summary>
+        public ImageValidationMode ImageValidationMode
+        {
+            get { return this._imageValidationMode; }
+            set { this._imageValidationMode = value; }
+        }
+
+        // Check to see if ImageValidationMode property is set
+        internal bool IsSetImageValidationMode()
+        {
+            return this._imageValidationMode != null;
         }
 
         /// <summary>

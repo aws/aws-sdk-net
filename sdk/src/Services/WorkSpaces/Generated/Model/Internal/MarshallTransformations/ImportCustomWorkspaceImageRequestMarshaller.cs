@@ -104,6 +104,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetImageValidationMode())
+            {
+                context.Writer.WritePropertyName("ImageValidationMode");
+                context.Writer.WriteStringValue(publicRequest.ImageValidationMode);
+            }
+
             if(publicRequest.IsSetInfrastructureConfigurationArn())
             {
                 context.Writer.WritePropertyName("InfrastructureConfigurationArn");
