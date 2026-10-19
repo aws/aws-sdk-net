@@ -22,12 +22,17 @@
         <dependency id="AWSCRT-AUTH" version="0.6.0" />
         <dependency id="AWSCRT-CHECKSUMS" version="0.6.0" />
       </group>
-      <group targetFramework="netcoreapp3.1">
+      <group targetFramework="net8.0">
         <dependency id="AWSSDK.Core" version="4.0.102.10" />
         <dependency id="AWSCRT-AUTH" version="0.6.0" />
         <dependency id="AWSCRT-CHECKSUMS" version="0.6.0" />
       </group>
-      <group targetFramework="net8.0">
+      <group targetFramework="net10.0">
+        <dependency id="AWSSDK.Core" version="4.0.102.10" />
+        <dependency id="AWSCRT-AUTH" version="0.6.0" />
+        <dependency id="AWSCRT-CHECKSUMS" version="0.6.0" />
+      </group>
+      <group targetFramework="net11.0">
         <dependency id="AWSSDK.Core" version="4.0.102.10" />
         <dependency id="AWSCRT-AUTH" version="0.6.0" />
         <dependency id="AWSCRT-CHECKSUMS" version="0.6.0" />
@@ -45,8 +50,11 @@
     <file src=".\bin\Release\net8.0\AWSSDK.Extensions.CrtIntegration.dll" target="lib\net8.0" />
     <file src=".\bin\Release\net8.0\AWSSDK.Extensions.CrtIntegration.pdb" target="lib\net8.0" />
     <file src=".\bin\Release\net8.0\AWSSDK.Extensions.CrtIntegration.xml" target="lib\net8.0" />
-    <file src=".\bin\Release\netcoreapp3.1\AWSSDK.Extensions.CrtIntegration.dll" target="lib\netcoreapp3.1" />
-    <file src=".\bin\Release\netcoreapp3.1\AWSSDK.Extensions.CrtIntegration.pdb" target="lib\netcoreapp3.1" />
-    <file src=".\bin\Release\netcoreapp3.1\AWSSDK.Extensions.CrtIntegration.xml" target="lib\netcoreapp3.1" />
+    <file src=".\bin\Release\net10.0\AWSSDK.Extensions.CrtIntegration.dll" target="lib\net10.0" />
+    <file src=".\bin\Release\net10.0\AWSSDK.Extensions.CrtIntegration.pdb" target="lib\net10.0" />
+    <file src=".\bin\Release\net10.0\AWSSDK.Extensions.CrtIntegration.xml" target="lib\net10.0" />
+    <file src=".\bin\Release\net11.0\AWSSDK.Extensions.CrtIntegration.dll" target="lib\net11.0" />
+    <file src=".\bin\Release\net11.0\AWSSDK.Extensions.CrtIntegration.pdb" target="lib\net11.0" />
+    <file src=".\bin\Release\net11.0\AWSSDK.Extensions.CrtIntegration.xml" target="lib\net11.0" />
   </files>
 </package>
