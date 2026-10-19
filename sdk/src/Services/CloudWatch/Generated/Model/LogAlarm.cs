@@ -34,6 +34,7 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class LogAlarm
     {
+        private ActionConfiguration _actionConfiguration;
         private int? _actionLogLineCount;
         private string _actionLogLineRoleArn;
         private bool? _actionsEnabled;
@@ -57,6 +58,26 @@ namespace Amazon.CloudWatch.Model
         private double? _threshold;
         private string _treatMissingData;
         private WarmUpConfiguration _warmUpConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property ActionConfiguration. 
+        /// <para>
+        /// Settings that change the content of the notifications and events that the alarm sends
+        /// when its state changes. These settings apply to the alarm's actions, whichever state
+        /// triggers them.
+        /// </para>
+        /// </summary>
+        public ActionConfiguration ActionConfiguration
+        {
+            get { return this._actionConfiguration; }
+            set { this._actionConfiguration = value; }
+        }
+
+        // Check to see if ActionConfiguration property is set
+        internal bool IsSetActionConfiguration()
+        {
+            return this._actionConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ActionLogLineCount. 

@@ -71,6 +71,16 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             {
                 writer.WriteStartMap(null);
                 var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetActionConfiguration())
+                {
+                    context.Writer.WriteTextString("ActionConfiguration");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = ActionConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ActionConfiguration, context);
+
+                    context.Writer.WriteEndMap();
+                }
                 if (publicRequest.IsSetActionsEnabled())
                 {
                     context.Writer.WriteTextString("ActionsEnabled");

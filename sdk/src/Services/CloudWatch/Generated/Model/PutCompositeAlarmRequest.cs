@@ -116,6 +116,7 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class PutCompositeAlarmRequest : AmazonCloudWatchRequest
     {
+        private ActionConfiguration _actionConfiguration;
         private bool? _actionsEnabled;
         private string _actionsSuppressor;
         private int? _actionsSuppressorExtensionPeriod;
@@ -127,6 +128,26 @@ namespace Amazon.CloudWatch.Model
         private List<string> _insufficientDataActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _okActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+
+        /// <summary>
+        /// Gets and sets the property ActionConfiguration. 
+        /// <para>
+        /// Settings that change the content of the notifications and events that the alarm sends
+        /// when its state changes. These settings apply to the alarm's actions, whichever state
+        /// triggers them.
+        /// </para>
+        /// </summary>
+        public ActionConfiguration ActionConfiguration
+        {
+            get { return this._actionConfiguration; }
+            set { this._actionConfiguration = value; }
+        }
+
+        // Check to see if ActionConfiguration property is set
+        internal bool IsSetActionConfiguration()
+        {
+            return this._actionConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ActionsEnabled. 
