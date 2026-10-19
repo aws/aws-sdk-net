@@ -32,6 +32,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.AwsQuery
 {
@@ -45,18 +46,26 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("AwsQuery")]
-        public void QueryXmlEmptyMapsResponse()
+        public async Task QueryXmlEmptyMapsResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "text/xml";
-            byte[] bytes = Encoding.ASCII.GetBytes("<XmlEmptyMapsResponse xmlns=\"https://example.com/\">\n    <XmlEmptyMapsResult>\n        <myMap>\n        </myMap>\n    </XmlEmptyMapsResult>\n</XmlEmptyMapsResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonQueryProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonQueryProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("<XmlEmptyMapsResponse xmlns=\"https://example.com/\">\n    <XmlEmptyMapsResult>\n        <myMap>\n        </myMap>\n    </XmlEmptyMapsResult>\n</XmlEmptyMapsResponse>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "text/xml";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new XmlEmptyMapsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.XmlEmptyMapsAsync(new XmlEmptyMapsRequest()).ConfigureAwait(false);
             var expectedResponse = new XmlEmptyMapsResponse
             {
                 MyMap = new Dictionary<string, GreetingStruct>()
@@ -66,9 +75,8 @@ namespace AWSSDK.ProtocolTests.AwsQuery
             };
 
             // Assert
-            var actualResponse = (XmlEmptyMapsResponse)unmarshalledResponse;
             Comparer.CompareObjects<XmlEmptyMapsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -78,18 +86,26 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("AwsQuery")]
-        public void QueryXmlEmptySelfClosedMapsResponse()
+        public async Task QueryXmlEmptySelfClosedMapsResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "text/xml";
-            byte[] bytes = Encoding.ASCII.GetBytes("<XmlEmptyMapsResponse xmlns=\"https://example.com/\">\n    <XmlEmptyMapsResult>\n        <myMap/>\n    </XmlEmptyMapsResult>\n</XmlEmptyMapsResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonQueryProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonQueryProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("<XmlEmptyMapsResponse xmlns=\"https://example.com/\">\n    <XmlEmptyMapsResult>\n        <myMap/>\n    </XmlEmptyMapsResult>\n</XmlEmptyMapsResponse>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "text/xml";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new XmlEmptyMapsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.XmlEmptyMapsAsync(new XmlEmptyMapsRequest()).ConfigureAwait(false);
             var expectedResponse = new XmlEmptyMapsResponse
             {
                 MyMap = new Dictionary<string, GreetingStruct>()
@@ -99,9 +115,8 @@ namespace AWSSDK.ProtocolTests.AwsQuery
             };
 
             // Assert
-            var actualResponse = (XmlEmptyMapsResponse)unmarshalledResponse;
             Comparer.CompareObjects<XmlEmptyMapsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
     }

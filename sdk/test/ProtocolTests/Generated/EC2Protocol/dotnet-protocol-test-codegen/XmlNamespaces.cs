@@ -32,6 +32,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.AwsEc2
 {
@@ -45,18 +46,26 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("AwsEc2")]
-        public void Ec2XmlNamespacesResponse()
+        public async Task Ec2XmlNamespacesResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "text/xml;charset=UTF-8";
-            byte[] bytes = Encoding.ASCII.GetBytes("<XmlNamespacesResponse xmlns=\"https://example.com/\">\n    <nested>\n        <foo xmlns:baz=\"http://baz.com\">Foo</foo>\n        <values xmlns=\"http://qux.com\">\n            <member xmlns=\"http://bux.com\">Bar</member>\n            <member xmlns=\"http://bux.com\">Baz</member>\n        </values>\n    </nested>\n    <requestId>requestid</requestId>\n</XmlNamespacesResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonEC2ProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonEC2ProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("<XmlNamespacesResponse xmlns=\"https://example.com/\">\n    <nested>\n        <foo xmlns:baz=\"http://baz.com\">Foo</foo>\n        <values xmlns=\"http://qux.com\">\n            <member xmlns=\"http://bux.com\">Bar</member>\n            <member xmlns=\"http://bux.com\">Baz</member>\n        </values>\n    </nested>\n    <requestId>requestid</requestId>\n</XmlNamespacesResponse>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "text/xml;charset=UTF-8";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new XmlNamespacesResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.XmlNamespacesAsync(new XmlNamespacesRequest()).ConfigureAwait(false);
             var expectedResponse = new XmlNamespacesResponse
             {
                 Nested = new XmlNamespaceNested
@@ -71,9 +80,8 @@ namespace AWSSDK.ProtocolTests.AwsEc2
             };
 
             // Assert
-            var actualResponse = (XmlNamespacesResponse)unmarshalledResponse;
             Comparer.CompareObjects<XmlNamespacesResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
     }

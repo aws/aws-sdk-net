@@ -50,7 +50,11 @@ public final class HttpProtocolTestGenerator implements Runnable {
     private static final Set<ShapeId> MOCKED_CLIENT_SERVICES = Set.of(
             ShapeId.from("aws.protocoltests.json10#JsonRpc10"),
             ShapeId.from("aws.protocoltests.restjson#RestJson"),
-            ShapeId.from("aws.protocoltests.json#JsonProtocol")
+            ShapeId.from("aws.protocoltests.json#JsonProtocol"),
+            ShapeId.from("aws.protocoltests.query#AwsQuery"),
+            ShapeId.from("aws.protocoltests.ec2#AwsEc2"),
+            ShapeId.from("aws.protocoltests.restxml#RestXml"),
+            ShapeId.from("aws.protocoltests.restxml.xmlns#RestXmlWithNamespace")
     );
     private final boolean useMockedClient;
     private final List<String> tagsToSkip = List.of("defaults" , "skip-legacy-conversion");
@@ -288,13 +292,26 @@ public final class HttpProtocolTestGenerator implements Runnable {
         writer.write("using var client = new $L(MockHttpClientUtils.TestCredentials, config);",
                 ProtocolTestUtils.getProtocolClient(this.serviceNamespace));
         // Request tests only assert on what was sent, so any response the unmarshaller accepts will do.
-        writer.write("""
-                     var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
-                     {
-                         ContentType = "application/json",
-                         Body = Encoding.UTF8.GetBytes("{}"),
-                     });
-                     """);
+        if (this.marshallerType.equals("Json")) {
+            writer.write("""
+                         var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+                         {
+                             ContentType = "application/json",
+                             Body = Encoding.UTF8.GetBytes("{}"),
+                         });
+                         """);
+        } else {
+            // XML responses (Query, EC2 and REST XML) are read by the XML unmarshaller, which rejects a "{}"
+            // JSON body and throws on an empty body ("Root element is missing"). A minimal well-formed XML
+            // document with an unrecognized root unmarshalls into an empty response without error.
+            writer.write("""
+                         var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+                         {
+                             ContentType = "text/xml",
+                             Body = Encoding.UTF8.GetBytes("<Response/>"),
+                         });
+                         """);
+        }
         writer.writeSingleLineComment("Act");
         writer.write("await client.$LAsync(request).ConfigureAwait(false);", operationName);
         writer.write("var actualRequest = mockHttp.LastCreatedRequest;");
@@ -312,6 +329,13 @@ public final class HttpProtocolTestGenerator implements Runnable {
         }
         var headers = httpRequestTestCase.getHeaders();
         for (var header : headers.keySet()) {
+            if (header.equals("Content-Type")
+                    && (httpRequestTestCase.getProtocol().getName().equals("awsQuery") || httpRequestTestCase.getProtocol().getName().equals("ec2Query"))) {
+                // the smithy docs https://smithy.io/2.0/aws/protocols/aws-query-protocol.html#request-serialization> use SHALL when describing the content-type
+                // for query based protocols. Since the .NET SDK has sent charset=utf-8 for many years, the assertion here will be more relaxed.
+                writer.write("Assert.AreEqual(\"application/x-www-form-urlencoded; charset=utf-8\", actualRequest.Headers[$S]);", header);
+                continue;
+            }
             // We are relaxing our assert here so that "1, 2, 3" = "1,2,3" There is nothing in the smithy docs that says whitespace matters.
             writer.write("Assert.AreEqual($S.Replace(\" \",\"\"), actualRequest.Headers[$S].Replace(\" \",\"\"));", headers.get(header), header);
         }
@@ -343,8 +367,14 @@ public final class HttpProtocolTestGenerator implements Runnable {
         if (this.marshallerType.equals("Json")) {
             writer.write("var expectedBody = $S;", httpRequestTestCase.getBody());
             writer.write("JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);");
+        } else if (httpRequestTestCase.getProtocol().getName().equals("awsQuery") || httpRequestTestCase.getProtocol().getName().equals("ec2Query")) {
+            writer.write("var expectedBody = $S;", httpRequestTestCase.getBody());
+            writer.write("QueryTestUtils.AssertBody(actualRequest.Body, expectedBody);");
+        } else if (httpRequestTestCase.getProtocol().getName().equals("restXml")) {
+            writer.write("var expectedBody = $S;", httpRequestTestCase.getBody());
+            writer.write("XmlTestUtils.AssertBody(actualRequest.Body, expectedBody);");
         } else {
-            throw new CodegenException("Mocked client request tests are only supported for JSON protocols.");
+            throw new CodegenException("Mocked client request tests are only supported for JSON, Query and REST XML protocols.");
         }
     }
 

@@ -32,6 +32,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.AwsQuery
 {
@@ -45,18 +46,26 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("AwsQuery")]
-        public void QueryXmlEnumsResponse()
+        public async Task QueryXmlEnumsResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "text/xml";
-            byte[] bytes = Encoding.ASCII.GetBytes("<XmlEnumsResponse xmlns=\"https://example.com/\">\n    <XmlEnumsResult>\n        <fooEnum1>Foo</fooEnum1>\n        <fooEnum2>0</fooEnum2>\n        <fooEnum3>1</fooEnum3>\n        <fooEnumList>\n            <member>Foo</member>\n            <member>0</member>\n        </fooEnumList>\n        <fooEnumSet>\n            <member>Foo</member>\n            <member>0</member>\n        </fooEnumSet>\n        <fooEnumMap>\n            <entry>\n                <key>hi</key>\n                <value>Foo</value>\n            </entry>\n            <entry>\n                <key>zero</key>\n                <value>0</value>\n            </entry>\n        </fooEnumMap>\n    </XmlEnumsResult>\n</XmlEnumsResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonQueryProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonQueryProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("<XmlEnumsResponse xmlns=\"https://example.com/\">\n    <XmlEnumsResult>\n        <fooEnum1>Foo</fooEnum1>\n        <fooEnum2>0</fooEnum2>\n        <fooEnum3>1</fooEnum3>\n        <fooEnumList>\n            <member>Foo</member>\n            <member>0</member>\n        </fooEnumList>\n        <fooEnumSet>\n            <member>Foo</member>\n            <member>0</member>\n        </fooEnumSet>\n        <fooEnumMap>\n            <entry>\n                <key>hi</key>\n                <value>Foo</value>\n            </entry>\n            <entry>\n                <key>zero</key>\n                <value>0</value>\n            </entry>\n        </fooEnumMap>\n    </XmlEnumsResult>\n</XmlEnumsResponse>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "text/xml";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new XmlEnumsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.XmlEnumsAsync(new XmlEnumsRequest()).ConfigureAwait(false);
             var expectedResponse = new XmlEnumsResponse
             {
                 FooEnum1 = "Foo",
@@ -81,9 +90,8 @@ namespace AWSSDK.ProtocolTests.AwsQuery
             };
 
             // Assert
-            var actualResponse = (XmlEnumsResponse)unmarshalledResponse;
             Comparer.CompareObjects<XmlEnumsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
     }

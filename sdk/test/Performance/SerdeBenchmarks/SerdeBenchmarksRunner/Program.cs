@@ -69,9 +69,11 @@ internal class Program
         // Parse custom arguments before passing remaining args to BDN
         var suite = "e2e";
         var cpuTimeMode = false;
-        // ops/CPU-sec defaults (warmup 1000 — sits on .NET's JIT plateau per D2 sweep; min 50000
-        // iters OR 5s CPU, first wins).
-        var warmup = 1000;
+        // ops/CPU-sec defaults: warmup 100000, then min 50000 iters OR 5s CPU (first wins). Tiered
+        // compilation keeps recompiling hot methods in the background for a while after the first calls,
+        // so a short warmup lets that JIT work (and slower code) land in the measured window, mostly for
+        // the first cases of each protocol.
+        var warmup = 100000;
         var minIterations = 50000;
         var minCpuSeconds = 5.0;
         var bdnArgs = new List<string>();

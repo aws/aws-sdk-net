@@ -32,6 +32,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.AwsQuery
 {
@@ -45,18 +46,26 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("AwsQuery")]
-        public void QueryXmlListsResponse()
+        public async Task QueryXmlListsResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "text/xml";
-            byte[] bytes = Encoding.ASCII.GetBytes("<XmlListsResponse xmlns=\"https://example.com/\">\n    <XmlListsResult>\n        <stringList>\n            <member>foo</member>\n            <member>bar</member>\n        </stringList>\n        <stringSet>\n            <member>foo</member>\n            <member>bar</member>\n        </stringSet>\n        <integerList>\n            <member>1</member>\n            <member>2</member>\n        </integerList>\n        <booleanList>\n            <member>true</member>\n            <member>false</member>\n        </booleanList>\n        <timestampList>\n            <member>2014-04-29T18:30:38Z</member>\n            <member>2014-04-29T18:30:38Z</member>\n        </timestampList>\n        <enumList>\n            <member>Foo</member>\n            <member>0</member>\n        </enumList>\n        <intEnumList>\n            <member>1</member>\n            <member>2</member>\n        </intEnumList>\n        <nestedStringList>\n            <member>\n                <member>foo</member>\n                <member>bar</member>\n            </member>\n            <member>\n                <member>baz</member>\n                <member>qux</member>\n            </member>\n        </nestedStringList>\n        <renamed>\n            <item>foo</item>\n            <item>bar</item>\n        </renamed>\n        <flattenedList>hi</flattenedList>\n        <flattenedList>bye</flattenedList>\n        <customName>yep</customName>\n        <customName>nope</customName>\n        <flattenedListWithMemberNamespace xmlns=\"https://xml-member.example.com\">a</flattenedListWithMemberNamespace>\n        <flattenedListWithMemberNamespace xmlns=\"https://xml-member.example.com\">b</flattenedListWithMemberNamespace>\n        <flattenedListWithNamespace>a</flattenedListWithNamespace>\n        <flattenedListWithNamespace>b</flattenedListWithNamespace>\n        <myStructureList>\n            <item>\n                <value>1</value>\n                <other>2</other>\n            </item>\n            <item>\n                <value>3</value>\n                <other>4</other>\n            </item>\n        </myStructureList>\n    </XmlListsResult>\n</XmlListsResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonQueryProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonQueryProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("<XmlListsResponse xmlns=\"https://example.com/\">\n    <XmlListsResult>\n        <stringList>\n            <member>foo</member>\n            <member>bar</member>\n        </stringList>\n        <stringSet>\n            <member>foo</member>\n            <member>bar</member>\n        </stringSet>\n        <integerList>\n            <member>1</member>\n            <member>2</member>\n        </integerList>\n        <booleanList>\n            <member>true</member>\n            <member>false</member>\n        </booleanList>\n        <timestampList>\n            <member>2014-04-29T18:30:38Z</member>\n            <member>2014-04-29T18:30:38Z</member>\n        </timestampList>\n        <enumList>\n            <member>Foo</member>\n            <member>0</member>\n        </enumList>\n        <intEnumList>\n            <member>1</member>\n            <member>2</member>\n        </intEnumList>\n        <nestedStringList>\n            <member>\n                <member>foo</member>\n                <member>bar</member>\n            </member>\n            <member>\n                <member>baz</member>\n                <member>qux</member>\n            </member>\n        </nestedStringList>\n        <renamed>\n            <item>foo</item>\n            <item>bar</item>\n        </renamed>\n        <flattenedList>hi</flattenedList>\n        <flattenedList>bye</flattenedList>\n        <customName>yep</customName>\n        <customName>nope</customName>\n        <flattenedListWithMemberNamespace xmlns=\"https://xml-member.example.com\">a</flattenedListWithMemberNamespace>\n        <flattenedListWithMemberNamespace xmlns=\"https://xml-member.example.com\">b</flattenedListWithMemberNamespace>\n        <flattenedListWithNamespace>a</flattenedListWithNamespace>\n        <flattenedListWithNamespace>b</flattenedListWithNamespace>\n        <myStructureList>\n            <item>\n                <value>1</value>\n                <other>2</other>\n            </item>\n            <item>\n                <value>3</value>\n                <other>4</other>\n            </item>\n        </myStructureList>\n    </XmlListsResult>\n</XmlListsResponse>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "text/xml";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new XmlListsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.XmlListsAsync(new XmlListsRequest()).ConfigureAwait(false);
             var expectedResponse = new XmlListsResponse
             {
                 StringList =  new List<string>()
@@ -148,9 +157,8 @@ namespace AWSSDK.ProtocolTests.AwsQuery
             };
 
             // Assert
-            var actualResponse = (XmlListsResponse)unmarshalledResponse;
             Comparer.CompareObjects<XmlListsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
     }

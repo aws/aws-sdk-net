@@ -32,6 +32,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.AwsQuery
 {
@@ -45,18 +46,26 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("AwsQuery")]
-        public void QuerySimpleScalarPropertiesResponse()
+        public async Task QuerySimpleScalarPropertiesResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "text/xml";
-            byte[] bytes = Encoding.ASCII.GetBytes("<SimpleScalarXmlPropertiesResponse xmlns=\"https://example.com/\">\n    <SimpleScalarXmlPropertiesResult>\n        <stringValue>string</stringValue>\n        <emptyStringValue/>\n        <trueBooleanValue>true</trueBooleanValue>\n        <falseBooleanValue>false</falseBooleanValue>\n        <byteValue>1</byteValue>\n        <shortValue>2</shortValue>\n        <integerValue>3</integerValue>\n        <longValue>4</longValue>\n        <floatValue>5.5</floatValue>\n        <DoubleDribble>6.5</DoubleDribble>\n    </SimpleScalarXmlPropertiesResult>\n</SimpleScalarXmlPropertiesResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonQueryProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonQueryProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("<SimpleScalarXmlPropertiesResponse xmlns=\"https://example.com/\">\n    <SimpleScalarXmlPropertiesResult>\n        <stringValue>string</stringValue>\n        <emptyStringValue/>\n        <trueBooleanValue>true</trueBooleanValue>\n        <falseBooleanValue>false</falseBooleanValue>\n        <byteValue>1</byteValue>\n        <shortValue>2</shortValue>\n        <integerValue>3</integerValue>\n        <longValue>4</longValue>\n        <floatValue>5.5</floatValue>\n        <DoubleDribble>6.5</DoubleDribble>\n    </SimpleScalarXmlPropertiesResult>\n</SimpleScalarXmlPropertiesResponse>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "text/xml";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new SimpleScalarXmlPropertiesResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.SimpleScalarXmlPropertiesAsync(new SimpleScalarXmlPropertiesRequest()).ConfigureAwait(false);
             var expectedResponse = new SimpleScalarXmlPropertiesResponse
             {
                 StringValue = "string",
@@ -72,9 +81,8 @@ namespace AWSSDK.ProtocolTests.AwsQuery
             };
 
             // Assert
-            var actualResponse = (SimpleScalarXmlPropertiesResponse)unmarshalledResponse;
             Comparer.CompareObjects<SimpleScalarXmlPropertiesResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -84,18 +92,26 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("AwsQuery")]
-        public void AwsQuerySupportsNaNFloatOutputsResponse()
+        public async Task AwsQuerySupportsNaNFloatOutputsResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "text/xml";
-            byte[] bytes = Encoding.ASCII.GetBytes("<SimpleScalarXmlPropertiesResponse xmlns=\"https://example.com/\">\n    <SimpleScalarXmlPropertiesResult>\n        <floatValue>NaN</floatValue>\n        <DoubleDribble>NaN</DoubleDribble>\n    </SimpleScalarXmlPropertiesResult>\n</SimpleScalarXmlPropertiesResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonQueryProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonQueryProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("<SimpleScalarXmlPropertiesResponse xmlns=\"https://example.com/\">\n    <SimpleScalarXmlPropertiesResult>\n        <floatValue>NaN</floatValue>\n        <DoubleDribble>NaN</DoubleDribble>\n    </SimpleScalarXmlPropertiesResult>\n</SimpleScalarXmlPropertiesResponse>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "text/xml";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new SimpleScalarXmlPropertiesResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.SimpleScalarXmlPropertiesAsync(new SimpleScalarXmlPropertiesRequest()).ConfigureAwait(false);
             var expectedResponse = new SimpleScalarXmlPropertiesResponse
             {
                 FloatValue = float.NaN,
@@ -103,9 +119,8 @@ namespace AWSSDK.ProtocolTests.AwsQuery
             };
 
             // Assert
-            var actualResponse = (SimpleScalarXmlPropertiesResponse)unmarshalledResponse;
             Comparer.CompareObjects<SimpleScalarXmlPropertiesResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -115,18 +130,26 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("AwsQuery")]
-        public void AwsQuerySupportsInfinityFloatOutputsResponse()
+        public async Task AwsQuerySupportsInfinityFloatOutputsResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "text/xml";
-            byte[] bytes = Encoding.ASCII.GetBytes("<SimpleScalarXmlPropertiesResponse xmlns=\"https://example.com/\">\n    <SimpleScalarXmlPropertiesResult>\n        <floatValue>Infinity</floatValue>\n        <DoubleDribble>Infinity</DoubleDribble>\n    </SimpleScalarXmlPropertiesResult>\n</SimpleScalarXmlPropertiesResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonQueryProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonQueryProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("<SimpleScalarXmlPropertiesResponse xmlns=\"https://example.com/\">\n    <SimpleScalarXmlPropertiesResult>\n        <floatValue>Infinity</floatValue>\n        <DoubleDribble>Infinity</DoubleDribble>\n    </SimpleScalarXmlPropertiesResult>\n</SimpleScalarXmlPropertiesResponse>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "text/xml";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new SimpleScalarXmlPropertiesResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.SimpleScalarXmlPropertiesAsync(new SimpleScalarXmlPropertiesRequest()).ConfigureAwait(false);
             var expectedResponse = new SimpleScalarXmlPropertiesResponse
             {
                 FloatValue = float.PositiveInfinity,
@@ -134,9 +157,8 @@ namespace AWSSDK.ProtocolTests.AwsQuery
             };
 
             // Assert
-            var actualResponse = (SimpleScalarXmlPropertiesResponse)unmarshalledResponse;
             Comparer.CompareObjects<SimpleScalarXmlPropertiesResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -146,18 +168,26 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("AwsQuery")]
-        public void AwsQuerySupportsNegativeInfinityFloatOutputsResponse()
+        public async Task AwsQuerySupportsNegativeInfinityFloatOutputsResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "text/xml";
-            byte[] bytes = Encoding.ASCII.GetBytes("<SimpleScalarXmlPropertiesResponse xmlns=\"https://example.com/\">\n    <SimpleScalarXmlPropertiesResult>\n        <floatValue>-Infinity</floatValue>\n        <DoubleDribble>-Infinity</DoubleDribble>\n    </SimpleScalarXmlPropertiesResult>\n</SimpleScalarXmlPropertiesResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonQueryProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonQueryProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("<SimpleScalarXmlPropertiesResponse xmlns=\"https://example.com/\">\n    <SimpleScalarXmlPropertiesResult>\n        <floatValue>-Infinity</floatValue>\n        <DoubleDribble>-Infinity</DoubleDribble>\n    </SimpleScalarXmlPropertiesResult>\n</SimpleScalarXmlPropertiesResponse>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "text/xml";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new SimpleScalarXmlPropertiesResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.SimpleScalarXmlPropertiesAsync(new SimpleScalarXmlPropertiesRequest()).ConfigureAwait(false);
             var expectedResponse = new SimpleScalarXmlPropertiesResponse
             {
                 FloatValue = float.NegativeInfinity,
@@ -165,9 +195,8 @@ namespace AWSSDK.ProtocolTests.AwsQuery
             };
 
             // Assert
-            var actualResponse = (SimpleScalarXmlPropertiesResponse)unmarshalledResponse;
             Comparer.CompareObjects<SimpleScalarXmlPropertiesResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
     }

@@ -82,7 +82,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(publicRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutBucketPolicyRequest.BucketName");
             request.ResourcePath = "/";
-            request.Content = Encoding.UTF8.GetBytes(StringUtils.FromString(publicRequest.Policy));
+            if (publicRequest.IsSetPolicy())
+            {
+                request.Content = Encoding.UTF8.GetBytes(StringUtils.FromString(publicRequest.Policy));
+            }
             request.Headers["Content-Type"] = "text/plain";
             PostMarshallCustomization(request, publicRequest);
                 ChecksumUtils.SetChecksumData(

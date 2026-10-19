@@ -32,6 +32,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.AwsQuery
 {
@@ -46,18 +47,26 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("AwsQuery")]
-        public void QueryQueryFlattenedXmlMapWithXmlNamespaceResponse()
+        public async Task QueryQueryFlattenedXmlMapWithXmlNamespaceResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "text/xml";
-            byte[] bytes = Encoding.ASCII.GetBytes("<FlattenedXmlMapWithXmlNamespaceResponse xmlns=\"https://example.com/\">\n    <FlattenedXmlMapWithXmlNamespaceResult>\n        <KVP xmlns=\"https://the-member.example.com\">\n            <K xmlns=\"https://the-key.example.com\">a</K>\n            <V xmlns=\"https://the-value.example.com\">A</V>\n        </KVP>\n        <KVP xmlns=\"https://the-member.example.com\">\n            <K xmlns=\"https://the-key.example.com\">b</K>\n            <V xmlns=\"https://the-value.example.com\">B</V>\n        </KVP>\n    </FlattenedXmlMapWithXmlNamespaceResult>\n</FlattenedXmlMapWithXmlNamespaceResponse>");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonQueryProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonQueryProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("<FlattenedXmlMapWithXmlNamespaceResponse xmlns=\"https://example.com/\">\n    <FlattenedXmlMapWithXmlNamespaceResult>\n        <KVP xmlns=\"https://the-member.example.com\">\n            <K xmlns=\"https://the-key.example.com\">a</K>\n            <V xmlns=\"https://the-value.example.com\">A</V>\n        </KVP>\n        <KVP xmlns=\"https://the-member.example.com\">\n            <K xmlns=\"https://the-key.example.com\">b</K>\n            <V xmlns=\"https://the-value.example.com\">B</V>\n        </KVP>\n    </FlattenedXmlMapWithXmlNamespaceResult>\n</FlattenedXmlMapWithXmlNamespaceResponse>"),
+            };
+            mockResponse.Headers["Content-Type"] = "text/xml";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new FlattenedXmlMapWithXmlNamespaceResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.FlattenedXmlMapWithXmlNamespaceAsync(new FlattenedXmlMapWithXmlNamespaceRequest()).ConfigureAwait(false);
             var expectedResponse = new FlattenedXmlMapWithXmlNamespaceResponse
             {
                 MyMap = new Dictionary<string, string>()
@@ -69,9 +78,8 @@ namespace AWSSDK.ProtocolTests.AwsQuery
             };
 
             // Assert
-            var actualResponse = (FlattenedXmlMapWithXmlNamespaceResponse)unmarshalledResponse;
             Comparer.CompareObjects<FlattenedXmlMapWithXmlNamespaceResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
     }
