@@ -32,7 +32,7 @@ namespace Amazon.PricingPlanManager
     public partial class AmazonPricingPlanManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Pricing Plan Manager", "4.0.100.12");
+            InternalSDKUtils.BuildUserAgentString("Pricing Plan Manager", "4.0.100.13");
 
         private static readonly AmazonPricingPlanManagerEndpointResolver EndpointResolver =
             new AmazonPricingPlanManagerEndpointResolver();

@@ -1,9 +1,0 @@
-{
-  "core": {
-    "changeLogMessages": [
-      "Fixed SSO token refresh after a failed attempt to retry at most once every 30 seconds, both before and after the token expires, as the SSO token provider specification requires."
-    ],
-    "type": "patch",
-    "updateMinimum": true
-  }
-}

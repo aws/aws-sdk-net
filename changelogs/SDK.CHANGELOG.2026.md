@@ -1,3 +1,83 @@
+### 4.0.354.0 (2026-10-19 18:17 UTC)
+* Amplify (4.0.103.0)
+	* Documentation update release for AWS service
+* BedrockAgent (4.0.105.0)
+	* Adds Retrieval Instructions for Amazon Bedrock Knowledge Bases. Create, get, update, delete, list, and version customer-authored instructions that guide how a knowledge base retrieves and answers, with content review before use.
+* BedrockAgentCore (4.0.114.0)
+	* Adds the Builtin.FailureAnalysis evaluator for batch evaluations. GetBatchEvaluation now returns insightResults that group session failures into insights with root causes and suggested fixes.
+* BedrockAgentRuntime (4.0.104.0)
+	* Adds support for applying a Retrieval Instruction, optionally by version, to AgenticRetrieveStream requests for Amazon Bedrock Knowledge Bases, and reports the applied instruction and version on the trace.
+* CloudWatch (4.0.106.0)
+	* This release adds ActionConfiguration to PutMetricAlarm, PutCompositeAlarm and PutLogAlarm. It allows customers to include an alarm's tags in its notifications and alarm state change events
+* CloudWatchLogs (4.0.106.0)
+	* Amazon CloudWatch Logs now supports filtering DescribeDeliverySources by resourceArns, DescribeDeliveryDestinations by names, and DescribeDeliveries by deliverySourceNames.
+* CodeCommit (4.0.102.0)
+	* Documentation update release for AWS service
+* CodeConnections (4.0.102.0)
+	* Documentation update release for AWS service
+* CodeDeploy (4.0.103.0)
+	* Adds support for suspending Amazon EC2 Auto Scaling processes during CodeDeploy EC2 in-place deployments. Use ec2DeploymentOptions to choose which processes are suspended and resumed.
+* CodePipeline (4.0.101.0)
+	* Documentation update release for AWS service
+* CodeStarNotifications (4.0.101.0)
+	* Documentation update release for AWS service
+* Connect (4.0.124.0)
+	* Amazon Connect GetAttachedFile API now supports an optional UrlContentDisposition parameter. Set it to INLINE to get a pre-signed URL that displays the file in the browser, so agents can preview email attachments without downloading them. ATTACHMENT (download) remains the default.
+* ControlTower (4.0.101.0)
+	* Documentation update release for AWS service
+* DataZone (4.0.110.0)
+	* Adds SDK and CLI support for the Iceberg REST catalog connection types already available in Amazon SageMaker Unified Studio - ICEBERGRESTCATALOG, SNOWFLAKEICEBERGRESTCATALOG, and DATABRICKSICEBERGRESTCATALOG.
+* DevOpsAgent (4.0.106.0)
+	* Documentation update release for AWS service
+* Drs (4.0.104.0)
+	* Documentation update release for AWS service
+* DynamoDBv2 (4.0.108.0)
+	* Enable account endpoint generation for existing CN and GovCloud regions
+* ECR (4.0.101.11)
+	* ECR is now generated from its Smithy model. There are no changes to the public API.
+* ECS (4.0.107.0)
+	* Adds support for configurable envoy application log levels. Customers can now debug network connectivity issues with their task's sidecar envoys.
+* EMRContainers (4.0.104.0)
+	* Documentation update release for AWS service
+* Finspace (Removed)
+	* Amazon FinSpace has been removed from the SDK because it has been discontinued.
+* FinSpaceData (Removed)
+	* Amazon FinSpace Data has been removed from the SDK because it has been discontinued.
+* GlueDataBrew (4.0.101.0)
+	* Documentation update release for AWS service
+* GuardDuty (4.0.111.0)
+	* Adding a new Expected Bucket Owner optional field for GuardDuty publishing destination APIs
+* IoTWireless (4.0.103.0)
+	* Documentation update release for AWS service
+* ManagedGrafana (4.0.101.0)
+	* Documentation update release for AWS service
+* ObservabilityAdmin (4.0.108.0)
+	* Adding support for EKS Container Insights Telemetry Rules
+* OpenSearchService (4.0.105.0)
+	* Amazon OpenSearch Service adds a new TLS security policy to support FIPS policy and post-quantum cryptography
+* S3 (4.0.104.5)
+	* Fixed an issue where TransferUtility.DownloadDirectory could report fewer objects in ObjectsDownloaded than were actually downloaded, because the count was updated from a background progress callback.
+	* Fixes an issue where empty requests were failing if the request had a string payload.
+* SocialMessaging (4.0.104.0)
+	* Adding support for WhatsApp Direct Send.
+* TimestreamInfluxDB (4.0.104.0)
+	* Adds four new parameters to the InfluxDBv3Enterprise parameter group for Amazon Timestream for InfluxDB. The new parameters are upgradePachaTree, walBufferSize, snapshotSize, and snapshotDuration.
+* Tnb (Removed)
+	* AWS Telco Network Builder has been removed from the SDK because it has been discontinued.
+* WAFV2 (4.0.101.14)
+	* WAFV2 is now generated from its Smithy model. There are no changes to the public API.
+* WorkDocs (4.0.100.19)
+	* WorkDocs is now generated from its Smithy model. `DeactivatingLastSystemUserException` and `UnauthorizedOperationException` now expose the `Code` property that the service returns in error responses.
+* WorkSpaces (4.0.104.0)
+	* Adds optional imageValidationMode enum to ImportCustomWorkspaceImageRequest. This allows customers to opt-in to having prevalidation run in the service account instead of customer account.
+* WorkspacesInstances (4.0.103.0)
+	* ModifyVolume is a new public API for WorkSpaces Core Managed Instances. Customers can change the size, type, IOPS, or throughput of an existing managed volume online, with no stop required. Customers track progress by calling EC2 DescribeVolumesModifications directly.
+* XRay (4.0.101.0)
+	* Adds support for encrypting the Transaction Search spans log group with a customer managed AWS KMS key. Pass the key ARN in the new CloudWatchLogsConfiguration.SpansLogGroupKmsKeyId field of UpdateTraceSegmentDestination. X-Ray applies the key when it creates the log group.
+* Core 4.0.102.12
+	* Fixed SSO token refresh after a failed attempt to retry at most once every 30 seconds, both before and after the token expires, as the SSO token provider specification requires.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.353.0 (2026-10-14 18:14 UTC)
 * ApplicationAutoScaling (4.0.100.18)
 	* ApplicationAutoScaling is now generated from its Smithy model. There are no changes to the public API.
