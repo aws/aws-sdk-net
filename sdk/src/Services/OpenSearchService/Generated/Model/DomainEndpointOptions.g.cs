@@ -115,6 +115,11 @@ namespace Amazon.OpenSearchService.Model
         ///  <b>Policy-Min-TLS-1-2-RFC9151-FIPS-2024-08:</b> TLS security policy that supports
         /// TLS version 1.3 with FIPS
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Policy-Min-TLS-1-2-FIPS-PQ-2026-10:</b> TLS security policy that supports TLS
+        /// version 1.2 to TLS version 1.3 with FIPS and post-quantum cipher suites
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public TLSSecurityPolicy TLSSecurityPolicy { get; set; }
