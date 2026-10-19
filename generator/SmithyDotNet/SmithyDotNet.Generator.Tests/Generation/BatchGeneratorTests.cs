@@ -23,18 +23,22 @@ public class BatchGeneratorTests : IDisposable
         }
     }
 
+    // The seeded CloudTrailData model is unlisted, so it is skipped; Core's files are written regardless.
     [Fact]
-    public void EmptyServiceListIsNoOp()
+    public void EmptyServiceListWritesOnlyCoreFiles()
     {
         WriteControlFile();
 
         var generated = new BatchGenerator(_repoRoot).Run(TestContext.Current.CancellationToken);
         Assert.Empty(generated);
         Assert.False(Directory.Exists(Path.Combine(_repoRoot, "sdk", "src", "Services", "CloudTrailData", "Generated")));
+        var coreDir = SdkTreeLayout.CoreRoot(_repoRoot);
+        Assert.Contains("public static readonly RegionEndpoint USEast1 =", File.ReadAllText(Path.Combine(coreDir, "RegionEndpoint", "RegionEndpoint.generated.cs")));
+        Assert.Contains("_defaultPartition = aws;", File.ReadAllText(Path.Combine(coreDir, "Amazon.Runtime", "Internal", "Endpoints", "StandardLibrary", "Partition.generated.cs")));
     }
 
     [Fact]
-    public void MissingControlFileIsNoOp()
+    public void MissingControlFileGeneratesNoServices()
     {
         var generated = new BatchGenerator(_repoRoot).Run(TestContext.Current.CancellationToken);
         Assert.Empty(generated);
@@ -199,15 +203,6 @@ public class BatchGeneratorTests : IDisposable
         Assert.Contains("metadata.json", ex.Message);
     }
 
-    [Fact]
-    public void UnlistedModelIsSkipped()
-    {
-        WriteControlFile();
-
-        var generated = new BatchGenerator(_repoRoot).Run(TestContext.Current.CancellationToken);
-        Assert.Empty(generated);
-    }
-
     // A repeated or case-variant entry must not schedule the same service twice (it would race on
     // the same output dirs); it resolves to a single generation.
     [Fact]
@@ -221,7 +216,7 @@ public class BatchGeneratorTests : IDisposable
 
     // Builds the minimal repo layout BatchGenerator expects, reusing the TestData fixtures: the
     // CloudTrailData Smithy model + metadata sidecar in its C2J-style model dir, the version
-    // manifest, the default-configuration file, and the TFM props.
+    // manifest, the default-configuration and partitions files, and the TFM props.
     private void SeedRepoSkeleton()
     {
         var modelDir = Path.Combine(SdkTreeLayout.ModelsRoot(_repoRoot), "cloudtrail-data");
@@ -231,9 +226,10 @@ public class BatchGeneratorTests : IDisposable
 
         SeedFile(SdkTreeLayout.VersionManifestPath(_repoRoot), JsonSerializer.Serialize(TestManifests.CloudTrailData()));
 
-        var coreDir = Path.Combine(SdkTreeLayout.SdkRoot(_repoRoot), "src", "Core");
+        var coreDir = SdkTreeLayout.CoreRoot(_repoRoot);
         Directory.CreateDirectory(coreDir);
         File.Copy("TestData/sdk-default-configuration.json", Path.Combine(coreDir, "sdk-default-configuration.json"));
+        File.Copy("TestData/partitions.json", Path.Combine(coreDir, "partitions.json"));
         File.Copy("TestData/Directory.Build.props", Path.Combine(SdkTreeLayout.SdkRoot(_repoRoot), "Directory.Build.props"));
     }
 

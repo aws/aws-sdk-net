@@ -347,6 +347,34 @@ public static class FileHeader
     }
 
     /// <summary>
+    /// Writes the license header of Core's generated files, which C2J's templates carry and the service files don't.
+    /// It stays while C2J writes the same files, since both outputs must match.
+    /// </summary>
+    public static void WriteCoreLicense(CodeWriter writer)
+    {
+        writer.WriteLine("/*******************************************************************************");
+        writer.WriteLine(" *  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.");
+        writer.WriteLine(""" *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use""");
+        writer.WriteLine(" *  this file except in compliance with the License. A copy of the License is located at");
+        writer.WriteLine(" *");
+        writer.WriteLine(" *  http://aws.amazon.com/apache2.0");
+        writer.WriteLine(" *");
+        writer.WriteLine(""" *  or in the "license" file accompanying this file.""");
+        writer.WriteLine(""" *  This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR""");
+        writer.WriteLine(" *  CONDITIONS OF ANY KIND, either express or implied. See the License for the");
+        writer.WriteLine(" *  specific language governing permissions and limitations under the License.");
+        writer.WriteLine(" * *****************************************************************************");
+        writer.WriteLine(" *    __  _    _  ___");
+        writer.WriteLine(""" *   (  )( \/\/ )/ __)""");
+        writer.WriteLine(""" *   /__\ \    / \__ \""");
+        writer.WriteLine(""" *  (_)(_) \/\/  (___/""");
+        writer.WriteLine(" *");
+        writer.WriteLine(" *  AWS SDK for .NET");
+        writer.WriteLine(" *");
+        writer.WriteLine(" */");
+    }
+
+    /// <summary>
     /// Writes one <c>using {namespace};</c> directive per entry, in the order given.
     /// </summary>
     public static void WriteUsings(CodeWriter writer, IReadOnlyList<string> namespaces, bool emitTrailingNewLine = true)

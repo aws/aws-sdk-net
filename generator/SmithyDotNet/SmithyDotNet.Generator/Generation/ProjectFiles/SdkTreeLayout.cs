@@ -36,6 +36,9 @@ public static class SdkTreeLayout
     /// <summary>Root of the doc-sample tree the API reference builds from (<c>docgenerator/AWSSDKDocSamples</c>).</summary>
     public static string DocSamplesRoot(string repoRoot) => Path.Combine(repoRoot, "docgenerator", "AWSSDKDocSamples");
 
+    /// <summary>sdk/src/Core — the runtime, home of <c>partitions.json</c> and the files generated from it.</summary>
+    public static string CoreRoot(string repoRoot) => Path.Combine(SdkRoot(repoRoot), "src", "Core");
+
     // Relative prefixes embedded in generated files. Forward-slash so the generated references are
     // byte-identical whether the generator runs on Windows or Linux.
 

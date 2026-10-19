@@ -9,6 +9,7 @@ using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Converters;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
+using SmithyDotNet.Generator.Writers.Core;
 
 namespace SmithyDotNet.Generator.Generation;
 
@@ -44,25 +45,26 @@ public sealed class BatchGenerator(string repoRoot)
     private readonly StringComparer _pathComparer = Directory.Exists(SdkTreeLayout.SdkRoot(repoRoot).ToUpperInvariant()) ? StringComparer.OrdinalIgnoreCase : StringComparer.Ordinal;
 
     /// <summary>
-    /// Runs the batch generation. Returns the generated ServiceFolderNames (empty when the control
-    /// file is missing or lists no services — a clean no-op so CI is unaffected until a service is
-    /// listed). Throws <see cref="GeneratorException"/> on configuration errors.
+    /// Runs the batch generation: Core's region files, then the listed services. Returns the generated
+    /// ServiceFolderNames (empty when the control file is missing or lists no services). Throws
+    /// <see cref="GeneratorException"/> on configuration errors.
     /// </summary>
     public IReadOnlyList<string> Run(CancellationToken ct = default)
     {
+        // Per-service lines below log repo-relative paths; the root is logged once here.
+        Log.Info($"Generating under '{repoRoot}'.");
+        GenerateCoreFiles(ct);
+
         var controlFilePath = Path.Combine(_modelsRoot, SdkTreeLayout.MigratedServicesFileName);
         var migrated = LoadControlFile(controlFilePath);
         if (migrated.Count == 0)
         {
-            Log.Info($"No services listed in '{controlFilePath}'; nothing to generate.");
+            Log.Info($"No services listed in '{controlFilePath}'; no services to generate.");
             return [];
         }
 
-        // Per-service lines below log repo-relative paths; the root is logged once here.
-        Log.Info($"Generating migrated services under '{repoRoot}'.");
-
         var versionManifest = SdkVersionManifest.Load(SdkTreeLayout.VersionManifestPath(repoRoot));
-        var defaultConfigurationModes = DefaultConfigurationManifest.Load(Path.Combine(_sdkRoot, "src", "Core", "sdk-default-configuration.json"));
+        var defaultConfigurationModes = DefaultConfigurationManifest.Load(Path.Combine(SdkTreeLayout.CoreRoot(repoRoot), "sdk-default-configuration.json"));
         TargetPlatforms.Initialize(_sdkRoot);
 
         var discovered = DiscoverModels(ct);
@@ -78,6 +80,18 @@ public sealed class BatchGenerator(string repoRoot)
         });
 
         return generated.ToList();
+    }
+
+    // Core's region constants and partition tables come from partitions.json rather than a service model, so they're
+    // written even when no service is listed. C2J still writes them too, because the release's partitions merge runs
+    // C2J alone; the two outputs must stay byte-identical. They're written unformatted, as C2J's templates produce them.
+    private void GenerateCoreFiles(CancellationToken ct)
+    {
+        var coreRoot = SdkTreeLayout.CoreRoot(repoRoot);
+        var partitions = PartitionsManifest.Load(Path.Combine(coreRoot, "partitions.json"));
+        ServiceGenerator.WriteFile(Path.Combine(coreRoot, "RegionEndpoint", "RegionEndpoint.generated.cs"), new RegionEndpointWriter(partitions).Write(), format: false, ct);
+        ServiceGenerator.WriteFile(Path.Combine(coreRoot, "Amazon.Runtime", "Internal", "Endpoints", "StandardLibrary", "Partition.generated.cs"), new PartitionWriter(partitions).Write(), format: false, ct);
+        Log.Info($"Generated Core's region and partition files under '{Relative(coreRoot)}'.");
     }
 
     // The work is CPU-bound (mostly the Roslyn formatter), so one worker per core: at two per core the threads
@@ -100,7 +114,7 @@ public sealed class BatchGenerator(string repoRoot)
     {
         if (!File.Exists(path))
         {
-            Log.Info($"Control file '{path}' not found; nothing to generate.");
+            Log.Info($"Control file '{path}' not found; no services to generate.");
             return [];
         }
 
