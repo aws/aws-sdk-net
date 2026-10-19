@@ -1,0 +1,32 @@
+{
+  "services": [
+    {
+      "serviceName": "ECS",
+      "type": "patch",
+      "changeLogMessages": [
+        "ECS is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "LexModelsV2",
+      "type": "patch",
+      "changeLogMessages": [
+        "LexModelsV2 is now generated from its Smithy model. The RetryAfterSeconds property on ThrottlingException is now populated from the Retry-After response header."
+      ]
+    },
+    {
+      "serviceName": "MediaPackage",
+      "type": "patch",
+      "changeLogMessages": [
+        "MediaPackage is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "RDSDataService",
+      "type": "patch",
+      "changeLogMessages": [
+        "RDSDataService is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    }
+  ]
+}
