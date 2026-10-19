@@ -49,6 +49,35 @@ namespace Amazon.ObservabilityAdmin.Model
         internal bool IsSetBackupConfiguration() => this.BackupConfiguration != null;
 
         /// <summary>
+        /// Gets and sets the property LogGroupDeletionProtection. 
+        /// <para>
+        /// Specifies whether this centralization rule enables deletion protection on the destination
+        /// log groups that it creates. If you don't specify this setting, the rule doesn't enable
+        /// deletion protection on the log groups that it creates. If you specify a backup Region
+        /// in <c>BackupConfiguration</c>, the setting also applies to the log groups that the
+        /// rule creates in the backup Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you set this to <c>ENABLED</c>, the rule enables deletion protection only on
+        /// log groups that it creates after you enable the setting. It does not add deletion
+        /// protection to log groups the rule created before you enabled the setting.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you remove this setting from the rule or delete the rule, deletion protection stays
+        /// enabled on log groups that already have it. To delete one of these log groups, first
+        /// disable deletion protection on the log group in the destination account.
+        /// </para>
+        /// </summary>
+        public DeletionProtection LogGroupDeletionProtection { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LogGroupDeletionProtection property is set.
+        /// </summary>
+        internal bool IsSetLogGroupDeletionProtection() => this.LogGroupDeletionProtection != null;
+
+        /// <summary>
         /// Gets and sets the property LogGroupNameConfiguration. 
         /// <para>
         /// Configuration that specifies a naming pattern for destination log groups created during
