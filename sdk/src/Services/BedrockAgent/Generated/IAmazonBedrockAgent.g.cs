@@ -1132,6 +1132,142 @@ namespace Amazon.BedrockAgent
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates a new retrieval instruction. The retrieval instruction is usable once its
+        /// status becomes ACTIVE. Use GetRetrievalInstruction to check whether it is ready.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRetrievalInstruction service method.</param>
+        /// <returns>The response from the CreateRetrievalInstruction service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateRetrievalInstruction">REST API Reference for CreateRetrievalInstruction Operation</seealso>
+        CreateRetrievalInstructionResponse CreateRetrievalInstruction(CreateRetrievalInstructionRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a new retrieval instruction. The retrieval instruction is usable once its
+        /// status becomes ACTIVE. Use GetRetrievalInstruction to check whether it is ready.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRetrievalInstruction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateRetrievalInstruction service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateRetrievalInstruction">REST API Reference for CreateRetrievalInstruction Operation</seealso>
+        Task<CreateRetrievalInstructionResponse> CreateRetrievalInstructionAsync(CreateRetrievalInstructionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates an immutable numbered version from the retrieval instruction's current reviewed
+        /// content. The service creates the version synchronously.
+        /// 
+        ///  
+        /// <para>
+        /// The service numbers versions from 1 and assigns them in order, never reusing a number.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRetrievalInstructionVersion service method.</param>
+        /// <returns>The response from the CreateRetrievalInstructionVersion service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateRetrievalInstructionVersion">REST API Reference for CreateRetrievalInstructionVersion Operation</seealso>
+        CreateRetrievalInstructionVersionResponse CreateRetrievalInstructionVersion(CreateRetrievalInstructionVersionRequest request);
+#endif
+
+        /// <summary>
+        /// Creates an immutable numbered version from the retrieval instruction's current reviewed
+        /// content. The service creates the version synchronously.
+        /// 
+        ///  
+        /// <para>
+        /// The service numbers versions from 1 and assigns them in order, never reusing a number.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRetrievalInstructionVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateRetrievalInstructionVersion service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateRetrievalInstructionVersion">REST API Reference for CreateRetrievalInstructionVersion Operation</seealso>
+        Task<CreateRetrievalInstructionVersionResponse> CreateRetrievalInstructionVersionAsync(CreateRetrievalInstructionVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Creates a VPC configuration that lets a knowledge base connect to a resource in your
         /// private VPC. This operation is asynchronous: it returns a <c>vpcConfigurationId</c>
         /// with status <c>CREATING</c>. Poll <c>GetVpcConfiguration</c> until the status becomes
@@ -1920,6 +2056,73 @@ namespace Amazon.BedrockAgent
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes a retrieval instruction or a single version of it. Omit retrievalInstructionVersion
+        /// to delete the retrieval instruction itself; the service rejects that request with
+        /// ConflictException while the retrieval instruction has versions or while lastTransitionStatus
+        /// is CREATING or UPDATING. Specify retrievalInstructionVersion to delete only that version;
+        /// the retrieval instruction and its other versions are unaffected.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRetrievalInstruction service method.</param>
+        /// <returns>The response from the DeleteRetrievalInstruction service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteRetrievalInstruction">REST API Reference for DeleteRetrievalInstruction Operation</seealso>
+        DeleteRetrievalInstructionResponse DeleteRetrievalInstruction(DeleteRetrievalInstructionRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes a retrieval instruction or a single version of it. Omit retrievalInstructionVersion
+        /// to delete the retrieval instruction itself; the service rejects that request with
+        /// ConflictException while the retrieval instruction has versions or while lastTransitionStatus
+        /// is CREATING or UPDATING. Specify retrievalInstructionVersion to delete only that version;
+        /// the retrieval instruction and its other versions are unaffected.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRetrievalInstruction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteRetrievalInstruction service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteRetrievalInstruction">REST API Reference for DeleteRetrievalInstruction Operation</seealso>
+        Task<DeleteRetrievalInstructionResponse> DeleteRetrievalInstructionAsync(DeleteRetrievalInstructionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -2927,6 +3130,61 @@ namespace Amazon.BedrockAgent
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Gets a retrieval instruction. Also used to poll the terminal reporting of an asynchronous
+        /// create or update.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRetrievalInstruction service method.</param>
+        /// <returns>The response from the GetRetrievalInstruction service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetRetrievalInstruction">REST API Reference for GetRetrievalInstruction Operation</seealso>
+        GetRetrievalInstructionResponse GetRetrievalInstruction(GetRetrievalInstructionRequest request);
+#endif
+
+        /// <summary>
+        /// Gets a retrieval instruction. Also used to poll the terminal reporting of an asynchronous
+        /// create or update.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRetrievalInstruction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetRetrievalInstruction service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetRetrievalInstruction">REST API Reference for GetRetrievalInstruction Operation</seealso>
+        Task<GetRetrievalInstructionResponse> GetRetrievalInstructionAsync(GetRetrievalInstructionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Returns the details and current status of a single VPC configuration. Use this operation
         /// to poll for the outcome of an asynchronous create or delete.
         /// </summary>
@@ -3792,6 +4050,110 @@ namespace Amazon.BedrockAgent
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListPrompts">REST API Reference for ListPrompts Operation</seealso>
         Task<ListPromptsResponse> ListPromptsAsync(ListPromptsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the numbered versions of a retrieval instruction, newest first. DRAFT is not
+        /// listed; read it with GetRetrievalInstruction without retrievalInstructionVersion.
+        /// Results are paginated. Use the nextToken parameter to retrieve additional results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRetrievalInstructionVersions service method.</param>
+        /// <returns>The response from the ListRetrievalInstructionVersions service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListRetrievalInstructionVersions">REST API Reference for ListRetrievalInstructionVersions Operation</seealso>
+        ListRetrievalInstructionVersionsResponse ListRetrievalInstructionVersions(ListRetrievalInstructionVersionsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the numbered versions of a retrieval instruction, newest first. DRAFT is not
+        /// listed; read it with GetRetrievalInstruction without retrievalInstructionVersion.
+        /// Results are paginated. Use the nextToken parameter to retrieve additional results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRetrievalInstructionVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListRetrievalInstructionVersions service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListRetrievalInstructionVersions">REST API Reference for ListRetrievalInstructionVersions Operation</seealso>
+        Task<ListRetrievalInstructionVersionsResponse> ListRetrievalInstructionVersionsAsync(ListRetrievalInstructionVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the retrieval instructions in the caller's account. Results are paginated. Use
+        /// the nextToken parameter to retrieve additional results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRetrievalInstructions service method.</param>
+        /// <returns>The response from the ListRetrievalInstructions service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListRetrievalInstructions">REST API Reference for ListRetrievalInstructions Operation</seealso>
+        ListRetrievalInstructionsResponse ListRetrievalInstructions(ListRetrievalInstructionsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the retrieval instructions in the caller's account. Results are paginated. Use
+        /// the nextToken parameter to retrieve additional results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRetrievalInstructions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListRetrievalInstructions service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListRetrievalInstructions">REST API Reference for ListRetrievalInstructions Operation</seealso>
+        Task<ListRetrievalInstructionsResponse> ListRetrievalInstructionsAsync(ListRetrievalInstructionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -5053,6 +5415,71 @@ namespace Amazon.BedrockAgent
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdatePrompt">REST API Reference for UpdatePrompt Operation</seealso>
         Task<UpdatePromptResponse> UpdatePromptAsync(UpdatePromptRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the content of a retrieval instruction. The update is processed asynchronously;
+        /// the stored content is a candidate until content review passes, and the served content
+        /// does not change while the update is in flight. The service rejects the request with
+        /// ConflictException while lastTransitionStatus is CREATING or UPDATING.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRetrievalInstruction service method.</param>
+        /// <returns>The response from the UpdateRetrievalInstruction service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateRetrievalInstruction">REST API Reference for UpdateRetrievalInstruction Operation</seealso>
+        UpdateRetrievalInstructionResponse UpdateRetrievalInstruction(UpdateRetrievalInstructionRequest request);
+#endif
+
+        /// <summary>
+        /// Updates the content of a retrieval instruction. The update is processed asynchronously;
+        /// the stored content is a candidate until content review passes, and the served content
+        /// does not change while the update is in flight. The service rejects the request with
+        /// ConflictException while lastTransitionStatus is CREATING or UPDATING.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRetrievalInstruction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateRetrievalInstruction service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateRetrievalInstruction">REST API Reference for UpdateRetrievalInstruction Operation</seealso>
+        Task<UpdateRetrievalInstructionResponse> UpdateRetrievalInstructionAsync(UpdateRetrievalInstructionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>

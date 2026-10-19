@@ -117,6 +117,18 @@ namespace Amazon.BedrockAgent.Model
         IListPromptsPaginator ListPrompts(ListPromptsRequest request);
 
         /// <summary>
+        /// Paginator for ListRetrievalInstructionVersions operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListRetrievalInstructionVersionsPaginator ListRetrievalInstructionVersions(ListRetrievalInstructionVersionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListRetrievalInstructions operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListRetrievalInstructionsPaginator ListRetrievalInstructions(ListRetrievalInstructionsRequest request);
+
+        /// <summary>
         /// Paginator for ListVpcConfigurations operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
