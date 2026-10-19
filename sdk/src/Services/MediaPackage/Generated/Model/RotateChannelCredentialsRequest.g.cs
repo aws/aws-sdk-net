@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the mediapackage-2017-10-12.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -22,38 +22,30 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 using System.Net;
-
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618,CS1570
+
 namespace Amazon.MediaPackage.Model
 {
     /// <summary>
-    /// Container for the parameters to the RotateChannelCredentials operation.
-    /// Changes the Channel's first IngestEndpoint's username and password. WARNING - This
-    /// API is deprecated. Please use RotateIngestEndpointCredentials instead
+    /// Container for the parameters to the RotateChannelCredentials operation. Changes the
+    /// Channel's first IngestEndpoint's username and password. WARNING - This API is deprecated.
+    /// Please use RotateIngestEndpointCredentials instead
     /// </summary>
     [Obsolete("This API is deprecated. Please use RotateIngestEndpointCredentials instead")]
     public partial class RotateChannelCredentialsRequest : AmazonMediaPackageRequest
     {
-        private string _id;
-
         /// <summary>
         /// Gets and sets the property Id. The ID of the channel to update.
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string Id
-        {
-            get { return this._id; }
-            set { this._id = value; }
-        }
+        [AWSProperty(Required = true)]
+        public string Id { get; set; }
 
-        // Check to see if Id property is set
-        internal bool IsSetId()
-        {
-            return this._id != null;
-        }
-
+        /// <summary>
+        /// Checks to see if the Id property is set.
+        /// </summary>
+        internal bool IsSetId() => this.Id != null;
     }
 }
