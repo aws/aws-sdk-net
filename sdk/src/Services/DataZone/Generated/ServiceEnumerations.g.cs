@@ -533,6 +533,11 @@ namespace Amazon.DataZone
         public static readonly ConnectionType DATABRICKS = new ConnectionType("DATABRICKS");
 
         /// <summary>
+        /// Constant DATABRICKSICEBERGRESTCATALOG for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType DATABRICKSICEBERGRESTCATALOG = new ConnectionType("DATABRICKSICEBERGRESTCATALOG");
+
+        /// <summary>
         /// Constant DOCUMENTDB for ConnectionType
         /// </summary>
         public static readonly ConnectionType DOCUMENTDB = new ConnectionType("DOCUMENTDB");
@@ -556,6 +561,11 @@ namespace Amazon.DataZone
         /// Constant IAM for ConnectionType
         /// </summary>
         public static readonly ConnectionType IAM = new ConnectionType("IAM");
+
+        /// <summary>
+        /// Constant ICEBERGRESTCATALOG for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType ICEBERGRESTCATALOG = new ConnectionType("ICEBERGRESTCATALOG");
 
         /// <summary>
         /// Constant MLFLOW for ConnectionType
@@ -601,6 +611,11 @@ namespace Amazon.DataZone
         /// Constant SNOWFLAKE for ConnectionType
         /// </summary>
         public static readonly ConnectionType SNOWFLAKE = new ConnectionType("SNOWFLAKE");
+
+        /// <summary>
+        /// Constant SNOWFLAKEICEBERGRESTCATALOG for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType SNOWFLAKEICEBERGRESTCATALOG = new ConnectionType("SNOWFLAKEICEBERGRESTCATALOG");
 
         /// <summary>
         /// Constant SPARK for ConnectionType
@@ -1930,6 +1945,11 @@ namespace Amazon.DataZone
         public static readonly GlueConnectionType BIGQUERY = new GlueConnectionType("BIGQUERY");
 
         /// <summary>
+        /// Constant DATABRICKSICEBERGRESTCATALOG for GlueConnectionType
+        /// </summary>
+        public static readonly GlueConnectionType DATABRICKSICEBERGRESTCATALOG = new GlueConnectionType("DATABRICKSICEBERGRESTCATALOG");
+
+        /// <summary>
         /// Constant DOCUMENTDB for GlueConnectionType
         /// </summary>
         public static readonly GlueConnectionType DOCUMENTDB = new GlueConnectionType("DOCUMENTDB");
@@ -1938,6 +1958,11 @@ namespace Amazon.DataZone
         /// Constant DYNAMODB for GlueConnectionType
         /// </summary>
         public static readonly GlueConnectionType DYNAMODB = new GlueConnectionType("DYNAMODB");
+
+        /// <summary>
+        /// Constant ICEBERGRESTCATALOG for GlueConnectionType
+        /// </summary>
+        public static readonly GlueConnectionType ICEBERGRESTCATALOG = new GlueConnectionType("ICEBERGRESTCATALOG");
 
         /// <summary>
         /// Constant MYSQL for GlueConnectionType
@@ -1973,6 +1998,11 @@ namespace Amazon.DataZone
         /// Constant SNOWFLAKE for GlueConnectionType
         /// </summary>
         public static readonly GlueConnectionType SNOWFLAKE = new GlueConnectionType("SNOWFLAKE");
+
+        /// <summary>
+        /// Constant SNOWFLAKEICEBERGRESTCATALOG for GlueConnectionType
+        /// </summary>
+        public static readonly GlueConnectionType SNOWFLAKEICEBERGRESTCATALOG = new GlueConnectionType("SNOWFLAKEICEBERGRESTCATALOG");
 
         /// <summary>
         /// Constant SQLSERVER for GlueConnectionType
