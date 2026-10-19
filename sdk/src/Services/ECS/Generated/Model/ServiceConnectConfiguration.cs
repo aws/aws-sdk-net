@@ -47,6 +47,7 @@ namespace Amazon.ECS.Model
     public partial class ServiceConnectConfiguration
     {
         private ServiceConnectAccessLogConfiguration _accessLogConfiguration;
+        private List<ServiceConnectContainerConfiguration> _containerConfigurations = AWSConfigs.InitializeCollections ? new List<ServiceConnectContainerConfiguration>() : null;
         private bool? _enabled;
         private LogConfiguration _logConfiguration;
         private string _awsNamespace;
@@ -77,6 +78,40 @@ namespace Amazon.ECS.Model
         internal bool IsSetAccessLogConfiguration()
         {
             return this._accessLogConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContainerConfigurations. 
+        /// <para>
+        /// The settings for the Service Connect proxy container that Amazon ECS adds to each
+        /// task in this service. Each object in the list sets exactly one setting, and each setting
+        /// can appear only once in the list.
+        /// </para>
+        ///  
+        /// <para>
+        /// Your changes to these settings apply only to tasks that Amazon ECS launches after
+        /// you update the service. Your running tasks keep their existing settings until Amazon
+        /// ECS replaces them. If you update the <c>serviceConnectConfiguration</c> of your service
+        /// and don't include <c>containerConfigurations</c>, the proxy container settings return
+        /// to their defaults.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<ServiceConnectContainerConfiguration> ContainerConfigurations
+        {
+            get { return this._containerConfigurations; }
+            set { this._containerConfigurations = value; }
+        }
+
+        // Check to see if ContainerConfigurations property is set
+        internal bool IsSetContainerConfigurations()
+        {
+            return this._containerConfigurations != null && (this._containerConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

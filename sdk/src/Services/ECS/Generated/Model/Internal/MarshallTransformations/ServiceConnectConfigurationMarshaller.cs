@@ -57,6 +57,22 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetContainerConfigurations())
+            {
+                context.Writer.WritePropertyName("containerConfigurations");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectContainerConfigurationsListValue in requestObject.ContainerConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ServiceConnectContainerConfigurationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectContainerConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("enabled");
