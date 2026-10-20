@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the smithy.json service model.
+ * Do not modify this file. This file is generated from the imagebuilder-2019-12-02.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -22,11 +22,11 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 using System.Net;
+
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618,CS1570
-
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
@@ -34,6 +34,34 @@ namespace Amazon.Imagebuilder.Model
     /// </summary>
     public partial class ListImageScanFindingAggregationsResponse : AmazonWebServiceResponse
     {
+        private List<ImageScanFindingAggregation> _aggregations = AWSConfigs.InitializeCollections ? new List<ImageScanFindingAggregation>() : null;
+        private string _aggregationType;
+        private string _nextToken;
+        private string _requestId;
+
+        /// <summary>
+        /// Gets and sets the property Aggregations. 
+        /// <para>
+        /// An array of image scan finding aggregations that match the filter criteria.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<ImageScanFindingAggregation> Aggregations
+        {
+            get { return this._aggregations; }
+            set { this._aggregations = value; }
+        }
+
+        // Check to see if Aggregations property is set
+        internal bool IsSetAggregations()
+        {
+            return this._aggregations != null && (this._aggregations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
         /// <summary>
         /// Gets and sets the property AggregationType. 
         /// <para>
@@ -67,32 +95,18 @@ namespace Amazon.Imagebuilder.Model
         /// level findings, plus a total for all of the findings for each key value.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 1, Max = 1024)]
-        public string AggregationType { get; set; }
+        [AWSProperty(Min=1, Max=1024)]
+        public string AggregationType
+        {
+            get { return this._aggregationType; }
+            set { this._aggregationType = value; }
+        }
 
-        /// <summary>
-        /// Checks to see if the AggregationType property is set.
-        /// </summary>
-        internal bool IsSetAggregationType() => this.AggregationType != null;
-
-        /// <summary>
-        /// Gets and sets the property Aggregations. 
-        /// <para>
-        /// An array of image scan finding aggregations that match the filter criteria.
-        /// </para>
-        /// <para />
-        /// Starting with version 4 of the SDK this property will default to null. If no data
-        /// for this property is returned from the service the property will also be null. This
-        /// was changed to improve performance and allow the SDK and caller to distinguish between
-        /// a property not set or a property being empty to clear out a value. To retain the previous
-        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
-        /// </summary>
-        public List<ImageScanFindingAggregation> Aggregations { get; set; } = AWSConfigs.InitializeCollections ? new List<ImageScanFindingAggregation>() : null;
-
-        /// <summary>
-        /// Checks to see if the Aggregations property is set.
-        /// </summary>
-        internal bool IsSetAggregations() => this.Aggregations != null && (this.Aggregations.Count > 0 || !AWSConfigs.InitializeCollections);
+        // Check to see if AggregationType property is set
+        internal bool IsSetAggregationType()
+        {
+            return this._aggregationType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -102,13 +116,18 @@ namespace Amazon.Imagebuilder.Model
         /// with the next request to retrieve additional objects.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 1, Max = 65535)]
-        public string NextToken { get; set; }
+        [AWSProperty(Min=1, Max=65535)]
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
 
-        /// <summary>
-        /// Checks to see if the NextToken property is set.
-        /// </summary>
-        internal bool IsSetNextToken() => this.NextToken != null;
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RequestId. 
@@ -116,12 +135,18 @@ namespace Amazon.Imagebuilder.Model
         /// The request ID that uniquely identifies this request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 1, Max = 1024)]
-        public string RequestId { get; set; }
+        [AWSProperty(Min=1, Max=1024)]
+        public string RequestId
+        {
+            get { return this._requestId; }
+            set { this._requestId = value; }
+        }
 
-        /// <summary>
-        /// Checks to see if the RequestId property is set.
-        /// </summary>
-        internal bool IsSetRequestId() => this.RequestId != null;
+        // Check to see if RequestId property is set
+        internal bool IsSetRequestId()
+        {
+            return this._requestId != null;
+        }
+
     }
 }
