@@ -96,16 +96,24 @@ public class MockHttpHandler : HttpMessageHandler
 /// </summary>
 public class MockHttpClientFactory : HttpClientFactory
 {
-    private readonly HttpClient _client;
+    // Stub: created up front. https: created on first use from the service client's config.
+    private HttpClient? _client;
 
     public MockHttpClientFactory(MockHttpHandler handler)
     {
-        _client = BenchmarkTransport.Kind == BenchmarkTransportKind.Https
-            ? HttpsLoopback.CreateClient(handler)
-            : new HttpClient(handler);
+        if (BenchmarkTransport.Kind == BenchmarkTransportKind.Https)
+            HttpsLoopback.PostFixture(handler.BuildRawResponse());
+        else
+            _client = new HttpClient(handler);
     }
 
-    public override HttpClient CreateHttpClient(IClientConfig clientConfig) => _client;
+    public override HttpClient CreateHttpClient(IClientConfig clientConfig)
+    {
+        if (_client != null)
+            return _client;
+        var created = HttpsLoopback.CreateClient(clientConfig);
+        return Interlocked.CompareExchange(ref _client, created, null) ?? created;
+    }
     public override bool UseSDKHttpClientCaching(IClientConfig clientConfig) => false;
     public override bool DisposeHttpClientsAfterUse(IClientConfig clientConfig) => false;
     public override string GetConfigUniqueString(IClientConfig clientConfig) => "mock-benchmark";

@@ -17,6 +17,7 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Sockets;
 using System.Text;
+using Amazon.Runtime;
 
 namespace AWSSDK.Benchmarks.Serde;
 
@@ -103,16 +104,17 @@ public static class BenchmarkTransport
 /// </summary>
 internal static class HttpsLoopback
 {
-    public static HttpClient CreateClient(MockHttpHandler handler)
+    /// <summary>
+    /// Builds the HttpClient the way the SDK does when no HttpClientFactory is set (HttpRequestMessageFactory's
+    /// CreateManagedHttpClient on .NET 8+), from the same client config. The only differences are the two this
+    /// transport needs: a ConnectCallback that dials the fixture server, and accepting its self-signed certificate.
+    /// </summary>
+    public static HttpClient CreateClient(IClientConfig clientConfig)
     {
-        PostFixture(BenchmarkTransport.FixtureControl, handler.BuildRawResponse());
         var data = BenchmarkTransport.HttpsServer;
         var sockets = new SocketsHttpHandler
         {
-            UseProxy = false,
-            AllowAutoRedirect = false,
-            // Connections of earlier cases' clients are never reused; let them close.
-            PooledConnectionIdleTimeout = TimeSpan.FromSeconds(10),
+            EnableMultipleHttp2Connections = true,
             ConnectCallback = async (ctx, ct) =>
             {
                 var socket = new Socket(SocketType.Stream, ProtocolType.Tcp) { NoDelay = true };
@@ -129,12 +131,30 @@ internal static class HttpsLoopback
             },
         };
         sockets.SslOptions.RemoteCertificateValidationCallback = (_, _, _, _) => true; // the fixture server's certificate is self-signed
-        return new HttpClient(sockets);
+
+        // The rest mirrors CreateManagedHttpClient.
+        if (clientConfig.ConnectTimeout.HasValue)
+            sockets.ConnectTimeout = clientConfig.ConnectTimeout.Value;
+        if (clientConfig.MaxConnectionsPerServer.HasValue)
+            sockets.MaxConnectionsPerServer = clientConfig.MaxConnectionsPerServer.Value;
+        sockets.AllowAutoRedirect = clientConfig.AllowAutoRedirect;
+        sockets.AutomaticDecompression = DecompressionMethods.None;
+        var proxy = clientConfig.GetWebProxy();
+        if (proxy != null)
+            sockets.Proxy = proxy;
+        if (sockets.Proxy != null && clientConfig.ProxyCredentials != null)
+            sockets.Proxy.Credentials = clientConfig.ProxyCredentials;
+
+        var httpClient = new HttpClient(sockets);
+        if (clientConfig.Timeout.HasValue)
+            httpClient.Timeout = clientConfig.Timeout.Value;
+        return httpClient;
     }
 
     /// <summary>Replaces the fixture server's response (POST /fixture on its control address) and checks it was accepted.</summary>
-    private static void PostFixture(IPEndPoint control, byte[] fixture)
+    public static void PostFixture(byte[] fixture)
     {
+        var control = BenchmarkTransport.FixtureControl;
         using var tcp = new TcpClient();
         try
         {

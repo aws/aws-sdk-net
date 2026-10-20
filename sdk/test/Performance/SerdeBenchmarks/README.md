@@ -92,6 +92,7 @@ dotnet run -c Release --project sdk/test/Performance/SerdeBenchmarks/SerdeBenchm
 
 - **Fixtures:** before each case, the harness posts that case's canned response: the stub's status, body and headers, plus `Content-Type`, `Content-Length` and `x-amzn-RequestId`.
 - **Redirect:** only the socket is redirected, via `SocketsHttpHandler.ConnectCallback`. Endpoint resolution, the URL, the `Host` header, TLS SNI and SigV4 signing stay those of the real endpoint.
+- **Client settings:** the `SocketsHttpHandler` and `HttpClient` are configured from the service client's config the same way the SDK configures its own default client. The only differences are the `ConnectCallback` and the certificate check below.
 - **Certificate:** not verified, since the server's certificate is expected to be self-signed.
 - **Fail fast:** the run stops right away if either address doesn't accept connections, or if the control address doesn't answer `204`.
 - **CPU/wall ratio:** above 1 in this mode, because socket I/O completes on other threads.
