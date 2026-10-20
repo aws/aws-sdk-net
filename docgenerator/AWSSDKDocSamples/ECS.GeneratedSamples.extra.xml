@@ -2,6 +2,22 @@
 <docs>
   <doc>
     <members>
+      <member name="M:Amazon.ECS.IAmazonECS.AssociateGatewayWithCluster(Amazon.ECS.Model.AssociateGatewayWithClusterRequest)" />
+      <member name="M:Amazon.ECS.AmazonECSClient.AssociateGatewayWithCluster(Amazon.ECS.Model.AssociateGatewayWithClusterRequest)" />
+      <member name="T:Amazon.ECS.Model.AssociateGatewayWithClusterRequest" />
+      <member name="T:Amazon.ECS.Model.AssociateGatewayWithClusterResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example associates the gateway named my-gateway with the cluster named my-cluster so that services in the cluster can use the gateway for ingress.
+        </para>
+        <code title="To associate a gateway with a cluster" source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs" region="AssociateGatewayWithCluster-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.ECS.IAmazonECS.ContinueServiceDeployment(Amazon.ECS.Model.ContinueServiceDeploymentRequest)" />
       <member name="M:Amazon.ECS.AmazonECSClient.ContinueServiceDeployment(Amazon.ECS.Model.ContinueServiceDeploymentRequest)" />
       <member name="T:Amazon.ECS.Model.ContinueServiceDeploymentRequest" />
@@ -77,6 +93,22 @@
           This example creates a daemon named my-monitoring-daemon in the specified cluster that uses the monitoring-agent daemon task definition and deploys to the specified capacity provider.
         </para>
         <code title="To create a daemon" source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs" region="CreateDaemon-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ECS.IAmazonECS.CreateGateway(Amazon.ECS.Model.CreateGatewayRequest)" />
+      <member name="M:Amazon.ECS.AmazonECSClient.CreateGateway(Amazon.ECS.Model.CreateGatewayRequest)" />
+      <member name="T:Amazon.ECS.Model.CreateGatewayRequest" />
+      <member name="T:Amazon.ECS.Model.CreateGatewayResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example creates a gateway named my-gateway that uses internet-facing Application Load Balancers with host-based routing in the specified subnets.
+        </para>
+        <code title="To create a gateway" source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs" region="CreateGateway-1" />
       </example>
     </value>
   </doc>
@@ -269,6 +301,22 @@
           This example deletes the first revision of the monitoring-agent daemon task definition.
         </para>
         <code title="To delete a daemon task definition" source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs" region="DeleteDaemonTaskDefinition-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ECS.IAmazonECS.DeleteGateway(Amazon.ECS.Model.DeleteGatewayRequest)" />
+      <member name="M:Amazon.ECS.AmazonECSClient.DeleteGateway(Amazon.ECS.Model.DeleteGatewayRequest)" />
+      <member name="T:Amazon.ECS.Model.DeleteGatewayRequest" />
+      <member name="T:Amazon.ECS.Model.DeleteGatewayResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example deletes the gateway named my-gateway. Deletion protection must be disabled and the gateway must not be associated with any clusters.
+        </para>
+        <code title="To delete a gateway" source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs" region="DeleteGateway-1" />
       </example>
     </value>
   </doc>
@@ -482,6 +530,54 @@
   </doc>
   <doc>
     <members>
+      <member name="M:Amazon.ECS.IAmazonECS.DescribeGateway(Amazon.ECS.Model.DescribeGatewayRequest)" />
+      <member name="M:Amazon.ECS.AmazonECSClient.DescribeGateway(Amazon.ECS.Model.DescribeGatewayRequest)" />
+      <member name="T:Amazon.ECS.Model.DescribeGatewayRequest" />
+      <member name="T:Amazon.ECS.Model.DescribeGatewayResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example describes the gateway named my-gateway.
+        </para>
+        <code title="To describe a gateway" source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs" region="DescribeGateway-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ECS.IAmazonECS.DescribeGatewayResources(Amazon.ECS.Model.DescribeGatewayResourcesRequest)" />
+      <member name="M:Amazon.ECS.AmazonECSClient.DescribeGatewayResources(Amazon.ECS.Model.DescribeGatewayResourcesRequest)" />
+      <member name="T:Amazon.ECS.Model.DescribeGatewayResourcesRequest" />
+      <member name="T:Amazon.ECS.Model.DescribeGatewayResourcesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example returns the load balancers, listeners, and gateway routes that the gateway named my-gateway manages.
+        </para>
+        <code title="To describe the infrastructure that a gateway manages" source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs" region="DescribeGatewayResources-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ECS.IAmazonECS.DescribeGatewayRoute(Amazon.ECS.Model.DescribeGatewayRouteRequest)" />
+      <member name="M:Amazon.ECS.AmazonECSClient.DescribeGatewayRoute(Amazon.ECS.Model.DescribeGatewayRouteRequest)" />
+      <member name="T:Amazon.ECS.Model.DescribeGatewayRouteRequest" />
+      <member name="T:Amazon.ECS.Model.DescribeGatewayRouteResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example describes the specified gateway route, including the service URL and the load balancer resources that the gateway manages for the route.
+        </para>
+        <code title="To describe a gateway route" source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs" region="DescribeGatewayRoute-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.ECS.IAmazonECS.DescribeServiceDeployments(Amazon.ECS.Model.DescribeServiceDeploymentsRequest)" />
       <member name="M:Amazon.ECS.AmazonECSClient.DescribeServiceDeployments(Amazon.ECS.Model.DescribeServiceDeploymentsRequest)" />
       <member name="T:Amazon.ECS.Model.DescribeServiceDeploymentsRequest" />
@@ -621,6 +717,22 @@
           This example describes a task set in service MyService that uses an EXTERNAL deployment controller. 
         </para>
         <code title="To describe a task set " source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs" region="DescribeTaskSets-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ECS.IAmazonECS.DisassociateGatewayFromCluster(Amazon.ECS.Model.DisassociateGatewayFromClusterRequest)" />
+      <member name="M:Amazon.ECS.AmazonECSClient.DisassociateGatewayFromCluster(Amazon.ECS.Model.DisassociateGatewayFromClusterRequest)" />
+      <member name="T:Amazon.ECS.Model.DisassociateGatewayFromClusterRequest" />
+      <member name="T:Amazon.ECS.Model.DisassociateGatewayFromClusterResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example removes the association between the gateway named my-gateway and the cluster named my-cluster. The association remains in the DISASSOCIATING state until all gateway routes for the cluster are removed.
+        </para>
+        <code title="To disassociate a gateway from a cluster" source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs" region="DisassociateGatewayFromCluster-1" />
       </example>
     </value>
   </doc>
@@ -781,6 +893,54 @@
           This example lists all daemon task definitions in your account that start with the monitoring prefix.
         </para>
         <code title="To list daemon task definitions" source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs" region="ListDaemonTaskDefinitions-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ECS.IAmazonECS.ListGatewayClusterAssociations(Amazon.ECS.Model.ListGatewayClusterAssociationsRequest)" />
+      <member name="M:Amazon.ECS.AmazonECSClient.ListGatewayClusterAssociations(Amazon.ECS.Model.ListGatewayClusterAssociationsRequest)" />
+      <member name="T:Amazon.ECS.Model.ListGatewayClusterAssociationsRequest" />
+      <member name="T:Amazon.ECS.Model.ListGatewayClusterAssociationsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example lists the clusters that are associated with the gateway named my-gateway.
+        </para>
+        <code title="To list the clusters associated with a gateway" source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs" region="ListGatewayClusterAssociations-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ECS.IAmazonECS.ListGatewayRoutes(Amazon.ECS.Model.ListGatewayRoutesRequest)" />
+      <member name="M:Amazon.ECS.AmazonECSClient.ListGatewayRoutes(Amazon.ECS.Model.ListGatewayRoutesRequest)" />
+      <member name="T:Amazon.ECS.Model.ListGatewayRoutesRequest" />
+      <member name="T:Amazon.ECS.Model.ListGatewayRoutesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example lists the gateway routes for the gateway named my-gateway in the cluster named my-cluster.
+        </para>
+        <code title="To list the gateway routes for a gateway" source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs" region="ListGatewayRoutes-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ECS.IAmazonECS.ListGateways(Amazon.ECS.Model.ListGatewaysRequest)" />
+      <member name="M:Amazon.ECS.AmazonECSClient.ListGateways(Amazon.ECS.Model.ListGatewaysRequest)" />
+      <member name="T:Amazon.ECS.Model.ListGatewaysRequest" />
+      <member name="T:Amazon.ECS.Model.ListGatewaysResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example lists the gateways in your account that have a status of ACTIVE.
+        </para>
+        <code title="To list active gateways" source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs" region="ListGateways-1" />
       </example>
     </value>
   </doc>
@@ -1277,6 +1437,22 @@
           This example updates the my-monitoring-daemon daemon to use a new daemon task definition revision.
         </para>
         <code title="To update a daemon" source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs" region="UpdateDaemon-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ECS.IAmazonECS.UpdateGateway(Amazon.ECS.Model.UpdateGatewayRequest)" />
+      <member name="M:Amazon.ECS.AmazonECSClient.UpdateGateway(Amazon.ECS.Model.UpdateGatewayRequest)" />
+      <member name="T:Amazon.ECS.Model.UpdateGatewayRequest" />
+      <member name="T:Amazon.ECS.Model.UpdateGatewayResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example raises the maximum number of Application Load Balancers that the gateway named my-gateway manages, and changes the desync mitigation mode to strictest.
+        </para>
+        <code title="To update a gateway" source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs" region="UpdateGateway-1" />
       </example>
     </value>
   </doc>

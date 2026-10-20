@@ -12,6 +12,24 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 {
     class ECSSamples : ISample
     {
+        public void ECSAssociateGatewayWithCluster()
+        {
+            #region AssociateGatewayWithCluster-1
+
+            var client = new AmazonECSClient();
+            var response = client.AssociateGatewayWithCluster(new AssociateGatewayWithClusterRequest
+            {
+                Cluster = "my-cluster",
+                Gateway = "my-gateway"
+            });
+
+            string clusterArn = response.ClusterArn;
+            string gatewayArn = response.GatewayArn;
+            GatewayClusterAssociationStatus status = response.Status;
+
+            #endregion
+        }
+
         public void ECSContinueServiceDeployment()
         {
             #region ContinueServiceDeployment-1
@@ -107,6 +125,45 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             string daemonArn = response.DaemonArn;
             string deploymentArn = response.DeploymentArn;
             DaemonStatus status = response.Status;
+
+            #endregion
+        }
+
+        public void ECSCreateGateway()
+        {
+            #region CreateGateway-1
+
+            var client = new AmazonECSClient();
+            var response = client.CreateGateway(new CreateGatewayRequest
+            {
+                Configuration = new GatewayConfiguration { HostSharedAlb = new HostSharedAlbConfiguration {
+                    HttpDesync = "defensive",
+                    MaxAlbCount = 10,
+                    NetworkConfiguration = new GatewayElbNetworkConfiguration {
+                        IpAddressType = "ipv4",
+                        Subnets = new List<string> {
+                            "subnet-0123456789abcdef0",
+                            "subnet-0fedcba9876543210"
+                        }
+                    },
+                    Port = 443,
+                    Protocol = "HTTPS",
+                    Scheme = "internet-facing"
+                } },
+                InfrastructureRoleArn = "arn:aws:iam::123456789012:role/ecsInfrastructureRole",
+                Name = "my-gateway",
+                PropagateTags = "GATEWAY",
+                Tags = new List<Tag> {
+                    new Tag {
+                        Key = "team",
+                        Value = "web"
+                    }
+                }
+            });
+
+            string gatewayArn = response.GatewayArn;
+            string name = response.Name;
+            GatewayStatus status = response.Status;
 
             #endregion
         }
@@ -351,6 +408,23 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             #endregion
         }
 
+        public void ECSDeleteGateway()
+        {
+            #region DeleteGateway-1
+
+            var client = new AmazonECSClient();
+            var response = client.DeleteGateway(new DeleteGatewayRequest
+            {
+                Gateway = "my-gateway"
+            });
+
+            string gatewayArn = response.GatewayArn;
+            string name = response.Name;
+            GatewayStatus status = response.Status;
+
+            #endregion
+        }
+
         public void ECSDeleteService()
         {
             #region DeleteService-1
@@ -569,6 +643,51 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             #endregion
         }
 
+        public void ECSDescribeGateway()
+        {
+            #region DescribeGateway-1
+
+            var client = new AmazonECSClient();
+            var response = client.DescribeGateway(new DescribeGatewayRequest
+            {
+                Gateway = "my-gateway"
+            });
+
+            Gateway gateway = response.Gateway;
+
+            #endregion
+        }
+
+        public void ECSDescribeGatewayResources()
+        {
+            #region DescribeGatewayResources-1
+
+            var client = new AmazonECSClient();
+            var response = client.DescribeGatewayResources(new DescribeGatewayResourcesRequest
+            {
+                Gateway = "my-gateway"
+            });
+
+            GatewayResources gatewayResources = response.GatewayResources;
+
+            #endregion
+        }
+
+        public void ECSDescribeGatewayRoute()
+        {
+            #region DescribeGatewayRoute-1
+
+            var client = new AmazonECSClient();
+            var response = client.DescribeGatewayRoute(new DescribeGatewayRouteRequest
+            {
+                GatewayRouteArn = "arn:aws:ecs:us-east-1:123456789012:gateway-route/my-gateway/a1b2c3d4e5f6478890abcdef12345678/f0e1d2c3b4a5968778695a4b3c2d1e0f"
+            });
+
+            GatewayRoute gatewayRoute = response.GatewayRoute;
+
+            #endregion
+        }
+
         public void ECSDescribeServiceDeployments()
         {
             #region DescribeServiceDeployments-1
@@ -726,6 +845,24 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
             List<Failure> failures = response.Failures;
             List<TaskSet> taskSets = response.TaskSets;
+
+            #endregion
+        }
+
+        public void ECSDisassociateGatewayFromCluster()
+        {
+            #region DisassociateGatewayFromCluster-1
+
+            var client = new AmazonECSClient();
+            var response = client.DisassociateGatewayFromCluster(new DisassociateGatewayFromClusterRequest
+            {
+                Cluster = "my-cluster",
+                Gateway = "my-gateway"
+            });
+
+            string clusterArn = response.ClusterArn;
+            string gatewayArn = response.GatewayArn;
+            GatewayClusterAssociationStatus status = response.Status;
 
             #endregion
         }
@@ -895,6 +1032,54 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             });
 
             List<DaemonTaskDefinitionSummary> daemonTaskDefinitions = response.DaemonTaskDefinitions;
+
+            #endregion
+        }
+
+        public void ECSListGatewayClusterAssociations()
+        {
+            #region ListGatewayClusterAssociations-1
+
+            var client = new AmazonECSClient();
+            var response = client.ListGatewayClusterAssociations(new ListGatewayClusterAssociationsRequest
+            {
+                Gateway = "my-gateway"
+            });
+
+            List<GatewayClusterAssociationSummary> gatewayClusterAssociations = response.GatewayClusterAssociations;
+
+            #endregion
+        }
+
+        public void ECSListGatewayRoutes()
+        {
+            #region ListGatewayRoutes-1
+
+            var client = new AmazonECSClient();
+            var response = client.ListGatewayRoutes(new ListGatewayRoutesRequest
+            {
+                Cluster = "my-cluster",
+                Gateway = "my-gateway"
+            });
+
+            List<GatewayRouteSummary> gatewayRoutes = response.GatewayRoutes;
+
+            #endregion
+        }
+
+        public void ECSListGateways()
+        {
+            #region ListGateways-1
+
+            var client = new AmazonECSClient();
+            var response = client.ListGateways(new ListGatewaysRequest
+            {
+                Status = new List<string> {
+                    "ACTIVE"
+                }
+            });
+
+            List<GatewaySummary> gateways = response.Gateways;
 
             #endregion
         }
@@ -1496,6 +1681,27 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             string deploymentArn = response.DeploymentArn;
             DaemonStatus status = response.Status;
             DateTime? updatedAt = response.UpdatedAt;
+
+            #endregion
+        }
+
+        public void ECSUpdateGateway()
+        {
+            #region UpdateGateway-1
+
+            var client = new AmazonECSClient();
+            var response = client.UpdateGateway(new UpdateGatewayRequest
+            {
+                Configuration = new UpdateGatewayConfiguration { HostSharedAlb = new UpdateGatewayAlbConfiguration {
+                    HttpDesync = "strictest",
+                    MaxAlbCount = 20
+                } },
+                Gateway = "my-gateway"
+            });
+
+            string gatewayArn = response.GatewayArn;
+            string name = response.Name;
+            GatewayStatus status = response.Status;
 
             #endregion
         }

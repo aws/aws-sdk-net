@@ -111,6 +111,21 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
             #endregion
         }
 
+        public void RDSCancelDBCapacityReservation()
+        {
+            #region example-1
+
+            var client = new AmazonRDSClient();
+            var response = client.CancelDBCapacityReservation(new CancelDBCapacityReservationRequest 
+            {
+                DBCapacityReservationIdentifier = "dbcr-7hqk2m9xv4t1bn6cz3ws8dj5fp0gyr2a"
+            });
+
+            DBCapacityReservation dbCapacityReservation = response.DBCapacityReservation;
+
+            #endregion
+        }
+
         public void RDSCancelExportTask()
         {
             #region example-1
@@ -252,6 +267,28 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
             });
 
             BlueGreenDeployment blueGreenDeployment = response.BlueGreenDeployment;
+
+            #endregion
+        }
+
+        public void RDSCreateDBCapacityReservation()
+        {
+            #region example-1
+
+            var client = new AmazonRDSClient();
+            var response = client.CreateDBCapacityReservation(new CreateDBCapacityReservationRequest 
+            {
+                AvailabilityZones = new List<string> {
+                    "us-east-1a",
+                    "us-east-1b"
+                },
+                CapacityPerAvailabilityZone = 2,
+                DBCapacityReservationName = "my-mysql-reservation",
+                DBInstanceClass = "db.m5.large",
+                Engine = "mysql"
+            });
+
+            DBCapacityReservation dbCapacityReservation = response.DBCapacityReservation;
 
             #endregion
         }
@@ -920,6 +957,46 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
             #endregion
         }
 
+        public void RDSDescribeDBCapacityReservations()
+        {
+            #region example-1
+
+            var client = new AmazonRDSClient();
+            var response = client.DescribeDBCapacityReservations(new DescribeDBCapacityReservationsRequest 
+            {
+                DBCapacityReservationIdentifier = "dbcr-7hqk2m9xv4t1bn6cz3ws8dj5fp0gyr2a"
+            });
+
+            List<DBCapacityReservation> dbCapacityReservations = response.DBCapacityReservations;
+
+            #endregion
+        }
+
+        public void RDSDescribeDBCapacityReservations()
+        {
+            #region example-2
+
+            var client = new AmazonRDSClient();
+            var response = client.DescribeDBCapacityReservations(new DescribeDBCapacityReservationsRequest 
+            {
+                Filters = new List<Filter> {
+                    new Filter {
+                        Name = "state",
+                        Values = new List<string> {
+                            "active"
+                        }
+                    }
+                },
+                Marker = "eyJ2ZXJzaW9uIjoxLCJ0b2tlbkRldGFpbCI6IkFRSUNBSGhWdjlWNG1RM3JLY0xwWjh0Mlh5RjdiTjB3UmpTNXVF...",
+                MaxRecords = 20
+            });
+
+            List<DBCapacityReservation> dbCapacityReservations = response.DBCapacityReservations;
+            string marker = response.Marker;
+
+            #endregion
+        }
+
         public void RDSDescribeDBClusterBacktracks()
         {
             #region example-1
@@ -1533,6 +1610,23 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
             int pendingCapacity = response.PendingCapacity;
             int secondsBeforeTimeout = response.SecondsBeforeTimeout;
             string timeoutAction = response.TimeoutAction;
+
+            #endregion
+        }
+
+        public void RDSModifyDBCapacityReservation()
+        {
+            #region example-1
+
+            var client = new AmazonRDSClient();
+            var response = client.ModifyDBCapacityReservation(new ModifyDBCapacityReservationRequest 
+            {
+                CapacityPerAvailabilityZone = 3,
+                DBCapacityReservationIdentifier = "dbcr-7hqk2m9xv4t1bn6cz3ws8dj5fp0gyr2a",
+                EndDate = new DateTime(2026, 12, 31, 11, 59, 59, DateTimeKind.Utc),
+                EndDateType = "limited"
+            });
+
 
             #endregion
         }
