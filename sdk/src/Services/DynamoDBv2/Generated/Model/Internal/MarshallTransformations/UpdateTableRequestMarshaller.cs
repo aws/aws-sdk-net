@@ -103,6 +103,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.DeletionProtectionEnabled.Value);
             }
 
+            if(publicRequest.IsSetDisassociationProtectionEnabled())
+            {
+                context.Writer.WritePropertyName("DisassociationProtectionEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.DisassociationProtectionEnabled.Value);
+            }
+
             if(publicRequest.IsSetGlobalSecondaryIndexUpdates())
             {
                 context.Writer.WritePropertyName("GlobalSecondaryIndexUpdates");

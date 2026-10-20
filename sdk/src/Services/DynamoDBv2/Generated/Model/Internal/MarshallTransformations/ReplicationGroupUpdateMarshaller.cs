@@ -68,6 +68,17 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetDisassociate())
+            {
+                context.Writer.WritePropertyName("Disassociate");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DisassociateReplicationGroupMemberActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.Disassociate, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetUpdate())
             {
                 context.Writer.WritePropertyName("Update");

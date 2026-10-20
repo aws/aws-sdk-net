@@ -48,7 +48,18 @@ namespace Amazon.DynamoDBv2.Model
     /// action in the destination Region, deleting the replica and all if its items in the
     /// destination Region.
     /// </para>
-    ///  </li> </ul> <note> 
+    ///  </li> <li> 
+    /// <para>
+    /// The local replica to be disassociated from a global table and retained as a standalone
+    /// regional table.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Each <c>ReplicationGroupUpdate</c> contains exactly one action. A <c>Disassociate</c>
+    /// action must be the only replica update in the request; including other updates causes
+    /// the request to fail.
+    /// </para>
+    ///  <note> 
     /// <para>
     /// When you manually remove a table or global table replica, you do not automatically
     /// remove any associated scalable targets, scaling policies, or CloudWatch alarms.
@@ -59,6 +70,7 @@ namespace Amazon.DynamoDBv2.Model
     {
         private CreateReplicationGroupMemberAction _create;
         private DeleteReplicationGroupMemberAction _delete;
+        private DisassociateReplicationGroupMemberAction _disassociate;
         private UpdateReplicationGroupMemberAction _update;
 
         /// <summary>
@@ -95,6 +107,25 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetDelete()
         {
             return this._delete != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Disassociate. 
+        /// <para>
+        /// The parameters for disassociating the local replica from the global table and retaining
+        /// it as a standalone regional table.
+        /// </para>
+        /// </summary>
+        public DisassociateReplicationGroupMemberAction Disassociate
+        {
+            get { return this._disassociate; }
+            set { this._disassociate = value; }
+        }
+
+        // Check to see if Disassociate property is set
+        internal bool IsSetDisassociate()
+        {
+            return this._disassociate != null;
         }
 
         /// <summary>
