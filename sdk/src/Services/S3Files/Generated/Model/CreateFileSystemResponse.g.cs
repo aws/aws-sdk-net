@@ -178,8 +178,9 @@ namespace Amazon.S3Files.Model
         /// The lifecycle state of the file system. Valid values are: <c>AVAILABLE</c> (the file
         /// system is available for use), <c>CREATING</c> (the file system is being created),
         /// <c>DELETING</c> (the file system is being deleted), <c>DELETED</c> (the file system
-        /// has been deleted), <c>ERROR</c> (the file system is in an error state), or <c>UPDATING</c>
-        /// (the file system is being updated).
+        /// has been deleted), <c>ERROR</c> (the file system is in an error state), <c>MISCONFIGURED</c>
+        /// (the file system has a misconfiguration), or <c>UPDATING</c> (the file system is being
+        /// updated).
         /// </para>
         /// </summary>
         public LifeCycleState Status { get; set; }
