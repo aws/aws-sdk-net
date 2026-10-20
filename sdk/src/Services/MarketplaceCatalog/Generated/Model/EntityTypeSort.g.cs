@@ -74,6 +74,19 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetDataProductSort() => this.DataProductSort != null;
 
         /// <summary>
+        /// Gets and sets the property ExpressPrivateOfferConfigurationSort. 
+        /// <para>
+        /// A sort for express private offer configurations.
+        /// </para>
+        /// </summary>
+        public ExpressPrivateOfferConfigurationSort ExpressPrivateOfferConfigurationSort { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExpressPrivateOfferConfigurationSort property is set.
+        /// </summary>
+        internal bool IsSetExpressPrivateOfferConfigurationSort() => this.ExpressPrivateOfferConfigurationSort != null;
+
+        /// <summary>
         /// Gets and sets the property MachineLearningProductSort.
         /// </summary>
         public MachineLearningProductSort MachineLearningProductSort { get; set; }

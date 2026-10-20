@@ -95,6 +95,13 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("ExpressPrivateOfferConfigurationSummary", targetDepth, ref reader))
+                {
+                    var unmarshaller = ExpressPrivateOfferConfigurationSummaryUnmarshaller.Instance;
+                    unmarshalledObject.ExpressPrivateOfferConfigurationSummary = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("LastModifiedDate", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

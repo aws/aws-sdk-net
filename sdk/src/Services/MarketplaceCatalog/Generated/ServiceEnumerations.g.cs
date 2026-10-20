@@ -486,6 +486,98 @@ namespace Amazon.MarketplaceCatalog
     }
 
     /// <summary>
+    /// Constants used for properties of type ExpressPrivateOfferConfigurationSortBy.
+    /// </summary>
+    public class ExpressPrivateOfferConfigurationSortBy : ConstantClass
+    {
+        /// <summary>
+        /// Constant EntityId for ExpressPrivateOfferConfigurationSortBy
+        /// </summary>
+        public static readonly ExpressPrivateOfferConfigurationSortBy EntityId = new ExpressPrivateOfferConfigurationSortBy("EntityId");
+
+        /// <summary>
+        /// Constant LastModifiedDate for ExpressPrivateOfferConfigurationSortBy
+        /// </summary>
+        public static readonly ExpressPrivateOfferConfigurationSortBy LastModifiedDate = new ExpressPrivateOfferConfigurationSortBy("LastModifiedDate");
+
+        /// <summary>
+        /// Constant ProductId for ExpressPrivateOfferConfigurationSortBy
+        /// </summary>
+        public static readonly ExpressPrivateOfferConfigurationSortBy ProductId = new ExpressPrivateOfferConfigurationSortBy("ProductId");
+
+        /// <summary>
+        /// Constant State for ExpressPrivateOfferConfigurationSortBy
+        /// </summary>
+        public static readonly ExpressPrivateOfferConfigurationSortBy State = new ExpressPrivateOfferConfigurationSortBy("State");
+
+        /// <summary>
+        /// Constructs a custom ExpressPrivateOfferConfigurationSortBy for a value not among the defined constants.
+        /// </summary>
+        public ExpressPrivateOfferConfigurationSortBy(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExpressPrivateOfferConfigurationSortBy FindValue(string value)
+        {
+            return FindValue<ExpressPrivateOfferConfigurationSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExpressPrivateOfferConfigurationSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ExpressPrivateOfferConfigurationStateString.
+    /// </summary>
+    public class ExpressPrivateOfferConfigurationStateString : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for ExpressPrivateOfferConfigurationStateString
+        /// </summary>
+        public static readonly ExpressPrivateOfferConfigurationStateString ACTIVE = new ExpressPrivateOfferConfigurationStateString("ACTIVE");
+
+        /// <summary>
+        /// Constant INACTIVE for ExpressPrivateOfferConfigurationStateString
+        /// </summary>
+        public static readonly ExpressPrivateOfferConfigurationStateString INACTIVE = new ExpressPrivateOfferConfigurationStateString("INACTIVE");
+
+        /// <summary>
+        /// Constructs a custom ExpressPrivateOfferConfigurationStateString for a value not among the defined constants.
+        /// </summary>
+        public ExpressPrivateOfferConfigurationStateString(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExpressPrivateOfferConfigurationStateString FindValue(string value)
+        {
+            return FindValue<ExpressPrivateOfferConfigurationStateString>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExpressPrivateOfferConfigurationStateString(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type FailureCode.
     /// </summary>
     public class FailureCode : ConstantClass

@@ -74,6 +74,19 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetDataProductFilters() => this.DataProductFilters != null;
 
         /// <summary>
+        /// Gets and sets the property ExpressPrivateOfferConfigurationFilters. 
+        /// <para>
+        /// A filter for express private offer configurations.
+        /// </para>
+        /// </summary>
+        public ExpressPrivateOfferConfigurationFilters ExpressPrivateOfferConfigurationFilters { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExpressPrivateOfferConfigurationFilters property is set.
+        /// </summary>
+        internal bool IsSetExpressPrivateOfferConfigurationFilters() => this.ExpressPrivateOfferConfigurationFilters != null;
+
+        /// <summary>
         /// Gets and sets the property MachineLearningProductFilters.
         /// </summary>
         public MachineLearningProductFilters MachineLearningProductFilters { get; set; }

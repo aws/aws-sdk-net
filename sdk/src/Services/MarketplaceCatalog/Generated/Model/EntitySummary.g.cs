@@ -118,6 +118,19 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetEntityType() => this.EntityType != null;
 
         /// <summary>
+        /// Gets and sets the property ExpressPrivateOfferConfigurationSummary. 
+        /// <para>
+        /// An object that contains summary information about the express private offer configuration.
+        /// </para>
+        /// </summary>
+        public ExpressPrivateOfferConfigurationSummary ExpressPrivateOfferConfigurationSummary { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExpressPrivateOfferConfigurationSummary property is set.
+        /// </summary>
+        internal bool IsSetExpressPrivateOfferConfigurationSummary() => this.ExpressPrivateOfferConfigurationSummary != null;
+
+        /// <summary>
         /// Gets and sets the property LastModifiedDate. 
         /// <para>
         /// The last time the entity was published, using ISO 8601 format (2018-02-27T13:45:22Z).
