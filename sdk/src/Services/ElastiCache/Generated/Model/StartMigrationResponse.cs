@@ -35,6 +35,7 @@ namespace Amazon.ElastiCache.Model
     public partial class StartMigrationResponse : AmazonWebServiceResponse
     {
         private ReplicationGroup _replicationGroup;
+        private ServerlessCache _serverlessCache;
 
         /// <summary>
         /// Gets and sets the property ReplicationGroup.
@@ -49,6 +50,24 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetReplicationGroup()
         {
             return this._replicationGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerlessCache. 
+        /// <para>
+        /// Provides the details of the serverless cache to which ElastiCache is migrating data.
+        /// </para>
+        /// </summary>
+        public ServerlessCache ServerlessCache
+        {
+            get { return this._serverlessCache; }
+            set { this._serverlessCache = value; }
+        }
+
+        // Check to see if ServerlessCache property is set
+        internal bool IsSetServerlessCache()
+        {
+            return this._serverlessCache != null;
         }
 
     }

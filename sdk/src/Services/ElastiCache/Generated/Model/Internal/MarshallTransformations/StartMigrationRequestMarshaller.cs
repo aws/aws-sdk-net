@@ -59,6 +59,14 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAutoCutover())
+                {
+                    request.Parameters.Add("AutoCutover", StringUtils.FromBool(publicRequest.AutoCutover));
+                }
+                if(publicRequest.IsSetClearTargetCacheData())
+                {
+                    request.Parameters.Add("ClearTargetCacheData", StringUtils.FromBool(publicRequest.ClearTargetCacheData));
+                }
                 if(publicRequest.IsSetCustomerNodeEndpointList())
                 {
                     if (publicRequest.CustomerNodeEndpointList.Count == 0)
@@ -83,6 +91,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetReplicationGroupId())
                 {
                     request.Parameters.Add("ReplicationGroupId", StringUtils.FromString(publicRequest.ReplicationGroupId));
+                }
+                if(publicRequest.IsSetServerlessCacheName())
+                {
+                    request.Parameters.Add("ServerlessCacheName", StringUtils.FromString(publicRequest.ServerlessCacheName));
                 }
             }
 
