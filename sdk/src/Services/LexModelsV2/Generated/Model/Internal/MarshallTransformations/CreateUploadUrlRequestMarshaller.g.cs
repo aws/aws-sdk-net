@@ -14,48 +14,43 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the models.lex.v2-2020-08-07.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
-using System.Text;
-using System.Xml.Serialization;
-
-using Amazon.LexModelsV2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Text.Json;
 using System.Buffers;
+
+using Amazon.LexModelsV2.Model;
+using System.Globalization;
 #if !NETFRAMEWORK
 using ThirdParty.RuntimeBackports;
 #endif
 #pragma warning disable CS0612,CS0618
+
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CreateUploadUrl Request Marshaller
-    /// </summary>       
-    public class CreateUploadUrlRequestMarshaller : IMarshaller<IRequest, CreateUploadUrlRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    /// </summary>
+    public partial class CreateUploadUrlRequestMarshaller : IMarshaller<IRequest, CreateUploadUrlRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
     {
         /// <summary>
-        /// Marshaller the request object to the HTTP request.
-        /// </summary>  
-        /// <param name="input"></param>
-        /// <returns></returns>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((CreateUploadUrlRequest)input);
         }
 
         /// <summary>
-        /// Marshaller the request object to the HTTP request.
-        /// </summary>  
-        /// <param name="publicRequest"></param>
-        /// <returns></returns>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
         public IRequest Marshall(CreateUploadUrlRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LexModelsV2");
@@ -63,27 +58,18 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-07";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/createuploadurl/";
+            request.ResourcePath = "/createuploadurl";
 
             return request;
         }
-        private static CreateUploadUrlRequestMarshaller _instance = new CreateUploadUrlRequestMarshaller();        
 
-        internal static CreateUploadUrlRequestMarshaller GetInstance()
-        {
-            return _instance;
-        }
+        private static readonly CreateUploadUrlRequestMarshaller _instance = new();
+
+        internal static CreateUploadUrlRequestMarshaller GetInstance() => _instance;
 
         /// <summary>
         /// Gets the singleton.
-        /// </summary>  
-        public static CreateUploadUrlRequestMarshaller Instance
-        {
-            get
-            {
-                return _instance;
-            }
-        }
-
+        /// </summary>
+        public static CreateUploadUrlRequestMarshaller Instance => _instance;
     }
 }
