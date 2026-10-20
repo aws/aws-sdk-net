@@ -1,3 +1,34 @@
+### 4.0.355.0 (2026-10-20 18:20 UTC)
+* Bedrock (4.0.104.0)
+	* Amazon Bedrock Guardrails now supports a configurable tier for the contextual grounding policy via a new tier option. Select the Standard tier for grounding that better supports conversations and reasoning, with expanded language coverage.
+* CleanRooms (4.0.105.0)
+	* This release allows customers and their partners to easily collaborate with data stored in Databricks, without having to move or share their underlying data among collaborators.
+* CloudWatch (4.0.107.0)
+	* Amazon CloudWatch now supports two new anomaly detector settings. AdaptationSpeed (FAST, NORMAL, SLOW) controls how fast the model adapts to baseline changes, and OutlierFilteringStrength (MINIMAL, MODERATE, STRICT) controls how aggressively outliers are filtered.
+* CloudWatchOmni (4.0.102.0)
+	* Updating max value for maxResults in SearchPrincipals API
+* DynamoDBv2 (4.0.109.0)
+	* Adds support for disassociating a replica from an Amazon DynamoDB multi-Region eventual consistency global table, so you can keep it as a single-Region table with its existing data. Also adds disassociation protection, on by default, to help prevent accidental disassociation.
+* ECS (4.0.108.0)
+	* ECS Service Gateway makes it easier for developers to deploy ECS services without having to worry about complex ingress networking constructs.
+	* ECS is now generated from its Smithy model. There are no changes to the public API.
+* ElastiCache (4.0.103.0)
+	* LiveMigration enables customers to migrate from self-hosted EC2 Redis and Valkey clusters to ElastiCache Serverless with near-zero downtime. Customers control the migration through three API-driven phases (prepare, start, complete) that handle traffic proxying, data replication, and cutover.
+* LexModelsV2 (4.0.101.6)
+	* LexModelsV2 is now generated from its Smithy model. The RetryAfterSeconds property on ThrottlingException is now populated from the Retry-After response header.
+* MarketplaceCatalog (4.0.105.0)
+	* Adds ListEntities filter, sort, and summary support for the ExpressPrivateOfferConfiguration entity type, including filtering by ProductId.
+* MediaPackage (4.0.100.20)
+	* MediaPackage is now generated from its Smithy model. There are no changes to the public API.
+* RDS (4.0.107.0)
+	* Amazon RDS now supports On-Demand Capacity Reservations for DB instances.
+* RDSDataService (4.0.100.20)
+	* RDSDataService is now generated from its Smithy model. There are no changes to the public API.
+* S3Files (4.0.101.0)
+	* S3 Files adds support for the "Misconfigured" file system status.
+* WorkspacesInstances (4.0.104.0)
+	* Documentation update release for AWS service
+
 ### 4.0.354.0 (2026-10-19 18:17 UTC)
 * Amplify (4.0.103.0)
 	* Documentation update release for AWS service
