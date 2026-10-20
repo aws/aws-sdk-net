@@ -56,6 +56,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetDatabricks())
+            {
+                context.Writer.WritePropertyName("databricks");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DatabricksTableReferenceMarshaller.Instance;
+                marshaller.Marshall(requestObject.Databricks, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetGlue())
             {
                 context.Writer.WritePropertyName("glue");

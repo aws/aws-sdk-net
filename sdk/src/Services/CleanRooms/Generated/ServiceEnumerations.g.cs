@@ -3741,6 +3741,57 @@ namespace Amazon.CleanRooms
     }
 
     /// <summary>
+    /// Constants used for properties of type TableReferenceType.
+    /// </summary>
+    public class TableReferenceType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ATHENA for TableReferenceType
+        /// </summary>
+        public static readonly TableReferenceType ATHENA = new TableReferenceType("ATHENA");
+
+        /// <summary>
+        /// Constant DATABRICKS for TableReferenceType
+        /// </summary>
+        public static readonly TableReferenceType DATABRICKS = new TableReferenceType("DATABRICKS");
+
+        /// <summary>
+        /// Constant GLUE for TableReferenceType
+        /// </summary>
+        public static readonly TableReferenceType GLUE = new TableReferenceType("GLUE");
+
+        /// <summary>
+        /// Constant SNOWFLAKE for TableReferenceType
+        /// </summary>
+        public static readonly TableReferenceType SNOWFLAKE = new TableReferenceType("SNOWFLAKE");
+
+        /// <summary>
+        /// Constructs a custom TableReferenceType for a value not among the defined constants.
+        /// </summary>
+        public TableReferenceType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TableReferenceType FindValue(string value)
+        {
+            return FindValue<TableReferenceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TableReferenceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type TargetProtectedJobStatus.
     /// </summary>
     public class TargetProtectedJobStatus : ConstantClass
