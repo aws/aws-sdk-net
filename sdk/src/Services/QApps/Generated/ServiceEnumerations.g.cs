@@ -14,51 +14,42 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the qapps-2023-11-27.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
-
 using Amazon.Runtime;
 
 namespace Amazon.QApps
 {
-
     /// <summary>
     /// Constants used for properties of type AppRequiredCapability.
     /// </summary>
     public class AppRequiredCapability : ConstantClass
     {
-
         /// <summary>
         /// Constant CreatorMode for AppRequiredCapability
         /// </summary>
         public static readonly AppRequiredCapability CreatorMode = new AppRequiredCapability("CreatorMode");
+
         /// <summary>
         /// Constant FileUpload for AppRequiredCapability
         /// </summary>
         public static readonly AppRequiredCapability FileUpload = new AppRequiredCapability("FileUpload");
+
         /// <summary>
         /// Constant PluginMode for AppRequiredCapability
         /// </summary>
         public static readonly AppRequiredCapability PluginMode = new AppRequiredCapability("PluginMode");
+
         /// <summary>
         /// Constant RetrievalMode for AppRequiredCapability
         /// </summary>
         public static readonly AppRequiredCapability RetrievalMode = new AppRequiredCapability("RetrievalMode");
 
         /// <summary>
-        /// This constant constructor does not need to be called if the constant
-        /// you are attempting to use is already defined as a static instance of 
-        /// this class.
-        /// This constructor should be used to construct constants that are not
-        /// defined as statics, for instance if attempting to use a feature that is
-        /// newer than the current version of the SDK.
+        /// Constructs a custom AppRequiredCapability for a value not among the defined constants.
         /// </summary>
-        public AppRequiredCapability(string value)
-            : base(value)
-        {
-        }
+        public AppRequiredCapability(string value) : base(value) { }
 
         /// <summary>
         /// Finds the constant for the unique value.
@@ -81,38 +72,30 @@ namespace Amazon.QApps
         }
     }
 
-
     /// <summary>
     /// Constants used for properties of type AppStatus.
     /// </summary>
     public class AppStatus : ConstantClass
     {
-
         /// <summary>
         /// Constant DELETED for AppStatus
         /// </summary>
         public static readonly AppStatus DELETED = new AppStatus("DELETED");
+
         /// <summary>
         /// Constant DRAFT for AppStatus
         /// </summary>
         public static readonly AppStatus DRAFT = new AppStatus("DRAFT");
+
         /// <summary>
         /// Constant PUBLISHED for AppStatus
         /// </summary>
         public static readonly AppStatus PUBLISHED = new AppStatus("PUBLISHED");
 
         /// <summary>
-        /// This constant constructor does not need to be called if the constant
-        /// you are attempting to use is already defined as a static instance of 
-        /// this class.
-        /// This constructor should be used to construct constants that are not
-        /// defined as statics, for instance if attempting to use a feature that is
-        /// newer than the current version of the SDK.
+        /// Constructs a custom AppStatus for a value not among the defined constants.
         /// </summary>
-        public AppStatus(string value)
-            : base(value)
-        {
-        }
+        public AppStatus(string value) : base(value) { }
 
         /// <summary>
         /// Finds the constant for the unique value.
@@ -135,34 +118,25 @@ namespace Amazon.QApps
         }
     }
 
-
     /// <summary>
     /// Constants used for properties of type CardOutputSource.
     /// </summary>
     public class CardOutputSource : ConstantClass
     {
-
         /// <summary>
         /// Constant ApprovedSources for CardOutputSource
         /// </summary>
         public static readonly CardOutputSource ApprovedSources = new CardOutputSource("approved-sources");
+
         /// <summary>
         /// Constant Llm for CardOutputSource
         /// </summary>
         public static readonly CardOutputSource Llm = new CardOutputSource("llm");
 
         /// <summary>
-        /// This constant constructor does not need to be called if the constant
-        /// you are attempting to use is already defined as a static instance of 
-        /// this class.
-        /// This constructor should be used to construct constants that are not
-        /// defined as statics, for instance if attempting to use a feature that is
-        /// newer than the current version of the SDK.
+        /// Constructs a custom CardOutputSource for a value not among the defined constants.
         /// </summary>
-        public CardOutputSource(string value)
-            : base(value)
-        {
-        }
+        public CardOutputSource(string value) : base(value) { }
 
         /// <summary>
         /// Finds the constant for the unique value.
@@ -185,46 +159,40 @@ namespace Amazon.QApps
         }
     }
 
-
     /// <summary>
     /// Constants used for properties of type CardType.
     /// </summary>
     public class CardType : ConstantClass
     {
-
         /// <summary>
         /// Constant FileUpload for CardType
         /// </summary>
         public static readonly CardType FileUpload = new CardType("file-upload");
+
         /// <summary>
         /// Constant FormInput for CardType
         /// </summary>
         public static readonly CardType FormInput = new CardType("form-input");
+
         /// <summary>
         /// Constant QPlugin for CardType
         /// </summary>
         public static readonly CardType QPlugin = new CardType("q-plugin");
+
         /// <summary>
         /// Constant QQuery for CardType
         /// </summary>
         public static readonly CardType QQuery = new CardType("q-query");
+
         /// <summary>
         /// Constant TextInput for CardType
         /// </summary>
         public static readonly CardType TextInput = new CardType("text-input");
 
         /// <summary>
-        /// This constant constructor does not need to be called if the constant
-        /// you are attempting to use is already defined as a static instance of 
-        /// this class.
-        /// This constructor should be used to construct constants that are not
-        /// defined as statics, for instance if attempting to use a feature that is
-        /// newer than the current version of the SDK.
+        /// Constructs a custom CardType for a value not among the defined constants.
         /// </summary>
-        public CardType(string value)
-            : base(value)
-        {
-        }
+        public CardType(string value) : base(value) { }
 
         /// <summary>
         /// Finds the constant for the unique value.
@@ -247,34 +215,25 @@ namespace Amazon.QApps
         }
     }
 
-
     /// <summary>
     /// Constants used for properties of type DocumentScope.
     /// </summary>
     public class DocumentScope : ConstantClass
     {
-
         /// <summary>
         /// Constant APPLICATION for DocumentScope
         /// </summary>
         public static readonly DocumentScope APPLICATION = new DocumentScope("APPLICATION");
+
         /// <summary>
         /// Constant SESSION for DocumentScope
         /// </summary>
         public static readonly DocumentScope SESSION = new DocumentScope("SESSION");
 
         /// <summary>
-        /// This constant constructor does not need to be called if the constant
-        /// you are attempting to use is already defined as a static instance of 
-        /// this class.
-        /// This constructor should be used to construct constants that are not
-        /// defined as statics, for instance if attempting to use a feature that is
-        /// newer than the current version of the SDK.
+        /// Constructs a custom DocumentScope for a value not among the defined constants.
         /// </summary>
-        public DocumentScope(string value)
-            : base(value)
-        {
-        }
+        public DocumentScope(string value) : base(value) { }
 
         /// <summary>
         /// Finds the constant for the unique value.
@@ -297,42 +256,35 @@ namespace Amazon.QApps
         }
     }
 
-
     /// <summary>
     /// Constants used for properties of type ExecutionStatus.
     /// </summary>
     public class ExecutionStatus : ConstantClass
     {
-
         /// <summary>
         /// Constant COMPLETED for ExecutionStatus
         /// </summary>
         public static readonly ExecutionStatus COMPLETED = new ExecutionStatus("COMPLETED");
+
         /// <summary>
         /// Constant ERROR for ExecutionStatus
         /// </summary>
         public static readonly ExecutionStatus ERROR = new ExecutionStatus("ERROR");
+
         /// <summary>
         /// Constant IN_PROGRESS for ExecutionStatus
         /// </summary>
         public static readonly ExecutionStatus IN_PROGRESS = new ExecutionStatus("IN_PROGRESS");
+
         /// <summary>
         /// Constant WAITING for ExecutionStatus
         /// </summary>
         public static readonly ExecutionStatus WAITING = new ExecutionStatus("WAITING");
 
         /// <summary>
-        /// This constant constructor does not need to be called if the constant
-        /// you are attempting to use is already defined as a static instance of 
-        /// this class.
-        /// This constructor should be used to construct constants that are not
-        /// defined as statics, for instance if attempting to use a feature that is
-        /// newer than the current version of the SDK.
+        /// Constructs a custom ExecutionStatus for a value not among the defined constants.
         /// </summary>
-        public ExecutionStatus(string value)
-            : base(value)
-        {
-        }
+        public ExecutionStatus(string value) : base(value) { }
 
         /// <summary>
         /// Finds the constant for the unique value.
@@ -355,34 +307,25 @@ namespace Amazon.QApps
         }
     }
 
-
     /// <summary>
     /// Constants used for properties of type InputCardComputeMode.
     /// </summary>
     public class InputCardComputeMode : ConstantClass
     {
-
         /// <summary>
         /// Constant Append for InputCardComputeMode
         /// </summary>
         public static readonly InputCardComputeMode Append = new InputCardComputeMode("append");
+
         /// <summary>
         /// Constant Replace for InputCardComputeMode
         /// </summary>
         public static readonly InputCardComputeMode Replace = new InputCardComputeMode("replace");
 
         /// <summary>
-        /// This constant constructor does not need to be called if the constant
-        /// you are attempting to use is already defined as a static instance of 
-        /// this class.
-        /// This constructor should be used to construct constants that are not
-        /// defined as statics, for instance if attempting to use a feature that is
-        /// newer than the current version of the SDK.
+        /// Constructs a custom InputCardComputeMode for a value not among the defined constants.
         /// </summary>
-        public InputCardComputeMode(string value)
-            : base(value)
-        {
-        }
+        public InputCardComputeMode(string value) : base(value) { }
 
         /// <summary>
         /// Finds the constant for the unique value.
@@ -405,34 +348,25 @@ namespace Amazon.QApps
         }
     }
 
-
     /// <summary>
     /// Constants used for properties of type LibraryItemStatus.
     /// </summary>
     public class LibraryItemStatus : ConstantClass
     {
-
         /// <summary>
         /// Constant DISABLED for LibraryItemStatus
         /// </summary>
         public static readonly LibraryItemStatus DISABLED = new LibraryItemStatus("DISABLED");
+
         /// <summary>
         /// Constant PUBLISHED for LibraryItemStatus
         /// </summary>
         public static readonly LibraryItemStatus PUBLISHED = new LibraryItemStatus("PUBLISHED");
 
         /// <summary>
-        /// This constant constructor does not need to be called if the constant
-        /// you are attempting to use is already defined as a static instance of 
-        /// this class.
-        /// This constructor should be used to construct constants that are not
-        /// defined as statics, for instance if attempting to use a feature that is
-        /// newer than the current version of the SDK.
+        /// Constructs a custom LibraryItemStatus for a value not among the defined constants.
         /// </summary>
-        public LibraryItemStatus(string value)
-            : base(value)
-        {
-        }
+        public LibraryItemStatus(string value) : base(value) { }
 
         /// <summary>
         /// Finds the constant for the unique value.
@@ -455,34 +389,25 @@ namespace Amazon.QApps
         }
     }
 
-
     /// <summary>
     /// Constants used for properties of type PermissionInputActionEnum.
     /// </summary>
     public class PermissionInputActionEnum : ConstantClass
     {
-
         /// <summary>
         /// Constant Read for PermissionInputActionEnum
         /// </summary>
         public static readonly PermissionInputActionEnum Read = new PermissionInputActionEnum("read");
+
         /// <summary>
         /// Constant Write for PermissionInputActionEnum
         /// </summary>
         public static readonly PermissionInputActionEnum Write = new PermissionInputActionEnum("write");
 
         /// <summary>
-        /// This constant constructor does not need to be called if the constant
-        /// you are attempting to use is already defined as a static instance of 
-        /// this class.
-        /// This constructor should be used to construct constants that are not
-        /// defined as statics, for instance if attempting to use a feature that is
-        /// newer than the current version of the SDK.
+        /// Constructs a custom PermissionInputActionEnum for a value not among the defined constants.
         /// </summary>
-        public PermissionInputActionEnum(string value)
-            : base(value)
-        {
-        }
+        public PermissionInputActionEnum(string value) : base(value) { }
 
         /// <summary>
         /// Finds the constant for the unique value.
@@ -505,34 +430,25 @@ namespace Amazon.QApps
         }
     }
 
-
     /// <summary>
     /// Constants used for properties of type PermissionOutputActionEnum.
     /// </summary>
     public class PermissionOutputActionEnum : ConstantClass
     {
-
         /// <summary>
         /// Constant Read for PermissionOutputActionEnum
         /// </summary>
         public static readonly PermissionOutputActionEnum Read = new PermissionOutputActionEnum("read");
+
         /// <summary>
         /// Constant Write for PermissionOutputActionEnum
         /// </summary>
         public static readonly PermissionOutputActionEnum Write = new PermissionOutputActionEnum("write");
 
         /// <summary>
-        /// This constant constructor does not need to be called if the constant
-        /// you are attempting to use is already defined as a static instance of 
-        /// this class.
-        /// This constructor should be used to construct constants that are not
-        /// defined as statics, for instance if attempting to use a feature that is
-        /// newer than the current version of the SDK.
+        /// Constructs a custom PermissionOutputActionEnum for a value not among the defined constants.
         /// </summary>
-        public PermissionOutputActionEnum(string value)
-            : base(value)
-        {
-        }
+        public PermissionOutputActionEnum(string value) : base(value) { }
 
         /// <summary>
         /// Finds the constant for the unique value.
@@ -555,90 +471,95 @@ namespace Amazon.QApps
         }
     }
 
-
     /// <summary>
     /// Constants used for properties of type PluginType.
     /// </summary>
     public class PluginType : ConstantClass
     {
-
         /// <summary>
         /// Constant ASANA for PluginType
         /// </summary>
         public static readonly PluginType ASANA = new PluginType("ASANA");
+
         /// <summary>
         /// Constant ATLASSIAN_CONFLUENCE for PluginType
         /// </summary>
         public static readonly PluginType ATLASSIAN_CONFLUENCE = new PluginType("ATLASSIAN_CONFLUENCE");
+
         /// <summary>
         /// Constant CUSTOM for PluginType
         /// </summary>
         public static readonly PluginType CUSTOM = new PluginType("CUSTOM");
+
         /// <summary>
         /// Constant GOOGLE_CALENDAR for PluginType
         /// </summary>
         public static readonly PluginType GOOGLE_CALENDAR = new PluginType("GOOGLE_CALENDAR");
+
         /// <summary>
         /// Constant JIRA for PluginType
         /// </summary>
         public static readonly PluginType JIRA = new PluginType("JIRA");
+
         /// <summary>
         /// Constant JIRA_CLOUD for PluginType
         /// </summary>
         public static readonly PluginType JIRA_CLOUD = new PluginType("JIRA_CLOUD");
+
         /// <summary>
         /// Constant MICROSOFT_EXCHANGE for PluginType
         /// </summary>
         public static readonly PluginType MICROSOFT_EXCHANGE = new PluginType("MICROSOFT_EXCHANGE");
+
         /// <summary>
         /// Constant MICROSOFT_TEAMS for PluginType
         /// </summary>
         public static readonly PluginType MICROSOFT_TEAMS = new PluginType("MICROSOFT_TEAMS");
+
         /// <summary>
         /// Constant PAGERDUTY_ADVANCE for PluginType
         /// </summary>
         public static readonly PluginType PAGERDUTY_ADVANCE = new PluginType("PAGERDUTY_ADVANCE");
+
         /// <summary>
         /// Constant SALESFORCE for PluginType
         /// </summary>
         public static readonly PluginType SALESFORCE = new PluginType("SALESFORCE");
+
         /// <summary>
         /// Constant SALESFORCE_CRM for PluginType
         /// </summary>
         public static readonly PluginType SALESFORCE_CRM = new PluginType("SALESFORCE_CRM");
-        /// <summary>
-        /// Constant SERVICE_NOW for PluginType
-        /// </summary>
-        public static readonly PluginType SERVICE_NOW = new PluginType("SERVICE_NOW");
+
         /// <summary>
         /// Constant SERVICENOW_NOW_PLATFORM for PluginType
         /// </summary>
         public static readonly PluginType SERVICENOW_NOW_PLATFORM = new PluginType("SERVICENOW_NOW_PLATFORM");
+
+        /// <summary>
+        /// Constant SERVICE_NOW for PluginType
+        /// </summary>
+        public static readonly PluginType SERVICE_NOW = new PluginType("SERVICE_NOW");
+
         /// <summary>
         /// Constant SMARTSHEET for PluginType
         /// </summary>
         public static readonly PluginType SMARTSHEET = new PluginType("SMARTSHEET");
+
         /// <summary>
         /// Constant ZENDESK for PluginType
         /// </summary>
         public static readonly PluginType ZENDESK = new PluginType("ZENDESK");
+
         /// <summary>
         /// Constant ZENDESK_SUITE for PluginType
         /// </summary>
         public static readonly PluginType ZENDESK_SUITE = new PluginType("ZENDESK_SUITE");
 
         /// <summary>
-        /// This constant constructor does not need to be called if the constant
-        /// you are attempting to use is already defined as a static instance of 
-        /// this class.
-        /// This constructor should be used to construct constants that are not
-        /// defined as statics, for instance if attempting to use a feature that is
-        /// newer than the current version of the SDK.
+        /// Constructs a custom PluginType for a value not among the defined constants.
         /// </summary>
-        public PluginType(string value)
-            : base(value)
-        {
-        }
+        public PluginType(string value) : base(value) { }
 
         /// <summary>
         /// Finds the constant for the unique value.
@@ -661,34 +582,25 @@ namespace Amazon.QApps
         }
     }
 
-
     /// <summary>
     /// Constants used for properties of type PrincipalOutputUserTypeEnum.
     /// </summary>
     public class PrincipalOutputUserTypeEnum : ConstantClass
     {
-
         /// <summary>
         /// Constant Owner for PrincipalOutputUserTypeEnum
         /// </summary>
         public static readonly PrincipalOutputUserTypeEnum Owner = new PrincipalOutputUserTypeEnum("owner");
+
         /// <summary>
         /// Constant User for PrincipalOutputUserTypeEnum
         /// </summary>
         public static readonly PrincipalOutputUserTypeEnum User = new PrincipalOutputUserTypeEnum("user");
 
         /// <summary>
-        /// This constant constructor does not need to be called if the constant
-        /// you are attempting to use is already defined as a static instance of 
-        /// this class.
-        /// This constructor should be used to construct constants that are not
-        /// defined as statics, for instance if attempting to use a feature that is
-        /// newer than the current version of the SDK.
+        /// Constructs a custom PrincipalOutputUserTypeEnum for a value not among the defined constants.
         /// </summary>
-        public PrincipalOutputUserTypeEnum(string value)
-            : base(value)
-        {
-        }
+        public PrincipalOutputUserTypeEnum(string value) : base(value) { }
 
         /// <summary>
         /// Finds the constant for the unique value.
@@ -711,34 +623,25 @@ namespace Amazon.QApps
         }
     }
 
-
     /// <summary>
     /// Constants used for properties of type Sender.
     /// </summary>
     public class Sender : ConstantClass
     {
-
         /// <summary>
         /// Constant SYSTEM for Sender
         /// </summary>
         public static readonly Sender SYSTEM = new Sender("SYSTEM");
+
         /// <summary>
         /// Constant USER for Sender
         /// </summary>
         public static readonly Sender USER = new Sender("USER");
 
         /// <summary>
-        /// This constant constructor does not need to be called if the constant
-        /// you are attempting to use is already defined as a static instance of 
-        /// this class.
-        /// This constructor should be used to construct constants that are not
-        /// defined as statics, for instance if attempting to use a feature that is
-        /// newer than the current version of the SDK.
+        /// Constructs a custom Sender for a value not among the defined constants.
         /// </summary>
-        public Sender(string value)
-            : base(value)
-        {
-        }
+        public Sender(string value) : base(value) { }
 
         /// <summary>
         /// Finds the constant for the unique value.
@@ -761,38 +664,30 @@ namespace Amazon.QApps
         }
     }
 
-
     /// <summary>
     /// Constants used for properties of type SubmissionMutationKind.
     /// </summary>
     public class SubmissionMutationKind : ConstantClass
     {
-
         /// <summary>
         /// Constant Add for SubmissionMutationKind
         /// </summary>
         public static readonly SubmissionMutationKind Add = new SubmissionMutationKind("add");
+
         /// <summary>
         /// Constant Delete for SubmissionMutationKind
         /// </summary>
         public static readonly SubmissionMutationKind Delete = new SubmissionMutationKind("delete");
+
         /// <summary>
         /// Constant Edit for SubmissionMutationKind
         /// </summary>
         public static readonly SubmissionMutationKind Edit = new SubmissionMutationKind("edit");
 
         /// <summary>
-        /// This constant constructor does not need to be called if the constant
-        /// you are attempting to use is already defined as a static instance of 
-        /// this class.
-        /// This constructor should be used to construct constants that are not
-        /// defined as statics, for instance if attempting to use a feature that is
-        /// newer than the current version of the SDK.
+        /// Constructs a custom SubmissionMutationKind for a value not among the defined constants.
         /// </summary>
-        public SubmissionMutationKind(string value)
-            : base(value)
-        {
-        }
+        public SubmissionMutationKind(string value) : base(value) { }
 
         /// <summary>
         /// Finds the constant for the unique value.
@@ -814,5 +709,4 @@ namespace Amazon.QApps
             return FindValue(value);
         }
     }
-
 }

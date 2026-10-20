@@ -14,29 +14,28 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the amplifybackend-2020-08-11.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
+
 namespace Amazon.AmplifyBackend.Model
 {
     /// <summary>
-    /// Base class for ListBackendJobs paginators.
+    /// Paginator for the ListBackendJobs operation
     /// </summary>
     internal sealed partial class ListBackendJobsPaginator : IPaginator<ListBackendJobsResponse>, IListBackendJobsPaginator
     {
         private readonly IAmazonAmplifyBackend _client;
         private readonly ListBackendJobsRequest _request;
         private int _isPaginatorInUse = 0;
-        
+
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
@@ -45,7 +44,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Enumerable containing all of the Jobs
         /// </summary>
-        public IPaginatedEnumerable<BackendJobRespObj> Jobs => 
+        public IPaginatedEnumerable<BackendJobRespObj> Jobs =>
             new PaginatedResultKeyResponse<ListBackendJobsResponse, BackendJobRespObj>(this, (i) => i.Jobs ?? new List<BackendJobRespObj>());
 
         internal ListBackendJobsPaginator(IAmazonAmplifyBackend client, ListBackendJobsRequest request)
@@ -53,7 +52,7 @@ namespace Amazon.AmplifyBackend.Model
             this._client = client;
             this._request = request;
         }
-#if BCL
+#if NETFRAMEWORK
         IEnumerable<ListBackendJobsResponse> IPaginator<ListBackendJobsResponse>.Paginate()
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)

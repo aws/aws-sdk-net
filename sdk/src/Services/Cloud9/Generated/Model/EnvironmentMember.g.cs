@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloud9-2017-09-23.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -22,11 +22,11 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 using System.Net;
-
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618,CS1570
+
 namespace Amazon.Cloud9.Model
 {
     /// <summary>
@@ -34,30 +34,19 @@ namespace Amazon.Cloud9.Model
     /// </summary>
     public partial class EnvironmentMember
     {
-        private string _environmentId;
-        private DateTime? _lastAccess;
-        private PermissionsType _permissions;
-        private string _userArn;
-        private string _userId;
-
         /// <summary>
         /// Gets and sets the property EnvironmentId. 
         /// <para>
         /// The ID of the environment for the environment member.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string EnvironmentId
-        {
-            get { return this._environmentId; }
-            set { this._environmentId = value; }
-        }
+        [AWSProperty(Required = true)]
+        public string EnvironmentId { get; set; }
 
-        // Check to see if EnvironmentId property is set
-        internal bool IsSetEnvironmentId()
-        {
-            return this._environmentId != null;
-        }
+        /// <summary>
+        /// Checks to see if the EnvironmentId property is set.
+        /// </summary>
+        internal bool IsSetEnvironmentId() => this.EnvironmentId != null;
 
         /// <summary>
         /// Gets and sets the property LastAccess. 
@@ -66,17 +55,12 @@ namespace Amazon.Cloud9.Model
         /// the environment.
         /// </para>
         /// </summary>
-        public DateTime? LastAccess
-        {
-            get { return this._lastAccess; }
-            set { this._lastAccess = value; }
-        }
+        public DateTime? LastAccess { get; set; }
 
-        // Check to see if LastAccess property is set
-        internal bool IsSetLastAccess()
-        {
-            return this._lastAccess.HasValue; 
-        }
+        /// <summary>
+        /// Checks to see if the LastAccess property is set.
+        /// </summary>
+        internal bool IsSetLastAccess() => this.LastAccess.HasValue;
 
         /// <summary>
         /// Gets and sets the property Permissions. 
@@ -98,18 +82,13 @@ namespace Amazon.Cloud9.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public PermissionsType Permissions
-        {
-            get { return this._permissions; }
-            set { this._permissions = value; }
-        }
+        [AWSProperty(Required = true)]
+        public PermissionsType Permissions { get; set; }
 
-        // Check to see if Permissions property is set
-        internal bool IsSetPermissions()
-        {
-            return this._permissions != null;
-        }
+        /// <summary>
+        /// Checks to see if the Permissions property is set.
+        /// </summary>
+        internal bool IsSetPermissions() => this.Permissions != null;
 
         /// <summary>
         /// Gets and sets the property UserArn. 
@@ -117,18 +96,13 @@ namespace Amazon.Cloud9.Model
         /// The Amazon Resource Name (ARN) of the environment member.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string UserArn
-        {
-            get { return this._userArn; }
-            set { this._userArn = value; }
-        }
+        [AWSProperty(Required = true)]
+        public string UserArn { get; set; }
 
-        // Check to see if UserArn property is set
-        internal bool IsSetUserArn()
-        {
-            return this._userArn != null;
-        }
+        /// <summary>
+        /// Checks to see if the UserArn property is set.
+        /// </summary>
+        internal bool IsSetUserArn() => this.UserArn != null;
 
         /// <summary>
         /// Gets and sets the property UserId. 
@@ -136,18 +110,12 @@ namespace Amazon.Cloud9.Model
         /// The user ID in Identity and Access Management (IAM) of the environment member.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string UserId
-        {
-            get { return this._userId; }
-            set { this._userId = value; }
-        }
+        [AWSProperty(Required = true)]
+        public string UserId { get; set; }
 
-        // Check to see if UserId property is set
-        internal bool IsSetUserId()
-        {
-            return this._userId != null;
-        }
-
+        /// <summary>
+        /// Checks to see if the UserId property is set.
+        /// </summary>
+        internal bool IsSetUserId() => this.UserId != null;
     }
 }
