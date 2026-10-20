@@ -1655,6 +1655,47 @@ namespace Amazon.Bedrock
     }
 
     /// <summary>
+    /// Constants used for properties of type GuardrailContextualGroundingTierName.
+    /// </summary>
+    public class GuardrailContextualGroundingTierName : ConstantClass
+    {
+        /// <summary>
+        /// Constant CLASSIC for GuardrailContextualGroundingTierName
+        /// </summary>
+        public static readonly GuardrailContextualGroundingTierName CLASSIC = new GuardrailContextualGroundingTierName("CLASSIC");
+
+        /// <summary>
+        /// Constant STANDARD for GuardrailContextualGroundingTierName
+        /// </summary>
+        public static readonly GuardrailContextualGroundingTierName STANDARD = new GuardrailContextualGroundingTierName("STANDARD");
+
+        /// <summary>
+        /// Constructs a custom GuardrailContextualGroundingTierName for a value not among the defined constants.
+        /// </summary>
+        public GuardrailContextualGroundingTierName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailContextualGroundingTierName FindValue(string value)
+        {
+            return FindValue<GuardrailContextualGroundingTierName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailContextualGroundingTierName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type GuardrailFilterStrength.
     /// </summary>
     public class GuardrailFilterStrength : ConstantClass
