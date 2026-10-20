@@ -50,6 +50,11 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             if (requestObject == null)
                 return;
 
+            if (requestObject.IsSetAdaptationSpeed())
+            {
+                context.Writer.WriteTextString("AdaptationSpeed");
+                context.Writer.WriteTextString(requestObject.AdaptationSpeed);
+            }
             if (requestObject.IsSetExcludedTimeRanges())
             {
                 context.Writer.WriteTextString("ExcludedTimeRanges");
@@ -69,6 +74,11 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             {
                 context.Writer.WriteTextString("MetricTimezone");
                 context.Writer.WriteTextString(requestObject.MetricTimezone);
+            }
+            if (requestObject.IsSetOutlierFilteringStrength())
+            {
+                context.Writer.WriteTextString("OutlierFilteringStrength");
+                context.Writer.WriteTextString(requestObject.OutlierFilteringStrength);
             }
         }
 

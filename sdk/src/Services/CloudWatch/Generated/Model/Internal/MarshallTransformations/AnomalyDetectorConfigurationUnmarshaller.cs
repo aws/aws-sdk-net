@@ -62,6 +62,14 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 string propertyName = reader.ReadTextString();
                 switch (propertyName)
                 {
+                    case "AdaptationSpeed":
+                        {
+                            context.AddPathSegment("AdaptationSpeed");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.AdaptationSpeed = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
                     case "ExcludedTimeRanges":
                         {
                             context.AddPathSegment("ExcludedTimeRanges");
@@ -75,6 +83,14 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                             context.AddPathSegment("MetricTimezone");
                             var unmarshaller = CborStringUnmarshaller.Instance;
                             unmarshalledObject.MetricTimezone = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "OutlierFilteringStrength":
+                        {
+                            context.AddPathSegment("OutlierFilteringStrength");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.OutlierFilteringStrength = unmarshaller.Unmarshall(context);
                             context.PopPathSegment();
                             break;
                         }
