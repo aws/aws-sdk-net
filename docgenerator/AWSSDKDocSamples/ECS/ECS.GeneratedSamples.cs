@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
     {
         public void ECSContinueServiceDeployment()
         {
-            #region example-1
+            #region ContinueServiceDeployment-1
 
             var client = new AmazonECSClient();
-            var response = client.ContinueServiceDeployment(new ContinueServiceDeploymentRequest 
+            var response = client.ContinueServiceDeployment(new ContinueServiceDeploymentRequest
             {
                 Action = "CONTINUE",
                 HookId = "ecs-pause-Xk7rT2mP9sLwQn4vB8fYd3hJ6gA1cE5iO0uR_ZpWq",
@@ -30,10 +31,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSContinueServiceDeployment()
         {
-            #region example-2
+            #region ContinueServiceDeployment-2
 
             var client = new AmazonECSClient();
-            var response = client.ContinueServiceDeployment(new ContinueServiceDeploymentRequest 
+            var response = client.ContinueServiceDeployment(new ContinueServiceDeploymentRequest
             {
                 Action = "ROLLBACK",
                 HookId = "ecs-pause-Xk7rT2mP9sLwQn4vB8fYd3hJ6gA1cE5iO0uR_ZpWq",
@@ -47,12 +48,11 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSCreateCapacityProvider()
         {
-            #region example-1
+            #region CreateCapacityProvider-1
 
             var client = new AmazonECSClient();
-            var response = client.CreateCapacityProvider(new CreateCapacityProviderRequest 
+            var response = client.CreateCapacityProvider(new CreateCapacityProviderRequest
             {
-                Name = "MyCapacityProvider",
                 AutoScalingGroupProvider = new AutoScalingGroupProvider {
                     AutoScalingGroupArn = "arn:aws:autoscaling:us-east-1:123456789012:autoScalingGroup:57ffcb94-11f0-4d6d-bf60-3bac5EXAMPLE:autoScalingGroupName/MyASG",
                     ManagedScaling = new ManagedScaling {
@@ -60,7 +60,8 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
                         TargetCapacity = 100
                     },
                     ManagedTerminationProtection = "ENABLED"
-                }
+                },
+                Name = "MyCapacityProvider"
             });
 
             CapacityProvider capacityProvider = response.CapacityProvider;
@@ -70,10 +71,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSCreateCluster()
         {
-            #region example-1
+            #region CreateCluster-1
 
             var client = new AmazonECSClient();
-            var response = client.CreateCluster(new CreateClusterRequest 
+            var response = client.CreateCluster(new CreateClusterRequest
             {
                 ClusterName = "my_cluster"
             });
@@ -85,10 +86,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSCreateDaemon()
         {
-            #region example-1
+            #region CreateDaemon-1
 
             var client = new AmazonECSClient();
-            var response = client.CreateDaemon(new CreateDaemonRequest 
+            var response = client.CreateDaemon(new CreateDaemonRequest
             {
                 CapacityProviderArns = new List<string> {
                     "arn:aws:ecs:us-east-1:123456789012:capacity-provider/my-capacity-provider"
@@ -102,20 +103,20 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
                 }
             });
 
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string daemonArn = response.DaemonArn;
             string deploymentArn = response.DeploymentArn;
-            string status = response.Status;
+            DaemonStatus status = response.Status;
 
             #endregion
         }
 
         public void ECSCreateService()
         {
-            #region example-1
+            #region CreateService-1
 
             var client = new AmazonECSClient();
-            var response = client.CreateService(new CreateServiceRequest 
+            var response = client.CreateService(new CreateServiceRequest
             {
                 DesiredCount = 10,
                 ServiceName = "ecs-simple-service",
@@ -129,10 +130,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSCreateService()
         {
-            #region example-2
+            #region CreateService-2
 
             var client = new AmazonECSClient();
-            var response = client.CreateService(new CreateServiceRequest 
+            var response = client.CreateService(new CreateServiceRequest
             {
                 DesiredCount = 10,
                 LoadBalancers = new List<LoadBalancer> {
@@ -154,10 +155,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSCreateService()
         {
-            #region example-3
+            #region CreateService-3
 
             var client = new AmazonECSClient();
-            var response = client.CreateService(new CreateServiceRequest 
+            var response = client.CreateService(new CreateServiceRequest
             {
                 DeploymentConfiguration = new DeploymentConfiguration {
                     LifecycleHooks = new List<DeploymentLifecycleHook> {
@@ -186,10 +187,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSCreateService()
         {
-            #region example-4
+            #region CreateService-4
 
             var client = new AmazonECSClient();
-            var response = client.CreateService(new CreateServiceRequest 
+            var response = client.CreateService(new CreateServiceRequest
             {
                 DesiredCount = 2,
                 Monitoring = new MonitoringConfiguration { MetricConfigurations = new List<MetricConfiguration> {
@@ -212,10 +213,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSCreateTaskSet()
         {
-            #region example-1
+            #region CreateTaskSet-1
 
             var client = new AmazonECSClient();
-            var response = client.CreateTaskSet(new CreateTaskSetRequest 
+            var response = client.CreateTaskSet(new CreateTaskSetRequest
             {
                 Cluster = "MyCluster",
                 NetworkConfiguration = new NetworkConfiguration { AwsvpcConfiguration = new AwsVpcConfiguration {
@@ -237,10 +238,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDeleteAccountSetting()
         {
-            #region example-1
+            #region DeleteAccountSetting-1
 
             var client = new AmazonECSClient();
-            var response = client.DeleteAccountSetting(new DeleteAccountSettingRequest 
+            var response = client.DeleteAccountSetting(new DeleteAccountSettingRequest
             {
                 Name = "serviceLongArnFormat"
             });
@@ -252,10 +253,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDeleteAccountSetting()
         {
-            #region example-2
+            #region DeleteAccountSetting-2
 
             var client = new AmazonECSClient();
-            var response = client.DeleteAccountSetting(new DeleteAccountSettingRequest 
+            var response = client.DeleteAccountSetting(new DeleteAccountSettingRequest
             {
                 Name = "containerInstanceLongArnFormat",
                 PrincipalArn = "arn:aws:iam::<aws_account_id>:user/principalName"
@@ -268,10 +269,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDeleteAttributes()
         {
-            #region example-1
+            #region DeleteAttributes-1
 
             var client = new AmazonECSClient();
-            var response = client.DeleteAttributes(new DeleteAttributesRequest 
+            var response = client.DeleteAttributes(new DeleteAttributesRequest
             {
                 Attributes = new List<Attribute> {
                     new Attribute {
@@ -288,10 +289,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDeleteCapacityProvider()
         {
-            #region example-1
+            #region DeleteCapacityProvider-1
 
             var client = new AmazonECSClient();
-            var response = client.DeleteCapacityProvider(new DeleteCapacityProviderRequest 
+            var response = client.DeleteCapacityProvider(new DeleteCapacityProviderRequest
             {
                 CapacityProvider = "arn:aws:ecs:us-west-2:123456789012:capacity-provider/ExampleCapacityProvider"
             });
@@ -303,10 +304,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDeleteCluster()
         {
-            #region example-1
+            #region DeleteCluster-1
 
             var client = new AmazonECSClient();
-            var response = client.DeleteCluster(new DeleteClusterRequest 
+            var response = client.DeleteCluster(new DeleteClusterRequest
             {
                 Cluster = "my_cluster"
             });
@@ -318,29 +319,29 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDeleteDaemon()
         {
-            #region example-1
+            #region DeleteDaemon-1
 
             var client = new AmazonECSClient();
-            var response = client.DeleteDaemon(new DeleteDaemonRequest 
+            var response = client.DeleteDaemon(new DeleteDaemonRequest
             {
                 DaemonArn = "arn:aws:ecs:us-east-1:123456789012:daemon/my-cluster/my-monitoring-daemon"
             });
 
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string daemonArn = response.DaemonArn;
             string deploymentArn = response.DeploymentArn;
-            string status = response.Status;
-            DateTime updatedAt = response.UpdatedAt;
+            DaemonStatus status = response.Status;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void ECSDeleteDaemonTaskDefinition()
         {
-            #region example-1
+            #region DeleteDaemonTaskDefinition-1
 
             var client = new AmazonECSClient();
-            var response = client.DeleteDaemonTaskDefinition(new DeleteDaemonTaskDefinitionRequest 
+            var response = client.DeleteDaemonTaskDefinition(new DeleteDaemonTaskDefinitionRequest
             {
                 DaemonTaskDefinition = "monitoring-agent:1"
             });
@@ -352,10 +353,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDeleteService()
         {
-            #region example-1
+            #region DeleteService-1
 
             var client = new AmazonECSClient();
-            var response = client.DeleteService(new DeleteServiceRequest 
+            var response = client.DeleteService(new DeleteServiceRequest
             {
                 Service = "my-http-service"
             });
@@ -366,10 +367,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDeleteTaskDefinitions()
         {
-            #region example-1
+            #region DeleteTaskDefinitions-1
 
             var client = new AmazonECSClient();
-            var response = client.DeleteTaskDefinitions(new DeleteTaskDefinitionsRequest 
+            var response = client.DeleteTaskDefinitions(new DeleteTaskDefinitionsRequest
             {
                 TaskDefinitions = new List<string> {
                     "Example-task-definition:1"
@@ -384,10 +385,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDeleteTaskSet()
         {
-            #region example-1
+            #region DeleteTaskSet-1
 
             var client = new AmazonECSClient();
-            var response = client.DeleteTaskSet(new DeleteTaskSetRequest 
+            var response = client.DeleteTaskSet(new DeleteTaskSetRequest
             {
                 Cluster = "MyCluster",
                 Force = true,
@@ -402,10 +403,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDeregisterContainerInstance()
         {
-            #region example-1
+            #region DeregisterContainerInstance-1
 
             var client = new AmazonECSClient();
-            var response = client.DeregisterContainerInstance(new DeregisterContainerInstanceRequest 
+            var response = client.DeregisterContainerInstance(new DeregisterContainerInstanceRequest
             {
                 Cluster = "default",
                 ContainerInstance = "container_instance_UUID",
@@ -418,10 +419,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDeregisterTaskDefinition()
         {
-            #region example-1
+            #region DeregisterTaskDefinition-1
 
             var client = new AmazonECSClient();
-            var response = client.DeregisterTaskDefinition(new DeregisterTaskDefinitionRequest 
+            var response = client.DeregisterTaskDefinition(new DeregisterTaskDefinitionRequest
             {
                 TaskDefinition = "fargate-task:1"
             });
@@ -433,10 +434,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDescribeCapacityProviders()
         {
-            #region example-1
+            #region DescribeCapacityProviders-1
 
             var client = new AmazonECSClient();
-            var response = client.DescribeCapacityProviders(new DescribeCapacityProvidersRequest 
+            var response = client.DescribeCapacityProviders(new DescribeCapacityProvidersRequest
             {
             });
 
@@ -447,10 +448,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDescribeCapacityProviders()
         {
-            #region example-2
+            #region DescribeCapacityProviders-2
 
             var client = new AmazonECSClient();
-            var response = client.DescribeCapacityProviders(new DescribeCapacityProvidersRequest 
+            var response = client.DescribeCapacityProviders(new DescribeCapacityProvidersRequest
             {
                 CapacityProviders = new List<string> {
                     "MyCapacityProvider"
@@ -467,10 +468,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDescribeClusters()
         {
-            #region example-1
+            #region DescribeClusters-1
 
             var client = new AmazonECSClient();
-            var response = client.DescribeClusters(new DescribeClustersRequest 
+            var response = client.DescribeClusters(new DescribeClustersRequest
             {
                 Clusters = new List<string> {
                     "default"
@@ -485,10 +486,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDescribeContainerInstances()
         {
-            #region example-1
+            #region DescribeContainerInstances-1
 
             var client = new AmazonECSClient();
-            var response = client.DescribeContainerInstances(new DescribeContainerInstancesRequest 
+            var response = client.DescribeContainerInstances(new DescribeContainerInstancesRequest
             {
                 Cluster = "default",
                 ContainerInstances = new List<string> {
@@ -504,10 +505,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDescribeDaemon()
         {
-            #region example-1
+            #region DescribeDaemon-1
 
             var client = new AmazonECSClient();
-            var response = client.DescribeDaemon(new DescribeDaemonRequest 
+            var response = client.DescribeDaemon(new DescribeDaemonRequest
             {
                 DaemonArn = "arn:aws:ecs:us-east-1:123456789012:daemon/my-cluster/my-monitoring-daemon"
             });
@@ -519,10 +520,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDescribeDaemonDeployments()
         {
-            #region example-1
+            #region DescribeDaemonDeployments-1
 
             var client = new AmazonECSClient();
-            var response = client.DescribeDaemonDeployments(new DescribeDaemonDeploymentsRequest 
+            var response = client.DescribeDaemonDeployments(new DescribeDaemonDeploymentsRequest
             {
                 DaemonDeploymentArns = new List<string> {
                     "arn:aws:ecs:us-east-1:123456789012:daemon-deployment/my-cluster/my-monitoring-daemon/aB1cD2eF3gH4iJ5k"
@@ -537,10 +538,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDescribeDaemonRevisions()
         {
-            #region example-1
+            #region DescribeDaemonRevisions-1
 
             var client = new AmazonECSClient();
-            var response = client.DescribeDaemonRevisions(new DescribeDaemonRevisionsRequest 
+            var response = client.DescribeDaemonRevisions(new DescribeDaemonRevisionsRequest
             {
                 DaemonRevisionArns = new List<string> {
                     "arn:aws:ecs:us-east-1:123456789012:daemon-revision/my-cluster/my-monitoring-daemon/4980306466373577095"
@@ -555,10 +556,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDescribeDaemonTaskDefinition()
         {
-            #region example-1
+            #region DescribeDaemonTaskDefinition-1
 
             var client = new AmazonECSClient();
-            var response = client.DescribeDaemonTaskDefinition(new DescribeDaemonTaskDefinitionRequest 
+            var response = client.DescribeDaemonTaskDefinition(new DescribeDaemonTaskDefinitionRequest
             {
                 DaemonTaskDefinition = "monitoring-agent:1"
             });
@@ -570,10 +571,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDescribeServiceDeployments()
         {
-            #region example-1
+            #region DescribeServiceDeployments-1
 
             var client = new AmazonECSClient();
-            var response = client.DescribeServiceDeployments(new DescribeServiceDeploymentsRequest 
+            var response = client.DescribeServiceDeployments(new DescribeServiceDeploymentsRequest
             {
                 ServiceDeploymentArns = new List<string> {
                     "arn:aws:ecs:us-west-2:123456789012:service-deployment/example/sd-example/NCWGC2ZR-taawPAYrIaU5"
@@ -588,10 +589,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDescribeServiceDeployments()
         {
-            #region example-2
+            #region DescribeServiceDeployments-2
 
             var client = new AmazonECSClient();
-            var response = client.DescribeServiceDeployments(new DescribeServiceDeploymentsRequest 
+            var response = client.DescribeServiceDeployments(new DescribeServiceDeploymentsRequest
             {
                 ServiceDeploymentArns = new List<string> {
                     "arn:aws:ecs:us-east-1:123456789012:service-deployment/MyCluster/MyService/r9i43YFjvgF_xlg7m2eJ1r"
@@ -606,10 +607,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDescribeServiceRevisions()
         {
-            #region example-1
+            #region DescribeServiceRevisions-1
 
             var client = new AmazonECSClient();
-            var response = client.DescribeServiceRevisions(new DescribeServiceRevisionsRequest 
+            var response = client.DescribeServiceRevisions(new DescribeServiceRevisionsRequest
             {
                 ServiceRevisionArns = new List<string> {
                     "arn:aws:ecs:us-west-2:123456789012:service-revision/testc/sd1/4980306466373577095"
@@ -624,10 +625,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDescribeServiceRevisions()
         {
-            #region example-2
+            #region DescribeServiceRevisions-2
 
             var client = new AmazonECSClient();
-            var response = client.DescribeServiceRevisions(new DescribeServiceRevisionsRequest 
+            var response = client.DescribeServiceRevisions(new DescribeServiceRevisionsRequest
             {
                 ServiceRevisionArns = new List<string> {
                     "arn:aws:ecs:us-east-1:012345678910:service-revision/default/ecs-monitored-service/8675309012345678901"
@@ -642,10 +643,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDescribeServices()
         {
-            #region example-1
+            #region DescribeServices-1
 
             var client = new AmazonECSClient();
-            var response = client.DescribeServices(new DescribeServicesRequest 
+            var response = client.DescribeServices(new DescribeServicesRequest
             {
                 Services = new List<string> {
                     "ecs-simple-service"
@@ -660,10 +661,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDescribeServices()
         {
-            #region example-2
+            #region DescribeServices-2
 
             var client = new AmazonECSClient();
-            var response = client.DescribeServices(new DescribeServicesRequest 
+            var response = client.DescribeServices(new DescribeServicesRequest
             {
                 Services = new List<string> {
                     "ecs-service-with-pause-hook"
@@ -678,10 +679,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDescribeTaskDefinition()
         {
-            #region example-1
+            #region DescribeTaskDefinition-1
 
             var client = new AmazonECSClient();
-            var response = client.DescribeTaskDefinition(new DescribeTaskDefinitionRequest 
+            var response = client.DescribeTaskDefinition(new DescribeTaskDefinitionRequest
             {
                 TaskDefinition = "hello_world:8"
             });
@@ -693,10 +694,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDescribeTasks()
         {
-            #region example-1
+            #region DescribeTasks-1
 
             var client = new AmazonECSClient();
-            var response = client.DescribeTasks(new DescribeTasksRequest 
+            var response = client.DescribeTasks(new DescribeTasksRequest
             {
                 Tasks = new List<string> {
                     "c5cba4eb-5dad-405e-96db-71ef8eefe6a8"
@@ -711,10 +712,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDescribeTaskSets()
         {
-            #region example-1
+            #region DescribeTaskSets-1
 
             var client = new AmazonECSClient();
-            var response = client.DescribeTaskSets(new DescribeTaskSetsRequest 
+            var response = client.DescribeTaskSets(new DescribeTaskSetsRequest
             {
                 Cluster = "MyCluster",
                 Service = "MyService",
@@ -731,10 +732,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSExecuteCommand()
         {
-            #region example-1
+            #region ExecuteCommand-1
 
             var client = new AmazonECSClient();
-            var response = client.ExecuteCommand(new ExecuteCommandRequest 
+            var response = client.ExecuteCommand(new ExecuteCommandRequest
             {
                 Cluster = "MyCluster",
                 Command = "/bin/sh",
@@ -746,7 +747,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             string clusterArn = response.ClusterArn;
             string containerArn = response.ContainerArn;
             string containerName = response.ContainerName;
-            bool interactive = response.Interactive;
+            bool? interactive = response.Interactive;
             Session session = response.Session;
             string taskArn = response.TaskArn;
 
@@ -755,10 +756,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSGetTaskProtection()
         {
-            #region example-1
+            #region GetTaskProtection-1
 
             var client = new AmazonECSClient();
-            var response = client.GetTaskProtection(new GetTaskProtectionRequest 
+            var response = client.GetTaskProtection(new GetTaskProtectionRequest
             {
                 Cluster = "test-task-protection",
                 Tasks = new List<string> {
@@ -774,10 +775,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSListAccountSettings()
         {
-            #region example-1
+            #region ListAccountSettings-1
 
             var client = new AmazonECSClient();
-            var response = client.ListAccountSettings(new ListAccountSettingsRequest 
+            var response = client.ListAccountSettings(new ListAccountSettingsRequest
             {
                 EffectiveSettings = true
             });
@@ -789,10 +790,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSListAccountSettings()
         {
-            #region example-2
+            #region ListAccountSettings-2
 
             var client = new AmazonECSClient();
-            var response = client.ListAccountSettings(new ListAccountSettingsRequest 
+            var response = client.ListAccountSettings(new ListAccountSettingsRequest
             {
                 EffectiveSettings = true,
                 PrincipalArn = "arn:aws:iam::<aws_account_id>:user/principalName"
@@ -805,10 +806,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSListAttributes()
         {
-            #region example-1
+            #region ListAttributes-1
 
             var client = new AmazonECSClient();
-            var response = client.ListAttributes(new ListAttributesRequest 
+            var response = client.ListAttributes(new ListAttributesRequest
             {
                 AttributeName = "stack",
                 AttributeValue = "production",
@@ -823,10 +824,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSListClusters()
         {
-            #region example-1
+            #region ListClusters-1
 
             var client = new AmazonECSClient();
-            var response = client.ListClusters(new ListClustersRequest 
+            var response = client.ListClusters(new ListClustersRequest
             {
             });
 
@@ -837,10 +838,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSListContainerInstances()
         {
-            #region example-1
+            #region ListContainerInstances-1
 
             var client = new AmazonECSClient();
-            var response = client.ListContainerInstances(new ListContainerInstancesRequest 
+            var response = client.ListContainerInstances(new ListContainerInstancesRequest
             {
                 Cluster = "default"
             });
@@ -852,10 +853,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSListDaemonDeployments()
         {
-            #region example-1
+            #region ListDaemonDeployments-1
 
             var client = new AmazonECSClient();
-            var response = client.ListDaemonDeployments(new ListDaemonDeploymentsRequest 
+            var response = client.ListDaemonDeployments(new ListDaemonDeploymentsRequest
             {
                 DaemonArn = "arn:aws:ecs:us-east-1:123456789012:daemon/my-cluster/my-monitoring-daemon",
                 Status = new List<string> {
@@ -870,10 +871,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSListDaemons()
         {
-            #region example-1
+            #region ListDaemons-1
 
             var client = new AmazonECSClient();
-            var response = client.ListDaemons(new ListDaemonsRequest 
+            var response = client.ListDaemons(new ListDaemonsRequest
             {
                 ClusterArn = "arn:aws:ecs:us-east-1:123456789012:cluster/my-cluster"
             });
@@ -885,10 +886,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSListDaemonTaskDefinitions()
         {
-            #region example-1
+            #region ListDaemonTaskDefinitions-1
 
             var client = new AmazonECSClient();
-            var response = client.ListDaemonTaskDefinitions(new ListDaemonTaskDefinitionsRequest 
+            var response = client.ListDaemonTaskDefinitions(new ListDaemonTaskDefinitionsRequest
             {
                 FamilyPrefix = "monitoring"
             });
@@ -900,10 +901,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSListServiceDeployments()
         {
-            #region example-1
+            #region ListServiceDeployments-1
 
             var client = new AmazonECSClient();
-            var response = client.ListServiceDeployments(new ListServiceDeploymentsRequest 
+            var response = client.ListServiceDeployments(new ListServiceDeploymentsRequest
             {
                 Cluster = "example",
                 Service = "sd-example",
@@ -919,10 +920,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSListServices()
         {
-            #region example-1
+            #region ListServices-1
 
             var client = new AmazonECSClient();
-            var response = client.ListServices(new ListServicesRequest 
+            var response = client.ListServices(new ListServicesRequest
             {
             });
 
@@ -933,10 +934,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSListTagsForResource()
         {
-            #region example-1
+            #region ListTagsForResource-1
 
             var client = new AmazonECSClient();
-            var response = client.ListTagsForResource(new ListTagsForResourceRequest 
+            var response = client.ListTagsForResource(new ListTagsForResourceRequest
             {
                 ResourceArn = "arn:aws:ecs:region:aws_account_id:cluster/dev"
             });
@@ -948,10 +949,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSListTaskDefinitionFamilies()
         {
-            #region example-1
+            #region ListTaskDefinitionFamilies-1
 
             var client = new AmazonECSClient();
-            var response = client.ListTaskDefinitionFamilies(new ListTaskDefinitionFamiliesRequest 
+            var response = client.ListTaskDefinitionFamilies(new ListTaskDefinitionFamiliesRequest
             {
             });
 
@@ -962,10 +963,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSListTaskDefinitionFamilies()
         {
-            #region example-2
+            #region ListTaskDefinitionFamilies-2
 
             var client = new AmazonECSClient();
-            var response = client.ListTaskDefinitionFamilies(new ListTaskDefinitionFamiliesRequest 
+            var response = client.ListTaskDefinitionFamilies(new ListTaskDefinitionFamiliesRequest
             {
                 FamilyPrefix = "hpcc"
             });
@@ -977,10 +978,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSListTaskDefinitions()
         {
-            #region example-1
+            #region ListTaskDefinitions-1
 
             var client = new AmazonECSClient();
-            var response = client.ListTaskDefinitions(new ListTaskDefinitionsRequest 
+            var response = client.ListTaskDefinitions(new ListTaskDefinitionsRequest
             {
             });
 
@@ -991,10 +992,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSListTaskDefinitions()
         {
-            #region example-2
+            #region ListTaskDefinitions-2
 
             var client = new AmazonECSClient();
-            var response = client.ListTaskDefinitions(new ListTaskDefinitionsRequest 
+            var response = client.ListTaskDefinitions(new ListTaskDefinitionsRequest
             {
                 FamilyPrefix = "wordpress"
             });
@@ -1006,10 +1007,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSListTasks()
         {
-            #region example-1
+            #region ListTasks-1
 
             var client = new AmazonECSClient();
-            var response = client.ListTasks(new ListTasksRequest 
+            var response = client.ListTasks(new ListTasksRequest
             {
                 Cluster = "default"
             });
@@ -1021,10 +1022,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSListTasks()
         {
-            #region example-2
+            #region ListTasks-2
 
             var client = new AmazonECSClient();
-            var response = client.ListTasks(new ListTasksRequest 
+            var response = client.ListTasks(new ListTasksRequest
             {
                 Cluster = "default",
                 ContainerInstance = "f6bbb147-5370-4ace-8c73-c7181ded911f"
@@ -1037,10 +1038,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSPutAccountSetting()
         {
-            #region example-1
+            #region PutAccountSetting-1
 
             var client = new AmazonECSClient();
-            var response = client.PutAccountSetting(new PutAccountSettingRequest 
+            var response = client.PutAccountSetting(new PutAccountSettingRequest
             {
                 Name = "serviceLongArnFormat",
                 Value = "enabled"
@@ -1053,14 +1054,14 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSPutAccountSetting()
         {
-            #region example-2
+            #region PutAccountSetting-2
 
             var client = new AmazonECSClient();
-            var response = client.PutAccountSetting(new PutAccountSettingRequest 
+            var response = client.PutAccountSetting(new PutAccountSettingRequest
             {
                 Name = "containerInstanceLongArnFormat",
-                Value = "enabled",
-                PrincipalArn = "arn:aws:iam::<aws_account_id>:user/principalName"
+                PrincipalArn = "arn:aws:iam::<aws_account_id>:user/principalName",
+                Value = "enabled"
             });
 
             Setting setting = response.Setting;
@@ -1070,10 +1071,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSPutAccountSettingDefault()
         {
-            #region example-1
+            #region PutAccountSettingDefault-1
 
             var client = new AmazonECSClient();
-            var response = client.PutAccountSettingDefault(new PutAccountSettingDefaultRequest 
+            var response = client.PutAccountSettingDefault(new PutAccountSettingDefaultRequest
             {
                 Name = "serviceLongArnFormat",
                 Value = "enabled"
@@ -1086,16 +1087,16 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSPutAttributes()
         {
-            #region example-1
+            #region PutAttributes-1
 
             var client = new AmazonECSClient();
-            var response = client.PutAttributes(new PutAttributesRequest 
+            var response = client.PutAttributes(new PutAttributesRequest
             {
                 Attributes = new List<Attribute> {
                     new Attribute {
                         Name = "stack",
-                        Value = "production",
-                        TargetId = "arn:aws:ecs:us-west-2:123456789012:container-instance/1c3be8ed-df30-47b4-8f1e-6e68ebd01f34"
+                        TargetId = "arn:aws:ecs:us-west-2:123456789012:container-instance/1c3be8ed-df30-47b4-8f1e-6e68ebd01f34",
+                        Value = "production"
                     }
                 },
                 Cluster = "MyCluster"
@@ -1108,10 +1109,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSPutClusterCapacityProviders()
         {
-            #region example-1
+            #region PutClusterCapacityProviders-1
 
             var client = new AmazonECSClient();
-            var response = client.PutClusterCapacityProviders(new PutClusterCapacityProvidersRequest 
+            var response = client.PutClusterCapacityProviders(new PutClusterCapacityProvidersRequest
             {
                 CapacityProviders = new List<string> {
                     "MyCapacityProvider1",
@@ -1137,10 +1138,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSPutClusterCapacityProviders()
         {
-            #region example-2
+            #region PutClusterCapacityProviders-2
 
             var client = new AmazonECSClient();
-            var response = client.PutClusterCapacityProviders(new PutClusterCapacityProvidersRequest 
+            var response = client.PutClusterCapacityProviders(new PutClusterCapacityProvidersRequest
             {
                 CapacityProviders = new List<string> {
                     "MyCapacityProvider1"
@@ -1162,17 +1163,15 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSPutClusterCapacityProviders()
         {
-            #region example-3
+            #region PutClusterCapacityProviders-3
 
             var client = new AmazonECSClient();
-            var response = client.PutClusterCapacityProviders(new PutClusterCapacityProvidersRequest 
+            var response = client.PutClusterCapacityProviders(new PutClusterCapacityProvidersRequest
             {
                 CapacityProviders = new List<string> {
-                    
                 },
                 Cluster = "MyCluster",
                 DefaultCapacityProviderStrategy = new List<CapacityProviderStrategyItem> {
-                    
                 }
             });
 
@@ -1183,14 +1182,13 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSRegisterDaemonTaskDefinition()
         {
-            #region example-1
+            #region RegisterDaemonTaskDefinition-1
 
             var client = new AmazonECSClient();
-            var response = client.RegisterDaemonTaskDefinition(new RegisterDaemonTaskDefinitionRequest 
+            var response = client.RegisterDaemonTaskDefinition(new RegisterDaemonTaskDefinitionRequest
             {
                 ContainerDefinitions = new List<DaemonContainerDefinition> {
                     new DaemonContainerDefinition {
-                        Name = "cloudwatch-agent",
                         Cpu = 128,
                         Environment = new List<KeyValuePair> {
                             new KeyValuePair {
@@ -1208,7 +1206,8 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
                                 { "awslogs-stream-prefix", "ecs" }
                             }
                         },
-                        Memory = 256
+                        Memory = 256,
+                        Name = "cloudwatch-agent"
                     }
                 },
                 Cpu = "128",
@@ -1225,14 +1224,13 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSRegisterTaskDefinition()
         {
-            #region example-1
+            #region RegisterTaskDefinition-1
 
             var client = new AmazonECSClient();
-            var response = client.RegisterTaskDefinition(new RegisterTaskDefinitionRequest 
+            var response = client.RegisterTaskDefinition(new RegisterTaskDefinitionRequest
             {
                 ContainerDefinitions = new List<ContainerDefinition> {
                     new ContainerDefinition {
-                        Name = "sleep",
                         Command = new List<string> {
                             "sleep",
                             "360"
@@ -1240,13 +1238,13 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
                         Cpu = 10,
                         Essential = true,
                         Image = "public.ecr.aws/docker/library/busybox:latest",
-                        Memory = 10
+                        Memory = 10,
+                        Name = "sleep"
                     }
                 },
                 Family = "sleep360",
                 TaskRoleArn = "",
                 Volumes = new List<Volume> {
-                    
                 }
             });
 
@@ -1257,10 +1255,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSRunTask()
         {
-            #region example-1
+            #region RunTask-1
 
             var client = new AmazonECSClient();
-            var response = client.RunTask(new RunTaskRequest 
+            var response = client.RunTask(new RunTaskRequest
             {
                 Cluster = "default",
                 TaskDefinition = "sleep360:1"
@@ -1273,10 +1271,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSStartTask()
         {
-            #region example-1
+            #region StartTask-1
 
             var client = new AmazonECSClient();
-            var response = client.StartTask(new StartTaskRequest 
+            var response = client.StartTask(new StartTaskRequest
             {
                 Cluster = "MyCluster",
                 ContainerInstances = new List<string> {
@@ -1293,10 +1291,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSStopServiceDeployment()
         {
-            #region example-1
+            #region StopServiceDeployment-1
 
             var client = new AmazonECSClient();
-            var response = client.StopServiceDeployment(new StopServiceDeploymentRequest 
+            var response = client.StopServiceDeployment(new StopServiceDeploymentRequest
             {
                 ServiceDeploymentArn = "arn:aws:ecs:us-east-1:123456789012:service-deployment/MyCluster/MyService/r9i43YFjvgF_xlg7m2eJ1r",
                 StopType = "ROLLBACK"
@@ -1309,10 +1307,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSStopTask()
         {
-            #region example-1
+            #region StopTask-1
 
             var client = new AmazonECSClient();
-            var response = client.StopTask(new StopTaskRequest 
+            var response = client.StopTask(new StopTaskRequest
             {
                 Cluster = "MyCluster",
                 Reason = "testing stop task.",
@@ -1326,10 +1324,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSTagResource()
         {
-            #region example-1
+            #region TagResource-1
 
             var client = new AmazonECSClient();
-            var response = client.TagResource(new TagResourceRequest 
+            var response = client.TagResource(new TagResourceRequest
             {
                 ResourceArn = "arn:aws:ecs:region:aws_account_id:cluster/dev",
                 Tags = new List<Tag> {
@@ -1346,10 +1344,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSUntagResource()
         {
-            #region example-1
+            #region UntagResource-1
 
             var client = new AmazonECSClient();
-            var response = client.UntagResource(new UntagResourceRequest 
+            var response = client.UntagResource(new UntagResourceRequest
             {
                 ResourceArn = "arn:aws:ecs:region:aws_account_id:cluster/dev",
                 TagKeys = new List<string> {
@@ -1363,17 +1361,17 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSUpdateCapacityProvider()
         {
-            #region example-1
+            #region UpdateCapacityProvider-1
 
             var client = new AmazonECSClient();
-            var response = client.UpdateCapacityProvider(new UpdateCapacityProviderRequest 
+            var response = client.UpdateCapacityProvider(new UpdateCapacityProviderRequest
             {
-                Name = "MyCapacityProvider",
                 AutoScalingGroupProvider = new AutoScalingGroupProviderUpdate { ManagedScaling = new ManagedScaling {
                     InstanceWarmupPeriod = 150,
                     Status = "ENABLED",
                     TargetCapacity = 90
-                } }
+                } },
+                Name = "MyCapacityProvider"
             });
 
             CapacityProvider capacityProvider = response.CapacityProvider;
@@ -1383,10 +1381,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSUpdateCluster()
         {
-            #region example-1
+            #region UpdateCluster-1
 
             var client = new AmazonECSClient();
-            var response = client.UpdateCluster(new UpdateClusterRequest 
+            var response = client.UpdateCluster(new UpdateClusterRequest
             {
                 Cluster = "ECS-project-update-cluster",
                 Settings = new List<ClusterSetting> {
@@ -1404,10 +1402,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSUpdateCluster()
         {
-            #region example-2
+            #region UpdateCluster-2
 
             var client = new AmazonECSClient();
-            var response = client.UpdateCluster(new UpdateClusterRequest 
+            var response = client.UpdateCluster(new UpdateClusterRequest
             {
                 Cluster = "ECS-project-update-cluster",
                 ServiceConnectDefaults = new ClusterServiceConnectDefaultsRequest { Namespace = "test" }
@@ -1420,10 +1418,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSUpdateClusterSettings()
         {
-            #region example-1
+            #region UpdateClusterSettings-1
 
             var client = new AmazonECSClient();
-            var response = client.UpdateClusterSettings(new UpdateClusterSettingsRequest 
+            var response = client.UpdateClusterSettings(new UpdateClusterSettingsRequest
             {
                 Cluster = "default",
                 Settings = new List<ClusterSetting> {
@@ -1441,10 +1439,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSUpdateContainerAgent()
         {
-            #region example-1
+            #region UpdateContainerAgent-1
 
             var client = new AmazonECSClient();
-            var response = client.UpdateContainerAgent(new UpdateContainerAgentRequest 
+            var response = client.UpdateContainerAgent(new UpdateContainerAgentRequest
             {
                 Cluster = "MyCluster",
                 ContainerInstance = "53ac7152-dcd1-4102-81f5-208962864132"
@@ -1457,10 +1455,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSUpdateContainerInstancesState()
         {
-            #region example-1
+            #region UpdateContainerInstancesState-1
 
             var client = new AmazonECSClient();
-            var response = client.UpdateContainerInstancesState(new UpdateContainerInstancesStateRequest 
+            var response = client.UpdateContainerInstancesState(new UpdateContainerInstancesStateRequest
             {
                 Cluster = "default",
                 ContainerInstances = new List<string> {
@@ -1477,10 +1475,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSUpdateDaemon()
         {
-            #region example-1
+            #region UpdateDaemon-1
 
             var client = new AmazonECSClient();
-            var response = client.UpdateDaemon(new UpdateDaemonRequest 
+            var response = client.UpdateDaemon(new UpdateDaemonRequest
             {
                 CapacityProviderArns = new List<string> {
                     "arn:aws:ecs:us-east-1:123456789012:capacity-provider/my-capacity-provider"
@@ -1493,21 +1491,21 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
                 }
             });
 
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string daemonArn = response.DaemonArn;
             string deploymentArn = response.DeploymentArn;
-            string status = response.Status;
-            DateTime updatedAt = response.UpdatedAt;
+            DaemonStatus status = response.Status;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void ECSUpdateService()
         {
-            #region example-1
+            #region UpdateService-1
 
             var client = new AmazonECSClient();
-            var response = client.UpdateService(new UpdateServiceRequest 
+            var response = client.UpdateService(new UpdateServiceRequest
             {
                 Service = "my-http-service",
                 TaskDefinition = "amazon-ecs-sample"
@@ -1519,10 +1517,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSUpdateService()
         {
-            #region example-2
+            #region UpdateService-2
 
             var client = new AmazonECSClient();
-            var response = client.UpdateService(new UpdateServiceRequest 
+            var response = client.UpdateService(new UpdateServiceRequest
             {
                 DesiredCount = 10,
                 Service = "my-http-service"
@@ -1534,10 +1532,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSUpdateService()
         {
-            #region example-3
+            #region UpdateService-3
 
             var client = new AmazonECSClient();
-            var response = client.UpdateService(new UpdateServiceRequest 
+            var response = client.UpdateService(new UpdateServiceRequest
             {
                 DeploymentConfiguration = new DeploymentConfiguration {
                     LifecycleHooks = new List<DeploymentLifecycleHook> {
@@ -1563,10 +1561,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSUpdateService()
         {
-            #region example-4
+            #region UpdateService-4
 
             var client = new AmazonECSClient();
-            var response = client.UpdateService(new UpdateServiceRequest 
+            var response = client.UpdateService(new UpdateServiceRequest
             {
                 Monitoring = new MonitoringConfiguration { MetricConfigurations = new List<MetricConfiguration> {
                     new MetricConfiguration {
@@ -1586,10 +1584,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSUpdateServicePrimaryTaskSet()
         {
-            #region example-1
+            #region UpdateServicePrimaryTaskSet-1
 
             var client = new AmazonECSClient();
-            var response = client.UpdateServicePrimaryTaskSet(new UpdateServicePrimaryTaskSetRequest 
+            var response = client.UpdateServicePrimaryTaskSet(new UpdateServicePrimaryTaskSetRequest
             {
                 Cluster = "MyCluster",
                 PrimaryTaskSet = "arn:aws:ecs:us-west-2:123456789012:task-set/MyCluster/MyService/ecs-svc/1234567890123456789",
@@ -1603,10 +1601,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSUpdateTaskProtection()
         {
-            #region example-1
+            #region UpdateTaskProtection-1
 
             var client = new AmazonECSClient();
-            var response = client.UpdateTaskProtection(new UpdateTaskProtectionRequest 
+            var response = client.UpdateTaskProtection(new UpdateTaskProtectionRequest
             {
                 Cluster = "test-task-protection",
                 ExpiresInMinutes = 60,
@@ -1624,10 +1622,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSUpdateTaskProtection()
         {
-            #region example-2
+            #region UpdateTaskProtection-2
 
             var client = new AmazonECSClient();
-            var response = client.UpdateTaskProtection(new UpdateTaskProtectionRequest 
+            var response = client.UpdateTaskProtection(new UpdateTaskProtectionRequest
             {
                 Cluster = "test-task-protection",
                 ProtectionEnabled = true,
@@ -1644,10 +1642,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSUpdateTaskProtection()
         {
-            #region example-3
+            #region UpdateTaskProtection-3
 
             var client = new AmazonECSClient();
-            var response = client.UpdateTaskProtection(new UpdateTaskProtectionRequest 
+            var response = client.UpdateTaskProtection(new UpdateTaskProtectionRequest
             {
                 Cluster = "test-task-protection",
                 ProtectionEnabled = false,
@@ -1664,15 +1662,15 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSUpdateTaskSet()
         {
-            #region example-1
+            #region UpdateTaskSet-1
 
             var client = new AmazonECSClient();
-            var response = client.UpdateTaskSet(new UpdateTaskSetRequest 
+            var response = client.UpdateTaskSet(new UpdateTaskSetRequest
             {
                 Cluster = "MyCluster",
                 Scale = new Scale {
-                    Value = 50,
-                    Unit = "PERCENT"
+                    Unit = "PERCENT",
+                    Value = 50
                 },
                 Service = "MyService",
                 TaskSet = "arn:aws:ecs:us-west-2:123456789012:task-set/MyCluster/MyService/ecs-svc/1234567890123456789"
@@ -1683,13 +1681,10 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

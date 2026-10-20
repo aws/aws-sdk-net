@@ -1,0 +1,188 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.LexModelsV2.Model
+{
+    /// <summary>
+    /// Contains fields describing a condition by which to filter the paths. The expression
+    /// may be understood as <c>name</c> <c>operator</c> <c>values</c>. For example:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>LocaleId EQ en</c> – The locale is "en".
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>BotVersion EQ 2</c> – The bot version is equal to two.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// The operators that each filter supports are listed below:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>BotAlias</c> – <c>EQ</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>BotVersion</c> – <c>EQ</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>LocaleId</c> – <c>EQ</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>Modality</c> – <c>EQ</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>Channel</c> – <c>EQ</c>.
+    /// </para>
+    ///  </li> </ul>
+    /// </summary>
+    public partial class AnalyticsPathFilter
+    {
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The category by which to filter the intent paths. The descriptions for each option
+        /// are as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>BotAlias</c> – The name of the bot alias.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>BotVersion</c> – The version of the bot.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>LocaleId</c> – The locale of the bot.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Modality</c> – The modality of the session with the bot (audio, DTMF, or text).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Channel</c> – The channel that the bot is integrated with.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public AnalyticsCommonFilterName Name { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Name property is set.
+        /// </summary>
+        internal bool IsSetName() => this.Name != null;
+
+        /// <summary>
+        /// Gets and sets the property Operator. 
+        /// <para>
+        /// The operation by which to filter the category. The following operations are possible:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CO</c> – Contains
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>EQ</c> – Equals
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>GT</c> – Greater than
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>LT</c> – Less than
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The operators that each filter supports are listed below:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>BotAlias</c> – <c>EQ</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>BotVersion</c> – <c>EQ</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>LocaleId</c> – <c>EQ</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Modality</c> – <c>EQ</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Channel</c> – <c>EQ</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public AnalyticsFilterOperator Operator { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Operator property is set.
+        /// </summary>
+        internal bool IsSetOperator() => this.Operator != null;
+
+        /// <summary>
+        /// Gets and sets the property Values. 
+        /// <para>
+        /// An array containing the values of the category by which to apply the operator to filter
+        /// the results. You can provide multiple values if the operator is <c>EQ</c> or <c>CO</c>.
+        /// If you provide multiple values, you filter for results that equal/contain any of the
+        /// values. For example, if the <c>name</c>, <c>operator</c>, and <c>values</c> fields
+        /// are <c>Modality</c>, <c>EQ</c>, and <c>[Speech, Text]</c>, the operation filters for
+        /// results where the modality was either <c>Speech</c> or <c>Text</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 5)]
+        public List<string> Values { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the Values property is set.
+        /// </summary>
+        internal bool IsSetValues() => this.Values != null && (this.Values.Count > 0 || !AWSConfigs.InitializeCollections);
+    }
+}
