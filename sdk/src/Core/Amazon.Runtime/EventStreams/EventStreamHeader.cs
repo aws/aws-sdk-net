@@ -21,6 +21,7 @@
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 using System;
+using System.Buffers.Binary;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Net;
@@ -148,7 +149,7 @@ namespace Amazon.Runtime.EventStreams
         string AsString();
 
         /// <summary>
-        /// Sets the current value. Utf-8 encoded. Max byte size is 2^16 - 1
+        /// Sets the current value. Utf-8 encoded. Max byte size is 2^15 - 1
         /// </summary>
         void SetString(string value);
 
@@ -204,6 +205,18 @@ namespace Amazon.Runtime.EventStreams
         private const int _sizeOfGuid = 16;
 
         /// <summary>
+        /// Maximum encoded length, in bytes, of a header name (1-byte unsigned length field).
+        /// </summary>
+        private const int _maxNameLength = 255;
+
+        /// <summary>
+        /// Maximum encoded length, in bytes, of a string or byte-array header value. The length
+        /// field is two bytes (and could hold 65,535), but the protocol caps the value at the
+        /// signed 16-bit maximum (INT16_MAX, 2^15 - 1), so the encoder must enforce the lower limit.
+        /// </summary>
+        private const int _maxValueLength = short.MaxValue;
+
+        /// <summary>
         /// Name for the Header. Maximum of 255 bytes.
         /// </summary>
         public string Name { get; }
@@ -240,7 +253,7 @@ namespace Amazon.Runtime.EventStreams
 
             header.HeaderType = (EventStreamHeaderType)buffer[newOffset++];
 
-            Int16 valueLength = 0;
+            int valueLength = 0;
             switch (header.HeaderType)
             {
                 case EventStreamHeaderType.BoolTrue:
@@ -266,14 +279,18 @@ namespace Amazon.Runtime.EventStreams
                     newOffset += _sizeOfInt64;
                     break;
                 case EventStreamHeaderType.ByteBuf:
-                    valueLength = IPAddress.NetworkToHostOrder(BitConverter.ToInt16(buffer, newOffset));
+                    // Two-byte big-endian length field. The protocol caps the value at INT16_MAX;
+                    // reading it as unsigned keeps the decoder aligned for any on-wire length.
+                    valueLength = BinaryPrimitives.ReadUInt16BigEndian(buffer.AsSpan(newOffset));
                     newOffset += _sizeOfInt16;
                     header.HeaderValue = new byte[valueLength];
                     Buffer.BlockCopy(buffer, newOffset, header.HeaderValue as byte[], 0, valueLength);
                     newOffset += valueLength;
                     break;
                 case EventStreamHeaderType.String:
-                    valueLength = IPAddress.NetworkToHostOrder(BitConverter.ToInt16(buffer, newOffset));
+                    // Two-byte big-endian length field. The protocol caps the value at INT16_MAX;
+                    // reading it as unsigned keeps the decoder aligned for any on-wire length.
+                    valueLength = BinaryPrimitives.ReadUInt16BigEndian(buffer.AsSpan(newOffset));
                     newOffset += _sizeOfInt16;
                     header.HeaderValue = Encoding.UTF8.GetString(buffer, newOffset, valueLength);
                     newOffset += valueLength;
@@ -316,14 +333,39 @@ namespace Amazon.Runtime.EventStreams
         /// </returns>
         public int WriteToBuffer(byte[] buffer, int offset)
         {
-            var newOffset = offset;
-            buffer[newOffset++] = (byte)Name.Length;
+            // Validate every variable-length field up front, before writing any bytes, so a
+            // rejected header leaves no partially serialized frame on the wire.
             var nameBytes = Encoding.UTF8.GetBytes(Name);
-            Buffer.BlockCopy(nameBytes, 0, buffer, newOffset, Name.Length);
-            newOffset += Name.Length;
+            if (nameBytes.Length > _maxNameLength)
+            {
+                throw new EventStreamParseException(string.Format(CultureInfo.InvariantCulture,
+                    "Header name encodes to {0} bytes, which exceeds the maximum of {1} bytes.",
+                    nameBytes.Length, _maxNameLength));
+            }
+
+            byte[] serializedBytes = null;
+            if (HeaderType == EventStreamHeaderType.String)
+            {
+                serializedBytes = Encoding.UTF8.GetBytes(HeaderValue as string);
+            }
+            else if (HeaderType == EventStreamHeaderType.ByteBuf)
+            {
+                serializedBytes = HeaderValue as byte[];
+            }
+
+            if (serializedBytes != null && serializedBytes.Length > _maxValueLength)
+            {
+                throw new EventStreamParseException(string.Format(CultureInfo.InvariantCulture,
+                    "Header value encodes to {0} bytes, which exceeds the maximum of {1} bytes.",
+                    serializedBytes.Length, _maxValueLength));
+            }
+
+            var newOffset = offset;
+            buffer[newOffset++] = (byte)nameBytes.Length;
+            Buffer.BlockCopy(nameBytes, 0, buffer, newOffset, nameBytes.Length);
+            newOffset += nameBytes.Length;
 
             buffer[newOffset++] = (byte)HeaderType;
-            byte[] serializedBytes = null;
             int valueLength = 0;
 
             switch (HeaderType)
@@ -350,19 +392,11 @@ namespace Amazon.Runtime.EventStreams
                     newOffset += _sizeOfInt64;
                     break;
                 case EventStreamHeaderType.ByteBuf:
-                    serializedBytes = HeaderValue as byte[];
-                    valueLength = serializedBytes.Length;
-                    Buffer.BlockCopy(BitConverter.GetBytes(IPAddress.HostToNetworkOrder((Int16)valueLength)), 0,
-                        buffer, newOffset, 2);
-                    newOffset += _sizeOfInt16;
-                    Buffer.BlockCopy(serializedBytes, 0, buffer, newOffset, valueLength);
-                    newOffset += valueLength;
-                    break;
                 case EventStreamHeaderType.String:
-                    serializedBytes = Encoding.UTF8.GetBytes(HeaderValue as string);
+                    // serializedBytes was computed and length-validated (<= INT16_MAX) up front, so
+                    // it fits the two-byte length field with the high bit clear.
                     valueLength = serializedBytes.Length;
-                    Buffer.BlockCopy(BitConverter.GetBytes(IPAddress.HostToNetworkOrder((Int16)valueLength)), 0,
-                        buffer, newOffset, 2);
+                    BinaryPrimitives.WriteUInt16BigEndian(buffer.AsSpan(newOffset), (ushort)valueLength);
                     newOffset += _sizeOfInt16;
                     Buffer.BlockCopy(serializedBytes, 0, buffer, newOffset, valueLength);
                     newOffset += valueLength;
@@ -400,7 +434,8 @@ namespace Amazon.Runtime.EventStreams
             // [name len] (1) | [utf-8 name] (v)
             // [type (1)]
             // [value (v)]
-            var len = _sizeOfByte + Name.Length + _sizeOfByte;
+            // Name length must be counted in UTF-8 bytes to match WriteToBuffer.
+            var len = _sizeOfByte + Encoding.UTF8.GetByteCount(Name) + _sizeOfByte;
             switch (HeaderType)
             {
                 case EventStreamHeaderType.BoolTrue:
@@ -556,7 +591,7 @@ namespace Amazon.Runtime.EventStreams
         }
 
         /// <summary>
-        /// Sets the current value. Utf-8 encoded. Max byte size is 2^16 - 1
+        /// Sets the current value. Utf-8 encoded. Max byte size is 2^15 - 1
         /// </summary>
         public void SetString(string value)
         {
