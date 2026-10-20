@@ -50,10 +50,9 @@ namespace Amazon.CloudWatchOmni.Model
 
         /// <summary>
         /// Gets and sets the property MaxResults. The maximum number of results to return. Defaults
-        /// to 10. Valid only when searchQuery is *; other searches reject this parameter and
-        /// return at most 10 results.
+        /// to 100.
         /// </summary>
-        [AWSProperty(Min = 1, Max = 50)]
+        [AWSProperty(Min = 1, Max = 100)]
         public int? MaxResults { get; set; }
 
         /// <summary>
@@ -63,8 +62,8 @@ namespace Amazon.CloudWatchOmni.Model
 
         /// <summary>
         /// Gets and sets the property NextToken. A token to retrieve the next page of results.
-        /// Valid only when searchQuery is *; other searches do not paginate and reject this parameter.
-        /// Tokens expire after 24 hours.
+        /// Supply the same searchQuery used on the request that returned it. Tokens expire after
+        /// 24 hours.
         /// </summary>
         public string NextToken { get; set; }
 
