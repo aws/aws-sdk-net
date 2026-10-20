@@ -337,6 +337,27 @@ namespace Amazon.ECS.Model
         internal bool IsSetEnableExecuteCommand() => this.EnableExecuteCommand.HasValue;
 
         /// <summary>
+        /// Gets and sets the property GatewayConnectors. 
+        /// <para>
+        /// The gateway connectors that attach the service to a gateway ingress path. You can
+        /// specify at most one gateway connector.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max = 1)]
+        public List<GatewayConnector> GatewayConnectors { get; set; } = AWSConfigs.InitializeCollections ? new List<GatewayConnector>() : null;
+
+        /// <summary>
+        /// Checks to see if the GatewayConnectors property is set.
+        /// </summary>
+        internal bool IsSetGatewayConnectors() => this.GatewayConnectors != null && (this.GatewayConnectors.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property HealthCheckGracePeriodSeconds. 
         /// <para>
         /// The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy

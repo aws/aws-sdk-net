@@ -133,6 +133,26 @@ namespace Amazon.ECS.Model
         internal bool IsSetFargateEphemeralStorage() => this.FargateEphemeralStorage != null;
 
         /// <summary>
+        /// Gets and sets the property GatewayConnectors. 
+        /// <para>
+        /// The gateway connectors that are associated with the service revision.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max = 1)]
+        public List<GatewayConnector> GatewayConnectors { get; set; } = AWSConfigs.InitializeCollections ? new List<GatewayConnector>() : null;
+
+        /// <summary>
+        /// Checks to see if the GatewayConnectors property is set.
+        /// </summary>
+        internal bool IsSetGatewayConnectors() => this.GatewayConnectors != null && (this.GatewayConnectors.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property GuardDutyEnabled. 
         /// <para>
         /// Indicates whether Runtime Monitoring is turned on.

@@ -60,6 +60,13 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("gatewayConnections", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<GatewayConnection, GatewayConnectionUnmarshaller>(GatewayConnectionUnmarshaller.Instance);
+                    unmarshalledObject.GatewayConnections = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("ingressPaths", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ManagedIngressPath, ManagedIngressPathUnmarshaller>(ManagedIngressPathUnmarshaller.Instance);

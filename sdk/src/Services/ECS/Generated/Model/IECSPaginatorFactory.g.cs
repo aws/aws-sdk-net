@@ -57,6 +57,24 @@ namespace Amazon.ECS.Model
         IListContainerInstancesPaginator ListContainerInstances(ListContainerInstancesRequest request);
 
         /// <summary>
+        /// Paginator for ListGatewayClusterAssociations operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListGatewayClusterAssociationsPaginator ListGatewayClusterAssociations(ListGatewayClusterAssociationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListGatewayRoutes operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListGatewayRoutesPaginator ListGatewayRoutes(ListGatewayRoutesRequest request);
+
+        /// <summary>
+        /// Paginator for ListGateways operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListGatewaysPaginator ListGateways(ListGatewaysRequest request);
+
+        /// <summary>
         /// Paginator for ListServices operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]

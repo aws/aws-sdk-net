@@ -95,6 +95,13 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("gatewayConnectors", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<GatewayConnector, GatewayConnectorUnmarshaller>(GatewayConnectorUnmarshaller.Instance);
+                    unmarshalledObject.GatewayConnectors = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("guardDutyEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;

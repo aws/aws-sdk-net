@@ -2571,6 +2571,389 @@ namespace Amazon.ECS
     }
 
     /// <summary>
+    /// Constants used for properties of type GatewayAlbDesyncMitigationMode.
+    /// </summary>
+    public class GatewayAlbDesyncMitigationMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant Defensive for GatewayAlbDesyncMitigationMode
+        /// </summary>
+        public static readonly GatewayAlbDesyncMitigationMode Defensive = new GatewayAlbDesyncMitigationMode("defensive");
+
+        /// <summary>
+        /// Constant Monitor for GatewayAlbDesyncMitigationMode
+        /// </summary>
+        public static readonly GatewayAlbDesyncMitigationMode Monitor = new GatewayAlbDesyncMitigationMode("monitor");
+
+        /// <summary>
+        /// Constant Strictest for GatewayAlbDesyncMitigationMode
+        /// </summary>
+        public static readonly GatewayAlbDesyncMitigationMode Strictest = new GatewayAlbDesyncMitigationMode("strictest");
+
+        /// <summary>
+        /// Constructs a custom GatewayAlbDesyncMitigationMode for a value not among the defined constants.
+        /// </summary>
+        public GatewayAlbDesyncMitigationMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GatewayAlbDesyncMitigationMode FindValue(string value)
+        {
+            return FindValue<GatewayAlbDesyncMitigationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GatewayAlbDesyncMitigationMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type GatewayAlbProtocol.
+    /// </summary>
+    public class GatewayAlbProtocol : ConstantClass
+    {
+        /// <summary>
+        /// Constant HTTP for GatewayAlbProtocol
+        /// </summary>
+        public static readonly GatewayAlbProtocol HTTP = new GatewayAlbProtocol("HTTP");
+
+        /// <summary>
+        /// Constant HTTPS for GatewayAlbProtocol
+        /// </summary>
+        public static readonly GatewayAlbProtocol HTTPS = new GatewayAlbProtocol("HTTPS");
+
+        /// <summary>
+        /// Constructs a custom GatewayAlbProtocol for a value not among the defined constants.
+        /// </summary>
+        public GatewayAlbProtocol(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GatewayAlbProtocol FindValue(string value)
+        {
+            return FindValue<GatewayAlbProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GatewayAlbProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type GatewayClusterAssociationStatus.
+    /// </summary>
+    public class GatewayClusterAssociationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for GatewayClusterAssociationStatus
+        /// </summary>
+        public static readonly GatewayClusterAssociationStatus ACTIVE = new GatewayClusterAssociationStatus("ACTIVE");
+
+        /// <summary>
+        /// Constant DISASSOCIATING for GatewayClusterAssociationStatus
+        /// </summary>
+        public static readonly GatewayClusterAssociationStatus DISASSOCIATING = new GatewayClusterAssociationStatus("DISASSOCIATING");
+
+        /// <summary>
+        /// Constant INACTIVE for GatewayClusterAssociationStatus
+        /// </summary>
+        public static readonly GatewayClusterAssociationStatus INACTIVE = new GatewayClusterAssociationStatus("INACTIVE");
+
+        /// <summary>
+        /// Constructs a custom GatewayClusterAssociationStatus for a value not among the defined constants.
+        /// </summary>
+        public GatewayClusterAssociationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GatewayClusterAssociationStatus FindValue(string value)
+        {
+            return FindValue<GatewayClusterAssociationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GatewayClusterAssociationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type GatewayConnectorHealthCheckProtocol.
+    /// </summary>
+    public class GatewayConnectorHealthCheckProtocol : ConstantClass
+    {
+        /// <summary>
+        /// Constant HTTP for GatewayConnectorHealthCheckProtocol
+        /// </summary>
+        public static readonly GatewayConnectorHealthCheckProtocol HTTP = new GatewayConnectorHealthCheckProtocol("HTTP");
+
+        /// <summary>
+        /// Constant HTTPS for GatewayConnectorHealthCheckProtocol
+        /// </summary>
+        public static readonly GatewayConnectorHealthCheckProtocol HTTPS = new GatewayConnectorHealthCheckProtocol("HTTPS");
+
+        /// <summary>
+        /// Constructs a custom GatewayConnectorHealthCheckProtocol for a value not among the defined constants.
+        /// </summary>
+        public GatewayConnectorHealthCheckProtocol(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GatewayConnectorHealthCheckProtocol FindValue(string value)
+        {
+            return FindValue<GatewayConnectorHealthCheckProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GatewayConnectorHealthCheckProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type GatewayElbIpAddressType.
+    /// </summary>
+    public class GatewayElbIpAddressType : ConstantClass
+    {
+        /// <summary>
+        /// Constant Dualstack for GatewayElbIpAddressType
+        /// </summary>
+        public static readonly GatewayElbIpAddressType Dualstack = new GatewayElbIpAddressType("dualstack");
+
+        /// <summary>
+        /// Constant DualstackWithoutPublicIpv4 for GatewayElbIpAddressType
+        /// </summary>
+        public static readonly GatewayElbIpAddressType DualstackWithoutPublicIpv4 = new GatewayElbIpAddressType("dualstack-without-public-ipv4");
+
+        /// <summary>
+        /// Constant Ipv4 for GatewayElbIpAddressType
+        /// </summary>
+        public static readonly GatewayElbIpAddressType Ipv4 = new GatewayElbIpAddressType("ipv4");
+
+        /// <summary>
+        /// Constructs a custom GatewayElbIpAddressType for a value not among the defined constants.
+        /// </summary>
+        public GatewayElbIpAddressType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GatewayElbIpAddressType FindValue(string value)
+        {
+            return FindValue<GatewayElbIpAddressType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GatewayElbIpAddressType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type GatewayElbScheme.
+    /// </summary>
+    public class GatewayElbScheme : ConstantClass
+    {
+        /// <summary>
+        /// Constant Internal for GatewayElbScheme
+        /// </summary>
+        public static readonly GatewayElbScheme Internal = new GatewayElbScheme("internal");
+
+        /// <summary>
+        /// Constant InternetFacing for GatewayElbScheme
+        /// </summary>
+        public static readonly GatewayElbScheme InternetFacing = new GatewayElbScheme("internet-facing");
+
+        /// <summary>
+        /// Constructs a custom GatewayElbScheme for a value not among the defined constants.
+        /// </summary>
+        public GatewayElbScheme(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GatewayElbScheme FindValue(string value)
+        {
+            return FindValue<GatewayElbScheme>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GatewayElbScheme(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type GatewayRouteStatus.
+    /// </summary>
+    public class GatewayRouteStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for GatewayRouteStatus
+        /// </summary>
+        public static readonly GatewayRouteStatus ACTIVE = new GatewayRouteStatus("ACTIVE");
+
+        /// <summary>
+        /// Constant CREATE_FAILED for GatewayRouteStatus
+        /// </summary>
+        public static readonly GatewayRouteStatus CREATE_FAILED = new GatewayRouteStatus("CREATE_FAILED");
+
+        /// <summary>
+        /// Constant CREATE_IN_PROGRESS for GatewayRouteStatus
+        /// </summary>
+        public static readonly GatewayRouteStatus CREATE_IN_PROGRESS = new GatewayRouteStatus("CREATE_IN_PROGRESS");
+
+        /// <summary>
+        /// Constant DELETE_FAILED for GatewayRouteStatus
+        /// </summary>
+        public static readonly GatewayRouteStatus DELETE_FAILED = new GatewayRouteStatus("DELETE_FAILED");
+
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for GatewayRouteStatus
+        /// </summary>
+        public static readonly GatewayRouteStatus DELETE_IN_PROGRESS = new GatewayRouteStatus("DELETE_IN_PROGRESS");
+
+        /// <summary>
+        /// Constant UPDATE_FAILED for GatewayRouteStatus
+        /// </summary>
+        public static readonly GatewayRouteStatus UPDATE_FAILED = new GatewayRouteStatus("UPDATE_FAILED");
+
+        /// <summary>
+        /// Constant UPDATE_IN_PROGRESS for GatewayRouteStatus
+        /// </summary>
+        public static readonly GatewayRouteStatus UPDATE_IN_PROGRESS = new GatewayRouteStatus("UPDATE_IN_PROGRESS");
+
+        /// <summary>
+        /// Constructs a custom GatewayRouteStatus for a value not among the defined constants.
+        /// </summary>
+        public GatewayRouteStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GatewayRouteStatus FindValue(string value)
+        {
+            return FindValue<GatewayRouteStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GatewayRouteStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type GatewayStatus.
+    /// </summary>
+    public class GatewayStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for GatewayStatus
+        /// </summary>
+        public static readonly GatewayStatus ACTIVE = new GatewayStatus("ACTIVE");
+
+        /// <summary>
+        /// Constant DELETED for GatewayStatus
+        /// </summary>
+        public static readonly GatewayStatus DELETED = new GatewayStatus("DELETED");
+
+        /// <summary>
+        /// Constant UPDATE_COMPLETE for GatewayStatus
+        /// </summary>
+        public static readonly GatewayStatus UPDATE_COMPLETE = new GatewayStatus("UPDATE_COMPLETE");
+
+        /// <summary>
+        /// Constant UPDATE_FAILED for GatewayStatus
+        /// </summary>
+        public static readonly GatewayStatus UPDATE_FAILED = new GatewayStatus("UPDATE_FAILED");
+
+        /// <summary>
+        /// Constant UPDATE_IN_PROGRESS for GatewayStatus
+        /// </summary>
+        public static readonly GatewayStatus UPDATE_IN_PROGRESS = new GatewayStatus("UPDATE_IN_PROGRESS");
+
+        /// <summary>
+        /// Constructs a custom GatewayStatus for a value not among the defined constants.
+        /// </summary>
+        public GatewayStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GatewayStatus FindValue(string value)
+        {
+            return FindValue<GatewayStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GatewayStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type HealthStatus.
     /// </summary>
     public class HealthStatus : ConstantClass
@@ -3566,6 +3949,47 @@ namespace Amazon.ECS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PlatformDeviceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PropagateGatewayTags.
+    /// </summary>
+    public class PropagateGatewayTags : ConstantClass
+    {
+        /// <summary>
+        /// Constant GATEWAY for PropagateGatewayTags
+        /// </summary>
+        public static readonly PropagateGatewayTags GATEWAY = new PropagateGatewayTags("GATEWAY");
+
+        /// <summary>
+        /// Constant NONE for PropagateGatewayTags
+        /// </summary>
+        public static readonly PropagateGatewayTags NONE = new PropagateGatewayTags("NONE");
+
+        /// <summary>
+        /// Constructs a custom PropagateGatewayTags for a value not among the defined constants.
+        /// </summary>
+        public PropagateGatewayTags(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PropagateGatewayTags FindValue(string value)
+        {
+            return FindValue<PropagateGatewayTags>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PropagateGatewayTags(string value)
         {
             return FindValue(value);
         }

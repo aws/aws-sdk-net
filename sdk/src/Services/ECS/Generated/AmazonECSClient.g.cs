@@ -270,6 +270,118 @@ namespace Amazon.ECS
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Associates a gateway with an Amazon ECS cluster. After a cluster is associated with
+        /// a gateway, services in that cluster can use the gateway for ingress. No changes take
+        /// effect until you update a service in the cluster to use the gateway. A single cluster
+        /// can be associated with up to 5 gateways.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateGatewayWithCluster service method.</param>
+        /// <returns>The response from the AssociateGatewayWithCluster service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.GatewayNotFoundException">
+        /// The specified gateway wasn't found. Check that the gateway name or ARN is correct
+        /// and that the gateway exists in your account and Region.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/AssociateGatewayWithCluster">REST API Reference for AssociateGatewayWithCluster Operation</seealso>
+        public virtual AssociateGatewayWithClusterResponse AssociateGatewayWithCluster(AssociateGatewayWithClusterRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateGatewayWithClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateGatewayWithClusterResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateGatewayWithClusterResponse>(request, options);
+        }
+#else
+        internal virtual AssociateGatewayWithClusterResponse AssociateGatewayWithCluster(AssociateGatewayWithClusterRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateGatewayWithClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateGatewayWithClusterResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateGatewayWithClusterResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Associates a gateway with an Amazon ECS cluster. After a cluster is associated with
+        /// a gateway, services in that cluster can use the gateway for ingress. No changes take
+        /// effect until you update a service in the cluster to use the gateway. A single cluster
+        /// can be associated with up to 5 gateways.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateGatewayWithCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the AssociateGatewayWithCluster service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.GatewayNotFoundException">
+        /// The specified gateway wasn't found. Check that the gateway name or ARN is correct
+        /// and that the gateway exists in your account and Region.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/AssociateGatewayWithCluster">REST API Reference for AssociateGatewayWithCluster Operation</seealso>
+        public virtual Task<AssociateGatewayWithClusterResponse> AssociateGatewayWithClusterAsync(AssociateGatewayWithClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateGatewayWithClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateGatewayWithClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateGatewayWithClusterResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Continues or rolls back an Amazon ECS service deployment that is paused at a lifecycle
         /// hook.
         /// 
@@ -934,6 +1046,118 @@ namespace Amazon.ECS
             options.ResponseUnmarshaller = CreateExpressGatewayServiceResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateExpressGatewayServiceResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a gateway. A gateway defines and dynamically manages ingress paths for your
+        /// Amazon ECS services, handling traffic routing and infrastructure across multiple services
+        /// while optimizing infrastructure usage. <c>CreateGateway</c> is a synchronous operation
+        /// and the gateway is returned with a status of <c>ACTIVE</c>. The load balancers and
+        /// other infrastructure that a gateway manages aren't created until a service in an associated
+        /// cluster begins using the gateway.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>iam:PassRole</c> permission for the infrastructure
+        /// role that you specify in <c>infrastructureRoleArn</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGateway service method.</param>
+        /// <returns>The response from the CreateGateway service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateGateway">REST API Reference for CreateGateway Operation</seealso>
+        public virtual CreateGatewayResponse CreateGateway(CreateGatewayRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<CreateGatewayResponse>(request, options);
+        }
+#else
+        internal virtual CreateGatewayResponse CreateGateway(CreateGatewayRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<CreateGatewayResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Creates a gateway. A gateway defines and dynamically manages ingress paths for your
+        /// Amazon ECS services, handling traffic routing and infrastructure across multiple services
+        /// while optimizing infrastructure usage. <c>CreateGateway</c> is a synchronous operation
+        /// and the gateway is returned with a status of <c>ACTIVE</c>. The load balancers and
+        /// other infrastructure that a gateway manages aren't created until a service in an associated
+        /// cluster begins using the gateway.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>iam:PassRole</c> permission for the infrastructure
+        /// role that you specify in <c>infrastructureRoleArn</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGateway service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateGateway service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateGateway">REST API Reference for CreateGateway Operation</seealso>
+        public virtual Task<CreateGatewayResponse> CreateGatewayAsync(CreateGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGatewayResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateGatewayResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -2632,6 +2856,112 @@ namespace Amazon.ECS
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Deletes a gateway. Before you can delete a gateway, deletion protection must be disabled
+        /// and the gateway must not have any cluster associations that are in the <c>ACTIVE</c>
+        /// or <c>DISASSOCIATING</c> state. If associations exist, the operation fails; disassociate
+        /// all clusters first. <c>DeleteGateway</c> is a synchronous operation. After you delete
+        /// a gateway, subsequent requests for it return a <c>GatewayNotFoundException</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGateway service method.</param>
+        /// <returns>The response from the DeleteGateway service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.GatewayNotFoundException">
+        /// The specified gateway wasn't found. Check that the gateway name or ARN is correct
+        /// and that the gateway exists in your account and Region.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteGateway">REST API Reference for DeleteGateway Operation</seealso>
+        public virtual DeleteGatewayResponse DeleteGateway(DeleteGatewayRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteGatewayResponse>(request, options);
+        }
+#else
+        internal virtual DeleteGatewayResponse DeleteGateway(DeleteGatewayRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteGatewayResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Deletes a gateway. Before you can delete a gateway, deletion protection must be disabled
+        /// and the gateway must not have any cluster associations that are in the <c>ACTIVE</c>
+        /// or <c>DISASSOCIATING</c> state. If associations exist, the operation fails; disassociate
+        /// all clusters first. <c>DeleteGateway</c> is a synchronous operation. After you delete
+        /// a gateway, subsequent requests for it return a <c>GatewayNotFoundException</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGateway service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteGateway service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.GatewayNotFoundException">
+        /// The specified gateway wasn't found. Check that the gateway name or ARN is correct
+        /// and that the gateway exists in your account and Region.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteGateway">REST API Reference for DeleteGateway Operation</seealso>
+        public virtual Task<DeleteGatewayResponse> DeleteGatewayAsync(DeleteGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGatewayResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteGatewayResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Deletes a specified service within a cluster. You can delete a service if you have
         /// no running tasks in it and the desired task count is zero. If the service is actively
         /// maintaining tasks, you can't delete it, and you must update the service to a desired
@@ -4166,6 +4496,316 @@ namespace Amazon.ECS
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Describes a gateway, including its configuration, status, and the type-specific infrastructure
+        /// settings that it uses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGateway service method.</param>
+        /// <returns>The response from the DescribeGateway service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.GatewayNotFoundException">
+        /// The specified gateway wasn't found. Check that the gateway name or ARN is correct
+        /// and that the gateway exists in your account and Region.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeGateway">REST API Reference for DescribeGateway Operation</seealso>
+        public virtual DescribeGatewayResponse DescribeGateway(DescribeGatewayRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeGatewayResponse>(request, options);
+        }
+#else
+        internal virtual DescribeGatewayResponse DescribeGateway(DescribeGatewayRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeGatewayResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Describes a gateway, including its configuration, status, and the type-specific infrastructure
+        /// settings that it uses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGateway service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeGateway service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.GatewayNotFoundException">
+        /// The specified gateway wasn't found. Check that the gateway name or ARN is correct
+        /// and that the gateway exists in your account and Region.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeGateway">REST API Reference for DescribeGateway Operation</seealso>
+        public virtual Task<DescribeGatewayResponse> DescribeGatewayAsync(DescribeGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeGatewayResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeGatewayResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns the infrastructure that a gateway has created and manages, so that you can
+        /// follow the traffic path from top-level shared resources, such as load balancers, to
+        /// the service-specific resources represented as gateway routes. Responses include only
+        /// the Amazon Resource Names (ARNs) of gateway-managed infrastructure. For the current
+        /// state of a resource, describe it with the corresponding Amazon Web Services service
+        /// (Elastic Load Balancing, Amazon EC2, or Amazon Web Services Certificate Manager).
+        /// The results are paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGatewayResources service method.</param>
+        /// <returns>The response from the DescribeGatewayResources service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.GatewayNotFoundException">
+        /// The specified gateway wasn't found. Check that the gateway name or ARN is correct
+        /// and that the gateway exists in your account and Region.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeGatewayResources">REST API Reference for DescribeGatewayResources Operation</seealso>
+        public virtual DescribeGatewayResourcesResponse DescribeGatewayResources(DescribeGatewayResourcesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeGatewayResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeGatewayResourcesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeGatewayResourcesResponse>(request, options);
+        }
+#else
+        internal virtual DescribeGatewayResourcesResponse DescribeGatewayResources(DescribeGatewayResourcesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeGatewayResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeGatewayResourcesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeGatewayResourcesResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns the infrastructure that a gateway has created and manages, so that you can
+        /// follow the traffic path from top-level shared resources, such as load balancers, to
+        /// the service-specific resources represented as gateway routes. Responses include only
+        /// the Amazon Resource Names (ARNs) of gateway-managed infrastructure. For the current
+        /// state of a resource, describe it with the corresponding Amazon Web Services service
+        /// (Elastic Load Balancing, Amazon EC2, or Amazon Web Services Certificate Manager).
+        /// The results are paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGatewayResources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeGatewayResources service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.GatewayNotFoundException">
+        /// The specified gateway wasn't found. Check that the gateway name or ARN is correct
+        /// and that the gateway exists in your account and Region.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeGatewayResources">REST API Reference for DescribeGatewayResources Operation</seealso>
+        public virtual Task<DescribeGatewayResourcesResponse> DescribeGatewayResourcesAsync(DescribeGatewayResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeGatewayResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeGatewayResourcesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeGatewayResourcesResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Describes a gateway route, including its status, the service it routes traffic to,
+        /// and the service-specific infrastructure, such as target groups and listener rules,
+        /// that the gateway manages for it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGatewayRoute service method.</param>
+        /// <returns>The response from the DescribeGatewayRoute service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ResourceNotFoundException">
+        /// The specified resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeGatewayRoute">REST API Reference for DescribeGatewayRoute Operation</seealso>
+        public virtual DescribeGatewayRouteResponse DescribeGatewayRoute(DescribeGatewayRouteRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeGatewayRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeGatewayRouteResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeGatewayRouteResponse>(request, options);
+        }
+#else
+        internal virtual DescribeGatewayRouteResponse DescribeGatewayRoute(DescribeGatewayRouteRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeGatewayRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeGatewayRouteResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeGatewayRouteResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Describes a gateway route, including its status, the service it routes traffic to,
+        /// and the service-specific infrastructure, such as target groups and listener rules,
+        /// that the gateway manages for it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGatewayRoute service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeGatewayRoute service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ResourceNotFoundException">
+        /// The specified resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeGatewayRoute">REST API Reference for DescribeGatewayRoute Operation</seealso>
+        public virtual Task<DescribeGatewayRouteResponse> DescribeGatewayRouteAsync(DescribeGatewayRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeGatewayRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeGatewayRouteResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeGatewayRouteResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Describes one or more of your service deployments.
         /// 
         ///  
@@ -4840,6 +5480,126 @@ namespace Amazon.ECS
             options.ResponseUnmarshaller = DescribeTasksResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeTasksResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Removes the association between a gateway and an Amazon ECS cluster. The association
+        /// remains in the <c>DISASSOCIATING</c> state until you remove all of the gateway routes
+        /// for the cluster by updating the associated services. You can use <c>ListGatewayRoutes</c>
+        /// with a cluster filter to determine which routes are preventing disassociation. No
+        /// infrastructure changes are made until the affected services are updated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateGatewayFromCluster service method.</param>
+        /// <returns>The response from the DisassociateGatewayFromCluster service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.GatewayNotFoundException">
+        /// The specified gateway wasn't found. Check that the gateway name or ARN is correct
+        /// and that the gateway exists in your account and Region.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ResourceNotFoundException">
+        /// The specified resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DisassociateGatewayFromCluster">REST API Reference for DisassociateGatewayFromCluster Operation</seealso>
+        public virtual DisassociateGatewayFromClusterResponse DisassociateGatewayFromCluster(DisassociateGatewayFromClusterRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateGatewayFromClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateGatewayFromClusterResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateGatewayFromClusterResponse>(request, options);
+        }
+#else
+        internal virtual DisassociateGatewayFromClusterResponse DisassociateGatewayFromCluster(DisassociateGatewayFromClusterRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateGatewayFromClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateGatewayFromClusterResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateGatewayFromClusterResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Removes the association between a gateway and an Amazon ECS cluster. The association
+        /// remains in the <c>DISASSOCIATING</c> state until you remove all of the gateway routes
+        /// for the cluster by updating the associated services. You can use <c>ListGatewayRoutes</c>
+        /// with a cluster filter to determine which routes are preventing disassociation. No
+        /// infrastructure changes are made until the affected services are updated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateGatewayFromCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DisassociateGatewayFromCluster service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.GatewayNotFoundException">
+        /// The specified gateway wasn't found. Check that the gateway name or ARN is correct
+        /// and that the gateway exists in your account and Region.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ResourceNotFoundException">
+        /// The specified resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DisassociateGatewayFromCluster">REST API Reference for DisassociateGatewayFromCluster Operation</seealso>
+        public virtual Task<DisassociateGatewayFromClusterResponse> DisassociateGatewayFromClusterAsync(DisassociateGatewayFromClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateGatewayFromClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateGatewayFromClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateGatewayFromClusterResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -5762,6 +6522,300 @@ namespace Amazon.ECS
             options.ResponseUnmarshaller = ListDaemonsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListDaemonsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns a list of the associations between gateways and clusters. You can filter the
+        /// results by gateway, cluster, and status. The results are paginated. We recommend that
+        /// you use pagination to ensure that the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGatewayClusterAssociations service method.</param>
+        /// <returns>The response from the ListGatewayClusterAssociations service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListGatewayClusterAssociations">REST API Reference for ListGatewayClusterAssociations Operation</seealso>
+        public virtual ListGatewayClusterAssociationsResponse ListGatewayClusterAssociations(ListGatewayClusterAssociationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListGatewayClusterAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGatewayClusterAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListGatewayClusterAssociationsResponse>(request, options);
+        }
+#else
+        internal virtual ListGatewayClusterAssociationsResponse ListGatewayClusterAssociations(ListGatewayClusterAssociationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListGatewayClusterAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGatewayClusterAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListGatewayClusterAssociationsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns a list of the associations between gateways and clusters. You can filter the
+        /// results by gateway, cluster, and status. The results are paginated. We recommend that
+        /// you use pagination to ensure that the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGatewayClusterAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListGatewayClusterAssociations service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListGatewayClusterAssociations">REST API Reference for ListGatewayClusterAssociations Operation</seealso>
+        public virtual Task<ListGatewayClusterAssociationsResponse> ListGatewayClusterAssociationsAsync(ListGatewayClusterAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListGatewayClusterAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGatewayClusterAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListGatewayClusterAssociationsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns a list of gateway routes. A gateway route represents the association between
+        /// a service and a gateway and the service-specific infrastructure the gateway manages
+        /// for it. You can filter the results by gateway, cluster, service, container port name,
+        /// and status. The results are paginated. We recommend that you use pagination to ensure
+        /// that the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGatewayRoutes service method.</param>
+        /// <returns>The response from the ListGatewayRoutes service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.GatewayNotFoundException">
+        /// The specified gateway wasn't found. Check that the gateway name or ARN is correct
+        /// and that the gateway exists in your account and Region.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListGatewayRoutes">REST API Reference for ListGatewayRoutes Operation</seealso>
+        public virtual ListGatewayRoutesResponse ListGatewayRoutes(ListGatewayRoutesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListGatewayRoutesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGatewayRoutesResponseUnmarshaller.Instance;
+
+            return Invoke<ListGatewayRoutesResponse>(request, options);
+        }
+#else
+        internal virtual ListGatewayRoutesResponse ListGatewayRoutes(ListGatewayRoutesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListGatewayRoutesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGatewayRoutesResponseUnmarshaller.Instance;
+
+            return Invoke<ListGatewayRoutesResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns a list of gateway routes. A gateway route represents the association between
+        /// a service and a gateway and the service-specific infrastructure the gateway manages
+        /// for it. You can filter the results by gateway, cluster, service, container port name,
+        /// and status. The results are paginated. We recommend that you use pagination to ensure
+        /// that the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGatewayRoutes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListGatewayRoutes service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.GatewayNotFoundException">
+        /// The specified gateway wasn't found. Check that the gateway name or ARN is correct
+        /// and that the gateway exists in your account and Region.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListGatewayRoutes">REST API Reference for ListGatewayRoutes Operation</seealso>
+        public virtual Task<ListGatewayRoutesResponse> ListGatewayRoutesAsync(ListGatewayRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListGatewayRoutesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGatewayRoutesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListGatewayRoutesResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns a list of gateways in your account. You can filter the results by gateway
+        /// name and status. The results are paginated. We recommend that you use pagination to
+        /// ensure that the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGateways service method.</param>
+        /// <returns>The response from the ListGateways service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListGateways">REST API Reference for ListGateways Operation</seealso>
+        public virtual ListGatewaysResponse ListGateways(ListGatewaysRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListGatewaysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGatewaysResponseUnmarshaller.Instance;
+
+            return Invoke<ListGatewaysResponse>(request, options);
+        }
+#else
+        internal virtual ListGatewaysResponse ListGateways(ListGatewaysRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListGatewaysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGatewaysResponseUnmarshaller.Instance;
+
+            return Invoke<ListGatewaysResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns a list of gateways in your account. You can filter the results by gateway
+        /// name and status. The results are paginated. We recommend that you use pagination to
+        /// ensure that the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGateways service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListGateways service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListGateways">REST API Reference for ListGateways Operation</seealso>
+        public virtual Task<ListGatewaysResponse> ListGatewaysAsync(ListGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListGatewaysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGatewaysResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListGatewaysResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -9274,6 +10328,134 @@ namespace Amazon.ECS
             options.ResponseUnmarshaller = UpdateExpressGatewayServiceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateExpressGatewayServiceResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Modifies the configuration of a gateway. You can change only the properties that can
+        /// be applied without interrupting traffic, and the configuration variant that you provide
+        /// must match the gateway's type. <c>UpdateGateway</c> is an asynchronous operation:
+        /// the changes are applied to each load balancer the gateway manages, and the gateway
+        /// reports a status of <c>UPDATE_IN_PROGRESS</c> until the update completes. If Amazon
+        /// ECS can't update one or more resources, it makes a best effort to update the rest
+        /// and the gateway status changes to <c>UPDATE_FAILED</c>. Use <c>DescribeGateway</c>
+        /// to inspect the gateway's <c>statusReason</c> and failures list, which gives the ARN
+        /// of each load balancer that was not updated and the operation, error code, and message
+        /// for each failure.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify <c>infrastructureRoleArn</c>, you must have the <c>iam:PassRole</c>
+        /// permission for that role.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGateway service method.</param>
+        /// <returns>The response from the UpdateGateway service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.GatewayNotFoundException">
+        /// The specified gateway wasn't found. Check that the gateway name or ARN is correct
+        /// and that the gateway exists in your account and Region.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateGateway">REST API Reference for UpdateGateway Operation</seealso>
+        public virtual UpdateGatewayResponse UpdateGateway(UpdateGatewayRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGatewayResponse>(request, options);
+        }
+#else
+        internal virtual UpdateGatewayResponse UpdateGateway(UpdateGatewayRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGatewayResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Modifies the configuration of a gateway. You can change only the properties that can
+        /// be applied without interrupting traffic, and the configuration variant that you provide
+        /// must match the gateway's type. <c>UpdateGateway</c> is an asynchronous operation:
+        /// the changes are applied to each load balancer the gateway manages, and the gateway
+        /// reports a status of <c>UPDATE_IN_PROGRESS</c> until the update completes. If Amazon
+        /// ECS can't update one or more resources, it makes a best effort to update the rest
+        /// and the gateway status changes to <c>UPDATE_FAILED</c>. Use <c>DescribeGateway</c>
+        /// to inspect the gateway's <c>statusReason</c> and failures list, which gives the ARN
+        /// of each load balancer that was not updated and the operation, error code, and message
+        /// for each failure.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify <c>infrastructureRoleArn</c>, you must have the <c>iam:PassRole</c>
+        /// permission for that role.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGateway service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateGateway service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.GatewayNotFoundException">
+        /// The specified gateway wasn't found. Check that the gateway name or ARN is correct
+        /// and that the gateway exists in your account and Region.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateGateway">REST API Reference for UpdateGateway Operation</seealso>
+        public virtual Task<UpdateGatewayResponse> UpdateGatewayAsync(UpdateGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGatewayResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateGatewayResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK

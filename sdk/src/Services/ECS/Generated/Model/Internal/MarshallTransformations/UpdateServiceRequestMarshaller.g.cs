@@ -135,6 +135,21 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("forceNewDeployment");
                 context.Writer.WriteBooleanValue(publicRequest.ForceNewDeployment.Value);
             }
+            if (publicRequest.IsSetGatewayConnectors())
+            {
+                context.Writer.WritePropertyName("gatewayConnectors");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestGatewayConnectorsListValue in publicRequest.GatewayConnectors)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = GatewayConnectorMarshaller.Instance;
+                    marshaller.Marshall(publicRequestGatewayConnectorsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
             if (publicRequest.IsSetHealthCheckGracePeriodSeconds())
             {
                 context.Writer.WritePropertyName("healthCheckGracePeriodSeconds");

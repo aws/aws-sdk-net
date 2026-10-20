@@ -65,6 +65,30 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Paginator for ListGatewayClusterAssociations operation
+        /// </summary>
+        public IListGatewayClusterAssociationsPaginator ListGatewayClusterAssociations(ListGatewayClusterAssociationsRequest request)
+        {
+            return new ListGatewayClusterAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListGatewayRoutes operation
+        /// </summary>
+        public IListGatewayRoutesPaginator ListGatewayRoutes(ListGatewayRoutesRequest request)
+        {
+            return new ListGatewayRoutesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListGateways operation
+        /// </summary>
+        public IListGatewaysPaginator ListGateways(ListGatewaysRequest request)
+        {
+            return new ListGatewaysPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListServices operation
         /// </summary>
         public IListServicesPaginator ListServices(ListServicesRequest request)
