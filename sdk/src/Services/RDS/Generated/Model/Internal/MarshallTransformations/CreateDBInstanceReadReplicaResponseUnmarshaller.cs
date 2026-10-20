@@ -117,6 +117,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     return CertificateNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("DBCapacityReservationNotFound"))
+                {
+                    return DBCapacityReservationNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("DBClusterNotFoundFault"))
                 {
                     return DBClusterNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -160,6 +164,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientDBInstanceCapacity"))
                 {
                     return InsufficientDBInstanceCapacityExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBCapacityReservationState"))
+                {
+                    return InvalidDBCapacityReservationStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBClusterStateFault"))
                 {

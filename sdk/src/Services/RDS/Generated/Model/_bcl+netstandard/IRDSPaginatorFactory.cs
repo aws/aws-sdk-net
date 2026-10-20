@@ -48,6 +48,16 @@ namespace Amazon.RDS.Model
         IDescribeCertificatesPaginator DescribeCertificates(DescribeCertificatesRequest request);
 
         /// <summary>
+        /// Paginator for DescribeDBCapacityReservations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxRecords",
+            OutputToken = new[] { "Marker" }
+        )]
+        IDescribeDBCapacityReservationsPaginator DescribeDBCapacityReservations(DescribeDBCapacityReservationsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeDBClusterAutomatedBackups operation
         ///</summary>
         [AWSPaginator(

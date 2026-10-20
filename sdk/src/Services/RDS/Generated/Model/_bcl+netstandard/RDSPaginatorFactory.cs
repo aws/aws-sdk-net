@@ -53,6 +53,14 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeDBCapacityReservations operation
+        ///</summary>
+        public IDescribeDBCapacityReservationsPaginator DescribeDBCapacityReservations(DescribeDBCapacityReservationsRequest request) 
+        {
+            return new DescribeDBCapacityReservationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeDBClusterAutomatedBackups operation
         ///</summary>
         public IDescribeDBClusterAutomatedBackupsPaginator DescribeDBClusterAutomatedBackups(DescribeDBClusterAutomatedBackupsRequest request) 

@@ -59,6 +59,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetDBCapacityReservationIdentifier())
+                {
+                    request.Parameters.Add("DBCapacityReservationIdentifier", StringUtils.FromString(publicRequest.DBCapacityReservationIdentifier));
+                }
                 if(publicRequest.IsSetDBInstanceIdentifier())
                 {
                     request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(publicRequest.DBInstanceIdentifier));

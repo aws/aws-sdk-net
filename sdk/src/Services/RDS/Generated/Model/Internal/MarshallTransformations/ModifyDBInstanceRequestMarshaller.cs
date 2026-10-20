@@ -175,6 +175,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DatabaseInsightsMode", StringUtils.FromString(publicRequest.DatabaseInsightsMode));
                 }
+                if(publicRequest.IsSetDBCapacityReservationIdentifier())
+                {
+                    request.Parameters.Add("DBCapacityReservationIdentifier", StringUtils.FromString(publicRequest.DBCapacityReservationIdentifier));
+                }
                 if(publicRequest.IsSetDBInstanceClass())
                 {
                     request.Parameters.Add("DBInstanceClass", StringUtils.FromString(publicRequest.DBInstanceClass));

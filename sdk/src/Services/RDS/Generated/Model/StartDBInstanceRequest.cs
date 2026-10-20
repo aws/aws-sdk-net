@@ -49,7 +49,72 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class StartDBInstanceRequest : AmazonRDSRequest
     {
+        private string _dbCapacityReservationIdentifier;
         private string _dbInstanceIdentifier;
+
+        /// <summary>
+        /// Gets and sets the property DBCapacityReservationIdentifier. 
+        /// <para>
+        /// The identifier or the name of the DB capacity reservation for the DB instance to use
+        /// after it starts. You can specify the identifier, which has the prefix <c>dbcr-</c>,
+        /// or the reservation name.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify this parameter when the DB instance stopped using a reservation, or when you
+        /// want the DB instance to use a different reservation.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you omit this parameter, and the DB instance kept a DB capacity reservation when
+        /// it stopped, Amazon RDS starts the DB instance in that reservation.
+        /// </para>
+        ///  
+        /// <para>
+        /// If that reservation is deleted, ended, or cancelled, the DB instance still starts.
+        /// Amazon RDS starts the DB instance outside the reservation, on unreserved capacity,
+        /// and it charges on-demand prices for the DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// If that reservation has no available capacity in the Availability Zone of the DB instance,
+        /// the request fails. Amazon RDS doesn't start the DB instance, and it doesn't wait for
+        /// capacity in that Availability Zone. Specify a reservation that has available capacity
+        /// in that Availability Zone, or retry the request after the reservation has available
+        /// capacity.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The reservation must be in the <c>active</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The reservation must reserve capacity for the DB instance class and the engine of
+        /// the DB instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The reservation must cover the Availability Zone of the DB instance, and it must have
+        /// available capacity in that Availability Zone.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min=1, Max=63)]
+        public string DBCapacityReservationIdentifier
+        {
+            get { return this._dbCapacityReservationIdentifier; }
+            set { this._dbCapacityReservationIdentifier = value; }
+        }
+
+        // Check to see if DBCapacityReservationIdentifier property is set
+        internal bool IsSetDBCapacityReservationIdentifier()
+        {
+            return this._dbCapacityReservationIdentifier != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DBInstanceIdentifier. 

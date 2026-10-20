@@ -40,6 +40,7 @@ namespace Amazon.RDS.Model
         private AutomationMode _automationMode;
         private int? _backupRetentionPeriod;
         private string _caCertificateIdentifier;
+        private string _dbCapacityReservationIdentifier;
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
         private string _dbSubnetGroupName;
@@ -167,6 +168,27 @@ namespace Amazon.RDS.Model
         internal bool IsSetCACertificateIdentifier()
         {
             return this._caCertificateIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBCapacityReservationIdentifier. 
+        /// <para>
+        /// The identifier of the DB capacity reservation that the DB instance uses after a pending
+        /// modification completes. Amazon RDS returns this value when a <c>ModifyDBInstance</c>
+        /// request changes the DB capacity reservation, and the change hasn't been applied yet.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=63)]
+        public string DBCapacityReservationIdentifier
+        {
+            get { return this._dbCapacityReservationIdentifier; }
+            set { this._dbCapacityReservationIdentifier = value; }
+        }
+
+        // Check to see if DBCapacityReservationIdentifier property is set
+        internal bool IsSetDBCapacityReservationIdentifier()
+        {
+            return this._dbCapacityReservationIdentifier != null;
         }
 
         /// <summary>

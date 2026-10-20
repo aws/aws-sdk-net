@@ -45,6 +45,10 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
+    ///  <c>DescribeDBCapacityReservations</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <c>DescribeDBClusterBacktracks</c> 
     /// </para>
     ///  </li> <li> 

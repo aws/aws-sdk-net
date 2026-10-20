@@ -112,6 +112,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     return BlueGreenDeploymentNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("DBCapacityReservationNotFound"))
+                {
+                    return DBCapacityReservationNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("DBClusterNotFoundFault"))
                 {
                     return DBClusterNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

@@ -67,6 +67,7 @@ namespace Amazon.RDS.Model
         private bool? _copyTagsToSnapshot;
         private string _customIamInstanceProfile;
         private DatabaseInsightsMode _databaseInsightsMode;
+        private string _dbCapacityReservationIdentifier;
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
         private string _dbParameterGroupName;
@@ -380,6 +381,80 @@ namespace Amazon.RDS.Model
         internal bool IsSetDatabaseInsightsMode()
         {
             return this._databaseInsightsMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBCapacityReservationIdentifier. 
+        /// <para>
+        /// The identifier or the name of the DB capacity reservation to associate with this read
+        /// replica. You can specify the identifier, which has the prefix <c>dbcr-</c>, or the
+        /// reservation name. When you specify this parameter, the read replica uses reserved
+        /// capacity from the specified reservation. A read replica uses one unit of reserved
+        /// capacity, in the same way as any other DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify <c>AvailabilityZone</c>, Amazon RDS places the DB instance in that
+        /// Availability Zone, and the reservation must cover it.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The reservation must reserve capacity for the DB instance class and the database engine
+        /// of the DB instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the reservation reserves capacity for a specific license model, the license model
+        /// of the source DB instance must match it. A read replica inherits its license model
+        /// from the source DB instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The reservation must be in the <c>active</c> state, and it must not be past its end
+        /// date.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you specify <c>AvailabilityZone</c>, it must be one of the Availability Zones of
+        /// the reservation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For a Multi-AZ DB instance, the reservation must cover two or more Availability Zones.
+        /// A Multi-AZ DB instance uses one unit of reserved capacity in each of two Availability
+        /// Zones. If the reservation covers more than two Availability Zones, Amazon RDS chooses
+        /// the two that the DB instance uses.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The reservation must have available capacity in each Availability Zone that the DB
+        /// instance uses.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The DB subnet group must be in a VPC with default tenancy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The DB subnet group must cover each Availability Zone that the DB instance uses.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min=1, Max=63)]
+        public string DBCapacityReservationIdentifier
+        {
+            get { return this._dbCapacityReservationIdentifier; }
+            set { this._dbCapacityReservationIdentifier = value; }
+        }
+
+        // Check to see if DBCapacityReservationIdentifier property is set
+        internal bool IsSetDBCapacityReservationIdentifier()
+        {
+            return this._dbCapacityReservationIdentifier != null;
         }
 
         /// <summary>
@@ -912,10 +987,15 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If you create an encrypted read replica in the same Amazon Web Services Region as
-        /// the source DB instance or Multi-AZ DB cluster, don't specify a value for this parameter.
-        /// A read replica in the same Amazon Web Services Region is always encrypted with the
-        /// same KMS key as the source DB instance or cluster.
+        /// For a read replica in the same Amazon Web Services Region as the source DB instance
+        /// or Multi-AZ DB cluster, specifying this parameter is optional. If you specify a KMS
+        /// key identifier, the read replica is encrypted with that KMS key, which can be different
+        /// from the KMS key of the source.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify a value for this parameter, the read replica is encrypted with
+        /// the same KMS key as the source DB instance or Multi-AZ DB cluster.
         /// </para>
         ///  
         /// <para>

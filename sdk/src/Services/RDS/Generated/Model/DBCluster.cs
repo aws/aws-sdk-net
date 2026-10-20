@@ -1853,7 +1853,15 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageEncrypted. 
         /// <para>
-        /// Indicates whether the DB cluster is encrypted.
+        /// Specifies whether the DB cluster is encrypted with an Amazon Web Services managed
+        /// key or a customer managed key.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the DB cluster is encrypted with an Amazon Web Services owned key, this value is
+        /// <c>false</c> and <c>StorageEncryptionType</c> is <c>sse-rds</c>. In that case, the
+        /// data at rest is still encrypted. To determine how the data at rest is protected, use
+        /// <c>StorageEncryptionType</c>.
         /// </para>
         /// </summary>
         public bool? StorageEncrypted

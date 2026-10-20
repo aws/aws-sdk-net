@@ -90,6 +90,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.CACertificateIdentifier = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DBCapacityReservationIdentifier", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DBCapacityReservationIdentifier = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DBInstanceClass", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
