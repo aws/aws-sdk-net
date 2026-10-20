@@ -70,8 +70,8 @@ dotnet run -c Release --project sdk/test/Performance/SerdeBenchmarks/SerdeBenchm
 | `--warmup N` | 100000 | Warmup iterations per case, not measured |
 | `--min-iterations N`, `--min-cpu-seconds S` | 50000, 5 | Stop measuring a case after N iterations or S seconds of process CPU, whichever comes first |
 | `--transport stub\|https` | `stub` | `stub`: the in-process `MockHttpHandler`. `https`: see [HTTPS loopback mode](#https-loopback-mode) |
-| `--https-server IP:PORT` | `127.0.0.1:18443` | The fixture server's HTTPS address (https only) |
-| `--fixture-control IP:PORT` | `127.0.0.1:18080` | The fixture server's control address (https only) |
+| `--https-server IP:PORT` | `127.0.0.1:18443` | The fixture server's HTTPS address (https only; loopback addresses only) |
+| `--fixture-control IP:PORT` | `127.0.0.1:18080` | The fixture server's control address (https only; loopback addresses only) |
 
 An invalid value, or a transport option without `--cpu-time`, exits with code 2. The run banner prints the transport used.
 

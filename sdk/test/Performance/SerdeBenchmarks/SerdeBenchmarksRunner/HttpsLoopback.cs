@@ -16,7 +16,6 @@
 using System.Net;
 using System.Net.Http;
 using System.Net.Sockets;
-using System.Text;
 using Amazon.Runtime;
 
 namespace AWSSDK.Benchmarks.Serde;
@@ -70,15 +69,14 @@ public static class BenchmarkTransport
 
     internal static IPEndPoint ParseEndpoint(string option, string hostPort)
     {
-        int colon = hostPort.LastIndexOf(':');
-        if (colon <= 0
-            || !IPAddress.TryParse(hostPort[..colon], out var address)
-            || !int.TryParse(hostPort[(colon + 1)..], out var port)
-            || port < 1 || port > 65535)
-        {
-            throw new ArgumentException($"{option} {hostPort}: expected IP:PORT, for example 127.0.0.1:18443");
-        }
-        return new IPEndPoint(address, port);
+        var example = option == "--https-server" ? DefaultHttpsServer : DefaultFixtureControl;
+        // IPEndPoint.TryParse accepts a missing port as 0, so require one explicitly.
+        if (!IPEndPoint.TryParse(hostPort, out var endpoint) || endpoint.Port == 0)
+            throw new ArgumentException($"{option} {hostPort}: expected IP:PORT, for example {example}");
+        // The server's certificate isn't verified, and the server runs on this host, so allow loopback only.
+        if (!IPAddress.IsLoopback(endpoint.Address))
+            throw new ArgumentException($"{option} {hostPort}: must be a loopback address, for example {example}");
+        return endpoint;
     }
 
     private static void CheckConnect(string option, IPEndPoint endpoint)
@@ -151,26 +149,30 @@ internal static class HttpsLoopback
         return httpClient;
     }
 
+    // Posts fixtures to the control address. No proxy: the control address is on this host. The timeout makes a
+    // control server that accepts but never answers fail the run instead of hanging it.
+    private static readonly HttpClient ControlClient = new(new SocketsHttpHandler { UseProxy = false })
+    {
+        Timeout = TimeSpan.FromSeconds(10)
+    };
+
     /// <summary>Replaces the fixture server's response (POST /fixture on its control address) and checks it was accepted.</summary>
     public static void PostFixture(byte[] fixture)
     {
         var control = BenchmarkTransport.FixtureControl;
-        using var tcp = new TcpClient();
+        HttpResponseMessage response;
         try
         {
-            tcp.Connect(control);
+            response = ControlClient.Send(new HttpRequestMessage(HttpMethod.Post, $"http://{control}/fixture") { Content = new ByteArrayContent(fixture) });
         }
-        catch (SocketException e)
+        catch (Exception e) when (e is HttpRequestException or TaskCanceledException)
         {
             throw new InvalidOperationException($"Couldn't post the fixture to --fixture-control {control}: {e.Message}", e);
         }
-        var stream = tcp.GetStream();
-        stream.Write(Encoding.ASCII.GetBytes($"POST /fixture HTTP/1.1\r\nHost: fixture\r\nContent-Length: {fixture.Length}\r\nConnection: close\r\n\r\n"));
-        stream.Write(fixture);
-        var status = new StringBuilder();
-        int b;
-        while ((b = stream.ReadByte()) >= 0 && b != '\n') status.Append((char)b);
-        if (!status.ToString().StartsWith("HTTP/1.1 204"))
-            throw new InvalidOperationException($"The fixture server rejected the fixture: {status.ToString().Trim()}");
+        using (response)
+        {
+            if (response.StatusCode != HttpStatusCode.NoContent)
+                throw new InvalidOperationException($"The fixture server at --fixture-control {control} rejected the fixture: {(int)response.StatusCode} {response.ReasonPhrase}");
+        }
     }
 }
