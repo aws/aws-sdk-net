@@ -301,6 +301,18 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.Slices.Value);
             }
 
+            if (requestObject.IsSetSlidingWindowMs())
+            {
+                context.Writer.WritePropertyName("slidingWindowMs");
+                context.Writer.WriteNumberValue(requestObject.SlidingWindowMs.Value);
+            }
+
+            if (requestObject.IsSetSlidingWindowPeakBitrate())
+            {
+                context.Writer.WritePropertyName("slidingWindowPeakBitrate");
+                context.Writer.WriteNumberValue(requestObject.SlidingWindowPeakBitrate.Value);
+            }
+
             if (requestObject.IsSetSlowPal())
             {
                 context.Writer.WritePropertyName("slowPal");

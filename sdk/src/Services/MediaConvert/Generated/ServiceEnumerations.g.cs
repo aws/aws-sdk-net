@@ -2399,6 +2399,11 @@ namespace Amazon.MediaConvert
     public class Av1RateControlMode : ConstantClass
     {
         /// <summary>
+        /// Constant CBR for Av1RateControlMode
+        /// </summary>
+        public static readonly Av1RateControlMode CBR = new Av1RateControlMode("CBR");
+
+        /// <summary>
         /// Constant QVBR for Av1RateControlMode
         /// </summary>
         public static readonly Av1RateControlMode QVBR = new Av1RateControlMode("QVBR");
@@ -2424,6 +2429,52 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Av1RateControlMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type Av1SceneChangeDetect.
+    /// </summary>
+    public class Av1SceneChangeDetect : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for Av1SceneChangeDetect
+        /// </summary>
+        public static readonly Av1SceneChangeDetect DISABLED = new Av1SceneChangeDetect("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for Av1SceneChangeDetect
+        /// </summary>
+        public static readonly Av1SceneChangeDetect ENABLED = new Av1SceneChangeDetect("ENABLED");
+
+        /// <summary>
+        /// Constant TRANSITION_DETECTION for Av1SceneChangeDetect
+        /// </summary>
+        public static readonly Av1SceneChangeDetect TRANSITION_DETECTION = new Av1SceneChangeDetect("TRANSITION_DETECTION");
+
+        /// <summary>
+        /// Constructs a custom Av1SceneChangeDetect for a value not among the defined constants.
+        /// </summary>
+        public Av1SceneChangeDetect(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Av1SceneChangeDetect FindValue(string value)
+        {
+            return FindValue<Av1SceneChangeDetect>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Av1SceneChangeDetect(string value)
         {
             return FindValue(value);
         }
@@ -5856,6 +5907,42 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CopyProtectionAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DashAdaptationSetGrouping.
+    /// </summary>
+    public class DashAdaptationSetGrouping : ConstantClass
+    {
+        /// <summary>
+        /// Constant CODEC for DashAdaptationSetGrouping
+        /// </summary>
+        public static readonly DashAdaptationSetGrouping CODEC = new DashAdaptationSetGrouping("CODEC");
+
+        /// <summary>
+        /// Constructs a custom DashAdaptationSetGrouping for a value not among the defined constants.
+        /// </summary>
+        public DashAdaptationSetGrouping(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DashAdaptationSetGrouping FindValue(string value)
+        {
+            return FindValue<DashAdaptationSetGrouping>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DashAdaptationSetGrouping(string value)
         {
             return FindValue(value);
         }
@@ -18450,6 +18537,16 @@ namespace Amazon.MediaConvert
         /// Constant MEAN for NoiseReducerFilter
         /// </summary>
         public static readonly NoiseReducerFilter MEAN = new NoiseReducerFilter("MEAN");
+
+        /// <summary>
+        /// Constant NONE for NoiseReducerFilter
+        /// </summary>
+        public static readonly NoiseReducerFilter NONE = new NoiseReducerFilter("NONE");
+
+        /// <summary>
+        /// Constant PERCEPTUAL for NoiseReducerFilter
+        /// </summary>
+        public static readonly NoiseReducerFilter PERCEPTUAL = new NoiseReducerFilter("PERCEPTUAL");
 
         /// <summary>
         /// Constant SHARPEN for NoiseReducerFilter

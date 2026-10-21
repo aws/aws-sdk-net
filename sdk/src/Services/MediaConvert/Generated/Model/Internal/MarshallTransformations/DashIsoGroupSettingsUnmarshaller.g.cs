@@ -74,6 +74,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("dashAdaptationSetGrouping", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.DashAdaptationSetGrouping = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("dashIFrameTrickPlayNameModifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -57,6 +57,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.BitDepth);
             }
 
+            if (requestObject.IsSetBitrate())
+            {
+                context.Writer.WritePropertyName("bitrate");
+                context.Writer.WriteNumberValue(requestObject.Bitrate.Value);
+            }
+
             if (requestObject.IsSetFilmGrainSynthesis())
             {
                 context.Writer.WritePropertyName("filmGrainSynthesis");
@@ -140,10 +146,28 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.RateControlMode);
             }
 
+            if (requestObject.IsSetSceneChangeDetect())
+            {
+                context.Writer.WritePropertyName("sceneChangeDetect");
+                context.Writer.WriteStringValue(requestObject.SceneChangeDetect);
+            }
+
             if (requestObject.IsSetSlices())
             {
                 context.Writer.WritePropertyName("slices");
                 context.Writer.WriteNumberValue(requestObject.Slices.Value);
+            }
+
+            if (requestObject.IsSetSlidingWindowMs())
+            {
+                context.Writer.WritePropertyName("slidingWindowMs");
+                context.Writer.WriteNumberValue(requestObject.SlidingWindowMs.Value);
+            }
+
+            if (requestObject.IsSetSlidingWindowPeakBitrate())
+            {
+                context.Writer.WritePropertyName("slidingWindowPeakBitrate");
+                context.Writer.WriteNumberValue(requestObject.SlidingWindowPeakBitrate.Value);
             }
 
             if (requestObject.IsSetSpatialAdaptiveQuantization())
