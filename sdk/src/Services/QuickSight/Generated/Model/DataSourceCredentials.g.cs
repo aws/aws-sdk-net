@@ -94,6 +94,20 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetOAuthClientCredentials() => this.OAuthClientCredentials != null;
 
         /// <summary>
+        /// Gets and sets the property OneDriveClientCredentials. 
+        /// <para>
+        /// The client credentials for connecting to a Microsoft OneDrive data source using two-legged
+        /// OAuth (2LO) certificate-based authentication.
+        /// </para>
+        /// </summary>
+        public OneDriveClientCredentials OneDriveClientCredentials { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OneDriveClientCredentials property is set.
+        /// </summary>
+        internal bool IsSetOneDriveClientCredentials() => this.OneDriveClientCredentials != null;
+
+        /// <summary>
         /// Gets and sets the property SecretArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the secret associated with the data source in Amazon
@@ -107,6 +121,34 @@ namespace Amazon.QuickSight.Model
         /// Checks to see if the SecretArn property is set.
         /// </summary>
         internal bool IsSetSecretArn() => this.SecretArn != null;
+
+        /// <summary>
+        /// Gets and sets the property ServiceAccountCredentials. 
+        /// <para>
+        /// The service account credentials for connecting to a data source that uses Google Workspace
+        /// domain-wide delegation.
+        /// </para>
+        /// </summary>
+        public ServiceAccountCredentials ServiceAccountCredentials { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ServiceAccountCredentials property is set.
+        /// </summary>
+        internal bool IsSetServiceAccountCredentials() => this.ServiceAccountCredentials != null;
+
+        /// <summary>
+        /// Gets and sets the property SharePointClientCredentials. 
+        /// <para>
+        /// The client credentials for connecting to a Microsoft SharePoint data source using
+        /// two-legged OAuth (2LO) certificate-based authentication.
+        /// </para>
+        /// </summary>
+        public SharePointClientCredentials SharePointClientCredentials { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SharePointClientCredentials property is set.
+        /// </summary>
+        internal bool IsSetSharePointClientCredentials() => this.SharePointClientCredentials != null;
 
         /// <summary>
         /// Gets and sets the property WebProxyCredentials. 
