@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Read the AWS_LAMBDA_FUNCTION_NAME environment variable once per process instead of on every request when setting the recursion detection header."
+    ],
+    "type": "patch",
+    "updateMinimum": false
+  }
+}
