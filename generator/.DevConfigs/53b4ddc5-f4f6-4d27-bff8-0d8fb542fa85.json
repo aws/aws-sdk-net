@@ -1,9 +1,0 @@
-{
-  "core": {
-    "type": "patch",
-    "updateMinimum": true,
-    "changeLogMessages": [
-      "Added validation of event-stream header name and value byte lengths during encoding so that oversized values are rejected rather than having their length field truncated."
-    ]
-  }
-}

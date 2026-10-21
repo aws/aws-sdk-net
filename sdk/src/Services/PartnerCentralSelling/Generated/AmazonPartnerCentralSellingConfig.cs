@@ -32,7 +32,7 @@ namespace Amazon.PartnerCentralSelling
     public partial class AmazonPartnerCentralSellingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("PartnerCentral Selling", "4.0.103.8");
+            InternalSDKUtils.BuildUserAgentString("PartnerCentral Selling", "4.0.103.9");
 
         private static readonly AmazonPartnerCentralSellingEndpointResolver EndpointResolver =
             new AmazonPartnerCentralSellingEndpointResolver();

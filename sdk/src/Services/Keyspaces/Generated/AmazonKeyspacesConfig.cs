@@ -32,7 +32,7 @@ namespace Amazon.Keyspaces
     public partial class AmazonKeyspacesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Keyspaces", "4.0.101.3");
+            InternalSDKUtils.BuildUserAgentString("Keyspaces", "4.0.101.4");
 
         private static readonly AmazonKeyspacesEndpointResolver EndpointResolver =
             new AmazonKeyspacesEndpointResolver();

@@ -1,3 +1,56 @@
+### 4.0.356.0 (2026-10-21 18:15 UTC)
+* AmplifyBackend (4.0.100.20)
+	* AmplifyBackend is now generated from its Smithy model. There are no changes to the public API.
+* AutoScaling (4.0.105.0)
+	* EC2 Auto Scaling now supports account settings, letting you manage account-level configuration for Auto Scaling.
+* BedrockRuntime (4.0.101.13)
+	* BedrockRuntime is now generated from its Smithy model. There are no changes to the public API.
+* Budgets (4.0.101.4)
+	* Budgets is now generated from its Smithy model. There are no changes to the public API.
+* Cloud9 (4.0.100.20)
+	* Cloud9 is now generated from its Smithy model. The exception classes now expose the ClassName and Code properties returned by the service.
+* CloudSearchDomain (4.0.100.20)
+	* CloudSearchDomain is now generated from its Smithy model. There are no changes to the public API.
+* Connect (4.0.125.0)
+	* Added support for AWS-managed security profiles.
+* DataZone (4.0.111.0)
+	* Added custom designations support with new CRUD APIs. The designation field in project membership and policy grant APIs supports a new enum for custom designations. These APIs also support a new field for custom designation id.
+* DevOpsAgent (4.0.107.0)
+	* Adds support for Microsoft Teams as a notification service. Associations can now be created and updated with a Microsoft Teams team and channel configuration using the DevOps Agent API and SDKs.
+* EC2 (4.0.128.0)
+	* Adds new response fields to DescribeInstanceStatus and Network Insights analysis results.
+* HealthLake (4.0.104.0)
+	* Update the UpdateProfileWithAgent API to return a streaming response to provide more frequent updates on what the agent is doing.
+* Imagebuilder (4.0.103.2)
+	* Imagebuilder is now generated from its Smithy model. There are no changes to the public API.
+* LexModelsV2 (4.0.102.0)
+	* Adds support for Assisted NLU - Dialog Manager mode allowing usage of LLMs as the default NLU system and dialog management
+* Lightsail (4.0.103.0)
+	* This release adds support for metrics related to system-disk performance.
+* MarketplaceDiscovery (4.0.103.6)
+	* MarketplaceDiscovery is now generated from its Smithy model. There are no changes to the public API.
+* MediaConvert (4.0.106.0)
+	* Adds AV1 CBR rate control and scene change detection. New sliding window peak bitrate setting for all codecs. DASH adaptation set grouping update. Option to disable the AV1 perceptual quality filter. Support for vertical (portrait) AV1 encoding.
+* NetworkFirewall (4.0.106.0)
+	* Adds support for Network Firewall Resolved IP validation.
+* Notifications (4.0.101.6)
+	* Notifications is now generated from its Smithy model. The RetryAfterSeconds property on ThrottlingException is now populated from the Retry-After response header.
+* Polly (4.0.101.0)
+	* Added support for the new voices - Kenneth (en-US), Nate (en-US), Tina (de-DE), Carlos (es-US), Carolina (pt-BR), Leo (pt-BR), Curtis (en-AU), Kiara (en-IN), Arjun (en-IN) and Hyunduk (ko-KR). They are available as a Generative voices only.
+* QApps (4.0.100.20)
+	* QApps is now generated from its Smithy model. The RetryAfterSeconds property on InternalServerException and ThrottlingException is now populated from the Retry-After response header.
+* QuickSight (4.0.112.0)
+	* Adds support for SharePoint and OneDrive two-legged OAuth certificate credentials and Google Workspace service account credentials when creating data sources
+* RedshiftDataAPIService (4.0.104.0)
+	* Add Redshift QueryUUID field to DescribeStatement response
+* Signin (4.0.101.17)
+	* Signin is now generated from its Smithy model. There are no changes to the public API.
+* StepFunctions (4.0.101.0)
+	* Release minor updates to API model
+* Core 4.0.102.13
+	* Added validation of event-stream header name and value byte lengths during encoding so that oversized values are rejected rather than having their length field truncated.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.355.0 (2026-10-20 18:20 UTC)
 * Bedrock (4.0.104.0)
 	* Amazon Bedrock Guardrails now supports a configurable tier for the contextual grounding policy via a new tier option. Select the Standard tier for grounding that better supports conversations and reasoning, with expanded language coverage.

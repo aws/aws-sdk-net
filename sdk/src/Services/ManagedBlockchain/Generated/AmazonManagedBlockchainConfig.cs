@@ -32,7 +32,7 @@ namespace Amazon.ManagedBlockchain
     public partial class AmazonManagedBlockchainConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ManagedBlockchain", "4.0.100.20");
+            InternalSDKUtils.BuildUserAgentString("ManagedBlockchain", "4.0.100.21");
 
         private static readonly AmazonManagedBlockchainEndpointResolver EndpointResolver =
             new AmazonManagedBlockchainEndpointResolver();
