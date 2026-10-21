@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Describes the status of an instance, including system status, instance status, attached
-    /// EBS status, and application status.
+    /// EBS status, application status, and performance status.
     /// </summary>
     public partial class InstanceStatus
     {
@@ -44,6 +44,7 @@ namespace Amazon.EC2.Model
         private InstanceState _instanceState;
         private OperatorResponse _operator;
         private string _outpostArn;
+        private PerformanceStatusSummary _performanceStatus;
         private InstanceStatusSummary _status;
         private InstanceStatusSummary _systemStatus;
 
@@ -214,6 +215,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetOutpostArn()
         {
             return this._outpostArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformanceStatus. 
+        /// <para>
+        /// Reports the performance-related health status for the instance. This information is
+        /// returned only when performance status checks are enabled for the instance.
+        /// </para>
+        /// </summary>
+        public PerformanceStatusSummary PerformanceStatus
+        {
+            get { return this._performanceStatus; }
+            set { this._performanceStatus = value; }
+        }
+
+        // Check to see if PerformanceStatus property is set
+        internal bool IsSetPerformanceStatus()
+        {
+            return this._performanceStatus != null;
         }
 
         /// <summary>
