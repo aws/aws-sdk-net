@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,16 +14,16 @@ namespace AWSSDKDocSamples.Amazon.Cloud9.Generated
     {
         public void Cloud9CreateEnvironmentEC2()
         {
-            #region createenvironmentec2-1516821730547
+            #region CreateEnvironmentEC2-1
 
             var client = new AmazonCloud9Client();
-            var response = client.CreateEnvironmentEC2(new CreateEnvironmentEC2Request 
+            var response = client.CreateEnvironmentEC2(new CreateEnvironmentEC2Request
             {
-                Name = "my-demo-environment",
                 AutomaticStopTimeMinutes = 60,
                 Description = "This is my demonstration environment.",
                 ImageId = "amazonlinux-2023-x86_64",
                 InstanceType = "t2.micro",
+                Name = "my-demo-environment",
                 OwnerArn = "arn:aws:iam::123456789012:user/MyDemoUser",
                 SubnetId = "subnet-6300cd1b"
             });
@@ -34,10 +35,10 @@ namespace AWSSDKDocSamples.Amazon.Cloud9.Generated
 
         public void Cloud9CreateEnvironmentMembership()
         {
-            #region createenvironmentmembership-1516822583452
+            #region CreateEnvironmentMembership-1
 
             var client = new AmazonCloud9Client();
-            var response = client.CreateEnvironmentMembership(new CreateEnvironmentMembershipRequest 
+            var response = client.CreateEnvironmentMembership(new CreateEnvironmentMembershipRequest
             {
                 EnvironmentId = "8d9967e2f0624182b74e7690ad69ebEX",
                 Permissions = "read-write",
@@ -51,10 +52,10 @@ namespace AWSSDKDocSamples.Amazon.Cloud9.Generated
 
         public void Cloud9DeleteEnvironment()
         {
-            #region deleteenvironment-1516822903149
+            #region DeleteEnvironment-1
 
             var client = new AmazonCloud9Client();
-            var response = client.DeleteEnvironment(new DeleteEnvironmentRequest 
+            var response = client.DeleteEnvironment(new DeleteEnvironmentRequest
             {
                 EnvironmentId = "8d9967e2f0624182b74e7690ad69ebEX"
             });
@@ -65,10 +66,10 @@ namespace AWSSDKDocSamples.Amazon.Cloud9.Generated
 
         public void Cloud9DeleteEnvironmentMembership()
         {
-            #region deleteenvironmentmembership-1516822975655
+            #region DeleteEnvironmentMembership-1
 
             var client = new AmazonCloud9Client();
-            var response = client.DeleteEnvironmentMembership(new DeleteEnvironmentMembershipRequest 
+            var response = client.DeleteEnvironmentMembership(new DeleteEnvironmentMembershipRequest
             {
                 EnvironmentId = "8d9967e2f0624182b74e7690ad69ebEX",
                 UserArn = "arn:aws:iam::123456789012:user/AnotherDemoUser"
@@ -80,25 +81,10 @@ namespace AWSSDKDocSamples.Amazon.Cloud9.Generated
 
         public void Cloud9DescribeEnvironmentMemberships()
         {
-            #region describeenvironmentmemberships1-1516823070453
+            #region DescribeEnvironmentMemberships-1
 
             var client = new AmazonCloud9Client();
-            var response = client.DescribeEnvironmentMemberships(new DescribeEnvironmentMembershipsRequest 
-            {
-                EnvironmentId = "8d9967e2f0624182b74e7690ad69ebEX"
-            });
-
-            List<EnvironmentMember> memberships = response.Memberships;
-
-            #endregion
-        }
-
-        public void Cloud9DescribeEnvironmentMemberships()
-        {
-            #region describeenvironmentmemberships2-1516823191355
-
-            var client = new AmazonCloud9Client();
-            var response = client.DescribeEnvironmentMemberships(new DescribeEnvironmentMembershipsRequest 
+            var response = client.DescribeEnvironmentMemberships(new DescribeEnvironmentMembershipsRequest
             {
                 EnvironmentId = "8d9967e2f0624182b74e7690ad69ebEX",
                 Permissions = new List<string> {
@@ -113,10 +99,10 @@ namespace AWSSDKDocSamples.Amazon.Cloud9.Generated
 
         public void Cloud9DescribeEnvironmentMemberships()
         {
-            #region describeenvironmentmemberships3-1516823268793
+            #region DescribeEnvironmentMemberships-2
 
             var client = new AmazonCloud9Client();
-            var response = client.DescribeEnvironmentMemberships(new DescribeEnvironmentMembershipsRequest 
+            var response = client.DescribeEnvironmentMemberships(new DescribeEnvironmentMembershipsRequest
             {
                 UserArn = "arn:aws:iam::123456789012:user/MyDemoUser"
             });
@@ -126,12 +112,27 @@ namespace AWSSDKDocSamples.Amazon.Cloud9.Generated
             #endregion
         }
 
-        public void Cloud9DescribeEnvironments()
+        public void Cloud9DescribeEnvironmentMemberships()
         {
-            #region describeenvironments-1516823568291
+            #region DescribeEnvironmentMemberships-3
 
             var client = new AmazonCloud9Client();
-            var response = client.DescribeEnvironments(new DescribeEnvironmentsRequest 
+            var response = client.DescribeEnvironmentMemberships(new DescribeEnvironmentMembershipsRequest
+            {
+                EnvironmentId = "8d9967e2f0624182b74e7690ad69ebEX"
+            });
+
+            List<EnvironmentMember> memberships = response.Memberships;
+
+            #endregion
+        }
+
+        public void Cloud9DescribeEnvironments()
+        {
+            #region DescribeEnvironments-1
+
+            var client = new AmazonCloud9Client();
+            var response = client.DescribeEnvironments(new DescribeEnvironmentsRequest
             {
                 EnvironmentIds = new List<string> {
                     "8d9967e2f0624182b74e7690ad69ebEX",
@@ -146,26 +147,26 @@ namespace AWSSDKDocSamples.Amazon.Cloud9.Generated
 
         public void Cloud9DescribeEnvironmentStatus()
         {
-            #region describeenvironmentstatus-1516823462133
+            #region DescribeEnvironmentStatus-1
 
             var client = new AmazonCloud9Client();
-            var response = client.DescribeEnvironmentStatus(new DescribeEnvironmentStatusRequest 
+            var response = client.DescribeEnvironmentStatus(new DescribeEnvironmentStatusRequest
             {
                 EnvironmentId = "8d9967e2f0624182b74e7690ad69ebEX"
             });
 
             string message = response.Message;
-            string status = response.Status;
+            EnvironmentStatus status = response.Status;
 
             #endregion
         }
 
         public void Cloud9ListEnvironments()
         {
-            #region listenvironments-1516823687205
+            #region ListEnvironments-1
 
             var client = new AmazonCloud9Client();
-            var response = client.ListEnvironments(new ListEnvironmentsRequest 
+            var response = client.ListEnvironments(new ListEnvironmentsRequest
             {
             });
 
@@ -176,14 +177,14 @@ namespace AWSSDKDocSamples.Amazon.Cloud9.Generated
 
         public void Cloud9UpdateEnvironment()
         {
-            #region updateenvironment-1516823781910
+            #region UpdateEnvironment-1
 
             var client = new AmazonCloud9Client();
-            var response = client.UpdateEnvironment(new UpdateEnvironmentRequest 
+            var response = client.UpdateEnvironment(new UpdateEnvironmentRequest
             {
-                Name = "my-changed-demo-environment",
                 Description = "This is my changed demonstration environment.",
-                EnvironmentId = "8d9967e2f0624182b74e7690ad69ebEX"
+                EnvironmentId = "8d9967e2f0624182b74e7690ad69ebEX",
+                Name = "my-changed-demo-environment"
             });
 
 
@@ -192,10 +193,10 @@ namespace AWSSDKDocSamples.Amazon.Cloud9.Generated
 
         public void Cloud9UpdateEnvironmentMembership()
         {
-            #region updateenvironmentmembership-1516823876645
+            #region UpdateEnvironmentMembership-1
 
             var client = new AmazonCloud9Client();
-            var response = client.UpdateEnvironmentMembership(new UpdateEnvironmentMembershipRequest 
+            var response = client.UpdateEnvironmentMembership(new UpdateEnvironmentMembershipRequest
             {
                 EnvironmentId = "8d9967e2f0624182b74e7690ad69ebEX",
                 Permissions = "read-only",
@@ -207,13 +208,10 @@ namespace AWSSDKDocSamples.Amazon.Cloud9.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

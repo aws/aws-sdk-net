@@ -1,0 +1,105 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Imagebuilder.Model
+{
+    /// <summary>
+    /// Defines filters that the lifecycle policy uses to determine impacted resource.
+    /// </summary>
+    public partial class LifecyclePolicyDetailFilter
+    {
+        /// <summary>
+        /// Gets and sets the property RetainAtLeast. 
+        /// <para>
+        /// For age-based filters, this is the number of resources to keep on hand after the lifecycle
+        /// <c>DELETE</c> action is applied. Impacted resources are only deleted if you have more
+        /// than this number of resources. If you have fewer resources than this number, the impacted
+        /// resource is not deleted.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 10)]
+        public int? RetainAtLeast { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RetainAtLeast property is set.
+        /// </summary>
+        internal bool IsSetRetainAtLeast() => this.RetainAtLeast.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// Filter resources based on either <c>AGE</c> or <c>COUNT</c>. You can only use the
+        /// count filter with the <c>DELETE</c> action type.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public LifecyclePolicyDetailFilterType Type { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Type property is set.
+        /// </summary>
+        internal bool IsSetType() => this.Type != null;
+
+        /// <summary>
+        /// Gets and sets the property Unit. 
+        /// <para>
+        /// Defines the unit of time that the lifecycle policy uses to determine impacted resources.
+        /// This is required for age-based rules.
+        /// </para>
+        /// </summary>
+        public LifecyclePolicyTimeUnit Unit { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Unit property is set.
+        /// </summary>
+        internal bool IsSetUnit() => this.Unit != null;
+
+        /// <summary>
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// The number of units for the time period or for the count. For example, a value of
+        /// <c>6</c> might refer to six months or six AMIs.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// For count-based filters, this value represents the minimum number of resources to
+        /// keep on hand. If you have fewer resources than this number, the resource is excluded
+        /// from lifecycle actions.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 1000)]
+        public int? Value { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Value property is set.
+        /// </summary>
+        internal bool IsSetValue() => this.Value.HasValue;
+    }
+}

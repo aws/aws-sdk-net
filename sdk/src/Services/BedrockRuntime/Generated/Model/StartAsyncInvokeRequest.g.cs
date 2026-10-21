@@ -1,0 +1,121 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.BedrockRuntime.Model
+{
+    /// <summary>
+    /// Container for the parameters to the StartAsyncInvoke operation. Starts an asynchronous
+    /// invocation. <para> This operation requires permission for the <c>bedrock:InvokeModel</c>
+    /// action. </para> <important> <para> To deny all inference access to resources that
+    /// you specify in the modelId field, you need to deny access to the <c>bedrock:InvokeModel</c>
+    /// and <c>bedrock:InvokeModelWithResponseStream</c> actions. Doing this also denies access
+    /// to the resource through the Converse API actions (<a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a>
+    /// and <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>).
+    /// For more information see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference">Deny
+    /// access for inference on specific models</a>. </para> </important>
+    /// </summary>
+    public partial class StartAsyncInvokeRequest : AmazonBedrockRuntimeRequest
+    {
+        /// <summary>
+        /// Gets and sets the property ClientRequestToken. 
+        /// <para>
+        /// Specify idempotency token to ensure that requests are not duplicated.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 256)]
+        public string ClientRequestToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ClientRequestToken property is set.
+        /// </summary>
+        internal bool IsSetClientRequestToken() => this.ClientRequestToken != null;
+
+        /// <summary>
+        /// Gets and sets the property ModelId. 
+        /// <para>
+        /// The model to invoke.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 256)]
+        public string ModelId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ModelId property is set.
+        /// </summary>
+        internal bool IsSetModelId() => this.ModelId != null;
+
+        /// <summary>
+        /// Gets and sets the property ModelInput. 
+        /// <para>
+        /// Input to send to the model.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Sensitive = true)]
+        public Amazon.Runtime.Documents.Document ModelInput { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ModelInput property is set.
+        /// </summary>
+        internal bool IsSetModelInput() => !this.ModelInput.IsNull();
+
+        /// <summary>
+        /// Gets and sets the property OutputDataConfig. 
+        /// <para>
+        /// Where to store the output.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public AsyncInvokeOutputDataConfig OutputDataConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OutputDataConfig property is set.
+        /// </summary>
+        internal bool IsSetOutputDataConfig() => this.OutputDataConfig != null;
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags to apply to the invocation.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 200)]
+        public List<Tag> Tags { get; set; } = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+
+        /// <summary>
+        /// Checks to see if the Tags property is set.
+        /// </summary>
+        internal bool IsSetTags() => this.Tags != null && (this.Tags.Count > 0 || !AWSConfigs.InitializeCollections);
+    }
+}

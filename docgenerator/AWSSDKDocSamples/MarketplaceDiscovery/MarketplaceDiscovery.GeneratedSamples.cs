@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
     {
         public void MarketplaceDiscoveryGetListing()
         {
-            #region example-1
+            #region GetListing-1
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.GetListing(new GetListingRequest 
+            var response = client.GetListing(new GetListingRequest
             {
                 ListingId = "prodview-sampleSaasId",
                 Locale = "en-US"
@@ -48,10 +49,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryGetListing()
         {
-            #region example-2
+            #region GetListing-2
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.GetListing(new GetListingRequest 
+            var response = client.GetListing(new GetListingRequest
             {
                 ListingId = "prodview-sampleAmiId",
                 Locale = "en-US"
@@ -83,10 +84,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryGetListing()
         {
-            #region example-3
+            #region GetListing-3
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.GetListing(new GetListingRequest 
+            var response = client.GetListing(new GetListingRequest
             {
                 ListingId = "prodview-sampleMultiProductId",
                 Locale = "en-US"
@@ -119,10 +120,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryGetOffer()
         {
-            #region example-1
+            #region GetOffer-1
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.GetOffer(new GetOfferRequest 
+            var response = client.GetOffer(new GetOfferRequest
             {
                 Locale = "en-US",
                 OfferId = "offer-sampleContractId"
@@ -130,10 +131,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
             string agreementProposalId = response.AgreementProposalId;
             List<OfferAssociatedEntity> associatedEntities = response.AssociatedEntities;
-            DateTime availableFromTime = response.AvailableFromTime;
+            DateTime? availableFromTime = response.AvailableFromTime;
             List<PurchaseOptionBadge> badges = response.Badges;
             string catalog = response.Catalog;
-            DateTime expirationTime = response.ExpirationTime;
+            DateTime? expirationTime = response.ExpirationTime;
             string locale = response.Locale;
             string offerId = response.OfferId;
             string offerName = response.OfferName;
@@ -146,10 +147,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryGetOffer()
         {
-            #region example-2
+            #region GetOffer-2
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.GetOffer(new GetOfferRequest 
+            var response = client.GetOffer(new GetOfferRequest
             {
                 Locale = "en-US",
                 OfferId = "offer-sampleUsageId"
@@ -159,7 +160,7 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             List<OfferAssociatedEntity> associatedEntities = response.AssociatedEntities;
             List<PurchaseOptionBadge> badges = response.Badges;
             string catalog = response.Catalog;
-            DateTime expirationTime = response.ExpirationTime;
+            DateTime? expirationTime = response.ExpirationTime;
             string locale = response.Locale;
             string offerId = response.OfferId;
             string offerName = response.OfferName;
@@ -172,10 +173,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryGetOffer()
         {
-            #region example-3
+            #region GetOffer-3
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.GetOffer(new GetOfferRequest 
+            var response = client.GetOffer(new GetOfferRequest
             {
                 Locale = "en-US",
                 OfferId = "offer-sampleByolId"
@@ -185,7 +186,7 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             List<OfferAssociatedEntity> associatedEntities = response.AssociatedEntities;
             List<PurchaseOptionBadge> badges = response.Badges;
             string catalog = response.Catalog;
-            DateTime expirationTime = response.ExpirationTime;
+            DateTime? expirationTime = response.ExpirationTime;
             string locale = response.Locale;
             string offerId = response.OfferId;
             string offerName = response.OfferName;
@@ -198,10 +199,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryGetOffer()
         {
-            #region example-4
+            #region GetOffer-4
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.GetOffer(new GetOfferRequest 
+            var response = client.GetOffer(new GetOfferRequest
             {
                 Locale = "en-US",
                 OfferId = "offer-sampleFreeId"
@@ -211,7 +212,7 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             List<OfferAssociatedEntity> associatedEntities = response.AssociatedEntities;
             List<PurchaseOptionBadge> badges = response.Badges;
             string catalog = response.Catalog;
-            DateTime expirationTime = response.ExpirationTime;
+            DateTime? expirationTime = response.ExpirationTime;
             string locale = response.Locale;
             string offerId = response.OfferId;
             string offerName = response.OfferName;
@@ -224,21 +225,21 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryGetOfferSet()
         {
-            #region example-1
+            #region GetOfferSet-1
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.GetOfferSet(new GetOfferSetRequest 
+            var response = client.GetOfferSet(new GetOfferSetRequest
             {
                 Locale = "en-US",
                 OfferSetId = "offerset-sampleId"
             });
 
             List<OfferSetAssociatedEntity> associatedEntities = response.AssociatedEntities;
-            DateTime availableFromTime = response.AvailableFromTime;
+            DateTime? availableFromTime = response.AvailableFromTime;
             List<PurchaseOptionBadge> badges = response.Badges;
             string buyerNotes = response.BuyerNotes;
             string catalog = response.Catalog;
-            DateTime expirationTime = response.ExpirationTime;
+            DateTime? expirationTime = response.ExpirationTime;
             string locale = response.Locale;
             string offerSetId = response.OfferSetId;
             string offerSetName = response.OfferSetName;
@@ -249,10 +250,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryGetOfferSet()
         {
-            #region example-2
+            #region GetOfferSet-2
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.GetOfferSet(new GetOfferSetRequest 
+            var response = client.GetOfferSet(new GetOfferSetRequest
             {
                 OfferSetId = "offerset-sampleMinimalId"
             });
@@ -268,17 +269,17 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryGetOfferSet()
         {
-            #region example-3
+            #region GetOfferSet-3
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.GetOfferSet(new GetOfferSetRequest 
+            var response = client.GetOfferSet(new GetOfferSetRequest
             {
                 Locale = "en-US",
                 OfferSetId = "offerset-samplePerpetualId"
             });
 
             List<OfferSetAssociatedEntity> associatedEntities = response.AssociatedEntities;
-            DateTime availableFromTime = response.AvailableFromTime;
+            DateTime? availableFromTime = response.AvailableFromTime;
             List<PurchaseOptionBadge> badges = response.Badges;
             string buyerNotes = response.BuyerNotes;
             string catalog = response.Catalog;
@@ -292,10 +293,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryGetOfferTerms()
         {
-            #region example-1
+            #region GetOfferTerms-1
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.GetOfferTerms(new GetOfferTermsRequest 
+            var response = client.GetOfferTerms(new GetOfferTermsRequest
             {
                 Locale = "en-US",
                 OfferId = "offer-sampleUsageBasedId"
@@ -309,10 +310,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryGetOfferTerms()
         {
-            #region example-2
+            #region GetOfferTerms-2
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.GetOfferTerms(new GetOfferTermsRequest 
+            var response = client.GetOfferTerms(new GetOfferTermsRequest
             {
                 Locale = "en-US",
                 OfferId = "offer-sampleByolId"
@@ -326,10 +327,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryGetOfferTerms()
         {
-            #region example-3
+            #region GetOfferTerms-3
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.GetOfferTerms(new GetOfferTermsRequest 
+            var response = client.GetOfferTerms(new GetOfferTermsRequest
             {
                 Locale = "en-US",
                 OfferId = "offer-sampleConfigUpfrontId"
@@ -343,10 +344,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryGetOfferTerms()
         {
-            #region example-4
+            #region GetOfferTerms-4
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.GetOfferTerms(new GetOfferTermsRequest 
+            var response = client.GetOfferTerms(new GetOfferTermsRequest
             {
                 Locale = "en-US",
                 OfferId = "offer-sampleFreeTrialId"
@@ -360,10 +361,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryGetOfferTerms()
         {
-            #region example-5
+            #region GetOfferTerms-5
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.GetOfferTerms(new GetOfferTermsRequest 
+            var response = client.GetOfferTerms(new GetOfferTermsRequest
             {
                 Locale = "en-US",
                 OfferId = "offer-sampleRecurringId"
@@ -377,10 +378,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryGetOfferTerms()
         {
-            #region example-6
+            #region GetOfferTerms-6
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.GetOfferTerms(new GetOfferTermsRequest 
+            var response = client.GetOfferTerms(new GetOfferTermsRequest
             {
                 Locale = "en-US",
                 OfferId = "offer-sampleVariableId"
@@ -394,10 +395,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryGetOfferTerms()
         {
-            #region example-7
+            #region GetOfferTerms-7
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.GetOfferTerms(new GetOfferTermsRequest 
+            var response = client.GetOfferTerms(new GetOfferTermsRequest
             {
                 Locale = "en-US",
                 OfferId = "offer-sampleRenewalId"
@@ -411,10 +412,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryGetOfferTerms()
         {
-            #region example-8
+            #region GetOfferTerms-8
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.GetOfferTerms(new GetOfferTermsRequest 
+            var response = client.GetOfferTerms(new GetOfferTermsRequest
             {
                 Locale = "en-US",
                 OfferId = "offer-sampleRenewalFixedId"
@@ -428,10 +429,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryGetOfferTerms()
         {
-            #region example-9
+            #region GetOfferTerms-9
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.GetOfferTerms(new GetOfferTermsRequest 
+            var response = client.GetOfferTerms(new GetOfferTermsRequest
             {
                 Locale = "en-US",
                 OfferId = "offer-sampleRenewalNoPriceIncreaseId"
@@ -445,10 +446,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryGetOfferTerms()
         {
-            #region example-10
+            #region GetOfferTerms-10
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.GetOfferTerms(new GetOfferTermsRequest 
+            var response = client.GetOfferTerms(new GetOfferTermsRequest
             {
                 Locale = "en-US",
                 OfferId = "offer-sampleSupportId"
@@ -462,10 +463,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryGetOfferTerms()
         {
-            #region example-11
+            #region GetOfferTerms-11
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.GetOfferTerms(new GetOfferTermsRequest 
+            var response = client.GetOfferTerms(new GetOfferTermsRequest
             {
                 Locale = "en-US",
                 OfferId = "offer-sampleValidityId"
@@ -479,10 +480,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryGetOfferTerms()
         {
-            #region example-12
+            #region GetOfferTerms-12
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.GetOfferTerms(new GetOfferTermsRequest 
+            var response = client.GetOfferTerms(new GetOfferTermsRequest
             {
                 Locale = "en-US",
                 OfferId = "offer-sampleNetPaymentId"
@@ -496,10 +497,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryGetProduct()
         {
-            #region example-1
+            #region GetProduct-1
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.GetProduct(new GetProductRequest 
+            var response = client.GetProduct(new GetProductRequest
             {
                 Locale = "en-US",
                 ProductId = "prod-sampleSaasId"
@@ -507,7 +508,7 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
             string catalog = response.Catalog;
             List<Category> categories = response.Categories;
-            string deployedOnAws = response.DeployedOnAws;
+            DeployedOnAwsStatus deployedOnAws = response.DeployedOnAws;
             List<FulfillmentOptionSummary> fulfillmentOptionSummaries = response.FulfillmentOptionSummaries;
             List<string> highlights = response.Highlights;
             string listingId = response.ListingId;
@@ -527,10 +528,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryGetProduct()
         {
-            #region example-2
+            #region GetProduct-2
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.GetProduct(new GetProductRequest 
+            var response = client.GetProduct(new GetProductRequest
             {
                 Locale = "en-US",
                 ProductId = "prod-sampleAmiId"
@@ -538,7 +539,7 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
             string catalog = response.Catalog;
             List<Category> categories = response.Categories;
-            string deployedOnAws = response.DeployedOnAws;
+            DeployedOnAwsStatus deployedOnAws = response.DeployedOnAws;
             List<FulfillmentOptionSummary> fulfillmentOptionSummaries = response.FulfillmentOptionSummaries;
             List<string> highlights = response.Highlights;
             string listingId = response.ListingId;
@@ -558,10 +559,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryGetProduct()
         {
-            #region example-3
+            #region GetProduct-3
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.GetProduct(new GetProductRequest 
+            var response = client.GetProduct(new GetProductRequest
             {
                 Locale = "en-US",
                 ProductId = "prod-sampleProServId"
@@ -569,7 +570,7 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
             string catalog = response.Catalog;
             List<Category> categories = response.Categories;
-            string deployedOnAws = response.DeployedOnAws;
+            DeployedOnAwsStatus deployedOnAws = response.DeployedOnAws;
             List<FulfillmentOptionSummary> fulfillmentOptionSummaries = response.FulfillmentOptionSummaries;
             List<string> highlights = response.Highlights;
             string listingId = response.ListingId;
@@ -589,10 +590,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryListFulfillmentOptions()
         {
-            #region example-1
+            #region ListFulfillmentOptions-1
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest 
+            var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest
             {
                 Locale = "en-US",
                 ProductId = "prod-sampleAmiId"
@@ -606,10 +607,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryListFulfillmentOptions()
         {
-            #region example-2
+            #region ListFulfillmentOptions-2
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest 
+            var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest
             {
                 Locale = "en-US",
                 ProductId = "prod-sampleApiId"
@@ -623,10 +624,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryListFulfillmentOptions()
         {
-            #region example-3
+            #region ListFulfillmentOptions-3
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest 
+            var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest
             {
                 Locale = "en-US",
                 ProductId = "prod-sampleApiDynamicId"
@@ -640,10 +641,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryListFulfillmentOptions()
         {
-            #region example-4
+            #region ListFulfillmentOptions-4
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest 
+            var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest
             {
                 Locale = "en-US",
                 ProductId = "prod-sampleCftId"
@@ -657,10 +658,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryListFulfillmentOptions()
         {
-            #region example-5
+            #region ListFulfillmentOptions-5
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest 
+            var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest
             {
                 Locale = "en-US",
                 ProductId = "prod-sampleContainerId"
@@ -674,10 +675,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryListFulfillmentOptions()
         {
-            #region example-6
+            #region ListFulfillmentOptions-6
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest 
+            var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest
             {
                 Locale = "en-US",
                 ProductId = "prod-sampleHelmId"
@@ -691,10 +692,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryListFulfillmentOptions()
         {
-            #region example-7
+            #region ListFulfillmentOptions-7
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest 
+            var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest
             {
                 Locale = "en-US",
                 ProductId = "prod-sampleEksId"
@@ -708,10 +709,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryListFulfillmentOptions()
         {
-            #region example-8
+            #region ListFulfillmentOptions-8
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest 
+            var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest
             {
                 Locale = "en-US",
                 ProductId = "prod-sampleImageBuilderId"
@@ -725,10 +726,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryListFulfillmentOptions()
         {
-            #region example-9
+            #region ListFulfillmentOptions-9
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest 
+            var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest
             {
                 Locale = "en-US",
                 ProductId = "prod-sampleDataExchangeId"
@@ -742,10 +743,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryListFulfillmentOptions()
         {
-            #region example-10
+            #region ListFulfillmentOptions-10
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest 
+            var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest
             {
                 Locale = "en-US",
                 ProductId = "prod-sampleProServId"
@@ -759,10 +760,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryListFulfillmentOptions()
         {
-            #region example-11
+            #region ListFulfillmentOptions-11
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest 
+            var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest
             {
                 Locale = "en-US",
                 ProductId = "prod-sampleSaasId"
@@ -776,10 +777,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryListFulfillmentOptions()
         {
-            #region example-12
+            #region ListFulfillmentOptions-12
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest 
+            var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest
             {
                 Locale = "en-US",
                 ProductId = "prod-sampleSmAlgoId"
@@ -793,10 +794,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryListFulfillmentOptions()
         {
-            #region example-13
+            #region ListFulfillmentOptions-13
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest 
+            var response = client.ListFulfillmentOptions(new ListFulfillmentOptionsRequest
             {
                 Locale = "en-US",
                 ProductId = "prod-sampleSmModelId"
@@ -810,10 +811,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryListPurchaseOptions()
         {
-            #region example-1
+            #region ListPurchaseOptions-1
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.ListPurchaseOptions(new ListPurchaseOptionsRequest 
+            var response = client.ListPurchaseOptions(new ListPurchaseOptionsRequest
             {
                 Filters = new List<PurchaseOptionFilter> {
                     new PurchaseOptionFilter {
@@ -833,10 +834,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoveryListPurchaseOptions()
         {
-            #region example-2
+            #region ListPurchaseOptions-2
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.ListPurchaseOptions(new ListPurchaseOptionsRequest 
+            var response = client.ListPurchaseOptions(new ListPurchaseOptionsRequest
             {
                 Filters = new List<PurchaseOptionFilter> {
                     new PurchaseOptionFilter {
@@ -868,10 +869,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
         public void MarketplaceDiscoverySearchFacets()
         {
-            #region example-1
+            #region SearchFacets-1
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.SearchFacets(new SearchFacetsRequest 
+            var response = client.SearchFacets(new SearchFacetsRequest
             {
                 FacetTypes = new List<string> {
                     "FULFILLMENT_OPTION_TYPE",
@@ -890,17 +891,17 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             });
 
             Dictionary<string, List<ListingFacet>> listingFacets = response.ListingFacets;
-            long totalResults = response.TotalResults;
+            long? totalResults = response.TotalResults;
 
             #endregion
         }
 
         public void MarketplaceDiscoverySearchFacets()
         {
-            #region example-2
+            #region SearchFacets-2
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.SearchFacets(new SearchFacetsRequest 
+            var response = client.SearchFacets(new SearchFacetsRequest
             {
                 FacetTypes = new List<string> {
                     "PRICING_MODEL",
@@ -930,17 +931,17 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             });
 
             Dictionary<string, List<ListingFacet>> listingFacets = response.ListingFacets;
-            long totalResults = response.TotalResults;
+            long? totalResults = response.TotalResults;
 
             #endregion
         }
 
         public void MarketplaceDiscoverySearchListings()
         {
-            #region example-1
+            #region SearchListings-1
 
             var client = new AmazonMarketplaceDiscoveryClient();
-            var response = client.SearchListings(new SearchListingsRequest 
+            var response = client.SearchListings(new SearchListingsRequest
             {
                 Filters = new List<SearchFilter> {
                     new SearchFilter {
@@ -965,18 +966,15 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
 
             List<ListingSummary> listingSummaries = response.ListingSummaries;
             string nextToken = response.NextToken;
-            long totalResults = response.TotalResults;
+            long? totalResults = response.TotalResults;
 
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

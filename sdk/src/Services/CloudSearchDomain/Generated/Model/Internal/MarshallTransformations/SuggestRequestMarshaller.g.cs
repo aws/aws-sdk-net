@@ -1,0 +1,103 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+using System.Buffers;
+
+using Amazon.CloudSearchDomain.Model;
+using System.Globalization;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Suggest Request Marshaller
+    /// </summary>
+    public partial class SuggestRequestMarshaller : IMarshaller<IRequest, SuggestRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    {
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((SuggestRequest)input);
+        }
+
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(SuggestRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudSearchDomain");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2013-01-01";
+            request.HttpMethod = "GET";
+
+            if (string.IsNullOrEmpty(publicRequest.Query))
+            {
+                throw new AmazonCloudSearchDomainException("Request object does not have required field Query set");
+            }
+
+            if (publicRequest.IsSetQuery())
+            {
+                request.Parameters.Add("q", StringUtils.FromString(publicRequest.Query));
+            }
+
+            if (publicRequest.IsSetSize())
+            {
+                request.Parameters.Add("size", StringUtils.FromLong(publicRequest.Size.Value));
+            }
+
+            if (string.IsNullOrEmpty(publicRequest.Suggester))
+            {
+                throw new AmazonCloudSearchDomainException("Request object does not have required field Suggester set");
+            }
+
+            if (publicRequest.IsSetSuggester())
+            {
+                request.Parameters.Add("suggester", StringUtils.FromString(publicRequest.Suggester));
+            }
+
+            request.AddSubResource("format", "sdk");
+            request.AddSubResource("pretty", "true");
+            request.ResourcePath = "/2013-01-01/suggest";
+
+            request.UseQueryString = true;
+
+            return request;
+        }
+
+        private static readonly SuggestRequestMarshaller _instance = new();
+
+        internal static SuggestRequestMarshaller GetInstance() => _instance;
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static SuggestRequestMarshaller Instance => _instance;
+    }
+}

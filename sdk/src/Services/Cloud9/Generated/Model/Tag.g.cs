@@ -1,0 +1,69 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Cloud9.Model
+{
+    /// <summary>
+    /// Metadata that is associated with Amazon Web Services resources. In particular, a name-value
+    /// pair that can be associated with an Cloud9 development environment. There are two
+    /// types of tags: <i>user tags</i> and <i>system tags</i>. A user tag is created by the
+    /// user. A system tag is automatically created by Amazon Web Services services. A system
+    /// tag is prefixed with <c>"aws:"</c> and cannot be modified by the user.
+    /// </summary>
+    public partial class Tag
+    {
+        /// <summary>
+        /// Gets and sets the property Key. 
+        /// <para>
+        /// The <b>name</b> part of a tag.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Sensitive = true, Min = 1, Max = 128)]
+        public string Key { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Key property is set.
+        /// </summary>
+        internal bool IsSetKey() => this.Key != null;
+
+        /// <summary>
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// The <b>value</b> part of a tag.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Sensitive = true, Min = 0, Max = 256)]
+        public string Value { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Value property is set.
+        /// </summary>
+        internal bool IsSetValue() => this.Value != null;
+    }
+}
