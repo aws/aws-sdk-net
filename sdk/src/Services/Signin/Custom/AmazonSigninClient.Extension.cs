@@ -17,7 +17,7 @@ namespace Amazon.Signin
 {
     public partial class AmazonSigninClient : AmazonServiceClient, IAmazonSignin
     {
-#if BCL
+#if NETFRAMEWORK
         /// <summary>
         /// Invoke CreateOAuth2Token to get access and refresh tokens.
         /// </summary>
