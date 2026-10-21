@@ -59,7 +59,7 @@ namespace Amazon.Runtime.Internal
 
             var endpoint = GetEndpoint(executionContext, parameters);
             requestContext.Request.Endpoint = new Uri(endpoint.URL);
-            requestContext.Request.EndpointAttributes = endpoint.Attributes;
+            requestContext.Request.EndpointAttributes = endpoint.RawAttributesOrNull;
 
             // If an explicit ServiceURL was provided, do not manipulate it based on UseHttp
             // This preserves existing behavior prior to 3.7.100
