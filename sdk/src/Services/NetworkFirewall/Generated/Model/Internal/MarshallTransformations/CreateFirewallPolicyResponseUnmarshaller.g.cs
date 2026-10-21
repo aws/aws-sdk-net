@@ -96,6 +96,10 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     {
                         return InternalServerErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                     }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidOperationException"))
+                    {
+                        return InvalidOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
                     {
                         return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

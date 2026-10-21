@@ -104,6 +104,30 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetEncryptionConfiguration() => this.EncryptionConfiguration != null;
 
         /// <summary>
+        /// Gets and sets the property Errors. 
+        /// <para>
+        /// Any configuration errors that apply to the firewall policy. Network Firewall detects
+        /// these errors asynchronously, after you create or update the policy, so an error can
+        /// appear after the request that caused it has already succeeded. Each entry describes
+        /// the problem and how to resolve it, and Network Firewall clears it automatically after
+        /// you resolve the problem.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 10)]
+        public List<FirewallPolicyError> Errors { get; set; } = AWSConfigs.InitializeCollections ? new List<FirewallPolicyError>() : null;
+
+        /// <summary>
+        /// Checks to see if the Errors property is set.
+        /// </summary>
+        internal bool IsSetErrors() => this.Errors != null && (this.Errors.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property FirewallPolicyArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the firewall policy.
@@ -192,6 +216,23 @@ namespace Amazon.NetworkFirewall.Model
         /// Checks to see if the NumberOfAssociations property is set.
         /// </summary>
         internal bool IsSetNumberOfAssociations() => this.NumberOfAssociations.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property StatusMessage. 
+        /// <para>
+        /// Additional detail about the firewall policy's current status, when applicable. For
+        /// example, while an Amazon Route 53 Resolver DNS Firewall rule group change is in progress,
+        /// the status is <c>UPDATING</c> and this message is "A DNS Firewall rule group change
+        /// is in progress."
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 8192)]
+        public string StatusMessage { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StatusMessage property is set.
+        /// </summary>
+        internal bool IsSetStatusMessage() => this.StatusMessage != null;
 
         /// <summary>
         /// Gets and sets the property Tags. 

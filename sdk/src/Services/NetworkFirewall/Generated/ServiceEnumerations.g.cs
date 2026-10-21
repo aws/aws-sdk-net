@@ -221,6 +221,52 @@ namespace Amazon.NetworkFirewall
     }
 
     /// <summary>
+    /// Constants used for properties of type DNSExpiryExceptionPolicy.
+    /// </summary>
+    public class DNSExpiryExceptionPolicy : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONTINUE for DNSExpiryExceptionPolicy
+        /// </summary>
+        public static readonly DNSExpiryExceptionPolicy CONTINUE = new DNSExpiryExceptionPolicy("CONTINUE");
+
+        /// <summary>
+        /// Constant DROP for DNSExpiryExceptionPolicy
+        /// </summary>
+        public static readonly DNSExpiryExceptionPolicy DROP = new DNSExpiryExceptionPolicy("DROP");
+
+        /// <summary>
+        /// Constant REJECT for DNSExpiryExceptionPolicy
+        /// </summary>
+        public static readonly DNSExpiryExceptionPolicy REJECT = new DNSExpiryExceptionPolicy("REJECT");
+
+        /// <summary>
+        /// Constructs a custom DNSExpiryExceptionPolicy for a value not among the defined constants.
+        /// </summary>
+        public DNSExpiryExceptionPolicy(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DNSExpiryExceptionPolicy FindValue(string value)
+        {
+            return FindValue<DNSExpiryExceptionPolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DNSExpiryExceptionPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type EnabledAnalysisType.
     /// </summary>
     public class EnabledAnalysisType : ConstantClass
@@ -297,6 +343,47 @@ namespace Amazon.NetworkFirewall
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EncryptionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FirewallPolicyErrorCode.
+    /// </summary>
+    public class FirewallPolicyErrorCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant DNS_FIREWALL_RULE_GROUP_UNAVAILABLE for FirewallPolicyErrorCode
+        /// </summary>
+        public static readonly FirewallPolicyErrorCode DNS_FIREWALL_RULE_GROUP_UNAVAILABLE = new FirewallPolicyErrorCode("DNS_FIREWALL_RULE_GROUP_UNAVAILABLE");
+
+        /// <summary>
+        /// Constant ROUTE53_RESOLVED_IP_VALIDATION_MISSING for FirewallPolicyErrorCode
+        /// </summary>
+        public static readonly FirewallPolicyErrorCode ROUTE53_RESOLVED_IP_VALIDATION_MISSING = new FirewallPolicyErrorCode("ROUTE53_RESOLVED_IP_VALIDATION_MISSING");
+
+        /// <summary>
+        /// Constructs a custom FirewallPolicyErrorCode for a value not among the defined constants.
+        /// </summary>
+        public FirewallPolicyErrorCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FirewallPolicyErrorCode FindValue(string value)
+        {
+            return FindValue<FirewallPolicyErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FirewallPolicyErrorCode(string value)
         {
             return FindValue(value);
         }
@@ -1130,6 +1217,11 @@ namespace Amazon.NetworkFirewall
         public static readonly ResourceStatus ERROR = new ResourceStatus("ERROR");
 
         /// <summary>
+        /// Constant UPDATING for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus UPDATING = new ResourceStatus("UPDATING");
+
+        /// <summary>
         /// Constructs a custom ResourceStatus for a value not among the defined constants.
         /// </summary>
         public ResourceStatus(string value) : base(value) { }
@@ -1196,6 +1288,52 @@ namespace Amazon.NetworkFirewall
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RevocationCheckAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type Route53ResolvedIPValidationAction.
+    /// </summary>
+    public class Route53ResolvedIPValidationAction : ConstantClass
+    {
+        /// <summary>
+        /// Constant ALERT for Route53ResolvedIPValidationAction
+        /// </summary>
+        public static readonly Route53ResolvedIPValidationAction ALERT = new Route53ResolvedIPValidationAction("ALERT");
+
+        /// <summary>
+        /// Constant DROP for Route53ResolvedIPValidationAction
+        /// </summary>
+        public static readonly Route53ResolvedIPValidationAction DROP = new Route53ResolvedIPValidationAction("DROP");
+
+        /// <summary>
+        /// Constant REJECT for Route53ResolvedIPValidationAction
+        /// </summary>
+        public static readonly Route53ResolvedIPValidationAction REJECT = new Route53ResolvedIPValidationAction("REJECT");
+
+        /// <summary>
+        /// Constructs a custom Route53ResolvedIPValidationAction for a value not among the defined constants.
+        /// </summary>
+        public Route53ResolvedIPValidationAction(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Route53ResolvedIPValidationAction FindValue(string value)
+        {
+            return FindValue<Route53ResolvedIPValidationAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Route53ResolvedIPValidationAction(string value)
         {
             return FindValue(value);
         }
@@ -1771,6 +1909,11 @@ namespace Amazon.NetworkFirewall
     /// </summary>
     public class TargetType : ConstantClass
     {
+        /// <summary>
+        /// Constant AWS_ROUTE_53_RESOLVED_DOMAIN for TargetType
+        /// </summary>
+        public static readonly TargetType AWS_ROUTE_53_RESOLVED_DOMAIN = new TargetType("AWS_ROUTE_53_RESOLVED_DOMAIN");
+
         /// <summary>
         /// Constant HTTP_HOST for TargetType
         /// </summary>

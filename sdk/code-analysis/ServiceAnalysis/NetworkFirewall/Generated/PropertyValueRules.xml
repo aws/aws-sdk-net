@@ -2304,6 +2304,18 @@
     <pattern>^arn:aws.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.FirewallPolicyError.Message</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9- ]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.FirewallPolicyError.ResourceId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9:/_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.FirewallPolicyMetadata.Arn</property>
     <min>1</min>
     <max>256</max>
@@ -2338,6 +2350,11 @@
     <min>1</min>
     <max>128</max>
     <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.FirewallPolicyResponse.StatusMessage</property>
+    <min>1</min>
+    <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.Flow.DestinationPort</property>
@@ -2593,6 +2610,12 @@
     <min>1</min>
     <max>128</max>
     <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.Route53ResolvedIPValidation.DNSFirewallRuleGroupId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^rslvr-frg-[0-9a-f]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.RuleGroupMetadata.Arn</property>

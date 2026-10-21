@@ -43,7 +43,7 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The ID of the Availability Zone where the firewall is located. For example, <c>us-east-2a</c>.
+        /// The name of the Availability Zone where the firewall is located. For example, <c>us-east-2a</c>.
         /// </para>
         ///  
         /// <para>
@@ -57,6 +57,22 @@ namespace Amazon.NetworkFirewall.Model
         /// Checks to see if the AvailabilityZone property is set.
         /// </summary>
         internal bool IsSetAvailabilityZone() => this.AvailabilityZone != null;
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneId. 
+        /// <para>
+        /// The ID of the Availability Zone where the firewall is located. For example, <c>use2-az1</c>.
+        /// Availability Zone IDs are the same in every Amazon Web Services account, so use this
+        /// parameter when you coordinate resources across accounts. Specify either <c>AvailabilityZone</c>
+        /// or <c>AvailabilityZoneId</c>, not both. If you specify both, the request fails.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZoneId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AvailabilityZoneId property is set.
+        /// </summary>
+        internal bool IsSetAvailabilityZoneId() => this.AvailabilityZoneId != null;
 
         /// <summary>
         /// Gets and sets the property FirewallArn. 

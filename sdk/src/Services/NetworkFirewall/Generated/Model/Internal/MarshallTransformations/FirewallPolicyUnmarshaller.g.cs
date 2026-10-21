@@ -67,6 +67,13 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("Route53ResolvedIPValidation", targetDepth, ref reader))
+                {
+                    var unmarshaller = Route53ResolvedIPValidationUnmarshaller.Instance;
+                    unmarshalledObject.Route53ResolvedIPValidation = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("StatefulDefaultActions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

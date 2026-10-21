@@ -62,6 +62,17 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetRoute53ResolvedIPValidation())
+            {
+                context.Writer.WritePropertyName("Route53ResolvedIPValidation");
+                context.Writer.WriteStartObject();
+
+                var marshaller = Route53ResolvedIPValidationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Route53ResolvedIPValidation, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetStatefulDefaultActions())
             {
                 context.Writer.WritePropertyName("StatefulDefaultActions");
