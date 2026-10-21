@@ -2373,6 +2373,34 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly InstanceMetricName CPUUtilization = new InstanceMetricName("CPUUtilization");
         /// <summary>
+        /// Constant DiskQueueLength for InstanceMetricName
+        /// </summary>
+        public static readonly InstanceMetricName DiskQueueLength = new InstanceMetricName("DiskQueueLength");
+        /// <summary>
+        /// Constant DiskReadBytes for InstanceMetricName
+        /// </summary>
+        public static readonly InstanceMetricName DiskReadBytes = new InstanceMetricName("DiskReadBytes");
+        /// <summary>
+        /// Constant DiskReadOps for InstanceMetricName
+        /// </summary>
+        public static readonly InstanceMetricName DiskReadOps = new InstanceMetricName("DiskReadOps");
+        /// <summary>
+        /// Constant DiskTotalReadTime for InstanceMetricName
+        /// </summary>
+        public static readonly InstanceMetricName DiskTotalReadTime = new InstanceMetricName("DiskTotalReadTime");
+        /// <summary>
+        /// Constant DiskTotalWriteTime for InstanceMetricName
+        /// </summary>
+        public static readonly InstanceMetricName DiskTotalWriteTime = new InstanceMetricName("DiskTotalWriteTime");
+        /// <summary>
+        /// Constant DiskWriteBytes for InstanceMetricName
+        /// </summary>
+        public static readonly InstanceMetricName DiskWriteBytes = new InstanceMetricName("DiskWriteBytes");
+        /// <summary>
+        /// Constant DiskWriteOps for InstanceMetricName
+        /// </summary>
+        public static readonly InstanceMetricName DiskWriteOps = new InstanceMetricName("DiskWriteOps");
+        /// <summary>
         /// Constant MetadataNoToken for InstanceMetricName
         /// </summary>
         public static readonly InstanceMetricName MetadataNoToken = new InstanceMetricName("MetadataNoToken");
@@ -3268,6 +3296,34 @@ namespace Amazon.Lightsail
         /// Constant DiskQueueDepth for MetricName
         /// </summary>
         public static readonly MetricName DiskQueueDepth = new MetricName("DiskQueueDepth");
+        /// <summary>
+        /// Constant DiskQueueLength for MetricName
+        /// </summary>
+        public static readonly MetricName DiskQueueLength = new MetricName("DiskQueueLength");
+        /// <summary>
+        /// Constant DiskReadBytes for MetricName
+        /// </summary>
+        public static readonly MetricName DiskReadBytes = new MetricName("DiskReadBytes");
+        /// <summary>
+        /// Constant DiskReadOps for MetricName
+        /// </summary>
+        public static readonly MetricName DiskReadOps = new MetricName("DiskReadOps");
+        /// <summary>
+        /// Constant DiskTotalReadTime for MetricName
+        /// </summary>
+        public static readonly MetricName DiskTotalReadTime = new MetricName("DiskTotalReadTime");
+        /// <summary>
+        /// Constant DiskTotalWriteTime for MetricName
+        /// </summary>
+        public static readonly MetricName DiskTotalWriteTime = new MetricName("DiskTotalWriteTime");
+        /// <summary>
+        /// Constant DiskWriteBytes for MetricName
+        /// </summary>
+        public static readonly MetricName DiskWriteBytes = new MetricName("DiskWriteBytes");
+        /// <summary>
+        /// Constant DiskWriteOps for MetricName
+        /// </summary>
+        public static readonly MetricName DiskWriteOps = new MetricName("DiskWriteOps");
         /// <summary>
         /// Constant FreeableMemory for MetricName
         /// </summary>

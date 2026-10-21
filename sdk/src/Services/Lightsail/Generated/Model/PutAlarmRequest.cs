@@ -228,7 +228,8 @@ namespace Amazon.Lightsail.Model
         /// <para>
         ///  <b>Instances</b>: <c>BurstCapacityPercentage</c>, <c>BurstCapacityTime</c>, <c>CPUUtilization</c>,
         /// <c>NetworkIn</c>, <c>NetworkOut</c>, <c>StatusCheckFailed</c>, <c>StatusCheckFailed_Instance</c>,
-        /// and <c>StatusCheckFailed_System</c>.
+        /// <c>StatusCheckFailed_System</c>, <c>DiskReadOps</c>, <c>DiskWriteOps</c>, <c>DiskReadBytes</c>,
+        /// <c>DiskWriteBytes</c>, <c>DiskTotalReadTime</c>, <c>DiskTotalWriteTime</c>, and <c>DiskQueueLength</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
