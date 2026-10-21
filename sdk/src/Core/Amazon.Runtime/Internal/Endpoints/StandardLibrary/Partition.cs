@@ -27,59 +27,62 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
     /// </summary>
     public partial class Partition : PropertyBag
     {
+        public override object this[string propertyName]
+        {
+            get => propertyName switch
+            {
+                "name" => name,
+                "dnsSuffix" => dnsSuffix,
+                "dualStackDnsSuffix" => dualStackDnsSuffix,
+                "supportsFIPS" => supportsFIPS,
+                "supportsDualStack" => supportsDualStack,
+                "implicitGlobalRegion" => implicitGlobalRegion,
+                _ => base[propertyName],
+            };
+            set
+            {
+                switch (propertyName)
+                {
+                    case "name": name = (string)value; break;
+                    case "dnsSuffix": dnsSuffix = (string)value; break;
+                    case "dualStackDnsSuffix": dualStackDnsSuffix = (string)value; break;
+                    case "supportsFIPS": supportsFIPS = (bool)value; break;
+                    case "supportsDualStack": supportsDualStack = (bool)value; break;
+                    case "implicitGlobalRegion": implicitGlobalRegion = (string)value; break;
+                    default: base[propertyName] = value; break;
+                }
+            }
+        }
+
         /// <summary>
         /// Partition Name
         /// </summary>
-        public string name
-        {
-            get { return (string)this["name"]; }
-            set { this["name"] = value; }
-        }
+        public string name { get; set; }
 
         /// <summary>
         /// Partition DNS suffix
         /// </summary>
-        public string dnsSuffix
-        {
-            get { return (string)this["dnsSuffix"]; }
-            set { this["dnsSuffix"] = value; }
-        }
+        public string dnsSuffix { get; set; }
 
         /// <summary>
         /// Partition IPv6 DNS suffix
         /// </summary>
-        public string dualStackDnsSuffix
-        {
-            get { return (string)this["dualStackDnsSuffix"]; }
-            set { this["dualStackDnsSuffix"] = value; }
-        }
+        public string dualStackDnsSuffix { get; set; }
 
         /// <summary>
         /// Partition supports FIPS
         /// </summary>
-        public bool supportsFIPS
-        {
-            get { return (bool)this["supportsFIPS"]; }
-            set { this["supportsFIPS"] = value; }
-        }
+        public bool supportsFIPS { get; set; }
 
         /// <summary>
         /// Partition supports IPv6
         /// </summary>
-        public bool supportsDualStack
-        {
-            get { return (bool)this["supportsDualStack"]; }
-            set { this["supportsDualStack"] = value; }
-        }
+        public bool supportsDualStack { get; set; }
 
         /// <summary>
         /// The region used by partitional (non-regionalized/global) services for signing.
         /// </summary>
-        public string implicitGlobalRegion
-        {
-            get { return (string)this["implicitGlobalRegion"]; }
-            set { this["implicitGlobalRegion"] = value; }
-        }
+        public string implicitGlobalRegion { get; set; }
 
         /// <summary>
         /// Builds Partition from PartitionAttributesShape

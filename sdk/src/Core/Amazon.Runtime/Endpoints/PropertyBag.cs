@@ -31,7 +31,7 @@ namespace Amazon.Runtime.Endpoints
     public class PropertyBag : IPropertyBag
     {
         private Dictionary<string, object> properties = new Dictionary<string, object>(); 
-        public object this[string propertyName]
+        public virtual object this[string propertyName]
         {
             get 
             {
