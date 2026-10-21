@@ -61,6 +61,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+
+            if (requestObject.IsSetUserCreatedDesignationId())
+            {
+                context.Writer.WritePropertyName("userCreatedDesignationId");
+                context.Writer.WriteStringValue(requestObject.UserCreatedDesignationId);
+            }
         }
 
         /// <summary>
