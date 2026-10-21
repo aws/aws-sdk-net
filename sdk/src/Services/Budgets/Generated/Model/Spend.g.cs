@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the budgets-2016-10-20.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -22,11 +22,11 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 using System.Net;
-
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618,CS1570
+
 namespace Amazon.Budgets.Model
 {
     /// <summary>
@@ -61,9 +61,6 @@ namespace Amazon.Budgets.Model
     /// </summary>
     public partial class Spend
     {
-        private decimal? _amount;
-        private string _unit;
-
         /// <summary>
         /// Gets and sets the property Amount. 
         /// <para>
@@ -71,18 +68,13 @@ namespace Amazon.Budgets.Model
         /// budget threshold.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2147483647)]
-        public decimal? Amount
-        {
-            get { return this._amount; }
-            set { this._amount = value; }
-        }
+        [AWSProperty(Required = true, Min = 1, Max = 2147483647)]
+        public decimal? Amount { get; set; }
 
-        // Check to see if Amount property is set
-        internal bool IsSetAmount()
-        {
-            return this._amount != null;
-        }
+        /// <summary>
+        /// Checks to see if the Amount property is set.
+        /// </summary>
+        internal bool IsSetAmount() => this.Amount.HasValue;
 
         /// <summary>
         /// Gets and sets the property Unit. 
@@ -91,18 +83,12 @@ namespace Amazon.Budgets.Model
         /// threshold.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2147483647)]
-        public string Unit
-        {
-            get { return this._unit; }
-            set { this._unit = value; }
-        }
+        [AWSProperty(Required = true, Min = 1, Max = 2147483647)]
+        public string Unit { get; set; }
 
-        // Check to see if Unit property is set
-        internal bool IsSetUnit()
-        {
-            return this._unit != null;
-        }
-
+        /// <summary>
+        /// Checks to see if the Unit property is set.
+        /// </summary>
+        internal bool IsSetUnit() => this.Unit != null;
     }
 }

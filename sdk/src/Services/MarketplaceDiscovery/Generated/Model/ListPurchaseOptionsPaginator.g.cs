@@ -14,29 +14,28 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the marketplace-discovery-2026-02-05.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
+
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// Base class for ListPurchaseOptions paginators.
+    /// Paginator for the ListPurchaseOptions operation
     /// </summary>
     internal sealed partial class ListPurchaseOptionsPaginator : IPaginator<ListPurchaseOptionsResponse>, IListPurchaseOptionsPaginator
     {
         private readonly IAmazonMarketplaceDiscovery _client;
         private readonly ListPurchaseOptionsRequest _request;
         private int _isPaginatorInUse = 0;
-        
+
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
@@ -45,7 +44,7 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Enumerable containing all of the PurchaseOptions
         /// </summary>
-        public IPaginatedEnumerable<PurchaseOptionSummary> PurchaseOptions => 
+        public IPaginatedEnumerable<PurchaseOptionSummary> PurchaseOptions =>
             new PaginatedResultKeyResponse<ListPurchaseOptionsResponse, PurchaseOptionSummary>(this, (i) => i.PurchaseOptions ?? new List<PurchaseOptionSummary>());
 
         internal ListPurchaseOptionsPaginator(IAmazonMarketplaceDiscovery client, ListPurchaseOptionsRequest request)
@@ -53,7 +52,7 @@ namespace Amazon.MarketplaceDiscovery.Model
             this._client = client;
             this._request = request;
         }
-#if BCL
+#if NETFRAMEWORK
         IEnumerable<ListPurchaseOptionsResponse> IPaginator<ListPurchaseOptionsResponse>.Paginate()
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloud9-2017-09-23.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -22,28 +22,26 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 using System.Net;
-
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618,CS1570
+
 namespace Amazon.Cloud9.Model
 {
     /// <summary>
     /// The target request is invalid.
     /// </summary>
-    #if !NETSTANDARD
+#if !NETSTANDARD
     [Serializable]
-    #endif
+#endif
     public partial class BadRequestException : AmazonCloud9Exception
     {
-
         /// <summary>
         /// Default constructor for BadRequestException
         /// message.
         /// </summary>
-        public BadRequestException() 
-            : base() {}
+        public BadRequestException() : base() { }
 
         /// <summary>
         /// Constructs a new BadRequestException with the specified error
@@ -52,47 +50,47 @@ namespace Amazon.Cloud9.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public BadRequestException(string message) 
-            : base(message) {}
+        public BadRequestException(string message) : base(message) { }
 
         /// <summary>
         /// Construct instance of BadRequestException
         /// </summary>
-        /// <param name="message"></param>
-        /// <param name="innerException"></param>
-        public BadRequestException(string message, Exception innerException) 
-            : base(message, innerException) {}
+        public BadRequestException(string message, Exception innerException) : base(message, innerException) { }
 
         /// <summary>
         /// Construct instance of BadRequestException
         /// </summary>
-        /// <param name="innerException"></param>
-        public BadRequestException(Exception innerException) 
-            : base(innerException) {}
+        public BadRequestException(Exception innerException) : base(innerException) { }
 
         /// <summary>
         /// Construct instance of BadRequestException
         /// </summary>
-        /// <param name="message"></param>
-        /// <param name="innerException"></param>
-        /// <param name="errorType"></param>
-        /// <param name="errorCode"></param>
-        /// <param name="requestId"></param>
-        /// <param name="statusCode"></param>
-        public BadRequestException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
-            : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
+        public BadRequestException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) : base(message, innerException, errorType, errorCode, requestId, statusCode) { }
 
         /// <summary>
         /// Construct instance of BadRequestException
         /// </summary>
-        /// <param name="message"></param>
-        /// <param name="errorType"></param>
-        /// <param name="errorCode"></param>
-        /// <param name="requestId"></param>
-        /// <param name="statusCode"></param>
-        public BadRequestException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
-            : base(message, errorType, errorCode, requestId, statusCode) {}
+        public BadRequestException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) : base(message, errorType, errorCode, requestId, statusCode) { }
 
+        /// <summary>
+        /// Gets and sets the property ClassName.
+        /// </summary>
+        public string ClassName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ClassName property is set.
+        /// </summary>
+        internal bool IsSetClassName() => this.ClassName != null;
+
+        /// <summary>
+        /// Gets and sets the property Code.
+        /// </summary>
+        public int? Code { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Code property is set.
+        /// </summary>
+        internal bool IsSetCode() => this.Code.HasValue;
 
 #if !NETSTANDARD
         /// <summary>
@@ -105,6 +103,8 @@ namespace Amazon.Cloud9.Model
         protected BadRequestException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.ClassName = (string)info.GetValue("ClassName", typeof(string));
+            this.Code = (int?)info.GetValue("Code", typeof(int?));
         }
 
         /// <summary>
@@ -114,14 +114,12 @@ namespace Amazon.Cloud9.Model
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
         [System.Security.SecurityCritical]
-        // These FxCop rules are giving false-positives for this method
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("ClassName", this.ClassName);
+            info.AddValue("Code", this.Code);
         }
 #endif
-
     }
 }

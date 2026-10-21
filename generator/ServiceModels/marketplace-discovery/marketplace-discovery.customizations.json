@@ -1,0 +1,7 @@
+{
+    "paginators": {
+        "ListPurchaseOptions": {
+            "pageSize": "maxResults"
+        }
+    }
+}
