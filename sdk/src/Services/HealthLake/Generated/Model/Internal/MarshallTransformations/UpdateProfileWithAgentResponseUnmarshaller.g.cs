@@ -46,26 +46,7 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             var unmarshalledObject = new UpdateProfileWithAgentResponse();
-            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
-
-            context.Read(ref reader);
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
-            {
-                if (context.TestExpression("AgentResponse", targetDepth, ref reader))
-                {
-                    var unmarshaller = AgentOutputMessageUnmarshaller.Instance;
-                    unmarshalledObject.AgentResponse = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("ConversationId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConversationId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-            }
+            unmarshalledObject.AgentResponse = new AgentOutputMessageStream(context.Stream);
 
             return unmarshalledObject;
         }
@@ -92,21 +73,9 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
                     {
                         return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                     }
-                    if (errorResponse.Code != null && errorResponse.Code.Equals("AgentMessageOutOfContextException"))
-                    {
-                        return AgentMessageOutOfContextExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                    }
-                    if (errorResponse.Code != null && errorResponse.Code.Equals("ConversationNotFoundException"))
-                    {
-                        return ConversationNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                    }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                     {
                         return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                    }
-                    if (errorResponse.Code != null && errorResponse.Code.Equals("NotImplementedOperationException"))
-                    {
-                        return NotImplementedOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                     {
@@ -116,14 +85,6 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
                     {
                         return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                     }
-                    if (errorResponse.Code != null && errorResponse.Code.Equals("UnauthorizedException"))
-                    {
-                        return UnauthorizedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                    }
-                    if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedMIMETypeException"))
-                    {
-                        return UnsupportedMIMETypeExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                    }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                     {
                         return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -132,6 +93,16 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
             }
             return new AmazonHealthLakeException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
+
+        /// <summary>
+        /// Overriden to return true indicating the response contains streaming data.
+        /// </summary>
+        public override bool HasStreamingProperty => true;
+
+        /// <summary>
+        /// Return false for reading the entire response
+        /// </summary>
+        protected override bool ShouldReadEntireResponse(IWebResponseData response, bool readEntireResponse) => false;
 
         private static UpdateProfileWithAgentResponseUnmarshaller _instance = new UpdateProfileWithAgentResponseUnmarshaller();
 

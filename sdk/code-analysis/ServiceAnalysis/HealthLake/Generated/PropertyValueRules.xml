@@ -541,17 +541,7 @@
     <pattern>^[a-f0-9]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.HealthLake.Model.UpdateProfileWithAgentResponse.ConversationId</property>
-    <min>1</min>
-    <max>36</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.HealthLake.Model.AgentInputMessage.Body</property>
-    <min>1</min>
-    <max>40960</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.HealthLake.Model.AgentOutputMessage.Body</property>
     <min>1</min>
     <max>40960</max>
   </property-value-rule>
@@ -642,9 +632,24 @@
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.HealthLake.Model.EndOfOutputEvent.ConversationId</property>
+    <min>1</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.EndOfOutputEvent.FinalResponseMessage</property>
+    <min>1</min>
+    <max>40960</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.HealthLake.Model.ErrorCause.ErrorMessage</property>
     <min>1</min>
     <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.ErrorEvent.Message</property>
+    <min>1</min>
+    <max>40960</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.ExportJobProperties.DataAccessRoleArn</property>
@@ -724,6 +729,11 @@
     <pattern>^(arn:aws((-us-gov)|(-iso)|(-iso-b)|(-cn))?:kms:)?([a-z]{2}-[a-z]+(-[a-z]+)?-\d:)?(\d{12}:)?(((key/)?[a-zA-Z0-9-_]+)|(alias/[a-zA-Z0-9:/_-]+))$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.HealthLake.Model.ProgressEvent.Message</property>
+    <min>1</min>
+    <max>40960</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.HealthLake.Model.S3Configuration.KmsKeyId</property>
     <min>1</min>
     <max>400</max>
@@ -751,6 +761,11 @@
     <min>0</min>
     <max>256</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.TextMessageEvent.Message</property>
+    <min>1</min>
+    <max>40960</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.TransformationInputDataConfig.S3Uri</property>

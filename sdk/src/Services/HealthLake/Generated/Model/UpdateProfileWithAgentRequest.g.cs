@@ -77,19 +77,5 @@ namespace Amazon.HealthLake.Model
         /// Checks to see if the ProfileId property is set.
         /// </summary>
         internal bool IsSetProfileId() => this.ProfileId != null;
-
-        /// <summary>
-        /// Gets and sets the property SourceFormat. 
-        /// <para>
-        /// The source data format for the transformation.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required = true)]
-        public SourceFormat SourceFormat { get; set; }
-
-        /// <summary>
-        /// Checks to see if the SourceFormat property is set.
-        /// </summary>
-        internal bool IsSetSourceFormat() => this.SourceFormat != null;
     }
 }

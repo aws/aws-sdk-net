@@ -34,17 +34,17 @@ using System.Text.Json;
 namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AgentOutputMessage Object
+    /// Response Unmarshaller for HeartbeatEvent Object
     /// </summary>
-    public partial class AgentOutputMessageUnmarshaller : IJsonUnmarshaller<AgentOutputMessage, JsonUnmarshallerContext>
+    public partial class HeartbeatEventUnmarshaller : IJsonUnmarshaller<HeartbeatEvent, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public AgentOutputMessage Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public HeartbeatEvent Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            var unmarshalledObject = new AgentOutputMessage();
+            var unmarshalledObject = new HeartbeatEvent();
             if (context.IsEmptyResponse) return null;
 
             context.Read(ref reader);
@@ -53,35 +53,15 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Body", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Body = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("OptionsList", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.OptionsList = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("Type", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
             }
             return unmarshalledObject;
         }
 
-        private static AgentOutputMessageUnmarshaller _instance = new AgentOutputMessageUnmarshaller();
+        private static HeartbeatEventUnmarshaller _instance = new HeartbeatEventUnmarshaller();
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>
-        public static AgentOutputMessageUnmarshaller Instance => _instance;
+        public static HeartbeatEventUnmarshaller Instance => _instance;
     }
 }
