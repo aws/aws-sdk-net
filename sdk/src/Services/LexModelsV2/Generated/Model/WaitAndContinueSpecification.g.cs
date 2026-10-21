@@ -53,10 +53,9 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property ContinueResponse. 
         /// <para>
         /// The response that Amazon Lex sends to indicate that the bot is ready to continue the
-        /// conversation.
+        /// conversation. Required unless the bot locale's <c>assistedNluMode</c> is <c>DialogManager</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true)]
         public ResponseSpecification ContinueResponse { get; set; }
 
         /// <summary>
@@ -82,10 +81,9 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property WaitingResponse. 
         /// <para>
         /// The response that Amazon Lex sends to indicate that the bot is waiting for the conversation
-        /// to continue.
+        /// to continue. Required unless the bot locale's <c>assistedNluMode</c> is <c>DialogManager</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true)]
         public ResponseSpecification WaitingResponse { get; set; }
 
         /// <summary>

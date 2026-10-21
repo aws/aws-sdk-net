@@ -1369,6 +1369,11 @@ namespace Amazon.LexModelsV2
     public class AssistedNluMode : ConstantClass
     {
         /// <summary>
+        /// Constant DialogManager for AssistedNluMode
+        /// </summary>
+        public static readonly AssistedNluMode DialogManager = new AssistedNluMode("DialogManager");
+
+        /// <summary>
         /// Constant Fallback for AssistedNluMode
         /// </summary>
         public static readonly AssistedNluMode Fallback = new AssistedNluMode("Fallback");
