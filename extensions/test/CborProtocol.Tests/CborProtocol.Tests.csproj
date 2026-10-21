@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>$(SdkNetFrameworkTargets)</TargetFrameworks>
+    <TargetFrameworks>$(SdkTestTargets)</TargetFrameworks>
     <AssemblyName>CborProtocol.Tests</AssemblyName>
     <PackageId>CborProtocol.Tests</PackageId>
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
@@ -23,8 +23,12 @@
 	  <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
   </ItemGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition="$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) == '.NETFramework'">
     <ProjectReference Include="../../../sdk/src/Core/AWSSDK.Core.NetFramework.csproj" />
     <ProjectReference Include="../../src/AWSSDK.Extensions.CborProtocol/AWSSDK.Extensions.CborProtocol.NetFramework.csproj" />
+  </ItemGroup>
+  <ItemGroup Condition="$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) != '.NETFramework'">
+    <ProjectReference Include="../../../sdk/src/Core/AWSSDK.Core.NetStandard.csproj" />
+    <ProjectReference Include="../../src/AWSSDK.Extensions.CborProtocol/AWSSDK.Extensions.CborProtocol.NetStandard.csproj" />
   </ItemGroup>
 </Project>
