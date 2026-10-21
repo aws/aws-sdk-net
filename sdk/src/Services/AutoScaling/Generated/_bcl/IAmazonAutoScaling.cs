@@ -1668,6 +1668,46 @@ namespace Amazon.AutoScaling
 
         #endregion
         
+        #region  DescribeAccountSettings
+
+
+        /// <summary>
+        /// Describes the current Amazon EC2 Auto Scaling account settings for your account.
+        /// Account settings are a framework that allows you to enable or disable features for
+        /// your account. The framework also gives you visibility into features that will be enforced
+        /// by a given date, providing a time window to prepare for backwards-incompatible changes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountSettings service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAccountSettings service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
+        /// The <c>NextToken</c> value is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAccountSettings">REST API Reference for DescribeAccountSettings Operation</seealso>
+        DescribeAccountSettingsResponse DescribeAccountSettings(DescribeAccountSettingsRequest request);
+
+
+
+        /// <summary>
+        /// Describes the current Amazon EC2 Auto Scaling account settings for your account.
+        /// Account settings are a framework that allows you to enable or disable features for
+        /// your account. The framework also gives you visibility into features that will be enforced
+        /// by a given date, providing a time window to prepare for backwards-incompatible changes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAccountSettings service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
+        /// The <c>NextToken</c> value is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAccountSettings">REST API Reference for DescribeAccountSettings Operation</seealso>
+        Task<DescribeAccountSettingsResponse> DescribeAccountSettingsAsync(DescribeAccountSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeAdjustmentTypes
 
 
@@ -4228,6 +4268,44 @@ namespace Amazon.AutoScaling
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LaunchInstances">REST API Reference for LaunchInstances Operation</seealso>
         Task<LaunchInstancesResponse> LaunchInstancesAsync(LaunchInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutAccountSetting
+
+
+        /// <summary>
+        /// Modifies an account setting for your account. You can use this operation to opt in
+        /// or opt out of features provided through account settings when permitted. Account settings
+        /// give you control over features that might have backwards-incompatible changes. When
+        /// Amazon EC2 Auto Scaling introduces such changes, account settings allow you to test
+        /// and adopt new features. Some account settings are enforced after a specified date.
+        /// This means that after the enforcement date, you can no longer modify the setting.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountSetting service method.</param>
+        /// 
+        /// <returns>The response from the PutAccountSetting service method, as returned by AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutAccountSetting">REST API Reference for PutAccountSetting Operation</seealso>
+        PutAccountSettingResponse PutAccountSetting(PutAccountSettingRequest request);
+
+
+
+        /// <summary>
+        /// Modifies an account setting for your account. You can use this operation to opt in
+        /// or opt out of features provided through account settings when permitted. Account settings
+        /// give you control over features that might have backwards-incompatible changes. When
+        /// Amazon EC2 Auto Scaling introduces such changes, account settings allow you to test
+        /// and adopt new features. Some account settings are enforced after a specified date.
+        /// This means that after the enforcement date, you can no longer modify the setting.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountSetting service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAccountSetting service method, as returned by AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutAccountSetting">REST API Reference for PutAccountSetting Operation</seealso>
+        Task<PutAccountSettingResponse> PutAccountSettingAsync(PutAccountSettingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -217,6 +217,18 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AutoScaling.Model.DescribeAccountSettingsRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z0-9\-_\/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.DescribeAccountSettingsRequest.NextToken</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.DescribeAccountSettingsResponse.NextToken</property>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AutoScaling.Model.DescribeAutoScalingGroupsRequest.NextToken</property>
   </property-value-rule>
   <property-value-rule>
@@ -433,6 +445,18 @@
     <property>Amazon.AutoScaling.Model.LaunchInstancesResponse.ClientToken</property>
     <min>1</min>
     <max>64</max>
+    <pattern>[A-Za-z0-9\-_\/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.PutAccountSettingRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z0-9\-_\/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.PutAccountSettingRequest.Value</property>
+    <min>1</min>
+    <max>255</max>
     <pattern>[A-Za-z0-9\-_\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -666,6 +690,36 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.AcceleratorTotalMemoryMiBRequest.Min</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.AccountSetting.DefaultValue</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z0-9\-_\/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.AccountSetting.EnforcedValue</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z0-9\-_\/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.AccountSetting.EnforcementType</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z0-9\-_\/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.AccountSetting.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z0-9\-_\/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.AccountSetting.Value</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z0-9\-_\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.Activity.ActivityId</property>
