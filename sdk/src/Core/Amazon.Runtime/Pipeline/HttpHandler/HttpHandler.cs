@@ -19,6 +19,8 @@ using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Telemetry;
 using Amazon.Runtime.Telemetry.Tracing;
 using Amazon.Runtime.Telemetry.Metrics;
+using Amazon.Runtime.Telemetry.Metrics.NoOp;
+using Amazon.Runtime.Telemetry.Tracing.NoOp;
 using Amazon.Util;
 using Amazon.Util.Internal;
 using System;
@@ -40,6 +42,10 @@ namespace Amazon.Runtime.Internal
         private bool _disposed;
         private IHttpRequestFactory<TRequestContent> _requestFactory;
         private const string CachedChecksumKey = "ConsumedCachedChecksum";
+        private volatile GeneratedUserAgent _lastUserAgent;
+#if !BCL
+        private volatile ComposedUri _lastComposedUri;
+#endif
 
         /// <summary>
         /// The sender parameter used in any events raised by this handler.
@@ -153,6 +159,12 @@ namespace Amazon.Runtime.Internal
 
         private static void RecordHttpTelemetryData(IExecutionContext executionContext, TraceSpan traceSpan, IRequest request)
         {
+            // With the default no-op providers every call below is discarded, so skip building attributes and boxing values.
+            bool noOpSpan = traceSpan is NoOpTraceSpan;
+            bool noOpMeter = executionContext.RequestContext.ClientConfig.TelemetryProvider.MeterProvider is NoOpMeterProvider;
+            if (noOpSpan && noOpMeter)
+                return;
+
             var response = executionContext.ResponseContext.HttpResponse;
 
             var metricsAttributes = new Attributes();
@@ -322,14 +334,16 @@ namespace Amazon.Runtime.Internal
 #if !NETFRAMEWORK
             else if (wrappedRequest.ContentStream is PooledContentStream pooledStream && pooledStream.Content.Length > 0)
             {
-                requestContext.Metrics.AddProperty(Metric.RequestSize, pooledStream.Content.Length);
+                if (requestContext.Metrics.IsEnabled)
+                    requestContext.Metrics.AddProperty(Metric.RequestSize, pooledStream.Content.Length);
                 httpRequest.WriteToRequestBody(requestContent, pooledStream.Content, requestContext.Request.Headers);
             }
 #endif
             else if (wrappedRequest.Content != null && wrappedRequest.Content.Length > 0)
             {
                 byte[] requestData = wrappedRequest.Content;
-                requestContext.Metrics.AddProperty(Metric.RequestSize, requestData.Length);
+                if (requestContext.Metrics.IsEnabled)
+                    requestContext.Metrics.AddProperty(Metric.RequestSize, requestData.Length);
                 httpRequest.WriteToRequestBody(requestContent, requestData, requestContext.Request.Headers);
             }
             else
@@ -386,7 +400,8 @@ namespace Amazon.Runtime.Internal
             if (wrappedRequest.Content != null && wrappedRequest.Content.Length > 0)
             {
                 byte[] requestData = wrappedRequest.Content;
-                requestContext.Metrics.AddProperty(Metric.RequestSize, requestData.Length);
+                if (requestContext.Metrics.IsEnabled)
+                    requestContext.Metrics.AddProperty(Metric.RequestSize, requestData.Length);
                 await httpRequest.WriteToRequestBodyAsync(requestContent, requestData, requestContext.Request.Headers, requestContext.CancellationToken).ConfigureAwait(false);
             }
             else
@@ -432,7 +447,7 @@ namespace Amazon.Runtime.Internal
         protected virtual IHttpRequest<TRequestContent> CreateWebRequest(IRequestContext requestContext)
         {
             IRequest request = requestContext.Request;
-            Uri url = AmazonServiceClient.ComposeUrl(request);
+            Uri url = ComposeRequestUrl(request);
 #if NET8_0_OR_GREATER
             // For bidirectional event stream requests (e.g., Transcribe Streaming), create a dedicated
             // HttpClient to ensure each stream gets its own HTTP/2 connection. Services like Amazon
@@ -497,6 +512,52 @@ namespace Amazon.Runtime.Internal
 
             return httpRequest;
         }
+
+        /// <summary>
+        /// Returns the same Uri as <see cref="AmazonServiceClient.ComposeUrl(IRequest)"/>, reusing the previously
+        /// parsed Uri when the composed URL string is unchanged.
+        /// </summary>
+        internal Uri ComposeRequestUrl(IRequest request)
+        {
+#if BCL
+            return AmazonServiceClient.ComposeUrl(request);
+#else
+            var urlString = AmazonServiceClient.ComposeUrlString(request);
+#if NET8_0_OR_GREATER
+            var disableCanonicalizationFlag = AWSConfigs.DisableDangerousDisablePathAndQueryCanonicalization;
+#else
+            var disableCanonicalizationFlag = false;
+#endif
+
+            var cached = _lastComposedUri;
+            if (cached != null &&
+                cached.DisableCanonicalizationFlag == disableCanonicalizationFlag &&
+                string.Equals(cached.UrlString, urlString, StringComparison.Ordinal))
+            {
+                return cached.Uri;
+            }
+
+            var uri = AmazonServiceClient.CreateRequestUri(urlString, disableCanonicalizationFlag);
+            _lastComposedUri = new ComposedUri(urlString, disableCanonicalizationFlag, uri);
+            return uri;
+#endif
+        }
+
+#if !BCL
+        private sealed class ComposedUri
+        {
+            public ComposedUri(string urlString, bool disableCanonicalizationFlag, Uri uri)
+            {
+                UrlString = urlString;
+                DisableCanonicalizationFlag = disableCanonicalizationFlag;
+                Uri = uri;
+            }
+
+            public string UrlString { get; }
+            public bool DisableCanonicalizationFlag { get; }
+            public Uri Uri { get; }
+        }
+#endif
 
         /// <summary>
         /// Disposes the HTTP handler.
@@ -605,13 +666,15 @@ namespace Amazon.Runtime.Internal
 
             var originalRequest = (IAmazonWebServiceRequest)requestContext.OriginalRequest;
 
-            requestContext.UserAgentDetails.AddUserAgentComponent(originalRequest.UserAgentDetails.GetCustomUserAgentComponents());
-            foreach (var featureId in originalRequest.UserAgentDetails.TrackedFeatureIds)
-            {
-                requestContext.UserAgentDetails.AddFeature(featureId);
-            }
+            requestContext.UserAgentDetails.MergeFrom(originalRequest.UserAgentDetails);
 
-            var metricsUserAgent = requestContext.UserAgentDetails.GenerateUserAgentWithMetrics();
+            // Requests from the same client usually produce the same User-Agent, so reuse the last generated
+            // string when the components and features are unchanged.
+            var cachedUserAgent = _lastUserAgent;
+            var generatedUserAgent = requestContext.UserAgentDetails.GetOrGenerateUserAgentWithMetrics(cachedUserAgent);
+            if (!ReferenceEquals(generatedUserAgent, cachedUserAgent))
+                _lastUserAgent = generatedUserAgent;
+            var metricsUserAgent = generatedUserAgent.Value;
             Logger.DebugFormat("User-Agent Header: {0}", metricsUserAgent);
 
             if (requestContext.ClientConfig.UseAlternateUserAgentHeader)
