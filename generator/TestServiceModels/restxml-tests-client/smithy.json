@@ -180,7 +180,16 @@
                 }
             }
         },
-        "aws.protocols#HttpConfiguration": {
+        "aws.protocols#StringList": {
+            "type": "list",
+            "member": {
+                "target": "smithy.api#String"
+            },
+            "traits": {
+                "smithy.api#private": {}
+            }
+        },
+        "aws.protocols#restXml": {
             "type": "structure",
             "members": {
                 "http": {
@@ -194,35 +203,7 @@
                     "traits": {
                         "smithy.api#documentation": "The priority ordered list of supported HTTP protocol versions that\nare required when using event streams with the service. If not set,\nthis value defaults to the value of the `http` member. Any entry in\n`eventStreamHttp` MUST also appear in `http`."
                     }
-                }
-            },
-            "traits": {
-                "smithy.api#documentation": "Contains HTTP protocol configuration for HTTP-based protocols.",
-                "smithy.api#mixin": {
-                    "localTraits": [
-                        "smithy.api#private"
-                    ]
                 },
-                "smithy.api#private": {}
-            }
-        },
-        "aws.protocols#StringList": {
-            "type": "list",
-            "member": {
-                "target": "smithy.api#String"
-            },
-            "traits": {
-                "smithy.api#private": {}
-            }
-        },
-        "aws.protocols#restXml": {
-            "type": "structure",
-            "mixins": [
-                {
-                    "target": "aws.protocols#HttpConfiguration"
-                }
-            ],
-            "members": {
                 "noErrorWrapping": {
                     "target": "smithy.api#Boolean",
                     "traits": {
@@ -416,7 +397,7 @@
                             "String=%20%25%3A%2F%3F%23%5B%5D%40%21%24%26%27%28%29%2A%2B%2C%3B%3D%F0%9F%98%B9"
                         ],
                         "params": {
-                            "queryString": " %:/?#[]@!$&'()*+,;=😹"
+                            "queryString": " %:/?#[]@!$&'()*+,;=≡ƒÿ╣"
                         }
                     },
                     {
@@ -2505,7 +2486,7 @@
                         "uri": "/HttpRequestWithLabels/%20%25%3A%2F%3F%23%5B%5D%40%21%24%26%27%28%29%2A%2B%2C%3B%3D%F0%9F%98%B9/1/2/3/4.1/5.1/true/2019-12-16T23%3A48%3A18Z",
                         "body": "",
                         "params": {
-                            "string": " %:/?#[]@!$&'()*+,;=😹",
+                            "string": " %:/?#[]@!$&'()*+,;=≡ƒÿ╣",
                             "short": 1,
                             "integer": 2,
                             "long": 3,
@@ -3405,17 +3386,6 @@
                 }
             }
         },
-        "aws.protocoltests.restxml#NestedXmlMapWithXmlNameInputOutput": {
-            "type": "structure",
-            "members": {
-                "nestedXmlMapWithXmlNameMap": {
-                    "target": "aws.protocoltests.restxml#NestedXmlMapWithXmlNameMap"
-                }
-            },
-            "traits": {
-                "smithy.api#mixin": {}
-            }
-        },
         "aws.protocoltests.restxml#NestedXmlMapWithXmlNameMap": {
             "type": "map",
             "key": {
@@ -3430,24 +3400,22 @@
         },
         "aws.protocoltests.restxml#NestedXmlMapWithXmlNameRequest": {
             "type": "structure",
-            "mixins": [
-                {
-                    "target": "aws.protocoltests.restxml#NestedXmlMapWithXmlNameInputOutput"
+            "members": {
+                "nestedXmlMapWithXmlNameMap": {
+                    "target": "aws.protocoltests.restxml#NestedXmlMapWithXmlNameMap"
                 }
-            ],
-            "members": {},
+            },
             "traits": {
                 "smithy.api#input": {}
             }
         },
         "aws.protocoltests.restxml#NestedXmlMapWithXmlNameResponse": {
             "type": "structure",
-            "mixins": [
-                {
-                    "target": "aws.protocoltests.restxml#NestedXmlMapWithXmlNameInputOutput"
+            "members": {
+                "nestedXmlMapWithXmlNameMap": {
+                    "target": "aws.protocoltests.restxml#NestedXmlMapWithXmlNameMap"
                 }
-            ],
-            "members": {},
+            },
             "traits": {
                 "smithy.api#output": {}
             }
@@ -3545,7 +3513,7 @@
                 ]
             }
         },
-        "aws.protocoltests.restxml#NestedXmlMapsInputOutput": {
+        "aws.protocoltests.restxml#NestedXmlMapsRequest": {
             "type": "structure",
             "members": {
                 "nestedMap": {
@@ -3559,29 +3527,22 @@
                 }
             },
             "traits": {
-                "smithy.api#mixin": {}
-            }
-        },
-        "aws.protocoltests.restxml#NestedXmlMapsRequest": {
-            "type": "structure",
-            "mixins": [
-                {
-                    "target": "aws.protocoltests.restxml#NestedXmlMapsInputOutput"
-                }
-            ],
-            "members": {},
-            "traits": {
                 "smithy.api#input": {}
             }
         },
         "aws.protocoltests.restxml#NestedXmlMapsResponse": {
             "type": "structure",
-            "mixins": [
-                {
-                    "target": "aws.protocoltests.restxml#NestedXmlMapsInputOutput"
+            "members": {
+                "nestedMap": {
+                    "target": "aws.protocoltests.restxml#NestedMap"
+                },
+                "flatNestedMap": {
+                    "target": "aws.protocoltests.restxml#NestedMap",
+                    "traits": {
+                        "smithy.api#xmlFlattened": {}
+                    }
                 }
-            ],
-            "members": {},
+            },
             "traits": {
                 "smithy.api#output": {}
             }
@@ -4789,7 +4750,7 @@
                 ]
             }
         },
-        "aws.protocoltests.restxml#SimpleScalarPropertiesInputOutput": {
+        "aws.protocoltests.restxml#SimpleScalarPropertiesRequest": {
             "type": "structure",
             "members": {
                 "foo": {
@@ -4830,29 +4791,49 @@
                 }
             },
             "traits": {
-                "smithy.api#mixin": {}
-            }
-        },
-        "aws.protocoltests.restxml#SimpleScalarPropertiesRequest": {
-            "type": "structure",
-            "mixins": [
-                {
-                    "target": "aws.protocoltests.restxml#SimpleScalarPropertiesInputOutput"
-                }
-            ],
-            "members": {},
-            "traits": {
                 "smithy.api#input": {}
             }
         },
         "aws.protocoltests.restxml#SimpleScalarPropertiesResponse": {
             "type": "structure",
-            "mixins": [
-                {
-                    "target": "aws.protocoltests.restxml#SimpleScalarPropertiesInputOutput"
+            "members": {
+                "foo": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#httpHeader": "X-Foo"
+                    }
+                },
+                "stringValue": {
+                    "target": "smithy.api#String"
+                },
+                "trueBooleanValue": {
+                    "target": "smithy.api#Boolean"
+                },
+                "falseBooleanValue": {
+                    "target": "smithy.api#Boolean"
+                },
+                "byteValue": {
+                    "target": "smithy.api#Integer"
+                },
+                "shortValue": {
+                    "target": "smithy.api#Integer"
+                },
+                "integerValue": {
+                    "target": "smithy.api#Integer"
+                },
+                "longValue": {
+                    "target": "smithy.api#Long"
+                },
+                "floatValue": {
+                    "target": "smithy.api#Float"
+                },
+                "doubleValue": {
+                    "target": "smithy.api#Double",
+                    "traits": {
+                        "smithy.api#xmlName": "DoubleDribble"
+                    }
                 }
-            ],
-            "members": {},
+            },
             "traits": {
                 "smithy.api#output": {}
             }
@@ -5162,21 +5143,39 @@
         },
         "aws.protocoltests.restxml#XmlAttributesInMiddlePayloadRequest": {
             "type": "structure",
-            "mixins": [
-                {
-                    "target": "aws.protocoltests.restxml#XmlAttributesMiddleMemberInputOutput"
+            "members": {
+                "foo": {
+                    "target": "smithy.api#String"
+                },
+                "attr": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#xmlAttribute": {},
+                        "smithy.api#xmlName": "test"
+                    }
+                },
+                "baz": {
+                    "target": "smithy.api#String"
                 }
-            ],
-            "members": {}
+            }
         },
         "aws.protocoltests.restxml#XmlAttributesInMiddlePayloadResponse": {
             "type": "structure",
-            "mixins": [
-                {
-                    "target": "aws.protocoltests.restxml#XmlAttributesMiddleMemberInputOutput"
+            "members": {
+                "foo": {
+                    "target": "smithy.api#String"
+                },
+                "attr": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#xmlAttribute": {},
+                        "smithy.api#xmlName": "test"
+                    }
+                },
+                "baz": {
+                    "target": "smithy.api#String"
                 }
-            ],
-            "members": {}
+            }
         },
         "aws.protocoltests.restxml#XmlAttributesInMiddleRequest": {
             "type": "structure",
@@ -5204,45 +5203,6 @@
             },
             "traits": {
                 "smithy.api#output": {}
-            }
-        },
-        "aws.protocoltests.restxml#XmlAttributesInputOutput": {
-            "type": "structure",
-            "members": {
-                "foo": {
-                    "target": "smithy.api#String"
-                },
-                "attr": {
-                    "target": "smithy.api#String",
-                    "traits": {
-                        "smithy.api#xmlAttribute": {},
-                        "smithy.api#xmlName": "test"
-                    }
-                }
-            },
-            "traits": {
-                "smithy.api#mixin": {}
-            }
-        },
-        "aws.protocoltests.restxml#XmlAttributesMiddleMemberInputOutput": {
-            "type": "structure",
-            "members": {
-                "foo": {
-                    "target": "smithy.api#String"
-                },
-                "attr": {
-                    "target": "smithy.api#String",
-                    "traits": {
-                        "smithy.api#xmlAttribute": {},
-                        "smithy.api#xmlName": "test"
-                    }
-                },
-                "baz": {
-                    "target": "smithy.api#String"
-                }
-            },
-            "traits": {
-                "smithy.api#mixin": {}
             }
         },
         "aws.protocoltests.restxml#XmlAttributesOnPayload": {
@@ -5331,42 +5291,66 @@
         },
         "aws.protocoltests.restxml#XmlAttributesPayloadRequest": {
             "type": "structure",
-            "mixins": [
-                {
-                    "target": "aws.protocoltests.restxml#XmlAttributesInputOutput"
+            "members": {
+                "foo": {
+                    "target": "smithy.api#String"
+                },
+                "attr": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#xmlAttribute": {},
+                        "smithy.api#xmlName": "test"
+                    }
                 }
-            ],
-            "members": {}
+            }
         },
         "aws.protocoltests.restxml#XmlAttributesPayloadResponse": {
             "type": "structure",
-            "mixins": [
-                {
-                    "target": "aws.protocoltests.restxml#XmlAttributesInputOutput"
+            "members": {
+                "foo": {
+                    "target": "smithy.api#String"
+                },
+                "attr": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#xmlAttribute": {},
+                        "smithy.api#xmlName": "test"
+                    }
                 }
-            ],
-            "members": {}
+            }
         },
         "aws.protocoltests.restxml#XmlAttributesRequest": {
             "type": "structure",
-            "mixins": [
-                {
-                    "target": "aws.protocoltests.restxml#XmlAttributesInputOutput"
+            "members": {
+                "foo": {
+                    "target": "smithy.api#String"
+                },
+                "attr": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#xmlAttribute": {},
+                        "smithy.api#xmlName": "test"
+                    }
                 }
-            ],
-            "members": {},
+            },
             "traits": {
                 "smithy.api#input": {}
             }
         },
         "aws.protocoltests.restxml#XmlAttributesResponse": {
             "type": "structure",
-            "mixins": [
-                {
-                    "target": "aws.protocoltests.restxml#XmlAttributesInputOutput"
+            "members": {
+                "foo": {
+                    "target": "smithy.api#String"
+                },
+                "attr": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#xmlAttribute": {},
+                        "smithy.api#xmlName": "test"
+                    }
                 }
-            ],
-            "members": {},
+            },
             "traits": {
                 "smithy.api#output": {}
             }
@@ -5573,24 +5557,162 @@
         },
         "aws.protocoltests.restxml#XmlEmptyListsRequest": {
             "type": "structure",
-            "mixins": [
-                {
-                    "target": "aws.protocoltests.restxml#XmlListsInputOutput"
+            "members": {
+                "stringList": {
+                    "target": "aws.protocoltests.shared#StringList"
+                },
+                "stringSet": {
+                    "target": "aws.protocoltests.shared#StringSet"
+                },
+                "integerList": {
+                    "target": "aws.protocoltests.shared#IntegerList"
+                },
+                "booleanList": {
+                    "target": "aws.protocoltests.shared#BooleanList"
+                },
+                "timestampList": {
+                    "target": "aws.protocoltests.shared#TimestampList"
+                },
+                "enumList": {
+                    "target": "aws.protocoltests.shared#FooEnumList"
+                },
+                "intEnumList": {
+                    "target": "aws.protocoltests.shared#IntegerEnumList"
+                },
+                "nestedStringList": {
+                    "target": "aws.protocoltests.shared#NestedStringList"
+                },
+                "renamedListMembers": {
+                    "target": "aws.protocoltests.restxml#RenamedListMembers",
+                    "traits": {
+                        "smithy.api#xmlName": "renamed"
+                    }
+                },
+                "flattenedList": {
+                    "target": "aws.protocoltests.restxml#RenamedListMembers",
+                    "traits": {
+                        "smithy.api#suppress": [
+                            "XmlFlattenedTrait"
+                        ],
+                        "smithy.api#xmlFlattened": {}
+                    }
+                },
+                "flattenedList2": {
+                    "target": "aws.protocoltests.restxml#RenamedListMembers",
+                    "traits": {
+                        "smithy.api#xmlFlattened": {},
+                        "smithy.api#xmlName": "customName"
+                    }
+                },
+                "flattenedListWithMemberNamespace": {
+                    "target": "aws.protocoltests.restxml#ListWithMemberNamespace",
+                    "traits": {
+                        "smithy.api#xmlFlattened": {}
+                    }
+                },
+                "flattenedListWithNamespace": {
+                    "target": "aws.protocoltests.restxml#ListWithNamespace",
+                    "traits": {
+                        "smithy.api#xmlFlattened": {}
+                    }
+                },
+                "structureList": {
+                    "target": "aws.protocoltests.restxml#StructureList",
+                    "traits": {
+                        "smithy.api#xmlName": "myStructureList"
+                    }
+                },
+                "flattenedStructureList": {
+                    "target": "aws.protocoltests.restxml#StructureList",
+                    "traits": {
+                        "smithy.api#suppress": [
+                            "XmlFlattenedTrait"
+                        ],
+                        "smithy.api#xmlFlattened": {}
+                    }
                 }
-            ],
-            "members": {},
+            },
             "traits": {
                 "smithy.api#input": {}
             }
         },
         "aws.protocoltests.restxml#XmlEmptyListsResponse": {
             "type": "structure",
-            "mixins": [
-                {
-                    "target": "aws.protocoltests.restxml#XmlListsInputOutput"
+            "members": {
+                "stringList": {
+                    "target": "aws.protocoltests.shared#StringList"
+                },
+                "stringSet": {
+                    "target": "aws.protocoltests.shared#StringSet"
+                },
+                "integerList": {
+                    "target": "aws.protocoltests.shared#IntegerList"
+                },
+                "booleanList": {
+                    "target": "aws.protocoltests.shared#BooleanList"
+                },
+                "timestampList": {
+                    "target": "aws.protocoltests.shared#TimestampList"
+                },
+                "enumList": {
+                    "target": "aws.protocoltests.shared#FooEnumList"
+                },
+                "intEnumList": {
+                    "target": "aws.protocoltests.shared#IntegerEnumList"
+                },
+                "nestedStringList": {
+                    "target": "aws.protocoltests.shared#NestedStringList"
+                },
+                "renamedListMembers": {
+                    "target": "aws.protocoltests.restxml#RenamedListMembers",
+                    "traits": {
+                        "smithy.api#xmlName": "renamed"
+                    }
+                },
+                "flattenedList": {
+                    "target": "aws.protocoltests.restxml#RenamedListMembers",
+                    "traits": {
+                        "smithy.api#suppress": [
+                            "XmlFlattenedTrait"
+                        ],
+                        "smithy.api#xmlFlattened": {}
+                    }
+                },
+                "flattenedList2": {
+                    "target": "aws.protocoltests.restxml#RenamedListMembers",
+                    "traits": {
+                        "smithy.api#xmlFlattened": {},
+                        "smithy.api#xmlName": "customName"
+                    }
+                },
+                "flattenedListWithMemberNamespace": {
+                    "target": "aws.protocoltests.restxml#ListWithMemberNamespace",
+                    "traits": {
+                        "smithy.api#xmlFlattened": {}
+                    }
+                },
+                "flattenedListWithNamespace": {
+                    "target": "aws.protocoltests.restxml#ListWithNamespace",
+                    "traits": {
+                        "smithy.api#xmlFlattened": {}
+                    }
+                },
+                "structureList": {
+                    "target": "aws.protocoltests.restxml#StructureList",
+                    "traits": {
+                        "smithy.api#xmlName": "myStructureList"
+                    }
+                },
+                "flattenedStructureList": {
+                    "target": "aws.protocoltests.restxml#StructureList",
+                    "traits": {
+                        "smithy.api#suppress": [
+                            "XmlFlattenedTrait"
+                        ],
+                        "smithy.api#xmlFlattened": {}
+                    }
                 }
-            ],
-            "members": {},
+            },
             "traits": {
                 "smithy.api#output": {}
             }
@@ -5854,7 +5976,7 @@
                 ]
             }
         },
-        "aws.protocoltests.restxml#XmlEnumsInputOutput": {
+        "aws.protocoltests.restxml#XmlEnumsRequest": {
             "type": "structure",
             "members": {
                 "fooEnum1": {
@@ -5877,29 +5999,31 @@
                 }
             },
             "traits": {
-                "smithy.api#mixin": {}
-            }
-        },
-        "aws.protocoltests.restxml#XmlEnumsRequest": {
-            "type": "structure",
-            "mixins": [
-                {
-                    "target": "aws.protocoltests.restxml#XmlEnumsInputOutput"
-                }
-            ],
-            "members": {},
-            "traits": {
                 "smithy.api#input": {}
             }
         },
         "aws.protocoltests.restxml#XmlEnumsResponse": {
             "type": "structure",
-            "mixins": [
-                {
-                    "target": "aws.protocoltests.restxml#XmlEnumsInputOutput"
+            "members": {
+                "fooEnum1": {
+                    "target": "aws.protocoltests.shared#FooEnum"
+                },
+                "fooEnum2": {
+                    "target": "aws.protocoltests.shared#FooEnum"
+                },
+                "fooEnum3": {
+                    "target": "aws.protocoltests.shared#FooEnum"
+                },
+                "fooEnumList": {
+                    "target": "aws.protocoltests.shared#FooEnumList"
+                },
+                "fooEnumSet": {
+                    "target": "aws.protocoltests.shared#FooEnumSet"
+                },
+                "fooEnumMap": {
+                    "target": "aws.protocoltests.shared#FooEnumMap"
                 }
-            ],
-            "members": {},
+            },
             "traits": {
                 "smithy.api#output": {}
             }
@@ -5982,7 +6106,7 @@
                 ]
             }
         },
-        "aws.protocoltests.restxml#XmlIntEnumsInputOutput": {
+        "aws.protocoltests.restxml#XmlIntEnumsRequest": {
             "type": "structure",
             "members": {
                 "intEnum1": {
@@ -6005,29 +6129,31 @@
                 }
             },
             "traits": {
-                "smithy.api#mixin": {}
-            }
-        },
-        "aws.protocoltests.restxml#XmlIntEnumsRequest": {
-            "type": "structure",
-            "mixins": [
-                {
-                    "target": "aws.protocoltests.restxml#XmlIntEnumsInputOutput"
-                }
-            ],
-            "members": {},
-            "traits": {
                 "smithy.api#input": {}
             }
         },
         "aws.protocoltests.restxml#XmlIntEnumsResponse": {
             "type": "structure",
-            "mixins": [
-                {
-                    "target": "aws.protocoltests.restxml#XmlIntEnumsInputOutput"
+            "members": {
+                "intEnum1": {
+                    "target": "aws.protocoltests.shared#IntegerEnum"
+                },
+                "intEnum2": {
+                    "target": "aws.protocoltests.shared#IntegerEnum"
+                },
+                "intEnum3": {
+                    "target": "aws.protocoltests.shared#IntegerEnum"
+                },
+                "intEnumList": {
+                    "target": "aws.protocoltests.shared#IntegerEnumList"
+                },
+                "intEnumSet": {
+                    "target": "aws.protocoltests.shared#IntegerEnumSet"
+                },
+                "intEnumMap": {
+                    "target": "aws.protocoltests.shared#IntegerEnumMap"
                 }
-            ],
-            "members": {},
+            },
             "traits": {
                 "smithy.api#output": {}
             }
@@ -6228,7 +6354,7 @@
                 ]
             }
         },
-        "aws.protocoltests.restxml#XmlListsInputOutput": {
+        "aws.protocoltests.restxml#XmlListsRequest": {
             "type": "structure",
             "members": {
                 "stringList": {
@@ -6306,29 +6432,86 @@
                 }
             },
             "traits": {
-                "smithy.api#mixin": {}
-            }
-        },
-        "aws.protocoltests.restxml#XmlListsRequest": {
-            "type": "structure",
-            "mixins": [
-                {
-                    "target": "aws.protocoltests.restxml#XmlListsInputOutput"
-                }
-            ],
-            "members": {},
-            "traits": {
                 "smithy.api#input": {}
             }
         },
         "aws.protocoltests.restxml#XmlListsResponse": {
             "type": "structure",
-            "mixins": [
-                {
-                    "target": "aws.protocoltests.restxml#XmlListsInputOutput"
+            "members": {
+                "stringList": {
+                    "target": "aws.protocoltests.shared#StringList"
+                },
+                "stringSet": {
+                    "target": "aws.protocoltests.shared#StringSet"
+                },
+                "integerList": {
+                    "target": "aws.protocoltests.shared#IntegerList"
+                },
+                "booleanList": {
+                    "target": "aws.protocoltests.shared#BooleanList"
+                },
+                "timestampList": {
+                    "target": "aws.protocoltests.shared#TimestampList"
+                },
+                "enumList": {
+                    "target": "aws.protocoltests.shared#FooEnumList"
+                },
+                "intEnumList": {
+                    "target": "aws.protocoltests.shared#IntegerEnumList"
+                },
+                "nestedStringList": {
+                    "target": "aws.protocoltests.shared#NestedStringList"
+                },
+                "renamedListMembers": {
+                    "target": "aws.protocoltests.restxml#RenamedListMembers",
+                    "traits": {
+                        "smithy.api#xmlName": "renamed"
+                    }
+                },
+                "flattenedList": {
+                    "target": "aws.protocoltests.restxml#RenamedListMembers",
+                    "traits": {
+                        "smithy.api#suppress": [
+                            "XmlFlattenedTrait"
+                        ],
+                        "smithy.api#xmlFlattened": {}
+                    }
+                },
+                "flattenedList2": {
+                    "target": "aws.protocoltests.restxml#RenamedListMembers",
+                    "traits": {
+                        "smithy.api#xmlFlattened": {},
+                        "smithy.api#xmlName": "customName"
+                    }
+                },
+                "flattenedListWithMemberNamespace": {
+                    "target": "aws.protocoltests.restxml#ListWithMemberNamespace",
+                    "traits": {
+                        "smithy.api#xmlFlattened": {}
+                    }
+                },
+                "flattenedListWithNamespace": {
+                    "target": "aws.protocoltests.restxml#ListWithNamespace",
+                    "traits": {
+                        "smithy.api#xmlFlattened": {}
+                    }
+                },
+                "structureList": {
+                    "target": "aws.protocoltests.restxml#StructureList",
+                    "traits": {
+                        "smithy.api#xmlName": "myStructureList"
+                    }
+                },
+                "flattenedStructureList": {
+                    "target": "aws.protocoltests.restxml#StructureList",
+                    "traits": {
+                        "smithy.api#suppress": [
+                            "XmlFlattenedTrait"
+                        ],
+                        "smithy.api#xmlFlattened": {}
+                    }
                 }
-            ],
-            "members": {},
+            },
             "traits": {
                 "smithy.api#output": {}
             }
@@ -6388,23 +6571,6 @@
                 ]
             }
         },
-        "aws.protocoltests.restxml#XmlMapWithXmlNamespaceInputOutput": {
-            "type": "structure",
-            "members": {
-                "myMap": {
-                    "target": "aws.protocoltests.restxml#XmlMapWithXmlNamespaceInputOutputMap",
-                    "traits": {
-                        "smithy.api#xmlName": "KVP",
-                        "smithy.api#xmlNamespace": {
-                            "uri": "https://the-member.example.com"
-                        }
-                    }
-                }
-            },
-            "traits": {
-                "smithy.api#mixin": {}
-            }
-        },
         "aws.protocoltests.restxml#XmlMapWithXmlNamespaceInputOutputMap": {
             "type": "map",
             "key": {
@@ -6428,24 +6594,34 @@
         },
         "aws.protocoltests.restxml#XmlMapWithXmlNamespaceRequest": {
             "type": "structure",
-            "mixins": [
-                {
-                    "target": "aws.protocoltests.restxml#XmlMapWithXmlNamespaceInputOutput"
+            "members": {
+                "myMap": {
+                    "target": "aws.protocoltests.restxml#XmlMapWithXmlNamespaceInputOutputMap",
+                    "traits": {
+                        "smithy.api#xmlName": "KVP",
+                        "smithy.api#xmlNamespace": {
+                            "uri": "https://the-member.example.com"
+                        }
+                    }
                 }
-            ],
-            "members": {},
+            },
             "traits": {
                 "smithy.api#input": {}
             }
         },
         "aws.protocoltests.restxml#XmlMapWithXmlNamespaceResponse": {
             "type": "structure",
-            "mixins": [
-                {
-                    "target": "aws.protocoltests.restxml#XmlMapWithXmlNamespaceInputOutput"
+            "members": {
+                "myMap": {
+                    "target": "aws.protocoltests.restxml#XmlMapWithXmlNamespaceInputOutputMap",
+                    "traits": {
+                        "smithy.api#xmlName": "KVP",
+                        "smithy.api#xmlNamespace": {
+                            "uri": "https://the-member.example.com"
+                        }
+                    }
                 }
-            ],
-            "members": {},
+            },
             "traits": {
                 "smithy.api#output": {}
             }
@@ -6741,7 +6917,7 @@
                 ]
             }
         },
-        "aws.protocoltests.restxml#XmlNamespacesInputOutput": {
+        "aws.protocoltests.restxml#XmlNamespacesRequest": {
             "type": "structure",
             "members": {
                 "nested": {
@@ -6749,34 +6925,24 @@
                 }
             },
             "traits": {
-                "smithy.api#mixin": {},
+                "smithy.api#input": {},
                 "smithy.api#xmlNamespace": {
                     "uri": "http://foo.com"
                 }
             }
         },
-        "aws.protocoltests.restxml#XmlNamespacesRequest": {
-            "type": "structure",
-            "mixins": [
-                {
-                    "target": "aws.protocoltests.restxml#XmlNamespacesInputOutput"
-                }
-            ],
-            "members": {},
-            "traits": {
-                "smithy.api#input": {}
-            }
-        },
         "aws.protocoltests.restxml#XmlNamespacesResponse": {
             "type": "structure",
-            "mixins": [
-                {
-                    "target": "aws.protocoltests.restxml#XmlNamespacesInputOutput"
+            "members": {
+                "nested": {
+                    "target": "aws.protocoltests.restxml#XmlNamespaceNested"
                 }
-            ],
-            "members": {},
+            },
             "traits": {
-                "smithy.api#output": {}
+                "smithy.api#output": {},
+                "smithy.api#xmlNamespace": {
+                    "uri": "http://foo.com"
+                }
             }
         },
         "aws.protocoltests.restxml#XmlNestedUnionStruct": {
@@ -7031,7 +7197,7 @@
                 ]
             }
         },
-        "aws.protocoltests.restxml#XmlTimestampsInputOutput": {
+        "aws.protocoltests.restxml#XmlTimestampsRequest": {
             "type": "structure",
             "members": {
                 "normal": {
@@ -7066,29 +7232,43 @@
                 }
             },
             "traits": {
-                "smithy.api#mixin": {}
-            }
-        },
-        "aws.protocoltests.restxml#XmlTimestampsRequest": {
-            "type": "structure",
-            "mixins": [
-                {
-                    "target": "aws.protocoltests.restxml#XmlTimestampsInputOutput"
-                }
-            ],
-            "members": {},
-            "traits": {
                 "smithy.api#input": {}
             }
         },
         "aws.protocoltests.restxml#XmlTimestampsResponse": {
             "type": "structure",
-            "mixins": [
-                {
-                    "target": "aws.protocoltests.restxml#XmlTimestampsInputOutput"
+            "members": {
+                "normal": {
+                    "target": "smithy.api#Timestamp"
+                },
+                "dateTime": {
+                    "target": "smithy.api#Timestamp",
+                    "traits": {
+                        "smithy.api#timestampFormat": "date-time"
+                    }
+                },
+                "dateTimeOnTarget": {
+                    "target": "aws.protocoltests.shared#DateTime"
+                },
+                "epochSeconds": {
+                    "target": "smithy.api#Timestamp",
+                    "traits": {
+                        "smithy.api#timestampFormat": "epoch-seconds"
+                    }
+                },
+                "epochSecondsOnTarget": {
+                    "target": "aws.protocoltests.shared#EpochSeconds"
+                },
+                "httpDate": {
+                    "target": "smithy.api#Timestamp",
+                    "traits": {
+                        "smithy.api#timestampFormat": "http-date"
+                    }
+                },
+                "httpDateOnTarget": {
+                    "target": "aws.protocoltests.shared#HttpDate"
                 }
-            ],
-            "members": {},
+            },
             "traits": {
                 "smithy.api#output": {}
             }
@@ -7553,7 +7733,7 @@
                 "smithy.api#private": {}
             }
         },
-        "smithy.test#HttpMessageMixin": {
+        "smithy.test#HttpRequestTestCase": {
             "type": "structure",
             "members": {
                 "headers": {
@@ -7585,22 +7765,7 @@
                     "traits": {
                         "smithy.api#documentation": "The media type of the `body`.\n\nThis is used to help test runners to parse and validate the expected\ndata against generated data."
                     }
-                }
-            },
-            "traits": {
-                "smithy.api#documentation": "A mixin that adds HTTP message members and supporting protocol test members,\nsuitable for both requests and responses.",
-                "smithy.api#mixin": {},
-                "smithy.api#private": {}
-            }
-        },
-        "smithy.test#HttpRequestMixin": {
-            "type": "structure",
-            "mixins": [
-                {
-                    "target": "smithy.test#HttpMessageMixin"
-                }
-            ],
-            "members": {
+                },
                 "method": {
                     "target": "smithy.api#String",
                     "traits": {
@@ -7650,22 +7815,7 @@
                     "traits": {
                         "smithy.api#documentation": "A list of query string parameter names that MUST appear in the\nserialized request URI, but no assertion is made on the value.\n\nEach value MUST appear in the format in which it is sent over the\nwire; if a key needs to be percent-encoded, then it MUST appear\npercent-encoded in this list."
                     }
-                }
-            },
-            "traits": {
-                "smithy.api#documentation": "A mixin that adds HTTP request members and supporting protocol test members.",
-                "smithy.api#mixin": {},
-                "smithy.api#private": {}
-            }
-        },
-        "smithy.test#HttpRequestTestCase": {
-            "type": "structure",
-            "mixins": [
-                {
-                    "target": "smithy.test#HttpRequestMixin"
-                }
-            ],
-            "members": {
+                },
                 "id": {
                     "target": "smithy.api#String",
                     "traits": {
@@ -7736,17 +7886,43 @@
                 }
             },
             "traits": {
+                "smithy.api#documentation": "A mixin that adds HTTP request members and supporting protocol test members.",
                 "smithy.api#private": {}
             }
         },
-        "smithy.test#HttpResponseMixin": {
+        "smithy.test#HttpResponseTestCase": {
             "type": "structure",
-            "mixins": [
-                {
-                    "target": "smithy.test#HttpMessageMixin"
-                }
-            ],
             "members": {
+                "headers": {
+                    "target": "smithy.test#StringMap",
+                    "traits": {
+                        "smithy.api#documentation": "Defines a map of expected HTTP headers.\n\nHeaders that are not listed in this map are ignored unless they are\nexplicitly forbidden through `forbidHeaders`."
+                    }
+                },
+                "forbidHeaders": {
+                    "target": "smithy.test#StringList",
+                    "traits": {
+                        "smithy.api#documentation": "A list of header field names that must not appear in the serialized\nHTTP request."
+                    }
+                },
+                "requireHeaders": {
+                    "target": "smithy.test#StringList",
+                    "traits": {
+                        "smithy.api#documentation": "A list of header field names that must appear in the serialized\nHTTP message, but no assertion is made on the value.\n\nHeaders listed in `headers` do not need to appear in this list."
+                    }
+                },
+                "body": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "The expected HTTP message body.\n\nIf no request body is defined, then no assertions are made about\nthe body of the message."
+                    }
+                },
+                "bodyMediaType": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "The media type of the `body`.\n\nThis is used to help test runners to parse and validate the expected\ndata against generated data."
+                    }
+                },
                 "code": {
                     "target": "smithy.api#Integer",
                     "traits": {
@@ -7757,22 +7933,7 @@
                         },
                         "smithy.api#required": {}
                     }
-                }
-            },
-            "traits": {
-                "smithy.api#documentation": "A mixin that adds HTTP response members and supporting protocol test members.",
-                "smithy.api#mixin": {},
-                "smithy.api#private": {}
-            }
-        },
-        "smithy.test#HttpResponseTestCase": {
-            "type": "structure",
-            "mixins": [
-                {
-                    "target": "smithy.test#HttpResponseMixin"
-                }
-            ],
-            "members": {
+                },
                 "id": {
                     "target": "smithy.api#String",
                     "traits": {
@@ -7843,6 +8004,7 @@
                 }
             },
             "traits": {
+                "smithy.api#documentation": "A mixin that adds HTTP response members and supporting protocol test members.",
                 "smithy.api#private": {}
             }
         },

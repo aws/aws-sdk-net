@@ -5,7 +5,7 @@ namespace SmithyDotNet.Generator.Generation.Protocols;
 /// <summary>
 /// The wire protocol used by an AWS service.
 /// </summary>
-public enum AWSProtocol { RestJson1, AwsJson1_0, AwsJson1_1, RpcV2Cbor }
+public enum AWSProtocol { RestJson1, AwsJson1_0, AwsJson1_1, RpcV2Cbor, RestXml }
 
 /// <summary>
 /// Resolves the service's wire protocol from its protocol traits the way the legacy generator does:
@@ -45,6 +45,7 @@ public static class ProtocolResolver
             "aws.protocols#awsJson1_0" => AWSProtocol.AwsJson1_0,
             "aws.protocols#awsJson1_1" => AWSProtocol.AwsJson1_1,
             "smithy.protocols#rpcv2Cbor" => AWSProtocol.RpcV2Cbor,
+            "aws.protocols#restXml" => AWSProtocol.RestXml,
             _ => throw new GeneratorException($"Resolved protocol '{resolved}' is not supported yet."),
         };
     }

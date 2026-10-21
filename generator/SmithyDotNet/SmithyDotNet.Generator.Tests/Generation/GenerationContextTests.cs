@@ -115,6 +115,18 @@ public class GenerationContextTests
         Assert.Contains("operationModifiers['GetThing'] wraps the output, which is only supported for awsJson.", ex.Message);
     }
 
+    [Theory]
+    [InlineData("Codegen/codegen-model.json")]
+    [InlineData("Codegen/rpcv2cbor-model.json")]
+    public void AllowEmptyResult_OutsideRestXml_Throws(string modelPath)
+    {
+        var customizations = new CustomizationsModel();
+        customizations.OperationModifiers["GetThing"] = new OperationModifier { AllowEmptyResult = true };
+
+        var ex = Assert.Throws<GeneratorException>(() => new GenerationContext(new ServiceIndex(TestModels.Load(modelPath)), TestManifests.Example(), customizations: customizations));
+        Assert.Contains("operationModifiers['GetThing'] allows an empty result, which is only supported for restXml.", ex.Message);
+    }
+
     [Fact]
     public void ApiVersion_DerivedFromServiceShape()
     {

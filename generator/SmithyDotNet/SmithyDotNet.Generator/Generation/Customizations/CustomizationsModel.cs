@@ -36,6 +36,16 @@ public sealed record CustomizationsModel
     public string? OverrideContentType { get; init; }
 
     /// <summary>
+    /// restXml-only (route53): members keep the model's declaration order instead of being sorted by
+    /// property name. Route 53 requires XML elements in declaration order, which the sort would break.
+    /// </summary>
+    [JsonPropertyName("retainOriginalMemberOrdering")]
+    public bool RetainOriginalMemberOrdering { get; init; }
+
+    /// <summary>True when <c>operationModifiers.{op}.allowEmptyResult</c> is set for <paramref name="operationName"/>.</summary>
+    public bool AllowsEmptyResult(string operationName) => OperationModifiers.TryGetValue(operationName, out var modifier) && modifier.AllowEmptyResult;
+
+    /// <summary>
     /// Usage:
     /// emitIsSetProperties: {
     ///   "OwningShapeName" :["memberName", "memberName2"]
@@ -136,6 +146,7 @@ public sealed record CustomizationsModel
         string? overrideContentType = null;
         var skipUriPropertyValidation = new List<string>();
         var generateUnmarshaller = new List<string>();
+        var retainOriginalMemberOrdering = false;
 
         foreach (var path in paths)
         {
@@ -238,6 +249,8 @@ public sealed record CustomizationsModel
                 overrideContentType = file.OverrideContentType;
             }
 
+            retainOriginalMemberOrdering |= file.RetainOriginalMemberOrdering;
+
             // A service often splits these across files (acm keeps simpleMethods and simpleConstructors in
             // their own siblings); concatenate the lists and merge the per-operation/per-class dictionaries,
             // failing on a repeated key the way the other hooks do.
@@ -278,6 +291,7 @@ public sealed record CustomizationsModel
             OverrideContentType = overrideContentType,
             SkipUriPropertyValidation = skipUriPropertyValidation,
             GenerateUnmarshaller = generateUnmarshaller,
+            RetainOriginalMemberOrdering = retainOriginalMemberOrdering
         };
     }
 }
@@ -369,6 +383,13 @@ public sealed record OperationModifier
     /// <summary>The name of the response's single property that holds the wrapped output.</summary>
     [JsonPropertyName("wrappedResultMember")]
     public string? WrappedResultMember { get; init; }
+
+    /// <summary>
+    /// restXml-only (s3control): a successful empty-body response returns the response object without
+    /// parsing the body, instead of running the XML result loop (which an empty body would make throw).
+    /// </summary>
+    [JsonPropertyName("allowEmptyResult")]
+    public bool AllowEmptyResult { get; init; }
 }
 
 /// <summary>

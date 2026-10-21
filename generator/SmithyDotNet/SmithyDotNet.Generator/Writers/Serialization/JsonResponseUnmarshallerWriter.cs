@@ -1,5 +1,6 @@
 using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Generation.Operations;
+using SmithyDotNet.Generator.Generation.Protocols;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
 using SmithyDotNet.Generator.Writers.Shapes;
@@ -35,7 +36,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
             WriteClassDocumentation(writer, operation.Name);
             writer.OpenBlock($"public partial class {unmarshallerClassName} : JsonResponseUnmarshaller", () =>
             {
-                WriteUnmarshallMethod(writer, className, members);
+                WriteUnmarshallMethod(writer, className, members, context.Protocol);
                 writer.WriteLine("");
                 WriteUnmarshallExceptionMethod(writer, operation);
                 writer.WriteLine("");
@@ -75,7 +76,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
         writer.WriteLine("/// </summary>");
     }
 
-    private static void WriteUnmarshallMethod(CodeWriter writer, string className, PartitionedMembers members)
+    private static void WriteUnmarshallMethod(CodeWriter writer, string className, PartitionedMembers members, AWSProtocol protocol)
     {
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Unmarshaller the response from the service to the response class.");
@@ -93,7 +94,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
             // emits no reader/loop.
             else if (members.PayloadMember is { } payload)
             {
-                WritePayloadUnmarshall(writer, payload);
+                MarshallerCommon.WritePayloadUnmarshall(writer, payload, protocol);
             }
             else if (members.BodyMembers.Count > 0)
             {
@@ -118,62 +119,6 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
             writer.WriteLine("");
             writer.WriteLine("return unmarshalledObject;");
         });
-    }
-
-    // Unmarshalls a @httpPayload response member — the ENTIRE body: a string/enum via StreamReader (an
-    // enum is a string shape in C2J and its ConstantClass converts implicitly from string), a structure
-    // or document via a JSON unmarshaller over a fresh reader (empty-body early-return), a @streaming blob
-    // as the raw response stream (unbuffered), a non-streaming blob copied into a buffered
-    // MemoryStream. Matches C2J output. A union is a structure (structure path); a document takes the
-    // same reader scaffold but the runtime DocumentUnmarshaller (C2J models a document as a structure, so
-    // it too takes the unmarshallPayload branch — see bedrock-agentcore GetAgentCardResponse); list/map
-    // fail loud here. Response-only: JsonExceptionUnmarshallerWriter fails loud on an @httpPayload error member.
-    private static void WritePayloadUnmarshall(CodeWriter writer, Member payload)
-    {
-        if (payload.Type.MarshalsAsString)
-        {
-            writer.OpenBlock("using (var sr = new StreamReader(context.Stream))", "}", () =>
-            {
-                writer.WriteLine($"unmarshalledObject.{payload.PropertyName} = sr.ReadToEnd();");
-            });
-            return;
-        }
-
-        if (payload.Type.IsStructure || payload.Type.IsDocument)
-        {
-            // A document reuses the DocumentUnmarshaller that body-member and collection-element documents
-            // resolve to (see JsonBodyMemberUnmarshaller); a structure uses its generated unmarshaller.
-            var unmarshaller = payload.Type.IsDocument
-                ? "Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller"
-                : payload.Type.UnmarshallerName;
-            writer.WriteLine("var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);");
-            writer.WriteLine("if (reader.Reader.IsFinalBlock) return unmarshalledObject;");
-            writer.WriteLine($"var unmarshaller = {unmarshaller}.Instance;");
-            writer.WriteLine($"unmarshalledObject.{payload.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
-            return;
-        }
-
-        if (payload.Type.IsStreaming)
-        {
-            // A streaming blob hands back the raw response stream unbuffered (the caller reads it);
-            // the class also overrides HasStreamingProperty. Matches C2J (see Polly SynthesizeSpeech).
-            writer.WriteLine($"unmarshalledObject.{payload.PropertyName} = context.Stream;");
-            return;
-        }
-
-        if (payload.Type.IsBlob)
-        {
-            writer.WriteLine("var ms = new MemoryStream();");
-            writer.WriteLine("Amazon.Util.AWSSDKUtils.CopyStream(context.Stream, ms);");
-            writer.WriteLine("ms.Seek(0, SeekOrigin.Begin);");
-            writer.OpenBlock("if (ms.Length > 0)", () =>
-            {
-                writer.WriteLine($"unmarshalledObject.{payload.PropertyName} = ms;");
-            });
-            return;
-        }
-
-        throw new GeneratorException($"Unsupported @httpPayload member type '{payload.Type.DotNetType}' (member: {payload.PropertyName}).");
     }
 
     // The JSON body reader loop over the in-scope `reader`, shared by the response and exception
@@ -305,7 +250,8 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
         Member? EventStreamMember);
 
     // Emits `if (context.ResponseData.IsHeaderPresent("name")) unmarshalledObject.Property = <conversion>;`
-    // per header member. Shared with the exception unmarshaller (both use the `unmarshalledObject` local).
+    // per header member, into the in-scope `unmarshalledObject` local. Shared with the exception
+    // unmarshaller and the restXml response/exception unmarshallers.
     internal static void WriteHeaderUnmarshallers(CodeWriter writer, List<(Member Member, string HeaderName)> headerMembers)
     {
         foreach (var (member, headerName) in headerMembers)
@@ -336,7 +282,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
     // https://smithy.io/2.0/spec/http-bindings.html#httpprefixheaders-trait
     // Collects every response header whose name starts with the member's prefix into a
     // map<string, string>, stripping the prefix from each key. An empty prefix (the ".Length > 0"
-    // guard is false) collects all headers. Shared with the exception unmarshaller (both use the
+    // guard is false) collects all headers. Shared with the exception and restXml unmarshallers (all use the
     // `unmarshalledObject` local). Smithy restricts the map value to a string; a non-string value fails
     // loud. Only assigned when non-empty, matching C2J.
     internal static void WritePrefixHeadersUnmarshaller(CodeWriter writer, Member member, string prefix)

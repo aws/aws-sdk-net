@@ -208,6 +208,23 @@ public static class FileHeader
     ];
 
     /// <summary>
+    /// Usings for restXml request marshaller files.
+    /// </summary>
+    public static IReadOnlyList<string> XmlRequestMarshallerUsings { get; } =
+    [
+        "System",
+        "System.Collections.Generic",
+        "System.Globalization",
+        "System.IO",
+        "System.Text",
+        "System.Xml",
+        "Amazon.Runtime",
+        "Amazon.Runtime.Internal",
+        "Amazon.Runtime.Internal.Transform",
+        "Amazon.Runtime.Internal.Util",
+    ];
+
+    /// <summary>
     /// Usings for the default-configuration file.
     /// </summary>
     public static IReadOnlyList<string> DefaultConfigurationUsings { get; } =

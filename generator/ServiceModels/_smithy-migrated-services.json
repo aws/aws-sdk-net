@@ -281,6 +281,8 @@
     "ResourceExplorer2",
     "ResourceGroupsTaggingAPI",
     "RestJsonProtocol",
+    "RestXmlProtocol",
+    "RestXmlProtocolNamespace",
     "Route53GlobalResolver",
     "Route53Profiles",
     "Route53RecoveryCluster",

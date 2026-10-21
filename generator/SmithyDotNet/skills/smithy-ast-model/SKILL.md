@@ -61,8 +61,8 @@ input/output references to Unit do **not** count; those emit empty `{Op}Request`
 - `@jsonName` overrides the wire name; the member key stays the model name.
 - Mixins are not resolved (production models arrive pre-flattened). A shape reachable from the service that
   declares `mixins` fails loud; unreachable consumers (the `smithy.test`/`aws.protocols` trait definitions
-  in the raw protocol-test models) are ignored. The restJson1 test model has no reachable consumers; the
-  restXml one does, so it needs flattening or mixin support before it can generate.
+  in the raw protocol-test models) are ignored. A raw protocol-test model with reachable mixin consumers
+  (the restXml one) is flattened  before it reaches the generator, so the closure it sees is already mixin-free.
 - Enum collection skips enums that are unreachable *and* outside the service's namespace, so
   trait-definition enums like `smithy.test#AppliesTo` don't become `ConstantClass`es. Unreachable enums in
   the service's own namespace still emit, matching C2J's orphan `*ExceptionReason` enums.

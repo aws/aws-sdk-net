@@ -19,7 +19,7 @@ public static class JsonScalarMarshaller
     /// the bare value with no unwrap and no special guard, matching C2J's collection path. An enum
     /// marshals as a <c>string</c> (implicit ConstantClass to string). A timestamp uses its explicit
     /// <c>@timestampFormat</c>, else <paramref name="timestampDefault"/> (the caller's binding default);
-    /// this mirrors <see cref="JsonRequestMarshallerWriter.StringConversion"/>, keeping protocol/binding
+    /// this mirrors <see cref="HttpRequestBindings.StringConversion"/>, keeping protocol/binding
     /// defaults out of this writer. A <see cref="TypeDescriptor.MarshallerOverride"/> replaces all of this with a
     /// call to the <c>dataTypeSwap</c> marshaller.
     /// </summary>
