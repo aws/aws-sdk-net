@@ -105,6 +105,12 @@ namespace Amazon.NetworkManager.Model
         IGetNetworkResourcesPaginator GetNetworkResources(GetNetworkResourcesRequest request);
 
         /// <summary>
+        /// Paginator for GetNetworkRoutes operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IGetNetworkRoutesPaginator GetNetworkRoutes(GetNetworkRoutesRequest request);
+
+        /// <summary>
         /// Paginator for GetNetworkTelemetry operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
@@ -127,6 +133,12 @@ namespace Amazon.NetworkManager.Model
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
         IGetTransitGatewayRegistrationsPaginator GetTransitGatewayRegistrations(GetTransitGatewayRegistrationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAttachmentNatConfigurations operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListAttachmentNatConfigurationsPaginator ListAttachmentNatConfigurations(ListAttachmentNatConfigurationsRequest request);
 
         /// <summary>
         /// Paginator for ListAttachmentRoutingPolicyAssociations operation

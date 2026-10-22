@@ -107,8 +107,8 @@ namespace Amazon.NetworkManager.Model
         /// <summary>
         /// Gets and sets the property RoutingPolicyAssociationDetails. 
         /// <para>
-        /// The names of the routing policies and other association details in the core network
-        /// change values.
+        /// The names of the routing policies and other association details in a core network
+        /// change event.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

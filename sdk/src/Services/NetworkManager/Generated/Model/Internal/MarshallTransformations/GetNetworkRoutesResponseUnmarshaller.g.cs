@@ -52,6 +52,13 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("CoreNetworkNetworkFunctionGroup", targetDepth, ref reader))
+                {
+                    var unmarshaller = CoreNetworkNetworkFunctionGroupIdentifierUnmarshaller.Instance;
+                    unmarshalledObject.CoreNetworkNetworkFunctionGroup = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("CoreNetworkSegmentEdge", targetDepth, ref reader))
                 {
                     var unmarshaller = CoreNetworkSegmentEdgeIdentifierUnmarshaller.Instance;
@@ -63,6 +70,13 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new JsonListUnmarshaller<NetworkRoute, NetworkRouteUnmarshaller>(NetworkRouteUnmarshaller.Instance);
                     unmarshalledObject.NetworkRoutes = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 

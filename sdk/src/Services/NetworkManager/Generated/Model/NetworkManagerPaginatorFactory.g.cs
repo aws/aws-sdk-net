@@ -129,6 +129,14 @@ namespace Amazon.NetworkManager.Model
         }
 
         /// <summary>
+        /// Paginator for GetNetworkRoutes operation
+        /// </summary>
+        public IGetNetworkRoutesPaginator GetNetworkRoutes(GetNetworkRoutesRequest request)
+        {
+            return new GetNetworkRoutesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetNetworkTelemetry operation
         /// </summary>
         public IGetNetworkTelemetryPaginator GetNetworkTelemetry(GetNetworkTelemetryRequest request)
@@ -158,6 +166,14 @@ namespace Amazon.NetworkManager.Model
         public IGetTransitGatewayRegistrationsPaginator GetTransitGatewayRegistrations(GetTransitGatewayRegistrationsRequest request)
         {
             return new GetTransitGatewayRegistrationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAttachmentNatConfigurations operation
+        /// </summary>
+        public IListAttachmentNatConfigurationsPaginator ListAttachmentNatConfigurations(ListAttachmentNatConfigurationsRequest request)
+        {
+            return new ListAttachmentNatConfigurationsPaginator(this.client, request);
         }
 
         /// <summary>
