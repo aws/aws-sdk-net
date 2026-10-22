@@ -98,7 +98,7 @@ namespace Amazon.Runtime.Internal
             this.Signer = clientSigner;
             this.Metrics = new RequestMetrics();
             this.Metrics.IsEnabled = enableMetrics;
-            this.InvocationId = Guid.NewGuid();
+            this.InvocationId = GuidUtils.NewRandomGuid();
         }
 
         public IRequest Request { get; set; }
