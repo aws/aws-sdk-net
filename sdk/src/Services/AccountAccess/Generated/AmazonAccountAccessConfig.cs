@@ -32,7 +32,7 @@ namespace Amazon.AccountAccess
     public partial class AmazonAccountAccessConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Account Access", "4.0.101.11");
+            InternalSDKUtils.BuildUserAgentString("Account Access", "4.0.101.12");
 
         private static readonly AmazonAccountAccessEndpointResolver EndpointResolver =
             new AmazonAccountAccessEndpointResolver();

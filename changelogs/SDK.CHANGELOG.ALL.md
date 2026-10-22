@@ -1,3 +1,70 @@
+### 4.0.357.0 (2026-10-22 18:12 UTC)
+* AccountAccess (4.0.101.12)
+	* AccountAccess is now generated from its Smithy model. There are no changes to the public API.
+* ApiGatewayV2 (4.0.100.21)
+	* ApiGatewayV2 is now generated from its Smithy model. There are no changes to the public API.
+* ApplicationDiscoveryService (4.0.100.21)
+	* ApplicationDiscoveryService is now generated from its Smithy model. There are no changes to the public API.
+* AppStream (4.0.103.4)
+	* AppStream is now generated from its Smithy model. There are no changes to the public API.
+* AWSHealth (4.0.102.5)
+	* AWSHealth is now generated from its Smithy model. There are no changes to the public API.
+* AWSMarketplaceCommerceAnalytics (4.0.100.21)
+	* AWSMarketplaceCommerceAnalytics is now generated from its Smithy model. There are no changes to the public API.
+* BedrockAgentCore (4.0.115.0)
+	* Adds the dimension name to evaluation results and batch evaluation summaries. For multi-dimensional LLM-as-a-Judge evaluators, each result and summary now identifies which dimension it corresponds to.
+* BedrockAgentCoreControl (4.0.123.0)
+	* Adds model-based routing and fallback to AgentCore Gateway rules. Rules can match the requested model, route to a specific model, and fall back across inference targets with an optional circuit breaker. Adds multi-dimensional rating scales for AgentCore Evaluations LLM-as-a-Judge evaluators.
+* Connect (4.0.126.0)
+	* Adds support for customer queryable replication errors.
+* Continuum (4.0.100.0)
+	* Releasing Continuum for Code Vulnerabilities APIs for SDKs
+* DatabaseMigrationService (4.0.100.22)
+	* DatabaseMigrationService is now generated from its Smithy model. There are no changes to the public API.
+* Deadline (4.0.103.5)
+	* Deadline is now generated from its Smithy model. The RetryAfterSeconds property on InternalServerErrorException and ThrottlingException is now populated from the Retry-After response header.
+* DevOpsGuru (4.0.100.21)
+	* DevOpsGuru is now generated from its Smithy model. The RetryAfterSeconds property on InternalServerException and ThrottlingException is now populated from the Retry-After response header.
+* Drs (4.0.104.2)
+	* Drs is now generated from its Smithy model. The RetryAfterSeconds property on InternalServerException and ThrottlingException is now populated from the Retry-After response header.
+* EC2 (4.0.129.0)
+	* AWS Transit Gateway now provides managed one-to-one NAT directly on its attachments, through integration with Regional Private NAT Gateway. Use ModifyTransitGatewayAttachmentNatConfiguration to enable NAT and configure NAT rules, and GetTransitGatewayAttachmentNatConfiguration to view them.
+* ElementalInference (4.0.107.0)
+	* Elemental Inference now supports feed scheduling, letting you apply feed configuration changes at a time you choose instead of building your own automation.
+* GlobalAccelerator (4.0.101.6)
+	* GlobalAccelerator is now generated from its Smithy model. There are no changes to the public API.
+* Glue (4.0.116.0)
+	* Add support for large worker types in AWS Glue
+* GuardDuty (4.0.111.2)
+	* GuardDuty is now generated from its Smithy model. There are no changes to the public API.
+* Inspector2 (4.0.106.7)
+	* Inspector2 is now generated from its Smithy model. The RetryAfterSeconds property on InternalServerException and ThrottlingException is now populated from the Retry-After response header.
+* IVSRealTime (4.0.102.0)
+	* Adds RevokeConnectionToken operation for Amazon IVS Real-Time Streaming.
+* KafkaConnect (4.0.102.0)
+	* Amazon MSK Connect now supports pausing and resuming connectors via the asynchronous PauseConnector and ResumeConnector APIs. Paused connectors keep their configuration and committed offsets and resume where they left off. Each call returns an operation ARN to track with DescribeConnectorOperation.
+* Lambda (4.0.110.3)
+	* AWS Lambda durable functions now supports payloads up to 1 MB for checkpoints, callback completion, and error details.
+* Lightsail (4.0.103.1)
+	* Lightsail is now generated from its Smithy model. There are no changes to the public API.
+* MTurk (4.0.100.21)
+	* MTurk is now generated from its Smithy model. There are no changes to the public API.
+* NetworkManager (4.0.101.0)
+	* AWS Cloud WAN now provides managed one-to-one NAT directly on it's core network attachments, through integration with Regional Private NAT Gateway. Use UpdateAttachmentNatConfiguration to enable NAT and configure NAT rules, and ListAttachmentNatConfigurations to view them.
+* OpenSearchServerless (4.0.101.0)
+	* Adds APIs to create, get, list, and cancel ingestion jobs, and to create, get, list, and delete ingestion streams, for ingesting data from Amazon S3 into OpenSearch Serverless collections.
+	* OpenSearchServerless is now generated from its Smithy model. There are no changes to the public API.
+* Resiliencehubv2 (4.0.105.4)
+	* Resiliencehubv2 is now generated from its Smithy model. There are no changes to the public API.
+* ResourceGroups (4.0.100.21)
+	* ResourceGroups is now generated from its Smithy model. There are no changes to the public API.
+* SageMakerGeospatial (4.0.100.21)
+	* SageMakerGeospatial is now generated from its Smithy model. There are no changes to the public API.
+* Scheduler (4.0.100.21)
+	* Scheduler is now generated from its Smithy model. There are no changes to the public API.
+* Shield (4.0.100.21)
+	* Shield is now generated from its Smithy model. There are no changes to the public API.
+
 ### 4.0.356.0 (2026-10-21 18:15 UTC)
 * AmplifyBackend (4.0.100.20)
 	* AmplifyBackend is now generated from its Smithy model. There are no changes to the public API.
