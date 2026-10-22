@@ -134,7 +134,7 @@ namespace Amazon.Lambda.Model
         /// <para>
         /// Error information if the durable execution failed. This field is only present when
         /// the execution status is <c>FAILED</c>, <c>TIMED_OUT</c>, or <c>STOPPED</c>. The combined
-        /// size of all error fields is limited to 256 KB.
+        /// size of all error fields is limited to 1 MB.
         /// </para>
         /// </summary>
         public ErrorObject Error
@@ -191,9 +191,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property InputPayload. 
         /// <para>
-        /// The JSON input payload that was provided when the durable execution was started. For
-        /// asynchronous invocations, this is limited to 256 KB. For synchronous invocations,
-        /// this can be up to 6 MB.
+        /// The JSON input payload that you provided when you started the durable execution. Asynchronous
+        /// invocations support up to 1 MB, and synchronous invocations support up to 6 MB.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=6291456)]
@@ -213,8 +212,8 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property Result. 
         /// <para>
         /// The JSON result returned by the durable execution if it completed successfully. This
-        /// field is only present when the execution status is <c>SUCCEEDED</c>. The result is
-        /// limited to 256 KB.
+        /// field is only present when the execution status is <c>SUCCEEDED</c>. Asynchronous
+        /// invocations support up to 1 MB, and synchronous invocations support up to 6 MB.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=6291456)]

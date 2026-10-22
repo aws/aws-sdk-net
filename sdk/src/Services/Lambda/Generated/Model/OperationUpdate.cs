@@ -118,7 +118,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// The error information for failed operations.
+        /// The error information for failed operations. The combined size of all error fields
+        /// is limited to 1 MB.
         /// </para>
         /// </summary>
         public ErrorObject Error
@@ -195,9 +196,9 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property Payload. 
         /// <para>
         /// The payload for successful operations. The maximum payload size is 6 MB for synchronous
-        /// <c>EXECUTION</c> operations (RequestResponse invocationType), 1 MB for asynchronous
-        /// <c>EXECUTION</c> (Event invocationType) and <c>CHAINED_INVOKE</c> operations, and
-        /// 256 KB for <c>CONTEXT</c>, <c>STEP</c>, <c>WAIT</c>, and <c>CALLBACK</c> operations.
+        /// <c>EXECUTION</c> operations (RequestResponse invocationType), and 1 MB for asynchronous
+        /// <c>EXECUTION</c> (Event invocationType), <c>CHAINED_INVOKE</c>, <c>CONTEXT</c>, <c>STEP</c>,
+        /// <c>WAIT</c>, and <c>CALLBACK</c> operations.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=6291456)]

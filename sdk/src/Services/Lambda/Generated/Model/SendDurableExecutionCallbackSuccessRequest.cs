@@ -61,7 +61,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Result. 
         /// <para>
-        /// The result data from the successful callback operation. Maximum size is 256 KB.
+        /// The result data from the successful callback operation. Maximum size is 1 MB.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=1048576)]

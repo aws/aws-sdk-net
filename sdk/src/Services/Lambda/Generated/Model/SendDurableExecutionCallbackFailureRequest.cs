@@ -61,7 +61,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// Error details describing why the callback operation failed.
+        /// Error details describing why the callback operation failed. The combined size of all
+        /// error fields is limited to 1 MB.
         /// </para>
         /// </summary>
         public ErrorObject Error

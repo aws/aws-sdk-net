@@ -62,7 +62,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// Optional error details explaining why the execution is being stopped.
+        /// Optional error details explaining why the execution is being stopped. The combined
+        /// size of all error fields is limited to 1 MB.
         /// </para>
         /// </summary>
         public ErrorObject Error
