@@ -106,6 +106,11 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
                 }
                 context.Writer.WriteEndObject();
             }
+            if (publicRequest.IsSetSkipHealthValidation())
+            {
+                context.Writer.WritePropertyName("skipHealthValidation");
+                context.Writer.WriteBooleanValue(publicRequest.SkipHealthValidation.Value);
+            }
 
             writer.WriteEndObject();
             writer.Flush();

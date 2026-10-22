@@ -96,5 +96,24 @@ namespace Amazon.KafkaConnect.Model
         /// Checks to see if the CurrentVersion property is set.
         /// </summary>
         internal bool IsSetCurrentVersion() => this.CurrentVersion != null;
+
+        /// <summary>
+        /// Gets and sets the property SkipHealthValidation. 
+        /// <para>
+        /// Specifies whether the update bypasses connector-level and task-level health checks.
+        /// If <c>true</c>, the update skips the health checks. The update stays in effect even
+        /// if the connector or its tasks are unhealthy, and Amazon MSK Connect doesn't roll it
+        /// back. If <c>false</c> or not specified, the health checks run. If they fail, MSK Connect
+        /// automatically rolls the connector back to its previous configuration, and the update
+        /// doesn't take effect. To update a connector that is in the <c>PAUSED</c> state, you
+        /// must set this parameter to <c>true</c>.
+        /// </para>
+        /// </summary>
+        public bool? SkipHealthValidation { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SkipHealthValidation property is set.
+        /// </summary>
+        internal bool IsSetSkipHealthValidation() => this.SkipHealthValidation.HasValue;
     }
 }
