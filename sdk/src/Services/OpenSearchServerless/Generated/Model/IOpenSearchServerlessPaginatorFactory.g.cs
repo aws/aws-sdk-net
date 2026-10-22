@@ -51,6 +51,18 @@ namespace Amazon.OpenSearchServerless.Model
         IListCollectionsPaginator ListCollections(ListCollectionsRequest request);
 
         /// <summary>
+        /// Paginator for ListIngestionJobs operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], OutputToken = ["NextToken"])]
+        IListIngestionJobsPaginator ListIngestionJobs(ListIngestionJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListIngestionStreams operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], OutputToken = ["NextToken"])]
+        IListIngestionStreamsPaginator ListIngestionStreams(ListIngestionStreamsRequest request);
+
+        /// <summary>
         /// Paginator for ListLifecyclePolicies operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]

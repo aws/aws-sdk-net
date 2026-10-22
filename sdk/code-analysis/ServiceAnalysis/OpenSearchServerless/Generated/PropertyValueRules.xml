@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.CancelIngestionJobRequest.ClientToken</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.CancelIngestionJobRequest.CollectionId</property>
+    <min>3</min>
+    <max>40</max>
+    <pattern>^[a-z0-9]{3,40}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.CancelIngestionJobRequest.IngestionJobId</property>
+    <min>20</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.CancelIngestionJobResponse.CollectionId</property>
+    <min>3</min>
+    <max>40</max>
+    <pattern>^[a-z0-9]{3,40}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.CancelIngestionJobResponse.IngestionJobId</property>
+    <min>20</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.CancelIngestionJobResponse.IngestionJobName</property>
+    <min>3</min>
+    <max>32</max>
+    <pattern>^[a-z][a-z0-9-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CreateAccessPolicyRequest.ClientToken</property>
     <min>1</min>
     <max>512</max>
@@ -41,7 +76,7 @@
     <property>Amazon.OpenSearchServerless.Model.CreateCollectionRequest.Name</property>
     <min>3</min>
     <max>64</max>
-    <pattern>^[a-z][a-z0-9-]+$</pattern>
+    <pattern>^[a-z][a-z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CreateCollectionGroupRequest.ClientToken</property>
@@ -63,6 +98,70 @@
     <min>3</min>
     <max>40</max>
     <pattern>^[a-z0-9]{3,40}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.CreateIngestionJobRequest.ClientToken</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.CreateIngestionJobRequest.CollectionId</property>
+    <min>3</min>
+    <max>40</max>
+    <pattern>^[a-z0-9]{3,40}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.CreateIngestionJobRequest.FailureIndexName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-z0-9.][a-z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.CreateIngestionJobRequest.IndexName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-z0-9.][a-z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.CreateIngestionJobRequest.IngestionJobName</property>
+    <min>3</min>
+    <max>32</max>
+    <pattern>^[a-z][a-z0-9-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.CreateIngestionStreamRequest.ClientToken</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.CreateIngestionStreamRequest.CollectionId</property>
+    <min>3</min>
+    <max>40</max>
+    <pattern>^[a-z0-9]{3,40}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.CreateIngestionStreamRequest.FailureIndexName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-z0-9.][a-z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.CreateIngestionStreamRequest.IndexName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-z0-9.][a-z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.CreateIngestionStreamRequest.IngestionStreamName</property>
+    <min>3</min>
+    <max>32</max>
+    <pattern>^[a-z][a-z0-9-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.CreateIngestionStreamRequest.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b|aws-iso-c|aws-iso-d|aws-iso-e):iam::\d{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CreateLifecyclePolicyRequest.ClientToken</property>
@@ -181,6 +280,41 @@
     <pattern>^[a-z0-9]{3,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.DeleteIngestionStreamRequest.ClientToken</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.DeleteIngestionStreamRequest.CollectionId</property>
+    <min>3</min>
+    <max>40</max>
+    <pattern>^[a-z0-9]{3,40}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.DeleteIngestionStreamRequest.IngestionStreamId</property>
+    <min>20</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.DeleteIngestionStreamResponse.CollectionId</property>
+    <min>3</min>
+    <max>40</max>
+    <pattern>^[a-z0-9]{3,40}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.DeleteIngestionStreamResponse.IngestionStreamId</property>
+    <min>20</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.DeleteIngestionStreamResponse.IngestionStreamName</property>
+    <min>3</min>
+    <max>32</max>
+    <pattern>^[a-z][a-z0-9-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.DeleteLifecyclePolicyRequest.ClientToken</property>
     <min>1</min>
     <max>512</max>
@@ -236,6 +370,30 @@
     <pattern>^[a-z0-9]{3,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.GetIngestionJobRequest.CollectionId</property>
+    <min>3</min>
+    <max>40</max>
+    <pattern>^[a-z0-9]{3,40}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.GetIngestionJobRequest.IngestionJobId</property>
+    <min>20</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.GetIngestionStreamRequest.CollectionId</property>
+    <min>3</min>
+    <max>40</max>
+    <pattern>^[a-z0-9]{3,40}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.GetIngestionStreamRequest.IngestionStreamId</property>
+    <min>20</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.GetSecurityConfigRequest.Id</property>
     <min>1</min>
     <max>100</max>
@@ -258,6 +416,28 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.ListCollectionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.ListIngestionJobsRequest.CollectionId</property>
+    <min>3</min>
+    <max>40</max>
+    <pattern>^[a-z0-9]{3,40}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.ListIngestionJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.ListIngestionStreamsRequest.CollectionId</property>
+    <min>3</min>
+    <max>40</max>
+    <pattern>^[a-z0-9]{3,40}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.ListIngestionStreamsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>
@@ -506,7 +686,7 @@
     <property>Amazon.OpenSearchServerless.Model.CollectionDetail.Name</property>
     <min>3</min>
     <max>64</max>
-    <pattern>^[a-z][a-z0-9-]+$</pattern>
+    <pattern>^[a-z][a-z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CollectionErrorDetail.Id</property>
@@ -518,7 +698,7 @@
     <property>Amazon.OpenSearchServerless.Model.CollectionErrorDetail.Name</property>
     <min>3</min>
     <max>64</max>
-    <pattern>^[a-z][a-z0-9-]+$</pattern>
+    <pattern>^[a-z][a-z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CollectionFilters.CollectionGroupName</property>
@@ -530,7 +710,7 @@
     <property>Amazon.OpenSearchServerless.Model.CollectionFilters.Name</property>
     <min>3</min>
     <max>64</max>
-    <pattern>^[a-z][a-z0-9-]+$</pattern>
+    <pattern>^[a-z][a-z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CollectionGroupCapacityLimits.MaxIndexingCapacityInOCU</property>
@@ -600,7 +780,7 @@
     <property>Amazon.OpenSearchServerless.Model.CollectionSummary.Name</property>
     <min>3</min>
     <max>64</max>
-    <pattern>^[a-z][a-z0-9-]+$</pattern>
+    <pattern>^[a-z][a-z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CreateCollectionDetail.CollectionGroupName</property>
@@ -618,7 +798,7 @@
     <property>Amazon.OpenSearchServerless.Model.CreateCollectionDetail.Name</property>
     <min>3</min>
     <max>64</max>
-    <pattern>^[a-z][a-z0-9-]+$</pattern>
+    <pattern>^[a-z][a-z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CreateCollectionGroupDetail.Id</property>
@@ -660,7 +840,7 @@
     <property>Amazon.OpenSearchServerless.Model.DeleteCollectionDetail.Name</property>
     <min>3</min>
     <max>64</max>
-    <pattern>^[a-z][a-z0-9-]+$</pattern>
+    <pattern>^[a-z][a-z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.DeleteVpcEndpointDetail.Id</property>
@@ -683,8 +863,8 @@
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.EncryptionConfig.KmsKeyArn</property>
     <min>10</min>
-    <max>100</max>
-    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):kms:[a-z0-9-]+:[0-9]{12}:key/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <max>2048</max>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b|aws-iso-c|aws-iso-d|aws-iso-e):(kms):[a-zA-Z-]+\d{1}:\d{12}:(key)\/.{1,2048}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.IamFederationConfigOptions.GroupAttribute</property>
@@ -709,6 +889,154 @@
     <min>10</min>
     <max>1224</max>
     <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.IngestionJobDetail.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b|aws-iso-c|aws-iso-d|aws-iso-e):aoss:[a-z0-9-]+:\d{12}:collection/[a-z0-9]{3,40}/ingestion-job/[a-z0-9]{20,64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.IngestionJobDetail.CollectionId</property>
+    <min>3</min>
+    <max>40</max>
+    <pattern>^[a-z0-9]{3,40}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.IngestionJobDetail.FailureIndexName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-z0-9.][a-z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.IngestionJobDetail.IndexName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-z0-9.][a-z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.IngestionJobDetail.IngestionJobId</property>
+    <min>20</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.IngestionJobDetail.IngestionJobName</property>
+    <min>3</min>
+    <max>32</max>
+    <pattern>^[a-z][a-z0-9-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.IngestionJobS3Source.Bucket</property>
+    <min>3</min>
+    <max>2048</max>
+    <pattern>^(arn:[a-z0-9\-]+:s3:::[a-z0-9][a-z0-9.-]{1,61}[a-z0-9]|[a-z0-9][a-z0-9.-]{1,61}[a-z0-9])$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.IngestionJobS3Source.BucketOwnerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.IngestionJobS3Source.KeyPrefix</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.IngestionJobSummary.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b|aws-iso-c|aws-iso-d|aws-iso-e):aoss:[a-z0-9-]+:\d{12}:collection/[a-z0-9]{3,40}/ingestion-job/[a-z0-9]{20,64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.IngestionJobSummary.IndexName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-z0-9.][a-z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.IngestionJobSummary.IngestionJobId</property>
+    <min>20</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.IngestionJobSummary.IngestionJobName</property>
+    <min>3</min>
+    <max>32</max>
+    <pattern>^[a-z][a-z0-9-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.IngestionStreamDetail.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b|aws-iso-c|aws-iso-d|aws-iso-e):aoss:[a-z0-9-]+:\d{12}:collection/[a-z0-9]{3,40}/ingestion-stream/[a-z0-9]{20,64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.IngestionStreamDetail.CollectionId</property>
+    <min>3</min>
+    <max>40</max>
+    <pattern>^[a-z0-9]{3,40}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.IngestionStreamDetail.FailureIndexName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-z0-9.][a-z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.IngestionStreamDetail.IndexName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-z0-9.][a-z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.IngestionStreamDetail.IngestionStreamId</property>
+    <min>20</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.IngestionStreamDetail.IngestionStreamName</property>
+    <min>3</min>
+    <max>32</max>
+    <pattern>^[a-z][a-z0-9-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.IngestionStreamDetail.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b|aws-iso-c|aws-iso-d|aws-iso-e):iam::\d{12}:role/.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.IngestionStreamS3Source.SqsArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b|aws-iso-c|aws-iso-d|aws-iso-e):sqs:[a-z0-9-]+:\d{12}:.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.IngestionStreamSummary.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b|aws-iso-c|aws-iso-d|aws-iso-e):aoss:[a-z0-9-]+:\d{12}:collection/[a-z0-9]{3,40}/ingestion-stream/[a-z0-9]{20,64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.IngestionStreamSummary.IndexName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-z0-9.][a-z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.IngestionStreamSummary.IngestionStreamId</property>
+    <min>20</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.IngestionStreamSummary.IngestionStreamName</property>
+    <min>3</min>
+    <max>32</max>
+    <pattern>^[a-z][a-z0-9-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.LifecyclePolicyDetail.Description</property>
@@ -856,6 +1184,18 @@
     <pattern>^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.StreamBucketConfig.Bucket</property>
+    <min>3</min>
+    <max>2048</max>
+    <pattern>^(arn:[a-z0-9\-]+:s3:::[a-z0-9][a-z0-9.-]{1,61}[a-z0-9]|[a-z0-9][a-z0-9.-]{1,61}[a-z0-9])$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.StreamBucketConfig.BucketOwnerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>
@@ -875,7 +1215,7 @@
     <property>Amazon.OpenSearchServerless.Model.UpdateCollectionDetail.Name</property>
     <min>3</min>
     <max>64</max>
-    <pattern>^[a-z][a-z0-9-]+$</pattern>
+    <pattern>^[a-z][a-z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.UpdateCollectionGroupDetail.Id</property>

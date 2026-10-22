@@ -339,6 +339,352 @@ namespace Amazon.OpenSearchServerless
     }
 
     /// <summary>
+    /// Constants used for properties of type IngestionAlertCode.
+    /// </summary>
+    public class IngestionAlertCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant DESTINATION_ACCESS_DENIED for IngestionAlertCode
+        /// </summary>
+        public static readonly IngestionAlertCode DESTINATION_ACCESS_DENIED = new IngestionAlertCode("DESTINATION_ACCESS_DENIED");
+
+        /// <summary>
+        /// Constant DESTINATION_RESOURCE_NOT_FOUND for IngestionAlertCode
+        /// </summary>
+        public static readonly IngestionAlertCode DESTINATION_RESOURCE_NOT_FOUND = new IngestionAlertCode("DESTINATION_RESOURCE_NOT_FOUND");
+
+        /// <summary>
+        /// Constant INTERNAL_SERVER_ERROR for IngestionAlertCode
+        /// </summary>
+        public static readonly IngestionAlertCode INTERNAL_SERVER_ERROR = new IngestionAlertCode("INTERNAL_SERVER_ERROR");
+
+        /// <summary>
+        /// Constant SOURCE_ACCESS_DENIED for IngestionAlertCode
+        /// </summary>
+        public static readonly IngestionAlertCode SOURCE_ACCESS_DENIED = new IngestionAlertCode("SOURCE_ACCESS_DENIED");
+
+        /// <summary>
+        /// Constant SOURCE_RESOURCE_NOT_FOUND for IngestionAlertCode
+        /// </summary>
+        public static readonly IngestionAlertCode SOURCE_RESOURCE_NOT_FOUND = new IngestionAlertCode("SOURCE_RESOURCE_NOT_FOUND");
+
+        /// <summary>
+        /// Constructs a custom IngestionAlertCode for a value not among the defined constants.
+        /// </summary>
+        public IngestionAlertCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IngestionAlertCode FindValue(string value)
+        {
+            return FindValue<IngestionAlertCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IngestionAlertCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type IngestionFailureCode.
+    /// </summary>
+    public class IngestionFailureCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant DESTINATION_ACCESS_DENIED for IngestionFailureCode
+        /// </summary>
+        public static readonly IngestionFailureCode DESTINATION_ACCESS_DENIED = new IngestionFailureCode("DESTINATION_ACCESS_DENIED");
+
+        /// <summary>
+        /// Constant DESTINATION_RESOURCE_NOT_FOUND for IngestionFailureCode
+        /// </summary>
+        public static readonly IngestionFailureCode DESTINATION_RESOURCE_NOT_FOUND = new IngestionFailureCode("DESTINATION_RESOURCE_NOT_FOUND");
+
+        /// <summary>
+        /// Constant INTERNAL_SERVER_ERROR for IngestionFailureCode
+        /// </summary>
+        public static readonly IngestionFailureCode INTERNAL_SERVER_ERROR = new IngestionFailureCode("INTERNAL_SERVER_ERROR");
+
+        /// <summary>
+        /// Constant SOURCE_ACCESS_DENIED for IngestionFailureCode
+        /// </summary>
+        public static readonly IngestionFailureCode SOURCE_ACCESS_DENIED = new IngestionFailureCode("SOURCE_ACCESS_DENIED");
+
+        /// <summary>
+        /// Constant SOURCE_RESOURCE_NOT_FOUND for IngestionFailureCode
+        /// </summary>
+        public static readonly IngestionFailureCode SOURCE_RESOURCE_NOT_FOUND = new IngestionFailureCode("SOURCE_RESOURCE_NOT_FOUND");
+
+        /// <summary>
+        /// Constructs a custom IngestionFailureCode for a value not among the defined constants.
+        /// </summary>
+        public IngestionFailureCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IngestionFailureCode FindValue(string value)
+        {
+            return FindValue<IngestionFailureCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IngestionFailureCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type IngestionJobStatus.
+    /// </summary>
+    public class IngestionJobStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for IngestionJobStatus
+        /// </summary>
+        public static readonly IngestionJobStatus ACTIVE = new IngestionJobStatus("ACTIVE");
+
+        /// <summary>
+        /// Constant CANCELLED for IngestionJobStatus
+        /// </summary>
+        public static readonly IngestionJobStatus CANCELLED = new IngestionJobStatus("CANCELLED");
+
+        /// <summary>
+        /// Constant CANCELLING for IngestionJobStatus
+        /// </summary>
+        public static readonly IngestionJobStatus CANCELLING = new IngestionJobStatus("CANCELLING");
+
+        /// <summary>
+        /// Constant CANCEL_FAILED for IngestionJobStatus
+        /// </summary>
+        public static readonly IngestionJobStatus CANCEL_FAILED = new IngestionJobStatus("CANCEL_FAILED");
+
+        /// <summary>
+        /// Constant COMPLETED for IngestionJobStatus
+        /// </summary>
+        public static readonly IngestionJobStatus COMPLETED = new IngestionJobStatus("COMPLETED");
+
+        /// <summary>
+        /// Constant CREATE_FAILED for IngestionJobStatus
+        /// </summary>
+        public static readonly IngestionJobStatus CREATE_FAILED = new IngestionJobStatus("CREATE_FAILED");
+
+        /// <summary>
+        /// Constant CREATING for IngestionJobStatus
+        /// </summary>
+        public static readonly IngestionJobStatus CREATING = new IngestionJobStatus("CREATING");
+
+        /// <summary>
+        /// Constant FAILED for IngestionJobStatus
+        /// </summary>
+        public static readonly IngestionJobStatus FAILED = new IngestionJobStatus("FAILED");
+
+        /// <summary>
+        /// Constructs a custom IngestionJobStatus for a value not among the defined constants.
+        /// </summary>
+        public IngestionJobStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IngestionJobStatus FindValue(string value)
+        {
+            return FindValue<IngestionJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IngestionJobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type IngestionState.
+    /// </summary>
+    public class IngestionState : ConstantClass
+    {
+        /// <summary>
+        /// Constant FAILED for IngestionState
+        /// </summary>
+        public static readonly IngestionState FAILED = new IngestionState("FAILED");
+
+        /// <summary>
+        /// Constant INGESTION_COMPLETE for IngestionState
+        /// </summary>
+        public static readonly IngestionState INGESTION_COMPLETE = new IngestionState("INGESTION_COMPLETE");
+
+        /// <summary>
+        /// Constant INGESTION_IN_PROGRESS for IngestionState
+        /// </summary>
+        public static readonly IngestionState INGESTION_IN_PROGRESS = new IngestionState("INGESTION_IN_PROGRESS");
+
+        /// <summary>
+        /// Constant SCANNING for IngestionState
+        /// </summary>
+        public static readonly IngestionState SCANNING = new IngestionState("SCANNING");
+
+        /// <summary>
+        /// Constant STARTING for IngestionState
+        /// </summary>
+        public static readonly IngestionState STARTING = new IngestionState("STARTING");
+
+        /// <summary>
+        /// Constant STOPPED for IngestionState
+        /// </summary>
+        public static readonly IngestionState STOPPED = new IngestionState("STOPPED");
+
+        /// <summary>
+        /// Constructs a custom IngestionState for a value not among the defined constants.
+        /// </summary>
+        public IngestionState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IngestionState FindValue(string value)
+        {
+            return FindValue<IngestionState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IngestionState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type IngestionStreamStatus.
+    /// </summary>
+    public class IngestionStreamStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for IngestionStreamStatus
+        /// </summary>
+        public static readonly IngestionStreamStatus ACTIVE = new IngestionStreamStatus("ACTIVE");
+
+        /// <summary>
+        /// Constant CREATE_FAILED for IngestionStreamStatus
+        /// </summary>
+        public static readonly IngestionStreamStatus CREATE_FAILED = new IngestionStreamStatus("CREATE_FAILED");
+
+        /// <summary>
+        /// Constant CREATING for IngestionStreamStatus
+        /// </summary>
+        public static readonly IngestionStreamStatus CREATING = new IngestionStreamStatus("CREATING");
+
+        /// <summary>
+        /// Constant DELETED for IngestionStreamStatus
+        /// </summary>
+        public static readonly IngestionStreamStatus DELETED = new IngestionStreamStatus("DELETED");
+
+        /// <summary>
+        /// Constant DELETE_FAILED for IngestionStreamStatus
+        /// </summary>
+        public static readonly IngestionStreamStatus DELETE_FAILED = new IngestionStreamStatus("DELETE_FAILED");
+
+        /// <summary>
+        /// Constant DELETING for IngestionStreamStatus
+        /// </summary>
+        public static readonly IngestionStreamStatus DELETING = new IngestionStreamStatus("DELETING");
+
+        /// <summary>
+        /// Constructs a custom IngestionStreamStatus for a value not among the defined constants.
+        /// </summary>
+        public IngestionStreamStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IngestionStreamStatus FindValue(string value)
+        {
+            return FindValue<IngestionStreamStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IngestionStreamStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type InitialScan.
+    /// </summary>
+    public class InitialScan : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for InitialScan
+        /// </summary>
+        public static readonly InitialScan DISABLED = new InitialScan("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for InitialScan
+        /// </summary>
+        public static readonly InitialScan ENABLED = new InitialScan("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom InitialScan for a value not among the defined constants.
+        /// </summary>
+        public InitialScan(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InitialScan FindValue(string value)
+        {
+            return FindValue<InitialScan>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InitialScan(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type LifecyclePolicyType.
     /// </summary>
     public class LifecyclePolicyType : ConstantClass

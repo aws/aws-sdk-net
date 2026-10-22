@@ -88,6 +88,13 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("kmsKeyArn", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KmsKeyArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("lastModifiedDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;

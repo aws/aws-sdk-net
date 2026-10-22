@@ -78,6 +78,16 @@ namespace Amazon.OpenSearchServerless.Model
         internal bool IsSetDescription() => this.Description != null;
 
         /// <summary>
+        /// Gets and sets the property EncryptionConfig.
+        /// </summary>
+        public EncryptionConfig EncryptionConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EncryptionConfig property is set.
+        /// </summary>
+        internal bool IsSetEncryptionConfig() => this.EncryptionConfig != null;
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
         /// The unique identifier of the collection.

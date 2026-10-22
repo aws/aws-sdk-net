@@ -243,6 +243,57 @@ namespace Amazon.OpenSearchServerless
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Cancels an in-progress ingestion job. Documents that were already indexed before the
+        /// cancellation remain in the index.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelIngestionJob service method.</param>
+        /// <returns>The response from the CancelIngestionJob service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
+        /// When creating a resource, thrown when a resource with the same name already exists
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE, FAILED, or UPDATE_FAILED state.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CancelIngestionJob">REST API Reference for CancelIngestionJob Operation</seealso>
+        CancelIngestionJobResponse CancelIngestionJob(CancelIngestionJobRequest request);
+#endif
+
+        /// <summary>
+        /// Cancels an in-progress ingestion job. Documents that were already indexed before the
+        /// cancellation remain in the index.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelIngestionJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CancelIngestionJob service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
+        /// When creating a resource, thrown when a resource with the same name already exists
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE, FAILED, or UPDATE_FAILED state.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CancelIngestionJob">REST API Reference for CancelIngestionJob Operation</seealso>
+        Task<CancelIngestionJobResponse> CancelIngestionJobAsync(CancelIngestionJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Creates a data access policy for OpenSearch Serverless. Access policies limit access
         /// to collections and the resources within them, and allow a user to access that data
         /// irrespective of the access mechanism or network source. For more information, see
@@ -482,6 +533,134 @@ namespace Amazon.OpenSearchServerless
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
         Task<CreateIndexResponse> CreateIndexAsync(CreateIndexRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates an ingestion job that performs a one-time bulk ingestion of data from an Amazon
+        /// S3 bucket into an index in an OpenSearch Serverless collection. An ingestion job scans
+        /// the source bucket, indexes the documents it finds, and then completes. To continuously
+        /// ingest new data as it arrives, use <c>CreateIngestionStream</c> instead.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIngestionJob service method.</param>
+        /// <returns>The response from the CreateIngestionJob service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
+        /// When creating a resource, thrown when a resource with the same name already exists
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE, FAILED, or UPDATE_FAILED state.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ServiceQuotaExceededException">
+        /// Thrown when you attempt to create more resources than the service allows based on
+        /// service quotas.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateIngestionJob">REST API Reference for CreateIngestionJob Operation</seealso>
+        CreateIngestionJobResponse CreateIngestionJob(CreateIngestionJobRequest request);
+#endif
+
+        /// <summary>
+        /// Creates an ingestion job that performs a one-time bulk ingestion of data from an Amazon
+        /// S3 bucket into an index in an OpenSearch Serverless collection. An ingestion job scans
+        /// the source bucket, indexes the documents it finds, and then completes. To continuously
+        /// ingest new data as it arrives, use <c>CreateIngestionStream</c> instead.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIngestionJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateIngestionJob service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
+        /// When creating a resource, thrown when a resource with the same name already exists
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE, FAILED, or UPDATE_FAILED state.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ServiceQuotaExceededException">
+        /// Thrown when you attempt to create more resources than the service allows based on
+        /// service quotas.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateIngestionJob">REST API Reference for CreateIngestionJob Operation</seealso>
+        Task<CreateIngestionJobResponse> CreateIngestionJobAsync(CreateIngestionJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates an ingestion stream that continuously ingests data from an Amazon S3 bucket
+        /// into an index in an OpenSearch Serverless collection. An ingestion stream processes
+        /// Amazon S3 event notifications delivered to an Amazon SQS queue and ingests new objects
+        /// as they arrive. The stream continues to ingest data until you delete it. To perform
+        /// a one-time bulk ingestion instead, use <c>CreateIngestionJob</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIngestionStream service method.</param>
+        /// <returns>The response from the CreateIngestionStream service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
+        /// When creating a resource, thrown when a resource with the same name already exists
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE, FAILED, or UPDATE_FAILED state.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ServiceQuotaExceededException">
+        /// Thrown when you attempt to create more resources than the service allows based on
+        /// service quotas.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateIngestionStream">REST API Reference for CreateIngestionStream Operation</seealso>
+        CreateIngestionStreamResponse CreateIngestionStream(CreateIngestionStreamRequest request);
+#endif
+
+        /// <summary>
+        /// Creates an ingestion stream that continuously ingests data from an Amazon S3 bucket
+        /// into an index in an OpenSearch Serverless collection. An ingestion stream processes
+        /// Amazon S3 event notifications delivered to an Amazon SQS queue and ingests new objects
+        /// as they arrive. The stream continues to ingest data until you delete it. To perform
+        /// a one-time bulk ingestion instead, use <c>CreateIngestionJob</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIngestionStream service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateIngestionStream service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
+        /// When creating a resource, thrown when a resource with the same name already exists
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE, FAILED, or UPDATE_FAILED state.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ServiceQuotaExceededException">
+        /// Thrown when you attempt to create more resources than the service allows based on
+        /// service quotas.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateIngestionStream">REST API Reference for CreateIngestionStream Operation</seealso>
+        Task<CreateIngestionStreamResponse> CreateIngestionStreamAsync(CreateIngestionStreamRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -913,6 +1092,57 @@ namespace Amazon.OpenSearchServerless
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Deletes an ingestion stream. Documents that were already indexed by the stream remain
+        /// in the index.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIngestionStream service method.</param>
+        /// <returns>The response from the DeleteIngestionStream service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
+        /// When creating a resource, thrown when a resource with the same name already exists
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE, FAILED, or UPDATE_FAILED state.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteIngestionStream">REST API Reference for DeleteIngestionStream Operation</seealso>
+        DeleteIngestionStreamResponse DeleteIngestionStream(DeleteIngestionStreamRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes an ingestion stream. Documents that were already indexed by the stream remain
+        /// in the index.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIngestionStream service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteIngestionStream service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
+        /// When creating a resource, thrown when a resource with the same name already exists
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE, FAILED, or UPDATE_FAILED state.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteIngestionStream">REST API Reference for DeleteIngestionStream Operation</seealso>
+        Task<DeleteIngestionStreamResponse> DeleteIngestionStreamAsync(DeleteIngestionStreamRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Deletes an OpenSearch Serverless lifecycle policy. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-delete">Deleting
         /// data lifecycle policies</a>.
         /// </summary>
@@ -1238,6 +1468,88 @@ namespace Amazon.OpenSearchServerless
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns information about an ingestion job, including its configuration, status, and
+        /// processing state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIngestionJob service method.</param>
+        /// <returns>The response from the GetIngestionJob service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/GetIngestionJob">REST API Reference for GetIngestionJob Operation</seealso>
+        GetIngestionJobResponse GetIngestionJob(GetIngestionJobRequest request);
+#endif
+
+        /// <summary>
+        /// Returns information about an ingestion job, including its configuration, status, and
+        /// processing state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIngestionJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetIngestionJob service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/GetIngestionJob">REST API Reference for GetIngestionJob Operation</seealso>
+        Task<GetIngestionJobResponse> GetIngestionJobAsync(GetIngestionJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns information about an ingestion stream, including its configuration, status,
+        /// and processing state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIngestionStream service method.</param>
+        /// <returns>The response from the GetIngestionStream service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/GetIngestionStream">REST API Reference for GetIngestionStream Operation</seealso>
+        GetIngestionStreamResponse GetIngestionStream(GetIngestionStreamRequest request);
+#endif
+
+        /// <summary>
+        /// Returns information about an ingestion stream, including its configuration, status,
+        /// and processing state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIngestionStream service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetIngestionStream service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/GetIngestionStream">REST API Reference for GetIngestionStream Operation</seealso>
+        Task<GetIngestionStreamResponse> GetIngestionStreamAsync(GetIngestionStreamRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Returns statistical information about your OpenSearch Serverless access policies,
         /// security configurations, and security policies.
         /// </summary>
@@ -1469,6 +1781,84 @@ namespace Amazon.OpenSearchServerless
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/ListCollections">REST API Reference for ListCollections Operation</seealso>
         Task<ListCollectionsResponse> ListCollectionsAsync(ListCollectionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns a list of ingestion jobs in a collection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIngestionJobs service method.</param>
+        /// <returns>The response from the ListIngestionJobs service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/ListIngestionJobs">REST API Reference for ListIngestionJobs Operation</seealso>
+        ListIngestionJobsResponse ListIngestionJobs(ListIngestionJobsRequest request);
+#endif
+
+        /// <summary>
+        /// Returns a list of ingestion jobs in a collection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIngestionJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListIngestionJobs service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/ListIngestionJobs">REST API Reference for ListIngestionJobs Operation</seealso>
+        Task<ListIngestionJobsResponse> ListIngestionJobsAsync(ListIngestionJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns a list of ingestion streams in a collection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIngestionStreams service method.</param>
+        /// <returns>The response from the ListIngestionStreams service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/ListIngestionStreams">REST API Reference for ListIngestionStreams Operation</seealso>
+        ListIngestionStreamsResponse ListIngestionStreams(ListIngestionStreamsRequest request);
+#endif
+
+        /// <summary>
+        /// Returns a list of ingestion streams in a collection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIngestionStreams service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListIngestionStreams service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/ListIngestionStreams">REST API Reference for ListIngestionStreams Operation</seealso>
+        Task<ListIngestionStreamsResponse> ListIngestionStreamsAsync(ListIngestionStreamsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>

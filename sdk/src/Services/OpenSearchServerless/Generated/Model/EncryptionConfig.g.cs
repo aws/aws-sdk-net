@@ -54,7 +54,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// collection.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 10, Max = 100)]
+        [AWSProperty(Min = 10, Max = 2048)]
         public string KmsKeyArn { get; set; }
 
         /// <summary>

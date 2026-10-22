@@ -38,7 +38,9 @@ namespace Amazon.OpenSearchServerless.Model
         /// <summary>
         /// Gets and sets the property CapacityLimits. 
         /// <para>
-        /// Updated capacity limits for the collection group, in OpenSearch Compute Units (OCUs).
+        /// The updated capacity limits for the collection group, in OpenSearch Compute Units
+        /// (OCUs). Updates to capacity limits are not incremental. Any field not specified resets
+        /// to its default value.
         /// </para>
         /// </summary>
         public CollectionGroupCapacityLimits CapacityLimits { get; set; }

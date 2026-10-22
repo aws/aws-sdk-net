@@ -57,6 +57,22 @@ namespace Amazon.OpenSearchServerless.Model
         }
 
         /// <summary>
+        /// Paginator for ListIngestionJobs operation
+        /// </summary>
+        public IListIngestionJobsPaginator ListIngestionJobs(ListIngestionJobsRequest request)
+        {
+            return new ListIngestionJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListIngestionStreams operation
+        /// </summary>
+        public IListIngestionStreamsPaginator ListIngestionStreams(ListIngestionStreamsRequest request)
+        {
+            return new ListIngestionStreamsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListLifecyclePolicies operation
         /// </summary>
         public IListLifecyclePoliciesPaginator ListLifecyclePolicies(ListLifecyclePoliciesRequest request)

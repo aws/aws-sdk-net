@@ -102,6 +102,20 @@ namespace Amazon.OpenSearchServerless.Model
         internal bool IsSetId() => this.Id != null;
 
         /// <summary>
+        /// Gets and sets the property KmsKeyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service (Amazon
+        /// Web Services KMS) key used to encrypt the collection.
+        /// </para>
+        /// </summary>
+        public string KmsKeyArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the KmsKeyArn property is set.
+        /// </summary>
+        internal bool IsSetKmsKeyArn() => this.KmsKeyArn != null;
+
+        /// <summary>
         /// Gets and sets the property LastModifiedDate. 
         /// <para>
         /// The date and time when the collection was last modified.
