@@ -133,7 +133,7 @@ namespace Amazon.Runtime.Internal
         protected virtual void PreInvoke(IExecutionContext executionContext)
         {
             executionContext.RequestContext.CSMCallAttempt = new MonitoringAPICallAttempt(executionContext.RequestContext);
-            executionContext.RequestContext.Metrics.StartEvent(Metric.CSMAttemptLatency);
+            executionContext.RequestContext.Metrics.StartTimedEvent(Metric.CSMAttemptLatency);
         }
 
         /// <summary>
