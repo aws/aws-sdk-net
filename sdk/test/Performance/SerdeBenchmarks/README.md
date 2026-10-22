@@ -72,8 +72,14 @@ dotnet run -c Release --project sdk/test/Performance/SerdeBenchmarks/SerdeBenchm
 | `--transport stub\|https` | `stub` | `stub`: the in-process `MockHttpHandler`. `https`: see [HTTPS loopback mode](#https-loopback-mode) |
 | `--https-server IP:PORT` | `127.0.0.1:18443` | The fixture server's HTTPS address (https only; loopback addresses only) |
 | `--fixture-control IP:PORT` | `127.0.0.1:18080` | The fixture server's control address (https only; loopback addresses only) |
+| `--case-filter REGEX` | (all) | Run only the cases whose name matches |
+| `--threads N` | 1 | Concurrent workers per case on the shared client. See [Concurrency regression check](#concurrency-regression-check---threads-n). Not the cross-SDK metric when N > 1 |
+| `--breakdown` | off | Per-stage pipeline timing. See [Pipeline breakdown](#pipeline-breakdown---breakdown). Requires `--threads 1` and `--transport stub` |
+| `--breakdown-csv PATH` | — | Append the breakdown rows to a CSV file |
 
-An invalid value, or a transport option without `--cpu-time`, exits with code 2. The run banner prints the transport used.
+An invalid or missing value, one of these options without `--cpu-time`, `--breakdown-csv` without `--breakdown`, or a `--case-filter` that matches no case exits with code 2. The run banner prints the transport used.
+
+Do not pin the process to a single core (for example with `taskset -c N`). The runtime's background JIT and GC threads then share the benchmark core, and early cases come out up to 2x slow.
 
 ## HTTPS loopback mode
 
@@ -97,6 +103,65 @@ dotnet run -c Release --project sdk/test/Performance/SerdeBenchmarks/SerdeBenchm
 - **Fail fast:** the run stops right away if either address doesn't accept connections, or if the control address doesn't answer `204`.
 - **CPU/wall ratio:** above 1 in this mode, because socket I/O completes on other threads.
 - **Platform:** use Linux. On other systems the loopback cost is larger and noisier.
+
+## Concurrency regression check (`--threads N`)
+
+`--threads N` with N > 1 checks that SDK state shared between calls (signing-key cache, keyed-HMAC pool, per-handler User-Agent and `Uri` caches, thread-static buffers) holds up under concurrent calls. **It is a regression check, not the cross-SDK ops/CPU-sec metric.** Report and compare the cross-SDK number with the default `--threads 1` only, and compare N > 1 runs only against other runs with the same N on the same machine.
+
+```bash
+dotnet run -c Release --project sdk/test/Performance/SerdeBenchmarks/SerdeBenchmarksRunner/SerdeBenchmarksRunner.csproj -- --cpu-time --threads 4
+```
+
+`--threads 1` (the default) runs the original single-threaded loop, unchanged. With N > 1, each case works like this:
+
+- The N workers share the case's single client and request object, as a real application shares a client.
+- Warmup runs `--warmup` iterations in total, split across the N workers, and then forces a GC as in single-threaded mode.
+- The measurement starts N `Task.Run` workers, each looping on `await operation()`. The minimum thread-pool worker count is raised to N + 1 so that all workers start at once.
+- The run stops once total completed ops reach `--min-iterations` × N, or process CPU time reaches `--min-cpu-seconds` × N, whichever comes first. Each worker adds to a shared `Interlocked` counter and checks the stop condition every 100 of its own iterations. Ops that other workers finish after the stop decision are counted.
+- Ops/CPU-s is total ops / process CPU seconds, the same metric as single-threaded mode. Ops/Wall-s is aggregate throughput. CPU/Wall should be about N, plus the runtime's background JIT and GC threads. A value well below N means the workers were blocked or starved.
+
+Table titles show `(Threads: N)`, and the per-case rows keep the single-threaded format. The 12 cases whose request holds a `MemoryStream` (`*_PutItemRequest_BinaryData_*` and `*_PutObject_*`) are skipped when N > 1. Those cases share one request, and concurrent calls would race on the stream position. The overall geomean then covers 59 cases instead of 71.
+
+Keep N at or below the number of idle cores. When N exceeds the idle cores, workers time-slice, and the result reflects scheduling and cache effects as much as SDK contention.
+
+## Pipeline breakdown (`--breakdown`)
+
+`--breakdown` links a probe handler above the pipeline and below every handler, using `RuntimePipelineCustomizerRegistry`. For each case it reports the cost of every handler in the request direction and in the response direction, the mocked transport separately, and the bytes allocated per stage. The probes add about 0.2 µs to each stage. Use the breakdown to see where time goes, not as an ops/CPU-sec number. It needs the default `--transport stub`, because the in-process `MockHttpHandler` stamps the transport stage; with `--transport https` the run exits with code 2.
+
+## Sampling profile (Linux, `profiling/profile.sh`)
+
+The breakdown times whole stages on the benchmark thread. To see where the time goes inside a stage, or CPU on other threads such as the background GC, profile one case with `perf`:
+
+```bash
+cd sdk/test/Performance/SerdeBenchmarks
+BIN=$(mktemp -d)
+dotnet build SerdeBenchmarksRunner/SerdeBenchmarksRunner.csproj -c Release -p:SdkPerformanceTargets=net8.0 -o "$BIN"
+FLAMEGRAPH_DIR=<clone of https://github.com/brendangregg/FlameGraph> \
+    profiling/profile.sh "$BIN" awsJson1_0_GetItemOutput_S
+```
+
+The script runs the case under `perf record -g` with the default 100,000-iteration warmup and keeps going until 30 seconds of CPU. It then keeps only the samples taken from 0.5 seconds after tiered compilation finishes. Earlier samples are mostly JIT compilation and not-yet-optimized code: in the first 5 seconds of a single-case run, about half of them. It writes these files to `./profile-<case>/`:
+
+- `<case>.summary.txt`: thread shares, where the CPU was (managed code, GC, OpenSSL, ...), the pipeline stage of each benchmark-thread sample, and the hottest methods inside each stage.
+- `<case>.folded` (all threads) and `<case>.main.folded` (benchmark thread): collapsed stacks. Open them in [speedscope](https://www.speedscope.app), or with `FLAMEGRAPH_DIR` set the script also renders `<case>.svg` and `<case>.main.svg`.
+
+The run sets `DOTNET_PerfMapEnabled=1` so `perf` can name JIT-compiled methods, and `DOTNET_EnableWriteXorExecute=0`, without which .NET 8 keeps JIT code in a mapping `perf` cannot resolve. Both change the runtime, so the profile is diagnostic only. Never report the runner's numbers from a profiled run. Read the profile as shares, not timings.
+
+`perf` needs `kernel.perf_event_paranoid` at 2 or lower to profile your own processes. Two gaps in attribution:
+
+- Without symbols for the runtime, its samples (GC, allocation, type checks) show as raw `libcoreclr.so` addresses. To fix that, download the symbols and put them in `perf`'s build-id cache:
+
+  ```bash
+  dotnet tool install -g dotnet-symbol
+  CLR=$DOTNET_ROOT/shared/Microsoft.NETCore.App/<version>/libcoreclr.so
+  SYM=$(mktemp -d)
+  dotnet-symbol --symbols -o "$SYM" $CLR
+  BID=$(readelf -n $CLR | awk '/Build ID/{print $3}')
+  mkdir -p ~/.debug/.build-id/${BID:0:2}/${BID:2}
+  cp "$SYM/libcoreclr.so.dbg" ~/.debug/.build-id/${BID:0:2}/${BID:2}/debug
+  ```
+
+- OpenSSL's `libcrypto` is built without frame pointers, so its samples lose their managed caller. The summary lists them as "native, caller lost". With SigV4 they are almost all signing (HMAC and SHA-256).
 
 ## Regenerating the benchmark payloads
 
