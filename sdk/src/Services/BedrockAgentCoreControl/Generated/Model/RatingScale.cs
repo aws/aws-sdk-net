@@ -36,6 +36,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class RatingScale
     {
         private List<CategoricalScaleDefinition> _categorical = AWSConfigs.InitializeCollections ? new List<CategoricalScaleDefinition>() : null;
+        private List<EvaluationDimension> _multiDimensional = AWSConfigs.InitializeCollections ? new List<EvaluationDimension>() : null;
         private List<NumericalScaleDefinition> _numerical = AWSConfigs.InitializeCollections ? new List<NumericalScaleDefinition>() : null;
 
         /// <summary>
@@ -60,6 +61,32 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetCategorical()
         {
             return this._categorical != null && (this._categorical.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiDimensional. 
+        /// <para>
+        ///  A list of dimensions that lets an LLM-as-a-judge evaluator score several dimensions
+        /// of the same target in a single evaluation. Each dimension has its own instruction
+        /// and rating scale, and produces its own result. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public List<EvaluationDimension> MultiDimensional
+        {
+            get { return this._multiDimensional; }
+            set { this._multiDimensional = value; }
+        }
+
+        // Check to see if MultiDimensional property is set
+        internal bool IsSetMultiDimensional()
+        {
+            return this._multiDimensional != null && (this._multiDimensional.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

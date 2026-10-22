@@ -4818,6 +4818,15 @@
     <max>30000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.EvaluationDimension.DimensionInstruction</property>
+    <min>1</min>
+    <max>4000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.EvaluationDimension.DimensionName</property>
+    <pattern>[a-zA-Z][a-zA-Z0-9_]{0,47}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.EvaluatorReference.EvaluatorId</property>
     <min>1</min>
     <max>111</max>
@@ -4849,6 +4858,26 @@
     <min>1</min>
     <max>2048</max>
     <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.Fallback.FirstByteTimeoutMilliseconds</property>
+    <min>50</min>
+    <max>900000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.FallbackTarget.FirstByteTimeoutMilliseconds</property>
+    <min>50</min>
+    <max>900000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.FallbackTarget.Model</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9\-._/@:]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.FallbackTarget.TargetName</property>
+    <pattern>([0-9a-zA-Z][-]?){1,100}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.Filter.Key</property>
@@ -5340,13 +5369,13 @@
     <property>Amazon.BedrockAgentCoreControl.Model.InferenceOperationConfiguration.Path</property>
     <min>1</min>
     <max>256</max>
-    <pattern>/[a-zA-Z0-9\-\._/]+</pattern>
+    <pattern>/[a-zA-Z0-9\-\._/{}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.InferenceOperationConfiguration.ProviderPath</property>
     <min>1</min>
     <max>256</max>
-    <pattern>/[a-zA-Z0-9\-\._/]+</pattern>
+    <pattern>/[a-zA-Z0-9\-\._/{}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.InferenceProviderTargetConfiguration.Endpoint</property>
@@ -5488,6 +5517,12 @@
     <pattern>vpc-(([0-9a-z]{8})|([0-9a-z]{17}))</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.MatchModelEntry.Value</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[a-zA-Z0-9\-\._\*\?@:]+(/[a-zA-Z0-9\-\._\*\?@:]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.MCPGatewayConfiguration.Instructions</property>
     <min>1</min>
     <max>2048</max>
@@ -5607,8 +5642,8 @@
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.ModelEntry.Model</property>
     <min>1</min>
-    <max>256</max>
-    <pattern>[a-zA-Z0-9\-\._\*\?@]+(/[a-zA-Z0-9\-\._\*\?@]+)*</pattern>
+    <max>2048</max>
+    <pattern>[a-zA-Z0-9\-\._\*\?@:]+(/[a-zA-Z0-9\-\._\*\?@:]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.ModifyInvocationConfigurationInput.PayloadDeliveryBucketName</property>
@@ -6317,6 +6352,12 @@
     <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.StaticRoute.Model</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9\-._/@:]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.StaticRoute.TargetName</property>
     <pattern>([0-9a-zA-Z][-]?){1,100}</pattern>
   </property-value-rule>
@@ -6422,6 +6463,12 @@
     <property>Amazon.BedrockAgentCoreControl.Model.TargetTrafficSplitEntry.Description</property>
     <min>1</min>
     <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.TargetTrafficSplitEntry.Model</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9\-._/@:]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.TargetTrafficSplitEntry.Name</property>

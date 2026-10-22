@@ -46,6 +46,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetMatchModels())
+            {
+                context.Writer.WritePropertyName("matchModels");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MatchModelsMarshaller.Instance;
+                marshaller.Marshall(requestObject.MatchModels, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetMatchPaths())
             {
                 context.Writer.WritePropertyName("matchPaths");

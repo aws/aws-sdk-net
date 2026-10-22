@@ -46,6 +46,23 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetFallback())
+            {
+                context.Writer.WritePropertyName("fallback");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FallbackMarshaller.Instance;
+                marshaller.Marshall(requestObject.Fallback, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetModel())
+            {
+                context.Writer.WritePropertyName("model");
+                context.Writer.WriteStringValue(requestObject.Model);
+            }
+
             if(requestObject.IsSetTargetName())
             {
                 context.Writer.WritePropertyName("targetName");

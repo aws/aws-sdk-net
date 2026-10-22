@@ -35,7 +35,9 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class TargetTrafficSplitEntry
     {
         private string _description;
+        private Fallback _fallback;
         private Dictionary<string, string> _metadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private string _model;
         private string _name;
         private string _targetName;
         private int? _weight;
@@ -60,6 +62,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Fallback. 
+        /// <para>
+        /// The fallback configuration for this variant. Supported only for inference targets.
+        /// </para>
+        /// </summary>
+        public Fallback Fallback
+        {
+            get { return this._fallback; }
+            set { this._fallback = value; }
+        }
+
+        // Check to see if Fallback property is set
+        internal bool IsSetFallback()
+        {
+            return this._fallback != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
         /// Key-value metadata associated with this traffic split variant.
@@ -81,6 +101,27 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetMetadata()
         {
             return this._metadata != null && (this._metadata.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Model. 
+        /// <para>
+        /// The model ID to send to the target for this variant. Supported only for inference
+        /// targets. If you don't specify a model, the gateway sends the model from the original
+        /// request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string Model
+        {
+            get { return this._model; }
+            set { this._model = value; }
+        }
+
+        // Check to see if Model property is set
+        internal bool IsSetModel()
+        {
+            return this._model != null;
         }
 
         /// <summary>

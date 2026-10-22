@@ -34,7 +34,47 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class StaticRoute
     {
+        private Fallback _fallback;
+        private string _model;
         private string _targetName;
+
+        /// <summary>
+        /// Gets and sets the property Fallback. 
+        /// <para>
+        /// The fallback configuration for this route. Supported only for inference targets.
+        /// </para>
+        /// </summary>
+        public Fallback Fallback
+        {
+            get { return this._fallback; }
+            set { this._fallback = value; }
+        }
+
+        // Check to see if Fallback property is set
+        internal bool IsSetFallback()
+        {
+            return this._fallback != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Model. 
+        /// <para>
+        /// The model ID to send to the target. Supported only for inference targets. If you don't
+        /// specify a model, the gateway sends the model from the original request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string Model
+        {
+            get { return this._model; }
+            set { this._model = value; }
+        }
+
+        // Check to see if Model property is set
+        internal bool IsSetModel()
+        {
+            return this._model != null;
+        }
 
         /// <summary>
         /// Gets and sets the property TargetName. 

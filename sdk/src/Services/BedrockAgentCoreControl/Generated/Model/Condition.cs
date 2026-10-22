@@ -30,13 +30,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// A condition that determines when a gateway rule applies. Conditions can match on principals
-    /// or request paths.
+    /// A condition that determines when a gateway rule applies. Conditions can match on principals,
+    /// request paths, or the requested model.
     /// </summary>
     public partial class Condition
     {
+        private MatchModels _matchModels;
         private MatchPaths _matchPaths;
         private MatchPrincipals _matchPrincipals;
+
+        /// <summary>
+        /// Gets and sets the property MatchModels. 
+        /// <para>
+        /// A condition that matches on the model requested in an inference request.
+        /// </para>
+        /// </summary>
+        public MatchModels MatchModels
+        {
+            get { return this._matchModels; }
+            set { this._matchModels = value; }
+        }
+
+        // Check to see if MatchModels property is set
+        internal bool IsSetMatchModels()
+        {
+            return this._matchModels != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MatchPaths. 

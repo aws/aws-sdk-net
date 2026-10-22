@@ -5766,6 +5766,13 @@ namespace Amazon.BedrockAgentCoreControl
 
         /// <summary>
         /// Updates an existing gateway.
+        /// 
+        ///  
+        /// <para>
+        /// Replaces the entire gateway configuration. Any optional field that you omit, including
+        /// fields in <c>protocolConfiguration</c>, is reset. For information about retrieving
+        /// the current configuration, see <a href="https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetGateway.html">GetGateway</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGateway service method.</param>
         /// <param name="cancellationToken">

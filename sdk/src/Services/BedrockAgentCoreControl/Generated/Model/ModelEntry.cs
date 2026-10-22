@@ -43,7 +43,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// or <c>openai.gpt-oss-*</c>).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string Model
         {
             get { return this._model; }

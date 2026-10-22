@@ -799,6 +799,56 @@ namespace Amazon.BedrockAgentCoreControl
 
 
     /// <summary>
+    /// Constants used for properties of type CircuitBreakerMode.
+    /// </summary>
+    public class CircuitBreakerMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for CircuitBreakerMode
+        /// </summary>
+        public static readonly CircuitBreakerMode DISABLED = new CircuitBreakerMode("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for CircuitBreakerMode
+        /// </summary>
+        public static readonly CircuitBreakerMode ENABLED = new CircuitBreakerMode("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CircuitBreakerMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CircuitBreakerMode FindValue(string value)
+        {
+            return FindValue<CircuitBreakerMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CircuitBreakerMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ClaimMatchOperatorType.
     /// </summary>
     public class ClaimMatchOperatorType : ConstantClass
@@ -2297,6 +2347,60 @@ namespace Amazon.BedrockAgentCoreControl
 
 
     /// <summary>
+    /// Constants used for properties of type FallbackError.
+    /// </summary>
+    public class FallbackError : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONNECTION_ERROR for FallbackError
+        /// </summary>
+        public static readonly FallbackError CONNECTION_ERROR = new FallbackError("CONNECTION_ERROR");
+        /// <summary>
+        /// Constant FIRST_BYTE_TIMEOUT for FallbackError
+        /// </summary>
+        public static readonly FallbackError FIRST_BYTE_TIMEOUT = new FallbackError("FIRST_BYTE_TIMEOUT");
+        /// <summary>
+        /// Constant UNROUTABLE for FallbackError
+        /// </summary>
+        public static readonly FallbackError UNROUTABLE = new FallbackError("UNROUTABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FallbackError(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FallbackError FindValue(string value)
+        {
+            return FindValue<FallbackError>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FallbackError(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FilterOperator.
     /// </summary>
     public class FilterOperator : ConstantClass
@@ -3476,6 +3580,56 @@ namespace Amazon.BedrockAgentCoreControl
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ListingMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MatchOperator.
+    /// </summary>
+    public class MatchOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant StringEquals for MatchOperator
+        /// </summary>
+        public static readonly MatchOperator StringEquals = new MatchOperator("StringEquals");
+        /// <summary>
+        /// Constant StringLike for MatchOperator
+        /// </summary>
+        public static readonly MatchOperator StringLike = new MatchOperator("StringLike");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MatchOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MatchOperator FindValue(string value)
+        {
+            return FindValue<MatchOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MatchOperator(string value)
         {
             return FindValue(value);
         }

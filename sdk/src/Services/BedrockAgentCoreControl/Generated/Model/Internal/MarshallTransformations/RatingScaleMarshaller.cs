@@ -62,6 +62,22 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetMultiDimensional())
+            {
+                context.Writer.WritePropertyName("multiDimensional");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectMultiDimensionalListValue in requestObject.MultiDimensional)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = EvaluationDimensionMarshaller.Instance;
+                    marshaller.Marshall(requestObjectMultiDimensionalListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetNumerical())
             {
                 context.Writer.WritePropertyName("numerical");

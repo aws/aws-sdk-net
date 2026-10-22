@@ -52,6 +52,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Description);
             }
 
+            if(requestObject.IsSetFallback())
+            {
+                context.Writer.WritePropertyName("fallback");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FallbackMarshaller.Instance;
+                marshaller.Marshall(requestObject.Fallback, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetMetadata())
             {
                 context.Writer.WritePropertyName("metadata");
@@ -64,6 +75,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                         context.Writer.WriteStringValue(requestObjectMetadataValue);
                 }
                 context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetModel())
+            {
+                context.Writer.WritePropertyName("model");
+                context.Writer.WriteStringValue(requestObject.Model);
             }
 
             if(requestObject.IsSetName())

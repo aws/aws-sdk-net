@@ -62,6 +62,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     unmarshalledObject.Categorical = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("multiDimensional", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<EvaluationDimension, EvaluationDimensionUnmarshaller>(EvaluationDimensionUnmarshaller.Instance);
+                    unmarshalledObject.MultiDimensional = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("numerical", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<NumericalScaleDefinition, NumericalScaleDefinitionUnmarshaller>(NumericalScaleDefinitionUnmarshaller.Instance);
