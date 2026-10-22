@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Improve CRC32 checksum performance with hardware acceleration (PCLMULQDQ on x86/x64, CRC32 instructions on ARM64) on .NET 8+ and a slicing-by-16 implementation on other targets."
+    ],
+    "type": "patch",
+    "updateMinimum": false
+  }
+}

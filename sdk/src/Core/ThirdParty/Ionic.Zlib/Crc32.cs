@@ -125,10 +125,9 @@ namespace ThirdParty.Ionic.Zlib
         /// <param name="count">how many bytes within the block to slurp</param>
         public void SlurpBlock(byte[] block, int offset, int count)
         {
-            for (int i = 0; i < count; i++)
+            if (count > 0)
             {
-                int x = offset + i;
-                _RunningCrc32Result = ((_RunningCrc32Result) >> 8) ^ crc32Table[(block[x]) ^ ((_RunningCrc32Result) & 0x000000FF)];
+                _RunningCrc32Result = Amazon.Runtime.Internal.Util.Crc32Ieee.Update(_RunningCrc32Result, block, offset, count);
             }
             _TotalBytesRead += count;
         }
