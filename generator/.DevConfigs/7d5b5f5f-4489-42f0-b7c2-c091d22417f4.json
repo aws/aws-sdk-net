@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Reduce per-request client entry cost by generating the request invocation ID from batched cryptographic random bytes instead of calling Guid.NewGuid() per request."
+    ],
+    "type": "patch",
+    "updateMinimum": false
+  }
+}
