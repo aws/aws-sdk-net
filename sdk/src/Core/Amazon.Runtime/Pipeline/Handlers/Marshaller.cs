@@ -33,6 +33,10 @@ namespace Amazon.Runtime.Internal
     /// </summary>
     public class Marshaller : PipelineHandler
     {
+        // AWS_LAMBDA_FUNCTION_NAME is set by the Lambda runtime before the process starts and doesn't change
+        // for the life of the execution environment, so it's read once instead of on every request.
+        private static bool _isRunningInLambda = IsLambdaFunctionNameSet();
+
         /// <summary>
         /// Calls pre invoke logic before calling the next handler
         /// in the pipeline.
@@ -136,8 +140,7 @@ namespace Amazon.Runtime.Internal
         {
             if (!headers.ContainsKey(HeaderKeys.XAmznTraceIdHeader))
             {
-                var lambdaFunctionName = Environment.GetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_FUNCTION_NAME);
-                if (!string.IsNullOrEmpty(lambdaFunctionName))
+                if (_isRunningInLambda)
                 {
                     string amznTraceId;
                     if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_MAX_CONCURRENCY)))
@@ -156,6 +159,20 @@ namespace Amazon.Runtime.Internal
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// Re-reads the AWS_LAMBDA_FUNCTION_NAME environment variable so that the next request picks up
+        /// a change to it. Used by tests that set the variable at runtime.
+        /// </summary>
+        internal static void ResetIsRunningInLambda()
+        {
+            _isRunningInLambda = IsLambdaFunctionNameSet();
+        }
+
+        private static bool IsLambdaFunctionNameSet()
+        {
+            return !string.IsNullOrEmpty(Environment.GetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_FUNCTION_NAME));
         }
 
         private static void UpdateUserAgentDetails(IRequestContext requestContext)

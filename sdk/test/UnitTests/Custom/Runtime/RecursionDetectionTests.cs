@@ -38,6 +38,7 @@ namespace AWSSDK.UnitTests
             {
                 Environment.SetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_FUNCTION_NAME, lambdaFunctionName);
                 Environment.SetEnvironmentVariable(EnvironmentVariables._X_AMZN_TRACE_ID, traceId);
+                Marshaller.ResetIsRunningInLambda();
 
                 var config = new AmazonS3Config
                 {
@@ -61,6 +62,7 @@ namespace AWSSDK.UnitTests
             {
                 Environment.SetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_FUNCTION_NAME, savedLambdaFunctionName);
                 Environment.SetEnvironmentVariable(EnvironmentVariables._X_AMZN_TRACE_ID, savedTraceId);
+                Marshaller.ResetIsRunningInLambda();
             }
         }
 
@@ -163,6 +165,77 @@ namespace AWSSDK.UnitTests
             expectedHeaders.Add(HeaderKeys.XAmznTraceIdHeader,
                 "test123-=;:+&[]{}\"'");
             ValidateHeaders(internalRequest.Headers, expectedHeaders);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void WhenFunctionNameIsSet_TraceIdIsReadOnEveryRequest()
+        {
+            var savedLambdaFunctionName = Environment.GetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_FUNCTION_NAME);
+            var savedTraceId = Environment.GetEnvironmentVariable(EnvironmentVariables._X_AMZN_TRACE_ID);
+            try
+            {
+                Environment.SetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_FUNCTION_NAME, "some-function");
+                Marshaller.ResetIsRunningInLambda();
+
+                Environment.SetEnvironmentVariable(EnvironmentVariables._X_AMZN_TRACE_ID, "FirstInvocation");
+                var headers = new Dictionary<string, string>();
+                Marshaller.SetRecursionDetectionHeader(headers);
+                Assert.AreEqual("FirstInvocation", headers[HeaderKeys.XAmznTraceIdHeader]);
+
+                Environment.SetEnvironmentVariable(EnvironmentVariables._X_AMZN_TRACE_ID, "SecondInvocation");
+                headers = new Dictionary<string, string>();
+                Marshaller.SetRecursionDetectionHeader(headers);
+                Assert.AreEqual("SecondInvocation", headers[HeaderKeys.XAmznTraceIdHeader]);
+
+                Environment.SetEnvironmentVariable(EnvironmentVariables._X_AMZN_TRACE_ID, null);
+                headers = new Dictionary<string, string>();
+                Marshaller.SetRecursionDetectionHeader(headers);
+                Assert.IsFalse(headers.ContainsKey(HeaderKeys.XAmznTraceIdHeader));
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_FUNCTION_NAME, savedLambdaFunctionName);
+                Environment.SetEnvironmentVariable(EnvironmentVariables._X_AMZN_TRACE_ID, savedTraceId);
+                Marshaller.ResetIsRunningInLambda();
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void FunctionNameIsReadOnceUntilReset()
+        {
+            var savedLambdaFunctionName = Environment.GetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_FUNCTION_NAME);
+            var savedTraceId = Environment.GetEnvironmentVariable(EnvironmentVariables._X_AMZN_TRACE_ID);
+            try
+            {
+                Environment.SetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_FUNCTION_NAME, null);
+                Environment.SetEnvironmentVariable(EnvironmentVariables._X_AMZN_TRACE_ID, "EnvValue");
+                Marshaller.ResetIsRunningInLambda();
+
+                Environment.SetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_FUNCTION_NAME, "some-function");
+                var headers = new Dictionary<string, string>();
+                Marshaller.SetRecursionDetectionHeader(headers);
+                Assert.IsFalse(headers.ContainsKey(HeaderKeys.XAmznTraceIdHeader));
+
+                Marshaller.ResetIsRunningInLambda();
+                headers = new Dictionary<string, string>();
+                Marshaller.SetRecursionDetectionHeader(headers);
+                Assert.AreEqual("EnvValue", headers[HeaderKeys.XAmznTraceIdHeader]);
+
+                Environment.SetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_FUNCTION_NAME, null);
+                headers = new Dictionary<string, string>();
+                Marshaller.SetRecursionDetectionHeader(headers);
+                Assert.AreEqual("EnvValue", headers[HeaderKeys.XAmznTraceIdHeader]);
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_FUNCTION_NAME, savedLambdaFunctionName);
+                Environment.SetEnvironmentVariable(EnvironmentVariables._X_AMZN_TRACE_ID, savedTraceId);
+                Marshaller.ResetIsRunningInLambda();
+            }
         }
     }
 }
