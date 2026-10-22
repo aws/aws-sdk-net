@@ -1,0 +1,32 @@
+{
+  "services": [
+    {
+      "serviceName": "APIGateway",
+      "type": "patch",
+      "changeLogMessages": [
+        "APIGateway is now generated from its Smithy model. The RetryAfterSeconds property on LimitExceededException, ServiceUnavailableException and TooManyRequestsException is now populated from the Retry-After response header."
+      ]
+    },
+    {
+      "serviceName": "BedrockAgentCoreControl",
+      "type": "patch",
+      "changeLogMessages": [
+        "BedrockAgentCoreControl is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "MediaLive",
+      "type": "patch",
+      "changeLogMessages": [
+        "MediaLive is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "Pinpoint",
+      "type": "patch",
+      "changeLogMessages": [
+        "Pinpoint is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    }
+  ]
+}

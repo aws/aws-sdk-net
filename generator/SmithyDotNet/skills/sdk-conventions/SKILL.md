@@ -289,7 +289,8 @@ hook key fails deserialization (fail-closed) rather than silently diverging from
 `shapeSubstitutions.renameShape` is applied first, as an entry in the service's `rename` map (the shape ID
 is unchanged, so targets still resolve). Every hook keys a renamed shape by its modeled name. C2J keys a renamed
 structure by its new name, so S3's entries for its renamed structures must be rekeyed on migration. Wire error codes
-keep the modeled name. A model that already renames the shape fails.
+keep the modeled name. A model that already renames the shape fails; so does a name another shape already emits, except
+service, resource and operation shapes, which emit no type.
 A Smithy-only `"Structure$member"` key instead copies that member's target under the new name (QApps: one
 `Action` enum is C2J's `PermissionInputActionEnum` and `PermissionOutputActionEnum`); the original is dropped once
 nothing targets it.

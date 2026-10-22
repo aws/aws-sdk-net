@@ -106,6 +106,8 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
             baseClass = baseClass + ", IDisposable";
         }
 
+        // TODO: the output structure's @documentation is available here, but across the models it is mostly
+        // boilerplate ("The response to the request.") or leaked modeling notes, so the generic line stays.
         var doc = $"This is the response object from the {operation.Name} operation.";
         var record = new OperationRecord(className, baseClass, doc, members, TypeMapper.BuildObsolete(operation.Output), streamingMembers, hasRequestEventStream);
         return WriteClass(record, cancellationToken);

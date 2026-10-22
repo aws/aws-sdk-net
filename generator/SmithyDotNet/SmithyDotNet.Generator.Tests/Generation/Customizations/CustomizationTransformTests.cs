@@ -48,9 +48,12 @@ public class CustomizationTransformTests
     // shapeSubstitutions
 
     // The error AccessDenied emits AccessDeniedException, so renaming it to Grant doesn't clash with the Grant structure.
+    // Operation and resource shapes emit no type, so their names are free as well.
     [Theory]
     [InlineData("Bucket", "S3Bucket")]
     [InlineData("AccessDenied", "Grant")]
+    [InlineData("StorageClass", "ListBuckets")]
+    [InlineData("Grant", "BucketResource")]
     public void ShapeSubstitution_RenamesViaServiceRename(string shape, string newName)
     {
         var model = Apply(Substitute(shape, newName));
