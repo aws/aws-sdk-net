@@ -5,6 +5,7 @@ using Amazon.Runtime.SharedInterfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -32,7 +33,7 @@ namespace AWSSDK.UnitTests
             var cachedToken = CreateToken(TimeSpan.FromHours(1));
             SetupDiskToken(cachedToken);
             var factoryCalls = 0;
-            var tokenManager = new LoginTokenManager(() => { factoryCalls++; return _mockSigninClient.Object; }, _mockFileCache.Object);
+            var tokenManager = new LoginTokenManager(_ => { factoryCalls++; return _mockSigninClient.Object; }, _mockFileCache.Object);
 
             var result = await tokenManager.GetTokenAsync(NewOptions());
 
@@ -71,7 +72,7 @@ namespace AWSSDK.UnitTests
             var refreshedToken = CreateToken(TimeSpan.FromHours(1));
             SetupDiskToken(CreateToken(TimeSpan.FromMinutes(1)));
             SetupRefreshWrites(refreshedToken);
-            var tokenManager = new LoginTokenManager(() => _mockSigninClient.Object, _mockFileCache.Object);
+            var tokenManager = new LoginTokenManager(_ => _mockSigninClient.Object, _mockFileCache.Object);
 
             var result = await tokenManager.GetTokenAsync(NewOptions());
 
@@ -93,7 +94,7 @@ namespace AWSSDK.UnitTests
             SetupRefreshWrites(refreshedToken);
             var factoryCalls = 0;
             var tokenManager = new LoginTokenManager(
-                () => ++factoryCalls == 1 ? throw new AmazonClientException("No region") : _mockSigninClient.Object,
+                _ => ++factoryCalls == 1 ? throw new AmazonClientException("No region") : _mockSigninClient.Object,
                 _mockFileCache.Object);
             var options = NewOptions();
             var savedClockCorrection = AWSConfigs.ManualClockCorrection;
@@ -118,13 +119,88 @@ namespace AWSSDK.UnitTests
         {
             SetupDiskToken(CreateToken(TimeSpan.FromMinutes(-1)));
             var refreshError = new AmazonClientException("No region");
-            var tokenManager = new LoginTokenManager(() => throw refreshError, _mockFileCache.Object);
+            var tokenManager = new LoginTokenManager(_ => throw refreshError, _mockFileCache.Object);
 
             var exception = await Assert.ThrowsExactlyAsync<AmazonClientException>(() => tokenManager.GetTokenAsync(NewOptions()));
 
             Assert.AreSame(refreshError, exception.InnerException);
             StringAssert.Contains(exception.Message, refreshError.Message);
         }
+
+        [TestMethod]
+        public async Task GetTokenAsync_TokenWithSignInRegion_RefreshesInSignInRegion()
+        {
+            var expiringToken = CreateToken(TimeSpan.FromMinutes(1));
+            expiringToken.SignInRegion = "us-east-1";
+            SetupDiskToken(expiringToken);
+            SetupRefreshWrites(CreateToken(TimeSpan.FromHours(1)));
+            var clientRegions = new List<string>();
+            var tokenManager = new LoginTokenManager(region => { clientRegions.Add(region); return _mockSigninClient.Object; }, _mockFileCache.Object);
+            var options = NewOptions();
+            options.Region = "us-west-2";
+
+            await tokenManager.GetTokenAsync(options);
+
+            CollectionAssert.AreEqual(new[] { "us-east-1" }, clientRegions);
+        }
+
+        [TestMethod]
+        [DataRow(null)]
+        [DataRow("")]
+        public async Task GetTokenAsync_TokenWithoutSignInRegion_RefreshesInFallbackRegion(string signInRegion)
+        {
+            var expiringToken = CreateToken(TimeSpan.FromMinutes(1));
+            expiringToken.SignInRegion = signInRegion;
+            SetupDiskToken(expiringToken);
+            SetupRefreshWrites(CreateToken(TimeSpan.FromHours(1)));
+            var clientRegions = new List<string>();
+            var tokenManager = new LoginTokenManager(region => { clientRegions.Add(region); return _mockSigninClient.Object; }, _mockFileCache.Object);
+            var options = NewOptions();
+            options.Region = "us-west-2";
+
+            await tokenManager.GetTokenAsync(options);
+
+            CollectionAssert.AreEqual(new[] { "us-west-2" }, clientRegions);
+        }
+
+        [TestMethod]
+        public async Task GetTokenAsync_RefreshesInDifferentRegions_CreatesOneClientPerRegion()
+        {
+            var clientRegions = new List<string>();
+            var tokenManager = new LoginTokenManager(region => { clientRegions.Add(region); return _mockSigninClient.Object; }, _mockFileCache.Object);
+
+            foreach (var signInRegion in new[] { "us-east-1", "eu-west-1", "us-east-1" })
+            {
+                var expiringToken = CreateToken(TimeSpan.FromMinutes(1));
+                expiringToken.SignInRegion = signInRegion;
+                SetupDiskToken(expiringToken);
+                SetupRefreshWrites(CreateToken(TimeSpan.FromHours(1)));
+
+                await tokenManager.GetTokenAsync(NewOptions());
+            }
+
+            CollectionAssert.AreEqual(new[] { "us-east-1", "eu-west-1" }, clientRegions);
+            _mockSigninClient.Verify(x => x.CreateOAuth2TokenAsync(It.IsAny<CoreCreateOAuth2TokenRequest>(), false, It.IsAny<CancellationToken>()), Times.Exactly(3));
+        }
+
+#if NETFRAMEWORK
+        [TestMethod]
+        public void GetToken_TokenWithSignInRegion_RefreshesInSignInRegion()
+        {
+            var expiringToken = CreateToken(TimeSpan.FromMinutes(1));
+            expiringToken.SignInRegion = "us-east-1";
+            _mockFileCache.Setup(x => x.TryGetLoginToken(It.IsAny<string>(), It.IsAny<string>(), out expiringToken)).Returns(true);
+            var clientRegions = new List<string>();
+            var tokenManager = new LoginTokenManager(region => { clientRegions.Add(region); return _mockSigninClient.Object; }, _mockFileCache.Object);
+            var options = NewOptions();
+            options.Region = "us-west-2";
+
+            tokenManager.GetToken(options);
+
+            CollectionAssert.AreEqual(new[] { "us-east-1" }, clientRegions);
+            _mockSigninClient.Verify(x => x.CreateOAuth2Token(It.IsAny<CoreCreateOAuth2TokenRequest>(), false), Times.Once);
+        }
+#endif
 
         private static LoginTokenManagerGetTokenOptions NewOptions()
         {

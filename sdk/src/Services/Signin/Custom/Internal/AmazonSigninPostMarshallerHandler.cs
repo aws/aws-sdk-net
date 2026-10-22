@@ -62,11 +62,12 @@ namespace Amazon.Signin.Internal
             var createOAuth2Request = (originalRequest as CreateOAuth2TokenRequest);
             string dpopKeyToSave = null;
             string originalIdentityToken = null;
+            string signInRegion = null;
 
             // Set DPoP Proof header.
             if (createOAuth2Request != null)
             {
-                GetCreateOAuth2TokenRequiredParameters(requestContext, createOAuth2Request, out var existingDPoPKey, out var existingIdentityToken);
+                GetCreateOAuth2TokenRequiredParameters(requestContext, createOAuth2Request, out var existingDPoPKey, out var existingIdentityToken, out signInRegion);
 
                 dpopKeyToSave = existingDPoPKey;
                 originalIdentityToken = existingIdentityToken;
@@ -78,7 +79,7 @@ namespace Amazon.Signin.Internal
             // Only try to save LoginToken if original request was CreateOAuth2TokenRequest.
             if (createOAuth2Request != null)
             {
-                SaveLoginToken(executionContext.ResponseContext, createOAuth2Request.TokenInput.ClientId, originalIdentityToken, dpopKeyToSave);
+                SaveLoginToken(executionContext.ResponseContext, createOAuth2Request.TokenInput.ClientId, originalIdentityToken, dpopKeyToSave, signInRegion);
             }
         }
 
@@ -98,12 +99,13 @@ namespace Amazon.Signin.Internal
             var createOAuth2Request = (originalRequest as CreateOAuth2TokenRequest);
             string dpopKeyToSave = null;
             string originalIdentityToken = null;
+            string signInRegion = null;
 
             // Set DPoP Proof header.
             if (createOAuth2Request != null)
             {
                 // Async methods cannot have ref/out parameters.
-                GetCreateOAuth2TokenRequiredParameters(requestContext, createOAuth2Request, out var existingDPoPKey, out var existingIdentityToken);
+                GetCreateOAuth2TokenRequiredParameters(requestContext, createOAuth2Request, out var existingDPoPKey, out var existingIdentityToken, out signInRegion);
 
                 dpopKeyToSave = existingDPoPKey;
                 originalIdentityToken = existingIdentityToken;
@@ -115,7 +117,7 @@ namespace Amazon.Signin.Internal
             // Only try to save LoginToken if original request was CreateOAuth2TokenRequest.
             if (createOAuth2Request != null)
             {
-                await SaveLoginTokenAsync(executionContext.ResponseContext, createOAuth2Request.TokenInput.ClientId, originalIdentityToken, dpopKeyToSave).ConfigureAwait(false);
+                await SaveLoginTokenAsync(executionContext.ResponseContext, createOAuth2Request.TokenInput.ClientId, originalIdentityToken, dpopKeyToSave, signInRegion).ConfigureAwait(false);
             }
 
             return task;
@@ -144,10 +146,11 @@ namespace Amazon.Signin.Internal
             }
         }
 
-        private void GetCreateOAuth2TokenRequiredParameters(IRequestContext requestContext, CreateOAuth2TokenRequest createOAuth2Request, out string dpopKey, out string identityToken)
+        private void GetCreateOAuth2TokenRequiredParameters(IRequestContext requestContext, CreateOAuth2TokenRequest createOAuth2Request, out string dpopKey, out string identityToken, out string signInRegion)
         {
             dpopKey = null; // For authorization_code grant type, it is initial request.
             identityToken = null; // Identity Token is not included for refresh responses.
+            signInRegion = null;
 
             if (createOAuth2Request.TokenInput.IsSetGrantType())
             {
@@ -164,8 +167,15 @@ namespace Amazon.Signin.Internal
                         {
                             dpopKey = loginToken.DPoPKey;
                             identityToken = loginToken.IdentityToken;
+                            signInRegion = loginToken.SignInRegion;
                         }
                     }
+                }
+                else
+                {
+                    // With an endpoint override, the region no longer says where the login was sent.
+                    var clientConfig = requestContext.ClientConfig;
+                    signInRegion = string.IsNullOrEmpty(clientConfig?.ServiceURL) ? clientConfig?.RegionEndpoint?.SystemName : null;
                 }
             }
         }
@@ -199,7 +209,7 @@ namespace Amazon.Signin.Internal
             return new ProfileIniFile(Path.Combine(Path.GetDirectoryName(sharedCredentialsFile.FilePath), ConfigFileName), !isDefaultProfile);
         }
 
-        private void SaveLoginToken(IResponseContext responseContext, string clientId, string originalIdentityToken, string dpopKey)
+        private void SaveLoginToken(IResponseContext responseContext, string clientId, string originalIdentityToken, string dpopKey, string signInRegion)
         {
             var createOAuth2TokenResponse = (responseContext.Response as CreateOAuth2TokenResponse);
             
@@ -219,6 +229,7 @@ namespace Amazon.Signin.Internal
                                     (createOAuth2TokenResponse.TokenOutput.ExpiresIn != null ? AWSSDKUtils.CorrectedUtcNow.AddSeconds((double)createOAuth2TokenResponse.TokenOutput.ExpiresIn) : null),
                                     accountId),
                     ClientId = clientId,
+                    SignInRegion = signInRegion,
                     DPoPKey = dpopKey,
                     IdentityToken = createOAuth2TokenResponse.TokenOutput.IdToken ?? originalIdentityToken,
                     RefreshToken = createOAuth2TokenResponse.TokenOutput.RefreshToken,
@@ -229,7 +240,7 @@ namespace Amazon.Signin.Internal
             }
         }
 
-        private async Task SaveLoginTokenAsync(IResponseContext responseContext, string clientId, string originalIdentityToken, string dpopKey)
+        private async Task SaveLoginTokenAsync(IResponseContext responseContext, string clientId, string originalIdentityToken, string dpopKey, string signInRegion)
         {
             var createOAuth2TokenResponse = (responseContext.Response as CreateOAuth2TokenResponse);
 
@@ -249,6 +260,7 @@ namespace Amazon.Signin.Internal
                                     (createOAuth2TokenResponse.TokenOutput.ExpiresIn != null ? AWSSDKUtils.CorrectedUtcNow.AddSeconds((double)createOAuth2TokenResponse.TokenOutput.ExpiresIn) : null),
                                     accountId),
                     ClientId = clientId,
+                    SignInRegion = signInRegion,
                     DPoPKey = dpopKey,
                     IdentityToken = createOAuth2TokenResponse.TokenOutput.IdToken ?? originalIdentityToken,
                     RefreshToken = createOAuth2TokenResponse.TokenOutput.RefreshToken,
