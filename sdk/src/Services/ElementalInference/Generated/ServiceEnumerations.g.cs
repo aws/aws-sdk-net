@@ -410,6 +410,93 @@ namespace Amazon.ElementalInference
     }
 
     /// <summary>
+    /// Constants used for properties of type ScheduleActionErrorCode.
+    /// </summary>
+    public class ScheduleActionErrorCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant INTERNAL_ERROR for ScheduleActionErrorCode
+        /// </summary>
+        public static readonly ScheduleActionErrorCode INTERNAL_ERROR = new ScheduleActionErrorCode("INTERNAL_ERROR");
+
+        /// <summary>
+        /// Constant INVALID_ACTION_TARGET for ScheduleActionErrorCode
+        /// </summary>
+        public static readonly ScheduleActionErrorCode INVALID_ACTION_TARGET = new ScheduleActionErrorCode("INVALID_ACTION_TARGET");
+
+        /// <summary>
+        /// Constructs a custom ScheduleActionErrorCode for a value not among the defined constants.
+        /// </summary>
+        public ScheduleActionErrorCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScheduleActionErrorCode FindValue(string value)
+        {
+            return FindValue<ScheduleActionErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScheduleActionErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ScheduleActionStatus.
+    /// </summary>
+    public class ScheduleActionStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant COMPLETED for ScheduleActionStatus
+        /// </summary>
+        public static readonly ScheduleActionStatus COMPLETED = new ScheduleActionStatus("COMPLETED");
+
+        /// <summary>
+        /// Constant FAILED for ScheduleActionStatus
+        /// </summary>
+        public static readonly ScheduleActionStatus FAILED = new ScheduleActionStatus("FAILED");
+
+        /// <summary>
+        /// Constant PENDING for ScheduleActionStatus
+        /// </summary>
+        public static readonly ScheduleActionStatus PENDING = new ScheduleActionStatus("PENDING");
+
+        /// <summary>
+        /// Constructs a custom ScheduleActionStatus for a value not among the defined constants.
+        /// </summary>
+        public ScheduleActionStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScheduleActionStatus FindValue(string value)
+        {
+            return FindValue<ScheduleActionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScheduleActionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type SummaryGenerationMode.
     /// </summary>
     public class SummaryGenerationMode : ConstantClass
