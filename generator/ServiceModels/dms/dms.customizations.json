@@ -1,12 +1,5 @@
 {
     "shapeModifiers": {
-        "EndpointType": {
-            "modify": [
-                {
-                    "EndpointType": { "emitPropertyName": "ReplicationEndpointType" }
-                }
-            ]
-        },
         "ReplicationInstance": {
             "modify": [
                 {

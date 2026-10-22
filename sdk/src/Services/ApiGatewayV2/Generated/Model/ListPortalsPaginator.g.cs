@@ -14,53 +14,46 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the resource-groups-2017-11-27.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
-namespace Amazon.ResourceGroups.Model
+
+namespace Amazon.ApiGatewayV2.Model
 {
     /// <summary>
-    /// Base class for ListGroupResources paginators.
+    /// Paginator for the ListPortals operation
     /// </summary>
-    internal sealed partial class ListGroupResourcesPaginator : IPaginator<ListGroupResourcesResponse>, IListGroupResourcesPaginator
+    internal sealed partial class ListPortalsPaginator : IPaginator<ListPortalsResponse>, IListPortalsPaginator
     {
-        private readonly IAmazonResourceGroups _client;
-        private readonly ListGroupResourcesRequest _request;
+        private readonly IAmazonApiGatewayV2 _client;
+        private readonly ListPortalsRequest _request;
         private int _isPaginatorInUse = 0;
-        
+
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        public IPaginatedEnumerable<ListGroupResourcesResponse> Responses => new PaginatedResponse<ListGroupResourcesResponse>(this);
+        public IPaginatedEnumerable<ListPortalsResponse> Responses => new PaginatedResponse<ListPortalsResponse>(this);
 
         /// <summary>
-        /// Enumerable containing all of the ResourceIdentifiers
+        /// Enumerable containing all of the Items
         /// </summary>
-        public IPaginatedEnumerable<ResourceIdentifier> ResourceIdentifiers => 
-            new PaginatedResultKeyResponse<ListGroupResourcesResponse, ResourceIdentifier>(this, (i) => i.ResourceIdentifiers ?? new List<ResourceIdentifier>());
+        public IPaginatedEnumerable<PortalSummary> Items =>
+            new PaginatedResultKeyResponse<ListPortalsResponse, PortalSummary>(this, (i) => i.Items ?? new List<PortalSummary>());
 
-        /// <summary>
-        /// Enumerable containing all of the Resources
-        /// </summary>
-        public IPaginatedEnumerable<ListGroupResourcesItem> Resources => 
-            new PaginatedResultKeyResponse<ListGroupResourcesResponse, ListGroupResourcesItem>(this, (i) => i.Resources ?? new List<ListGroupResourcesItem>());
-
-        internal ListGroupResourcesPaginator(IAmazonResourceGroups client, ListGroupResourcesRequest request)
+        internal ListPortalsPaginator(IAmazonApiGatewayV2 client, ListPortalsRequest request)
         {
             this._client = client;
             this._request = request;
         }
-#if BCL
-        IEnumerable<ListGroupResourcesResponse> IPaginator<ListGroupResourcesResponse>.Paginate()
+#if NETFRAMEWORK
+        IEnumerable<ListPortalsResponse> IPaginator<ListPortalsResponse>.Paginate()
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -68,11 +61,11 @@ namespace Amazon.ResourceGroups.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextToken = _request.NextToken;
-            ListGroupResourcesResponse response;
+            ListPortalsResponse response;
             do
             {
                 _request.NextToken = nextToken;
-                response = _client.ListGroupResources(_request);
+                response = _client.ListPortals(_request);
                 nextToken = response.NextToken;
                 yield return response;
             }
@@ -80,7 +73,7 @@ namespace Amazon.ResourceGroups.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListGroupResourcesResponse> IPaginator<ListGroupResourcesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
+        async IAsyncEnumerable<ListPortalsResponse> IPaginator<ListPortalsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -88,11 +81,11 @@ namespace Amazon.ResourceGroups.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextToken = _request.NextToken;
-            ListGroupResourcesResponse response;
+            ListPortalsResponse response;
             do
             {
                 _request.NextToken = nextToken;
-                response = await _client.ListGroupResourcesAsync(_request, cancellationToken).ConfigureAwait(false);
+                response = await _client.ListPortalsAsync(_request, cancellationToken).ConfigureAwait(false);
                 nextToken = response.NextToken;
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;

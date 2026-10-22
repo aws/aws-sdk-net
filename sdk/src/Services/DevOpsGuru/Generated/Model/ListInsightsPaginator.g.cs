@@ -14,29 +14,28 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the devops-guru-2020-12-01.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
+
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// Base class for ListInsights paginators.
+    /// Paginator for the ListInsights operation
     /// </summary>
     internal sealed partial class ListInsightsPaginator : IPaginator<ListInsightsResponse>, IListInsightsPaginator
     {
         private readonly IAmazonDevOpsGuru _client;
         private readonly ListInsightsRequest _request;
         private int _isPaginatorInUse = 0;
-        
+
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
@@ -45,13 +44,13 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Enumerable containing all of the ProactiveInsights
         /// </summary>
-        public IPaginatedEnumerable<ProactiveInsightSummary> ProactiveInsights => 
+        public IPaginatedEnumerable<ProactiveInsightSummary> ProactiveInsights =>
             new PaginatedResultKeyResponse<ListInsightsResponse, ProactiveInsightSummary>(this, (i) => i.ProactiveInsights ?? new List<ProactiveInsightSummary>());
 
         /// <summary>
         /// Enumerable containing all of the ReactiveInsights
         /// </summary>
-        public IPaginatedEnumerable<ReactiveInsightSummary> ReactiveInsights => 
+        public IPaginatedEnumerable<ReactiveInsightSummary> ReactiveInsights =>
             new PaginatedResultKeyResponse<ListInsightsResponse, ReactiveInsightSummary>(this, (i) => i.ReactiveInsights ?? new List<ReactiveInsightSummary>());
 
         internal ListInsightsPaginator(IAmazonDevOpsGuru client, ListInsightsRequest request)
@@ -59,7 +58,7 @@ namespace Amazon.DevOpsGuru.Model
             this._client = client;
             this._request = request;
         }
-#if BCL
+#if NETFRAMEWORK
         IEnumerable<ListInsightsResponse> IPaginator<ListInsightsResponse>.Paginate()
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)

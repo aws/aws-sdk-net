@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the devops-guru-2020-12-01.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -32,44 +32,33 @@ using Amazon.Runtime.Internal.Util;
 using System.Text.Json;
 using Amazon.Util;
 #pragma warning disable CS0612,CS0618
+
 namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ThrottlingException Object
-    /// </summary>  
-    public class ThrottlingExceptionUnmarshaller : IJsonErrorResponseUnmarshaller<ThrottlingException, JsonUnmarshallerContext>
+    /// Exception Unmarshaller for ThrottlingException
+    /// </summary>
+    public partial class ThrottlingExceptionUnmarshaller : IJsonErrorResponseUnmarshaller<ThrottlingException, JsonUnmarshallerContext>
     {
         /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <param name="reader"></param>
-        /// <returns></returns>
+        /// Unmarshall the exception from the service to the appropriate exception class
+        /// </summary>
         public ThrottlingException Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse(), ref reader);
         }
 
         /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <param name="errorResponse"></param>
-        /// <param name="reader"></param>
-        /// <returns></returns>
+        /// Unmarshall the exception from the service to the appropriate exception class
+        /// </summary>
         public ThrottlingException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
         {
+            var unmarshalledObject = new ThrottlingException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+
             if (context.Stream.Length > 0)
             {
                 context.Read(ref reader);
-            }
-
-            ThrottlingException unmarshalledObject = new ThrottlingException(errorResponse.Message, errorResponse.InnerException,
-                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
-        
-            int targetDepth = context.CurrentDepth;
-            if (context.Stream.Length > 0)
-            {
+                int targetDepth = context.CurrentDepth;
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
                     if (context.TestExpression("QuotaCode", targetDepth, ref reader))
@@ -78,12 +67,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
                         unmarshalledObject.QuotaCode = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("Retry-After", targetDepth, ref reader))
-                    {
-                        var unmarshaller = NullableIntUnmarshaller.Instance;
-                        unmarshalledObject.RetryAfterSeconds = unmarshaller.Unmarshall(context, ref reader);
-                        continue;
-                    }
+
                     if (context.TestExpression("ServiceCode", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -92,21 +76,19 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
                     }
                 }
             }
-          
+            if (context.ResponseData.IsHeaderPresent("Retry-After"))
+            {
+                unmarshalledObject.RetryAfterSeconds = int.Parse(context.ResponseData.GetHeaderValue("Retry-After"), CultureInfo.InvariantCulture);
+            }
+
             return unmarshalledObject;
         }
 
-        private static ThrottlingExceptionUnmarshaller _instance = new ThrottlingExceptionUnmarshaller();        
+        private static ThrottlingExceptionUnmarshaller _instance = new ThrottlingExceptionUnmarshaller();
 
         /// <summary>
         /// Gets the singleton.
-        /// </summary>  
-        public static ThrottlingExceptionUnmarshaller Instance
-        {
-            get
-            {
-                return _instance;
-            }
-        }
+        /// </summary>
+        public static ThrottlingExceptionUnmarshaller Instance => _instance;
     }
 }
