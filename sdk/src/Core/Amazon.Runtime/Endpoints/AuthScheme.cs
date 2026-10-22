@@ -19,10 +19,26 @@ namespace Amazon.Runtime.Endpoints
     /// <summary>
     /// Typed representation of a resolved endpoint auth scheme.
     /// </summary>
-    public record AuthScheme(
-        string Name,
-        string SigningName,
-        string SigningRegion,
-        IList<string> SigningRegionSet,
-        bool DisableDoubleEncoding);
+    public class AuthScheme
+    {
+        public AuthScheme(
+            string name,
+            string signingName,
+            string signingRegion,
+            IList<string> signingRegionSet,
+            bool disableDoubleEncoding)
+        {
+            Name = name;
+            SigningName = signingName;
+            SigningRegion = signingRegion;
+            SigningRegionSet = signingRegionSet;
+            DisableDoubleEncoding = disableDoubleEncoding;
+        }
+
+        public string Name { get; }
+        public string SigningName { get; }
+        public string SigningRegion { get; }
+        public IList<string> SigningRegionSet { get; }
+        public bool DisableDoubleEncoding { get; }
+    }
 }
