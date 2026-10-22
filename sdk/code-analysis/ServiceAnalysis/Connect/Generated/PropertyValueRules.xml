@@ -3016,6 +3016,32 @@
     <max>100000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.ListReplicationFindingsRequest.InstanceId</property>
+    <min>1</min>
+    <max>250</max>
+    <pattern>^(arn:(aws|aws-us-gov):connect:[a-z]{2}-[a-z]+-[0-9]{1}:[0-9]{1,20}:instance/)?[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListReplicationFindingsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListReplicationFindingsRequest.NextToken</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListReplicationFindingsRequest.ResourceType</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListReplicationFindingsResponse.NextToken</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.ListRoutingProfileManualAssignmentQueuesRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -5778,6 +5804,12 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.ApproximateDriftedResourceCount.Region</property>
+    <min>8</min>
+    <max>31</max>
+    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.AssociatedContactSummary.ContactId</property>
     <min>1</min>
     <max>256</max>
@@ -7923,6 +7955,41 @@
     <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.ReplicationFinding.Id</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ReplicationFinding.Message</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ReplicationFinding.Name</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ReplicationFinding.Operation</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ReplicationFinding.ReferenceCode</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ReplicationFinding.Region</property>
+    <min>8</min>
+    <max>31</max>
+    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ReplicationFinding.ResourceType</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.ReplicationStatusSummary.Region</property>
     <min>8</min>
     <max>31</max>
@@ -7932,6 +7999,17 @@
     <property>Amazon.Connect.Model.ReplicationStatusSummary.ReplicationStatusReason</property>
     <min>0</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ResourceReplicationStatus.Region</property>
+    <min>8</min>
+    <max>31</max>
+    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ResourceReplicationStatus.Status</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.RoutingProfile.Description</property>

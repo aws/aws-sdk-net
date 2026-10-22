@@ -21622,6 +21622,85 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListReplicationFindings
+
+
+        /// <summary>
+        /// Lists replication findings for resources of a specified resource type in a specified
+        /// Connect Customer instance. A replication finding describes a single resource whose
+        /// replication to one or more Regions is incomplete or has encountered an error. Results
+        /// are returned in pages. This operation is available only for instances that are set
+        /// up for Global Resiliency.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReplicationFindings service method.</param>
+        /// 
+        /// <returns>The response from the ListReplicationFindings service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListReplicationFindings">REST API Reference for ListReplicationFindings Operation</seealso>
+        public virtual ListReplicationFindingsResponse ListReplicationFindings(ListReplicationFindingsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListReplicationFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReplicationFindingsResponseUnmarshaller.Instance;
+
+            return Invoke<ListReplicationFindingsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists replication findings for resources of a specified resource type in a specified
+        /// Connect Customer instance. A replication finding describes a single resource whose
+        /// replication to one or more Regions is incomplete or has encountered an error. Results
+        /// are returned in pages. This operation is available only for instances that are set
+        /// up for Global Resiliency.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReplicationFindings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListReplicationFindings service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListReplicationFindings">REST API Reference for ListReplicationFindings Operation</seealso>
+        public virtual Task<ListReplicationFindingsResponse> ListReplicationFindingsAsync(ListReplicationFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListReplicationFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReplicationFindingsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListReplicationFindingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListRoutingProfileManualAssignmentQueues
 
 

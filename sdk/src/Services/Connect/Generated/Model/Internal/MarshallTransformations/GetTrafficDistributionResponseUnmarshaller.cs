@@ -70,6 +70,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     response.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("LastFailoverTime", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    response.LastFailoverTime = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("SignInConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = SignInConfigUnmarshaller.Instance;

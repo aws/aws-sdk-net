@@ -413,6 +413,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListReplicationFindings operation
+        ///</summary>
+        public IListReplicationFindingsPaginator ListReplicationFindings(ListReplicationFindingsRequest request) 
+        {
+            return new ListReplicationFindingsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListRoutingProfileManualAssignmentQueues operation
         ///</summary>
         public IListRoutingProfileManualAssignmentQueuesPaginator ListRoutingProfileManualAssignmentQueues(ListRoutingProfileManualAssignmentQueuesRequest request) 

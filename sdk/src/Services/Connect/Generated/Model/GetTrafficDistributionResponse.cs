@@ -37,6 +37,7 @@ namespace Amazon.Connect.Model
         private AgentConfig _agentConfig;
         private string _arn;
         private string _id;
+        private DateTime? _lastFailoverTime;
         private SignInConfig _signInConfig;
         private TelephonyConfig _telephonyConfig;
 
@@ -94,6 +95,26 @@ namespace Amazon.Connect.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastFailoverTime. 
+        /// <para>
+        /// The timestamp of the most recent failover for the traffic distribution group. This
+        /// value is updated each time <c>UpdateTrafficDistribution</c> is called to change the
+        /// traffic distribution.
+        /// </para>
+        /// </summary>
+        public DateTime? LastFailoverTime
+        {
+            get { return this._lastFailoverTime; }
+            set { this._lastFailoverTime = value; }
+        }
+
+        // Check to see if LastFailoverTime property is set
+        internal bool IsSetLastFailoverTime()
+        {
+            return this._lastFailoverTime.HasValue; 
         }
 
         /// <summary>
