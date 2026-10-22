@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Reduce per-request overhead of disabled request metrics and the no-op tracer provider by avoiding allocations and locks when they are not collected."
+    ],
+    "type": "patch",
+    "updateMinimum": false
+  }
+}
