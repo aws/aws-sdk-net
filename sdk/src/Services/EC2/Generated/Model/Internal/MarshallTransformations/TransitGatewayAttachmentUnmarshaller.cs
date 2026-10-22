@@ -67,6 +67,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("natGatewaySupport", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.NatGatewaySupport = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("resourceId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

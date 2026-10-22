@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
     {
         private TransitGatewayAttachmentAssociation _association;
         private DateTime? _creationTime;
+        private TransitGatewayAttachmentNatGatewaySupportState _natGatewaySupport;
         private string _resourceId;
         private string _resourceOwnerId;
         private TransitGatewayAttachmentResourceType _resourceType;
@@ -79,6 +80,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NatGatewaySupport. 
+        /// <para>
+        /// The state of NAT gateway support for the attachment. Only the owner of the transit
+        /// gateway receives this parameter.
+        /// </para>
+        /// </summary>
+        public TransitGatewayAttachmentNatGatewaySupportState NatGatewaySupport
+        {
+            get { return this._natGatewaySupport; }
+            set { this._natGatewaySupport = value; }
+        }
+
+        // Check to see if NatGatewaySupport property is set
+        internal bool IsSetNatGatewaySupport()
+        {
+            return this._natGatewaySupport != null;
         }
 
         /// <summary>
