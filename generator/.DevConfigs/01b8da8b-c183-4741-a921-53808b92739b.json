@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Reduce SigV4 signing CPU and allocations: build the canonical request, string to sign, date stamps and Authorization header without string formatting or intermediate collections, reuse keyed HMAC and SHA-256 instances on .NET 8, and use the known hash for empty payloads. Signatures and headers are unchanged."
+    ],
+    "type": "patch",
+    "updateMinimum": false
+  }
+}

@@ -14,16 +14,21 @@
  */
 
 using System;
+using System.Buffers;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Globalization;
+using System.Threading;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Endpoints;
 using ThirdParty.RuntimeBackports;
 using Amazon.Runtime.Identity;
+#if NET8_0_OR_GREATER
+using System.Security.Cryptography;
+#endif
 
 namespace Amazon.Runtime.Internal.Auth
 {
@@ -70,6 +75,20 @@ namespace Amazon.Runtime.Internal.Auth
             HeaderKeys.XAmzUserAgentHeader
         };
 
+        /// <summary>
+        /// AppContext switch that sends every request through <see cref="SortAndPruneHeaders"/> and
+        /// <see cref="CanonicalizeRequestHelper"/>, the canonicalization path used before the single-pass one.
+        /// Read once per process.
+        /// </summary>
+        internal const string DisableFastCanonicalizationSwitch = "Amazon.Runtime.AWS4Signer.DisableFastCanonicalization";
+
+        internal static bool DisableFastCanonicalization = IsSwitchEnabled(DisableFastCanonicalizationSwitch);
+
+        private static bool IsSwitchEnabled(string switchName)
+        {
+            return AppContext.TryGetSwitch(switchName, out var enabled) && enabled;
+        }
+
         // Derived signing keys are deterministic for a given secret, region, date and service,
         // so they are reused across requests. One entry is kept per secret, region and service;
         // it is replaced in place when the UTC date changes, so stale keys never accumulate.
@@ -78,8 +97,20 @@ namespace Amazon.Runtime.Internal.Auth
         private static readonly ConcurrentDictionary<string, SigningKeyCacheEntry> _signingKeyCache = new();
         private static readonly ConcurrentQueue<string> _signingKeyCacheOrder = new();
 
+        /// <summary>
+        /// A cached signing key. On .NET 8+ it also pools keyed HMAC-SHA256 instances for the signature step,
+        /// so that step doesn't re-key OS crypto on every request. When the entry is replaced at the UTC date
+        /// change or evicted, its pooled instances are not disposed, because concurrent callers may still be
+        /// using them; they are left for the GC and finalizer to reclaim.
+        /// </summary>
         private sealed class SigningKeyCacheEntry
         {
+#if NET8_0_OR_GREATER
+            private const int MaxPooledHmacs = 4;
+            private readonly IncrementalHash[] _hmacs = new IncrementalHash[MaxPooledHmacs];
+            private int _hmacsCreated;
+#endif
+
             public SigningKeyCacheEntry(string dateStamp, byte[] key)
             {
                 DateStamp = dateStamp;
@@ -88,6 +119,69 @@ namespace Amazon.Runtime.Internal.Auth
 
             public string DateStamp { get; }
             public byte[] Key { get; }
+
+#if NET8_0_OR_GREATER
+            /// <summary>
+            /// Computes HMAC-SHA256 of <paramref name="data"/> with this key into <paramref name="destination"/>.
+            /// Uses a pooled keyed instance when one is free; otherwise uses the one-shot API.
+            /// </summary>
+            internal void ComputeHmac(ReadOnlySpan<byte> data, Span<byte> destination)
+            {
+                var hmac = RentHmac();
+                if (hmac == null)
+                {
+                    HMACSHA256.HashData(Key, data, destination);
+                    return;
+                }
+
+                try
+                {
+                    hmac.AppendData(data);
+                    hmac.GetHashAndReset(destination);
+                }
+                catch
+                {
+                    // The instance may hold partial input; drop it and free its pool slot.
+                    hmac.Dispose();
+                    Interlocked.Decrement(ref _hmacsCreated);
+                    throw;
+                }
+
+                ReturnHmac(hmac);
+            }
+
+            private IncrementalHash RentHmac()
+            {
+                for (int i = 0; i < MaxPooledHmacs; i++)
+                {
+                    var hmac = Interlocked.Exchange(ref _hmacs[i], null);
+                    if (hmac != null)
+                        return hmac;
+                }
+
+                if (Volatile.Read(ref _hmacsCreated) < MaxPooledHmacs)
+                {
+                    if (Interlocked.Increment(ref _hmacsCreated) <= MaxPooledHmacs)
+                        return IncrementalHash.CreateHMAC(HashAlgorithmName.SHA256, Key);
+
+                    // Lost the race for the last slot: undo, so the count stays exact.
+                    Interlocked.Decrement(ref _hmacsCreated);
+                }
+
+                return null;
+            }
+
+            private void ReturnHmac(IncrementalHash hmac)
+            {
+                for (int i = 0; i < MaxPooledHmacs; i++)
+                {
+                    if (Interlocked.CompareExchange(ref _hmacs[i], hmac, null) == null)
+                        return;
+                }
+
+                hmac.Dispose();
+            }
+#endif
         }
 
         public AWS4Signer()
@@ -264,8 +358,9 @@ namespace Amazon.Runtime.Internal.Auth
             request.DeterminedSigningRegion = DetermineSigningRegion(clientConfig, clientConfig.RegionEndpointServiceName, request.AlternateEndpoint, request);
             SetXAmzTrailerHeader(request.Headers, request.TrailingHeaders);
 
-            var parametersToCanonicalize = GetParametersToCanonicalize(request);
-            var canonicalParameters = CanonicalizeQueryParameters(parametersToCanonicalize);
+            var canonicalParameters = HasParametersToCanonicalize(request)
+                ? CanonicalizeQueryParameters(GetParametersToCanonicalize(request))
+                : string.Empty;
 
             // If the request should use a fixed x-amz-content-sha256 header value, determine the appropriate one
             var bodySha = request.TrailingHeaders?.Count > 0
@@ -273,9 +368,18 @@ namespace Amazon.Runtime.Internal.Auth
                 : StreamingBodySha256;
 
             var bodyHash = SetRequestBodyHash(request, SignPayload, bodySha, ChunkedUploadWrapperStream.V4_SIGNATURE_LENGTH);
-            var sortedHeaders = SortAndPruneHeaders(request.Headers);
 
-            var canonicalRequest = CanonicalizeRequestHelper(
+            // The canonical request string is only needed for metrics; otherwise it is hashed without being materialized.
+            bool materializeCanonicalRequest = metrics != null && metrics.IsEnabled;
+            Span<byte> canonicalRequestHash = stackalloc byte[Sha256HashLength];
+            string canonicalRequest = null;
+            string signedHeaderNames = null;
+            if (DisableFastCanonicalization ||
+                !TryCanonicalizeRequestFast(request, canonicalParameters, bodyHash, materializeCanonicalRequest, canonicalRequestHash,
+                                            out canonicalRequest, out signedHeaderNames))
+            {
+                var sortedHeaders = SortAndPruneHeaders(request.Headers);
+                canonicalRequest = CanonicalizeRequestHelper(
                                                              request.Endpoint,
                                                              request.ResourcePath,
                                                              request.HttpMethod,
@@ -284,8 +388,9 @@ namespace Amazon.Runtime.Internal.Auth
                                                              bodyHash,
                                                              request.PathResources,
                                                              request.UseDoubleEncoding,
-                                                             out var signedHeaderNames);
-            if (metrics != null)
+                                                             out signedHeaderNames);
+            }
+            if (metrics != null && canonicalRequest != null)
                 metrics.AddProperty(Metric.CanonicalRequest, canonicalRequest);
             request.SignatureVersion = SignatureVersion.SigV4;
             return ComputeSignature(awsAccessKeyId,
@@ -295,6 +400,7 @@ namespace Amazon.Runtime.Internal.Auth
                                     serviceSigningName,
                                     signedHeaderNames,
                                     canonicalRequest,
+                                    canonicalRequest == null ? canonicalRequestHash : default,
                                     metrics);
         }
 
@@ -334,7 +440,7 @@ namespace Amazon.Runtime.Internal.Auth
             }
 
             var dt = requestDateTime;
-            headers[HeaderKeys.XAmzDateHeader] = dt.ToUniversalTime().ToString(AWSSDKUtils.ISO8601BasicDateTimeFormat, CultureInfo.InvariantCulture);
+            headers[HeaderKeys.XAmzDateHeader] = FormatIso8601BasicDateTime(dt.ToUniversalTime());
 
             return dt;
         }
@@ -449,42 +555,238 @@ namespace Amazon.Runtime.Internal.Auth
                                                          string canonicalRequest,
                                                          RequestMetrics metrics)
         {
-            var dateStamp = FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateFormat);
-            var scope = string.Format(CultureInfo.InvariantCulture, "{0}/{1}/{2}/{3}", dateStamp, region, service, Terminator);
-
-            var stringToSignBuilder = new StringBuilder();
-            stringToSignBuilder.AppendFormat(CultureInfo.InvariantCulture, "{0}-{1}\n{2}\n{3}\n",
-                                      Scheme,
-                                      Algorithm,
-                                      FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateTimeFormat),
-                                      scope);
-
-            var canonicalRequestHashBytes = ComputeHash(canonicalRequest);
-            stringToSignBuilder.Append(AWSSDKUtils.ToHex(canonicalRequestHashBytes, true));
-
-            if (metrics != null)
-                metrics.AddProperty(Metric.StringToSign, stringToSignBuilder);
-
-            var key = GetSigningKey(awsSecretAccessKey,
-                                    region,
-                                    dateStamp,
-                                    service);
-
-            var stringToSign = stringToSignBuilder.ToString();
-            var signature = ComputeKeyedHash(SignerAlgorithm, key, stringToSign);
-            return new AWS4SigningResult(awsAccessKey, awsSecretAccessKey, signedAt, signedHeaders, scope, key, signature);
+            return ComputeSignature(awsAccessKey, awsSecretAccessKey, region, signedAt, service, signedHeaders, canonicalRequest, default, metrics);
         }
 
         /// <summary>
-        /// Returns the signing key for the supplied scope, deriving and caching it on first use.
-        /// The returned array is shared and must not be modified by callers.
+        /// Computes the signature from either the canonical request or, when <paramref name="canonicalRequestHash"/>
+        /// is non-empty, its precomputed SHA-256 hash.
         /// </summary>
-        private static byte[] GetSigningKey(string awsSecretAccessKey, string region, string dateStamp, string service)
+        private static AWS4SigningResult ComputeSignature(string awsAccessKey,
+                                                          string awsSecretAccessKey,
+                                                          string region,
+                                                          DateTime signedAt,
+                                                          string service,
+                                                          string signedHeaders,
+                                                          string canonicalRequest,
+                                                          ReadOnlySpan<byte> canonicalRequestHash,
+                                                          RequestMetrics metrics)
+        {
+            var utcSignedAt = signedAt.ToUniversalTime();
+            var dateStamp = FormatIso8601BasicDate(utcSignedAt);
+
+            var scopeBuilder = new ValueStringBuilder(stackalloc char[128]);
+            scopeBuilder.Append(dateStamp);
+            scopeBuilder.Append('/');
+            scopeBuilder.Append(region);
+            scopeBuilder.Append('/');
+            scopeBuilder.Append(service);
+            scopeBuilder.Append('/');
+            scopeBuilder.Append(Terminator);
+            var scope = scopeBuilder.ToString();
+
+            // AWS4-HMAC-SHA256\n<x-amz-date>\n<scope>\n<hex(sha256(canonical request))>
+            var stringToSign = new ValueStringBuilder(stackalloc char[256]);
+            stringToSign.Append(AWS4AlgorithmTag);
+            stringToSign.Append('\n');
+            WriteIso8601BasicDateTime(utcSignedAt, stringToSign.AppendSpan(Iso8601BasicDateTimeLength));
+            stringToSign.Append('\n');
+            stringToSign.Append(scope);
+            stringToSign.Append('\n');
+            if (canonicalRequestHash.IsEmpty)
+                AppendCanonicalRequestHashHex(ref stringToSign, canonicalRequest);
+            else
+                WriteHexLower(canonicalRequestHash, stringToSign.AppendSpan(canonicalRequestHash.Length * 2));
+
+            if (metrics != null && metrics.IsEnabled)
+                metrics.AddProperty(Metric.StringToSign, new StringBuilder().Append(stringToSign.AsSpan().ToString()));
+
+            var signingKeyEntry = GetSigningKeyEntry(awsSecretAccessKey, region, dateStamp, service);
+            var key = signingKeyEntry.Key;
+
+            var signature = ComputeStringToSignHmac(signingKeyEntry, key, ref stringToSign);
+            return new AWS4SigningResult(awsAccessKey, awsSecretAccessKey, signedAt, signedHeaders, scope, key, signature);
+        }
+
+        private const int Iso8601BasicDateLength = 8;       // yyyyMMdd
+        private const int Iso8601BasicDateTimeLength = 16;  // yyyyMMddTHHmmssZ
+        private const int Sha256HashLength = 32;
+        private const int StackAllocByteThreshold = 1024;
+
+        private static void AppendCanonicalRequestHashHex(ref ValueStringBuilder builder, string canonicalRequest)
+        {
+#if NET8_0_OR_GREATER
+            if (canonicalRequest != null)
+            {
+                Span<byte> hash = stackalloc byte[Sha256HashLength];
+                ComputeSha256(canonicalRequest.AsSpan(), hash);
+                WriteHexLower(hash, builder.AppendSpan(Sha256HashLength * 2));
+                return;
+            }
+#endif
+            var hashBytes = ComputeHash(canonicalRequest);
+            WriteHexLower(hashBytes, builder.AppendSpan(hashBytes.Length * 2));
+        }
+
+        /// <summary>
+        /// Computes HMAC-SHA256(key, UTF-8(stringToSign)) and disposes the builder.
+        /// </summary>
+        private static byte[] ComputeStringToSignHmac(SigningKeyCacheEntry signingKeyEntry, byte[] key, ref ValueStringBuilder stringToSign)
+        {
+#if NET8_0_OR_GREATER
+            var chars = stringToSign.AsSpan();
+            byte[] rented = null;
+            int maxByteCount = Encoding.UTF8.GetMaxByteCount(chars.Length);
+            Span<byte> buffer = maxByteCount <= StackAllocByteThreshold
+                ? stackalloc byte[StackAllocByteThreshold]
+                : (rented = ArrayPool<byte>.Shared.Rent(maxByteCount));
+            try
+            {
+                int byteCount = Encoding.UTF8.GetBytes(chars, buffer);
+                var data = buffer.Slice(0, byteCount);
+                var signature = new byte[Sha256HashLength];
+                signingKeyEntry.ComputeHmac(data, signature);
+                return signature;
+            }
+            finally
+            {
+                stringToSign.Dispose();
+                if (rented != null)
+                    ArrayPool<byte>.Shared.Return(rented);
+            }
+#else
+            return ComputeKeyedHash(SignerAlgorithm, key, stringToSign.ToString());
+#endif
+        }
+
+#if NET8_0_OR_GREATER
+        [ThreadStatic]
+        private static IncrementalHash _sha256;
+
+        private static void ComputeSha256(ReadOnlySpan<byte> data, Span<byte> destination)
+        {
+            var sha256 = _sha256 ?? (_sha256 = IncrementalHash.CreateHash(HashAlgorithmName.SHA256));
+            try
+            {
+                sha256.AppendData(data);
+                sha256.GetHashAndReset(destination);
+            }
+            catch
+            {
+                // The instance may hold partial input; drop it.
+                _sha256 = null;
+                sha256.Dispose();
+                throw;
+            }
+        }
+
+        private static void ComputeSha256(ReadOnlySpan<char> data, Span<byte> destination)
+        {
+            byte[] rented = null;
+            int maxByteCount = Encoding.UTF8.GetMaxByteCount(data.Length);
+            Span<byte> buffer = maxByteCount <= StackAllocByteThreshold
+                ? stackalloc byte[StackAllocByteThreshold]
+                : (rented = ArrayPool<byte>.Shared.Rent(maxByteCount));
+            try
+            {
+                int byteCount = Encoding.UTF8.GetBytes(data, buffer);
+                ComputeSha256(buffer.Slice(0, byteCount), destination);
+            }
+            finally
+            {
+                if (rented != null)
+                    ArrayPool<byte>.Shared.Return(rented);
+            }
+        }
+#endif
+
+        private static string ComputePayloadHashHex(byte[] payloadBytes)
+        {
+            if (payloadBytes != null && payloadBytes.Length == 0)
+                return EmptyBodySha256;
+
+#if NET8_0_OR_GREATER
+            if (payloadBytes != null)
+            {
+                Span<byte> hash = stackalloc byte[Sha256HashLength];
+                ComputeSha256(payloadBytes, hash);
+                Span<char> hex = stackalloc char[Sha256HashLength * 2];
+                WriteHexLower(hash, hex);
+                return hex.ToString();
+            }
+#endif
+            byte[] payloadHashBytes = CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(payloadBytes);
+            return AWSSDKUtils.ToHex(payloadHashBytes, true);
+        }
+
+        private static void WriteHexLower(ReadOnlySpan<byte> bytes, Span<char> destination)
+        {
+            const string HexDigits = "0123456789abcdef";
+            for (int i = 0; i < bytes.Length; i++)
+            {
+                byte b = bytes[i];
+                destination[i * 2] = HexDigits[b >> 4];
+                destination[i * 2 + 1] = HexDigits[b & 0xF];
+            }
+        }
+
+        /// <summary>
+        /// Formats a UTC date/time as yyyyMMdd (<see cref="AWSSDKUtils.ISO8601BasicDateFormat"/>).
+        /// </summary>
+        internal static string FormatIso8601BasicDate(DateTime utc)
+        {
+            Span<char> chars = stackalloc char[Iso8601BasicDateLength];
+            WriteIso8601BasicDate(utc, chars);
+            return chars.ToString();
+        }
+
+        /// <summary>
+        /// Formats a UTC date/time as yyyyMMddTHHmmssZ (<see cref="AWSSDKUtils.ISO8601BasicDateTimeFormat"/>).
+        /// </summary>
+        internal static string FormatIso8601BasicDateTime(DateTime utc)
+        {
+            Span<char> chars = stackalloc char[Iso8601BasicDateTimeLength];
+            WriteIso8601BasicDateTime(utc, chars);
+            return chars.ToString();
+        }
+
+        private static void WriteIso8601BasicDate(DateTime utc, Span<char> destination)
+        {
+            int year = utc.Year;
+            destination[0] = (char)('0' + year / 1000);
+            destination[1] = (char)('0' + year / 100 % 10);
+            destination[2] = (char)('0' + year / 10 % 10);
+            destination[3] = (char)('0' + year % 10);
+            WriteTwoDigits(utc.Month, destination.Slice(4));
+            WriteTwoDigits(utc.Day, destination.Slice(6));
+        }
+
+        private static void WriteIso8601BasicDateTime(DateTime utc, Span<char> destination)
+        {
+            WriteIso8601BasicDate(utc, destination);
+            destination[8] = 'T';
+            WriteTwoDigits(utc.Hour, destination.Slice(9));
+            WriteTwoDigits(utc.Minute, destination.Slice(11));
+            WriteTwoDigits(utc.Second, destination.Slice(13));
+            destination[15] = 'Z';
+        }
+
+        private static void WriteTwoDigits(int value, Span<char> destination)
+        {
+            destination[0] = (char)('0' + value / 10);
+            destination[1] = (char)('0' + value % 10);
+        }
+
+        /// <summary>
+        /// Returns the cache entry for the supplied scope, deriving and caching its signing key on first use.
+        /// The entry's key array is shared and must not be modified by callers.
+        /// </summary>
+        private static SigningKeyCacheEntry GetSigningKeyEntry(string awsSecretAccessKey, string region, string dateStamp, string service)
         {
             var cacheKey = string.Concat(awsSecretAccessKey, "/", region, "/", service);
             if (_signingKeyCache.TryGetValue(cacheKey, out var entry) && entry.DateStamp == dateStamp)
             {
-                return entry.Key;
+                return entry;
             }
 
             var key = ComposeSigningKey(awsSecretAccessKey, region, dateStamp, service);
@@ -502,8 +804,13 @@ namespace Amazon.Runtime.Internal.Auth
                     _signingKeyCache.TryRemove(oldest, out _);
                 }
             }
+            else if (_signingKeyCache.TryGetValue(cacheKey, out var winner) && winner.DateStamp == dateStamp)
+            {
+                // Another thread cached this scope first: share its entry, and so its HMAC pool.
+                return winner;
+            }
 
-            return key;
+            return newEntry;
         }
 
         /// <summary>
@@ -514,6 +821,11 @@ namespace Amazon.Runtime.Internal.Auth
         /// <returns>The UTC date/time in the requested format</returns>
         public static string FormatDateTime(DateTime dt, string formatString)
         {
+            if (string.Equals(formatString, AWSSDKUtils.ISO8601BasicDateTimeFormat, StringComparison.Ordinal))
+                return FormatIso8601BasicDateTime(dt.ToUniversalTime());
+            if (string.Equals(formatString, AWSSDKUtils.ISO8601BasicDateFormat, StringComparison.Ordinal))
+                return FormatIso8601BasicDate(dt.ToUniversalTime());
+
             return dt.ToUniversalTime().ToString(formatString, CultureInfo.InvariantCulture);
         }
 
@@ -638,8 +950,7 @@ namespace Amazon.Runtime.Internal.Auth
                 else
                 {
                     byte[] payloadBytes = AWSSDKUtils.GetRequestPayloadBytes(request, request.UseQueryString);
-                    byte[] payloadHashBytes = CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(payloadBytes);
-                    computedContentHash = AWSSDKUtils.ToHex(payloadHashBytes, true);
+                    computedContentHash = ComputePayloadHashHex(payloadBytes);
                 }
             }
 
@@ -739,11 +1050,7 @@ namespace Amazon.Runtime.Internal.Auth
         #region Private Signing Helpers
         static string SetPayloadSignatureHeader(IRequest request, string payloadHash)
         {
-            if (request.Headers.ContainsKey(HeaderKeys.XAmzContentSha256Header))
-                request.Headers[HeaderKeys.XAmzContentSha256Header] = payloadHash;
-            else
-                request.Headers.Add(HeaderKeys.XAmzContentSha256Header, payloadHash);
-
+            request.Headers[HeaderKeys.XAmzContentSha256Header] = payloadHash;
             return payloadHash;
         }
 
@@ -914,7 +1221,7 @@ namespace Amazon.Runtime.Internal.Auth
             {
                 AppendLowerInvariant(ref canonicalRequest, entry.Key);
                 canonicalRequest.Append(':');
-                canonicalRequest.Append(AWSSDKUtils.CompressSpaces(entry.Value, trim: true));
+                canonicalRequest.Append(CanonicalizeHeaderValue(entry.Value));
                 canonicalRequest.Append('\n');
 
                 if (namesBuilder.Length > 0)
@@ -934,6 +1241,186 @@ namespace Amazon.Runtime.Internal.Auth
             signedHeaderNames = namesBuilder.ToString();
 
             return canonicalRequest.ToString();
+        }
+
+        /// <summary>
+        /// Builds the canonical request for <see cref="SignRequest(IRequest, IClientConfig, RequestMetrics, string, string, DateTime)"/>
+        /// without materializing the sorted header dictionary. On .NET 8+, unless <paramref name="materializeCanonicalRequest"/>
+        /// is set, it writes the canonical request's SHA-256 to <paramref name="canonicalRequestHash"/> and returns a null
+        /// <paramref name="canonicalRequest"/> instead. Produces the same output as
+        /// <see cref="SortAndPruneHeaders"/> followed by <see cref="CanonicalizeRequestHelper"/>. Returns false, without
+        /// side effects, for inputs it doesn't handle (non-ASCII header names, header names that collide once
+        /// lowercased, no body hash); the caller then uses that general path.
+        /// </summary>
+        private static bool TryCanonicalizeRequestFast(IRequest request,
+                                                       string canonicalQueryString,
+                                                       string bodyHash,
+                                                       bool materializeCanonicalRequest,
+                                                       Span<byte> canonicalRequestHash,
+                                                       out string canonicalRequest,
+                                                       out string signedHeaderNames)
+        {
+            canonicalRequest = null;
+            signedHeaderNames = null;
+
+            var requestHeaders = request.Headers;
+            if (bodyHash == null || requestHeaders == null)
+                return false;
+
+            var headers = ArrayPool<KeyValuePair<string, string>>.Shared.Rent(requestHeaders.Count);
+            try
+            {
+                int count = 0;
+                foreach (var header in requestHeaders)
+                {
+                    if (header.Key == null || !IsAscii(header.Key))
+                        return false;
+                    if (IsHeaderIgnoredWhenSigning(header.Key))
+                        continue;
+
+                    // Insertion sort by ordinal order of the lowercased names; there are only a handful of headers.
+                    int i = count - 1;
+                    int comparison = 0;
+                    while (i >= 0 && (comparison = CompareOrdinalAsciiLowercase(headers[i].Key, header.Key)) > 0)
+                    {
+                        headers[i + 1] = headers[i];
+                        i--;
+                    }
+                    if (i >= 0 && comparison == 0)
+                        return false;
+
+                    headers[i + 1] = header;
+                    count++;
+                }
+
+                var canonical = new ValueStringBuilder(stackalloc char[1024]);
+                canonical.Append(request.HttpMethod);
+                canonical.Append('\n');
+                canonical.Append(AWSSDKUtils.CanonicalizeResourcePathV2(request.Endpoint, request.ResourcePath, request.UseDoubleEncoding, request.PathResources));
+                canonical.Append('\n');
+                canonical.Append(canonicalQueryString);
+                canonical.Append('\n');
+
+                var names = new ValueStringBuilder(stackalloc char[256]);
+                for (int i = 0; i < count; i++)
+                {
+                    var key = headers[i].Key;
+                    int nameStart = canonical.Length;
+                    WriteAsciiLowercase(key, canonical.AppendSpan(key.Length));
+                    if (i > 0)
+                        names.Append(';');
+                    names.Append(canonical.AsSpan(nameStart, key.Length));
+
+                    canonical.Append(':');
+                    canonical.Append(CanonicalizeHeaderValue(headers[i].Value));
+                    canonical.Append('\n');
+                }
+
+                canonical.Append('\n');
+                canonical.Append(names.AsSpan());
+                canonical.Append('\n');
+                canonical.Append(bodyHash);
+
+                signedHeaderNames = names.ToString();
+#if NET8_0_OR_GREATER
+                if (!materializeCanonicalRequest)
+                {
+                    ComputeSha256(canonical.AsSpan(), canonicalRequestHash);
+                    canonical.Dispose();
+                    return true;
+                }
+#endif
+                canonicalRequest = canonical.ToString();
+                return true;
+            }
+            finally
+            {
+                ArrayPool<KeyValuePair<string, string>>.Shared.Return(headers, clearArray: true);
+            }
+        }
+
+        // Same set as _headersToIgnoreWhenSigning, as a switch to avoid case-insensitive hashing per header.
+        internal static bool IsHeaderIgnoredWhenSigning(string name)
+        {
+            switch (name.Length)
+            {
+                case 10:
+                    return string.Equals(name, HeaderKeys.UserAgentHeader, StringComparison.OrdinalIgnoreCase);
+                case 15:
+                    return string.Equals(name, HeaderKeys.XAmznTraceIdHeader, StringComparison.OrdinalIgnoreCase)
+                        || string.Equals(name, HeaderKeys.AmzSdkRequest, StringComparison.OrdinalIgnoreCase);
+                case 16:
+                    return string.Equals(name, HeaderKeys.XAmzUserAgentHeader, StringComparison.OrdinalIgnoreCase);
+                case 17:
+                    return string.Equals(name, HeaderKeys.TransferEncodingHeader, StringComparison.OrdinalIgnoreCase);
+                case 21:
+                    return string.Equals(name, HeaderKeys.AmzSdkInvocationId, StringComparison.OrdinalIgnoreCase);
+                default:
+                    return false;
+            }
+        }
+
+        // Lets tests keep IsHeaderIgnoredWhenSigning in sync with the set.
+        internal static IEnumerable<string> HeadersToIgnoreWhenSigning => _headersToIgnoreWhenSigning;
+
+        /// <summary>
+        /// Trims the value and collapses runs of whitespace to a single space, as
+        /// <see cref="AWSSDKUtils.CompressSpaces(string, bool)"/> with trim does.
+        /// </summary>
+        internal static string CanonicalizeHeaderValue(string value)
+        {
+#if NET8_0_OR_GREATER
+            // Vectorized check for the common case of a value that is already canonical. In ASCII text the only
+            // characters char.IsWhiteSpace accepts are '\t' through '\r' and ' ', so such a value comes back unchanged.
+            if (value != null && value.Length > 0 && value[0] != ' ' && value[value.Length - 1] != ' ')
+            {
+                var span = value.AsSpan();
+                if (System.Text.Ascii.IsValid(span) && span.IndexOfAnyInRange('\t', '\r') < 0 && span.IndexOf("  ".AsSpan()) < 0)
+                    return value;
+            }
+#endif
+            return AWSSDKUtils.CompressSpaces(value, trim: true);
+        }
+
+        private static bool IsAscii(string value)
+        {
+            foreach (var c in value)
+            {
+                if (c > 0x7F)
+                    return false;
+            }
+            return true;
+        }
+
+        // For ASCII strings, equals the sign of string.CompareOrdinal(a.ToLowerInvariant(), b.ToLowerInvariant()).
+        private static int CompareOrdinalAsciiLowercase(string a, string b)
+        {
+            int length = Math.Min(a.Length, b.Length);
+            for (int i = 0; i < length; i++)
+            {
+                int ca = a[i];
+                int cb = b[i];
+                if ((uint)(ca - 'A') <= 'Z' - 'A') ca |= 0x20;
+                if ((uint)(cb - 'A') <= 'Z' - 'A') cb |= 0x20;
+                if (ca != cb)
+                    return ca - cb;
+            }
+            return a.Length - b.Length;
+        }
+
+        private static void WriteAsciiLowercase(string value, Span<char> destination)
+        {
+            for (int i = 0; i < value.Length; i++)
+            {
+                char c = value[i];
+                destination[i] = (uint)(c - 'A') <= 'Z' - 'A' ? (char)(c | 0x20) : c;
+            }
+        }
+
+        private static bool HasParametersToCanonicalize(IRequest request)
+        {
+            return (request.SubResources != null && request.SubResources.Count > 0)
+                || (request.UseQueryString && request.Parameters != null && request.Parameters.Count > 0);
         }
 
         private static void AppendLowerInvariant(ref ValueStringBuilder builder, string value)
@@ -987,7 +1474,7 @@ namespace Amazon.Runtime.Internal.Auth
                 // Refer https://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html. (Step #4: "To create the canonical headers list, convert all header names to lowercase and remove leading spaces and trailing spaces. Convert sequential spaces in the header value to a single space.").
                 builder.Append(entry.Key.ToLowerInvariant());
                 builder.Append(':');
-                builder.Append(AWSSDKUtils.CompressSpaces(entry.Value, trim: true));
+                builder.Append(CanonicalizeHeaderValue(entry.Value));
                 builder.Append('\n');
             }
             return builder.ToString();
