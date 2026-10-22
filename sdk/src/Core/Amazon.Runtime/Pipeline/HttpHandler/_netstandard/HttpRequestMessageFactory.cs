@@ -488,7 +488,25 @@ namespace Amazon.Runtime
         public string Method
         {
             get { return _request.Method.Method; }
-            set { _request.Method = new HttpMethod(value); }
+            set { _request.Method = GetHttpMethod(value); }
+        }
+
+        /// <summary>
+        /// Returns the shared HttpMethod instance for the standard methods (exact, upper-case match)
+        /// and a new HttpMethod otherwise.
+        /// </summary>
+        internal static HttpMethod GetHttpMethod(string method)
+        {
+            switch (method)
+            {
+                case "GET": return HttpMethod.Get;
+                case "POST": return HttpMethod.Post;
+                case "PUT": return HttpMethod.Put;
+                case "DELETE": return HttpMethod.Delete;
+                case "HEAD": return HttpMethod.Head;
+                case "OPTIONS": return HttpMethod.Options;
+                default: return new HttpMethod(method);
+            }
         }
 
         /// <summary>
@@ -530,13 +548,25 @@ namespace Amazon.Runtime
         /// <param name="headers">A dictionary of header names and values.</param>
         public void SetRequestHeaders(IDictionary<string, string> headers)
         {
-            foreach (var kvp in headers)
+            // Enumerate the concrete type when possible to avoid boxing the enumerator.
+            if (headers is Dictionary<string, string> dictionary)
             {
-                if (ContentHeaderNames.Contains(kvp.Key))
-                    continue;
-
-                _request.Headers.TryAddWithoutValidation(kvp.Key, kvp.Value);
+                foreach (var kvp in dictionary)
+                    AddRequestHeader(kvp.Key, kvp.Value);
             }
+            else
+            {
+                foreach (var kvp in headers)
+                    AddRequestHeader(kvp.Key, kvp.Value);
+            }
+        }
+
+        private void AddRequestHeader(string name, string value)
+        {
+            if (ContentHeaderNames.Contains(name))
+                return;
+
+            _request.Headers.TryAddWithoutValidation(name, value);
         }
 
         /// <summary>
@@ -799,10 +829,10 @@ namespace Amazon.Runtime
 
         private void WriteContentHeaders(IDictionary<string, string> contentHeaders)
         {
-            if (contentHeaders.ContainsKey(HeaderKeys.ContentTypeHeader))
+            if (contentHeaders.TryGetValue(HeaderKeys.ContentTypeHeader, out var contentTypeHeader))
             {
                 _request.Content.Headers.ContentType =
-                    MediaTypeHeaderValue.Parse(contentHeaders[HeaderKeys.ContentTypeHeader]);
+                    MediaTypeHeaderValue.Parse(contentTypeHeader);
             }
 
             if (contentHeaders.TryGetValue(HeaderKeys.ContentRangeHeader, out var contentRangeHeader))

@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Reduce per-request overhead in the HttpClient adapter: cheaper response header copy, reuse of the generated User-Agent string, request Uri and standard HttpMethod instances, and skipped attribute building for no-op telemetry providers."
+    ],
+    "type": "patch",
+    "updateMinimum": false
+  }
+}
