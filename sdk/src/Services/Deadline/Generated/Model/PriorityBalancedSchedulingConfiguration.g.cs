@@ -1,0 +1,55 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Deadline.Model
+{
+    /// <summary>
+    /// Configuration for priority balanced scheduling. Workers are distributed evenly across
+    /// all jobs at the highest priority level.
+    /// </summary>
+    public partial class PriorityBalancedSchedulingConfiguration
+    {
+        /// <summary>
+        /// Gets and sets the property RenderingTaskBuffer. 
+        /// <para>
+        /// The rendering task buffer controls worker stickiness. A worker only switches from
+        /// its current job to another job at the same priority if the other job has fewer rendering
+        /// tasks by more than this buffer value. Higher values make workers stickier to their
+        /// current jobs. The default value is <c>1</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 1000)]
+        public int? RenderingTaskBuffer { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RenderingTaskBuffer property is set.
+        /// </summary>
+        internal bool IsSetRenderingTaskBuffer() => this.RenderingTaskBuffer.HasValue;
+    }
+}

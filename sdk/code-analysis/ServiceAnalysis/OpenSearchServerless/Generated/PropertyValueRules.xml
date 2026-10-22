@@ -14,7 +14,7 @@
     <property>Amazon.OpenSearchServerless.Model.CreateAccessPolicyRequest.Name</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CreateAccessPolicyRequest.Policy</property>
@@ -31,18 +31,17 @@
     <property>Amazon.OpenSearchServerless.Model.CreateCollectionRequest.CollectionGroupName</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CreateCollectionRequest.Description</property>
-    <min>0</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CreateCollectionRequest.Name</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CreateCollectionGroupRequest.ClientToken</property>
@@ -51,20 +50,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CreateCollectionGroupRequest.Description</property>
-    <min>0</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CreateCollectionGroupRequest.Name</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CreateIndexRequest.Id</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-z0-9]{3,40}</pattern>
+    <pattern>^[a-z0-9]{3,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CreateLifecyclePolicyRequest.ClientToken</property>
@@ -80,7 +78,7 @@
     <property>Amazon.OpenSearchServerless.Model.CreateLifecyclePolicyRequest.Name</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CreateLifecyclePolicyRequest.Policy</property>
@@ -102,7 +100,7 @@
     <property>Amazon.OpenSearchServerless.Model.CreateSecurityConfigRequest.Name</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CreateSecurityPolicyRequest.ClientToken</property>
@@ -118,7 +116,7 @@
     <property>Amazon.OpenSearchServerless.Model.CreateSecurityPolicyRequest.Name</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CreateSecurityPolicyRequest.Policy</property>
@@ -135,13 +133,13 @@
     <property>Amazon.OpenSearchServerless.Model.CreateVpcEndpointRequest.Name</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CreateVpcEndpointRequest.VpcId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>vpc-[0-9a-z]*</pattern>
+    <pattern>^vpc-[0-9a-z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.DeleteAccessPolicyRequest.ClientToken</property>
@@ -152,7 +150,7 @@
     <property>Amazon.OpenSearchServerless.Model.DeleteAccessPolicyRequest.Name</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.DeleteCollectionRequest.ClientToken</property>
@@ -163,7 +161,7 @@
     <property>Amazon.OpenSearchServerless.Model.DeleteCollectionRequest.Id</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-z0-9]{3,40}</pattern>
+    <pattern>^[a-z0-9]{3,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.DeleteCollectionGroupRequest.ClientToken</property>
@@ -174,13 +172,13 @@
     <property>Amazon.OpenSearchServerless.Model.DeleteCollectionGroupRequest.Id</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-z0-9]{3,40}</pattern>
+    <pattern>^[a-z0-9]{3,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.DeleteIndexRequest.Id</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-z0-9]{3,40}</pattern>
+    <pattern>^[a-z0-9]{3,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.DeleteLifecyclePolicyRequest.ClientToken</property>
@@ -191,7 +189,7 @@
     <property>Amazon.OpenSearchServerless.Model.DeleteLifecyclePolicyRequest.Name</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.DeleteSecurityConfigRequest.ClientToken</property>
@@ -212,7 +210,7 @@
     <property>Amazon.OpenSearchServerless.Model.DeleteSecurityPolicyRequest.Name</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.DeleteVpcEndpointRequest.ClientToken</property>
@@ -223,19 +221,19 @@
     <property>Amazon.OpenSearchServerless.Model.DeleteVpcEndpointRequest.Id</property>
     <min>1</min>
     <max>255</max>
-    <pattern>vpce-[0-9a-z]*</pattern>
+    <pattern>^vpce-[0-9a-z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.GetAccessPolicyRequest.Name</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.GetIndexRequest.Id</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-z0-9]{3,40}</pattern>
+    <pattern>^[a-z0-9]{3,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.GetSecurityConfigRequest.Id</property>
@@ -246,7 +244,7 @@
     <property>Amazon.OpenSearchServerless.Model.GetSecurityPolicyRequest.Name</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.ListAccessPoliciesRequest.MaxResults</property>
@@ -312,7 +310,7 @@
     <property>Amazon.OpenSearchServerless.Model.UpdateAccessPolicyRequest.Name</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.UpdateAccessPolicyRequest.Policy</property>
@@ -324,7 +322,7 @@
     <property>Amazon.OpenSearchServerless.Model.UpdateAccessPolicyRequest.PolicyVersion</property>
     <min>20</min>
     <max>36</max>
-    <pattern>([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?</pattern>
+    <pattern>^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.UpdateCollectionRequest.ClientToken</property>
@@ -333,14 +331,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.UpdateCollectionRequest.Description</property>
-    <min>0</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.UpdateCollectionRequest.Id</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-z0-9]{3,40}</pattern>
+    <pattern>^[a-z0-9]{3,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.UpdateCollectionGroupRequest.ClientToken</property>
@@ -349,20 +346,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.UpdateCollectionGroupRequest.Description</property>
-    <min>0</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.UpdateCollectionGroupRequest.Id</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-z0-9]{3,40}</pattern>
+    <pattern>^[a-z0-9]{3,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.UpdateIndexRequest.Id</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-z0-9]{3,40}</pattern>
+    <pattern>^[a-z0-9]{3,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.UpdateLifecyclePolicyRequest.ClientToken</property>
@@ -378,7 +374,7 @@
     <property>Amazon.OpenSearchServerless.Model.UpdateLifecyclePolicyRequest.Name</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.UpdateLifecyclePolicyRequest.Policy</property>
@@ -390,7 +386,7 @@
     <property>Amazon.OpenSearchServerless.Model.UpdateLifecyclePolicyRequest.PolicyVersion</property>
     <min>20</min>
     <max>36</max>
-    <pattern>([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?</pattern>
+    <pattern>^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.UpdateSecurityConfigRequest.ClientToken</property>
@@ -401,7 +397,7 @@
     <property>Amazon.OpenSearchServerless.Model.UpdateSecurityConfigRequest.ConfigVersion</property>
     <min>20</min>
     <max>36</max>
-    <pattern>([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?</pattern>
+    <pattern>^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.UpdateSecurityConfigRequest.Description</property>
@@ -427,7 +423,7 @@
     <property>Amazon.OpenSearchServerless.Model.UpdateSecurityPolicyRequest.Name</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.UpdateSecurityPolicyRequest.Policy</property>
@@ -439,7 +435,7 @@
     <property>Amazon.OpenSearchServerless.Model.UpdateSecurityPolicyRequest.PolicyVersion</property>
     <min>20</min>
     <max>36</max>
-    <pattern>([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?</pattern>
+    <pattern>^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.UpdateVpcEndpointRequest.ClientToken</property>
@@ -450,7 +446,7 @@
     <property>Amazon.OpenSearchServerless.Model.UpdateVpcEndpointRequest.Id</property>
     <min>1</min>
     <max>255</max>
-    <pattern>vpce-[0-9a-z]*</pattern>
+    <pattern>^vpce-[0-9a-z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.AccessPolicyDetail.Description</property>
@@ -461,13 +457,13 @@
     <property>Amazon.OpenSearchServerless.Model.AccessPolicyDetail.Name</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.AccessPolicyDetail.PolicyVersion</property>
     <min>20</min>
     <max>36</max>
-    <pattern>([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?</pattern>
+    <pattern>^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.AccessPolicySummary.Description</property>
@@ -478,13 +474,13 @@
     <property>Amazon.OpenSearchServerless.Model.AccessPolicySummary.Name</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.AccessPolicySummary.PolicyVersion</property>
     <min>20</min>
     <max>36</max>
-    <pattern>([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?</pattern>
+    <pattern>^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CapacityLimits.MaxIndexingCapacityInOCU</property>
@@ -498,43 +494,43 @@
     <property>Amazon.OpenSearchServerless.Model.CollectionDetail.CollectionGroupName</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CollectionDetail.Id</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-z0-9]{3,40}</pattern>
+    <pattern>^[a-z0-9]{3,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CollectionDetail.Name</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CollectionErrorDetail.Id</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-z0-9]{3,40}</pattern>
+    <pattern>^[a-z0-9]{3,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CollectionErrorDetail.Name</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CollectionFilters.CollectionGroupName</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CollectionFilters.Name</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CollectionGroupCapacityLimits.MaxIndexingCapacityInOCU</property>
@@ -556,163 +552,163 @@
     <property>Amazon.OpenSearchServerless.Model.CollectionGroupDetail.Id</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-z0-9]{3,40}</pattern>
+    <pattern>^[a-z0-9]{3,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CollectionGroupDetail.Name</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CollectionGroupErrorDetail.Id</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-z0-9]{3,40}</pattern>
+    <pattern>^[a-z0-9]{3,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CollectionGroupErrorDetail.Name</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CollectionGroupSummary.Id</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-z0-9]{3,40}</pattern>
+    <pattern>^[a-z0-9]{3,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CollectionGroupSummary.Name</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CollectionSummary.CollectionGroupName</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CollectionSummary.Id</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-z0-9]{3,40}</pattern>
+    <pattern>^[a-z0-9]{3,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CollectionSummary.Name</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CreateCollectionDetail.CollectionGroupName</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CreateCollectionDetail.Id</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-z0-9]{3,40}</pattern>
+    <pattern>^[a-z0-9]{3,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CreateCollectionDetail.Name</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CreateCollectionGroupDetail.Id</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-z0-9]{3,40}</pattern>
+    <pattern>^[a-z0-9]{3,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CreateCollectionGroupDetail.Name</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CreateIamIdentityCenterConfigOptions.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CreateVpcEndpointDetail.Id</property>
     <min>1</min>
     <max>255</max>
-    <pattern>vpce-[0-9a-z]*</pattern>
+    <pattern>^vpce-[0-9a-z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CreateVpcEndpointDetail.Name</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.DeleteCollectionDetail.Id</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-z0-9]{3,40}</pattern>
+    <pattern>^[a-z0-9]{3,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.DeleteCollectionDetail.Name</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.DeleteVpcEndpointDetail.Id</property>
     <min>1</min>
     <max>255</max>
-    <pattern>vpce-[0-9a-z]*</pattern>
+    <pattern>^vpce-[0-9a-z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.DeleteVpcEndpointDetail.Name</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.EffectiveLifecyclePolicyDetail.PolicyName</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.EncryptionConfig.KmsKeyArn</property>
     <min>10</min>
     <max>100</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):kms:[a-z0-9-]+:[0-9]{12}:key/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):kms:[a-z0-9-]+:[0-9]{12}:key/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.IamFederationConfigOptions.GroupAttribute</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z][A-Za-z0-9_.:/=+\-@]*</pattern>
+    <pattern>^[A-Za-z][A-Za-z0-9_.:/=+\-@]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.IamFederationConfigOptions.UserAttribute</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z][A-Za-z0-9_.:/=+\-@]*</pattern>
+    <pattern>^[A-Za-z][A-Za-z0-9_.:/=+\-@]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.IamIdentityCenterConfigOptions.ApplicationArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso::\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso::\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.IamIdentityCenterConfigOptions.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.LifecyclePolicyDetail.Description</property>
@@ -723,29 +719,29 @@
     <property>Amazon.OpenSearchServerless.Model.LifecyclePolicyDetail.Name</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.LifecyclePolicyDetail.PolicyVersion</property>
     <min>20</min>
     <max>36</max>
-    <pattern>([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?</pattern>
+    <pattern>^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.LifecyclePolicyErrorDetail.Name</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.LifecyclePolicyIdentifier.Name</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.LifecyclePolicyResourceIdentifier.Resource</property>
-    <pattern>index/[a-z][a-z0-9-]{3,63}/([a-z;0-9&amp;$%][+.~=\-_a-z;0-9&amp;$%]*)</pattern>
+    <pattern>^index/[a-z][a-z0-9-]{3,63}/([a-z;0-9&amp;$%][+.~=\-_a-z;0-9&amp;$%]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.LifecyclePolicySummary.Description</property>
@@ -756,13 +752,13 @@
     <property>Amazon.OpenSearchServerless.Model.LifecyclePolicySummary.Name</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.LifecyclePolicySummary.PolicyVersion</property>
     <min>20</min>
     <max>36</max>
-    <pattern>([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?</pattern>
+    <pattern>^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.SamlConfigOptions.GroupAttribute</property>
@@ -780,7 +776,7 @@
     <property>Amazon.OpenSearchServerless.Model.SamlConfigOptions.OpenSearchServerlessEntityId</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>aws:opensearch:[0-9]{12}:*.*</pattern>
+    <pattern>^aws:opensearch:[0-9]{12}:*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.SamlConfigOptions.SessionTimeout</property>
@@ -797,7 +793,7 @@
     <property>Amazon.OpenSearchServerless.Model.SecurityConfigDetail.ConfigVersion</property>
     <min>20</min>
     <max>36</max>
-    <pattern>([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?</pattern>
+    <pattern>^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.SecurityConfigDetail.Description</property>
@@ -813,7 +809,7 @@
     <property>Amazon.OpenSearchServerless.Model.SecurityConfigSummary.ConfigVersion</property>
     <min>20</min>
     <max>36</max>
-    <pattern>([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?</pattern>
+    <pattern>^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.SecurityConfigSummary.Description</property>
@@ -834,13 +830,13 @@
     <property>Amazon.OpenSearchServerless.Model.SecurityPolicyDetail.Name</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.SecurityPolicyDetail.PolicyVersion</property>
     <min>20</min>
     <max>36</max>
-    <pattern>([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?</pattern>
+    <pattern>^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.SecurityPolicySummary.Description</property>
@@ -851,13 +847,13 @@
     <property>Amazon.OpenSearchServerless.Model.SecurityPolicySummary.Name</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.SecurityPolicySummary.PolicyVersion</property>
     <min>20</min>
     <max>36</max>
-    <pattern>([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?</pattern>
+    <pattern>^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.Tag.Key</property>
@@ -873,72 +869,72 @@
     <property>Amazon.OpenSearchServerless.Model.UpdateCollectionDetail.Id</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-z0-9]{3,40}</pattern>
+    <pattern>^[a-z0-9]{3,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.UpdateCollectionDetail.Name</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.UpdateCollectionGroupDetail.Id</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-z0-9]{3,40}</pattern>
+    <pattern>^[a-z0-9]{3,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.UpdateCollectionGroupDetail.Name</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.UpdateVpcEndpointDetail.Id</property>
     <min>1</min>
     <max>255</max>
-    <pattern>vpce-[0-9a-z]*</pattern>
+    <pattern>^vpce-[0-9a-z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.UpdateVpcEndpointDetail.Name</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.VpcEndpointDetail.Id</property>
     <min>1</min>
     <max>255</max>
-    <pattern>vpce-[0-9a-z]*</pattern>
+    <pattern>^vpce-[0-9a-z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.VpcEndpointDetail.Name</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.VpcEndpointDetail.VpcId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>vpc-[0-9a-z]*</pattern>
+    <pattern>^vpc-[0-9a-z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.VpcEndpointErrorDetail.Id</property>
     <min>1</min>
     <max>255</max>
-    <pattern>vpce-[0-9a-z]*</pattern>
+    <pattern>^vpce-[0-9a-z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.VpcEndpointSummary.Id</property>
     <min>1</min>
     <max>255</max>
-    <pattern>vpce-[0-9a-z]*</pattern>
+    <pattern>^vpce-[0-9a-z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.VpcEndpointSummary.Name</property>
     <min>3</min>
     <max>32</max>
-    <pattern>[a-z][a-z0-9-]+</pattern>
+    <pattern>^[a-z][a-z0-9-]+$</pattern>
   </property-value-rule>
 </property-value-rules>

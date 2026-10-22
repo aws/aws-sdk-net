@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,18 +14,18 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
     {
         public void DatabaseMigrationServiceAddTagsToResource()
         {
-            #region add-tags-to-resource-1481744141435
+            #region AddTagsToResource-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.AddTagsToResource(new AddTagsToResourceRequest 
+            var response = client.AddTagsToResource(new AddTagsToResourceRequest
             {
-                ResourceArn = "arn:aws:dms:us-east-1:123456789012:endpoint:ASXWXJZLNWNT5HTWCGV2BUJQ7E", // Required. Use the ARN of the resource you want to tag.
+                ResourceArn = "arn:aws:dms:us-east-1:123456789012:endpoint:ASXWXJZLNWNT5HTWCGV2BUJQ7E",
                 Tags = new List<Tag> {
                     new Tag {
                         Key = "Acount",
                         Value = "1633456"
                     }
-                } // Required. Use the Key/Value pair format.
+                }
             });
 
 
@@ -33,10 +34,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceCancelMetadataModelConversion()
         {
-            #region cancel-metadata-model-conversion-1689722427798
+            #region CancelMetadataModelConversion-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.CancelMetadataModelConversion(new CancelMetadataModelConversionRequest 
+            var response = client.CancelMetadataModelConversion(new CancelMetadataModelConversionRequest
             {
                 MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS",
                 RequestIdentifier = "a1b2c3d4-5678-90ab-cdef-EXAMPLE11111"
@@ -49,10 +50,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceCancelMetadataModelCreation()
         {
-            #region cancel-metadata-model-creation-1689722427798
+            #region CancelMetadataModelCreation-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.CancelMetadataModelCreation(new CancelMetadataModelCreationRequest 
+            var response = client.CancelMetadataModelCreation(new CancelMetadataModelCreationRequest
             {
                 MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS",
                 RequestIdentifier = "a1b2c3d4-5678-90ab-cdef-EXAMPLE11111"
@@ -65,10 +66,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceCreateDataProvider()
         {
-            #region create-data-provider-1689726511871
+            #region CreateDataProvider-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.CreateDataProvider(new CreateDataProviderRequest 
+            var response = client.CreateDataProvider(new CreateDataProviderRequest
             {
                 DataProviderName = "example-data-provider",
                 Description = "Example data provider for documentation",
@@ -89,10 +90,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceCreateEndpoint()
         {
-            #region create-endpoint-1481746254348
+            #region CreateEndpoint-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.CreateEndpoint(new CreateEndpointRequest 
+            var response = client.CreateEndpoint(new CreateEndpointRequest
             {
                 CertificateArn = "",
                 DatabaseName = "testdb",
@@ -121,10 +122,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceCreateInstanceProfile()
         {
-            #region create-instance-profile-1689716070633
+            #region CreateInstanceProfile-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.CreateInstanceProfile(new CreateInstanceProfileRequest 
+            var response = client.CreateInstanceProfile(new CreateInstanceProfileRequest
             {
                 Description = "Example instance profile for documentation",
                 InstanceProfileName = "example-instance-profile",
@@ -144,10 +145,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceCreateMigrationProject()
         {
-            #region create-migration-project-1689716672685
+            #region CreateMigrationProject-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.CreateMigrationProject(new CreateMigrationProjectRequest 
+            var response = client.CreateMigrationProject(new CreateMigrationProjectRequest
             {
                 Description = "Example migration project for documentation",
                 InstanceProfileIdentifier = "arn:aws:dms:us-east-1:111122223333:instance-profile:EXAMPLEABCDEFGHIJKLMNOPQRS",
@@ -180,10 +181,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceCreateReplicationInstance()
         {
-            #region create-replication-instance-1481746705295
+            #region CreateReplicationInstance-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.CreateReplicationInstance(new CreateReplicationInstanceRequest 
+            var response = client.CreateReplicationInstance(new CreateReplicationInstanceRequest
             {
                 AllocatedStorage = 123,
                 AutoMinorVersionUpgrade = true,
@@ -203,7 +204,6 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
                     }
                 },
                 VpcSecurityGroupIds = new List<string> {
-                    
                 }
             });
 
@@ -214,10 +214,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceCreateReplicationSubnetGroup()
         {
-            #region create-replication-subnet-group-1481747297930
+            #region CreateReplicationSubnetGroup-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.CreateReplicationSubnetGroup(new CreateReplicationSubnetGroupRequest 
+            var response = client.CreateReplicationSubnetGroup(new CreateReplicationSubnetGroupRequest
             {
                 ReplicationSubnetGroupDescription = "US West subnet group",
                 ReplicationSubnetGroupIdentifier = "us-west-2ab-vpc-215ds366",
@@ -240,12 +240,12 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceCreateReplicationTask()
         {
-            #region create-replication-task-1481747646288
+            #region CreateReplicationTask-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.CreateReplicationTask(new CreateReplicationTaskRequest 
+            var response = client.CreateReplicationTask(new CreateReplicationTaskRequest
             {
-                CdcStartTime = new DateTime(2016, 12, 14, 6, 25, 43, DateTimeKind.Utc),
+                CdcStartTime = new DateTime(2016, 12, 14, 18, 25, 43, DateTimeKind.Utc),
                 MigrationType = "full-load",
                 ReplicationInstanceArn = "arn:aws:dms:us-east-1:123456789012:rep:6UTDJGBOUS3VI3SUWA66XFJCJQ",
                 ReplicationTaskIdentifier = "task1",
@@ -268,10 +268,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDeleteCertificate()
         {
-            #region delete-certificate-1481751957981
+            #region DeleteCertificate-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DeleteCertificate(new DeleteCertificateRequest 
+            var response = client.DeleteCertificate(new DeleteCertificateRequest
             {
                 CertificateArn = "arn:aws:dms:us-east-1:123456789012:rep:6UTDJGBOUSM457DE6XFJCJQ"
             });
@@ -283,10 +283,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDeleteConnection()
         {
-            #region delete-connection-1481751957981
+            #region DeleteConnection-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DeleteConnection(new DeleteConnectionRequest 
+            var response = client.DeleteConnection(new DeleteConnectionRequest
             {
                 EndpointArn = "arn:aws:dms:us-east-1:123456789012:endpoint:RAAR3R22XSH46S3PWLC3NJAWKM",
                 ReplicationInstanceArn = "arn:aws:dms:us-east-1:123456789012:rep:6UTDJGBOUS3VI3SUWA66XFJCJQ"
@@ -299,10 +299,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDeleteDataProvider()
         {
-            #region delete-data-provider-1689724476356
+            #region DeleteDataProvider-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DeleteDataProvider(new DeleteDataProviderRequest 
+            var response = client.DeleteDataProvider(new DeleteDataProviderRequest
             {
                 DataProviderIdentifier = "arn:aws:dms:us-east-1:111122223333:data-provider:EXAMPLEABCDEFGHIJKLMNOPQRS"
             });
@@ -314,10 +314,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDeleteEndpoint()
         {
-            #region delete-endpoint-1481752425530
+            #region DeleteEndpoint-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DeleteEndpoint(new DeleteEndpointRequest 
+            var response = client.DeleteEndpoint(new DeleteEndpointRequest
             {
                 EndpointArn = "arn:aws:dms:us-east-1:123456789012:endpoint:RAAR3R22XSH46S3PWLC3NJAWKM"
             });
@@ -329,10 +329,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDeleteInstanceProfile()
         {
-            #region delete-instance-profile-1689716924105
+            #region DeleteInstanceProfile-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DeleteInstanceProfile(new DeleteInstanceProfileRequest 
+            var response = client.DeleteInstanceProfile(new DeleteInstanceProfileRequest
             {
                 InstanceProfileIdentifier = "arn:aws:dms:us-east-1:111122223333:instance-profile:EXAMPLEABCDEFGHIJKLMNOPQRS"
             });
@@ -344,10 +344,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDeleteMigrationProject()
         {
-            #region delete-migration-project-1689717217454
+            #region DeleteMigrationProject-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DeleteMigrationProject(new DeleteMigrationProjectRequest 
+            var response = client.DeleteMigrationProject(new DeleteMigrationProjectRequest
             {
                 MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS"
             });
@@ -359,10 +359,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDeleteReplicationInstance()
         {
-            #region delete-replication-instance-1481752552839
+            #region DeleteReplicationInstance-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DeleteReplicationInstance(new DeleteReplicationInstanceRequest 
+            var response = client.DeleteReplicationInstance(new DeleteReplicationInstanceRequest
             {
                 ReplicationInstanceArn = "arn:aws:dms:us-east-1:123456789012:rep:6UTDJGBOUS3VI3SUWA66XFJCJQ"
             });
@@ -374,10 +374,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDeleteReplicationSubnetGroup()
         {
-            #region delete-replication-subnet-group-1481752728597
+            #region DeleteReplicationSubnetGroup-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DeleteReplicationSubnetGroup(new DeleteReplicationSubnetGroupRequest 
+            var response = client.DeleteReplicationSubnetGroup(new DeleteReplicationSubnetGroupRequest
             {
                 ReplicationSubnetGroupIdentifier = "us-west-2ab-vpc-215ds366"
             });
@@ -388,10 +388,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDeleteReplicationTask()
         {
-            #region delete-replication-task-1481752903506
+            #region DeleteReplicationTask-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DeleteReplicationTask(new DeleteReplicationTaskRequest 
+            var response = client.DeleteReplicationTask(new DeleteReplicationTaskRequest
             {
                 ReplicationTaskArn = "arn:aws:dms:us-east-1:123456789012:rep:6UTDJGBOUS3VI3SUWA66XFJCJQ"
             });
@@ -403,10 +403,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDescribeAccountAttributes()
         {
-            #region describe-acount-attributes-1481753085663
+            #region DescribeAccountAttributes-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DescribeAccountAttributes(new DescribeAccountAttributesRequest 
+            var response = client.DescribeAccountAttributes(new DescribeAccountAttributesRequest
             {
             });
 
@@ -417,10 +417,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDescribeCertificates()
         {
-            #region describe-certificates-1481753186244
+            #region DescribeCertificates-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DescribeCertificates(new DescribeCertificatesRequest 
+            var response = client.DescribeCertificates(new DescribeCertificatesRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -443,10 +443,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDescribeConnections()
         {
-            #region describe-connections-1481754477953
+            #region DescribeConnections-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DescribeConnections(new DescribeConnectionsRequest 
+            var response = client.DescribeConnections(new DescribeConnectionsRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -469,10 +469,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDescribeConversionConfiguration()
         {
-            #region describe-conversion-configuration-1689717690907
+            #region DescribeConversionConfiguration-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DescribeConversionConfiguration(new DescribeConversionConfigurationRequest 
+            var response = client.DescribeConversionConfiguration(new DescribeConversionConfigurationRequest
             {
                 MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS"
             });
@@ -485,10 +485,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDescribeDataProviders()
         {
-            #region describe-data-providers-1689725897156
+            #region DescribeDataProviders-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DescribeDataProviders(new DescribeDataProvidersRequest 
+            var response = client.DescribeDataProviders(new DescribeDataProvidersRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -507,10 +507,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDescribeEndpoints()
         {
-            #region describe-endpoints-1481754926060
+            #region DescribeEndpoints-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DescribeEndpoints(new DescribeEndpointsRequest 
+            var response = client.DescribeEndpoints(new DescribeEndpointsRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -533,10 +533,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDescribeEndpointTypes()
         {
-            #region describe-endpoint-types-1481754742591
+            #region DescribeEndpointTypes-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DescribeEndpointTypes(new DescribeEndpointTypesRequest 
+            var response = client.DescribeEndpointTypes(new DescribeEndpointTypesRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -559,10 +559,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDescribeExtensionPackAssociations()
         {
-            #region describe-extension-pack-associations-1689718322580
+            #region DescribeExtensionPackAssociations-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DescribeExtensionPackAssociations(new DescribeExtensionPackAssociationsRequest 
+            var response = client.DescribeExtensionPackAssociations(new DescribeExtensionPackAssociationsRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -584,10 +584,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDescribeInstanceProfiles()
         {
-            #region describe-instance-profiles-1689718406840
+            #region DescribeInstanceProfiles-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DescribeInstanceProfiles(new DescribeInstanceProfilesRequest 
+            var response = client.DescribeInstanceProfiles(new DescribeInstanceProfilesRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -606,10 +606,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDescribeMetadataModel()
         {
-            #region describe-metadata-model-1716000000000
+            #region DescribeMetadataModel-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DescribeMetadataModel(new DescribeMetadataModelRequest 
+            var response = client.DescribeMetadataModel(new DescribeMetadataModelRequest
             {
                 MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS",
                 Origin = "SOURCE",
@@ -626,10 +626,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDescribeMetadataModelAssessments()
         {
-            #region describe-metadata-model-assessments-1689718702303
+            #region DescribeMetadataModelAssessments-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DescribeMetadataModelAssessments(new DescribeMetadataModelAssessmentsRequest 
+            var response = client.DescribeMetadataModelAssessments(new DescribeMetadataModelAssessmentsRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -651,10 +651,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDescribeMetadataModelChildren()
         {
-            #region describe-metadata-model-children-1716000000000
+            #region DescribeMetadataModelChildren-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DescribeMetadataModelChildren(new DescribeMetadataModelChildrenRequest 
+            var response = client.DescribeMetadataModelChildren(new DescribeMetadataModelChildrenRequest
             {
                 MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS",
                 Origin = "SOURCE",
@@ -668,10 +668,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDescribeMetadataModelConversions()
         {
-            #region describe-metadata-model-conversions-1689719021495
+            #region DescribeMetadataModelConversions-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DescribeMetadataModelConversions(new DescribeMetadataModelConversionsRequest 
+            var response = client.DescribeMetadataModelConversions(new DescribeMetadataModelConversionsRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -693,10 +693,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDescribeMetadataModelCreations()
         {
-            #region describe-metadata-model-creations-1689719900000
+            #region DescribeMetadataModelCreations-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DescribeMetadataModelCreations(new DescribeMetadataModelCreationsRequest 
+            var response = client.DescribeMetadataModelCreations(new DescribeMetadataModelCreationsRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -718,10 +718,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDescribeMetadataModelExportsAsScript()
         {
-            #region describe-metadata-model-exports-as-script-1689719253938
+            #region DescribeMetadataModelExportsAsScript-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DescribeMetadataModelExportsAsScript(new DescribeMetadataModelExportsAsScriptRequest 
+            var response = client.DescribeMetadataModelExportsAsScript(new DescribeMetadataModelExportsAsScriptRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -743,10 +743,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDescribeMetadataModelExportsToTarget()
         {
-            #region describe-metadata-model-exports-to-target-1689719484750
+            #region DescribeMetadataModelExportsToTarget-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DescribeMetadataModelExportsToTarget(new DescribeMetadataModelExportsToTargetRequest 
+            var response = client.DescribeMetadataModelExportsToTarget(new DescribeMetadataModelExportsToTargetRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -768,10 +768,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDescribeMetadataModelImports()
         {
-            #region describe-metadata-model-imports-1689719771322
+            #region DescribeMetadataModelImports-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DescribeMetadataModelImports(new DescribeMetadataModelImportsRequest 
+            var response = client.DescribeMetadataModelImports(new DescribeMetadataModelImportsRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -793,10 +793,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDescribeMigrationProjects()
         {
-            #region describe-migration-projects-1689719912075
+            #region DescribeMigrationProjects-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DescribeMigrationProjects(new DescribeMigrationProjectsRequest 
+            var response = client.DescribeMigrationProjects(new DescribeMigrationProjectsRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -815,10 +815,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDescribeOrderableReplicationInstances()
         {
-            #region describe-orderable-replication-instances-1481755123669
+            #region DescribeOrderableReplicationInstances-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DescribeOrderableReplicationInstances(new DescribeOrderableReplicationInstancesRequest 
+            var response = client.DescribeOrderableReplicationInstances(new DescribeOrderableReplicationInstancesRequest
             {
                 Marker = "",
                 MaxRecords = 123
@@ -832,10 +832,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDescribeRefreshSchemasStatus()
         {
-            #region describe-refresh-schema-status-1481755303497
+            #region DescribeRefreshSchemasStatus-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DescribeRefreshSchemasStatus(new DescribeRefreshSchemasStatusRequest 
+            var response = client.DescribeRefreshSchemasStatus(new DescribeRefreshSchemasStatusRequest
             {
                 EndpointArn = ""
             });
@@ -847,10 +847,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDescribeReplicationInstances()
         {
-            #region describe-replication-instances-1481755443952
+            #region DescribeReplicationInstances-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DescribeReplicationInstances(new DescribeReplicationInstancesRequest 
+            var response = client.DescribeReplicationInstances(new DescribeReplicationInstancesRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -873,10 +873,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDescribeReplicationSubnetGroups()
         {
-            #region describe-replication-subnet-groups-1481755621284
+            #region DescribeReplicationSubnetGroups-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DescribeReplicationSubnetGroups(new DescribeReplicationSubnetGroupsRequest 
+            var response = client.DescribeReplicationSubnetGroups(new DescribeReplicationSubnetGroupsRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -899,10 +899,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDescribeReplicationTasks()
         {
-            #region describe-replication-tasks-1481755777563
+            #region DescribeReplicationTasks-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DescribeReplicationTasks(new DescribeReplicationTasksRequest 
+            var response = client.DescribeReplicationTasks(new DescribeReplicationTasksRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -925,10 +925,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDescribeSchemas()
         {
-            #region describe-schemas-1481755933924
+            #region DescribeSchemas-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DescribeSchemas(new DescribeSchemasRequest 
+            var response = client.DescribeSchemas(new DescribeSchemasRequest
             {
                 EndpointArn = "",
                 Marker = "",
@@ -943,10 +943,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceDescribeTableStatistics()
         {
-            #region describe-table-statistics-1481756071890
+            #region DescribeTableStatistics-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.DescribeTableStatistics(new DescribeTableStatisticsRequest 
+            var response = client.DescribeTableStatistics(new DescribeTableStatisticsRequest
             {
                 Marker = "",
                 MaxRecords = 123,
@@ -962,10 +962,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceExportMetadataModelAssessment()
         {
-            #region export-metadata-model-assessment-1689720309558
+            #region ExportMetadataModelAssessment-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.ExportMetadataModelAssessment(new ExportMetadataModelAssessmentRequest 
+            var response = client.ExportMetadataModelAssessment(new ExportMetadataModelAssessmentRequest
             {
                 AssessmentReportTypes = new List<string> {
                     "pdf",
@@ -984,10 +984,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceGetTargetSelectionRules()
         {
-            #region get-target-selection-rules-1716000000000
+            #region GetTargetSelectionRules-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.GetTargetSelectionRules(new GetTargetSelectionRulesRequest 
+            var response = client.GetTargetSelectionRules(new GetTargetSelectionRulesRequest
             {
                 MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS",
                 SelectionRules = "{\"rules\": [{\"rule-type\": \"selection\", \"rule-id\": \"1\", \"rule-name\": \"1\", \"object-locator\": {\"server-name\": \"example-source-server.us-east-1.rds.amazonaws.com\", \"database-name\": \"ExampleDatabase\", \"schema-name\": \"ExampleSchema\", \"table-name\": \"ExampleTable\"}, \"rule-action\": \"explicit\"}]}"
@@ -1000,10 +1000,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceImportCertificate()
         {
-            #region import-certificate-1481756197206
+            #region ImportCertificate-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.ImportCertificate(new ImportCertificateRequest 
+            var response = client.ImportCertificate(new ImportCertificateRequest
             {
                 CertificateIdentifier = "",
                 CertificatePem = ""
@@ -1016,10 +1016,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceListTagsForResource()
         {
-            #region list-tags-for-resource-1481761095501
+            #region ListTagsForResource-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.ListTagsForResource(new ListTagsForResourceRequest 
+            var response = client.ListTagsForResource(new ListTagsForResourceRequest
             {
                 ResourceArn = ""
             });
@@ -1031,10 +1031,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceModifyConversionConfiguration()
         {
-            #region modify-conversion-configuration-1689720529855
+            #region ModifyConversionConfiguration-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.ModifyConversionConfiguration(new ModifyConversionConfigurationRequest 
+            var response = client.ModifyConversionConfiguration(new ModifyConversionConfigurationRequest
             {
                 ConversionConfiguration = "{\"Common project settings\":{\"EnableGenAiConversion\":true},\"MSSQL_TO_AURORA_POSTGRESQL\":{\"ConvertProceduresToFunction\":false}}",
                 MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS"
@@ -1047,10 +1047,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceModifyDataProvider()
         {
-            #region modify-data-provider-1689720700567
+            #region ModifyDataProvider-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.ModifyDataProvider(new ModifyDataProviderRequest 
+            var response = client.ModifyDataProvider(new ModifyDataProviderRequest
             {
                 DataProviderIdentifier = "arn:aws:dms:us-east-1:111122223333:data-provider:EXAMPLEABCDEFGHIJKLMNOPQRS",
                 Description = "Updated data provider description",
@@ -1065,10 +1065,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceModifyEndpoint()
         {
-            #region modify-endpoint-1481761649937
+            #region ModifyEndpoint-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.ModifyEndpoint(new ModifyEndpointRequest 
+            var response = client.ModifyEndpoint(new ModifyEndpointRequest
             {
                 CertificateArn = "",
                 DatabaseName = "",
@@ -1091,10 +1091,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceModifyInstanceProfile()
         {
-            #region modify-instance-profile-1689724223329
+            #region ModifyInstanceProfile-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.ModifyInstanceProfile(new ModifyInstanceProfileRequest 
+            var response = client.ModifyInstanceProfile(new ModifyInstanceProfileRequest
             {
                 Description = "Updated instance profile description",
                 InstanceProfileIdentifier = "arn:aws:dms:us-east-1:111122223333:instance-profile:EXAMPLEABCDEFGHIJKLMNOPQRS",
@@ -1108,10 +1108,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceModifyMigrationProject()
         {
-            #region modify-migration-project-1689721117475
+            #region ModifyMigrationProject-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.ModifyMigrationProject(new ModifyMigrationProjectRequest 
+            var response = client.ModifyMigrationProject(new ModifyMigrationProjectRequest
             {
                 Description = "Updated migration project description",
                 MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS",
@@ -1127,10 +1127,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceModifyReplicationInstance()
         {
-            #region modify-replication-instance-1481761784746
+            #region ModifyReplicationInstance-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.ModifyReplicationInstance(new ModifyReplicationInstanceRequest 
+            var response = client.ModifyReplicationInstance(new ModifyReplicationInstanceRequest
             {
                 AllocatedStorage = 123,
                 AllowMajorVersionUpgrade = true,
@@ -1143,7 +1143,6 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
                 ReplicationInstanceClass = "dms.t2.micro",
                 ReplicationInstanceIdentifier = "test-rep-1",
                 VpcSecurityGroupIds = new List<string> {
-                    
                 }
             });
 
@@ -1154,15 +1153,14 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceModifyReplicationSubnetGroup()
         {
-            #region modify-replication-subnet-group-1481762275392
+            #region ModifyReplicationSubnetGroup-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.ModifyReplicationSubnetGroup(new ModifyReplicationSubnetGroupRequest 
+            var response = client.ModifyReplicationSubnetGroup(new ModifyReplicationSubnetGroupRequest
             {
                 ReplicationSubnetGroupDescription = "",
                 ReplicationSubnetGroupIdentifier = "",
                 SubnetIds = new List<string> {
-                    
                 }
             });
 
@@ -1173,10 +1171,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceRefreshSchemas()
         {
-            #region refresh-schema-1481762399111
+            #region RefreshSchemas-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.RefreshSchemas(new RefreshSchemasRequest 
+            var response = client.RefreshSchemas(new RefreshSchemasRequest
             {
                 EndpointArn = "",
                 ReplicationInstanceArn = ""
@@ -1189,14 +1187,13 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceRemoveTagsFromResource()
         {
-            #region remove-tags-from-resource-1481762571330
+            #region RemoveTagsFromResource-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.RemoveTagsFromResource(new RemoveTagsFromResourceRequest 
+            var response = client.RemoveTagsFromResource(new RemoveTagsFromResourceRequest
             {
                 ResourceArn = "arn:aws:dms:us-east-1:123456789012:endpoint:ASXWXJZLNWNT5HTWCGV2BUJQ7E",
                 TagKeys = new List<string> {
-                    
                 }
             });
 
@@ -1206,10 +1203,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceStartExtensionPackAssociation()
         {
-            #region start-extension-pack-association-1689721897266
+            #region StartExtensionPackAssociation-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.StartExtensionPackAssociation(new StartExtensionPackAssociationRequest 
+            var response = client.StartExtensionPackAssociation(new StartExtensionPackAssociationRequest
             {
                 MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS"
             });
@@ -1221,10 +1218,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceStartMetadataModelAssessment()
         {
-            #region start-metadata-model-assessment-1689722322596
+            #region StartMetadataModelAssessment-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.StartMetadataModelAssessment(new StartMetadataModelAssessmentRequest 
+            var response = client.StartMetadataModelAssessment(new StartMetadataModelAssessmentRequest
             {
                 MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS",
                 SelectionRules = "{\"rules\": [{\"rule-type\": \"selection\",\"rule-id\": \"1\",\"rule-name\": \"1\",\"object-locator\": {\"server-name\": \"example-source-server.us-east-1.rds.amazonaws.com\", \"schema-name\": \"ExampleSchema\"},\"rule-action\": \"explicit\"}]}"
@@ -1237,10 +1234,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceStartMetadataModelConversion()
         {
-            #region start-metadata-model-conversion-1689722427798
+            #region StartMetadataModelConversion-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.StartMetadataModelConversion(new StartMetadataModelConversionRequest 
+            var response = client.StartMetadataModelConversion(new StartMetadataModelConversionRequest
             {
                 MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS",
                 SelectionRules = "{\"rules\": [{\"rule-type\": \"selection\",\"rule-id\": \"1\",\"rule-name\": \"1\",\"object-locator\": {\"server-name\": \"example-source-server.us-east-1.rds.amazonaws.com\", \"schema-name\": \"ExampleSchema\"},\"rule-action\": \"explicit\"}]}"
@@ -1253,10 +1250,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceStartMetadataModelCreation()
         {
-            #region start-metadata-model-creation-1689722322596
+            #region StartMetadataModelCreation-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.StartMetadataModelCreation(new StartMetadataModelCreationRequest 
+            var response = client.StartMetadataModelCreation(new StartMetadataModelCreationRequest
             {
                 MetadataModelName = "ExampleStatement",
                 MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS",
@@ -1271,10 +1268,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceStartMetadataModelExportAsScript()
         {
-            #region start-metadata-model-export-as-script-1689722681469
+            #region StartMetadataModelExportAsScript-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.StartMetadataModelExportAsScript(new StartMetadataModelExportAsScriptRequest 
+            var response = client.StartMetadataModelExportAsScript(new StartMetadataModelExportAsScriptRequest
             {
                 FileName = "ExampleScript",
                 MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS",
@@ -1289,10 +1286,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceStartMetadataModelExportToTarget()
         {
-            #region start-metadata-model-export-to-target-1689783666835
+            #region StartMetadataModelExportToTarget-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.StartMetadataModelExportToTarget(new StartMetadataModelExportToTargetRequest 
+            var response = client.StartMetadataModelExportToTarget(new StartMetadataModelExportToTargetRequest
             {
                 MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS",
                 OverwriteExtensionPack = true,
@@ -1306,10 +1303,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceStartMetadataModelImport()
         {
-            #region start-metadata-model-import-1689723124259
+            #region StartMetadataModelImport-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.StartMetadataModelImport(new StartMetadataModelImportRequest 
+            var response = client.StartMetadataModelImport(new StartMetadataModelImportRequest
             {
                 MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS",
                 Origin = "SOURCE",
@@ -1324,12 +1321,12 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceStartReplicationTask()
         {
-            #region start-replication-task-1481762706778
+            #region StartReplicationTask-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.StartReplicationTask(new StartReplicationTaskRequest 
+            var response = client.StartReplicationTask(new StartReplicationTaskRequest
             {
-                CdcStartTime = new DateTime(2016, 12, 14, 1, 33, 20, DateTimeKind.Utc),
+                CdcStartTime = new DateTime(2016, 12, 14, 13, 33, 20, DateTimeKind.Utc),
                 ReplicationTaskArn = "arn:aws:dms:us-east-1:123456789012:rep:6UTDJGBOUS3VI3SUWA66XFJCJQ",
                 StartReplicationTaskType = "start-replication"
             });
@@ -1341,10 +1338,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceStopReplicationTask()
         {
-            #region stop-replication-task-1481762924947
+            #region StopReplicationTask-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.StopReplicationTask(new StopReplicationTaskRequest 
+            var response = client.StopReplicationTask(new StopReplicationTaskRequest
             {
                 ReplicationTaskArn = "arn:aws:dms:us-east-1:123456789012:endpoint:ASXWXJZLNWNT5HTWCGV2BUJQ7E"
             });
@@ -1356,10 +1353,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
 
         public void DatabaseMigrationServiceTestConnection()
         {
-            #region test-conection-1481763017636
+            #region TestConnection-1
 
             var client = new AmazonDatabaseMigrationServiceClient();
-            var response = client.TestConnection(new TestConnectionRequest 
+            var response = client.TestConnection(new TestConnectionRequest
             {
                 EndpointArn = "arn:aws:dms:us-east-1:123456789012:endpoint:RAAR3R22XSH46S3PWLC3NJAWKM",
                 ReplicationInstanceArn = "arn:aws:dms:us-east-1:123456789012:rep:6UTDJGBOUS3VI3SUWA66XFJCJQ"
@@ -1370,13 +1367,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

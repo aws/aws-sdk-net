@@ -2,19 +2,19 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.AllocateStaticIpRequest.StaticIpName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.AttachCertificateToDistributionRequest.CertificateName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.AttachCertificateToDistributionRequest.DistributionName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.AttachDiskRequest.DiskName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.AttachDiskRequest.DiskPath</property>
@@ -22,39 +22,39 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.AttachDiskRequest.InstanceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.AttachInstancesToLoadBalancerRequest.LoadBalancerName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.AttachLoadBalancerTlsCertificateRequest.CertificateName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.AttachLoadBalancerTlsCertificateRequest.LoadBalancerName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.AttachStaticIpRequest.InstanceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.AttachStaticIpRequest.StaticIpName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CloseInstancePublicPortsRequest.InstanceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CopySnapshotRequest.SourceSnapshotName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CopySnapshotRequest.TargetSnapshotName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateBucketRequest.BucketName</property>
@@ -100,7 +100,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateDiskRequest.DiskName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateDiskFromSnapshotRequest.AvailabilityZone</property>
@@ -108,39 +108,47 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateDiskFromSnapshotRequest.DiskName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateDiskFromSnapshotRequest.DiskSnapshotName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateDiskSnapshotRequest.DiskName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateDiskSnapshotRequest.DiskSnapshotName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateDiskSnapshotRequest.InstanceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateDistributionRequest.CertificateName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateDistributionRequest.DistributionName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateGUISessionAccessDetailsRequest.ResourceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateGUISessionAccessDetailsResponse.ResourceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.CreateInstanceSnapshotRequest.InstanceName</property>
+    <pattern>^\w[\w\-]*\w$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.CreateInstanceSnapshotRequest.InstanceSnapshotName</property>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateInstancesRequest.BlueprintId</property>
@@ -152,11 +160,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateInstancesRequest.CustomImageName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateInstancesRequest.KeyPairName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateInstancesFromSnapshotRequest.BundleId</property>
@@ -164,27 +172,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateInstancesFromSnapshotRequest.InstanceSnapshotName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateInstancesFromSnapshotRequest.KeyPairName</property>
-    <pattern>\w[\w\-]*\w</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Lightsail.Model.CreateInstanceSnapshotRequest.InstanceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Lightsail.Model.CreateInstanceSnapshotRequest.InstanceSnapshotName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateKeyPairRequest.KeyPairName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateLoadBalancerRequest.CertificateName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateLoadBalancerRequest.InstancePort</property>
@@ -193,43 +193,43 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateLoadBalancerRequest.LoadBalancerName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateLoadBalancerTlsCertificateRequest.CertificateName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateLoadBalancerTlsCertificateRequest.LoadBalancerName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateRelationalDatabaseRequest.RelationalDatabaseName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateRelationalDatabaseFromSnapshotRequest.RelationalDatabaseName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateRelationalDatabaseFromSnapshotRequest.RelationalDatabaseSnapshotName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateRelationalDatabaseFromSnapshotRequest.SourceRelationalDatabaseName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateRelationalDatabaseSnapshotRequest.RelationalDatabaseName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateRelationalDatabaseSnapshotRequest.RelationalDatabaseSnapshotName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DeleteAlarmRequest.AlarmName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DeleteAutoSnapshotRequest.Date</property>
@@ -237,7 +237,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DeleteAutoSnapshotRequest.ResourceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DeleteBucketRequest.BucketName</property>
@@ -269,99 +269,99 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DeleteDiskRequest.DiskName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DeleteDiskSnapshotRequest.DiskSnapshotName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DeleteDistributionRequest.DistributionName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DeleteInstanceRequest.InstanceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DeleteInstanceSnapshotRequest.InstanceSnapshotName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DeleteKeyPairRequest.KeyPairName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DeleteKnownHostKeysRequest.InstanceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DeleteLoadBalancerRequest.LoadBalancerName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DeleteLoadBalancerTlsCertificateRequest.CertificateName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DeleteLoadBalancerTlsCertificateRequest.LoadBalancerName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DeleteRelationalDatabaseRequest.FinalRelationalDatabaseSnapshotName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DeleteRelationalDatabaseRequest.RelationalDatabaseName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DeleteRelationalDatabaseSnapshotRequest.RelationalDatabaseSnapshotName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DetachCertificateFromDistributionRequest.DistributionName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DetachDiskRequest.DiskName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DetachInstancesFromLoadBalancerRequest.LoadBalancerName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DetachStaticIpRequest.StaticIpName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DisableAddOnRequest.ResourceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.EnableAddOnRequest.ResourceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.ExportSnapshotRequest.SourceSnapshotName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetAlarmsRequest.AlarmName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetAlarmsRequest.MonitoredResourceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetAutoSnapshotsRequest.ResourceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetAutoSnapshotsResponse.ResourceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetBucketAccessKeysRequest.BucketName</property>
@@ -423,23 +423,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetCostEstimateRequest.ResourceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetDiskRequest.DiskName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetDiskSnapshotRequest.DiskSnapshotName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetDistributionLatestCacheResetRequest.DistributionName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetDistributionMetricDataRequest.DistributionName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetDistributionMetricDataRequest.Period</property>
@@ -448,19 +448,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetDistributionsRequest.DistributionName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetInstanceRequest.InstanceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetInstanceAccessDetailsRequest.InstanceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetInstanceMetricDataRequest.InstanceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetInstanceMetricDataRequest.Period</property>
@@ -469,27 +469,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetInstancePortStatesRequest.InstanceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetInstanceSnapshotRequest.InstanceSnapshotName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetInstanceStateRequest.InstanceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetKeyPairRequest.KeyPairName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetLoadBalancerRequest.LoadBalancerName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetLoadBalancerMetricDataRequest.LoadBalancerName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetLoadBalancerMetricDataRequest.Period</property>
@@ -498,7 +498,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetLoadBalancerTlsCertificatesRequest.LoadBalancerName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetOperationRequest.OperationId</property>
@@ -506,27 +506,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetOperationsForResourceRequest.ResourceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetRelationalDatabaseRequest.RelationalDatabaseName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetRelationalDatabaseEventsRequest.RelationalDatabaseName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetRelationalDatabaseLogEventsRequest.RelationalDatabaseName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetRelationalDatabaseLogStreamsRequest.RelationalDatabaseName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetRelationalDatabaseMasterUserPasswordRequest.RelationalDatabaseName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetRelationalDatabaseMetricDataRequest.Period</property>
@@ -535,15 +535,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetRelationalDatabaseMetricDataRequest.RelationalDatabaseName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetRelationalDatabaseParametersRequest.RelationalDatabaseName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetRelationalDatabaseSnapshotRequest.RelationalDatabaseSnapshotName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetSetupHistoryRequest.PageToken</property>
@@ -553,7 +553,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetSetupHistoryRequest.ResourceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetSetupHistoryResponse.NextPageToken</property>
@@ -563,35 +563,35 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.GetStaticIpRequest.StaticIpName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.ImportKeyPairRequest.KeyPairName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.OpenInstancePublicPortsRequest.InstanceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.PutAlarmRequest.AlarmName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.PutAlarmRequest.MonitoredResourceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.PutInstancePublicPortsRequest.InstanceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.RebootInstanceRequest.InstanceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.RebootRelationalDatabaseRequest.RelationalDatabaseName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.RegisterContainerImageRequest.Label</property>
@@ -607,15 +607,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.ReleaseStaticIpRequest.StaticIpName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.ResetDistributionCacheRequest.DistributionName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.SetIpAddressTypeRequest.ResourceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.SetResourceAccessForBucketRequest.BucketName</property>
@@ -625,7 +625,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.SetResourceAccessForBucketRequest.ResourceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.SetupInstanceHttpsRequest.EmailAddress</property>
@@ -635,35 +635,35 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.SetupInstanceHttpsRequest.InstanceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.StartGUISessionRequest.ResourceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.StartInstanceRequest.InstanceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.StartRelationalDatabaseRequest.RelationalDatabaseName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.StopGUISessionRequest.ResourceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.StopInstanceRequest.InstanceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.StopRelationalDatabaseRequest.RelationalDatabaseName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.StopRelationalDatabaseRequest.RelationalDatabaseSnapshotName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.TagResourceRequest.ResourceArn</property>
@@ -671,11 +671,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.TagResourceRequest.ResourceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.TestAlarmRequest.AlarmName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.UntagResourceRequest.ResourceArn</property>
@@ -683,7 +683,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.UntagResourceRequest.ResourceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.UpdateBucketRequest.BucketName</property>
@@ -718,19 +718,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.UpdateDistributionRequest.CertificateName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.UpdateDistributionRequest.DistributionName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.UpdateDistributionBundleRequest.DistributionName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.UpdateInstanceMetadataOptionsRequest.InstanceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.UpdateLoadBalancerAttributeRequest.AttributeValue</property>
@@ -739,15 +739,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.UpdateLoadBalancerAttributeRequest.LoadBalancerName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.UpdateRelationalDatabaseRequest.RelationalDatabaseName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.UpdateRelationalDatabaseParametersRequest.RelationalDatabaseName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.AccessKey.AccessKeyId</property>
@@ -773,7 +773,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.Alarm.Name</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.Alarm.Period</property>
@@ -802,7 +802,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.Blueprint.Name</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.Bucket.Arn</property>
@@ -856,6 +856,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.BucketCorsRule.Id</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -888,7 +889,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CloudFormationStackRecord.Name</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.CloudFormationStackRecordSourceInfo.Arn</property>
@@ -908,7 +909,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.ContactMethod.Name</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.ContainerService.Arn</property>
@@ -943,11 +944,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.Disk.AttachedTo</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.Disk.Name</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DiskInfo.Path</property>
@@ -955,7 +956,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DiskMap.NewDiskName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DiskMap.OriginalDiskPath</property>
@@ -971,7 +972,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DiskSnapshot.FromDiskName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DiskSnapshot.FromInstanceArn</property>
@@ -979,11 +980,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DiskSnapshot.FromInstanceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DiskSnapshot.Name</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.Domain.Arn</property>
@@ -991,7 +992,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.Domain.Name</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DomainEntry.Id</property>
@@ -1003,7 +1004,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.ExportSnapshotRecord.Name</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.ExportSnapshotRecordSourceInfo.Arn</property>
@@ -1023,7 +1024,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.InputOrigin.Name</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.Instance.Arn</property>
@@ -1043,19 +1044,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.Instance.Name</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.Instance.PrivateIpAddress</property>
-    <pattern>([0-9]{1,3}\.){3}[0-9]{1,3}</pattern>
+    <pattern>^([0-9]{1,3}\.){3}[0-9]{1,3}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.Instance.PublicIpAddress</property>
-    <pattern>([0-9]{1,3}\.){3}[0-9]{1,3}</pattern>
+    <pattern>^([0-9]{1,3}\.){3}[0-9]{1,3}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.Instance.SshKeyName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.Instance.Username</property>
@@ -1063,11 +1064,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.InstanceAccessDetails.InstanceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.InstanceAccessDetails.IpAddress</property>
-    <pattern>([0-9]{1,3}\.){3}[0-9]{1,3}</pattern>
+    <pattern>^([0-9]{1,3}\.){3}[0-9]{1,3}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.InstanceEntry.InstanceType</property>
@@ -1075,11 +1076,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.InstanceEntry.SourceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.InstanceHealthSummary.InstanceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.InstancePortInfo.FromPort</property>
@@ -1111,11 +1112,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.InstanceSnapshot.FromInstanceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.InstanceSnapshot.Name</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.InstanceSnapshotInfo.FromBlueprintId</property>
@@ -1131,7 +1132,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.KeyPair.Name</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.LightsailDistribution.Arn</property>
@@ -1139,11 +1140,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.LightsailDistribution.CertificateName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.LightsailDistribution.Name</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.LoadBalancer.Arn</property>
@@ -1159,11 +1160,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.LoadBalancer.Name</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.LoadBalancer.TlsPolicyName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.LoadBalancerTlsCertificate.Arn</property>
@@ -1179,11 +1180,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.LoadBalancerTlsCertificate.LoadBalancerName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.LoadBalancerTlsCertificate.Name</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.LoadBalancerTlsCertificate.Serial</property>
@@ -1211,11 +1212,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.LoadBalancerTlsCertificateSummary.Name</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.LoadBalancerTlsPolicy.Name</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.MonitoredResourceInfo.Arn</property>
@@ -1223,7 +1224,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.MonitoredResourceInfo.Name</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.Operation.Id</property>
@@ -1231,15 +1232,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.Operation.ResourceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.Origin.Name</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.PasswordData.KeyPairName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.PendingMaintenanceAction.Action</property>
@@ -1277,7 +1278,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.RelationalDatabase.Name</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.RelationalDatabase.ParameterApplyStatus</property>
@@ -1309,7 +1310,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.RelationalDatabaseEvent.Resource</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.RelationalDatabaseSnapshot.Arn</property>
@@ -1333,7 +1334,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.RelationalDatabaseSnapshot.Name</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.RelationalDatabaseSnapshot.State</property>
@@ -1341,7 +1342,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.ResourceBudgetEstimate.ResourceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.ResourceReceivingAccess.Name</property>
@@ -1373,11 +1374,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.SetupHistoryResource.Name</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.SetupRequest.InstanceName</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.StaticIp.Arn</property>
@@ -1385,14 +1386,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.StaticIp.AttachedTo</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.StaticIp.IpAddress</property>
-    <pattern>([0-9]{1,3}\.){3}[0-9]{1,3}</pattern>
+    <pattern>^([0-9]{1,3}\.){3}[0-9]{1,3}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.StaticIp.Name</property>
-    <pattern>\w[\w\-]*\w</pattern>
+    <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
 </property-value-rules>

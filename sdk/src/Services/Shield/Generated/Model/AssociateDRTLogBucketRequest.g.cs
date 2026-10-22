@@ -1,0 +1,58 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Shield.Model
+{
+    /// <summary>
+    /// Container for the parameters to the AssociateDRTLogBucket operation. Authorizes the
+    /// Shield Response Team (SRT) to access the specified Amazon S3 bucket containing log
+    /// data such as Application Load Balancer access logs, CloudFront logs, or logs from
+    /// third party sources. You can associate up to 10 Amazon S3 buckets with your subscription.
+    /// <para> To use the services of the SRT and make an <c>AssociateDRTLogBucket</c> request,
+    /// you must be subscribed to the <a href="http://aws.amazon.com/premiumsupport/business-support/">Business
+    /// Support plan</a> or the <a href="http://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
+    /// Support plan</a>. </para>
+    /// </summary>
+    public partial class AssociateDRTLogBucketRequest : AmazonShieldRequest
+    {
+        /// <summary>
+        /// Gets and sets the property LogBucket. 
+        /// <para>
+        /// The Amazon S3 bucket that contains the logs that you want to share.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 3, Max = 63)]
+        public string LogBucket { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LogBucket property is set.
+        /// </summary>
+        internal bool IsSetLogBucket() => this.LogBucket != null;
+    }
+}

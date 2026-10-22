@@ -1,0 +1,94 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.Deadline.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.Deadline.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// CustomerManagedFleetConfiguration Marshaller
+    /// </summary>
+    public partial class CustomerManagedFleetConfigurationMarshaller : IRequestMarshaller<CustomerManagedFleetConfiguration, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(CustomerManagedFleetConfiguration requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetAutoScalingConfiguration())
+            {
+                context.Writer.WritePropertyName("autoScalingConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CustomerManagedAutoScalingConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AutoScalingConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetMode())
+            {
+                context.Writer.WritePropertyName("mode");
+                context.Writer.WriteStringValue(requestObject.Mode);
+            }
+
+            if (requestObject.IsSetStorageProfileId())
+            {
+                context.Writer.WritePropertyName("storageProfileId");
+                context.Writer.WriteStringValue(requestObject.StorageProfileId);
+            }
+
+            if (requestObject.IsSetTagPropagationMode())
+            {
+                context.Writer.WritePropertyName("tagPropagationMode");
+                context.Writer.WriteStringValue(requestObject.TagPropagationMode);
+            }
+
+            if (requestObject.IsSetWorkerCapabilities())
+            {
+                context.Writer.WritePropertyName("workerCapabilities");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CustomerManagedWorkerCapabilitiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.WorkerCapabilities, context);
+
+                context.Writer.WriteEndObject();
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static CustomerManagedFleetConfigurationMarshaller Instance = new CustomerManagedFleetConfigurationMarshaller();
+    }
+}

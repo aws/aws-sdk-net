@@ -1,0 +1,95 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.GuardDuty.Model
+{
+    /// <summary>
+    /// Container for the parameters to the ListCustomDetectionRuleAssociations operation.
+    /// Returns all custom detection rule associations for your account. You can filter by
+    /// rule ID and mode.
+    /// </summary>
+    public partial class ListCustomDetectionRuleAssociationsRequest : AmazonGuardDutyRequest
+    {
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return in a single page. Minimum value of 1, maximum
+        /// value of 100.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 100)]
+        public int? MaxResults { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MaxResults property is set.
+        /// </summary>
+        internal bool IsSetMaxResults() => this.MaxResults.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Mode. 
+        /// <para>
+        /// The rule execution mode to filter associations by.
+        /// </para>
+        /// </summary>
+        public AssociationMode Mode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Mode property is set.
+        /// </summary>
+        internal bool IsSetMode() => this.Mode != null;
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// A pagination token from a previous response. Use this token to retrieve the next page
+        /// of results.
+        /// </para>
+        /// </summary>
+        public string NextToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NextToken property is set.
+        /// </summary>
+        internal bool IsSetNextToken() => this.NextToken != null;
+
+        /// <summary>
+        /// Gets and sets the property RuleId. 
+        /// <para>
+        /// The unique identifier for the custom detection rule to filter associations by.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 100)]
+        public string RuleId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RuleId property is set.
+        /// </summary>
+        internal bool IsSetRuleId() => this.RuleId != null;
+    }
+}
