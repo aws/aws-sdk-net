@@ -1,4 +1,5 @@
 ﻿using System;
+#if NETFRAMEWORK
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -67,3 +68,4 @@ namespace Amazon.DynamoDBv2.DataModel
 
     }
 }
+#endif

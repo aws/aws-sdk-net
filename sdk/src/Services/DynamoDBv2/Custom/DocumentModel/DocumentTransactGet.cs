@@ -415,7 +415,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             if (Items == null || !Items.Any()) return (new Dictionary<DocumentTransactGet, List<Document>>(), new List<ConsumedCapacity>());
 
             var request = ConstructRequest(isAsync: false);
-#if NETSTANDARD
+#if !NETFRAMEWORK
             // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
             var internalClient = Items[0].TransactionPart.TargetTable.DDBClient as AmazonDynamoDBClient;
             if (internalClient == null)
