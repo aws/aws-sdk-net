@@ -15,13 +15,16 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq.Expressions;
 using Amazon.DynamoDBv2.DocumentModel;
+using ThirdParty.RuntimeBackports;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
     public partial class DynamoDBContext : IDynamoDBContext
     {
+#if NETFRAMEWORK
         #region Save/serialize
 
         /// <inheritdoc/>
@@ -528,21 +531,22 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         #endregion
+#endif
 
         #region Table methods
 
         /// <inheritdoc/>
-        public ITable GetTargetTable<T>()
+        public ITable GetTargetTable<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>()
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(GetTargetTable)))
             {
-                return GetTargetTable<T>((GetTargetTableConfig)null);
+                return GetTargetTableInternal<T>(new DynamoDBFlatConfig(null, Config));
             }
         }
 
         /// <inheritdoc/>
         [Obsolete("Use the GetTargetTable overload that takes GetTargetTableConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to GetTargetTable.")]
-        public ITable GetTargetTable<T>(DynamoDBOperationConfig operationConfig = null)
+        public ITable GetTargetTable<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(DynamoDBOperationConfig operationConfig = null)
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(GetTargetTable)))
             {
@@ -551,7 +555,7 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
-        public ITable GetTargetTable<T>(GetTargetTableConfig getTargetTableConfig)
+        public ITable GetTargetTable<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(GetTargetTableConfig getTargetTableConfig)
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(GetTargetTable)))
             {

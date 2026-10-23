@@ -19,7 +19,6 @@ namespace AWSSDK_DotNet.UnitTests
     public class MockingTests
     {
 
-#if ASYNC_AWAIT
         [TestMethod]
         [TestCategory("DynamoDBv2")]
         public async Task TestMockingAsyncSeach()
@@ -51,7 +50,6 @@ namespace AWSSDK_DotNet.UnitTests
                 return Task.FromResult(new List<T>());
             }
         }
-#endif
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]

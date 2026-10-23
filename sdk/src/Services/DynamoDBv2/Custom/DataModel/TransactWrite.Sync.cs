@@ -13,24 +13,31 @@
  * permissions and limitations under the License.
  */
 
+#if NETFRAMEWORK
 using Amazon.Runtime.Telemetry.Tracing;
 
-namespace Amazon.DynamoDBv2.DocumentModel
+namespace Amazon.DynamoDBv2.DataModel
 {
-    public partial interface IDocumentTransactWrite
+    public partial interface ITransactWrite
     {
         /// <summary>
-        /// Executes a server call to condition-check/put/update/delete the items specified in a transaction.
+        /// Executes a server call to write/delete/version-check the items requested in a transaction.
         /// </summary>
         void Execute();
     }
 
-    public partial class DocumentTransactWrite : IDocumentTransactWrite
+    public abstract partial class TransactWrite : ITransactWrite
     {
         /// <inheritdoc/>
-        public void Execute()
+        public abstract void Execute();
+    }
+
+    public partial class TransactWrite<T> : TransactWrite, ITransactWrite<T>
+    {
+        /// <inheritdoc/>
+        public override void Execute()
         {
-            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(DocumentTransactWrite), nameof(Execute));
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(TransactWrite), nameof(Execute));
             using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
                 ExecuteHelper();
@@ -38,24 +45,20 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
     }
 
-    public partial interface IMultiTableDocumentTransactWrite
+    public partial interface IMultiTableTransactWrite
     {
         /// <summary>
-        /// Executes a multi-table transactional condition-check/put/update/delete against all configured DocumentTransactWrite objects.
+        /// Executes a multi-table transaction request against all configured TransactWrite objects.
         /// </summary>
         void Execute();
     }
 
-    /// <summary>
-    /// Class for condition checking, putting, updating and/or deleting
-    /// multiple items in multiple DynamoDB tables in a transaction.
-    /// </summary>
-    public partial class MultiTableDocumentTransactWrite : IMultiTableDocumentTransactWrite
+    public partial class MultiTableTransactWrite : IMultiTableTransactWrite
     {
         /// <inheritdoc/>
         public void Execute()
         {
-            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(MultiTableDocumentTransactWrite), nameof(Execute));
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(MultiTableTransactWrite), nameof(Execute));
             using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
                 ExecuteHelper();
@@ -63,3 +66,4 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
     }
 }
+#endif
