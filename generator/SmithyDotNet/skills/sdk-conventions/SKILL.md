@@ -55,7 +55,8 @@ Every generated file starts with the full Apache 2.0 license block followed by t
 "Do not modify this file. This file is generated from the {model-filename} service model." notice,
 where `{model-filename}` is the Smithy model file name (e.g. `cloudtrail-data-2021-08-11.normal.json`).
 The exact text lives in `Writers/FileHeader.cs`.
-Core's region files (below) instead carry C2J's older ASCII-art header, `FileHeader.WriteCoreLicense`.
+Core's `.generated.cs` files (below) instead carry C2J's headers: the ASCII-art `FileHeader.WriteCoreLicense`, or
+`FileHeader.WriteLicenseWithNotice` for `InternalSDKUtils.generated.cs`.
 
 ## Naming Rules
 
@@ -155,11 +156,11 @@ Differences from C2J:
   is written as it is. The docs build parses the XML and left-justifies each region, so the rendered docs
   don't change.
 
-## Core Region Files
+## Core and Extension Files
 
-Each batch run writes two Core files from `sdk/src/Core/partitions.json` (`PartitionsManifest`), before the
-services and byte-identical to what C2J's templates produce. C2J still writes both too, since the release's
-partitions merge runs C2J alone, so any change to either file has to be made in both generators:
+Each batch run writes Core's repo-level files before the services, byte-identical to what C2J produces (apart from the
+git-ignored nuspec, which C2J rewrites after this generator). C2J still writes them too, and the release runs C2J
+alone for its partitions and endpoints merges, so any change to them has to be made in both generators. From `sdk/src/Core/partitions.json` (`PartitionsManifest`):
 
 - `RegionEndpoint/RegionEndpoint.generated.cs` (`RegionEndpointWriter`): a public `RegionEndpoint` constant per
   region, skipping each partition's `*-global` pseudo-region. Names upper-case the first dash-separated part and
@@ -168,9 +169,18 @@ partitions merge runs C2J alone, so any change to either file has to be made in 
 - `Amazon.Runtime/Internal/Endpoints/StandardLibrary/Partition.generated.cs` (`PartitionWriter`): the endpoint
   rules' partition lookup tables, including the `*-global` regions.
 
-Both are written unformatted and without a final newline. S3's `S3Enumerations.cs`, built from the same file, stays
-with C2J until S3 migrates: C2J deletes any file under an unmigrated service's `Generated/` folder that it didn't
-write in that run, and it runs after the Smithy generator.
+From `_sdk-versions.json` (`CoreVersionWriter`): Core's `Properties/AssemblyInfo.cs`,
+`Amazon.Util/Internal/InternalSDKUtils.generated.cs` and the git-ignored `AWSSDK.Core.nuspec`. `AssemblyInfo.cs`
+shares the services' `FileHeader.WriteAssemblyInfoBody`, and C2J's `CoreAssemblyInfo.tt` matches it. From
+`sdk-default-configuration.json` (`DefaultConfigurationModeWriter`): `Amazon.Runtime/DefaultConfigurationMode.generated.cs`.
+
+Core's files are written unformatted and, as C2J trims them, without a final newline. S3's `S3Enumerations.cs`,
+built from `partitions.json`, stays with C2J until S3 migrates: C2J deletes any file under an unmigrated service's
+`Generated/` folder that it didn't write in that run, and it runs after the Smithy generator.
+
+Each extension under `extensions/src` with a nuspec gets its `ExtensionVersions` entry stamped into the nuspec and
+`Properties/AssemblyInfo.cs` (`ExtensionVersionUpdater`). Those files are hand-written, so they're edited in place;
+C2J's `GeneratorExtensionsDriver` still makes the same edits.
 
 ## Event Streams
 

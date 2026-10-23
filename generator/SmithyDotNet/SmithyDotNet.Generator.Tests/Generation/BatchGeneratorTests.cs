@@ -35,6 +35,7 @@ public class BatchGeneratorTests : IDisposable
         var coreDir = SdkTreeLayout.CoreRoot(_repoRoot);
         Assert.Contains("public static readonly RegionEndpoint USEast1 =", File.ReadAllText(Path.Combine(coreDir, "RegionEndpoint", "RegionEndpoint.generated.cs")));
         Assert.Contains("_defaultPartition = aws;", File.ReadAllText(Path.Combine(coreDir, "Amazon.Runtime", "Internal", "Endpoints", "StandardLibrary", "Partition.generated.cs")));
+        Assert.Contains("""CoreVersionNumber = "4.0.100.3";""", File.ReadAllText(Path.Combine(coreDir, "Amazon.Util", "Internal", "InternalSDKUtils.generated.cs")));
     }
 
     [Fact]
@@ -231,6 +232,7 @@ public class BatchGeneratorTests : IDisposable
         File.Copy("TestData/sdk-default-configuration.json", Path.Combine(coreDir, "sdk-default-configuration.json"));
         File.Copy("TestData/partitions.json", Path.Combine(coreDir, "partitions.json"));
         File.Copy("TestData/Directory.Build.props", Path.Combine(SdkTreeLayout.SdkRoot(_repoRoot), "Directory.Build.props"));
+        Directory.CreateDirectory(SdkTreeLayout.ExtensionsRoot(_repoRoot));
     }
 
     // Relocates the seeded CloudTrailData model into TestServiceModels and marks it test-service.

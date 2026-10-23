@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Aligned the layout of Core's generated `AssemblyInfo.cs` with the service assemblies. No functional changes."
+    ],
+    "type": "patch",
+    "updateMinimum": false
+  }
+}

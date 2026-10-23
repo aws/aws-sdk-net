@@ -1,3 +1,5 @@
+using SmithyDotNet.Generator.Generation.ProjectFiles;
+
 namespace SmithyDotNet.Generator.Writers;
 
 /// <summary>
@@ -7,6 +9,9 @@ namespace SmithyDotNet.Generator.Writers;
 /// </summary>
 public static class FileHeader
 {
+    // The public half of sdk/awssdk.dll.snk, which signs every SDK assembly.
+    private const string SdkPublicKey = "0024000004800000940000000602000000240000525341310004000001000100db5f59f098d27276c7833875a6263a3cc74ab17ba9a9df0b52aedbe7252745db7274d5271fd79c1f08f668ecfa8eaab5626fa76adc811d3c8fc55859b0d09d3bc0a84eecd0ba891f2b8a2fc55141cdcc37c2053d53491e650a479967c3622762977900eddbf1252ed08a2413f00a28f3a0752a81203f03ccb7f684db373518b4";
+
     /// <summary>
     /// The default warning codes suppressed in model-level generated files.
     /// </summary>
@@ -285,8 +290,8 @@ public static class FileHeader
     ];
 
     /// <summary>
-    /// Writes the shared assembly attribute body that appears in both the service and
-    /// code-analysis <c>AssemblyInfo.cs</c> files: the title, configuration, product, company,
+    /// Writes the shared assembly attribute body that appears in the service, code-analysis and Core
+    /// <c>AssemblyInfo.cs</c> files: the title, configuration, product, company,
     /// copyright, trademark, culture, ComVisible, and version attributes. The caller supplies
     /// an <paramref name="assemblyDescription"/> action to emit the description attribute(s),
     /// since the service file uses a platform-conditional <c>#if</c> chain while the
@@ -337,11 +342,51 @@ public static class FileHeader
         writer.WriteLine($"""[assembly: AssemblyFileVersion("{fileVersion}")]""");
     }
 
+    /// <summary>Writes the <c>#if</c> chain giving each target platform its <paramref name="description"/>.</summary>
+    public static void WritePlatformDescriptions(CodeWriter writer, Func<string, string> description)
+    {
+        var platforms = TargetPlatforms.Platforms;
+        for (var i = 0; i < platforms.Count; i++)
+        {
+            var platform = platforms[i];
+            var directive = i == 0 ? "#if" : "#elif";
+            writer.WriteLine($"{directive} {platform.Symbol}");
+            writer.WriteLine($"""[assembly: AssemblyDescription("{description(platform.Label)}")]""");
+        }
+
+        writer.WriteLine("#else");
+        writer.WriteLine("#error Unknown platform constant - unable to set correct AssemblyDescription");
+        writer.WriteLine("#endif");
+    }
+
+    /// <summary>
+    /// Writes an <c>[InternalsVisibleTo]</c> per assembly, signed with the SDK's key unless the entry names its own.
+    /// </summary>
+    public static void WriteInternalsVisibleTo(CodeWriter writer, IReadOnlyList<string> assemblies)
+    {
+        if (assemblies.Count == 0)
+        {
+            return;
+        }
+
+        writer.WriteLine();
+        foreach (var assembly in assemblies)
+        {
+            var target = assembly.Contains("PublicKey=") ? assembly : $"{assembly}, PublicKey={SdkPublicKey}";
+            writer.WriteLine($"""[assembly: InternalsVisibleTo("{target}")]""");
+        }
+        writer.WriteLine();
+    }
+
     /// <summary>
     /// Writes the Apache 2.0 license block and the "do not modify" generation notice,
     /// referencing <paramref name="modelFileName"/>.
     /// </summary>
-    public static void WriteLicense(CodeWriter writer, string modelFileName)
+    public static void WriteLicense(CodeWriter writer, string modelFileName) =>
+        WriteLicenseWithNotice(writer, $"This file is generated from the {modelFileName} service model.");
+
+    /// <summary>Writes the Apache 2.0 license block and a "do not modify" notice ending in <paramref name="notice"/>.</summary>
+    public static void WriteLicenseWithNotice(CodeWriter writer, string notice)
     {
         writer.WriteLine("/*");
         writer.WriteLine(" * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.");
@@ -359,7 +404,7 @@ public static class FileHeader
         writer.WriteLine(" */");
         writer.WriteLine();
         writer.WriteLine("/*");
-        writer.WriteLine($" * Do not modify this file. This file is generated from the {modelFileName} service model.");
+        writer.WriteLine($" * Do not modify this file. {notice}");
         writer.WriteLine(" */");
     }
 
