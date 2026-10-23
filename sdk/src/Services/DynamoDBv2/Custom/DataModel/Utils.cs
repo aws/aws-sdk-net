@@ -329,7 +329,7 @@ namespace Amazon.DynamoDBv2.DataModel
         private static object[] GetAttributeObjects(MemberInfo targetMemberInfo)
         {
             if (targetMemberInfo == null) throw new ArgumentNullException("targetMemberInfo");
-#if NETSTANDARD
+#if !NETFRAMEWORK
             object[] attributes = CustomAttributeExtensions.GetCustomAttributes(targetMemberInfo, typeof(DynamoDBAttribute), true).ToArray<object>();
 #else
             object[] attributes = Attribute.GetCustomAttributes(targetMemberInfo, typeof(DynamoDBAttribute), true).ToArray<object>();

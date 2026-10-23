@@ -13,25 +13,28 @@
  * permissions and limitations under the License.
  */
 
+#if NETFRAMEWORK
 using Amazon.Runtime.Telemetry.Tracing;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
-    public partial interface IDocumentBatchGet
+    public partial interface IDocumentBatchWrite
     {
         /// <summary>
-        /// Executes a server call to batch-get the documents requested.
-        /// Populates Results with the retrieved items.
+        /// Executes a server call to batch-put/delete the item specified.
+        /// 
+        /// If more than 25 put/delete operations are specified, calls of up to 25
+        /// put/delete items will be made until all items are processed.
         /// </summary>
         void Execute();
     }
 
-    public partial class DocumentBatchGet : IDocumentBatchGet
+    public partial class DocumentBatchWrite : IDocumentBatchWrite
     {
         /// <inheritdoc/>
         public void Execute()
         {
-            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(DocumentBatchGet), nameof(Execute));
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(DocumentBatchWrite), nameof(Execute));
             using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
                 ExecuteHelper();
@@ -39,21 +42,23 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
     }
 
-    public partial interface IMultiTableDocumentBatchGet
+    public partial interface IMultiTableDocumentBatchWrite
     {
         /// <summary>
-        /// Executes a multi-table batch request against all configured batches.
-        /// Results are stored in the respective DocumentBatchGet objects.
+        /// Executes a multi-table batch put/delete against all configured batches.
+        ///
+        /// If more than 25 put/delete operations are specified, calls of up to 25
+        /// put/delete items will be made until all items are processed.
         /// </summary>
         void Execute();
     }
 
-    public partial class MultiTableDocumentBatchGet : IMultiTableDocumentBatchGet
+    public partial class MultiTableDocumentBatchWrite : IMultiTableDocumentBatchWrite
     {
         /// <inheritdoc/>
         public void Execute()
         {
-            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(MultiTableDocumentBatchGet), nameof(Execute));
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(MultiTableDocumentBatchWrite), nameof(Execute));
             using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
                 ExecuteHelper();
@@ -61,3 +66,4 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
     }
 }
+#endif

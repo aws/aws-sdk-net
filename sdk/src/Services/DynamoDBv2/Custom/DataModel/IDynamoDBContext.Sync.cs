@@ -15,8 +15,10 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq.Expressions;
 using Amazon.DynamoDBv2.DocumentModel;
+using ThirdParty.RuntimeBackports;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -26,6 +28,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// </summary>
     partial interface IDynamoDBContext
     {
+#if NETFRAMEWORK
         #region Save/serialize
 
         /// <summary>
@@ -647,6 +650,7 @@ namespace Amazon.DynamoDBv2.DataModel
         IEnumerable<SearchVectorsItem<T>> FromSearchVectors<T>(SearchVectorsOperationRequest searchVectorsOperationRequest, FromSearchVectorsConfig fromSearchVectorsConfig);
 
         #endregion
+#endif
 
         #region Table methods
 
@@ -655,7 +659,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <typeparam name="T">Type to retrieve table for</typeparam>
         /// <returns>Table object</returns>
-        ITable GetTargetTable<T>();
+        ITable GetTargetTable<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>();
 
         /// <summary>
         /// Retrieves the target table for the specified type
@@ -664,7 +668,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         /// <returns>Table object</returns>
         [Obsolete("Use the GetTargetTable overload that takes GetTargetTableConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to GetTargetTable.")]
-        ITable GetTargetTable<T>(DynamoDBOperationConfig operationConfig = null);
+        ITable GetTargetTable<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(DynamoDBOperationConfig operationConfig = null);
 
         /// <summary>
         /// Retrieves the target table for the specified type
@@ -672,7 +676,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type to retrieve table for</typeparam>
         /// <param name="getTargetTableConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <returns>Table object</returns>
-        ITable GetTargetTable<T>(GetTargetTableConfig getTargetTableConfig);
+        ITable GetTargetTable<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(GetTargetTableConfig getTargetTableConfig);
 
         #endregion
     }

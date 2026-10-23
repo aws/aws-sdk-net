@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+#if NETFRAMEWORK
 using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime.Telemetry.Tracing;
 using System.Collections.Generic;
@@ -698,3 +699,4 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
     }
 }
+#endif
