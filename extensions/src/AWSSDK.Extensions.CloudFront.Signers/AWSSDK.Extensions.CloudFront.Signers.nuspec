@@ -22,12 +22,15 @@
         <dependency id="AWSSDK.CloudFront" version="4.0.102.2" />
         <dependency id="BouncyCastle.Cryptography" version="2.6.2" />
       </group>
-      <group targetFramework="netcoreapp3.1">
+      <group targetFramework="net8.0">
         <dependency id="AWSSDK.Core" version="4.0.102.10" />
         <dependency id="AWSSDK.CloudFront" version="4.0.102.2" />
-        <dependency id="BouncyCastle.Cryptography" version="2.6.2" />
       </group>
-      <group targetFramework="net8.0">
+      <group targetFramework="net10.0">
+        <dependency id="AWSSDK.Core" version="4.0.102.10" />
+        <dependency id="AWSSDK.CloudFront" version="4.0.102.2" />
+      </group>
+      <group targetFramework="net11.0">
         <dependency id="AWSSDK.Core" version="4.0.102.10" />
         <dependency id="AWSSDK.CloudFront" version="4.0.102.2" />
       </group>
@@ -41,11 +44,14 @@
     <file src=".\bin\Release\netstandard2.0\AWSSDK.Extensions.CloudFront.Signers.dll" target="lib\netstandard2.0" />
     <file src=".\bin\Release\netstandard2.0\AWSSDK.Extensions.CloudFront.Signers.pdb" target="lib\netstandard2.0" />
     <file src=".\bin\Release\netstandard2.0\AWSSDK.Extensions.CloudFront.Signers.xml" target="lib\netstandard2.0" />
-    <file src=".\bin\Release\netcoreapp3.1\AWSSDK.Extensions.CloudFront.Signers.dll" target="lib\netcoreapp3.1" />
-    <file src=".\bin\Release\netcoreapp3.1\AWSSDK.Extensions.CloudFront.Signers.pdb" target="lib\netcoreapp3.1" />
-    <file src=".\bin\Release\netcoreapp3.1\AWSSDK.Extensions.CloudFront.Signers.xml" target="lib\netcoreapp3.1" />
     <file src=".\bin\Release\net8.0\AWSSDK.Extensions.CloudFront.Signers.dll" target="lib\net8.0" />
     <file src=".\bin\Release\net8.0\AWSSDK.Extensions.CloudFront.Signers.pdb" target="lib\net8.0" />
     <file src=".\bin\Release\net8.0\AWSSDK.Extensions.CloudFront.Signers.xml" target="lib\net8.0" />
+    <file src=".\bin\Release\net10.0\AWSSDK.Extensions.CloudFront.Signers.dll" target="lib\net10.0" />
+    <file src=".\bin\Release\net10.0\AWSSDK.Extensions.CloudFront.Signers.pdb" target="lib\net10.0" />
+    <file src=".\bin\Release\net10.0\AWSSDK.Extensions.CloudFront.Signers.xml" target="lib\net10.0" />
+    <file src=".\bin\Release\net11.0\AWSSDK.Extensions.CloudFront.Signers.dll" target="lib\net11.0" />
+    <file src=".\bin\Release\net11.0\AWSSDK.Extensions.CloudFront.Signers.pdb" target="lib\net11.0" />
+    <file src=".\bin\Release\net11.0\AWSSDK.Extensions.CloudFront.Signers.xml" target="lib\net11.0" />
   </files>
 </package>

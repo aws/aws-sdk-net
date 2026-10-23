@@ -3,6 +3,7 @@ using Amazon.DynamoDBv2.DocumentModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -28,6 +29,7 @@ namespace AWSSDK_DotNet.UnitTests
         [DynamicData(nameof(V1PrimitiveData))]
         public void V1_ConvertToEntry_Primitives(object value, DynamoDBEntry expectedPrimitive)
         {
+            value = NormalizePrimitiveValue(value);
             var actualPrimitive = DynamoDBEntryConversion.V1.ConvertToEntry(value.GetType(), value);
             Assert.AreEqual(expectedPrimitive, actualPrimitive);
         }
@@ -36,6 +38,7 @@ namespace AWSSDK_DotNet.UnitTests
         [DynamicData(nameof(V1PrimitiveData))]
         public void V1_ConvertFromEntry_Primitives(object expectedValue, DynamoDBEntry primitive)
         {
+            expectedValue = NormalizePrimitiveValue(expectedValue);
             var actualValue = DynamoDBEntryConversion.V1.ConvertFromEntry(expectedValue.GetType(), primitive);
             Assert.AreEqual(expectedValue, actualValue);
         }
@@ -62,6 +65,7 @@ namespace AWSSDK_DotNet.UnitTests
         [DynamicData(nameof(V2PrimitiveData))]
         public void V2_ConvertToEntry_Primitives(object value, DynamoDBEntry expectedPrimitive)
         {
+            value = NormalizePrimitiveValue(value);
             var actualPrimitive = DynamoDBEntryConversion.V2.ConvertToEntry(value.GetType(), value);
             Assert.AreEqual(expectedPrimitive, actualPrimitive);
         }
@@ -70,6 +74,7 @@ namespace AWSSDK_DotNet.UnitTests
         [DynamicData(nameof(V2PrimitiveData))]
         public void V2_ConvertFromEntry_Primitives(object expectedValue, DynamoDBEntry primitive)
         {
+            expectedValue = NormalizePrimitiveValue(expectedValue);
             var actualValue = DynamoDBEntryConversion.V2.ConvertFromEntry(expectedValue.GetType(), primitive);
             Assert.AreEqual(expectedValue, actualValue);
         }
@@ -387,6 +392,21 @@ namespace AWSSDK_DotNet.UnitTests
         private static DynamoDBEntryConversion ResolveConversion(ConversionSchema schema) =>
             schema == ConversionSchema.V1 ? DynamoDBEntryConversion.V1 : DynamoDBEntryConversion.V2;
 
+        // Sentinel prefix used to carry a decimal through DynamicData as a string. The .NET 11 test
+        // host serializes DynamicData arguments and reconstructs a decimal via double, which changes
+        // 3.45 into 3.4500000000000001776356839400 before the test runs. Passing the decimal as a
+        // string and parsing it here rebuilds the exact value without the precision change.
+        private const string DecimalPrefix = "decimal:";
+
+        private static object NormalizePrimitiveValue(object value)
+        {
+            if (value is string s && s.StartsWith(DecimalPrefix, StringComparison.Ordinal))
+            {
+                return decimal.Parse(s.Substring(DecimalPrefix.Length), CultureInfo.InvariantCulture);
+            }
+            return value;
+        }
+
         private static IEnumerable<object[]> CommonPrimitiveData { get; } = new object[][]
         {
             new object[] { (short)-1, new Primitive("-1", true) },
@@ -399,7 +419,11 @@ namespace AWSSDK_DotNet.UnitTests
             new object[] { (sbyte)5, new Primitive("5", true) },
             new object[] { (float)1.23, new Primitive("1.23", true) },
             new object[] { (double)2.34, new Primitive("2.34", true) },
-            new object[] { (decimal)3.45, new Primitive("3.45", true) },
+            // Pass the decimal as a string and rebuild it in the test body (see NormalizePrimitiveValue).
+            // A decimal placed directly in the DynamicData row is round-tripped through a double by the
+            // .NET 11 test host's argument serializer, which turns 3.45 into 3.4500000000000001776356839400
+            // and breaks the exact string comparison. float/double are unaffected.
+            new object[] { DecimalPrefix + "3.45", new Primitive("3.45", true) },
             new object[] { (char)'c', new Primitive("c", false) },
             new object[] { "stringValue", new Primitive("stringValue", false) },
             new object[] { new Guid("6a34ff83-9d2b-4893-950f-1da35414f9b0"), new Primitive("6a34ff83-9d2b-4893-950f-1da35414f9b0", false) },

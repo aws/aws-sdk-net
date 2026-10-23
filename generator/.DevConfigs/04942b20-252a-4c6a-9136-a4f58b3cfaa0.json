@@ -1,11 +1,30 @@
 {
   "core": {
-    "updateMinimum": false,
+    "updateMinimum": true,
     "type": "patch",
     "changeLogMessages": [
       "Breaking Change: Removed support .NET Core 3.1",
       "Added build targets for .NET 10 and .NET 11",
       "Replace checksum provider from the native Amazon Common Runtime to System.IO.Hashing"
+    ],
+    "backwardIncompatibilitiesToIgnore": [
+      "Amazon.Runtime.Internal.Util.CrtCrc32/TypeRemoved",
+      "Amazon.Runtime.Internal.Util.CrtCrc32c/TypeRemoved",
+      "Amazon.Runtime.Internal.Util.CrtCrc64NVME/TypeRemoved",
+      "ThirdParty.Ionic.Zlib.CrcCalculatorStream/TypeRemoved",
+      "Amazon.Runtime.Internal.Transform.UnmarshallerContext/MethodRemoved",
+      "Amazon.Runtime.Internal.Util.JsonConstants/MethodRemoved",
+      "Amazon.Runtime.Internal.Compression.GZipCompression/MethodRemoved",
+      "Amazon.Runtime.Internal.Compression.GZipCompression/MethodOverloadAdded",
+      "Amazon.Runtime.Internal.Compression.ICompressionAlgorithm/MethodRemoved",
+      "Amazon.Runtime.Internal.PooledContentStream/MethodRemoved",
+      "Amazon.Runtime.HttpWebRequestMessage/MethodRemoved",
+      "Amazon.Runtime.HttpWebRequestMessage/MethodOverloadAdded",
+      "Amazon.Runtime.IHttpRequest/MethodRemoved",
+      "ThirdParty.RuntimeBackports.ArrayPoolExtensions/MethodRemoved",
+      "ThirdParty.RuntimeBackports.ArrayPoolBufferWriter/MethodRemoved",
+      "ThirdParty.RuntimeBackports.ArrayPoolBufferWriter/MethodReturnTypeChanged",
+      "ThirdParty.RuntimeBackports.ArrayPoolBufferWriter/TypeInterfaceRemoved"
     ]
   },
   "overrideVersion": "4.1.0.0"
