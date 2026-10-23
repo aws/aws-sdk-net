@@ -14,29 +14,28 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
+
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Base class for BatchGetItem paginators.
+    /// Paginator for the BatchGetItem operation
     /// </summary>
     internal sealed partial class BatchGetItemPaginator : IPaginator<BatchGetItemResponse>, IBatchGetItemPaginator
     {
         private readonly IAmazonDynamoDB _client;
         private readonly BatchGetItemRequest _request;
         private int _isPaginatorInUse = 0;
-        
+
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
@@ -47,7 +46,7 @@ namespace Amazon.DynamoDBv2.Model
             this._client = client;
             this._request = request;
         }
-#if BCL
+#if NETFRAMEWORK
         IEnumerable<BatchGetItemResponse> IPaginator<BatchGetItemResponse>.Paginate()
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
@@ -55,16 +54,16 @@ namespace Amazon.DynamoDBv2.Model
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
-            var requestItems = _request.RequestItems;
+            var nextToken = _request.RequestItems;
             BatchGetItemResponse response;
             do
             {
-                _request.RequestItems = requestItems;
+                _request.RequestItems = nextToken;
                 response = _client.BatchGetItem(_request);
-                requestItems = response.UnprocessedKeys;
+                nextToken = response.UnprocessedKeys;
                 yield return response;
             }
-            while (requestItems.Count > 0);
+            while (nextToken?.Count > 0);
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
@@ -75,17 +74,17 @@ namespace Amazon.DynamoDBv2.Model
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
-            var requestItems = _request.RequestItems;
+            var nextToken = _request.RequestItems;
             BatchGetItemResponse response;
             do
             {
-                _request.RequestItems = requestItems;
+                _request.RequestItems = nextToken;
                 response = await _client.BatchGetItemAsync(_request, cancellationToken).ConfigureAwait(false);
-                requestItems = response.UnprocessedKeys;
+                nextToken = response.UnprocessedKeys;
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;
             }
-            while (requestItems?.Count > 0);
+            while (nextToken?.Count > 0);
         }
 #endif
     }
