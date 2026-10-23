@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the acm-2015-12-08.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -22,55 +22,39 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 using System.Net;
-
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618,CS1570
+
 namespace Amazon.CertificateManager.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteCertificate operation.
-    /// Deletes a certificate and its associated private key. If this action succeeds, the
-    /// certificate is not available for use by Amazon Web Services services integrated with
-    /// ACM. Deleting a certificate is eventually consistent. The may be a short delay before
-    /// the certificate no longer appears in the list that can be displayed by calling the
-    /// <a>ListCertificates</a> action or be retrieved by calling the <a>GetCertificate</a>
-    /// action.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// You cannot delete an ACM certificate that is being used by another Amazon Web Services
-    /// service. To delete a certificate that is in use, you must first remove the certificate
-    /// association using the console or the CLI for the associated service.
-    /// </para>
-    ///  
-    /// <para>
-    /// Deleting a certificate issued by a private certificate authority (CA) has no effect
-    /// on the CA. You will continue to be charged for the CA until it is deleted. For more
-    /// information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PCADeleteCA.html">
+    /// Container for the parameters to the DeleteCertificate operation. Deletes a certificate
+    /// and its associated private key. If this action succeeds, the certificate is not available
+    /// for use by Amazon Web Services services integrated with ACM. Deleting a certificate
+    /// is eventually consistent. The may be a short delay before the certificate no longer
+    /// appears in the list that can be displayed by calling the <a>ListCertificates</a> action
+    /// or be retrieved by calling the <a>GetCertificate</a> action. <note> <para> You cannot
+    /// delete an ACM certificate that is being used by another Amazon Web Services service.
+    /// To delete a certificate that is in use, you must first remove the certificate association
+    /// using the console or the CLI for the associated service. </para> <para> Deleting a
+    /// certificate issued by a private certificate authority (CA) has no effect on the CA.
+    /// You will continue to be charged for the CA until it is deleted. For more information,
+    /// see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PCADeleteCA.html">
     /// Deleting Your Private CA</a> in the <i>Private Certificate Authority User Guide</i>.
-    /// </para>
-    ///  
-    /// <para>
-    /// You cannot delete a certificate with a <c>CertificateKeyPairOrigin</c> of <c>ACME</c>.
-    /// ACM automatically deletes these certificates 1 year after they expire.
-    /// </para>
-    ///  </note> 
-    /// <para>
-    /// Deleting a certificate issued by a private certificate authority (CA) has no effect
-    /// on the CA. You will continue to be charged for the CA until it is deleted. For more
-    /// information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PCADeleteCA.html">Deleting
+    /// </para> <para> You cannot delete a certificate with a <c>CertificateKeyPairOrigin</c>
+    /// of <c>ACME</c>. ACM automatically deletes these certificates 1 year after they expire.
+    /// </para> </note> <para> Deleting a certificate issued by a private certificate authority
+    /// (CA) has no effect on the CA. You will continue to be charged for the CA until it
+    /// is deleted. For more information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PCADeleteCA.html">Deleting
     /// your private CA</a> in the <i>Amazon Web Services Private Certificate Authority User
-    /// Guide</i>.
-    /// </para>
+    /// Guide</i>. </para>
     /// </summary>
     public partial class DeleteCertificateRequest : AmazonCertificateManagerRequest
     {
-        private string _certificateArn;
-
         /// <summary>
-        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// Empty constructor used to set properties independently even when a simple constructor is available
         /// </summary>
         public DeleteCertificateRequest() { }
 
@@ -80,7 +64,7 @@ namespace Amazon.CertificateManager.Model
         /// <param name="certificateArn">String that contains the ARN of the ACM certificate to be deleted. This must be of the form:  <c>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</c>  For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</param>
         public DeleteCertificateRequest(string certificateArn)
         {
-            _certificateArn = certificateArn;
+            this.CertificateArn = certificateArn;
         }
 
         /// <summary>
@@ -100,18 +84,12 @@ namespace Amazon.CertificateManager.Model
         /// Resource Names (ARNs)</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=20, Max=2048)]
-        public string CertificateArn
-        {
-            get { return this._certificateArn; }
-            set { this._certificateArn = value; }
-        }
+        [AWSProperty(Required = true, Min = 20, Max = 2048)]
+        public string CertificateArn { get; set; }
 
-        // Check to see if CertificateArn property is set
-        internal bool IsSetCertificateArn()
-        {
-            return this._certificateArn != null;
-        }
-
+        /// <summary>
+        /// Checks to see if the CertificateArn property is set.
+        /// </summary>
+        internal bool IsSetCertificateArn() => this.CertificateArn != null;
     }
 }

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the lambda-2015-03-31.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -22,11 +22,11 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 using System.Net;
-
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618,CS1570
+
 namespace Amazon.Lambda.Model
 {
     /// <summary>
@@ -36,7 +36,7 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class Environment
     {
-        private Dictionary<string, string> _variables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _Variables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Variables. 
@@ -45,17 +45,14 @@ namespace Amazon.Lambda.Model
         /// Lambda environment variables</a>.
         /// </para>
         /// <para />
-        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
-        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
-        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Sensitive=true)]
-        public Dictionary<string, string> Variables
-        {
-            get { return this._variables; }
-            set { this._variables = value; }
-        }
+        [AWSProperty(Sensitive = true)]
+        public Dictionary<string, string> Variables { get => this._Variables; set => this._Variables = value; }
 
         /// <summary>
         /// This property is set to true if the property <seealso cref="Variables"/>
@@ -72,21 +69,13 @@ namespace Amazon.Lambda.Model
         /// </returns>
         public bool IsVariablesSet
         {
-            get
-            {
-                return Amazon.Util.Internal.InternalSDKUtils.GetIsSet(this._variables);
-            }
-            set
-            {
-                Amazon.Util.Internal.InternalSDKUtils.SetIsSet(value, ref this._variables);
-            }
+            get => Amazon.Util.Internal.InternalSDKUtils.GetIsSet(this._Variables);
+            set => Amazon.Util.Internal.InternalSDKUtils.SetIsSet(value, ref this._Variables);
         }
 
-        // Check to see if Variables property is set
-        internal bool IsSetVariables()
-        {
-            return this.IsVariablesSet; 
-        }
-
+        /// <summary>
+        /// Checks to see if the Variables property is set.
+        /// </summary>
+        internal bool IsSetVariables() => this.IsVariablesSet;
     }
 }

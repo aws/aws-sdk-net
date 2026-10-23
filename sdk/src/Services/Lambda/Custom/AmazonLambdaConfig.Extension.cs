@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+#if NETFRAMEWORK
 using Amazon.Runtime;
 
 namespace Amazon.Lambda
@@ -31,3 +32,4 @@ namespace Amazon.Lambda
         }
     }
 }
+#endif
