@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <TargetFrameworks>$(SdkTestXunitv2NetTargets)</TargetFrameworks>
-    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 	  
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
