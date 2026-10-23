@@ -14,61 +14,50 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
 using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
-using System.Text;
 using System.Xml.Serialization;
-
-using Amazon.DynamoDBv2.Model;
+using System.Text;
+using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+
+using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
+
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Endpoint discovery parameters for GetItem operation
-    /// </summary>  
-    public class GetItemEndpointDiscoveryMarshaller : IMarshaller<EndpointDiscoveryDataBase, GetItemRequest> , IMarshaller<EndpointDiscoveryDataBase,AmazonWebServiceRequest>
+    /// </summary>
+    public partial class GetItemEndpointDiscoveryMarshaller : IMarshaller<EndpointDiscoveryDataBase, GetItemRequest>, IMarshaller<EndpointDiscoveryDataBase, AmazonWebServiceRequest>
     {
         /// <summary>
-        /// Marshaller the endpoint discovery object.
-        /// </summary>  
-        /// <param name="input"></param>
-        /// <returns></returns>
+        /// Marshall the request object to its endpoint discovery data.
+        /// </summary>
         public EndpointDiscoveryDataBase Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((GetItemRequest)input);
         }
 
         /// <summary>
-        /// Marshaller the request object to the HTTP request.
-        /// </summary>  
-        /// <param name="publicRequest"></param>
-        /// <returns></returns>
+        /// Marshall the request object to its endpoint discovery data.
+        /// </summary>
         public EndpointDiscoveryDataBase Marshall(GetItemRequest publicRequest)
         {
-            var endpointDiscoveryData = new EndpointDiscoveryData(false);
-
-            return endpointDiscoveryData;
+            return new EndpointDiscoveryData(false);
         }
-        
+
         private static GetItemEndpointDiscoveryMarshaller _instance = new GetItemEndpointDiscoveryMarshaller();
 
         /// <summary>
         /// Gets the singleton.
-        /// </summary>  
-        public static GetItemEndpointDiscoveryMarshaller Instance
-        {
-            get
-            {
-                return _instance;
-            }
-        }
-      
+        /// </summary>
+        public static GetItemEndpointDiscoveryMarshaller Instance => _instance;
     }
 }
