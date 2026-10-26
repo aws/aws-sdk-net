@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Reduced per-request allocations and CPU in the request pipeline."
+    ],
+    "type": "patch",
+    "updateMinimum": false
+  }
+}
