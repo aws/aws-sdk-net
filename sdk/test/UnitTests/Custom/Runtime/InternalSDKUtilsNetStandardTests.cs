@@ -197,12 +197,14 @@ namespace AWSSDK.UnitTests
                 Assert.IsFalse(headers.ContainsKey(HeaderKeys.XAmznTraceIdHeader));
 
                 Environment.SetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_FUNCTION_NAME, "LambdaFunction");
+                Marshaller.ResetLambdaEnvironmentCache();
 
                 headers = new Dictionary<string, string>();
                 Marshaller.SetRecursionDetectionHeader(headers);
                 Assert.AreEqual("environmentTraceId", headers[HeaderKeys.XAmznTraceIdHeader]);
 
                 Environment.SetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_MAX_CONCURRENCY, "1");
+                Marshaller.ResetLambdaEnvironmentCache();
                 headers = new Dictionary<string, string>();
                 Marshaller.SetRecursionDetectionHeader(headers);
                 Assert.AreEqual("contextTraceId", headers[HeaderKeys.XAmznTraceIdHeader]);
@@ -222,6 +224,7 @@ namespace AWSSDK.UnitTests
                 Environment.SetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_FUNCTION_NAME, null);
                 Environment.SetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_MAX_CONCURRENCY, null);
                 SDKTaskContext.Default.Set(EnvironmentVariables._X_AMZN_TRACE_ID, null);
+                Marshaller.ResetLambdaEnvironmentCache();
             }
         }
     }

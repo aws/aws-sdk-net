@@ -134,28 +134,65 @@ namespace Amazon.Runtime.Internal
         /// <param name="headers">Current request headers before marshalling.</param>
         internal static void SetRecursionDetectionHeader(IDictionary<string, string> headers)
         {
-            if (!headers.ContainsKey(HeaderKeys.XAmznTraceIdHeader))
+            if (headers.ContainsKey(HeaderKeys.XAmznTraceIdHeader))
             {
-                var lambdaFunctionName = Environment.GetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_FUNCTION_NAME);
-                if (!string.IsNullOrEmpty(lambdaFunctionName))
-                {
-                    string amznTraceId;
-                    if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_MAX_CONCURRENCY)))
-                    {
-                        amznTraceId = SDKTaskContext.Default.Get(EnvironmentVariables._X_AMZN_TRACE_ID)?.ToString() ??
-                                            Environment.GetEnvironmentVariable(EnvironmentVariables._X_AMZN_TRACE_ID);
-                    }
-                    else
-                    {
-                        amznTraceId = Environment.GetEnvironmentVariable(EnvironmentVariables._X_AMZN_TRACE_ID);
-                    }
-
-                    if (!string.IsNullOrEmpty(amznTraceId))
-                    {
-                        headers[HeaderKeys.XAmznTraceIdHeader] = AWSSDKUtils.EncodeTraceIdHeaderValue(amznTraceId);
-                    }
-                }
+                return;
             }
+
+            EnsureLambdaEnvironmentCached();
+            if (!_isLambdaEnvironment)
+            {
+                return;
+            }
+
+            // The trace id changes per Lambda invocation, so it is always read for each request.
+            string amznTraceId;
+            if (_useTaskContextTraceId)
+            {
+                amznTraceId = SDKTaskContext.Default.Get(EnvironmentVariables._X_AMZN_TRACE_ID)?.ToString() ??
+                                    Environment.GetEnvironmentVariable(EnvironmentVariables._X_AMZN_TRACE_ID);
+            }
+            else
+            {
+                amznTraceId = Environment.GetEnvironmentVariable(EnvironmentVariables._X_AMZN_TRACE_ID);
+            }
+
+            if (!string.IsNullOrEmpty(amznTraceId))
+            {
+                headers[HeaderKeys.XAmznTraceIdHeader] = AWSSDKUtils.EncodeTraceIdHeaderValue(amznTraceId);
+            }
+        }
+
+        // AWS_LAMBDA_FUNCTION_NAME and AWS_LAMBDA_MAX_CONCURRENCY are set by the Lambda runtime
+        // for the lifetime of the process, so they are read once instead of on every request
+        // (each environment lookup is a native call that allocates the returned string).
+        private static volatile bool _lambdaEnvironmentCached;
+        private static bool _isLambdaEnvironment;
+        private static bool _useTaskContextTraceId;
+
+        private static void EnsureLambdaEnvironmentCached()
+        {
+            if (_lambdaEnvironmentCached)
+            {
+                return;
+            }
+
+            var isLambdaEnvironment = !string.IsNullOrEmpty(Environment.GetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_FUNCTION_NAME));
+            var useTaskContextTraceId = isLambdaEnvironment &&
+                !string.IsNullOrEmpty(Environment.GetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_MAX_CONCURRENCY));
+
+            _isLambdaEnvironment = isLambdaEnvironment;
+            _useTaskContextTraceId = useTaskContextTraceId;
+            // The volatile write publishes the two fields above to other threads.
+            _lambdaEnvironmentCached = true;
+        }
+
+        /// <summary>
+        /// Clears the cached Lambda environment lookup so it is re-read on the next request. Intended for tests.
+        /// </summary>
+        internal static void ResetLambdaEnvironmentCache()
+        {
+            _lambdaEnvironmentCached = false;
         }
 
         private static void UpdateUserAgentDetails(IRequestContext requestContext)
