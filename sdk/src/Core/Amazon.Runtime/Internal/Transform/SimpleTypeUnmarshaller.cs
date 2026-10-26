@@ -19,6 +19,7 @@ using System.Globalization;
 using System.IO;
 using System.Numerics;
 using System.Text.Json;
+using Amazon.Extensions.Numerics;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 
@@ -857,6 +858,83 @@ namespace Amazon.Runtime.Internal.Transform
                 return null;
             }
             return BigInteger.Parse(text, NumberStyles.Integer, CultureInfo.InvariantCulture);
+        }
+    }
+
+    /// <summary>
+    /// Unmarshaller for BigDecimal fields. The value is parsed from the raw token text so no
+    /// digits or scale are lost, which would happen if it were read as a double or decimal.
+    /// </summary>
+    public class BigDecimalUnmarshaller : IXmlUnmarshaller<BigDecimal, XmlUnmarshallerContext>, IJsonUnmarshaller<BigDecimal, JsonUnmarshallerContext>
+    {
+        private BigDecimalUnmarshaller() { }
+
+        private static BigDecimalUnmarshaller _instance = new BigDecimalUnmarshaller();
+
+        public static BigDecimalUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
+        public BigDecimal Unmarshall(XmlUnmarshallerContext context)
+        {
+            return BigDecimal.Parse(context.ReadText(), CultureInfo.InvariantCulture);
+        }
+        public BigDecimal Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        {
+            context.Read(ref reader);
+            string text = context.ReadText(ref reader);
+            if (text == null)
+            {
+                return default(BigDecimal);
+            }
+            return BigDecimal.Parse(text, CultureInfo.InvariantCulture);
+        }
+    }
+
+    /// <summary>
+    /// Unmarshaller for nullable BigDecimal fields. The value is parsed from the raw token text so no
+    /// digits or scale are lost, which would happen if it were read as a double or decimal.
+    /// </summary>
+    public class NullableBigDecimalUnmarshaller : IXmlUnmarshaller<BigDecimal?, XmlUnmarshallerContext>, IJsonUnmarshaller<BigDecimal?, JsonUnmarshallerContext>
+    {
+        private NullableBigDecimalUnmarshaller() { }
+
+        private static NullableBigDecimalUnmarshaller _instance = new NullableBigDecimalUnmarshaller();
+
+        public static NullableBigDecimalUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
+        public BigDecimal? Unmarshall(XmlUnmarshallerContext context)
+        {
+            context.Read();
+            string text = context.ReadText();
+
+            if (text == null)
+            {
+                return null;
+            }
+            return BigDecimal.Parse(text, CultureInfo.InvariantCulture);
+        }
+
+        public BigDecimal? Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        {
+            context.Read(ref reader);
+            string text = context.ReadText(ref reader);
+
+            if (text == null)
+            {
+                return null;
+            }
+            return BigDecimal.Parse(text, CultureInfo.InvariantCulture);
         }
     }
 
