@@ -102,8 +102,19 @@ namespace Amazon.Runtime.Internal.Util
             PreviousChunkSignature = headerSigningResult?.Signature;
 
             _wrappedStreamBufferSize = wrappedStreamBufferSize;
-            _inputBuffer = new byte[DefaultChunkSize];
-            _outputBuffer = new byte[CalculateChunkHeaderLength(DefaultChunkSize, HeaderSigningResult is AWS4aSigningResult ? V4A_SIGNATURE_LENGTH : V4_SIGNATURE_LENGTH)]; // header+data
+
+            // Size the chunk buffers to the wrapped stream when its remaining length
+            // is known to be smaller than a full chunk. Small payloads (the common case
+            // for PutObject) would otherwise pay for two ~80 KB buffers per request.
+            var chunkSize = DefaultChunkSize;
+            var remainingLength = GetRemainingLength(stream);
+            if (remainingLength >= 0 && remainingLength < chunkSize)
+            {
+                chunkSize = Math.Max(1, (int)remainingLength);
+            }
+
+            _inputBuffer = new byte[chunkSize];
+            _outputBuffer = new byte[CalculateChunkHeaderLength(chunkSize, HeaderSigningResult is AWS4aSigningResult ? V4A_SIGNATURE_LENGTH : V4_SIGNATURE_LENGTH)]; // header+data
 
             // if the wrapped stream implements encryption, switch to a read-and-copy
             // strategy for filling the chunk buffer
@@ -119,6 +130,26 @@ namespace Amazon.Runtime.Internal.Util
 
             if (encryptionStream != null)
                 _readStrategy = ReadStrategy.ReadAndCopy;
+        }
+
+        /// <summary>
+        /// Returns the number of bytes left to read from <paramref name="stream"/>, or -1 when it cannot be determined.
+        /// </summary>
+        private static long GetRemainingLength(Stream stream)
+        {
+            if (stream == null || !stream.CanSeek)
+            {
+                return -1;
+            }
+
+            try
+            {
+                return stream.Length - stream.Position;
+            }
+            catch (NotSupportedException)
+            {
+                return -1;
+            }
         }
 
         /// <summary>
