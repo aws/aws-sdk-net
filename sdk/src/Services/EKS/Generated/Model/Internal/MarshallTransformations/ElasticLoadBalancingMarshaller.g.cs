@@ -50,6 +50,17 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("enabled");
                 context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
+
+            if (requestObject.IsSetGatewayApi())
+            {
+                context.Writer.WritePropertyName("gatewayApi");
+                context.Writer.WriteStartObject();
+
+                var marshaller = GatewayApiConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.GatewayApi, context);
+
+                context.Writer.WriteEndObject();
+            }
         }
 
         /// <summary>
