@@ -699,6 +699,21 @@ namespace Amazon.Runtime.Internal.Auth
         /// <returns>Hash of the data</returns>
         public static byte[] ComputeKeyedHash(SigningAlgorithm algorithm, byte[] key, string data)
         {
+#if NET8_0_OR_GREATER
+            if (algorithm == SigningAlgorithm.HmacSHA256 && key != null && key.Length > 0 && !string.IsNullOrEmpty(data))
+            {
+                var buffer = System.Buffers.ArrayPool<byte>.Shared.Rent(Encoding.UTF8.GetMaxByteCount(data.Length));
+                try
+                {
+                    var written = Encoding.UTF8.GetBytes(data, buffer);
+                    return System.Security.Cryptography.HMACSHA256.HashData(key, new ReadOnlySpan<byte>(buffer, 0, written));
+                }
+                finally
+                {
+                    System.Buffers.ArrayPool<byte>.Shared.Return(buffer);
+                }
+            }
+#endif
             return ComputeKeyedHash(algorithm, key, Encoding.UTF8.GetBytes(data));
         }
 
@@ -721,6 +736,21 @@ namespace Amazon.Runtime.Internal.Auth
         /// <returns></returns>
         public static byte[] ComputeHash(string data)
         {
+#if NET8_0_OR_GREATER
+            if (data != null)
+            {
+                var buffer = System.Buffers.ArrayPool<byte>.Shared.Rent(Encoding.UTF8.GetMaxByteCount(data.Length));
+                try
+                {
+                    var written = Encoding.UTF8.GetBytes(data, buffer);
+                    return System.Security.Cryptography.SHA256.HashData(new ReadOnlySpan<byte>(buffer, 0, written));
+                }
+                finally
+                {
+                    System.Buffers.ArrayPool<byte>.Shared.Return(buffer);
+                }
+            }
+#endif
             return ComputeHash(Encoding.UTF8.GetBytes(data));
         }
 
