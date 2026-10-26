@@ -32,7 +32,7 @@ namespace Amazon.MarketplaceDiscovery
     public partial class AmazonMarketplaceDiscoveryConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Marketplace Discovery", "4.0.103.6");
+            InternalSDKUtils.BuildUserAgentString("Marketplace Discovery", "4.0.103.7");
 
         private static readonly AmazonMarketplaceDiscoveryEndpointResolver EndpointResolver =
             new AmazonMarketplaceDiscoveryEndpointResolver();

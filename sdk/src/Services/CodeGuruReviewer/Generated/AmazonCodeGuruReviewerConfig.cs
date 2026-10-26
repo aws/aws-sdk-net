@@ -32,7 +32,7 @@ namespace Amazon.CodeGuruReviewer
     public partial class AmazonCodeGuruReviewerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CodeGuru Reviewer", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("CodeGuru Reviewer", "4.0.100.22");
 
         private static readonly AmazonCodeGuruReviewerEndpointResolver EndpointResolver =
             new AmazonCodeGuruReviewerEndpointResolver();

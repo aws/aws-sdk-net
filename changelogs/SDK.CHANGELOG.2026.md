@@ -1,3 +1,57 @@
+### 4.0.358.0 (2026-10-26 18:11 UTC)
+* APIGateway (4.0.101.7)
+	* APIGateway is now generated from its Smithy model. The RetryAfterSeconds property on LimitExceededException, ServiceUnavailableException and TooManyRequestsException is now populated from the Retry-After response header.
+* AppStream (4.0.104.0)
+	* Add Windows 11 to PlatformType enum
+* BedrockAgentCoreControl (4.0.123.1)
+	* BedrockAgentCoreControl is now generated from its Smithy model. There are no changes to the public API.
+* Billing (4.0.106.0)
+	* Adds support for managing private pricing contracts and contractual investments including listing and associating contracts, retrieving contractual investments and their summaries, and creating, listing, and canceling contractual investment attestations
+* CertificateManager (4.0.102.13)
+	* CertificateManager is now generated from its Smithy model. There are no changes to the public API.
+* CloudWatchEvents (4.0.100.21)
+	* CloudWatchEvents is now generated from its Smithy model. There are no changes to the public API.
+* Connect (4.0.127.0)
+	* Amazon Connect now automatically saves agents' in-progress email drafts preserving the message, recipients, and subject during browser or network interruptions so agents can return to the mail and continue instead of starting over.
+* Deadline (4.0.103.6)
+	* fix the sdk documenation issue only
+* ECR (4.0.102.0)
+	* Add support for ECR replication backfill
+* EKS (4.0.108.0)
+	* This release adds support for EKS management of Gateway API CRDs (Custom Resource Definitions)
+* IVS (4.0.102.0)
+	* The release adds failover slate configurations, which show viewers a slate during temporary broadcaster network disruptions to reduce viewer drop-off and refresh storms.
+* KeyManagementService (4.0.101.0)
+	* This release adds support for ML-KEM (Module-Lattice-Based Key-Encapsulation Mechanism) keys in AWS KMS. ML-KEM, as specified in NIST FIPS 203, is a post-quantum key encapsulation mechanism that can be used to establish a shared secret between two parties.
+* Lambda (4.0.110.4)
+	* Lambda is now generated from its Smithy model. The RetryAfterSeconds property on TooManyRequestsException is now populated from the Retry-After response header.
+* Lightsail (4.0.104.0)
+	* This release adds Web Application Firewall (WAF) support for Lightsail distribution.
+* MarketplaceCatalog (4.0.106.0)
+	* This release adds support for the SubsidiaryAuthorization entity type in the ListEntities operation, including entity-type filters with partial name search, sort options, and a summary returned for each subsidiary authorization.
+* MediaConnect (4.0.104.0)
+	* This release adds support for managing and sharing endpoint across accounts in AWS Elemental MediaConnect. You can now register endpoints to represent external or service-managed sources and destinations, and share them across AWS accounts.
+* MediaLive (4.0.107.0)
+	* AWS Elemental MediaLive now lets you control whether explicit weighted prediction is applied to H.264 outputs. It also introduces Perceptual Filter, a new noise reduction filter designed to improve video quality by increasing VMAF scores, now with Auto, None, and strength options.
+	* MediaLive is now generated from its Smithy model. There are no changes to the public API.
+* Odb (4.0.104.0)
+	* Adds support for Exascale storage with Oracle Exadata Database Service on Dedicated Infrastructure
+* Pinpoint (4.0.100.21)
+	* Pinpoint is now generated from its Smithy model. There are no changes to the public API.
+* SageMaker (4.0.123.0)
+	* Amazon SageMaker HyperPod adds the MultiNodeTrainingValidation deep health check for clusters orchestrated by Amazon EKS. It validates NVIDIA GPU instances by running a short multi-node training workload and flags instances that produce numerical errors or fall behind expected training time.
+* Signin (4.0.102.0)
+	* Adds support for the OAuth 2.0 Token Exchange grant (RFC 8693), enabling applications to exchange identity provider issued JSON Web Tokens (JWTs) for short-lived OAuth access tokens to access supported AWS services without managing separate AWS credentials.
+	* Fixed the cached login token not recording the region the login was performed in. It is now saved as `signInRegion`, except when the Sign-In endpoint is overridden, and kept when the token is refreshed.
+* SSOAdmin (4.0.104.0)
+	* Added support for the RegionScope parameter on ListInstances, allowing you to list IAM Identity Center instances in the current Region or across all Regions.
+* TaxSettings (4.0.102.0)
+	* Add Mexico Additional Info changes
+* Core 4.0.102.14
+	* Aligned the layout of Core's generated `AssemblyInfo.cs` with the service assemblies. No functional changes.
+	* Fixed login credentials refreshing in the profile or default region instead of the region the login was performed in. Refresh is now sent to the `signInRegion` recorded in the cached login token, and tokens without it keep using the existing region resolution.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.357.0 (2026-10-22 18:12 UTC)
 * AccountAccess (4.0.101.12)
 	* AccountAccess is now generated from its Smithy model. There are no changes to the public API.

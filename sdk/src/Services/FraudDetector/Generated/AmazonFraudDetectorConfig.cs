@@ -32,7 +32,7 @@ namespace Amazon.FraudDetector
     public partial class AmazonFraudDetectorConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("FraudDetector", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("FraudDetector", "4.0.100.22");
 
         private static readonly AmazonFraudDetectorEndpointResolver EndpointResolver =
             new AmazonFraudDetectorEndpointResolver();
