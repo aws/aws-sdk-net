@@ -2132,6 +2132,94 @@ namespace Amazon.ECR
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns the status, progress, and per-image results for a replication backfill. The
+        /// backfill to describe is identified by the <c>replicationBackfillId</c> returned by
+        /// the <a>StartReplicationBackfill</a> operation.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The per-image results are available only after the replication backfill reaches a
+        /// terminal status.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationBackfillResults service method.</param>
+        /// <returns>The response from the DescribeReplicationBackfillResults service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ReplicationBackfillNotFoundException">
+        /// The specified replication backfill could not be found. Check the specified replication
+        /// backfill ID and ensure that you are operating on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeReplicationBackfillResults">REST API Reference for DescribeReplicationBackfillResults Operation</seealso>
+        public virtual DescribeReplicationBackfillResultsResponse DescribeReplicationBackfillResults(DescribeReplicationBackfillResultsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeReplicationBackfillResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplicationBackfillResultsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeReplicationBackfillResultsResponse>(request, options);
+        }
+#else
+        internal virtual DescribeReplicationBackfillResultsResponse DescribeReplicationBackfillResults(DescribeReplicationBackfillResultsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeReplicationBackfillResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplicationBackfillResultsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeReplicationBackfillResultsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns the status, progress, and per-image results for a replication backfill. The
+        /// backfill to describe is identified by the <c>replicationBackfillId</c> returned by
+        /// the <a>StartReplicationBackfill</a> operation.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The per-image results are available only after the replication backfill reaches a
+        /// terminal status.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationBackfillResults service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeReplicationBackfillResults service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ReplicationBackfillNotFoundException">
+        /// The specified replication backfill could not be found. Check the specified replication
+        /// backfill ID and ensure that you are operating on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeReplicationBackfillResults">REST API Reference for DescribeReplicationBackfillResults Operation</seealso>
+        public virtual Task<DescribeReplicationBackfillResultsResponse> DescribeReplicationBackfillResultsAsync(DescribeReplicationBackfillResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeReplicationBackfillResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplicationBackfillResultsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeReplicationBackfillResultsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Describes image repositories in a registry.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRepositories service method.</param>
@@ -3294,6 +3382,82 @@ namespace Amazon.ECR
             options.ResponseUnmarshaller = ListPullTimeUpdateExclusionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListPullTimeUpdateExclusionsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the replication backfills for a registry, including their status and progress.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Replication backfills that have reached a terminal status are retained for 90 days
+        /// after they end, after which they are no longer returned.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReplicationBackfills service method.</param>
+        /// <returns>The response from the ListReplicationBackfills service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListReplicationBackfills">REST API Reference for ListReplicationBackfills Operation</seealso>
+        public virtual ListReplicationBackfillsResponse ListReplicationBackfills(ListReplicationBackfillsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListReplicationBackfillsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReplicationBackfillsResponseUnmarshaller.Instance;
+
+            return Invoke<ListReplicationBackfillsResponse>(request, options);
+        }
+#else
+        internal virtual ListReplicationBackfillsResponse ListReplicationBackfills(ListReplicationBackfillsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListReplicationBackfillsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReplicationBackfillsResponseUnmarshaller.Instance;
+
+            return Invoke<ListReplicationBackfillsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Lists the replication backfills for a registry, including their status and progress.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Replication backfills that have reached a terminal status are retained for 90 days
+        /// after they end, after which they are no longer returned.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReplicationBackfills service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListReplicationBackfills service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListReplicationBackfills">REST API Reference for ListReplicationBackfills Operation</seealso>
+        public virtual Task<ListReplicationBackfillsResponse> ListReplicationBackfillsAsync(ListReplicationBackfillsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListReplicationBackfillsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReplicationBackfillsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListReplicationBackfillsResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -4482,6 +4646,228 @@ namespace Amazon.ECR
             options.ResponseUnmarshaller = StartLifecyclePolicyPreviewResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartLifecyclePolicyPreviewResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Starts a replication backfill for a registry. A replication backfill replicates a
+        /// registry's existing images that match its replication configuration to the specified
+        /// destination. Use the <a>DescribeReplicationBackfillResults</a> operation to monitor
+        /// the progress of a replication backfill, and to retrieve its per-image results after
+        /// it reaches a terminal status.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The destination must already be configured in the registry's replication configuration.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// Only one replication backfill can be in progress for a given destination Region at
+        /// a time. Starting a replication backfill for a destination Region that already has
+        /// one in progress fails with a <c>ReplicationBackfillInProgressException</c>. In addition,
+        /// a registry can have at most 10 replication backfills in progress at once. Starting
+        /// a replication backfill that would exceed this limit fails with a <c>LimitExceededException</c>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartReplicationBackfill service method.</param>
+        /// <returns>The response from the StartReplicationBackfill service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.LimitExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for your
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
+        /// ECR service quotas</a> in the Amazon Elastic Container Registry User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ReplicationBackfillInProgressException">
+        /// A replication backfill is already in progress for the specified destination Region.
+        /// This occurs because only one replication backfill can be in progress for a given destination
+        /// Region at a time. Wait for the in progress backfill to reach a terminal status, or
+        /// stop it with the <a>StopReplicationBackfill</a> operation, before starting another
+        /// one.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartReplicationBackfill">REST API Reference for StartReplicationBackfill Operation</seealso>
+        public virtual StartReplicationBackfillResponse StartReplicationBackfill(StartReplicationBackfillRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartReplicationBackfillRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartReplicationBackfillResponseUnmarshaller.Instance;
+
+            return Invoke<StartReplicationBackfillResponse>(request, options);
+        }
+#else
+        internal virtual StartReplicationBackfillResponse StartReplicationBackfill(StartReplicationBackfillRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartReplicationBackfillRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartReplicationBackfillResponseUnmarshaller.Instance;
+
+            return Invoke<StartReplicationBackfillResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Starts a replication backfill for a registry. A replication backfill replicates a
+        /// registry's existing images that match its replication configuration to the specified
+        /// destination. Use the <a>DescribeReplicationBackfillResults</a> operation to monitor
+        /// the progress of a replication backfill, and to retrieve its per-image results after
+        /// it reaches a terminal status.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The destination must already be configured in the registry's replication configuration.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// Only one replication backfill can be in progress for a given destination Region at
+        /// a time. Starting a replication backfill for a destination Region that already has
+        /// one in progress fails with a <c>ReplicationBackfillInProgressException</c>. In addition,
+        /// a registry can have at most 10 replication backfills in progress at once. Starting
+        /// a replication backfill that would exceed this limit fails with a <c>LimitExceededException</c>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartReplicationBackfill service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the StartReplicationBackfill service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.LimitExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for your
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
+        /// ECR service quotas</a> in the Amazon Elastic Container Registry User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ReplicationBackfillInProgressException">
+        /// A replication backfill is already in progress for the specified destination Region.
+        /// This occurs because only one replication backfill can be in progress for a given destination
+        /// Region at a time. Wait for the in progress backfill to reach a terminal status, or
+        /// stop it with the <a>StopReplicationBackfill</a> operation, before starting another
+        /// one.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartReplicationBackfill">REST API Reference for StartReplicationBackfill Operation</seealso>
+        public virtual Task<StartReplicationBackfillResponse> StartReplicationBackfillAsync(StartReplicationBackfillRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartReplicationBackfillRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartReplicationBackfillResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartReplicationBackfillResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Stops an in progress replication backfill for a registry. The backfill to stop is
+        /// identified by the <c>replicationBackfillId</c> returned by the <a>StartReplicationBackfill</a>
+        /// operation.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Images that have already been replicated are not affected, and replications that are
+        /// already in progress continue to completion.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopReplicationBackfill service method.</param>
+        /// <returns>The response from the StopReplicationBackfill service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ReplicationBackfillInvalidStatusException">
+        /// The requested operation can't be performed on the replication backfill because it
+        /// is not in a valid status for that operation. For example, you can't stop a replication
+        /// backfill that has already reached a terminal status. Use the <a>DescribeReplicationBackfillResults</a>
+        /// operation to check the current status before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ReplicationBackfillNotFoundException">
+        /// The specified replication backfill could not be found. Check the specified replication
+        /// backfill ID and ensure that you are operating on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StopReplicationBackfill">REST API Reference for StopReplicationBackfill Operation</seealso>
+        public virtual StopReplicationBackfillResponse StopReplicationBackfill(StopReplicationBackfillRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopReplicationBackfillRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopReplicationBackfillResponseUnmarshaller.Instance;
+
+            return Invoke<StopReplicationBackfillResponse>(request, options);
+        }
+#else
+        internal virtual StopReplicationBackfillResponse StopReplicationBackfill(StopReplicationBackfillRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopReplicationBackfillRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopReplicationBackfillResponseUnmarshaller.Instance;
+
+            return Invoke<StopReplicationBackfillResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Stops an in progress replication backfill for a registry. The backfill to stop is
+        /// identified by the <c>replicationBackfillId</c> returned by the <a>StartReplicationBackfill</a>
+        /// operation.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Images that have already been replicated are not affected, and replications that are
+        /// already in progress continue to completion.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopReplicationBackfill service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the StopReplicationBackfill service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ReplicationBackfillInvalidStatusException">
+        /// The requested operation can't be performed on the replication backfill because it
+        /// is not in a valid status for that operation. For example, you can't stop a replication
+        /// backfill that has already reached a terminal status. Use the <a>DescribeReplicationBackfillResults</a>
+        /// operation to check the current status before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ReplicationBackfillNotFoundException">
+        /// The specified replication backfill could not be found. Check the specified replication
+        /// backfill ID and ensure that you are operating on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StopReplicationBackfill">REST API Reference for StopReplicationBackfill Operation</seealso>
+        public virtual Task<StopReplicationBackfillResponse> StopReplicationBackfillAsync(StopReplicationBackfillRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopReplicationBackfillRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopReplicationBackfillResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopReplicationBackfillResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
