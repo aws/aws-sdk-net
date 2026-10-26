@@ -22,6 +22,7 @@ using Amazon.Util;
 using System.Linq;
 using System.Diagnostics.CodeAnalysis;
 using System.Buffers;
+using System.Numerics;
 using System.Text.Json;
 
 namespace Amazon.Runtime.Internal.Util
@@ -136,6 +137,62 @@ namespace Amazon.Runtime.Internal.Util
             }
 
             return value.Value.ToString(CultureInfo.InvariantCulture);
+        }
+
+        public static string FromSByte(sbyte value)
+        {
+            return value.ToString(CultureInfo.InvariantCulture);
+        }
+
+        public static string FromSByte(sbyte? value)
+        {
+            if (!value.HasValue)
+            {
+                return null;
+            }
+
+            return value.Value.ToString(CultureInfo.InvariantCulture);
+        }
+
+        public static string FromShort(short value)
+        {
+            return value.ToString(CultureInfo.InvariantCulture);
+        }
+
+        public static string FromShort(short? value)
+        {
+            if (!value.HasValue)
+            {
+                return null;
+            }
+
+            return value.Value.ToString(CultureInfo.InvariantCulture);
+        }
+
+        public static string FromBigInteger(BigInteger value)
+        {
+            return value.ToString(CultureInfo.InvariantCulture);
+        }
+
+        public static string FromBigInteger(BigInteger? value)
+        {
+            if (!value.HasValue)
+            {
+                return null;
+            }
+
+            return value.Value.ToString(CultureInfo.InvariantCulture);
+        }
+
+        /// <summary>
+        /// Writes a <see cref="BigInteger"/> as a JSON number containing all of its digits.
+        /// </summary>
+        /// <param name="writer">The JSON writer.</param>
+        /// <param name="value">The value to write.</param>
+        public static void WriteBigIntegerValue(Utf8JsonWriter writer, BigInteger value)
+        {
+            // Utf8JsonWriter has no BigInteger overload, and going through double or decimal would lose digits.
+            writer.WriteRawValue(value.ToString(CultureInfo.InvariantCulture));
         }
 
         public static string FromLong(long value)
@@ -444,6 +501,18 @@ namespace Amazon.Runtime.Internal.Util
             }
 
             return FromList(values?.Select(x => x.ToString()));
+        }
+
+        /// <summary>
+        /// Combines an enumerable of T into a comma-separated string to be marshalled as a header,
+        /// formatting each value with the given format provider.
+        /// </summary>
+        /// <param name="values">List of T</param>
+        /// <param name="provider">The format provider, normally <see cref="CultureInfo.InvariantCulture"/>.</param>
+        /// <returns>Header value representing the list of T.</returns>
+        public static string FromValueTypeList<T>(IEnumerable<T> values, IFormatProvider provider) where T : struct, IFormattable
+        {
+            return FromList(values?.Select(x => x.ToString(null, provider)));
         }
 
         /// <summary>
