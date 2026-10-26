@@ -12,6 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon.Extensions.Numerics;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using AWSSDK_DotNet.UnitTests;
@@ -28,7 +29,7 @@ using System.Threading;
 namespace AWSSDK.UnitTests
 {
     /// <summary>
-    /// Tests for the byte, short and bigInteger types from the Full Numeric Type Support SEP.
+    /// Tests for the byte, short, bigInteger and bigDecimal types from the Full Numeric Type Support SEP.
     /// </summary>
     [TestClass]
     [TestCategory("UnitTest")]
@@ -245,6 +246,155 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(
                 StringUtils.FromValueTypeList(new List<int> { 1, 2, 3 }),
                 StringUtils.FromValueTypeList(new List<int> { 1, 2, 3 }, CultureInfo.InvariantCulture));
+        }
+
+        // BigDecimal cases below are ported from the boblod-bigdecimal-stj-test branch (2026-07-21) and now
+        // run through the real SDK unmarshallers and writers instead of System.Text.Json directly.
+
+        [TestMethod]
+        [DataRow("0", "0", 0)]
+        [DataRow("-1", "-1", 0)]
+        [DataRow("123456789", "123456789", 0)]
+        [DataRow("0.0", "0", 1)]
+        [DataRow("-3.14", "-314", 2)]
+        [DataRow("1.50", "150", 2)]
+        [DataRow("0.001", "1", 3)]
+        // Beyond long, ulong and decimal.
+        [DataRow("123456789012345678901234567890", "123456789012345678901234567890", 0)]
+        [DataRow("1.23456789012345678901234567890", "123456789012345678901234567890", 29)]
+        [DataRow("3.14159265358979323846264338327950288419716939937510", "314159265358979323846264338327950288419716939937510", 50)]
+        // A double reads this as 0.1, losing the trailing digits.
+        [DataRow("0.1000000000000000055511151231257827", "1000000000000000055511151231257827", 34)]
+        // Exponent forms are valid JSON numbers.
+        [DataRow("1e100", "1", -100)]
+        [DataRow("1E10", "1", -10)]
+        [DataRow("1e-100", "1", 100)]
+        [DataRow("1.5e3", "15", -2)]
+        [DataRow("1.23456789012345678901234567890e20", "123456789012345678901234567890", 9)]
+        public void JsonBigDecimalKeepsDigitsAndScale(string json, string unscaled, int scale)
+        {
+            foreach (var input in new[] { json, "\"" + json + "\"" })
+            {
+                var value = UnmarshallJson(BigDecimalUnmarshaller.Instance, input);
+                Assert.AreEqual(BigInteger.Parse(unscaled, CultureInfo.InvariantCulture), value.UnscaledValue, input);
+                Assert.AreEqual(scale, value.Scale, input);
+
+                var nullable = UnmarshallJson(NullableBigDecimalUnmarshaller.Instance, input);
+                Assert.IsTrue(nullable.HasValue);
+                Assert.AreEqual(value.UnscaledValue, nullable.Value.UnscaledValue);
+                Assert.AreEqual(value.Scale, nullable.Value.Scale);
+            }
+        }
+
+        [TestMethod]
+        public void JsonBigDecimalNegativeZero()
+        {
+            Assert.AreEqual(BigDecimal.Zero, UnmarshallJson(BigDecimalUnmarshaller.Instance, "-0"));
+            Assert.AreEqual(BigDecimal.Zero, UnmarshallJson(BigDecimalUnmarshaller.Instance, "-0.0"));
+        }
+
+        [TestMethod]
+        public void JsonBigDecimalNull()
+        {
+            Assert.IsNull(UnmarshallJson(NullableBigDecimalUnmarshaller.Instance, "null"));
+            Assert.AreEqual(default(BigDecimal), UnmarshallJson(BigDecimalUnmarshaller.Instance, "null"));
+        }
+
+        [TestMethod]
+        [DataRow("\"abc\"")]
+        [DataRow("\"NaN\"")]
+        [DataRow("\"Infinity\"")]
+        public void JsonBigDecimalInvalidTextThrows(string json)
+        {
+            Assert.ThrowsExactly<FormatException>(() => UnmarshallJson(BigDecimalUnmarshaller.Instance, json));
+        }
+
+        [TestMethod]
+        public void XmlBigDecimalKeepsDigitsAndScale()
+        {
+            var value = UnmarshallXml(BigDecimalUnmarshaller.Instance, "-3.14159265358979323846264338327950288419716939937510");
+            Assert.AreEqual(BigInteger.Parse("-314159265358979323846264338327950288419716939937510", CultureInfo.InvariantCulture), value.UnscaledValue);
+            Assert.AreEqual(50, value.Scale);
+
+            var trailingZeros = UnmarshallXml(BigDecimalUnmarshaller.Instance, "1.500");
+            Assert.AreEqual(3, trailingZeros.Scale);
+
+            Assert.AreEqual(
+                (BigDecimal?)UnmarshallXml(BigDecimalUnmarshaller.Instance, "12"),
+                UnmarshallXml(NullableBigDecimalUnmarshaller.Instance, "<R><V>12</V></R>", "/R"));
+        }
+
+        [TestMethod]
+        [DataRow("0", "0")]
+        [DataRow("1.50", "1.50")]
+        [DataRow("-0.001", "-0.001")]
+        [DataRow("1E+3", "1000")]
+        [DataRow("1.23E-10", "0.000000000123")]
+        [DataRow("3.14159265358979323846264338327950288419716939937510", "3.14159265358979323846264338327950288419716939937510")]
+        public void FromBigDecimalWritesPlainDecimalText(string value, string expected)
+        {
+            var parsed = BigDecimal.Parse(value, CultureInfo.InvariantCulture);
+            Assert.AreEqual(expected, StringUtils.FromBigDecimal(parsed));
+            Assert.AreEqual(expected, StringUtils.FromBigDecimal((BigDecimal?)parsed));
+            Assert.IsNull(StringUtils.FromBigDecimal((BigDecimal?)null));
+        }
+
+        [TestMethod]
+        [DataRow("1.50")]
+        [DataRow("-98765432109876543210.98765432109876543210")]
+        [DataRow("1E+3")]
+        [DataRow("1E-40")]
+        public void WriteBigDecimalValueRoundTrips(string text)
+        {
+            var value = BigDecimal.Parse(text, CultureInfo.InvariantCulture);
+            string json;
+            using (var stream = new MemoryStream())
+            {
+                using (var writer = new Utf8JsonWriter(stream))
+                {
+                    writer.WriteStartArray();
+                    StringUtils.WriteBigDecimalValue(writer, value);
+                    writer.WriteEndArray();
+                }
+                json = Encoding.UTF8.GetString(stream.ToArray());
+            }
+
+            Assert.AreEqual("[" + StringUtils.FromBigDecimal(value) + "]", json);
+            using (var document = JsonDocument.Parse(json))
+            {
+                Assert.AreEqual(JsonValueKind.Number, document.RootElement[0].ValueKind);
+            }
+
+            // Reading back what was written gives the same value. Plain decimal text has no exponent, so a
+            // negative scale (1E+3 is unscaled 1, scale -3) comes back as scale 0 (1000). Non-negative
+            // scales, including trailing zeros, round-trip exactly.
+            var readBack = UnmarshallJson(BigDecimalUnmarshaller.Instance, json.Substring(1, json.Length - 2));
+            Assert.AreEqual(value, readBack);
+            if (value.Scale >= 0)
+            {
+                Assert.AreEqual(value.UnscaledValue, readBack.UnscaledValue);
+                Assert.AreEqual(value.Scale, readBack.Scale);
+            }
+            else
+            {
+                Assert.AreEqual(0, readBack.Scale);
+            }
+        }
+
+        [TestMethod]
+        public void BigDecimalUsesInvariantCultureUnderOtherCultures()
+        {
+            foreach (var cultureName in new[] { "nb-NO", "de-DE", "ar-SA" })
+            {
+                RunInCulture(cultureName, () =>
+                {
+                    var value = UnmarshallJson(BigDecimalUnmarshaller.Instance, "-1.5");
+                    Assert.AreEqual(new BigInteger(-15), value.UnscaledValue);
+                    Assert.AreEqual(1, value.Scale);
+                    Assert.AreEqual("-1.5", StringUtils.FromBigDecimal(value));
+                    Assert.AreEqual(new BigInteger(-15), UnmarshallXml(BigDecimalUnmarshaller.Instance, "-1.5").UnscaledValue);
+                });
+            }
         }
 
         private static void RunInCulture(string cultureName, Action action)

@@ -18,6 +18,7 @@ using System.Globalization;
 using System.Text;
 using System.IO;
 
+using Amazon.Extensions.Numerics;
 using Amazon.Util;
 using System.Linq;
 using System.Diagnostics.CodeAnalysis;
@@ -193,6 +194,36 @@ namespace Amazon.Runtime.Internal.Util
         {
             // Utf8JsonWriter has no BigInteger overload, and going through double or decimal would lose digits.
             writer.WriteRawValue(value.ToString(CultureInfo.InvariantCulture));
+        }
+
+        /// <summary>
+        /// Converts a <see cref="BigDecimal"/> to its plain decimal text, with no exponent, keeping
+        /// every digit and the scale (for example 1.50 stays "1.50").
+        /// </summary>
+        public static string FromBigDecimal(BigDecimal value)
+        {
+            return value.ToPlainString(CultureInfo.InvariantCulture);
+        }
+
+        public static string FromBigDecimal(BigDecimal? value)
+        {
+            if (!value.HasValue)
+            {
+                return null;
+            }
+
+            return FromBigDecimal(value.Value);
+        }
+
+        /// <summary>
+        /// Writes a <see cref="BigDecimal"/> as a JSON number containing all of its digits.
+        /// </summary>
+        /// <param name="writer">The JSON writer.</param>
+        /// <param name="value">The value to write.</param>
+        public static void WriteBigDecimalValue(Utf8JsonWriter writer, BigDecimal value)
+        {
+            // Utf8JsonWriter has no BigDecimal overload, and going through double or decimal would lose digits.
+            writer.WriteRawValue(FromBigDecimal(value));
         }
 
         public static string FromLong(long value)
