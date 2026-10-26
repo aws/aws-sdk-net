@@ -42,14 +42,18 @@ namespace Amazon.TaxSettings.Model
     /// billing address are verified, you can call this API operation. </para> </li> <li>
     /// <para> For Amazon Web Services accounts created through Organizations, you can call
     /// this API operation when you don't have a billing address. </para> </li> </ul> <para>
-    /// <b>Georgia</b> </para> <ul> <li> <para> The valid <c>personType</c> values are <c>Physical
-    /// Person</c> and <c>Business</c>. </para> </li> </ul> <para> <b>Indonesia</b> </para>
-    /// <ul> <li> <para> <c>PutTaxRegistration</c>: The use of this operation to submit tax
-    /// information is subject to the <a href="http://aws.amazon.com/service-terms/">Amazon
-    /// Web Services service terms</a>. By submitting, you’re providing consent for Amazon
-    /// Web Services to validate NIK, NPWP, and NITKU data, provided by you with the Directorate
-    /// General of Taxes of Indonesia in accordance with the Minister of Finance Regulation
-    /// (PMK) Number 112/PMK.03/2022. </para> </li> <li> <para> <c>BatchPutTaxRegistration</c>:
+    /// <b>Colombia</b> </para> <ul> <li> <para> You can provide a Registro Único Tributario
+    /// (RUT) document in the <b>verificationDetails</b> field. </para> </li> <li> <para>
+    /// If you provide the RUT document, you do not need to provide address and legal name.
+    /// These will be populated based on your document. </para> </li> </ul> <para> <b>Georgia</b>
+    /// </para> <ul> <li> <para> The valid <c>personType</c> values are <c>Physical Person</c>
+    /// and <c>Business</c>. </para> </li> </ul> <para> <b>Indonesia</b> </para> <ul> <li>
+    /// <para> <c>PutTaxRegistration</c>: The use of this operation to submit tax information
+    /// is subject to the <a href="http://aws.amazon.com/service-terms/">Amazon Web Services
+    /// service terms</a>. By submitting, you’re providing consent for Amazon Web Services
+    /// to validate NIK, NPWP, and NITKU data, provided by you with the Directorate General
+    /// of Taxes of Indonesia in accordance with the Minister of Finance Regulation (PMK)
+    /// Number 112/PMK.03/2022. </para> </li> <li> <para> <c>BatchPutTaxRegistration</c>:
     /// The use of this operation to submit tax information is subject to the <a href="http://aws.amazon.com/service-terms/">Amazon
     /// Web Services service terms</a>. By submitting, you’re providing consent for Amazon
     /// Web Services to validate NIK, NPWP, and NITKU data, provided by you with the Directorate
@@ -141,9 +145,15 @@ namespace Amazon.TaxSettings.Model
     /// in the <c>franceAdditionalInfo</c> field of the <c>additionalTaxInformation</c> object.
     /// </para> </li> </ul> <para> <b>Monaco</b> </para> <ul> <li> <para> You must specify
     /// the <c>businessNumber</c> in the <c>monacoAdditionalInfo</c> field of the <c>additionalTaxInformation</c>
-    /// object. </para> </li> </ul> <para> <b>Poland</b> </para> <ul> <li> <para> You can
-    /// optionally specify the <c>taxRegistrationNumberType</c> in the <c>polandAdditionalInfo</c>
-    /// field of the <c>additionalTaxInformation</c> object. Valid values are <c>EUTaxRegistrationNumber</c>,
+    /// object. </para> </li> </ul> <para> <b>Germany</b> </para> <ul> <li> <para> You must
+    /// provide at least one of the following: a Tax Registration Number (TRN) (<c>registrationId</c>),
+    /// the <c>economicIdentificationNumber</c>, or the <c>steuernummer</c>. </para> </li>
+    /// <li> <para> You can optionally specify the <c>economicIdentificationNumber</c> (Wirtschafts-Identifikationsnummer,
+    /// or W-IdNr) and the <c>steuernummer</c> (tax number issued by the local tax office)
+    /// in the <c>germanyAdditionalInfo</c> field of the <c>additionalTaxInformation</c> object.
+    /// </para> </li> </ul> <para> <b>Poland</b> </para> <ul> <li> <para> You can optionally
+    /// specify the <c>taxRegistrationNumberType</c> in the <c>polandAdditionalInfo</c> field
+    /// of the <c>additionalTaxInformation</c> object. Valid values are <c>EUTaxRegistrationNumber</c>,
     /// <c>LocalTaxRegistrationNumber</c>, or <c>LocalRegistrationNumber</c>. </para> </li>
     /// </ul>
     /// </summary>

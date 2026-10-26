@@ -295,6 +295,14 @@
     <pattern>^[0-9]{9}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TaxSettings.Model.GermanyAdditionalInfo.EconomicIdentificationNumber</property>
+    <pattern>^DE[0-9]{9}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.GermanyAdditionalInfo.Steuernummer</property>
+    <pattern>^((10|11|21|22|23|24|26|27|28|30|31|32|40|41)[0-9]{11}|[59][0-9]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TaxSettings.Model.GreeceAdditionalInfo.ContractingAuthorityCode</property>
     <pattern>^\d{4}\.[A-Z]\d{5}\.\d{4}$</pattern>
   </property-value-rule>
@@ -351,6 +359,19 @@
   <property-value-rule>
     <property>Amazon.TaxSettings.Model.MalaysiaAdditionalInfo.TaxInformationNumber</property>
     <pattern>^(IG|C|CS|P|D|F|FA|PT|TA|TC|TN|TR|TP|J|LE)[0-9]{10,13}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.MexicoAdditionalInfo.CfdiUsageCode</property>
+    <pattern>^[A-Z]{1,2}\d{2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.MexicoAdditionalInfo.TaxRegime</property>
+    <pattern>^\d{3}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.MexicoAdditionalInfo.TaxRegimeFullName</property>
+    <min>1</min>
+    <max>150</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TaxSettings.Model.MonacoAdditionalInfo.BusinessNumber</property>
