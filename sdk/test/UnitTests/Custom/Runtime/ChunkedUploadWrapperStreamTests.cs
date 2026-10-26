@@ -16,6 +16,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -265,5 +266,154 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(expectedContent.Length, wrappedStream.Length);
             Assert.AreEqual(expectedContent, actualContent);
         }
+
+        /// <summary>
+        /// A payload smaller than a chunk gets buffers sized to the payload instead of DefaultChunkSize.
+        /// </summary>
+        [TestMethod]
+        public void SmallPayloadUsesExactSizeBuffers()
+        {
+            var contentStream = new MemoryStream(Encoding.Default.GetBytes("Hello world"));
+            var headerSigningResult = new AWS4SigningResult(_accessKey, _secretKey, _fixedSigningTimestamp, "", "", _signingKey, _headerSignature);
+            var wrappedStream = new ChunkedUploadWrapperStream(contentStream, 8192, headerSigningResult);
+
+            Assert.AreEqual(11, wrappedStream.InputBufferSize);
+
+            var output = ReadAll(wrappedStream);
+            Assert.AreEqual(wrappedStream.Length, output.Length);
+            CollectionAssert.AreEqual(Encoding.Default.GetBytes("Hello world"), ReassembleChunks(output, out var chunkSizes, out _));
+            CollectionAssert.AreEqual(new List<int> { 11 }, chunkSizes);
+        }
+
+        /// <summary>
+        /// A stream that is not seekable cannot be measured, so the full-size buffers are used.
+        /// </summary>
+        [TestMethod]
+        public void NonSeekableStreamUsesDefaultChunkSize()
+        {
+            var contentStream = new NonSeekableStream(Encoding.Default.GetBytes("Hello world"));
+            var headerSigningResult = new AWS4SigningResult(_accessKey, _secretKey, _fixedSigningTimestamp, "", "", _signingKey, _headerSignature);
+            var wrappedStream = new ChunkedUploadWrapperStream(contentStream, 8192, headerSigningResult);
+
+            Assert.AreEqual(ChunkedUploadWrapperStream.DefaultChunkSize, wrappedStream.InputBufferSize);
+
+            CollectionAssert.AreEqual(Encoding.Default.GetBytes("Hello world"), ReassembleChunks(ReadAll(wrappedStream), out _, out _));
+        }
+
+        /// <summary>
+        /// A payload that is not a multiple of the chunk size produces a full chunk, a short chunk and the terminator,
+        /// and the data round-trips unchanged.
+        /// </summary>
+        [TestMethod]
+        public void MultiChunkPayloadRoundTrips()
+        {
+            var data = new byte[ChunkedUploadWrapperStream.DefaultChunkSize + 12345];
+            new Random(42).NextBytes(data);
+            var headerSigningResult = new AWS4SigningResult(_accessKey, _secretKey, _fixedSigningTimestamp, "", "", _signingKey, _headerSignature);
+            var wrappedStream = new ChunkedUploadWrapperStream(new MemoryStream(data), 8192, headerSigningResult);
+
+            var output = ReadAll(wrappedStream);
+
+            Assert.AreEqual(wrappedStream.Length, output.Length);
+            CollectionAssert.AreEqual(data, ReassembleChunks(output, out var chunkSizes, out var chunkSignatures));
+            CollectionAssert.AreEqual(new List<int> { ChunkedUploadWrapperStream.DefaultChunkSize, 12345 }, chunkSizes);
+
+            // Each chunk signature must cover exactly that chunk's bytes: recompute them independently from
+            // exact-size copies with the public string-to-sign helper and chain them from the header signature.
+            var expectedSignatures = new List<string>();
+            var previousSignature = headerSigningResult.Signature;
+            var offset = 0;
+            foreach (var size in new[] { chunkSizes[0], chunkSizes[1], 0 })
+            {
+                var chunk = new byte[size];
+                Buffer.BlockCopy(data, offset, chunk, 0, size);
+                offset += size;
+                var stringToSign = ChunkedUploadWrapperStream.BuildChunkedStringToSign("AWS4-HMAC-SHA256-PAYLOAD",
+                    headerSigningResult.ISO8601DateTime, headerSigningResult.Scope, previousSignature, size, chunk);
+                previousSignature = AWSSDKUtils.ToHex(AWS4Signer.SignBlob(headerSigningResult.GetSigningKey(), stringToSign), true);
+                expectedSignatures.Add(previousSignature);
+            }
+            CollectionAssert.AreEqual(expectedSignatures, chunkSignatures);
+        }
+
+        /// <summary>
+        /// An encrypting wrapped stream uses the read-and-copy strategy. A read buffer larger than the chunk buffer
+        /// must be clamped to the space left in the chunk, otherwise the copy overflows.
+        /// </summary>
+        [TestMethod]
+        public void EncryptedStreamWithLargeReadBufferDoesNotOverflow()
+        {
+            var data = new byte[ChunkedUploadWrapperStream.DefaultChunkSize + 1000];
+            new Random(7).NextBytes(data);
+            var encryptedStream = new AESEncryptionPutObjectStream(new MemoryStream(data), new byte[32], new byte[16]);
+            var headerSigningResult = new AWS4SigningResult(_accessKey, _secretKey, _fixedSigningTimestamp, "", "", _signingKey, _headerSignature);
+            var wrappedStream = new ChunkedUploadWrapperStream(encryptedStream, ChunkedUploadWrapperStream.DefaultChunkSize * 2, headerSigningResult);
+
+            var output = ReadAll(wrappedStream);
+
+            Assert.AreEqual(wrappedStream.Length, output.Length);
+            var cipherText = ReassembleChunks(output, out _, out _);
+            Assert.AreEqual(encryptedStream.Length, cipherText.Length);
+        }
+
+        private static byte[] ReadAll(Stream stream)
+        {
+            using (var output = new MemoryStream())
+            {
+                stream.CopyTo(output);
+                return output.ToArray();
+            }
+        }
+
+        /// <summary>
+        /// Parses aws-chunked content (without trailing headers) back into the original payload, also returning the
+        /// size and signature of every chunk including the terminating zero-length chunk.
+        /// </summary>
+        private static byte[] ReassembleChunks(byte[] chunked, out List<int> chunkSizes, out List<string> chunkSignatures)
+        {
+            chunkSizes = new List<int>();
+            chunkSignatures = new List<string>();
+            var payload = new MemoryStream();
+            var position = 0;
+            while (true)
+            {
+                var headerEnd = IndexOf(chunked, (byte)'\n', position);
+                var header = Encoding.ASCII.GetString(chunked, position, headerEnd - position - 1); // without \r
+                var size = Convert.ToInt32(header.Substring(0, header.IndexOf(';')), 16);
+                chunkSignatures.Add(header.Substring(header.IndexOf('=') + 1));
+                position = headerEnd + 1;
+                if (size == 0)
+                {
+                    break;
+                }
+                chunkSizes.Add(size);
+                payload.Write(chunked, position, size);
+                position += size + 2; // data + \r\n
+            }
+            return payload.ToArray();
+        }
+
+        private static int IndexOf(byte[] data, byte value, int start)
+        {
+            for (var i = start; i < data.Length; i++)
+            {
+                if (data[i] == value)
+                    return i;
+            }
+            throw new InvalidOperationException("Malformed chunked content.");
+        }
+
+        private sealed class NonSeekableStream : MemoryStream
+        {
+            public NonSeekableStream(byte[] data) : base(data) { }
+            public override bool CanSeek => false;
+            public override long Length => throw new NotSupportedException();
+            public override long Position
+            {
+                get => throw new NotSupportedException();
+                set => throw new NotSupportedException();
+            }
+        }
+
     }
 }

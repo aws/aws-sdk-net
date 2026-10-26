@@ -109,5 +109,99 @@ namespace AWSSDK.UnitTests
 
             Assert.AreEqual("authentication-region", executionContext.RequestContext.Request.AuthenticationRegion);
         }
+
+        /// <summary>
+        /// Counts how often the ruleset is evaluated and lets a test change the parameters between calls.
+        /// </summary>
+        private class CountingEndpointProvider : IEndpointProvider
+        {
+            public int Calls;
+
+            public Endpoint ResolveEndpoint(EndpointParameters parameters)
+            {
+                Calls++;
+                return new Endpoint("https://" + parameters["Region"] + ".localhost:7777", "{\"authSchemes\":[{\"name\":\"sigv4\"}]}", null);
+            }
+        }
+
+        private class ParameterizedEndpointResolver : BaseEndpointResolver
+        {
+            public string Region = "us-east-1";
+
+            protected override EndpointParameters MapEndpointsParameters(Amazon.Runtime.IRequestContext requestContext)
+            {
+                var parameters = new EndpointParameters();
+                parameters["Region"] = Region;
+                return parameters;
+            }
+        }
+
+        private static ExecutionContext CreateExecutionContext(IEndpointProvider provider)
+        {
+            var config = new MockClientConfig { EndpointProvider = provider };
+            var requestContext = new RequestContext(false, new NullSigner())
+            {
+                ClientConfig = config,
+                Request = new DefaultRequest(new MockAmazonWebServiceRequest(), "test-service")
+            };
+            return new ExecutionContext(requestContext, null);
+        }
+
+        /// <summary>
+        /// Resolving the endpoint twice for the same request (as the auth resolver and the endpoint resolver do for S3)
+        /// evaluates the ruleset once and yields the same endpoint.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        public void EndpointResolverReusesEndpointForUnchangedParameters()
+        {
+            var provider = new CountingEndpointProvider();
+            var executionContext = CreateExecutionContext(provider);
+            var resolver = new ParameterizedEndpointResolver();
+
+            var first = resolver.GetEndpoint(executionContext);
+            resolver.ProcessRequestHandlers(executionContext);
+
+            Assert.AreEqual(1, provider.Calls);
+            Assert.AreSame(first.Attributes, executionContext.RequestContext.Request.EndpointAttributes);
+            Assert.AreEqual("https://us-east-1.localhost:7777/", executionContext.RequestContext.Request.Endpoint.ToString());
+        }
+
+        /// <summary>
+        /// Changed parameters on the same request context resolve again.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        public void EndpointResolverResolvesAgainWhenParametersChange()
+        {
+            var provider = new CountingEndpointProvider();
+            var executionContext = CreateExecutionContext(provider);
+            var resolver = new ParameterizedEndpointResolver();
+
+            resolver.GetEndpoint(executionContext);
+            resolver.Region = "eu-west-1";
+            resolver.ProcessRequestHandlers(executionContext);
+
+            Assert.AreEqual(2, provider.Calls);
+            Assert.AreEqual("https://eu-west-1.localhost:7777/", executionContext.RequestContext.Request.Endpoint.ToString());
+        }
+
+        /// <summary>
+        /// Resolvers that do not map parameters (the base implementation returns null) resolve on every call without failing.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        public void EndpointResolverHandlesNullParameters()
+        {
+            var provider = new TestEndpointProvider();
+            var executionContext = CreateExecutionContext(provider);
+            var resolver = new BaseEndpointResolver();
+
+            resolver.GetEndpoint(executionContext);
+            resolver.ProcessRequestHandlers(executionContext);
+
+            Assert.AreEqual("https://localhost:7777/", executionContext.RequestContext.Request.Endpoint.ToString());
+        }
+
     }
 }

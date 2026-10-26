@@ -19,7 +19,6 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -30,7 +29,6 @@ namespace Amazon.Runtime.Internal.Transform
         HttpResponseMessageBody _response;
         string[] _headerNames;
         Dictionary<string, string> _headers;
-        HashSet<string> _headerNamesSet;
         private Dictionary<string, IEventStreamHeader> _eventHeaders;
 
         internal HttpClientResponseData(Dictionary<string, IEventStreamHeader> eventHeaders)
@@ -78,7 +76,8 @@ namespace Amazon.Runtime.Internal.Transform
 
         public bool IsHeaderPresent(string headerName)
         {
-            return _headerNamesSet.Contains(headerName);
+            // _headers is keyed case-insensitively, so it doubles as the name set.
+            return _headers.ContainsKey(headerName);
         }
 
         public string[] GetHeaderNames()
@@ -88,79 +87,27 @@ namespace Amazon.Runtime.Internal.Transform
 
         private void CopyHeaderValues(HttpResponseMessage response)
         {
-#if NET8_0_OR_GREATER
-            // Enumerating HttpHeaders directly parses and validates every value (allocating parsed header objects
-            // for each one). The SDK only needs the raw first value of each header, which NonValidated provides.
-            var responseHeaders = response.Headers.NonValidated;
-            var contentHeaders = response.Content?.Headers.NonValidated;
-            var capacity = responseHeaders.Count + (contentHeaders?.Count ?? 0);
-            List<string> headerNames = new List<string>(capacity);
-            _headers = new Dictionary<string, string>(capacity, StringComparer.OrdinalIgnoreCase);
-
-            foreach (var kvp in responseHeaders)
-            {
-                headerNames.Add(kvp.Key);
-                _headers.Add(kvp.Key, GetFirstHeaderValue(kvp.Value));
-            }
-
-            if (contentHeaders != null)
-            {
-                foreach (var kvp in contentHeaders)
-                {
-                    if (!_headers.ContainsKey(kvp.Key))
-                    {
-                        headerNames.Add(kvp.Key);
-                        _headers.Add(kvp.Key, GetFirstHeaderValue(kvp.Value));
-                    }
-                }
-            }
-#else
             List<string> headerNames = new List<string>();
             _headers = new Dictionary<string, string>(10, StringComparer.OrdinalIgnoreCase);
 
             foreach (KeyValuePair<string, IEnumerable<string>> kvp in response.Headers)
             {
                 headerNames.Add(kvp.Key);
-                var headerValue = GetFirstHeaderValue(response.Headers, kvp.Key);
-                _headers.Add(kvp.Key, headerValue);
+                _headers.Add(kvp.Key, kvp.Value.FirstOrDefault() ?? string.Empty);
             }
 
             if (response.Content != null)
             {
                 foreach (var kvp in response.Content.Headers)
                 {
-                    if (!headerNames.Contains(kvp.Key))
+                    if (!_headers.ContainsKey(kvp.Key))
                     {
                         headerNames.Add(kvp.Key);
-                        var headerValue = GetFirstHeaderValue(response.Content.Headers, kvp.Key);
-                        _headers.Add(kvp.Key, headerValue);
+                        _headers.Add(kvp.Key, kvp.Value.FirstOrDefault() ?? string.Empty);
                     }
                 }
             }
-#endif
             _headerNames = headerNames.ToArray();
-            _headerNamesSet = new HashSet<string>(_headerNames, StringComparer.OrdinalIgnoreCase);
-        }
-
-#if NET8_0_OR_GREATER
-        private static string GetFirstHeaderValue(HeaderStringValues values)
-        {
-            foreach (var value in values)
-            {
-                return value;
-            }
-
-            return string.Empty;
-        }
-#endif
-
-        private string GetFirstHeaderValue(HttpHeaders headers, string key)
-        {
-            IEnumerable<string> headerValues = null;
-            if (headers.TryGetValues(key, out headerValues))
-                return headerValues.FirstOrDefault();
-
-            return string.Empty;
         }
 
         public IEventStreamHeader GetEventStreamHeader(string headerName)

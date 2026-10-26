@@ -259,7 +259,13 @@ namespace Amazon.Runtime.Internal.Util
             if (!_bufferReturned)
             {
                 _bufferReturned = true;
-                ArrayPool<byte>.Shared.Return(_buffer);
+                var buffer = _buffer;
+                // Drop the reference: Read already short-circuits once the buffer is gone, and GetMoreBytesFromStream
+                // rejects a null buffer, so nothing can refill an array the pool may have handed to someone else.
+                // The Utf8JsonReader keeps its view of the last token (the context reads its TokenType right after
+                // Read returns), so it is deliberately left in place.
+                _buffer = null;
+                ArrayPool<byte>.Shared.Return(buffer);
             }
         }
 
@@ -280,6 +286,9 @@ namespace Amazon.Runtime.Internal.Util
 
         private static void GetMoreBytesFromStream(Stream stream, ref byte[] buffer, ref Utf8JsonReader reader)
         {
+            if (buffer == null)
+                throw new InvalidOperationException("The JSON document has already been read to its end and the reader's buffer has been released.");
+
             int bytesRead = 0;
             ReadOnlySpan<byte> leftover = buffer.AsSpan().Slice((int)reader.BytesConsumed);
             if (reader.BytesConsumed < buffer.Length)

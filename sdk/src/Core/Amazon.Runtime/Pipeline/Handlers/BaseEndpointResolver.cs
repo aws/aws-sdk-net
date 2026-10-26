@@ -108,7 +108,7 @@ namespace Amazon.Runtime.Internal
             // endpoint once in the auth resolver and again here. Rule evaluation is a pure function of
             // the parameters, so the previous result is reused when the parameters have not changed since.
             var cache = requestContext as RequestContext;
-            if (cache != null && cache.ResolvedEndpoint != null && cache.ResolvedEndpointParameters.ContentEquals(parameters))
+            if (cache != null && cache.ResolvedEndpoint != null && cache.ResolvedEndpointParameters != null && cache.ResolvedEndpointParameters.ContentEquals(parameters))
             {
                 endpoint = cache.ResolvedEndpoint;
                 endpoint.URL = cache.ResolvedEndpointUrl;
@@ -119,12 +119,12 @@ namespace Amazon.Runtime.Internal
                 {
                     endpoint = GlobalEndpoints.Provider.ResolveEndpoint(requestContext.ServiceMetaData?.ServiceId, parameters);
                 }
-                else if (endpoint == null && config.EndpointProvider != null)
+                else if (config.EndpointProvider != null)
                 {
                     endpoint = config.EndpointProvider.ResolveEndpoint(parameters);
                 }
 
-                if (cache != null && endpoint != null)
+                if (cache != null && endpoint != null && parameters != null)
                 {
                     cache.ResolvedEndpoint = endpoint;
                     cache.ResolvedEndpointParameters = parameters;
