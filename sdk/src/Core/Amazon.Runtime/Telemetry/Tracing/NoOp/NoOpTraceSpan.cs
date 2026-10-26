@@ -25,6 +25,11 @@ namespace Amazon.Runtime.Telemetry.Tracing.NoOp
     internal class NoOpTraceSpan : TraceSpan
     {
         /// <summary>
+        /// Shared instance. The span holds no state, so one instance can serve every request.
+        /// </summary>
+        internal static readonly NoOpTraceSpan Instance = new NoOpTraceSpan();
+
+        /// <summary>
         /// No-op implementation of the <see cref="EmitEvent(string, Attributes)"/> method.
         /// This method does nothing when called.
         /// </summary>

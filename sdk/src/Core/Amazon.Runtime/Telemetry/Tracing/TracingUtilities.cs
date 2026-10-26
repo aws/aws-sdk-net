@@ -39,6 +39,12 @@ namespace Amazon.Runtime.Telemetry.Tracing
             SpanKind spanKind = SpanKind.INTERNAL,
             SpanContext parentContext = null)
         {
+            var tracerProvider = requestContext.ClientConfig.TelemetryProvider.TracerProvider;
+            if (tracerProvider is NoOp.NoOpTracerProvider)
+            {
+                return NoOp.NoOpTraceSpan.Instance;
+            }
+
             var serviceId = requestContext.ClientConfig.ServiceId;
 
             if (initialAttributes == null)
@@ -50,8 +56,6 @@ namespace Amazon.Runtime.Telemetry.Tracing
 
             initialAttributes.Set(TelemetryConstants.SystemAttributeKey, TelemetryConstants.SystemAttributeValue);
             initialAttributes.Set(TelemetryConstants.ServiceAttributeKey, serviceId);
-
-            var tracerProvider = requestContext.ClientConfig.TelemetryProvider.TracerProvider;
 
             var scope = $"{TelemetryConstants.TelemetryScopePrefix}.{serviceId}";
             var tracer = tracerProvider.GetTracer(scope);

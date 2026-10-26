@@ -153,6 +153,12 @@ namespace Amazon.Runtime.Internal
 
         private static void RecordHttpTelemetryData(IExecutionContext executionContext, TraceSpan traceSpan, IRequest request)
         {
+            if (traceSpan is Telemetry.Tracing.NoOp.NoOpTraceSpan &&
+                executionContext.RequestContext.ClientConfig.TelemetryProvider.MeterProvider is Telemetry.Metrics.NoOp.NoOpMeterProvider)
+            {
+                return;
+            }
+
             var response = executionContext.ResponseContext.HttpResponse;
 
             var metricsAttributes = new Attributes();
