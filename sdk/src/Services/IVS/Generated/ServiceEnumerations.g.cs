@@ -155,6 +155,57 @@ namespace Amazon.IVS
     }
 
     /// <summary>
+    /// Constants used for properties of type FailoverSlateConfigurationState.
+    /// </summary>
+    public class FailoverSlateConfigurationState : ConstantClass
+    {
+        /// <summary>
+        /// Constant CREATED for FailoverSlateConfigurationState
+        /// </summary>
+        public static readonly FailoverSlateConfigurationState CREATED = new FailoverSlateConfigurationState("CREATED");
+
+        /// <summary>
+        /// Constant CREATE_FAILED for FailoverSlateConfigurationState
+        /// </summary>
+        public static readonly FailoverSlateConfigurationState CREATE_FAILED = new FailoverSlateConfigurationState("CREATE_FAILED");
+
+        /// <summary>
+        /// Constant CREATING for FailoverSlateConfigurationState
+        /// </summary>
+        public static readonly FailoverSlateConfigurationState CREATING = new FailoverSlateConfigurationState("CREATING");
+
+        /// <summary>
+        /// Constant UPDATING for FailoverSlateConfigurationState
+        /// </summary>
+        public static readonly FailoverSlateConfigurationState UPDATING = new FailoverSlateConfigurationState("UPDATING");
+
+        /// <summary>
+        /// Constructs a custom FailoverSlateConfigurationState for a value not among the defined constants.
+        /// </summary>
+        public FailoverSlateConfigurationState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FailoverSlateConfigurationState FindValue(string value)
+        {
+            return FindValue<FailoverSlateConfigurationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FailoverSlateConfigurationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type MultitrackMaximumResolution.
     /// </summary>
     public class MultitrackMaximumResolution : ConstantClass

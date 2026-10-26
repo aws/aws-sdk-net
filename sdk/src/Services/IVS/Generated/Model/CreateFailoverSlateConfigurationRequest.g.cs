@@ -1,0 +1,121 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.IVS.Model
+{
+    /// <summary>
+    /// Container for the parameters to the CreateFailoverSlateConfiguration operation. Creates
+    /// a new failover slate configuration.
+    /// </summary>
+    public partial class CreateFailoverSlateConfigurationRequest : AmazonIVSRequest
+    {
+        /// <summary>
+        /// Gets and sets the property ActivationThresholdSeconds. 
+        /// <para>
+        /// Number of seconds of ingest interruption before the failover slate activates. Minimum:
+        /// <c>3</c>. Maximum: <c>5</c>. Default: <c>3</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 3, Max = 5)]
+        public int? ActivationThresholdSeconds { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ActivationThresholdSeconds property is set.
+        /// </summary>
+        internal bool IsSetActivationThresholdSeconds() => this.ActivationThresholdSeconds.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property MaxSlateDisplaySeconds. 
+        /// <para>
+        /// Maximum number of seconds that the failover slate displays. Minimum: <c>60</c>. Maximum:
+        /// <c>180</c>. Default: <c>60</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 60, Max = 180)]
+        public int? MaxSlateDisplaySeconds { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MaxSlateDisplaySeconds property is set.
+        /// </summary>
+        internal bool IsSetMaxSlateDisplaySeconds() => this.MaxSlateDisplaySeconds.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property MinSlateDisplaySeconds. 
+        /// <para>
+        /// Minimum number of seconds that the failover slate displays after activation. Minimum:
+        /// <c>3</c>. Maximum: <c>10</c>. Default: <c>3</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 3, Max = 10)]
+        public int? MinSlateDisplaySeconds { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MinSlateDisplaySeconds property is set.
+        /// </summary>
+        internal bool IsSetMinSlateDisplaySeconds() => this.MinSlateDisplaySeconds.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// Failover-slate-configuration name. The value does not need to be unique.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 128)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Name property is set.
+        /// </summary>
+        internal bool IsSetName() => this.Name != null;
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Array of 1-50 maps, each of the form <c>string:string (key:value)</c>. See <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html">Best
+        /// practices and strategies</a> in <i>Tagging Amazon Web Services Resources and Tag Editor</i>
+        /// for details, including restrictions that apply to tags and "Tag naming limits and
+        /// requirements"; Amazon IVS has no service-specific constraints beyond what is documented
+        /// there.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 50)]
+        public Dictionary<string, string> Tags { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Checks to see if the Tags property is set.
+        /// </summary>
+        internal bool IsSetTags() => this.Tags != null && (this.Tags.Count > 0 || !AWSConfigs.InitializeCollections);
+    }
+}

@@ -83,6 +83,11 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("containerFormat");
                 context.Writer.WriteStringValue(publicRequest.ContainerFormat);
             }
+            if (publicRequest.IsSetFailoverSlateConfigurationArn())
+            {
+                context.Writer.WritePropertyName("failoverSlateConfigurationArn");
+                context.Writer.WriteStringValue(publicRequest.FailoverSlateConfigurationArn);
+            }
             if (publicRequest.IsSetInsecureIngest())
             {
                 context.Writer.WritePropertyName("insecureIngest");
