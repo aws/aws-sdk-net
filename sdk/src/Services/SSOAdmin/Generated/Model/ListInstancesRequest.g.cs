@@ -64,5 +64,33 @@ namespace Amazon.SSOAdmin.Model
         /// Checks to see if the NextToken property is set.
         /// </summary>
         internal bool IsSetNextToken() => this.NextToken != null;
+
+        /// <summary>
+        /// Gets and sets the property RegionScope. 
+        /// <para>
+        /// Specifies which Amazon Web Services Regions to list IAM Identity Center instances
+        /// from. Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CURRENT_REGION</c> - Lists only the instances in the Region that you call this
+        /// API from.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ALL_REGIONS</c> - Lists the instances that the caller owns or that are shared
+        /// with the caller across all Regions.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you don't specify a value, the default is <c>CURRENT_REGION</c>.
+        /// </para>
+        /// </summary>
+        public RegionScope RegionScope { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RegionScope property is set.
+        /// </summary>
+        internal bool IsSetRegionScope() => this.RegionScope != null;
     }
 }

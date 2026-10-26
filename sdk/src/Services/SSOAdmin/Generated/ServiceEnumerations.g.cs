@@ -611,6 +611,47 @@ namespace Amazon.SSOAdmin
     }
 
     /// <summary>
+    /// Constants used for properties of type RegionScope.
+    /// </summary>
+    public class RegionScope : ConstantClass
+    {
+        /// <summary>
+        /// Constant ALL_REGIONS for RegionScope
+        /// </summary>
+        public static readonly RegionScope ALL_REGIONS = new RegionScope("ALL_REGIONS");
+
+        /// <summary>
+        /// Constant CURRENT_REGION for RegionScope
+        /// </summary>
+        public static readonly RegionScope CURRENT_REGION = new RegionScope("CURRENT_REGION");
+
+        /// <summary>
+        /// Constructs a custom RegionScope for a value not among the defined constants.
+        /// </summary>
+        public RegionScope(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RegionScope FindValue(string value)
+        {
+            return FindValue<RegionScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RegionScope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type RegionStatus.
     /// </summary>
     public class RegionStatus : ConstantClass
