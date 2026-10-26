@@ -210,8 +210,14 @@ namespace AWSSDK.UnitTests
                     Assert.AreEqual("-5", StringUtils.FromSByte((sbyte)-5));
                     Assert.AreEqual("-5", StringUtils.FromShort((short)-5));
                     Assert.AreEqual("-5", StringUtils.FromBigInteger(new BigInteger(-5)));
-                    Assert.AreEqual("-5,-6", StringUtils.FromValueTypeList(new List<short> { -5, -6 }, CultureInfo.InvariantCulture));
-                    Assert.AreEqual("-1,2", StringUtils.FromValueTypeList(new List<BigInteger> { -1, 2 }, CultureInfo.InvariantCulture));
+                    Assert.AreEqual("-5,-6", StringUtils.FromValueTypeList(new List<short> { -5, -6 }, StringUtils.FromShort));
+                    Assert.AreEqual("-1,2", StringUtils.FromValueTypeList(new List<BigInteger> { -1, 2 }, StringUtils.FromBigInteger));
+                    Assert.AreEqual("-1.5,1000", StringUtils.FromValueTypeList(new List<BigDecimal>
+                    {
+                        BigDecimal.Parse("-1.5", CultureInfo.InvariantCulture),
+                        BigDecimal.Parse("1E+3", CultureInfo.InvariantCulture)
+                    }, StringUtils.FromBigDecimal));
+                    Assert.AreEqual("-128,127", StringUtils.FromValueTypeList(new List<sbyte> { sbyte.MinValue, sbyte.MaxValue }, StringUtils.FromSByte));
                     Assert.AreEqual((sbyte)-5, UnmarshallJson(SByteUnmarshaller.Instance, "\"-5\""));
                     Assert.AreEqual((short)-5, UnmarshallXml(ShortUnmarshaller.Instance, "-5"));
                     Assert.AreEqual(new BigInteger(-5), UnmarshallJson(BigIntegerUnmarshaller.Instance, "\"-5\""));
@@ -239,13 +245,14 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        public void FromValueTypeListWithProviderMatchesExistingOutputForInvariantValues()
+        public void FromValueTypeListWithFormatterMatchesExistingOutputForInvariantValues()
         {
-            Assert.AreEqual("", StringUtils.FromValueTypeList((List<short>)null, CultureInfo.InvariantCulture));
-            Assert.AreEqual("", StringUtils.FromValueTypeList(new List<short>(), CultureInfo.InvariantCulture));
+            Assert.AreEqual("", StringUtils.FromValueTypeList((List<short>)null, StringUtils.FromShort));
+            Assert.AreEqual("", StringUtils.FromValueTypeList(new List<short>(), StringUtils.FromShort));
             Assert.AreEqual(
                 StringUtils.FromValueTypeList(new List<int> { 1, 2, 3 }),
-                StringUtils.FromValueTypeList(new List<int> { 1, 2, 3 }, CultureInfo.InvariantCulture));
+                StringUtils.FromValueTypeList(new List<int> { 1, 2, 3 }, StringUtils.FromInt));
+            Assert.ThrowsExactly<ArgumentNullException>(() => StringUtils.FromValueTypeList(new List<short> { 1 }, (Func<short, string>)null));
         }
 
         // BigDecimal cases below are ported from the boblod-bigdecimal-stj-test branch (2026-07-21) and now

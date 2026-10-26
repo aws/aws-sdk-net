@@ -133,6 +133,22 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
                 unmarshalledObject.<#=member.PropertyName#> = context.ResponseData.GetEventStreamHeader("<#=member.ModeledName#>").AsLong();
 <#
         }
+        else if (member.Shape.IsByte)
+        {
+#>
+                unmarshalledObject.<#=member.PropertyName#> = context.ResponseData.GetEventStreamHeader("<#=member.ModeledName#>").AsSByte();
+<#
+        }
+        else if (member.Shape.IsShort)
+        {
+#>
+                unmarshalledObject.<#=member.PropertyName#> = context.ResponseData.GetEventStreamHeader("<#=member.ModeledName#>").AsInt16();
+<#
+        }
+        else if (member.Shape.IsArbitraryPrecisionNumber)
+        {
+            throw new Exception($"Member {member.PropertyName} is a {member.Shape.Type}, which cannot be bound to an event stream header.");
+        }
         else if (member.Shape.IsString)
         {
 #>

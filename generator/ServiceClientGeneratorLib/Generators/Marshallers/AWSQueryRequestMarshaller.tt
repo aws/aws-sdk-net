@@ -156,14 +156,14 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
                 if(member.Shape.ValueShape.IsList)
                 {
 #>
-<#=new string(' ', level * 4)#>                        List<<#= member.Shape.ValueShape.ListShape.GetPrimitiveType() #>> value;
+<#=new string(' ', level * 4)#>                        List<<#= member.Shape.ValueShape.ListShape.QueryMapValueTypeName #>> value;
 
 <#+
                 }
                 else
                 {
 #>
-<#=new string(' ', level * 4)#>                        <#= member.Shape.ValueShape.IsStructure ? member.Shape.ValueShape.Name : member.Shape.ValueShape.GetPrimitiveType() #> value;
+<#=new string(' ', level * 4)#>                        <#= member.Shape.ValueShape.IsStructure ? member.Shape.ValueShape.Name : member.Shape.ValueShape.QueryMapValueTypeName #> value;
 <#+
                 }
 #>

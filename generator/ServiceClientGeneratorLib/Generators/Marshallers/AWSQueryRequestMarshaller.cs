@@ -773,7 +773,7 @@ this.Write("                        List<");
         #line hidden
         
         #line 159 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ValueShape.ListShape.GetPrimitiveType()));
+this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ValueShape.ListShape.QueryMapValueTypeName));
 
         
         #line default
@@ -811,7 +811,7 @@ this.Write("                        ");
         #line hidden
         
         #line 166 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ValueShape.IsStructure ? member.Shape.ValueShape.Name : member.Shape.ValueShape.GetPrimitiveType()));
+this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ValueShape.IsStructure ? member.Shape.ValueShape.Name : member.Shape.ValueShape.QueryMapValueTypeName));
 
         
         #line default

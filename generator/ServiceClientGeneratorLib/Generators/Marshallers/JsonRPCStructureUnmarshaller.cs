@@ -333,6 +333,26 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line 134 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureUnmarshaller.tt"
 
         }
+        else if (member.Shape.IsByte)
+        {
+            this.Write("                unmarshalledObject.");
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
+            this.Write(" = context.ResponseData.GetEventStreamHeader(\"");
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.ModeledName));
+            this.Write("\").AsSByte();\r\n");
+        }
+        else if (member.Shape.IsShort)
+        {
+            this.Write("                unmarshalledObject.");
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
+            this.Write(" = context.ResponseData.GetEventStreamHeader(\"");
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.ModeledName));
+            this.Write("\").AsInt16();\r\n");
+        }
+        else if (member.Shape.IsArbitraryPrecisionNumber)
+        {
+            throw new Exception($"Member {member.PropertyName} is a {member.Shape.Type}, which cannot be bound to an event stream header.");
+        }
         else if (member.Shape.IsString)
         {
 

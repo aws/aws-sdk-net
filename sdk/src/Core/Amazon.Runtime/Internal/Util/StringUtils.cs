@@ -536,14 +536,19 @@ namespace Amazon.Runtime.Internal.Util
 
         /// <summary>
         /// Combines an enumerable of T into a comma-separated string to be marshalled as a header,
-        /// formatting each value with the given format provider.
+        /// converting each value with the given formatter, for example <see cref="FromShort(short)"/>.
         /// </summary>
         /// <param name="values">List of T</param>
-        /// <param name="provider">The format provider, normally <see cref="CultureInfo.InvariantCulture"/>.</param>
+        /// <param name="format">Converts a single value to its header text.</param>
         /// <returns>Header value representing the list of T.</returns>
-        public static string FromValueTypeList<T>(IEnumerable<T> values, IFormatProvider provider) where T : struct, IFormattable
+        public static string FromValueTypeList<T>(IEnumerable<T> values, Func<T, string> format) where T : struct
         {
-            return FromList(values?.Select(x => x.ToString(null, provider)));
+            if (format == null)
+            {
+                throw new ArgumentNullException(nameof(format));
+            }
+
+            return FromList(values?.Select(format));
         }
 
         /// <summary>

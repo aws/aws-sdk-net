@@ -581,6 +581,14 @@ namespace ServiceClientGenerator
                     return $"int{nullableSuffix}";
                 case "long":
                     return $"long{nullableSuffix}";
+                case "byte":
+                    return $"sbyte{nullableSuffix}";
+                case "short":
+                    return $"short{nullableSuffix}";
+                case "bigInteger":
+                    return $"{Shape.BigIntegerTypeName}{nullableSuffix}";
+                case "bigDecimal":
+                    return $"{Shape.BigDecimalTypeName}{nullableSuffix}";
                 case "timestamp":
                     return $"DateTime{nullableSuffix}";
                 case "structure":
@@ -687,6 +695,14 @@ namespace ServiceClientGenerator
                     return $"{primitiveUnmarshallerPrefix}{nullableSuffix}IntUnmarshaller";
                 case "long":
                     return $"{primitiveUnmarshallerPrefix}{nullableSuffix}LongUnmarshaller";
+                case "byte":
+                    return $"{primitiveUnmarshallerPrefix}{nullableSuffix}SByteUnmarshaller";
+                case "short":
+                    return $"{primitiveUnmarshallerPrefix}{nullableSuffix}ShortUnmarshaller";
+                case "bigInteger":
+                    return $"{primitiveUnmarshallerPrefix}{nullableSuffix}BigIntegerUnmarshaller";
+                case "bigDecimal":
+                    return $"{primitiveUnmarshallerPrefix}{nullableSuffix}BigDecimalUnmarshaller";
                 case "timestamp":
                     return $"{primitiveUnmarshallerPrefix}{nullableSuffix}DateTimeUnmarshaller";
                 case "structure":
@@ -808,6 +824,14 @@ namespace ServiceClientGenerator
                     return $"{primitiveUnmarshallerPrefix}{nullableSuffix}IntUnmarshaller.Instance";
                 case "long":
                     return $"{primitiveUnmarshallerPrefix}{nullableSuffix}LongUnmarshaller.Instance";
+                case "byte":
+                    return $"{primitiveUnmarshallerPrefix}{nullableSuffix}SByteUnmarshaller.Instance";
+                case "short":
+                    return $"{primitiveUnmarshallerPrefix}{nullableSuffix}ShortUnmarshaller.Instance";
+                case "bigInteger":
+                    return $"{primitiveUnmarshallerPrefix}{nullableSuffix}BigIntegerUnmarshaller.Instance";
+                case "bigDecimal":
+                    return $"{primitiveUnmarshallerPrefix}{nullableSuffix}BigDecimalUnmarshaller.Instance";
                 case "timestamp":
                     return $"{primitiveUnmarshallerPrefix}{nullableSuffix}DateTimeUnmarshaller.Instance";
                 case "structure":

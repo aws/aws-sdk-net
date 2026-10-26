@@ -1,0 +1,234 @@
+{
+  "version": "2.0",
+  "metadata": {
+    "apiVersion": "2026-10-26",
+    "auth": [
+      "aws.auth#sigv4"
+    ],
+    "endpointPrefix": "numerictypesquery",
+    "protocol": "query",
+    "protocols": [
+      "query"
+    ],
+    "serviceFullName": "Sample Numeric Types Query Service",
+    "serviceId": "Numeric Types Query",
+    "signatureVersion": "v4",
+    "signingName": "numerictypesquery",
+    "uid": "numerictypesquery-2026-10-26",
+    "xmlNamespace": "https://example.com/numerictypes/"
+  },
+  "operations": {
+    "BodyNumbers": {
+      "name": "BodyNumbers",
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "BodyNumbersRequest"
+      },
+      "output": {
+        "shape": "BodyNumbersResponse",
+        "resultWrapper": "BodyNumbersResult"
+      },
+      "documentation": "<p>Sends and receives every numeric type in the request and response bodies.</p>"
+    }
+  },
+  "shapes": {
+    "BigDecimal": {
+      "type": "bigDecimal"
+    },
+    "BigDecimalList": {
+      "type": "list",
+      "member": {
+        "shape": "BigDecimal"
+      }
+    },
+    "BigDecimalMap": {
+      "type": "map",
+      "key": {
+        "shape": "String"
+      },
+      "value": {
+        "shape": "BigDecimal"
+      }
+    },
+    "BigInteger": {
+      "type": "bigInteger"
+    },
+    "BigIntegerList": {
+      "type": "list",
+      "member": {
+        "shape": "BigInteger"
+      }
+    },
+    "BigIntegerMap": {
+      "type": "map",
+      "key": {
+        "shape": "String"
+      },
+      "value": {
+        "shape": "BigInteger"
+      }
+    },
+    "BodyNumbersRequest": {
+      "type": "structure",
+      "members": {
+        "ByteValue": {
+          "shape": "Byte"
+        },
+        "ByteList": {
+          "shape": "ByteList"
+        },
+        "ByteMap": {
+          "shape": "ByteMap"
+        },
+        "ShortValue": {
+          "shape": "Short"
+        },
+        "ShortList": {
+          "shape": "ShortList"
+        },
+        "ShortMap": {
+          "shape": "ShortMap"
+        },
+        "BigIntegerValue": {
+          "shape": "BigInteger"
+        },
+        "BigIntegerList": {
+          "shape": "BigIntegerList"
+        },
+        "BigIntegerMap": {
+          "shape": "BigIntegerMap"
+        },
+        "BigDecimalValue": {
+          "shape": "BigDecimal"
+        },
+        "BigDecimalList": {
+          "shape": "BigDecimalList"
+        },
+        "BigDecimalMap": {
+          "shape": "BigDecimalMap"
+        },
+        "Nested": {
+          "shape": "NestedNumbers"
+        },
+        "NestedList": {
+          "shape": "NestedNumbersList"
+        }
+      }
+    },
+    "BodyNumbersResponse": {
+      "type": "structure",
+      "members": {
+        "ByteValue": {
+          "shape": "Byte"
+        },
+        "ByteList": {
+          "shape": "ByteList"
+        },
+        "ByteMap": {
+          "shape": "ByteMap"
+        },
+        "ShortValue": {
+          "shape": "Short"
+        },
+        "ShortList": {
+          "shape": "ShortList"
+        },
+        "ShortMap": {
+          "shape": "ShortMap"
+        },
+        "BigIntegerValue": {
+          "shape": "BigInteger"
+        },
+        "BigIntegerList": {
+          "shape": "BigIntegerList"
+        },
+        "BigIntegerMap": {
+          "shape": "BigIntegerMap"
+        },
+        "BigDecimalValue": {
+          "shape": "BigDecimal"
+        },
+        "BigDecimalList": {
+          "shape": "BigDecimalList"
+        },
+        "BigDecimalMap": {
+          "shape": "BigDecimalMap"
+        },
+        "Nested": {
+          "shape": "NestedNumbers"
+        },
+        "NestedList": {
+          "shape": "NestedNumbersList"
+        }
+      }
+    },
+    "Byte": {
+      "type": "byte"
+    },
+    "ByteList": {
+      "type": "list",
+      "member": {
+        "shape": "Byte"
+      }
+    },
+    "ByteMap": {
+      "type": "map",
+      "key": {
+        "shape": "String"
+      },
+      "value": {
+        "shape": "Byte"
+      }
+    },
+    "Integer": {
+      "type": "integer"
+    },
+    "NestedNumbers": {
+      "type": "structure",
+      "members": {
+        "ByteValue": {
+          "shape": "Byte"
+        },
+        "ShortValue": {
+          "shape": "Short"
+        },
+        "BigIntegerValue": {
+          "shape": "BigInteger"
+        },
+        "BigDecimalValue": {
+          "shape": "BigDecimal"
+        }
+      }
+    },
+    "NestedNumbersList": {
+      "type": "list",
+      "member": {
+        "shape": "NestedNumbers"
+      }
+    },
+    "Short": {
+      "type": "short"
+    },
+    "ShortList": {
+      "type": "list",
+      "member": {
+        "shape": "Short"
+      }
+    },
+    "ShortMap": {
+      "type": "map",
+      "key": {
+        "shape": "String"
+      },
+      "value": {
+        "shape": "Short"
+      }
+    },
+    "String": {
+      "type": "string"
+    }
+  }
+}

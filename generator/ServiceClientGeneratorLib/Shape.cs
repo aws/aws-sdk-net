@@ -54,6 +54,10 @@ namespace ServiceClientGenerator
             "int",
             "integer",
             "long",
+            "byte",
+            "short",
+            "bigInteger",
+            "bigDecimal",
         };
 
         public static readonly Dictionary<string, string> PrimitiveTypeNames = new Dictionary<string, string>
@@ -67,7 +71,22 @@ namespace ServiceClientGenerator
             { "long",       "Long" },
             { "string",     "String" },
             { "timestamp",  "DateTime"},
+            { "byte",       "SByte" },
+            { "short",      "Short" },
+            { "bigInteger", "BigInteger" },
+            { "bigDecimal", "BigDecimal" },
         };
+
+        /// <summary>
+        /// C# type emitted for the bigInteger shape type.
+        /// </summary>
+        public const string BigIntegerTypeName = "System.Numerics.BigInteger";
+
+        /// <summary>
+        /// C# type emitted for the bigDecimal shape type. BigDecimal lives in the AWSSDK.Extensions.Numerics package,
+        /// which AWSSDK.Core depends on.
+        /// </summary>
+        public const string BigDecimalTypeName = "Amazon.Extensions.Numerics.BigDecimal";
 
         private readonly string _name;
 
@@ -492,6 +511,146 @@ namespace ServiceClientGenerator
         public bool IsBoolean
         {
             get { return this.Type == "boolean"; }
+        }
+
+        /// <summary>
+        /// Determines if the shape's type is a byte, a signed 8-bit integer emitted as sbyte
+        /// </summary>
+        public bool IsByte
+        {
+            get { return this.Type == "byte"; }
+        }
+
+        /// <summary>
+        /// Determines if the shape's type is a short
+        /// </summary>
+        public bool IsShort
+        {
+            get { return this.Type == "short"; }
+        }
+
+        /// <summary>
+        /// Determines if the shape's type is a bigInteger
+        /// </summary>
+        public bool IsBigInteger
+        {
+            get { return this.Type == "bigInteger"; }
+        }
+
+        /// <summary>
+        /// Determines if the shape's type is a bigDecimal
+        /// </summary>
+        public bool IsBigDecimal
+        {
+            get { return this.Type == "bigDecimal"; }
+        }
+
+        /// <summary>
+        /// Determines if the shape is a bigInteger or bigDecimal. Utf8JsonWriter has no overload for these types, so
+        /// they are written with the StringUtils.Write{BigInteger,BigDecimal}Value helpers to keep every digit.
+        /// </summary>
+        public bool IsArbitraryPrecisionNumber
+        {
+            get { return IsBigInteger || IsBigDecimal; }
+        }
+
+        /// <summary>
+        /// Determines if the shape is one of the numeric types added by the Full Numeric Type Support SEP
+        /// (byte, short, bigInteger, bigDecimal).
+        /// </summary>
+        public bool IsSepNumericType
+        {
+            get { return IsByte || IsShort || IsArbitraryPrecisionNumber; }
+        }
+
+        /// <summary>
+        /// The JSON writer statement for an arbitrary-precision number, for example
+        /// "StringUtils.WriteBigDecimalValue(context.Writer, value)".
+        /// </summary>
+        public string ArbitraryPrecisionJsonWriteStatement(string valueExpression)
+        {
+            return $"StringUtils.Write{GetPrimitiveType()}Value(context.Writer, {valueExpression});";
+        }
+
+        /// <summary>
+        /// The type name used to call Parse on a header value, for example "int" in int.Parse(...).
+        /// Existing types keep the lower-cased primitive name the templates have always used.
+        /// </summary>
+        public string PrimitiveParseTypeName
+        {
+            get
+            {
+                switch (this.Type)
+                {
+                    case "byte": return "sbyte";
+                    case "short": return "short";
+                    case "bigInteger": return BigIntegerTypeName;
+                    case "bigDecimal": return BigDecimalTypeName;
+                    default: return GetPrimitiveType().ToLower();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Extra argument for MultiValueHeaderParser.ToValueTypeList when parsing a list header of this shape.
+        /// The numeric types from the Full Numeric Type Support SEP pass an invariant-culture parse function;
+        /// existing types pass nothing and keep using the Convert.ChangeType based overload.
+        /// </summary>
+        public string HeaderListParseArgument
+        {
+            get
+            {
+                return IsSepNumericType
+                    ? $", s => {PrimitiveParseTypeName}.Parse(s, CultureInfo.InvariantCulture)"
+                    : string.Empty;
+            }
+        }
+
+        /// <summary>
+        /// Extra argument for StringUtils.FromValueTypeList when marshalling a list header of this shape.
+        /// The numeric types from the Full Numeric Type Support SEP pass their invariant-culture StringUtils.From*
+        /// method; existing types pass nothing and keep using the ToString() based overload.
+        /// </summary>
+        public string HeaderListFormatArgument
+        {
+            get { return IsSepNumericType ? $", {PrimitiveMarshaller(MarshallLocation.Header)}" : string.Empty; }
+        }
+
+        /// <summary>
+        /// The variable type the AWS Query marshaller declares for a map value of this primitive shape.
+        /// Existing types keep the primitive name the template has always emitted, so generated code for
+        /// current services does not change; the SEP numeric types use their C# type.
+        /// </summary>
+        public string QueryMapValueTypeName
+        {
+            get { return IsSepNumericType ? PrimitiveCSharpTypeName : GetPrimitiveType(); }
+        }
+
+        /// <summary>
+        /// The C# type of a primitive shape, used where generated code declares a variable of that type.
+        /// </summary>
+        public string PrimitiveCSharpTypeName
+        {
+            get
+            {
+                switch (this.Type)
+                {
+                    case "boolean": return "bool";
+                    case "integer": return "int";
+                    case "long": return "long";
+                    case "float": return "float";
+                    case "double": return "double";
+                    case "decimal": return "decimal";
+                    case "string": return "string";
+                    case "timestamp": return "DateTime";
+                    case "blob": return "MemoryStream";
+                    case "byte": return "sbyte";
+                    case "short": return "short";
+                    case "bigInteger": return BigIntegerTypeName;
+                    case "bigDecimal": return BigDecimalTypeName;
+                    default: throw new Exception("Shape is not a primitive type: " + this.Type);
+                }
+            }
         }
 
         /// <summary>
