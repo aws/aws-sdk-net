@@ -5221,6 +5221,21 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateOutboundEmailContactMessageRequest.ContactId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateOutboundEmailContactMessageRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateOutboundEmailContactMessageResponse.ContactId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.UpdateParticipantAuthenticationRequest.Code</property>
     <min>1</min>
     <max>2048</max>
@@ -8405,6 +8420,16 @@
     <min>1</min>
     <max>128</max>
     <pattern>(^[\S].*[\S]$)|(^[\S]$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateOutboundRawMessage.Body</property>
+    <min>1</min>
+    <max>5242880</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateOutboundRawMessage.ContentType</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UploadUrlMetadata.Url</property>
