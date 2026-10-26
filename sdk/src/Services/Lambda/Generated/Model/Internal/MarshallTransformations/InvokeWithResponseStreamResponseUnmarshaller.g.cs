@@ -1,0 +1,265 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.Lambda.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+using System.Globalization;
+using Amazon.Util;
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.Lambda.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for InvokeWithResponseStream operation.
+    /// </summary>
+    public partial class InvokeWithResponseStreamResponseUnmarshaller : JsonResponseUnmarshaller
+    {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
+        {
+            var unmarshalledObject = new InvokeWithResponseStreamResponse();
+            unmarshalledObject.EventStream = new InvokeWithResponseStreamResponseEvent(context.Stream);
+            if (context.ResponseData.IsHeaderPresent("X-Amz-Executed-Version"))
+            {
+                unmarshalledObject.ExecutedVersion = context.ResponseData.GetHeaderValue("X-Amz-Executed-Version");
+            }
+            if (context.ResponseData.IsHeaderPresent("Content-Type"))
+            {
+                unmarshalledObject.ResponseStreamContentType = context.ResponseData.GetHeaderValue("Content-Type");
+            }
+            unmarshalledObject.StatusCode = (int)context.ResponseData.StatusCode;
+
+            return unmarshalledObject;
+        }
+
+        /// <summary>
+        /// Unmarshall error response to exception.
+        /// </summary>
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        {
+            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
+
+            errorResponse.InnerException = innerException;
+            errorResponse.StatusCode = statusCode;
+
+            var responseBodyBytes = context.GetResponseBodyBytes();
+
+            using (var streamCopy = new MemoryStream(responseBodyBytes))
+            {
+                using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
+                {
+                    var readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("CodeArtifactUserDeletedException"))
+                    {
+                        return CodeArtifactUserDeletedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("CodeArtifactUserFailedException"))
+                    {
+                        return CodeArtifactUserFailedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("CodeArtifactUserPendingException"))
+                    {
+                        return CodeArtifactUserPendingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("EC2AccessDeniedException"))
+                    {
+                        return EC2AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("EC2ThrottledException"))
+                    {
+                        return EC2ThrottledExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("EC2UnexpectedException"))
+                    {
+                        return EC2UnexpectedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("EFSIOException"))
+                    {
+                        return EFSIOExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("EFSMountConnectivityException"))
+                    {
+                        return EFSMountConnectivityExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("EFSMountFailureException"))
+                    {
+                        return EFSMountFailureExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("EFSMountTimeoutException"))
+                    {
+                        return EFSMountTimeoutExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("ENILimitReachedException"))
+                    {
+                        return ENILimitReachedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValueException"))
+                    {
+                        return InvalidParameterValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestContentException"))
+                    {
+                        return InvalidRequestContentExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRuntimeException"))
+                    {
+                        return InvalidRuntimeExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidSecurityGroupIDException"))
+                    {
+                        return InvalidSecurityGroupIDExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidSubnetIDException"))
+                    {
+                        return InvalidSubnetIDExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidZipFileException"))
+                    {
+                        return InvalidZipFileExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("KMSAccessDeniedException"))
+                    {
+                        return KMSAccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("KMSDisabledException"))
+                    {
+                        return KMSDisabledExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("KMSInvalidStateException"))
+                    {
+                        return KMSInvalidStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("KMSNotFoundException"))
+                    {
+                        return KMSNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("NoPublishedVersionException"))
+                    {
+                        return NoPublishedVersionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("RecursiveInvocationException"))
+                    {
+                        return RecursiveInvocationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("RequestTooLargeException"))
+                    {
+                        return RequestTooLargeExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceConflictException"))
+                    {
+                        return ResourceConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+                    {
+                        return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotReadyException"))
+                    {
+                        return ResourceNotReadyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("S3FilesMountConnectivityException"))
+                    {
+                        return S3FilesMountConnectivityExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("S3FilesMountFailureException"))
+                    {
+                        return S3FilesMountFailureExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("S3FilesMountTimeoutException"))
+                    {
+                        return S3FilesMountTimeoutExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("SerializedRequestEntityTooLargeException"))
+                    {
+                        return SerializedRequestEntityTooLargeExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceException"))
+                    {
+                        return ServiceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
+                    {
+                        return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("SnapStartException"))
+                    {
+                        return SnapStartExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("SnapStartNotReadyException"))
+                    {
+                        return SnapStartNotReadyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("SnapStartRegenerationFailureException"))
+                    {
+                        return SnapStartRegenerationFailureExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("SnapStartTimeoutException"))
+                    {
+                        return SnapStartTimeoutExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("SubnetIPAddressLimitReachedException"))
+                    {
+                        return SubnetIPAddressLimitReachedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyRequestsException"))
+                    {
+                        return TooManyRequestsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedMediaTypeException"))
+                    {
+                        return UnsupportedMediaTypeExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                }
+            }
+            return new AmazonLambdaException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+        }
+
+        /// <summary>
+        /// Overriden to return true indicating the response contains streaming data.
+        /// </summary>
+        public override bool HasStreamingProperty => true;
+
+        /// <summary>
+        /// Return false for reading the entire response
+        /// </summary>
+        protected override bool ShouldReadEntireResponse(IWebResponseData response, bool readEntireResponse) => false;
+
+        private static InvokeWithResponseStreamResponseUnmarshaller _instance = new InvokeWithResponseStreamResponseUnmarshaller();
+
+        internal static InvokeWithResponseStreamResponseUnmarshaller GetInstance() => _instance;
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static InvokeWithResponseStreamResponseUnmarshaller Instance => _instance;
+    }
+}

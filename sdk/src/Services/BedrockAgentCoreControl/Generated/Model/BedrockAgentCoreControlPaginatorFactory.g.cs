@@ -1,0 +1,347 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.BedrockAgentCoreControl.Model
+{
+    /// <summary>
+    /// Paginators for the BedrockAgentCoreControl service
+    /// </summary>
+    public class BedrockAgentCoreControlPaginatorFactory : IBedrockAgentCoreControlPaginatorFactory
+    {
+        private readonly IAmazonBedrockAgentCoreControl client;
+
+        internal BedrockAgentCoreControlPaginatorFactory(IAmazonBedrockAgentCoreControl client)
+        {
+            this.client = client;
+        }
+
+        /// <summary>
+        /// Paginator for ListAgentRuntimeEndpoints operation
+        /// </summary>
+        public IListAgentRuntimeEndpointsPaginator ListAgentRuntimeEndpoints(ListAgentRuntimeEndpointsRequest request)
+        {
+            return new ListAgentRuntimeEndpointsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAgentRuntimeVersions operation
+        /// </summary>
+        public IListAgentRuntimeVersionsPaginator ListAgentRuntimeVersions(ListAgentRuntimeVersionsRequest request)
+        {
+            return new ListAgentRuntimeVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAgentRuntimeVersionsByCapacityProvider operation
+        /// </summary>
+        public IListAgentRuntimeVersionsByCapacityProviderPaginator ListAgentRuntimeVersionsByCapacityProvider(ListAgentRuntimeVersionsByCapacityProviderRequest request)
+        {
+            return new ListAgentRuntimeVersionsByCapacityProviderPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAgentRuntimes operation
+        /// </summary>
+        public IListAgentRuntimesPaginator ListAgentRuntimes(ListAgentRuntimesRequest request)
+        {
+            return new ListAgentRuntimesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListApiKeyCredentialProviders operation
+        /// </summary>
+        public IListApiKeyCredentialProvidersPaginator ListApiKeyCredentialProviders(ListApiKeyCredentialProvidersRequest request)
+        {
+            return new ListApiKeyCredentialProvidersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListBrowserProfiles operation
+        /// </summary>
+        public IListBrowserProfilesPaginator ListBrowserProfiles(ListBrowserProfilesRequest request)
+        {
+            return new ListBrowserProfilesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListBrowsers operation
+        /// </summary>
+        public IListBrowsersPaginator ListBrowsers(ListBrowsersRequest request)
+        {
+            return new ListBrowsersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCapacityProviders operation
+        /// </summary>
+        public IListCapacityProvidersPaginator ListCapacityProviders(ListCapacityProvidersRequest request)
+        {
+            return new ListCapacityProvidersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCodeInterpreters operation
+        /// </summary>
+        public IListCodeInterpretersPaginator ListCodeInterpreters(ListCodeInterpretersRequest request)
+        {
+            return new ListCodeInterpretersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListConfigurationBundleVersions operation
+        /// </summary>
+        public IListConfigurationBundleVersionsPaginator ListConfigurationBundleVersions(ListConfigurationBundleVersionsRequest request)
+        {
+            return new ListConfigurationBundleVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListConfigurationBundles operation
+        /// </summary>
+        public IListConfigurationBundlesPaginator ListConfigurationBundles(ListConfigurationBundlesRequest request)
+        {
+            return new ListConfigurationBundlesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListConsentPortals operation
+        /// </summary>
+        public IListConsentPortalsPaginator ListConsentPortals(ListConsentPortalsRequest request)
+        {
+            return new ListConsentPortalsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDatasetExamples operation
+        /// </summary>
+        public IListDatasetExamplesPaginator ListDatasetExamples(ListDatasetExamplesRequest request)
+        {
+            return new ListDatasetExamplesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDatasetVersions operation
+        /// </summary>
+        public IListDatasetVersionsPaginator ListDatasetVersions(ListDatasetVersionsRequest request)
+        {
+            return new ListDatasetVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDatasets operation
+        /// </summary>
+        public IListDatasetsPaginator ListDatasets(ListDatasetsRequest request)
+        {
+            return new ListDatasetsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEvaluators operation
+        /// </summary>
+        public IListEvaluatorsPaginator ListEvaluators(ListEvaluatorsRequest request)
+        {
+            return new ListEvaluatorsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListGatewayRateLimits operation
+        /// </summary>
+        public IListGatewayRateLimitsPaginator ListGatewayRateLimits(ListGatewayRateLimitsRequest request)
+        {
+            return new ListGatewayRateLimitsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListGatewayRules operation
+        /// </summary>
+        public IListGatewayRulesPaginator ListGatewayRules(ListGatewayRulesRequest request)
+        {
+            return new ListGatewayRulesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListGatewayTargets operation
+        /// </summary>
+        public IListGatewayTargetsPaginator ListGatewayTargets(ListGatewayTargetsRequest request)
+        {
+            return new ListGatewayTargetsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListGateways operation
+        /// </summary>
+        public IListGatewaysPaginator ListGateways(ListGatewaysRequest request)
+        {
+            return new ListGatewaysPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListHarnessEndpoints operation
+        /// </summary>
+        public IListHarnessEndpointsPaginator ListHarnessEndpoints(ListHarnessEndpointsRequest request)
+        {
+            return new ListHarnessEndpointsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListHarnessVersions operation
+        /// </summary>
+        public IListHarnessVersionsPaginator ListHarnessVersions(ListHarnessVersionsRequest request)
+        {
+            return new ListHarnessVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListHarnesses operation
+        /// </summary>
+        public IListHarnessesPaginator ListHarnesses(ListHarnessesRequest request)
+        {
+            return new ListHarnessesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListMemories operation
+        /// </summary>
+        public IListMemoriesPaginator ListMemories(ListMemoriesRequest request)
+        {
+            return new ListMemoriesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListOauth2CredentialProviders operation
+        /// </summary>
+        public IListOauth2CredentialProvidersPaginator ListOauth2CredentialProviders(ListOauth2CredentialProvidersRequest request)
+        {
+            return new ListOauth2CredentialProvidersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListOnlineEvaluationConfigs operation
+        /// </summary>
+        public IListOnlineEvaluationConfigsPaginator ListOnlineEvaluationConfigs(ListOnlineEvaluationConfigsRequest request)
+        {
+            return new ListOnlineEvaluationConfigsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPaymentConnectors operation
+        /// </summary>
+        public IListPaymentConnectorsPaginator ListPaymentConnectors(ListPaymentConnectorsRequest request)
+        {
+            return new ListPaymentConnectorsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPaymentCredentialProviders operation
+        /// </summary>
+        public IListPaymentCredentialProvidersPaginator ListPaymentCredentialProviders(ListPaymentCredentialProvidersRequest request)
+        {
+            return new ListPaymentCredentialProvidersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPaymentManagers operation
+        /// </summary>
+        public IListPaymentManagersPaginator ListPaymentManagers(ListPaymentManagersRequest request)
+        {
+            return new ListPaymentManagersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPolicies operation
+        /// </summary>
+        public IListPoliciesPaginator ListPolicies(ListPoliciesRequest request)
+        {
+            return new ListPoliciesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPolicyEngineSummaries operation
+        /// </summary>
+        public IListPolicyEngineSummariesPaginator ListPolicyEngineSummaries(ListPolicyEngineSummariesRequest request)
+        {
+            return new ListPolicyEngineSummariesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPolicyEngines operation
+        /// </summary>
+        public IListPolicyEnginesPaginator ListPolicyEngines(ListPolicyEnginesRequest request)
+        {
+            return new ListPolicyEnginesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPolicyGenerationAssets operation
+        /// </summary>
+        public IListPolicyGenerationAssetsPaginator ListPolicyGenerationAssets(ListPolicyGenerationAssetsRequest request)
+        {
+            return new ListPolicyGenerationAssetsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPolicyGenerationSummaries operation
+        /// </summary>
+        public IListPolicyGenerationSummariesPaginator ListPolicyGenerationSummaries(ListPolicyGenerationSummariesRequest request)
+        {
+            return new ListPolicyGenerationSummariesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPolicyGenerations operation
+        /// </summary>
+        public IListPolicyGenerationsPaginator ListPolicyGenerations(ListPolicyGenerationsRequest request)
+        {
+            return new ListPolicyGenerationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPolicySummaries operation
+        /// </summary>
+        public IListPolicySummariesPaginator ListPolicySummaries(ListPolicySummariesRequest request)
+        {
+            return new ListPolicySummariesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRegistries operation
+        /// </summary>
+        public IListRegistriesPaginator ListRegistries(ListRegistriesRequest request)
+        {
+            return new ListRegistriesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRegistryRecords operation
+        /// </summary>
+        public IListRegistryRecordsPaginator ListRegistryRecords(ListRegistryRecordsRequest request)
+        {
+            return new ListRegistryRecordsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListWorkloadIdentities operation
+        /// </summary>
+        public IListWorkloadIdentitiesPaginator ListWorkloadIdentities(ListWorkloadIdentitiesRequest request)
+        {
+            return new ListWorkloadIdentitiesPaginator(this.client, request);
+        }
+    }
+}

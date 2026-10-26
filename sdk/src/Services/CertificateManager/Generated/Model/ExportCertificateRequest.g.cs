@@ -1,0 +1,93 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.CertificateManager.Model
+{
+    /// <summary>
+    /// Container for the parameters to the ExportCertificate operation. Exports a private
+    /// certificate issued by a private certificate authority (CA) or a public certificate
+    /// for use anywhere. The exported file contains the certificate, the certificate chain,
+    /// and the encrypted private key associated with the public key that is embedded in the
+    /// certificate. For security, you must assign a passphrase for the private key when exporting
+    /// it. <para> For information about exporting and formatting a certificate using the
+    /// ACM console or CLI, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/export-private.html">Export
+    /// a private certificate</a> and <a href="https://docs.aws.amazon.com/acm/latest/userguide/export-public-certificate">Export
+    /// a public certificate</a>. </para> <note> <para> ACM public certificates created prior
+    /// to June 17, 2025 cannot be exported. </para> </note>
+    /// </summary>
+    public partial class ExportCertificateRequest : AmazonCertificateManagerRequest
+    {
+        /// <summary>
+        /// Gets and sets the property CertificateArn. 
+        /// <para>
+        /// An Amazon Resource Name (ARN) of the issued certificate. This must be of the form:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</c>
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 20, Max = 2048)]
+        public string CertificateArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CertificateArn property is set.
+        /// </summary>
+        internal bool IsSetCertificateArn() => this.CertificateArn != null;
+
+        /// <summary>
+        /// Gets and sets the property Passphrase. 
+        /// <para>
+        /// Passphrase to associate with the encrypted exported private key. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// When creating your passphrase, you can use any ASCII character except #, $, or %.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// If you want to later decrypt the private key, you must have the passphrase. You can
+        /// use the following OpenSSL command to decrypt a private key. After entering the command,
+        /// you are prompted for the passphrase.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</c> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Sensitive = true, Min = 4, Max = 128)]
+        public MemoryStream Passphrase { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Passphrase property is set.
+        /// </summary>
+        internal bool IsSetPassphrase() => this.Passphrase != null;
+    }
+}

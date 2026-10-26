@@ -1,0 +1,120 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.CertificateManager.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// AcmCertificateMetadataFilter Marshaller
+    /// </summary>
+    public partial class AcmCertificateMetadataFilterMarshaller : IRequestMarshaller<AcmCertificateMetadataFilter, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(AcmCertificateMetadataFilter requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetAcmeAccountId())
+            {
+                context.Writer.WritePropertyName("AcmeAccountId");
+                context.Writer.WriteStringValue(requestObject.AcmeAccountId);
+            }
+
+            if (requestObject.IsSetAcmeEndpointArn())
+            {
+                context.Writer.WritePropertyName("AcmeEndpointArn");
+                context.Writer.WriteStringValue(requestObject.AcmeEndpointArn);
+            }
+
+            if (requestObject.IsSetCertificateKeyPairOrigin())
+            {
+                context.Writer.WritePropertyName("CertificateKeyPairOrigin");
+                context.Writer.WriteStringValue(requestObject.CertificateKeyPairOrigin);
+            }
+
+            if (requestObject.IsSetExportOption())
+            {
+                context.Writer.WritePropertyName("ExportOption");
+                context.Writer.WriteStringValue(requestObject.ExportOption);
+            }
+
+            if (requestObject.IsSetExported())
+            {
+                context.Writer.WritePropertyName("Exported");
+                context.Writer.WriteBooleanValue(requestObject.Exported.Value);
+            }
+
+            if (requestObject.IsSetInUse())
+            {
+                context.Writer.WritePropertyName("InUse");
+                context.Writer.WriteBooleanValue(requestObject.InUse.Value);
+            }
+
+            if (requestObject.IsSetManagedBy())
+            {
+                context.Writer.WritePropertyName("ManagedBy");
+                context.Writer.WriteStringValue(requestObject.ManagedBy);
+            }
+
+            if (requestObject.IsSetRenewalStatus())
+            {
+                context.Writer.WritePropertyName("RenewalStatus");
+                context.Writer.WriteStringValue(requestObject.RenewalStatus);
+            }
+
+            if (requestObject.IsSetStatus())
+            {
+                context.Writer.WritePropertyName("Status");
+                context.Writer.WriteStringValue(requestObject.Status);
+            }
+
+            if (requestObject.IsSetType())
+            {
+                context.Writer.WritePropertyName("Type");
+                context.Writer.WriteStringValue(requestObject.Type);
+            }
+
+            if (requestObject.IsSetValidationMethod())
+            {
+                context.Writer.WritePropertyName("ValidationMethod");
+                context.Writer.WriteStringValue(requestObject.ValidationMethod);
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static AcmCertificateMetadataFilterMarshaller Instance = new AcmCertificateMetadataFilterMarshaller();
+    }
+}

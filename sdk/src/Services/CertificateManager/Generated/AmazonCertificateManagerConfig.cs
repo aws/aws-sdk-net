@@ -14,9 +14,8 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the acm-2015-12-08.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -39,16 +38,12 @@ namespace Amazon.CertificateManager
             new AmazonCertificateManagerEndpointResolver();
 
         private string _userAgent = UserAgentString;
-        ///<summary>
+
+        /// <summary>
         /// The ServiceId, which is the unique identifier for a service.
-        ///</summary>
-        public static new string ServiceId
-        {
-            get
-            {
-                return "ACM";
-            }
-        }
+        /// </summary>
+        public static new string ServiceId => "ACM";
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -63,35 +58,17 @@ namespace Amazon.CertificateManager
         /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
-        public override string RegionEndpointServiceName
-        {
-            get
-            {
-                return "acm";
-            }
-        }
+        public override string RegionEndpointServiceName => "acm";
 
         /// <summary>
         /// Gets the ServiceVersion property.
         /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2015-12-08";
-            }
-        }
+        public override string ServiceVersion => "2015-12-08";
 
         /// <summary>
         /// Gets the value of UserAgent property.
         /// </summary>
-        public override string UserAgent
-        {
-            get
-            {
-                return _userAgent;
-            }
-        }
+        public override string UserAgent => _userAgent;
 
         /// <summary>
         /// The service type: ACM or ACM-ACME. Injected via @staticContextParams.
@@ -118,7 +95,5 @@ namespace Amazon.CertificateManager
             var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
             return EndpointResolver.GetEndpoint(executionContext);
         }
-
-
     }
 }

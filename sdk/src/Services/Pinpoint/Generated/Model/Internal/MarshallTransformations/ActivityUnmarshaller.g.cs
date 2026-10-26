@@ -1,0 +1,143 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.Pinpoint.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for Activity Object
+    /// </summary>
+    public partial class ActivityUnmarshaller : IJsonUnmarshaller<Activity, JsonUnmarshallerContext>
+    {
+        /// <summary>
+        /// Unmarshall the response from the service to the response class.
+        /// </summary>
+        /// <returns>The unmarshalled object</returns>
+        public Activity Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        {
+            var unmarshalledObject = new Activity();
+            if (context.IsEmptyResponse) return null;
+
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) return null;
+
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth, ref reader))
+            {
+                if (context.TestExpression("CUSTOM", targetDepth, ref reader))
+                {
+                    var unmarshaller = CustomMessageActivityUnmarshaller.Instance;
+                    unmarshalledObject.CUSTOM = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("ConditionalSplit", targetDepth, ref reader))
+                {
+                    var unmarshaller = ConditionalSplitActivityUnmarshaller.Instance;
+                    unmarshalledObject.ConditionalSplit = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("ContactCenter", targetDepth, ref reader))
+                {
+                    var unmarshaller = ContactCenterActivityUnmarshaller.Instance;
+                    unmarshalledObject.ContactCenter = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("Description", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("EMAIL", targetDepth, ref reader))
+                {
+                    var unmarshaller = EmailMessageActivityUnmarshaller.Instance;
+                    unmarshalledObject.EMAIL = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("Holdout", targetDepth, ref reader))
+                {
+                    var unmarshaller = HoldoutActivityUnmarshaller.Instance;
+                    unmarshalledObject.Holdout = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("MultiCondition", targetDepth, ref reader))
+                {
+                    var unmarshaller = MultiConditionalSplitActivityUnmarshaller.Instance;
+                    unmarshalledObject.MultiCondition = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("PUSH", targetDepth, ref reader))
+                {
+                    var unmarshaller = PushMessageActivityUnmarshaller.Instance;
+                    unmarshalledObject.PUSH = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("RandomSplit", targetDepth, ref reader))
+                {
+                    var unmarshaller = RandomSplitActivityUnmarshaller.Instance;
+                    unmarshalledObject.RandomSplit = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("SMS", targetDepth, ref reader))
+                {
+                    var unmarshaller = SMSMessageActivityUnmarshaller.Instance;
+                    unmarshalledObject.SMS = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("Wait", targetDepth, ref reader))
+                {
+                    var unmarshaller = WaitActivityUnmarshaller.Instance;
+                    unmarshalledObject.Wait = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+            }
+            return unmarshalledObject;
+        }
+
+        private static ActivityUnmarshaller _instance = new ActivityUnmarshaller();
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static ActivityUnmarshaller Instance => _instance;
+    }
+}

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the acm-2015-12-08.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -42,7 +42,7 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
             EnsureSimpleMethodExists(typeof(Amazon.CertificateManager.AmazonCertificateManagerClient), "GetCertificate", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.CertificateManager.AmazonCertificateManagerClient), "RequestCertificate", new Type[] { typeof(string), });
         }
-        
+
         void EnsureSimpleMethodExists(Type type, string methodName, Type[] simpleParams)
         {
             Assert.IsNotNull(type.GetMethod(methodName, simpleParams), "Failed to find simple method " + methodName);

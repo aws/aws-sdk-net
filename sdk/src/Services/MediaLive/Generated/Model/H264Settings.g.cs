@@ -1,0 +1,585 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.MediaLive.Model
+{
+    /// <summary>
+    /// H264 Settings
+    /// </summary>
+    public partial class H264Settings
+    {
+        /// <summary>
+        /// Gets and sets the property AdaptiveQuantization. Enables or disables adaptive quantization
+        /// (AQ), which is a technique MediaLive can apply to video on a frame-by-frame basis
+        /// to produce more compression without losing quality. There are three types of adaptive
+        /// quantization: spatial, temporal, and flicker. We recommend that you set the field
+        /// to Auto. For more information about all the options, see the topic about video adaptive
+        /// quantization in the MediaLive user guide.
+        /// </summary>
+        public H264AdaptiveQuantization AdaptiveQuantization { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AdaptiveQuantization property is set.
+        /// </summary>
+        internal bool IsSetAdaptiveQuantization() => this.AdaptiveQuantization != null;
+
+        /// <summary>
+        /// Gets and sets the property AfdSignaling. Indicates that AFD values will be written
+        /// into the output stream. If afdSignaling is "auto", the system will try to preserve
+        /// the input AFD value (in cases where multiple AFD values are valid). If set to "fixed",
+        /// the AFD value will be the value configured in the fixedAfd parameter.
+        /// </summary>
+        public AfdSignaling AfdSignaling { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AfdSignaling property is set.
+        /// </summary>
+        internal bool IsSetAfdSignaling() => this.AfdSignaling != null;
+
+        /// <summary>
+        /// Gets and sets the property Bitrate. Average bitrate in bits/second. Required when
+        /// the rate control mode is VBR or CBR. Not used for QVBR. In an MS Smooth output group,
+        /// each output must have a unique value when its bitrate is rounded down to the nearest
+        /// multiple of 1000.
+        /// </summary>
+        public int? Bitrate { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Bitrate property is set.
+        /// </summary>
+        internal bool IsSetBitrate() => this.Bitrate.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property BufFillPct. Percentage of the buffer that should initially
+        /// be filled (HRD buffer model).
+        /// </summary>
+        public int? BufFillPct { get; set; }
+
+        /// <summary>
+        /// Checks to see if the BufFillPct property is set.
+        /// </summary>
+        internal bool IsSetBufFillPct() => this.BufFillPct.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property BufSize. Size of buffer (HRD buffer model) in bits.
+        /// </summary>
+        public int? BufSize { get; set; }
+
+        /// <summary>
+        /// Checks to see if the BufSize property is set.
+        /// </summary>
+        internal bool IsSetBufSize() => this.BufSize.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property ColorMetadata. Includes colorspace metadata in the output.
+        /// </summary>
+        public H264ColorMetadata ColorMetadata { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ColorMetadata property is set.
+        /// </summary>
+        internal bool IsSetColorMetadata() => this.ColorMetadata != null;
+
+        /// <summary>
+        /// Gets and sets the property ColorSpaceSettings. Specify the type of color space to
+        /// apply or choose to pass through. The default is to pass through the color space that
+        /// is in the source.
+        /// </summary>
+        public H264ColorSpaceSettings ColorSpaceSettings { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ColorSpaceSettings property is set.
+        /// </summary>
+        internal bool IsSetColorSpaceSettings() => this.ColorSpaceSettings != null;
+
+        /// <summary>
+        /// Gets and sets the property EntropyEncoding. Entropy encoding mode. Use cabac (must
+        /// be in Main or High profile) or cavlc.
+        /// </summary>
+        public H264EntropyEncoding EntropyEncoding { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EntropyEncoding property is set.
+        /// </summary>
+        internal bool IsSetEntropyEncoding() => this.EntropyEncoding != null;
+
+        /// <summary>
+        /// Gets and sets the property FilterSettings. Optional. Both filters reduce bandwidth
+        /// by removing imperceptible details. You can enable one of the filters. We recommend
+        /// that you try both filters and observe the results to decide which one to use. The
+        /// Temporal Filter reduces bandwidth by removing imperceptible details in the content.
+        /// It combines perceptual filtering and motion compensated temporal filtering (MCTF).
+        /// It operates independently of the compression level. The Bandwidth Reduction filter
+        /// is a perceptual filter located within the encoding loop. It adapts to the current
+        /// compression level to filter imperceptible signals. This filter works only when the
+        /// resolution is 1080p or lower.
+        /// </summary>
+        public H264FilterSettings FilterSettings { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FilterSettings property is set.
+        /// </summary>
+        internal bool IsSetFilterSettings() => this.FilterSettings != null;
+
+        /// <summary>
+        /// Gets and sets the property FixedAfd. Four bit AFD value to write on all frames of
+        /// video in the output stream. Only valid when afdSignaling is set to 'Fixed'.
+        /// </summary>
+        public FixedAfd FixedAfd { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FixedAfd property is set.
+        /// </summary>
+        internal bool IsSetFixedAfd() => this.FixedAfd != null;
+
+        /// <summary>
+        /// Gets and sets the property FlickerAq. Flicker AQ makes adjustments within each frame
+        /// to reduce flicker or 'pop' on I-frames. The value to enter in this field depends on
+        /// the value in the Adaptive quantization field. For more information, see the topic
+        /// about video adaptive quantization in the MediaLive user guide.
+        /// </summary>
+        public H264FlickerAq FlickerAq { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FlickerAq property is set.
+        /// </summary>
+        internal bool IsSetFlickerAq() => this.FlickerAq != null;
+
+        /// <summary>
+        /// Gets and sets the property ForceFieldPictures. This setting applies only when scan
+        /// type is "interlaced." It controls whether coding is performed on a field basis or
+        /// on a frame basis. (When the video is progressive, the coding is always performed on
+        /// a frame basis.) enabled: Force MediaLive to code on a field basis, so that odd and
+        /// even sets of fields are coded separately. disabled: Code the two sets of fields separately
+        /// (on a field basis) or together (on a frame basis using PAFF), depending on what is
+        /// most appropriate for the content.
+        /// </summary>
+        public H264ForceFieldPictures ForceFieldPictures { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ForceFieldPictures property is set.
+        /// </summary>
+        internal bool IsSetForceFieldPictures() => this.ForceFieldPictures != null;
+
+        /// <summary>
+        /// Gets and sets the property FramerateControl. This field indicates how the output video
+        /// frame rate is specified. If "specified" is selected then the output video frame rate
+        /// is determined by framerateNumerator and framerateDenominator, else if "initializeFromSource"
+        /// is selected then the output video frame rate will be set equal to the input video
+        /// frame rate of the first input.
+        /// </summary>
+        public H264FramerateControl FramerateControl { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FramerateControl property is set.
+        /// </summary>
+        internal bool IsSetFramerateControl() => this.FramerateControl != null;
+
+        /// <summary>
+        /// Gets and sets the property FramerateDenominator. Framerate denominator.
+        /// </summary>
+        public int? FramerateDenominator { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FramerateDenominator property is set.
+        /// </summary>
+        internal bool IsSetFramerateDenominator() => this.FramerateDenominator.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property FramerateNumerator. Framerate numerator - framerate is
+        /// a fraction, e.g. 24000 / 1001 = 23.976 fps.
+        /// </summary>
+        public int? FramerateNumerator { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FramerateNumerator property is set.
+        /// </summary>
+        internal bool IsSetFramerateNumerator() => this.FramerateNumerator.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property GopBReference. Documentation update needed
+        /// </summary>
+        public H264GopBReference GopBReference { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GopBReference property is set.
+        /// </summary>
+        internal bool IsSetGopBReference() => this.GopBReference != null;
+
+        /// <summary>
+        /// Gets and sets the property GopClosedCadence. Frequency of closed GOPs. In streaming
+        /// applications, it is recommended that this be set to 1 so a decoder joining mid-stream
+        /// will receive an IDR frame as quickly as possible. Setting this value to 0 will break
+        /// output segmenting.
+        /// </summary>
+        public int? GopClosedCadence { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GopClosedCadence property is set.
+        /// </summary>
+        internal bool IsSetGopClosedCadence() => this.GopClosedCadence.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property GopNumBFrames. Number of B-frames between reference frames.
+        /// </summary>
+        public int? GopNumBFrames { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GopNumBFrames property is set.
+        /// </summary>
+        internal bool IsSetGopNumBFrames() => this.GopNumBFrames.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property GopSize. GOP size (keyframe interval) in units of either
+        /// frames or seconds per gopSizeUnits. If gopSizeUnits is frames, gopSize must be an
+        /// integer and must be greater than or equal to 1. If gopSizeUnits is seconds, gopSize
+        /// must be greater than 0, but need not be an integer.
+        /// </summary>
+        public double? GopSize { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GopSize property is set.
+        /// </summary>
+        internal bool IsSetGopSize() => this.GopSize.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property GopSizeUnits. Indicates if the gopSize is specified in
+        /// frames or seconds. If seconds the system will convert the gopSize into a frame count
+        /// at run time.
+        /// </summary>
+        public H264GopSizeUnits GopSizeUnits { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GopSizeUnits property is set.
+        /// </summary>
+        internal bool IsSetGopSizeUnits() => this.GopSizeUnits != null;
+
+        /// <summary>
+        /// Gets and sets the property Level. H.264 Level.
+        /// </summary>
+        public H264Level Level { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Level property is set.
+        /// </summary>
+        internal bool IsSetLevel() => this.Level != null;
+
+        /// <summary>
+        /// Gets and sets the property LookAheadRateControl. Amount of lookahead. A value of low
+        /// can decrease latency and memory usage, while high can produce better quality for certain
+        /// content.
+        /// </summary>
+        public H264LookAheadRateControl LookAheadRateControl { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LookAheadRateControl property is set.
+        /// </summary>
+        internal bool IsSetLookAheadRateControl() => this.LookAheadRateControl != null;
+
+        /// <summary>
+        /// Gets and sets the property MaxBitrate. For QVBR: See the tooltip for Quality level
+        /// For VBR: Set the maximum bitrate in order to accommodate expected spikes in the complexity
+        /// of the video.
+        /// </summary>
+        public int? MaxBitrate { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MaxBitrate property is set.
+        /// </summary>
+        internal bool IsSetMaxBitrate() => this.MaxBitrate.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property MinBitrate. Used for QVBR rate control mode only. Optional.
+        /// Enter a minimum bitrate if you want to keep the output bitrate about a threshold,
+        /// in order to prevent the downstream system from de-allocating network bandwidth for
+        /// this output.
+        /// </summary>
+        public int? MinBitrate { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MinBitrate property is set.
+        /// </summary>
+        internal bool IsSetMinBitrate() => this.MinBitrate.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property MinIInterval. Only meaningful if sceneChangeDetect is set
+        /// to enabled. Defaults to 5 if multiplex rate control is used. Enforces separation between
+        /// repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a
+        /// scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is
+        /// shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling
+        /// lookahead as well as setting I-interval. The normal cadence resumes for the next GOP.
+        /// Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
+        /// </summary>
+        public int? MinIInterval { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MinIInterval property is set.
+        /// </summary>
+        internal bool IsSetMinIInterval() => this.MinIInterval.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property MinQp. Sets the minimum QP. If you aren't familiar with
+        /// quantization adjustment, leave the field empty. MediaLive will apply an appropriate
+        /// value.
+        /// </summary>
+        public int? MinQp { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MinQp property is set.
+        /// </summary>
+        internal bool IsSetMinQp() => this.MinQp.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property NumRefFrames. Number of reference frames to use. The encoder
+        /// may use more than requested if using B-frames and/or interlaced encoding.
+        /// </summary>
+        public int? NumRefFrames { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NumRefFrames property is set.
+        /// </summary>
+        internal bool IsSetNumRefFrames() => this.NumRefFrames.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property ParControl. This field indicates how the output pixel aspect
+        /// ratio is specified. If "specified" is selected then the output video pixel aspect
+        /// ratio is determined by parNumerator and parDenominator, else if "initializeFromSource"
+        /// is selected then the output pixsel aspect ratio will be set equal to the input video
+        /// pixel aspect ratio of the first input.
+        /// </summary>
+        public H264ParControl ParControl { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ParControl property is set.
+        /// </summary>
+        internal bool IsSetParControl() => this.ParControl != null;
+
+        /// <summary>
+        /// Gets and sets the property ParDenominator. Pixel Aspect Ratio denominator.
+        /// </summary>
+        public int? ParDenominator { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ParDenominator property is set.
+        /// </summary>
+        internal bool IsSetParDenominator() => this.ParDenominator.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property ParNumerator. Pixel Aspect Ratio numerator.
+        /// </summary>
+        public int? ParNumerator { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ParNumerator property is set.
+        /// </summary>
+        internal bool IsSetParNumerator() => this.ParNumerator.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Profile. H.264 Profile.
+        /// </summary>
+        public H264Profile Profile { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Profile property is set.
+        /// </summary>
+        internal bool IsSetProfile() => this.Profile != null;
+
+        /// <summary>
+        /// Gets and sets the property QualityLevel. Leave as STANDARD_QUALITY or choose a different
+        /// value (which might result in additional costs to run the channel). - ENHANCED_QUALITY:
+        /// Produces a slightly better video quality without an increase in the bitrate. Has an
+        /// effect only when the Rate control mode is QVBR or CBR. If this channel is in a MediaLive
+        /// multiplex, the value must be ENHANCED_QUALITY. - STANDARD_QUALITY: Valid for any Rate
+        /// control mode.
+        /// </summary>
+        public H264QualityLevel QualityLevel { get; set; }
+
+        /// <summary>
+        /// Checks to see if the QualityLevel property is set.
+        /// </summary>
+        internal bool IsSetQualityLevel() => this.QualityLevel != null;
+
+        /// <summary>
+        /// Gets and sets the property QvbrQualityLevel. Controls the target quality for the video
+        /// encode. Applies only when the rate control mode is QVBR. You can set a target quality
+        /// or you can let MediaLive determine the best quality. To set a target quality, enter
+        /// values in the QVBR quality level field and the Max bitrate field. Enter values that
+        /// suit your most important viewing devices. Recommended values are: - Primary screen:
+        /// Quality level: 8 to 10. Max bitrate: 4M - PC or tablet: Quality level: 7. Max bitrate:
+        /// 1.5M to 3M - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M To let MediaLive
+        /// decide, leave the QVBR quality level field empty, and in Max bitrate enter the maximum
+        /// rate you want in the video. For more information, see the section called "Video -
+        /// rate control mode" in the MediaLive user guide
+        /// </summary>
+        public int? QvbrQualityLevel { get; set; }
+
+        /// <summary>
+        /// Checks to see if the QvbrQualityLevel property is set.
+        /// </summary>
+        internal bool IsSetQvbrQualityLevel() => this.QvbrQualityLevel.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property RateControlMode. Rate control mode. QVBR: Quality will
+        /// match the specified quality level except when it is constrained by the maximum bitrate.
+        /// Recommended if you or your viewers pay for bandwidth. VBR: Quality and bitrate vary,
+        /// depending on the video complexity. Recommended instead of QVBR if you want to maintain
+        /// a specific average bitrate over the duration of the channel. CBR: Quality varies,
+        /// depending on the video complexity. Recommended only if you distribute your assets
+        /// to devices that cannot handle variable bitrates. Multiplex: This rate control mode
+        /// is only supported (and is required) when the video is being delivered to a MediaLive
+        /// Multiplex in which case the rate control configuration is controlled by the properties
+        /// within the Multiplex Program.
+        /// </summary>
+        public H264RateControlMode RateControlMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RateControlMode property is set.
+        /// </summary>
+        internal bool IsSetRateControlMode() => this.RateControlMode != null;
+
+        /// <summary>
+        /// Gets and sets the property ScanType. Sets the scan type of the output to progressive
+        /// or top-field-first interlaced.
+        /// </summary>
+        public H264ScanType ScanType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ScanType property is set.
+        /// </summary>
+        internal bool IsSetScanType() => this.ScanType != null;
+
+        /// <summary>
+        /// Gets and sets the property SceneChangeDetect. Scene change detection. - On: inserts
+        /// I-frames when scene change is detected. - Off: does not force an I-frame when scene
+        /// change is detected.
+        /// </summary>
+        public H264SceneChangeDetect SceneChangeDetect { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SceneChangeDetect property is set.
+        /// </summary>
+        internal bool IsSetSceneChangeDetect() => this.SceneChangeDetect != null;
+
+        /// <summary>
+        /// Gets and sets the property Slices. Number of slices per picture. Must be less than
+        /// or equal to the number of macroblock rows for progressive pictures, and less than
+        /// or equal to half the number of macroblock rows for interlaced pictures. This field
+        /// is optional; when no value is specified the encoder will choose the number of slices
+        /// based on encode resolution.
+        /// </summary>
+        public int? Slices { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Slices property is set.
+        /// </summary>
+        internal bool IsSetSlices() => this.Slices.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Softness. Softness. Selects quantizer matrix, larger values
+        /// reduce high-frequency content in the encoded image. If not set to zero, must be greater
+        /// than 15.
+        /// </summary>
+        public int? Softness { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Softness property is set.
+        /// </summary>
+        internal bool IsSetSoftness() => this.Softness.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property SpatialAq. Spatial AQ makes adjustments within each frame
+        /// based on spatial variation of content complexity. The value to enter in this field
+        /// depends on the value in the Adaptive quantization field. For more information, see
+        /// the topic about video adaptive quantization in the MediaLive user guide.
+        /// </summary>
+        public H264SpatialAq SpatialAq { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SpatialAq property is set.
+        /// </summary>
+        internal bool IsSetSpatialAq() => this.SpatialAq != null;
+
+        /// <summary>
+        /// Gets and sets the property SubgopLength. If set to fixed, use gopNumBFrames B-frames
+        /// per sub-GOP. If set to dynamic, optimize the number of B-frames used for each sub-GOP
+        /// to improve visual quality.
+        /// </summary>
+        public H264SubGopLength SubgopLength { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SubgopLength property is set.
+        /// </summary>
+        internal bool IsSetSubgopLength() => this.SubgopLength != null;
+
+        /// <summary>
+        /// Gets and sets the property Syntax. Produces a bitstream compliant with SMPTE RP-2027.
+        /// </summary>
+        public H264Syntax Syntax { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Syntax property is set.
+        /// </summary>
+        internal bool IsSetSyntax() => this.Syntax != null;
+
+        /// <summary>
+        /// Gets and sets the property TemporalAq. Temporal makes adjustments within each frame
+        /// based on variations in content complexity over time. The value to enter in this field
+        /// depends on the value in the Adaptive quantization field. For more information, see
+        /// the topic about video adaptive quantization in the MediaLive user guide.
+        /// </summary>
+        public H264TemporalAq TemporalAq { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TemporalAq property is set.
+        /// </summary>
+        internal bool IsSetTemporalAq() => this.TemporalAq != null;
+
+        /// <summary>
+        /// Gets and sets the property TimecodeBurninSettings. Timecode burn-in settings
+        /// </summary>
+        public TimecodeBurninSettings TimecodeBurninSettings { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TimecodeBurninSettings property is set.
+        /// </summary>
+        internal bool IsSetTimecodeBurninSettings() => this.TimecodeBurninSettings != null;
+
+        /// <summary>
+        /// Gets and sets the property TimecodeInsertion. Determines how timecodes should be inserted
+        /// into the video elementary stream. - 'disabled': Do not include timecodes - 'picTimingSei':
+        /// Pass through picture timing SEI messages from the source specified in Timecode Config
+        /// </summary>
+        public H264TimecodeInsertionBehavior TimecodeInsertion { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TimecodeInsertion property is set.
+        /// </summary>
+        internal bool IsSetTimecodeInsertion() => this.TimecodeInsertion != null;
+    }
+}

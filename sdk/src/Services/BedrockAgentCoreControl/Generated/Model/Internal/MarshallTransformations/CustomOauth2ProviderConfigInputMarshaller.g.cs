@@ -1,0 +1,149 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.BedrockAgentCoreControl.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// CustomOauth2ProviderConfigInput Marshaller
+    /// </summary>
+    public partial class CustomOauth2ProviderConfigInputMarshaller : IRequestMarshaller<CustomOauth2ProviderConfigInput, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(CustomOauth2ProviderConfigInput requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetClientAuthenticationMethod())
+            {
+                context.Writer.WritePropertyName("clientAuthenticationMethod");
+                context.Writer.WriteStringValue(requestObject.ClientAuthenticationMethod);
+            }
+
+            if (requestObject.IsSetClientId())
+            {
+                context.Writer.WritePropertyName("clientId");
+                context.Writer.WriteStringValue(requestObject.ClientId);
+            }
+
+            if (requestObject.IsSetClientSecret())
+            {
+                context.Writer.WritePropertyName("clientSecret");
+                context.Writer.WriteStringValue(requestObject.ClientSecret);
+            }
+
+            if (requestObject.IsSetClientSecretConfig())
+            {
+                context.Writer.WritePropertyName("clientSecretConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SecretReferenceMarshaller.Instance;
+                marshaller.Marshall(requestObject.ClientSecretConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetClientSecretSource())
+            {
+                context.Writer.WritePropertyName("clientSecretSource");
+                context.Writer.WriteStringValue(requestObject.ClientSecretSource);
+            }
+
+            if (requestObject.IsSetOauthDiscovery())
+            {
+                context.Writer.WritePropertyName("oauthDiscovery");
+                context.Writer.WriteStartObject();
+
+                var marshaller = Oauth2DiscoveryMarshaller.Instance;
+                marshaller.Marshall(requestObject.OauthDiscovery, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetOnBehalfOfTokenExchangeConfig())
+            {
+                context.Writer.WritePropertyName("onBehalfOfTokenExchangeConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OnBehalfOfTokenExchangeConfigTypeMarshaller.Instance;
+                marshaller.Marshall(requestObject.OnBehalfOfTokenExchangeConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetPrivateEndpoint())
+            {
+                context.Writer.WritePropertyName("privateEndpoint");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PrivateEndpointMarshaller.Instance;
+                marshaller.Marshall(requestObject.PrivateEndpoint, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetPrivateEndpointOverrides())
+            {
+                context.Writer.WritePropertyName("privateEndpointOverrides");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectPrivateEndpointOverridesListValue in requestObject.PrivateEndpointOverrides)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = PrivateEndpointOverrideMarshaller.Instance;
+                    marshaller.Marshall(requestObjectPrivateEndpointOverridesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetPrivateKeyJwtConfig())
+            {
+                context.Writer.WritePropertyName("privateKeyJwtConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PrivateKeyJwtConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.PrivateKeyJwtConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static CustomOauth2ProviderConfigInputMarshaller Instance = new CustomOauth2ProviderConfigInputMarshaller();
+    }
+}
