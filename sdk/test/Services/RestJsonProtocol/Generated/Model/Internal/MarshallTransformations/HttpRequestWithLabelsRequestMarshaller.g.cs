@@ -91,7 +91,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             {
                 throw new AmazonRestJsonProtocolException("Request object does not have required field Short set");
             }
-            request.AddPathResource("{short}", StringUtils.FromInt(publicRequest.Short.Value));
+            request.AddPathResource("{short}", StringUtils.FromShort(publicRequest.Short.Value));
 
             if (!publicRequest.IsSetString())
             {
