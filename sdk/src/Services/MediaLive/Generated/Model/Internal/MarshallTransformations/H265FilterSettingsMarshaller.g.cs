@@ -45,6 +45,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetAutoFilterSettings())
+            {
+                context.Writer.WritePropertyName("autoFilterSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AutoFilterSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AutoFilterSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetBandwidthReductionFilterSettings())
             {
                 context.Writer.WritePropertyName("bandwidthReductionFilterSettings");
@@ -52,6 +63,28 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
                 var marshaller = BandwidthReductionFilterSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.BandwidthReductionFilterSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetNoneFilterSettings())
+            {
+                context.Writer.WritePropertyName("noneFilterSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NoneFilterSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.NoneFilterSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetPerceptualFilterSettings())
+            {
+                context.Writer.WritePropertyName("perceptualFilterSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PerceptualFilterSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.PerceptualFilterSettings, context);
 
                 context.Writer.WriteEndObject();
             }

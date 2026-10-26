@@ -6097,6 +6097,47 @@ namespace Amazon.MediaLive
     }
 
     /// <summary>
+    /// Constants used for properties of type H264AllowExplicitWeightedPrediction.
+    /// </summary>
+    public class H264AllowExplicitWeightedPrediction : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for H264AllowExplicitWeightedPrediction
+        /// </summary>
+        public static readonly H264AllowExplicitWeightedPrediction DISABLED = new H264AllowExplicitWeightedPrediction("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for H264AllowExplicitWeightedPrediction
+        /// </summary>
+        public static readonly H264AllowExplicitWeightedPrediction ENABLED = new H264AllowExplicitWeightedPrediction("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom H264AllowExplicitWeightedPrediction for a value not among the defined constants.
+        /// </summary>
+        public H264AllowExplicitWeightedPrediction(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H264AllowExplicitWeightedPrediction FindValue(string value)
+        {
+            return FindValue<H264AllowExplicitWeightedPrediction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H264AllowExplicitWeightedPrediction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type H264ColorMetadata.
     /// </summary>
     public class H264ColorMetadata : ConstantClass
@@ -13229,6 +13270,47 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OutputUsage(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PerceptualFilterStrength.
+    /// </summary>
+    public class PerceptualFilterStrength : ConstantClass
+    {
+        /// <summary>
+        /// Constant STRENGTH_1 for PerceptualFilterStrength
+        /// </summary>
+        public static readonly PerceptualFilterStrength STRENGTH_1 = new PerceptualFilterStrength("STRENGTH_1");
+
+        /// <summary>
+        /// Constant STRENGTH_2 for PerceptualFilterStrength
+        /// </summary>
+        public static readonly PerceptualFilterStrength STRENGTH_2 = new PerceptualFilterStrength("STRENGTH_2");
+
+        /// <summary>
+        /// Constructs a custom PerceptualFilterStrength for a value not among the defined constants.
+        /// </summary>
+        public PerceptualFilterStrength(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PerceptualFilterStrength FindValue(string value)
+        {
+            return FindValue<PerceptualFilterStrength>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PerceptualFilterStrength(string value)
         {
             return FindValue(value);
         }

@@ -92,6 +92,17 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetColorSpaceSettings() => this.ColorSpaceSettings != null;
 
         /// <summary>
+        /// Gets and sets the property FilterSettings. Optional filters that you can apply to
+        /// an encode.
+        /// </summary>
+        public Av1FilterSettings FilterSettings { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FilterSettings property is set.
+        /// </summary>
+        internal bool IsSetFilterSettings() => this.FilterSettings != null;
+
+        /// <summary>
         /// Gets and sets the property FixedAfd. Complete this property only if you set the afdSignaling
         /// property to FIXED. Choose the AFD value (4 bits) to write on all frames of the video
         /// encode.

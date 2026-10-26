@@ -67,6 +67,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("allowExplicitWeightedPrediction", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AllowExplicitWeightedPrediction = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("bitrate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

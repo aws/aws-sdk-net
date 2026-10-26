@@ -63,6 +63,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetAfdSignaling() => this.AfdSignaling != null;
 
         /// <summary>
+        /// Gets and sets the property AllowExplicitWeightedPrediction. Specifies whether the
+        /// encoder may apply explicit weighted prediction (EWP), an H.264 coding tool that can
+        /// improve compression. EWP applies a scaling factor and offset to reference frames,
+        /// which helps when brightness changes between frames, such as during a fade. When this
+        /// setting is enabled, the encoder decides whether to apply EWP based on the output's
+        /// other codec settings, such as profile and quality level. We recommend that you keep
+        /// the default, enabled. When disabled, the encoder never applies EWP.
+        /// </summary>
+        public H264AllowExplicitWeightedPrediction AllowExplicitWeightedPrediction { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AllowExplicitWeightedPrediction property is set.
+        /// </summary>
+        internal bool IsSetAllowExplicitWeightedPrediction() => this.AllowExplicitWeightedPrediction != null;
+
+        /// <summary>
         /// Gets and sets the property Bitrate. Average bitrate in bits/second. Required when
         /// the rate control mode is VBR or CBR. Not used for QVBR. In an MS Smooth output group,
         /// each output must have a unique value when its bitrate is rounded down to the nearest

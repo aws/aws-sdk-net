@@ -80,6 +80,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetFilterSettings())
+            {
+                context.Writer.WritePropertyName("filterSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = Av1FilterSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.FilterSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetFixedAfd())
             {
                 context.Writer.WritePropertyName("fixedAfd");

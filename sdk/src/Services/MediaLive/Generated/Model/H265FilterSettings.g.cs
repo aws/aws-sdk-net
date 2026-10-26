@@ -35,6 +35,16 @@ namespace Amazon.MediaLive.Model
     public partial class H265FilterSettings
     {
         /// <summary>
+        /// Gets and sets the property AutoFilterSettings.
+        /// </summary>
+        public AutoFilterSettings AutoFilterSettings { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AutoFilterSettings property is set.
+        /// </summary>
+        internal bool IsSetAutoFilterSettings() => this.AutoFilterSettings != null;
+
+        /// <summary>
         /// Gets and sets the property BandwidthReductionFilterSettings.
         /// </summary>
         public BandwidthReductionFilterSettings BandwidthReductionFilterSettings { get; set; }
@@ -43,6 +53,26 @@ namespace Amazon.MediaLive.Model
         /// Checks to see if the BandwidthReductionFilterSettings property is set.
         /// </summary>
         internal bool IsSetBandwidthReductionFilterSettings() => this.BandwidthReductionFilterSettings != null;
+
+        /// <summary>
+        /// Gets and sets the property NoneFilterSettings.
+        /// </summary>
+        public NoneFilterSettings NoneFilterSettings { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NoneFilterSettings property is set.
+        /// </summary>
+        internal bool IsSetNoneFilterSettings() => this.NoneFilterSettings != null;
+
+        /// <summary>
+        /// Gets and sets the property PerceptualFilterSettings.
+        /// </summary>
+        public PerceptualFilterSettings PerceptualFilterSettings { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PerceptualFilterSettings property is set.
+        /// </summary>
+        internal bool IsSetPerceptualFilterSettings() => this.PerceptualFilterSettings != null;
 
         /// <summary>
         /// Gets and sets the property TemporalFilterSettings.

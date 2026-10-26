@@ -88,6 +88,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("filterSettings", targetDepth, ref reader))
+                {
+                    var unmarshaller = Av1FilterSettingsUnmarshaller.Instance;
+                    unmarshalledObject.FilterSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("fixedAfd", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
