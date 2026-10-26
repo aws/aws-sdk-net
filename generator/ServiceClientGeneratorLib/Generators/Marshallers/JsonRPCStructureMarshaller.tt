@@ -273,7 +273,13 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 <#+
                     }
                 }
-                else if(structure.ValueShape.IsInt || structure.ValueShape.IsLong || structure.ValueShape.IsFloat || structure.ValueShape.IsDouble)
+                else if(structure.ValueShape.IsArbitraryPrecisionNumber)
+                {
+#>
+<#=new string(' ', level * 4)#>                    <#=structure.ValueShape.ArbitraryPrecisionJsonWriteStatement(flatVariableName + (isSparse ? "Value.Value" : "Value"))#>
+<#+
+                }
+                else if(structure.ValueShape.IsInt || structure.ValueShape.IsLong || structure.ValueShape.IsFloat || structure.ValueShape.IsDouble || structure.ValueShape.IsByte || structure.ValueShape.IsShort)
                 {
                     if(isSparse)
                     {
@@ -402,7 +408,25 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 				}
 			}
 		}
-		else if (shape.IsInt || shape.IsLong || shape.IsFloat || shape.IsDouble)
+		else if (shape.IsArbitraryPrecisionNumber)
+		{
+			if (isSparse)
+			{
+#>
+<#=new string(' ', level * 4)#>				   if (<#=memberProperty#> != null)
+<#=new string(' ', level * 4)#>				       <#=shape.ArbitraryPrecisionJsonWriteStatement(memberProperty + ".Value")#>
+<#=new string(' ', level * 4)#>				   else
+<#=new string(' ', level * 4)#>				       context.Writer.WriteNullValue();
+<#+
+			}
+			else
+			{
+#>
+<#=new string(' ', level * 4)#>                <#=shape.ArbitraryPrecisionJsonWriteStatement(memberProperty)#>
+<#+
+			}
+		}
+		else if (shape.IsInt || shape.IsLong || shape.IsFloat || shape.IsDouble || shape.IsByte || shape.IsShort)
 		{
 			if (isSparse)
 			{
@@ -477,6 +501,24 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 		{
 #>
 <#=new string(' ', level * 4)#>                <#=eventHeaderVariable#>.SetInt64(requestObject.<#=member.PropertyName#>.Value);
+<#=new string(' ', level * 4)#>				context.Request.EventHeaders.Add(<#=eventHeaderVariable#>);
+<#+
+		}
+		if (member.Shape.IsArbitraryPrecisionNumber)
+		{
+			throw new Exception($"Member {member.PropertyName} is a {member.Shape.Type}, which cannot be bound to an event stream header.");
+		}
+		if (member.Shape.IsByte)
+		{
+#>
+<#=new string(' ', level * 4)#>                <#=eventHeaderVariable#>.SetSByte(requestObject.<#=member.PropertyName#>.Value);
+<#=new string(' ', level * 4)#>				context.Request.EventHeaders.Add(<#=eventHeaderVariable#>);
+<#+
+		}
+		if (member.Shape.IsShort)
+		{
+#>
+<#=new string(' ', level * 4)#>                <#=eventHeaderVariable#>.SetInt16(requestObject.<#=member.PropertyName#>.Value);
 <#=new string(' ', level * 4)#>				context.Request.EventHeaders.Add(<#=eventHeaderVariable#>);
 <#+
 		}

@@ -391,6 +391,13 @@ this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
         #line hidden
         
         #line 87 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ListShape.HeaderListFormatArgument));
+
+        
+        #line default
+        #line hidden
+        
+        #line 87 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(");\r\n");
 
         

@@ -1700,7 +1700,14 @@ this.Write("Value);\r\n");
 
                     }
                 }
-                else if(structure.ValueShape.IsInt || structure.ValueShape.IsLong || structure.ValueShape.IsFloat || structure.ValueShape.IsDouble)
+                else if(structure.ValueShape.IsArbitraryPrecisionNumber)
+                {
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+this.Write("                    ");
+this.Write(this.ToStringHelper.ToStringWithCulture(structure.ValueShape.ArbitraryPrecisionJsonWriteStatement(flatVariableName + (isSparse ? "Value.Value" : "Value"))));
+this.Write("\r\n");
+                }
+                else if(structure.ValueShape.IsInt || structure.ValueShape.IsLong || structure.ValueShape.IsFloat || structure.ValueShape.IsDouble || structure.ValueShape.IsByte || structure.ValueShape.IsShort)
                 {
                     if(isSparse)
                     {
@@ -2347,7 +2354,32 @@ this.Write("));\r\n");
 				}
 			}
 		}
-		else if (shape.IsInt || shape.IsLong || shape.IsFloat || shape.IsDouble)
+		else if (shape.IsArbitraryPrecisionNumber)
+		{
+			if (isSparse)
+			{
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+this.Write("\t\t\t\t   if (");
+this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
+this.Write(" != null)\r\n");
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+this.Write("\t\t\t\t       ");
+this.Write(this.ToStringHelper.ToStringWithCulture(shape.ArbitraryPrecisionJsonWriteStatement(memberProperty + ".Value")));
+this.Write("\r\n");
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+this.Write("\t\t\t\t   else\r\n");
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+this.Write("\t\t\t\t       context.Writer.WriteNullValue();\r\n");
+			}
+			else
+			{
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+this.Write("                ");
+this.Write(this.ToStringHelper.ToStringWithCulture(shape.ArbitraryPrecisionJsonWriteStatement(memberProperty)));
+this.Write("\r\n");
+			}
+		}
+		else if (shape.IsInt || shape.IsLong || shape.IsFloat || shape.IsDouble || shape.IsByte || shape.IsShort)
 		{
 			if (isSparse)
 			{
@@ -3001,6 +3033,36 @@ this.Write(");\r\n");
         
         #line 481 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
+		}
+		if (member.Shape.IsArbitraryPrecisionNumber)
+		{
+			throw new Exception($"Member {member.PropertyName} is a {member.Shape.Type}, which cannot be bound to an event stream header.");
+		}
+		if (member.Shape.IsByte)
+		{
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+this.Write("                ");
+this.Write(this.ToStringHelper.ToStringWithCulture(eventHeaderVariable));
+this.Write(".SetSByte(requestObject.");
+this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
+this.Write(".Value);\r\n");
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+this.Write("\t\t\t\tcontext.Request.EventHeaders.Add(");
+this.Write(this.ToStringHelper.ToStringWithCulture(eventHeaderVariable));
+this.Write(");\r\n");
+		}
+		if (member.Shape.IsShort)
+		{
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+this.Write("                ");
+this.Write(this.ToStringHelper.ToStringWithCulture(eventHeaderVariable));
+this.Write(".SetInt16(requestObject.");
+this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
+this.Write(".Value);\r\n");
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+this.Write("\t\t\t\tcontext.Request.EventHeaders.Add(");
+this.Write(this.ToStringHelper.ToStringWithCulture(eventHeaderVariable));
+this.Write(");\r\n");
 		}
 		if (member.Shape.IsMemoryStream)
 		{

@@ -311,7 +311,7 @@ using Amazon.Runtime.Internal.Util;
 					{
 						//Example: "X-IntegerList": "1, 2, 3"
 #>
-				response.<#=member.PropertyName#> = MultiValueHeaderParser.ToValueTypeList<<#=member.Shape.ListShape.GetPrimitiveType().ToLower()#>>(context.ResponseData.GetHeaderValue("<#=member.MarshallLocationName#>"));
+				response.<#=member.PropertyName#> = MultiValueHeaderParser.ToValueTypeList<<#=member.Shape.ListShape.PrimitiveParseTypeName#>>(context.ResponseData.GetHeaderValue("<#=member.MarshallLocationName#>")<#=member.Shape.ListShape.HeaderListParseArgument#>);
 <#+					
 					}
 					else
@@ -342,7 +342,7 @@ using Amazon.Runtime.Internal.Util;
 				else if (member.Shape.IsPrimitiveType)
 				{
 #>
-				response.<#=member.PropertyName#> = <#=member.Shape.GetPrimitiveType().ToLower()#>.Parse(context.ResponseData.GetHeaderValue("<#=member.MarshallLocationName#>")<#=(member.Shape.IsBoolean)?"":", CultureInfo.InvariantCulture"#><#=(!member.Shape.IsTimeStamp)?"":", DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal"#>);
+				response.<#=member.PropertyName#> = <#=member.Shape.PrimitiveParseTypeName#>.Parse(context.ResponseData.GetHeaderValue("<#=member.MarshallLocationName#>")<#=(member.Shape.IsBoolean)?"":", CultureInfo.InvariantCulture"#><#=(!member.Shape.IsTimeStamp)?"":", DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal"#>);
 <#+
 				}
 				else

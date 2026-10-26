@@ -84,7 +84,7 @@ using Amazon.Runtime.Internal.Util;
                     else
                     {
 #>
-                        request.Headers["<#=member.MarshallLocationName#>"] = StringUtils.FromValueTypeList(<#=variableName#>.<#=member.PropertyName#>);
+                        request.Headers["<#=member.MarshallLocationName#>"] = StringUtils.FromValueTypeList(<#=variableName#>.<#=member.PropertyName#><#=member.Shape.ListShape.HeaderListFormatArgument#>);
 <#+
                     }
                 }
