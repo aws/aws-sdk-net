@@ -17,6 +17,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Numerics;
 using System.Text.Json;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
@@ -615,6 +616,247 @@ namespace Amazon.Runtime.Internal.Transform
             }
 
             return SimpleTypeUnmarshaller<byte>.UnmarshallCurrentToken(context, ref reader);
+        }
+    }
+
+    /// <summary>
+    /// Unmarshaller for sbyte fields, which model the signed 8-bit Smithy byte type.
+    /// Values outside the sbyte range throw an <see cref="OverflowException"/>.
+    /// </summary>
+    public class SByteUnmarshaller : IXmlUnmarshaller<sbyte, XmlUnmarshallerContext>, IJsonUnmarshaller<sbyte, JsonUnmarshallerContext>
+    {
+        private SByteUnmarshaller() { }
+
+        private static SByteUnmarshaller _instance = new SByteUnmarshaller();
+
+        public static SByteUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
+        public sbyte Unmarshall(XmlUnmarshallerContext context)
+        {
+            return sbyte.Parse(context.ReadText(), CultureInfo.InvariantCulture);
+        }
+        public sbyte Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        {
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Number && reader.TryGetSByte(out sbyte value))
+            {
+                return value;
+            }
+
+            return SimpleTypeUnmarshaller<sbyte>.UnmarshallCurrentToken(context, ref reader);
+        }
+    }
+
+    /// <summary>
+    /// Unmarshaller for nullable sbyte fields, which model the signed 8-bit Smithy byte type.
+    /// Values outside the sbyte range throw an <see cref="OverflowException"/>.
+    /// </summary>
+    public class NullableSByteUnmarshaller : IXmlUnmarshaller<sbyte?, XmlUnmarshallerContext>, IJsonUnmarshaller<sbyte?, JsonUnmarshallerContext>
+    {
+        private NullableSByteUnmarshaller() { }
+
+        private static NullableSByteUnmarshaller _instance = new NullableSByteUnmarshaller();
+
+        public static NullableSByteUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
+        public sbyte? Unmarshall(XmlUnmarshallerContext context)
+        {
+            context.Read();
+            string text = context.ReadText();
+
+            if (text == null)
+            {
+                return null;
+            }
+            return sbyte.Parse(text, CultureInfo.InvariantCulture);
+        }
+
+        public sbyte? Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        {
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Number && reader.TryGetSByte(out sbyte value))
+            {
+                return value;
+            }
+
+            string text = context.ReadText(ref reader);
+
+            if (text == null)
+            {
+                return null;
+            }
+            return sbyte.Parse(text, CultureInfo.InvariantCulture);
+        }
+    }
+
+    /// <summary>
+    /// Unmarshaller for short fields.
+    /// Values outside the short range throw an <see cref="OverflowException"/>.
+    /// </summary>
+    public class ShortUnmarshaller : IXmlUnmarshaller<short, XmlUnmarshallerContext>, IJsonUnmarshaller<short, JsonUnmarshallerContext>
+    {
+        private ShortUnmarshaller() { }
+
+        private static ShortUnmarshaller _instance = new ShortUnmarshaller();
+
+        public static ShortUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
+        public short Unmarshall(XmlUnmarshallerContext context)
+        {
+            return short.Parse(context.ReadText(), CultureInfo.InvariantCulture);
+        }
+        public short Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        {
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Number && reader.TryGetInt16(out short value))
+            {
+                return value;
+            }
+
+            return SimpleTypeUnmarshaller<short>.UnmarshallCurrentToken(context, ref reader);
+        }
+    }
+
+    /// <summary>
+    /// Unmarshaller for nullable short fields.
+    /// Values outside the short range throw an <see cref="OverflowException"/>.
+    /// </summary>
+    public class NullableShortUnmarshaller : IXmlUnmarshaller<short?, XmlUnmarshallerContext>, IJsonUnmarshaller<short?, JsonUnmarshallerContext>
+    {
+        private NullableShortUnmarshaller() { }
+
+        private static NullableShortUnmarshaller _instance = new NullableShortUnmarshaller();
+
+        public static NullableShortUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
+        public short? Unmarshall(XmlUnmarshallerContext context)
+        {
+            context.Read();
+            string text = context.ReadText();
+
+            if (text == null)
+            {
+                return null;
+            }
+            return short.Parse(text, CultureInfo.InvariantCulture);
+        }
+
+        public short? Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        {
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Number && reader.TryGetInt16(out short value))
+            {
+                return value;
+            }
+
+            string text = context.ReadText(ref reader);
+
+            if (text == null)
+            {
+                return null;
+            }
+            return short.Parse(text, CultureInfo.InvariantCulture);
+        }
+    }
+
+    /// <summary>
+    /// Unmarshaller for BigInteger fields. The value is parsed from the raw token text so no
+    /// digits are lost, which would happen if it were read as a double.
+    /// </summary>
+    public class BigIntegerUnmarshaller : IXmlUnmarshaller<BigInteger, XmlUnmarshallerContext>, IJsonUnmarshaller<BigInteger, JsonUnmarshallerContext>
+    {
+        private BigIntegerUnmarshaller() { }
+
+        private static BigIntegerUnmarshaller _instance = new BigIntegerUnmarshaller();
+
+        public static BigIntegerUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
+        public BigInteger Unmarshall(XmlUnmarshallerContext context)
+        {
+            return BigInteger.Parse(context.ReadText(), NumberStyles.Integer, CultureInfo.InvariantCulture);
+        }
+        public BigInteger Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        {
+            context.Read(ref reader);
+            string text = context.ReadText(ref reader);
+            if (text == null)
+            {
+                return default(BigInteger);
+            }
+            return BigInteger.Parse(text, NumberStyles.Integer, CultureInfo.InvariantCulture);
+        }
+    }
+
+    /// <summary>
+    /// Unmarshaller for nullable BigInteger fields. The value is parsed from the raw token text so no
+    /// digits are lost, which would happen if it were read as a double.
+    /// </summary>
+    public class NullableBigIntegerUnmarshaller : IXmlUnmarshaller<BigInteger?, XmlUnmarshallerContext>, IJsonUnmarshaller<BigInteger?, JsonUnmarshallerContext>
+    {
+        private NullableBigIntegerUnmarshaller() { }
+
+        private static NullableBigIntegerUnmarshaller _instance = new NullableBigIntegerUnmarshaller();
+
+        public static NullableBigIntegerUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
+        public BigInteger? Unmarshall(XmlUnmarshallerContext context)
+        {
+            context.Read();
+            string text = context.ReadText();
+
+            if (text == null)
+            {
+                return null;
+            }
+            return BigInteger.Parse(text, NumberStyles.Integer, CultureInfo.InvariantCulture);
+        }
+
+        public BigInteger? Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        {
+            context.Read(ref reader);
+            string text = context.ReadText(ref reader);
+
+            if (text == null)
+            {
+                return null;
+            }
+            return BigInteger.Parse(text, NumberStyles.Integer, CultureInfo.InvariantCulture);
         }
     }
 
