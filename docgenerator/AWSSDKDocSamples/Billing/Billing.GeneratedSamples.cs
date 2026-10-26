@@ -12,6 +12,21 @@ namespace AWSSDKDocSamples.Amazon.Billing.Generated
 {
     class BillingSamples : ISample
     {
+        public void BillingAssociateContract()
+        {
+            #region AssociateContract-1
+
+            var client = new AmazonBillingClient();
+            var response = client.AssociateContract(new AssociateContractRequest
+            {
+                ContractArn = "arn:aws:billing::123456789012:contract/1a2b3c4d-5e6f-7a8b-9c0d-111122223333",
+                ContractDocumentId = "CC OTH XXXXXXXX XXXX TR"
+            });
+
+
+            #endregion
+        }
+
         public void BillingAssociateSourceViews()
         {
             #region AssociateSourceViews-1
@@ -27,6 +42,22 @@ namespace AWSSDKDocSamples.Amazon.Billing.Generated
             });
 
             string arn = response.Arn;
+
+            #endregion
+        }
+
+        public void BillingCancelContractualInvestmentAttestation()
+        {
+            #region CancelContractualInvestmentAttestation-1
+
+            var client = new AmazonBillingClient();
+            var response = client.CancelContractualInvestmentAttestation(new CancelContractualInvestmentAttestationRequest
+            {
+                AttestationId = "a1b2c3d4-5678-90ab-cdef-111122223333",
+                ContractArn = "arn:aws:billing::123456789012:contract/1a2b3c4d-5e6f-7a8b-9c0d-111122223333",
+                Reason = "Example cancellation reason"
+            });
+
 
             #endregion
         }
@@ -57,6 +88,133 @@ namespace AWSSDKDocSamples.Amazon.Billing.Generated
             #endregion
         }
 
+        public void BillingCreateContractualInvestmentAttestation()
+        {
+            #region CreateContractualInvestmentAttestation-1
+
+            var client = new AmazonBillingClient();
+            var response = client.CreateContractualInvestmentAttestation(new CreateContractualInvestmentAttestationRequest
+            {
+                AdditionalRecipients = new List<AdditionalRecipient> {
+                    new AdditionalRecipient { Email = "recipient@example.com" }
+                },
+                ApproverDetails = new ApproverDetails {
+                    Email = "first-name.last-name@example.com",
+                    Name = "First-Name Last-Name",
+                    Title = "Title"
+                },
+                AttestationDetails = new AttestationDetails {
+                    AttestationValue = new AttestationValue { AttestationAmount = new Amount {
+                        CurrencyAmount = "1.00",
+                        CurrencyCode = "USD"
+                    } },
+                    InvestmentDistributions = new List<InvestmentDistribution> {
+                        new InvestmentDistribution {
+                            AccountId = "123456789012",
+                            InvestmentAmount = new Amount {
+                                CurrencyAmount = "1.00",
+                                CurrencyCode = "USD"
+                            }
+                        }
+                    }
+                },
+                ClientToken = "c0ffee00-1234-4abc-9def-0123456789ab",
+                ContractArn = "arn:aws:billing::123456789012:contract/1a2b3c4d-5e6f-7a8b-9c0d-111122223333",
+                ContractDocumentId = "CC OTH XXXXXXXX XXXX TR",
+                InvestmentDisbursedAt = new DateTime(2008, 1, 10, 0, 0, 0, DateTimeKind.Utc),
+                InvestmentId = "Investment-Id",
+                InvestmentSummaryId = "Example-Investment-Summary-Id"
+            });
+
+            string attestationId = response.AttestationId;
+
+            #endregion
+        }
+
+        public void BillingCreateContractualInvestmentAttestation()
+        {
+            #region CreateContractualInvestmentAttestation-2
+
+            var client = new AmazonBillingClient();
+            var response = client.CreateContractualInvestmentAttestation(new CreateContractualInvestmentAttestationRequest
+            {
+                ApproverDetails = new ApproverDetails {
+                    Email = "first-name.last-name@example.com",
+                    Name = "First-Name Last-Name",
+                    Title = "Title"
+                },
+                AttestationDetails = new AttestationDetails {
+                    AttestationValue = new AttestationValue { AttestationQuantities = new List<AttestationQuantity> {
+                        new AttestationQuantity {
+                            AttestationUnit = "Example attestation unit",
+                            AttestationVolume = "3"
+                        }
+                    } },
+                    InvestmentDistributions = new List<InvestmentDistribution> {
+                        new InvestmentDistribution {
+                            AccountId = "123456789012",
+                            InvestmentAmount = new Amount {
+                                CurrencyAmount = "1500.00",
+                                CurrencyCode = "USD"
+                            }
+                        }
+                    }
+                },
+                ClientToken = "c0ffee00-1234-4abc-9def-0123456789ac",
+                ContractArn = "arn:aws:billing::123456789012:contract/1a2b3c4d-5e6f-7a8b-9c0d-111122223333",
+                ContractDocumentId = "CC OTH XXXXXXXX XXXX TR",
+                InvestmentDisbursedAt = new DateTime(2008, 1, 10, 0, 0, 0, DateTimeKind.Utc),
+                InvestmentId = "Investment-Id",
+                InvestmentSummaryId = "Example-Investment-Summary-Id"
+            });
+
+            string attestationId = response.AttestationId;
+
+            #endregion
+        }
+
+        public void BillingCreateContractualInvestmentAttestation()
+        {
+            #region CreateContractualInvestmentAttestation-3
+
+            var client = new AmazonBillingClient();
+            var response = client.CreateContractualInvestmentAttestation(new CreateContractualInvestmentAttestationRequest
+            {
+                ApproverDetails = new ApproverDetails {
+                    Email = "first-name.last-name@example.com",
+                    Name = "First-Name Last-Name",
+                    Title = "Title"
+                },
+                AttestationDetails = new AttestationDetails {
+                    AttestationValue = new AttestationValue { AttestationQuantities = new List<AttestationQuantity> {
+                        new AttestationQuantity {
+                            AttestationUnit = "Example attestation unit",
+                            AttestationVolume = "1000"
+                        }
+                    } },
+                    InvestmentDistributions = new List<InvestmentDistribution> {
+                        new InvestmentDistribution {
+                            AccountId = "123456789012",
+                            InvestmentAmount = new Amount {
+                                CurrencyAmount = "150.00",
+                                CurrencyCode = "USD"
+                            }
+                        }
+                    }
+                },
+                ClientToken = "c0ffee00-1234-4abc-9def-0123456789ad",
+                ContractArn = "arn:aws:billing::123456789012:contract/1a2b3c4d-5e6f-7a8b-9c0d-111122223333",
+                ContractDocumentId = "CC OTH XXXXXXXX XXXX TR",
+                InvestmentDisbursedAt = new DateTime(2008, 1, 10, 0, 0, 0, DateTimeKind.Utc),
+                InvestmentId = "Investment-Id",
+                InvestmentSummaryId = "Example-Investment-Summary-Id"
+            });
+
+            string attestationId = response.AttestationId;
+
+            #endregion
+        }
+
         public void BillingDeleteBillingView()
         {
             #region DeleteBillingView-1
@@ -68,6 +226,20 @@ namespace AWSSDKDocSamples.Amazon.Billing.Generated
             });
 
             string arn = response.Arn;
+
+            #endregion
+        }
+
+        public void BillingDisassociateContract()
+        {
+            #region DisassociateContract-1
+
+            var client = new AmazonBillingClient();
+            var response = client.DisassociateContract(new DisassociateContractRequest
+            {
+                ContractArn = "arn:aws:billing::123456789012:contract/1a2b3c4d-5e6f-7a8b-9c0d-111122223333"
+            });
+
 
             #endregion
         }
@@ -102,6 +274,21 @@ namespace AWSSDKDocSamples.Amazon.Billing.Generated
             });
 
             BillingViewElement billingView = response.BillingView;
+
+            #endregion
+        }
+
+        public void BillingGetContractInformation()
+        {
+            #region GetContractInformation-1
+
+            var client = new AmazonBillingClient();
+            var response = client.GetContractInformation(new GetContractInformationRequest
+            {
+                ContractArn = "arn:aws:billing::123456789012:contract/1a2b3c4d-5e6f-7a8b-9c0d-111122223333"
+            });
+
+            ContractDetails contract = response.Contract;
 
             #endregion
         }
@@ -188,6 +375,70 @@ namespace AWSSDKDocSamples.Amazon.Billing.Generated
                 }
             });
 
+
+            #endregion
+        }
+
+        public void BillingListContracts()
+        {
+            #region ListContracts-1
+
+            var client = new AmazonBillingClient();
+            var response = client.ListContracts(new ListContractsRequest
+            {
+                MaxResults = 100
+            });
+
+            List<ContractSummary> items = response.Items;
+
+            #endregion
+        }
+
+        public void BillingListContractualInvestmentAttestations()
+        {
+            #region ListContractualInvestmentAttestations-1
+
+            var client = new AmazonBillingClient();
+            var response = client.ListContractualInvestmentAttestations(new ListContractualInvestmentAttestationsRequest
+            {
+                ContractArn = "arn:aws:billing::123456789012:contract/1a2b3c4d-5e6f-7a8b-9c0d-111122223333",
+                MaxResults = 25
+            });
+
+            List<InvestmentAttestation> items = response.Items;
+
+            #endregion
+        }
+
+        public void BillingListContractualInvestments()
+        {
+            #region ListContractualInvestments-1
+
+            var client = new AmazonBillingClient();
+            var response = client.ListContractualInvestments(new ListContractualInvestmentsRequest
+            {
+                ContractArn = "arn:aws:billing::123456789012:contract/1a2b3c4d-5e6f-7a8b-9c0d-111122223333",
+                InvestmentSummaryId = "Example-Investment-Summary-Id",
+                MaxResults = 100
+            });
+
+            List<Investment> items = response.Items;
+
+            #endregion
+        }
+
+        public void BillingListContractualInvestmentSummaries()
+        {
+            #region ListContractualInvestmentSummaries-1
+
+            var client = new AmazonBillingClient();
+            var response = client.ListContractualInvestmentSummaries(new ListContractualInvestmentSummariesRequest
+            {
+                ContractArn = "arn:aws:billing::123456789012:contract/1a2b3c4d-5e6f-7a8b-9c0d-111122223333",
+                MaxResults = 100
+            });
+
+            List<InvestmentSummary> items = response.Items;
 
             #endregion
         }

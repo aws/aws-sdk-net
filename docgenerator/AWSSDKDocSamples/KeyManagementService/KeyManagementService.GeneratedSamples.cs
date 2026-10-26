@@ -307,6 +307,25 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             #endregion
         }
 
+        public void KeyManagementServiceDecapsulate()
+        {
+            #region to-recover-a-shared-secret-1
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.Decapsulate(new DecapsulateRequest 
+            {
+                EncapsulationAlgorithm = "ML_KEM", // The requested key encapsulation algorithm. The only valid value is ML_KEM.
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab", // The asymmetric ML-KEM KMS key that recovers the shared secret.
+                SharedSecretCiphertextBlob = new MemoryStream(<binary data>) // The encapsulated shared secret that you received from your peer.
+            });
+
+            string encapsulationAlgorithm = response.EncapsulationAlgorithm; // The key encapsulation algorithm used to recover the shared secret.
+            string keyId = response.KeyId; // The key ARN of the asymmetric ML-KEM KMS key that recovered the shared secret.
+            MemoryStream sharedSecret = response.SharedSecret; // The raw shared secret. It matches the shared secret that Encapsulate returned to your peer.
+
+            #endregion
+        }
+
         public void KeyManagementServiceDecrypt()
         {
             #region to-decrypt-data-1
@@ -671,6 +690,25 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
                 RotationPeriodInDays = 365 // The number of days between each rotation date. Specify a value between 9 and 2560. If no value is specified, the default value is 365 days.
             });
 
+
+            #endregion
+        }
+
+        public void KeyManagementServiceEncapsulate()
+        {
+            #region to-generate-a-shared-secret-1
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.Encapsulate(new EncapsulateRequest 
+            {
+                EncapsulationAlgorithm = "ML_KEM", // The requested key encapsulation algorithm. The only valid value is ML_KEM.
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The asymmetric ML-KEM KMS key that generates the shared secret.
+            });
+
+            string encapsulationAlgorithm = response.EncapsulationAlgorithm; // The key encapsulation algorithm used to generate the shared secret.
+            string keyId = response.KeyId; // The key ARN of the asymmetric ML-KEM KMS key that generated the shared secret.
+            MemoryStream sharedSecret = response.SharedSecret; // The raw shared secret.
+            MemoryStream sharedSecretCiphertextBlob = response.SharedSecretCiphertextBlob; // The encapsulated shared secret. Send this ciphertext to your peer, who calls Decapsulate with the same KMS key to recover the same shared secret.
 
             #endregion
         }
