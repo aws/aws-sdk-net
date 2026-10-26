@@ -221,6 +221,20 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetSaaSProductSummary() => this.SaaSProductSummary != null;
 
         /// <summary>
+        /// Gets and sets the property SubsidiaryAuthorizationSummary. 
+        /// <para>
+        /// An object that contains summary information about the subsidiary authorization, such
+        /// as its status and authorized resource, when the entity type is <c>SubsidiaryAuthorization</c>.
+        /// </para>
+        /// </summary>
+        public SubsidiaryAuthorizationSummary SubsidiaryAuthorizationSummary { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SubsidiaryAuthorizationSummary property is set.
+        /// </summary>
+        internal bool IsSetSubsidiaryAuthorizationSummary() => this.SubsidiaryAuthorizationSummary != null;
+
+        /// <summary>
         /// Gets and sets the property Visibility. 
         /// <para>
         /// The visibility status of the entity to buyers. This value can be <c>Public</c> (everyone

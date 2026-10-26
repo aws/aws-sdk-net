@@ -147,5 +147,18 @@ namespace Amazon.MarketplaceCatalog.Model
         /// Checks to see if the SaaSProductFilters property is set.
         /// </summary>
         internal bool IsSetSaaSProductFilters() => this.SaaSProductFilters != null;
+
+        /// <summary>
+        /// Gets and sets the property SubsidiaryAuthorizationFilters. 
+        /// <para>
+        /// A filter for subsidiary authorizations.
+        /// </para>
+        /// </summary>
+        public SubsidiaryAuthorizationFilters SubsidiaryAuthorizationFilters { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SubsidiaryAuthorizationFilters property is set.
+        /// </summary>
+        internal bool IsSetSubsidiaryAuthorizationFilters() => this.SubsidiaryAuthorizationFilters != null;
     }
 }

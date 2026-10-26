@@ -1521,6 +1521,113 @@ namespace Amazon.MarketplaceCatalog
     }
 
     /// <summary>
+    /// Constants used for properties of type SubsidiaryAuthorizationSortBy.
+    /// </summary>
+    public class SubsidiaryAuthorizationSortBy : ConstantClass
+    {
+        /// <summary>
+        /// Constant CreatedDate for SubsidiaryAuthorizationSortBy
+        /// </summary>
+        public static readonly SubsidiaryAuthorizationSortBy CreatedDate = new SubsidiaryAuthorizationSortBy("CreatedDate");
+
+        /// <summary>
+        /// Constant EntityId for SubsidiaryAuthorizationSortBy
+        /// </summary>
+        public static readonly SubsidiaryAuthorizationSortBy EntityId = new SubsidiaryAuthorizationSortBy("EntityId");
+
+        /// <summary>
+        /// Constant LastModifiedDate for SubsidiaryAuthorizationSortBy
+        /// </summary>
+        public static readonly SubsidiaryAuthorizationSortBy LastModifiedDate = new SubsidiaryAuthorizationSortBy("LastModifiedDate");
+
+        /// <summary>
+        /// Constant ResourceId for SubsidiaryAuthorizationSortBy
+        /// </summary>
+        public static readonly SubsidiaryAuthorizationSortBy ResourceId = new SubsidiaryAuthorizationSortBy("ResourceId");
+
+        /// <summary>
+        /// Constant Status for SubsidiaryAuthorizationSortBy
+        /// </summary>
+        public static readonly SubsidiaryAuthorizationSortBy Status = new SubsidiaryAuthorizationSortBy("Status");
+
+        /// <summary>
+        /// Constant SubsidiaryAccountId for SubsidiaryAuthorizationSortBy
+        /// </summary>
+        public static readonly SubsidiaryAuthorizationSortBy SubsidiaryAccountId = new SubsidiaryAuthorizationSortBy("SubsidiaryAccountId");
+
+        /// <summary>
+        /// Constructs a custom SubsidiaryAuthorizationSortBy for a value not among the defined constants.
+        /// </summary>
+        public SubsidiaryAuthorizationSortBy(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SubsidiaryAuthorizationSortBy FindValue(string value)
+        {
+            return FindValue<SubsidiaryAuthorizationSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SubsidiaryAuthorizationSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SubsidiaryAuthorizationStatusString.
+    /// </summary>
+    public class SubsidiaryAuthorizationStatusString : ConstantClass
+    {
+        /// <summary>
+        /// Constant Active for SubsidiaryAuthorizationStatusString
+        /// </summary>
+        public static readonly SubsidiaryAuthorizationStatusString Active = new SubsidiaryAuthorizationStatusString("Active");
+
+        /// <summary>
+        /// Constant Draft for SubsidiaryAuthorizationStatusString
+        /// </summary>
+        public static readonly SubsidiaryAuthorizationStatusString Draft = new SubsidiaryAuthorizationStatusString("Draft");
+
+        /// <summary>
+        /// Constant Restricted for SubsidiaryAuthorizationStatusString
+        /// </summary>
+        public static readonly SubsidiaryAuthorizationStatusString Restricted = new SubsidiaryAuthorizationStatusString("Restricted");
+
+        /// <summary>
+        /// Constructs a custom SubsidiaryAuthorizationStatusString for a value not among the defined constants.
+        /// </summary>
+        public SubsidiaryAuthorizationStatusString(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SubsidiaryAuthorizationStatusString FindValue(string value)
+        {
+            return FindValue<SubsidiaryAuthorizationStatusString>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SubsidiaryAuthorizationStatusString(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ValidationExceptionReason.
     /// </summary>
     public class ValidationExceptionReason : ConstantClass

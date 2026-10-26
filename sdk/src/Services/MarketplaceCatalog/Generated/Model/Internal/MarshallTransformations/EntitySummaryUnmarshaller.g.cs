@@ -151,6 +151,13 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("SubsidiaryAuthorizationSummary", targetDepth, ref reader))
+                {
+                    var unmarshaller = SubsidiaryAuthorizationSummaryUnmarshaller.Instance;
+                    unmarshalledObject.SubsidiaryAuthorizationSummary = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("Visibility", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
