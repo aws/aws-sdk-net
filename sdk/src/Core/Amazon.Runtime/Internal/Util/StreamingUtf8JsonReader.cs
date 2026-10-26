@@ -156,6 +156,7 @@ namespace Amazon.Runtime.Internal.Util
         private Stream _stream;
         private byte[] _buffer;
         private bool _hasReadFromStream;
+        private bool _bufferReturned;
 
         /// <summary>
         /// Initializes a new instance of the StreamingUtf8JsonReader. The stream is not read until the first call to <see cref="Read"/>, which fills the buffer.
@@ -213,6 +214,13 @@ namespace Amazon.Runtime.Internal.Util
         /// <returns>true if there is more data, false otherwise.</returns>
         public bool Read()
         {
+            if (_bufferReturned)
+            {
+                // The document has been fully read and the buffer handed back to the pool; there
+                // is nothing left to read and the pooled array must not be touched again.
+                return false;
+            }
+
             if (!_hasReadFromStream)
             {
                 ReadFirstBuffer();
@@ -225,7 +233,7 @@ namespace Amazon.Runtime.Internal.Util
             {
                 if (_reader.IsFinalBlock)
                 {
-                    ArrayPool<byte>.Shared.Return(_buffer);
+                    ReturnBuffer();
                     break;
                 }
 
@@ -234,7 +242,25 @@ namespace Amazon.Runtime.Internal.Util
                 hasMoreData = _reader.Read();
             }
 
+            // Generated unmarshallers stop reading at the closing token of the root value and never read past the end of
+            // the document, so the buffer would otherwise only be returned to the pool when a caller reads to end-of-stream.
+            // A JSON document has a single root value, so once its closing token has been read the buffer can be released.
+            if (hasMoreData && _reader.CurrentDepth == 0 &&
+                (_reader.TokenType == JsonTokenType.EndObject || _reader.TokenType == JsonTokenType.EndArray))
+            {
+                ReturnBuffer();
+            }
+
             return hasMoreData;
+        }
+
+        private void ReturnBuffer()
+        {
+            if (!_bufferReturned)
+            {
+                _bufferReturned = true;
+                ArrayPool<byte>.Shared.Return(_buffer);
+            }
         }
 
         private void ReadFirstBuffer()
