@@ -243,7 +243,10 @@ public sealed class DocSamplesWriter(GenerationContext context)
         BooleanShape when data.ValueKind is JsonValueKind.True or JsonValueKind.False => data.GetRawText(),
         // C2J prints a string-typed boolean or number unquoted, which is only valid C# when the string parses.
         BooleanShape when data.ValueKind == JsonValueKind.String && bool.TryParse(data.GetString(), out var flag) => flag ? "true" : "false",
-        IntegerShape or IntEnumShape or LongShape or DoubleShape => NumberLiteral(data) ?? "<data>",
+        IntegerShape or IntEnumShape or LongShape or DoubleShape or ByteShape or ShortShape => NumberLiteral(data) ?? "<data>",
+        // Parsed from text so the sample keeps every digit; a C# numeric literal could not hold the value.
+        BigIntegerShape or BigDecimalShape when data.ValueKind is JsonValueKind.Number or JsonValueKind.String =>
+            $"{TypeMapper.MapNonNullableScalar(shape)}.Parse({CodeWriter.Literal(data.ValueKind == JsonValueKind.String ? data.GetString() ?? string.Empty : data.GetRawText())}, System.Globalization.CultureInfo.InvariantCulture)",
         // A fractional literal is a double in C#, which doesn't convert to float implicitly.
         FloatShape => NumberLiteral(data) is { } number ? (long.TryParse(number, out _) ? number : number + "f") : "<data>",
         TimestampShape => TimestampLiteral(data),

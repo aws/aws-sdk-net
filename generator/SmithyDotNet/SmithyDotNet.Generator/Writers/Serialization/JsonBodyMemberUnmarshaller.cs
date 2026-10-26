@@ -60,6 +60,10 @@ public static class JsonBodyMemberUnmarshaller
             FloatShape => "Float",
             DoubleShape => "Double",
             TimestampShape => "DateTime",
+            ByteShape => "SByte",
+            ShortShape => "Short",
+            BigIntegerShape => "BigInteger",
+            BigDecimalShape => "BigDecimal",
             _ => null,
         };
 
