@@ -1280,7 +1280,6 @@ public class CborStreamReaderTests : IClassFixture<BufferSizeConfigFixture>
         var bytes = new byte[] { 0x9A, 0x05, 0xF5, 0xE1, 0x00, 0x01, 0x02, 0x03 };
         using var reader = new CborStreamReader(new MemoryStream(bytes));
 
-#if NET11_0_OR_GREATER
         // The incremental reader validates element counts lazily: the array header is well-formed, so
         // ReadStartArray returns the declared count and the content error surfaces once the body runs out.
         reader.ReadStartArray();
@@ -1289,14 +1288,85 @@ public class CborStreamReaderTests : IClassFixture<BufferSizeConfigFixture>
             for (int i = 0; i < 100_000_000; i++)
                 reader.ReadInt32();
         });
-#else
-        Assert.Throws<CborContentException>(() => reader.ReadStartArray());
-#endif
 
         // The buffer grows only as received bytes arrive, so a header can't force a ~100 MB allocation.
         var buffer = (byte[])typeof(CborStreamReader)
             .GetField("_buffer", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)!
             .GetValue(reader)!;
         Assert.True(buffer.Length <= 1024 * 1024, $"Read buffer grew to {buffer.Length} bytes for an 8-byte stream.");
+    }
+
+    private static byte[] GetBuffer(CborStreamReader reader) =>
+        (byte[])typeof(CborStreamReader)
+            .GetField("_buffer", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)!
+            .GetValue(reader)!;
+
+    [Fact]
+    public void MalformedByte_DoesNotBufferRestOfStream()
+    {
+        // [ 0x82 = array(2), 0x1C = reserved additional info (malformed) ] + 2 MB padding.
+        var bytes = new byte[2 * 1024 * 1024];
+        bytes[0] = 0x82;
+        bytes[1] = 0x1C;
+        var stream = new MemoryStream(bytes);
+        using var reader = new CborStreamReader(stream);
+
+        reader.ReadStartArray();
+        Assert.Throws<CborContentException>(() => reader.ReadInt32());
+
+        // Fail fast: a malformed token must not buffer the whole stream first.
+        Assert.True(stream.Position < 2 * AWSConfigs.CborReaderInitialBufferSize,
+            $"Stream advanced to {stream.Position} bytes on a malformed token; expected an early failure.");
+        Assert.True(GetBuffer(reader).Length < 2 * 1024 * 1024,
+            "Read buffer grew toward the full stream size on a malformed token.");
+    }
+
+    [Fact]
+    public void SkipValue_OverLargeSubtree_SpanningManyChunks_Succeeds()
+    {
+        // A valid array far larger than the buffer, so SkipValue spans many refills.
+        var writer = new CborWriter();
+        writer.WriteStartArray(500);
+        for (int i = 0; i < 500; i++)
+            writer.WriteTextString($"element-with-some-length-{i}");
+        writer.WriteEndArray();
+        var payload = writer.Encode();
+        Assert.True(payload.Length > 10 * AWSConfigs.CborReaderInitialBufferSize);
+
+        // Wrap so there is a value after the skipped one to confirm the position.
+        var outer = new CborWriter();
+        outer.WriteStartArray(2);
+        outer.WriteEncodedValue(payload);
+        outer.WriteInt32(42);
+        outer.WriteEndArray();
+
+        using var reader = new CborStreamReader(new MemoryStream(outer.Encode()));
+        reader.ReadStartArray();
+        reader.SkipValue();
+        Assert.Equal(42, reader.ReadInt32());
+        reader.ReadEndArray();
+    }
+
+    [Fact]
+    public void LargeValidPayload_StreamsWithoutBufferingWholePayload()
+    {
+        // A valid payload larger than the buffer should read correctly while the buffer stays bounded.
+        const int count = 2000;
+        var writer = new CborWriter();
+        writer.WriteStartArray(count);
+        for (int i = 0; i < count; i++)
+            writer.WriteInt32(i);
+        writer.WriteEndArray();
+        var payload = writer.Encode();
+        Assert.True(payload.Length > 20 * AWSConfigs.CborReaderInitialBufferSize);
+
+        using var reader = new CborStreamReader(new MemoryStream(payload));
+        Assert.Equal(count, reader.ReadStartArray());
+        for (int i = 0; i < count; i++)
+            Assert.Equal(i, reader.ReadInt32());
+        reader.ReadEndArray();
+
+        Assert.True(GetBuffer(reader).Length < payload.Length,
+            $"Buffer ({GetBuffer(reader).Length}) should stay below the full payload size ({payload.Length}).");
     }
 }

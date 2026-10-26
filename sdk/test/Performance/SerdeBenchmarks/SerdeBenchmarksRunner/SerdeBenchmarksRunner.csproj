@@ -2,9 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <!-- Pinned to net11.0 so the serde benchmarks exercise the incremental CBOR decode path
-         (gated by NET11_0_OR_GREATER in AWSSDK.Extensions.CborProtocol). -->
-    <TargetFramework>net11.0</TargetFramework>
+    <TargetFramework>$(SdkPerformanceTargets)</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
