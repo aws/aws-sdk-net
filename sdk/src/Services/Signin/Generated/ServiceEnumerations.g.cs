@@ -47,9 +47,34 @@ namespace Amazon.Signin
         public static readonly OAuth2ErrorCode INVALID_REQUEST = new OAuth2ErrorCode("INVALID_REQUEST");
 
         /// <summary>
+        /// Constant Invalid_grant for OAuth2ErrorCode
+        /// </summary>
+        public static readonly OAuth2ErrorCode Invalid_grant = new OAuth2ErrorCode("invalid_grant");
+
+        /// <summary>
+        /// Constant Invalid_scope for OAuth2ErrorCode
+        /// </summary>
+        public static readonly OAuth2ErrorCode Invalid_scope = new OAuth2ErrorCode("invalid_scope");
+
+        /// <summary>
+        /// Constant Invalid_target for OAuth2ErrorCode
+        /// </summary>
+        public static readonly OAuth2ErrorCode Invalid_target = new OAuth2ErrorCode("invalid_target");
+
+        /// <summary>
+        /// Constant OAuth_Invalid_Request for OAuth2ErrorCode
+        /// </summary>
+        public static readonly OAuth2ErrorCode OAuth_Invalid_Request = new OAuth2ErrorCode("invalid_request");
+
+        /// <summary>
         /// Constant RESOURCE_NOT_FOUND for OAuth2ErrorCode
         /// </summary>
         public static readonly OAuth2ErrorCode RESOURCE_NOT_FOUND = new OAuth2ErrorCode("RESOURCE_NOT_FOUND");
+
+        /// <summary>
+        /// Constant Rate_exceeded for OAuth2ErrorCode
+        /// </summary>
+        public static readonly OAuth2ErrorCode Rate_exceeded = new OAuth2ErrorCode("rate_exceeded");
 
         /// <summary>
         /// Constant SERVICE_QUOTA_EXCEEDED for OAuth2ErrorCode
@@ -62,6 +87,11 @@ namespace Amazon.Signin
         public static readonly OAuth2ErrorCode Server_error = new OAuth2ErrorCode("server_error");
 
         /// <summary>
+        /// Constant Service_unavailable for OAuth2ErrorCode
+        /// </summary>
+        public static readonly OAuth2ErrorCode Service_unavailable = new OAuth2ErrorCode("service_unavailable");
+
+        /// <summary>
         /// Constant TOKEN_EXPIRED for OAuth2ErrorCode
         /// </summary>
         public static readonly OAuth2ErrorCode TOKEN_EXPIRED = new OAuth2ErrorCode("TOKEN_EXPIRED");
@@ -70,6 +100,11 @@ namespace Amazon.Signin
         /// Constant USER_CREDENTIALS_CHANGED for OAuth2ErrorCode
         /// </summary>
         public static readonly OAuth2ErrorCode USER_CREDENTIALS_CHANGED = new OAuth2ErrorCode("USER_CREDENTIALS_CHANGED");
+
+        /// <summary>
+        /// Constant Unsupported_grant_type for OAuth2ErrorCode
+        /// </summary>
+        public static readonly OAuth2ErrorCode Unsupported_grant_type = new OAuth2ErrorCode("unsupported_grant_type");
 
         /// <summary>
         /// Constructs a custom OAuth2ErrorCode for a value not among the defined constants.

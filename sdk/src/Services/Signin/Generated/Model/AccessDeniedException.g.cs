@@ -30,11 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Signin.Model
 {
     /// <summary>
-    /// Error thrown for access denied scenarios with flexible HTTP status mapping Runtime
-    /// HTTP Status Code Mapping: - HTTP 401 (Unauthorized): TOKEN_EXPIRED, AUTHCODE_EXPIRED
-    /// - HTTP 403 (Forbidden): USER_CREDENTIALS_CHANGED, INSUFFICIENT_PERMISSIONS The specific
-    /// HTTP status code is determined at runtime based on the error enum value. Consumers
-    /// should use the error field to determine the specific access denial reason.
+    /// You do not have sufficient access to perform this action.
     /// </summary>
 #if !NETSTANDARD
     [Serializable]
@@ -77,9 +73,8 @@ namespace Amazon.Signin.Model
         public AccessDeniedException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) : base(message, errorType, errorCode, requestId, statusCode) { }
 
         /// <summary>
-        /// Gets and sets the property Error. OAuth 2.0 error code indicating the specific type
-        /// of access denial Can be TOKEN_EXPIRED, AUTHCODE_EXPIRED, USER_CREDENTIALS_CHANGED,
-        /// or INSUFFICIENT_PERMISSIONS
+        /// Gets and sets the property Error. One of TOKEN_EXPIRED, AUTHCODE_EXPIRED, USER_CREDENTIALS_CHANGED,
+        /// or INSUFFICIENT_PERMISSIONS.
         /// </summary>
         [AWSProperty(Required = true)]
         public OAuth2ErrorCode Error { get; set; }

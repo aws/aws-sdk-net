@@ -35,8 +35,8 @@ namespace Amazon.Signin.Model
     public partial class CreateOAuth2TokenResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property TokenOutput. Flattened token operation outputs The specific
-        /// response fields depend on the grant_type used in the request
+        /// Gets and sets the property TokenOutput. Flattened token operation outputs. The specific
+        /// response fields depend on the grant_type used in the request.
         /// </summary>
         [AWSProperty(Required = true)]
         public CreateOAuth2TokenResponseBody TokenOutput { get; set; }

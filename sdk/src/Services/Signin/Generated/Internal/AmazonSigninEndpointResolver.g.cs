@@ -95,6 +95,11 @@ namespace Amazon.Signin.Internal
                 result.IsOAuthEndpoint = true;
                 return result;
             }
+            if (requestContext.RequestName == "CreateOAuth2TokenWithTokenExchangeRequest")
+            {
+                result.IsOAuthEndpoint = true;
+                return result;
+            }
             if (requestContext.RequestName == "DeleteConsoleAuthorizationConfigurationRequest")
             {
                 result.IsControlPlane = true;

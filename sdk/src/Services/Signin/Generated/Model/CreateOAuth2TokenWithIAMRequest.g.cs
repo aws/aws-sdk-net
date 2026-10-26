@@ -30,14 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Signin.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateOAuth2TokenWithIAM operation. Grants permission
-    /// to exchange client credentials for an OAuth 2.0 access token scoped to a resource
-    /// that can be used to access AWS services from applications
+    /// Container for the parameters to the CreateOAuth2TokenWithIAM operation. Exchanges
+    /// client credentials for an OAuth 2.0 access token scoped to a resource, which you can
+    /// use to access AWS services from applications.
     /// </summary>
     public partial class CreateOAuth2TokenWithIAMRequest : AmazonSigninRequest
     {
         /// <summary>
-        /// Gets and sets the property GrantType. OAuth 2.0 grant type. Must be "client_credentials".
+        /// Gets and sets the property GrantType. The OAuth 2.0 grant type. Must be "client_credentials".
         /// </summary>
         [AWSProperty(Required = true)]
         public string GrantType { get; set; }

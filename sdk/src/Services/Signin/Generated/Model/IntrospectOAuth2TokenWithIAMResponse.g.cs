@@ -48,8 +48,8 @@ namespace Amazon.Signin.Model
 
         /// <summary>
         /// Gets and sets the property Active. Indicates whether the token is currently active.
-        /// `true` only when the token is valid, has not expired, has not been revoked, and belongs
-        /// to the caller's account.
+        /// Returns "true" only when the token is valid, has not expired, has not been revoked,
+        /// and belongs to the caller's account.
         /// </summary>
         [AWSProperty(Required = true)]
         public bool? Active { get; set; }
@@ -60,8 +60,8 @@ namespace Amazon.Signin.Model
         internal bool IsSetActive() => this.Active.HasValue;
 
         /// <summary>
-        /// Gets and sets the property Aud. Audience of the token: the OAuth resource the token
-        /// is scoped to (for example, "aws-mcp.amazonaws.com"). Omitted for refresh tokens.
+        /// Gets and sets the property Aud. The OAuth resource the token is scoped to. Omitted
+        /// for refresh tokens. Example: "aws-mcp.amazonaws.com".
         /// </summary>
         public string Aud { get; set; }
 
@@ -135,9 +135,10 @@ namespace Amazon.Signin.Model
         internal bool IsSetNbf() => this.Nbf.HasValue;
 
         /// <summary>
-        /// Gets and sets the property Resource. The OAuth resource the token is scoped to during
-        /// Human OAuth flow. Only present for refresh token introspection.
+        /// Gets and sets the property Resource. The OAuth resource the token is scoped to. Only
+        /// present for refresh token introspection.
         /// </summary>
+        [AWSProperty(Min = 1, Max = 2048)]
         public string Resource { get; set; }
 
         /// <summary>
@@ -157,9 +158,8 @@ namespace Amazon.Signin.Model
         internal bool IsSetSigninSession() => this.SigninSession != null;
 
         /// <summary>
-        /// Gets and sets the property Sub. Subject of the token: the IAM principal ARN. For assumed-role
-        /// sessions, this is the session ARN (matches sts:GetCallerIdentity's `Arn` field), e.g.
-        /// arn:aws:sts::123456789012:assumed-role/MyRole/session-name.
+        /// Gets and sets the property Sub. The IAM principal Amazon Resource Name (ARN). For
+        /// assumed-role sessions, this is the session ARN.
         /// </summary>
         public string Sub { get; set; }
 
@@ -180,9 +180,8 @@ namespace Amazon.Signin.Model
         internal bool IsSetTokenType() => this.TokenType != null;
 
         /// <summary>
-        /// Gets and sets the property UserId. User identifier matching sts:GetCallerIdentity's
-        /// `UserId` field for the token's subject principal (e.g. "AIDAEXAMPLE" for an IAM user,
-        /// or "AROAEXAMPLE:session-name" for an assumed role).
+        /// Gets and sets the property UserId. User identifier matching the "UserId" field from
+        /// "sts:GetCallerIdentity" for the token's subject principal.
         /// </summary>
         public string UserId { get; set; }
 

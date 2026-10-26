@@ -30,16 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Signin.Model
 {
     /// <summary>
-    /// Response body payload for CreateOAuth2Token operation The response content depends
-    /// on the grant_type from the request: - grant_type=authorization_code: Returns all fields
-    /// including refresh_token and id_token - grant_type=refresh_token: Returns access_token,
-    /// token_type, expires_in, refresh_token (no id_token)
+    /// The response body for an OAuth 2.0 token request. The fields returned depend on the
+    /// "grant_type". The authorization code flow returns "refresh_token" and "id_token".
+    /// The refresh token flow omits "id_token".
     /// </summary>
     public partial class CreateOAuth2TokenResponseBody
     {
         /// <summary>
-        /// Gets and sets the property AccessToken. Scoped-down AWS credentials (15 minute duration)
-        /// Present for both authorization code redemption and token refresh
+        /// Gets and sets the property AccessToken. The access token issued by the authorization
+        /// server. The token contains temporary AWS security credentials that you use to sign
+        /// requests with SigV4.
         /// </summary>
         [AWSProperty(Required = true, Sensitive = true)]
         public AccessToken AccessToken { get; set; }
@@ -50,8 +50,8 @@ namespace Amazon.Signin.Model
         internal bool IsSetAccessToken() => this.AccessToken != null;
 
         /// <summary>
-        /// Gets and sets the property ExpiresIn. Time to expiry in seconds (maximum 900) Present
-        /// for both authorization code redemption and token refresh
+        /// Gets and sets the property ExpiresIn. The number of seconds until the access token
+        /// expires. Maximum value is 900 seconds (15 minutes).
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 900)]
         public int? ExpiresIn { get; set; }
@@ -62,9 +62,9 @@ namespace Amazon.Signin.Model
         internal bool IsSetExpiresIn() => this.ExpiresIn.HasValue;
 
         /// <summary>
-        /// Gets and sets the property IdToken. ID token containing user identity information
-        /// Present only in authorization code redemption response (grant_type=authorization_code)
-        /// Not included in token refresh responses
+        /// Gets and sets the property IdToken. A JSON Web Token (JWT) containing user identity
+        /// claims. Present only when "grant_type=authorization_code". Not included in refresh
+        /// token responses.
         /// </summary>
         [AWSProperty(Min = 1, Max = 4096)]
         public string IdToken { get; set; }
@@ -75,8 +75,8 @@ namespace Amazon.Signin.Model
         internal bool IsSetIdToken() => this.IdToken != null;
 
         /// <summary>
-        /// Gets and sets the property RefreshToken. Encrypted refresh token with cnf.jkt (SHA-256
-        /// thumbprint of presented jwk) Always present in responses (required for both flows)
+        /// Gets and sets the property RefreshToken. A refresh token that can be used to obtain
+        /// new access tokens without re-authenticating.
         /// </summary>
         [AWSProperty(Required = true, Sensitive = true, Min = 1, Max = 2048)]
         public string RefreshToken { get; set; }
@@ -87,8 +87,7 @@ namespace Amazon.Signin.Model
         internal bool IsSetRefreshToken() => this.RefreshToken != null;
 
         /// <summary>
-        /// Gets and sets the property TokenType. Token type indicating this is AWS SigV4 credentials
-        /// Value is "aws_sigv4" for both flows
+        /// Gets and sets the property TokenType. The type of token issued. Value is "aws_sigv4".
         /// </summary>
         [AWSProperty(Required = true)]
         public string TokenType { get; set; }

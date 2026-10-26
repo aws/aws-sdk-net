@@ -30,9 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Signin.Model
 {
     /// <summary>
-    /// Error thrown when request validation fails HTTP Status Code: 400 Bad Request Used
-    /// for request validation errors such as malformed parameters, missing required fields,
-    /// or invalid parameter values.
+    /// The request failed because it contains a malformed, missing, or invalid parameter.
     /// </summary>
 #if !NETSTANDARD
     [Serializable]
@@ -75,8 +73,7 @@ namespace Amazon.Signin.Model
         public ValidationException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) : base(message, errorType, errorCode, requestId, statusCode) { }
 
         /// <summary>
-        /// Gets and sets the property Error. OAuth 2.0 error code indicating validation failure
-        /// Will be INVALID_REQUEST for validation errors
+        /// Gets and sets the property Error. The specific code depends on which validation failed.
         /// </summary>
         [AWSProperty(Required = true)]
         public OAuth2ErrorCode Error { get; set; }

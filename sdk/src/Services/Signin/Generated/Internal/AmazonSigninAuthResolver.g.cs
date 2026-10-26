@@ -70,6 +70,7 @@ namespace Amazon.Signin.Internal
             {
                 "CreateOAuth2TokenRequest" => AuthSchemeOption.DEFAULT_NOAUTH,
                 "CreateOAuth2TokenWithIAMRequest" => AuthSchemeOption.DEFAULT_SIGV4,
+                "CreateOAuth2TokenWithTokenExchangeRequest" => AuthSchemeOption.DEFAULT_NOAUTH,
                 "IntrospectOAuth2TokenWithIAMRequest" => AuthSchemeOption.DEFAULT_SIGV4,
                 "RevokeOAuth2TokenWithIAMRequest" => AuthSchemeOption.DEFAULT_SIGV4,
                 // Default for the service, applies to all remaining operations.

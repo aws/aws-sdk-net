@@ -30,11 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Signin.Model
 {
     /// <summary>
-    /// Error thrown when rate limit is exceeded HTTP Status Code: 429 Too Many Requests Possible
-    /// OAuth2ErrorCode values: - INVALID_REQUEST: Rate limiting, too many requests, abuse
-    /// prevention Possible causes: - Too many token requests from the same client - Rate
-    /// limiting based on client_id or IP address - Abuse prevention mechanisms triggered
-    /// - Service protection against excessive token generation
+    /// The request failed because you exceeded the request rate limit for this operation.
     /// </summary>
 #if !NETSTANDARD
     [Serializable]
@@ -77,8 +73,7 @@ namespace Amazon.Signin.Model
         public TooManyRequestsErrorException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) : base(message, errorType, errorCode, requestId, statusCode) { }
 
         /// <summary>
-        /// Gets and sets the property Error. OAuth 2.0 error code indicating the specific type
-        /// of error Will be INVALID_REQUEST for rate limiting scenarios
+        /// Gets and sets the property Error. Will be rate_exceeded.
         /// </summary>
         [AWSProperty(Required = true)]
         public OAuth2ErrorCode Error { get; set; }

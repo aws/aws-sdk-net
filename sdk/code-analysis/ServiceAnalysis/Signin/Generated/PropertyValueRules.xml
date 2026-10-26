@@ -24,6 +24,47 @@
     <pattern>^Bearer$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Signin.Model.CreateOAuth2TokenWithTokenExchangeRequest.GrantType</property>
+    <pattern>^urn:ietf:params:oauth:grant-type:token-exchange$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.CreateOAuth2TokenWithTokenExchangeRequest.Resource</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.CreateOAuth2TokenWithTokenExchangeRequest.Scope</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.CreateOAuth2TokenWithTokenExchangeRequest.SubjectToken</property>
+    <min>4</min>
+    <max>20000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.CreateOAuth2TokenWithTokenExchangeRequest.SubjectTokenType</property>
+    <pattern>^urn:ietf:params:oauth:token-type:.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.CreateOAuth2TokenWithTokenExchangeResponse.AccessToken</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.CreateOAuth2TokenWithTokenExchangeResponse.ExpiresIn</property>
+    <min>1</min>
+    <max>3600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.CreateOAuth2TokenWithTokenExchangeResponse.IssuedTokenType</property>
+    <pattern>^urn:ietf:params:oauth:token-type:access_token$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.CreateOAuth2TokenWithTokenExchangeResponse.TokenType</property>
+    <pattern>^Bearer$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Signin.Model.DeleteConsoleAuthorizationConfigurationRequest.TargetId</property>
     <min>12</min>
     <max>32</max>
@@ -72,6 +113,11 @@
     <min>12</min>
     <max>12</max>
     <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.IntrospectOAuth2TokenWithIAMResponse.Resource</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.IntrospectOAuth2TokenWithIAMResponse.TokenType</property>

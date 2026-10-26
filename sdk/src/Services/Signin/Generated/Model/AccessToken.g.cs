@@ -30,13 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Signin.Model
 {
     /// <summary>
-    /// AWS credentials structure containing temporary access credentials Scoped, temporary
-    /// AWS credentials with a 15-minute duration.
+    /// Contains the scoped, temporary AWS credentials used to sign requests with SigV4. Valid
+    /// for 15 minutes.
     /// </summary>
     public partial class AccessToken
     {
         /// <summary>
-        /// Gets and sets the property AccessKeyId. AWS access key ID for temporary credentials
+        /// Gets and sets the property AccessKeyId. The AWS access key ID for the temporary credentials.
         /// </summary>
         [AWSProperty(Required = true)]
         public string AccessKeyId { get; set; }
@@ -47,7 +47,8 @@ namespace Amazon.Signin.Model
         internal bool IsSetAccessKeyId() => this.AccessKeyId != null;
 
         /// <summary>
-        /// Gets and sets the property SecretAccessKey. AWS secret access key for temporary credentials
+        /// Gets and sets the property SecretAccessKey. The AWS secret access key used to sign
+        /// requests.
         /// </summary>
         [AWSProperty(Required = true)]
         public string SecretAccessKey { get; set; }
@@ -58,7 +59,8 @@ namespace Amazon.Signin.Model
         internal bool IsSetSecretAccessKey() => this.SecretAccessKey != null;
 
         /// <summary>
-        /// Gets and sets the property SessionToken. AWS session token for temporary credentials
+        /// Gets and sets the property SessionToken. The session token that validates the temporary
+        /// security credentials.
         /// </summary>
         [AWSProperty(Required = true)]
         public string SessionToken { get; set; }

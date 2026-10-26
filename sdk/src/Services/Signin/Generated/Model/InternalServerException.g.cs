@@ -30,8 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Signin.Model
 {
     /// <summary>
-    /// Error thrown when an internal server error occurs HTTP Status Code: 500 Internal Server
-    /// Error Used for unexpected server-side errors that prevent request processing.
+    /// The request failed because of an internal server error.
     /// </summary>
 #if !NETSTANDARD
     [Serializable]
@@ -74,8 +73,7 @@ namespace Amazon.Signin.Model
         public InternalServerException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) : base(message, errorType, errorCode, requestId, statusCode) { }
 
         /// <summary>
-        /// Gets and sets the property Error. OAuth 2.0 error code indicating server error Will
-        /// be SERVER_ERROR for internal server errors
+        /// Gets and sets the property Error. Will be server_error.
         /// </summary>
         [AWSProperty(Required = true)]
         public OAuth2ErrorCode Error { get; set; }

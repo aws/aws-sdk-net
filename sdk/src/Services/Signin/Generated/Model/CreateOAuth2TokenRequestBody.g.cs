@@ -30,15 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Signin.Model
 {
     /// <summary>
-    /// Request body payload for CreateOAuth2Token operation The operation type is determined
-    /// by the grant_type parameter: - grant_type=authorization_code: Requires code, redirect_uri,
-    /// code_verifier - grant_type=refresh_token: Requires refresh_token
+    /// The request body for creating an OAuth 2.0 token. Supports both the authorization
+    /// code and refresh token flows, selected by the "grant_type" parameter.
     /// </summary>
     public partial class CreateOAuth2TokenRequestBody
     {
         /// <summary>
-        /// Gets and sets the property ClientId. The client identifier (ARN) used during Sign-In
-        /// onboarding Required for both authorization code and refresh token flows
+        /// Gets and sets the property ClientId. The OAuth 2.0 client identifier. Expected values:
+        /// "arn:aws:signin:::devtools/same-device" or "arn:aws:signin:::devtools/cross-device".
         /// </summary>
         [AWSProperty(Required = true)]
         public string ClientId { get; set; }
@@ -49,8 +48,8 @@ namespace Amazon.Signin.Model
         internal bool IsSetClientId() => this.ClientId != null;
 
         /// <summary>
-        /// Gets and sets the property Code. The authorization code received from /v1/authorize
-        /// Required only when grant_type=authorization_code
+        /// Gets and sets the property Code. The authorization code received from the "/v1/authorize"
+        /// endpoint. Required when "grant_type=authorization_code".
         /// </summary>
         [AWSProperty(Min = 1, Max = 512)]
         public string Code { get; set; }
@@ -61,8 +60,8 @@ namespace Amazon.Signin.Model
         internal bool IsSetCode() => this.Code != null;
 
         /// <summary>
-        /// Gets and sets the property CodeVerifier. PKCE code verifier to prove possession of
-        /// the original code challenge Required only when grant_type=authorization_code
+        /// Gets and sets the property CodeVerifier. The PKCE code verifier that proves possession
+        /// of the original code challenge. Required when "grant_type=authorization_code".
         /// </summary>
         [AWSProperty(Min = 43, Max = 128)]
         public string CodeVerifier { get; set; }
@@ -73,8 +72,9 @@ namespace Amazon.Signin.Model
         internal bool IsSetCodeVerifier() => this.CodeVerifier != null;
 
         /// <summary>
-        /// Gets and sets the property GrantType. OAuth 2.0 grant type - determines which flow
-        /// is used Must be "authorization_code" or "refresh_token"
+        /// Gets and sets the property GrantType. The OAuth 2.0 grant type. Supported values:
+        /// - "authorization_code" - Exchange an authorization code for tokens. - "refresh_token"
+        /// - Use a refresh token to obtain a new access token.
         /// </summary>
         [AWSProperty(Required = true)]
         public string GrantType { get; set; }
@@ -85,8 +85,8 @@ namespace Amazon.Signin.Model
         internal bool IsSetGrantType() => this.GrantType != null;
 
         /// <summary>
-        /// Gets and sets the property RedirectUri. The redirect URI that must match the original
-        /// authorization request Required only when grant_type=authorization_code
+        /// Gets and sets the property RedirectUri. The redirect URI that was used in the original
+        /// authorization request. Must match exactly. Required when "grant_type=authorization_code".
         /// </summary>
         [AWSProperty(Min = 1, Max = 2048)]
         public string RedirectUri { get; set; }
@@ -97,8 +97,8 @@ namespace Amazon.Signin.Model
         internal bool IsSetRedirectUri() => this.RedirectUri != null;
 
         /// <summary>
-        /// Gets and sets the property RefreshToken. The refresh token returned from auth_code
-        /// redemption Required only when grant_type=refresh_token
+        /// Gets and sets the property RefreshToken. The refresh token issued by a previous token
+        /// response. Required when "grant_type=refresh_token".
         /// </summary>
         [AWSProperty(Sensitive = true, Min = 1, Max = 2048)]
         public string RefreshToken { get; set; }

@@ -30,20 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Signin.Model
 {
     /// <summary>
-    /// Container for the parameters to the IntrospectOAuth2TokenWithIAM operation. Grants
-    /// permission to inspect the metadata and state of an OAuth 2.0 access token or refresh
-    /// token Implements RFC 7662 OAuth 2.0 Token Introspection over a SigV4-authenticated
-    /// endpoint. Inspects the metadata of an access_token or refresh_token issued by AWS
-    /// Sign-In and returns the claims associated with it. Inactive token semantics (RFC 7662
-    /// §2.2): when the supplied token is unknown, expired, revoked, malformed, or owned by
-    /// a different account, the response body is exactly { "active": false } with all other
-    /// claims omitted.
+    /// Container for the parameters to the IntrospectOAuth2TokenWithIAM operation. Inspects
+    /// the metadata and active state of an OAuth 2.0 access token or refresh token. Implements
+    /// RFC 7662 OAuth 2.0 Token Introspection over a SigV4-authenticated endpoint. Returns
+    /// the claims associated with a token issued by AWS Sign-In.
     /// </summary>
     public partial class IntrospectOAuth2TokenWithIAMRequest : AmazonSigninRequest
     {
         /// <summary>
-        /// Gets and sets the property Token. The string value of the token to introspect. May
-        /// be either an access_token or a refresh_token issued by AWS Sign-In.
+        /// Gets and sets the property Token. The access token or refresh token issued by AWS
+        /// Sign-In.
         /// </summary>
         [AWSProperty(Required = true, Sensitive = true, Min = 1, Max = 4096)]
         public string Token { get; set; }
@@ -54,9 +50,9 @@ namespace Amazon.Signin.Model
         internal bool IsSetToken() => this.Token != null;
 
         /// <summary>
-        /// Gets and sets the property TokenTypeHint. Optional hint about the type of the token
-        /// submitted for introspection. The server uses this hint to optimize lookup, but still
-        /// falls back to the other token type on miss. Allowed values: access_token, refresh_token.
+        /// Gets and sets the property TokenTypeHint. An optional hint about the type of the token
+        /// submitted for introspection, as defined in RFC 7662 §2.1. The server checks both token
+        /// types regardless of the hint. Allowed values: "access_token", "refresh_token".
         /// </summary>
         public string TokenTypeHint { get; set; }
 

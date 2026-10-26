@@ -35,8 +35,8 @@ namespace Amazon.Signin.Model
     public partial class CreateOAuth2TokenWithIAMResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property AccessToken. JWT access token containing principal identity,
-        /// resource scope, and session metadata
+        /// Gets and sets the property AccessToken. Access token containing principal identity,
+        /// resource scope, and session metadata.
         /// </summary>
         [AWSProperty(Required = true, Sensitive = true, Min = 1, Max = 4096)]
         public string AccessToken { get; set; }
@@ -48,7 +48,7 @@ namespace Amazon.Signin.Model
 
         /// <summary>
         /// Gets and sets the property ExpiresIn. Token lifetime in seconds. Value is the minimum
-        /// of session validity and 1 hour.
+        /// of the caller's session validity and 1 hour (3600 seconds).
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 3600)]
         public int? ExpiresIn { get; set; }
@@ -59,7 +59,8 @@ namespace Amazon.Signin.Model
         internal bool IsSetExpiresIn() => this.ExpiresIn.HasValue;
 
         /// <summary>
-        /// Gets and sets the property TokenType. Always "Bearer" per OAuth 2.1 specification
+        /// Gets and sets the property TokenType. The token type. Always "Bearer" as defined in
+        /// RFC 6749.
         /// </summary>
         [AWSProperty(Required = true)]
         public string TokenType { get; set; }
