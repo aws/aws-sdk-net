@@ -35,10 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class GetJobEntityError
     {
         /// <summary>
-        /// Gets and sets the property EnvironmentDetails. 
-        /// <para>
-        /// The environment details for the failed job entity.
-        /// </para>
+        /// Gets and sets the property EnvironmentDetails. The environment details for the failed
+        /// job entity.
         /// </summary>
         public EnvironmentDetailsError EnvironmentDetails { get; set; }
 
@@ -48,10 +46,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetEnvironmentDetails() => this.EnvironmentDetails != null;
 
         /// <summary>
-        /// Gets and sets the property JobAttachmentDetails. 
-        /// <para>
-        /// The job attachment details for the failed job entity.
-        /// </para>
+        /// Gets and sets the property JobAttachmentDetails. The job attachment details for the
+        /// failed job entity.
         /// </summary>
         public JobAttachmentDetailsError JobAttachmentDetails { get; set; }
 
@@ -61,10 +57,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetJobAttachmentDetails() => this.JobAttachmentDetails != null;
 
         /// <summary>
-        /// Gets and sets the property JobDetails. 
-        /// <para>
-        /// The job details for the failed job entity.
-        /// </para>
+        /// Gets and sets the property JobDetails. The job details for the failed job entity.
         /// </summary>
         public JobDetailsError JobDetails { get; set; }
 
@@ -74,10 +67,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetJobDetails() => this.JobDetails != null;
 
         /// <summary>
-        /// Gets and sets the property StepDetails. 
-        /// <para>
-        /// The step details for the failed job entity.
-        /// </para>
+        /// Gets and sets the property StepDetails. The step details for the failed job entity.
         /// </summary>
         public StepDetailsError StepDetails { get; set; }
 

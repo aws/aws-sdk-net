@@ -36,10 +36,8 @@ namespace Amazon.Deadline.Model
     public partial class UpdateStorageProfileRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property ClientToken. 
-        /// <para>
-        /// The unique token which the server uses to recognize retries of the same request.
-        /// </para>
+        /// Gets and sets the property ClientToken. The unique token which the server uses to
+        /// recognize retries of the same request.
         /// </summary>
         [AWSProperty(Min = 1, Max = 64)]
         public string ClientToken { get; set; }
@@ -70,10 +68,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetDisplayName() => this.DisplayName != null;
 
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID to update.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID to update.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -84,10 +79,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property FileSystemLocationsToAdd. 
-        /// <para>
-        /// The file system location names to add.
-        /// </para>
+        /// Gets and sets the property FileSystemLocationsToAdd. The file system location names
+        /// to add.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -104,10 +97,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFileSystemLocationsToAdd() => this.FileSystemLocationsToAdd != null && (this.FileSystemLocationsToAdd.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property FileSystemLocationsToRemove. 
-        /// <para>
-        /// The file system location names to remove.
-        /// </para>
+        /// Gets and sets the property FileSystemLocationsToRemove. The file system location names
+        /// to remove.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -124,10 +115,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFileSystemLocationsToRemove() => this.FileSystemLocationsToRemove != null && (this.FileSystemLocationsToRemove.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property OsFamily. 
-        /// <para>
-        /// The OS system to update.
-        /// </para>
+        /// Gets and sets the property OsFamily. The OS system to update.
         /// </summary>
         public StorageProfileOperatingSystemFamily OsFamily { get; set; }
 
@@ -137,10 +125,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetOsFamily() => this.OsFamily != null;
 
         /// <summary>
-        /// Gets and sets the property StorageProfileId. 
-        /// <para>
-        /// The storage profile ID to update.
-        /// </para>
+        /// Gets and sets the property StorageProfileId. The storage profile ID to update.
         /// </summary>
         [AWSProperty(Required = true)]
         public string StorageProfileId { get; set; }

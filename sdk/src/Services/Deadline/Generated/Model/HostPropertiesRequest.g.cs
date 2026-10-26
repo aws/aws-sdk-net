@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class HostPropertiesRequest
     {
         /// <summary>
-        /// Gets and sets the property HostName. 
-        /// <para>
-        /// The host name.
-        /// </para>
+        /// Gets and sets the property HostName. The host name.
         /// </summary>
         public string HostName { get; set; }
 
@@ -48,10 +45,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetHostName() => this.HostName != null;
 
         /// <summary>
-        /// Gets and sets the property IpAddresses. 
-        /// <para>
-        /// The IP address of the host.
-        /// </para>
+        /// Gets and sets the property IpAddresses. The IP address of the host.
         /// </summary>
         public IpAddresses IpAddresses { get; set; }
 

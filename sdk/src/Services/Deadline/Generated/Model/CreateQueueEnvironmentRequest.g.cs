@@ -36,10 +36,8 @@ namespace Amazon.Deadline.Model
     public partial class CreateQueueEnvironmentRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property ClientToken. 
-        /// <para>
-        /// The unique token which the server uses to recognize retries of the same request.
-        /// </para>
+        /// Gets and sets the property ClientToken. The unique token which the server uses to
+        /// recognize retries of the same request.
         /// </summary>
         [AWSProperty(Min = 1, Max = 64)]
         public string ClientToken { get; set; }
@@ -50,10 +48,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetClientToken() => this.ClientToken != null;
 
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID of the farm to connect to the environment.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID of the farm to connect to the environment.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -64,12 +59,10 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property Priority. 
-        /// <para>
-        /// Sets the priority of the environments in the queue from 0 to 10,000, where 0 is the
-        /// highest priority (activated first and deactivated last). If two environments share
-        /// the same priority value, the environment created first takes higher priority.
-        /// </para>
+        /// Gets and sets the property Priority. Sets the priority of the environments in the
+        /// queue from 0 to 10,000, where 0 is the highest priority (activated first and deactivated
+        /// last). If two environments share the same priority value, the environment created
+        /// first takes higher priority.
         /// </summary>
         [AWSProperty(Required = true, Min = 0, Max = 10000)]
         public int? Priority { get; set; }
@@ -80,10 +73,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetPriority() => this.Priority.HasValue;
 
         /// <summary>
-        /// Gets and sets the property QueueId. 
-        /// <para>
-        /// The queue ID to connect the queue and environment.
-        /// </para>
+        /// Gets and sets the property QueueId. The queue ID to connect the queue and environment.
         /// </summary>
         [AWSProperty(Required = true)]
         public string QueueId { get; set; }
@@ -94,10 +84,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetQueueId() => this.QueueId != null;
 
         /// <summary>
-        /// Gets and sets the property Template. 
-        /// <para>
-        /// The environment template to use in the queue.
-        /// </para>
+        /// Gets and sets the property Template. The environment template to use in the queue.
         /// </summary>
         [AWSProperty(Required = true, Sensitive = true, Min = 1, Max = 15000)]
         public string Template { get; set; }
@@ -108,10 +95,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetTemplate() => this.Template != null;
 
         /// <summary>
-        /// Gets and sets the property TemplateType. 
-        /// <para>
-        /// The template's file type, <c>JSON</c> or <c>YAML</c>.
-        /// </para>
+        /// Gets and sets the property TemplateType. The template's file type, <c>JSON</c> or
+        /// <c>YAML</c>.
         /// </summary>
         [AWSProperty(Required = true)]
         public EnvironmentTemplateType TemplateType { get; set; }

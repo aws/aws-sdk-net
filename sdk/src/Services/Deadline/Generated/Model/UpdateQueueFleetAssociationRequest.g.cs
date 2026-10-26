@@ -36,10 +36,7 @@ namespace Amazon.Deadline.Model
     public partial class UpdateQueueFleetAssociationRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID to update.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID to update.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -50,10 +47,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property FleetId. 
-        /// <para>
-        /// The fleet ID to update.
-        /// </para>
+        /// Gets and sets the property FleetId. The fleet ID to update.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FleetId { get; set; }
@@ -64,10 +58,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFleetId() => this.FleetId != null;
 
         /// <summary>
-        /// Gets and sets the property QueueId. 
-        /// <para>
-        /// The queue ID to update.
-        /// </para>
+        /// Gets and sets the property QueueId. The queue ID to update.
         /// </summary>
         [AWSProperty(Required = true)]
         public string QueueId { get; set; }
@@ -78,10 +69,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetQueueId() => this.QueueId != null;
 
         /// <summary>
-        /// Gets and sets the property Status. 
-        /// <para>
-        /// The status to update.
-        /// </para>
+        /// Gets and sets the property Status. The status to update.
         /// </summary>
         [AWSProperty(Required = true)]
         public UpdateQueueFleetAssociationStatus Status { get; set; }

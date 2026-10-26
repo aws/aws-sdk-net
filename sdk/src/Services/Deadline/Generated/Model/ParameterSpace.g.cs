@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class ParameterSpace
     {
         /// <summary>
-        /// Gets and sets the property Combination. 
-        /// <para>
-        /// The combination expression to use in the search.
-        /// </para>
+        /// Gets and sets the property Combination. The combination expression to use in the search.
         /// </summary>
         [AWSProperty(Min = 1, Max = 1280)]
         public string Combination { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCombination() => this.Combination != null;
 
         /// <summary>
-        /// Gets and sets the property Parameters. 
-        /// <para>
-        /// The parameters to search for.
-        /// </para>
+        /// Gets and sets the property Parameters. The parameters to search for.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

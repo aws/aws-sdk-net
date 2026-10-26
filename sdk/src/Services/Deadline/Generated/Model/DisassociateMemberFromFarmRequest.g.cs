@@ -36,10 +36,8 @@ namespace Amazon.Deadline.Model
     public partial class DisassociateMemberFromFarmRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID of the farm to disassociate from the member.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID of the farm to disassociate from the
+        /// member.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -50,10 +48,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property PrincipalId. 
-        /// <para>
-        /// A member's principal ID to disassociate from a farm.
-        /// </para>
+        /// Gets and sets the property PrincipalId. A member's principal ID to disassociate from
+        /// a farm.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 47)]
         public string PrincipalId { get; set; }

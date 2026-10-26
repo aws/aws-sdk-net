@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class SearchFilterExpression
     {
         /// <summary>
-        /// Gets and sets the property DateTimeFilter. 
-        /// <para>
-        /// Filters based on date and time.
-        /// </para>
+        /// Gets and sets the property DateTimeFilter. Filters based on date and time.
         /// </summary>
         public DateTimeFilterExpression DateTimeFilter { get; set; }
 
@@ -48,10 +45,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetDateTimeFilter() => this.DateTimeFilter != null;
 
         /// <summary>
-        /// Gets and sets the property GroupFilter. 
-        /// <para>
-        /// Filters by group.
-        /// </para>
+        /// Gets and sets the property GroupFilter. Filters by group.
         /// </summary>
         public SearchGroupedFilterExpressions GroupFilter { get; set; }
 
@@ -61,10 +55,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetGroupFilter() => this.GroupFilter != null;
 
         /// <summary>
-        /// Gets and sets the property ParameterFilter. 
-        /// <para>
-        /// Filters by parameter.
-        /// </para>
+        /// Gets and sets the property ParameterFilter. Filters by parameter.
         /// </summary>
         public ParameterFilterExpression ParameterFilter { get; set; }
 
@@ -74,10 +65,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetParameterFilter() => this.ParameterFilter != null;
 
         /// <summary>
-        /// Gets and sets the property SearchTermFilter. 
-        /// <para>
-        /// Filters by a specified search term.
-        /// </para>
+        /// Gets and sets the property SearchTermFilter. Filters by a specified search term.
         /// </summary>
         public SearchTermFilterExpression SearchTermFilter { get; set; }
 
@@ -87,10 +75,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetSearchTermFilter() => this.SearchTermFilter != null;
 
         /// <summary>
-        /// Gets and sets the property StringFilter. 
-        /// <para>
-        /// Filters by a string.
-        /// </para>
+        /// Gets and sets the property StringFilter. Filters by a string.
         /// </summary>
         public StringFilterExpression StringFilter { get; set; }
 
@@ -100,10 +85,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStringFilter() => this.StringFilter != null;
 
         /// <summary>
-        /// Gets and sets the property StringListFilter. 
-        /// <para>
-        /// Filters by a list of strings.
-        /// </para>
+        /// Gets and sets the property StringListFilter. Filters by a list of strings.
         /// </summary>
         public StringListFilterExpression StringListFilter { get; set; }
 

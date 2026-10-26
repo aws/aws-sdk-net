@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class CreateWorkerResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property WorkerId. 
-        /// <para>
-        /// The worker ID.
-        /// </para>
+        /// Gets and sets the property WorkerId. The worker ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string WorkerId { get; set; }

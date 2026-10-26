@@ -36,11 +36,8 @@ namespace Amazon.Deadline.Model
     public partial class UpdateBudgetRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property ActionsToAdd. 
-        /// <para>
-        /// The budget actions to add. Budget actions specify what happens when the budget runs
-        /// out.
-        /// </para>
+        /// Gets and sets the property ActionsToAdd. The budget actions to add. Budget actions
+        /// specify what happens when the budget runs out.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -57,10 +54,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetActionsToAdd() => this.ActionsToAdd != null && (this.ActionsToAdd.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property ActionsToRemove. 
-        /// <para>
-        /// The budget actions to remove from the budget.
-        /// </para>
+        /// Gets and sets the property ActionsToRemove. The budget actions to remove from the
+        /// budget.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -77,10 +72,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetActionsToRemove() => this.ActionsToRemove != null && (this.ActionsToRemove.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property ApproximateDollarLimit. 
-        /// <para>
-        /// The dollar limit to update on the budget. Based on consumed usage.
-        /// </para>
+        /// Gets and sets the property ApproximateDollarLimit. The dollar limit to update on the
+        /// budget. Based on consumed usage.
         /// </summary>
         public float? ApproximateDollarLimit { get; set; }
 
@@ -90,10 +83,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetApproximateDollarLimit() => this.ApproximateDollarLimit.HasValue;
 
         /// <summary>
-        /// Gets and sets the property BudgetId. 
-        /// <para>
-        /// The budget ID to update.
-        /// </para>
+        /// Gets and sets the property BudgetId. The budget ID to update.
         /// </summary>
         [AWSProperty(Required = true)]
         public string BudgetId { get; set; }
@@ -104,10 +94,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetBudgetId() => this.BudgetId != null;
 
         /// <summary>
-        /// Gets and sets the property ClientToken. 
-        /// <para>
-        /// The unique token which the server uses to recognize retries of the same request.
-        /// </para>
+        /// Gets and sets the property ClientToken. The unique token which the server uses to
+        /// recognize retries of the same request.
         /// </summary>
         [AWSProperty(Min = 1, Max = 64)]
         public string ClientToken { get; set; }
@@ -158,10 +146,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetDisplayName() => this.DisplayName != null;
 
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID of the budget to update.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID of the budget to update.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -172,10 +157,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property Schedule. 
-        /// <para>
-        /// The schedule to update.
-        /// </para>
+        /// Gets and sets the property Schedule. The schedule to update.
         /// </summary>
         public BudgetSchedule Schedule { get; set; }
 

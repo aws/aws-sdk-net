@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class SearchWorkersResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property NextItemOffset. 
-        /// <para>
-        /// The next item offset for the search results.
-        /// </para>
+        /// Gets and sets the property NextItemOffset. The next item offset for the search results.
         /// </summary>
         [AWSProperty(Min = 0, Max = 10000)]
         public int? NextItemOffset { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetNextItemOffset() => this.NextItemOffset.HasValue;
 
         /// <summary>
-        /// Gets and sets the property TotalResults. 
-        /// <para>
-        /// The total number of results in the search.
-        /// </para>
+        /// Gets and sets the property TotalResults. The total number of results in the search.
         /// </summary>
         [AWSProperty(Required = true, Min = 0, Max = 10000)]
         public int? TotalResults { get; set; }
@@ -63,10 +57,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetTotalResults() => this.TotalResults.HasValue;
 
         /// <summary>
-        /// Gets and sets the property Workers. 
-        /// <para>
-        /// The workers for the search.
-        /// </para>
+        /// Gets and sets the property Workers. The workers for the search.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

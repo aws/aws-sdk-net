@@ -36,10 +36,8 @@ namespace Amazon.Deadline.Model
     public partial class ListLimitsRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The unique identifier of the farm that contains the limits.
-        /// </para>
+        /// Gets and sets the property FarmId. The unique identifier of the farm that contains
+        /// the limits.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -50,10 +48,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
-        /// <para>
-        /// The maximum number of limits to return in each page of results.
-        /// </para>
+        /// Gets and sets the property MaxResults. The maximum number of limits to return in each
+        /// page of results.
         /// </summary>
         [AWSProperty(Min = 1, Max = 100)]
         public int? MaxResults { get; set; }
@@ -64,10 +60,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMaxResults() => this.MaxResults.HasValue;
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
-        /// <para>
-        /// The token for the next set of results, or <c>null</c> to start from the beginning.
-        /// </para>
+        /// Gets and sets the property NextToken. The token for the next set of results, or <c>null</c>
+        /// to start from the beginning.
         /// </summary>
         [AWSProperty(Max = 4096)]
         public string NextToken { get; set; }

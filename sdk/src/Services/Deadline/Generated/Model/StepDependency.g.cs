@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class StepDependency
     {
         /// <summary>
-        /// Gets and sets the property Status. 
-        /// <para>
-        /// The step dependency status.
-        /// </para>
+        /// Gets and sets the property Status. The step dependency status.
         /// </summary>
         [AWSProperty(Required = true)]
         public DependencyConsumerResolutionStatus Status { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStatus() => this.Status != null;
 
         /// <summary>
-        /// Gets and sets the property StepId. 
-        /// <para>
-        /// The step ID.
-        /// </para>
+        /// Gets and sets the property StepId. The step ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string StepId { get; set; }

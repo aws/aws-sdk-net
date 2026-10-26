@@ -44,10 +44,8 @@ namespace Amazon.Deadline.Model
     public partial class CreateWorkerRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property ClientToken. 
-        /// <para>
-        /// The unique token which the server uses to recognize retries of the same request.
-        /// </para>
+        /// Gets and sets the property ClientToken. The unique token which the server uses to
+        /// recognize retries of the same request.
         /// </summary>
         [AWSProperty(Min = 1, Max = 64)]
         public string ClientToken { get; set; }
@@ -58,10 +56,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetClientToken() => this.ClientToken != null;
 
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID of the farm to connect to the worker.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID of the farm to connect to the worker.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -72,10 +67,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property FleetId. 
-        /// <para>
-        /// The fleet ID to connect to the worker.
-        /// </para>
+        /// Gets and sets the property FleetId. The fleet ID to connect to the worker.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FleetId { get; set; }
@@ -86,10 +78,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFleetId() => this.FleetId != null;
 
         /// <summary>
-        /// Gets and sets the property HostProperties. 
-        /// <para>
-        /// The IP address and host name of the worker.
-        /// </para>
+        /// Gets and sets the property HostProperties. The IP address and host name of the worker.
         /// </summary>
         public HostPropertiesRequest HostProperties { get; set; }
 
@@ -99,11 +88,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetHostProperties() => this.HostProperties != null;
 
         /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// Each tag consists of a tag key and a tag value. Tag keys and values are both required,
-        /// but tag values can be empty strings.
-        /// </para>
+        /// Gets and sets the property Tags. Each tag consists of a tag key and a tag value. Tag
+        /// keys and values are both required, but tag values can be empty strings.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

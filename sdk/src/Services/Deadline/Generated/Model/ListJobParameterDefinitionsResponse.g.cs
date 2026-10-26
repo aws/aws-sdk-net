@@ -35,10 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class ListJobParameterDefinitionsResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property JobParameterDefinitions. 
-        /// <para>
-        /// Lists parameter definitions of a job.
-        /// </para>
+        /// Gets and sets the property JobParameterDefinitions. Lists parameter definitions of
+        /// a job.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -55,15 +53,13 @@ namespace Amazon.Deadline.Model
         internal bool IsSetJobParameterDefinitions() => this.JobParameterDefinitions != null && (this.JobParameterDefinitions.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
-        /// <para>
-        /// If Deadline Cloud returns <c>nextToken</c>, then there are more results available.
-        /// The value of <c>nextToken</c> is a unique pagination token for each page. To retrieve
-        /// the next page, call the operation again using the returned token. Keep all other arguments
-        /// unchanged. If no results remain, then <c>nextToken</c> is set to <c>null</c>. Each
-        /// pagination token expires after 24 hours. If you provide a token that isn't valid,
-        /// then you receive an HTTP 400 <c>ValidationException</c> error.
-        /// </para>
+        /// Gets and sets the property NextToken. If Deadline Cloud returns <c>nextToken</c>,
+        /// then there are more results available. The value of <c>nextToken</c> is a unique pagination
+        /// token for each page. To retrieve the next page, call the operation again using the
+        /// returned token. Keep all other arguments unchanged. If no results remain, then <c>nextToken</c>
+        /// is set to <c>null</c>. Each pagination token expires after 24 hours. If you provide
+        /// a token that isn't valid, then you receive an HTTP 400 <c>ValidationException</c>
+        /// error.
         /// </summary>
         [AWSProperty(Max = 4096)]
         public string NextToken { get; set; }

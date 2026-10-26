@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class GetQueueRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID of the farm in the queue.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID of the farm in the queue.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property QueueId. 
-        /// <para>
-        /// The queue ID for the queue to retrieve.
-        /// </para>
+        /// Gets and sets the property QueueId. The queue ID for the queue to retrieve.
         /// </summary>
         [AWSProperty(Required = true)]
         public string QueueId { get; set; }

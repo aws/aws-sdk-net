@@ -42,10 +42,8 @@ namespace Amazon.Deadline.Model
     public partial class BatchUpdateJobRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property ClientToken. 
-        /// <para>
-        /// The unique token which the server uses to recognize retries of the same request.
-        /// </para>
+        /// Gets and sets the property ClientToken. The unique token which the server uses to
+        /// recognize retries of the same request.
         /// </summary>
         [AWSProperty(Min = 1, Max = 64)]
         public string ClientToken { get; set; }
@@ -56,10 +54,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetClientToken() => this.ClientToken != null;
 
         /// <summary>
-        /// Gets and sets the property Jobs. 
-        /// <para>
-        /// The list of jobs to update. You can specify up to 100 jobs per request.
-        /// </para>
+        /// Gets and sets the property Jobs. The list of jobs to update. You can specify up to
+        /// 100 jobs per request.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

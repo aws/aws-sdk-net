@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class FleetAmountCapability
     {
         /// <summary>
-        /// Gets and sets the property Max. 
-        /// <para>
-        /// The maximum amount of the fleet worker capability.
-        /// </para>
+        /// Gets and sets the property Max. The maximum amount of the fleet worker capability.
         /// </summary>
         public float? Max { get; set; }
 
@@ -48,10 +45,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMax() => this.Max.HasValue;
 
         /// <summary>
-        /// Gets and sets the property Min. 
-        /// <para>
-        /// The minimum amount of fleet worker capability.
-        /// </para>
+        /// Gets and sets the property Min. The minimum amount of fleet worker capability.
         /// </summary>
         [AWSProperty(Required = true)]
         public float? Min { get; set; }
@@ -62,10 +56,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMin() => this.Min.HasValue;
 
         /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name of the fleet capability.
-        /// </para>
+        /// Gets and sets the property Name. The name of the fleet capability.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 100)]
         public string Name { get; set; }

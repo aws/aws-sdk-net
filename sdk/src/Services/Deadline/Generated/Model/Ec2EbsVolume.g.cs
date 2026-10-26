@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class Ec2EbsVolume
     {
         /// <summary>
-        /// Gets and sets the property Iops. 
-        /// <para>
-        /// The IOPS per volume.
-        /// </para>
+        /// Gets and sets the property Iops. The IOPS per volume.
         /// </summary>
         [AWSProperty(Min = 3000, Max = 16000)]
         public int? Iops { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetIops() => this.Iops.HasValue;
 
         /// <summary>
-        /// Gets and sets the property SizeGiB. 
-        /// <para>
-        /// The EBS volume size in GiB.
-        /// </para>
+        /// Gets and sets the property SizeGiB. The EBS volume size in GiB.
         /// </summary>
         public int? SizeGiB { get; set; }
 
@@ -62,10 +56,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetSizeGiB() => this.SizeGiB.HasValue;
 
         /// <summary>
-        /// Gets and sets the property ThroughputMiB. 
-        /// <para>
-        /// The throughput per volume in MiB.
-        /// </para>
+        /// Gets and sets the property ThroughputMiB. The throughput per volume in MiB.
         /// </summary>
         [AWSProperty(Min = 125, Max = 1000)]
         public int? ThroughputMiB { get; set; }

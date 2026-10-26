@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class CreateQueueResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property QueueId. 
-        /// <para>
-        /// The queue ID.
-        /// </para>
+        /// Gets and sets the property QueueId. The queue ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string QueueId { get; set; }

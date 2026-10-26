@@ -35,10 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class BudgetSummary
     {
         /// <summary>
-        /// Gets and sets the property ApproximateDollarLimit. 
-        /// <para>
-        /// The approximate dollar limit of the budget.
-        /// </para>
+        /// Gets and sets the property ApproximateDollarLimit. The approximate dollar limit of
+        /// the budget.
         /// </summary>
         [AWSProperty(Required = true)]
         public float? ApproximateDollarLimit { get; set; }
@@ -49,10 +47,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetApproximateDollarLimit() => this.ApproximateDollarLimit.HasValue;
 
         /// <summary>
-        /// Gets and sets the property BudgetId. 
-        /// <para>
-        /// The budget ID.
-        /// </para>
+        /// Gets and sets the property BudgetId. The budget ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string BudgetId { get; set; }
@@ -63,10 +58,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetBudgetId() => this.BudgetId != null;
 
         /// <summary>
-        /// Gets and sets the property CreatedAt. 
-        /// <para>
-        /// The date and time the resource was created.
-        /// </para>
+        /// Gets and sets the property CreatedAt. The date and time the resource was created.
         /// </summary>
         [AWSProperty(Required = true)]
         public DateTime? CreatedAt { get; set; }
@@ -77,10 +69,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCreatedAt() => this.CreatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property CreatedBy. 
-        /// <para>
-        /// The user or system that created this resource.
-        /// </para>
+        /// Gets and sets the property CreatedBy. The user or system that created this resource.
         /// </summary>
         [AWSProperty(Required = true)]
         public string CreatedBy { get; set; }
@@ -156,10 +145,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStatus() => this.Status != null;
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt. 
-        /// <para>
-        /// The date and time the resource was updated.
-        /// </para>
+        /// Gets and sets the property UpdatedAt. The date and time the resource was updated.
         /// </summary>
         public DateTime? UpdatedAt { get; set; }
 
@@ -169,10 +155,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetUpdatedAt() => this.UpdatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property UpdatedBy. 
-        /// <para>
-        /// The user or system that updated this resource.
-        /// </para>
+        /// Gets and sets the property UpdatedBy. The user or system that updated this resource.
         /// </summary>
         public string UpdatedBy { get; set; }
 
@@ -182,10 +165,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetUpdatedBy() => this.UpdatedBy != null;
 
         /// <summary>
-        /// Gets and sets the property UsageTrackingResource. 
-        /// <para>
-        /// The resource used to track expenditure in the budget.
-        /// </para>
+        /// Gets and sets the property UsageTrackingResource. The resource used to track expenditure
+        /// in the budget.
         /// </summary>
         [AWSProperty(Required = true)]
         public UsageTrackingResource UsageTrackingResource { get; set; }
@@ -196,10 +177,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetUsageTrackingResource() => this.UsageTrackingResource != null;
 
         /// <summary>
-        /// Gets and sets the property Usages. 
-        /// <para>
-        /// The consumed usage for the budget.
-        /// </para>
+        /// Gets and sets the property Usages. The consumed usage for the budget.
         /// </summary>
         [AWSProperty(Required = true)]
         public ConsumedUsages Usages { get; set; }

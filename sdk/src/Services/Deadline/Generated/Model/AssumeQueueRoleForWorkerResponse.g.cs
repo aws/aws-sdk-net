@@ -35,10 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class AssumeQueueRoleForWorkerResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property Credentials. 
-        /// <para>
-        /// The Amazon Web Services credentials for the role that the worker is assuming.
-        /// </para>
+        /// Gets and sets the property Credentials. The Amazon Web Services credentials for the
+        /// role that the worker is assuming.
         /// </summary>
         [AWSProperty(Sensitive = true)]
         public AwsCredentials Credentials { get; set; }

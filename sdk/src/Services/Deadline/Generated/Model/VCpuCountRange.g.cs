@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class VCpuCountRange
     {
         /// <summary>
-        /// Gets and sets the property Max. 
-        /// <para>
-        /// The maximum amount of vCPU.
-        /// </para>
+        /// Gets and sets the property Max. The maximum amount of vCPU.
         /// </summary>
         [AWSProperty(Min = 1, Max = 10000)]
         public int? Max { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMax() => this.Max.HasValue;
 
         /// <summary>
-        /// Gets and sets the property Min. 
-        /// <para>
-        /// The minimum amount of vCPU.
-        /// </para>
+        /// Gets and sets the property Min. The minimum amount of vCPU.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 10000)]
         public int? Min { get; set; }

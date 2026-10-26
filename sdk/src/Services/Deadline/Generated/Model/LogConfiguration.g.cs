@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class LogConfiguration
     {
         /// <summary>
-        /// Gets and sets the property Error. 
-        /// <para>
-        /// The log configuration error details.
-        /// </para>
+        /// Gets and sets the property Error. The log configuration error details.
         /// </summary>
         [AWSProperty(Min = 1, Max = 512)]
         public string Error { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetError() => this.Error != null;
 
         /// <summary>
-        /// Gets and sets the property LogDriver. 
-        /// <para>
-        /// The log drivers for worker related logs.
-        /// </para>
+        /// Gets and sets the property LogDriver. The log drivers for worker related logs.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 512)]
         public string LogDriver { get; set; }
@@ -63,10 +57,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetLogDriver() => this.LogDriver != null;
 
         /// <summary>
-        /// Gets and sets the property Options. 
-        /// <para>
-        /// The options for a log driver.
-        /// </para>
+        /// Gets and sets the property Options. The options for a log driver.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -82,10 +73,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetOptions() => this.Options != null && (this.Options.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property Parameters. 
-        /// <para>
-        /// The parameters for the log configuration.
-        /// </para>
+        /// Gets and sets the property Parameters. The parameters for the log configuration.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

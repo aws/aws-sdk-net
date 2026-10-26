@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class JobAttachmentDetailsError
     {
         /// <summary>
-        /// Gets and sets the property Code. 
-        /// <para>
-        /// The error code.
-        /// </para>
+        /// Gets and sets the property Code. The error code.
         /// </summary>
         [AWSProperty(Required = true)]
         public JobEntityErrorCode Code { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCode() => this.Code != null;
 
         /// <summary>
-        /// Gets and sets the property JobId. 
-        /// <para>
-        /// The job ID.
-        /// </para>
+        /// Gets and sets the property JobId. The job ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string JobId { get; set; }
@@ -63,10 +57,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetJobId() => this.JobId != null;
 
         /// <summary>
-        /// Gets and sets the property Message. 
-        /// <para>
-        /// The error message detailing the error's cause.
-        /// </para>
+        /// Gets and sets the property Message. The error message detailing the error's cause.
         /// </summary>
         [AWSProperty(Required = true)]
         public string Message { get; set; }

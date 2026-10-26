@@ -39,10 +39,8 @@ namespace Amazon.Deadline.Model
     public partial class DeleteQueueLimitAssociationRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The unique identifier of the farm that contains the queue and limit to disassociate.
-        /// </para>
+        /// Gets and sets the property FarmId. The unique identifier of the farm that contains
+        /// the queue and limit to disassociate.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -53,10 +51,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property LimitId. 
-        /// <para>
-        /// The unique identifier of the limit to disassociate.
-        /// </para>
+        /// Gets and sets the property LimitId. The unique identifier of the limit to disassociate.
         /// </summary>
         [AWSProperty(Required = true)]
         public string LimitId { get; set; }
@@ -67,10 +62,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetLimitId() => this.LimitId != null;
 
         /// <summary>
-        /// Gets and sets the property QueueId. 
-        /// <para>
-        /// The unique identifier of the queue to disassociate.
-        /// </para>
+        /// Gets and sets the property QueueId. The unique identifier of the queue to disassociate.
         /// </summary>
         [AWSProperty(Required = true)]
         public string QueueId { get; set; }

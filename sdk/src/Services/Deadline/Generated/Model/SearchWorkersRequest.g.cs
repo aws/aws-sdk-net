@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class SearchWorkersRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID in the workers search.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID in the workers search.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property FilterExpressions. 
-        /// <para>
-        /// The search terms for a resource.
-        /// </para>
+        /// Gets and sets the property FilterExpressions. The search terms for a resource.
         /// </summary>
         public SearchGroupedFilterExpressions FilterExpressions { get; set; }
 
@@ -62,10 +56,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFilterExpressions() => this.FilterExpressions != null;
 
         /// <summary>
-        /// Gets and sets the property FleetIds. 
-        /// <para>
-        /// The fleet ID of the workers to search for.
-        /// </para>
+        /// Gets and sets the property FleetIds. The fleet ID of the workers to search for.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -82,10 +73,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFleetIds() => this.FleetIds != null && (this.FleetIds.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property ItemOffset. 
-        /// <para>
-        /// The offset for the search results.
-        /// </para>
+        /// Gets and sets the property ItemOffset. The offset for the search results.
         /// </summary>
         [AWSProperty(Required = true, Min = 0, Max = 10000)]
         public int? ItemOffset { get; set; }
@@ -96,10 +84,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetItemOffset() => this.ItemOffset.HasValue;
 
         /// <summary>
-        /// Gets and sets the property PageSize. 
-        /// <para>
-        /// Specifies the number of results to return.
-        /// </para>
+        /// Gets and sets the property PageSize. Specifies the number of results to return.
         /// </summary>
         [AWSProperty(Min = 1, Max = 100)]
         public int? PageSize { get; set; }
@@ -110,10 +95,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetPageSize() => this.PageSize.HasValue;
 
         /// <summary>
-        /// Gets and sets the property SortExpressions. 
-        /// <para>
-        /// The search terms for a resource.
-        /// </para>
+        /// Gets and sets the property SortExpressions. The search terms for a resource.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

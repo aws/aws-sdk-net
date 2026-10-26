@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class GetBudgetResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property Actions. 
-        /// <para>
-        /// The budget actions for the budget.
-        /// </para>
+        /// Gets and sets the property Actions. The budget actions for the budget.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -55,10 +52,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetActions() => this.Actions != null && (this.Actions.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property ApproximateDollarLimit. 
-        /// <para>
-        /// The consumed usage limit for the budget.
-        /// </para>
+        /// Gets and sets the property ApproximateDollarLimit. The consumed usage limit for the
+        /// budget.
         /// </summary>
         [AWSProperty(Required = true)]
         public float? ApproximateDollarLimit { get; set; }
@@ -69,10 +64,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetApproximateDollarLimit() => this.ApproximateDollarLimit.HasValue;
 
         /// <summary>
-        /// Gets and sets the property BudgetId. 
-        /// <para>
-        /// The budget ID.
-        /// </para>
+        /// Gets and sets the property BudgetId. The budget ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string BudgetId { get; set; }
@@ -83,10 +75,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetBudgetId() => this.BudgetId != null;
 
         /// <summary>
-        /// Gets and sets the property CreatedAt. 
-        /// <para>
-        /// The date and time the resource was created.
-        /// </para>
+        /// Gets and sets the property CreatedAt. The date and time the resource was created.
         /// </summary>
         [AWSProperty(Required = true)]
         public DateTime? CreatedAt { get; set; }
@@ -97,10 +86,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCreatedAt() => this.CreatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property CreatedBy. 
-        /// <para>
-        /// The user or system that created this resource.
-        /// </para>
+        /// Gets and sets the property CreatedBy. The user or system that created this resource.
         /// </summary>
         [AWSProperty(Required = true)]
         public string CreatedBy { get; set; }
@@ -151,10 +137,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetDisplayName() => this.DisplayName != null;
 
         /// <summary>
-        /// Gets and sets the property QueueStoppedAt. 
-        /// <para>
-        /// The date and time the queue stopped.
-        /// </para>
+        /// Gets and sets the property QueueStoppedAt. The date and time the queue stopped.
         /// </summary>
         public DateTime? QueueStoppedAt { get; set; }
 
@@ -164,10 +147,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetQueueStoppedAt() => this.QueueStoppedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property Schedule. 
-        /// <para>
-        /// The budget schedule.
-        /// </para>
+        /// Gets and sets the property Schedule. The budget schedule.
         /// </summary>
         [AWSProperty(Required = true)]
         public BudgetSchedule Schedule { get; set; }
@@ -202,10 +182,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStatus() => this.Status != null;
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt. 
-        /// <para>
-        /// The date and time the resource was updated.
-        /// </para>
+        /// Gets and sets the property UpdatedAt. The date and time the resource was updated.
         /// </summary>
         public DateTime? UpdatedAt { get; set; }
 
@@ -215,10 +192,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetUpdatedAt() => this.UpdatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property UpdatedBy. 
-        /// <para>
-        /// The user or system that updated this resource.
-        /// </para>
+        /// Gets and sets the property UpdatedBy. The user or system that updated this resource.
         /// </summary>
         public string UpdatedBy { get; set; }
 
@@ -228,10 +202,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetUpdatedBy() => this.UpdatedBy != null;
 
         /// <summary>
-        /// Gets and sets the property UsageTrackingResource. 
-        /// <para>
-        /// The resource that the budget is tracking usage for.
-        /// </para>
+        /// Gets and sets the property UsageTrackingResource. The resource that the budget is
+        /// tracking usage for.
         /// </summary>
         [AWSProperty(Required = true)]
         public UsageTrackingResource UsageTrackingResource { get; set; }
@@ -242,10 +214,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetUsageTrackingResource() => this.UsageTrackingResource != null;
 
         /// <summary>
-        /// Gets and sets the property Usages. 
-        /// <para>
-        /// The usages of the budget.
-        /// </para>
+        /// Gets and sets the property Usages. The usages of the budget.
         /// </summary>
         [AWSProperty(Required = true)]
         public ConsumedUsages Usages { get; set; }

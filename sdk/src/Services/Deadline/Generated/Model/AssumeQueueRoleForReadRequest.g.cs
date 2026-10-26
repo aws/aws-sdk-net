@@ -37,10 +37,7 @@ namespace Amazon.Deadline.Model
     public partial class AssumeQueueRoleForReadRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID of the farm containing the queue.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID of the farm containing the queue.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -51,10 +48,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property QueueId. 
-        /// <para>
-        /// The queue ID.
-        /// </para>
+        /// Gets and sets the property QueueId. The queue ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string QueueId { get; set; }

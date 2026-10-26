@@ -36,10 +36,8 @@ namespace Amazon.Deadline.Model
     public partial class ListQueueLimitAssociationsRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The unique identifier of the farm that contains the limits and associations.
-        /// </para>
+        /// Gets and sets the property FarmId. The unique identifier of the farm that contains
+        /// the limits and associations.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -50,12 +48,9 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property LimitId. 
-        /// <para>
-        /// Specifies that the operation should return only the queue limit associations for the
-        /// specified limit. If you specify both the <c>queueId</c> and the <c>limitId</c>, only
-        /// the specified limit is returned if it exists.
-        /// </para>
+        /// Gets and sets the property LimitId. Specifies that the operation should return only
+        /// the queue limit associations for the specified limit. If you specify both the <c>queueId</c>
+        /// and the <c>limitId</c>, only the specified limit is returned if it exists.
         /// </summary>
         public string LimitId { get; set; }
 
@@ -65,10 +60,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetLimitId() => this.LimitId != null;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
-        /// <para>
-        /// The maximum number of associations to return in each page of results.
-        /// </para>
+        /// Gets and sets the property MaxResults. The maximum number of associations to return
+        /// in each page of results.
         /// </summary>
         [AWSProperty(Min = 1, Max = 100)]
         public int? MaxResults { get; set; }
@@ -79,10 +72,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMaxResults() => this.MaxResults.HasValue;
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
-        /// <para>
-        /// The token for the next set of results, or <c>null</c> to start from the beginning.
-        /// </para>
+        /// Gets and sets the property NextToken. The token for the next set of results, or <c>null</c>
+        /// to start from the beginning.
         /// </summary>
         [AWSProperty(Max = 4096)]
         public string NextToken { get; set; }
@@ -93,12 +84,9 @@ namespace Amazon.Deadline.Model
         internal bool IsSetNextToken() => this.NextToken != null;
 
         /// <summary>
-        /// Gets and sets the property QueueId. 
-        /// <para>
-        /// Specifies that the operation should return only the queue limit associations for the
-        /// specified queue. If you specify both the <c>queueId</c> and the <c>limitId</c>, only
-        /// the specified limit is returned if it exists.
-        /// </para>
+        /// Gets and sets the property QueueId. Specifies that the operation should return only
+        /// the queue limit associations for the specified queue. If you specify both the <c>queueId</c>
+        /// and the <c>limitId</c>, only the specified limit is returned if it exists.
         /// </summary>
         public string QueueId { get; set; }
 

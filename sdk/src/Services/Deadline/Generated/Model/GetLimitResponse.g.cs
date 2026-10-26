@@ -35,11 +35,9 @@ namespace Amazon.Deadline.Model
     public partial class GetLimitResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property AmountRequirementName. 
-        /// <para>
-        /// The value that you specify as the <c>name</c> in the <c>amounts</c> field of the <c>hostRequirements</c>
-        /// in a step of a job template to declare the limit requirement.
-        /// </para>
+        /// Gets and sets the property AmountRequirementName. The value that you specify as the
+        /// <c>name</c> in the <c>amounts</c> field of the <c>hostRequirements</c> in a step of
+        /// a job template to declare the limit requirement.
         /// </summary>
         [AWSProperty(Required = true, Max = 1024)]
         public string AmountRequirementName { get; set; }
@@ -50,10 +48,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetAmountRequirementName() => this.AmountRequirementName != null;
 
         /// <summary>
-        /// Gets and sets the property CreatedAt. 
-        /// <para>
-        /// The Unix timestamp of the date and time that the limit was created.
-        /// </para>
+        /// Gets and sets the property CreatedAt. The Unix timestamp of the date and time that
+        /// the limit was created.
         /// </summary>
         [AWSProperty(Required = true)]
         public DateTime? CreatedAt { get; set; }
@@ -64,10 +60,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCreatedAt() => this.CreatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property CreatedBy. 
-        /// <para>
-        /// The user identifier of the person that created the limit.
-        /// </para>
+        /// Gets and sets the property CreatedBy. The user identifier of the person that created
+        /// the limit.
         /// </summary>
         [AWSProperty(Required = true)]
         public string CreatedBy { get; set; }
@@ -78,11 +72,9 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCreatedBy() => this.CreatedBy != null;
 
         /// <summary>
-        /// Gets and sets the property CurrentCount. 
-        /// <para>
-        /// The number of resources from the limit that are being used by jobs. The result is
-        /// delayed and may not be the count at the time that you called the operation.
-        /// </para>
+        /// Gets and sets the property CurrentCount. The number of resources from the limit that
+        /// are being used by jobs. The result is delayed and may not be the count at the time
+        /// that you called the operation.
         /// </summary>
         [AWSProperty(Required = true, Min = 0, Max = 2147483647)]
         public int? CurrentCount { get; set; }
@@ -133,10 +125,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetDisplayName() => this.DisplayName != null;
 
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The unique identifier of the farm that contains the limit.
-        /// </para>
+        /// Gets and sets the property FarmId. The unique identifier of the farm that contains
+        /// the limit.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -147,10 +137,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property LimitId. 
-        /// <para>
-        /// The unique identifier of the limit.
-        /// </para>
+        /// Gets and sets the property LimitId. The unique identifier of the limit.
         /// </summary>
         [AWSProperty(Required = true)]
         public string LimitId { get; set; }
@@ -161,17 +148,11 @@ namespace Amazon.Deadline.Model
         internal bool IsSetLimitId() => this.LimitId != null;
 
         /// <summary>
-        /// Gets and sets the property MaxCount. 
-        /// <para>
-        /// The maximum number of resources constrained by this limit. When all of the resources
-        /// are in use, steps that require the limit won't be scheduled until the resource is
-        /// available.
-        /// </para>
-        ///  
-        /// <para>
-        /// The <c>maxValue</c> must not be 0. If the value is -1, there is no restriction on
-        /// the number of resources that can be acquired for this limit.
-        /// </para>
+        /// Gets and sets the property MaxCount. The maximum number of resources constrained by
+        /// this limit. When all of the resources are in use, steps that require the limit won't
+        /// be scheduled until the resource is available. The <c>maxValue</c> must not be 0. If
+        /// the value is -1, there is no restriction on the number of resources that can be acquired
+        /// for this limit.
         /// </summary>
         [AWSProperty(Required = true, Min = -1, Max = 2147483647)]
         public int? MaxCount { get; set; }
@@ -182,10 +163,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMaxCount() => this.MaxCount.HasValue;
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt. 
-        /// <para>
-        /// The Unix timestamp of the date and time that the limit was last updated.
-        /// </para>
+        /// Gets and sets the property UpdatedAt. The Unix timestamp of the date and time that
+        /// the limit was last updated.
         /// </summary>
         public DateTime? UpdatedAt { get; set; }
 
@@ -195,10 +174,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetUpdatedAt() => this.UpdatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property UpdatedBy. 
-        /// <para>
-        /// The user identifier of the person that last updated the limit.
-        /// </para>
+        /// Gets and sets the property UpdatedBy. The user identifier of the person that last
+        /// updated the limit.
         /// </summary>
         public string UpdatedBy { get; set; }
 

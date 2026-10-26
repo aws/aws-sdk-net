@@ -74,10 +74,8 @@ namespace Amazon.Deadline.Model
         public ValidationException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) : base(message, errorType, errorCode, requestId, statusCode) { }
 
         /// <summary>
-        /// Gets and sets the property Context. 
-        /// <para>
-        /// Information about the resources in use when the exception was thrown.
-        /// </para>
+        /// Gets and sets the property Context. Information about the resources in use when the
+        /// exception was thrown.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -93,10 +91,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetContext() => this.Context != null && (this.Context.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property FieldList. 
-        /// <para>
-        /// A list of fields that failed validation.
-        /// </para>
+        /// Gets and sets the property FieldList. A list of fields that failed validation.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -112,10 +107,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFieldList() => this.FieldList != null && (this.FieldList.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property Reason. 
-        /// <para>
-        /// The reason that the request failed validation.
-        /// </para>
+        /// Gets and sets the property Reason. The reason that the request failed validation.
         /// </summary>
         [AWSProperty(Required = true)]
         public ValidationExceptionReason Reason { get; set; }

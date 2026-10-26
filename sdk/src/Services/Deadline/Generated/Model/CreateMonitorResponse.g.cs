@@ -35,10 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class CreateMonitorResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property IdentityCenterApplicationArn. 
-        /// <para>
-        /// The Amazon Resource Name that IAM Identity Center assigns to the monitor.
-        /// </para>
+        /// Gets and sets the property IdentityCenterApplicationArn. The Amazon Resource Name
+        /// that IAM Identity Center assigns to the monitor.
         /// </summary>
         [AWSProperty(Required = true)]
         public string IdentityCenterApplicationArn { get; set; }
@@ -49,10 +47,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetIdentityCenterApplicationArn() => this.IdentityCenterApplicationArn != null;
 
         /// <summary>
-        /// Gets and sets the property MonitorId. 
-        /// <para>
-        /// The unique identifier of the monitor.
-        /// </para>
+        /// Gets and sets the property MonitorId. The unique identifier of the monitor.
         /// </summary>
         [AWSProperty(Required = true)]
         public string MonitorId { get; set; }

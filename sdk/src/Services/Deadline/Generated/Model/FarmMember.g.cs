@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class FarmMember
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID of the farm member.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID of the farm member.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property IdentityStoreId. 
-        /// <para>
-        /// The identity store ID of the farm member.
-        /// </para>
+        /// Gets and sets the property IdentityStoreId. The identity store ID of the farm member.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 36)]
         public string IdentityStoreId { get; set; }
@@ -63,10 +57,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetIdentityStoreId() => this.IdentityStoreId != null;
 
         /// <summary>
-        /// Gets and sets the property MembershipLevel. 
-        /// <para>
-        /// The farm member's membership level.
-        /// </para>
+        /// Gets and sets the property MembershipLevel. The farm member's membership level.
         /// </summary>
         [AWSProperty(Required = true)]
         public MembershipLevel MembershipLevel { get; set; }
@@ -77,10 +68,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMembershipLevel() => this.MembershipLevel != null;
 
         /// <summary>
-        /// Gets and sets the property PrincipalId. 
-        /// <para>
-        /// The principal ID of the farm member.
-        /// </para>
+        /// Gets and sets the property PrincipalId. The principal ID of the farm member.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 47)]
         public string PrincipalId { get; set; }
@@ -91,10 +79,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetPrincipalId() => this.PrincipalId != null;
 
         /// <summary>
-        /// Gets and sets the property PrincipalType. 
-        /// <para>
-        /// The principal type of the farm member.
-        /// </para>
+        /// Gets and sets the property PrincipalType. The principal type of the farm member.
         /// </summary>
         [AWSProperty(Required = true)]
         public PrincipalType PrincipalType { get; set; }

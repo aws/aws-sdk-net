@@ -31,19 +31,16 @@ namespace Amazon.Deadline.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchUpdateTask operation. Updates multiple tasks
-    /// in a single request. This is a batch version of the <c>UpdateTask</c> API. <para>
-    /// The result of updating each task is reported individually in the response. Because
-    /// the batch request can result in a combination of successful and unsuccessful actions,
-    /// you should check for batch errors even when the call returns an HTTP status code of
-    /// 200. </para>
+    /// in a single request. This is a batch version of the <c>UpdateTask</c> API. The result
+    /// of updating each task is reported individually in the response. Because the batch
+    /// request can result in a combination of successful and unsuccessful actions, you should
+    /// check for batch errors even when the call returns an HTTP status code of 200.
     /// </summary>
     public partial class BatchUpdateTaskRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property ClientToken. 
-        /// <para>
-        /// The unique token which the server uses to recognize retries of the same request.
-        /// </para>
+        /// Gets and sets the property ClientToken. The unique token which the server uses to
+        /// recognize retries of the same request.
         /// </summary>
         [AWSProperty(Min = 1, Max = 64)]
         public string ClientToken { get; set; }
@@ -54,10 +51,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetClientToken() => this.ClientToken != null;
 
         /// <summary>
-        /// Gets and sets the property Tasks. 
-        /// <para>
-        /// The list of tasks to update. You can specify up to 100 tasks per request.
-        /// </para>
+        /// Gets and sets the property Tasks. The list of tasks to update. You can specify up
+        /// to 100 tasks per request.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

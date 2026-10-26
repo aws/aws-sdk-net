@@ -48,12 +48,9 @@ namespace Amazon.Deadline.Model
     public partial class WeightedBalancedSchedulingConfiguration
     {
         /// <summary>
-        /// Gets and sets the property ErrorWeight. 
-        /// <para>
-        /// The weight applied to the number of errors on a job. A negative value means jobs without
-        /// errors are scheduled first. A value of <c>0</c> means errors are ignored. The default
-        /// value is <c>-10.0</c>.
-        /// </para>
+        /// Gets and sets the property ErrorWeight. The weight applied to the number of errors
+        /// on a job. A negative value means jobs without errors are scheduled first. A value
+        /// of <c>0</c> means errors are ignored. The default value is <c>-10.0</c>.
         /// </summary>
         [AWSProperty(Min = -10000, Max = 10000)]
         public double? ErrorWeight { get; set; }
@@ -64,12 +61,10 @@ namespace Amazon.Deadline.Model
         internal bool IsSetErrorWeight() => this.ErrorWeight.HasValue;
 
         /// <summary>
-        /// Gets and sets the property MaxPriorityOverride. 
-        /// <para>
-        /// Overrides the weighted scheduling formula for jobs at the maximum priority (100).
-        /// When set, jobs with priority 100 are always scheduled first regardless of their calculated
-        /// weight. When absent, maximum priority jobs use the standard weighted formula.
-        /// </para>
+        /// Gets and sets the property MaxPriorityOverride. Overrides the weighted scheduling
+        /// formula for jobs at the maximum priority (100). When set, jobs with priority 100 are
+        /// always scheduled first regardless of their calculated weight. When absent, maximum
+        /// priority jobs use the standard weighted formula.
         /// </summary>
         public SchedulingMaxPriorityOverride MaxPriorityOverride { get; set; }
 
@@ -79,12 +74,10 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMaxPriorityOverride() => this.MaxPriorityOverride != null;
 
         /// <summary>
-        /// Gets and sets the property MinPriorityOverride. 
-        /// <para>
-        /// Overrides the weighted scheduling formula for jobs at the minimum priority (0). When
-        /// set, jobs with priority 0 are always scheduled last regardless of their calculated
-        /// weight. When absent, minimum priority jobs use the standard weighted formula.
-        /// </para>
+        /// Gets and sets the property MinPriorityOverride. Overrides the weighted scheduling
+        /// formula for jobs at the minimum priority (0). When set, jobs with priority 0 are always
+        /// scheduled last regardless of their calculated weight. When absent, minimum priority
+        /// jobs use the standard weighted formula.
         /// </summary>
         public SchedulingMinPriorityOverride MinPriorityOverride { get; set; }
 
@@ -94,12 +87,9 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMinPriorityOverride() => this.MinPriorityOverride != null;
 
         /// <summary>
-        /// Gets and sets the property PriorityWeight. 
-        /// <para>
-        /// The weight applied to job priority in the scheduling formula. Higher values give more
-        /// influence to job priority. A value of <c>0</c> means priority is ignored. The default
-        /// value is <c>100.0</c>.
-        /// </para>
+        /// Gets and sets the property PriorityWeight. The weight applied to job priority in the
+        /// scheduling formula. Higher values give more influence to job priority. A value of
+        /// <c>0</c> means priority is ignored. The default value is <c>100.0</c>.
         /// </summary>
         [AWSProperty(Min = 0, Max = 10000)]
         public double? PriorityWeight { get; set; }
@@ -110,14 +100,11 @@ namespace Amazon.Deadline.Model
         internal bool IsSetPriorityWeight() => this.PriorityWeight.HasValue;
 
         /// <summary>
-        /// Gets and sets the property RenderingTaskBuffer. 
-        /// <para>
-        /// The rendering task buffer is subtracted from the number of rendering tasks before
-        /// applying the rendering task weight. This creates a stickiness effect where workers
-        /// prefer to stay with their current job. Higher values make workers stickier. The default
-        /// value is <c>1</c>. The buffer is only applied in the weight calculation for a job
-        /// if the worker is currently assigned to that job.
-        /// </para>
+        /// Gets and sets the property RenderingTaskBuffer. The rendering task buffer is subtracted
+        /// from the number of rendering tasks before applying the rendering task weight. This
+        /// creates a stickiness effect where workers prefer to stay with their current job. Higher
+        /// values make workers stickier. The default value is <c>1</c>. The buffer is only applied
+        /// in the weight calculation for a job if the worker is currently assigned to that job.
         /// </summary>
         [AWSProperty(Min = 0, Max = 1000)]
         public int? RenderingTaskBuffer { get; set; }
@@ -128,12 +115,10 @@ namespace Amazon.Deadline.Model
         internal bool IsSetRenderingTaskBuffer() => this.RenderingTaskBuffer.HasValue;
 
         /// <summary>
-        /// Gets and sets the property RenderingTaskWeight. 
-        /// <para>
-        /// The weight applied to the number of tasks currently rendering on a job. A negative
-        /// value means jobs that are not already rendering are scheduled next. A value of <c>0</c>
-        /// means the rendering state is ignored. The default value is <c>-100.0</c>.
-        /// </para>
+        /// Gets and sets the property RenderingTaskWeight. The weight applied to the number of
+        /// tasks currently rendering on a job. A negative value means jobs that are not already
+        /// rendering are scheduled next. A value of <c>0</c> means the rendering state is ignored.
+        /// The default value is <c>-100.0</c>.
         /// </summary>
         [AWSProperty(Min = -10000, Max = 10000)]
         public double? RenderingTaskWeight { get; set; }
@@ -144,12 +129,9 @@ namespace Amazon.Deadline.Model
         internal bool IsSetRenderingTaskWeight() => this.RenderingTaskWeight.HasValue;
 
         /// <summary>
-        /// Gets and sets the property SubmissionTimeWeight. 
-        /// <para>
-        /// The weight applied to job submission time. A positive value means earlier jobs are
-        /// scheduled first. A value of <c>0</c> means submission time is ignored. The default
-        /// value is <c>3.0</c>.
-        /// </para>
+        /// Gets and sets the property SubmissionTimeWeight. The weight applied to job submission
+        /// time. A positive value means earlier jobs are scheduled first. A value of <c>0</c>
+        /// means submission time is ignored. The default value is <c>3.0</c>.
         /// </summary>
         [AWSProperty(Min = 0, Max = 10000)]
         public double? SubmissionTimeWeight { get; set; }

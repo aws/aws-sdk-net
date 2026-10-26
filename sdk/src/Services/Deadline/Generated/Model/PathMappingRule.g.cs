@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class PathMappingRule
     {
         /// <summary>
-        /// Gets and sets the property DestinationPath. 
-        /// <para>
-        /// The destination path.
-        /// </para>
+        /// Gets and sets the property DestinationPath. The destination path.
         /// </summary>
         [AWSProperty(Required = true)]
         public string DestinationPath { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetDestinationPath() => this.DestinationPath != null;
 
         /// <summary>
-        /// Gets and sets the property SourcePath. 
-        /// <para>
-        /// The source path.
-        /// </para>
+        /// Gets and sets the property SourcePath. The source path.
         /// </summary>
         [AWSProperty(Required = true)]
         public string SourcePath { get; set; }
@@ -63,10 +57,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetSourcePath() => this.SourcePath != null;
 
         /// <summary>
-        /// Gets and sets the property SourcePathFormat. 
-        /// <para>
-        /// The source path format.
-        /// </para>
+        /// Gets and sets the property SourcePathFormat. The source path format.
         /// </summary>
         [AWSProperty(Required = true)]
         public PathFormat SourcePathFormat { get; set; }

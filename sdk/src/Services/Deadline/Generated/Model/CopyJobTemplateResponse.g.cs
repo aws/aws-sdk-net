@@ -35,10 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class CopyJobTemplateResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property TemplateType. 
-        /// <para>
-        /// The format of the job template, either <c>JSON</c> or <c>YAML</c>.
-        /// </para>
+        /// Gets and sets the property TemplateType. The format of the job template, either <c>JSON</c>
+        /// or <c>YAML</c>.
         /// </summary>
         [AWSProperty(Required = true)]
         public JobTemplateType TemplateType { get; set; }

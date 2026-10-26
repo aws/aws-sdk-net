@@ -35,10 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class FleetAttributeCapability
     {
         /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name of the fleet attribute capability for the worker.
-        /// </para>
+        /// Gets and sets the property Name. The name of the fleet attribute capability for the
+        /// worker.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 100)]
         public string Name { get; set; }
@@ -49,10 +47,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
-        /// Gets and sets the property Values. 
-        /// <para>
-        /// The number of fleet attribute capabilities.
-        /// </para>
+        /// Gets and sets the property Values. The number of fleet attribute capabilities.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

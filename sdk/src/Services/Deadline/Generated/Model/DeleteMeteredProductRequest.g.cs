@@ -36,10 +36,8 @@ namespace Amazon.Deadline.Model
     public partial class DeleteMeteredProductRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property LicenseEndpointId. 
-        /// <para>
-        /// The ID of the license endpoint from which to remove the metered product.
-        /// </para>
+        /// Gets and sets the property LicenseEndpointId. The ID of the license endpoint from
+        /// which to remove the metered product.
         /// </summary>
         [AWSProperty(Required = true)]
         public string LicenseEndpointId { get; set; }
@@ -50,10 +48,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetLicenseEndpointId() => this.LicenseEndpointId != null;
 
         /// <summary>
-        /// Gets and sets the property ProductId. 
-        /// <para>
-        /// The product ID to remove from the license endpoint.
-        /// </para>
+        /// Gets and sets the property ProductId. The product ID to remove from the license endpoint.
         /// </summary>
         [AWSProperty(Required = true)]
         public string ProductId { get; set; }

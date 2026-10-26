@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class ManifestProperties
     {
         /// <summary>
-        /// Gets and sets the property FileSystemLocationName. 
-        /// <para>
-        /// The file system location name.
-        /// </para>
+        /// Gets and sets the property FileSystemLocationName. The file system location name.
         /// </summary>
         [AWSProperty(Min = 1, Max = 64)]
         public string FileSystemLocationName { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFileSystemLocationName() => this.FileSystemLocationName != null;
 
         /// <summary>
-        /// Gets and sets the property InputManifestHash. 
-        /// <para>
-        /// The hash value of the file.
-        /// </para>
+        /// Gets and sets the property InputManifestHash. The hash value of the file.
         /// </summary>
         [AWSProperty(Min = 1, Max = 256)]
         public string InputManifestHash { get; set; }
@@ -63,10 +57,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetInputManifestHash() => this.InputManifestHash != null;
 
         /// <summary>
-        /// Gets and sets the property InputManifestPath. 
-        /// <para>
-        /// The file path.
-        /// </para>
+        /// Gets and sets the property InputManifestPath. The file path.
         /// </summary>
         [AWSProperty(Min = 1, Max = 512)]
         public string InputManifestPath { get; set; }
@@ -77,10 +68,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetInputManifestPath() => this.InputManifestPath != null;
 
         /// <summary>
-        /// Gets and sets the property OutputRelativeDirectories. 
-        /// <para>
-        /// The file path relative to the directory.
-        /// </para>
+        /// Gets and sets the property OutputRelativeDirectories. The file path relative to the
+        /// directory.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -97,10 +86,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetOutputRelativeDirectories() => this.OutputRelativeDirectories != null && (this.OutputRelativeDirectories.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property RootPath. 
-        /// <para>
-        /// The file's root path.
-        /// </para>
+        /// Gets and sets the property RootPath. The file's root path.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 1024)]
         public string RootPath { get; set; }
@@ -111,10 +97,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetRootPath() => this.RootPath != null;
 
         /// <summary>
-        /// Gets and sets the property RootPathFormat. 
-        /// <para>
-        /// The format of the root path.
-        /// </para>
+        /// Gets and sets the property RootPathFormat. The format of the root path.
         /// </summary>
         [AWSProperty(Required = true)]
         public PathFormat RootPathFormat { get; set; }

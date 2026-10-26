@@ -35,11 +35,9 @@ namespace Amazon.Deadline.Model
     public partial class StartSessionsStatisticsAggregationResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property AggregationId. 
-        /// <para>
-        /// A unique identifier for the aggregated statistics. Use this identifier with the <c>GetAggregatedStatisticsForSessions</c>
-        /// operation to return the statistics.
-        /// </para>
+        /// Gets and sets the property AggregationId. A unique identifier for the aggregated statistics.
+        /// Use this identifier with the <c>GetAggregatedStatisticsForSessions</c> operation to
+        /// return the statistics.
         /// </summary>
         [AWSProperty(Required = true)]
         public string AggregationId { get; set; }

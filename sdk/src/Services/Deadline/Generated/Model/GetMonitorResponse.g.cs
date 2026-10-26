@@ -35,10 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class GetMonitorResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property CreatedAt. 
-        /// <para>
-        /// The UNIX timestamp of the date and time that the monitor was created.
-        /// </para>
+        /// Gets and sets the property CreatedAt. The UNIX timestamp of the date and time that
+        /// the monitor was created.
         /// </summary>
         [AWSProperty(Required = true)]
         public DateTime? CreatedAt { get; set; }
@@ -49,10 +47,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCreatedAt() => this.CreatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property CreatedBy. 
-        /// <para>
-        /// The user name of the person that created the monitor.
-        /// </para>
+        /// Gets and sets the property CreatedBy. The user name of the person that created the
+        /// monitor.
         /// </summary>
         [AWSProperty(Required = true)]
         public string CreatedBy { get; set; }
@@ -83,11 +79,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetDisplayName() => this.DisplayName != null;
 
         /// <summary>
-        /// Gets and sets the property IdentityCenterApplicationArn. 
-        /// <para>
-        /// The Amazon Resource Name that the IAM Identity Center assigned to the monitor when
-        /// it was created.
-        /// </para>
+        /// Gets and sets the property IdentityCenterApplicationArn. The Amazon Resource Name
+        /// that the IAM Identity Center assigned to the monitor when it was created.
         /// </summary>
         [AWSProperty(Required = true)]
         public string IdentityCenterApplicationArn { get; set; }
@@ -98,11 +91,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetIdentityCenterApplicationArn() => this.IdentityCenterApplicationArn != null;
 
         /// <summary>
-        /// Gets and sets the property IdentityCenterInstanceArn. 
-        /// <para>
-        /// The Amazon Resource Name of the IAM Identity Center instance responsible for authenticating
-        /// monitor users.
-        /// </para>
+        /// Gets and sets the property IdentityCenterInstanceArn. The Amazon Resource Name of
+        /// the IAM Identity Center instance responsible for authenticating monitor users.
         /// </summary>
         [AWSProperty(Required = true)]
         public string IdentityCenterInstanceArn { get; set; }
@@ -113,10 +103,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetIdentityCenterInstanceArn() => this.IdentityCenterInstanceArn != null;
 
         /// <summary>
-        /// Gets and sets the property IdentityCenterRegion. 
-        /// <para>
-        /// The Region where IAM Identity Center is enabled.
-        /// </para>
+        /// Gets and sets the property IdentityCenterRegion. The Region where IAM Identity Center
+        /// is enabled.
         /// </summary>
         [AWSProperty(Min = 1, Max = 25)]
         public string IdentityCenterRegion { get; set; }
@@ -127,10 +115,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetIdentityCenterRegion() => this.IdentityCenterRegion != null;
 
         /// <summary>
-        /// Gets and sets the property MonitorId. 
-        /// <para>
-        /// The unique identifier for the monitor.
-        /// </para>
+        /// Gets and sets the property MonitorId. The unique identifier for the monitor.
         /// </summary>
         [AWSProperty(Required = true)]
         public string MonitorId { get; set; }
@@ -141,11 +126,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMonitorId() => this.MonitorId != null;
 
         /// <summary>
-        /// Gets and sets the property RoleArn. 
-        /// <para>
-        /// The Amazon Resource Name of the IAM role for the monitor. Users of the monitor use
-        /// this role to access Deadline Cloud resources.
-        /// </para>
+        /// Gets and sets the property RoleArn. The Amazon Resource Name of the IAM role for the
+        /// monitor. Users of the monitor use this role to access Deadline Cloud resources.
         /// </summary>
         [AWSProperty(Required = true)]
         public string RoleArn { get; set; }
@@ -156,10 +138,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetRoleArn() => this.RoleArn != null;
 
         /// <summary>
-        /// Gets and sets the property Subdomain. 
-        /// <para>
-        /// The subdomain used for the monitor URL. The full URL of the monitor is subdomain.Region.deadlinecloud.amazonaws.com.
-        /// </para>
+        /// Gets and sets the property Subdomain. The subdomain used for the monitor URL. The
+        /// full URL of the monitor is subdomain.Region.deadlinecloud.amazonaws.com.
         /// </summary>
         [AWSProperty(Required = true)]
         public string Subdomain { get; set; }
@@ -170,10 +150,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetSubdomain() => this.Subdomain != null;
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt. 
-        /// <para>
-        /// The UNIX timestamp of the last date and time that the monitor was updated.
-        /// </para>
+        /// Gets and sets the property UpdatedAt. The UNIX timestamp of the last date and time
+        /// that the monitor was updated.
         /// </summary>
         public DateTime? UpdatedAt { get; set; }
 
@@ -183,10 +161,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetUpdatedAt() => this.UpdatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property UpdatedBy. 
-        /// <para>
-        /// The user name of the person that last updated the monitor.
-        /// </para>
+        /// Gets and sets the property UpdatedBy. The user name of the person that last updated
+        /// the monitor.
         /// </summary>
         public string UpdatedBy { get; set; }
 
@@ -196,10 +172,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetUpdatedBy() => this.UpdatedBy != null;
 
         /// <summary>
-        /// Gets and sets the property Url. 
-        /// <para>
-        /// The complete URL of the monitor. The full URL of the monitor is subdomain.Region.deadlinecloud.amazonaws.com.
-        /// </para>
+        /// Gets and sets the property Url. The complete URL of the monitor. The full URL of the
+        /// monitor is subdomain.Region.deadlinecloud.amazonaws.com.
         /// </summary>
         [AWSProperty(Required = true)]
         public string Url { get; set; }

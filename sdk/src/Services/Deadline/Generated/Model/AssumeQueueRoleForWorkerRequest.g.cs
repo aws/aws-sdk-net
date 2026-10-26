@@ -36,10 +36,7 @@ namespace Amazon.Deadline.Model
     public partial class AssumeQueueRoleForWorkerRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID of the worker assuming the queue role.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID of the worker assuming the queue role.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -50,10 +47,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property FleetId. 
-        /// <para>
-        /// The fleet ID of the worker assuming the queue role.
-        /// </para>
+        /// Gets and sets the property FleetId. The fleet ID of the worker assuming the queue
+        /// role.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FleetId { get; set; }
@@ -64,10 +59,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFleetId() => this.FleetId != null;
 
         /// <summary>
-        /// Gets and sets the property QueueId. 
-        /// <para>
-        /// The queue ID of the worker assuming the queue role.
-        /// </para>
+        /// Gets and sets the property QueueId. The queue ID of the worker assuming the queue
+        /// role.
         /// </summary>
         [AWSProperty(Required = true)]
         public string QueueId { get; set; }
@@ -78,10 +71,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetQueueId() => this.QueueId != null;
 
         /// <summary>
-        /// Gets and sets the property WorkerId. 
-        /// <para>
-        /// The worker ID of the worker assuming the queue role.
-        /// </para>
+        /// Gets and sets the property WorkerId. The worker ID of the worker assuming the queue
+        /// role.
         /// </summary>
         [AWSProperty(Required = true)]
         public string WorkerId { get; set; }

@@ -37,10 +37,8 @@ namespace Amazon.Deadline.Model
     public partial class UpdateMonitorSettingsRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property MonitorId. 
-        /// <para>
-        /// The unique identifier of the monitor to update settings for.
-        /// </para>
+        /// Gets and sets the property MonitorId. The unique identifier of the monitor to update
+        /// settings for.
         /// </summary>
         [AWSProperty(Required = true)]
         public string MonitorId { get; set; }
@@ -51,11 +49,9 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMonitorId() => this.MonitorId != null;
 
         /// <summary>
-        /// Gets and sets the property Settings. 
-        /// <para>
-        /// The monitor settings to update as key-value pairs. Keys present in the request are
-        /// upserted; keys absent are left unchanged. Send an empty string value to delete a key.
-        /// </para>
+        /// Gets and sets the property Settings. The monitor settings to update as key-value pairs.
+        /// Keys present in the request are upserted; keys absent are left unchanged. Send an
+        /// empty string value to delete a key.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

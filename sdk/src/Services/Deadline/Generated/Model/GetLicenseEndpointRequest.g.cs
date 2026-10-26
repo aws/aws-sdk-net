@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class GetLicenseEndpointRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property LicenseEndpointId. 
-        /// <para>
-        /// The license endpoint ID.
-        /// </para>
+        /// Gets and sets the property LicenseEndpointId. The license endpoint ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string LicenseEndpointId { get; set; }

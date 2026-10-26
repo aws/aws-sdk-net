@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class AssumeFleetRoleForReadResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property Credentials. 
-        /// <para>
-        /// The credentials for the fleet role.
-        /// </para>
+        /// Gets and sets the property Credentials. The credentials for the fleet role.
         /// </summary>
         [AWSProperty(Required = true, Sensitive = true)]
         public AwsCredentials Credentials { get; set; }

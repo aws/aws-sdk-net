@@ -35,10 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class FleetConfiguration
     {
         /// <summary>
-        /// Gets and sets the property CustomerManaged. 
-        /// <para>
-        /// The customer managed fleets within a fleet configuration.
-        /// </para>
+        /// Gets and sets the property CustomerManaged. The customer managed fleets within a fleet
+        /// configuration.
         /// </summary>
         public CustomerManagedFleetConfiguration CustomerManaged { get; set; }
 
@@ -48,10 +46,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCustomerManaged() => this.CustomerManaged != null;
 
         /// <summary>
-        /// Gets and sets the property ServiceManagedEc2. 
-        /// <para>
-        /// The service managed Amazon EC2 instances for a fleet configuration.
-        /// </para>
+        /// Gets and sets the property ServiceManagedEc2. The service managed Amazon EC2 instances
+        /// for a fleet configuration.
         /// </summary>
         public ServiceManagedEc2FleetConfiguration ServiceManagedEc2 { get; set; }
 

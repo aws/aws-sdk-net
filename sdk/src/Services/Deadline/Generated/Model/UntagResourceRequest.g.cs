@@ -36,10 +36,8 @@ namespace Amazon.Deadline.Model
     public partial class UntagResourceRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property ResourceArn. 
-        /// <para>
-        /// The ARN of the resource to remove the tag from.
-        /// </para>
+        /// Gets and sets the property ResourceArn. The ARN of the resource to remove the tag
+        /// from.
         /// </summary>
         [AWSProperty(Required = true)]
         public string ResourceArn { get; set; }
@@ -50,10 +48,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetResourceArn() => this.ResourceArn != null;
 
         /// <summary>
-        /// Gets and sets the property TagKeys. 
-        /// <para>
-        /// They keys of the tag.
-        /// </para>
+        /// Gets and sets the property TagKeys. They keys of the tag.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

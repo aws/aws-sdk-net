@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class TaskSearchSummary
     {
         /// <summary>
-        /// Gets and sets the property EndedAt. 
-        /// <para>
-        /// The date and time the resource ended running.
-        /// </para>
+        /// Gets and sets the property EndedAt. The date and time the resource ended running.
         /// </summary>
         public DateTime? EndedAt { get; set; }
 
@@ -48,10 +45,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetEndedAt() => this.EndedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property FailureRetryCount. 
-        /// <para>
-        /// The number of times that the task failed and was retried.
-        /// </para>
+        /// Gets and sets the property FailureRetryCount. The number of times that the task failed
+        /// and was retried.
         /// </summary>
         [AWSProperty(Min = 0, Max = 2147483647)]
         public int? FailureRetryCount { get; set; }
@@ -62,10 +57,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFailureRetryCount() => this.FailureRetryCount.HasValue;
 
         /// <summary>
-        /// Gets and sets the property JobId. 
-        /// <para>
-        /// The job ID.
-        /// </para>
+        /// Gets and sets the property JobId. The job ID.
         /// </summary>
         public string JobId { get; set; }
 
@@ -75,10 +67,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetJobId() => this.JobId != null;
 
         /// <summary>
-        /// Gets and sets the property LatestSessionActionId. 
-        /// <para>
-        /// The latest session action ID for the task.
-        /// </para>
+        /// Gets and sets the property LatestSessionActionId. The latest session action ID for
+        /// the task.
         /// </summary>
         public string LatestSessionActionId { get; set; }
 
@@ -88,10 +78,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetLatestSessionActionId() => this.LatestSessionActionId != null;
 
         /// <summary>
-        /// Gets and sets the property Parameters. 
-        /// <para>
-        /// The parameters to search for.
-        /// </para>
+        /// Gets and sets the property Parameters. The parameters to search for.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -108,10 +95,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetParameters() => this.Parameters != null && (this.Parameters.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property QueueId. 
-        /// <para>
-        /// The queue ID.
-        /// </para>
+        /// Gets and sets the property QueueId. The queue ID.
         /// </summary>
         public string QueueId { get; set; }
 
@@ -121,10 +105,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetQueueId() => this.QueueId != null;
 
         /// <summary>
-        /// Gets and sets the property RunStatus. 
-        /// <para>
-        /// The run status of the task.
-        /// </para>
+        /// Gets and sets the property RunStatus. The run status of the task.
         /// </summary>
         public TaskRunStatus RunStatus { get; set; }
 
@@ -134,10 +115,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetRunStatus() => this.RunStatus != null;
 
         /// <summary>
-        /// Gets and sets the property StartedAt. 
-        /// <para>
-        /// The date and time the resource started running.
-        /// </para>
+        /// Gets and sets the property StartedAt. The date and time the resource started running.
         /// </summary>
         public DateTime? StartedAt { get; set; }
 
@@ -147,10 +125,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStartedAt() => this.StartedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property StepId. 
-        /// <para>
-        /// The step ID.
-        /// </para>
+        /// Gets and sets the property StepId. The step ID.
         /// </summary>
         public string StepId { get; set; }
 
@@ -160,10 +135,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStepId() => this.StepId != null;
 
         /// <summary>
-        /// Gets and sets the property TargetRunStatus. 
-        /// <para>
-        /// The run status that the task is being updated to.
-        /// </para>
+        /// Gets and sets the property TargetRunStatus. The run status that the task is being
+        /// updated to.
         /// </summary>
         public TaskTargetRunStatus TargetRunStatus { get; set; }
 
@@ -173,10 +146,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetTargetRunStatus() => this.TargetRunStatus != null;
 
         /// <summary>
-        /// Gets and sets the property TaskId. 
-        /// <para>
-        /// The task ID.
-        /// </para>
+        /// Gets and sets the property TaskId. The task ID.
         /// </summary>
         public string TaskId { get; set; }
 
@@ -186,10 +156,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetTaskId() => this.TaskId != null;
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt. 
-        /// <para>
-        /// The date and time the resource was updated.
-        /// </para>
+        /// Gets and sets the property UpdatedAt. The date and time the resource was updated.
         /// </summary>
         public DateTime? UpdatedAt { get; set; }
 
@@ -199,10 +166,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetUpdatedAt() => this.UpdatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property UpdatedBy. 
-        /// <para>
-        /// The user or system that updated this resource.
-        /// </para>
+        /// Gets and sets the property UpdatedBy. The user or system that updated this resource.
         /// </summary>
         public string UpdatedBy { get; set; }
 

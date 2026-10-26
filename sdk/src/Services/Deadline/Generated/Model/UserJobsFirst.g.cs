@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class UserJobsFirst
     {
         /// <summary>
-        /// Gets and sets the property UserIdentityId. 
-        /// <para>
-        /// The user's ID.
-        /// </para>
+        /// Gets and sets the property UserIdentityId. The user's ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string UserIdentityId { get; set; }

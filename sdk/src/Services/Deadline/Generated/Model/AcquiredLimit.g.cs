@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class AcquiredLimit
     {
         /// <summary>
-        /// Gets and sets the property Count. 
-        /// <para>
-        /// The number of limit resources used.
-        /// </para>
+        /// Gets and sets the property Count. The number of limit resources used.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 2147483647)]
         public int? Count { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCount() => this.Count.HasValue;
 
         /// <summary>
-        /// Gets and sets the property LimitId. 
-        /// <para>
-        /// The unique identifier of the limit.
-        /// </para>
+        /// Gets and sets the property LimitId. The unique identifier of the limit.
         /// </summary>
         [AWSProperty(Required = true)]
         public string LimitId { get; set; }

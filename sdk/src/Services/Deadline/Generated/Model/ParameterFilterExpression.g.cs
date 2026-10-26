@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class ParameterFilterExpression
     {
         /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name of the parameter to filter on.
-        /// </para>
+        /// Gets and sets the property Name. The name of the parameter to filter on.
         /// </summary>
         [AWSProperty(Required = true)]
         public string Name { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
-        /// Gets and sets the property Operator. 
-        /// <para>
-        /// The type of comparison to use to filter results.
-        /// </para>
+        /// Gets and sets the property Operator. The type of comparison to use to filter results.
         /// </summary>
         [AWSProperty(Required = true)]
         public ComparisonOperator Operator { get; set; }
@@ -63,10 +57,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetOperator() => this.Operator != null;
 
         /// <summary>
-        /// Gets and sets the property Value. 
-        /// <para>
-        /// The parameter's value.
-        /// </para>
+        /// Gets and sets the property Value. The parameter's value.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 256)]
         public string Value { get; set; }

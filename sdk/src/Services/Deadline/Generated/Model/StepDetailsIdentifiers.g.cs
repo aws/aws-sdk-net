@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class StepDetailsIdentifiers
     {
         /// <summary>
-        /// Gets and sets the property JobId. 
-        /// <para>
-        /// The job ID.
-        /// </para>
+        /// Gets and sets the property JobId. The job ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string JobId { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetJobId() => this.JobId != null;
 
         /// <summary>
-        /// Gets and sets the property StepId. 
-        /// <para>
-        /// The step ID.
-        /// </para>
+        /// Gets and sets the property StepId. The step ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string StepId { get; set; }

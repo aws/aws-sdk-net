@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class FleetCapabilities
     {
         /// <summary>
-        /// Gets and sets the property Amounts. 
-        /// <para>
-        /// Amount capabilities of the fleet.
-        /// </para>
+        /// Gets and sets the property Amounts. Amount capabilities of the fleet.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -55,10 +52,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetAmounts() => this.Amounts != null && (this.Amounts.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property Attributes. 
-        /// <para>
-        /// Attribute capabilities of the fleet.
-        /// </para>
+        /// Gets and sets the property Attributes. Attribute capabilities of the fleet.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

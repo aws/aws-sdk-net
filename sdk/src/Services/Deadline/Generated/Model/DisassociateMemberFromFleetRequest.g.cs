@@ -36,10 +36,8 @@ namespace Amazon.Deadline.Model
     public partial class DisassociateMemberFromFleetRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID of the fleet to disassociate a member from.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID of the fleet to disassociate a member
+        /// from.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -50,10 +48,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property FleetId. 
-        /// <para>
-        /// The fleet ID of the fleet to from which to disassociate a member.
-        /// </para>
+        /// Gets and sets the property FleetId. The fleet ID of the fleet to from which to disassociate
+        /// a member.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FleetId { get; set; }
@@ -64,10 +60,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFleetId() => this.FleetId != null;
 
         /// <summary>
-        /// Gets and sets the property PrincipalId. 
-        /// <para>
-        /// A member's principal ID to disassociate from a fleet.
-        /// </para>
+        /// Gets and sets the property PrincipalId. A member's principal ID to disassociate from
+        /// a fleet.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 47)]
         public string PrincipalId { get; set; }

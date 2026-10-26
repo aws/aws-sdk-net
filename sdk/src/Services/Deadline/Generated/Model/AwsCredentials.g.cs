@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class AwsCredentials
     {
         /// <summary>
-        /// Gets and sets the property AccessKeyId. 
-        /// <para>
-        /// The IAM access key ID.
-        /// </para>
+        /// Gets and sets the property AccessKeyId. The IAM access key ID.
         /// </summary>
         [AWSProperty(Required = true, Sensitive = true)]
         public string AccessKeyId { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetAccessKeyId() => this.AccessKeyId != null;
 
         /// <summary>
-        /// Gets and sets the property Expiration. 
-        /// <para>
-        /// The expiration date and time of the IAM credentials.
-        /// </para>
+        /// Gets and sets the property Expiration. The expiration date and time of the IAM credentials.
         /// </summary>
         [AWSProperty(Required = true)]
         public DateTime? Expiration { get; set; }
@@ -63,10 +57,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetExpiration() => this.Expiration.HasValue;
 
         /// <summary>
-        /// Gets and sets the property SecretAccessKey. 
-        /// <para>
-        /// The IAM secret access key.
-        /// </para>
+        /// Gets and sets the property SecretAccessKey. The IAM secret access key.
         /// </summary>
         [AWSProperty(Required = true, Sensitive = true)]
         public string SecretAccessKey { get; set; }
@@ -77,10 +68,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetSecretAccessKey() => this.SecretAccessKey != null;
 
         /// <summary>
-        /// Gets and sets the property SessionToken. 
-        /// <para>
-        /// The IAM session token
-        /// </para>
+        /// Gets and sets the property SessionToken. The IAM session token
         /// </summary>
         [AWSProperty(Required = true, Sensitive = true)]
         public string SessionToken { get; set; }

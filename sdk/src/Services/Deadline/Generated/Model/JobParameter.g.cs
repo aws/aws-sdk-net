@@ -35,11 +35,9 @@ namespace Amazon.Deadline.Model
     public partial class JobParameter
     {
         /// <summary>
-        /// Gets and sets the property Bool. 
-        /// <para>
-        /// A boolean value represented as a string. Accepted values are <c>true</c>, <c>false</c>,
-        /// <c>yes</c>, <c>no</c>, <c>on</c>, <c>off</c>, <c>1</c>, and <c>0</c>, case-insensitive.
-        /// </para>
+        /// Gets and sets the property Bool. A boolean value represented as a string. Accepted
+        /// values are <c>true</c>, <c>false</c>, <c>yes</c>, <c>no</c>, <c>on</c>, <c>off</c>,
+        /// <c>1</c>, and <c>0</c>, case-insensitive.
         /// </summary>
         [AWSProperty(Min = 1, Max = 5)]
         public string Bool { get; set; }
@@ -50,10 +48,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetBool() => this.Bool != null;
 
         /// <summary>
-        /// Gets and sets the property BoolList. 
-        /// <para>
-        /// A list of boolean values, each represented as a string.
-        /// </para>
+        /// Gets and sets the property BoolList. A list of boolean values, each represented as
+        /// a string.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -70,10 +66,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetBoolList() => this.BoolList != null && (this.BoolList.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property Float. 
-        /// <para>
-        /// A double precision IEEE-754 floating point number represented as a string.
-        /// </para>
+        /// Gets and sets the property Float. A double precision IEEE-754 floating point number
+        /// represented as a string.
         /// </summary>
         [AWSProperty(Min = 1, Max = 26)]
         public string Float { get; set; }
@@ -84,11 +78,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFloat() => this.Float != null;
 
         /// <summary>
-        /// Gets and sets the property FloatList. 
-        /// <para>
-        /// A list of double precision IEEE-754 floating point numbers, each represented as a
-        /// string.
-        /// </para>
+        /// Gets and sets the property FloatList. A list of double precision IEEE-754 floating
+        /// point numbers, each represented as a string.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -105,10 +96,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFloatList() => this.FloatList != null && (this.FloatList.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property Int. 
-        /// <para>
-        /// A signed integer represented as a string.
-        /// </para>
+        /// Gets and sets the property Int. A signed integer represented as a string.
         /// </summary>
         [AWSProperty(Min = 1, Max = 20)]
         public string Int { get; set; }
@@ -119,10 +107,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetInt() => this.Int != null;
 
         /// <summary>
-        /// Gets and sets the property IntList. 
-        /// <para>
-        /// A list of signed integers, each represented as a string.
-        /// </para>
+        /// Gets and sets the property IntList. A list of signed integers, each represented as
+        /// a string.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -139,10 +125,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetIntList() => this.IntList != null && (this.IntList.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property IntListList. 
-        /// <para>
-        /// A list of lists of signed integers, each represented as a string.
-        /// </para>
+        /// Gets and sets the property IntListList. A list of lists of signed integers, each represented
+        /// as a string.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -159,10 +143,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetIntListList() => this.IntListList != null && (this.IntListList.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property Path. 
-        /// <para>
-        /// A file system path represented as a string.
-        /// </para>
+        /// Gets and sets the property Path. A file system path represented as a string.
         /// </summary>
         [AWSProperty(Min = 0, Max = 1024)]
         public string Path { get; set; }
@@ -173,10 +154,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetPath() => this.Path != null;
 
         /// <summary>
-        /// Gets and sets the property PathList. 
-        /// <para>
-        /// A list of file system paths, each represented as a string.
-        /// </para>
+        /// Gets and sets the property PathList. A list of file system paths, each represented
+        /// as a string.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -193,10 +172,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetPathList() => this.PathList != null && (this.PathList.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property RangeExpr. 
-        /// <para>
-        /// An Open Job Description range expression represented as a string, such as <c>1-10:2</c>.
-        /// </para>
+        /// Gets and sets the property RangeExpr. An Open Job Description range expression represented
+        /// as a string, such as <c>1-10:2</c>.
         /// </summary>
         [AWSProperty(Min = 1, Max = 1024)]
         public string RangeExpr { get; set; }
@@ -207,10 +184,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetRangeExpr() => this.RangeExpr != null;
 
         /// <summary>
-        /// Gets and sets the property String. 
-        /// <para>
-        /// A UTF-8 string.
-        /// </para>
+        /// Gets and sets the property String. A UTF-8 string.
         /// </summary>
         [AWSProperty(Min = 0, Max = 1024)]
         public string String { get; set; }
@@ -221,10 +195,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetString() => this.String != null;
 
         /// <summary>
-        /// Gets and sets the property StringList. 
-        /// <para>
-        /// A list of UTF-8 strings.
-        /// </para>
+        /// Gets and sets the property StringList. A list of UTF-8 strings.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

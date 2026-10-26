@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class GetMonitorSettingsResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property Settings. 
-        /// <para>
-        /// The monitor settings as key-value pairs.
-        /// </para>
+        /// Gets and sets the property Settings. The monitor settings as key-value pairs.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

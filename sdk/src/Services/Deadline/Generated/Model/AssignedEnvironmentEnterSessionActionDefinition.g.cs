@@ -35,10 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class AssignedEnvironmentEnterSessionActionDefinition
     {
         /// <summary>
-        /// Gets and sets the property EnvironmentId. 
-        /// <para>
-        /// The environment ID of the assigned environment at the start of a session.
-        /// </para>
+        /// Gets and sets the property EnvironmentId. The environment ID of the assigned environment
+        /// at the start of a session.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 1024)]
         public string EnvironmentId { get; set; }

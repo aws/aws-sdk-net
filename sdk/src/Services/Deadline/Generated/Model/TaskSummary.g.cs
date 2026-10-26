@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class TaskSummary
     {
         /// <summary>
-        /// Gets and sets the property CreatedAt. 
-        /// <para>
-        /// The date and time the resource was created.
-        /// </para>
+        /// Gets and sets the property CreatedAt. The date and time the resource was created.
         /// </summary>
         [AWSProperty(Required = true)]
         public DateTime? CreatedAt { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCreatedAt() => this.CreatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property CreatedBy. 
-        /// <para>
-        /// The user or system that created this resource.
-        /// </para>
+        /// Gets and sets the property CreatedBy. The user or system that created this resource.
         /// </summary>
         [AWSProperty(Required = true)]
         public string CreatedBy { get; set; }
@@ -63,10 +57,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCreatedBy() => this.CreatedBy != null;
 
         /// <summary>
-        /// Gets and sets the property EndedAt. 
-        /// <para>
-        /// The date and time the resource ended running.
-        /// </para>
+        /// Gets and sets the property EndedAt. The date and time the resource ended running.
         /// </summary>
         public DateTime? EndedAt { get; set; }
 
@@ -76,10 +67,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetEndedAt() => this.EndedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property FailureRetryCount. 
-        /// <para>
-        /// The number of times that the task failed and was retried.
-        /// </para>
+        /// Gets and sets the property FailureRetryCount. The number of times that the task failed
+        /// and was retried.
         /// </summary>
         [AWSProperty(Min = 0, Max = 2147483647)]
         public int? FailureRetryCount { get; set; }
@@ -90,10 +79,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFailureRetryCount() => this.FailureRetryCount.HasValue;
 
         /// <summary>
-        /// Gets and sets the property LatestSessionActionId. 
-        /// <para>
-        /// The latest session action ID for the task.
-        /// </para>
+        /// Gets and sets the property LatestSessionActionId. The latest session action ID for
+        /// the task.
         /// </summary>
         public string LatestSessionActionId { get; set; }
 
@@ -103,10 +90,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetLatestSessionActionId() => this.LatestSessionActionId != null;
 
         /// <summary>
-        /// Gets and sets the property Parameters. 
-        /// <para>
-        /// The task parameters.
-        /// </para>
+        /// Gets and sets the property Parameters. The task parameters.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -123,10 +107,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetParameters() => this.Parameters != null && (this.Parameters.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property RunStatus. 
-        /// <para>
-        /// The run status of the task.
-        /// </para>
+        /// Gets and sets the property RunStatus. The run status of the task.
         /// </summary>
         [AWSProperty(Required = true)]
         public TaskRunStatus RunStatus { get; set; }
@@ -137,10 +118,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetRunStatus() => this.RunStatus != null;
 
         /// <summary>
-        /// Gets and sets the property StartedAt. 
-        /// <para>
-        /// The date and time the resource started running.
-        /// </para>
+        /// Gets and sets the property StartedAt. The date and time the resource started running.
         /// </summary>
         public DateTime? StartedAt { get; set; }
 
@@ -150,10 +128,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStartedAt() => this.StartedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property TargetRunStatus. 
-        /// <para>
-        /// The run status on which the started.
-        /// </para>
+        /// Gets and sets the property TargetRunStatus. The run status on which the started.
         /// </summary>
         public TaskTargetRunStatus TargetRunStatus { get; set; }
 
@@ -163,10 +138,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetTargetRunStatus() => this.TargetRunStatus != null;
 
         /// <summary>
-        /// Gets and sets the property TaskId. 
-        /// <para>
-        /// The task ID.
-        /// </para>
+        /// Gets and sets the property TaskId. The task ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string TaskId { get; set; }
@@ -177,10 +149,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetTaskId() => this.TaskId != null;
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt. 
-        /// <para>
-        /// The date and time the resource was updated.
-        /// </para>
+        /// Gets and sets the property UpdatedAt. The date and time the resource was updated.
         /// </summary>
         public DateTime? UpdatedAt { get; set; }
 
@@ -190,10 +159,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetUpdatedAt() => this.UpdatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property UpdatedBy. 
-        /// <para>
-        /// The user or system that updated this resource.
-        /// </para>
+        /// Gets and sets the property UpdatedBy. The user or system that updated this resource.
         /// </summary>
         public string UpdatedBy { get; set; }
 

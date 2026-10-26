@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class GetFarmRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID of the farm.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID of the farm.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }

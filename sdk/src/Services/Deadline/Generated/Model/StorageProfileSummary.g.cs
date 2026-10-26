@@ -55,10 +55,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetDisplayName() => this.DisplayName != null;
 
         /// <summary>
-        /// Gets and sets the property OsFamily. 
-        /// <para>
-        /// The operating system (OS) family.
-        /// </para>
+        /// Gets and sets the property OsFamily. The operating system (OS) family.
         /// </summary>
         [AWSProperty(Required = true)]
         public StorageProfileOperatingSystemFamily OsFamily { get; set; }
@@ -69,10 +66,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetOsFamily() => this.OsFamily != null;
 
         /// <summary>
-        /// Gets and sets the property StorageProfileId. 
-        /// <para>
-        /// The storage profile ID.
-        /// </para>
+        /// Gets and sets the property StorageProfileId. The storage profile ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string StorageProfileId { get; set; }

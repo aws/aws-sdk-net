@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class StringFilterExpression
     {
         /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The field name to search.
-        /// </para>
+        /// Gets and sets the property Name. The field name to search.
         /// </summary>
         [AWSProperty(Required = true)]
         public string Name { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
-        /// Gets and sets the property Operator. 
-        /// <para>
-        /// The type of comparison to use for this search.
-        /// </para>
+        /// Gets and sets the property Operator. The type of comparison to use for this search.
         /// </summary>
         [AWSProperty(Required = true)]
         public ComparisonOperator Operator { get; set; }
@@ -63,10 +57,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetOperator() => this.Operator != null;
 
         /// <summary>
-        /// Gets and sets the property Value. 
-        /// <para>
-        /// The string to search for.
-        /// </para>
+        /// Gets and sets the property Value. The string to search for.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 256)]
         public string Value { get; set; }

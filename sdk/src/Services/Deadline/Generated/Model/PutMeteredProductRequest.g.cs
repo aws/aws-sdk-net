@@ -35,10 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class PutMeteredProductRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property LicenseEndpointId. 
-        /// <para>
-        /// The license endpoint ID to add to the metered product.
-        /// </para>
+        /// Gets and sets the property LicenseEndpointId. The license endpoint ID to add to the
+        /// metered product.
         /// </summary>
         [AWSProperty(Required = true)]
         public string LicenseEndpointId { get; set; }
@@ -49,10 +47,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetLicenseEndpointId() => this.LicenseEndpointId != null;
 
         /// <summary>
-        /// Gets and sets the property ProductId. 
-        /// <para>
-        /// The product ID to add to the metered product.
-        /// </para>
+        /// Gets and sets the property ProductId. The product ID to add to the metered product.
         /// </summary>
         [AWSProperty(Required = true)]
         public string ProductId { get; set; }

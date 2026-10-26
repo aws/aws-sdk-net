@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class CreateFleetResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property FleetId. 
-        /// <para>
-        /// The fleet ID.
-        /// </para>
+        /// Gets and sets the property FleetId. The fleet ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FleetId { get; set; }

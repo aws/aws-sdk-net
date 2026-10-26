@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class FieldSortExpression
     {
         /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name of the field.
-        /// </para>
+        /// Gets and sets the property Name. The name of the field.
         /// </summary>
         [AWSProperty(Required = true)]
         public string Name { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
-        /// Gets and sets the property SortOrder. 
-        /// <para>
-        /// The sort order for the field.
-        /// </para>
+        /// Gets and sets the property SortOrder. The sort order for the field.
         /// </summary>
         [AWSProperty(Required = true)]
         public SortOrder SortOrder { get; set; }

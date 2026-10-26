@@ -35,11 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class TaskParameterValue
     {
         /// <summary>
-        /// Gets and sets the property ChunkInt. 
-        /// <para>
-        /// A range (for example 1-10) or selection of specific (for example 1,3,7,8,10) integers
-        /// represented as a string.
-        /// </para>
+        /// Gets and sets the property ChunkInt. A range (for example 1-10) or selection of specific
+        /// (for example 1,3,7,8,10) integers represented as a string.
         /// </summary>
         public string ChunkInt { get; set; }
 
@@ -49,10 +46,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetChunkInt() => this.ChunkInt != null;
 
         /// <summary>
-        /// Gets and sets the property Float. 
-        /// <para>
-        /// A double precision IEEE-754 floating point number represented as a string.
-        /// </para>
+        /// Gets and sets the property Float. A double precision IEEE-754 floating point number
+        /// represented as a string.
         /// </summary>
         [AWSProperty(Min = 1, Max = 26)]
         public string Float { get; set; }
@@ -63,10 +58,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFloat() => this.Float != null;
 
         /// <summary>
-        /// Gets and sets the property Int. 
-        /// <para>
-        /// A signed integer represented as a string.
-        /// </para>
+        /// Gets and sets the property Int. A signed integer represented as a string.
         /// </summary>
         [AWSProperty(Min = 1, Max = 20)]
         public string Int { get; set; }
@@ -77,10 +69,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetInt() => this.Int != null;
 
         /// <summary>
-        /// Gets and sets the property Path. 
-        /// <para>
-        /// A file system path represented as a string.
-        /// </para>
+        /// Gets and sets the property Path. A file system path represented as a string.
         /// </summary>
         [AWSProperty(Min = 0, Max = 1024)]
         public string Path { get; set; }
@@ -91,10 +80,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetPath() => this.Path != null;
 
         /// <summary>
-        /// Gets and sets the property String. 
-        /// <para>
-        /// A UTF-8 string.
-        /// </para>
+        /// Gets and sets the property String. A UTF-8 string.
         /// </summary>
         [AWSProperty(Min = 0, Max = 1024)]
         public string String { get; set; }

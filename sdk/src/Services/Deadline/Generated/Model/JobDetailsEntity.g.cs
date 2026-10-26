@@ -35,11 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class JobDetailsEntity
     {
         /// <summary>
-        /// Gets and sets the property Extensions. 
-        /// <para>
-        /// The Open Job Description extensions that the job template uses. This value is used
-        /// by the worker agent.
-        /// </para>
+        /// Gets and sets the property Extensions. The Open Job Description extensions that the
+        /// job template uses. This value is used by the worker agent.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -56,10 +53,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetExtensions() => this.Extensions != null && (this.Extensions.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property JobAttachmentSettings. 
-        /// <para>
-        /// The job attachment settings.
-        /// </para>
+        /// Gets and sets the property JobAttachmentSettings. The job attachment settings.
         /// </summary>
         public JobDetailsJobAttachmentSettings JobAttachmentSettings { get; set; }
 
@@ -69,10 +63,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetJobAttachmentSettings() => this.JobAttachmentSettings != null;
 
         /// <summary>
-        /// Gets and sets the property JobId. 
-        /// <para>
-        /// The job ID.
-        /// </para>
+        /// Gets and sets the property JobId. The job ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string JobId { get; set; }
@@ -83,10 +74,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetJobId() => this.JobId != null;
 
         /// <summary>
-        /// Gets and sets the property JobRunAsUser. 
-        /// <para>
-        /// The user name and group that the job uses when run.
-        /// </para>
+        /// Gets and sets the property JobRunAsUser. The user name and group that the job uses
+        /// when run.
         /// </summary>
         public JobRunAsUser JobRunAsUser { get; set; }
 
@@ -96,10 +85,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetJobRunAsUser() => this.JobRunAsUser != null;
 
         /// <summary>
-        /// Gets and sets the property LogGroupName. 
-        /// <para>
-        /// The log group name.
-        /// </para>
+        /// Gets and sets the property LogGroupName. The log group name.
         /// </summary>
         [AWSProperty(Required = true)]
         public string LogGroupName { get; set; }
@@ -110,10 +96,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetLogGroupName() => this.LogGroupName != null;
 
         /// <summary>
-        /// Gets and sets the property Parameters. 
-        /// <para>
-        /// The parameters.
-        /// </para>
+        /// Gets and sets the property Parameters. The parameters.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -130,10 +113,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetParameters() => this.Parameters != null && (this.Parameters.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property PathMappingRules. 
-        /// <para>
-        /// The path mapping rules.
-        /// </para>
+        /// Gets and sets the property PathMappingRules. The path mapping rules.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -149,10 +129,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetPathMappingRules() => this.PathMappingRules != null && (this.PathMappingRules.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property QueueRoleArn. 
-        /// <para>
-        /// The queue role ARN.
-        /// </para>
+        /// Gets and sets the property QueueRoleArn. The queue role ARN.
         /// </summary>
         public string QueueRoleArn { get; set; }
 
@@ -162,10 +139,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetQueueRoleArn() => this.QueueRoleArn != null;
 
         /// <summary>
-        /// Gets and sets the property SchemaVersion. 
-        /// <para>
-        /// The schema version.
-        /// </para>
+        /// Gets and sets the property SchemaVersion. The schema version.
         /// </summary>
         [AWSProperty(Required = true)]
         public string SchemaVersion { get; set; }

@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class Statistics
     {
         /// <summary>
-        /// Gets and sets the property AggregationEndTime. 
-        /// <para>
-        /// The end time for the aggregation.
-        /// </para>
+        /// Gets and sets the property AggregationEndTime. The end time for the aggregation.
         /// </summary>
         public DateTime? AggregationEndTime { get; set; }
 
@@ -48,10 +45,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetAggregationEndTime() => this.AggregationEndTime.HasValue;
 
         /// <summary>
-        /// Gets and sets the property AggregationStartTime. 
-        /// <para>
-        /// The start time for the aggregation.
-        /// </para>
+        /// Gets and sets the property AggregationStartTime. The start time for the aggregation.
         /// </summary>
         public DateTime? AggregationStartTime { get; set; }
 
@@ -61,11 +55,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetAggregationStartTime() => this.AggregationStartTime.HasValue;
 
         /// <summary>
-        /// Gets and sets the property CostInUsd. 
-        /// <para>
-        /// How the statistics should appear in USD. Options include: minimum, maximum, average
-        /// or sum.
-        /// </para>
+        /// Gets and sets the property CostInUsd. How the statistics should appear in USD. Options
+        /// include: minimum, maximum, average or sum.
         /// </summary>
         [AWSProperty(Required = true)]
         public Stats CostInUsd { get; set; }
@@ -76,10 +67,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCostInUsd() => this.CostInUsd != null;
 
         /// <summary>
-        /// Gets and sets the property Count. 
-        /// <para>
-        /// The number of instances in a list of statistics.
-        /// </para>
+        /// Gets and sets the property Count. The number of instances in a list of statistics.
         /// </summary>
         [AWSProperty(Required = true)]
         public int? Count { get; set; }
@@ -90,10 +78,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCount() => this.Count.HasValue;
 
         /// <summary>
-        /// Gets and sets the property FleetId. 
-        /// <para>
-        /// The fleet ID.
-        /// </para>
+        /// Gets and sets the property FleetId. The fleet ID.
         /// </summary>
         public string FleetId { get; set; }
 
@@ -103,10 +88,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFleetId() => this.FleetId != null;
 
         /// <summary>
-        /// Gets and sets the property InstanceType. 
-        /// <para>
-        /// The type of instance.
-        /// </para>
+        /// Gets and sets the property InstanceType. The type of instance.
         /// </summary>
         [AWSProperty(Min = 1, Max = 100)]
         public string InstanceType { get; set; }
@@ -117,10 +99,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetInstanceType() => this.InstanceType != null;
 
         /// <summary>
-        /// Gets and sets the property JobId. 
-        /// <para>
-        /// The job ID.
-        /// </para>
+        /// Gets and sets the property JobId. The job ID.
         /// </summary>
         public string JobId { get; set; }
 
@@ -130,10 +109,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetJobId() => this.JobId != null;
 
         /// <summary>
-        /// Gets and sets the property JobName. 
-        /// <para>
-        /// The job name.
-        /// </para>
+        /// Gets and sets the property JobName. The job name.
         /// </summary>
         [AWSProperty(Min = 1, Max = 512)]
         public string JobName { get; set; }
@@ -144,10 +120,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetJobName() => this.JobName != null;
 
         /// <summary>
-        /// Gets and sets the property LicenseProduct. 
-        /// <para>
-        /// The licensed product.
-        /// </para>
+        /// Gets and sets the property LicenseProduct. The licensed product.
         /// </summary>
         public string LicenseProduct { get; set; }
 
@@ -157,10 +130,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetLicenseProduct() => this.LicenseProduct != null;
 
         /// <summary>
-        /// Gets and sets the property QueueId. 
-        /// <para>
-        /// The queue ID.
-        /// </para>
+        /// Gets and sets the property QueueId. The queue ID.
         /// </summary>
         public string QueueId { get; set; }
 
@@ -170,10 +140,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetQueueId() => this.QueueId != null;
 
         /// <summary>
-        /// Gets and sets the property RuntimeInSeconds. 
-        /// <para>
-        /// The total aggregated runtime.
-        /// </para>
+        /// Gets and sets the property RuntimeInSeconds. The total aggregated runtime.
         /// </summary>
         [AWSProperty(Required = true)]
         public Stats RuntimeInSeconds { get; set; }
@@ -184,10 +151,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetRuntimeInSeconds() => this.RuntimeInSeconds != null;
 
         /// <summary>
-        /// Gets and sets the property UsageType. 
-        /// <para>
-        /// The type of usage for the statistics.
-        /// </para>
+        /// Gets and sets the property UsageType. The type of usage for the statistics.
         /// </summary>
         public UsageType UsageType { get; set; }
 
@@ -197,10 +161,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetUsageType() => this.UsageType != null;
 
         /// <summary>
-        /// Gets and sets the property UserId. 
-        /// <para>
-        /// The user ID.
-        /// </para>
+        /// Gets and sets the property UserId. The user ID.
         /// </summary>
         public string UserId { get; set; }
 

@@ -73,10 +73,8 @@ namespace Amazon.Deadline.Model
         public ThrottlingException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) : base(message, errorType, errorCode, requestId, statusCode) { }
 
         /// <summary>
-        /// Gets and sets the property Context. 
-        /// <para>
-        /// Information about the resources in use when the exception was thrown.
-        /// </para>
+        /// Gets and sets the property Context. Information about the resources in use when the
+        /// exception was thrown.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -92,10 +90,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetContext() => this.Context != null && (this.Context.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property QuotaCode. 
-        /// <para>
-        /// Identifies the quota that is being throttled.
-        /// </para>
+        /// Gets and sets the property QuotaCode. Identifies the quota that is being throttled.
         /// </summary>
         public string QuotaCode { get; set; }
 
@@ -105,10 +100,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetQuotaCode() => this.QuotaCode != null;
 
         /// <summary>
-        /// Gets and sets the property RetryAfterSeconds. 
-        /// <para>
-        /// The number of seconds a client should wait before retrying the request.
-        /// </para>
+        /// Gets and sets the property RetryAfterSeconds. The number of seconds a client should
+        /// wait before retrying the request.
         /// </summary>
         public int? RetryAfterSeconds { get; set; }
 
@@ -118,10 +111,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetRetryAfterSeconds() => this.RetryAfterSeconds.HasValue;
 
         /// <summary>
-        /// Gets and sets the property ServiceCode. 
-        /// <para>
-        /// Identifies the service that is being throttled.
-        /// </para>
+        /// Gets and sets the property ServiceCode. Identifies the service that is being throttled.
         /// </summary>
         public string ServiceCode { get; set; }
 

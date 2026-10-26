@@ -36,10 +36,7 @@ namespace Amazon.Deadline.Model
     public partial class PersistentVolumeConfiguration
     {
         /// <summary>
-        /// Gets and sets the property Iops. 
-        /// <para>
-        /// The IOPS per persistent volume. The default is 3000.
-        /// </para>
+        /// Gets and sets the property Iops. The IOPS per persistent volume. The default is 3000.
         /// </summary>
         [AWSProperty(Min = 100, Max = 80000)]
         public int? Iops { get; set; }
@@ -50,11 +47,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetIops() => this.Iops.HasValue;
 
         /// <summary>
-        /// Gets and sets the property LastUsedTtlHours. 
-        /// <para>
-        /// The number of hours a persistent volume can remain unused before it is deleted. The
-        /// default is 168 (7 days).
-        /// </para>
+        /// Gets and sets the property LastUsedTtlHours. The number of hours a persistent volume
+        /// can remain unused before it is deleted. The default is 12.
         /// </summary>
         [AWSProperty(Min = 1, Max = 8760)]
         public int? LastUsedTtlHours { get; set; }
@@ -65,10 +59,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetLastUsedTtlHours() => this.LastUsedTtlHours.HasValue;
 
         /// <summary>
-        /// Gets and sets the property MountPath. 
-        /// <para>
-        /// The file system path where the persistent volume is mounted on the worker instance.
-        /// </para>
+        /// Gets and sets the property MountPath. The file system path where the persistent volume
+        /// is mounted on the worker instance.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 255)]
         public string MountPath { get; set; }
@@ -79,10 +71,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMountPath() => this.MountPath != null;
 
         /// <summary>
-        /// Gets and sets the property SizeGiB. 
-        /// <para>
-        /// The persistent volume size in GiB. The default is 250.
-        /// </para>
+        /// Gets and sets the property SizeGiB. The persistent volume size in GiB. The default
+        /// is 250.
         /// </summary>
         [AWSProperty(Min = 1, Max = 65536)]
         public int? SizeGiB { get; set; }
@@ -93,10 +83,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetSizeGiB() => this.SizeGiB.HasValue;
 
         /// <summary>
-        /// Gets and sets the property ThroughputMiB. 
-        /// <para>
-        /// The throughput per persistent volume in MiB. The default is 125.
-        /// </para>
+        /// Gets and sets the property ThroughputMiB. The throughput per persistent volume in
+        /// MiB. The default is 125.
         /// </summary>
         [AWSProperty(Min = 125, Max = 2000)]
         public int? ThroughputMiB { get; set; }

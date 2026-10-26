@@ -37,10 +37,7 @@ namespace Amazon.Deadline.Model
     public partial class MembershipSummary
     {
         /// <summary>
-        /// Gets and sets the property Farm. 
-        /// <para>
-        /// A membership on a farm.
-        /// </para>
+        /// Gets and sets the property Farm. A membership on a farm.
         /// </summary>
         public FarmMember Farm { get; set; }
 
@@ -50,10 +47,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarm() => this.Farm != null;
 
         /// <summary>
-        /// Gets and sets the property Fleet. 
-        /// <para>
-        /// A membership on a fleet.
-        /// </para>
+        /// Gets and sets the property Fleet. A membership on a fleet.
         /// </summary>
         public FleetMember Fleet { get; set; }
 
@@ -63,10 +57,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFleet() => this.Fleet != null;
 
         /// <summary>
-        /// Gets and sets the property Job. 
-        /// <para>
-        /// A membership on a job.
-        /// </para>
+        /// Gets and sets the property Job. A membership on a job.
         /// </summary>
         public JobMember Job { get; set; }
 
@@ -76,10 +67,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetJob() => this.Job != null;
 
         /// <summary>
-        /// Gets and sets the property Queue. 
-        /// <para>
-        /// A membership on a queue.
-        /// </para>
+        /// Gets and sets the property Queue. A membership on a queue.
         /// </summary>
         public QueueMember Queue { get; set; }
 

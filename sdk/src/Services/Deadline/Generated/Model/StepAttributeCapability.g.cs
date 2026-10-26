@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class StepAttributeCapability
     {
         /// <summary>
-        /// Gets and sets the property AllOf. 
-        /// <para>
-        /// Requires all of the step attribute values.
-        /// </para>
+        /// Gets and sets the property AllOf. Requires all of the step attribute values.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -54,10 +51,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetAllOf() => this.AllOf != null && (this.AllOf.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property AnyOf. 
-        /// <para>
-        /// Requires any of the step attributes in a given list.
-        /// </para>
+        /// Gets and sets the property AnyOf. Requires any of the step attributes in a given list.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -73,10 +67,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetAnyOf() => this.AnyOf != null && (this.AnyOf.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name of the step attribute.
-        /// </para>
+        /// Gets and sets the property Name. The name of the step attribute.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 100)]
         public string Name { get; set; }

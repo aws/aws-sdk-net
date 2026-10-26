@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class DateTimeFilterExpression
     {
         /// <summary>
-        /// Gets and sets the property DateTime. 
-        /// <para>
-        /// The date and time.
-        /// </para>
+        /// Gets and sets the property DateTime. The date and time.
         /// </summary>
         [AWSProperty(Required = true)]
         public DateTime? DateTime { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetDateTime() => this.DateTime.HasValue;
 
         /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name of the date-time field to filter on.
-        /// </para>
+        /// Gets and sets the property Name. The name of the date-time field to filter on.
         /// </summary>
         [AWSProperty(Required = true)]
         public string Name { get; set; }
@@ -63,10 +57,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
-        /// Gets and sets the property Operator. 
-        /// <para>
-        /// The type of comparison to use to filter the results.
-        /// </para>
+        /// Gets and sets the property Operator. The type of comparison to use to filter the results.
         /// </summary>
         [AWSProperty(Required = true)]
         public ComparisonOperator Operator { get; set; }

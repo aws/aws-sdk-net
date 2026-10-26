@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class WindowsUser
     {
         /// <summary>
-        /// Gets and sets the property PasswordArn. 
-        /// <para>
-        /// The password ARN for the Windows user.
-        /// </para>
+        /// Gets and sets the property PasswordArn. The password ARN for the Windows user.
         /// </summary>
         [AWSProperty(Required = true, Min = 20, Max = 2048)]
         public string PasswordArn { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetPasswordArn() => this.PasswordArn != null;
 
         /// <summary>
-        /// Gets and sets the property User. 
-        /// <para>
-        /// The user.
-        /// </para>
+        /// Gets and sets the property User. The user.
         /// </summary>
         [AWSProperty(Required = true, Min = 0, Max = 111)]
         public string User { get; set; }

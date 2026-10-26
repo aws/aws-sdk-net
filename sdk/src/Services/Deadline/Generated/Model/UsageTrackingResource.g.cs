@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class UsageTrackingResource
     {
         /// <summary>
-        /// Gets and sets the property QueueId. 
-        /// <para>
-        /// The queue ID.
-        /// </para>
+        /// Gets and sets the property QueueId. The queue ID.
         /// </summary>
         public string QueueId { get; set; }
 

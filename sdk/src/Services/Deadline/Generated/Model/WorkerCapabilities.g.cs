@@ -35,10 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class WorkerCapabilities
     {
         /// <summary>
-        /// Gets and sets the property Amounts. 
-        /// <para>
-        /// The worker capabilities amounts on a list of worker capabilities.
-        /// </para>
+        /// Gets and sets the property Amounts. The worker capabilities amounts on a list of worker
+        /// capabilities.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -55,10 +53,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetAmounts() => this.Amounts != null && (this.Amounts.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property Attributes. 
-        /// <para>
-        /// The worker attribute capabilities in the list of attribute capabilities.
-        /// </para>
+        /// Gets and sets the property Attributes. The worker attribute capabilities in the list
+        /// of attribute capabilities.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

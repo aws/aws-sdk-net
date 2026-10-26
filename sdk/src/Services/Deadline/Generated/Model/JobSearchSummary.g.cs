@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class JobSearchSummary
     {
         /// <summary>
-        /// Gets and sets the property CreatedAt. 
-        /// <para>
-        /// The date and time the resource was created.
-        /// </para>
+        /// Gets and sets the property CreatedAt. The date and time the resource was created.
         /// </summary>
         public DateTime? CreatedAt { get; set; }
 
@@ -48,10 +45,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCreatedAt() => this.CreatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property CreatedBy. 
-        /// <para>
-        /// The user or system that created this resource.
-        /// </para>
+        /// Gets and sets the property CreatedBy. The user or system that created this resource.
         /// </summary>
         public string CreatedBy { get; set; }
 
@@ -61,10 +55,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCreatedBy() => this.CreatedBy != null;
 
         /// <summary>
-        /// Gets and sets the property EndedAt. 
-        /// <para>
-        /// The date and time the resource ended running.
-        /// </para>
+        /// Gets and sets the property EndedAt. The date and time the resource ended running.
         /// </summary>
         public DateTime? EndedAt { get; set; }
 
@@ -74,10 +65,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetEndedAt() => this.EndedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property JobId. 
-        /// <para>
-        /// The job ID.
-        /// </para>
+        /// Gets and sets the property JobId. The job ID.
         /// </summary>
         public string JobId { get; set; }
 
@@ -87,10 +75,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetJobId() => this.JobId != null;
 
         /// <summary>
-        /// Gets and sets the property JobParameters. 
-        /// <para>
-        /// The job parameters.
-        /// </para>
+        /// Gets and sets the property JobParameters. The job parameters.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -107,10 +92,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetJobParameters() => this.JobParameters != null && (this.JobParameters.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property LifecycleStatus. 
-        /// <para>
-        /// The life cycle status.
-        /// </para>
+        /// Gets and sets the property LifecycleStatus. The life cycle status.
         /// </summary>
         public JobLifecycleStatus LifecycleStatus { get; set; }
 
@@ -120,10 +102,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetLifecycleStatus() => this.LifecycleStatus != null;
 
         /// <summary>
-        /// Gets and sets the property LifecycleStatusMessage. 
-        /// <para>
-        /// The life cycle status message.
-        /// </para>
+        /// Gets and sets the property LifecycleStatusMessage. The life cycle status message.
         /// </summary>
         public string LifecycleStatusMessage { get; set; }
 
@@ -133,10 +112,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetLifecycleStatusMessage() => this.LifecycleStatusMessage != null;
 
         /// <summary>
-        /// Gets and sets the property MaxFailedTasksCount. 
-        /// <para>
-        /// The number of task failures before the job stops running and is marked as <c>FAILED</c>.
-        /// </para>
+        /// Gets and sets the property MaxFailedTasksCount. The number of task failures before
+        /// the job stops running and is marked as <c>FAILED</c>.
         /// </summary>
         [AWSProperty(Min = 0, Max = 2147483647)]
         public int? MaxFailedTasksCount { get; set; }
@@ -147,10 +124,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMaxFailedTasksCount() => this.MaxFailedTasksCount.HasValue;
 
         /// <summary>
-        /// Gets and sets the property MaxRetriesPerTask. 
-        /// <para>
-        /// The maximum number of retries for a job.
-        /// </para>
+        /// Gets and sets the property MaxRetriesPerTask. The maximum number of retries for a
+        /// job.
         /// </summary>
         [AWSProperty(Min = 0, Max = 2147483647)]
         public int? MaxRetriesPerTask { get; set; }
@@ -161,21 +136,12 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMaxRetriesPerTask() => this.MaxRetriesPerTask.HasValue;
 
         /// <summary>
-        /// Gets and sets the property MaxWorkerCount. 
-        /// <para>
-        /// The maximum number of worker hosts that can concurrently process a job. When the <c>maxWorkerCount</c>
-        /// is reached, no more workers will be assigned to process the job, even if the fleets
-        /// assigned to the job's queue has available workers.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can't set the <c>maxWorkerCount</c> to 0. If you set it to -1, there is no maximum
-        /// number of workers.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you don't specify the <c>maxWorkerCount</c>, the default is -1.
-        /// </para>
+        /// Gets and sets the property MaxWorkerCount. The maximum number of worker hosts that
+        /// can concurrently process a job. When the <c>maxWorkerCount</c> is reached, no more
+        /// workers will be assigned to process the job, even if the fleets assigned to the job's
+        /// queue has available workers. You can't set the <c>maxWorkerCount</c> to 0. If you
+        /// set it to -1, there is no maximum number of workers. If you don't specify the <c>maxWorkerCount</c>,
+        /// the default is -1.
         /// </summary>
         [AWSProperty(Min = -1, Max = 2147483647)]
         public int? MaxWorkerCount { get; set; }
@@ -186,10 +152,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMaxWorkerCount() => this.MaxWorkerCount.HasValue;
 
         /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The job name.
-        /// </para>
+        /// Gets and sets the property Name. The job name.
         /// </summary>
         [AWSProperty(Min = 1, Max = 512)]
         public string Name { get; set; }
@@ -200,10 +163,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
-        /// Gets and sets the property Priority. 
-        /// <para>
-        /// The job priority.
-        /// </para>
+        /// Gets and sets the property Priority. The job priority.
         /// </summary>
         [AWSProperty(Min = 0, Max = 100)]
         public int? Priority { get; set; }
@@ -214,10 +174,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetPriority() => this.Priority.HasValue;
 
         /// <summary>
-        /// Gets and sets the property QueueId. 
-        /// <para>
-        /// The queue ID.
-        /// </para>
+        /// Gets and sets the property QueueId. The queue ID.
         /// </summary>
         public string QueueId { get; set; }
 
@@ -227,10 +184,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetQueueId() => this.QueueId != null;
 
         /// <summary>
-        /// Gets and sets the property SourceJobId. 
-        /// <para>
-        /// The job ID for the source job.
-        /// </para>
+        /// Gets and sets the property SourceJobId. The job ID for the source job.
         /// </summary>
         public string SourceJobId { get; set; }
 
@@ -240,10 +194,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetSourceJobId() => this.SourceJobId != null;
 
         /// <summary>
-        /// Gets and sets the property StartedAt. 
-        /// <para>
-        /// The date and time the resource started running.
-        /// </para>
+        /// Gets and sets the property StartedAt. The date and time the resource started running.
         /// </summary>
         public DateTime? StartedAt { get; set; }
 
@@ -253,10 +204,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStartedAt() => this.StartedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property TargetTaskRunStatus. 
-        /// <para>
-        /// The task status to update the job's tasks to.
-        /// </para>
+        /// Gets and sets the property TargetTaskRunStatus. The task status to update the job's
+        /// tasks to.
         /// </summary>
         public JobTargetTaskRunStatus TargetTaskRunStatus { get; set; }
 
@@ -266,10 +215,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetTargetTaskRunStatus() => this.TargetTaskRunStatus != null;
 
         /// <summary>
-        /// Gets and sets the property TaskFailureRetryCount. 
-        /// <para>
-        /// The total number of times tasks from the job failed and were retried.
-        /// </para>
+        /// Gets and sets the property TaskFailureRetryCount. The total number of times tasks
+        /// from the job failed and were retried.
         /// </summary>
         [AWSProperty(Min = 0, Max = 2147483647)]
         public int? TaskFailureRetryCount { get; set; }
@@ -334,10 +281,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetTaskRunStatus() => this.TaskRunStatus != null;
 
         /// <summary>
-        /// Gets and sets the property TaskRunStatusCounts. 
-        /// <para>
-        /// The number of tasks running on the job.
-        /// </para>
+        /// Gets and sets the property TaskRunStatusCounts. The number of tasks running on the
+        /// job.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -353,10 +298,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetTaskRunStatusCounts() => this.TaskRunStatusCounts != null && (this.TaskRunStatusCounts.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt. 
-        /// <para>
-        /// The date and time the resource was updated.
-        /// </para>
+        /// Gets and sets the property UpdatedAt. The date and time the resource was updated.
         /// </summary>
         public DateTime? UpdatedAt { get; set; }
 
@@ -366,10 +308,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetUpdatedAt() => this.UpdatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property UpdatedBy. 
-        /// <para>
-        /// The user or system that updated this resource.
-        /// </para>
+        /// Gets and sets the property UpdatedBy. The user or system that updated this resource.
         /// </summary>
         public string UpdatedBy { get; set; }
 

@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class SearchGroupedFilterExpressions
     {
         /// <summary>
-        /// Gets and sets the property Filters. 
-        /// <para>
-        /// The filters to use for the search.
-        /// </para>
+        /// Gets and sets the property Filters. The filters to use for the search.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -55,10 +52,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFilters() => this.Filters != null && (this.Filters.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property Operator. 
-        /// <para>
-        /// The operators to include in the search.
-        /// </para>
+        /// Gets and sets the property Operator. The operators to include in the search.
         /// </summary>
         [AWSProperty(Required = true)]
         public LogicalOperator Operator { get; set; }

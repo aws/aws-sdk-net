@@ -36,10 +36,7 @@ namespace Amazon.Deadline.Model
     public partial class JobDetailsJobAttachmentSettings
     {
         /// <summary>
-        /// Gets and sets the property RootPrefix. 
-        /// <para>
-        /// The root prefix.
-        /// </para>
+        /// Gets and sets the property RootPrefix. The root prefix.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 63)]
         public string RootPrefix { get; set; }
@@ -50,10 +47,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetRootPrefix() => this.RootPrefix != null;
 
         /// <summary>
-        /// Gets and sets the property S3BucketName. 
-        /// <para>
-        /// The Amazon S3 bucket name.
-        /// </para>
+        /// Gets and sets the property S3BucketName. The Amazon S3 bucket name.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 255)]
         public string S3BucketName { get; set; }

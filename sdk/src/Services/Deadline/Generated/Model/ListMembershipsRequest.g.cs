@@ -37,11 +37,9 @@ namespace Amazon.Deadline.Model
     public partial class ListMembershipsRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property IdentityCenterRegion. 
-        /// <para>
-        /// The Region of the IAM Identity Center instance. If not provided, the service defaults
-        /// to the Amazon Web Services Region in which you make the request.
-        /// </para>
+        /// Gets and sets the property IdentityCenterRegion. The Region of the IAM Identity Center
+        /// instance. If not provided, the service defaults to the Amazon Web Services Region
+        /// in which you make the request.
         /// </summary>
         [AWSProperty(Min = 1, Max = 25)]
         public string IdentityCenterRegion { get; set; }
@@ -52,11 +50,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetIdentityCenterRegion() => this.IdentityCenterRegion != null;
 
         /// <summary>
-        /// Gets and sets the property IdentityStoreId. 
-        /// <para>
-        /// The identity store ID that contains the principal. This parameter is required for
-        /// callers that do not use a monitor session.
-        /// </para>
+        /// Gets and sets the property IdentityStoreId. The identity store ID that contains the
+        /// principal. This parameter is required for callers that do not use a monitor session.
         /// </summary>
         [AWSProperty(Min = 1, Max = 36)]
         public string IdentityStoreId { get; set; }
@@ -67,11 +62,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetIdentityStoreId() => this.IdentityStoreId != null;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
-        /// <para>
-        /// The maximum number of results to return. Use this parameter with <c>NextToken</c>
-        /// to get results as a set of sequential pages.
-        /// </para>
+        /// Gets and sets the property MaxResults. The maximum number of results to return. Use
+        /// this parameter with <c>NextToken</c> to get results as a set of sequential pages.
         /// </summary>
         [AWSProperty(Min = 1, Max = 100)]
         public int? MaxResults { get; set; }
@@ -82,10 +74,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMaxResults() => this.MaxResults.HasValue;
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
-        /// <para>
-        /// The token for the next set of results, or <c>null</c> to start from the beginning.
-        /// </para>
+        /// Gets and sets the property NextToken. The token for the next set of results, or <c>null</c>
+        /// to start from the beginning.
         /// </summary>
         [AWSProperty(Max = 4096)]
         public string NextToken { get; set; }
@@ -96,11 +86,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetNextToken() => this.NextToken != null;
 
         /// <summary>
-        /// Gets and sets the property PrincipalId. 
-        /// <para>
-        /// The ID of the IAM Identity Center principal whose Deadline Cloud resource memberships
-        /// you want to list.
-        /// </para>
+        /// Gets and sets the property PrincipalId. The ID of the IAM Identity Center principal
+        /// whose Deadline Cloud resource memberships you want to list.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 47)]
         public string PrincipalId { get; set; }
@@ -111,11 +98,9 @@ namespace Amazon.Deadline.Model
         internal bool IsSetPrincipalId() => this.PrincipalId != null;
 
         /// <summary>
-        /// Gets and sets the property ResourceTypes. 
-        /// <para>
-        /// The resource types to include when listing the principal's memberships. If not specified,
-        /// memberships for all supported resource types are returned.
-        /// </para>
+        /// Gets and sets the property ResourceTypes. The resource types to include when listing
+        /// the principal's memberships. If not specified, memberships for all supported resource
+        /// types are returned.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

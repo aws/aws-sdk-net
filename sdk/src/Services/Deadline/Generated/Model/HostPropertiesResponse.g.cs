@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class HostPropertiesResponse
     {
         /// <summary>
-        /// Gets and sets the property Ec2InstanceArn. 
-        /// <para>
-        /// The ARN of the host EC2 instance.
-        /// </para>
+        /// Gets and sets the property Ec2InstanceArn. The ARN of the host EC2 instance.
         /// </summary>
         public string Ec2InstanceArn { get; set; }
 
@@ -48,10 +45,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetEc2InstanceArn() => this.Ec2InstanceArn != null;
 
         /// <summary>
-        /// Gets and sets the property Ec2InstanceType. 
-        /// <para>
-        /// The instance type of the host EC2 instance.
-        /// </para>
+        /// Gets and sets the property Ec2InstanceType. The instance type of the host EC2 instance.
         /// </summary>
         [AWSProperty(Min = 1, Max = 100)]
         public string Ec2InstanceType { get; set; }
@@ -62,10 +56,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetEc2InstanceType() => this.Ec2InstanceType != null;
 
         /// <summary>
-        /// Gets and sets the property HostName. 
-        /// <para>
-        /// The host name.
-        /// </para>
+        /// Gets and sets the property HostName. The host name.
         /// </summary>
         public string HostName { get; set; }
 
@@ -75,10 +66,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetHostName() => this.HostName != null;
 
         /// <summary>
-        /// Gets and sets the property IpAddresses. 
-        /// <para>
-        /// The IP address of the host.
-        /// </para>
+        /// Gets and sets the property IpAddresses. The IP address of the host.
         /// </summary>
         public IpAddresses IpAddresses { get; set; }
 

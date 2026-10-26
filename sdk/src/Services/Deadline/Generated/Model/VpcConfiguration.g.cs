@@ -35,10 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class VpcConfiguration
     {
         /// <summary>
-        /// Gets and sets the property ResourceConfigurationArns. 
-        /// <para>
-        /// The ARNs of the VPC Lattice resource configurations attached to the fleet.
-        /// </para>
+        /// Gets and sets the property ResourceConfigurationArns. The ARNs of the VPC Lattice
+        /// resource configurations attached to the fleet.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

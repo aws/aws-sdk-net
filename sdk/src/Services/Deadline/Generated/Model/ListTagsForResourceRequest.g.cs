@@ -36,10 +36,7 @@ namespace Amazon.Deadline.Model
     public partial class ListTagsForResourceRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property ResourceArn. 
-        /// <para>
-        /// The resource ARN to list tags for.
-        /// </para>
+        /// Gets and sets the property ResourceArn. The resource ARN to list tags for.
         /// </summary>
         [AWSProperty(Required = true)]
         public string ResourceArn { get; set; }

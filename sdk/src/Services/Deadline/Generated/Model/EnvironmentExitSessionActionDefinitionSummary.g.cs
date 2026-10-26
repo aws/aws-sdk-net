@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class EnvironmentExitSessionActionDefinitionSummary
     {
         /// <summary>
-        /// Gets and sets the property EnvironmentId. 
-        /// <para>
-        /// The environment ID.
-        /// </para>
+        /// Gets and sets the property EnvironmentId. The environment ID.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 1024)]
         public string EnvironmentId { get; set; }

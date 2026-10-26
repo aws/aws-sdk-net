@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class QueueFleetAssociationSummary
     {
         /// <summary>
-        /// Gets and sets the property CreatedAt. 
-        /// <para>
-        /// The date and time the resource was created.
-        /// </para>
+        /// Gets and sets the property CreatedAt. The date and time the resource was created.
         /// </summary>
         [AWSProperty(Required = true)]
         public DateTime? CreatedAt { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCreatedAt() => this.CreatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property CreatedBy. 
-        /// <para>
-        /// The user or system that created this resource.
-        /// </para>
+        /// Gets and sets the property CreatedBy. The user or system that created this resource.
         /// </summary>
         [AWSProperty(Required = true)]
         public string CreatedBy { get; set; }
@@ -63,10 +57,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCreatedBy() => this.CreatedBy != null;
 
         /// <summary>
-        /// Gets and sets the property FleetId. 
-        /// <para>
-        /// The fleet ID.
-        /// </para>
+        /// Gets and sets the property FleetId. The fleet ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FleetId { get; set; }
@@ -77,10 +68,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFleetId() => this.FleetId != null;
 
         /// <summary>
-        /// Gets and sets the property QueueId. 
-        /// <para>
-        /// The queue ID.
-        /// </para>
+        /// Gets and sets the property QueueId. The queue ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string QueueId { get; set; }
@@ -124,10 +112,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStatus() => this.Status != null;
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt. 
-        /// <para>
-        /// The date and time the resource was updated.
-        /// </para>
+        /// Gets and sets the property UpdatedAt. The date and time the resource was updated.
         /// </summary>
         public DateTime? UpdatedAt { get; set; }
 
@@ -137,10 +122,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetUpdatedAt() => this.UpdatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property UpdatedBy. 
-        /// <para>
-        /// The user or system that updated this resource.
-        /// </para>
+        /// Gets and sets the property UpdatedBy. The user or system that updated this resource.
         /// </summary>
         public string UpdatedBy { get; set; }
 

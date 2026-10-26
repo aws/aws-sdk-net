@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class IpAddresses
     {
         /// <summary>
-        /// Gets and sets the property IpV4Addresses. 
-        /// <para>
-        /// The IpV4 address of the network.
-        /// </para>
+        /// Gets and sets the property IpV4Addresses. The IpV4 address of the network.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -54,10 +51,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetIpV4Addresses() => this.IpV4Addresses != null && (this.IpV4Addresses.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property IpV6Addresses. 
-        /// <para>
-        /// The IpV6 address for the network and node component.
-        /// </para>
+        /// Gets and sets the property IpV6Addresses. The IpV6 address for the network and node
+        /// component.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

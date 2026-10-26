@@ -58,10 +58,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMatchType() => this.MatchType != null;
 
         /// <summary>
-        /// Gets and sets the property SearchTerm. 
-        /// <para>
-        /// The term to search for.
-        /// </para>
+        /// Gets and sets the property SearchTerm. The term to search for.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 256)]
         public string SearchTerm { get; set; }

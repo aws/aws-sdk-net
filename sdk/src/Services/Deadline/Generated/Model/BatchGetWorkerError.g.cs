@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class BatchGetWorkerError
     {
         /// <summary>
-        /// Gets and sets the property Code. 
-        /// <para>
-        /// The error code.
-        /// </para>
+        /// Gets and sets the property Code. The error code.
         /// </summary>
         [AWSProperty(Required = true)]
         public BatchGetWorkerErrorCode Code { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCode() => this.Code != null;
 
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID of the worker that could not be retrieved.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID of the worker that could not be retrieved.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -63,10 +57,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property FleetId. 
-        /// <para>
-        /// The fleet ID of the worker that could not be retrieved.
-        /// </para>
+        /// Gets and sets the property FleetId. The fleet ID of the worker that could not be retrieved.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FleetId { get; set; }
@@ -77,10 +68,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFleetId() => this.FleetId != null;
 
         /// <summary>
-        /// Gets and sets the property Message. 
-        /// <para>
-        /// The error message.
-        /// </para>
+        /// Gets and sets the property Message. The error message.
         /// </summary>
         [AWSProperty(Required = true)]
         public string Message { get; set; }
@@ -91,10 +79,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMessage() => this.Message != null;
 
         /// <summary>
-        /// Gets and sets the property WorkerId. 
-        /// <para>
-        /// The worker ID of the worker that could not be retrieved.
-        /// </para>
+        /// Gets and sets the property WorkerId. The worker ID of the worker that could not be
+        /// retrieved.
         /// </summary>
         [AWSProperty(Required = true)]
         public string WorkerId { get; set; }

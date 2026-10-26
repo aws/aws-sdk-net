@@ -36,10 +36,7 @@ namespace Amazon.Deadline.Model
     public partial class CopyJobTemplateRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID to copy.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID to copy.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -50,10 +47,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property JobId. 
-        /// <para>
-        /// The job ID to copy.
-        /// </para>
+        /// Gets and sets the property JobId. The job ID to copy.
         /// </summary>
         [AWSProperty(Required = true)]
         public string JobId { get; set; }
@@ -64,10 +58,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetJobId() => this.JobId != null;
 
         /// <summary>
-        /// Gets and sets the property QueueId. 
-        /// <para>
-        /// The queue ID to copy.
-        /// </para>
+        /// Gets and sets the property QueueId. The queue ID to copy.
         /// </summary>
         [AWSProperty(Required = true)]
         public string QueueId { get; set; }
@@ -78,10 +69,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetQueueId() => this.QueueId != null;
 
         /// <summary>
-        /// Gets and sets the property TargetS3Location. 
-        /// <para>
-        /// The Amazon S3 bucket name and key where you would like to add a copy of the job template.
-        /// </para>
+        /// Gets and sets the property TargetS3Location. The Amazon S3 bucket name and key where
+        /// you would like to add a copy of the job template.
         /// </summary>
         [AWSProperty(Required = true)]
         public S3Location TargetS3Location { get; set; }

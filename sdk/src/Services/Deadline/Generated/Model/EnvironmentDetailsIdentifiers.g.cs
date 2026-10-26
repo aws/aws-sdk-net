@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class EnvironmentDetailsIdentifiers
     {
         /// <summary>
-        /// Gets and sets the property EnvironmentId. 
-        /// <para>
-        /// The environment ID.
-        /// </para>
+        /// Gets and sets the property EnvironmentId. The environment ID.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 1024)]
         public string EnvironmentId { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetEnvironmentId() => this.EnvironmentId != null;
 
         /// <summary>
-        /// Gets and sets the property JobId. 
-        /// <para>
-        /// The job ID.
-        /// </para>
+        /// Gets and sets the property JobId. The job ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string JobId { get; set; }

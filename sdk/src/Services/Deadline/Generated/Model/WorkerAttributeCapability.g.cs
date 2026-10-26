@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class WorkerAttributeCapability
     {
         /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name of the worker attribute capability.
-        /// </para>
+        /// Gets and sets the property Name. The name of the worker attribute capability.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 100)]
         public string Name { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
-        /// Gets and sets the property Values. 
-        /// <para>
-        /// The values of the worker amount capability.
-        /// </para>
+        /// Gets and sets the property Values. The values of the worker amount capability.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

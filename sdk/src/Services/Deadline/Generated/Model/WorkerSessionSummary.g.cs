@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class WorkerSessionSummary
     {
         /// <summary>
-        /// Gets and sets the property EndedAt. 
-        /// <para>
-        /// The date and time the resource ended running.
-        /// </para>
+        /// Gets and sets the property EndedAt. The date and time the resource ended running.
         /// </summary>
         public DateTime? EndedAt { get; set; }
 
@@ -48,10 +45,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetEndedAt() => this.EndedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property JobId. 
-        /// <para>
-        /// The job ID for the job associated with the worker's session.
-        /// </para>
+        /// Gets and sets the property JobId. The job ID for the job associated with the worker's
+        /// session.
         /// </summary>
         [AWSProperty(Required = true)]
         public string JobId { get; set; }
@@ -62,10 +57,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetJobId() => this.JobId != null;
 
         /// <summary>
-        /// Gets and sets the property LifecycleStatus. 
-        /// <para>
-        /// The life cycle status for the worker's session.
-        /// </para>
+        /// Gets and sets the property LifecycleStatus. The life cycle status for the worker's
+        /// session.
         /// </summary>
         [AWSProperty(Required = true)]
         public SessionLifecycleStatus LifecycleStatus { get; set; }
@@ -76,10 +69,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetLifecycleStatus() => this.LifecycleStatus != null;
 
         /// <summary>
-        /// Gets and sets the property QueueId. 
-        /// <para>
-        /// The queue ID for the queue associated to the worker.
-        /// </para>
+        /// Gets and sets the property QueueId. The queue ID for the queue associated to the worker.
         /// </summary>
         [AWSProperty(Required = true)]
         public string QueueId { get; set; }
@@ -90,10 +80,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetQueueId() => this.QueueId != null;
 
         /// <summary>
-        /// Gets and sets the property SessionId. 
-        /// <para>
-        /// The session ID for the session action.
-        /// </para>
+        /// Gets and sets the property SessionId. The session ID for the session action.
         /// </summary>
         [AWSProperty(Required = true)]
         public string SessionId { get; set; }
@@ -104,10 +91,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetSessionId() => this.SessionId != null;
 
         /// <summary>
-        /// Gets and sets the property StartedAt. 
-        /// <para>
-        /// The date and time the resource started running.
-        /// </para>
+        /// Gets and sets the property StartedAt. The date and time the resource started running.
         /// </summary>
         [AWSProperty(Required = true)]
         public DateTime? StartedAt { get; set; }

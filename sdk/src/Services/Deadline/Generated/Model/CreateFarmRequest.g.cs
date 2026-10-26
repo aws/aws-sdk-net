@@ -38,10 +38,8 @@ namespace Amazon.Deadline.Model
     public partial class CreateFarmRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property ClientToken. 
-        /// <para>
-        /// The unique token which the server uses to recognize retries of the same request.
-        /// </para>
+        /// Gets and sets the property ClientToken. The unique token which the server uses to
+        /// recognize retries of the same request.
         /// </summary>
         [AWSProperty(Min = 1, Max = 64)]
         public string ClientToken { get; set; }
@@ -52,12 +50,10 @@ namespace Amazon.Deadline.Model
         internal bool IsSetClientToken() => this.ClientToken != null;
 
         /// <summary>
-        /// Gets and sets the property CostScaleFactor. 
-        /// <para>
-        /// A multiplier applied to the farm's calculated costs for usage data and budget tracking.
-        /// A value less than 1 represents a discount, a value greater than 1 represents a premium,
-        /// and a value of 1 represents no adjustment. The default value is 1.
-        /// </para>
+        /// Gets and sets the property CostScaleFactor. A multiplier applied to the farm's calculated
+        /// costs for usage data and budget tracking. A value less than 1 represents a discount,
+        /// a value greater than 1 represents a premium, and a value of 1 represents no adjustment.
+        /// The default value is 1.
         /// </summary>
         [AWSProperty(Min = 0, Max = 100)]
         public float? CostScaleFactor { get; set; }
@@ -108,10 +104,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetDisplayName() => this.DisplayName != null;
 
         /// <summary>
-        /// Gets and sets the property KmsKeyArn. 
-        /// <para>
-        /// The ARN of the KMS key to use on the farm.
-        /// </para>
+        /// Gets and sets the property KmsKeyArn. The ARN of the KMS key to use on the farm.
         /// </summary>
         public string KmsKeyArn { get; set; }
 
@@ -121,11 +114,9 @@ namespace Amazon.Deadline.Model
         internal bool IsSetKmsKeyArn() => this.KmsKeyArn != null;
 
         /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// The tags to add to your farm. Each tag consists of a tag key and a tag value. Tag
-        /// keys and values are both required, but tag values can be empty strings.
-        /// </para>
+        /// Gets and sets the property Tags. The tags to add to your farm. Each tag consists of
+        /// a tag key and a tag value. Tag keys and values are both required, but tag values can
+        /// be empty strings.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

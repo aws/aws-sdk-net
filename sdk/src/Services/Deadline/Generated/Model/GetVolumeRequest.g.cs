@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class GetVolumeRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID of the farm that contains the fleet.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID of the farm that contains the fleet.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property FleetId. 
-        /// <para>
-        /// The fleet ID of the fleet that contains the volume.
-        /// </para>
+        /// Gets and sets the property FleetId. The fleet ID of the fleet that contains the volume.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FleetId { get; set; }
@@ -63,10 +57,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFleetId() => this.FleetId != null;
 
         /// <summary>
-        /// Gets and sets the property VolumeId. 
-        /// <para>
-        /// The volume ID of the volume to retrieve.
-        /// </para>
+        /// Gets and sets the property VolumeId. The volume ID of the volume to retrieve.
         /// </summary>
         [AWSProperty(Required = true)]
         public string VolumeId { get; set; }

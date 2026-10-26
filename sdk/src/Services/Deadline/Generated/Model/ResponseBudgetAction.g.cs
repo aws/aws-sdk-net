@@ -55,10 +55,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetDescription() => this.Description != null;
 
         /// <summary>
-        /// Gets and sets the property ThresholdPercentage. 
-        /// <para>
-        /// The percentage threshold for the budget.
-        /// </para>
+        /// Gets and sets the property ThresholdPercentage. The percentage threshold for the budget.
         /// </summary>
         [AWSProperty(Required = true, Min = 0, Max = 100)]
         public float? ThresholdPercentage { get; set; }
@@ -69,10 +66,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetThresholdPercentage() => this.ThresholdPercentage.HasValue;
 
         /// <summary>
-        /// Gets and sets the property Type. 
-        /// <para>
-        /// The action taken on the budget once scheduling stops.
-        /// </para>
+        /// Gets and sets the property Type. The action taken on the budget once scheduling stops.
         /// </summary>
         [AWSProperty(Required = true)]
         public BudgetActionType Type { get; set; }

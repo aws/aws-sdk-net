@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class FleetSummary
     {
         /// <summary>
-        /// Gets and sets the property AutoScalingStatus. 
-        /// <para>
-        /// The Auto Scaling status of a fleet.
-        /// </para>
+        /// Gets and sets the property AutoScalingStatus. The Auto Scaling status of a fleet.
         /// </summary>
         public AutoScalingStatus AutoScalingStatus { get; set; }
 
@@ -48,10 +45,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetAutoScalingStatus() => this.AutoScalingStatus != null;
 
         /// <summary>
-        /// Gets and sets the property Configuration. 
-        /// <para>
-        /// The configuration details for the fleet.
-        /// </para>
+        /// Gets and sets the property Configuration. The configuration details for the fleet.
         /// </summary>
         [AWSProperty(Required = true)]
         public FleetConfiguration Configuration { get; set; }
@@ -62,10 +56,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetConfiguration() => this.Configuration != null;
 
         /// <summary>
-        /// Gets and sets the property CreatedAt. 
-        /// <para>
-        /// The date and time the resource was created.
-        /// </para>
+        /// Gets and sets the property CreatedAt. The date and time the resource was created.
         /// </summary>
         [AWSProperty(Required = true)]
         public DateTime? CreatedAt { get; set; }
@@ -76,10 +67,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCreatedAt() => this.CreatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property CreatedBy. 
-        /// <para>
-        /// The user or system that created this resource.
-        /// </para>
+        /// Gets and sets the property CreatedBy. The user or system that created this resource.
         /// </summary>
         [AWSProperty(Required = true)]
         public string CreatedBy { get; set; }
@@ -110,10 +98,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetDisplayName() => this.DisplayName != null;
 
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -124,10 +109,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property FleetId. 
-        /// <para>
-        /// The fleet ID.
-        /// </para>
+        /// Gets and sets the property FleetId. The fleet ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FleetId { get; set; }
@@ -138,10 +120,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFleetId() => this.FleetId != null;
 
         /// <summary>
-        /// Gets and sets the property MaxWorkerCount. 
-        /// <para>
-        /// The maximum number of workers specified in the fleet.
-        /// </para>
+        /// Gets and sets the property MaxWorkerCount. The maximum number of workers specified
+        /// in the fleet.
         /// </summary>
         [AWSProperty(Required = true, Min = 0, Max = 2147483647)]
         public int? MaxWorkerCount { get; set; }
@@ -152,10 +132,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMaxWorkerCount() => this.MaxWorkerCount.HasValue;
 
         /// <summary>
-        /// Gets and sets the property MinWorkerCount. 
-        /// <para>
-        /// The minimum number of workers in the fleet.
-        /// </para>
+        /// Gets and sets the property MinWorkerCount. The minimum number of workers in the fleet.
         /// </summary>
         [AWSProperty(Required = true, Min = 0, Max = 2147483647)]
         public int? MinWorkerCount { get; set; }
@@ -166,10 +143,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMinWorkerCount() => this.MinWorkerCount.HasValue;
 
         /// <summary>
-        /// Gets and sets the property Status. 
-        /// <para>
-        /// The status of the fleet.
-        /// </para>
+        /// Gets and sets the property Status. The status of the fleet.
         /// </summary>
         [AWSProperty(Required = true)]
         public FleetStatus Status { get; set; }
@@ -180,10 +154,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStatus() => this.Status != null;
 
         /// <summary>
-        /// Gets and sets the property StatusMessage. 
-        /// <para>
-        /// A message that communicates a suspended status of the fleet.
-        /// </para>
+        /// Gets and sets the property StatusMessage. A message that communicates a suspended
+        /// status of the fleet.
         /// </summary>
         public string StatusMessage { get; set; }
 
@@ -193,10 +165,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStatusMessage() => this.StatusMessage != null;
 
         /// <summary>
-        /// Gets and sets the property TargetWorkerCount. 
-        /// <para>
-        /// The target number of workers in a fleet.
-        /// </para>
+        /// Gets and sets the property TargetWorkerCount. The target number of workers in a fleet.
         /// </summary>
         public int? TargetWorkerCount { get; set; }
 
@@ -206,10 +175,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetTargetWorkerCount() => this.TargetWorkerCount.HasValue;
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt. 
-        /// <para>
-        /// The date and time the resource was updated.
-        /// </para>
+        /// Gets and sets the property UpdatedAt. The date and time the resource was updated.
         /// </summary>
         public DateTime? UpdatedAt { get; set; }
 
@@ -219,10 +185,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetUpdatedAt() => this.UpdatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property UpdatedBy. 
-        /// <para>
-        /// The user or system that updated this resource.
-        /// </para>
+        /// Gets and sets the property UpdatedBy. The user or system that updated this resource.
         /// </summary>
         public string UpdatedBy { get; set; }
 
@@ -232,10 +195,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetUpdatedBy() => this.UpdatedBy != null;
 
         /// <summary>
-        /// Gets and sets the property WorkerCount. 
-        /// <para>
-        /// The number of workers in the fleet summary.
-        /// </para>
+        /// Gets and sets the property WorkerCount. The number of workers in the fleet summary.
         /// </summary>
         [AWSProperty(Required = true)]
         public int? WorkerCount { get; set; }

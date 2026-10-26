@@ -94,16 +94,6 @@ namespace Amazon.Deadline.Model
         ///  <c>grid:r580</c> - <a href="https://docs.nvidia.com/vgpu/19.0/index.html">NVIDIA
         /// vGPU software 19</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>grid:r570</c> - <a href="https://docs.nvidia.com/vgpu/18.0/index.html">NVIDIA
-        /// vGPU software 18</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>grid:r535</c> - <a href="https://docs.nvidia.com/vgpu/16.0/index.html">NVIDIA
-        /// vGPU software 16</a> 
-        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If you don't specify a runtime, Amazon Web Services Deadline Cloud uses <c>latest</c>
@@ -112,22 +102,9 @@ namespace Amazon.Deadline.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// Not all runtimes are compatible with all accelerator types:
+        /// All accelerator types support <c>grid:r580</c>.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>t4</c> and <c>a10g</c>: Support all runtimes (<c>grid:r580</c>, <c>grid:r570</c>,
-        /// <c>grid:r535</c>)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>l4</c> and <c>l40s</c>: Only support <c>grid:r570</c> and newer
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>rtx-pro-server-6000</c>: Only supports <c>grid:r580</c> 
-        /// </para>
-        ///  </li> </ul> 
+        ///  
         /// <para>
         /// All accelerators in a fleet must use the same runtime version. You cannot mix different
         /// runtime versions within a single fleet.

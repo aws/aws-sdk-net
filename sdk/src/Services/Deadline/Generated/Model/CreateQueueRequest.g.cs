@@ -37,10 +37,8 @@ namespace Amazon.Deadline.Model
     public partial class CreateQueueRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property AllowedStorageProfileIds. 
-        /// <para>
-        /// The storage profile IDs to include in the queue.
-        /// </para>
+        /// Gets and sets the property AllowedStorageProfileIds. The storage profile IDs to include
+        /// in the queue.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -57,10 +55,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetAllowedStorageProfileIds() => this.AllowedStorageProfileIds != null && (this.AllowedStorageProfileIds.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property ClientToken. 
-        /// <para>
-        /// The unique token which the server uses to recognize retries of the same request.
-        /// </para>
+        /// Gets and sets the property ClientToken. The unique token which the server uses to
+        /// recognize retries of the same request.
         /// </summary>
         [AWSProperty(Min = 1, Max = 64)]
         public string ClientToken { get; set; }
@@ -71,10 +67,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetClientToken() => this.ClientToken != null;
 
         /// <summary>
-        /// Gets and sets the property DefaultBudgetAction. 
-        /// <para>
-        /// The default action to take on a queue if a budget isn't configured.
-        /// </para>
+        /// Gets and sets the property DefaultBudgetAction. The default action to take on a queue
+        /// if a budget isn't configured.
         /// </summary>
         public DefaultQueueBudgetAction DefaultBudgetAction { get; set; }
 
@@ -124,10 +118,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetDisplayName() => this.DisplayName != null;
 
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID of the farm to connect to the queue.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID of the farm to connect to the queue.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -138,11 +129,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property JobAttachmentSettings. 
-        /// <para>
-        /// The job attachment settings for the queue. These are the Amazon S3 bucket name and
-        /// the Amazon S3 prefix.
-        /// </para>
+        /// Gets and sets the property JobAttachmentSettings. The job attachment settings for
+        /// the queue. These are the Amazon S3 bucket name and the Amazon S3 prefix.
         /// </summary>
         public JobAttachmentSettings JobAttachmentSettings { get; set; }
 
@@ -152,10 +140,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetJobAttachmentSettings() => this.JobAttachmentSettings != null;
 
         /// <summary>
-        /// Gets and sets the property JobRunAsUser. 
-        /// <para>
-        /// The jobs in the queue run as the specified POSIX user.
-        /// </para>
+        /// Gets and sets the property JobRunAsUser. The jobs in the queue run as the specified
+        /// POSIX user.
         /// </summary>
         public JobRunAsUser JobRunAsUser { get; set; }
 
@@ -165,10 +151,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetJobRunAsUser() => this.JobRunAsUser != null;
 
         /// <summary>
-        /// Gets and sets the property RequiredFileSystemLocationNames. 
-        /// <para>
-        /// The file system location name to include in the queue.
-        /// </para>
+        /// Gets and sets the property RequiredFileSystemLocationNames. The file system location
+        /// name to include in the queue.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -185,10 +169,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetRequiredFileSystemLocationNames() => this.RequiredFileSystemLocationNames != null && (this.RequiredFileSystemLocationNames.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property RoleArn. 
-        /// <para>
-        /// The IAM role ARN that workers will use while running jobs for this queue.
-        /// </para>
+        /// Gets and sets the property RoleArn. The IAM role ARN that workers will use while running
+        /// jobs for this queue.
         /// </summary>
         public string RoleArn { get; set; }
 
@@ -198,15 +180,9 @@ namespace Amazon.Deadline.Model
         internal bool IsSetRoleArn() => this.RoleArn != null;
 
         /// <summary>
-        /// Gets and sets the property SchedulingConfiguration. 
-        /// <para>
-        /// The scheduling configuration for the queue. This configuration determines how workers
-        /// are assigned to jobs in the queue.
-        /// </para>
-        ///  
-        /// <para>
+        /// Gets and sets the property SchedulingConfiguration. The scheduling configuration for
+        /// the queue. This configuration determines how workers are assigned to jobs in the queue.
         /// If not specified, the queue defaults to the <c>priorityFifo</c> scheduling configuration.
-        /// </para>
         /// </summary>
         public SchedulingConfiguration SchedulingConfiguration { get; set; }
 
@@ -216,11 +192,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetSchedulingConfiguration() => this.SchedulingConfiguration != null;
 
         /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// Each tag consists of a tag key and a tag value. Tag keys and values are both required,
-        /// but tag values can be empty strings.
-        /// </para>
+        /// Gets and sets the property Tags. Each tag consists of a tag key and a tag value. Tag
+        /// keys and values are both required, but tag values can be empty strings.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

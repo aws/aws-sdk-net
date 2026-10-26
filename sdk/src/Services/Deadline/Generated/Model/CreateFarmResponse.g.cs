@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class CreateFarmResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }

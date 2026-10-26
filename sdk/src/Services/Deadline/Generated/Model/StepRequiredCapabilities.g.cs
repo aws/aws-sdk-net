@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class StepRequiredCapabilities
     {
         /// <summary>
-        /// Gets and sets the property Amounts. 
-        /// <para>
-        /// The capability amounts that the step requires.
-        /// </para>
+        /// Gets and sets the property Amounts. The capability amounts that the step requires.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -55,10 +52,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetAmounts() => this.Amounts != null && (this.Amounts.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property Attributes. 
-        /// <para>
-        /// The capability attributes that the step requires.
-        /// </para>
+        /// Gets and sets the property Attributes. The capability attributes that the step requires.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

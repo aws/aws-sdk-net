@@ -73,10 +73,8 @@ namespace Amazon.Deadline.Model
         public ResourceNotFoundException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) : base(message, errorType, errorCode, requestId, statusCode) { }
 
         /// <summary>
-        /// Gets and sets the property Context. 
-        /// <para>
-        /// Information about the resources in use when the exception was thrown.
-        /// </para>
+        /// Gets and sets the property Context. Information about the resources in use when the
+        /// exception was thrown.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -92,10 +90,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetContext() => this.Context != null && (this.Context.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property ResourceId. 
-        /// <para>
-        /// The identifier of the resource that couldn't be found.
-        /// </para>
+        /// Gets and sets the property ResourceId. The identifier of the resource that couldn't
+        /// be found.
         /// </summary>
         [AWSProperty(Required = true)]
         public string ResourceId { get; set; }
@@ -106,10 +102,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetResourceId() => this.ResourceId != null;
 
         /// <summary>
-        /// Gets and sets the property ResourceType. 
-        /// <para>
-        /// The type of the resource that couldn't be found.
-        /// </para>
+        /// Gets and sets the property ResourceType. The type of the resource that couldn't be
+        /// found.
         /// </summary>
         [AWSProperty(Required = true)]
         public string ResourceType { get; set; }

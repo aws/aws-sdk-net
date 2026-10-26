@@ -36,10 +36,7 @@ namespace Amazon.Deadline.Model
     public partial class UpdatedSessionActionInfo
     {
         /// <summary>
-        /// Gets and sets the property CompletedStatus. 
-        /// <para>
-        /// The status of the session upon completion.
-        /// </para>
+        /// Gets and sets the property CompletedStatus. The status of the session upon completion.
         /// </summary>
         public CompletedStatus CompletedStatus { get; set; }
 
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCompletedStatus() => this.CompletedStatus != null;
 
         /// <summary>
-        /// Gets and sets the property EndedAt. 
-        /// <para>
-        /// The date and time the resource ended running.
-        /// </para>
+        /// Gets and sets the property EndedAt. The date and time the resource ended running.
         /// </summary>
         public DateTime? EndedAt { get; set; }
 
@@ -62,11 +56,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetEndedAt() => this.EndedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property Manifests. 
-        /// <para>
-        /// A list of output manifest properties reported by the worker agent, with each entry
-        /// corresponding to a manifest property in the job.
-        /// </para>
+        /// Gets and sets the property Manifests. A list of output manifest properties reported
+        /// by the worker agent, with each entry corresponding to a manifest property in the job.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -83,11 +74,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetManifests() => this.Manifests != null && (this.Manifests.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property ProcessExitCode. 
-        /// <para>
-        /// The process exit code. The default Deadline Cloud worker agent converts unsigned 32-bit
-        /// exit codes to signed 32-bit exit codes.
-        /// </para>
+        /// Gets and sets the property ProcessExitCode. The process exit code. The default Deadline
+        /// Cloud worker agent converts unsigned 32-bit exit codes to signed 32-bit exit codes.
         /// </summary>
         [AWSProperty(Min = -2147483648, Max = 2147483647)]
         public int? ProcessExitCode { get; set; }
@@ -98,10 +86,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetProcessExitCode() => this.ProcessExitCode.HasValue;
 
         /// <summary>
-        /// Gets and sets the property ProgressMessage. 
-        /// <para>
-        /// A message to indicate the progress of the updated session action.
-        /// </para>
+        /// Gets and sets the property ProgressMessage. A message to indicate the progress of
+        /// the updated session action.
         /// </summary>
         [AWSProperty(Sensitive = true, Min = 0, Max = 4096)]
         public string ProgressMessage { get; set; }
@@ -112,10 +98,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetProgressMessage() => this.ProgressMessage != null;
 
         /// <summary>
-        /// Gets and sets the property ProgressPercent. 
-        /// <para>
-        /// The percentage completed.
-        /// </para>
+        /// Gets and sets the property ProgressPercent. The percentage completed.
         /// </summary>
         [AWSProperty(Min = 0, Max = 100)]
         public float? ProgressPercent { get; set; }
@@ -126,10 +109,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetProgressPercent() => this.ProgressPercent.HasValue;
 
         /// <summary>
-        /// Gets and sets the property StartedAt. 
-        /// <para>
-        /// The date and time the resource started running.
-        /// </para>
+        /// Gets and sets the property StartedAt. The date and time the resource started running.
         /// </summary>
         public DateTime? StartedAt { get; set; }
 
@@ -139,10 +119,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStartedAt() => this.StartedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt. 
-        /// <para>
-        /// The updated time.
-        /// </para>
+        /// Gets and sets the property UpdatedAt. The updated time.
         /// </summary>
         public DateTime? UpdatedAt { get; set; }
 

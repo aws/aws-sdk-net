@@ -37,10 +37,8 @@ namespace Amazon.Deadline.Model
     public partial class CreateLicenseEndpointRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property ClientToken. 
-        /// <para>
-        /// The unique token which the server uses to recognize retries of the same request.
-        /// </para>
+        /// Gets and sets the property ClientToken. The unique token which the server uses to
+        /// recognize retries of the same request.
         /// </summary>
         [AWSProperty(Min = 1, Max = 64)]
         public string ClientToken { get; set; }
@@ -51,10 +49,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetClientToken() => this.ClientToken != null;
 
         /// <summary>
-        /// Gets and sets the property SecurityGroupIds. 
-        /// <para>
-        /// The security group IDs.
-        /// </para>
+        /// Gets and sets the property SecurityGroupIds. The security group IDs.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -71,10 +66,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetSecurityGroupIds() => this.SecurityGroupIds != null && (this.SecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property SubnetIds. 
-        /// <para>
-        /// The subnet IDs.
-        /// </para>
+        /// Gets and sets the property SubnetIds. The subnet IDs.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -91,11 +83,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetSubnetIds() => this.SubnetIds != null && (this.SubnetIds.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// Each tag consists of a tag key and a tag value. Tag keys and values are both required,
-        /// but tag values can be empty strings.
-        /// </para>
+        /// Gets and sets the property Tags. Each tag consists of a tag key and a tag value. Tag
+        /// keys and values are both required, but tag values can be empty strings.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -111,10 +100,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetTags() => this.Tags != null && (this.Tags.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property VpcId. 
-        /// <para>
-        /// The VPC (virtual private cloud) ID to use with the license endpoint.
-        /// </para>
+        /// Gets and sets the property VpcId. The VPC (virtual private cloud) ID to use with the
+        /// license endpoint.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 32)]
         public string VpcId { get; set; }

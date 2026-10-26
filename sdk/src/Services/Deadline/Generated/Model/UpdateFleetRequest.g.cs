@@ -42,10 +42,8 @@ namespace Amazon.Deadline.Model
     public partial class UpdateFleetRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property ClientToken. 
-        /// <para>
-        /// The unique token which the server uses to recognize retries of the same request.
-        /// </para>
+        /// Gets and sets the property ClientToken. The unique token which the server uses to
+        /// recognize retries of the same request.
         /// </summary>
         [AWSProperty(Min = 1, Max = 64)]
         public string ClientToken { get; set; }
@@ -56,10 +54,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetClientToken() => this.ClientToken != null;
 
         /// <summary>
-        /// Gets and sets the property Configuration. 
-        /// <para>
-        /// The fleet configuration to update.
-        /// </para>
+        /// Gets and sets the property Configuration. The fleet configuration to update.
         /// </summary>
         public FleetConfiguration Configuration { get; set; }
 
@@ -109,10 +104,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetDisplayName() => this.DisplayName != null;
 
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID to update.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID to update.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -123,10 +115,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property FleetId. 
-        /// <para>
-        /// The fleet ID to update.
-        /// </para>
+        /// Gets and sets the property FleetId. The fleet ID to update.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FleetId { get; set; }
@@ -137,11 +126,9 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFleetId() => this.FleetId != null;
 
         /// <summary>
-        /// Gets and sets the property HostConfiguration. 
-        /// <para>
-        /// Provides a script that runs as a worker is starting up that you can use to provide
-        /// additional configuration for workers in your fleet.
-        /// </para>
+        /// Gets and sets the property HostConfiguration. Provides a script that runs as a worker
+        /// is starting up that you can use to provide additional configuration for workers in
+        /// your fleet.
         /// </summary>
         public HostConfiguration HostConfiguration { get; set; }
 
@@ -151,19 +138,13 @@ namespace Amazon.Deadline.Model
         internal bool IsSetHostConfiguration() => this.HostConfiguration != null;
 
         /// <summary>
-        /// Gets and sets the property MaxWorkerCount. 
-        /// <para>
-        /// The maximum number of workers in the fleet.
-        /// </para>
-        ///  
-        /// <para>
+        /// Gets and sets the property MaxWorkerCount. The maximum number of workers in the fleet.
         /// Deadline Cloud limits the number of workers to less than or equal to the fleet's maximum
         /// worker count. The service maintains eventual consistency for the worker count. If
         /// you make multiple rapid calls to <c>CreateWorker</c> before the field updates, you
         /// might exceed your fleet's maximum worker count. For example, if your <c>maxWorkerCount</c>
         /// is 10 and you currently have 9 workers, making two quick <c>CreateWorker</c> calls
         /// might successfully create 2 workers instead of 1, resulting in 11 total workers.
-        /// </para>
         /// </summary>
         [AWSProperty(Min = 0, Max = 2147483647)]
         public int? MaxWorkerCount { get; set; }
@@ -174,10 +155,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMaxWorkerCount() => this.MaxWorkerCount.HasValue;
 
         /// <summary>
-        /// Gets and sets the property MinWorkerCount. 
-        /// <para>
-        /// The minimum number of workers in the fleet.
-        /// </para>
+        /// Gets and sets the property MinWorkerCount. The minimum number of workers in the fleet.
         /// </summary>
         [AWSProperty(Min = 0, Max = 2147483647)]
         public int? MinWorkerCount { get; set; }
@@ -188,10 +166,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMinWorkerCount() => this.MinWorkerCount.HasValue;
 
         /// <summary>
-        /// Gets and sets the property RoleArn. 
-        /// <para>
-        /// The IAM role ARN that the fleet's workers assume while running jobs.
-        /// </para>
+        /// Gets and sets the property RoleArn. The IAM role ARN that the fleet's workers assume
+        /// while running jobs.
         /// </summary>
         public string RoleArn { get; set; }
 

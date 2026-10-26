@@ -35,10 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class DeleteFleetRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property ClientToken. 
-        /// <para>
-        /// The unique token which the server uses to recognize retries of the same request.
-        /// </para>
+        /// Gets and sets the property ClientToken. The unique token which the server uses to
+        /// recognize retries of the same request.
         /// </summary>
         [AWSProperty(Min = 1, Max = 64)]
         public string ClientToken { get; set; }
@@ -49,10 +47,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetClientToken() => this.ClientToken != null;
 
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID of the farm to remove from the fleet.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID of the farm to remove from the fleet.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -63,10 +58,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property FleetId. 
-        /// <para>
-        /// The fleet ID of the fleet to delete.
-        /// </para>
+        /// Gets and sets the property FleetId. The fleet ID of the fleet to delete.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FleetId { get; set; }

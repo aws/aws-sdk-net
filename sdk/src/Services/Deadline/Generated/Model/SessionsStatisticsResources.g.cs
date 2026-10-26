@@ -36,11 +36,9 @@ namespace Amazon.Deadline.Model
     public partial class SessionsStatisticsResources
     {
         /// <summary>
-        /// Gets and sets the property FleetIds. 
-        /// <para>
-        /// One to 10 fleet IDs that specify the fleets to return statistics for. If you specify
-        /// the <c>fleetIds</c> field, you can't specify the <c>queueIds</c> field.
-        /// </para>
+        /// Gets and sets the property FleetIds. One to 10 fleet IDs that specify the fleets to
+        /// return statistics for. If you specify the <c>fleetIds</c> field, you can't specify
+        /// the <c>queueIds</c> field.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -57,11 +55,9 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFleetIds() => this.FleetIds != null && (this.FleetIds.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property QueueIds. 
-        /// <para>
-        /// One to 10 queue IDs that specify the queues to return statistics for. If you specify
-        /// the <c>queueIds</c> field, you can't specify the <c>fleetIds</c> field.
-        /// </para>
+        /// Gets and sets the property QueueIds. One to 10 queue IDs that specify the queues to
+        /// return statistics for. If you specify the <c>queueIds</c> field, you can't specify
+        /// the <c>fleetIds</c> field.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

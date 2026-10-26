@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class SessionSummary
     {
         /// <summary>
-        /// Gets and sets the property EndedAt. 
-        /// <para>
-        /// The date and time the resource ended running.
-        /// </para>
+        /// Gets and sets the property EndedAt. The date and time the resource ended running.
         /// </summary>
         public DateTime? EndedAt { get; set; }
 
@@ -48,10 +45,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetEndedAt() => this.EndedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property FleetId. 
-        /// <para>
-        /// The fleet ID.
-        /// </para>
+        /// Gets and sets the property FleetId. The fleet ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FleetId { get; set; }
@@ -62,10 +56,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFleetId() => this.FleetId != null;
 
         /// <summary>
-        /// Gets and sets the property LifecycleStatus. 
-        /// <para>
-        /// The life cycle status for the session.
-        /// </para>
+        /// Gets and sets the property LifecycleStatus. The life cycle status for the session.
         /// </summary>
         [AWSProperty(Required = true)]
         public SessionLifecycleStatus LifecycleStatus { get; set; }
@@ -76,10 +67,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetLifecycleStatus() => this.LifecycleStatus != null;
 
         /// <summary>
-        /// Gets and sets the property SessionId. 
-        /// <para>
-        /// The session ID.
-        /// </para>
+        /// Gets and sets the property SessionId. The session ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string SessionId { get; set; }
@@ -90,10 +78,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetSessionId() => this.SessionId != null;
 
         /// <summary>
-        /// Gets and sets the property StartedAt. 
-        /// <para>
-        /// The date and time the resource started running.
-        /// </para>
+        /// Gets and sets the property StartedAt. The date and time the resource started running.
         /// </summary>
         [AWSProperty(Required = true)]
         public DateTime? StartedAt { get; set; }
@@ -104,10 +89,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStartedAt() => this.StartedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property TargetLifecycleStatus. 
-        /// <para>
-        /// The target life cycle status for the session.
-        /// </para>
+        /// Gets and sets the property TargetLifecycleStatus. The target life cycle status for
+        /// the session.
         /// </summary>
         public SessionLifecycleTargetStatus TargetLifecycleStatus { get; set; }
 
@@ -117,10 +100,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetTargetLifecycleStatus() => this.TargetLifecycleStatus != null;
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt. 
-        /// <para>
-        /// The date and time the resource was updated.
-        /// </para>
+        /// Gets and sets the property UpdatedAt. The date and time the resource was updated.
         /// </summary>
         public DateTime? UpdatedAt { get; set; }
 
@@ -130,10 +110,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetUpdatedAt() => this.UpdatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property UpdatedBy. 
-        /// <para>
-        /// The user or system that updated this resource.
-        /// </para>
+        /// Gets and sets the property UpdatedBy. The user or system that updated this resource.
         /// </summary>
         public string UpdatedBy { get; set; }
 
@@ -143,10 +120,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetUpdatedBy() => this.UpdatedBy != null;
 
         /// <summary>
-        /// Gets and sets the property WorkerId. 
-        /// <para>
-        /// The worker ID.
-        /// </para>
+        /// Gets and sets the property WorkerId. The worker ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string WorkerId { get; set; }

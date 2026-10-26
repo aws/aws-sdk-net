@@ -35,12 +35,9 @@ namespace Amazon.Deadline.Model
     public partial class GetFarmResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property CostScaleFactor. 
-        /// <para>
-        /// A multiplier applied to the farm's calculated costs for usage data and budget tracking.
-        /// A value less than 1 represents a discount, a value greater than 1 represents a premium,
-        /// and a value of 1 represents no adjustment.
-        /// </para>
+        /// Gets and sets the property CostScaleFactor. A multiplier applied to the farm's calculated
+        /// costs for usage data and budget tracking. A value less than 1 represents a discount,
+        /// a value greater than 1 represents a premium, and a value of 1 represents no adjustment.
         /// </summary>
         [AWSProperty(Required = true, Min = 0, Max = 100)]
         public float? CostScaleFactor { get; set; }
@@ -51,10 +48,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCostScaleFactor() => this.CostScaleFactor.HasValue;
 
         /// <summary>
-        /// Gets and sets the property CreatedAt. 
-        /// <para>
-        /// The date and time the resource was created.
-        /// </para>
+        /// Gets and sets the property CreatedAt. The date and time the resource was created.
         /// </summary>
         [AWSProperty(Required = true)]
         public DateTime? CreatedAt { get; set; }
@@ -65,10 +59,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCreatedAt() => this.CreatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property CreatedBy. 
-        /// <para>
-        /// The user or system that created this resource.
-        /// </para>
+        /// Gets and sets the property CreatedBy. The user or system that created this resource.
         /// </summary>
         [AWSProperty(Required = true)]
         public string CreatedBy { get; set; }
@@ -119,10 +110,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetDisplayName() => this.DisplayName != null;
 
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID of the farm to get.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID of the farm to get.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -133,10 +121,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property KmsKeyArn. 
-        /// <para>
-        /// The ARN of the KMS key used on the farm.
-        /// </para>
+        /// Gets and sets the property KmsKeyArn. The ARN of the KMS key used on the farm.
         /// </summary>
         public string KmsKeyArn { get; set; }
 
@@ -146,10 +131,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetKmsKeyArn() => this.KmsKeyArn != null;
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt. 
-        /// <para>
-        /// The date and time the resource was updated.
-        /// </para>
+        /// Gets and sets the property UpdatedAt. The date and time the resource was updated.
         /// </summary>
         public DateTime? UpdatedAt { get; set; }
 
@@ -159,10 +141,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetUpdatedAt() => this.UpdatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property UpdatedBy. 
-        /// <para>
-        /// The user or system that updated this resource.
-        /// </para>
+        /// Gets and sets the property UpdatedBy. The user or system that updated this resource.
         /// </summary>
         public string UpdatedBy { get; set; }
 

@@ -36,13 +36,11 @@ namespace Amazon.Deadline.Model
     public partial class SchedulingConfiguration
     {
         /// <summary>
-        /// Gets and sets the property PriorityBalanced. 
-        /// <para>
-        /// Workers are distributed evenly across all jobs at the highest priority level. When
-        /// workers cannot be evenly divided, the extra workers are assigned to the jobs submitted
-        /// earliest. If a job has fewer remaining tasks than its share of workers, the surplus
-        /// workers are redistributed to other jobs at the same priority level.
-        /// </para>
+        /// Gets and sets the property PriorityBalanced. Workers are distributed evenly across
+        /// all jobs at the highest priority level. When workers cannot be evenly divided, the
+        /// extra workers are assigned to the jobs submitted earliest. If a job has fewer remaining
+        /// tasks than its share of workers, the surplus workers are redistributed to other jobs
+        /// at the same priority level.
         /// </summary>
         public PriorityBalancedSchedulingConfiguration PriorityBalanced { get; set; }
 
@@ -52,12 +50,9 @@ namespace Amazon.Deadline.Model
         internal bool IsSetPriorityBalanced() => this.PriorityBalanced != null;
 
         /// <summary>
-        /// Gets and sets the property PriorityFifo. 
-        /// <para>
-        /// Workers are assigned to the highest-priority job first. When multiple jobs share the
-        /// same priority, the job submitted earliest receives workers first. This is the default
-        /// scheduling configuration for new queues.
-        /// </para>
+        /// Gets and sets the property PriorityFifo. Workers are assigned to the highest-priority
+        /// job first. When multiple jobs share the same priority, the job submitted earliest
+        /// receives workers first. This is the default scheduling configuration for new queues.
         /// </summary>
         public PriorityFifoSchedulingConfiguration PriorityFifo { get; set; }
 
@@ -67,12 +62,10 @@ namespace Amazon.Deadline.Model
         internal bool IsSetPriorityFifo() => this.PriorityFifo != null;
 
         /// <summary>
-        /// Gets and sets the property WeightedBalanced. 
-        /// <para>
-        /// Workers are assigned to jobs based on a weighted formula that considers job priority,
-        /// error count, submission time, and the number of tasks currently rendering. Each factor
-        /// has a configurable weight that determines its influence on scheduling decisions.
-        /// </para>
+        /// Gets and sets the property WeightedBalanced. Workers are assigned to jobs based on
+        /// a weighted formula that considers job priority, error count, submission time, and
+        /// the number of tasks currently rendering. Each factor has a configurable weight that
+        /// determines its influence on scheduling decisions.
         /// </summary>
         public WeightedBalancedSchedulingConfiguration WeightedBalanced { get; set; }
 

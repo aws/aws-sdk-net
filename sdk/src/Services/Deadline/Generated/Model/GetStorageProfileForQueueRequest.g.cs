@@ -36,10 +36,7 @@ namespace Amazon.Deadline.Model
     public partial class GetStorageProfileForQueueRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID for the queue in storage profile.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID for the queue in storage profile.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -50,10 +47,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property QueueId. 
-        /// <para>
-        /// The queue ID the queue in the storage profile.
-        /// </para>
+        /// Gets and sets the property QueueId. The queue ID the queue in the storage profile.
         /// </summary>
         [AWSProperty(Required = true)]
         public string QueueId { get; set; }
@@ -64,10 +58,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetQueueId() => this.QueueId != null;
 
         /// <summary>
-        /// Gets and sets the property StorageProfileId. 
-        /// <para>
-        /// The storage profile ID for the storage profile in the queue.
-        /// </para>
+        /// Gets and sets the property StorageProfileId. The storage profile ID for the storage
+        /// profile in the queue.
         /// </summary>
         [AWSProperty(Required = true)]
         public string StorageProfileId { get; set; }

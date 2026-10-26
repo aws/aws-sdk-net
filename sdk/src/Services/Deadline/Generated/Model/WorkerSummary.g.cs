@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class WorkerSummary
     {
         /// <summary>
-        /// Gets and sets the property CreatedAt. 
-        /// <para>
-        /// The date and time the resource was created.
-        /// </para>
+        /// Gets and sets the property CreatedAt. The date and time the resource was created.
         /// </summary>
         [AWSProperty(Required = true)]
         public DateTime? CreatedAt { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCreatedAt() => this.CreatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property CreatedBy. 
-        /// <para>
-        /// The user or system that created this resource.
-        /// </para>
+        /// Gets and sets the property CreatedBy. The user or system that created this resource.
         /// </summary>
         [AWSProperty(Required = true)]
         public string CreatedBy { get; set; }
@@ -63,10 +57,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCreatedBy() => this.CreatedBy != null;
 
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -77,10 +68,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property FleetId. 
-        /// <para>
-        /// The fleet ID.
-        /// </para>
+        /// Gets and sets the property FleetId. The fleet ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FleetId { get; set; }
@@ -91,10 +79,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFleetId() => this.FleetId != null;
 
         /// <summary>
-        /// Gets and sets the property HostProperties. 
-        /// <para>
-        /// The host properties of the worker.
-        /// </para>
+        /// Gets and sets the property HostProperties. The host properties of the worker.
         /// </summary>
         public HostPropertiesResponse HostProperties { get; set; }
 
@@ -104,10 +89,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetHostProperties() => this.HostProperties != null;
 
         /// <summary>
-        /// Gets and sets the property Log. 
-        /// <para>
-        /// The log configuration for the worker.
-        /// </para>
+        /// Gets and sets the property Log. The log configuration for the worker.
         /// </summary>
         public LogConfiguration Log { get; set; }
 
@@ -117,10 +99,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetLog() => this.Log != null;
 
         /// <summary>
-        /// Gets and sets the property Status. 
-        /// <para>
-        /// The status of the worker.
-        /// </para>
+        /// Gets and sets the property Status. The status of the worker.
         /// </summary>
         [AWSProperty(Required = true)]
         public WorkerStatus Status { get; set; }
@@ -131,10 +110,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStatus() => this.Status != null;
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt. 
-        /// <para>
-        /// The date and time the resource was updated.
-        /// </para>
+        /// Gets and sets the property UpdatedAt. The date and time the resource was updated.
         /// </summary>
         public DateTime? UpdatedAt { get; set; }
 
@@ -144,10 +120,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetUpdatedAt() => this.UpdatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property UpdatedBy. 
-        /// <para>
-        /// The user or system that updated this resource.
-        /// </para>
+        /// Gets and sets the property UpdatedBy. The user or system that updated this resource.
         /// </summary>
         public string UpdatedBy { get; set; }
 
@@ -157,10 +130,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetUpdatedBy() => this.UpdatedBy != null;
 
         /// <summary>
-        /// Gets and sets the property WorkerId. 
-        /// <para>
-        /// The worker ID.
-        /// </para>
+        /// Gets and sets the property WorkerId. The worker ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string WorkerId { get; set; }

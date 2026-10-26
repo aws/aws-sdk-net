@@ -35,10 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class UpdateQueueRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property AllowedStorageProfileIdsToAdd. 
-        /// <para>
-        /// The storage profile IDs to add.
-        /// </para>
+        /// Gets and sets the property AllowedStorageProfileIdsToAdd. The storage profile IDs
+        /// to add.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -55,10 +53,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetAllowedStorageProfileIdsToAdd() => this.AllowedStorageProfileIdsToAdd != null && (this.AllowedStorageProfileIdsToAdd.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property AllowedStorageProfileIdsToRemove. 
-        /// <para>
-        /// The storage profile ID to remove.
-        /// </para>
+        /// Gets and sets the property AllowedStorageProfileIdsToRemove. The storage profile ID
+        /// to remove.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -75,10 +71,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetAllowedStorageProfileIdsToRemove() => this.AllowedStorageProfileIdsToRemove != null && (this.AllowedStorageProfileIdsToRemove.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property ClientToken. 
-        /// <para>
-        /// The idempotency token to update in the queue.
-        /// </para>
+        /// Gets and sets the property ClientToken. The idempotency token to update in the queue.
         /// </summary>
         [AWSProperty(Min = 1, Max = 64)]
         public string ClientToken { get; set; }
@@ -89,10 +82,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetClientToken() => this.ClientToken != null;
 
         /// <summary>
-        /// Gets and sets the property DefaultBudgetAction. 
-        /// <para>
-        /// The default action to take for a queue update if a budget isn't configured.
-        /// </para>
+        /// Gets and sets the property DefaultBudgetAction. The default action to take for a queue
+        /// update if a budget isn't configured.
         /// </summary>
         public DefaultQueueBudgetAction DefaultBudgetAction { get; set; }
 
@@ -142,10 +133,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetDisplayName() => this.DisplayName != null;
 
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID to update in the queue.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID to update in the queue.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -156,10 +144,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property JobAttachmentSettings. 
-        /// <para>
-        /// The job attachment settings to update for the queue.
-        /// </para>
+        /// Gets and sets the property JobAttachmentSettings. The job attachment settings to update
+        /// for the queue.
         /// </summary>
         public JobAttachmentSettings JobAttachmentSettings { get; set; }
 
@@ -169,10 +155,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetJobAttachmentSettings() => this.JobAttachmentSettings != null;
 
         /// <summary>
-        /// Gets and sets the property JobRunAsUser. 
-        /// <para>
-        /// Update the jobs in the queue to run as a specified POSIX user.
-        /// </para>
+        /// Gets and sets the property JobRunAsUser. Update the jobs in the queue to run as a
+        /// specified POSIX user.
         /// </summary>
         public JobRunAsUser JobRunAsUser { get; set; }
 
@@ -182,10 +166,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetJobRunAsUser() => this.JobRunAsUser != null;
 
         /// <summary>
-        /// Gets and sets the property QueueId. 
-        /// <para>
-        /// The queue ID to update.
-        /// </para>
+        /// Gets and sets the property QueueId. The queue ID to update.
         /// </summary>
         [AWSProperty(Required = true)]
         public string QueueId { get; set; }
@@ -196,10 +177,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetQueueId() => this.QueueId != null;
 
         /// <summary>
-        /// Gets and sets the property RequiredFileSystemLocationNamesToAdd. 
-        /// <para>
-        /// The required file system location names to add to the queue.
-        /// </para>
+        /// Gets and sets the property RequiredFileSystemLocationNamesToAdd. The required file
+        /// system location names to add to the queue.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -216,10 +195,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetRequiredFileSystemLocationNamesToAdd() => this.RequiredFileSystemLocationNamesToAdd != null && (this.RequiredFileSystemLocationNamesToAdd.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property RequiredFileSystemLocationNamesToRemove. 
-        /// <para>
-        /// The required file system location names to remove from the queue.
-        /// </para>
+        /// Gets and sets the property RequiredFileSystemLocationNamesToRemove. The required file
+        /// system location names to remove from the queue.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -236,10 +213,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetRequiredFileSystemLocationNamesToRemove() => this.RequiredFileSystemLocationNamesToRemove != null && (this.RequiredFileSystemLocationNamesToRemove.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property RoleArn. 
-        /// <para>
-        /// The IAM role ARN that's used to run jobs from this queue.
-        /// </para>
+        /// Gets and sets the property RoleArn. The IAM role ARN that's used to run jobs from
+        /// this queue.
         /// </summary>
         public string RoleArn { get; set; }
 
@@ -249,20 +224,11 @@ namespace Amazon.Deadline.Model
         internal bool IsSetRoleArn() => this.RoleArn != null;
 
         /// <summary>
-        /// Gets and sets the property SchedulingConfiguration. 
-        /// <para>
-        /// The scheduling configuration for the queue. This configuration determines how workers
-        /// are assigned to jobs in the queue.
-        /// </para>
-        ///  
-        /// <para>
+        /// Gets and sets the property SchedulingConfiguration. The scheduling configuration for
+        /// the queue. This configuration determines how workers are assigned to jobs in the queue.
         /// When updating the scheduling configuration, the entire configuration is replaced.
-        /// </para>
-        ///  
-        /// <para>
         /// In-progress tasks run to completion before the new scheduling configuration takes
         /// effect.
-        /// </para>
         /// </summary>
         public SchedulingConfiguration SchedulingConfiguration { get; set; }
 

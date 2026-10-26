@@ -35,11 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class CreateLimitResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property LimitId. 
-        /// <para>
-        /// A unique identifier for the limit. Use this identifier in other operations, such as
-        /// <c>CreateQueueLimitAssociation</c> and <c>DeleteLimit</c>.
-        /// </para>
+        /// Gets and sets the property LimitId. A unique identifier for the limit. Use this identifier
+        /// in other operations, such as <c>CreateQueueLimitAssociation</c> and <c>DeleteLimit</c>.
         /// </summary>
         [AWSProperty(Required = true)]
         public string LimitId { get; set; }

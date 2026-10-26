@@ -35,10 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class QueueLimitAssociationSummary
     {
         /// <summary>
-        /// Gets and sets the property CreatedAt. 
-        /// <para>
-        /// The Unix timestamp of the date and time that the association was created.
-        /// </para>
+        /// Gets and sets the property CreatedAt. The Unix timestamp of the date and time that
+        /// the association was created.
         /// </summary>
         [AWSProperty(Required = true)]
         public DateTime? CreatedAt { get; set; }
@@ -49,10 +47,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCreatedAt() => this.CreatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property CreatedBy. 
-        /// <para>
-        /// The user identifier of the person that created the association.
-        /// </para>
+        /// Gets and sets the property CreatedBy. The user identifier of the person that created
+        /// the association.
         /// </summary>
         [AWSProperty(Required = true)]
         public string CreatedBy { get; set; }
@@ -63,10 +59,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCreatedBy() => this.CreatedBy != null;
 
         /// <summary>
-        /// Gets and sets the property LimitId. 
-        /// <para>
-        /// The unique identifier of the limit in the association.
-        /// </para>
+        /// Gets and sets the property LimitId. The unique identifier of the limit in the association.
         /// </summary>
         [AWSProperty(Required = true)]
         public string LimitId { get; set; }
@@ -77,10 +70,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetLimitId() => this.LimitId != null;
 
         /// <summary>
-        /// Gets and sets the property QueueId. 
-        /// <para>
-        /// The unique identifier of the queue in the association.
-        /// </para>
+        /// Gets and sets the property QueueId. The unique identifier of the queue in the association.
         /// </summary>
         [AWSProperty(Required = true)]
         public string QueueId { get; set; }
@@ -124,10 +114,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStatus() => this.Status != null;
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt. 
-        /// <para>
-        /// The Unix timestamp of the date and time that the association was last updated.
-        /// </para>
+        /// Gets and sets the property UpdatedAt. The Unix timestamp of the date and time that
+        /// the association was last updated.
         /// </summary>
         public DateTime? UpdatedAt { get; set; }
 
@@ -137,10 +125,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetUpdatedAt() => this.UpdatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property UpdatedBy. 
-        /// <para>
-        /// The user identifier of the person that updated the association.
-        /// </para>
+        /// Gets and sets the property UpdatedBy. The user identifier of the person that updated
+        /// the association.
         /// </summary>
         public string UpdatedBy { get; set; }
 

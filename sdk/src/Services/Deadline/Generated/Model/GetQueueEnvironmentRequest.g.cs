@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class GetQueueEnvironmentRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID for the queue environment.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID for the queue environment.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property QueueEnvironmentId. 
-        /// <para>
-        /// The queue environment ID.
-        /// </para>
+        /// Gets and sets the property QueueEnvironmentId. The queue environment ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string QueueEnvironmentId { get; set; }
@@ -63,10 +57,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetQueueEnvironmentId() => this.QueueEnvironmentId != null;
 
         /// <summary>
-        /// Gets and sets the property QueueId. 
-        /// <para>
-        /// The queue ID for the queue environment.
-        /// </para>
+        /// Gets and sets the property QueueId. The queue ID for the queue environment.
         /// </summary>
         [AWSProperty(Required = true)]
         public string QueueId { get; set; }

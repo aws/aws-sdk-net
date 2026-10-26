@@ -35,10 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class SyncInputJobAttachmentsSessionActionDefinitionSummary
     {
         /// <summary>
-        /// Gets and sets the property StepId. 
-        /// <para>
-        /// The step ID for the sync input job attachments session action summary.
-        /// </para>
+        /// Gets and sets the property StepId. The step ID for the sync input job attachments
+        /// session action summary.
         /// </summary>
         public string StepId { get; set; }
 

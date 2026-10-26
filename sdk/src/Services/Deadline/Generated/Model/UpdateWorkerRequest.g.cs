@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class UpdateWorkerRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property Capabilities. 
-        /// <para>
-        /// The worker capabilities to update.
-        /// </para>
+        /// Gets and sets the property Capabilities. The worker capabilities to update.
         /// </summary>
         public WorkerCapabilities Capabilities { get; set; }
 
@@ -48,10 +45,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCapabilities() => this.Capabilities != null;
 
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID to update.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID to update.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -62,10 +56,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property FleetId. 
-        /// <para>
-        /// The fleet ID to update.
-        /// </para>
+        /// Gets and sets the property FleetId. The fleet ID to update.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FleetId { get; set; }
@@ -76,10 +67,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFleetId() => this.FleetId != null;
 
         /// <summary>
-        /// Gets and sets the property HostProperties. 
-        /// <para>
-        /// The host properties to update.
-        /// </para>
+        /// Gets and sets the property HostProperties. The host properties to update.
         /// </summary>
         public HostPropertiesRequest HostProperties { get; set; }
 
@@ -89,10 +77,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetHostProperties() => this.HostProperties != null;
 
         /// <summary>
-        /// Gets and sets the property Status. 
-        /// <para>
-        /// The worker status to update.
-        /// </para>
+        /// Gets and sets the property Status. The worker status to update.
         /// </summary>
         public UpdatedWorkerStatus Status { get; set; }
 
@@ -102,10 +87,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStatus() => this.Status != null;
 
         /// <summary>
-        /// Gets and sets the property WorkerId. 
-        /// <para>
-        /// The worker ID to update.
-        /// </para>
+        /// Gets and sets the property WorkerId. The worker ID to update.
         /// </summary>
         [AWSProperty(Required = true)]
         public string WorkerId { get; set; }

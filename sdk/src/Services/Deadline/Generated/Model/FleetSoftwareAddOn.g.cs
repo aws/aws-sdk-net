@@ -35,10 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class FleetSoftwareAddOn
     {
         /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name of the software add-on. The supported value is <c>docker</c>.
-        /// </para>
+        /// Gets and sets the property Name. The name of the software add-on. The supported value
+        /// is <c>docker</c>.
         /// </summary>
         [AWSProperty(Required = true)]
         public FleetSoftwareAddOnName Name { get; set; }

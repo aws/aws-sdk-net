@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class DeleteBudgetRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property BudgetId. 
-        /// <para>
-        /// The budget ID of the budget to delete.
-        /// </para>
+        /// Gets and sets the property BudgetId. The budget ID of the budget to delete.
         /// </summary>
         [AWSProperty(Required = true)]
         public string BudgetId { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetBudgetId() => this.BudgetId != null;
 
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID of the farm to remove from the budget.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID of the farm to remove from the budget.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }

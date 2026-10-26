@@ -37,10 +37,7 @@ namespace Amazon.Deadline.Model
     public partial class AssumeFleetRoleForReadRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID for the fleet's farm.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID for the fleet's farm.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -51,10 +48,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property FleetId. 
-        /// <para>
-        /// The fleet ID.
-        /// </para>
+        /// Gets and sets the property FleetId. The fleet ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FleetId { get; set; }

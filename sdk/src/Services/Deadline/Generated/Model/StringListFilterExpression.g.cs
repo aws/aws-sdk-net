@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class StringListFilterExpression
     {
         /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The field name to search.
-        /// </para>
+        /// Gets and sets the property Name. The field name to search.
         /// </summary>
         [AWSProperty(Required = true)]
         public string Name { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
-        /// Gets and sets the property Operator. 
-        /// <para>
-        /// The type of comparison to use for this search.
-        /// </para>
+        /// Gets and sets the property Operator. The type of comparison to use for this search.
         /// </summary>
         [AWSProperty(Required = true)]
         public ComparisonOperator Operator { get; set; }
@@ -63,10 +57,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetOperator() => this.Operator != null;
 
         /// <summary>
-        /// Gets and sets the property Values. 
-        /// <para>
-        /// The list of string values to search for.
-        /// </para>
+        /// Gets and sets the property Values. The list of string values to search for.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

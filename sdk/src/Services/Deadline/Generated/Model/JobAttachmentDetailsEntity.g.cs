@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class JobAttachmentDetailsEntity
     {
         /// <summary>
-        /// Gets and sets the property Attachments. 
-        /// <para>
-        /// The job attachments.
-        /// </para>
+        /// Gets and sets the property Attachments. The job attachments.
         /// </summary>
         [AWSProperty(Required = true)]
         public Attachments Attachments { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetAttachments() => this.Attachments != null;
 
         /// <summary>
-        /// Gets and sets the property JobId. 
-        /// <para>
-        /// The job ID.
-        /// </para>
+        /// Gets and sets the property JobId. The job ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string JobId { get; set; }

@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class SessionActionSummary
     {
         /// <summary>
-        /// Gets and sets the property Definition. 
-        /// <para>
-        /// The session action definition.
-        /// </para>
+        /// Gets and sets the property Definition. The session action definition.
         /// </summary>
         [AWSProperty(Required = true)]
         public SessionActionDefinitionSummary Definition { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetDefinition() => this.Definition != null;
 
         /// <summary>
-        /// Gets and sets the property EndedAt. 
-        /// <para>
-        /// The date and time the resource ended running.
-        /// </para>
+        /// Gets and sets the property EndedAt. The date and time the resource ended running.
         /// </summary>
         public DateTime? EndedAt { get; set; }
 
@@ -62,10 +56,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetEndedAt() => this.EndedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property Manifests. 
-        /// <para>
-        /// The list of manifest properties that describe file attachments for the task run.
-        /// </para>
+        /// Gets and sets the property Manifests. The list of manifest properties that describe
+        /// file attachments for the task run.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -81,10 +73,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetManifests() => this.Manifests != null && (this.Manifests.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property ProgressPercent. 
-        /// <para>
-        /// The completion percentage for the session action.
-        /// </para>
+        /// Gets and sets the property ProgressPercent. The completion percentage for the session
+        /// action.
         /// </summary>
         [AWSProperty(Min = 0, Max = 100)]
         public float? ProgressPercent { get; set; }
@@ -95,10 +85,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetProgressPercent() => this.ProgressPercent.HasValue;
 
         /// <summary>
-        /// Gets and sets the property SessionActionId. 
-        /// <para>
-        /// The session action ID.
-        /// </para>
+        /// Gets and sets the property SessionActionId. The session action ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string SessionActionId { get; set; }
@@ -109,10 +96,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetSessionActionId() => this.SessionActionId != null;
 
         /// <summary>
-        /// Gets and sets the property StartedAt. 
-        /// <para>
-        /// The date and time the resource started running.
-        /// </para>
+        /// Gets and sets the property StartedAt. The date and time the resource started running.
         /// </summary>
         public DateTime? StartedAt { get; set; }
 
@@ -122,10 +106,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStartedAt() => this.StartedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property Status. 
-        /// <para>
-        /// The status of the session action.
-        /// </para>
+        /// Gets and sets the property Status. The status of the session action.
         /// </summary>
         [AWSProperty(Required = true)]
         public SessionActionStatus Status { get; set; }
@@ -136,10 +117,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStatus() => this.Status != null;
 
         /// <summary>
-        /// Gets and sets the property WorkerUpdatedAt. 
-        /// <para>
-        /// The Linux timestamp of the last date and time that the session action was updated.
-        /// </para>
+        /// Gets and sets the property WorkerUpdatedAt. The Linux timestamp of the last date and
+        /// time that the session action was updated.
         /// </summary>
         public DateTime? WorkerUpdatedAt { get; set; }
 

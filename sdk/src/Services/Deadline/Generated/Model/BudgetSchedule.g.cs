@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class BudgetSchedule
     {
         /// <summary>
-        /// Gets and sets the property Fixed. 
-        /// <para>
-        /// The fixed start and end time of the budget's schedule.
-        /// </para>
+        /// Gets and sets the property Fixed. The fixed start and end time of the budget's schedule.
         /// </summary>
         public FixedBudgetSchedule Fixed { get; set; }
 

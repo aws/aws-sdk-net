@@ -36,10 +36,8 @@ namespace Amazon.Deadline.Model
     public partial class DeleteQueueEnvironmentRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID of the farm from which to remove the queue environment.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID of the farm from which to remove the
+        /// queue environment.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -50,10 +48,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property QueueEnvironmentId. 
-        /// <para>
-        /// The queue environment ID of the queue environment to delete.
-        /// </para>
+        /// Gets and sets the property QueueEnvironmentId. The queue environment ID of the queue
+        /// environment to delete.
         /// </summary>
         [AWSProperty(Required = true)]
         public string QueueEnvironmentId { get; set; }
@@ -64,10 +60,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetQueueEnvironmentId() => this.QueueEnvironmentId != null;
 
         /// <summary>
-        /// Gets and sets the property QueueId. 
-        /// <para>
-        /// The queue ID of the queue environment to delete.
-        /// </para>
+        /// Gets and sets the property QueueId. The queue ID of the queue environment to delete.
         /// </summary>
         [AWSProperty(Required = true)]
         public string QueueId { get; set; }

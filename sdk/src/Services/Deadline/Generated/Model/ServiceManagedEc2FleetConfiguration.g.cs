@@ -35,10 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class ServiceManagedEc2FleetConfiguration
     {
         /// <summary>
-        /// Gets and sets the property AutoScalingConfiguration. 
-        /// <para>
-        /// The auto scaling configuration settings for the service managed EC2 fleet.
-        /// </para>
+        /// Gets and sets the property AutoScalingConfiguration. The auto scaling configuration
+        /// settings for the service managed EC2 fleet.
         /// </summary>
         public ServiceManagedEc2AutoScalingConfiguration AutoScalingConfiguration { get; set; }
 
@@ -48,10 +46,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetAutoScalingConfiguration() => this.AutoScalingConfiguration != null;
 
         /// <summary>
-        /// Gets and sets the property InstanceCapabilities. 
-        /// <para>
-        /// The instance capabilities for the service managed EC2 fleet.
-        /// </para>
+        /// Gets and sets the property InstanceCapabilities. The instance capabilities for the
+        /// service managed EC2 fleet.
         /// </summary>
         [AWSProperty(Required = true)]
         public ServiceManagedEc2InstanceCapabilities InstanceCapabilities { get; set; }
@@ -62,10 +58,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetInstanceCapabilities() => this.InstanceCapabilities != null;
 
         /// <summary>
-        /// Gets and sets the property InstanceMarketOptions. 
-        /// <para>
-        /// The instance market options for the service managed EC2 fleet.
-        /// </para>
+        /// Gets and sets the property InstanceMarketOptions. The instance market options for
+        /// the service managed EC2 fleet.
         /// </summary>
         [AWSProperty(Required = true)]
         public ServiceManagedEc2InstanceMarketOptions InstanceMarketOptions { get; set; }
@@ -76,10 +70,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetInstanceMarketOptions() => this.InstanceMarketOptions != null;
 
         /// <summary>
-        /// Gets and sets the property PersistentVolumeConfiguration. 
-        /// <para>
-        /// The persistent volume configuration for the service managed EC2 fleet.
-        /// </para>
+        /// Gets and sets the property PersistentVolumeConfiguration. The persistent volume configuration
+        /// for the service managed EC2 fleet.
         /// </summary>
         public PersistentVolumeConfiguration PersistentVolumeConfiguration { get; set; }
 
@@ -89,10 +81,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetPersistentVolumeConfiguration() => this.PersistentVolumeConfiguration != null;
 
         /// <summary>
-        /// Gets and sets the property StorageProfileId. 
-        /// <para>
-        /// The storage profile ID for the service managed EC2 fleet.
-        /// </para>
+        /// Gets and sets the property StorageProfileId. The storage profile ID for the service
+        /// managed EC2 fleet.
         /// </summary>
         public string StorageProfileId { get; set; }
 
@@ -102,10 +92,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStorageProfileId() => this.StorageProfileId != null;
 
         /// <summary>
-        /// Gets and sets the property VpcConfiguration. 
-        /// <para>
-        /// The VPC configuration for the service managed EC2 fleet.
-        /// </para>
+        /// Gets and sets the property VpcConfiguration. The VPC configuration for the service
+        /// managed EC2 fleet.
         /// </summary>
         public VpcConfiguration VpcConfiguration { get; set; }
 

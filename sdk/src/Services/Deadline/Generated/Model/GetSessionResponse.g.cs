@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class GetSessionResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property EndedAt. 
-        /// <para>
-        /// The date and time the resource ended running.
-        /// </para>
+        /// Gets and sets the property EndedAt. The date and time the resource ended running.
         /// </summary>
         public DateTime? EndedAt { get; set; }
 
@@ -48,10 +45,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetEndedAt() => this.EndedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property FleetId. 
-        /// <para>
-        /// The fleet ID for the session.
-        /// </para>
+        /// Gets and sets the property FleetId. The fleet ID for the session.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FleetId { get; set; }
@@ -62,10 +56,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFleetId() => this.FleetId != null;
 
         /// <summary>
-        /// Gets and sets the property HostProperties. 
-        /// <para>
-        /// Provides the Amazon EC2 properties of the host.
-        /// </para>
+        /// Gets and sets the property HostProperties. Provides the Amazon EC2 properties of the
+        /// host.
         /// </summary>
         public HostPropertiesResponse HostProperties { get; set; }
 
@@ -75,10 +67,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetHostProperties() => this.HostProperties != null;
 
         /// <summary>
-        /// Gets and sets the property LifecycleStatus. 
-        /// <para>
-        /// The life cycle status of the session.
-        /// </para>
+        /// Gets and sets the property LifecycleStatus. The life cycle status of the session.
         /// </summary>
         [AWSProperty(Required = true)]
         public SessionLifecycleStatus LifecycleStatus { get; set; }
@@ -89,10 +78,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetLifecycleStatus() => this.LifecycleStatus != null;
 
         /// <summary>
-        /// Gets and sets the property Log. 
-        /// <para>
-        /// The session log.
-        /// </para>
+        /// Gets and sets the property Log. The session log.
         /// </summary>
         [AWSProperty(Required = true)]
         public LogConfiguration Log { get; set; }
@@ -103,10 +89,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetLog() => this.Log != null;
 
         /// <summary>
-        /// Gets and sets the property SessionId. 
-        /// <para>
-        /// The session ID.
-        /// </para>
+        /// Gets and sets the property SessionId. The session ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string SessionId { get; set; }
@@ -117,10 +100,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetSessionId() => this.SessionId != null;
 
         /// <summary>
-        /// Gets and sets the property StartedAt. 
-        /// <para>
-        /// The date and time the resource started running.
-        /// </para>
+        /// Gets and sets the property StartedAt. The date and time the resource started running.
         /// </summary>
         [AWSProperty(Required = true)]
         public DateTime? StartedAt { get; set; }
@@ -131,10 +111,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStartedAt() => this.StartedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property TargetLifecycleStatus. 
-        /// <para>
-        /// The life cycle status with which the session started.
-        /// </para>
+        /// Gets and sets the property TargetLifecycleStatus. The life cycle status with which
+        /// the session started.
         /// </summary>
         public SessionLifecycleTargetStatus TargetLifecycleStatus { get; set; }
 
@@ -144,10 +122,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetTargetLifecycleStatus() => this.TargetLifecycleStatus != null;
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt. 
-        /// <para>
-        /// The date and time the resource was updated.
-        /// </para>
+        /// Gets and sets the property UpdatedAt. The date and time the resource was updated.
         /// </summary>
         public DateTime? UpdatedAt { get; set; }
 
@@ -157,10 +132,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetUpdatedAt() => this.UpdatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property UpdatedBy. 
-        /// <para>
-        /// The user or system that updated this resource.
-        /// </para>
+        /// Gets and sets the property UpdatedBy. The user or system that updated this resource.
         /// </summary>
         public string UpdatedBy { get; set; }
 
@@ -170,10 +142,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetUpdatedBy() => this.UpdatedBy != null;
 
         /// <summary>
-        /// Gets and sets the property WorkerId. 
-        /// <para>
-        /// The worker ID for the session.
-        /// </para>
+        /// Gets and sets the property WorkerId. The worker ID for the session.
         /// </summary>
         [AWSProperty(Required = true)]
         public string WorkerId { get; set; }
@@ -184,10 +153,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetWorkerId() => this.WorkerId != null;
 
         /// <summary>
-        /// Gets and sets the property WorkerLog. 
-        /// <para>
-        /// The worker log for the session.
-        /// </para>
+        /// Gets and sets the property WorkerLog. The worker log for the session.
         /// </summary>
         public LogConfiguration WorkerLog { get; set; }
 

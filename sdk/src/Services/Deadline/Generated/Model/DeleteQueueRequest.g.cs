@@ -37,10 +37,7 @@ namespace Amazon.Deadline.Model
     public partial class DeleteQueueRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The ID of the farm from which to remove the queue.
-        /// </para>
+        /// Gets and sets the property FarmId. The ID of the farm from which to remove the queue.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -51,10 +48,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property QueueId. 
-        /// <para>
-        /// The queue ID of the queue to delete.
-        /// </para>
+        /// Gets and sets the property QueueId. The queue ID of the queue to delete.
         /// </summary>
         [AWSProperty(Required = true)]
         public string QueueId { get; set; }

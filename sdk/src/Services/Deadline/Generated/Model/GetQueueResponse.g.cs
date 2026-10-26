@@ -35,10 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class GetQueueResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property AllowedStorageProfileIds. 
-        /// <para>
-        /// The storage profile IDs for the queue.
-        /// </para>
+        /// Gets and sets the property AllowedStorageProfileIds. The storage profile IDs for the
+        /// queue.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -55,10 +53,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetAllowedStorageProfileIds() => this.AllowedStorageProfileIds != null && (this.AllowedStorageProfileIds.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property BlockedReason. 
-        /// <para>
-        /// The reason the queue was blocked.
-        /// </para>
+        /// Gets and sets the property BlockedReason. The reason the queue was blocked.
         /// </summary>
         public QueueBlockedReason BlockedReason { get; set; }
 
@@ -68,10 +63,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetBlockedReason() => this.BlockedReason != null;
 
         /// <summary>
-        /// Gets and sets the property CreatedAt. 
-        /// <para>
-        /// The date and time the resource was created.
-        /// </para>
+        /// Gets and sets the property CreatedAt. The date and time the resource was created.
         /// </summary>
         [AWSProperty(Required = true)]
         public DateTime? CreatedAt { get; set; }
@@ -82,10 +74,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCreatedAt() => this.CreatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property CreatedBy. 
-        /// <para>
-        /// The user or system that created this resource.
-        /// </para>
+        /// Gets and sets the property CreatedBy. The user or system that created this resource.
         /// </summary>
         [AWSProperty(Required = true)]
         public string CreatedBy { get; set; }
@@ -96,10 +85,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCreatedBy() => this.CreatedBy != null;
 
         /// <summary>
-        /// Gets and sets the property DefaultBudgetAction. 
-        /// <para>
-        /// The default action taken on a queue if a budget wasn't configured.
-        /// </para>
+        /// Gets and sets the property DefaultBudgetAction. The default action taken on a queue
+        /// if a budget wasn't configured.
         /// </summary>
         [AWSProperty(Required = true)]
         public DefaultQueueBudgetAction DefaultBudgetAction { get; set; }
@@ -150,10 +137,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetDisplayName() => this.DisplayName != null;
 
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID for the queue.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID for the queue.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -164,10 +148,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property JobAttachmentSettings. 
-        /// <para>
-        /// The job attachment settings for the queue.
-        /// </para>
+        /// Gets and sets the property JobAttachmentSettings. The job attachment settings for
+        /// the queue.
         /// </summary>
         public JobAttachmentSettings JobAttachmentSettings { get; set; }
 
@@ -177,10 +159,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetJobAttachmentSettings() => this.JobAttachmentSettings != null;
 
         /// <summary>
-        /// Gets and sets the property JobRunAsUser. 
-        /// <para>
-        /// The jobs in the queue ran as this specified POSIX user.
-        /// </para>
+        /// Gets and sets the property JobRunAsUser. The jobs in the queue ran as this specified
+        /// POSIX user.
         /// </summary>
         public JobRunAsUser JobRunAsUser { get; set; }
 
@@ -190,10 +170,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetJobRunAsUser() => this.JobRunAsUser != null;
 
         /// <summary>
-        /// Gets and sets the property QueueId. 
-        /// <para>
-        /// The queue ID.
-        /// </para>
+        /// Gets and sets the property QueueId. The queue ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string QueueId { get; set; }
@@ -204,10 +181,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetQueueId() => this.QueueId != null;
 
         /// <summary>
-        /// Gets and sets the property RequiredFileSystemLocationNames. 
-        /// <para>
-        /// A list of the required file system location names in the queue.
-        /// </para>
+        /// Gets and sets the property RequiredFileSystemLocationNames. A list of the required
+        /// file system location names in the queue.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -224,10 +199,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetRequiredFileSystemLocationNames() => this.RequiredFileSystemLocationNames != null && (this.RequiredFileSystemLocationNames.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property RoleArn. 
-        /// <para>
-        /// The IAM role ARN.
-        /// </para>
+        /// Gets and sets the property RoleArn. The IAM role ARN.
         /// </summary>
         public string RoleArn { get; set; }
 
@@ -237,11 +209,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetRoleArn() => this.RoleArn != null;
 
         /// <summary>
-        /// Gets and sets the property SchedulingConfiguration. 
-        /// <para>
-        /// The scheduling configuration for the queue. This configuration determines how workers
-        /// are assigned to jobs in the queue.
-        /// </para>
+        /// Gets and sets the property SchedulingConfiguration. The scheduling configuration for
+        /// the queue. This configuration determines how workers are assigned to jobs in the queue.
         /// </summary>
         public SchedulingConfiguration SchedulingConfiguration { get; set; }
 
@@ -278,10 +247,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStatus() => this.Status != null;
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt. 
-        /// <para>
-        /// The date and time the resource was updated.
-        /// </para>
+        /// Gets and sets the property UpdatedAt. The date and time the resource was updated.
         /// </summary>
         public DateTime? UpdatedAt { get; set; }
 
@@ -291,10 +257,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetUpdatedAt() => this.UpdatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property UpdatedBy. 
-        /// <para>
-        /// The user or system that updated this resource.
-        /// </para>
+        /// Gets and sets the property UpdatedBy. The user or system that updated this resource.
         /// </summary>
         public string UpdatedBy { get; set; }
 

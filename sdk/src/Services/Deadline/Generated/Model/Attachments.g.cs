@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class Attachments
     {
         /// <summary>
-        /// Gets and sets the property FileSystem. 
-        /// <para>
-        /// The file system location for the attachments.
-        /// </para>
+        /// Gets and sets the property FileSystem. The file system location for the attachments.
         /// </summary>
         public JobAttachmentsFileSystem FileSystem { get; set; }
 
@@ -48,10 +45,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFileSystem() => this.FileSystem != null;
 
         /// <summary>
-        /// Gets and sets the property Manifests. 
-        /// <para>
-        /// The manifest properties for the attachments.
-        /// </para>
+        /// Gets and sets the property Manifests. The manifest properties for the attachments.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

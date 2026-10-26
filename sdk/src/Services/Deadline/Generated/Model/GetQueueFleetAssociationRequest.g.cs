@@ -36,10 +36,8 @@ namespace Amazon.Deadline.Model
     public partial class GetQueueFleetAssociationRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID of the farm that contains the queue-fleet association.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID of the farm that contains the queue-fleet
+        /// association.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -50,10 +48,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property FleetId. 
-        /// <para>
-        /// The fleet ID for the queue-fleet association.
-        /// </para>
+        /// Gets and sets the property FleetId. The fleet ID for the queue-fleet association.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FleetId { get; set; }
@@ -64,10 +59,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFleetId() => this.FleetId != null;
 
         /// <summary>
-        /// Gets and sets the property QueueId. 
-        /// <para>
-        /// The queue ID for the queue-fleet association.
-        /// </para>
+        /// Gets and sets the property QueueId. The queue ID for the queue-fleet association.
         /// </summary>
         [AWSProperty(Required = true)]
         public string QueueId { get; set; }

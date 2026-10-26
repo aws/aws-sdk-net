@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class CreateBudgetResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property BudgetId. 
-        /// <para>
-        /// The budget ID.
-        /// </para>
+        /// Gets and sets the property BudgetId. The budget ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string BudgetId { get; set; }

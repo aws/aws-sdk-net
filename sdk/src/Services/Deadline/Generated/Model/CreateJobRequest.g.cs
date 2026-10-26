@@ -38,11 +38,8 @@ namespace Amazon.Deadline.Model
     public partial class CreateJobRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property Attachments. 
-        /// <para>
-        /// The attachments for the job. Attach files required for the job to run to a render
-        /// job.
-        /// </para>
+        /// Gets and sets the property Attachments. The attachments for the job. Attach files
+        /// required for the job to run to a render job.
         /// </summary>
         public Attachments Attachments { get; set; }
 
@@ -52,10 +49,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetAttachments() => this.Attachments != null;
 
         /// <summary>
-        /// Gets and sets the property ClientToken. 
-        /// <para>
-        /// The unique token which the server uses to recognize retries of the same request.
-        /// </para>
+        /// Gets and sets the property ClientToken. The unique token which the server uses to
+        /// recognize retries of the same request.
         /// </summary>
         [AWSProperty(Min = 1, Max = 64)]
         public string ClientToken { get; set; }
@@ -66,10 +61,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetClientToken() => this.ClientToken != null;
 
         /// <summary>
-        /// Gets and sets the property DescriptionOverride. 
-        /// <para>
-        /// A custom description to override the job description derived from the job template.
-        /// </para>
+        /// Gets and sets the property DescriptionOverride. A custom description to override the
+        /// job description derived from the job template.
         /// </summary>
         [AWSProperty(Sensitive = true, Min = 0, Max = 2048)]
         public string DescriptionOverride { get; set; }
@@ -80,10 +73,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetDescriptionOverride() => this.DescriptionOverride != null;
 
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID of the farm to connect to the job.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID of the farm to connect to the job.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -94,10 +84,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property MaxFailedTasksCount. 
-        /// <para>
-        /// The number of task failures before the job stops running and is marked as <c>FAILED</c>.
-        /// </para>
+        /// Gets and sets the property MaxFailedTasksCount. The number of task failures before
+        /// the job stops running and is marked as <c>FAILED</c>.
         /// </summary>
         [AWSProperty(Min = 0, Max = 2147483647)]
         public int? MaxFailedTasksCount { get; set; }
@@ -108,10 +96,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMaxFailedTasksCount() => this.MaxFailedTasksCount.HasValue;
 
         /// <summary>
-        /// Gets and sets the property MaxRetriesPerTask. 
-        /// <para>
-        /// The maximum number of retries for each task.
-        /// </para>
+        /// Gets and sets the property MaxRetriesPerTask. The maximum number of retries for each
+        /// task.
         /// </summary>
         [AWSProperty(Min = 0, Max = 2147483647)]
         public int? MaxRetriesPerTask { get; set; }
@@ -122,22 +108,12 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMaxRetriesPerTask() => this.MaxRetriesPerTask.HasValue;
 
         /// <summary>
-        /// Gets and sets the property MaxWorkerCount. 
-        /// <para>
-        /// The maximum number of worker hosts that can concurrently process a job. When the <c>maxWorkerCount</c>
-        /// is reached, no more workers will be assigned to process the job, even if the fleets
-        /// assigned to the job's queue has available workers.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can't set the <c>maxWorkerCount</c> to 0. If you set it to -1, there is no maximum
-        /// number of workers.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you don't specify the <c>maxWorkerCount</c>, Deadline Cloud won't throttle the
-        /// number of workers used to process the job.
-        /// </para>
+        /// Gets and sets the property MaxWorkerCount. The maximum number of worker hosts that
+        /// can concurrently process a job. When the <c>maxWorkerCount</c> is reached, no more
+        /// workers will be assigned to process the job, even if the fleets assigned to the job's
+        /// queue has available workers. You can't set the <c>maxWorkerCount</c> to 0. If you
+        /// set it to -1, there is no maximum number of workers. If you don't specify the <c>maxWorkerCount</c>,
+        /// Deadline Cloud won't throttle the number of workers used to process the job.
         /// </summary>
         [AWSProperty(Min = -1, Max = 2147483647)]
         public int? MaxWorkerCount { get; set; }
@@ -148,10 +124,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMaxWorkerCount() => this.MaxWorkerCount.HasValue;
 
         /// <summary>
-        /// Gets and sets the property NameOverride. 
-        /// <para>
-        /// A custom name to override the job name derived from the job template.
-        /// </para>
+        /// Gets and sets the property NameOverride. A custom name to override the job name derived
+        /// from the job template.
         /// </summary>
         [AWSProperty(Min = 1, Max = 512)]
         public string NameOverride { get; set; }
@@ -162,10 +136,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetNameOverride() => this.NameOverride != null;
 
         /// <summary>
-        /// Gets and sets the property Parameters. 
-        /// <para>
-        /// The parameters for the job.
-        /// </para>
+        /// Gets and sets the property Parameters. The parameters for the job.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -182,11 +153,9 @@ namespace Amazon.Deadline.Model
         internal bool IsSetParameters() => this.Parameters != null && (this.Parameters.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property Priority. 
-        /// <para>
-        /// The priority of the job. The highest priority (first scheduled) is 100. When two jobs
-        /// have the same priority, the oldest job is scheduled first.
-        /// </para>
+        /// Gets and sets the property Priority. The priority of the job. The highest priority
+        /// (first scheduled) is 100. When two jobs have the same priority, the oldest job is
+        /// scheduled first.
         /// </summary>
         [AWSProperty(Required = true, Min = 0, Max = 100)]
         public int? Priority { get; set; }
@@ -197,10 +166,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetPriority() => this.Priority.HasValue;
 
         /// <summary>
-        /// Gets and sets the property QueueId. 
-        /// <para>
-        /// The ID of the queue that the job is submitted to.
-        /// </para>
+        /// Gets and sets the property QueueId. The ID of the queue that the job is submitted
+        /// to.
         /// </summary>
         [AWSProperty(Required = true)]
         public string QueueId { get; set; }
@@ -211,10 +178,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetQueueId() => this.QueueId != null;
 
         /// <summary>
-        /// Gets and sets the property SourceJobId. 
-        /// <para>
-        /// The job ID for the source job.
-        /// </para>
+        /// Gets and sets the property SourceJobId. The job ID for the source job.
         /// </summary>
         public string SourceJobId { get; set; }
 
@@ -224,10 +188,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetSourceJobId() => this.SourceJobId != null;
 
         /// <summary>
-        /// Gets and sets the property StorageProfileId. 
-        /// <para>
-        /// The storage profile ID for the storage profile to connect to the job.
-        /// </para>
+        /// Gets and sets the property StorageProfileId. The storage profile ID for the storage
+        /// profile to connect to the job.
         /// </summary>
         public string StorageProfileId { get; set; }
 
@@ -237,11 +199,9 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStorageProfileId() => this.StorageProfileId != null;
 
         /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// The tags to add to your job. Each tag consists of a tag key and a tag value. Tag keys
-        /// and values are both required, but tag values can be empty strings.
-        /// </para>
+        /// Gets and sets the property Tags. The tags to add to your job. Each tag consists of
+        /// a tag key and a tag value. Tag keys and values are both required, but tag values can
+        /// be empty strings.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -257,11 +217,9 @@ namespace Amazon.Deadline.Model
         internal bool IsSetTags() => this.Tags != null && (this.Tags.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property TargetTaskRunStatus. 
-        /// <para>
-        /// The initial job status when it is created. Jobs that are created with a <c>SUSPENDED</c>
-        /// status will not run until manually requeued.
-        /// </para>
+        /// Gets and sets the property TargetTaskRunStatus. The initial job status when it is
+        /// created. Jobs that are created with a <c>SUSPENDED</c> status will not run until manually
+        /// requeued.
         /// </summary>
         public CreateJobTargetTaskRunStatus TargetTaskRunStatus { get; set; }
 
@@ -271,10 +229,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetTargetTaskRunStatus() => this.TargetTaskRunStatus != null;
 
         /// <summary>
-        /// Gets and sets the property Template. 
-        /// <para>
-        /// The job template to use for this job.
-        /// </para>
+        /// Gets and sets the property Template. The job template to use for this job.
         /// </summary>
         [AWSProperty(Sensitive = true, Min = 1, Max = 1000000)]
         public string Template { get; set; }
@@ -285,10 +240,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetTemplate() => this.Template != null;
 
         /// <summary>
-        /// Gets and sets the property TemplateType. 
-        /// <para>
-        /// The file type for the job template.
-        /// </para>
+        /// Gets and sets the property TemplateType. The file type for the job template.
         /// </summary>
         public JobTemplateType TemplateType { get; set; }
 

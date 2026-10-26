@@ -73,10 +73,8 @@ namespace Amazon.Deadline.Model
         public AccessDeniedException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) : base(message, errorType, errorCode, requestId, statusCode) { }
 
         /// <summary>
-        /// Gets and sets the property Context. 
-        /// <para>
-        /// Information about the resources in use when the exception was thrown.
-        /// </para>
+        /// Gets and sets the property Context. Information about the resources in use when the
+        /// exception was thrown.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

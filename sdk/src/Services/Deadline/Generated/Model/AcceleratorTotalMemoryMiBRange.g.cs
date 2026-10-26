@@ -35,10 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class AcceleratorTotalMemoryMiBRange
     {
         /// <summary>
-        /// Gets and sets the property Max. 
-        /// <para>
-        /// The maximum amount of memory to use for the accelerator, measured in MiB.
-        /// </para>
+        /// Gets and sets the property Max. The maximum amount of memory to use for the accelerator,
+        /// measured in MiB.
         /// </summary>
         [AWSProperty(Min = 0, Max = 2147483647)]
         public int? Max { get; set; }
@@ -49,10 +47,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMax() => this.Max.HasValue;
 
         /// <summary>
-        /// Gets and sets the property Min. 
-        /// <para>
-        /// The minimum amount of memory to use for the accelerator, measured in MiB.
-        /// </para>
+        /// Gets and sets the property Min. The minimum amount of memory to use for the accelerator,
+        /// measured in MiB.
         /// </summary>
         [AWSProperty(Required = true, Min = 0, Max = 2147483647)]
         public int? Min { get; set; }

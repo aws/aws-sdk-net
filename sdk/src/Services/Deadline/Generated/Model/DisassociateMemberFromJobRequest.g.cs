@@ -36,10 +36,8 @@ namespace Amazon.Deadline.Model
     public partial class DisassociateMemberFromJobRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID for the job to disassociate from the member.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID for the job to disassociate from the
+        /// member.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -50,10 +48,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property JobId. 
-        /// <para>
-        /// The job ID to disassociate from a member in a job.
-        /// </para>
+        /// Gets and sets the property JobId. The job ID to disassociate from a member in a job.
         /// </summary>
         [AWSProperty(Required = true)]
         public string JobId { get; set; }
@@ -64,10 +59,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetJobId() => this.JobId != null;
 
         /// <summary>
-        /// Gets and sets the property PrincipalId. 
-        /// <para>
-        /// A member's principal ID to disassociate from a job.
-        /// </para>
+        /// Gets and sets the property PrincipalId. A member's principal ID to disassociate from
+        /// a job.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 47)]
         public string PrincipalId { get; set; }
@@ -78,10 +71,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetPrincipalId() => this.PrincipalId != null;
 
         /// <summary>
-        /// Gets and sets the property QueueId. 
-        /// <para>
-        /// The queue ID connected to a job for which you're disassociating a member.
-        /// </para>
+        /// Gets and sets the property QueueId. The queue ID connected to a job for which you're
+        /// disassociating a member.
         /// </summary>
         [AWSProperty(Required = true)]
         public string QueueId { get; set; }

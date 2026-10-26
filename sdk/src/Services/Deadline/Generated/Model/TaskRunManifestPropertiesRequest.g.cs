@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class TaskRunManifestPropertiesRequest
     {
         /// <summary>
-        /// Gets and sets the property OutputManifestHash. 
-        /// <para>
-        /// The hash value of the file.
-        /// </para>
+        /// Gets and sets the property OutputManifestHash. The hash value of the file.
         /// </summary>
         [AWSProperty(Min = 1, Max = 256)]
         public string OutputManifestHash { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetOutputManifestHash() => this.OutputManifestHash != null;
 
         /// <summary>
-        /// Gets and sets the property OutputManifestPath. 
-        /// <para>
-        /// The manifest file path.
-        /// </para>
+        /// Gets and sets the property OutputManifestPath. The manifest file path.
         /// </summary>
         [AWSProperty(Min = 1, Max = 512)]
         public string OutputManifestPath { get; set; }

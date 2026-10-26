@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class JobDetailsIdentifiers
     {
         /// <summary>
-        /// Gets and sets the property JobId. 
-        /// <para>
-        /// The job ID.
-        /// </para>
+        /// Gets and sets the property JobId. The job ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string JobId { get; set; }

@@ -35,12 +35,9 @@ namespace Amazon.Deadline.Model
     public partial class UpdateFarmRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property CostScaleFactor. 
-        /// <para>
-        /// A multiplier applied to the farm's calculated costs for usage data and budget tracking.
-        /// A value less than 1 represents a discount, a value greater than 1 represents a premium,
-        /// and a value of 1 represents no adjustment.
-        /// </para>
+        /// Gets and sets the property CostScaleFactor. A multiplier applied to the farm's calculated
+        /// costs for usage data and budget tracking. A value less than 1 represents a discount,
+        /// a value greater than 1 represents a premium, and a value of 1 represents no adjustment.
         /// </summary>
         [AWSProperty(Min = 0, Max = 100)]
         public float? CostScaleFactor { get; set; }
@@ -91,10 +88,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetDisplayName() => this.DisplayName != null;
 
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID to update.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID to update.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }

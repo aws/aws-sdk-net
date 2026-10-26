@@ -36,10 +36,8 @@ namespace Amazon.Deadline.Model
     public partial class AssociateMemberToFleetRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID of the fleet to associate with the member.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID of the fleet to associate with the
+        /// member.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -50,10 +48,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property FleetId. 
-        /// <para>
-        /// The ID of the fleet to associate with a member.
-        /// </para>
+        /// Gets and sets the property FleetId. The ID of the fleet to associate with a member.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FleetId { get; set; }
@@ -64,11 +59,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFleetId() => this.FleetId != null;
 
         /// <summary>
-        /// Gets and sets the property IdentityCenterRegion. 
-        /// <para>
-        /// The Region of the IAM Identity Center instance. If not provided, the service defaults
-        /// to the Region of the farm.
-        /// </para>
+        /// Gets and sets the property IdentityCenterRegion. The Region of the IAM Identity Center
+        /// instance. If not provided, the service defaults to the Region of the farm.
         /// </summary>
         [AWSProperty(Min = 1, Max = 25)]
         public string IdentityCenterRegion { get; set; }
@@ -79,10 +71,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetIdentityCenterRegion() => this.IdentityCenterRegion != null;
 
         /// <summary>
-        /// Gets and sets the property IdentityStoreId. 
-        /// <para>
-        /// The member's identity store ID to associate with the fleet.
-        /// </para>
+        /// Gets and sets the property IdentityStoreId. The member's identity store ID to associate
+        /// with the fleet.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 36)]
         public string IdentityStoreId { get; set; }
@@ -93,10 +83,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetIdentityStoreId() => this.IdentityStoreId != null;
 
         /// <summary>
-        /// Gets and sets the property MembershipLevel. 
-        /// <para>
-        /// The principal's membership level for the associated fleet.
-        /// </para>
+        /// Gets and sets the property MembershipLevel. The principal's membership level for the
+        /// associated fleet.
         /// </summary>
         [AWSProperty(Required = true)]
         public MembershipLevel MembershipLevel { get; set; }
@@ -107,10 +95,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMembershipLevel() => this.MembershipLevel != null;
 
         /// <summary>
-        /// Gets and sets the property PrincipalId. 
-        /// <para>
-        /// The member's principal ID to associate with a fleet.
-        /// </para>
+        /// Gets and sets the property PrincipalId. The member's principal ID to associate with
+        /// a fleet.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 47)]
         public string PrincipalId { get; set; }
@@ -121,10 +107,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetPrincipalId() => this.PrincipalId != null;
 
         /// <summary>
-        /// Gets and sets the property PrincipalType. 
-        /// <para>
-        /// The member's principal type to associate with the fleet.
-        /// </para>
+        /// Gets and sets the property PrincipalType. The member's principal type to associate
+        /// with the fleet.
         /// </summary>
         [AWSProperty(Required = true)]
         public PrincipalType PrincipalType { get; set; }

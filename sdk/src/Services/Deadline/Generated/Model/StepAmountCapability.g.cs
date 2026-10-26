@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class StepAmountCapability
     {
         /// <summary>
-        /// Gets and sets the property Max. 
-        /// <para>
-        /// The maximum amount.
-        /// </para>
+        /// Gets and sets the property Max. The maximum amount.
         /// </summary>
         public double? Max { get; set; }
 
@@ -48,10 +45,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMax() => this.Max.HasValue;
 
         /// <summary>
-        /// Gets and sets the property Min. 
-        /// <para>
-        /// The minimum amount.
-        /// </para>
+        /// Gets and sets the property Min. The minimum amount.
         /// </summary>
         public double? Min { get; set; }
 
@@ -61,10 +55,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMin() => this.Min.HasValue;
 
         /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name of the step.
-        /// </para>
+        /// Gets and sets the property Name. The name of the step.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 100)]
         public string Name { get; set; }
@@ -75,10 +66,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
-        /// Gets and sets the property Value. 
-        /// <para>
-        /// The amount value.
-        /// </para>
+        /// Gets and sets the property Value. The amount value.
         /// </summary>
         public double? Value { get; set; }
 

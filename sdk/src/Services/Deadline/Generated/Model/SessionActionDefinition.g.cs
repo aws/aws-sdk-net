@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class SessionActionDefinition
     {
         /// <summary>
-        /// Gets and sets the property EnvEnter. 
-        /// <para>
-        /// The environment to enter into.
-        /// </para>
+        /// Gets and sets the property EnvEnter. The environment to enter into.
         /// </summary>
         public EnvironmentEnterSessionActionDefinition EnvEnter { get; set; }
 
@@ -48,10 +45,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetEnvEnter() => this.EnvEnter != null;
 
         /// <summary>
-        /// Gets and sets the property EnvExit. 
-        /// <para>
-        /// The environment to exit from.
-        /// </para>
+        /// Gets and sets the property EnvExit. The environment to exit from.
         /// </summary>
         public EnvironmentExitSessionActionDefinition EnvExit { get; set; }
 
@@ -61,10 +55,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetEnvExit() => this.EnvExit != null;
 
         /// <summary>
-        /// Gets and sets the property SyncInputJobAttachments. 
-        /// <para>
-        /// The session action definition for syncing input job attachments.
-        /// </para>
+        /// Gets and sets the property SyncInputJobAttachments. The session action definition
+        /// for syncing input job attachments.
         /// </summary>
         public SyncInputJobAttachmentsSessionActionDefinition SyncInputJobAttachments { get; set; }
 
@@ -74,10 +66,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetSyncInputJobAttachments() => this.SyncInputJobAttachments != null;
 
         /// <summary>
-        /// Gets and sets the property TaskRun. 
-        /// <para>
-        /// The task run in the session.
-        /// </para>
+        /// Gets and sets the property TaskRun. The task run in the session.
         /// </summary>
         public TaskRunSessionActionDefinition TaskRun { get; set; }
 

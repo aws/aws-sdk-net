@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class GetFleetRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID of the farm in the fleet.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID of the farm in the fleet.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property FleetId. 
-        /// <para>
-        /// The fleet ID of the fleet to get.
-        /// </para>
+        /// Gets and sets the property FleetId. The fleet ID of the fleet to get.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FleetId { get; set; }

@@ -38,10 +38,8 @@ namespace Amazon.Deadline.Model
     public partial class CreateMonitorRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property ClientToken. 
-        /// <para>
-        /// The unique token which the server uses to recognize retries of the same request.
-        /// </para>
+        /// Gets and sets the property ClientToken. The unique token which the server uses to
+        /// recognize retries of the same request.
         /// </summary>
         [AWSProperty(Min = 1, Max = 64)]
         public string ClientToken { get; set; }
@@ -72,11 +70,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetDisplayName() => this.DisplayName != null;
 
         /// <summary>
-        /// Gets and sets the property IdentityCenterInstanceArn. 
-        /// <para>
-        /// The Amazon Resource Name of the IAM Identity Center instance that authenticates monitor
-        /// users.
-        /// </para>
+        /// Gets and sets the property IdentityCenterInstanceArn. The Amazon Resource Name of
+        /// the IAM Identity Center instance that authenticates monitor users.
         /// </summary>
         [AWSProperty(Required = true)]
         public string IdentityCenterInstanceArn { get; set; }
@@ -87,11 +82,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetIdentityCenterInstanceArn() => this.IdentityCenterInstanceArn != null;
 
         /// <summary>
-        /// Gets and sets the property IdentityCenterRegion. 
-        /// <para>
-        /// The Region where IAM Identity Center is enabled. Required when IAM Identity Center
-        /// is in a different Region than the monitor.
-        /// </para>
+        /// Gets and sets the property IdentityCenterRegion. The Region where IAM Identity Center
+        /// is enabled. Required when IAM Identity Center is in a different Region than the monitor.
         /// </summary>
         [AWSProperty(Min = 1, Max = 25)]
         public string IdentityCenterRegion { get; set; }
@@ -102,12 +94,9 @@ namespace Amazon.Deadline.Model
         internal bool IsSetIdentityCenterRegion() => this.IdentityCenterRegion != null;
 
         /// <summary>
-        /// Gets and sets the property RoleArn. 
-        /// <para>
-        /// The Amazon Resource Name of the IAM role that the monitor uses to connect to Deadline
-        /// Cloud. Every user that signs in to the monitor using IAM Identity Center uses this
-        /// role to access Deadline Cloud resources.
-        /// </para>
+        /// Gets and sets the property RoleArn. The Amazon Resource Name of the IAM role that
+        /// the monitor uses to connect to Deadline Cloud. Every user that signs in to the monitor
+        /// using IAM Identity Center uses this role to access Deadline Cloud resources.
         /// </summary>
         [AWSProperty(Required = true)]
         public string RoleArn { get; set; }
@@ -118,11 +107,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetRoleArn() => this.RoleArn != null;
 
         /// <summary>
-        /// Gets and sets the property Subdomain. 
-        /// <para>
-        /// The subdomain to use when creating the monitor URL. The full URL of the monitor is
-        /// subdomain.Region.deadlinecloud.amazonaws.com.
-        /// </para>
+        /// Gets and sets the property Subdomain. The subdomain to use when creating the monitor
+        /// URL. The full URL of the monitor is subdomain.Region.deadlinecloud.amazonaws.com.
         /// </summary>
         [AWSProperty(Required = true)]
         public string Subdomain { get; set; }
@@ -133,11 +119,9 @@ namespace Amazon.Deadline.Model
         internal bool IsSetSubdomain() => this.Subdomain != null;
 
         /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// The tags to add to your monitor. Each tag consists of a tag key and a tag value. Tag
-        /// keys and values are both required, but tag values can be empty strings.
-        /// </para>
+        /// Gets and sets the property Tags. The tags to add to your monitor. Each tag consists
+        /// of a tag key and a tag value. Tag keys and values are both required, but tag values
+        /// can be empty strings.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

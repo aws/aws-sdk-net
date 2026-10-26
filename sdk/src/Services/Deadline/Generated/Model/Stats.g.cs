@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class Stats
     {
         /// <summary>
-        /// Gets and sets the property Avg. 
-        /// <para>
-        /// The average of the usage statistics.
-        /// </para>
+        /// Gets and sets the property Avg. The average of the usage statistics.
         /// </summary>
         public double? Avg { get; set; }
 
@@ -48,10 +45,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetAvg() => this.Avg.HasValue;
 
         /// <summary>
-        /// Gets and sets the property Max. 
-        /// <para>
-        /// The maximum among the usage statistics.
-        /// </para>
+        /// Gets and sets the property Max. The maximum among the usage statistics.
         /// </summary>
         public double? Max { get; set; }
 
@@ -61,10 +55,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMax() => this.Max.HasValue;
 
         /// <summary>
-        /// Gets and sets the property Min. 
-        /// <para>
-        /// The minimum of the usage statistics.
-        /// </para>
+        /// Gets and sets the property Min. The minimum of the usage statistics.
         /// </summary>
         public double? Min { get; set; }
 
@@ -74,10 +65,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMin() => this.Min.HasValue;
 
         /// <summary>
-        /// Gets and sets the property Sum. 
-        /// <para>
-        /// The sum of the usage statistics.
-        /// </para>
+        /// Gets and sets the property Sum. The sum of the usage statistics.
         /// </summary>
         public double? Sum { get; set; }
 

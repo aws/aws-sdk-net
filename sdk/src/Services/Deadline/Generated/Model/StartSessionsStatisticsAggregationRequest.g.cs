@@ -41,10 +41,8 @@ namespace Amazon.Deadline.Model
     public partial class StartSessionsStatisticsAggregationRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property EndTime. 
-        /// <para>
-        /// The Linux timestamp of the date and time that the statistics end.
-        /// </para>
+        /// Gets and sets the property EndTime. The Linux timestamp of the date and time that
+        /// the statistics end.
         /// </summary>
         [AWSProperty(Required = true)]
         public DateTime? EndTime { get; set; }
@@ -55,10 +53,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetEndTime() => this.EndTime.HasValue;
 
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The identifier of the farm that contains queues or fleets to return statistics for.
-        /// </para>
+        /// Gets and sets the property FarmId. The identifier of the farm that contains queues
+        /// or fleets to return statistics for.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -69,10 +65,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property GroupBy. 
-        /// <para>
-        /// The field to use to group the statistics.
-        /// </para>
+        /// Gets and sets the property GroupBy. The field to use to group the statistics.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -89,10 +82,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetGroupBy() => this.GroupBy != null && (this.GroupBy.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property Period. 
-        /// <para>
-        /// The period to aggregate the statistics.
-        /// </para>
+        /// Gets and sets the property Period. The period to aggregate the statistics.
         /// </summary>
         public Period Period { get; set; }
 
@@ -102,10 +92,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetPeriod() => this.Period != null;
 
         /// <summary>
-        /// Gets and sets the property ResourceIds. 
-        /// <para>
-        /// A list of fleet IDs or queue IDs to gather statistics for.
-        /// </para>
+        /// Gets and sets the property ResourceIds. A list of fleet IDs or queue IDs to gather
+        /// statistics for.
         /// </summary>
         [AWSProperty(Required = true)]
         public SessionsStatisticsResources ResourceIds { get; set; }
@@ -116,10 +104,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetResourceIds() => this.ResourceIds != null;
 
         /// <summary>
-        /// Gets and sets the property StartTime. 
-        /// <para>
-        /// The Linux timestamp of the date and time that the statistics start.
-        /// </para>
+        /// Gets and sets the property StartTime. The Linux timestamp of the date and time that
+        /// the statistics start.
         /// </summary>
         [AWSProperty(Required = true)]
         public DateTime? StartTime { get; set; }
@@ -130,10 +116,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStartTime() => this.StartTime.HasValue;
 
         /// <summary>
-        /// Gets and sets the property Statistics. 
-        /// <para>
-        /// One to four statistics to return.
-        /// </para>
+        /// Gets and sets the property Statistics. One to four statistics to return.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

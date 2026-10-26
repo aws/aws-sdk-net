@@ -73,10 +73,8 @@ namespace Amazon.Deadline.Model
         public InternalServerErrorException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) : base(message, errorType, errorCode, requestId, statusCode) { }
 
         /// <summary>
-        /// Gets and sets the property RetryAfterSeconds. 
-        /// <para>
-        /// The number of seconds a client should wait before retrying the request.
-        /// </para>
+        /// Gets and sets the property RetryAfterSeconds. The number of seconds a client should
+        /// wait before retrying the request.
         /// </summary>
         public int? RetryAfterSeconds { get; set; }
 

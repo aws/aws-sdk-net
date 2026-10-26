@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class FixedBudgetSchedule
     {
         /// <summary>
-        /// Gets and sets the property EndTime. 
-        /// <para>
-        /// When the budget ends.
-        /// </para>
+        /// Gets and sets the property EndTime. When the budget ends.
         /// </summary>
         [AWSProperty(Required = true)]
         public DateTime? EndTime { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetEndTime() => this.EndTime.HasValue;
 
         /// <summary>
-        /// Gets and sets the property StartTime. 
-        /// <para>
-        /// When the budget starts.
-        /// </para>
+        /// Gets and sets the property StartTime. When the budget starts.
         /// </summary>
         [AWSProperty(Required = true)]
         public DateTime? StartTime { get; set; }

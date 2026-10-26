@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class EnvironmentDetailsEntity
     {
         /// <summary>
-        /// Gets and sets the property EnvironmentId. 
-        /// <para>
-        /// The environment ID.
-        /// </para>
+        /// Gets and sets the property EnvironmentId. The environment ID.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 1024)]
         public string EnvironmentId { get; set; }
@@ -49,11 +46,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetEnvironmentId() => this.EnvironmentId != null;
 
         /// <summary>
-        /// Gets and sets the property Extensions. 
-        /// <para>
-        /// The Open Job Description extensions that the environment uses. This value is used
-        /// by the worker agent.
-        /// </para>
+        /// Gets and sets the property Extensions. The Open Job Description extensions that the
+        /// environment uses. This value is used by the worker agent.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -70,10 +64,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetExtensions() => this.Extensions != null && (this.Extensions.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property JobId. 
-        /// <para>
-        /// The job ID.
-        /// </para>
+        /// Gets and sets the property JobId. The job ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string JobId { get; set; }
@@ -84,11 +75,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetJobId() => this.JobId != null;
 
         /// <summary>
-        /// Gets and sets the property ResolvedSymbolTable. 
-        /// <para>
-        /// The resolved symbol table for the environment's expressions, serialized as JSON. This
-        /// value is used by the worker agent.
-        /// </para>
+        /// Gets and sets the property ResolvedSymbolTable. The resolved symbol table for the
+        /// environment's expressions, serialized as JSON. This value is used by the worker agent.
         /// </summary>
         [AWSProperty(Min = 1, Max = 1000000)]
         public string ResolvedSymbolTable { get; set; }
@@ -99,10 +87,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetResolvedSymbolTable() => this.ResolvedSymbolTable != null;
 
         /// <summary>
-        /// Gets and sets the property SchemaVersion. 
-        /// <para>
-        /// The schema version in the environment.
-        /// </para>
+        /// Gets and sets the property SchemaVersion. The schema version in the environment.
         /// </summary>
         [AWSProperty(Required = true)]
         public string SchemaVersion { get; set; }
@@ -113,10 +98,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetSchemaVersion() => this.SchemaVersion != null;
 
         /// <summary>
-        /// Gets and sets the property Template. 
-        /// <para>
-        /// The template used for the environment.
-        /// </para>
+        /// Gets and sets the property Template. The template used for the environment.
         /// </summary>
         [AWSProperty(Required = true, Sensitive = true)]
         public Amazon.Runtime.Documents.Document Template { get; set; }

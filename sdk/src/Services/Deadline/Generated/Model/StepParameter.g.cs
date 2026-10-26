@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class StepParameter
     {
         /// <summary>
-        /// Gets and sets the property Chunks. 
-        /// <para>
-        /// The configuration for task chunking.
-        /// </para>
+        /// Gets and sets the property Chunks. The configuration for task chunking.
         /// </summary>
         public StepParameterChunks Chunks { get; set; }
 
@@ -48,10 +45,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetChunks() => this.Chunks != null;
 
         /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name of the parameter.
-        /// </para>
+        /// Gets and sets the property Name. The name of the parameter.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 512)]
         public string Name { get; set; }
@@ -62,10 +56,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
-        /// Gets and sets the property Type. 
-        /// <para>
-        /// The data type of the parameter.
-        /// </para>
+        /// Gets and sets the property Type. The data type of the parameter.
         /// </summary>
         [AWSProperty(Required = true)]
         public StepParameterType Type { get; set; }

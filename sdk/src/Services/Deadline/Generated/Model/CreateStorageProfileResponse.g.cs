@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class CreateStorageProfileResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property StorageProfileId. 
-        /// <para>
-        /// The storage profile ID.
-        /// </para>
+        /// Gets and sets the property StorageProfileId. The storage profile ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string StorageProfileId { get; set; }

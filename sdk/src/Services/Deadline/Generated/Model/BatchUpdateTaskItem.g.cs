@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class BatchUpdateTaskItem
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID of the task to update.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID of the task to update.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property JobId. 
-        /// <para>
-        /// The job ID of the task to update.
-        /// </para>
+        /// Gets and sets the property JobId. The job ID of the task to update.
         /// </summary>
         [AWSProperty(Required = true)]
         public string JobId { get; set; }
@@ -63,10 +57,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetJobId() => this.JobId != null;
 
         /// <summary>
-        /// Gets and sets the property QueueId. 
-        /// <para>
-        /// The queue ID of the task to update.
-        /// </para>
+        /// Gets and sets the property QueueId. The queue ID of the task to update.
         /// </summary>
         [AWSProperty(Required = true)]
         public string QueueId { get; set; }
@@ -77,10 +68,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetQueueId() => this.QueueId != null;
 
         /// <summary>
-        /// Gets and sets the property StepId. 
-        /// <para>
-        /// The step ID of the task to update.
-        /// </para>
+        /// Gets and sets the property StepId. The step ID of the task to update.
         /// </summary>
         [AWSProperty(Required = true)]
         public string StepId { get; set; }
@@ -91,10 +79,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStepId() => this.StepId != null;
 
         /// <summary>
-        /// Gets and sets the property TargetRunStatus. 
-        /// <para>
-        /// The run status with which to start the task.
-        /// </para>
+        /// Gets and sets the property TargetRunStatus. The run status with which to start the
+        /// task.
         /// </summary>
         [AWSProperty(Required = true)]
         public TaskTargetRunStatus TargetRunStatus { get; set; }
@@ -105,10 +91,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetTargetRunStatus() => this.TargetRunStatus != null;
 
         /// <summary>
-        /// Gets and sets the property TaskId. 
-        /// <para>
-        /// The task ID of the task to update.
-        /// </para>
+        /// Gets and sets the property TaskId. The task ID of the task to update.
         /// </summary>
         [AWSProperty(Required = true)]
         public string TaskId { get; set; }

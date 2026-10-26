@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class ListSessionActionsRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID for the session actions list.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID for the session actions list.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property JobId. 
-        /// <para>
-        /// The job ID for the session actions list.
-        /// </para>
+        /// Gets and sets the property JobId. The job ID for the session actions list.
         /// </summary>
         [AWSProperty(Required = true)]
         public string JobId { get; set; }
@@ -63,11 +57,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetJobId() => this.JobId != null;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
-        /// <para>
-        /// The maximum number of results to return. Use this parameter with <c>NextToken</c>
-        /// to get results as a set of sequential pages.
-        /// </para>
+        /// Gets and sets the property MaxResults. The maximum number of results to return. Use
+        /// this parameter with <c>NextToken</c> to get results as a set of sequential pages.
         /// </summary>
         [AWSProperty(Min = 1, Max = 100)]
         public int? MaxResults { get; set; }
@@ -78,10 +69,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMaxResults() => this.MaxResults.HasValue;
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
-        /// <para>
-        /// The token for the next set of results, or <c>null</c> to start from the beginning.
-        /// </para>
+        /// Gets and sets the property NextToken. The token for the next set of results, or <c>null</c>
+        /// to start from the beginning.
         /// </summary>
         [AWSProperty(Max = 4096)]
         public string NextToken { get; set; }
@@ -92,10 +81,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetNextToken() => this.NextToken != null;
 
         /// <summary>
-        /// Gets and sets the property QueueId. 
-        /// <para>
-        /// The queue ID for the session actions list.
-        /// </para>
+        /// Gets and sets the property QueueId. The queue ID for the session actions list.
         /// </summary>
         [AWSProperty(Required = true)]
         public string QueueId { get; set; }
@@ -106,10 +92,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetQueueId() => this.QueueId != null;
 
         /// <summary>
-        /// Gets and sets the property SessionId. 
-        /// <para>
-        /// The session ID to include on the sessions action list.
-        /// </para>
+        /// Gets and sets the property SessionId. The session ID to include on the sessions action
+        /// list.
         /// </summary>
         public string SessionId { get; set; }
 
@@ -119,10 +103,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetSessionId() => this.SessionId != null;
 
         /// <summary>
-        /// Gets and sets the property TaskId. 
-        /// <para>
-        /// The task ID for the session actions list.
-        /// </para>
+        /// Gets and sets the property TaskId. The task ID for the session actions list.
         /// </summary>
         public string TaskId { get; set; }
 

@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class GetQueueEnvironmentResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property CreatedAt. 
-        /// <para>
-        /// The date and time the resource was created.
-        /// </para>
+        /// Gets and sets the property CreatedAt. The date and time the resource was created.
         /// </summary>
         [AWSProperty(Required = true)]
         public DateTime? CreatedAt { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCreatedAt() => this.CreatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property CreatedBy. 
-        /// <para>
-        /// The user or system that created this resource.&gt;
-        /// </para>
+        /// Gets and sets the property CreatedBy. The user or system that created this resource.&gt;
         /// </summary>
         [AWSProperty(Required = true)]
         public string CreatedBy { get; set; }
@@ -63,10 +57,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCreatedBy() => this.CreatedBy != null;
 
         /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name of the queue environment.
-        /// </para>
+        /// Gets and sets the property Name. The name of the queue environment.
         /// </summary>
         [AWSProperty(Required = true)]
         public string Name { get; set; }
@@ -77,10 +68,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
-        /// Gets and sets the property Priority. 
-        /// <para>
-        /// The priority of the queue environment.
-        /// </para>
+        /// Gets and sets the property Priority. The priority of the queue environment.
         /// </summary>
         [AWSProperty(Required = true, Min = 0, Max = 10000)]
         public int? Priority { get; set; }
@@ -91,10 +79,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetPriority() => this.Priority.HasValue;
 
         /// <summary>
-        /// Gets and sets the property QueueEnvironmentId. 
-        /// <para>
-        /// The queue environment ID.
-        /// </para>
+        /// Gets and sets the property QueueEnvironmentId. The queue environment ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string QueueEnvironmentId { get; set; }
@@ -105,10 +90,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetQueueEnvironmentId() => this.QueueEnvironmentId != null;
 
         /// <summary>
-        /// Gets and sets the property Template. 
-        /// <para>
-        /// The template for the queue environment.
-        /// </para>
+        /// Gets and sets the property Template. The template for the queue environment.
         /// </summary>
         [AWSProperty(Required = true, Sensitive = true, Min = 1, Max = 15000)]
         public string Template { get; set; }
@@ -119,10 +101,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetTemplate() => this.Template != null;
 
         /// <summary>
-        /// Gets and sets the property TemplateType. 
-        /// <para>
-        /// The type of template for the queue environment.
-        /// </para>
+        /// Gets and sets the property TemplateType. The type of template for the queue environment.
         /// </summary>
         [AWSProperty(Required = true)]
         public EnvironmentTemplateType TemplateType { get; set; }
@@ -133,10 +112,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetTemplateType() => this.TemplateType != null;
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt. 
-        /// <para>
-        /// The date and time the resource was updated.
-        /// </para>
+        /// Gets and sets the property UpdatedAt. The date and time the resource was updated.
         /// </summary>
         public DateTime? UpdatedAt { get; set; }
 
@@ -146,10 +122,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetUpdatedAt() => this.UpdatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property UpdatedBy. 
-        /// <para>
-        /// The user or system that updated this resource.
-        /// </para>
+        /// Gets and sets the property UpdatedBy. The user or system that updated this resource.
         /// </summary>
         public string UpdatedBy { get; set; }
 

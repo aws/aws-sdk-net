@@ -37,10 +37,8 @@ namespace Amazon.Deadline.Model
     public partial class DeleteLimitRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The unique identifier of the farm that contains the limit to delete.
-        /// </para>
+        /// Gets and sets the property FarmId. The unique identifier of the farm that contains
+        /// the limit to delete.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -51,10 +49,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property LimitId. 
-        /// <para>
-        /// The unique identifier of the limit to delete.
-        /// </para>
+        /// Gets and sets the property LimitId. The unique identifier of the limit to delete.
         /// </summary>
         [AWSProperty(Required = true)]
         public string LimitId { get; set; }

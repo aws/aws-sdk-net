@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class ValidationExceptionField
     {
         /// <summary>
-        /// Gets and sets the property Message. 
-        /// <para>
-        /// The error message for the validation exception.
-        /// </para>
+        /// Gets and sets the property Message. The error message for the validation exception.
         /// </summary>
         [AWSProperty(Required = true)]
         public string Message { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMessage() => this.Message != null;
 
         /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name of the validation exception.
-        /// </para>
+        /// Gets and sets the property Name. The name of the validation exception.
         /// </summary>
         [AWSProperty(Required = true)]
         public string Name { get; set; }

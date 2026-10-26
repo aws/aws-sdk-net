@@ -36,12 +36,9 @@ namespace Amazon.Deadline.Model
     public partial class SchedulingMaxPriorityOverride
     {
         /// <summary>
-        /// Gets and sets the property AlwaysScheduleFirst. 
-        /// <para>
-        /// Jobs at the maximum priority (100) are always scheduled before other jobs, regardless
-        /// of the weighted scheduling formula. If multiple jobs have priority 100, ties are broken
-        /// using the standard weighted formula.
-        /// </para>
+        /// Gets and sets the property AlwaysScheduleFirst. Jobs at the maximum priority (100)
+        /// are always scheduled before other jobs, regardless of the weighted scheduling formula.
+        /// If multiple jobs have priority 100, ties are broken using the standard weighted formula.
         /// </summary>
         public SchedulingMaxPriorityOverrideAlwaysScheduleFirst AlwaysScheduleFirst { get; set; }
 

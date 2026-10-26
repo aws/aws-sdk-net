@@ -35,10 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class BatchGetJobEntityResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property Entities. 
-        /// <para>
-        /// A list of the job entities, or details, in the batch.
-        /// </para>
+        /// Gets and sets the property Entities. A list of the job entities, or details, in the
+        /// batch.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -55,10 +53,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetEntities() => this.Entities != null && (this.Entities.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property Errors. 
-        /// <para>
-        /// A list of errors from the job error logs for the batch.
-        /// </para>
+        /// Gets and sets the property Errors. A list of errors from the job error logs for the
+        /// batch.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

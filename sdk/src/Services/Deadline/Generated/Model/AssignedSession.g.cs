@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class AssignedSession
     {
         /// <summary>
-        /// Gets and sets the property JobId. 
-        /// <para>
-        /// The job ID for the assigned session.
-        /// </para>
+        /// Gets and sets the property JobId. The job ID for the assigned session.
         /// </summary>
         [AWSProperty(Required = true)]
         public string JobId { get; set; }
@@ -49,10 +46,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetJobId() => this.JobId != null;
 
         /// <summary>
-        /// Gets and sets the property LogConfiguration. 
-        /// <para>
-        /// The log configuration for the worker's assigned session.
-        /// </para>
+        /// Gets and sets the property LogConfiguration. The log configuration for the worker's
+        /// assigned session.
         /// </summary>
         [AWSProperty(Required = true)]
         public LogConfiguration LogConfiguration { get; set; }
@@ -63,11 +58,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetLogConfiguration() => this.LogConfiguration != null;
 
         /// <summary>
-        /// Gets and sets the property Metadata. 
-        /// <para>
-        /// Key-value hints that the service provides to guide how the session runs. This value
-        /// is used by the worker agent.
-        /// </para>
+        /// Gets and sets the property Metadata. Key-value hints that the service provides to
+        /// guide how the session runs. This value is used by the worker agent.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -84,10 +76,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMetadata() => this.Metadata != null && (this.Metadata.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property QueueId. 
-        /// <para>
-        /// The queue ID of the assigned session.
-        /// </para>
+        /// Gets and sets the property QueueId. The queue ID of the assigned session.
         /// </summary>
         [AWSProperty(Required = true)]
         public string QueueId { get; set; }
@@ -98,10 +87,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetQueueId() => this.QueueId != null;
 
         /// <summary>
-        /// Gets and sets the property SessionActions. 
-        /// <para>
-        /// The session actions to apply to the assigned session.
-        /// </para>
+        /// Gets and sets the property SessionActions. The session actions to apply to the assigned
+        /// session.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

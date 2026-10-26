@@ -35,15 +35,13 @@ namespace Amazon.Deadline.Model
     public partial class GetSessionsStatisticsAggregationResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property NextToken. 
-        /// <para>
-        /// If Deadline Cloud returns <c>nextToken</c>, then there are more results available.
-        /// The value of <c>nextToken</c> is a unique pagination token for each page. To retrieve
-        /// the next page, call the operation again using the returned token. Keep all other arguments
-        /// unchanged. If no results remain, then <c>nextToken</c> is set to <c>null</c>. Each
-        /// pagination token expires after 24 hours. If you provide a token that isn't valid,
-        /// then you receive an HTTP 400 <c>ValidationException</c> error.
-        /// </para>
+        /// Gets and sets the property NextToken. If Deadline Cloud returns <c>nextToken</c>,
+        /// then there are more results available. The value of <c>nextToken</c> is a unique pagination
+        /// token for each page. To retrieve the next page, call the operation again using the
+        /// returned token. Keep all other arguments unchanged. If no results remain, then <c>nextToken</c>
+        /// is set to <c>null</c>. Each pagination token expires after 24 hours. If you provide
+        /// a token that isn't valid, then you receive an HTTP 400 <c>ValidationException</c>
+        /// error.
         /// </summary>
         [AWSProperty(Max = 4096)]
         public string NextToken { get; set; }
@@ -54,10 +52,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetNextToken() => this.NextToken != null;
 
         /// <summary>
-        /// Gets and sets the property Statistics. 
-        /// <para>
-        /// The statistics for the specified fleets or queues.
-        /// </para>
+        /// Gets and sets the property Statistics. The statistics for the specified fleets or
+        /// queues.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -73,18 +69,12 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStatistics() => this.Statistics != null && (this.Statistics.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property Status. 
-        /// <para>
-        /// The status of the aggregated results. An aggregation may fail or time out if the results
-        /// are too large. If this happens, you can call the <c>StartSessionsStatisticsAggregation</c>
-        /// operation after you reduce the aggregation time frame, reduce the number of queues
-        /// or fleets in the aggregation, or increase the period length.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you call the <c>StartSessionsStatisticsAggregation </c> operation when the status
-        /// is <c>IN_PROGRESS</c>, you will receive a <c>ThrottlingException</c>.
-        /// </para>
+        /// Gets and sets the property Status. The status of the aggregated results. An aggregation
+        /// may fail or time out if the results are too large. If this happens, you can call the
+        /// <c>StartSessionsStatisticsAggregation</c> operation after you reduce the aggregation
+        /// time frame, reduce the number of queues or fleets in the aggregation, or increase
+        /// the period length. If you call the <c>StartSessionsStatisticsAggregation </c> operation
+        /// when the status is <c>IN_PROGRESS</c>, you will receive a <c>ThrottlingException</c>.
         /// </summary>
         [AWSProperty(Required = true)]
         public SessionsStatisticsAggregationStatus Status { get; set; }
@@ -95,10 +85,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStatus() => this.Status != null;
 
         /// <summary>
-        /// Gets and sets the property StatusMessage. 
-        /// <para>
-        /// A message that describes the status.
-        /// </para>
+        /// Gets and sets the property StatusMessage. A message that describes the status.
         /// </summary>
         public string StatusMessage { get; set; }
 

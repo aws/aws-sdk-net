@@ -35,10 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class VolumeSummary
     {
         /// <summary>
-        /// Gets and sets the property AttachedWorkerId. 
-        /// <para>
-        /// The worker ID of the worker the volume is attached to.
-        /// </para>
+        /// Gets and sets the property AttachedWorkerId. The worker ID of the worker the volume
+        /// is attached to.
         /// </summary>
         public string AttachedWorkerId { get; set; }
 
@@ -48,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetAttachedWorkerId() => this.AttachedWorkerId != null;
 
         /// <summary>
-        /// Gets and sets the property AvailabilityZoneId. 
-        /// <para>
-        /// The Availability Zone ID of the volume.
-        /// </para>
+        /// Gets and sets the property AvailabilityZoneId. The Availability Zone ID of the volume.
         /// </summary>
         [AWSProperty(Required = true)]
         public string AvailabilityZoneId { get; set; }
@@ -62,10 +57,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetAvailabilityZoneId() => this.AvailabilityZoneId != null;
 
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID of the farm that contains the fleet.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID of the farm that contains the fleet.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -76,10 +68,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property FleetId. 
-        /// <para>
-        /// The fleet ID of the fleet that contains the volume.
-        /// </para>
+        /// Gets and sets the property FleetId. The fleet ID of the fleet that contains the volume.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FleetId { get; set; }
@@ -90,10 +79,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFleetId() => this.FleetId != null;
 
         /// <summary>
-        /// Gets and sets the property SizeGiB. 
-        /// <para>
-        /// The volume size in GiB.
-        /// </para>
+        /// Gets and sets the property SizeGiB. The volume size in GiB.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 65536)]
         public int? SizeGiB { get; set; }
@@ -104,10 +90,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetSizeGiB() => this.SizeGiB.HasValue;
 
         /// <summary>
-        /// Gets and sets the property State. 
-        /// <para>
-        /// The state of the volume.
-        /// </para>
+        /// Gets and sets the property State. The state of the volume.
         /// </summary>
         [AWSProperty(Required = true)]
         public VolumeState State { get; set; }
@@ -118,10 +101,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetState() => this.State != null;
 
         /// <summary>
-        /// Gets and sets the property VolumeId. 
-        /// <para>
-        /// The volume ID.
-        /// </para>
+        /// Gets and sets the property VolumeId. The volume ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string VolumeId { get; set; }

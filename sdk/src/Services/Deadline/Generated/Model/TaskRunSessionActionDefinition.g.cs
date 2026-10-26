@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class TaskRunSessionActionDefinition
     {
         /// <summary>
-        /// Gets and sets the property Parameters. 
-        /// <para>
-        /// The task parameters.
-        /// </para>
+        /// Gets and sets the property Parameters. The task parameters.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -55,10 +52,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetParameters() => this.Parameters != null && (this.Parameters.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property StepId. 
-        /// <para>
-        /// The step ID.
-        /// </para>
+        /// Gets and sets the property StepId. The step ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string StepId { get; set; }
@@ -69,10 +63,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStepId() => this.StepId != null;
 
         /// <summary>
-        /// Gets and sets the property TaskId. 
-        /// <para>
-        /// The task ID.
-        /// </para>
+        /// Gets and sets the property TaskId. The task ID.
         /// </summary>
         public string TaskId { get; set; }
 

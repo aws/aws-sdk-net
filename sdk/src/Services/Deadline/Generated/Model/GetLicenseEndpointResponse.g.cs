@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class GetLicenseEndpointResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property DnsName. 
-        /// <para>
-        /// The DNS name.
-        /// </para>
+        /// Gets and sets the property DnsName. The DNS name.
         /// </summary>
         public string DnsName { get; set; }
 
@@ -48,10 +45,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetDnsName() => this.DnsName != null;
 
         /// <summary>
-        /// Gets and sets the property LicenseEndpointId. 
-        /// <para>
-        /// The license endpoint ID.
-        /// </para>
+        /// Gets and sets the property LicenseEndpointId. The license endpoint ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string LicenseEndpointId { get; set; }
@@ -62,10 +56,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetLicenseEndpointId() => this.LicenseEndpointId != null;
 
         /// <summary>
-        /// Gets and sets the property SecurityGroupIds. 
-        /// <para>
-        /// The security group IDs for the license endpoint.
-        /// </para>
+        /// Gets and sets the property SecurityGroupIds. The security group IDs for the license
+        /// endpoint.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -82,10 +74,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetSecurityGroupIds() => this.SecurityGroupIds != null && (this.SecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property Status. 
-        /// <para>
-        /// The status of the license endpoint.
-        /// </para>
+        /// Gets and sets the property Status. The status of the license endpoint.
         /// </summary>
         [AWSProperty(Required = true)]
         public LicenseEndpointStatus Status { get; set; }
@@ -96,10 +85,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStatus() => this.Status != null;
 
         /// <summary>
-        /// Gets and sets the property StatusMessage. 
-        /// <para>
-        /// The status message of the license endpoint.
-        /// </para>
+        /// Gets and sets the property StatusMessage. The status message of the license endpoint.
         /// </summary>
         [AWSProperty(Required = true, Min = 0, Max = 1024)]
         public string StatusMessage { get; set; }
@@ -110,10 +96,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStatusMessage() => this.StatusMessage != null;
 
         /// <summary>
-        /// Gets and sets the property SubnetIds. 
-        /// <para>
-        /// The subnet IDs.
-        /// </para>
+        /// Gets and sets the property SubnetIds. The subnet IDs.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -130,10 +113,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetSubnetIds() => this.SubnetIds != null && (this.SubnetIds.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property VpcId. 
-        /// <para>
-        /// The VPC (virtual private cloud) ID associated with the license endpoint.
-        /// </para>
+        /// Gets and sets the property VpcId. The VPC (virtual private cloud) ID associated with
+        /// the license endpoint.
         /// </summary>
         [AWSProperty(Min = 1, Max = 32)]
         public string VpcId { get; set; }

@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class BatchUpdateJobItem
     {
         /// <summary>
-        /// Gets and sets the property Description. 
-        /// <para>
-        /// The description of the job to update.
-        /// </para>
+        /// Gets and sets the property Description. The description of the job to update.
         /// </summary>
         [AWSProperty(Sensitive = true, Min = 0, Max = 2048)]
         public string Description { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetDescription() => this.Description != null;
 
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID of the job to update.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID of the job to update.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -63,10 +57,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property JobId. 
-        /// <para>
-        /// The job ID of the job to update.
-        /// </para>
+        /// Gets and sets the property JobId. The job ID of the job to update.
         /// </summary>
         [AWSProperty(Required = true)]
         public string JobId { get; set; }
@@ -97,10 +88,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetLifecycleStatus() => this.LifecycleStatus != null;
 
         /// <summary>
-        /// Gets and sets the property MaxFailedTasksCount. 
-        /// <para>
-        /// The number of task failures before the job stops running and is marked as <c>FAILED</c>.
-        /// </para>
+        /// Gets and sets the property MaxFailedTasksCount. The number of task failures before
+        /// the job stops running and is marked as <c>FAILED</c>.
         /// </summary>
         [AWSProperty(Min = 0, Max = 2147483647)]
         public int? MaxFailedTasksCount { get; set; }
@@ -111,10 +100,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMaxFailedTasksCount() => this.MaxFailedTasksCount.HasValue;
 
         /// <summary>
-        /// Gets and sets the property MaxRetriesPerTask. 
-        /// <para>
-        /// The maximum number of retries per failed tasks.
-        /// </para>
+        /// Gets and sets the property MaxRetriesPerTask. The maximum number of retries per failed
+        /// tasks.
         /// </summary>
         [AWSProperty(Min = 0, Max = 2147483647)]
         public int? MaxRetriesPerTask { get; set; }
@@ -125,10 +112,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMaxRetriesPerTask() => this.MaxRetriesPerTask.HasValue;
 
         /// <summary>
-        /// Gets and sets the property MaxWorkerCount. 
-        /// <para>
-        /// The maximum number of worker hosts that can concurrently process a job.
-        /// </para>
+        /// Gets and sets the property MaxWorkerCount. The maximum number of worker hosts that
+        /// can concurrently process a job.
         /// </summary>
         [AWSProperty(Min = -1, Max = 2147483647)]
         public int? MaxWorkerCount { get; set; }
@@ -139,10 +124,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMaxWorkerCount() => this.MaxWorkerCount.HasValue;
 
         /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name of the job to update.
-        /// </para>
+        /// Gets and sets the property Name. The name of the job to update.
         /// </summary>
         [AWSProperty(Min = 1, Max = 512)]
         public string Name { get; set; }
@@ -153,10 +135,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
-        /// Gets and sets the property Priority. 
-        /// <para>
-        /// The job priority to update.
-        /// </para>
+        /// Gets and sets the property Priority. The job priority to update.
         /// </summary>
         [AWSProperty(Min = 0, Max = 100)]
         public int? Priority { get; set; }
@@ -167,10 +146,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetPriority() => this.Priority.HasValue;
 
         /// <summary>
-        /// Gets and sets the property QueueId. 
-        /// <para>
-        /// The queue ID of the job to update.
-        /// </para>
+        /// Gets and sets the property QueueId. The queue ID of the job to update.
         /// </summary>
         [AWSProperty(Required = true)]
         public string QueueId { get; set; }
@@ -181,10 +157,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetQueueId() => this.QueueId != null;
 
         /// <summary>
-        /// Gets and sets the property TargetTaskRunStatus. 
-        /// <para>
-        /// The task status to update the job's tasks to.
-        /// </para>
+        /// Gets and sets the property TargetTaskRunStatus. The task status to update the job's
+        /// tasks to.
         /// </summary>
         public JobTargetTaskRunStatus TargetTaskRunStatus { get; set; }
 

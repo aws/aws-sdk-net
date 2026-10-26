@@ -36,13 +36,11 @@ namespace Amazon.Deadline.Model
     public partial class PriorityBalancedSchedulingConfiguration
     {
         /// <summary>
-        /// Gets and sets the property RenderingTaskBuffer. 
-        /// <para>
-        /// The rendering task buffer controls worker stickiness. A worker only switches from
-        /// its current job to another job at the same priority if the other job has fewer rendering
-        /// tasks by more than this buffer value. Higher values make workers stickier to their
-        /// current jobs. The default value is <c>1</c>.
-        /// </para>
+        /// Gets and sets the property RenderingTaskBuffer. The rendering task buffer controls
+        /// worker stickiness. A worker only switches from its current job to another job at the
+        /// same priority if the other job has fewer rendering tasks by more than this buffer
+        /// value. Higher values make workers stickier to their current jobs. The default value
+        /// is <c>1</c>.
         /// </summary>
         [AWSProperty(Min = 0, Max = 1000)]
         public int? RenderingTaskBuffer { get; set; }

@@ -35,10 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class ListSessionsForWorkerResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property NextToken. 
-        /// <para>
-        /// The token for the next set of results, or <c>null</c> to start from the beginning.
-        /// </para>
+        /// Gets and sets the property NextToken. The token for the next set of results, or <c>null</c>
+        /// to start from the beginning.
         /// </summary>
         [AWSProperty(Max = 4096)]
         public string NextToken { get; set; }
@@ -49,10 +47,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetNextToken() => this.NextToken != null;
 
         /// <summary>
-        /// Gets and sets the property Sessions. 
-        /// <para>
-        /// The sessions in the response.
-        /// </para>
+        /// Gets and sets the property Sessions. The sessions in the response.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

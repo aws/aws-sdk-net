@@ -32,19 +32,16 @@ namespace Amazon.Deadline.Model
     /// <summary>
     /// Container for the parameters to the BatchGetSession operation. Retrieves multiple
     /// sessions in a single request. This is a batch version of the <c>GetSession</c> API.
-    /// <para> The result of getting each session is reported individually in the response.
-    /// Because the batch request can result in a combination of successful and unsuccessful
-    /// actions, you should check for batch errors even when the call returns an HTTP status
-    /// code of 200. </para>
+    /// The result of getting each session is reported individually in the response. Because
+    /// the batch request can result in a combination of successful and unsuccessful actions,
+    /// you should check for batch errors even when the call returns an HTTP status code of
+    /// 200.
     /// </summary>
     public partial class BatchGetSessionRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property Identifiers. 
-        /// <para>
-        /// The list of session identifiers to retrieve. You can specify up to 100 identifiers
-        /// per request.
-        /// </para>
+        /// Gets and sets the property Identifiers. The list of session identifiers to retrieve.
+        /// You can specify up to 100 identifiers per request.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

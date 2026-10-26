@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class PosixUser
     {
         /// <summary>
-        /// Gets and sets the property Group. 
-        /// <para>
-        /// The name of the POSIX user's group.
-        /// </para>
+        /// Gets and sets the property Group. The name of the POSIX user's group.
         /// </summary>
         [AWSProperty(Required = true, Min = 0, Max = 31)]
         public string Group { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetGroup() => this.Group != null;
 
         /// <summary>
-        /// Gets and sets the property User. 
-        /// <para>
-        /// The name of the POSIX user.
-        /// </para>
+        /// Gets and sets the property User. The name of the POSIX user.
         /// </summary>
         [AWSProperty(Required = true, Min = 0, Max = 31)]
         public string User { get; set; }

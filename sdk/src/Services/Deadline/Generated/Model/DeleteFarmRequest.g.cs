@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class DeleteFarmRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID of the farm to delete.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID of the farm to delete.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }

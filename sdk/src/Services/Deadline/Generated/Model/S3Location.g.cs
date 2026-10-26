@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class S3Location
     {
         /// <summary>
-        /// Gets and sets the property BucketName. 
-        /// <para>
-        /// The name of the Amazon S3 bucket.
-        /// </para>
+        /// Gets and sets the property BucketName. The name of the Amazon S3 bucket.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 255)]
         public string BucketName { get; set; }
@@ -49,10 +46,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetBucketName() => this.BucketName != null;
 
         /// <summary>
-        /// Gets and sets the property Key. 
-        /// <para>
-        /// The Amazon S3 object key that uniquely identifies the Amazon S3 bucket.
-        /// </para>
+        /// Gets and sets the property Key. The Amazon S3 object key that uniquely identifies
+        /// the Amazon S3 bucket.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 1024)]
         public string Key { get; set; }

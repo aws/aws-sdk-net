@@ -36,10 +36,7 @@ namespace Amazon.Deadline.Model
     public partial class ListStepDependenciesRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID for the step dependencies list.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID for the step dependencies list.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -50,10 +47,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property JobId. 
-        /// <para>
-        /// The job ID for the step dependencies list.
-        /// </para>
+        /// Gets and sets the property JobId. The job ID for the step dependencies list.
         /// </summary>
         [AWSProperty(Required = true)]
         public string JobId { get; set; }
@@ -64,11 +58,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetJobId() => this.JobId != null;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
-        /// <para>
-        /// The maximum number of results to return. Use this parameter with <c>NextToken</c>
-        /// to get results as a set of sequential pages.
-        /// </para>
+        /// Gets and sets the property MaxResults. The maximum number of results to return. Use
+        /// this parameter with <c>NextToken</c> to get results as a set of sequential pages.
         /// </summary>
         [AWSProperty(Min = 1, Max = 1000)]
         public int? MaxResults { get; set; }
@@ -79,10 +70,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMaxResults() => this.MaxResults.HasValue;
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
-        /// <para>
-        /// The token for the next set of results, or <c>null</c> to start from the beginning.
-        /// </para>
+        /// Gets and sets the property NextToken. The token for the next set of results, or <c>null</c>
+        /// to start from the beginning.
         /// </summary>
         [AWSProperty(Max = 4096)]
         public string NextToken { get; set; }
@@ -93,10 +82,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetNextToken() => this.NextToken != null;
 
         /// <summary>
-        /// Gets and sets the property QueueId. 
-        /// <para>
-        /// The queue ID for the step dependencies list.
-        /// </para>
+        /// Gets and sets the property QueueId. The queue ID for the step dependencies list.
         /// </summary>
         [AWSProperty(Required = true)]
         public string QueueId { get; set; }
@@ -107,10 +93,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetQueueId() => this.QueueId != null;
 
         /// <summary>
-        /// Gets and sets the property StepId. 
-        /// <para>
-        /// The step ID to include on the list.
-        /// </para>
+        /// Gets and sets the property StepId. The step ID to include on the list.
         /// </summary>
         [AWSProperty(Required = true)]
         public string StepId { get; set; }

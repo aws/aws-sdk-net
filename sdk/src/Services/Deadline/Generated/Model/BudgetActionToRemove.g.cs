@@ -35,10 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class BudgetActionToRemove
     {
         /// <summary>
-        /// Gets and sets the property ThresholdPercentage. 
-        /// <para>
-        /// The percentage threshold for the budget action to remove.
-        /// </para>
+        /// Gets and sets the property ThresholdPercentage. The percentage threshold for the budget
+        /// action to remove.
         /// </summary>
         [AWSProperty(Required = true, Min = 0, Max = 100)]
         public float? ThresholdPercentage { get; set; }
@@ -49,10 +47,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetThresholdPercentage() => this.ThresholdPercentage.HasValue;
 
         /// <summary>
-        /// Gets and sets the property Type. 
-        /// <para>
-        /// The type of budget action to remove.
-        /// </para>
+        /// Gets and sets the property Type. The type of budget action to remove.
         /// </summary>
         [AWSProperty(Required = true)]
         public BudgetActionType Type { get; set; }

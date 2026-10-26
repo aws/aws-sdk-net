@@ -35,11 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class ListFarmsRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property MaxResults. 
-        /// <para>
-        /// The maximum number of results to return. Use this parameter with <c>NextToken</c>
-        /// to get results as a set of sequential pages.
-        /// </para>
+        /// Gets and sets the property MaxResults. The maximum number of results to return. Use
+        /// this parameter with <c>NextToken</c> to get results as a set of sequential pages.
         /// </summary>
         [AWSProperty(Min = 1, Max = 100)]
         public int? MaxResults { get; set; }
@@ -50,10 +47,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMaxResults() => this.MaxResults.HasValue;
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
-        /// <para>
-        /// The token for the next set of results, or <c>null</c> to start from the beginning.
-        /// </para>
+        /// Gets and sets the property NextToken. The token for the next set of results, or <c>null</c>
+        /// to start from the beginning.
         /// </summary>
         [AWSProperty(Max = 4096)]
         public string NextToken { get; set; }
@@ -64,10 +59,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetNextToken() => this.NextToken != null;
 
         /// <summary>
-        /// Gets and sets the property PrincipalId. 
-        /// <para>
-        /// The principal ID of the member to list on the farm.
-        /// </para>
+        /// Gets and sets the property PrincipalId. The principal ID of the member to list on
+        /// the farm.
         /// </summary>
         [AWSProperty(Min = 1, Max = 47)]
         public string PrincipalId { get; set; }

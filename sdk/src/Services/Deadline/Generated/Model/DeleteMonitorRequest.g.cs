@@ -37,11 +37,9 @@ namespace Amazon.Deadline.Model
     public partial class DeleteMonitorRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property MonitorId. 
-        /// <para>
-        /// The unique identifier of the monitor to delete. This ID is returned by the <c>CreateMonitor</c>
-        /// operation, and is included in the response to the <c>GetMonitor</c> operation.
-        /// </para>
+        /// Gets and sets the property MonitorId. The unique identifier of the monitor to delete.
+        /// This ID is returned by the <c>CreateMonitor</c> operation, and is included in the
+        /// response to the <c>GetMonitor</c> operation.
         /// </summary>
         [AWSProperty(Required = true)]
         public string MonitorId { get; set; }

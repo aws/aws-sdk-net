@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class WorkerAmountCapability
     {
         /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name of the worker amount capability.
-        /// </para>
+        /// Gets and sets the property Name. The name of the worker amount capability.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 100)]
         public string Name { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
-        /// Gets and sets the property Value. 
-        /// <para>
-        /// The value of the worker amount capability.
-        /// </para>
+        /// Gets and sets the property Value. The value of the worker amount capability.
         /// </summary>
         [AWSProperty(Required = true)]
         public float? Value { get; set; }

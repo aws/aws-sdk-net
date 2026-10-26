@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class BatchGetJobIdentifier
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID of the job.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID of the job.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property JobId. 
-        /// <para>
-        /// The job ID.
-        /// </para>
+        /// Gets and sets the property JobId. The job ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string JobId { get; set; }
@@ -63,10 +57,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetJobId() => this.JobId != null;
 
         /// <summary>
-        /// Gets and sets the property QueueId. 
-        /// <para>
-        /// The queue ID of the job.
-        /// </para>
+        /// Gets and sets the property QueueId. The queue ID of the job.
         /// </summary>
         [AWSProperty(Required = true)]
         public string QueueId { get; set; }

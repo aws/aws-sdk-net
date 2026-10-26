@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class ServiceManagedEc2InstanceMarketOptions
     {
         /// <summary>
-        /// Gets and sets the property Type. 
-        /// <para>
-        /// The Amazon EC2 instance type.
-        /// </para>
+        /// Gets and sets the property Type. The Amazon EC2 instance type.
         /// </summary>
         [AWSProperty(Required = true)]
         public Ec2MarketType Type { get; set; }

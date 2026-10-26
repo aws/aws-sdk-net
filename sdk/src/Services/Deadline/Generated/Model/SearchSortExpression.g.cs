@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class SearchSortExpression
     {
         /// <summary>
-        /// Gets and sets the property FieldSort. 
-        /// <para>
-        /// Options for sorting by a field.
-        /// </para>
+        /// Gets and sets the property FieldSort. Options for sorting by a field.
         /// </summary>
         public FieldSortExpression FieldSort { get; set; }
 
@@ -48,10 +45,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFieldSort() => this.FieldSort != null;
 
         /// <summary>
-        /// Gets and sets the property ParameterSort. 
-        /// <para>
-        /// Options for sorting by a parameter.
-        /// </para>
+        /// Gets and sets the property ParameterSort. Options for sorting by a parameter.
         /// </summary>
         public ParameterSortExpression ParameterSort { get; set; }
 
@@ -61,10 +55,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetParameterSort() => this.ParameterSort != null;
 
         /// <summary>
-        /// Gets and sets the property UserJobsFirst. 
-        /// <para>
-        /// Options for sorting a particular user's jobs first.
-        /// </para>
+        /// Gets and sets the property UserJobsFirst. Options for sorting a particular user's
+        /// jobs first.
         /// </summary>
         public UserJobsFirst UserJobsFirst { get; set; }
 

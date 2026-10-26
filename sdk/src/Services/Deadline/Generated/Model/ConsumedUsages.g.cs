@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class ConsumedUsages
     {
         /// <summary>
-        /// Gets and sets the property ApproximateDollarUsage. 
-        /// <para>
-        /// The amount of the budget consumed.
-        /// </para>
+        /// Gets and sets the property ApproximateDollarUsage. The amount of the budget consumed.
         /// </summary>
         [AWSProperty(Required = true)]
         public float? ApproximateDollarUsage { get; set; }

@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class StepSummary
     {
         /// <summary>
-        /// Gets and sets the property CreatedAt. 
-        /// <para>
-        /// The date and time the resource was created.
-        /// </para>
+        /// Gets and sets the property CreatedAt. The date and time the resource was created.
         /// </summary>
         [AWSProperty(Required = true)]
         public DateTime? CreatedAt { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCreatedAt() => this.CreatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property CreatedBy. 
-        /// <para>
-        /// The user or system that created this resource.
-        /// </para>
+        /// Gets and sets the property CreatedBy. The user or system that created this resource.
         /// </summary>
         [AWSProperty(Required = true)]
         public string CreatedBy { get; set; }
@@ -63,10 +57,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCreatedBy() => this.CreatedBy != null;
 
         /// <summary>
-        /// Gets and sets the property DependencyCounts. 
-        /// <para>
-        /// The number of dependencies for the step.
-        /// </para>
+        /// Gets and sets the property DependencyCounts. The number of dependencies for the step.
         /// </summary>
         public DependencyCounts DependencyCounts { get; set; }
 
@@ -76,10 +67,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetDependencyCounts() => this.DependencyCounts != null;
 
         /// <summary>
-        /// Gets and sets the property EndedAt. 
-        /// <para>
-        /// The date and time the resource ended running.
-        /// </para>
+        /// Gets and sets the property EndedAt. The date and time the resource ended running.
         /// </summary>
         public DateTime? EndedAt { get; set; }
 
@@ -89,10 +77,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetEndedAt() => this.EndedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property LifecycleStatus. 
-        /// <para>
-        /// The life cycle status.
-        /// </para>
+        /// Gets and sets the property LifecycleStatus. The life cycle status.
         /// </summary>
         [AWSProperty(Required = true)]
         public StepLifecycleStatus LifecycleStatus { get; set; }
@@ -103,10 +88,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetLifecycleStatus() => this.LifecycleStatus != null;
 
         /// <summary>
-        /// Gets and sets the property LifecycleStatusMessage. 
-        /// <para>
-        /// A message that describes the lifecycle of the step.
-        /// </para>
+        /// Gets and sets the property LifecycleStatusMessage. A message that describes the lifecycle
+        /// of the step.
         /// </summary>
         public string LifecycleStatusMessage { get; set; }
 
@@ -116,10 +99,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetLifecycleStatusMessage() => this.LifecycleStatusMessage != null;
 
         /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name of the step.
-        /// </para>
+        /// Gets and sets the property Name. The name of the step.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 512)]
         public string Name { get; set; }
@@ -130,10 +110,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
-        /// Gets and sets the property StartedAt. 
-        /// <para>
-        /// The date and time the resource started running.
-        /// </para>
+        /// Gets and sets the property StartedAt. The date and time the resource started running.
         /// </summary>
         public DateTime? StartedAt { get; set; }
 
@@ -143,10 +120,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStartedAt() => this.StartedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property StepId. 
-        /// <para>
-        /// The step ID.
-        /// </para>
+        /// Gets and sets the property StepId. The step ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string StepId { get; set; }
@@ -157,10 +131,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStepId() => this.StepId != null;
 
         /// <summary>
-        /// Gets and sets the property TargetTaskRunStatus. 
-        /// <para>
-        /// The task status to update the job's tasks to.
-        /// </para>
+        /// Gets and sets the property TargetTaskRunStatus. The task status to update the job's
+        /// tasks to.
         /// </summary>
         public StepTargetTaskRunStatus TargetTaskRunStatus { get; set; }
 
@@ -170,10 +142,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetTargetTaskRunStatus() => this.TargetTaskRunStatus != null;
 
         /// <summary>
-        /// Gets and sets the property TaskFailureRetryCount. 
-        /// <para>
-        /// The total number of times tasks from the step failed and were retried.
-        /// </para>
+        /// Gets and sets the property TaskFailureRetryCount. The total number of times tasks
+        /// from the step failed and were retried.
         /// </summary>
         [AWSProperty(Min = 0, Max = 2147483647)]
         public int? TaskFailureRetryCount { get; set; }
@@ -239,10 +209,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetTaskRunStatus() => this.TaskRunStatus != null;
 
         /// <summary>
-        /// Gets and sets the property TaskRunStatusCounts. 
-        /// <para>
-        /// The number of tasks running on the job.
-        /// </para>
+        /// Gets and sets the property TaskRunStatusCounts. The number of tasks running on the
+        /// job.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -259,10 +227,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetTaskRunStatusCounts() => this.TaskRunStatusCounts != null && (this.TaskRunStatusCounts.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt. 
-        /// <para>
-        /// The date and time the resource was updated.
-        /// </para>
+        /// Gets and sets the property UpdatedAt. The date and time the resource was updated.
         /// </summary>
         public DateTime? UpdatedAt { get; set; }
 
@@ -272,10 +237,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetUpdatedAt() => this.UpdatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property UpdatedBy. 
-        /// <para>
-        /// The user or system that updated this resource.
-        /// </para>
+        /// Gets and sets the property UpdatedBy. The user or system that updated this resource.
         /// </summary>
         public string UpdatedBy { get; set; }
 

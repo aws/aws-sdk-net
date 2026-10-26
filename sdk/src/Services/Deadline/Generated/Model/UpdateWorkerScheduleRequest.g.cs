@@ -36,10 +36,7 @@ namespace Amazon.Deadline.Model
     public partial class UpdateWorkerScheduleRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID to update.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID to update.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -50,10 +47,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property FleetId. 
-        /// <para>
-        /// The fleet ID to update.
-        /// </para>
+        /// Gets and sets the property FleetId. The fleet ID to update.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FleetId { get; set; }
@@ -64,10 +58,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFleetId() => this.FleetId != null;
 
         /// <summary>
-        /// Gets and sets the property UpdatedSessionActions. 
-        /// <para>
-        /// The session actions associated with the worker schedule to update.
-        /// </para>
+        /// Gets and sets the property UpdatedSessionActions. The session actions associated with
+        /// the worker schedule to update.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -83,10 +75,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetUpdatedSessionActions() => this.UpdatedSessionActions != null && (this.UpdatedSessionActions.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property WorkerId. 
-        /// <para>
-        /// The worker ID to update.
-        /// </para>
+        /// Gets and sets the property WorkerId. The worker ID to update.
         /// </summary>
         [AWSProperty(Required = true)]
         public string WorkerId { get; set; }

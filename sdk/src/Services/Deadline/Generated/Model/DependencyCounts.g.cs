@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class DependencyCounts
     {
         /// <summary>
-        /// Gets and sets the property ConsumersResolved. 
-        /// <para>
-        /// The number of consumers resolved.
-        /// </para>
+        /// Gets and sets the property ConsumersResolved. The number of consumers resolved.
         /// </summary>
         [AWSProperty(Required = true)]
         public int? ConsumersResolved { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetConsumersResolved() => this.ConsumersResolved.HasValue;
 
         /// <summary>
-        /// Gets and sets the property ConsumersUnresolved. 
-        /// <para>
-        /// The number of unresolved consumers.
-        /// </para>
+        /// Gets and sets the property ConsumersUnresolved. The number of unresolved consumers.
         /// </summary>
         [AWSProperty(Required = true)]
         public int? ConsumersUnresolved { get; set; }
@@ -63,10 +57,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetConsumersUnresolved() => this.ConsumersUnresolved.HasValue;
 
         /// <summary>
-        /// Gets and sets the property DependenciesResolved. 
-        /// <para>
-        /// The number of resolved dependencies.
-        /// </para>
+        /// Gets and sets the property DependenciesResolved. The number of resolved dependencies.
         /// </summary>
         [AWSProperty(Required = true)]
         public int? DependenciesResolved { get; set; }
@@ -77,10 +68,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetDependenciesResolved() => this.DependenciesResolved.HasValue;
 
         /// <summary>
-        /// Gets and sets the property DependenciesUnresolved. 
-        /// <para>
-        /// The number of unresolved dependencies.
-        /// </para>
+        /// Gets and sets the property DependenciesUnresolved. The number of unresolved dependencies.
         /// </summary>
         [AWSProperty(Required = true)]
         public int? DependenciesUnresolved { get; set; }

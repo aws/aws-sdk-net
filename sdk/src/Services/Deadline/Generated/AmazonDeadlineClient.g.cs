@@ -45,16 +45,11 @@ namespace Amazon.Deadline
     ///
     /// The Amazon Web Services Deadline Cloud API provides infrastructure and centralized
     /// management for your projects. Use the Deadline Cloud API to onboard users, assign
-    /// projects, and attach permissions specific to their job function.
-    /// 
-    ///  
-    /// <para>
-    /// With Deadline Cloud, content production teams can deploy resources for their workforce
-    /// securely in the cloud, reducing the costs of added physical infrastructure. Keep your
-    /// content production operations secure, while allowing your contributors to access the
-    /// tools they need, such as scalable high-speed storage, licenses, and cost management
-    /// services.
-    /// </para>
+    /// projects, and attach permissions specific to their job function. With Deadline Cloud,
+    /// content production teams can deploy resources for their workforce securely in the
+    /// cloud, reducing the costs of added physical infrastructure. Keep your content production
+    /// operations secure, while allowing your contributors to access the tools they need,
+    /// such as scalable high-speed storage, licenses, and cost management services.
     /// </summary>
     public partial class AmazonDeadlineClient : AmazonServiceClient, IAmazonDeadline
     {
@@ -996,15 +991,10 @@ namespace Amazon.Deadline
 #if NETFRAMEWORK
         /// <summary>
         /// Retrieves multiple jobs in a single request. This is a batch version of the <c>GetJob</c>
-        /// API.
-        /// 
-        ///  
-        /// <para>
-        /// The result of getting each job is reported individually in the response. Because the
-        /// batch request can result in a combination of successful and unsuccessful actions,
+        /// API. The result of getting each job is reported individually in the response. Because
+        /// the batch request can result in a combination of successful and unsuccessful actions,
         /// you should check for batch errors even when the call returns an HTTP status code of
         /// 200.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetJob service method.</param>
         /// <returns>The response from the BatchGetJob service method, as returned by Deadline.</returns>
@@ -1043,15 +1033,10 @@ namespace Amazon.Deadline
 
         /// <summary>
         /// Retrieves multiple jobs in a single request. This is a batch version of the <c>GetJob</c>
-        /// API.
-        /// 
-        ///  
-        /// <para>
-        /// The result of getting each job is reported individually in the response. Because the
-        /// batch request can result in a combination of successful and unsuccessful actions,
+        /// API. The result of getting each job is reported individually in the response. Because
+        /// the batch request can result in a combination of successful and unsuccessful actions,
         /// you should check for batch errors even when the call returns an HTTP status code of
         /// 200.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetJob service method.</param>
         /// <param name="cancellationToken">
@@ -1160,15 +1145,10 @@ namespace Amazon.Deadline
 #if NETFRAMEWORK
         /// <summary>
         /// Retrieves multiple sessions in a single request. This is a batch version of the <c>GetSession</c>
-        /// API.
-        /// 
-        ///  
-        /// <para>
-        /// The result of getting each session is reported individually in the response. Because
-        /// the batch request can result in a combination of successful and unsuccessful actions,
-        /// you should check for batch errors even when the call returns an HTTP status code of
-        /// 200.
-        /// </para>
+        /// API. The result of getting each session is reported individually in the response.
+        /// Because the batch request can result in a combination of successful and unsuccessful
+        /// actions, you should check for batch errors even when the call returns an HTTP status
+        /// code of 200.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetSession service method.</param>
         /// <returns>The response from the BatchGetSession service method, as returned by Deadline.</returns>
@@ -1207,15 +1187,10 @@ namespace Amazon.Deadline
 
         /// <summary>
         /// Retrieves multiple sessions in a single request. This is a batch version of the <c>GetSession</c>
-        /// API.
-        /// 
-        ///  
-        /// <para>
-        /// The result of getting each session is reported individually in the response. Because
-        /// the batch request can result in a combination of successful and unsuccessful actions,
-        /// you should check for batch errors even when the call returns an HTTP status code of
-        /// 200.
-        /// </para>
+        /// API. The result of getting each session is reported individually in the response.
+        /// Because the batch request can result in a combination of successful and unsuccessful
+        /// actions, you should check for batch errors even when the call returns an HTTP status
+        /// code of 200.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetSession service method.</param>
         /// <param name="cancellationToken">
@@ -1248,15 +1223,10 @@ namespace Amazon.Deadline
 #if NETFRAMEWORK
         /// <summary>
         /// Retrieves multiple session actions in a single request. This is a batch version of
-        /// the <c>GetSessionAction</c> API.
-        /// 
-        ///  
-        /// <para>
-        /// The result of getting each session action is reported individually in the response.
-        /// Because the batch request can result in a combination of successful and unsuccessful
-        /// actions, you should check for batch errors even when the call returns an HTTP status
-        /// code of 200.
-        /// </para>
+        /// the <c>GetSessionAction</c> API. The result of getting each session action is reported
+        /// individually in the response. Because the batch request can result in a combination
+        /// of successful and unsuccessful actions, you should check for batch errors even when
+        /// the call returns an HTTP status code of 200.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetSessionAction service method.</param>
         /// <returns>The response from the BatchGetSessionAction service method, as returned by Deadline.</returns>
@@ -1295,15 +1265,10 @@ namespace Amazon.Deadline
 
         /// <summary>
         /// Retrieves multiple session actions in a single request. This is a batch version of
-        /// the <c>GetSessionAction</c> API.
-        /// 
-        ///  
-        /// <para>
-        /// The result of getting each session action is reported individually in the response.
-        /// Because the batch request can result in a combination of successful and unsuccessful
-        /// actions, you should check for batch errors even when the call returns an HTTP status
-        /// code of 200.
-        /// </para>
+        /// the <c>GetSessionAction</c> API. The result of getting each session action is reported
+        /// individually in the response. Because the batch request can result in a combination
+        /// of successful and unsuccessful actions, you should check for batch errors even when
+        /// the call returns an HTTP status code of 200.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetSessionAction service method.</param>
         /// <param name="cancellationToken">
@@ -1336,15 +1301,10 @@ namespace Amazon.Deadline
 #if NETFRAMEWORK
         /// <summary>
         /// Retrieves multiple steps in a single request. This is a batch version of the <c>GetStep</c>
-        /// API.
-        /// 
-        ///  
-        /// <para>
-        /// The result of getting each step is reported individually in the response. Because
+        /// API. The result of getting each step is reported individually in the response. Because
         /// the batch request can result in a combination of successful and unsuccessful actions,
         /// you should check for batch errors even when the call returns an HTTP status code of
         /// 200.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetStep service method.</param>
         /// <returns>The response from the BatchGetStep service method, as returned by Deadline.</returns>
@@ -1383,15 +1343,10 @@ namespace Amazon.Deadline
 
         /// <summary>
         /// Retrieves multiple steps in a single request. This is a batch version of the <c>GetStep</c>
-        /// API.
-        /// 
-        ///  
-        /// <para>
-        /// The result of getting each step is reported individually in the response. Because
+        /// API. The result of getting each step is reported individually in the response. Because
         /// the batch request can result in a combination of successful and unsuccessful actions,
         /// you should check for batch errors even when the call returns an HTTP status code of
         /// 200.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetStep service method.</param>
         /// <param name="cancellationToken">
@@ -1424,15 +1379,10 @@ namespace Amazon.Deadline
 #if NETFRAMEWORK
         /// <summary>
         /// Retrieves multiple tasks in a single request. This is a batch version of the <c>GetTask</c>
-        /// API.
-        /// 
-        ///  
-        /// <para>
-        /// The result of getting each task is reported individually in the response. Because
+        /// API. The result of getting each task is reported individually in the response. Because
         /// the batch request can result in a combination of successful and unsuccessful actions,
         /// you should check for batch errors even when the call returns an HTTP status code of
         /// 200.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetTask service method.</param>
         /// <returns>The response from the BatchGetTask service method, as returned by Deadline.</returns>
@@ -1471,15 +1421,10 @@ namespace Amazon.Deadline
 
         /// <summary>
         /// Retrieves multiple tasks in a single request. This is a batch version of the <c>GetTask</c>
-        /// API.
-        /// 
-        ///  
-        /// <para>
-        /// The result of getting each task is reported individually in the response. Because
+        /// API. The result of getting each task is reported individually in the response. Because
         /// the batch request can result in a combination of successful and unsuccessful actions,
         /// you should check for batch errors even when the call returns an HTTP status code of
         /// 200.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetTask service method.</param>
         /// <param name="cancellationToken">
@@ -1512,15 +1457,10 @@ namespace Amazon.Deadline
 #if NETFRAMEWORK
         /// <summary>
         /// Retrieves multiple workers in a single request. This is a batch version of the <c>GetWorker</c>
-        /// API.
-        /// 
-        ///  
-        /// <para>
-        /// The result of getting each worker is reported individually in the response. Because
+        /// API. The result of getting each worker is reported individually in the response. Because
         /// the batch request can result in a combination of successful and unsuccessful actions,
         /// you should check for batch errors even when the call returns an HTTP status code of
         /// 200.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetWorker service method.</param>
         /// <returns>The response from the BatchGetWorker service method, as returned by Deadline.</returns>
@@ -1559,15 +1499,10 @@ namespace Amazon.Deadline
 
         /// <summary>
         /// Retrieves multiple workers in a single request. This is a batch version of the <c>GetWorker</c>
-        /// API.
-        /// 
-        ///  
-        /// <para>
-        /// The result of getting each worker is reported individually in the response. Because
+        /// API. The result of getting each worker is reported individually in the response. Because
         /// the batch request can result in a combination of successful and unsuccessful actions,
         /// you should check for batch errors even when the call returns an HTTP status code of
         /// 200.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetWorker service method.</param>
         /// <param name="cancellationToken">
@@ -1710,15 +1645,10 @@ namespace Amazon.Deadline
 #if NETFRAMEWORK
         /// <summary>
         /// Updates multiple tasks in a single request. This is a batch version of the <c>UpdateTask</c>
-        /// API.
-        /// 
-        ///  
-        /// <para>
-        /// The result of updating each task is reported individually in the response. Because
+        /// API. The result of updating each task is reported individually in the response. Because
         /// the batch request can result in a combination of successful and unsuccessful actions,
         /// you should check for batch errors even when the call returns an HTTP status code of
         /// 200.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateTask service method.</param>
         /// <returns>The response from the BatchUpdateTask service method, as returned by Deadline.</returns>
@@ -1757,15 +1687,10 @@ namespace Amazon.Deadline
 
         /// <summary>
         /// Updates multiple tasks in a single request. This is a batch version of the <c>UpdateTask</c>
-        /// API.
-        /// 
-        ///  
-        /// <para>
-        /// The result of updating each task is reported individually in the response. Because
+        /// API. The result of updating each task is reported individually in the response. Because
         /// the batch request can result in a combination of successful and unsuccessful actions,
         /// you should check for batch errors even when the call returns an HTTP status code of
         /// 200.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateTask service method.</param>
         /// <param name="cancellationToken">

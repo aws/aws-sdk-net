@@ -36,11 +36,8 @@ namespace Amazon.Deadline.Model
     public partial class BatchGetJobEntityRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID of the worker that's fetching job details. The worker must have an assignment
-        /// on a job to fetch job details.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID of the worker that's fetching job details.
+        /// The worker must have an assignment on a job to fetch job details.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -51,11 +48,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property FleetId. 
-        /// <para>
-        /// The fleet ID of the worker that's fetching job details. The worker must have an assignment
-        /// on a job to fetch job details.
-        /// </para>
+        /// Gets and sets the property FleetId. The fleet ID of the worker that's fetching job
+        /// details. The worker must have an assignment on a job to fetch job details.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FleetId { get; set; }
@@ -66,10 +60,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFleetId() => this.FleetId != null;
 
         /// <summary>
-        /// Gets and sets the property Identifiers. 
-        /// <para>
-        /// The job identifiers to include within the job entity batch details.
-        /// </para>
+        /// Gets and sets the property Identifiers. The job identifiers to include within the
+        /// job entity batch details.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -86,10 +78,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetIdentifiers() => this.Identifiers != null && (this.Identifiers.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property WorkerId. 
-        /// <para>
-        /// The worker ID of the worker containing the job details to get.
-        /// </para>
+        /// Gets and sets the property WorkerId. The worker ID of the worker containing the job
+        /// details to get.
         /// </summary>
         [AWSProperty(Required = true)]
         public string WorkerId { get; set; }

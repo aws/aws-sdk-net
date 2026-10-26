@@ -35,11 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// Each tag consists of a tag key and a tag value. Tag keys and values are both required,
-        /// but tag values can be empty strings.
-        /// </para>
+        /// Gets and sets the property Tags. Each tag consists of a tag key and a tag value. Tag
+        /// keys and values are both required, but tag values can be empty strings.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

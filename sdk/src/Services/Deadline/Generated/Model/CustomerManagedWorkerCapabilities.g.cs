@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class CustomerManagedWorkerCapabilities
     {
         /// <summary>
-        /// Gets and sets the property AcceleratorCount. 
-        /// <para>
-        /// The range of the accelerator.
-        /// </para>
+        /// Gets and sets the property AcceleratorCount. The range of the accelerator.
         /// </summary>
         public AcceleratorCountRange AcceleratorCount { get; set; }
 
@@ -48,10 +45,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetAcceleratorCount() => this.AcceleratorCount != null;
 
         /// <summary>
-        /// Gets and sets the property AcceleratorTotalMemoryMiB. 
-        /// <para>
-        /// The total memory (MiB) for the customer managed worker capabilities.
-        /// </para>
+        /// Gets and sets the property AcceleratorTotalMemoryMiB. The total memory (MiB) for the
+        /// customer managed worker capabilities.
         /// </summary>
         public AcceleratorTotalMemoryMiBRange AcceleratorTotalMemoryMiB { get; set; }
 
@@ -61,10 +56,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetAcceleratorTotalMemoryMiB() => this.AcceleratorTotalMemoryMiB != null;
 
         /// <summary>
-        /// Gets and sets the property AcceleratorTypes. 
-        /// <para>
-        /// The accelerator types for the customer managed worker capabilities.
-        /// </para>
+        /// Gets and sets the property AcceleratorTypes. The accelerator types for the customer
+        /// managed worker capabilities.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -80,10 +73,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetAcceleratorTypes() => this.AcceleratorTypes != null && (this.AcceleratorTypes.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property CpuArchitectureType. 
-        /// <para>
-        /// The CPU architecture type for the customer managed worker capabilities.
-        /// </para>
+        /// Gets and sets the property CpuArchitectureType. The CPU architecture type for the
+        /// customer managed worker capabilities.
         /// </summary>
         [AWSProperty(Required = true)]
         public CpuArchitectureType CpuArchitectureType { get; set; }
@@ -94,10 +85,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCpuArchitectureType() => this.CpuArchitectureType != null;
 
         /// <summary>
-        /// Gets and sets the property CustomAmounts. 
-        /// <para>
-        /// Custom requirement ranges for customer managed worker capabilities.
-        /// </para>
+        /// Gets and sets the property CustomAmounts. Custom requirement ranges for customer managed
+        /// worker capabilities.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -114,10 +103,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCustomAmounts() => this.CustomAmounts != null && (this.CustomAmounts.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property CustomAttributes. 
-        /// <para>
-        /// Custom attributes for the customer manged worker capabilities.
-        /// </para>
+        /// Gets and sets the property CustomAttributes. Custom attributes for the customer manged
+        /// worker capabilities.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -134,10 +121,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCustomAttributes() => this.CustomAttributes != null && (this.CustomAttributes.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property MemoryMiB. 
-        /// <para>
-        /// The memory (MiB).
-        /// </para>
+        /// Gets and sets the property MemoryMiB. The memory (MiB).
         /// </summary>
         [AWSProperty(Required = true)]
         public MemoryMiBRange MemoryMiB { get; set; }
@@ -148,10 +132,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMemoryMiB() => this.MemoryMiB != null;
 
         /// <summary>
-        /// Gets and sets the property OsFamily. 
-        /// <para>
-        /// The operating system (OS) family.
-        /// </para>
+        /// Gets and sets the property OsFamily. The operating system (OS) family.
         /// </summary>
         [AWSProperty(Required = true)]
         public CustomerManagedFleetOperatingSystemFamily OsFamily { get; set; }
@@ -162,10 +143,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetOsFamily() => this.OsFamily != null;
 
         /// <summary>
-        /// Gets and sets the property VCpuCount. 
-        /// <para>
-        /// The vCPU count for the customer manged worker capabilities.
-        /// </para>
+        /// Gets and sets the property VCpuCount. The vCPU count for the customer manged worker
+        /// capabilities.
         /// </summary>
         [AWSProperty(Required = true)]
         public VCpuCountRange VCpuCount { get; set; }

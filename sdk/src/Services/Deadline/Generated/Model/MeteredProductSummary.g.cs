@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class MeteredProductSummary
     {
         /// <summary>
-        /// Gets and sets the property Family. 
-        /// <para>
-        /// The family to which the metered product belongs.
-        /// </para>
+        /// Gets and sets the property Family. The family to which the metered product belongs.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 64)]
         public string Family { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFamily() => this.Family != null;
 
         /// <summary>
-        /// Gets and sets the property Port. 
-        /// <para>
-        /// The port on which the metered product should run.
-        /// </para>
+        /// Gets and sets the property Port. The port on which the metered product should run.
         /// </summary>
         [AWSProperty(Required = true, Min = 1024, Max = 65535)]
         public int? Port { get; set; }
@@ -63,10 +57,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetPort() => this.Port.HasValue;
 
         /// <summary>
-        /// Gets and sets the property ProductId. 
-        /// <para>
-        /// The product ID.
-        /// </para>
+        /// Gets and sets the property ProductId. The product ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string ProductId { get; set; }
@@ -77,10 +68,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetProductId() => this.ProductId != null;
 
         /// <summary>
-        /// Gets and sets the property Vendor. 
-        /// <para>
-        /// The vendor.
-        /// </para>
+        /// Gets and sets the property Vendor. The vendor.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 64)]
         public string Vendor { get; set; }

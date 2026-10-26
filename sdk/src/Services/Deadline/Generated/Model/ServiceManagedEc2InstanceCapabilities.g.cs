@@ -35,11 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class ServiceManagedEc2InstanceCapabilities
     {
         /// <summary>
-        /// Gets and sets the property AcceleratorCapabilities. 
-        /// <para>
-        /// Describes the GPU accelerator capabilities required for worker host instances in this
-        /// fleet.
-        /// </para>
+        /// Gets and sets the property AcceleratorCapabilities. Describes the GPU accelerator
+        /// capabilities required for worker host instances in this fleet.
         /// </summary>
         public AcceleratorCapabilities AcceleratorCapabilities { get; set; }
 
@@ -53,6 +50,11 @@ namespace Amazon.Deadline.Model
         /// <para>
         /// The allowable Amazon EC2 instance types.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you specify <c>allowedInstanceTypes</c>, you can't specify <c>excludedInstanceTypes</c>.
+        /// </para>
+        ///  </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -69,10 +71,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetAllowedInstanceTypes() => this.AllowedInstanceTypes != null && (this.AllowedInstanceTypes.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property CpuArchitectureType. 
-        /// <para>
-        /// The CPU architecture type.
-        /// </para>
+        /// Gets and sets the property CpuArchitectureType. The CPU architecture type.
         /// </summary>
         [AWSProperty(Required = true)]
         public CpuArchitectureType CpuArchitectureType { get; set; }
@@ -83,10 +82,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCpuArchitectureType() => this.CpuArchitectureType != null;
 
         /// <summary>
-        /// Gets and sets the property CustomAmounts. 
-        /// <para>
-        /// The custom capability amounts to require for instances in this fleet.
-        /// </para>
+        /// Gets and sets the property CustomAmounts. The custom capability amounts to require
+        /// for instances in this fleet.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -103,10 +100,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCustomAmounts() => this.CustomAmounts != null && (this.CustomAmounts.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property CustomAttributes. 
-        /// <para>
-        /// The custom capability attributes to require for instances in this fleet.
-        /// </para>
+        /// Gets and sets the property CustomAttributes. The custom capability attributes to require
+        /// for instances in this fleet.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -127,6 +122,11 @@ namespace Amazon.Deadline.Model
         /// <para>
         /// The instance types to exclude from the fleet.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you specify <c>excludedInstanceTypes</c>, you can't specify <c>allowedInstanceTypes</c>.
+        /// </para>
+        ///  </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -143,10 +143,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetExcludedInstanceTypes() => this.ExcludedInstanceTypes != null && (this.ExcludedInstanceTypes.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property MemoryMiB. 
-        /// <para>
-        /// The memory, as MiB, for the Amazon EC2 instance type.
-        /// </para>
+        /// Gets and sets the property MemoryMiB. The memory, as MiB, for the Amazon EC2 instance
+        /// type.
         /// </summary>
         [AWSProperty(Required = true)]
         public MemoryMiBRange MemoryMiB { get; set; }
@@ -157,10 +155,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMemoryMiB() => this.MemoryMiB != null;
 
         /// <summary>
-        /// Gets and sets the property OsFamily. 
-        /// <para>
-        /// The operating system (OS) family.
-        /// </para>
+        /// Gets and sets the property OsFamily. The operating system (OS) family.
         /// </summary>
         [AWSProperty(Required = true)]
         public ServiceManagedFleetOperatingSystemFamily OsFamily { get; set; }
@@ -171,10 +166,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetOsFamily() => this.OsFamily != null;
 
         /// <summary>
-        /// Gets and sets the property RootEbsVolume. 
-        /// <para>
-        /// The root EBS volume.
-        /// </para>
+        /// Gets and sets the property RootEbsVolume. The root EBS volume.
         /// </summary>
         public Ec2EbsVolume RootEbsVolume { get; set; }
 
@@ -184,10 +176,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetRootEbsVolume() => this.RootEbsVolume != null;
 
         /// <summary>
-        /// Gets and sets the property SoftwareAddOns. 
-        /// <para>
-        /// The software add-ons that the service installs on worker hosts when they launch.
-        /// </para>
+        /// Gets and sets the property SoftwareAddOns. The software add-ons that the service installs
+        /// on worker hosts when they launch.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -204,10 +194,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetSoftwareAddOns() => this.SoftwareAddOns != null && (this.SoftwareAddOns.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property VCpuCount. 
-        /// <para>
-        /// The amount of vCPU to require for instances in this fleet.
-        /// </para>
+        /// Gets and sets the property VCpuCount. The amount of vCPU to require for instances
+        /// in this fleet.
         /// </summary>
         [AWSProperty(Required = true)]
         public VCpuCountRange VCpuCount { get; set; }

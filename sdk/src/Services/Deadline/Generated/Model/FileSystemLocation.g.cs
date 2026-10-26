@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class FileSystemLocation
     {
         /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The location name.
-        /// </para>
+        /// Gets and sets the property Name. The location name.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 64)]
         public string Name { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
-        /// Gets and sets the property Path. 
-        /// <para>
-        /// The file path.
-        /// </para>
+        /// Gets and sets the property Path. The file path.
         /// </summary>
         [AWSProperty(Required = true, Min = 0, Max = 1024)]
         public string Path { get; set; }
@@ -63,10 +57,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetPath() => this.Path != null;
 
         /// <summary>
-        /// Gets and sets the property Type. 
-        /// <para>
-        /// The type of file.
-        /// </para>
+        /// Gets and sets the property Type. The type of file.
         /// </summary>
         [AWSProperty(Required = true)]
         public FileSystemLocationType Type { get; set; }

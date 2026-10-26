@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class LicenseEndpointSummary
     {
         /// <summary>
-        /// Gets and sets the property LicenseEndpointId. 
-        /// <para>
-        /// The license endpoint ID.
-        /// </para>
+        /// Gets and sets the property LicenseEndpointId. The license endpoint ID.
         /// </summary>
         public string LicenseEndpointId { get; set; }
 
@@ -48,10 +45,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetLicenseEndpointId() => this.LicenseEndpointId != null;
 
         /// <summary>
-        /// Gets and sets the property Status. 
-        /// <para>
-        /// The status of the license endpoint.
-        /// </para>
+        /// Gets and sets the property Status. The status of the license endpoint.
         /// </summary>
         public LicenseEndpointStatus Status { get; set; }
 
@@ -61,10 +55,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStatus() => this.Status != null;
 
         /// <summary>
-        /// Gets and sets the property StatusMessage. 
-        /// <para>
-        /// The status message of the license endpoint.
-        /// </para>
+        /// Gets and sets the property StatusMessage. The status message of the license endpoint.
         /// </summary>
         [AWSProperty(Min = 0, Max = 1024)]
         public string StatusMessage { get; set; }
@@ -75,10 +66,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStatusMessage() => this.StatusMessage != null;
 
         /// <summary>
-        /// Gets and sets the property VpcId. 
-        /// <para>
-        /// The VPC (virtual private cloud) ID associated with the license endpoint.
-        /// </para>
+        /// Gets and sets the property VpcId. The VPC (virtual private cloud) ID associated with
+        /// the license endpoint.
         /// </summary>
         [AWSProperty(Min = 1, Max = 32)]
         public string VpcId { get; set; }

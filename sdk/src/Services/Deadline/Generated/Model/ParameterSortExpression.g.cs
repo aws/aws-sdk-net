@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class ParameterSortExpression
     {
         /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The parameter name to sort by.
-        /// </para>
+        /// Gets and sets the property Name. The parameter name to sort by.
         /// </summary>
         [AWSProperty(Required = true)]
         public string Name { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
-        /// Gets and sets the property SortOrder. 
-        /// <para>
-        /// The sort order for the parameter.
-        /// </para>
+        /// Gets and sets the property SortOrder. The sort order for the parameter.
         /// </summary>
         [AWSProperty(Required = true)]
         public SortOrder SortOrder { get; set; }

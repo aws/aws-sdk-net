@@ -57,10 +57,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetDisplayName() => this.DisplayName != null;
 
         /// <summary>
-        /// Gets and sets the property MonitorId. 
-        /// <para>
-        /// The unique identifier of the monitor to update.
-        /// </para>
+        /// Gets and sets the property MonitorId. The unique identifier of the monitor to update.
         /// </summary>
         [AWSProperty(Required = true)]
         public string MonitorId { get; set; }
@@ -71,10 +68,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMonitorId() => this.MonitorId != null;
 
         /// <summary>
-        /// Gets and sets the property RoleArn. 
-        /// <para>
-        /// The Amazon Resource Name of the new IAM role to use with the monitor.
-        /// </para>
+        /// Gets and sets the property RoleArn. The Amazon Resource Name of the new IAM role to
+        /// use with the monitor.
         /// </summary>
         public string RoleArn { get; set; }
 
@@ -84,10 +79,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetRoleArn() => this.RoleArn != null;
 
         /// <summary>
-        /// Gets and sets the property Subdomain. 
-        /// <para>
-        /// The new value of the subdomain to use when forming the monitor URL.
-        /// </para>
+        /// Gets and sets the property Subdomain. The new value of the subdomain to use when forming
+        /// the monitor URL.
         /// </summary>
         public string Subdomain { get; set; }
 

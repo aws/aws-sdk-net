@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class QueueEnvironmentSummary
     {
         /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name of the queue environment.
-        /// </para>
+        /// Gets and sets the property Name. The name of the queue environment.
         /// </summary>
         [AWSProperty(Required = true)]
         public string Name { get; set; }
@@ -49,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
-        /// Gets and sets the property Priority. 
-        /// <para>
-        /// The queue environment's priority.
-        /// </para>
+        /// Gets and sets the property Priority. The queue environment's priority.
         /// </summary>
         [AWSProperty(Required = true, Min = 0, Max = 10000)]
         public int? Priority { get; set; }
@@ -63,10 +57,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetPriority() => this.Priority.HasValue;
 
         /// <summary>
-        /// Gets and sets the property QueueEnvironmentId. 
-        /// <para>
-        /// The queue environment ID.
-        /// </para>
+        /// Gets and sets the property QueueEnvironmentId. The queue environment ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string QueueEnvironmentId { get; set; }

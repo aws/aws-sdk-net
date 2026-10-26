@@ -36,11 +36,9 @@ namespace Amazon.Deadline.Model
     public partial class GetMonitorSettingsRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property MonitorId. 
-        /// <para>
-        /// The unique identifier of the monitor. This ID is returned by the <c>CreateMonitor</c>
-        /// operation, and is included in the response to the <c>ListMonitors</c> operation.
-        /// </para>
+        /// Gets and sets the property MonitorId. The unique identifier of the monitor. This ID
+        /// is returned by the <c>CreateMonitor</c> operation, and is included in the response
+        /// to the <c>ListMonitors</c> operation.
         /// </summary>
         [AWSProperty(Required = true)]
         public string MonitorId { get; set; }

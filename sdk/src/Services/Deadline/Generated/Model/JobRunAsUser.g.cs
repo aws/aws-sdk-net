@@ -35,10 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class JobRunAsUser
     {
         /// <summary>
-        /// Gets and sets the property Posix. 
-        /// <para>
-        /// The user and group that the jobs in the queue run as.
-        /// </para>
+        /// Gets and sets the property Posix. The user and group that the jobs in the queue run
+        /// as.
         /// </summary>
         public PosixUser Posix { get; set; }
 
@@ -48,11 +46,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetPosix() => this.Posix != null;
 
         /// <summary>
-        /// Gets and sets the property RunAs. 
-        /// <para>
-        /// Specifies whether the job should run using the queue's system user or if the job should
-        /// run using the worker agent system user.
-        /// </para>
+        /// Gets and sets the property RunAs. Specifies whether the job should run using the queue's
+        /// system user or if the job should run using the worker agent system user.
         /// </summary>
         [AWSProperty(Required = true)]
         public RunAs RunAs { get; set; }
@@ -63,10 +58,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetRunAs() => this.RunAs != null;
 
         /// <summary>
-        /// Gets and sets the property Windows. 
-        /// <para>
-        /// Identifies a Microsoft Windows user.
-        /// </para>
+        /// Gets and sets the property Windows. Identifies a Microsoft Windows user.
         /// </summary>
         public WindowsUser Windows { get; set; }
 

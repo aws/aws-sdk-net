@@ -40,11 +40,9 @@ namespace Amazon.Deadline.Model
     public partial class CreateLimitRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property AmountRequirementName. 
-        /// <para>
-        /// The value that you specify as the <c>name</c> in the <c>amounts</c> field of the <c>hostRequirements</c>
-        /// in a step of a job template to declare the limit requirement.
-        /// </para>
+        /// Gets and sets the property AmountRequirementName. The value that you specify as the
+        /// <c>name</c> in the <c>amounts</c> field of the <c>hostRequirements</c> in a step of
+        /// a job template to declare the limit requirement.
         /// </summary>
         [AWSProperty(Required = true, Max = 1024)]
         public string AmountRequirementName { get; set; }
@@ -55,10 +53,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetAmountRequirementName() => this.AmountRequirementName != null;
 
         /// <summary>
-        /// Gets and sets the property ClientToken. 
-        /// <para>
-        /// The unique token which the server uses to recognize retries of the same request.
-        /// </para>
+        /// Gets and sets the property ClientToken. The unique token which the server uses to
+        /// recognize retries of the same request.
         /// </summary>
         [AWSProperty(Min = 1, Max = 64)]
         public string ClientToken { get; set; }
@@ -109,10 +105,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetDisplayName() => this.DisplayName != null;
 
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID of the farm that contains the limit.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID of the farm that contains the limit.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }

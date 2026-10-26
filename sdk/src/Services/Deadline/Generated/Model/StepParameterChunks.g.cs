@@ -35,10 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class StepParameterChunks
     {
         /// <summary>
-        /// Gets and sets the property DefaultTaskCount. 
-        /// <para>
-        /// The number of tasks to combine into a single chunk by default.
-        /// </para>
+        /// Gets and sets the property DefaultTaskCount. The number of tasks to combine into a
+        /// single chunk by default.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 2147483647)]
         public int? DefaultTaskCount { get; set; }
@@ -49,10 +47,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetDefaultTaskCount() => this.DefaultTaskCount.HasValue;
 
         /// <summary>
-        /// Gets and sets the property RangeConstraint. 
-        /// <para>
-        /// Specifies whether the chunked ranges must be contiguous or can have gaps between them.
-        /// </para>
+        /// Gets and sets the property RangeConstraint. Specifies whether the chunked ranges must
+        /// be contiguous or can have gaps between them.
         /// </summary>
         [AWSProperty(Required = true)]
         public RangeConstraint RangeConstraint { get; set; }
@@ -63,10 +59,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetRangeConstraint() => this.RangeConstraint != null;
 
         /// <summary>
-        /// Gets and sets the property TargetRuntimeSeconds. 
-        /// <para>
-        /// The number of seconds to aim for when forming chunks.
-        /// </para>
+        /// Gets and sets the property TargetRuntimeSeconds. The number of seconds to aim for
+        /// when forming chunks.
         /// </summary>
         [AWSProperty(Min = 0, Max = 2147483647)]
         public int? TargetRuntimeSeconds { get; set; }

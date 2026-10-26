@@ -35,10 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class AcceleratorCountRange
     {
         /// <summary>
-        /// Gets and sets the property Max. 
-        /// <para>
-        /// The maximum number of GPU accelerators in the worker host.
-        /// </para>
+        /// Gets and sets the property Max. The maximum number of GPU accelerators in the worker
+        /// host.
         /// </summary>
         [AWSProperty(Min = 0, Max = 2147483647)]
         public int? Max { get; set; }
@@ -49,10 +47,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMax() => this.Max.HasValue;
 
         /// <summary>
-        /// Gets and sets the property Min. 
-        /// <para>
-        /// The minimum number of GPU accelerators in the worker host.
-        /// </para>
+        /// Gets and sets the property Min. The minimum number of GPU accelerators in the worker
+        /// host.
         /// </summary>
         [AWSProperty(Required = true, Min = 0, Max = 2147483647)]
         public int? Min { get; set; }

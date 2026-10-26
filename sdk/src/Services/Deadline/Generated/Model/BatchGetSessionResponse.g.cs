@@ -35,10 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class BatchGetSessionResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property Errors. 
-        /// <para>
-        /// A list of errors for sessions that could not be retrieved.
-        /// </para>
+        /// Gets and sets the property Errors. A list of errors for sessions that could not be
+        /// retrieved.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -55,10 +53,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetErrors() => this.Errors != null && (this.Errors.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property Sessions. 
-        /// <para>
-        /// A list of sessions that were successfully retrieved.
-        /// </para>
+        /// Gets and sets the property Sessions. A list of sessions that were successfully retrieved.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

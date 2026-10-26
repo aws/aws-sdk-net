@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class UpdateWorkerScheduleResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property AssignedSessions. 
-        /// <para>
-        /// The assigned sessions to update.
-        /// </para>
+        /// Gets and sets the property AssignedSessions. The assigned sessions to update.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -55,10 +52,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetAssignedSessions() => this.AssignedSessions != null && (this.AssignedSessions.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property CancelSessionActions. 
-        /// <para>
-        /// The session actions associated with the worker schedule to cancel.
-        /// </para>
+        /// Gets and sets the property CancelSessionActions. The session actions associated with
+        /// the worker schedule to cancel.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -75,10 +70,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCancelSessionActions() => this.CancelSessionActions != null && (this.CancelSessionActions.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property DesiredWorkerStatus. 
-        /// <para>
-        /// The status to update the worker to.
-        /// </para>
+        /// Gets and sets the property DesiredWorkerStatus. The status to update the worker to.
         /// </summary>
         public DesiredWorkerStatus DesiredWorkerStatus { get; set; }
 
@@ -88,10 +80,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetDesiredWorkerStatus() => this.DesiredWorkerStatus != null;
 
         /// <summary>
-        /// Gets and sets the property UpdateIntervalSeconds. 
-        /// <para>
-        /// Updates the time interval (in seconds) for the schedule.
-        /// </para>
+        /// Gets and sets the property UpdateIntervalSeconds. Updates the time interval (in seconds)
+        /// for the schedule.
         /// </summary>
         [AWSProperty(Required = true, Min = 0)]
         public int? UpdateIntervalSeconds { get; set; }

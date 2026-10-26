@@ -35,10 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class AssignedSessionAction
     {
         /// <summary>
-        /// Gets and sets the property Definition. 
-        /// <para>
-        /// The definition of the assigned session action.
-        /// </para>
+        /// Gets and sets the property Definition. The definition of the assigned session action.
         /// </summary>
         [AWSProperty(Required = true)]
         public AssignedSessionActionDefinition Definition { get; set; }
@@ -49,10 +46,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetDefinition() => this.Definition != null;
 
         /// <summary>
-        /// Gets and sets the property SessionActionId. 
-        /// <para>
-        /// The session action ID for the assigned session.
-        /// </para>
+        /// Gets and sets the property SessionActionId. The session action ID for the assigned
+        /// session.
         /// </summary>
         [AWSProperty(Required = true)]
         public string SessionActionId { get; set; }

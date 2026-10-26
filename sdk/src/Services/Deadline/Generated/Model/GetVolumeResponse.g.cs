@@ -35,10 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class GetVolumeResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property AttachedWorkerId. 
-        /// <para>
-        /// The worker ID of the worker the volume is attached to.
-        /// </para>
+        /// Gets and sets the property AttachedWorkerId. The worker ID of the worker the volume
+        /// is attached to.
         /// </summary>
         public string AttachedWorkerId { get; set; }
 
@@ -48,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetAttachedWorkerId() => this.AttachedWorkerId != null;
 
         /// <summary>
-        /// Gets and sets the property AvailabilityZoneId. 
-        /// <para>
-        /// The Availability Zone ID of the volume.
-        /// </para>
+        /// Gets and sets the property AvailabilityZoneId. The Availability Zone ID of the volume.
         /// </summary>
         [AWSProperty(Required = true)]
         public string AvailabilityZoneId { get; set; }
@@ -62,10 +57,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetAvailabilityZoneId() => this.AvailabilityZoneId != null;
 
         /// <summary>
-        /// Gets and sets the property CreatedAt. 
-        /// <para>
-        /// The date and time the resource was created.
-        /// </para>
+        /// Gets and sets the property CreatedAt. The date and time the resource was created.
         /// </summary>
         [AWSProperty(Required = true)]
         public DateTime? CreatedAt { get; set; }
@@ -76,10 +68,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCreatedAt() => this.CreatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property ExpiresAt. 
-        /// <para>
-        /// The date and time the volume expires and will be deleted.
-        /// </para>
+        /// Gets and sets the property ExpiresAt. The date and time the volume expires and will
+        /// be deleted.
         /// </summary>
         public DateTime? ExpiresAt { get; set; }
 
@@ -89,10 +79,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetExpiresAt() => this.ExpiresAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID of the farm that contains the fleet.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID of the farm that contains the fleet.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -103,10 +90,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property FleetId. 
-        /// <para>
-        /// The fleet ID of the fleet that contains the volume.
-        /// </para>
+        /// Gets and sets the property FleetId. The fleet ID of the fleet that contains the volume.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FleetId { get; set; }
@@ -117,10 +101,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFleetId() => this.FleetId != null;
 
         /// <summary>
-        /// Gets and sets the property Iops. 
-        /// <para>
-        /// The IOPS of the volume.
-        /// </para>
+        /// Gets and sets the property Iops. The IOPS of the volume.
         /// </summary>
         [AWSProperty(Min = 100, Max = 80000)]
         public int? Iops { get; set; }
@@ -131,10 +112,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetIops() => this.Iops.HasValue;
 
         /// <summary>
-        /// Gets and sets the property LastAssignedAt. 
-        /// <para>
-        /// The date and time the volume was last assigned to a worker.
-        /// </para>
+        /// Gets and sets the property LastAssignedAt. The date and time the volume was last assigned
+        /// to a worker.
         /// </summary>
         public DateTime? LastAssignedAt { get; set; }
 
@@ -144,10 +123,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetLastAssignedAt() => this.LastAssignedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property LastReleasedAt. 
-        /// <para>
-        /// The date and time the volume was last released from a worker.
-        /// </para>
+        /// Gets and sets the property LastReleasedAt. The date and time the volume was last released
+        /// from a worker.
         /// </summary>
         public DateTime? LastReleasedAt { get; set; }
 
@@ -157,10 +134,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetLastReleasedAt() => this.LastReleasedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property SizeGiB. 
-        /// <para>
-        /// The volume size in GiB.
-        /// </para>
+        /// Gets and sets the property SizeGiB. The volume size in GiB.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 65536)]
         public int? SizeGiB { get; set; }
@@ -171,10 +145,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetSizeGiB() => this.SizeGiB.HasValue;
 
         /// <summary>
-        /// Gets and sets the property State. 
-        /// <para>
-        /// The state of the volume.
-        /// </para>
+        /// Gets and sets the property State. The state of the volume.
         /// </summary>
         [AWSProperty(Required = true)]
         public VolumeState State { get; set; }
@@ -185,10 +156,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetState() => this.State != null;
 
         /// <summary>
-        /// Gets and sets the property ThroughputMiB. 
-        /// <para>
-        /// The throughput of the volume in MiB.
-        /// </para>
+        /// Gets and sets the property ThroughputMiB. The throughput of the volume in MiB.
         /// </summary>
         [AWSProperty(Min = 125, Max = 2000)]
         public int? ThroughputMiB { get; set; }
@@ -199,10 +167,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetThroughputMiB() => this.ThroughputMiB.HasValue;
 
         /// <summary>
-        /// Gets and sets the property VolumeId. 
-        /// <para>
-        /// The volume ID.
-        /// </para>
+        /// Gets and sets the property VolumeId. The volume ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string VolumeId { get; set; }
@@ -213,10 +178,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetVolumeId() => this.VolumeId != null;
 
         /// <summary>
-        /// Gets and sets the property VolumeType. 
-        /// <para>
-        /// The EBS volume type.
-        /// </para>
+        /// Gets and sets the property VolumeType. The EBS volume type.
         /// </summary>
         [AWSProperty(Required = true)]
         public EbsVolumeType VolumeType { get; set; }

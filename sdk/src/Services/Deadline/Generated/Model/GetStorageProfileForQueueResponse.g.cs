@@ -55,10 +55,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetDisplayName() => this.DisplayName != null;
 
         /// <summary>
-        /// Gets and sets the property FileSystemLocations. 
-        /// <para>
-        /// The location of the files for the storage profile within the queue.
-        /// </para>
+        /// Gets and sets the property FileSystemLocations. The location of the files for the
+        /// storage profile within the queue.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -75,10 +73,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFileSystemLocations() => this.FileSystemLocations != null && (this.FileSystemLocations.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property OsFamily. 
-        /// <para>
-        /// The operating system of the storage profile in the queue.
-        /// </para>
+        /// Gets and sets the property OsFamily. The operating system of the storage profile in
+        /// the queue.
         /// </summary>
         [AWSProperty(Required = true)]
         public StorageProfileOperatingSystemFamily OsFamily { get; set; }
@@ -89,10 +85,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetOsFamily() => this.OsFamily != null;
 
         /// <summary>
-        /// Gets and sets the property StorageProfileId. 
-        /// <para>
-        /// The storage profile ID.
-        /// </para>
+        /// Gets and sets the property StorageProfileId. The storage profile ID.
         /// </summary>
         [AWSProperty(Required = true)]
         public string StorageProfileId { get; set; }

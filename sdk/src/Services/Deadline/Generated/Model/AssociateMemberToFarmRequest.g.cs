@@ -36,10 +36,7 @@ namespace Amazon.Deadline.Model
     public partial class AssociateMemberToFarmRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The ID of the farm to associate with the member.
-        /// </para>
+        /// Gets and sets the property FarmId. The ID of the farm to associate with the member.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -50,11 +47,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property IdentityCenterRegion. 
-        /// <para>
-        /// The Region of the IAM Identity Center instance. If not provided, the service defaults
-        /// to the Region of the farm.
-        /// </para>
+        /// Gets and sets the property IdentityCenterRegion. The Region of the IAM Identity Center
+        /// instance. If not provided, the service defaults to the Region of the farm.
         /// </summary>
         [AWSProperty(Min = 1, Max = 25)]
         public string IdentityCenterRegion { get; set; }
@@ -65,10 +59,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetIdentityCenterRegion() => this.IdentityCenterRegion != null;
 
         /// <summary>
-        /// Gets and sets the property IdentityStoreId. 
-        /// <para>
-        /// The identity store ID of the member to associate with the farm.
-        /// </para>
+        /// Gets and sets the property IdentityStoreId. The identity store ID of the member to
+        /// associate with the farm.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 36)]
         public string IdentityStoreId { get; set; }
@@ -79,10 +71,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetIdentityStoreId() => this.IdentityStoreId != null;
 
         /// <summary>
-        /// Gets and sets the property MembershipLevel. 
-        /// <para>
-        /// The principal's membership level for the associated farm.
-        /// </para>
+        /// Gets and sets the property MembershipLevel. The principal's membership level for the
+        /// associated farm.
         /// </summary>
         [AWSProperty(Required = true)]
         public MembershipLevel MembershipLevel { get; set; }
@@ -93,10 +83,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMembershipLevel() => this.MembershipLevel != null;
 
         /// <summary>
-        /// Gets and sets the property PrincipalId. 
-        /// <para>
-        /// The member's principal ID to associate with the farm.
-        /// </para>
+        /// Gets and sets the property PrincipalId. The member's principal ID to associate with
+        /// the farm.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 47)]
         public string PrincipalId { get; set; }
@@ -107,10 +95,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetPrincipalId() => this.PrincipalId != null;
 
         /// <summary>
-        /// Gets and sets the property PrincipalType. 
-        /// <para>
-        /// The principal type of the member to associate with the farm.
-        /// </para>
+        /// Gets and sets the property PrincipalType. The principal type of the member to associate
+        /// with the farm.
         /// </summary>
         [AWSProperty(Required = true)]
         public PrincipalType PrincipalType { get; set; }

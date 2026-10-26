@@ -36,12 +36,9 @@ namespace Amazon.Deadline.Model
     public partial class SchedulingMinPriorityOverride
     {
         /// <summary>
-        /// Gets and sets the property AlwaysScheduleLast. 
-        /// <para>
-        /// Jobs at the minimum priority (0) are always scheduled after all other jobs, regardless
-        /// of the weighted scheduling formula. If multiple jobs have priority 0, ties are broken
-        /// using the standard weighted formula.
-        /// </para>
+        /// Gets and sets the property AlwaysScheduleLast. Jobs at the minimum priority (0) are
+        /// always scheduled after all other jobs, regardless of the weighted scheduling formula.
+        /// If multiple jobs have priority 0, ties are broken using the standard weighted formula.
         /// </summary>
         public SchedulingMinPriorityOverrideAlwaysScheduleLast AlwaysScheduleLast { get; set; }
 

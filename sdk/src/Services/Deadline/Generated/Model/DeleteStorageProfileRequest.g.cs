@@ -36,10 +36,8 @@ namespace Amazon.Deadline.Model
     public partial class DeleteStorageProfileRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID of the farm from which to remove the storage profile.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID of the farm from which to remove the
+        /// storage profile.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -50,10 +48,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property StorageProfileId. 
-        /// <para>
-        /// The storage profile ID of the storage profile to delete.
-        /// </para>
+        /// Gets and sets the property StorageProfileId. The storage profile ID of the storage
+        /// profile to delete.
         /// </summary>
         [AWSProperty(Required = true)]
         public string StorageProfileId { get; set; }

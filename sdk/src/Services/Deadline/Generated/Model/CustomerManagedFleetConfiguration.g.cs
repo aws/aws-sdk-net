@@ -35,10 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class CustomerManagedFleetConfiguration
     {
         /// <summary>
-        /// Gets and sets the property AutoScalingConfiguration. 
-        /// <para>
-        /// The auto scaling configuration settings for the customer managed fleet.
-        /// </para>
+        /// Gets and sets the property AutoScalingConfiguration. The auto scaling configuration
+        /// settings for the customer managed fleet.
         /// </summary>
         public CustomerManagedAutoScalingConfiguration AutoScalingConfiguration { get; set; }
 
@@ -48,10 +46,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetAutoScalingConfiguration() => this.AutoScalingConfiguration != null;
 
         /// <summary>
-        /// Gets and sets the property Mode. 
-        /// <para>
-        /// The Auto Scaling mode for the customer managed fleet.
-        /// </para>
+        /// Gets and sets the property Mode. The Auto Scaling mode for the customer managed fleet.
         /// </summary>
         [AWSProperty(Required = true)]
         public AutoScalingMode Mode { get; set; }
@@ -62,10 +57,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMode() => this.Mode != null;
 
         /// <summary>
-        /// Gets and sets the property StorageProfileId. 
-        /// <para>
-        /// The storage profile ID for the customer managed fleet.
-        /// </para>
+        /// Gets and sets the property StorageProfileId. The storage profile ID for the customer
+        /// managed fleet.
         /// </summary>
         public string StorageProfileId { get; set; }
 
@@ -75,10 +68,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStorageProfileId() => this.StorageProfileId != null;
 
         /// <summary>
-        /// Gets and sets the property TagPropagationMode. 
-        /// <para>
-        /// The tag propagation mode for the customer managed fleet.
-        /// </para>
+        /// Gets and sets the property TagPropagationMode. The tag propagation mode for the customer
+        /// managed fleet.
         /// </summary>
         public TagPropagationMode TagPropagationMode { get; set; }
 
@@ -88,10 +79,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetTagPropagationMode() => this.TagPropagationMode != null;
 
         /// <summary>
-        /// Gets and sets the property WorkerCapabilities. 
-        /// <para>
-        /// The worker capabilities for the customer managed fleet.
-        /// </para>
+        /// Gets and sets the property WorkerCapabilities. The worker capabilities for the customer
+        /// managed fleet.
         /// </summary>
         [AWSProperty(Required = true)]
         public CustomerManagedWorkerCapabilities WorkerCapabilities { get; set; }

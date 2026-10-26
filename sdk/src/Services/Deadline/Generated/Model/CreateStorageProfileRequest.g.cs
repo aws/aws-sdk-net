@@ -37,10 +37,8 @@ namespace Amazon.Deadline.Model
     public partial class CreateStorageProfileRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property ClientToken. 
-        /// <para>
-        /// The unique token which the server uses to recognize retries of the same request.
-        /// </para>
+        /// Gets and sets the property ClientToken. The unique token which the server uses to
+        /// recognize retries of the same request.
         /// </summary>
         [AWSProperty(Min = 1, Max = 64)]
         public string ClientToken { get; set; }
@@ -71,10 +69,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetDisplayName() => this.DisplayName != null;
 
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID of the farm to connect to the storage profile.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID of the farm to connect to the storage
+        /// profile.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -85,10 +81,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property FileSystemLocations. 
-        /// <para>
-        /// File system paths to include in the storage profile.
-        /// </para>
+        /// Gets and sets the property FileSystemLocations. File system paths to include in the
+        /// storage profile.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -105,10 +99,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFileSystemLocations() => this.FileSystemLocations != null && (this.FileSystemLocations.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property OsFamily. 
-        /// <para>
-        /// The type of operating system (OS) for the storage profile.
-        /// </para>
+        /// Gets and sets the property OsFamily. The type of operating system (OS) for the storage
+        /// profile.
         /// </summary>
         [AWSProperty(Required = true)]
         public StorageProfileOperatingSystemFamily OsFamily { get; set; }

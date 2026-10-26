@@ -74,10 +74,8 @@ namespace Amazon.Deadline.Model
         public ServiceQuotaExceededException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) : base(message, errorType, errorCode, requestId, statusCode) { }
 
         /// <summary>
-        /// Gets and sets the property Context. 
-        /// <para>
-        /// Information about the resources in use when the exception was thrown.
-        /// </para>
+        /// Gets and sets the property Context. Information about the resources in use when the
+        /// exception was thrown.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -93,10 +91,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetContext() => this.Context != null && (this.Context.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property QuotaCode. 
-        /// <para>
-        /// Identifies the quota that has been exceeded.
-        /// </para>
+        /// Gets and sets the property QuotaCode. Identifies the quota that has been exceeded.
         /// </summary>
         [AWSProperty(Required = true)]
         public string QuotaCode { get; set; }
@@ -107,10 +102,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetQuotaCode() => this.QuotaCode != null;
 
         /// <summary>
-        /// Gets and sets the property Reason. 
-        /// <para>
-        /// A string that describes the reason the quota was exceeded.
-        /// </para>
+        /// Gets and sets the property Reason. A string that describes the reason the quota was
+        /// exceeded.
         /// </summary>
         [AWSProperty(Required = true)]
         public ServiceQuotaExceededExceptionReason Reason { get; set; }
@@ -121,10 +114,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetReason() => this.Reason != null;
 
         /// <summary>
-        /// Gets and sets the property ResourceId. 
-        /// <para>
-        /// The identifier of the affected resource.
-        /// </para>
+        /// Gets and sets the property ResourceId. The identifier of the affected resource.
         /// </summary>
         public string ResourceId { get; set; }
 
@@ -134,10 +124,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetResourceId() => this.ResourceId != null;
 
         /// <summary>
-        /// Gets and sets the property ResourceType. 
-        /// <para>
-        /// The type of the affected resource
-        /// </para>
+        /// Gets and sets the property ResourceType. The type of the affected resource
         /// </summary>
         [AWSProperty(Required = true)]
         public string ResourceType { get; set; }
@@ -148,10 +135,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetResourceType() => this.ResourceType != null;
 
         /// <summary>
-        /// Gets and sets the property ServiceCode. 
-        /// <para>
-        /// Identifies the service that exceeded the quota.
-        /// </para>
+        /// Gets and sets the property ServiceCode. Identifies the service that exceeded the quota.
         /// </summary>
         [AWSProperty(Required = true)]
         public string ServiceCode { get; set; }

@@ -35,11 +35,8 @@ namespace Amazon.Deadline.Model
     public partial class ServiceManagedEc2AutoScalingConfiguration
     {
         /// <summary>
-        /// Gets and sets the property ScaleOutWorkersPerMinute. 
-        /// <para>
-        /// The number of workers that can be added per minute to the fleet. The default is 10
-        /// workers per minute.
-        /// </para>
+        /// Gets and sets the property ScaleOutWorkersPerMinute. The number of workers that can
+        /// be added per minute to the fleet. The default is 10 workers per minute.
         /// </summary>
         [AWSProperty(Min = 1, Max = 2147483647)]
         public int? ScaleOutWorkersPerMinute { get; set; }
@@ -50,11 +47,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetScaleOutWorkersPerMinute() => this.ScaleOutWorkersPerMinute.HasValue;
 
         /// <summary>
-        /// Gets and sets the property StandbyWorkerCount. 
-        /// <para>
-        /// The number of idle workers maintained and ready to process incoming tasks. The default
-        /// is 0.
-        /// </para>
+        /// Gets and sets the property StandbyWorkerCount. The number of idle workers maintained
+        /// and ready to process incoming tasks. The default is 0.
         /// </summary>
         [AWSProperty(Min = 0, Max = 2147483647)]
         public int? StandbyWorkerCount { get; set; }
@@ -65,11 +59,8 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStandbyWorkerCount() => this.StandbyWorkerCount.HasValue;
 
         /// <summary>
-        /// Gets and sets the property WorkerIdleDurationSeconds. 
-        /// <para>
-        /// The number of seconds that a worker can remain idle before it is shut down. The default
-        /// is 300 seconds (5 minutes).
-        /// </para>
+        /// Gets and sets the property WorkerIdleDurationSeconds. The number of seconds that a
+        /// worker can remain idle before it is shut down. The default is 300 seconds (5 minutes).
         /// </summary>
         [AWSProperty(Min = 0, Max = 86400)]
         public int? WorkerIdleDurationSeconds { get; set; }

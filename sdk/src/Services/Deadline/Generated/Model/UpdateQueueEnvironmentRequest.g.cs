@@ -36,10 +36,8 @@ namespace Amazon.Deadline.Model
     public partial class UpdateQueueEnvironmentRequest : AmazonDeadlineRequest
     {
         /// <summary>
-        /// Gets and sets the property ClientToken. 
-        /// <para>
-        /// The unique token which the server uses to recognize retries of the same request.
-        /// </para>
+        /// Gets and sets the property ClientToken. The unique token which the server uses to
+        /// recognize retries of the same request.
         /// </summary>
         [AWSProperty(Min = 1, Max = 64)]
         public string ClientToken { get; set; }
@@ -50,10 +48,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetClientToken() => this.ClientToken != null;
 
         /// <summary>
-        /// Gets and sets the property FarmId. 
-        /// <para>
-        /// The farm ID of the queue environment to update.
-        /// </para>
+        /// Gets and sets the property FarmId. The farm ID of the queue environment to update.
         /// </summary>
         [AWSProperty(Required = true)]
         public string FarmId { get; set; }
@@ -64,10 +59,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId() => this.FarmId != null;
 
         /// <summary>
-        /// Gets and sets the property Priority. 
-        /// <para>
-        /// The priority to update.
-        /// </para>
+        /// Gets and sets the property Priority. The priority to update.
         /// </summary>
         [AWSProperty(Min = 0, Max = 10000)]
         public int? Priority { get; set; }
@@ -78,10 +70,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetPriority() => this.Priority.HasValue;
 
         /// <summary>
-        /// Gets and sets the property QueueEnvironmentId. 
-        /// <para>
-        /// The queue environment ID to update.
-        /// </para>
+        /// Gets and sets the property QueueEnvironmentId. The queue environment ID to update.
         /// </summary>
         [AWSProperty(Required = true)]
         public string QueueEnvironmentId { get; set; }
@@ -92,10 +81,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetQueueEnvironmentId() => this.QueueEnvironmentId != null;
 
         /// <summary>
-        /// Gets and sets the property QueueId. 
-        /// <para>
-        /// The queue ID of the queue environment to update.
-        /// </para>
+        /// Gets and sets the property QueueId. The queue ID of the queue environment to update.
         /// </summary>
         [AWSProperty(Required = true)]
         public string QueueId { get; set; }
@@ -106,10 +92,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetQueueId() => this.QueueId != null;
 
         /// <summary>
-        /// Gets and sets the property Template. 
-        /// <para>
-        /// The template to update.
-        /// </para>
+        /// Gets and sets the property Template. The template to update.
         /// </summary>
         [AWSProperty(Sensitive = true, Min = 1, Max = 15000)]
         public string Template { get; set; }
@@ -120,10 +103,7 @@ namespace Amazon.Deadline.Model
         internal bool IsSetTemplate() => this.Template != null;
 
         /// <summary>
-        /// Gets and sets the property TemplateType. 
-        /// <para>
-        /// The template type to update.
-        /// </para>
+        /// Gets and sets the property TemplateType. The template type to update.
         /// </summary>
         public EnvironmentTemplateType TemplateType { get; set; }
 
