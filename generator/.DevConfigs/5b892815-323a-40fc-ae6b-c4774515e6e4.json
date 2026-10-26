@@ -1,9 +1,0 @@
-{
-  "core": {
-    "changeLogMessages": [
-      "Updated EventStreamHeader.AsInt32 and AsInt64 to widen narrower integer header types instead of throwing an InvalidCastException."
-    ],
-    "type": "patch",
-    "updateMinimum": true
-  }
-}

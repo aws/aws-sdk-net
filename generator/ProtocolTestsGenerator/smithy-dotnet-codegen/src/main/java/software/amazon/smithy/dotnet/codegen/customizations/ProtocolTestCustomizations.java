@@ -88,6 +88,15 @@ public final class ProtocolTestCustomizations {
             // Adding that validation would be a breaking change: responses that unmarshall today (with the member left
             // null) would start throwing, for every service whose responses omit a member its model marks @required.
             "MissingRequiredInitialResponseOutput",
-            "DuplexMissingRequiredInitialResponseOutput"
+            "DuplexMissingRequiredInitialResponseOutput",
+            // The RestJson test service model (smithy.json) models the byte and short event headers as Integer, unlike the protocol test model.
+            // The protocol test model (definied in https://github.com/smithy-lang/smithy/blob/f9d0f0fde5d28b76aa99024bff0baeacaf40acaf/smithy-aws-protocol-tests/model/restJson1/event-stream.smithy#L31)
+            // defines the byte and short headers appropriately as byte and short. So this is a conversion issue from .smithy -> JSON AST.
+            // The SDK reads them with AsInt32(), which can't unbox the SByte/Int16 header values the tests send. Skipping until the test
+            // service model matches the protocol test model.
+            "ByteHeaderOutput",
+            "ShortHeaderOutput",
+            "DuplexByteHeaderOutput",
+            "DuplexShortHeaderOutput"
     );
 }
