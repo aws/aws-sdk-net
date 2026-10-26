@@ -130,6 +130,7 @@ public sealed class JsonStructureUnmarshallerWriter(GenerationContext context, s
             TimestampShape => $"{header}.AsTimestamp()",
             BlobShape => $"new MemoryStream({header}.AsByteBuf())",
             ShortShape => $"{header}.AsInt16()",
+            ByteShape => $"{header}.AsSByte()",
             var other => throw new GeneratorException($"Unsupported @eventHeader type '{other.Type}' on member '{member.ModeledName}'."),
         };
 

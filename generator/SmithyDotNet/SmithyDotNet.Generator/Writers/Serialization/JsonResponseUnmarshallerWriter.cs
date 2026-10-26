@@ -378,6 +378,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
             LongShape => $"long.Parse({value}, CultureInfo.InvariantCulture)",
             FloatShape => $"float.Parse({value}, CultureInfo.InvariantCulture)",
             DoubleShape => $"double.Parse({value}, CultureInfo.InvariantCulture)",
+            ByteShape or ShortShape or BigIntegerShape or BigDecimalShape => $"{TypeMapper.MapNonNullableScalar(member.Type.Target)}.Parse({value}, CultureInfo.InvariantCulture)",
             _ => throw new GeneratorException($"Unsupported header member type '{member.Type.DotNetType}' (member: {member.PropertyName})."),
         };
     }
@@ -401,6 +402,12 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
             // (restJson1's header binding default); the shared helper maps it to the runtime parser's name.
             var format = HttpBindingConversions.TimestampFormatName(element.TimestampFormat ?? "http-date");
             return $"""MultiValueHeaderParser.ToDateTimeList({value}, "{format}")""";
+        }
+        if (element is { IsScalar: true, IsSparse: false, Target: ByteShape or ShortShape or BigIntegerShape or BigDecimalShape })
+        {
+            // The untyped overload converts with Convert.ChangeType in the current culture, and BigInteger and
+            // BigDecimal are not IConvertible, so the SEP numeric types pass an invariant-culture parser.
+            return $"MultiValueHeaderParser.ToValueTypeList<{element.DotNetType}>({value}, s => {element.DotNetType}.Parse(s, CultureInfo.InvariantCulture))";
         }
         if (element is { IsScalar: true, IsSparse: false })
         {

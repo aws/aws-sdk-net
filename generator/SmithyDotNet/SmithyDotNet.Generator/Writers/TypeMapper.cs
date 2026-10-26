@@ -345,9 +345,7 @@ public static class TypeMapper
         }
 
         // Scalars are checked last so the aggregate branches above return without a MapScalar call.
-        // Value-type scalars follow the V4 nullable convention; the rest (byte/short/bigInteger/
-        // bigDecimal) have no settled mapping yet and fall through to the
-        // throw — the wider-numeric types are earmarked for a dedicated numerics extension.
+        // Value-type scalars follow the V4 nullable convention.
         return MapPrimitive(target) ?? throw new GeneratorException($"Unsupported member type '{target.Type}'.");
     }
 
@@ -447,6 +445,12 @@ public static class TypeMapper
         FloatShape => "float",
         DoubleShape => "double",
         TimestampShape => "DateTime",
+        // Full Numeric Type Support SEP: Smithy's byte is signed, so it is sbyte, not System.Byte. BigDecimal
+        // comes from AWSSDK.Extensions.Numerics, which AWSSDK.Core depends on.
+        ByteShape => "sbyte",
+        ShortShape => "short",
+        BigIntegerShape => "System.Numerics.BigInteger",
+        BigDecimalShape => "Amazon.Extensions.Numerics.BigDecimal",
         _ => null,
     };
 

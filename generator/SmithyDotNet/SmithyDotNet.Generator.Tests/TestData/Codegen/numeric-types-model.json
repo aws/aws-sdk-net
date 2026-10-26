@@ -1,0 +1,246 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.example.numerics#BigDecimalList": {
+      "type": "list",
+      "member": {
+        "target": "smithy.api#BigDecimal"
+      }
+    },
+    "com.example.numerics#BigDecimalMap": {
+      "type": "map",
+      "key": {
+        "target": "smithy.api#String"
+      },
+      "value": {
+        "target": "smithy.api#BigDecimal"
+      }
+    },
+    "com.example.numerics#BigIntegerList": {
+      "type": "list",
+      "member": {
+        "target": "smithy.api#BigInteger"
+      }
+    },
+    "com.example.numerics#BigIntegerMap": {
+      "type": "map",
+      "key": {
+        "target": "smithy.api#String"
+      },
+      "value": {
+        "target": "smithy.api#BigInteger"
+      }
+    },
+    "com.example.numerics#ByteList": {
+      "type": "list",
+      "member": {
+        "target": "smithy.api#Byte"
+      }
+    },
+    "com.example.numerics#ByteMap": {
+      "type": "map",
+      "key": {
+        "target": "smithy.api#String"
+      },
+      "value": {
+        "target": "smithy.api#Byte"
+      }
+    },
+    "com.example.numerics#DoNumbers": {
+      "type": "operation",
+      "input": {
+        "target": "com.example.numerics#DoNumbersRequest"
+      },
+      "output": {
+        "target": "com.example.numerics#DoNumbersResponse"
+      },
+      "traits": {
+        "smithy.api#http": {
+          "uri": "/numbers/{labelShort}",
+          "method": "POST"
+        }
+      }
+    },
+    "com.example.numerics#DoNumbersRequest": {
+      "type": "structure",
+      "members": {
+        "byteValue": {
+          "target": "smithy.api#Byte"
+        },
+        "byteList": {
+          "target": "com.example.numerics#ByteList"
+        },
+        "byteMap": {
+          "target": "com.example.numerics#ByteMap"
+        },
+        "shortValue": {
+          "target": "smithy.api#Short"
+        },
+        "shortList": {
+          "target": "com.example.numerics#ShortList"
+        },
+        "shortMap": {
+          "target": "com.example.numerics#ShortMap"
+        },
+        "bigIntegerValue": {
+          "target": "smithy.api#BigInteger"
+        },
+        "bigIntegerList": {
+          "target": "com.example.numerics#BigIntegerList"
+        },
+        "bigIntegerMap": {
+          "target": "com.example.numerics#BigIntegerMap"
+        },
+        "bigDecimalValue": {
+          "target": "smithy.api#BigDecimal"
+        },
+        "bigDecimalList": {
+          "target": "com.example.numerics#BigDecimalList"
+        },
+        "bigDecimalMap": {
+          "target": "com.example.numerics#BigDecimalMap"
+        },
+        "sparseBigIntegerList": {
+          "target": "com.example.numerics#SparseBigIntegerList"
+        },
+        "labelShort": {
+          "target": "smithy.api#Short",
+          "traits": {
+            "smithy.api#httpLabel": {},
+            "smithy.api#required": {}
+          }
+        },
+        "queryByte": {
+          "target": "smithy.api#Byte",
+          "traits": {
+            "smithy.api#httpQuery": "byte"
+          }
+        },
+        "queryBigDecimalList": {
+          "target": "com.example.numerics#BigDecimalList",
+          "traits": {
+            "smithy.api#httpQuery": "bigDecimals"
+          }
+        },
+        "headerBigInteger": {
+          "target": "smithy.api#BigInteger",
+          "traits": {
+            "smithy.api#httpHeader": "x-big-integer"
+          }
+        },
+        "headerShortList": {
+          "target": "com.example.numerics#ShortList",
+          "traits": {
+            "smithy.api#httpHeader": "x-shorts"
+          }
+        }
+      }
+    },
+    "com.example.numerics#DoNumbersResponse": {
+      "type": "structure",
+      "members": {
+        "byteValue": {
+          "target": "smithy.api#Byte"
+        },
+        "byteList": {
+          "target": "com.example.numerics#ByteList"
+        },
+        "byteMap": {
+          "target": "com.example.numerics#ByteMap"
+        },
+        "shortValue": {
+          "target": "smithy.api#Short"
+        },
+        "shortList": {
+          "target": "com.example.numerics#ShortList"
+        },
+        "shortMap": {
+          "target": "com.example.numerics#ShortMap"
+        },
+        "bigIntegerValue": {
+          "target": "smithy.api#BigInteger"
+        },
+        "bigIntegerList": {
+          "target": "com.example.numerics#BigIntegerList"
+        },
+        "bigIntegerMap": {
+          "target": "com.example.numerics#BigIntegerMap"
+        },
+        "bigDecimalValue": {
+          "target": "smithy.api#BigDecimal"
+        },
+        "bigDecimalList": {
+          "target": "com.example.numerics#BigDecimalList"
+        },
+        "bigDecimalMap": {
+          "target": "com.example.numerics#BigDecimalMap"
+        },
+        "sparseBigIntegerList": {
+          "target": "com.example.numerics#SparseBigIntegerList"
+        },
+        "headerByte": {
+          "target": "smithy.api#Byte",
+          "traits": {
+            "smithy.api#httpHeader": "x-byte"
+          }
+        },
+        "headerBigDecimal": {
+          "target": "smithy.api#BigDecimal",
+          "traits": {
+            "smithy.api#httpHeader": "x-big-decimal"
+          }
+        },
+        "headerBigIntegerList": {
+          "target": "com.example.numerics#BigIntegerList",
+          "traits": {
+            "smithy.api#httpHeader": "x-big-integers"
+          }
+        }
+      }
+    },
+    "com.example.numerics#NumericService": {
+      "type": "service",
+      "version": "2026-10-26",
+      "operations": [
+        {
+          "target": "com.example.numerics#DoNumbers"
+        }
+      ],
+      "traits": {
+        "aws.api#service": {
+          "sdkId": "Numeric Service",
+          "arnNamespace": "numerics"
+        },
+        "aws.auth#sigv4": {
+          "name": "numerics"
+        },
+        "aws.protocols#restJson1": {},
+        "smithy.api#title": "Numeric Service"
+      }
+    },
+    "com.example.numerics#ShortList": {
+      "type": "list",
+      "member": {
+        "target": "smithy.api#Short"
+      }
+    },
+    "com.example.numerics#ShortMap": {
+      "type": "map",
+      "key": {
+        "target": "smithy.api#String"
+      },
+      "value": {
+        "target": "smithy.api#Short"
+      }
+    },
+    "com.example.numerics#SparseBigIntegerList": {
+      "type": "list",
+      "member": {
+        "target": "smithy.api#BigInteger"
+      },
+      "traits": {
+        "smithy.api#sparse": {}
+      }
+    }
+  }
+}

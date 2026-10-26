@@ -41,8 +41,11 @@ public static class JsonScalarMarshaller
             case BooleanShape:
                 writer.WriteLine($"context.Writer.WriteBooleanValue({value});");
                 break;
-            case IntegerShape or IntEnumShape or LongShape:
+            case IntegerShape or IntEnumShape or LongShape or ByteShape or ShortShape:
                 writer.WriteLine($"context.Writer.WriteNumberValue({value});");
+                break;
+            case BigIntegerShape or BigDecimalShape:
+                writer.WriteLine(ArbitraryPrecisionWrite(type.Target, value));
                 break;
             case FloatShape or DoubleShape when type.IsNullableValueType:
                 WriteSpecialNumeric(writer, type.Target, expression);
@@ -75,8 +78,11 @@ public static class JsonScalarMarshaller
             case BooleanShape:
                 writer.WriteLine($"context.Writer.WriteBooleanValue({expression}.Value);");
                 break;
-            case IntegerShape or IntEnumShape or LongShape or FloatShape or DoubleShape:
+            case IntegerShape or IntEnumShape or LongShape or FloatShape or DoubleShape or ByteShape or ShortShape:
                 writer.WriteLine($"context.Writer.WriteNumberValue({expression}.Value);");
+                break;
+            case BigIntegerShape or BigDecimalShape:
+                writer.WriteLine(ArbitraryPrecisionWrite(type.Target, $"{expression}.Value"));
                 break;
             case TimestampShape:
                 WriteTimestamp(writer, type.TimestampFormat ?? timestampDefault, expression, nullable: true);
@@ -85,6 +91,11 @@ public static class JsonScalarMarshaller
                 throw new GeneratorException($"'{type.DotNetType}' is not a sparse value-type element.");
         }
     }
+
+    // Utf8JsonWriter has no BigInteger/BigDecimal overload, and going through double or decimal would lose
+    // digits, so the runtime helper writes the full value as a raw JSON number.
+    private static string ArbitraryPrecisionWrite(Shape target, string value) =>
+        $"StringUtils.Write{(target is BigIntegerShape ? "BigInteger" : "BigDecimal")}Value(context.Writer, {value});";
 
     private static void WriteSpecialNumeric(CodeWriter writer, Shape target, string expression)
     {
