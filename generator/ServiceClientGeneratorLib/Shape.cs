@@ -617,6 +617,43 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// The text conversion the REST XML marshaller appends to a map value of this shape. Existing types keep
+        /// the current-culture ToString() the template has always emitted; the SEP numeric types use invariant
+        /// culture, with bigDecimal as plain decimal text to match StringUtils.FromBigDecimal.
+        /// </summary>
+        public string RestXmlMapValueSuffix
+        {
+            get
+            {
+                if (IsString)
+                {
+                    return string.Empty;
+                }
+                return IsSepNumericType ? InvariantTextSuffix : ".ToString()";
+            }
+        }
+
+        /// <summary>
+        /// The text conversion the REST XML marshaller appends to a list element passed to XmlWriter.WriteValue.
+        /// XmlWriter has no BigInteger or BigDecimal overload, so those are converted to invariant text first;
+        /// every other type keeps the typed WriteValue overload.
+        /// </summary>
+        public string RestXmlListValueSuffix
+        {
+            get { return IsArbitraryPrecisionNumber ? InvariantTextSuffix : string.Empty; }
+        }
+
+        private string InvariantTextSuffix
+        {
+            get
+            {
+                return IsBigDecimal
+                    ? ".ToPlainString(System.Globalization.CultureInfo.InvariantCulture)"
+                    : ".ToString(System.Globalization.CultureInfo.InvariantCulture)";
+            }
+        }
+
+        /// <summary>
         /// The variable type the AWS Query marshaller declares for a map value of this primitive shape.
         /// Existing types keep the primitive name the template has always emitted, so generated code for
         /// current services does not change; the SEP numeric types use their C# type.

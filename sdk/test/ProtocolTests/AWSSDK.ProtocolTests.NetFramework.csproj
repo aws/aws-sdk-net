@@ -44,6 +44,11 @@
       <ProjectReference Include="../Services/NonQueryCompatibleRpcV2Protocol/AWSSDK.NonQueryCompatibleRpcV2Protocol.NetFramework.csproj" />
       <ProjectReference Include="../Services/QueryCompatibleJSONRPC10/AWSSDK.QueryCompatibleJSONRPC10.NetFramework.csproj" />
       <ProjectReference Include="../Services/QueryCompatibleRpcV2Protocol/AWSSDK.QueryCompatibleRpcV2Protocol.NetFramework.csproj" />
+      <ProjectReference Include="../Services/NumericTypesJson/AWSSDK.NumericTypesJson.NetFramework.csproj" />
+      <ProjectReference Include="../Services/NumericTypesRestJson/AWSSDK.NumericTypesRestJson.NetFramework.csproj" />
+      <ProjectReference Include="../Services/NumericTypesRestXml/AWSSDK.NumericTypesRestXml.NetFramework.csproj" />
+      <ProjectReference Include="../Services/NumericTypesQuery/AWSSDK.NumericTypesQuery.NetFramework.csproj" />
+      <ProjectReference Include="../Services/NumericTypesEC2/AWSSDK.NumericTypesEC2.NetFramework.csproj" />
     </ItemGroup>
     <ItemGroup Condition="$(RunAnalyzersDuringBuild)">
     </ItemGroup>

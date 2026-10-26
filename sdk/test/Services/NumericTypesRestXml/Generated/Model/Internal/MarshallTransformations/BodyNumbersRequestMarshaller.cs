@@ -78,7 +78,7 @@ namespace Amazon.NumericTypesRestXml.Model.Internal.MarshallTransformations
                     foreach (var publicRequestBigDecimalListValue in publicRequestBigDecimalList) 
                     {
                         xmlWriter.WriteStartElement("member");
-                        xmlWriter.WriteValue(publicRequestBigDecimalListValue);
+                        xmlWriter.WriteValue(publicRequestBigDecimalListValue.ToPlainString(System.Globalization.CultureInfo.InvariantCulture));
                         xmlWriter.WriteEndElement();
                     }            
                     xmlWriter.WriteEndElement();            
@@ -91,7 +91,7 @@ namespace Amazon.NumericTypesRestXml.Model.Internal.MarshallTransformations
                         xmlWriter.WriteStartElement("entry");
 
                         xmlWriter.WriteElementString("key", kvp.Key);
-                        xmlWriter.WriteElementString("value", kvp.Value.ToString());
+                        xmlWriter.WriteElementString("value", kvp.Value.ToPlainString(System.Globalization.CultureInfo.InvariantCulture));
                         xmlWriter.WriteEndElement();
                     }
                     xmlWriter.WriteEndElement();
@@ -106,7 +106,7 @@ namespace Amazon.NumericTypesRestXml.Model.Internal.MarshallTransformations
                     foreach (var publicRequestBigIntegerListValue in publicRequestBigIntegerList) 
                     {
                         xmlWriter.WriteStartElement("member");
-                        xmlWriter.WriteValue(publicRequestBigIntegerListValue);
+                        xmlWriter.WriteValue(publicRequestBigIntegerListValue.ToString(System.Globalization.CultureInfo.InvariantCulture));
                         xmlWriter.WriteEndElement();
                     }            
                     xmlWriter.WriteEndElement();            
@@ -119,7 +119,7 @@ namespace Amazon.NumericTypesRestXml.Model.Internal.MarshallTransformations
                         xmlWriter.WriteStartElement("entry");
 
                         xmlWriter.WriteElementString("key", kvp.Key);
-                        xmlWriter.WriteElementString("value", kvp.Value.ToString());
+                        xmlWriter.WriteElementString("value", kvp.Value.ToString(System.Globalization.CultureInfo.InvariantCulture));
                         xmlWriter.WriteEndElement();
                     }
                     xmlWriter.WriteEndElement();
@@ -147,7 +147,7 @@ namespace Amazon.NumericTypesRestXml.Model.Internal.MarshallTransformations
                         xmlWriter.WriteStartElement("entry");
 
                         xmlWriter.WriteElementString("key", kvp.Key);
-                        xmlWriter.WriteElementString("value", kvp.Value.ToString());
+                        xmlWriter.WriteElementString("value", kvp.Value.ToString(System.Globalization.CultureInfo.InvariantCulture));
                         xmlWriter.WriteEndElement();
                     }
                     xmlWriter.WriteEndElement();
@@ -210,7 +210,7 @@ namespace Amazon.NumericTypesRestXml.Model.Internal.MarshallTransformations
                         xmlWriter.WriteStartElement("entry");
 
                         xmlWriter.WriteElementString("key", kvp.Key);
-                        xmlWriter.WriteElementString("value", kvp.Value.ToString());
+                        xmlWriter.WriteElementString("value", kvp.Value.ToString(System.Globalization.CultureInfo.InvariantCulture));
                         xmlWriter.WriteEndElement();
                     }
                     xmlWriter.WriteEndElement();
