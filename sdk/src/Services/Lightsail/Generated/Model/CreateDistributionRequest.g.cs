@@ -206,6 +206,32 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetEnablePrivateOriginAccess() => this.EnablePrivateOriginAccess.HasValue;
 
         /// <summary>
+        /// Gets and sets the property EnableWaf. 
+        /// <para>
+        /// Specifies whether to enable Web Application Firewall (WAF) for the distribution. WAF
+        /// inspects viewer requests and blocks requests that match the WAF rule groups that you
+        /// enable.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you enable WAF without specifying the <c>wafRules</c> parameter, the distribution
+        /// has no WAF rule groups enabled and doesn't block any requests.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// WAF is available only for distributions that use the <c>medium_1_0</c> or <c>large_1_0</c>
+        /// bundle.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool? EnableWaf { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EnableWaf property is set.
+        /// </summary>
+        internal bool IsSetEnableWaf() => this.EnableWaf.HasValue;
+
+        /// <summary>
         /// Gets and sets the property IpAddressType. 
         /// <para>
         /// The IP address type for the distribution.
@@ -281,5 +307,42 @@ namespace Amazon.Lightsail.Model
         /// Checks to see if the ViewerMinimumTlsProtocolVersion property is set.
         /// </summary>
         internal bool IsSetViewerMinimumTlsProtocolVersion() => this.ViewerMinimumTlsProtocolVersion != null;
+
+        /// <summary>
+        /// Gets and sets the property WafRules. 
+        /// <para>
+        /// An array of objects that describe the WAF rule groups to enable for the distribution.
+        /// </para>
+        ///  
+        /// <para>
+        /// The WAF rule groups that you can specify depend on the bundle of the distribution:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>medium_1_0</c> – Supports the <c>AWSManagedRulesCommonRuleSet</c>, <c>AWSManagedRulesKnownBadInputsRuleSet</c>,
+        /// and <c>AWSManagedRulesAnonymousIpList</c> rule groups.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>large_1_0</c> – Supports the rule groups for <c>medium_1_0</c>, plus <c>AWSManagedRulesAdminProtectionRuleSet</c>,
+        /// <c>AWSManagedRulesSQLiRuleSet</c>, <c>AWSManagedRulesLinuxRuleSet</c>, <c>AWSManagedRulesUnixRuleSet</c>,
+        /// <c>AWSManagedRulesWindowsRuleSet</c>, <c>AWSManagedRulesPHPRuleSet</c>, <c>AWSManagedRulesWordPressRuleSet</c>,
+        /// <c>AWSManagedRulesAmazonIpReputationList</c>, <c>AWSManagedRulesATPRuleSet</c>, <c>AWSManagedRulesACFPRuleSet</c>,
+        /// and <c>AWSManagedRulesBotControlRuleSet</c> rule groups.
+        /// </para>
+        ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<WafRule> WafRules { get; set; } = AWSConfigs.InitializeCollections ? new List<WafRule>() : null;
+
+        /// <summary>
+        /// Checks to see if the WafRules property is set.
+        /// </summary>
+        internal bool IsSetWafRules() => this.WafRules != null && (this.WafRules.Count > 0 || !AWSConfigs.InitializeCollections);
     }
 }

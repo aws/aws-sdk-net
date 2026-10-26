@@ -213,6 +213,13 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     unmarshalledObject.ViewerMinimumTlsProtocolVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("waf", targetDepth, ref reader))
+                {
+                    var unmarshaller = WafConfigUnmarshaller.Instance;
+                    unmarshalledObject.Waf = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

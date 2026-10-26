@@ -185,6 +185,33 @@ namespace Amazon.Lightsail.Model
         /// <para>
         ///  <c>Unit</c>: The published unit is <c>Percent</c>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <c>WafAllowedRequests</c> </b> - The number of viewer requests that Web Application
+        /// Firewall (WAF) allowed. This metric is available only when WAF is enabled for the
+        /// distribution.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>Statistics</c>: The most useful statistic is <c>Sum</c>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>Unit</c>: The published unit is <c>None</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <c>WafBlockedRequests</c> </b> - The number of viewer requests that WAF blocked.
+        /// This metric is available only when WAF is enabled for the distribution.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>Statistics</c>: The most useful statistic is <c>Sum</c>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>Unit</c>: The published unit is <c>None</c>.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required = true)]

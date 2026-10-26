@@ -140,6 +140,11 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("enablePrivateOriginAccess");
                 context.Writer.WriteBooleanValue(publicRequest.EnablePrivateOriginAccess.Value);
             }
+            if (publicRequest.IsSetEnableWaf())
+            {
+                context.Writer.WritePropertyName("enableWaf");
+                context.Writer.WriteBooleanValue(publicRequest.EnableWaf.Value);
+            }
             if (publicRequest.IsSetIsEnabled())
             {
                 context.Writer.WritePropertyName("isEnabled");
@@ -164,6 +169,21 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("viewerMinimumTlsProtocolVersion");
                 context.Writer.WriteStringValue(publicRequest.ViewerMinimumTlsProtocolVersion);
+            }
+            if (publicRequest.IsSetWafRules())
+            {
+                context.Writer.WritePropertyName("wafRules");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestWafRulesListValue in publicRequest.WafRules)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = WafRuleMarshaller.Instance;
+                    marshaller.Marshall(publicRequestWafRulesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
             }
 
             writer.WriteEndObject();

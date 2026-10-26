@@ -385,5 +385,18 @@ namespace Amazon.Lightsail.Model
         /// Checks to see if the ViewerMinimumTlsProtocolVersion property is set.
         /// </summary>
         internal bool IsSetViewerMinimumTlsProtocolVersion() => this.ViewerMinimumTlsProtocolVersion != null;
+
+        /// <summary>
+        /// Gets and sets the property Waf. 
+        /// <para>
+        /// An object that describes the Web Application Firewall (WAF) configuration of the distribution.
+        /// </para>
+        /// </summary>
+        public WafConfig Waf { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Waf property is set.
+        /// </summary>
+        internal bool IsSetWaf() => this.Waf != null;
     }
 }

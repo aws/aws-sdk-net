@@ -1436,6 +1436,16 @@ namespace Amazon.Lightsail
         public static readonly DistributionMetricName TotalErrorRate = new DistributionMetricName("TotalErrorRate");
 
         /// <summary>
+        /// Constant WafAllowedRequests for DistributionMetricName
+        /// </summary>
+        public static readonly DistributionMetricName WafAllowedRequests = new DistributionMetricName("WafAllowedRequests");
+
+        /// <summary>
+        /// Constant WafBlockedRequests for DistributionMetricName
+        /// </summary>
+        public static readonly DistributionMetricName WafBlockedRequests = new DistributionMetricName("WafBlockedRequests");
+
+        /// <summary>
         /// Constructs a custom DistributionMetricName for a value not among the defined constants.
         /// </summary>
         public DistributionMetricName(string value) : base(value) { }
@@ -5206,6 +5216,88 @@ namespace Amazon.Lightsail
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ViewerMinimumTlsProtocolVersionEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type WafInspectionLevelEnum.
+    /// </summary>
+    public class WafInspectionLevelEnum : ConstantClass
+    {
+        /// <summary>
+        /// Constant COMMON for WafInspectionLevelEnum
+        /// </summary>
+        public static readonly WafInspectionLevelEnum COMMON = new WafInspectionLevelEnum("COMMON");
+
+        /// <summary>
+        /// Constant TARGETED for WafInspectionLevelEnum
+        /// </summary>
+        public static readonly WafInspectionLevelEnum TARGETED = new WafInspectionLevelEnum("TARGETED");
+
+        /// <summary>
+        /// Constructs a custom WafInspectionLevelEnum for a value not among the defined constants.
+        /// </summary>
+        public WafInspectionLevelEnum(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WafInspectionLevelEnum FindValue(string value)
+        {
+            return FindValue<WafInspectionLevelEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WafInspectionLevelEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type WafPayloadTypeEnum.
+    /// </summary>
+    public class WafPayloadTypeEnum : ConstantClass
+    {
+        /// <summary>
+        /// Constant FORM_ENCODED for WafPayloadTypeEnum
+        /// </summary>
+        public static readonly WafPayloadTypeEnum FORM_ENCODED = new WafPayloadTypeEnum("FORM_ENCODED");
+
+        /// <summary>
+        /// Constant JSON for WafPayloadTypeEnum
+        /// </summary>
+        public static readonly WafPayloadTypeEnum JSON = new WafPayloadTypeEnum("JSON");
+
+        /// <summary>
+        /// Constructs a custom WafPayloadTypeEnum for a value not among the defined constants.
+        /// </summary>
+        public WafPayloadTypeEnum(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WafPayloadTypeEnum FindValue(string value)
+        {
+            return FindValue<WafPayloadTypeEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WafPayloadTypeEnum(string value)
         {
             return FindValue(value);
         }
