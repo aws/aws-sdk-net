@@ -269,6 +269,20 @@ namespace Amazon.Odb.Model
         internal bool IsSetDisplayName() => this.DisplayName != null;
 
         /// <summary>
+        /// Gets and sets the property ExascaleConfiguration. 
+        /// <para>
+        /// The Exascale storage configuration of the Exadata infrastructure. This value is present
+        /// only when Exascale storage is configured on the infrastructure.
+        /// </para>
+        /// </summary>
+        public ExascaleConfiguration ExascaleConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExascaleConfiguration property is set.
+        /// </summary>
+        internal bool IsSetExascaleConfiguration() => this.ExascaleConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property LastMaintenanceRunId. 
         /// <para>
         /// The Oracle Cloud Identifier (OCID) of the last maintenance run for the Exadata infrastructure.
@@ -536,7 +550,7 @@ namespace Amazon.Odb.Model
         /// <summary>
         /// Gets and sets the property TotalStorageSizeInGBs. 
         /// <para>
-        /// The total amount of storage, in gigabytes (GB), on the the Exadata infrastructure.
+        /// The total amount of storage, in gigabytes (GB), on the Exadata infrastructure.
         /// </para>
         /// </summary>
         public int? TotalStorageSizeInGBs { get; set; }

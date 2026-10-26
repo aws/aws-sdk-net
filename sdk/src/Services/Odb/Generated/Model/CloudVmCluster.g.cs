@@ -245,6 +245,55 @@ namespace Amazon.Odb.Model
         internal bool IsSetDomain() => this.Domain != null;
 
         /// <summary>
+        /// Gets and sets the property ExascaleDbStorageVaultArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Exascale storage vault that the VM cluster uses.
+        /// This value is present only for VM clusters that use an Exascale storage vault.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 20, Max = 2048)]
+        public string ExascaleDbStorageVaultArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExascaleDbStorageVaultArn property is set.
+        /// </summary>
+        internal bool IsSetExascaleDbStorageVaultArn() => this.ExascaleDbStorageVaultArn != null;
+
+        /// <summary>
+        /// Gets and sets the property ExascaleDbStorageVaultId. 
+        /// <para>
+        /// The unique identifier of the Exascale storage vault that the VM cluster uses. This
+        /// value is present only for VM clusters that use an Exascale storage vault.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 6, Max = 64)]
+        public string ExascaleDbStorageVaultId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExascaleDbStorageVaultId property is set.
+        /// </summary>
+        internal bool IsSetExascaleDbStorageVaultId() => this.ExascaleDbStorageVaultId != null;
+
+        /// <summary>
+        /// Gets and sets the property FileSystemConfigurationDetails. 
+        /// <para>
+        /// The list of file system configurations for the VM cluster.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<FileSystemConfigurationDetails> FileSystemConfigurationDetails { get; set; } = AWSConfigs.InitializeCollections ? new List<FileSystemConfigurationDetails>() : null;
+
+        /// <summary>
+        /// Checks to see if the FileSystemConfigurationDetails property is set.
+        /// </summary>
+        internal bool IsSetFileSystemConfigurationDetails() => this.FileSystemConfigurationDetails != null && (this.FileSystemConfigurationDetails.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property GiVersion. 
         /// <para>
         /// The software version of the Oracle Grid Infrastructure (GI) for the VM cluster.
@@ -583,6 +632,20 @@ namespace Amazon.Odb.Model
         internal bool IsSetStatusReason() => this.StatusReason != null;
 
         /// <summary>
+        /// Gets and sets the property StorageManagementType. 
+        /// <para>
+        /// The type of storage management for the VM cluster. A value of <c>ASM</c> indicates
+        /// Oracle Automatic Storage Management, and <c>EXASCALE</c> indicates Exascale storage.
+        /// </para>
+        /// </summary>
+        public StorageManagementType StorageManagementType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StorageManagementType property is set.
+        /// </summary>
+        internal bool IsSetStorageManagementType() => this.StorageManagementType != null;
+
+        /// <summary>
         /// Gets and sets the property StorageSizeInGBs. 
         /// <para>
         /// The amount of local node storage, in gigabytes (GB), that's allocated to the VM cluster.
@@ -643,5 +706,31 @@ namespace Amazon.Odb.Model
         /// Checks to see if the VipIds property is set.
         /// </summary>
         internal bool IsSetVipIds() => this.VipIds != null && (this.VipIds.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property VmBackupStorageType. 
+        /// <para>
+        /// The type of storage that the VM cluster uses for VM backups.
+        /// </para>
+        /// </summary>
+        public VmStorageType VmBackupStorageType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the VmBackupStorageType property is set.
+        /// </summary>
+        internal bool IsSetVmBackupStorageType() => this.VmBackupStorageType != null;
+
+        /// <summary>
+        /// Gets and sets the property VmFileSystemStorageType. 
+        /// <para>
+        /// The type of storage that the VM cluster uses for its VM file systems.
+        /// </para>
+        /// </summary>
+        public VmStorageType VmFileSystemStorageType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the VmFileSystemStorageType property is set.
+        /// </summary>
+        internal bool IsSetVmFileSystemStorageType() => this.VmFileSystemStorageType != null;
     }
 }

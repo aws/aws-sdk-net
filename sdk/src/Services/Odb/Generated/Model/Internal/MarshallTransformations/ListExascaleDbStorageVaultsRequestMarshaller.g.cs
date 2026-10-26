@@ -70,6 +70,11 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetCloudExadataInfrastructureId())
+            {
+                context.Writer.WritePropertyName("cloudExadataInfrastructureId");
+                context.Writer.WriteStringValue(publicRequest.CloudExadataInfrastructureId);
+            }
             if (publicRequest.IsSetMaxResults())
             {
                 context.Writer.WritePropertyName("maxResults");
@@ -79,6 +84,11 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("nextToken");
                 context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+            if (publicRequest.IsSetVaultType())
+            {
+                context.Writer.WritePropertyName("vaultType");
+                context.Writer.WriteStringValue(publicRequest.VaultType);
             }
 
             writer.WriteEndObject();

@@ -100,6 +100,11 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if (publicRequest.IsSetCloudExadataInfrastructureId())
+            {
+                context.Writer.WritePropertyName("cloudExadataInfrastructureId");
+                context.Writer.WriteStringValue(publicRequest.CloudExadataInfrastructureId);
+            }
             if (publicRequest.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");

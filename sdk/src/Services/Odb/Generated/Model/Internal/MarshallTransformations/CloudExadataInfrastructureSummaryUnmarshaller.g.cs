@@ -172,6 +172,13 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("exascaleConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = ExascaleConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ExascaleConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("lastMaintenanceRunId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
