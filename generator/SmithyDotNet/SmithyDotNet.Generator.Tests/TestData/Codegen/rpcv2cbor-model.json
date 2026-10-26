@@ -8,7 +8,8 @@
         { "target": "com.example#Send" },
         { "target": "com.example#Put" },
         { "target": "com.example#Ping" },
-        { "target": "com.example#Converse" }
+        { "target": "com.example#Converse" },
+        { "target": "com.example#Chat" }
       ],
       "traits": {
         "aws.api#service": { "sdkId": "Example", "endpointPrefix": "example" },
@@ -118,6 +119,26 @@
     "com.example#ConverseResponse": {
       "type": "structure",
       "members": { "output": { "target": "com.example#OutputStream" } }
+    },
+    "com.example#Chat": {
+      "type": "operation",
+      "input": { "target": "com.example#ChatRequest" },
+      "output": { "target": "com.example#ChatResponse" }
+    },
+    "com.example#ChatRequest": {
+      "type": "structure",
+      "members": {
+        "sessionId": { "target": "smithy.api#String" },
+        "input": { "target": "com.example#InputStream" }
+      }
+    },
+    "com.example#ChatResponse": {
+      "type": "structure",
+      "members": {
+        "output": { "target": "com.example#OutputStream" },
+        "sessionId": { "target": "smithy.api#String", "traits": { "smithy.api#required": {} } },
+        "sequenceNumber": { "target": "smithy.api#Integer", "traits": { "smithy.api#required": {} } }
+      }
     },
     "com.example#InputStream": {
       "type": "union",

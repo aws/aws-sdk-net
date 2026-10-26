@@ -140,12 +140,11 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             AwsQueryCompatibleMarshalling.WriteQueryModeHeader(writer, context);
             _bindings.WriteResourcePath(writer, httpTrait, partitioned.LabelMembers);
 
-            // A @httpPayload member IS the whole body, so it replaces (never coexists with) normal
-            // JSON body members. A @streaming union payload is an input event stream: the body is the
-            // consumer's event publisher, wired here instead of serialized.
+            // A @httpPayload member replaces the body members. An event stream payload becomes the publisher;
+            // on awsJson its siblings become the initial-request.
             if (partitioned.PayloadMember is { Type.IsEventStream: true } eventStreamPayload)
             {
-                WriteEventStreamPublisher(writer, eventStreamPayload);
+                WriteEventStreamPublisher(writer, eventStreamPayload, partitioned.BodyMembers);
             }
             else if (partitioned.PayloadMember is { } payload)
             {
@@ -247,19 +246,37 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
 
     private void WriteBodySerialization(CodeWriter writer, List<Member> bodyMembers)
     {
-        WriteBodyScaffolding(writer, () =>
+        WriteBodyScaffolding(writer, () => WriteBodyMembers(writer, bodyMembers));
+    }
+
+    // The member's .NET type is the union class name, so it names the {Stream}PublisherMarshaller; the
+    // request property carries the "Publisher" suffix (see OperationWriter.ApplyEventStreamPublisher).
+    // On awsJson the stream's siblings are serialized as the initial-request payload.
+    private static void WriteEventStreamPublisher(CodeWriter writer, Member payload, List<Member> initialRequestMembers)
+    {
+        writer.WriteLine("""request.Headers["Content-Type"] = "application/vnd.amazon.eventstream";""");
+        if (initialRequestMembers.Count == 0)
         {
-            writer.WriteLine("writer.WriteStartObject();");
-            writer.WriteLine("var context = new JsonMarshallerContext(request, writer);");
+            writer.WriteLine($"request.EventStreamPublisher = new {payload.Type.DotNetType}PublisherMarshaller(publicRequest.{payload.PropertyName}Publisher);");
+            return;
+        }
 
-            foreach (var member in bodyMembers)
-            {
-                JsonBodyMemberMarshaller.WriteBodyMember(writer, member, "publicRequest");
-            }
+        WriteBodyScaffolding(writer, () => WriteBodyMembers(writer, initialRequestMembers), "initialRequest");
+        writer.WriteLine($"request.EventStreamPublisher = new {payload.Type.DotNetType}PublisherMarshaller(publicRequest.{payload.PropertyName}Publisher, initialRequest);");
+    }
 
-            writer.WriteLine("");
-            writer.WriteLine("writer.WriteEndObject();");
-        });
+    private static void WriteBodyMembers(CodeWriter writer, List<Member> members)
+    {
+        writer.WriteLine("writer.WriteStartObject();");
+        writer.WriteLine("var context = new JsonMarshallerContext(request, writer);");
+
+        foreach (var member in members)
+        {
+            JsonBodyMemberMarshaller.WriteBodyMember(writer, member, "publicRequest");
+        }
+
+        writer.WriteLine("");
+        writer.WriteLine("writer.WriteEndObject();");
     }
 
     // A @httpPayload member is serialized as the ENTIRE request body, with no wrapping JSON object or
@@ -269,14 +286,6 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
     // enum is a string shape in C2J and its ConstantClass converts implicitly to string); a blob payload
     // is the raw octet-stream body. Matches C2J output where one exists. A union is a structure (structure
     // path); a list/map payload fails loud below.
-    // The member's .NET type is the union class name, so it names the {Stream}PublisherMarshaller; the
-    // request property carries the "Publisher" suffix (see OperationWriter.ApplyEventStreamPublisher).
-    private static void WriteEventStreamPublisher(CodeWriter writer, Member payload)
-    {
-        writer.WriteLine("""request.Headers["Content-Type"] = "application/vnd.amazon.eventstream";""");
-        writer.WriteLine($"request.EventStreamPublisher = new {payload.Type.DotNetType}PublisherMarshaller(publicRequest.{payload.PropertyName}Publisher);");
-    }
-
     private void WritePayloadSerialization(CodeWriter writer, Member payload, bool unsignedPayload, bool blobContentTypeEmitted)
     {
         if (payload.Type.MarshalsAsString)
@@ -374,25 +383,38 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         }
     }
 
-    // The Utf8JsonWriter + Content/ContentStream scaffold shared by the normal JSON body and the
-    // structure-payload body. Non-NETFRAMEWORK streams straight into a PooledContentStream; NETFRAMEWORK
-    // buffers in a MemoryStream and copies to request.Content. The caller fills in the object/members.
-    private static void WriteBodyScaffolding(CodeWriter writer, Action writeContents)
+    // Normal bodies write to the request; initial messages always need a byte array.
+    private static void WriteBodyScaffolding(CodeWriter writer, Action writeContents, string? resultVariable = null)
     {
-        writer.WriteLine("#if !NETFRAMEWORK");
-        writer.WriteLine("request.ContentStream = new PooledContentStream();");
-        writer.WriteLine("using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);");
-        writer.WriteLine("#else");
-        writer.WriteLine("using var memoryStream = new MemoryStream();");
-        writer.WriteLine("using var writer = new Utf8JsonWriter(memoryStream);");
-        writer.WriteLine("#endif");
+        if (resultVariable is null)
+        {
+            writer.WriteLine("#if !NETFRAMEWORK");
+            writer.WriteLine("request.ContentStream = new PooledContentStream();");
+            writer.WriteLine("using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);");
+            writer.WriteLine("#else");
+            writer.WriteLine("using var memoryStream = new MemoryStream();");
+            writer.WriteLine("using var writer = new Utf8JsonWriter(memoryStream);");
+            writer.WriteLine("#endif");
+        }
+        else
+        {
+            writer.WriteLine("using var memoryStream = new MemoryStream();");
+            writer.WriteLine("using var writer = new Utf8JsonWriter(memoryStream);");
+        }
 
         writeContents();
 
         writer.WriteLine("writer.Flush();");
-        writer.WriteLine("#if NETFRAMEWORK");
-        writer.WriteLine("request.Content = memoryStream.ToArray();");
-        writer.WriteLine("#endif");
+        if (resultVariable is null)
+        {
+            writer.WriteLine("#if NETFRAMEWORK");
+            writer.WriteLine("request.Content = memoryStream.ToArray();");
+            writer.WriteLine("#endif");
+        }
+        else
+        {
+            writer.WriteLine($"var {resultVariable} = memoryStream.ToArray();");
+        }
     }
 
     private static void WriteMarshallerDocumentation(CodeWriter writer, string operationName)

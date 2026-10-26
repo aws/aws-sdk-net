@@ -34,6 +34,7 @@ public sealed class EventStreamPublisherMarshallerWriter(GenerationContext conte
 
         // The marshaller class and Func interface derive from the union's generated name, matching RequestEventStream.InterfaceName.
         var streamName = context.ToDotNetName(stream.Id);
+
         // Ordered by wire name so the branch order is deterministic and matches RequestEventStream.Events.
         // Branch order is behaviorally irrelevant (the checks are mutually exclusive), so this is safe.
         var events = union.Members
@@ -41,6 +42,9 @@ public sealed class EventStreamPublisherMarshallerWriter(GenerationContext conte
             .OrderBy(member => member.Key, StringComparer.Ordinal)
             .Select(member => new Event(member.Key, context.ToDotNetName(member.Value.Target), context.StructureMarshallerName(member.Value.Target), PayloadOf(member.Value.Target)))
             .ToList();
+
+        var hasInitialRequest = !context.UsesHttpBindings &&
+            stream.Operations.Any(operation => TypeMapper.ResolveMembers(operation.Input, context).Any(member => !member.Type.IsEventStream));
 
         // Without this the loop below emits no branch and the trailing `else` doesn't compile.
         if (events.Count == 0)
@@ -69,17 +73,21 @@ public sealed class EventStreamPublisherMarshallerWriter(GenerationContext conte
             writer.OpenBlock($"public partial class {streamName}PublisherMarshaller : {baseClass}", () =>
             {
                 writer.WriteLine($"Func<Task<I{streamName}Event>> _publisher;");
+                if (hasInitialRequest)
+                {
+                    writer.WriteLine("byte[] _initialRequest;");
+                }
                 writer.WriteLine();
-                WriteConstructor(writer, streamName);
+                WriteConstructor(writer, streamName, hasInitialRequest);
                 writer.WriteLine();
-                WriteNextEvent(writer, events);
+                WriteNextEvent(writer, events, hasInitialRequest);
             });
         });
 
         return writer.ToFormattedString(cancellationToken);
     }
 
-    private static void WriteConstructor(CodeWriter writer, string streamName)
+    private static void WriteConstructor(CodeWriter writer, string streamName, bool hasInitialRequest)
     {
         writer.WriteLine("/// <summary>");
         writer.WriteLine($"/// Creates instance of {streamName}PublisherMarshaller");
@@ -89,9 +97,18 @@ public sealed class EventStreamPublisherMarshallerWriter(GenerationContext conte
         {
             writer.WriteLine("_publisher = publisher;");
         });
+
+        if (hasInitialRequest)
+        {
+            writer.WriteLine();
+            writer.OpenBlock($"internal {streamName}PublisherMarshaller(Func<Task<I{streamName}Event>> publisher, byte[] initialRequest) : this(publisher)", () =>
+            {
+                writer.WriteLine("_initialRequest = initialRequest;");
+            });
+        }
     }
 
-    private void WriteNextEvent(CodeWriter writer, List<Event> events)
+    private void WriteNextEvent(CodeWriter writer, List<Event> events, bool hasInitialRequest)
     {
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Gets the next service event provided by the consumer of the SDK and converts it to a IEventStreamMessage.");
@@ -100,6 +117,18 @@ public sealed class EventStreamPublisherMarshallerWriter(GenerationContext conte
         writer.WriteLine("""/// <exception cref="Amazon.Runtime.AmazonClientException">If the type of the event is unknown.</exception>""");
         writer.OpenBlock("public override async Task<IEventStreamMessage> NextEventAsync()", () =>
         {
+            if (hasInitialRequest)
+            {
+                var contentType = Cbor ? "application/cbor" : "application/json";
+                writer.OpenBlock("if (_initialRequest != null)", () =>
+                {
+                    writer.WriteLine("var initialRequest = _initialRequest;");
+                    writer.WriteLine("_initialRequest = null;");
+                    writer.WriteLine($"""return CreateEventStreamMessage(eventType: "initial-request", contentType: "{contentType}", marshalledEventHeaders: null, eventPayload: initialRequest);""");
+                });
+                writer.WriteLine();
+            }
+
             writer.WriteLine("var evnt = await _publisher().ConfigureAwait(false);");
             writer.OpenBlock("if (evnt == null)", () => writer.WriteLine("return null;"));
             writer.WriteLine();

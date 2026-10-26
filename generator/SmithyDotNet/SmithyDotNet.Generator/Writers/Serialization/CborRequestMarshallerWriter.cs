@@ -19,13 +19,6 @@ public sealed class CborRequestMarshallerWriter(GenerationContext context, strin
         var members = TypeMapper.ResolveMembers(operation.Input, context);
         var compressionEncoding = MarshallerCommon.CompressionEncoding(operation);
 
-        // Every member is a body member, so an input event stream can only be the whole body: the other
-        // members would have to travel as an initial-request message, which Core cannot emit.
-        if (members.Count > 1 && members.Any(member => member.Type.IsEventStream))
-        {
-            throw new GeneratorException($"Operation '{operation.Name}' has an input event stream alongside other members, which is not supported.");
-        }
-
         // @hostLabel is not an HTTP binding, so it still applies.
         var hostLabelMembers = new List<Member>();
         foreach (var member in members)
@@ -71,6 +64,8 @@ public sealed class CborRequestMarshallerWriter(GenerationContext context, strin
         string? compressionEncoding)
     {
         var eventStream = members.FirstOrDefault(member => member.Type.IsEventStream);
+        var initialRequestMembers = members.Where(member => !member.Type.IsEventStream).ToList();
+
         // A Unit input sends no body and no Content-Type; an empty input structure still sends an empty map.
         var hasBody = operation.Shape.Input != ShapeId.Unit && eventStream is null;
         var hostPrefix = operation.Shape.GetEndpoint()?.HostPrefix;
@@ -87,7 +82,15 @@ public sealed class CborRequestMarshallerWriter(GenerationContext context, strin
                 // The member's .NET type is the union class name, so it names the {Stream}PublisherMarshaller; the
                 // request property carries the "Publisher" suffix (see OperationWriter.ApplyEventStreamPublisher).
                 writer.WriteLine("""request.Headers["Content-Type"] = "application/vnd.amazon.eventstream";""");
-                writer.WriteLine($"request.EventStreamPublisher = new {eventStream.Type.DotNetType}PublisherMarshaller(publicRequest.{eventStream.PropertyName}Publisher);");
+                if (initialRequestMembers.Count > 0)
+                {
+                    WriteInitialRequest(writer, initialRequestMembers);
+                    writer.WriteLine($"request.EventStreamPublisher = new {eventStream.Type.DotNetType}PublisherMarshaller(publicRequest.{eventStream.PropertyName}Publisher, initialRequest);");
+                }
+                else
+                {
+                    writer.WriteLine($"request.EventStreamPublisher = new {eventStream.Type.DotNetType}PublisherMarshaller(publicRequest.{eventStream.PropertyName}Publisher);");
+                }
             }
             else if (hasBody)
             {
@@ -116,7 +119,7 @@ public sealed class CborRequestMarshallerWriter(GenerationContext context, strin
             writer.WriteLine($"""request.ResourcePath = "service/{context.ServiceShapeName}/operation/{operation.Name}";""");
             if (hasBody)
             {
-                WriteBody(writer, members);
+                WriteBody(writer, members, () => WriteRequestContent(writer));
 
                 // The checksum covers the body, so it follows serialization.
                 if (operation.Shape.RequiresHttpChecksum())
@@ -140,7 +143,27 @@ public sealed class CborRequestMarshallerWriter(GenerationContext context, strin
         });
     }
 
-    private static void WriteBody(CodeWriter writer, List<Member> members)
+    private static void WriteInitialRequest(CodeWriter writer, List<Member> members)
+    {
+        writer.WriteLine("byte[] initialRequest;");
+        WriteBody(writer, members, () => writer.WriteLine("initialRequest = writer.Encode();"));
+    }
+
+    private static void WriteRequestContent(CodeWriter writer)
+    {
+        writer.WriteLine("#if !NETFRAMEWORK");
+        writer.WriteLine("var encodedLength = writer.BytesWritten;");
+        writer.WriteLine("request.ContentStream = new PooledContentStream(encodedLength);");
+        writer.WriteLine("var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;");
+        writer.WriteLine("var span = bufferWriter.GetSpan(encodedLength);");
+        writer.WriteLine("var bytesWritten = writer.Encode(span);");
+        writer.WriteLine("bufferWriter.Advance(bytesWritten);");
+        writer.WriteLine("#else");
+        writer.WriteLine("request.Content = writer.Encode();");
+        writer.WriteLine("#endif");
+    }
+
+    private static void WriteBody(CodeWriter writer, List<Member> members, Action writeEncoded)
     {
         writer.WriteLine("var writer = CborWriterPool.Rent();");
         writer.OpenBlock("try", () =>
@@ -152,17 +175,7 @@ public sealed class CborRequestMarshallerWriter(GenerationContext context, strin
                 CborBodyMemberMarshaller.WriteBodyMember(writer, member, "publicRequest");
             }
             writer.WriteLine("writer.WriteEndMap();");
-
-            writer.WriteLine("#if !NETFRAMEWORK");
-            writer.WriteLine("var encodedLength = writer.BytesWritten;");
-            writer.WriteLine("request.ContentStream = new PooledContentStream(encodedLength);");
-            writer.WriteLine("var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;");
-            writer.WriteLine("var span = bufferWriter.GetSpan(encodedLength);");
-            writer.WriteLine("var bytesWritten = writer.Encode(span);");
-            writer.WriteLine("bufferWriter.Advance(bytesWritten);");
-            writer.WriteLine("#else");
-            writer.WriteLine("request.Content = writer.Encode();");
-            writer.WriteLine("#endif");
+            writeEncoded();
         });
         writer.OpenBlock("finally", () =>
         {

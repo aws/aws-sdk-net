@@ -37,6 +37,11 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
             writer.OpenBlock($"public partial class {unmarshallerClassName} : JsonResponseUnmarshaller", () =>
             {
                 WriteUnmarshallMethod(writer, className, members, context.Protocol);
+                if (members.EventStreamMember is not null && members.BodyMembers.Count > 0)
+                {
+                    writer.WriteLine("");
+                    WriteInitialResponseUnmarshaller(writer, className, members.BodyMembers);
+                }
                 writer.WriteLine("");
                 WriteUnmarshallExceptionMethod(writer, operation);
                 writer.WriteLine("");
@@ -88,6 +93,10 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
             if (members.EventStreamMember is { } eventStream)
             {
                 MarshallerCommon.WriteEventStreamMember(writer, eventStream);
+                if (members.BodyMembers.Count > 0)
+                {
+                    writer.WriteLine($"unmarshalledObject.{eventStream.PropertyName}.InitialResponseReceived += (sender, args) => UnmarshallInitialResponse(unmarshalledObject, args.EventStreamEvent);");
+                }
             }
             // A @httpPayload member IS the whole body (it replaces normal body members); otherwise the
             // body members are read from the JSON payload. A response with only header (or no) members
@@ -121,6 +130,17 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
         });
     }
 
+    private static void WriteInitialResponseUnmarshaller(CodeWriter writer, string className, List<Member> members)
+    {
+        writer.OpenBlock($"private static void UnmarshallInitialResponse({className} unmarshalledObject, Amazon.Runtime.EventStreams.Internal.InitialResponseEvent initialResponse)", () =>
+        {
+            writer.WriteLine("var context = new JsonUnmarshallerContext(initialResponse.Payload, false, null);");
+            writer.WriteLine("var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);");
+            writer.WriteLine();
+            WriteBodyReadLoop(writer, members);
+        });
+    }
+
     // The JSON body reader loop over the in-scope `reader`, shared by the response and exception
     // unmarshallers. The caller sets `reader` up first — the response constructs its own, the exception
     // uses the passed `ref reader` guarded on stream length — which is the only part that differs.
@@ -147,8 +167,9 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
     /// <paramref name="bindStatusCode"/> <c>false</c> and the member falls through to the body.</para>
     ///
     /// <para>With <paramref name="httpBindings"/> <c>false</c> (awsJson1.x) the binding traits are ignored,
-    /// as that protocol requires, and every member except an event stream is a body member. An event stream
-    /// with body siblings fails loud on every protocol: the stream is the whole body.</para>
+    /// as that protocol requires, and every member except an event stream is a body member; the stream's
+    /// siblings come from the initial-response message. With HTTP bindings the stream is the whole body, so
+    /// body siblings fail loud.</para>
     /// </summary>
     internal static PartitionedMembers PartitionByBinding(
         StructureShape structure, List<Member> members, bool httpBindings, bool bindStatusCode = true)
@@ -224,9 +245,9 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
             throw new GeneratorException($"@httpPayload member '{payloadMember.PropertyName}' cannot coexist with body members ({names}); every other member must be bound to a header.");
         }
 
-        // An event stream IS the body too; its body siblings would arrive in an initial-response message, which
-        // Core cannot decode. On awsJson every non-stream member is a body member, so the stream must be alone.
-        if (eventStreamMember is not null && bodyMembers.Count > 0)
+        // REST protocols bind initial-response members outside the HTTP body. RPC protocols carry them
+        // in the event stream's initial-response message.
+        if (httpBindings && eventStreamMember is not null && bodyMembers.Count > 0)
         {
             var names = string.Join(", ", bodyMembers.Select(m => m.PropertyName));
             throw new GeneratorException($"Event stream member '{eventStreamMember.PropertyName}' cannot coexist with body members ({names}); every other member must be bound to a header.");

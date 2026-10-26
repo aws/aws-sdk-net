@@ -335,13 +335,6 @@ public sealed class HttpRequestBindings(GenerationContext context)
                 {
                     throw new GeneratorException($"Event stream member '{member.PropertyName}' must be bound with @httpPayload.");
                 }
-
-                // awsJson has no bindings, so the stream can only be the whole body: the other members would have
-                // to travel as an initial-request message, which Core cannot emit.
-                if (!httpBindings && members.Count > 1)
-                {
-                    throw new GeneratorException($"Event stream member '{member.PropertyName}' has sibling input members, which is not supported.");
-                }
             }
 
             if (!httpBindings)
@@ -409,9 +402,9 @@ public sealed class HttpRequestBindings(GenerationContext context)
             }
         }
 
-        // Per the Smithy spec, when a member is bound with @httpPayload every other member must be
-        // bound to a header/query/label — nothing else goes in the body. Fail loud if that is violated.
-        if (payloadMember is not null && bodyMembers.Count > 0)
+        // On HTTP protocols, @httpPayload excludes other body members. On awsJson the stream is the
+        // payload and its siblings are serialized into the initial-request message.
+        if (httpBindings && payloadMember is not null && bodyMembers.Count > 0)
         {
             var names = string.Join(", ", bodyMembers.Select(m => m.PropertyName));
             throw new GeneratorException($"@httpPayload member '{payloadMember.PropertyName}' cannot coexist with unbound body members ({names}); every other member must be bound to a header, query, or label.");

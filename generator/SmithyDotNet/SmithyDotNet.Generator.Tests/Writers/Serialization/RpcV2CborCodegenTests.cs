@@ -151,6 +151,21 @@ public class RpcV2CborCodegenTests
         var source = RequestMarshaller("Converse");
 
         Assert.Contains("request.EventStreamPublisher = new InputStreamPublisherMarshaller(publicRequest.InputPublisher);", source);
+        Assert.Contains("""request.Headers["Content-Type"] = "application/vnd.amazon.eventstream";""", source);
+        Assert.Contains("""request.Headers["Accept"] = "application/vnd.amazon.eventstream";""", source);
+        Assert.DoesNotContain("initialRequest", source);
+        Assert.DoesNotContain("application/cbor", source);
+    }
+
+    [Fact]
+    public void Request_SerializesSiblingsIntoTheInitialRequest()
+    {
+        var source = RequestMarshaller("Chat");
+
+        Assert.Contains("if (publicRequest.IsSetSessionId())", source);
+        Assert.Contains("""context.Writer.WriteTextString("sessionId");""", source);
+        Assert.Contains("initialRequest = writer.Encode();", source);
+        Assert.Contains("request.EventStreamPublisher = new InputStreamPublisherMarshaller(publicRequest.InputPublisher, initialRequest);", source);
         Assert.Contains("""request.Headers["Accept"] = "application/vnd.amazon.eventstream";""", source);
         Assert.DoesNotContain("application/cbor", source);
     }
@@ -161,6 +176,20 @@ public class RpcV2CborCodegenTests
         var source = ResponseUnmarshaller("Converse");
 
         Assert.Contains("unmarshalledObject.Output = new OutputStream(context.Stream);", source);
+        Assert.DoesNotContain("InitialResponseReceived", source);
+        Assert.Contains("public override bool HasStreamingProperty => true;", source);
+    }
+
+    [Fact]
+    public void Response_DeserializesSiblingsFromTheInitialResponse()
+    {
+        var source = ResponseUnmarshaller("Chat");
+
+        Assert.Contains("unmarshalledObject.Output = new OutputStream(context.Stream);", source);
+        Assert.Contains("unmarshalledObject.Output.InitialResponseReceived += (sender, args) => UnmarshallInitialResponse(unmarshalledObject, args.EventStreamEvent);", source);
+        Assert.Contains("var context = new CborUnmarshallerContext(initialResponse.Payload, false, null);", source);
+        Assert.Contains("""case "sessionId":""", source);
+        Assert.Contains("unmarshalledObject.SequenceNumber = CborNullableIntUnmarshaller.Instance.Unmarshall(context);", source);
         Assert.Contains("public override bool HasStreamingProperty => true;", source);
     }
 

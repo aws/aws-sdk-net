@@ -240,11 +240,14 @@ to the body like any ordinary member.
 
 ### Event streams (response)
 
-An output member targeting a `@streaming` union/structure is an event stream. It IS the body: the
-unmarshaller emits `unmarshalledObject.{Prop} = new {UnionClass}(context.Stream);` instead of a JSON
-reader loop (C2J parity), and the class overrides `HasStreamingProperty => true` and
-`ShouldReadEntireResponse(...) => false` so Core never buffers the body. The `{UnionClass}` itself, and
-everything else event streams emit, is in sdk-conventions → Event Streams.
+An output member targeting a `@streaming` union/structure is an event stream. It owns the HTTP body: the
+unmarshaller hands `context.Stream` to `{UnionClass}` instead of reading that stream as a normal JSON body
+(C2J parity), and the class overrides `HasStreamingProperty => true` and
+`ShouldReadEntireResponse(...) => false` so Core never buffers the body. On RPC protocols, output
+siblings arrive in the `initial-response` event ahead of the modeled events and are decoded into the
+response when the stream is processed. `InitialResponseEvent` is still raised through `EventReceived`,
+so enumeration yields it before the modeled events. The `{UnionClass}` itself, and everything else event
+streams emit, is in sdk-conventions → Event Streams.
 
 Each non-error union member targets an **event structure** that gets its own `{Event}Unmarshaller`,
 invoked per event from the event-stream class's `EventMapping`. A member carries at most one of
@@ -287,6 +290,7 @@ members still get marshallers.
   `[AWSProperty]`/`[Obsolete]`, no `IsSet`). The request marshaller wires it:
   `request.EventStreamPublisher = new {Union}PublisherMarshaller(publicRequest.{Member}Publisher)` with
   `Content-Type: application/vnd.amazon.eventstream`, replacing body serialization.
+- On RPC protocols, input siblings are serialized into an `initial-request` event before the first modeled event.
 
 ## Response Header Unmarshalling
 
@@ -420,8 +424,7 @@ Core handles the `__type` difference transparently, so the generator only varies
 Every one of those decisions is gated on `GenerationContext.UsesHttpBindings`; `AwsJsonCodegenTests`
 pins the emitted code and the JSONRPC10/JsonProtocol protocol tests verify it end to end.
 
-An event stream must be the input's or output's only member: Core has no initial-request/response message, so
-siblings fail loud. The publisher's `Content-Type` replaces the x-amz-json one. The rest is the restJson1 path.
+Event stream siblings use `initial-request` and `initial-response` events. The publisher's `Content-Type` replaces the x-amz-json one. The rest is the restJson1 path.
 
 ## rpcv2Cbor
 
@@ -437,7 +440,7 @@ list, but no CBOR service model uses `@sparse`. Documents and streaming blobs ar
 `UnsupportedTraitValidator`.
 
 Event streams follow the awsJson rules, plus `Accept: application/vnd.amazon.eventstream` for an output stream.
-Each event is a CBOR map decoded without its message headers, so a response `@eventHeader` fails loud.
+Initial messages and modeled events are CBOR maps. Each modeled event is decoded without its message headers, so a response `@eventHeader` fails loud.
 
 ## restXml
 
