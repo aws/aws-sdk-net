@@ -32,12 +32,51 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.RestJson
 {
     [TestClass]
     public class OutputStreamWithInitialResponse
     {
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ResponseTest")]
+        [TestCategory("RestJson")]
+        public async Task InitialResponseOutputResponse()
+        {
+            // Arrange
+            var request = new OutputStreamWithInitialResponseRequest
+            {
+            };
+            var config = new AmazonRestJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                ContentType = "application/vnd.amazon.eventstream",
+            };
+            mockResponse.Headers["initial-response-member"] = "foo";
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, mockResponse);
+
+            // Act
+            using var actualResponse = await client.OutputStreamWithInitialResponseAsync(request).ConfigureAwait(false);
+
+            // Assert
+            var expectedResponse = new OutputStreamWithInitialResponseResponse
+            {
+                InitialResponseMember = "foo",
+            };
+            Comparer.CompareObjects(expectedResponse.InitialResponseMember, actualResponse.InitialResponseMember);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
+        }
+
     }
 }

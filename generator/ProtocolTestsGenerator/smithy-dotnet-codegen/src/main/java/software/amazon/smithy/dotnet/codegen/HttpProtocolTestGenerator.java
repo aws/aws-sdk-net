@@ -22,15 +22,24 @@ import software.amazon.smithy.model.traits.TitleTrait;
 import software.amazon.smithy.codegen.core.CodegenException;
 import software.amazon.smithy.dotnet.codegen.utils.ProtocolTestUtils;
 import software.amazon.smithy.model.Model;
+import software.amazon.smithy.model.knowledge.EventStreamIndex;
+import software.amazon.smithy.model.knowledge.EventStreamInfo;
 import software.amazon.smithy.model.knowledge.OperationIndex;
 import software.amazon.smithy.model.knowledge.TopDownIndex;
 import software.amazon.smithy.model.node.*;
 import software.amazon.smithy.model.shapes.*;
 import software.amazon.smithy.model.traits.Trait;
 import software.amazon.smithy.protocoltests.traits.*;
+import software.amazon.smithy.protocoltests.traits.eventstream.Event;
+import software.amazon.smithy.protocoltests.traits.eventstream.EventHeaderValue;
+import software.amazon.smithy.protocoltests.traits.eventstream.EventStreamTestCase;
+import software.amazon.smithy.protocoltests.traits.eventstream.EventStreamTestsTrait;
+import software.amazon.smithy.protocoltests.traits.eventstream.EventType;
 import software.amazon.smithy.utils.StringUtils;
 import software.amazon.smithy.dotnet.codegen.customizations.*;
 
+import java.time.OffsetDateTime;
+import java.time.format.DateTimeParseException;
 import java.util.*;
 import java.util.logging.Logger;
 
@@ -58,6 +67,8 @@ public final class HttpProtocolTestGenerator implements Runnable {
     );
     private final boolean useMockedClient;
     private final List<String> tagsToSkip = List.of("defaults" , "skip-legacy-conversion");
+    private static final ShapeId INITIAL_HTTP_REQUEST = ShapeId.from("smithy.test#InitialHttpRequest");
+    private static final ShapeId INITIAL_HTTP_RESPONSE = ShapeId.from("smithy.test#InitialHttpResponse");
 
     public HttpProtocolTestGenerator(
             DotnetGenerationContext context
@@ -100,6 +111,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
                         generateRequestTests(operation);
                         generateResponseTests(operation);
                         generateErrorResponseTests(operation, operationIndex);
+                        generateEventStreamTests(operation);
                     });
                 });
             });
@@ -233,14 +245,325 @@ public final class HttpProtocolTestGenerator implements Runnable {
         });
     }
 
-    private void generateRequestTest(OperationShape operation, HttpRequestTestCase httpRequestTestCase) {
-        if (httpRequestTestCase.getDocumentation().isPresent()) {
-            writer.writeXmlDocs(httpRequestTestCase.getDocumentation().get());
-        }
+    private void WriteRequestTestAttributes(){
         writer.write("[TestMethod]");
         writer.write("[TestCategory(\"ProtocolTest\")]");
         writer.write("[TestCategory(\"RequestTest\")]");
         writer.write("[TestCategory(\"$L\")]", serviceName);
+    }
+
+    private void generateEventStreamTests(OperationShape operation) {
+        operation.getTrait(EventStreamTestsTrait.class).ifPresent(trait -> {
+            for (EventStreamTestCase eventStreamTestCase : trait.getTestCasesFor(AppliesTo.CLIENT)) {
+                if (ProtocolTestCustomizations.TestsToSkip.contains(eventStreamTestCase.getId()) || !Collections.disjoint(eventStreamTestCase.getTags(), tagsToSkip))
+                    continue;
+                generateEventStreamTest(operation, eventStreamTestCase);
+            }
+        });
+    }
+
+    private void generateEventStreamTest(OperationShape operation, EventStreamTestCase eventStreamTestCase) {
+        if (!useMockedClient) {
+            LOGGER.warning("Skipping event stream test " + eventStreamTestCase.getId() + ": event stream tests require the mocked client.");
+            return;
+        }
+        setMarshallerType(eventStreamTestCase.getProtocol().getName());
+        var hasInputStream = EventStreamIndex.of(model).getInputInfo(operation).isPresent();
+        // These only decide the test name suffix and categories. Initial messages are checked as well as event types
+        // because some tests have no events at all, e.g. InitialResponseOutput and ModeledProtocolError only set an
+        // initialResponse and would otherwise be named and categorized as request tests.
+        var isRequestTest = eventStreamTestCase.getInitialRequest().isPresent() || !getEvents(eventStreamTestCase, EventType.REQUEST).isEmpty();
+        var isResponseTest = eventStreamTestCase.getInitialResponse().isPresent() || !getEvents(eventStreamTestCase, EventType.RESPONSE).isEmpty();
+        var testSuffix = isRequestTest && isResponseTest ? "RequestAndResponse" : isResponseTest ? "Response" : "Request";
+
+        // Request stream publishing is only supported on .NET 8+, so this applies to every test of an operation with an input stream.
+        if (hasInputStream)
+            writer.write("#if NET8_0_OR_GREATER");
+        if (eventStreamTestCase.getDocumentation().isPresent()) {
+            writer.writeXmlDocs(eventStreamTestCase.getDocumentation().get());
+        }
+        writer.write("[TestMethod]");
+        writer.write("[TestCategory(\"ProtocolTest\")]");
+        if (isRequestTest || !isResponseTest)
+            writer.write("[TestCategory(\"RequestTest\")]");
+        if (isResponseTest)
+            writer.write("[TestCategory(\"ResponseTest\")]");
+        writer.write("[TestCategory(\"$L\")]", serviceName);
+        writer.addImport(serviceName, "System.Threading.Tasks");
+        writer.openBlock("public async Task $L$L()\n{", "}", eventStreamTestCase.getId(), testSuffix, () -> {
+            generateEventStreamTestBlock(operation, eventStreamTestCase);
+        });
+        if (hasInputStream)
+            writer.write("#endif");
+        writer.write("\n");
+    }
+
+    /**
+     * Generates an event stream test that calls the real service client (await client.OperationAsync(request))
+     * with a mocked HTTP layer. Request events are published through the request's stream publisher and asserted
+     * on the frames captured by the mock. Response events are returned by the mock and asserted on the events
+     * read from the response's event stream.
+     */
+    private void generateEventStreamTestBlock(OperationShape operation, EventStreamTestCase eventStreamTestCase) {
+        var eventStreamIndex = EventStreamIndex.of(model);
+        var inputStreamInfo = eventStreamIndex.getInputInfo(operation);
+        var outputStreamInfo = eventStreamIndex.getOutputInfo(operation);
+        var inputShape = model.expectShape(operation.getInputShape(), StructureShape.class);
+        var operationName = operation.getId().getName();
+        String inputShapeName = operationName + "Request";
+        var requestEvents = getEvents(eventStreamTestCase, EventType.REQUEST);
+        var responseEvents = getEvents(eventStreamTestCase, EventType.RESPONSE);
+        var initialRequest = getInitialHttpRequest(eventStreamTestCase);
+        var initialResponse = getInitialHttpResponse(eventStreamTestCase);
+        var expectation = eventStreamTestCase.getExpectation();
+        var outputStreamMember = outputStreamInfo.map(info -> context.symbolProvider().toMemberName(info.getEventStreamMember()));
+
+        writer.writeSingleLineComment("Arrange");
+        inputStreamInfo.ifPresent(info -> {
+            writer.openBlock("var inputEvents = new Queue<IEventStreamEvent>(new IEventStreamEvent[]\n{", "});", () -> {
+                for (var event : requestEvents) {
+                    writer.write("$C,", (Runnable) () -> writeModeledEvent(info, event));
+                }
+            });
+        });
+        writer.openBlock("var request = new $L\n{", "};", inputShapeName, () -> {
+            eventStreamTestCase.getInitialRequestParams().ifPresent(params -> params.accept(new ValueNodeVisitor(inputShape, true, inputShapeName)));
+            // The SDK calls the publisher until it returns null, which ends the input stream.
+            inputStreamInfo.ifPresent(info -> writer.write("$LPublisher = () => Task.FromResult(inputEvents.Count > 0 ? inputEvents.Dequeue() : null),",
+                    context.symbolProvider().toMemberName(info.getEventStreamMember())));
+        });
+        writeMockedClient(initialRequest.map(this::getMockedServiceUrl).orElse("MockHttpClientUtils.TestServiceUrl"));
+        if (outputStreamInfo.isPresent() || initialResponse.isPresent()) {
+            writeEventStreamMockHttp(initialResponse, responseEvents, outputStreamInfo.isPresent());
+        } else {
+            writeRequestTestMockHttp();
+        }
+        writer.write("\n");
+
+        writer.writeSingleLineComment("Act");
+        // Disposing the response stops the input stream, so it is kept alive until the end of the test.
+        if (expectation.isFailure()) {
+            var errorId = expectation.getFailure().flatMap(TestFailureExpectation::getErrorId);
+            var assertMethod = errorId.isPresent() ? "ThrowsExactlyAsync" : "ThrowsAsync";
+            var exceptionType = errorId.map(id -> isEventStreamError(outputStreamInfo, id)
+                    // Errors received on the event stream are wrapped in the service's event stream exception.
+                    ? serviceNamespace + "EventStreamException"
+                    : id.getName() + "Exception").orElse("Exception");
+            writer.openBlock("var exception = await Assert.$L<$L>(async () =>\n{", "}).ConfigureAwait(false);", assertMethod, exceptionType, () -> {
+                writer.write("using var actualResponse = await client.$LAsync(request).ConfigureAwait(false);", operationName);
+                if (!responseEvents.isEmpty())
+                    writer.write("actualResponse.$L.ToList();", outputStreamMember.get());
+            });
+        } else {
+            writer.write("using var actualResponse = await client.$LAsync(request).ConfigureAwait(false);", operationName);
+            if (!responseEvents.isEmpty())
+                writer.write("var actualEvents = actualResponse.$L.ToList();", outputStreamMember.get());
+        }
+        if (initialRequest.isPresent() || !requestEvents.isEmpty())
+            writer.write("var actualRequest = mockHttp.LastCreatedRequest;");
+        // Events are written in the background after the response is returned, so wait for the end of the input stream.
+        if (!requestEvents.isEmpty())
+            writer.write("await actualRequest.InputStreamCompleted.ConfigureAwait(false);");
+        writer.write("\n");
+
+        writer.writeSingleLineComment("Assert");
+        initialRequest.ifPresent(this::assertMockedHttpRequest);
+        if (!requestEvents.isEmpty()) {
+            writer.write("var sentEvents = MockHttpClientUtils.DecodeSignedInputFrames(actualRequest.InputFrames);");
+            writer.write("Assert.AreEqual($L, sentEvents.Count);", requestEvents.size());
+            for (int i = 0; i < requestEvents.size(); i++) {
+                assertSentEvent("sentEvents[" + i + "]", requestEvents.get(i));
+            }
+        }
+        if (expectation.isFailure()) {
+            expectation.getFailure().flatMap(TestFailureExpectation::getErrorId)
+                    .filter(errorId -> isEventStreamError(outputStreamInfo, errorId))
+                    .ifPresent(errorId -> writer.write("Assert.IsInstanceOfType(exception.InnerException, typeof($LException));", errorId.getName()));
+            return;
+        }
+        initialResponse.ifPresent(response -> assertInitialResponse(operation, outputStreamInfo, eventStreamTestCase, response));
+        if (!responseEvents.isEmpty()) {
+            var info = outputStreamInfo.get();
+            writer.write("Assert.AreEqual($L, actualEvents.Count);", responseEvents.size());
+            for (int i = 0; i < responseEvents.size(); i++) {
+                var event = responseEvents.get(i);
+                var eventName = event.getParams().get().getMembers().keySet().iterator().next().getValue();
+                var eventSymbol = context.symbolProvider().toSymbol(info.getEvents().get(eventName));
+                writer.write("Assert.IsInstanceOfType(actualEvents[$L], typeof($L));", i, eventSymbol);
+                writer.write("Comparer.CompareObjects<$L>($C, ($L)actualEvents[$L]);", eventSymbol,
+                        (Runnable) () -> writeModeledEvent(info, event), eventSymbol, i);
+            }
+        }
+    }
+
+    private List<Event> getEvents(EventStreamTestCase eventStreamTestCase, EventType type) {
+        return eventStreamTestCase.getEvents().stream().filter(event -> event.getType() == type).toList();
+    }
+
+    /**
+     * Writes the modeled event set in the event's params, e.g. new HeadersEvent { ... }.
+     */
+    private void writeModeledEvent(EventStreamInfo eventStreamInfo, Event event) {
+        var eventParams = event.getParams().get().getMembers().entrySet().iterator().next();
+        var eventShape = eventStreamInfo.getEvents().get(eventParams.getKey().getValue());
+        eventParams.getValue().accept(new ValueNodeVisitor(eventShape));
+    }
+
+    private boolean isEventStreamError(Optional<EventStreamInfo> outputStreamInfo, ShapeId errorId) {
+        return outputStreamInfo
+                .map(info -> info.getEventStreamTarget().members().stream().anyMatch(member -> member.getTarget().equals(errorId)))
+                .orElse(false);
+    }
+
+    /**
+     * Writes the mocked HTTP layer (as mockHttp) returning the test case's initial response, with the response
+     * events as the body.
+     */
+    private void writeEventStreamMockHttp(Optional<HttpResponseTestCase> initialResponse, List<Event> responseEvents, boolean hasOutputStream) {
+        writer.addImport(serviceName, "System.Net", "HttpStatusCode");
+        var hasContentTypeHeader = initialResponse
+                .map(response -> response.getHeaders().keySet().stream().anyMatch("Content-Type"::equalsIgnoreCase))
+                .orElse(false);
+        writer.openBlock("var mockResponse = new MockHttpResponse\n{", "};", () -> {
+            writer.write("StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), $L),", initialResponse.map(HttpResponseTestCase::getCode).orElse(200));
+            if (hasOutputStream && !hasContentTypeHeader)
+                writer.write("ContentType = \"application/vnd.amazon.eventstream\",");
+            if (!responseEvents.isEmpty()) {
+                writer.openBlock("Body = MockHttpClientUtils.EncodeEvents(", "),", () -> {
+                    for (int i = 0; i < responseEvents.size(); i++) {
+                        var event = responseEvents.get(i);
+                        writer.write("$C$L", (Runnable) () -> writeResponseEventBytes(event), i < responseEvents.size() - 1 ? "," : "");
+                    }
+                });
+            } else {
+                initialResponse.flatMap(HttpResponseTestCase::getBody).filter(body -> !body.isEmpty())
+                        .ifPresent(body -> writer.write("Body = Encoding.UTF8.GetBytes($S),", body));
+            }
+        });
+        initialResponse.ifPresent(response -> response.getHeaders().forEach((name, value) ->
+                writer.write("mockResponse.Headers[$S] = $S;", name, value)));
+        writer.write("var mockHttp = MockHttpClientUtils.InjectMockHttp(client, mockResponse);");
+    }
+
+    private void writeResponseEventBytes(Event event) {
+        if (event.getBytes().isPresent()) {
+            writer.writeInline("Convert.FromBase64String($S)", Base64.getEncoder().encodeToString(event.getBytes().get()));
+            return;
+        }
+        // Without bytes, the event is built from its headers and body.
+        writer.openBlock("MockHttpClientUtils.EncodeEvent(Encoding.UTF8.GetBytes($S), new Dictionary<string, object>\n{", "})",
+                event.getBody().orElse(""), () -> {
+            for (var header : event.getHeaders().entrySet()) {
+                writer.write("{ $S, $C },", header.getKey(), (Runnable) () -> writeEventHeaderValue(header.getValue()));
+            }
+        });
+    }
+
+    /**
+     * Writes an event header value whose CLR type matches the header's wire type.
+     */
+    private void writeEventHeaderValue(EventHeaderValue<?> value) {
+        switch (value.getType()) {
+            case BOOLEAN -> writer.writeInline("$L", value.asBoolean());
+            case BYTE -> writer.writeInline("(sbyte)$L", value.asByte());
+            case SHORT -> writer.writeInline("(short)$L", value.asShort());
+            case INTEGER -> writer.writeInline("$L", value.asInteger());
+            case LONG -> writer.writeInline("$LL", value.asLong());
+            case BLOB -> writer.writeInline("Convert.FromBase64String($S)", Base64.getEncoder().encodeToString(value.asBlob()));
+            case STRING -> writer.writeInline("$S", value.asString());
+            case TIMESTAMP -> writer.writeInline("ProtocolTestConstants.epoch.AddMilliseconds($L)", value.asTimestamp().toEpochMilli());
+            default -> throw new CodegenException("Unsupported event header type: " + value.getType());
+        }
+    }
+
+    private void assertInitialResponse(OperationShape operation, Optional<EventStreamInfo> outputStreamInfo, EventStreamTestCase eventStreamTestCase, HttpResponseTestCase initialResponse) {
+        var outputShape = model.expectShape(operation.getOutputShape(), StructureShape.class);
+        var responseSymbol = operation.getId().getName() + "Response";
+        // The event stream member is not part of the initial response, so it isn't compared.
+        var initialResponseMembers = outputShape.members().stream()
+                .filter(member -> outputStreamInfo.map(info -> !info.getEventStreamMember().equals(member)).orElse(true))
+                .toList();
+        if (!initialResponseMembers.isEmpty()) {
+            writer.openBlock("var expectedResponse = new $L\n{", "};", responseSymbol, () ->
+                    eventStreamTestCase.getInitialResponseParams().ifPresent(params -> params.accept(new ValueNodeVisitor(outputShape, true, responseSymbol))));
+            for (var member : initialResponseMembers) {
+                var memberName = context.symbolProvider().toMemberName(member);
+                writer.write("Comparer.CompareObjects(expectedResponse.$L, actualResponse.$L);", memberName, memberName);
+            }
+        }
+        writer.write("Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), $L), actualResponse.HttpStatusCode);", initialResponse.getCode());
+    }
+
+    private Optional<HttpResponseTestCase> getInitialHttpResponse(EventStreamTestCase eventStreamTestCase) {
+        if (eventStreamTestCase.getInitialResponse().isEmpty()
+                || !eventStreamTestCase.getInitialResponseShape().map(INITIAL_HTTP_RESPONSE::equals).orElse(false)) {
+            return Optional.empty();
+        }
+        // InitialHttpResponse shares its members with httpResponseTests, so it is read as an HttpResponseTestCase.
+        // HttpResponseTestCase.fromNode isn't public, so the case is built from the node's members.
+        var node = eventStreamTestCase.getInitialResponse().get();
+        var builder = HttpResponseTestCase.builder()
+                .code(node.expectNumberMember("code").getValue().intValue())
+                .id(eventStreamTestCase.getId())
+                .protocol(eventStreamTestCase.getProtocol());
+        node.getObjectMember("headers").ifPresent(headers -> headers.getStringMap().forEach((name, value) ->
+                builder.putHeader(name, value.expectStringNode().getValue())));
+        node.getStringMember("body").ifPresent(body -> builder.body(body.getValue()));
+        node.getStringMember("bodyMediaType").ifPresent(bodyMediaType -> builder.bodyMediaType(bodyMediaType.getValue()));
+        return Optional.of(builder.build());
+    }
+
+    private Optional<HttpRequestTestCase> getInitialHttpRequest(EventStreamTestCase eventStreamTestCase) {
+        if (eventStreamTestCase.getInitialRequest().isEmpty()
+                || !eventStreamTestCase.getInitialRequestShape().map(INITIAL_HTTP_REQUEST::equals).orElse(false)) {
+            return Optional.empty();
+        }
+        // InitialHttpRequest shares its members with httpRequestTests, so it is read as an HttpRequestTestCase
+        // to reuse the same request assertions.
+        return Optional.of(HttpRequestTestCase.fromNode(eventStreamTestCase.getInitialRequest().get().toBuilder()
+                .withMember("id", eventStreamTestCase.getId())
+                .withMember("protocol", eventStreamTestCase.getProtocol().toString())
+                .build()));
+    }
+
+    private void assertSentEvent(String actualEvent, Event event) {
+        for (var header : event.getHeaders().entrySet()) {
+            var name = header.getKey();
+            var value = header.getValue();
+            switch (value.getType()) {
+                case BOOLEAN -> writer.write("MockHttpClientUtils.AssertEventHeader($L, $S, $L);", actualEvent, name, value.asBoolean());
+                // The SDK models byte and short members as int, so integer headers are compared by value regardless of width.
+                case BYTE, SHORT, INTEGER, LONG -> writer.write("MockHttpClientUtils.AssertIntegerEventHeader($L, $S, $LL);",
+                        actualEvent, name, ((Number) value.getValue()).longValue());
+                case BLOB -> writer.write("MockHttpClientUtils.AssertEventHeader($L, $S, Convert.FromBase64String($S));",
+                        actualEvent, name, Base64.getEncoder().encodeToString(value.asBlob()));
+                case STRING -> writer.write("MockHttpClientUtils.AssertEventHeader($L, $S, $S);", actualEvent, name, value.asString());
+                case TIMESTAMP -> writer.write("MockHttpClientUtils.AssertEventHeader($L, $S, ProtocolTestConstants.epoch.AddMilliseconds($L));",
+                        actualEvent, name, value.asTimestamp().toEpochMilli());
+                default -> throw new CodegenException("Unsupported event header type: " + value.getType());
+            }
+        }
+        for (var forbidHeader : event.getForbidHeaders()) {
+            writer.write("Assert.IsFalse($L.Headers.ContainsKey($S));", actualEvent, forbidHeader);
+        }
+        for (var requireHeader : event.getRequireHeaders()) {
+            writer.write("Assert.IsTrue($L.Headers.ContainsKey($S));", actualEvent, requireHeader);
+        }
+        event.getBody().ifPresent(body -> {
+            if (event.getBodyMediaType().map("application/json"::equals).orElse(false)) {
+                writer.write("JsonProtocolUtils.AssertBody($L.Payload, $S);", actualEvent, body);
+            } else {
+                // Bodies with a media type that isn't understood must match exactly.
+                writer.write("CollectionAssert.AreEqual(Encoding.UTF8.GetBytes($S), $L.Payload);", body, actualEvent);
+            }
+        });
+    }
+
+    private void generateRequestTest(OperationShape operation, HttpRequestTestCase httpRequestTestCase) {
+        if (httpRequestTestCase.getDocumentation().isPresent()) {
+            writer.writeXmlDocs(httpRequestTestCase.getDocumentation().get());
+        }
+        WriteRequestTestAttributes();
         if (useMockedClient) {
             writer.addImport(serviceName, "System.Threading.Tasks");
             writer.openBlock("public async Task $LRequest()\n{", "}", httpRequestTestCase.getId(), () -> {
@@ -267,9 +590,18 @@ public final class HttpProtocolTestGenerator implements Runnable {
         String inputShapeName = operationName + "Request";
         writer.writeSingleLineComment("Arrange");
         writer.openBlock("var request = new $L\n{", "};", inputShapeName, (Runnable) () -> params.accept(new ValueNodeVisitor(inputShape, true, inputShapeName)));
+        writeMockedRequestTestClient(getMockedServiceUrl(httpRequestTestCase));
+        writer.writeSingleLineComment("Act");
+        writer.write("await client.$LAsync(request).ConfigureAwait(false);", operationName);
+        writer.write("var actualRequest = mockHttp.LastCreatedRequest;");
+        writer.write("\n");
+        writer.writeSingleLineComment("Assert");
+        assertMockedHttpRequest(httpRequestTestCase);
+    }
+
+    private String getMockedServiceUrl(HttpRequestTestCase httpRequestTestCase) {
         var hostList = httpRequestTestCase.getHost().orElse("test.com").split("/", 2);
         var host = hostList[0];
-        var resolvedHost = httpRequestTestCase.getResolvedHost().map(x -> x.split("/", 2)[0]).orElse(host);
         String path;
         if (hostList.length != 1) {
             path = hostList[1];
@@ -277,10 +609,20 @@ public final class HttpProtocolTestGenerator implements Runnable {
             path = "";
         }
 
-        var serviceUrl = host.equals("test.com") && path.isEmpty()
+        return host.equals("test.com") && path.isEmpty()
                 ? "MockHttpClientUtils.TestServiceUrl"
                 : "\"https://" + host + "/" + path + "\"";
+    }
 
+    /**
+     * Writes the config, client and mocked HTTP layer (as mockHttp) for a request test.
+     */
+    private void writeMockedRequestTestClient(String serviceUrl) {
+        writeMockedClient(serviceUrl);
+        writeRequestTestMockHttp();
+    }
+
+    private void writeMockedClient(String serviceUrl) {
         // Retries are disabled so a test fails fast instead of re-sending the request.
         writer.write("""
                      var config = new $L
@@ -291,6 +633,9 @@ public final class HttpProtocolTestGenerator implements Runnable {
                      """, ProtocolTestUtils.getProtocolConfig(this.serviceNamespace), serviceUrl);
         writer.write("using var client = new $L(MockHttpClientUtils.TestCredentials, config);",
                 ProtocolTestUtils.getProtocolClient(this.serviceNamespace));
+    }
+
+    private void writeRequestTestMockHttp() {
         // Request tests only assert on what was sent, so any response the unmarshaller accepts will do.
         if (this.marshallerType.equals("Json")) {
             writer.write("""
@@ -312,11 +657,14 @@ public final class HttpProtocolTestGenerator implements Runnable {
                          });
                          """);
         }
-        writer.writeSingleLineComment("Act");
-        writer.write("await client.$LAsync(request).ConfigureAwait(false);", operationName);
-        writer.write("var actualRequest = mockHttp.LastCreatedRequest;");
-        writer.write("\n");
-        writer.writeSingleLineComment("Assert");
+    }
+
+    /**
+     * Writes the assertions on the HTTP request captured by the mock (as actualRequest).
+     */
+    private void assertMockedHttpRequest(HttpRequestTestCase httpRequestTestCase) {
+        var host = httpRequestTestCase.getHost().orElse("test.com").split("/", 2)[0];
+        var resolvedHost = httpRequestTestCase.getResolvedHost().map(x -> x.split("/", 2)[0]).orElse(host);
         if (httpRequestTestCase.getBody().isPresent() && !httpRequestTestCase.getBody().get().equals("")) {
             assertRequestBodyV2(httpRequestTestCase);
         }
@@ -789,6 +1137,9 @@ public final class HttpProtocolTestGenerator implements Runnable {
                 } else {
                     writer.write("double.$L", value);
                 }
+            } else if (inputShape.isTimestampShape() && isDateTime(node.getValue())) {
+                writer.writeInline("ProtocolTestConstants.epoch.AddMilliseconds($L)",
+                        OffsetDateTime.parse(node.getValue()).toInstant().toEpochMilli());
             } else if (inputShape.isBlobShape()) {
                 var symbol = context.symbolProvider().toSymbol(inputShape);
                 writer.write("new $L(Encoding.UTF8.GetBytes($S))", symbol, node.getValue());
@@ -796,6 +1147,15 @@ public final class HttpProtocolTestGenerator implements Runnable {
                 writer.writeInline("$S", node.getValue());
             }
             return null;
+        }
+
+        private boolean isDateTime(String value) {
+            try {
+                OffsetDateTime.parse(value);
+                return true;
+            } catch (DateTimeParseException e) {
+                return false;
+            }
         }
     }
 }

@@ -224,6 +224,45 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(19, WriteHeader(header).Length);
         }
 
+        // ---- Narrower integer types widen, as byte and short members can be modeled as int ----
+
+        [TestMethod]
+        public void NarrowerIntegerHeaders_WidenToInt32()
+        {
+            var sbyteHeader = new EventStreamHeader("n");
+            sbyteHeader.SetSByte(-1);
+            Assert.AreEqual(-1, RoundTrip(sbyteHeader).AsInt32());
+
+            var int16Header = new EventStreamHeader("n");
+            int16Header.SetInt16(short.MinValue);
+            Assert.AreEqual(short.MinValue, RoundTrip(int16Header).AsInt32());
+        }
+
+        [TestMethod]
+        public void NarrowerIntegerHeaders_WidenToInt64()
+        {
+            var sbyteHeader = new EventStreamHeader("n");
+            sbyteHeader.SetSByte(-1);
+            Assert.AreEqual(-1L, RoundTrip(sbyteHeader).AsInt64());
+
+            var int16Header = new EventStreamHeader("n");
+            int16Header.SetInt16(short.MinValue);
+            Assert.AreEqual((long)short.MinValue, RoundTrip(int16Header).AsInt64());
+
+            var int32Header = new EventStreamHeader("n");
+            int32Header.SetInt32(int.MinValue);
+            Assert.AreEqual((long)int.MinValue, RoundTrip(int32Header).AsInt64());
+        }
+
+        [TestMethod]
+        public void Int64Header_AsInt32_Throws()
+        {
+            // Narrowing could lose data, so it still isn't allowed.
+            var header = new EventStreamHeader("n");
+            header.SetInt64(long.MaxValue);
+            Assert.ThrowsExactly<InvalidCastException>(() => RoundTrip(header).AsInt32());
+        }
+
         // ---- A forged-header input cannot produce a transmissible frame ----
 
         [TestMethod]

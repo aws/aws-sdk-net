@@ -532,10 +532,21 @@ namespace Amazon.Runtime.EventStreams
 
         /// <summary>
         /// Returns the current value as a 32 bit integer. (Host Order)
+        /// SByte and Int16 values are widened.
         /// </summary>
         public Int32 AsInt32()
         {
-            return (Int32)HeaderValue;
+            // Smithy byte and short members can be modeled as integers in the SDK, so a header sent with a
+            // narrower integer type must still be readable as an Int32.
+            switch (HeaderValue)
+            {
+                case sbyte value:
+                    return value;
+                case Int16 value:
+                    return value;
+                default:
+                    return (Int32)HeaderValue;
+            }
         }
 
         /// <summary>
@@ -549,10 +560,22 @@ namespace Amazon.Runtime.EventStreams
 
         /// <summary>
         /// returns the current value as a 64-bit integer. (Host Order)
+        /// SByte, Int16 and Int32 values are widened.
         /// </summary>
         public Int64 AsInt64()
         {
-            return (Int64)HeaderValue;
+            // See AsInt32 for why narrower integer types are widened.
+            switch (HeaderValue)
+            {
+                case sbyte value:
+                    return value;
+                case Int16 value:
+                    return value;
+                case Int32 value:
+                    return value;
+                default:
+                    return (Int64)HeaderValue;
+            }
         }
 
         /// <summary>
