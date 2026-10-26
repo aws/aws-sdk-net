@@ -1647,6 +1647,11 @@ namespace Amazon.AppStream
         public static readonly PlatformType WINDOWS = new PlatformType("WINDOWS");
 
         /// <summary>
+        /// Constant WINDOWS_11 for PlatformType
+        /// </summary>
+        public static readonly PlatformType WINDOWS_11 = new PlatformType("WINDOWS_11");
+
+        /// <summary>
         /// Constant WINDOWS_SERVER_2016 for PlatformType
         /// </summary>
         public static readonly PlatformType WINDOWS_SERVER_2016 = new PlatformType("WINDOWS_SERVER_2016");
