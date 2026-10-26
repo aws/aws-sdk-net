@@ -88,6 +88,33 @@ namespace Amazon.Runtime.Internal.Transform
 
         private void CopyHeaderValues(HttpResponseMessage response)
         {
+#if NET8_0_OR_GREATER
+            // Enumerating HttpHeaders directly parses and validates every value (allocating parsed header objects
+            // for each one). The SDK only needs the raw first value of each header, which NonValidated provides.
+            var responseHeaders = response.Headers.NonValidated;
+            var contentHeaders = response.Content?.Headers.NonValidated;
+            var capacity = responseHeaders.Count + (contentHeaders?.Count ?? 0);
+            List<string> headerNames = new List<string>(capacity);
+            _headers = new Dictionary<string, string>(capacity, StringComparer.OrdinalIgnoreCase);
+
+            foreach (var kvp in responseHeaders)
+            {
+                headerNames.Add(kvp.Key);
+                _headers.Add(kvp.Key, GetFirstHeaderValue(kvp.Value));
+            }
+
+            if (contentHeaders != null)
+            {
+                foreach (var kvp in contentHeaders)
+                {
+                    if (!_headers.ContainsKey(kvp.Key))
+                    {
+                        headerNames.Add(kvp.Key);
+                        _headers.Add(kvp.Key, GetFirstHeaderValue(kvp.Value));
+                    }
+                }
+            }
+#else
             List<string> headerNames = new List<string>();
             _headers = new Dictionary<string, string>(10, StringComparer.OrdinalIgnoreCase);
 
@@ -110,9 +137,22 @@ namespace Amazon.Runtime.Internal.Transform
                     }
                 }
             }
+#endif
             _headerNames = headerNames.ToArray();
             _headerNamesSet = new HashSet<string>(_headerNames, StringComparer.OrdinalIgnoreCase);
         }
+
+#if NET8_0_OR_GREATER
+        private static string GetFirstHeaderValue(HeaderStringValues values)
+        {
+            foreach (var value in values)
+            {
+                return value;
+            }
+
+            return string.Empty;
+        }
+#endif
 
         private string GetFirstHeaderValue(HttpHeaders headers, string key)
         {
