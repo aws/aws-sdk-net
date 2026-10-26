@@ -104,13 +104,32 @@ namespace Amazon.Runtime.Internal
             var config = requestContext.ClientConfig;
             Endpoint endpoint = null;
 
-            if (GlobalEndpoints.Provider != null)
+            // Services whose auth schemes come from the endpoint ruleset (e.g. S3) resolve the
+            // endpoint once in the auth resolver and again here. Rule evaluation is a pure function of
+            // the parameters, so the previous result is reused when the parameters have not changed since.
+            var cache = requestContext as RequestContext;
+            if (cache != null && cache.ResolvedEndpoint != null && cache.ResolvedEndpointParameters.ContentEquals(parameters))
             {
-                endpoint = GlobalEndpoints.Provider.ResolveEndpoint(requestContext.ServiceMetaData?.ServiceId, parameters);
+                endpoint = cache.ResolvedEndpoint;
+                endpoint.URL = cache.ResolvedEndpointUrl;
             }
-            else if (endpoint == null && config.EndpointProvider != null)
+            else
             {
-                endpoint = config.EndpointProvider.ResolveEndpoint(parameters);
+                if (GlobalEndpoints.Provider != null)
+                {
+                    endpoint = GlobalEndpoints.Provider.ResolveEndpoint(requestContext.ServiceMetaData?.ServiceId, parameters);
+                }
+                else if (endpoint == null && config.EndpointProvider != null)
+                {
+                    endpoint = config.EndpointProvider.ResolveEndpoint(parameters);
+                }
+
+                if (cache != null && endpoint != null)
+                {
+                    cache.ResolvedEndpoint = endpoint;
+                    cache.ResolvedEndpointParameters = parameters;
+                    cache.ResolvedEndpointUrl = endpoint.URL;
+                }
             }
 
             // Ensure url ends with "/" to avoid signature mismatch issues.

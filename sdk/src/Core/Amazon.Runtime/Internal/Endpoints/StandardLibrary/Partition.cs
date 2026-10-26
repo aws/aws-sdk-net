@@ -86,15 +86,31 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
         /// </summary>
         internal static Partition FromPartitionData(PartitionAttributesShape data)
         {
-            return new Partition
+            // Endpoint rules call Partition(region) on every request. Build the bag once per
+            // partition shape and  hand out exact-size copies, which avoids the repeated dictionary
+            // growth and boolean boxing while still giving each caller its own (mutable) instance.
+            var prototype = _prototypes.GetValue(data, static shape => new Partition
             {
-                name = data.name,
-                dnsSuffix = data.dnsSuffix,
-                dualStackDnsSuffix = data.dualStackDnsSuffix,
-                supportsFIPS = data.supportsFIPS,
-                supportsDualStack = data.supportsDualStack,
-                implicitGlobalRegion = data.implicitGlobalRegion,
-            };
+                name = shape.name,
+                dnsSuffix = shape.dnsSuffix,
+                dualStackDnsSuffix = shape.dualStackDnsSuffix,
+                supportsFIPS = shape.supportsFIPS,
+                supportsDualStack = shape.supportsDualStack,
+                implicitGlobalRegion = shape.implicitGlobalRegion,
+            });
+
+            return new Partition(prototype);
+        }
+
+        private static readonly System.Runtime.CompilerServices.ConditionalWeakTable<PartitionAttributesShape, Partition> _prototypes =
+            new System.Runtime.CompilerServices.ConditionalWeakTable<PartitionAttributesShape, Partition>();
+
+        public Partition()
+        {
+        }
+
+        private Partition(Partition source) : base(source)
+        {
         }
 
         private static readonly ReaderWriterLockSlim _locker = new ReaderWriterLockSlim();
