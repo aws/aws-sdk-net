@@ -55,6 +55,19 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetMediaLiveInput() => this.MediaLiveInput != null;
 
         /// <summary>
+        /// Gets and sets the property SourceEndpoint. 
+        /// <para>
+        /// Configuration settings for a router output that is represented by a source endpoint.
+        /// </para>
+        /// </summary>
+        public SourceEndpointRouterOutputConfiguration SourceEndpoint { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SourceEndpoint property is set.
+        /// </summary>
+        internal bool IsSetSourceEndpoint() => this.SourceEndpoint != null;
+
+        /// <summary>
         /// Gets and sets the property Standard.
         /// </summary>
         public StandardRouterOutputConfiguration Standard { get; set; }

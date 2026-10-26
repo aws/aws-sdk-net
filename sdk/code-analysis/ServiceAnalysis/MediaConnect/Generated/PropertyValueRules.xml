@@ -21,6 +21,30 @@
     <pattern>^arn:.+:mediaconnect.+:flow:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConnect.Model.ConnectEndpointsRequest.DestinationEndpointArn</property>
+    <min>64</min>
+    <max>128</max>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:destinationEndpoint:[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.ConnectEndpointsRequest.SourceEndpointArn</property>
+    <min>64</min>
+    <max>128</max>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:sourceEndpoint:[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.ConnectEndpointsResponse.DestinationEndpointArn</property>
+    <min>64</min>
+    <max>128</max>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:destinationEndpoint:[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.ConnectEndpointsResponse.SourceEndpointArn</property>
+    <min>64</min>
+    <max>128</max>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:sourceEndpoint:[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConnect.Model.CreateRouterInputRequest.ClientToken</property>
     <max>256</max>
     <pattern>^[!-~]+$</pattern>
@@ -88,8 +112,32 @@
     <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConnect.Model.DeregisterDestinationEndpointRequest.Arn</property>
+    <min>64</min>
+    <max>128</max>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:destinationEndpoint:[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.DeregisterDestinationEndpointResponse.Arn</property>
+    <min>64</min>
+    <max>128</max>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:destinationEndpoint:[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConnect.Model.DeregisterGatewayInstanceRequest.GatewayInstanceArn</property>
     <pattern>^arn:.+:mediaconnect.+:gateway:.+:instance:.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.DeregisterSourceEndpointRequest.Arn</property>
+    <min>64</min>
+    <max>128</max>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:sourceEndpoint:[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.DeregisterSourceEndpointResponse.Arn</property>
+    <min>64</min>
+    <max>128</max>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:sourceEndpoint:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.DescribeBridgeRequest.BridgeArn</property>
@@ -114,6 +162,36 @@
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.DescribeGatewayInstanceRequest.GatewayInstanceArn</property>
     <pattern>^arn:.+:mediaconnect.+:gateway:.+:instance:.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.DisconnectEndpointsRequest.DestinationEndpointArn</property>
+    <min>64</min>
+    <max>128</max>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:destinationEndpoint:[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.DisconnectEndpointsRequest.SourceEndpointArn</property>
+    <min>64</min>
+    <max>128</max>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:sourceEndpoint:[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.DisconnectEndpointsResponse.DestinationEndpointArn</property>
+    <min>64</min>
+    <max>128</max>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:destinationEndpoint:[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.DisconnectEndpointsResponse.SourceEndpointArn</property>
+    <min>64</min>
+    <max>128</max>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:sourceEndpoint:[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.GetDestinationEndpointRequest.Arn</property>
+    <min>64</min>
+    <max>128</max>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:destinationEndpoint:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.GetRouterInputRequest.Arn</property>
@@ -144,6 +222,12 @@
     <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConnect.Model.GetSourceEndpointRequest.Arn</property>
+    <min>64</min>
+    <max>128</max>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:sourceEndpoint:[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConnect.Model.GrantFlowEntitlementsRequest.FlowArn</property>
     <pattern>^arn:.+:mediaconnect.+:flow:.+$</pattern>
   </property-value-rule>
@@ -151,6 +235,11 @@
     <property>Amazon.MediaConnect.Model.ListBridgesRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.ListDestinationEndpointsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.ListEntitlementsRequest.MaxResults</property>
@@ -196,6 +285,33 @@
     <property>Amazon.MediaConnect.Model.ListRouterOutputsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.ListSourceEndpointsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.RegisterDestinationEndpointRequest.ClientToken</property>
+    <max>256</max>
+    <pattern>^[!-~]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.RegisterDestinationEndpointRequest.Description</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>^[ a-zA-Z_0-9\-.',@:;\(\)\[\]*]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.RegisterSourceEndpointRequest.ClientToken</property>
+    <max>256</max>
+    <pattern>^[!-~]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.RegisterSourceEndpointRequest.Description</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>^[ a-zA-Z_0-9\-.',@:;\(\)\[\]*]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.RemoveBridgeOutputRequest.BridgeArn</property>
@@ -326,6 +442,18 @@
     <pattern>^arn:.+:mediaconnect.+:bridge:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConnect.Model.UpdateDestinationEndpointRequest.Arn</property>
+    <min>64</min>
+    <max>128</max>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:destinationEndpoint:[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.UpdateDestinationEndpointRequest.Description</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>^[ a-zA-Z_0-9\-.',@:;\(\)\[\]*]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConnect.Model.UpdateFlowRequest.FlowArn</property>
     <pattern>^arn:.+:mediaconnect.+:flow:.+$</pattern>
   </property-value-rule>
@@ -399,6 +527,18 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConnect.Model.UpdateSourceEndpointRequest.Arn</property>
+    <min>64</min>
+    <max>128</max>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:sourceEndpoint:[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.UpdateSourceEndpointRequest.Description</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>^[ a-zA-Z_0-9\-.',@:;\(\)\[\]*]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConnect.Model.AddBridgeFlowSourceRequest.FlowArn</property>
     <pattern>^arn:.+:mediaconnect.+:flow:.+$</pattern>
   </property-value-rule>
@@ -406,6 +546,12 @@
     <property>Amazon.MediaConnect.Model.AddOutputRequest.NdiAudioReferenceLevel</property>
     <min>-40</min>
     <max>0</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.BatchGetDestinationEndpointError.Arn</property>
+    <min>64</min>
+    <max>128</max>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:destinationEndpoint:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.BatchGetRouterInputError.Arn</property>
@@ -420,9 +566,31 @@
     <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConnect.Model.BatchGetSourceEndpointError.Arn</property>
+    <min>64</min>
+    <max>128</max>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:sourceEndpoint:[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConnect.Model.BlackFramesConfiguration.ThresholdSeconds</property>
     <min>10</min>
     <max>60</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.DestinationEndpoint.Arn</property>
+    <min>64</min>
+    <max>128</max>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:destinationEndpoint:[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.DestinationEndpoint.ConnectedSource</property>
+    <min>64</min>
+    <max>128</max>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:sourceEndpoint:[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.EndpointEncryptionSecretConfiguration.SecretArn</property>
+    <pattern>^arn:(aws[a-zA-Z-]*):secretsmanager:[a-z0-9-]+:[0-9]{12}:secret:[a-zA-Z0-9/_+=.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.FailoverRouterInputConfiguration.NetworkInterfaceArn</property>
@@ -437,6 +605,18 @@
     <property>Amazon.MediaConnect.Model.FrozenFramesConfiguration.ThresholdSeconds</property>
     <min>10</min>
     <max>60</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.ListedDestinationEndpoint.Arn</property>
+    <min>64</min>
+    <max>128</max>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:destinationEndpoint:[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.ListedDestinationEndpoint.ConnectedSource</property>
+    <min>64</min>
+    <max>128</max>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:sourceEndpoint:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.ListedRouterInput.Arn</property>
@@ -461,6 +641,12 @@
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.ListedRouterOutput.RoutedInputArn</property>
     <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.ListedSourceEndpoint.Arn</property>
+    <min>64</min>
+    <max>128</max>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:sourceEndpoint:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.MediaConnectFlowRouterInputConfiguration.FlowArn</property>
@@ -496,7 +682,15 @@
     <max>0</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConnect.Model.PublicDestinationEndpointNetworkingConfigurationAllowRule.Cidr</property>
+    <pattern>^(?:[0-9]{1,3}\.){3}[0-9]{1,3}/([0-9]|[12][0-9]|3[0-2])$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConnect.Model.PublicRouterNetworkInterfaceRule.Cidr</property>
+    <pattern>^(?:[0-9]{1,3}\.){3}[0-9]{1,3}/([0-9]|[12][0-9]|3[0-2])$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.PublicSourceEndpointNetworkingConfigurationAllowRule.Cidr</property>
     <pattern>^(?:[0-9]{1,3}\.){3}[0-9]{1,3}/([0-9]|[12][0-9]|3[0-2])$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -515,7 +709,26 @@
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConnect.Model.RistStandardDestinationEndpointConfiguration.DestinationIngestPort</property>
+    <min>1024</min>
+    <max>65531</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.RistStandardSourceEndpointConfiguration.DestinationIngestPort</property>
+    <min>3000</min>
+    <max>30000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.RistStandardSourceEndpointConfiguration.RecoveryLatencyMilliseconds</property>
+    <min>10</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConnect.Model.RouterInput.Arn</property>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.RouterInputDestinationEndpointConfiguration.RouterInputArn</property>
     <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -531,6 +744,10 @@
     <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConnect.Model.RouterOutputSourceEndpointConfiguration.RouterOutputArn</property>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConnect.Model.RtmpPushRouterOutputConfiguration.DestinationPort</property>
     <min>443</min>
     <max>65535</max>
@@ -544,6 +761,16 @@
     <property>Amazon.MediaConnect.Model.RtpRouterOutputConfiguration.DestinationPort</property>
     <min>1024</min>
     <max>65531</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.RtpStandardDestinationEndpointConfiguration.DestinationIngestPort</property>
+    <min>1024</min>
+    <max>65531</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.RtpStandardSourceEndpointConfiguration.DestinationIngestPort</property>
+    <min>3000</min>
+    <max>30000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.SecretsManagerEncryptionKeyConfiguration.RoleArn</property>
@@ -567,6 +794,12 @@
     <max>60</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConnect.Model.SourceEndpoint.Arn</property>
+    <min>64</min>
+    <max>128</max>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:sourceEndpoint:[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConnect.Model.SrtCallerRouterInputConfiguration.MinimumLatencyMilliseconds</property>
     <min>10</min>
     <max>10000</max>
@@ -583,6 +816,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.SrtCallerRouterOutputConfiguration.MinimumLatencyMilliseconds</property>
+    <min>10</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.SrtCallerStandardDestinationEndpointConfiguration.MinimumLatencyMilliseconds</property>
+    <min>10</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.SrtCallerStandardDestinationEndpointConfiguration.SourceListenerPort</property>
+    <min>3000</min>
+    <max>30000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.SrtCallerStandardSourceEndpointConfiguration.DestinationIngestPort</property>
+    <min>3000</min>
+    <max>30000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.SrtCallerStandardSourceEndpointConfiguration.MinimumLatencyMilliseconds</property>
     <min>10</min>
     <max>10000</max>
   </property-value-rule>
@@ -607,12 +860,44 @@
     <max>30000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConnect.Model.SrtListenerStandardDestinationEndpointConfiguration.DestinationIngestPort</property>
+    <min>0</min>
+    <max>65531</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.SrtListenerStandardDestinationEndpointConfiguration.MinimumLatencyMilliseconds</property>
+    <min>10</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.SrtListenerStandardSourceEndpointConfiguration.MinimumLatencyMilliseconds</property>
+    <min>10</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.SrtListenerStandardSourceEndpointConfiguration.SourceListenerPort</property>
+    <min>1024</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.StandardDestinationEndpointConfiguration.Name</property>
+    <min>1</min>
+    <max>164</max>
+    <pattern>^[a-zA-Z0-9]([a-zA-Z0-9\-_]*[a-zA-Z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConnect.Model.StandardRouterInputConfiguration.NetworkInterfaceArn</property>
     <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerNetworkInterface:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.StandardRouterOutputConfiguration.NetworkInterfaceArn</property>
     <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerNetworkInterface:[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.StandardSourceEndpointConfiguration.Name</property>
+    <min>1</min>
+    <max>164</max>
+    <pattern>^[a-zA-Z0-9]([a-zA-Z0-9\-_]*[a-zA-Z0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.Transport.NdiAudioReferenceLevel</property>

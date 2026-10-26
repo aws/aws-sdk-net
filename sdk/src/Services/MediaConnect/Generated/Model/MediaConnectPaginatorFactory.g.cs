@@ -41,6 +41,14 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
+        /// Paginator for ListDestinationEndpoints operation
+        /// </summary>
+        public IListDestinationEndpointsPaginator ListDestinationEndpoints(ListDestinationEndpointsRequest request)
+        {
+            return new ListDestinationEndpointsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEntitlements operation
         /// </summary>
         public IListEntitlementsPaginator ListEntitlements(ListEntitlementsRequest request)
@@ -110,6 +118,14 @@ namespace Amazon.MediaConnect.Model
         public IListRouterOutputsPaginator ListRouterOutputs(ListRouterOutputsRequest request)
         {
             return new ListRouterOutputsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSourceEndpoints operation
+        /// </summary>
+        public IListSourceEndpointsPaginator ListSourceEndpoints(ListSourceEndpointsRequest request)
+        {
+            return new ListSourceEndpointsPaginator(this.client, request);
         }
     }
 }
