@@ -52,7 +52,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             }
             if (context.ResponseData.IsHeaderPresent("X-Byte"))
             {
-                unmarshalledObject.HeaderByte = int.Parse(context.ResponseData.GetHeaderValue("X-Byte"), CultureInfo.InvariantCulture);
+                unmarshalledObject.HeaderByte = sbyte.Parse(context.ResponseData.GetHeaderValue("X-Byte"), CultureInfo.InvariantCulture);
             }
             if (context.ResponseData.IsHeaderPresent("X-Double"))
             {
@@ -96,7 +96,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             }
             if (context.ResponseData.IsHeaderPresent("X-Short"))
             {
-                unmarshalledObject.HeaderShort = int.Parse(context.ResponseData.GetHeaderValue("X-Short"), CultureInfo.InvariantCulture);
+                unmarshalledObject.HeaderShort = short.Parse(context.ResponseData.GetHeaderValue("X-Short"), CultureInfo.InvariantCulture);
             }
             if (context.ResponseData.IsHeaderPresent("X-String"))
             {

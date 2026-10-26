@@ -759,12 +759,12 @@
           "locationName":"StringSet"
         },
         "queryByte":{
-          "shape":"Integer",
+          "shape":"Byte",
           "location":"querystring",
           "locationName":"Byte"
         },
         "queryShort":{
-          "shape":"Integer",
+          "shape":"Short",
           "location":"querystring",
           "locationName":"Short"
         },
@@ -1305,7 +1305,7 @@
           "locationName":"string"
         },
         "short":{
-          "shape":"Integer",
+          "shape":"Short",
           "location":"uri",
           "locationName":"short"
         },
@@ -1382,12 +1382,12 @@
           "locationName":"X-String"
         },
         "headerByte":{
-          "shape":"Integer",
+          "shape":"Byte",
           "location":"header",
           "locationName":"X-Byte"
         },
         "headerShort":{
-          "shape":"Integer",
+          "shape":"Short",
           "location":"header",
           "locationName":"X-Short"
         },
@@ -1468,6 +1468,7 @@
         }
       }
     },
+    "Byte":{"type":"byte"},
     "Integer":{
       "type":"integer",
       "box":true
@@ -1836,8 +1837,8 @@
         "stringValue":{"shape":"String"},
         "trueBooleanValue":{"shape":"Boolean"},
         "falseBooleanValue":{"shape":"Boolean"},
-        "byteValue":{"shape":"Integer"},
-        "shortValue":{"shape":"Integer"},
+        "byteValue":{"shape":"Byte"},
+        "shortValue":{"shape":"Short"},
         "integerValue":{"shape":"Integer"},
         "longValue":{"shape":"Long"},
         "floatValue":{"shape":"Float"},
@@ -1882,9 +1883,10 @@
       "value":{"shape":"StringSet"},
       "sparse":true
     },
+    "Short":{"type":"short"},
     "SparseShortList":{
       "type":"list",
-      "member":{"shape":"Integer"},
+      "member":{"shape":"Short"},
       "sparse":true
     },
     "SparseStringList":{

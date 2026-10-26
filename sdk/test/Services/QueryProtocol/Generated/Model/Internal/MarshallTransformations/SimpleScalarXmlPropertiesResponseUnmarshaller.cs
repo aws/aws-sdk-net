@@ -84,7 +84,7 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("byteValue", targetDepth))
                     {
-                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        var unmarshaller = NullableSByteUnmarshaller.Instance;
                         response.ByteValue = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -126,7 +126,7 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("shortValue", targetDepth))
                     {
-                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        var unmarshaller = NullableShortUnmarshaller.Instance;
                         response.ShortValue = unmarshaller.Unmarshall(context);
                         continue;
                     }

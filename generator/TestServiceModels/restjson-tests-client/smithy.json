@@ -613,13 +613,13 @@
                     }
                 },
                 "queryByte": {
-                    "target": "smithy.api#Integer",
+                    "target": "smithy.api#Byte",
                     "traits": {
                         "smithy.api#httpQuery": "Byte"
                     }
                 },
                 "queryShort": {
-                    "target": "smithy.api#Integer",
+                    "target": "smithy.api#Short",
                     "traits": {
                         "smithy.api#httpQuery": "Short"
                     }
@@ -3380,7 +3380,7 @@
                         "code": 200,
                         "body": "      {\n          \"datetime\": \"2000-01-02T20:34:56.123Z\"\n      }\n",
                         "params": {
-                            "datetime": 9.46845296123E8
+                            "datetime": 946845296.123
                         },
                         "bodyMediaType": "application/json",
                         "appliesTo": "client"
@@ -3506,13 +3506,13 @@
                     }
                 },
                 "byteHeader": {
-                    "target": "smithy.api#Integer",
+                    "target": "smithy.api#Byte",
                     "traits": {
                         "smithy.api#eventHeader": {}
                     }
                 },
                 "shortHeader": {
-                    "target": "smithy.api#Integer",
+                    "target": "smithy.api#Short",
                     "traits": {
                         "smithy.api#eventHeader": {}
                     }
@@ -4672,7 +4672,7 @@
                     }
                 },
                 "short": {
-                    "target": "smithy.api#Integer",
+                    "target": "smithy.api#Short",
                     "traits": {
                         "smithy.api#httpLabel": {},
                         "smithy.api#required": {}
@@ -5343,13 +5343,13 @@
                     }
                 },
                 "headerByte": {
-                    "target": "smithy.api#Integer",
+                    "target": "smithy.api#Byte",
                     "traits": {
                         "smithy.api#httpHeader": "X-Byte"
                     }
                 },
                 "headerShort": {
-                    "target": "smithy.api#Integer",
+                    "target": "smithy.api#Short",
                     "traits": {
                         "smithy.api#httpHeader": "X-Short"
                     }
@@ -10033,10 +10033,10 @@
                     "target": "smithy.api#Boolean"
                 },
                 "byteValue": {
-                    "target": "smithy.api#Integer"
+                    "target": "smithy.api#Byte"
                 },
                 "shortValue": {
-                    "target": "smithy.api#Integer"
+                    "target": "smithy.api#Short"
                 },
                 "integerValue": {
                     "target": "smithy.api#Integer"
@@ -11301,7 +11301,7 @@
         "aws.protocoltests.shared#SparseShortList": {
             "type": "list",
             "member": {
-                "target": "smithy.api#Integer"
+                "target": "smithy.api#Short"
             },
             "traits": {
                 "smithy.api#sparse": {}
@@ -11471,13 +11471,13 @@
                     "target": "smithy.api#Boolean"
                 },
                 "byte": {
-                    "target": "smithy.api#Integer",
+                    "target": "smithy.api#Byte",
                     "traits": {
                         "smithy.api#documentation": "Byte headers MUST be written in the model as base64-encoded\nstrings, e.g. `Zm9v` represents utf8 `foo`."
                     }
                 },
                 "short": {
-                    "target": "smithy.api#Integer"
+                    "target": "smithy.api#Short"
                 },
                 "integer": {
                     "target": "smithy.api#Integer"
