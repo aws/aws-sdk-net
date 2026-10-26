@@ -39,6 +39,12 @@ namespace Amazon.KeyManagementService.Model
     /// From the <a>ImportKeyMaterial</a> operation, the request was rejected because KMS
     /// could not decrypt the encrypted (wrapped) key material. 
     /// </para>
+    ///  
+    /// <para>
+    /// From the <a>Decapsulate</a> operation, the request was rejected because the length
+    /// of the <c>SharedSecretCiphertextBlob</c> is inconsistent with the specified ML-KEM
+    /// key spec.
+    /// </para>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -78,7 +78,8 @@ namespace Amazon.KeyManagementService.Model
     /// deletion. Instead, first <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">disable
     /// the key</a> and monitor CloudTrail for <c>DisabledException</c> entries, as there
     /// could be infrequent workflows that are dependent on the key. By looking for this exception,
-    /// you can identify potential dependencies and workload failures before they occur.
+    /// you can identify potential dependencies and workload failures before they occur. CloudTrail
+    /// remains the authoritative source for all API calls made to your key.
     /// </para>
     ///  </note> 
     /// <para>

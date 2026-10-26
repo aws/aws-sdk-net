@@ -79,7 +79,13 @@ namespace Amazon.KeyManagementService.Model
     /// key is a DER-encoded PKCS8 PrivateKeyInfo, as specified in <a href="https://tools.ietf.org/html/rfc5958">RFC
     /// 5958</a>.
     /// </para>
-    ///  
+    ///  <note> 
+    /// <para>
+    /// For ML-KEM data key pairs, the DER-encoded PKCS8 PrivateKeyInfo contains the private
+    /// key in seed format. As a result, the length of the private key is the same for all
+    /// ML-KEM key pair specs.
+    /// </para>
+    ///  </note> 
     /// <para>
     ///  <c>GenerateDataKeyPair</c> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
     /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
@@ -323,7 +329,8 @@ namespace Amazon.KeyManagementService.Model
         /// and decrypt or to sign and verify (but not both), the rule that permits you to use
         /// ECC KMS keys only to sign and verify, and the rule that permits you to use ML-DSA
         /// key pairs to sign and verify only are not effective on data key pairs, which are used
-        /// outside of KMS. The SM2 key spec is only available in China Regions.
+        /// outside of KMS. The SM2 key spec is only available in China Regions. The ML-KEM key
+        /// specs are not available in China Regions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

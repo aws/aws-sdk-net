@@ -545,6 +545,26 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
+        /// Asymmetric ML-KEM key pairs (establishing shared secrets)
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ML_KEM_512</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ML_KEM_768</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ML_KEM_1024</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The ML-KEM key specs are not available in China Regions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// SM2 key pairs (encryption and decryption -or- signing and verification -or- deriving
         /// shared secrets)
         /// </para>
@@ -605,6 +625,10 @@ namespace Amazon.KeyManagementService.Model
         ///  </li> <li> 
         /// <para>
         /// For asymmetric KMS keys with ML-DSA key pairs, specify <c>SIGN_VERIFY</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For asymmetric KMS keys with ML-KEM key pairs, specify <c>ENCAPSULATE_DECAPSULATE</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

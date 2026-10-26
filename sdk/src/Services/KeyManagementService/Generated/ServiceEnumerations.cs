@@ -437,6 +437,18 @@ namespace Amazon.KeyManagementService
         /// </summary>
         public static readonly DataKeyPairSpec ECC_SECG_P256K1 = new DataKeyPairSpec("ECC_SECG_P256K1");
         /// <summary>
+        /// Constant ML_KEM_1024 for DataKeyPairSpec
+        /// </summary>
+        public static readonly DataKeyPairSpec ML_KEM_1024 = new DataKeyPairSpec("ML_KEM_1024");
+        /// <summary>
+        /// Constant ML_KEM_512 for DataKeyPairSpec
+        /// </summary>
+        public static readonly DataKeyPairSpec ML_KEM_512 = new DataKeyPairSpec("ML_KEM_512");
+        /// <summary>
+        /// Constant ML_KEM_768 for DataKeyPairSpec
+        /// </summary>
+        public static readonly DataKeyPairSpec ML_KEM_768 = new DataKeyPairSpec("ML_KEM_768");
+        /// <summary>
         /// Constant RSA_2048 for DataKeyPairSpec
         /// </summary>
         public static readonly DataKeyPairSpec RSA_2048 = new DataKeyPairSpec("RSA_2048");
@@ -585,6 +597,52 @@ namespace Amazon.KeyManagementService
 
 
     /// <summary>
+    /// Constants used for properties of type EncapsulationAlgorithmSpec.
+    /// </summary>
+    public class EncapsulationAlgorithmSpec : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ML_KEM for EncapsulationAlgorithmSpec
+        /// </summary>
+        public static readonly EncapsulationAlgorithmSpec ML_KEM = new EncapsulationAlgorithmSpec("ML_KEM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EncapsulationAlgorithmSpec(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EncapsulationAlgorithmSpec FindValue(string value)
+        {
+            return FindValue<EncapsulationAlgorithmSpec>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EncapsulationAlgorithmSpec(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EncryptionAlgorithmSpec.
     /// </summary>
     public class EncryptionAlgorithmSpec : ConstantClass
@@ -703,6 +761,10 @@ namespace Amazon.KeyManagementService
         /// </summary>
         public static readonly GrantOperation CreateGrant = new GrantOperation("CreateGrant");
         /// <summary>
+        /// Constant Decapsulate for GrantOperation
+        /// </summary>
+        public static readonly GrantOperation Decapsulate = new GrantOperation("Decapsulate");
+        /// <summary>
         /// Constant Decrypt for GrantOperation
         /// </summary>
         public static readonly GrantOperation Decrypt = new GrantOperation("Decrypt");
@@ -714,6 +776,10 @@ namespace Amazon.KeyManagementService
         /// Constant DescribeKey for GrantOperation
         /// </summary>
         public static readonly GrantOperation DescribeKey = new GrantOperation("DescribeKey");
+        /// <summary>
+        /// Constant Encapsulate for GrantOperation
+        /// </summary>
+        public static readonly GrantOperation Encapsulate = new GrantOperation("Encapsulate");
         /// <summary>
         /// Constant Encrypt for GrantOperation
         /// </summary>
@@ -1051,6 +1117,10 @@ namespace Amazon.KeyManagementService
     {
 
         /// <summary>
+        /// Constant Decapsulate for KeyLastUsageTrackingOperation
+        /// </summary>
+        public static readonly KeyLastUsageTrackingOperation Decapsulate = new KeyLastUsageTrackingOperation("Decapsulate");
+        /// <summary>
         /// Constant Decrypt for KeyLastUsageTrackingOperation
         /// </summary>
         public static readonly KeyLastUsageTrackingOperation Decrypt = new KeyLastUsageTrackingOperation("Decrypt");
@@ -1058,6 +1128,10 @@ namespace Amazon.KeyManagementService
         /// Constant DeriveSharedSecret for KeyLastUsageTrackingOperation
         /// </summary>
         public static readonly KeyLastUsageTrackingOperation DeriveSharedSecret = new KeyLastUsageTrackingOperation("DeriveSharedSecret");
+        /// <summary>
+        /// Constant Encapsulate for KeyLastUsageTrackingOperation
+        /// </summary>
+        public static readonly KeyLastUsageTrackingOperation Encapsulate = new KeyLastUsageTrackingOperation("Encapsulate");
         /// <summary>
         /// Constant Encrypt for KeyLastUsageTrackingOperation
         /// </summary>
@@ -1297,6 +1371,18 @@ namespace Amazon.KeyManagementService
         /// </summary>
         public static readonly KeySpec ML_DSA_87 = new KeySpec("ML_DSA_87");
         /// <summary>
+        /// Constant ML_KEM_1024 for KeySpec
+        /// </summary>
+        public static readonly KeySpec ML_KEM_1024 = new KeySpec("ML_KEM_1024");
+        /// <summary>
+        /// Constant ML_KEM_512 for KeySpec
+        /// </summary>
+        public static readonly KeySpec ML_KEM_512 = new KeySpec("ML_KEM_512");
+        /// <summary>
+        /// Constant ML_KEM_768 for KeySpec
+        /// </summary>
+        public static readonly KeySpec ML_KEM_768 = new KeySpec("ML_KEM_768");
+        /// <summary>
         /// Constant RSA_2048 for KeySpec
         /// </summary>
         public static readonly KeySpec RSA_2048 = new KeySpec("RSA_2048");
@@ -1432,6 +1518,10 @@ namespace Amazon.KeyManagementService
     public class KeyUsageType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ENCAPSULATE_DECAPSULATE for KeyUsageType
+        /// </summary>
+        public static readonly KeyUsageType ENCAPSULATE_DECAPSULATE = new KeyUsageType("ENCAPSULATE_DECAPSULATE");
         /// <summary>
         /// Constant ENCRYPT_DECRYPT for KeyUsageType
         /// </summary>
