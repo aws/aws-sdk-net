@@ -442,6 +442,12 @@ operation is `POST service/{ServiceShapeName}/operation/{OperationName}` with `s
 timestamps are tag 1. The output is wire-compatible with C2J's CBOR templates and formatted like the JSON
 writers' output; the `Cbor*` writers mirror the JSON ones and are pinned by `RpcV2CborCodegenTests`.
 
+byte/short are written with `WriteInt32` (smallest integer encoding) and read by `CborSByteUnmarshaller` /
+`CborShortUnmarshaller` (out of range throws `OverflowException`). bigInteger is written with
+`CborWriter.WriteBigInteger` (tag 2/3 bignum) and bigDecimal with the `WriteBigDecimal` extension (tag 4 decimal
+fraction, bignum mantissa when it exceeds 64 bits), as the spec requires; the readers also accept a plain integer,
+and reject floats so no value goes through a double.
+
 A `@sparse` element writes CBOR null per the spec; C2J writes `{}` for a null structure element in a sparse
 list, but no CBOR service model uses `@sparse`. Documents and streaming blobs are rejected by
 `UnsupportedTraitValidator`.

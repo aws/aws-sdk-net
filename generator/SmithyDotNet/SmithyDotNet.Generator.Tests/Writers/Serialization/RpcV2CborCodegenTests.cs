@@ -38,6 +38,11 @@ public class RpcV2CborCodegenTests
         Assert.Contains("""context.Writer.WriteTextString("name");""", source);
         Assert.Contains("context.Writer.WriteInt32(publicRequest.Count.Value);", source);
         Assert.Contains("context.Writer.WriteInt64(publicRequest.Big.Value);", source);
+        // Full Numeric Type Support SEP: byte/short are plain integers, bigInteger a bignum, bigDecimal a decimal fraction.
+        Assert.Contains("context.Writer.WriteInt32(publicRequest.Tiny.Value);", source);
+        Assert.Contains("context.Writer.WriteInt32(publicRequest.Small.Value);", source);
+        Assert.Contains("context.Writer.WriteBigInteger(publicRequest.Huge.Value);", source);
+        Assert.Contains("context.Writer.WriteBigDecimal(publicRequest.Precise.Value);", source);
         Assert.Contains("context.Writer.WriteBoolean(publicRequest.Flag.Value);", source);
         Assert.Contains("context.Writer.WriteTextString(publicRequest.Color);", source);
         Assert.Contains("context.Writer.WriteDateTime(publicRequest.When.Value);", source);
@@ -112,6 +117,10 @@ public class RpcV2CborCodegenTests
         Assert.Contains("reader.ReadStartMap();", source);
         Assert.Contains("""case "count":""", source);
         Assert.Contains("unmarshalledObject.Count = CborNullableIntUnmarshaller.Instance.Unmarshall(context);", source);
+        Assert.Contains("unmarshalledObject.Tiny = CborNullableSByteUnmarshaller.Instance.Unmarshall(context);", source);
+        Assert.Contains("unmarshalledObject.Small = CborNullableShortUnmarshaller.Instance.Unmarshall(context);", source);
+        Assert.Contains("unmarshalledObject.Huge = CborNullableBigIntegerUnmarshaller.Instance.Unmarshall(context);", source);
+        Assert.Contains("unmarshalledObject.Precise = CborNullableBigDecimalUnmarshaller.Instance.Unmarshall(context);", source);
         Assert.Contains("unmarshalledObject.When = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);", source);
         Assert.Contains("new CborListUnmarshaller<Item, ItemUnmarshaller>(ItemUnmarshaller.Instance).Unmarshall(context);", source);
         Assert.Contains("new CborDictionaryUnmarshaller<string, string, CborStringUnmarshaller, CborStringUnmarshaller>(CborStringUnmarshaller.Instance, CborStringUnmarshaller.Instance).Unmarshall(context);", source);

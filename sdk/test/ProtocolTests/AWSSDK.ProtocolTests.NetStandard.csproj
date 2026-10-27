@@ -44,6 +44,7 @@
       <ProjectReference Include="../Services/NonQueryCompatibleRpcV2Protocol/AWSSDK.NonQueryCompatibleRpcV2Protocol.NetStandard.csproj" />
       <ProjectReference Include="../Services/QueryCompatibleJSONRPC10/AWSSDK.QueryCompatibleJSONRPC10.NetStandard.csproj" />
       <ProjectReference Include="../Services/QueryCompatibleRpcV2Protocol/AWSSDK.QueryCompatibleRpcV2Protocol.NetStandard.csproj" />
+      <ProjectReference Include="../Services/NumericTypesCbor/AWSSDK.NumericTypesCbor.NetStandard.csproj" />
       <ProjectReference Include="../Services/NumericTypesJson/AWSSDK.NumericTypesJson.NetStandard.csproj" />
       <ProjectReference Include="../Services/NumericTypesRestJson/AWSSDK.NumericTypesRestJson.NetStandard.csproj" />
       <ProjectReference Include="../Services/NumericTypesRestXml/AWSSDK.NumericTypesRestXml.NetStandard.csproj" />

@@ -1674,7 +1674,7 @@ this.Write(");\r\n");
 
 			}
 		}
-		else if (shape.IsInt)
+		else if (shape.IsInt || shape.IsByte || shape.IsShort)
 		{
 			if (isSparse)
 			{
@@ -1807,6 +1807,35 @@ this.Write(");\r\n");
         
         #line 295 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
 
+			}
+		}
+		else if (shape.IsArbitraryPrecisionNumber)
+		{
+			if (isSparse)
+			{
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+this.Write("\t\t\t\t\tif (");
+this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
+this.Write(" == null)\r\n");
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+this.Write("\t\t\t\t\t\tcontext.Writer.WriteNull();\r\n");
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+this.Write("\t\t\t\t\telse\r\n");
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+this.Write("\t\t\t\t\t\tcontext.Writer.Write");
+this.Write(this.ToStringHelper.ToStringWithCulture(shape.GetPrimitiveType()));
+this.Write("(");
+this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
+this.Write(".Value);\r\n");
+			}
+			else
+			{
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+this.Write("                context.Writer.Write");
+this.Write(this.ToStringHelper.ToStringWithCulture(shape.GetPrimitiveType()));
+this.Write("(");
+this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
+this.Write(");\r\n");
 			}
 		}
 		else if (shape.IsBoolean)
