@@ -115,6 +115,24 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(timing.ElapsedTime >= TimeSpan.FromMilliseconds(10), timing.ElapsedTime.ToString());
         }
 
+        [TestMethod]
+        public void Disabled_CsmAttemptCapture_ReportsAttemptLatency()
+        {
+            // End to end through the handler's own capture: PreInvoke starts the timing, and
+            // CSMCallAttemptMetricsCapture writes it to CSMCallAttempt.AttemptLatency.
+            var executionContext = CreateExecutionContext(new DefaultTelemetryProvider(), enableMetrics: false);
+            var requestContext = executionContext.RequestContext;
+            requestContext.Request = new DefaultRequest(requestContext.OriginalRequest, "S3");
+            requestContext.CSMCallEvent = new MonitoringAPICallEvent(requestContext);
+
+            var handler = new CsmPreInvokeHandler();
+            handler.CallPreInvoke(executionContext);
+            Thread.Sleep(20);
+            handler.CallCapture(executionContext);
+
+            Assert.IsTrue(requestContext.CSMCallAttempt.AttemptLatency >= 10, requestContext.CSMCallAttempt.AttemptLatency.ToString());
+        }
+
 #if NETCOREAPP
         [TestMethod]
         [TestCategory(AllocationCategory)]
@@ -477,6 +495,8 @@ namespace AWSSDK.UnitTests
         private class CsmPreInvokeHandler : CSMCallAttemptHandler
         {
             public void CallPreInvoke(IExecutionContext executionContext) => PreInvoke(executionContext);
+            public void CallCapture(IExecutionContext executionContext)
+                => CSMCallAttemptMetricsCapture(executionContext.RequestContext, executionContext.ResponseContext);
         }
 
         private class TestServiceMetadata : IServiceMetadata
