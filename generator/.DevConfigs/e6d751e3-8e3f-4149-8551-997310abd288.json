@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Fixed a buffer overflow in ChunkedUploadWrapperStream when an encrypting stream is uploaded with a buffer size that does not divide the chunk size, and reduced the per-chunk allocations of chunked uploads."
+    ],
+    "type": "patch",
+    "updateMinimum": false
+  }
+}
