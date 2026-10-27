@@ -14,29 +14,28 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the logs-2014-03-28.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
+
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// Base class for GetLogEvents paginators.
+    /// Paginator for the GetLogEvents operation
     /// </summary>
     internal sealed partial class GetLogEventsPaginator : IPaginator<GetLogEventsResponse>, IGetLogEventsPaginator
     {
         private readonly IAmazonCloudWatchLogs _client;
         private readonly GetLogEventsRequest _request;
         private int _isPaginatorInUse = 0;
-        
+
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
@@ -45,7 +44,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Enumerable containing all of the Events
         /// </summary>
-        public IPaginatedEnumerable<OutputLogEvent> Events => 
+        public IPaginatedEnumerable<OutputLogEvent> Events =>
             new PaginatedResultKeyResponse<GetLogEventsResponse, OutputLogEvent>(this, (i) => i.Events ?? new List<OutputLogEvent>());
 
         internal GetLogEventsPaginator(IAmazonCloudWatchLogs client, GetLogEventsRequest request)
@@ -53,7 +52,7 @@ namespace Amazon.CloudWatchLogs.Model
             this._client = client;
             this._request = request;
         }
-#if BCL
+#if NETFRAMEWORK
         IEnumerable<GetLogEventsResponse> IPaginator<GetLogEventsResponse>.Paginate()
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)

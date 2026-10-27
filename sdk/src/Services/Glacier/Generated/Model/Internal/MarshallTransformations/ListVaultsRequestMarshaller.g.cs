@@ -14,83 +14,75 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
-using System.Text;
-using System.Xml.Serialization;
-
-using Amazon.Glacier.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Text.Json;
 using System.Buffers;
+
+using Amazon.Glacier.Model;
+using System.Globalization;
 #if !NETFRAMEWORK
 using ThirdParty.RuntimeBackports;
 #endif
 #pragma warning disable CS0612,CS0618
+
 namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ListVaults Request Marshaller
-    /// </summary>       
-    public class ListVaultsRequestMarshaller : IMarshaller<IRequest, ListVaultsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    /// </summary>
+    public partial class ListVaultsRequestMarshaller : IMarshaller<IRequest, ListVaultsRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
     {
         /// <summary>
-        /// Marshaller the request object to the HTTP request.
-        /// </summary>  
-        /// <param name="input"></param>
-        /// <returns></returns>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((ListVaultsRequest)input);
         }
 
         /// <summary>
-        /// Marshaller the request object to the HTTP request.
-        /// </summary>  
-        /// <param name="publicRequest"></param>
-        /// <returns></returns>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
         public IRequest Marshall(ListVaultsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Glacier");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-06-01";
             request.HttpMethod = "GET";
 
-            request.AddPathResource("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
-            
             if (publicRequest.IsSetLimit())
+            {
                 request.Parameters.Add("limit", Amazon.Runtime.Internal.Util.StringUtils.FromInt(publicRequest.Limit));
-            
+            }
+
             if (publicRequest.IsSetMarker())
+            {
                 request.Parameters.Add("marker", StringUtils.FromString(publicRequest.Marker));
+            }
+
+            request.AddPathResource("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
+
             request.ResourcePath = "/{accountId}/vaults";
+
             request.UseQueryString = true;
 
             return request;
         }
-        private static ListVaultsRequestMarshaller _instance = new ListVaultsRequestMarshaller();        
 
-        internal static ListVaultsRequestMarshaller GetInstance()
-        {
-            return _instance;
-        }
+        private static readonly ListVaultsRequestMarshaller _instance = new();
+
+        internal static ListVaultsRequestMarshaller GetInstance() => _instance;
 
         /// <summary>
         /// Gets the singleton.
-        /// </summary>  
-        public static ListVaultsRequestMarshaller Instance
-        {
-            get
-            {
-                return _instance;
-            }
-        }
-
+        /// </summary>
+        public static ListVaultsRequestMarshaller Instance => _instance;
     }
 }
