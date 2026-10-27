@@ -4,7 +4,7 @@
     <property>Amazon.KendraRanking.Model.CreateRescoreExecutionPlanRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^$|[\x00-\x7F]+</pattern>
+    <pattern>^$|[\x00-\x7F]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KendraRanking.Model.CreateRescoreExecutionPlanRequest.Description</property>
@@ -16,37 +16,37 @@
     <property>Amazon.KendraRanking.Model.CreateRescoreExecutionPlanRequest.Name</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KendraRanking.Model.CreateRescoreExecutionPlanResponse.Arn</property>
     <min>0</min>
     <max>1284</max>
-    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KendraRanking.Model.CreateRescoreExecutionPlanResponse.Id</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KendraRanking.Model.DeleteRescoreExecutionPlanRequest.Id</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KendraRanking.Model.DescribeRescoreExecutionPlanRequest.Id</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KendraRanking.Model.DescribeRescoreExecutionPlanResponse.Arn</property>
     <min>0</min>
     <max>1284</max>
-    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KendraRanking.Model.DescribeRescoreExecutionPlanResponse.Description</property>
@@ -64,13 +64,13 @@
     <property>Amazon.KendraRanking.Model.DescribeRescoreExecutionPlanResponse.Id</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KendraRanking.Model.DescribeRescoreExecutionPlanResponse.Name</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KendraRanking.Model.ListRescoreExecutionPlansRequest.MaxResults</property>
@@ -98,7 +98,7 @@
     <property>Amazon.KendraRanking.Model.RescoreRequest.RescoreExecutionPlanId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KendraRanking.Model.RescoreRequest.SearchQuery</property>
@@ -109,7 +109,7 @@
     <property>Amazon.KendraRanking.Model.RescoreResponse.RescoreId</property>
     <min>1</min>
     <max>36</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KendraRanking.Model.TagResourceRequest.ResourceARN</property>
@@ -131,13 +131,13 @@
     <property>Amazon.KendraRanking.Model.UpdateRescoreExecutionPlanRequest.Id</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KendraRanking.Model.UpdateRescoreExecutionPlanRequest.Name</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KendraRanking.Model.CapacityUnitsConfiguration.RescoreCapacityUnits</property>
@@ -173,13 +173,13 @@
     <property>Amazon.KendraRanking.Model.RescoreExecutionPlanSummary.Id</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KendraRanking.Model.RescoreExecutionPlanSummary.Name</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KendraRanking.Model.RescoreResultItem.DocumentId</property>

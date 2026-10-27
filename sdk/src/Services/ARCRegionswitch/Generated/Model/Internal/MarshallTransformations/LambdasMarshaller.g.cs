@@ -62,6 +62,12 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("externalId");
                 context.Writer.WriteStringValue(requestObject.ExternalId);
             }
+
+            if (requestObject.IsSetPayload())
+            {
+                context.Writer.WritePropertyName("payload");
+                context.Writer.WriteStringValue(requestObject.Payload);
+            }
         }
 
         /// <summary>

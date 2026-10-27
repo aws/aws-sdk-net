@@ -51,6 +51,73 @@ namespace Amazon.Billing
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Private Pricing contracts let eligible payer accounts manage private pricing agreements
+        /// with Amazon Web Services. This operation associates a private pricing contract with
+        /// the caller's Amazon Web Services account. The caller must be a payer (management)
+        /// account listed on the contract. This operation is idempotent, so retrying a request
+        /// that already succeeded is safe.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateContract service method.</param>
+        /// <returns>The response from the AssociateContract service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/AssociateContract">REST API Reference for AssociateContract Operation</seealso>
+        AssociateContractResponse AssociateContract(AssociateContractRequest request);
+#endif
+
+        /// <summary>
+        /// Private Pricing contracts let eligible payer accounts manage private pricing agreements
+        /// with Amazon Web Services. This operation associates a private pricing contract with
+        /// the caller's Amazon Web Services account. The caller must be a payer (management)
+        /// account listed on the contract. This operation is idempotent, so retrying a request
+        /// that already succeeded is safe.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateContract service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the AssociateContract service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/AssociateContract">REST API Reference for AssociateContract Operation</seealso>
+        Task<AssociateContractResponse> AssociateContractAsync(AssociateContractRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Associates one or more source billing views with an existing billing view. This allows
         /// creating aggregate billing views that combine data from multiple sources.
         /// </summary>
@@ -125,6 +192,69 @@ namespace Amazon.Billing
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/AssociateSourceViews">REST API Reference for AssociateSourceViews Operation</seealso>
         Task<AssociateSourceViewsResponse> AssociateSourceViewsAsync(AssociateSourceViewsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Cancels a contractual investment attestation. This operation is idempotent, so retrying
+        /// is safe. You can cancel an attestation only while it is still pending (its <c>isCancellable</c>
+        /// value is <c>true</c>).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelContractualInvestmentAttestation service method.</param>
+        /// <returns>The response from the CancelContractualInvestmentAttestation service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/CancelContractualInvestmentAttestation">REST API Reference for CancelContractualInvestmentAttestation Operation</seealso>
+        CancelContractualInvestmentAttestationResponse CancelContractualInvestmentAttestation(CancelContractualInvestmentAttestationRequest request);
+#endif
+
+        /// <summary>
+        /// Cancels a contractual investment attestation. This operation is idempotent, so retrying
+        /// is safe. You can cancel an attestation only while it is still pending (its <c>isCancellable</c>
+        /// value is <c>true</c>).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelContractualInvestmentAttestation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CancelContractualInvestmentAttestation service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/CancelContractualInvestmentAttestation">REST API Reference for CancelContractualInvestmentAttestation Operation</seealso>
+        Task<CancelContractualInvestmentAttestationResponse> CancelContractualInvestmentAttestationAsync(CancelContractualInvestmentAttestationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -203,6 +333,73 @@ namespace Amazon.Billing
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates an attestation that claims an investment award for a completed milestone or
+        /// outcome within a private pricing contract. Supply a <c>clientToken</c> to make the
+        /// request idempotent so a safe retry does not create a duplicate attestation. This operation
+        /// starts an asynchronous review and returns an <c>attestationId</c> while the attestation
+        /// is pending.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContractualInvestmentAttestation service method.</param>
+        /// <returns>The response from the CreateContractualInvestmentAttestation service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/CreateContractualInvestmentAttestation">REST API Reference for CreateContractualInvestmentAttestation Operation</seealso>
+        CreateContractualInvestmentAttestationResponse CreateContractualInvestmentAttestation(CreateContractualInvestmentAttestationRequest request);
+#endif
+
+        /// <summary>
+        /// Creates an attestation that claims an investment award for a completed milestone or
+        /// outcome within a private pricing contract. Supply a <c>clientToken</c> to make the
+        /// request idempotent so a safe retry does not create a duplicate attestation. This operation
+        /// starts an asynchronous review and returns an <c>attestationId</c> while the attestation
+        /// is pending.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContractualInvestmentAttestation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateContractualInvestmentAttestation service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/CreateContractualInvestmentAttestation">REST API Reference for CreateContractualInvestmentAttestation Operation</seealso>
+        Task<CreateContractualInvestmentAttestationResponse> CreateContractualInvestmentAttestationAsync(CreateContractualInvestmentAttestationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Deletes the specified billing view.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBillingView service method.</param>
@@ -253,6 +450,61 @@ namespace Amazon.Billing
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/DeleteBillingView">REST API Reference for DeleteBillingView Operation</seealso>
         Task<DeleteBillingViewResponse> DeleteBillingViewAsync(DeleteBillingViewRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Removes the association between a private pricing contract and your Amazon Web Services
+        /// account. The account must have been associated with the contract previously. This
+        /// operation is idempotent, so retrying is safe.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateContract service method.</param>
+        /// <returns>The response from the DisassociateContract service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/DisassociateContract">REST API Reference for DisassociateContract Operation</seealso>
+        DisassociateContractResponse DisassociateContract(DisassociateContractRequest request);
+#endif
+
+        /// <summary>
+        /// Removes the association between a private pricing contract and your Amazon Web Services
+        /// account. The account must have been associated with the contract previously. This
+        /// operation is idempotent, so retrying is safe.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateContract service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DisassociateContract service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/DisassociateContract">REST API Reference for DisassociateContract Operation</seealso>
+        Task<DisassociateContractResponse> DisassociateContractAsync(DisassociateContractRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -424,6 +676,61 @@ namespace Amazon.Billing
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetBillingView">REST API Reference for GetBillingView Operation</seealso>
         Task<GetBillingViewResponse> GetBillingViewAsync(GetBillingViewRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns information about a specific private pricing contract, including its term
+        /// (duration), eligible payer accounts, investment accounts, and legal entities. This
+        /// operation is read-only.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContractInformation service method.</param>
+        /// <returns>The response from the GetContractInformation service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetContractInformation">REST API Reference for GetContractInformation Operation</seealso>
+        GetContractInformationResponse GetContractInformation(GetContractInformationRequest request);
+#endif
+
+        /// <summary>
+        /// Returns information about a specific private pricing contract, including its term
+        /// (duration), eligible payer accounts, investment accounts, and legal entities. This
+        /// operation is read-only.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContractInformation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetContractInformation service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetContractInformation">REST API Reference for GetContractInformation Operation</seealso>
+        Task<GetContractInformationResponse> GetContractInformationAsync(GetContractInformationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -947,6 +1254,214 @@ namespace Amazon.Billing
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListBusinessSupportSubscriptionHistory">REST API Reference for ListBusinessSupportSubscriptionHistory Operation</seealso>
         Task<ListBusinessSupportSubscriptionHistoryResponse> ListBusinessSupportSubscriptionHistoryAsync(ListBusinessSupportSubscriptionHistoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the private pricing contracts that your Amazon Web Services account is an eligible
+        /// payer account of. This operation is read-only and paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContracts service method.</param>
+        /// <returns>The response from the ListContracts service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListContracts">REST API Reference for ListContracts Operation</seealso>
+        ListContractsResponse ListContracts(ListContractsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the private pricing contracts that your Amazon Web Services account is an eligible
+        /// payer account of. This operation is read-only and paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContracts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListContracts service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListContracts">REST API Reference for ListContracts Operation</seealso>
+        Task<ListContractsResponse> ListContractsAsync(ListContractsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the investment attestations submitted under a specific private pricing contract.
+        /// Use this operation to track attestation status, including the terminal statuses <c>DISBURSED</c>,
+        /// <c>REJECTED</c>, and <c>CANCELLED</c>. This operation is read-only and paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContractualInvestmentAttestations service method.</param>
+        /// <returns>The response from the ListContractualInvestmentAttestations service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListContractualInvestmentAttestations">REST API Reference for ListContractualInvestmentAttestations Operation</seealso>
+        ListContractualInvestmentAttestationsResponse ListContractualInvestmentAttestations(ListContractualInvestmentAttestationsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the investment attestations submitted under a specific private pricing contract.
+        /// Use this operation to track attestation status, including the terminal statuses <c>DISBURSED</c>,
+        /// <c>REJECTED</c>, and <c>CANCELLED</c>. This operation is read-only and paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContractualInvestmentAttestations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListContractualInvestmentAttestations service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListContractualInvestmentAttestations">REST API Reference for ListContractualInvestmentAttestations Operation</seealso>
+        Task<ListContractualInvestmentAttestationsResponse> ListContractualInvestmentAttestationsAsync(ListContractualInvestmentAttestationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the investment summaries within a specific private pricing contract. This operation
+        /// is read-only and paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContractualInvestmentSummaries service method.</param>
+        /// <returns>The response from the ListContractualInvestmentSummaries service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListContractualInvestmentSummaries">REST API Reference for ListContractualInvestmentSummaries Operation</seealso>
+        ListContractualInvestmentSummariesResponse ListContractualInvestmentSummaries(ListContractualInvestmentSummariesRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the investment summaries within a specific private pricing contract. This operation
+        /// is read-only and paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContractualInvestmentSummaries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListContractualInvestmentSummaries service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListContractualInvestmentSummaries">REST API Reference for ListContractualInvestmentSummaries Operation</seealso>
+        Task<ListContractualInvestmentSummariesResponse> ListContractualInvestmentSummariesAsync(ListContractualInvestmentSummariesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the investments within a specific investment summary. This operation is read-only
+        /// and paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContractualInvestments service method.</param>
+        /// <returns>The response from the ListContractualInvestments service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListContractualInvestments">REST API Reference for ListContractualInvestments Operation</seealso>
+        ListContractualInvestmentsResponse ListContractualInvestments(ListContractualInvestmentsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the investments within a specific investment summary. This operation is read-only
+        /// and paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContractualInvestments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListContractualInvestments service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListContractualInvestments">REST API Reference for ListContractualInvestments Operation</seealso>
+        Task<ListContractualInvestmentsResponse> ListContractualInvestmentsAsync(ListContractualInvestmentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>

@@ -121,6 +121,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         unmarshalledObject.MajorEngineVersion = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Migration", targetDepth))
+                    {
+                        var unmarshaller = MigrationSummaryUnmarshaller.Instance;
+                        unmarshalledObject.Migration = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("NetworkType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

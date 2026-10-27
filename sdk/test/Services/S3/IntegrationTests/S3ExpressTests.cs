@@ -203,8 +203,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Assert.Null(response.S3Objects);
 
             await _usEast1Client.DeleteBucketAsync(destinationbucketName);
-            var listDirectoryBucketsResponse = await _usEast1Client.ListDirectoryBucketsAsync(new ListDirectoryBucketsRequest());
-            Assert.False(listDirectoryBucketsResponse.Buckets.Any(b => b.BucketName == destinationbucketName));
+            await UtilityMethods.WaitUntilAsync(async () =>
+            {
+                var listDirectoryBucketsResponse = await _usEast1Client.ListDirectoryBucketsAsync(new ListDirectoryBucketsRequest());
+                return !listDirectoryBucketsResponse.Buckets.Any(b => b.BucketName == destinationbucketName);
+            }, sleepSeconds: 1, maxWaitSeconds: 30);
         }
 
         [Fact]

@@ -113,6 +113,13 @@ public class GenerationContext
     /// </summary>
     public IReadOnlyList<OperationAuth> OperationsWithModeledAuth { get; }
 
+    /// <summary>
+    /// The service shape's <c>@xmlNamespace</c> (restXml), or null when absent. Its uri is the default
+    /// namespace the request marshaller declares on the body's root element; C2J calls it the service's
+    /// <c>xmlNamespace</c> metadata.
+    /// </summary>
+    public XmlNamespaceTrait? XmlNamespace { get; }
+
     /// <summary>The service shape's <c>@documentation</c>, or null if absent. Used for the client interface/class summary.</summary>
     public string? ServiceDocumentation { get; }
 
@@ -269,9 +276,23 @@ public class GenerationContext
 
         ServiceDocumentation = index.Service.GetDocumentation();
         ServiceTitle = index.Service.GetTitle();
+        XmlNamespace = index.Service.GetXmlNamespace();
         Protocol = ProtocolResolver.Resolve(index.Service, SdkId);
-        // TODO: restXml also honors the HTTP binding traits; add it here when that protocol lands.
-        UsesHttpBindings = Protocol == AWSProtocol.RestJson1;
+        UsesHttpBindings = Protocol is AWSProtocol.RestJson1 or AWSProtocol.RestXml;
+        // The wrapped output is read as the whole response body, which only awsJson's response is.
+        // TODO: ec2 wraps outputs too; support it in the XML response unmarshaller when ec2Query lands.
+        if (Protocol is not (AWSProtocol.AwsJson1_0 or AWSProtocol.AwsJson1_1)
+            && Customizations.OperationModifiers.FirstOrDefault(entry => entry.Value.UseWrappingResult).Key is { } wrapped)
+        {
+            throw new GeneratorException($"operationModifiers['{wrapped}'] wraps the output, which is only supported for awsJson.");
+        }
+        // allowEmptyResult only drives the restXml response unmarshaller's empty-body early-return; on any
+        // other protocol it would generate silently without the guard, where C2J throws.
+        if (Protocol is not AWSProtocol.RestXml
+            && Customizations.OperationModifiers.FirstOrDefault(entry => entry.Value.AllowEmptyResult).Key is { } emptyResult)
+        {
+            throw new GeneratorException($"operationModifiers['{emptyResult}'] allows an empty result, which is only supported for restXml.");
+        }
         IsAwsQueryCompatible = index.Service.HasAwsQueryCompatible();
         ServiceShapeName = index.ServiceId.Name;
         Operations = OperationResolver.Resolve(index, Protocol);

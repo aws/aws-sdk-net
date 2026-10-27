@@ -30,14 +30,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ARCRegionswitch.Model
 {
     /// <summary>
-    /// Configuration for handling failures when performing operations on Aurora global databases.
+    /// Configuration for an Aurora global database execution block in ungraceful mode.
     /// </summary>
     public partial class GlobalAuroraUngraceful
     {
         /// <summary>
         /// Gets and sets the property Ungraceful. 
         /// <para>
-        /// The settings for ungraceful execution.
+        /// The ungraceful behavior. The only valid value is <c>failover</c>, which calls <c>FailoverGlobalCluster</c>
+        /// with <c>AllowDataLoss</c> set to <c>true</c> and might cause data loss.
         /// </para>
         /// </summary>
         public GlobalAuroraUngracefulBehavior Ungraceful { get; set; }

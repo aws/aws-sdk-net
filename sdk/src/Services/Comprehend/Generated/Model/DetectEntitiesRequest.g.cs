@@ -1,0 +1,166 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Comprehend.Model
+{
+    /// <summary>
+    /// Container for the parameters to the DetectEntities operation. Detects named entities
+    /// in input text when you use the pre-trained model. Detects custom entities if you have
+    /// a custom entity recognition model. <para> When detecting named entities using the
+    /// pre-trained model, use plain text as the input. For more information about named entities,
+    /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a>
+    /// in the Comprehend Developer Guide. </para> <para> When you use a custom entity recognition
+    /// model, you can input plain text or you can upload a single-page input document (text,
+    /// PDF, Word, or image). </para> <para> If the system detects errors while processing
+    /// a page in the input document, the API response includes an entry in <c>Errors</c>
+    /// for each error. </para> <para> If the system detects a document-level error in your
+    /// input document, the API returns an <c>InvalidRequestException</c> error response.
+    /// For details about this exception, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync-err.html">
+    /// Errors in semi-structured documents</a> in the Comprehend Developer Guide. </para>
+    /// </summary>
+    public partial class DetectEntitiesRequest : AmazonComprehendRequest
+    {
+        /// <summary>
+        /// Gets and sets the property Bytes. 
+        /// <para>
+        /// This field applies only when you use a custom entity recognition model that was trained
+        /// with PDF annotations. For other cases, enter your text input in the <c>Text</c> field.
+        /// </para>
+        ///  
+        /// <para>
+        ///  Use the <c>Bytes</c> parameter to input a text, PDF, Word or image file. Using a
+        /// plain-text file in the <c>Bytes</c> parameter is equivelent to using the <c>Text</c>
+        /// parameter (the <c>Entities</c> field in the response is identical).
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also use the <c>Bytes</c> parameter to input an Amazon Textract <c>DetectDocumentText</c>
+        /// or <c>AnalyzeDocument</c> output file.
+        /// </para>
+        ///  
+        /// <para>
+        /// Provide the input document as a sequence of base64-encoded bytes. If your code uses
+        /// an Amazon Web Services SDK to detect entities, the SDK may encode the document file
+        /// bytes for you. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The maximum length of this field depends on the input document type. For details,
+        /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html">
+        /// Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you use the <c>Bytes</c> parameter, do not use the <c>Text</c> parameter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1)]
+        public MemoryStream Bytes { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Bytes property is set.
+        /// </summary>
+        internal bool IsSetBytes() => this.Bytes != null;
+
+        /// <summary>
+        /// Gets and sets the property DocumentReaderConfig. 
+        /// <para>
+        /// Provides configuration parameters to override the default actions for extracting text
+        /// from PDF documents and image files.
+        /// </para>
+        /// </summary>
+        public DocumentReaderConfig DocumentReaderConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DocumentReaderConfig property is set.
+        /// </summary>
+        internal bool IsSetDocumentReaderConfig() => this.DocumentReaderConfig != null;
+
+        /// <summary>
+        /// Gets and sets the property EndpointArn. 
+        /// <para>
+        /// The Amazon Resource Name of an endpoint that is associated with a custom entity recognition
+        /// model. Provide an endpoint if you want to detect entities by using your own custom
+        /// model instead of the default model that is used by Amazon Comprehend.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify an endpoint, Amazon Comprehend uses the language of your custom model,
+        /// and it ignores any language code that you provide in your request.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+        /// endpoints</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 256)]
+        public string EndpointArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EndpointArn property is set.
+        /// </summary>
+        internal bool IsSetEndpointArn() => this.EndpointArn != null;
+
+        /// <summary>
+        /// Gets and sets the property LanguageCode. 
+        /// <para>
+        /// The language of the input documents. You can specify any of the primary languages
+        /// supported by Amazon Comprehend. If your request includes the endpoint for a custom
+        /// entity recognition model, Amazon Comprehend uses the language of your custom model,
+        /// and it ignores any language code that you specify here.
+        /// </para>
+        ///  
+        /// <para>
+        /// All input documents must be in the same language.
+        /// </para>
+        /// </summary>
+        public LanguageCode LanguageCode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LanguageCode property is set.
+        /// </summary>
+        internal bool IsSetLanguageCode() => this.LanguageCode != null;
+
+        /// <summary>
+        /// Gets and sets the property Text. 
+        /// <para>
+        /// A UTF-8 text string. The maximum string size is 100 KB. If you enter text using this
+        /// parameter, do not use the <c>Bytes</c> parameter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true, Min = 1)]
+        public string Text { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Text property is set.
+        /// </summary>
+        internal bool IsSetText() => this.Text != null;
+    }
+}

@@ -36,8 +36,48 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class AnomalyDetectorConfiguration
     {
+        private AnomalyDetectorAdaptationSpeed _adaptationSpeed;
         private List<Range> _excludedTimeRanges = AWSConfigs.InitializeCollections ? new List<Range>() : null;
         private string _metricTimezone;
+        private AnomalyDetectorOutlierFilteringStrength _outlierFilteringStrength;
+
+        /// <summary>
+        /// Gets and sets the property AdaptationSpeed. 
+        /// <para>
+        /// The speed at which the anomaly detection model adapts to sustained changes in the
+        /// metric's baseline. Faster adaptation lets the model track shifting workloads sooner,
+        /// but increases the chance that the model treats a real, lasting change as normal.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>FAST</c> - The model adapts quickly to sustained changes in the baseline.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NORMAL</c> - The model adapts at a moderate pace. This is the default value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SLOW</c> - The model adapts slowly, reducing the risk of treating a real change
+        /// as normal.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public AnomalyDetectorAdaptationSpeed AdaptationSpeed
+        {
+            get { return this._adaptationSpeed; }
+            set { this._adaptationSpeed = value; }
+        }
+
+        // Check to see if AdaptationSpeed property is set
+        internal bool IsSetAdaptationSpeed()
+        {
+            return this._adaptationSpeed != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ExcludedTimeRanges. 
@@ -89,6 +129,45 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetMetricTimezone()
         {
             return this._metricTimezone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutlierFilteringStrength. 
+        /// <para>
+        /// The aggressiveness with which CloudWatch filters outliers from the metric data that
+        /// the anomaly detection model uses. Stronger filtering excludes more extreme values,
+        /// which can produce a tighter band of expected values but may also suppress legitimate
+        /// spikes.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>MINIMAL</c> - Excludes only the most extreme outliers.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MODERATE</c> - Excludes a moderate range of outliers. This is the default value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>STRICT</c> - Excludes a wider range of outliers, which can suppress legitimate
+        /// spikes.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public AnomalyDetectorOutlierFilteringStrength OutlierFilteringStrength
+        {
+            get { return this._outlierFilteringStrength; }
+            set { this._outlierFilteringStrength = value; }
+        }
+
+        // Check to see if OutlierFilteringStrength property is set
+        internal bool IsSetOutlierFilteringStrength()
+        {
+            return this._outlierFilteringStrength != null;
         }
 
     }

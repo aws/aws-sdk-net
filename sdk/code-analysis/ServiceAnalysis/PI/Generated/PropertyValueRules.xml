@@ -10,13 +10,13 @@
     <property>Amazon.PI.Model.CreatePerformanceAnalysisReportResponse.AnalysisReportId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>report-[0-9a-f]{17}</pattern>
+    <pattern>^report-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PI.Model.DeletePerformanceAnalysisReportRequest.AnalysisReportId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>report-[0-9a-f]{17}</pattern>
+    <pattern>^report-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PI.Model.DeletePerformanceAnalysisReportRequest.Identifier</property>
@@ -75,7 +75,7 @@
     <property>Amazon.PI.Model.GetPerformanceAnalysisReportRequest.AnalysisReportId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>report-[0-9a-f]{17}</pattern>
+    <pattern>^report-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PI.Model.GetPerformanceAnalysisReportRequest.Identifier</property>
@@ -174,7 +174,7 @@
     <property>Amazon.PI.Model.ListPerformanceAnalysisReportRecommendationsRequest.AnalysisReportId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>report-[0-9a-f]{17}</pattern>
+    <pattern>^report-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PI.Model.ListPerformanceAnalysisReportRecommendationsRequest.Identifier</property>
@@ -244,7 +244,7 @@
     <property>Amazon.PI.Model.AnalysisReport.AnalysisReportId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>report-[0-9a-f]{17}</pattern>
+    <pattern>^report-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PI.Model.AnalysisReport.Identifier</property>
@@ -297,7 +297,7 @@
     <property>Amazon.PI.Model.Insight.Description</property>
     <min>0</min>
     <max>8000</max>
-    <pattern>(.|\n)*</pattern>
+    <pattern>^(.|\n)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PI.Model.Insight.InsightId</property>
@@ -339,13 +339,13 @@
     <property>Amazon.PI.Model.Recommendation.RecommendationDescription</property>
     <min>0</min>
     <max>8000</max>
-    <pattern>(.|\n)*</pattern>
+    <pattern>^(.|\n)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PI.Model.Recommendation.RecommendationDetails</property>
     <min>0</min>
     <max>8000</max>
-    <pattern>(.|\n)*</pattern>
+    <pattern>^(.|\n)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PI.Model.Recommendation.RecommendationId</property>

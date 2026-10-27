@@ -2,13 +2,15 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CancelTaskExecutionRequest.TaskExecutionArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:task/task-[0-9a-f]{17}/execution/exec-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateAgentRequest.ActivationKey</property>
+    <min>0</min>
     <max>29</max>
-    <pattern>[A-Z0-9]{5}(-[A-Z0-9]{5}){4}</pattern>
+    <pattern>^[A-Z0-9]{5}(-[A-Z0-9]{5}){4}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateAgentRequest.AgentName</property>
@@ -22,121 +24,145 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateAgentResponse.AgentArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:agent/agent-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationAzureBlobRequest.ContainerUrl</property>
+    <min>0</min>
     <max>325</max>
     <pattern>^https:\/\/[A-Za-z0-9]((\.|-+)?[A-Za-z0-9]){0,252}\/[a-z0-9](-?[a-z0-9]){2,62}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationAzureBlobRequest.Subdirectory</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>^[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}\p{C}]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationAzureBlobResponse.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationEfsRequest.AccessPointArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):elasticfilesystem:[a-z\-0-9]+:[0-9]{12}:access-point/fsap-[0-9a-f]{8,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationEfsRequest.EfsFilesystemArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):elasticfilesystem:[a-z\-0-9]+:[0-9]{12}:file-system/fs-[0-9a-f]{8,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationEfsRequest.FileSystemAccessRoleArn</property>
+    <min>0</min>
     <max>2048</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):iam::[0-9]{12}:role/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationEfsRequest.Subdirectory</property>
+    <min>0</min>
     <max>4096</max>
     <pattern>^[a-zA-Z0-9_\-\+\./\(\)\p{Zs}]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationEfsResponse.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationFsxLustreRequest.FsxFilesystemArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):fsx:[a-z\-0-9]+:[0-9]{12}:file-system/fs-[0-9a-f]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationFsxLustreRequest.Subdirectory</property>
+    <min>0</min>
     <max>4096</max>
     <pattern>^[a-zA-Z0-9_\-\+\./\(\)\$\p{Zs}]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationFsxLustreResponse.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationFsxOntapRequest.StorageVirtualMachineArn</property>
+    <min>0</min>
     <max>162</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):fsx:[a-z\-0-9]+:[0-9]{12}:storage-virtual-machine/fs-[0-9a-f]+/svm-[0-9a-f]{17,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationFsxOntapRequest.Subdirectory</property>
+    <min>0</min>
     <max>255</max>
     <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationFsxOntapResponse.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationFsxOpenZfsRequest.FsxFilesystemArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):fsx:[a-z\-0-9]+:[0-9]{12}:file-system/fs-[0-9a-f]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationFsxOpenZfsRequest.Subdirectory</property>
+    <min>0</min>
     <max>4096</max>
     <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,4096}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationFsxOpenZfsResponse.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationFsxWindowsRequest.Domain</property>
+    <min>0</min>
     <max>253</max>
     <pattern>^[A-Za-z0-9]((\.|-+)?[A-Za-z0-9]){0,252}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationFsxWindowsRequest.FsxFilesystemArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):fsx:[a-z\-0-9]+:[0-9]{12}:file-system/fs-[0-9a-f]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationFsxWindowsRequest.Password</property>
+    <min>0</min>
     <max>104</max>
     <pattern>^.{0,104}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationFsxWindowsRequest.Subdirectory</property>
+    <min>0</min>
     <max>4096</max>
     <pattern>^[a-zA-Z0-9_\-\+\./\(\)\$\p{Zs}]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationFsxWindowsRequest.User</property>
+    <min>0</min>
     <max>104</max>
     <pattern>^[^\x22\x5B\x5D/\\:;|=,+*?\x3C\x3E]{1,104}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationFsxWindowsResponse.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
@@ -147,10 +173,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationHdfsRequest.KerberosKeytab</property>
+    <min>0</min>
     <max>65536</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationHdfsRequest.KerberosKrb5Conf</property>
+    <min>0</min>
     <max>131072</max>
   </property-value-rule>
   <property-value-rule>
@@ -178,26 +206,31 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationHdfsRequest.Subdirectory</property>
+    <min>0</min>
     <max>4096</max>
     <pattern>^[a-zA-Z0-9_\-\+\./\(\)\$\p{Zs}]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationHdfsResponse.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationNfsRequest.ServerHostname</property>
+    <min>0</min>
     <max>255</max>
     <pattern>^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9\-:]*[A-Za-z0-9])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationNfsRequest.Subdirectory</property>
+    <min>0</min>
     <max>4096</max>
     <pattern>^[a-zA-Z0-9_\-\+\./\(\)\p{Zs}]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationNfsResponse.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
@@ -221,10 +254,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationObjectStorageRequest.ServerCertificate</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationObjectStorageRequest.ServerHostname</property>
+    <min>0</min>
     <max>255</max>
     <pattern>^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9\-:]*[A-Za-z0-9])$</pattern>
   </property-value-rule>
@@ -235,40 +270,48 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationObjectStorageRequest.Subdirectory</property>
+    <min>0</min>
     <max>4096</max>
     <pattern>^[a-zA-Z0-9_\-\+\./\(\)\p{Zs}]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationObjectStorageResponse.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationS3Request.S3BucketArn</property>
+    <min>0</min>
     <max>268</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):s3:[a-z\-0-9]*:[0-9]{12}:accesspoint[/:][a-zA-Z0-9\-.]{1,63}$|^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):s3-outposts:[a-z\-0-9]+:[0-9]{12}:outpost[/:][a-zA-Z0-9\-]{1,63}[/:]accesspoint[/:][a-zA-Z0-9\-]{1,63}$|^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):s3:::[a-zA-Z0-9.\-_]{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationS3Request.Subdirectory</property>
+    <min>0</min>
     <max>4096</max>
     <pattern>^[a-zA-Z0-9_\-\+\./\(\)\p{Zs}]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationS3Response.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationSmbRequest.Domain</property>
+    <min>0</min>
     <max>253</max>
     <pattern>^[A-Za-z0-9]((\.|-+)?[A-Za-z0-9]){0,252}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationSmbRequest.KerberosKeytab</property>
+    <min>0</min>
     <max>65536</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationSmbRequest.KerberosKrb5Conf</property>
+    <min>0</min>
     <max>131072</max>
   </property-value-rule>
   <property-value-rule>
@@ -279,36 +322,43 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationSmbRequest.Password</property>
+    <min>0</min>
     <max>104</max>
     <pattern>^.{0,104}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationSmbRequest.ServerHostname</property>
+    <min>0</min>
     <max>255</max>
     <pattern>^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9\-:]*[A-Za-z0-9])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationSmbRequest.Subdirectory</property>
+    <min>0</min>
     <max>4096</max>
     <pattern>^[a-zA-Z0-9_\-\+\./\(\)\$\p{Zs}]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationSmbRequest.User</property>
+    <min>0</min>
     <max>104</max>
     <pattern>^[^\x22\x5B\x5D/\\:;|=,+*?\x3C\x3E]{1,104}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationSmbResponse.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateTaskRequest.CloudWatchLogGroupArn</property>
+    <min>0</min>
     <max>562</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):logs:[a-z\-0-9]+:[0-9]{12}:log-group:([^:\*]*)(:\*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateTaskRequest.DestinationLocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
@@ -320,36 +370,43 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateTaskRequest.SourceLocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateTaskResponse.TaskArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:task/task-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DeleteAgentRequest.AgentArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:agent/agent-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DeleteLocationRequest.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DeleteTaskRequest.TaskArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:task/task-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeAgentRequest.AgentArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:agent/agent-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeAgentResponse.AgentArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:agent/agent-[0-9a-z]{17}$</pattern>
   </property-value-rule>
@@ -361,126 +418,151 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationAzureBlobRequest.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationAzureBlobResponse.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationAzureBlobResponse.LocationUri</property>
+    <min>0</min>
     <max>4360</max>
     <pattern>^(efs|nfs|s3|smb|hdfs|fsx[a-z0-9-]+)://[a-zA-Z0-9.:/\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationEfsRequest.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationEfsResponse.AccessPointArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):elasticfilesystem:[a-z\-0-9]+:[0-9]{12}:access-point/fsap-[0-9a-f]{8,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationEfsResponse.FileSystemAccessRoleArn</property>
+    <min>0</min>
     <max>2048</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):iam::[0-9]{12}:role/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationEfsResponse.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationEfsResponse.LocationUri</property>
+    <min>0</min>
     <max>4360</max>
     <pattern>^(efs|nfs|s3|smb|hdfs|fsx[a-z0-9-]+)://[a-zA-Z0-9.:/\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationFsxLustreRequest.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationFsxLustreResponse.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationFsxLustreResponse.LocationUri</property>
+    <min>0</min>
     <max>4360</max>
     <pattern>^(efs|nfs|s3|smb|hdfs|fsx[a-z0-9-]+)://[a-zA-Z0-9.:/\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationFsxOntapRequest.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationFsxOntapResponse.FsxFilesystemArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):fsx:[a-z\-0-9]+:[0-9]{12}:file-system/fs-[0-9a-f]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationFsxOntapResponse.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationFsxOntapResponse.LocationUri</property>
+    <min>0</min>
     <max>4360</max>
     <pattern>^(efs|nfs|s3|smb|hdfs|fsx[a-z0-9-]+)://[a-zA-Z0-9.:/\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationFsxOntapResponse.StorageVirtualMachineArn</property>
+    <min>0</min>
     <max>162</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):fsx:[a-z\-0-9]+:[0-9]{12}:storage-virtual-machine/fs-[0-9a-f]+/svm-[0-9a-f]{17,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationFsxOpenZfsRequest.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationFsxOpenZfsResponse.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationFsxOpenZfsResponse.LocationUri</property>
+    <min>0</min>
     <max>4360</max>
     <pattern>^(efs|nfs|s3|smb|hdfs|fsx[a-z0-9-]+)://[a-zA-Z0-9.:/\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationFsxWindowsRequest.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationFsxWindowsResponse.Domain</property>
+    <min>0</min>
     <max>253</max>
     <pattern>^[A-Za-z0-9]((\.|-+)?[A-Za-z0-9]){0,252}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationFsxWindowsResponse.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationFsxWindowsResponse.LocationUri</property>
+    <min>0</min>
     <max>4360</max>
     <pattern>^(efs|nfs|s3|smb|hdfs|fsx[a-z0-9-]+)://[a-zA-Z0-9.:/\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationFsxWindowsResponse.User</property>
+    <min>0</min>
     <max>104</max>
     <pattern>^[^\x22\x5B\x5D/\\:;|=,+*?\x3C\x3E]{1,104}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationHdfsRequest.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
@@ -503,11 +585,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationHdfsResponse.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationHdfsResponse.LocationUri</property>
+    <min>0</min>
     <max>4360</max>
     <pattern>^(efs|nfs|s3|smb|hdfs|fsx[a-z0-9-]+)://[a-zA-Z0-9.:/\-]+$</pattern>
   </property-value-rule>
@@ -524,21 +608,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationNfsRequest.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationNfsResponse.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationNfsResponse.LocationUri</property>
+    <min>0</min>
     <max>4360</max>
     <pattern>^(efs|nfs|s3|smb|hdfs|fsx[a-z0-9-]+)://[a-zA-Z0-9.:/\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationObjectStorageRequest.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
@@ -550,16 +638,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationObjectStorageResponse.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationObjectStorageResponse.LocationUri</property>
+    <min>0</min>
     <max>4360</max>
     <pattern>^(efs|nfs|s3|smb|hdfs|fsx[a-z0-9-]+)://[a-zA-Z0-9.:/\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationObjectStorageResponse.ServerCertificate</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
@@ -569,26 +660,31 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationS3Request.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationS3Response.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationS3Response.LocationUri</property>
+    <min>0</min>
     <max>4360</max>
     <pattern>^(efs|nfs|s3|smb|hdfs|fsx[a-z0-9-]+)://[a-zA-Z0-9.:/\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationSmbRequest.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationSmbResponse.Domain</property>
+    <min>0</min>
     <max>253</max>
     <pattern>^[A-Za-z0-9]((\.|-+)?[A-Za-z0-9]){0,252}$</pattern>
   </property-value-rule>
@@ -600,36 +696,43 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationSmbResponse.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationSmbResponse.LocationUri</property>
+    <min>0</min>
     <max>4360</max>
     <pattern>^(efs|nfs|s3|smb|hdfs|fsx[a-z0-9-]+)://[a-zA-Z0-9.:/\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationSmbResponse.User</property>
+    <min>0</min>
     <max>104</max>
     <pattern>^[^\x22\x5B\x5D/\\:;|=,+*?\x3C\x3E]{1,104}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeTaskRequest.TaskArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:task/task-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeTaskResponse.CloudWatchLogGroupArn</property>
+    <min>0</min>
     <max>562</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):logs:[a-z\-0-9]+:[0-9]{12}:log-group:([^:\*]*)(:\*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeTaskResponse.CurrentTaskExecutionArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:task/task-[0-9a-f]{17}/execution/exec-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeTaskResponse.DestinationLocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
@@ -641,21 +744,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeTaskResponse.SourceLocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeTaskResponse.TaskArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:task/task-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeTaskExecutionRequest.TaskExecutionArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:task/task-[0-9a-f]{17}/execution/exec-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeTaskExecutionResponse.TaskExecutionArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:task/task-[0-9a-f]{17}/execution/exec-[0-9a-f]{17}$</pattern>
   </property-value-rule>
@@ -666,13 +773,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.ListAgentsRequest.NextToken</property>
+    <min>0</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.ListAgentsResponse.NextToken</property>
+    <min>0</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.ListLocationsRequest.MaxResults</property>
@@ -681,13 +790,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.ListLocationsRequest.NextToken</property>
+    <min>0</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.ListLocationsResponse.NextToken</property>
+    <min>0</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.ListTagsForResourceRequest.MaxResults</property>
@@ -696,18 +807,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.ListTagsForResourceRequest.NextToken</property>
+    <min>0</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:(((agent|task|location)/(agent|task|loc)-[a-z0-9]{17}(/execution/exec-[a-f0-9]{17})?)|(system/storage-system-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(/job/discovery-job-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.ListTagsForResourceResponse.NextToken</property>
+    <min>0</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.ListTaskExecutionsRequest.MaxResults</property>
@@ -716,18 +830,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.ListTaskExecutionsRequest.NextToken</property>
+    <min>0</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.ListTaskExecutionsRequest.TaskArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:task/task-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.ListTaskExecutionsResponse.NextToken</property>
+    <min>0</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.ListTasksRequest.MaxResults</property>
@@ -736,36 +853,43 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.ListTasksRequest.NextToken</property>
+    <min>0</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.ListTasksResponse.NextToken</property>
+    <min>0</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.StartTaskExecutionRequest.TaskArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:task/task-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.StartTaskExecutionResponse.TaskExecutionArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:task/task-[0-9a-f]{17}/execution/exec-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.TagResourceRequest.ResourceArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:(((agent|task|location)/(agent|task|loc)-[a-z0-9]{17}(/execution/exec-[a-f0-9]{17})?)|(system/storage-system-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(/job/discovery-job-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UntagResourceRequest.ResourceArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:(((agent|task|location)/(agent|task|loc)-[a-z0-9]{17}(/execution/exec-[a-f0-9]{17})?)|(system/storage-system-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(/job/discovery-job-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateAgentRequest.AgentArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:agent/agent-[0-9a-z]{17}$</pattern>
   </property-value-rule>
@@ -777,86 +901,103 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationAzureBlobRequest.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationAzureBlobRequest.Subdirectory</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>^[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}\p{C}]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationEfsRequest.AccessPointArn</property>
+    <min>0</min>
     <max>128</max>
-    <pattern>(^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):elasticfilesystem:[a-z\-0-9]+:[0-9]{12}:access-point/fsap-[0-9a-f]{8,40}$)|(^$)</pattern>
+    <pattern>^(^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):elasticfilesystem:[a-z\-0-9]+:[0-9]{12}:access-point/fsap-[0-9a-f]{8,40}$)|(^$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationEfsRequest.FileSystemAccessRoleArn</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>(^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):iam::[0-9]{12}:role/.*$)|(^$)</pattern>
+    <pattern>^(^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):iam::[0-9]{12}:role/.*$)|(^$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationEfsRequest.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationEfsRequest.Subdirectory</property>
+    <min>0</min>
     <max>4096</max>
     <pattern>^[a-zA-Z0-9_\-\+\./\(\)\p{Zs}]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationFsxLustreRequest.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationFsxLustreRequest.Subdirectory</property>
+    <min>0</min>
     <max>4096</max>
     <pattern>^[a-zA-Z0-9_\-\+\./\(\)\$\p{Zs}]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationFsxOntapRequest.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationFsxOntapRequest.Subdirectory</property>
+    <min>0</min>
     <max>255</max>
     <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationFsxOpenZfsRequest.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationFsxOpenZfsRequest.Subdirectory</property>
+    <min>0</min>
     <max>4096</max>
     <pattern>^[a-zA-Z0-9_\-\+\./\(\)\$\p{Zs}]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationFsxWindowsRequest.Domain</property>
+    <min>0</min>
     <max>253</max>
     <pattern>^([A-Za-z0-9]((\.|-+)?[A-Za-z0-9]){0,252})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationFsxWindowsRequest.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationFsxWindowsRequest.Password</property>
+    <min>0</min>
     <max>104</max>
     <pattern>^.{0,104}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationFsxWindowsRequest.Subdirectory</property>
+    <min>0</min>
     <max>4096</max>
     <pattern>^[a-zA-Z0-9_\-\+\./\(\)\$\p{Zs}]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationFsxWindowsRequest.User</property>
+    <min>0</min>
     <max>104</max>
     <pattern>^[^\x22\x5B\x5D/\\:;|=,+*?\x3C\x3E]{1,104}$</pattern>
   </property-value-rule>
@@ -867,10 +1008,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationHdfsRequest.KerberosKeytab</property>
+    <min>0</min>
     <max>65536</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationHdfsRequest.KerberosKrb5Conf</property>
+    <min>0</min>
     <max>131072</max>
   </property-value-rule>
   <property-value-rule>
@@ -887,6 +1030,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationHdfsRequest.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
@@ -903,21 +1047,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationHdfsRequest.Subdirectory</property>
+    <min>0</min>
     <max>4096</max>
     <pattern>^[a-zA-Z0-9_\-\+\./\(\)\$\p{Zs}]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationNfsRequest.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationNfsRequest.ServerHostname</property>
+    <min>0</min>
     <max>255</max>
     <pattern>^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9\-:]*[A-Za-z0-9])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationNfsRequest.Subdirectory</property>
+    <min>0</min>
     <max>4096</max>
     <pattern>^[a-zA-Z0-9_\-\+\./\(\)\p{Zs}]+$</pattern>
   </property-value-rule>
@@ -929,6 +1077,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationObjectStorageRequest.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
@@ -940,10 +1089,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationObjectStorageRequest.ServerCertificate</property>
+    <min>0</min>
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationObjectStorageRequest.ServerHostname</property>
+    <min>0</min>
     <max>255</max>
     <pattern>^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9\-:]*[A-Za-z0-9])$</pattern>
   </property-value-rule>
@@ -954,30 +1105,36 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationObjectStorageRequest.Subdirectory</property>
+    <min>0</min>
     <max>4096</max>
     <pattern>^[a-zA-Z0-9_\-\+\./\(\)\p{Zs}]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationS3Request.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationS3Request.Subdirectory</property>
+    <min>0</min>
     <max>4096</max>
     <pattern>^[a-zA-Z0-9_\-\+\./\(\)\p{Zs}]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationSmbRequest.Domain</property>
+    <min>0</min>
     <max>253</max>
     <pattern>^[A-Za-z0-9]((\.|-+)?[A-Za-z0-9]){0,252}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationSmbRequest.KerberosKeytab</property>
+    <min>0</min>
     <max>65536</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationSmbRequest.KerberosKrb5Conf</property>
+    <min>0</min>
     <max>131072</max>
   </property-value-rule>
   <property-value-rule>
@@ -988,31 +1145,37 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationSmbRequest.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationSmbRequest.Password</property>
+    <min>0</min>
     <max>104</max>
     <pattern>^.{0,104}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationSmbRequest.ServerHostname</property>
+    <min>0</min>
     <max>255</max>
     <pattern>^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9\-:]*[A-Za-z0-9])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationSmbRequest.Subdirectory</property>
+    <min>0</min>
     <max>4096</max>
     <pattern>^[a-zA-Z0-9_\-\+\./\(\)\$\p{Zs}]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationSmbRequest.User</property>
+    <min>0</min>
     <max>104</max>
     <pattern>^[^\x22\x5B\x5D/\\:;|=,+*?\x3C\x3E]{1,104}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateTaskRequest.CloudWatchLogGroupArn</property>
+    <min>0</min>
     <max>562</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):logs:[a-z\-0-9]+:[0-9]{12}:log-group:([^:\*]*)(:\*)?$</pattern>
   </property-value-rule>
@@ -1024,16 +1187,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateTaskRequest.TaskArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:task/task-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateTaskExecutionRequest.TaskExecutionArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:task/task-[0-9a-f]{17}/execution/exec-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.AgentListEntry.AgentArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:agent/agent-[0-9a-z]{17}$</pattern>
   </property-value-rule>
@@ -1051,66 +1217,79 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CmkSecretConfig.KmsKeyArn</property>
+    <min>0</min>
     <max>2048</max>
     <pattern>^(arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):kms:[a-z\-0-9]+:[0-9]{12}:key/.*|)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CmkSecretConfig.SecretArn</property>
+    <min>0</min>
     <max>2048</max>
     <pattern>^(arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):secretsmanager:[a-z\-0-9]+:[0-9]{12}:secret:.*|)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CustomSecretConfig.SecretAccessRoleArn</property>
+    <min>0</min>
     <max>2048</max>
     <pattern>^(arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):iam::[0-9]{12}:role/[a-zA-Z0-9+=,.@_/-]+|)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CustomSecretConfig.SecretArn</property>
+    <min>0</min>
     <max>2048</max>
     <pattern>^(arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):secretsmanager:[a-z\-0-9]+:[0-9]{12}:secret:.*|)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.Ec2Config.SubnetArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):ec2:[a-z\-0-9]*:[0-9]{12}:subnet/subnet-[a-f0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.FilterRule.FilterType</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^[A-Z0-9_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.FilterRule.Value</property>
+    <min>0</min>
     <max>102400</max>
     <pattern>^[^\x00]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.FsxProtocolSmb.Domain</property>
+    <min>0</min>
     <max>253</max>
     <pattern>^[A-Za-z0-9]((\.|-+)?[A-Za-z0-9]){0,252}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.FsxProtocolSmb.Password</property>
+    <min>0</min>
     <max>104</max>
     <pattern>^.{0,104}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.FsxProtocolSmb.User</property>
+    <min>0</min>
     <max>104</max>
     <pattern>^[^\x22\x5B\x5D/\\:;|=,+*?\x3C\x3E]{1,104}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.FsxUpdateProtocolSmb.Domain</property>
+    <min>0</min>
     <max>253</max>
     <pattern>^([A-Za-z0-9]((\.|-+)?[A-Za-z0-9]){0,252})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.FsxUpdateProtocolSmb.Password</property>
+    <min>0</min>
     <max>104</max>
     <pattern>^.{0,104}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.FsxUpdateProtocolSmb.User</property>
+    <min>0</min>
     <max>104</max>
     <pattern>^[^\x22\x5B\x5D/\\:;|=,+*?\x3C\x3E]{1,104}$</pattern>
   </property-value-rule>
@@ -1127,16 +1306,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.LocationListEntry.LocationArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.LocationListEntry.LocationUri</property>
+    <min>0</min>
     <max>4360</max>
     <pattern>^(efs|nfs|s3|smb|hdfs|fsx[a-z0-9-]+)://[a-zA-Z0-9.:/\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.ManagedSecretConfig.SecretArn</property>
+    <min>0</min>
     <max>2048</max>
     <pattern>^(arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):secretsmanager:[a-z\-0-9]+:[0-9]{12}:secret:.*|)$</pattern>
   </property-value-rule>
@@ -1154,7 +1336,7 @@
     <property>Amazon.DataSync.Model.PrivateLinkConfig.PrivateLinkEndpoint</property>
     <min>7</min>
     <max>15</max>
-    <pattern>\A(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}\z</pattern>
+    <pattern>^\A(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}\z$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.PrivateLinkConfig.VpcEndpointId</property>
@@ -1162,31 +1344,37 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.ReportDestinationS3.BucketAccessRoleArn</property>
+    <min>0</min>
     <max>2048</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):iam::[0-9]{12}:role/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.ReportDestinationS3.S3BucketArn</property>
+    <min>0</min>
     <max>268</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):s3:[a-z\-0-9]*:[0-9]{12}:accesspoint[/:][a-zA-Z0-9\-.]{1,63}$|^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):s3-outposts:[a-z\-0-9]+:[0-9]{12}:outpost[/:][a-zA-Z0-9\-]{1,63}[/:]accesspoint[/:][a-zA-Z0-9\-]{1,63}$|^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):s3:::[a-zA-Z0-9.\-_]{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.ReportDestinationS3.Subdirectory</property>
+    <min>0</min>
     <max>4096</max>
     <pattern>^[a-zA-Z0-9_\-\+\./\(\)\p{Zs}]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.S3Config.BucketAccessRoleArn</property>
+    <min>0</min>
     <max>2048</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):iam::[0-9]{12}:role/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.S3ManifestConfig.BucketAccessRoleArn</property>
+    <min>0</min>
     <max>2048</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):iam::[0-9]{12}:role/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.S3ManifestConfig.ManifestObjectPath</property>
+    <min>0</min>
     <max>4096</max>
     <pattern>^[a-zA-Z0-9_\-\+\./\(\)\p{Zs}]*$</pattern>
   </property-value-rule>
@@ -1198,6 +1386,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.S3ManifestConfig.S3BucketArn</property>
+    <min>0</min>
     <max>268</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):s3:[a-z\-0-9]*:[0-9]{12}:accesspoint[/:][a-zA-Z0-9\-.]{1,63}$|^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):s3-outposts:[a-z\-0-9]+:[0-9]{12}:outpost[/:][a-zA-Z0-9\-]{1,63}[/:]accesspoint[/:][a-zA-Z0-9\-]{1,63}$|^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):s3:::[a-zA-Z0-9.\-_]{1,255}$</pattern>
   </property-value-rule>
@@ -1215,6 +1404,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.TaskExecutionListEntry.TaskExecutionArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:task/task-[0-9a-f]{17}/execution/exec-[0-9a-f]{17}$</pattern>
   </property-value-rule>
@@ -1242,15 +1432,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.TaskListEntry.TaskArn</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:task/task-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.TaskSchedule.ScheduleExpression</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.TaskScheduleDetails.DisabledReason</property>
+    <min>0</min>
     <max>8192</max>
     <pattern>^[\w\s.,'?!:;\/=|&lt;&gt;()-]*$</pattern>
   </property-value-rule>

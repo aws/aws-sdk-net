@@ -114,8 +114,8 @@ namespace Amazon.CodeStarNotifications
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  For information about how to use CodeStar Notifications, see the <a href="https://docs.aws.amazon.com/dtconsole/latest/userguide/what-is-dtconsole.html">Amazon
-    /// Web Services Developer Tools Console User Guide</a>. 
+    ///  For information about how to use CodeStar Notifications, see the <a href="https://docs.aws.amazon.com/dtconsole/latest/userguide/what-is-dtconsole.html">
+    /// Amazon Web Services Developer Tools Console User Guide</a>. 
     /// </para>
     /// </summary>
     public partial interface IAmazonCodeStarNotifications : IAmazonService, IDisposable

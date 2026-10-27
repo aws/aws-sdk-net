@@ -10,7 +10,7 @@
     <property>Amazon.Shield.Model.AssociateDRTRoleRequest.RoleArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Shield.Model.AssociateHealthCheckRequest.HealthCheckArn</property>
@@ -22,13 +22,13 @@
     <property>Amazon.Shield.Model.AssociateHealthCheckRequest.ProtectionId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-zA-Z0-9\\-]*</pattern>
+    <pattern>^[a-zA-Z0-9\\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Shield.Model.CreateProtectionRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[ a-zA-Z0-9_\\.\\-]*</pattern>
+    <pattern>^[ a-zA-Z0-9_\\.\\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Shield.Model.CreateProtectionRequest.ResourceArn</property>
@@ -40,43 +40,43 @@
     <property>Amazon.Shield.Model.CreateProtectionResponse.ProtectionId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-zA-Z0-9\\-]*</pattern>
+    <pattern>^[a-zA-Z0-9\\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Shield.Model.CreateProtectionGroupRequest.ProtectionGroupId</property>
     <min>1</min>
     <max>36</max>
-    <pattern>[a-zA-Z0-9\\-]*</pattern>
+    <pattern>^[a-zA-Z0-9\\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Shield.Model.DeleteProtectionRequest.ProtectionId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-zA-Z0-9\\-]*</pattern>
+    <pattern>^[a-zA-Z0-9\\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Shield.Model.DeleteProtectionGroupRequest.ProtectionGroupId</property>
     <min>1</min>
     <max>36</max>
-    <pattern>[a-zA-Z0-9\\-]*</pattern>
+    <pattern>^[a-zA-Z0-9\\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Shield.Model.DescribeAttackRequest.AttackId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9\\-]*</pattern>
+    <pattern>^[a-zA-Z0-9\\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Shield.Model.DescribeDRTAccessResponse.RoleArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Shield.Model.DescribeProtectionRequest.ProtectionId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-zA-Z0-9\\-]*</pattern>
+    <pattern>^[a-zA-Z0-9\\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Shield.Model.DescribeProtectionRequest.ResourceArn</property>
@@ -88,7 +88,7 @@
     <property>Amazon.Shield.Model.DescribeProtectionGroupRequest.ProtectionGroupId</property>
     <min>1</min>
     <max>36</max>
-    <pattern>[a-zA-Z0-9\\-]*</pattern>
+    <pattern>^[a-zA-Z0-9\\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Shield.Model.DisableApplicationLayerAutomaticResponseRequest.ResourceArn</property>
@@ -112,7 +112,7 @@
     <property>Amazon.Shield.Model.DisassociateHealthCheckRequest.ProtectionId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-zA-Z0-9\\-]*</pattern>
+    <pattern>^[a-zA-Z0-9\\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Shield.Model.EnableApplicationLayerAutomaticResponseRequest.ResourceArn</property>
@@ -186,7 +186,7 @@
     <property>Amazon.Shield.Model.ListResourcesInProtectionGroupRequest.ProtectionGroupId</property>
     <min>1</min>
     <max>36</max>
-    <pattern>[a-zA-Z0-9\\-]*</pattern>
+    <pattern>^[a-zA-Z0-9\\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Shield.Model.ListResourcesInProtectionGroupResponse.NextToken</property>
@@ -222,13 +222,13 @@
     <property>Amazon.Shield.Model.UpdateProtectionGroupRequest.ProtectionGroupId</property>
     <min>1</min>
     <max>36</max>
-    <pattern>[a-zA-Z0-9\\-]*</pattern>
+    <pattern>^[a-zA-Z0-9\\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Shield.Model.AttackDetail.AttackId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9\\-]*</pattern>
+    <pattern>^[a-zA-Z0-9\\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Shield.Model.AttackDetail.ResourceArn</property>
@@ -258,13 +258,13 @@
     <property>Amazon.Shield.Model.Protection.Id</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-zA-Z0-9\\-]*</pattern>
+    <pattern>^[a-zA-Z0-9\\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Shield.Model.Protection.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[ a-zA-Z0-9_\\.\\-]*</pattern>
+    <pattern>^[ a-zA-Z0-9_\\.\\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Shield.Model.Protection.ProtectionArn</property>
@@ -288,7 +288,7 @@
     <property>Amazon.Shield.Model.ProtectionGroup.ProtectionGroupId</property>
     <min>1</min>
     <max>36</max>
-    <pattern>[a-zA-Z0-9\\-]*</pattern>
+    <pattern>^[a-zA-Z0-9\\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Shield.Model.Subscription.SubscriptionArn</property>

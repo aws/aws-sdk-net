@@ -50,7 +50,7 @@ namespace Amazon.EMRContainers.Model
         /// <summary>
         /// Gets and sets the property LakeFormationConfiguration. 
         /// <para>
-        /// Lake Formation related configuration inputs for the security configuration.
+        ///  Lake Formation related configuration inputs for the security configuration.
         /// </para>
         /// </summary>
         public LakeFormationConfiguration LakeFormationConfiguration { get; set; }

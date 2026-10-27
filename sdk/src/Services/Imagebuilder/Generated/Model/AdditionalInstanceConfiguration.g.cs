@@ -1,0 +1,104 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Imagebuilder.Model
+{
+    /// <summary>
+    /// In addition to your infrastructure configuration, these settings provide an extra
+    /// layer of control over your build instances. You can also specify commands to run on
+    /// launch for all of your build instances.
+    /// 
+    ///  
+    /// <para>
+    /// Image Builder does not automatically install the Systems Manager agent on Windows
+    /// instances. If your base image includes the Systems Manager agent, then the AMI that
+    /// you create will also include the agent. For Linux instances, if the base image does
+    /// not already include the Systems Manager agent, Image Builder installs it. For Linux
+    /// instances where Image Builder installs the Systems Manager agent, you can choose whether
+    /// to keep it for the AMI that you create.
+    /// </para>
+    /// </summary>
+    public partial class AdditionalInstanceConfiguration
+    {
+        /// <summary>
+        /// Gets and sets the property SystemsManagerAgent. 
+        /// <para>
+        /// The Systems Manager agent settings for your build instance. This setting applies to
+        /// Linux and macOS build instances only. Requests that set it for a recipe with a Windows
+        /// base image are rejected.
+        /// </para>
+        /// </summary>
+        public SystemsManagerAgent SystemsManagerAgent { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SystemsManagerAgent property is set.
+        /// </summary>
+        internal bool IsSetSystemsManagerAgent() => this.SystemsManagerAgent != null;
+
+        /// <summary>
+        /// Gets and sets the property UserDataOverride. 
+        /// <para>
+        /// Use this property to provide commands or a command script to run when you launch your
+        /// build instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The userDataOverride property replaces any commands that Image Builder might have
+        /// added to ensure that Systems Manager is installed on your Linux build instance. If
+        /// you override the user data, make sure that you add commands to install Systems Manager,
+        /// if it is not pre-installed on your base image.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The user data is always base 64 encoded. For example, the following commands are encoded
+        /// as <c>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhcg==</c>:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>#!/bin/bash</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// mkdir -p /var/bb/
+        /// </para>
+        ///  
+        /// <para>
+        /// touch /var
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 21847)]
+        public string UserDataOverride { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UserDataOverride property is set.
+        /// </summary>
+        internal bool IsSetUserDataOverride() => this.UserDataOverride != null;
+    }
+}

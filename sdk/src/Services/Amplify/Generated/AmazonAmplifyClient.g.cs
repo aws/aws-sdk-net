@@ -1853,7 +1853,7 @@ namespace Amazon.Amplify
         ///  
         /// <para>
         /// For more information about Amplify testing support, see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/running-tests.html">Setting
-        /// up end-to-end Cypress tests for your Amplify application</a> in the <i>Amplify Hosting
+        /// up end-to-end Cypress tests for your Amplify application</a> in the <i> Amplify Hosting
         /// User Guide</i>. 
         /// </para>
         /// </summary>
@@ -1902,7 +1902,7 @@ namespace Amazon.Amplify
         ///  
         /// <para>
         /// For more information about Amplify testing support, see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/running-tests.html">Setting
-        /// up end-to-end Cypress tests for your Amplify application</a> in the <i>Amplify Hosting
+        /// up end-to-end Cypress tests for your Amplify application</a> in the <i> Amplify Hosting
         /// User Guide</i>. 
         /// </para>
         /// </summary>

@@ -75,11 +75,11 @@ namespace Amazon.Runtime
             _loginTokenManager = new LoginTokenManager(CreateSigninClient, _loginFileCache);
         }
 
-        private ICoreAmazonSignin CreateSigninClient()
+        private ICoreAmazonSignin CreateSigninClient(string regionName)
         {
-            var region = string.IsNullOrEmpty(Options.Region)
+            var region = string.IsNullOrEmpty(regionName)
                 ? FallbackRegionFactory.GetRegionEndpoint()
-                : RegionEndpoint.GetBySystemName(Options.Region);
+                : RegionEndpoint.GetBySystemName(regionName);
             if (region == null)
                 throw new AmazonClientException("No AWS region could be resolved to refresh login credentials. Configure a region for the profile or set the AWS_REGION environment variable.");
 

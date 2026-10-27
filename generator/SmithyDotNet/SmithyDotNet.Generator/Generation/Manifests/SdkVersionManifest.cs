@@ -104,6 +104,13 @@ public sealed class SdkVersionManifest
     /// <summary>The nuspec range for the <c>Extensions.{extensionName}</c> entry under <c>ExtensionVersions</c>.</summary>
     public string GetExtensionRange(string extensionName)
     {
+        var (version, entry) = GetExtension(extensionName);
+        return Range(version, entry.InPreview);
+    }
+
+    /// <summary>The <c>Extensions.{extensionName}</c> entry under <c>ExtensionVersions</c> and its <c>Version</c>.</summary>
+    public (string Version, ServiceVersion Entry) GetExtension(string extensionName)
+    {
         var key = $"Extensions.{extensionName}";
         if (!ExtensionVersions.TryGetValue(key, out var entry))
         {
@@ -115,19 +122,29 @@ public sealed class SdkVersionManifest
             throw new GeneratorException($"Extension '{key}' in '{SourcePath}' has no 'Version' field.");
         }
 
-        return Range(version, entry.InPreview);
+        return (version, entry);
     }
 
+    /// <summary>The assembly version of the <c>Extensions.{extensionName}</c> entry, as <see cref="GetServiceAssemblyVersion"/> resolves a service's.</summary>
+    public string GetExtensionAssemblyVersion(string extensionName) => AssemblyVersion(GetExtension(extensionName).Entry, $"Extension 'Extensions.{extensionName}'");
+
+    /// <summary>The AWSSDK.Core file version.</summary>
+    public string GetCoreVersion() => CoreVersion ?? throw new GeneratorException($"'{SourcePath}' has no 'CoreVersion' field.");
+
+    /// <summary>The AWSSDK.Core assembly version: <c>major.minor</c> of <see cref="OverrideCoreVersion"/>, or of the file version without one.</summary>
+    public string GetCoreAssemblyVersion() => MajorMinor(OverrideCoreVersion ?? GetCoreVersion());
+
+    /// <summary>The AWSSDK.Core package version: the file version plus the preview label under <see cref="DefaultToPreview"/>.</summary>
+    public string GetCorePackageVersion() => GetCoreVersion() + Label(inPreview: false);
+
     /// <summary>The nuspec range for AWSSDK.Core.</summary>
-    public string GetCoreRange() => Range(CoreVersion ?? throw new GeneratorException($"'{SourcePath}' has no 'CoreVersion' field."), inPreview: false);
+    public string GetCoreRange() => Range(GetCoreVersion(), inPreview: false);
 
     // A dependency in preview is pinned to preview builds: the label goes on both bounds, as in C2J.
     private string Range(string version, bool inPreview)
     {
         var label = Label(inPreview);
-        return Version.TryParse(version, out var parsed)
-            ? $"[{version}{label}, {parsed.Major + 1}.0{label})"
-            : throw new GeneratorException($"'{SourcePath}' has an unparseable version '{version}'.");
+        return $"[{version}{label}, {ParseVersion(version).Major + 1}.0{label})";
     }
 
     // As in C2J, DefaultToPreview puts every package in preview, and the file stores the label without its '-'.
@@ -147,6 +164,11 @@ public sealed class SdkVersionManifest
             return DefaultAssemblyVersion ?? throw new GeneratorException($"'{SourcePath}' has no version entry for service '{serviceName}' and no 'DefaultAssemblyVersion'.");
         }
 
+        return AssemblyVersion(entry, $"Service '{serviceName}'");
+    }
+
+    private string AssemblyVersion(ServiceVersion entry, string owner)
+    {
         if (!string.IsNullOrEmpty(entry.AssemblyVersionOverride))
         {
             return entry.AssemblyVersionOverride;
@@ -154,16 +176,21 @@ public sealed class SdkVersionManifest
 
         if (string.IsNullOrEmpty(entry.Version))
         {
-            throw new GeneratorException($"Service '{serviceName}' in '{SourcePath}' has no AssemblyVersionOverride and no Version to derive major.minor from.");
+            throw new GeneratorException($"{owner} in '{SourcePath}' has no AssemblyVersionOverride and no Version to derive major.minor from.");
         }
 
-        if (!Version.TryParse(entry.Version, out var parsed))
-        {
-            throw new GeneratorException($"Service '{serviceName}' in '{SourcePath}' has an unparseable Version '{entry.Version}'.");
-        }
+        return MajorMinor(entry.Version);
+    }
 
+    // C2J's Utils.GetVersion.
+    private string MajorMinor(string version)
+    {
+        var parsed = ParseVersion(version);
         return new Version(parsed.Major, parsed.Minor).ToString();
     }
+
+    private Version ParseVersion(string version) =>
+        Version.TryParse(version, out var parsed) ? parsed : throw new GeneratorException($"'{SourcePath}' has an unparseable version '{version}'.");
 }
 
 /// <summary>A single service or extension entry under <c>ServiceVersions</c>/<c>ExtensionVersions</c>.</summary>

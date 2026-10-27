@@ -92,7 +92,20 @@ namespace Amazon.KeyManagementService
     /// (DHE) or Elliptic Curve Ephemeral Diffie-Hellman (ECDHE). Most modern systems such
     /// as Java 7 and later support these modes.
     /// </para>
-    ///  
+    ///  <note> 
+    /// <para>
+    /// With current technology, brute force attacks on KMS TLS cipher suite key exchange
+    /// mechanisms are not feasible. However, cipher suites that use Rivest–Shamir–Adleman
+    /// (RSA) or Diffie-Hellman (DH) key exchange will be susceptible if large-scale quantum
+    /// computing becomes practical. <a href="https://nvlpubs.nist.gov/nistpubs/ir/2024/NIST.IR.8547.ipd.pdf">NIST
+    /// IR 8547</a> on the NIST website establishes a timeline to phase out quantum-vulnerable
+    /// algorithms by 2030 and disallow them entirely by 2035. If your applications rely on
+    /// the long-term confidentiality of KMS API traffic, we recommend that you <a href="https://docs.aws.amazon.com/kms/latest/developerguide/pqtls.html">use
+    /// post-quantum TLS with KMS</a>. For more information about post-quantum cybersecurity,
+    /// see <a href="https://www.nsa.gov/Cybersecurity/Post-Quantum-Cybersecurity-Resources/">Post-Quantum
+    /// Cybersecurity Resources</a> on the National Security Agency (NSA) website.
+    /// </para>
+    ///  </note> 
     /// <para>
     ///  <b>Signing Requests</b> 
     /// </para>
@@ -2085,6 +2098,207 @@ namespace Amazon.KeyManagementService
         }
         #endregion
         
+        #region  Decapsulate
+
+        internal virtual DecapsulateResponse Decapsulate(DecapsulateRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DecapsulateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DecapsulateResponseUnmarshaller.Instance;
+
+            return Invoke<DecapsulateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Recovers the shared secret that was encapsulated with the public key of an ML-KEM
+        /// KMS key. Module-Lattice-Based Key-Encapsulation Mechanism (ML-KEM), specified in <a
+        /// href="https://csrc.nist.gov/pubs/fips/203/final">FIPS 203</a> on the NIST website,
+        /// is a post-quantum algorithm for establishing a shared secret between two parties.
+        /// For an example of how two parties establish a shared secret over an insecure channel
+        /// using ML-KEM, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/pqkeys.html#mlkem">ML-KEM
+        /// keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// The Decapsulate operation is not available in China Regions.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>Decapsulate</c> returns the shared secret as a 32-byte value. You can use it directly
+        /// as key material, or run it through a key derivation function to derive multiple keys
+        /// and nonces.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        ///  <c>Decapsulate</c> returns an <c>InvalidCiphertextException</c> when the length of
+        /// the <c>SharedSecretCiphertextBlob</c> is inconsistent with the ML-KEM key spec. In
+        /// all other cases, <c>Decapsulate</c> returns a 32-byte pseudo-random value. This is
+        /// true even when the <c>SharedSecretCiphertextBlob</c> was created using a different
+        /// ML-KEM key or altered from its original value. This behavior is a security feature
+        /// called <i>implicit rejection</i> that helps protect against chosen-ciphertext attacks.
+        /// </para>
+        ///  
+        /// <para>
+        /// Because a response does not indicate that the ciphertext and key are valid, confirm
+        /// the two parties derived the same shared secret before using it.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// The KMS key that you use for this operation must be in a compatible key state. For
+        /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Cross-account use</b>: Yes. To perform this operation with a KMS key in a different
+        /// Amazon Web Services account, specify the key ARN or alias ARN in the value of the
+        /// <c>KeyId</c> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:Decapsulate</a>
+        /// (key policy)
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>Encapsulate</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>CreateKey</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>GetPublicKey</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeKey</a> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS
+        /// eventual consistency</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the Decapsulate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the Decapsulate service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request. You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
+        /// The request was rejected because the specified KMS key is not enabled.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.DryRunOperationException">
+        /// The request was rejected because the DryRun parameter was specified.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidCiphertextException">
+        /// From the <a>Decrypt</a> or <a>ReEncrypt</a> operation, the request was rejected because
+        /// the specified ciphertext, or additional authenticated data incorporated into the ciphertext,
+        /// such as the encryption context, is corrupted, missing, or otherwise invalid.
+        /// 
+        ///  
+        /// <para>
+        /// From the <a>ImportKeyMaterial</a> operation, the request was rejected because KMS
+        /// could not decrypt the encrypted (wrapped) key material. 
+        /// </para>
+        ///  
+        /// <para>
+        /// From the <a>Decapsulate</a> operation, the request was rejected because the length
+        /// of the <c>SharedSecretCiphertextBlob</c> is inconsistent with the specified ML-KEM
+        /// key spec.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
+        /// The request was rejected because the specified grant token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidKeyUsageException">
+        /// The request was rejected for one of the following reasons: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>KeyUsage</c> value of the KMS key is incompatible with the API operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The encryption algorithm or signing algorithm specified for the operation is incompatible
+        /// with the type of key material in the KMS key <c>(KeySpec</c>).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For encrypting, decrypting, re-encrypting, and generating data keys, the <c>KeyUsage</c>
+        /// must be <c>ENCRYPT_DECRYPT</c>. For signing and verifying messages, the <c>KeyUsage</c>
+        /// must be <c>SIGN_VERIFY</c>. For generating and verifying message authentication codes
+        /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. For deriving key agreement
+        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. For encapsulating and decapsulating
+        /// shared secrets, the <c>KeyUsage</c> must be <c>ENCAPSULATE_DECAPSULATE</c>. To find
+        /// the <c>KeyUsage</c> of a KMS key, use the <a>DescribeKey</a> operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the encryption or signing algorithms supported for a particular KMS key, use
+        /// the <a>DescribeKey</a> operation.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KeyUnavailableException">
+        /// The request was rejected because the specified KMS key was not available. You can
+        /// retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. The request can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// This exceptions means one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Decapsulate">REST API Reference for Decapsulate Operation</seealso>
+        public virtual Task<DecapsulateResponse> DecapsulateAsync(DecapsulateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DecapsulateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DecapsulateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DecapsulateResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  Decrypt
 
         internal virtual DecryptResponse Decrypt(DecryptRequest request)
@@ -2252,6 +2466,12 @@ namespace Amazon.KeyManagementService
         /// From the <a>ImportKeyMaterial</a> operation, the request was rejected because KMS
         /// could not decrypt the encrypted (wrapped) key material. 
         /// </para>
+        ///  
+        /// <para>
+        /// From the <a>Decapsulate</a> operation, the request was rejected because the length
+        /// of the <c>SharedSecretCiphertextBlob</c> is inconsistent with the specified ML-KEM
+        /// key spec.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
         /// The request was rejected because the specified grant token is not valid.
@@ -2274,8 +2494,9 @@ namespace Amazon.KeyManagementService
         /// must be <c>ENCRYPT_DECRYPT</c>. For signing and verifying messages, the <c>KeyUsage</c>
         /// must be <c>SIGN_VERIFY</c>. For generating and verifying message authentication codes
         /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. For deriving key agreement
-        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. To find the <c>KeyUsage</c>
-        /// of a KMS key, use the <a>DescribeKey</a> operation.
+        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. For encapsulating and decapsulating
+        /// shared secrets, the <c>KeyUsage</c> must be <c>ENCAPSULATE_DECAPSULATE</c>. To find
+        /// the <c>KeyUsage</c> of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
         /// <para>
@@ -3073,8 +3294,9 @@ namespace Amazon.KeyManagementService
         /// must be <c>ENCRYPT_DECRYPT</c>. For signing and verifying messages, the <c>KeyUsage</c>
         /// must be <c>SIGN_VERIFY</c>. For generating and verifying message authentication codes
         /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. For deriving key agreement
-        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. To find the <c>KeyUsage</c>
-        /// of a KMS key, use the <a>DescribeKey</a> operation.
+        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. For encapsulating and decapsulating
+        /// shared secrets, the <c>KeyUsage</c> must be <c>ENCAPSULATE_DECAPSULATE</c>. To find
+        /// the <c>KeyUsage</c> of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
         /// <para>
@@ -4714,6 +4936,178 @@ namespace Amazon.KeyManagementService
         }
         #endregion
         
+        #region  Encapsulate
+
+        internal virtual EncapsulateResponse Encapsulate(EncapsulateRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = EncapsulateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EncapsulateResponseUnmarshaller.Instance;
+
+            return Invoke<EncapsulateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Generates a shared secret and its encapsulated (ciphertext) form using the public
+        /// key of an ML-KEM KMS key pair. Module-Lattice-Based Key-Encapsulation Mechanism (ML-KEM),
+        /// specified in <a href="https://csrc.nist.gov/pubs/fips/203/final">FIPS 203</a> on the
+        /// NIST website, is a post-quantum algorithm for establishing a shared secret between
+        /// two parties.
+        /// 
+        ///  
+        /// <para>
+        /// For an example of how two parties establish a shared secret over an insecure channel
+        /// using ML-KEM, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/pqkeys.html#mlkem">ML-KEM
+        /// keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The Encapsulate operation is not available in China Regions.
+        /// </para>
+        ///  
+        /// <para>
+        /// The KMS key that you use for this operation must be in a compatible key state. For
+        /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Cross-account use</b>: Yes. To perform this operation with a KMS key in a different
+        /// Amazon Web Services account, specify the key ARN or alias ARN in the value of the
+        /// <c>KeyId</c> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:Encapsulate</a>
+        /// (key policy)
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>Decapsulate</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeriveSharedSecret</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>CreateKey</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>GetPublicKey</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeKey</a> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS
+        /// eventual consistency</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the Encapsulate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the Encapsulate service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request. You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
+        /// The request was rejected because the specified KMS key is not enabled.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.DryRunOperationException">
+        /// The request was rejected because the DryRun parameter was specified.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
+        /// The request was rejected because the specified grant token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidKeyUsageException">
+        /// The request was rejected for one of the following reasons: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>KeyUsage</c> value of the KMS key is incompatible with the API operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The encryption algorithm or signing algorithm specified for the operation is incompatible
+        /// with the type of key material in the KMS key <c>(KeySpec</c>).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For encrypting, decrypting, re-encrypting, and generating data keys, the <c>KeyUsage</c>
+        /// must be <c>ENCRYPT_DECRYPT</c>. For signing and verifying messages, the <c>KeyUsage</c>
+        /// must be <c>SIGN_VERIFY</c>. For generating and verifying message authentication codes
+        /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. For deriving key agreement
+        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. For encapsulating and decapsulating
+        /// shared secrets, the <c>KeyUsage</c> must be <c>ENCAPSULATE_DECAPSULATE</c>. To find
+        /// the <c>KeyUsage</c> of a KMS key, use the <a>DescribeKey</a> operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the encryption or signing algorithms supported for a particular KMS key, use
+        /// the <a>DescribeKey</a> operation.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KeyUnavailableException">
+        /// The request was rejected because the specified KMS key was not available. You can
+        /// retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. The request can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// This exceptions means one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Encapsulate">REST API Reference for Encapsulate Operation</seealso>
+        public virtual Task<EncapsulateResponse> EncapsulateAsync(EncapsulateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = EncapsulateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EncapsulateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<EncapsulateResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  Encrypt
 
         internal virtual EncryptResponse Encrypt(EncryptRequest request)
@@ -4897,8 +5291,9 @@ namespace Amazon.KeyManagementService
         /// must be <c>ENCRYPT_DECRYPT</c>. For signing and verifying messages, the <c>KeyUsage</c>
         /// must be <c>SIGN_VERIFY</c>. For generating and verifying message authentication codes
         /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. For deriving key agreement
-        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. To find the <c>KeyUsage</c>
-        /// of a KMS key, use the <a>DescribeKey</a> operation.
+        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. For encapsulating and decapsulating
+        /// shared secrets, the <c>KeyUsage</c> must be <c>ENCAPSULATE_DECAPSULATE</c>. To find
+        /// the <c>KeyUsage</c> of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
         /// <para>
@@ -5152,8 +5547,9 @@ namespace Amazon.KeyManagementService
         /// must be <c>ENCRYPT_DECRYPT</c>. For signing and verifying messages, the <c>KeyUsage</c>
         /// must be <c>SIGN_VERIFY</c>. For generating and verifying message authentication codes
         /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. For deriving key agreement
-        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. To find the <c>KeyUsage</c>
-        /// of a KMS key, use the <a>DescribeKey</a> operation.
+        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. For encapsulating and decapsulating
+        /// shared secrets, the <c>KeyUsage</c> must be <c>ENCAPSULATE_DECAPSULATE</c>. To find
+        /// the <c>KeyUsage</c> of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
         /// <para>
@@ -5271,7 +5667,13 @@ namespace Amazon.KeyManagementService
         /// key is a DER-encoded PKCS8 PrivateKeyInfo, as specified in <a href="https://tools.ietf.org/html/rfc5958">RFC
         /// 5958</a>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// For ML-KEM data key pairs, the DER-encoded PKCS8 PrivateKeyInfo contains the private
+        /// key in seed format. As a result, the length of the private key is the same for all
+        /// ML-KEM key pair specs.
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  <c>GenerateDataKeyPair</c> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
         /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
@@ -5380,8 +5782,9 @@ namespace Amazon.KeyManagementService
         /// must be <c>ENCRYPT_DECRYPT</c>. For signing and verifying messages, the <c>KeyUsage</c>
         /// must be <c>SIGN_VERIFY</c>. For generating and verifying message authentication codes
         /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. For deriving key agreement
-        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. To find the <c>KeyUsage</c>
-        /// of a KMS key, use the <a>DescribeKey</a> operation.
+        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. For encapsulating and decapsulating
+        /// shared secrets, the <c>KeyUsage</c> must be <c>ENCAPSULATE_DECAPSULATE</c>. To find
+        /// the <c>KeyUsage</c> of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
         /// <para>
@@ -5491,7 +5894,13 @@ namespace Amazon.KeyManagementService
         /// to encrypt the private key. The public key is a DER-encoded X.509 SubjectPublicKeyInfo,
         /// as specified in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// For ML-KEM data key pairs, the DER-encoded PKCS8 PrivateKeyInfo contains the private
+        /// key in seed format. As a result, the length of the private key is the same for all
+        /// ML-KEM key pair specs.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// You can use an optional encryption context to add additional security to the encryption
         /// operation. If you specify an <c>EncryptionContext</c>, you must specify the same encryption
@@ -5584,8 +5993,9 @@ namespace Amazon.KeyManagementService
         /// must be <c>ENCRYPT_DECRYPT</c>. For signing and verifying messages, the <c>KeyUsage</c>
         /// must be <c>SIGN_VERIFY</c>. For generating and verifying message authentication codes
         /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. For deriving key agreement
-        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. To find the <c>KeyUsage</c>
-        /// of a KMS key, use the <a>DescribeKey</a> operation.
+        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. For encapsulating and decapsulating
+        /// shared secrets, the <c>KeyUsage</c> must be <c>ENCAPSULATE_DECAPSULATE</c>. To find
+        /// the <c>KeyUsage</c> of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
         /// <para>
@@ -5807,8 +6217,9 @@ namespace Amazon.KeyManagementService
         /// must be <c>ENCRYPT_DECRYPT</c>. For signing and verifying messages, the <c>KeyUsage</c>
         /// must be <c>SIGN_VERIFY</c>. For generating and verifying message authentication codes
         /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. For deriving key agreement
-        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. To find the <c>KeyUsage</c>
-        /// of a KMS key, use the <a>DescribeKey</a> operation.
+        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. For encapsulating and decapsulating
+        /// shared secrets, the <c>KeyUsage</c> must be <c>ENCAPSULATE_DECAPSULATE</c>. To find
+        /// the <c>KeyUsage</c> of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
         /// <para>
@@ -5962,8 +6373,9 @@ namespace Amazon.KeyManagementService
         /// must be <c>ENCRYPT_DECRYPT</c>. For signing and verifying messages, the <c>KeyUsage</c>
         /// must be <c>SIGN_VERIFY</c>. For generating and verifying message authentication codes
         /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. For deriving key agreement
-        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. To find the <c>KeyUsage</c>
-        /// of a KMS key, use the <a>DescribeKey</a> operation.
+        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. For encapsulating and decapsulating
+        /// shared secrets, the <c>KeyUsage</c> must be <c>ENCAPSULATE_DECAPSULATE</c>. To find
+        /// the <c>KeyUsage</c> of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
         /// <para>
@@ -6343,7 +6755,8 @@ namespace Amazon.KeyManagementService
         /// deletion. Instead, first <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">disable
         /// the key</a> and monitor CloudTrail for <c>DisabledException</c> entries, as there
         /// could be infrequent workflows that are dependent on the key. By looking for this exception,
-        /// you can identify potential dependencies and workload failures before they occur.
+        /// you can identify potential dependencies and workload failures before they occur. CloudTrail
+        /// remains the authoritative source for all API calls made to your key.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7228,8 +7641,9 @@ namespace Amazon.KeyManagementService
         /// must be <c>ENCRYPT_DECRYPT</c>. For signing and verifying messages, the <c>KeyUsage</c>
         /// must be <c>SIGN_VERIFY</c>. For generating and verifying message authentication codes
         /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. For deriving key agreement
-        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. To find the <c>KeyUsage</c>
-        /// of a KMS key, use the <a>DescribeKey</a> operation.
+        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. For encapsulating and decapsulating
+        /// shared secrets, the <c>KeyUsage</c> must be <c>ENCAPSULATE_DECAPSULATE</c>. To find
+        /// the <c>KeyUsage</c> of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
         /// <para>
@@ -7520,6 +7934,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// From the <a>ImportKeyMaterial</a> operation, the request was rejected because KMS
         /// could not decrypt the encrypted (wrapped) key material. 
+        /// </para>
+        ///  
+        /// <para>
+        /// From the <a>Decapsulate</a> operation, the request was rejected because the length
+        /// of the <c>SharedSecretCiphertextBlob</c> is inconsistent with the specified ML-KEM
+        /// key spec.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidImportTokenException">
@@ -8981,6 +9401,12 @@ namespace Amazon.KeyManagementService
         /// From the <a>ImportKeyMaterial</a> operation, the request was rejected because KMS
         /// could not decrypt the encrypted (wrapped) key material. 
         /// </para>
+        ///  
+        /// <para>
+        /// From the <a>Decapsulate</a> operation, the request was rejected because the length
+        /// of the <c>SharedSecretCiphertextBlob</c> is inconsistent with the specified ML-KEM
+        /// key spec.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
         /// The request was rejected because the specified grant token is not valid.
@@ -9003,8 +9429,9 @@ namespace Amazon.KeyManagementService
         /// must be <c>ENCRYPT_DECRYPT</c>. For signing and verifying messages, the <c>KeyUsage</c>
         /// must be <c>SIGN_VERIFY</c>. For generating and verifying message authentication codes
         /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. For deriving key agreement
-        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. To find the <c>KeyUsage</c>
-        /// of a KMS key, use the <a>DescribeKey</a> operation.
+        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. For encapsulating and decapsulating
+        /// shared secrets, the <c>KeyUsage</c> must be <c>ENCAPSULATE_DECAPSULATE</c>. To find
+        /// the <c>KeyUsage</c> of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
         /// <para>
@@ -10525,8 +10952,9 @@ namespace Amazon.KeyManagementService
         /// must be <c>ENCRYPT_DECRYPT</c>. For signing and verifying messages, the <c>KeyUsage</c>
         /// must be <c>SIGN_VERIFY</c>. For generating and verifying message authentication codes
         /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. For deriving key agreement
-        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. To find the <c>KeyUsage</c>
-        /// of a KMS key, use the <a>DescribeKey</a> operation.
+        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. For encapsulating and decapsulating
+        /// shared secrets, the <c>KeyUsage</c> must be <c>ENCAPSULATE_DECAPSULATE</c>. To find
+        /// the <c>KeyUsage</c> of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
         /// <para>
@@ -12030,8 +12458,9 @@ namespace Amazon.KeyManagementService
         /// must be <c>ENCRYPT_DECRYPT</c>. For signing and verifying messages, the <c>KeyUsage</c>
         /// must be <c>SIGN_VERIFY</c>. For generating and verifying message authentication codes
         /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. For deriving key agreement
-        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. To find the <c>KeyUsage</c>
-        /// of a KMS key, use the <a>DescribeKey</a> operation.
+        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. For encapsulating and decapsulating
+        /// shared secrets, the <c>KeyUsage</c> must be <c>ENCAPSULATE_DECAPSULATE</c>. To find
+        /// the <c>KeyUsage</c> of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
         /// <para>
@@ -12185,8 +12614,9 @@ namespace Amazon.KeyManagementService
         /// must be <c>ENCRYPT_DECRYPT</c>. For signing and verifying messages, the <c>KeyUsage</c>
         /// must be <c>SIGN_VERIFY</c>. For generating and verifying message authentication codes
         /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. For deriving key agreement
-        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. To find the <c>KeyUsage</c>
-        /// of a KMS key, use the <a>DescribeKey</a> operation.
+        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. For encapsulating and decapsulating
+        /// shared secrets, the <c>KeyUsage</c> must be <c>ENCAPSULATE_DECAPSULATE</c>. To find
+        /// the <c>KeyUsage</c> of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
         /// <para>

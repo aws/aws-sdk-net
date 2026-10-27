@@ -35,8 +35,11 @@ namespace Amazon.DataZone.Model
     public partial class NotificationConfig
     {
         /// <summary>
-        /// Gets and sets the property NotifyOn. Notebook run states that trigger notifications.
-        /// Ordering is not significant.
+        /// Gets and sets the property NotifyOn. 
+        /// <para>
+        /// The notebook run states that trigger notifications. You can specify up to 7 states,
+        /// and the ordering of the states is not significant.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

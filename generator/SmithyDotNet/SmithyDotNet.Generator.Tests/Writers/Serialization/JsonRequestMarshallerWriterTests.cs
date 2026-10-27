@@ -130,4 +130,17 @@ public class JsonRequestMarshallerWriterTests
         // The override wins over the default body Content-Type.
         Assert.DoesNotContain("""request.Headers["Content-Type"] = "application/json";""", marshaller);
     }
+
+    [Fact]
+    public void SkipUriPropertyValidation_SendsUnsetLabelEmpty()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.SkipUriPropertyValidation.Add("Id");
+        var context = TestModels.Context(TestModels.Load("Codegen/codegen-model.json"), customizations);
+        var marshaller = new JsonRequestMarshallerWriter(context, "smithy.json").Write(context.Operations.Single(o => o.Name == "DoScalars"), TestContext.Current.CancellationToken);
+
+        Assert.Contains("""request.AddPathResource("{id}", publicRequest.IsSetId() ? StringUtils.FromString(publicRequest.Id) : string.Empty);""", marshaller);
+        Assert.DoesNotContain("required field Id set", marshaller);
+        Assert.Contains("required field Seq set", marshaller);
+    }
 }

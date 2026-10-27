@@ -48,6 +48,14 @@ public record ServiceMetadata
     [JsonPropertyName("namespace")]
     public string? Namespace { get; init; }
 
+    /// <summary>
+    /// The <c>RegionEndpoint</c> field name the config falls back to when the environment supplies no
+    /// region (e.g. "USEast1"). Only iam sets it: as a partition-global service it still needs a region
+    /// to sign and resolve an endpoint, so a client built with no region configured must not fail.
+    /// </summary>
+    [JsonPropertyName("default-region")]
+    public string? DefaultRegion { get; init; }
+
     /// <summary>Free-form tags declared for the service.</summary>
     [JsonPropertyName("tags")]
     public IReadOnlyList<string> Tags { get; init; } = [];
@@ -81,6 +89,14 @@ public record ServiceMetadata
     /// </summary>
     [JsonPropertyName("netstandard-support")]
     public bool NetStandardSupport { get; init; } = true;
+
+    /// <summary>
+    /// Assemblies granted <c>[InternalsVisibleTo]</c>, by name. Each gets the SDK's public key unless it spells
+    /// out its own <c>PublicKey=</c> (S3's <c>DynamicProxyGenAssembly2</c> is signed with Castle's key, not ours).
+    /// </summary>
+    [JsonPropertyName("internals-visible-to")]
+    public IReadOnlyList<string> InternalsVisibleTo { get; init; } = [];
+
     /// <summary>
     /// Loads and deserializes the <c>metadata.json</c> at <paramref name="metadataPath"/>.
     /// </summary>

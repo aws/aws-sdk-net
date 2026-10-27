@@ -81,7 +81,7 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// Contains usage information about the last time the KMS key was used for a successful
         /// cryptographic operation. If the key has not been used since tracking began, this response
-        /// element is empty.
+        /// element is an empty object.
         /// </para>
         /// </summary>
         public KeyLastUsageData KeyLastUsage

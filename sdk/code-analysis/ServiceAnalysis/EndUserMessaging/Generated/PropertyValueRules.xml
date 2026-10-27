@@ -4,175 +4,175 @@
     <property>Amazon.EndUserMessaging.Model.CreateBrandProfileRequest.BrandProfileName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*</pattern>
+    <pattern>^[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.CreateBrandProfileRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\x21-\x7E]+</pattern>
+    <pattern>^[\x21-\x7E]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.CreateBrandProfileResponse.BrandProfileArn</property>
     <min>20</min>
     <max>256</max>
-    <pattern>arn:[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^arn:[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.CreateBrandProfileResponse.BrandProfileId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.CreateBrandProfileResponse.BrandProfileName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*</pattern>
+    <pattern>^[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.CreateBrandProfileAttributesRequest.BrandProfileId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.CreateBrandProfileAttributesRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\x21-\x7E]+</pattern>
+    <pattern>^[\x21-\x7E]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.CreateBrandProfileFromRegistrationRequest.BrandProfileName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*</pattern>
+    <pattern>^[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.CreateBrandProfileFromRegistrationRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\x21-\x7E]+</pattern>
+    <pattern>^[\x21-\x7E]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.CreateBrandProfileFromRegistrationRequest.RegistrationId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.CreateNotifyCodeConfigurationRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\x21-\x7E]+</pattern>
+    <pattern>^[\x21-\x7E]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.CreateNotifyCodeConfigurationRequest.NotifyCodeConfigurationName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*</pattern>
+    <pattern>^[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.CreateRegistrationsFromBrandProfileRequest.BrandProfileId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.CreateRegistrationsFromBrandProfileRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\x21-\x7E]+</pattern>
+    <pattern>^[\x21-\x7E]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.DeleteBrandProfileRequest.BrandProfileId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.DeleteBrandProfileResponse.BrandProfileArn</property>
     <min>20</min>
     <max>256</max>
-    <pattern>arn:[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^arn:[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.DeleteBrandProfileResponse.BrandProfileId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.DeleteBrandProfileAttributeRequest.AttributeName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*</pattern>
+    <pattern>^[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.DeleteBrandProfileAttributeRequest.BrandProfileId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.DeleteBrandProfileAttributeResponse.AttributeName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*</pattern>
+    <pattern>^[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.DeleteBrandProfileAttributeResponse.BrandProfileId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.DeleteNotifyCodeConfigurationRequest.NotifyCodeConfigurationId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.GetBrandProfileRequest.BrandProfileId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.GetBrandProfileResponse.BrandProfileArn</property>
     <min>20</min>
     <max>256</max>
-    <pattern>arn:[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^arn:[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.GetBrandProfileResponse.BrandProfileId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.GetBrandProfileResponse.BrandProfileName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*</pattern>
+    <pattern>^[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.GetBrandProfileAttributeRequest.AttributeName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*</pattern>
+    <pattern>^[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.GetBrandProfileAttributeRequest.BrandProfileId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.GetBrandProfileAttributeResponse.AttributeName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*</pattern>
+    <pattern>^[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.GetBrandProfileAttributeResponse.AttributeValue</property>
@@ -198,13 +198,13 @@
     <property>Amazon.EndUserMessaging.Model.GetJobRequest.JobId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9_-]+</pattern>
+    <pattern>^[A-Za-z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.GetJobResponse.BrandProfileId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.GetJobResponse.ErrorCode</property>
@@ -220,7 +220,7 @@
     <property>Amazon.EndUserMessaging.Model.GetJobResponse.JobId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9_-]+</pattern>
+    <pattern>^[A-Za-z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.GetJobResponse.OperationType</property>
@@ -231,13 +231,13 @@
     <property>Amazon.EndUserMessaging.Model.GetNotifyCodeConfigurationRequest.NotifyCodeConfigurationId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.ListBrandProfileAttributesRequest.BrandProfileId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.ListBrandProfileAttributesRequest.MaxResults</property>
@@ -248,13 +248,13 @@
     <property>Amazon.EndUserMessaging.Model.ListBrandProfileAttributesRequest.NextToken</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>.+</pattern>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.ListBrandProfileAttributesResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>.+</pattern>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.ListBrandProfilesRequest.MaxResults</property>
@@ -265,19 +265,19 @@
     <property>Amazon.EndUserMessaging.Model.ListBrandProfilesRequest.NextToken</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>.+</pattern>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.ListBrandProfilesResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>.+</pattern>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.ListJobsRequest.BrandProfileId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.ListJobsRequest.MaxResults</property>
@@ -288,7 +288,7 @@
     <property>Amazon.EndUserMessaging.Model.ListJobsRequest.NextToken</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>.+</pattern>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.ListJobsRequest.OperationType</property>
@@ -299,7 +299,7 @@
     <property>Amazon.EndUserMessaging.Model.ListJobsResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>.+</pattern>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.ListNotifyCodeConfigurationsRequest.MaxResults</property>
@@ -310,19 +310,19 @@
     <property>Amazon.EndUserMessaging.Model.ListNotifyCodeConfigurationsRequest.NextToken</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>.+</pattern>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.ListNotifyCodeConfigurationsResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>.+</pattern>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.ListRegistrationsFromBrandProfileRequest.BrandProfileId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.ListRegistrationsFromBrandProfileRequest.MaxResults</property>
@@ -333,109 +333,109 @@
     <property>Amazon.EndUserMessaging.Model.ListRegistrationsFromBrandProfileRequest.NextToken</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>.+</pattern>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.ListRegistrationsFromBrandProfileResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>.+</pattern>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>256</max>
-    <pattern>arn:[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^arn:[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.SendNotifyCodeVerificationRequest.ConfigurationSetName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_-]+</pattern>
+    <pattern>^[A-Za-z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.SendNotifyCodeVerificationRequest.DestinationIdentity</property>
     <min>1</min>
     <max>20</max>
-    <pattern>[\x21-\x22\x24-\x7E]+</pattern>
+    <pattern>^[\x21-\x22\x24-\x7E]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.SendNotifyCodeVerificationRequest.NotifyCodeConfiguration</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.SendNotifyCodeVerificationRequest.OriginationIdentity</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_:/+-]+</pattern>
+    <pattern>^[A-Za-z0-9_:/+-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.SendNotifyCodeVerificationRequest.ReferenceId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_-]+</pattern>
+    <pattern>^[A-Za-z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.SendNotifyCodeVerificationResponse.MessageId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.SendNotifyCodeVerificationResponse.VerificationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.TagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>256</max>
-    <pattern>arn:[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^arn:[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.UntagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>256</max>
-    <pattern>arn:[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^arn:[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.UpdateBrandProfileRequest.BrandProfileId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.UpdateBrandProfileRequest.BrandProfileName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*</pattern>
+    <pattern>^[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.UpdateBrandProfileResponse.BrandProfileArn</property>
     <min>20</min>
     <max>256</max>
-    <pattern>arn:[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^arn:[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.UpdateBrandProfileResponse.BrandProfileId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.UpdateBrandProfileResponse.BrandProfileName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*</pattern>
+    <pattern>^[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.UpdateBrandProfileAttributeRequest.AttributeName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*</pattern>
+    <pattern>^[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.UpdateBrandProfileAttributeRequest.AttributeValue</property>
@@ -446,7 +446,7 @@
     <property>Amazon.EndUserMessaging.Model.UpdateBrandProfileAttributeRequest.BrandProfileId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.UpdateBrandProfileAttributeRequest.Category</property>
@@ -462,7 +462,7 @@
     <property>Amazon.EndUserMessaging.Model.UpdateBrandProfileAttributeResponse.AttributeName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*</pattern>
+    <pattern>^[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.UpdateBrandProfileAttributeResponse.AttributeValue</property>
@@ -483,61 +483,61 @@
     <property>Amazon.EndUserMessaging.Model.UpdateBrandProfileFromRegistrationRequest.BrandProfileId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.UpdateBrandProfileFromRegistrationRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\x21-\x7E]+</pattern>
+    <pattern>^[\x21-\x7E]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.UpdateBrandProfileFromRegistrationRequest.RegistrationId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.UpdateNotifyCodeConfigurationRequest.NotifyCodeConfigurationId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.UpdateNotifyCodeConfigurationRequest.NotifyCodeConfigurationName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*</pattern>
+    <pattern>^[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.UpdateRegistrationsFromBrandProfileRequest.BrandProfileId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.UpdateRegistrationsFromBrandProfileRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\x21-\x7E]+</pattern>
+    <pattern>^[\x21-\x7E]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.ValidateNotifyCodeVerificationRequest.Code</property>
     <min>4</min>
     <max>8</max>
-    <pattern>[A-Za-z0-9]+</pattern>
+    <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.ValidateNotifyCodeVerificationRequest.DestinationIdentity</property>
     <min>1</min>
     <max>20</max>
-    <pattern>[\x21-\x22\x24-\x7E]+</pattern>
+    <pattern>^[\x21-\x22\x24-\x7E]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.ValidateNotifyCodeVerificationRequest.ReferenceId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_-]+</pattern>
+    <pattern>^[A-Za-z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.BrandProfileAttributeInput.AttachmentBody</property>
@@ -548,7 +548,7 @@
     <property>Amazon.EndUserMessaging.Model.BrandProfileAttributeInput.AttributeName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*</pattern>
+    <pattern>^[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.BrandProfileAttributeInput.AttributeValue</property>
@@ -569,7 +569,7 @@
     <property>Amazon.EndUserMessaging.Model.BrandProfileAttributeOutput.AttributeName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*</pattern>
+    <pattern>^[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.BrandProfileAttributeOutput.MediaDownloadUrl</property>
@@ -580,7 +580,7 @@
     <property>Amazon.EndUserMessaging.Model.BrandProfileAttributeSummary.AttributeName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*</pattern>
+    <pattern>^[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.BrandProfileAttributeSummary.Category</property>
@@ -596,19 +596,19 @@
     <property>Amazon.EndUserMessaging.Model.BrandProfileInfo.BrandProfileArn</property>
     <min>20</min>
     <max>256</max>
-    <pattern>arn:[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^arn:[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.BrandProfileInfo.BrandProfileId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.BrandProfileInfo.BrandProfileName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*</pattern>
+    <pattern>^[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.CodeConfigurationParameters.CodeLength</property>
@@ -629,31 +629,31 @@
     <property>Amazon.EndUserMessaging.Model.JobResource.ResourceArn</property>
     <min>20</min>
     <max>256</max>
-    <pattern>arn:[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^arn:[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.JobResource.ResourceId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.JobResult.JobId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9_-]+</pattern>
+    <pattern>^[A-Za-z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.JobResult.ResourceIdentifier</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.JobSummary.BrandProfileId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.JobSummary.ErrorCode</property>
@@ -669,7 +669,7 @@
     <property>Amazon.EndUserMessaging.Model.JobSummary.JobId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9_-]+</pattern>
+    <pattern>^[A-Za-z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.JobSummary.OperationType</property>
@@ -680,61 +680,61 @@
     <property>Amazon.EndUserMessaging.Model.NotifyCodeConfiguration.NotifyCodeConfigurationArn</property>
     <min>20</min>
     <max>256</max>
-    <pattern>arn:[A-Za-z0-9_:/-]+</pattern>
+    <pattern>^arn:[A-Za-z0-9_:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.NotifyCodeConfiguration.NotifyCodeConfigurationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9_-]+</pattern>
+    <pattern>^[A-Za-z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.NotifyCodeConfiguration.NotifyCodeConfigurationName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*</pattern>
+    <pattern>^[A-Za-z0-9_ -]*[A-Za-z0-9_-][A-Za-z0-9_ -]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.NotifyParameters.NotifyTemplateId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_-]+</pattern>
+    <pattern>^[A-Za-z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.NotifyParameters.VoiceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9]+</pattern>
+    <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.RegistrationAssociationSummary.RegistrationId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_-]+</pattern>
+    <pattern>^[A-Za-z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.RegistrationAssociationSummary.RegistrationType</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9_]+</pattern>
+    <pattern>^[A-Za-z0-9_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>
-    <pattern>.+</pattern>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.Tag.Value</property>
     <min>0</min>
     <max>256</max>
-    <pattern>.*</pattern>
+    <pattern>^.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.TextParameters.InlineTemplateBody</property>
     <min>1</min>
     <max>6000</max>
-    <pattern>[\s\S]*\S[\s\S]*</pattern>
+    <pattern>^[\s\S]*\S[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.UpdateCodeConfigurationParameters.CodeLength</property>
@@ -755,78 +755,78 @@
     <property>Amazon.EndUserMessaging.Model.UpdateNotifyParameters.NotifyTemplateId</property>
     <min>0</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9_-]*</pattern>
+    <pattern>^[A-Za-z0-9_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.UpdateNotifyParameters.VoiceId</property>
     <min>0</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9]*</pattern>
+    <pattern>^[A-Za-z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.UpdateTextParameters.InlineTemplateBody</property>
     <min>0</min>
     <max>6000</max>
-    <pattern>([\s\S]*\S[\s\S]*)?</pattern>
+    <pattern>^([\s\S]*\S[\s\S]*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.UpdateVoiceParameters.InlineTemplateBody</property>
     <min>0</min>
     <max>6000</max>
-    <pattern>([\s\S]*\S[\s\S]*)?</pattern>
+    <pattern>^([\s\S]*\S[\s\S]*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.UpdateVoiceParameters.LanguageCode</property>
     <min>0</min>
     <max>35</max>
-    <pattern>(\S{2,35})?</pattern>
+    <pattern>^(\S{2,35})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.UpdateVoiceParameters.VoiceId</property>
     <min>0</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9]*</pattern>
+    <pattern>^[A-Za-z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.UpdateWhatsAppParameters.LanguageCode</property>
     <min>0</min>
     <max>35</max>
-    <pattern>(\S{2,35})?</pattern>
+    <pattern>^(\S{2,35})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.UpdateWhatsAppParameters.WhatsAppTemplateName</property>
     <min>0</min>
     <max>512</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.VoiceParameters.InlineTemplateBody</property>
     <min>1</min>
     <max>6000</max>
-    <pattern>[\s\S]*\S[\s\S]*</pattern>
+    <pattern>^[\s\S]*\S[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.VoiceParameters.LanguageCode</property>
     <min>2</min>
     <max>35</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.VoiceParameters.VoiceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9]+</pattern>
+    <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.WhatsAppParameters.LanguageCode</property>
     <min>2</min>
     <max>35</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EndUserMessaging.Model.WhatsAppParameters.WhatsAppTemplateName</property>
     <min>1</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
 </property-value-rules>

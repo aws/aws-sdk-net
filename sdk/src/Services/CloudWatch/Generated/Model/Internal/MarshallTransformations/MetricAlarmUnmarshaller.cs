@@ -62,6 +62,14 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 string propertyName = reader.ReadTextString();
                 switch (propertyName)
                 {
+                    case "ActionConfiguration":
+                        {
+                            context.AddPathSegment("ActionConfiguration");
+                            var unmarshaller = ActionConfigurationUnmarshaller.Instance;
+                            unmarshalledObject.ActionConfiguration = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
                     case "ActionsEnabled":
                         {
                             context.AddPathSegment("ActionsEnabled");

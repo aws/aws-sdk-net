@@ -1714,6 +1714,112 @@ namespace Amazon.KafkaConnect
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Pauses the specified connector. The operation runs asynchronously. To track the pause,
+        /// pass the connector operation ARN from the response to <c>DescribeConnectorOperation</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PauseConnector service method.</param>
+        /// <returns>The response from the PauseConnector service method, as returned by KafkaConnect.</returns>
+        /// <exception cref="Amazon.KafkaConnect.Model.BadRequestException">
+        /// HTTP Status Code 400: Bad request due to incorrect input. Correct your request and
+        /// then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ConflictException">
+        /// HTTP Status Code 409: Conflict. A resource with this name already exists. Retry your
+        /// request with another name.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ForbiddenException">
+        /// HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.InternalServerErrorException">
+        /// HTTP Status Code 500: Unexpected internal server error. Retrying your request might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.NotFoundException">
+        /// HTTP Status Code 404: Resource not found due to incorrect input. Correct your request
+        /// and then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ServiceUnavailableException">
+        /// HTTP Status Code 503: Service Unavailable. Retrying your request in some time might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.TooManyRequestsException">
+        /// HTTP Status Code 429: Limit exceeded. Resource limit reached.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.UnauthorizedException">
+        /// HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/PauseConnector">REST API Reference for PauseConnector Operation</seealso>
+        public virtual PauseConnectorResponse PauseConnector(PauseConnectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PauseConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PauseConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<PauseConnectorResponse>(request, options);
+        }
+#else
+        internal virtual PauseConnectorResponse PauseConnector(PauseConnectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PauseConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PauseConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<PauseConnectorResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Pauses the specified connector. The operation runs asynchronously. To track the pause,
+        /// pass the connector operation ARN from the response to <c>DescribeConnectorOperation</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PauseConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the PauseConnector service method, as returned by KafkaConnect.</returns>
+        /// <exception cref="Amazon.KafkaConnect.Model.BadRequestException">
+        /// HTTP Status Code 400: Bad request due to incorrect input. Correct your request and
+        /// then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ConflictException">
+        /// HTTP Status Code 409: Conflict. A resource with this name already exists. Retry your
+        /// request with another name.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ForbiddenException">
+        /// HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.InternalServerErrorException">
+        /// HTTP Status Code 500: Unexpected internal server error. Retrying your request might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.NotFoundException">
+        /// HTTP Status Code 404: Resource not found due to incorrect input. Correct your request
+        /// and then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ServiceUnavailableException">
+        /// HTTP Status Code 503: Service Unavailable. Retrying your request in some time might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.TooManyRequestsException">
+        /// HTTP Status Code 429: Limit exceeded. Resource limit reached.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.UnauthorizedException">
+        /// HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/PauseConnector">REST API Reference for PauseConnector Operation</seealso>
+        public virtual Task<PauseConnectorResponse> PauseConnectorAsync(PauseConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PauseConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PauseConnectorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PauseConnectorResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Restarts the specified connector. By default, this operation restarts the connector
         /// and all of its tasks. This operation is asynchronous and returns a connector operation
         /// ARN that you can pass to <c>DescribeConnectorOperation</c> to track the state of the
@@ -1812,6 +1918,112 @@ namespace Amazon.KafkaConnect
             options.ResponseUnmarshaller = RestartConnectorResponseUnmarshaller.Instance;
 
             return InvokeAsync<RestartConnectorResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Resumes the specified paused connector. The operation runs asynchronously. To track
+        /// the resume, pass the connector operation ARN from the response to <c>DescribeConnectorOperation</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResumeConnector service method.</param>
+        /// <returns>The response from the ResumeConnector service method, as returned by KafkaConnect.</returns>
+        /// <exception cref="Amazon.KafkaConnect.Model.BadRequestException">
+        /// HTTP Status Code 400: Bad request due to incorrect input. Correct your request and
+        /// then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ConflictException">
+        /// HTTP Status Code 409: Conflict. A resource with this name already exists. Retry your
+        /// request with another name.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ForbiddenException">
+        /// HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.InternalServerErrorException">
+        /// HTTP Status Code 500: Unexpected internal server error. Retrying your request might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.NotFoundException">
+        /// HTTP Status Code 404: Resource not found due to incorrect input. Correct your request
+        /// and then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ServiceUnavailableException">
+        /// HTTP Status Code 503: Service Unavailable. Retrying your request in some time might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.TooManyRequestsException">
+        /// HTTP Status Code 429: Limit exceeded. Resource limit reached.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.UnauthorizedException">
+        /// HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ResumeConnector">REST API Reference for ResumeConnector Operation</seealso>
+        public virtual ResumeConnectorResponse ResumeConnector(ResumeConnectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ResumeConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumeConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<ResumeConnectorResponse>(request, options);
+        }
+#else
+        internal virtual ResumeConnectorResponse ResumeConnector(ResumeConnectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ResumeConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumeConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<ResumeConnectorResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Resumes the specified paused connector. The operation runs asynchronously. To track
+        /// the resume, pass the connector operation ARN from the response to <c>DescribeConnectorOperation</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResumeConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ResumeConnector service method, as returned by KafkaConnect.</returns>
+        /// <exception cref="Amazon.KafkaConnect.Model.BadRequestException">
+        /// HTTP Status Code 400: Bad request due to incorrect input. Correct your request and
+        /// then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ConflictException">
+        /// HTTP Status Code 409: Conflict. A resource with this name already exists. Retry your
+        /// request with another name.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ForbiddenException">
+        /// HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.InternalServerErrorException">
+        /// HTTP Status Code 500: Unexpected internal server error. Retrying your request might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.NotFoundException">
+        /// HTTP Status Code 404: Resource not found due to incorrect input. Correct your request
+        /// and then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ServiceUnavailableException">
+        /// HTTP Status Code 503: Service Unavailable. Retrying your request in some time might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.TooManyRequestsException">
+        /// HTTP Status Code 429: Limit exceeded. Resource limit reached.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.UnauthorizedException">
+        /// HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ResumeConnector">REST API Reference for ResumeConnector Operation</seealso>
+        public virtual Task<ResumeConnectorResponse> ResumeConnectorAsync(ResumeConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ResumeConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumeConnectorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ResumeConnectorResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK

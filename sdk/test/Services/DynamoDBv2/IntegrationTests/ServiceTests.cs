@@ -189,71 +189,60 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // Query global index
             // GSI reads are eventually consistent (ConsistentRead is not supported on a GSI),
             // so poll until the just-written item is indexed before asserting.
-            await UtilityMethods.WaitUntilAsync(async () =>
+            items = await Extensions.WaitForItemsAsync(async () => (await _fixture.Client.QueryAsync(new QueryRequest
             {
-                items = (await _fixture.Client.QueryAsync(new QueryRequest
+                TableName = hashTableName,
+                IndexName = "GlobalIndex",
+                KeyConditions = new Dictionary<string, Condition>
                 {
-                    TableName = hashTableName,
-                    IndexName = "GlobalIndex",
-                    KeyConditions = new Dictionary<string, Condition>
+                    // First Query condition must be HashKey EQ [Value]
                     {
-                        // First Query condition must be HashKey EQ [Value]
+                        "Company",
+                        new Condition
                         {
-                            "Company",
-                            new Condition
-                            {
-                                ComparisonOperator = ComparisonOperator.EQ,
-                                AttributeValueList = new List<AttributeValue> { new AttributeValue { S = "CloudsAreGrate" } }
-                            }
-                        },
-                        // Second Query condition must be RangeKey [Conditon] [Value]
+                            ComparisonOperator = ComparisonOperator.EQ,
+                            AttributeValueList = new List<AttributeValue> { new AttributeValue { S = "CloudsAreGrate" } }
+                        }
+                    },
+                    // Second Query condition must be RangeKey [Conditon] [Value]
+                    {
+                        "Price",
+                        new Condition
                         {
-                            "Price",
-                            new Condition
-                            {
-                                ComparisonOperator = ComparisonOperator.GT,
-                                AttributeValueList = new List<AttributeValue> { new AttributeValue { N = "50" } }
-                            }
+                            ComparisonOperator = ComparisonOperator.GT,
+                            AttributeValueList = new List<AttributeValue> { new AttributeValue { N = "50" } }
                         }
                     }
-                })).Items;
-                return items.Count == 1;
-            }, sleepSeconds: 1, maxWaitSeconds: 30);
-            Assert.Equal(1, items.Count);
+                }
+            })).Items, 1);
 
             // Scan global index
-            // Also eventually consistent on the GSI; poll as above.
-            await UtilityMethods.WaitUntilAsync(async () =>
+            items = await Extensions.WaitForItemsAsync(async () => (await _fixture.Client.ScanAsync(new ScanRequest
             {
-                items = (await _fixture.Client.ScanAsync(new ScanRequest
+                TableName = hashTableName,
+                IndexName = "GlobalIndex",
+                ScanFilter = new Dictionary<string, Condition>
                 {
-                    TableName = hashTableName,
-                    IndexName = "GlobalIndex",
-                    ScanFilter = new Dictionary<string, Condition>
+                    // First condition will be HashKey EQ [Value]
                     {
-                        // First condition will be HashKey EQ [Value]
+                        "Company",
+                        new Condition
                         {
-                            "Company",
-                            new Condition
-                            {
-                                ComparisonOperator = ComparisonOperator.EQ,
-                                AttributeValueList = new List<AttributeValue> { new AttributeValue { S = "CloudsAreGrate" } }
-                            }
-                        },
-                        // Second condition will be RangeKey [Conditon] [Value]
+                            ComparisonOperator = ComparisonOperator.EQ,
+                            AttributeValueList = new List<AttributeValue> { new AttributeValue { S = "CloudsAreGrate" } }
+                        }
+                    },
+                    // Second condition will be RangeKey [Conditon] [Value]
+                    {
+                        "Price",
+                        new Condition
                         {
-                            "Price",
-                            new Condition
-                            {
-                                ComparisonOperator = ComparisonOperator.GT,
-                                AttributeValueList = new List<AttributeValue> { new AttributeValue { N = "50" } }
-                            }
+                            ComparisonOperator = ComparisonOperator.GT,
+                            AttributeValueList = new List<AttributeValue> { new AttributeValue { N = "50" } }
                         }
                     }
-                })).Items;
-                return items.Count == 1;
-            }, sleepSeconds: 1, maxWaitSeconds: 30);
-            Assert.Equal(1, items.Count);
+                }
+            })).Items, 1);
 
             return (itemId, itemId2);
         }
@@ -392,7 +381,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.Equal(1, items.Count);
 
             // Query global index
-            items = (await _fixture.Client.QueryAsync(new QueryRequest
+            items = await Extensions.WaitForItemsAsync(async () => (await _fixture.Client.QueryAsync(new QueryRequest
             {
                 TableName = hashRangeTableName,
                 IndexName = "GlobalIndex",
@@ -417,8 +406,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         }
                     }
                 }
-            })).Items;
-            Assert.Equal(1, items.Count);
+            })).Items, 1);
 
             // Query local index with no range-key condition
             items = (await _fixture.Client.QueryAsync(new QueryRequest
@@ -502,7 +490,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.Equal(1, items.Count);
 
             // Scan global index
-            items = (await _fixture.Client.ScanAsync(new ScanRequest
+            items = await Extensions.WaitForItemsAsync(async () => (await _fixture.Client.ScanAsync(new ScanRequest
             {
                 TableName = hashRangeTableName,
                 IndexName = "GlobalIndex",
@@ -527,8 +515,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         }
                     }
                 }
-            })).Items;
-            Assert.Equal(1, items.Count);
+            })).Items, 1);
 
             // Scan local index with no range-key condition
             items = (await _fixture.Client.ScanAsync(new ScanRequest

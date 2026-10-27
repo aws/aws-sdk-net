@@ -83,6 +83,26 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("CoreNetworkId");
                 context.Writer.WriteStringValue(publicRequest.CoreNetworkId);
             }
+            if (publicRequest.IsSetNatGatewayRules())
+            {
+                context.Writer.WritePropertyName("NatGatewayRules");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestNatGatewayRulesListValue in publicRequest.NatGatewayRules)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = NatRuleRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequestNatGatewayRulesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetNatGatewaySupport())
+            {
+                context.Writer.WritePropertyName("NatGatewaySupport");
+                context.Writer.WriteStringValue(publicRequest.NatGatewaySupport);
+            }
             if (publicRequest.IsSetOptions())
             {
                 context.Writer.WritePropertyName("Options");

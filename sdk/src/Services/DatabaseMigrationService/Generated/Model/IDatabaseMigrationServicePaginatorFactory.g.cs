@@ -1,0 +1,287 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.DatabaseMigrationService.Model
+{
+    /// <summary>
+    /// Paginators for the DatabaseMigrationService service
+    /// </summary>
+    public interface IDatabaseMigrationServicePaginatorFactory
+    {
+        /// <summary>
+        /// Paginator for DescribeApplicableIndividualAssessments operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeApplicableIndividualAssessmentsPaginator DescribeApplicableIndividualAssessments(DescribeApplicableIndividualAssessmentsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeCertificates operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeCertificatesPaginator DescribeCertificates(DescribeCertificatesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeConnections operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeConnectionsPaginator DescribeConnections(DescribeConnectionsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeDataMigrations operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeDataMigrationsPaginator DescribeDataMigrations(DescribeDataMigrationsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeDataProviders operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeDataProvidersPaginator DescribeDataProviders(DescribeDataProvidersRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeEndpointSettings operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeEndpointSettingsPaginator DescribeEndpointSettings(DescribeEndpointSettingsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeEndpointTypes operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeEndpointTypesPaginator DescribeEndpointTypes(DescribeEndpointTypesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeEndpoints operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeEndpointsPaginator DescribeEndpoints(DescribeEndpointsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeEngineVersions operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeEngineVersionsPaginator DescribeEngineVersions(DescribeEngineVersionsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeEventSubscriptions operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeEventSubscriptionsPaginator DescribeEventSubscriptions(DescribeEventSubscriptionsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeEvents operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeEventsPaginator DescribeEvents(DescribeEventsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeExtensionPackAssociations operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeExtensionPackAssociationsPaginator DescribeExtensionPackAssociations(DescribeExtensionPackAssociationsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeFleetAdvisorCollectors operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxRecords", OutputToken = ["NextToken"])]
+        IDescribeFleetAdvisorCollectorsPaginator DescribeFleetAdvisorCollectors(DescribeFleetAdvisorCollectorsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeFleetAdvisorDatabases operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxRecords", OutputToken = ["NextToken"])]
+        IDescribeFleetAdvisorDatabasesPaginator DescribeFleetAdvisorDatabases(DescribeFleetAdvisorDatabasesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeFleetAdvisorLsaAnalysis operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxRecords", OutputToken = ["NextToken"])]
+        IDescribeFleetAdvisorLsaAnalysisPaginator DescribeFleetAdvisorLsaAnalysis(DescribeFleetAdvisorLsaAnalysisRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeFleetAdvisorSchemaObjectSummary operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxRecords", OutputToken = ["NextToken"])]
+        IDescribeFleetAdvisorSchemaObjectSummaryPaginator DescribeFleetAdvisorSchemaObjectSummary(DescribeFleetAdvisorSchemaObjectSummaryRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeFleetAdvisorSchemas operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxRecords", OutputToken = ["NextToken"])]
+        IDescribeFleetAdvisorSchemasPaginator DescribeFleetAdvisorSchemas(DescribeFleetAdvisorSchemasRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeInstanceProfiles operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeInstanceProfilesPaginator DescribeInstanceProfiles(DescribeInstanceProfilesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeMetadataModelAssessments operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeMetadataModelAssessmentsPaginator DescribeMetadataModelAssessments(DescribeMetadataModelAssessmentsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeMetadataModelChildren operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeMetadataModelChildrenPaginator DescribeMetadataModelChildren(DescribeMetadataModelChildrenRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeMetadataModelConversions operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeMetadataModelConversionsPaginator DescribeMetadataModelConversions(DescribeMetadataModelConversionsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeMetadataModelCreations operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeMetadataModelCreationsPaginator DescribeMetadataModelCreations(DescribeMetadataModelCreationsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeMetadataModelExportsAsScript operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeMetadataModelExportsAsScriptPaginator DescribeMetadataModelExportsAsScript(DescribeMetadataModelExportsAsScriptRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeMetadataModelExportsToTarget operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeMetadataModelExportsToTargetPaginator DescribeMetadataModelExportsToTarget(DescribeMetadataModelExportsToTargetRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeMetadataModelImports operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeMetadataModelImportsPaginator DescribeMetadataModelImports(DescribeMetadataModelImportsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeMigrationProjects operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeMigrationProjectsPaginator DescribeMigrationProjects(DescribeMigrationProjectsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeOrderableReplicationInstances operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeOrderableReplicationInstancesPaginator DescribeOrderableReplicationInstances(DescribeOrderableReplicationInstancesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribePendingMaintenanceActions operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribePendingMaintenanceActionsPaginator DescribePendingMaintenanceActions(DescribePendingMaintenanceActionsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeRecommendationLimitations operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxRecords", OutputToken = ["NextToken"])]
+        IDescribeRecommendationLimitationsPaginator DescribeRecommendationLimitations(DescribeRecommendationLimitationsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeRecommendations operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxRecords", OutputToken = ["NextToken"])]
+        IDescribeRecommendationsPaginator DescribeRecommendations(DescribeRecommendationsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeReplicationConfigs operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeReplicationConfigsPaginator DescribeReplicationConfigs(DescribeReplicationConfigsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeReplicationInstanceTaskLogs operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeReplicationInstanceTaskLogsPaginator DescribeReplicationInstanceTaskLogs(DescribeReplicationInstanceTaskLogsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeReplicationInstances operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeReplicationInstancesPaginator DescribeReplicationInstances(DescribeReplicationInstancesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeReplicationSubnetGroups operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeReplicationSubnetGroupsPaginator DescribeReplicationSubnetGroups(DescribeReplicationSubnetGroupsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeReplicationTableStatistics operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeReplicationTableStatisticsPaginator DescribeReplicationTableStatistics(DescribeReplicationTableStatisticsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeReplicationTaskAssessmentResults operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeReplicationTaskAssessmentResultsPaginator DescribeReplicationTaskAssessmentResults(DescribeReplicationTaskAssessmentResultsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeReplicationTaskAssessmentRuns operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeReplicationTaskAssessmentRunsPaginator DescribeReplicationTaskAssessmentRuns(DescribeReplicationTaskAssessmentRunsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeReplicationTaskIndividualAssessments operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeReplicationTaskIndividualAssessmentsPaginator DescribeReplicationTaskIndividualAssessments(DescribeReplicationTaskIndividualAssessmentsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeReplicationTasks operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeReplicationTasksPaginator DescribeReplicationTasks(DescribeReplicationTasksRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeReplications operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeReplicationsPaginator DescribeReplications(DescribeReplicationsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeSchemas operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeSchemasPaginator DescribeSchemas(DescribeSchemasRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeTableStatistics operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeTableStatisticsPaginator DescribeTableStatistics(DescribeTableStatisticsRequest request);
+    }
+}

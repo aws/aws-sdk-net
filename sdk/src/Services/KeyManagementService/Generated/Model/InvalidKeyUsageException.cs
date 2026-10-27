@@ -47,8 +47,9 @@ namespace Amazon.KeyManagementService.Model
     /// must be <c>ENCRYPT_DECRYPT</c>. For signing and verifying messages, the <c>KeyUsage</c>
     /// must be <c>SIGN_VERIFY</c>. For generating and verifying message authentication codes
     /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. For deriving key agreement
-    /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. To find the <c>KeyUsage</c>
-    /// of a KMS key, use the <a>DescribeKey</a> operation.
+    /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. For encapsulating and decapsulating
+    /// shared secrets, the <c>KeyUsage</c> must be <c>ENCAPSULATE_DECAPSULATE</c>. To find
+    /// the <c>KeyUsage</c> of a KMS key, use the <a>DescribeKey</a> operation.
     /// </para>
     ///  
     /// <para>

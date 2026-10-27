@@ -32,6 +32,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -48,7 +49,7 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestXml")]
-        public void RestXmlXmlMapWithXmlNamespaceRequest()
+        public async Task RestXmlXmlMapWithXmlNamespaceRequest()
         {
             // Arrange
             var request = new XmlMapWithXmlNamespaceRequest
@@ -62,20 +63,27 @@ namespace AWSSDK.ProtocolTests.RestXml
             };
             var config = new AmazonRestXmlProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new XmlMapWithXmlNamespaceRequestMarshaller();
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "text/xml",
+                Body = Encoding.UTF8.GetBytes("<Response/>"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.XmlMapWithXmlNamespaceAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "<XmlMapWithXmlNamespaceRequest>\n    <KVP xmlns=\"https://the-member.example.com\">\n        <entry>\n            <K xmlns=\"https://the-key.example.com\">a</K>\n            <V xmlns=\"https://the-value.example.com\">A</V>\n        </entry>\n        <entry>\n            <K xmlns=\"https://the-key.example.com\">b</K>\n            <V xmlns=\"https://the-value.example.com\">B</V>\n        </entry>\n    </KVP>\n</XmlMapWithXmlNamespaceRequest>";
-            XmlTestUtils.AssertBody(marshalledRequest,expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/XmlMapWithXmlNamespace", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/xml".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+            XmlTestUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/XmlMapWithXmlNamespace", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/xml".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
         }
 
         /// <summary>
@@ -86,18 +94,26 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestXml")]
-        public void RestXmlXmlMapWithXmlNamespaceResponse()
+        public async Task RestXmlXmlMapWithXmlNamespaceResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/xml";
-            byte[] bytes = Encoding.ASCII.GetBytes("<XmlMapWithXmlNamespaceResponse>\n    <KVP xmlns=\"https://the-member.example.com\">\n        <entry>\n            <K xmlns=\"https://the-key.example.com\">a</K>\n            <V xmlns=\"https://the-value.example.com\">A</V>\n        </entry>\n        <entry>\n            <K xmlns=\"https://the-key.example.com\">b</K>\n            <V xmlns=\"https://the-value.example.com\">B</V>\n        </entry>\n    </KVP>\n</XmlMapWithXmlNamespaceResponse>");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonRestXmlProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestXmlProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("<XmlMapWithXmlNamespaceResponse>\n    <KVP xmlns=\"https://the-member.example.com\">\n        <entry>\n            <K xmlns=\"https://the-key.example.com\">a</K>\n            <V xmlns=\"https://the-value.example.com\">A</V>\n        </entry>\n        <entry>\n            <K xmlns=\"https://the-key.example.com\">b</K>\n            <V xmlns=\"https://the-value.example.com\">B</V>\n        </entry>\n    </KVP>\n</XmlMapWithXmlNamespaceResponse>"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/xml";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new XmlMapWithXmlNamespaceResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.XmlMapWithXmlNamespaceAsync(new XmlMapWithXmlNamespaceRequest()).ConfigureAwait(false);
             var expectedResponse = new XmlMapWithXmlNamespaceResponse
             {
                 MyMap = new Dictionary<string, string>()
@@ -109,9 +125,8 @@ namespace AWSSDK.ProtocolTests.RestXml
             };
 
             // Assert
-            var actualResponse = (XmlMapWithXmlNamespaceResponse)unmarshalledResponse;
             Comparer.CompareObjects<XmlMapWithXmlNamespaceResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
     }

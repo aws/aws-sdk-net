@@ -88,6 +88,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         response.ReplicationGroup = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ServerlessCache", targetDepth))
+                    {
+                        var unmarshaller = ServerlessCacheUnmarshaller.Instance;
+                        response.ServerlessCache = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 } 
            }
 
@@ -113,6 +119,14 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidCacheClusterState"))
+                {
+                    return InvalidCacheClusterStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterCombination"))
+                {
+                    return InvalidParameterCombinationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValue"))
                 {
                     return InvalidParameterValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -121,6 +135,14 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     return InvalidReplicationGroupStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidServerlessCacheStateFault"))
+                {
+                    return InvalidServerlessCacheStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("MigrationHealthFault"))
+                {
+                    return MigrationHealthExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ReplicationGroupAlreadyUnderMigrationFault"))
                 {
                     return ReplicationGroupAlreadyUnderMigrationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -128,6 +150,14 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ReplicationGroupNotFoundFault"))
                 {
                     return ReplicationGroupNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ServerlessCacheNotFoundFault"))
+                {
+                    return ServerlessCacheNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ServerlessCacheNotUnderMigrationFault"))
+                {
+                    return ServerlessCacheNotUnderMigrationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonElastiCacheException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

@@ -35,6 +35,22 @@ namespace Amazon.SocialMessaging.Model
     public partial class TemplateSummary
     {
         /// <summary>
+        /// Gets and sets the property CorrectCategory. 
+        /// <para>
+        /// The category that the template content actually belongs to, when it differs from the
+        /// template's current category. This field is present only when the template has been
+        /// flagged as miscategorized.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 100)]
+        public string CorrectCategory { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CorrectCategory property is set.
+        /// </summary>
+        internal bool IsSetCorrectCategory() => this.CorrectCategory != null;
+
+        /// <summary>
         /// Gets and sets the property MetaTemplateId. 
         /// <para>
         /// The numeric ID assigned to the template by Meta.
@@ -103,6 +119,22 @@ namespace Amazon.SocialMessaging.Model
         /// Checks to see if the TemplateQualityScore property is set.
         /// </summary>
         internal bool IsSetTemplateQualityScore() => this.TemplateQualityScore != null;
+
+        /// <summary>
+        /// Gets and sets the property TemplateSource. 
+        /// <para>
+        /// The source of the template. A value of AUTO_GENERATED indicates that the template
+        /// was created automatically from a message that you sent. This field is not present
+        /// for templates that you created manually.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 20)]
+        public string TemplateSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TemplateSource property is set.
+        /// </summary>
+        internal bool IsSetTemplateSource() => this.TemplateSource != null;
 
         /// <summary>
         /// Gets and sets the property TemplateStatus. 

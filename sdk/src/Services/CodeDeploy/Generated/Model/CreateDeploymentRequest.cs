@@ -41,6 +41,7 @@ namespace Amazon.CodeDeploy.Model
         private string _deploymentGroupName;
         private DeploymentMode _deploymentMode;
         private string _description;
+        private EC2DeploymentOptions _ec2DeploymentOptions;
         private FileExistsBehavior _fileExistsBehavior;
         private bool? _ignoreApplicationStopFailures;
         private AlarmConfiguration _overrideAlarmConfiguration;
@@ -197,6 +198,21 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ec2DeploymentOptions.
+        /// </summary>
+        public EC2DeploymentOptions Ec2DeploymentOptions
+        {
+            get { return this._ec2DeploymentOptions; }
+            set { this._ec2DeploymentOptions = value; }
+        }
+
+        // Check to see if Ec2DeploymentOptions property is set
+        internal bool IsSetEc2DeploymentOptions()
+        {
+            return this._ec2DeploymentOptions != null;
         }
 
         /// <summary>

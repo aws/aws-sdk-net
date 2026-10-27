@@ -32,6 +32,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.AwsQuery
 {
@@ -46,18 +47,26 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("AwsQuery")]
-        public void QueryQueryFlattenedXmlMapWithXmlNameResponse()
+        public async Task QueryQueryFlattenedXmlMapWithXmlNameResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "text/xml";
-            byte[] bytes = Encoding.ASCII.GetBytes("<FlattenedXmlMapWithXmlNameResponse xmlns=\"https://example.com/\">\n    <FlattenedXmlMapWithXmlNameResult>\n        <KVP>\n            <K>a</K>\n            <V>A</V>\n        </KVP>\n        <KVP>\n            <K>b</K>\n            <V>B</V>\n        </KVP>\n    </FlattenedXmlMapWithXmlNameResult>\n</FlattenedXmlMapWithXmlNameResponse>");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonQueryProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonQueryProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("<FlattenedXmlMapWithXmlNameResponse xmlns=\"https://example.com/\">\n    <FlattenedXmlMapWithXmlNameResult>\n        <KVP>\n            <K>a</K>\n            <V>A</V>\n        </KVP>\n        <KVP>\n            <K>b</K>\n            <V>B</V>\n        </KVP>\n    </FlattenedXmlMapWithXmlNameResult>\n</FlattenedXmlMapWithXmlNameResponse>"),
+            };
+            mockResponse.Headers["Content-Type"] = "text/xml";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new FlattenedXmlMapWithXmlNameResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.FlattenedXmlMapWithXmlNameAsync(new FlattenedXmlMapWithXmlNameRequest()).ConfigureAwait(false);
             var expectedResponse = new FlattenedXmlMapWithXmlNameResponse
             {
                 MyMap = new Dictionary<string, string>()
@@ -69,9 +78,8 @@ namespace AWSSDK.ProtocolTests.AwsQuery
             };
 
             // Assert
-            var actualResponse = (FlattenedXmlMapWithXmlNameResponse)unmarshalledResponse;
             Comparer.CompareObjects<FlattenedXmlMapWithXmlNameResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
     }

@@ -447,6 +447,20 @@ namespace Amazon.TaxSettings
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        ///  <b>Colombia</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can provide a Registro Único Tributario (RUT) document in the <b>verificationDetails</b>
+        /// field.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you provide the RUT document, you do not need to provide address and legal name.
+        /// These will be populated based on your document.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         ///  <b>Georgia</b> 
         /// </para>
         ///  <ul> <li> 
@@ -748,6 +762,21 @@ namespace Amazon.TaxSettings
         /// <para>
         /// You must specify the <c>businessNumber</c> in the <c>monacoAdditionalInfo</c> field
         /// of the <c>additionalTaxInformation</c> object.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Germany</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must provide at least one of the following: a Tax Registration Number (TRN) (<c>registrationId</c>),
+        /// the <c>economicIdentificationNumber</c>, or the <c>steuernummer</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can optionally specify the <c>economicIdentificationNumber</c> (Wirtschafts-Identifikationsnummer,
+        /// or W-IdNr) and the <c>steuernummer</c> (tax number issued by the local tax office)
+        /// in the <c>germanyAdditionalInfo</c> field of the <c>additionalTaxInformation</c> object.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -829,6 +858,20 @@ namespace Amazon.TaxSettings
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        ///  <b>Colombia</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can provide a Registro Único Tributario (RUT) document in the <b>verificationDetails</b>
+        /// field.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you provide the RUT document, you do not need to provide address and legal name.
+        /// These will be populated based on your document.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         ///  <b>Georgia</b> 
         /// </para>
         ///  <ul> <li> 
@@ -1130,6 +1173,21 @@ namespace Amazon.TaxSettings
         /// <para>
         /// You must specify the <c>businessNumber</c> in the <c>monacoAdditionalInfo</c> field
         /// of the <c>additionalTaxInformation</c> object.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Germany</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must provide at least one of the following: a Tax Registration Number (TRN) (<c>registrationId</c>),
+        /// the <c>economicIdentificationNumber</c>, or the <c>steuernummer</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can optionally specify the <c>economicIdentificationNumber</c> (Wirtschafts-Identifikationsnummer,
+        /// or W-IdNr) and the <c>steuernummer</c> (tax number issued by the local tax office)
+        /// in the <c>germanyAdditionalInfo</c> field of the <c>additionalTaxInformation</c> object.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2026,6 +2084,20 @@ namespace Amazon.TaxSettings
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        ///  <b>Colombia</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can provide a Registro Único Tributario (RUT) document in the <b>verificationDetails</b>
+        /// field.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you provide the RUT document, you do not need to provide address and legal name.
+        /// These will be populated based on your document.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         ///  <b>Georgia</b> 
         /// </para>
         ///  <ul> <li> 
@@ -2327,6 +2399,21 @@ namespace Amazon.TaxSettings
         /// <para>
         /// You must specify the <c>businessNumber</c> in the <c>monacoAdditionalInfo</c> field
         /// of the <c>additionalTaxInformation</c> object.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Germany</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must provide at least one of the following: a Tax Registration Number (TRN) (<c>registrationId</c>),
+        /// the <c>economicIdentificationNumber</c>, or the <c>steuernummer</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can optionally specify the <c>economicIdentificationNumber</c> (Wirtschafts-Identifikationsnummer,
+        /// or W-IdNr) and the <c>steuernummer</c> (tax number issued by the local tax office)
+        /// in the <c>germanyAdditionalInfo</c> field of the <c>additionalTaxInformation</c> object.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2407,6 +2494,20 @@ namespace Amazon.TaxSettings
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        ///  <b>Colombia</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can provide a Registro Único Tributario (RUT) document in the <b>verificationDetails</b>
+        /// field.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you provide the RUT document, you do not need to provide address and legal name.
+        /// These will be populated based on your document.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         ///  <b>Georgia</b> 
         /// </para>
         ///  <ul> <li> 
@@ -2708,6 +2809,21 @@ namespace Amazon.TaxSettings
         /// <para>
         /// You must specify the <c>businessNumber</c> in the <c>monacoAdditionalInfo</c> field
         /// of the <c>additionalTaxInformation</c> object.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Germany</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must provide at least one of the following: a Tax Registration Number (TRN) (<c>registrationId</c>),
+        /// the <c>economicIdentificationNumber</c>, or the <c>steuernummer</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can optionally specify the <c>economicIdentificationNumber</c> (Wirtschafts-Identifikationsnummer,
+        /// or W-IdNr) and the <c>steuernummer</c> (tax number issued by the local tax office)
+        /// in the <c>germanyAdditionalInfo</c> field of the <c>additionalTaxInformation</c> object.
         /// </para>
         ///  </li> </ul> 
         /// <para>

@@ -73,6 +73,13 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.ProjectIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("userCreatedDesignationId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UserCreatedDesignationId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

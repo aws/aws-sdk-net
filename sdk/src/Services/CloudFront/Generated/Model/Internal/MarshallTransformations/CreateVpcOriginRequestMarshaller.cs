@@ -103,6 +103,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         xmlWriter.WriteElementString("HTTPPort", StringUtils.FromInt(publicRequest.VpcOriginEndpointConfig.HTTPPort.Value));
                     if(publicRequest.VpcOriginEndpointConfig.IsSetHTTPSPort())
                         xmlWriter.WriteElementString("HTTPSPort", StringUtils.FromInt(publicRequest.VpcOriginEndpointConfig.HTTPSPort.Value));
+                    if(publicRequest.VpcOriginEndpointConfig.IsSetIpAddressType())
+                        xmlWriter.WriteElementString("IpAddressType", StringUtils.FromString(publicRequest.VpcOriginEndpointConfig.IpAddressType));
                     if(publicRequest.VpcOriginEndpointConfig.IsSetName())
                         xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.VpcOriginEndpointConfig.Name));
                     if(publicRequest.VpcOriginEndpointConfig.IsSetOriginProtocolPolicy())

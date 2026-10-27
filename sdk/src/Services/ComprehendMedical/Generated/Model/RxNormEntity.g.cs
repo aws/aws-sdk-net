@@ -1,0 +1,198 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.ComprehendMedical.Model
+{
+    /// <summary>
+    /// The collection of medical entities extracted from the input text and their associated
+    /// information. For each entity, the response provides the entity text, the entity category,
+    /// where the entity text begins and ends, and the level of confidence that Amazon Comprehend
+    /// Medical has in the detection and analysis. Attributes and traits of the entity are
+    /// also returned.
+    /// </summary>
+    public partial class RxNormEntity
+    {
+        /// <summary>
+        /// Gets and sets the property Attributes. 
+        /// <para>
+        /// The extracted attributes that relate to the entity. The attributes recognized by InferRxNorm
+        /// are <c>DOSAGE</c>, <c>DURATION</c>, <c>FORM</c>, <c>FREQUENCY</c>, <c>RATE</c>, <c>ROUTE_OR_MODE</c>,
+        /// and <c>STRENGTH</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<RxNormAttribute> Attributes { get; set; } = AWSConfigs.InitializeCollections ? new List<RxNormAttribute>() : null;
+
+        /// <summary>
+        /// Checks to see if the Attributes property is set.
+        /// </summary>
+        internal bool IsSetAttributes() => this.Attributes != null && (this.Attributes.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property BeginOffset. 
+        /// <para>
+        /// The 0-based character offset in the input text that shows where the entity begins.
+        /// The offset returns the UTF-8 code point in the string.
+        /// </para>
+        /// </summary>
+        public int? BeginOffset { get; set; }
+
+        /// <summary>
+        /// Checks to see if the BeginOffset property is set.
+        /// </summary>
+        internal bool IsSetBeginOffset() => this.BeginOffset.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Category. 
+        /// <para>
+        /// The category of the entity. The recognized categories are <c>GENERIC</c> or <c>BRAND_NAME</c>.
+        /// </para>
+        /// </summary>
+        public RxNormEntityCategory Category { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Category property is set.
+        /// </summary>
+        internal bool IsSetCategory() => this.Category != null;
+
+        /// <summary>
+        /// Gets and sets the property EndOffset. 
+        /// <para>
+        /// The 0-based character offset in the input text that shows where the entity ends. The
+        /// offset returns the UTF-8 code point in the string.
+        /// </para>
+        /// </summary>
+        public int? EndOffset { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EndOffset property is set.
+        /// </summary>
+        internal bool IsSetEndOffset() => this.EndOffset.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The numeric identifier for the entity. This is a monotonically increasing id unique
+        /// within this response rather than a global unique identifier.
+        /// </para>
+        /// </summary>
+        public int? Id { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Id property is set.
+        /// </summary>
+        internal bool IsSetId() => this.Id.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property RxNormConcepts. 
+        /// <para>
+        /// The RxNorm concepts that the entity could refer to, along with a score indicating
+        /// the likelihood of the match.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<RxNormConcept> RxNormConcepts { get; set; } = AWSConfigs.InitializeCollections ? new List<RxNormConcept>() : null;
+
+        /// <summary>
+        /// Checks to see if the RxNormConcepts property is set.
+        /// </summary>
+        internal bool IsSetRxNormConcepts() => this.RxNormConcepts != null && (this.RxNormConcepts.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property Score. 
+        /// <para>
+        /// The level of confidence that Amazon Comprehend Medical has in the accuracy of the
+        /// detected entity.
+        /// </para>
+        /// </summary>
+        public float? Score { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Score property is set.
+        /// </summary>
+        internal bool IsSetScore() => this.Score.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Text. 
+        /// <para>
+        /// The segment of input text extracted from which the entity was detected.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 10000)]
+        public string Text { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Text property is set.
+        /// </summary>
+        internal bool IsSetText() => this.Text != null;
+
+        /// <summary>
+        /// Gets and sets the property Traits. 
+        /// <para>
+        /// Contextual information for the entity.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<RxNormTrait> Traits { get; set; } = AWSConfigs.InitializeCollections ? new List<RxNormTrait>() : null;
+
+        /// <summary>
+        /// Checks to see if the Traits property is set.
+        /// </summary>
+        internal bool IsSetTraits() => this.Traits != null && (this.Traits.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        ///  Describes the specific type of entity. For InferRxNorm, the recognized entity type
+        /// is <c>MEDICATION</c>.
+        /// </para>
+        /// </summary>
+        public RxNormEntityType Type { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Type property is set.
+        /// </summary>
+        internal bool IsSetType() => this.Type != null;
+    }
+}

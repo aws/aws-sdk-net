@@ -61,5 +61,19 @@ namespace Amazon.DataZone.Model
         /// Checks to see if the MemberDetails property is set.
         /// </summary>
         internal bool IsSetMemberDetails() => this.MemberDetails != null;
+
+        /// <summary>
+        /// Gets and sets the property UserCreatedDesignationId. 
+        /// <para>
+        /// The ID of the user-created designation held by the project member when <c>designation</c>
+        /// is <c>USER_CREATED_DESIGNATION</c>.
+        /// </para>
+        /// </summary>
+        public string UserCreatedDesignationId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UserCreatedDesignationId property is set.
+        /// </summary>
+        internal bool IsSetUserCreatedDesignationId() => this.UserCreatedDesignationId != null;
     }
 }

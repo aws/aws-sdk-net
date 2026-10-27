@@ -121,6 +121,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     return DBSnapshotAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBCapacityReservationState"))
+                {
+                    return InvalidDBCapacityReservationStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBClusterStateFault"))
                 {
                     return InvalidDBClusterStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

@@ -45,6 +45,7 @@ namespace Amazon.ElastiCache.Model
         private string _fullEngineVersion;
         private string _kmsKeyId;
         private string _majorEngineVersion;
+        private MigrationSummary _migration;
         private NetworkType _networkType;
         private Endpoint _readerEndpoint;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -252,6 +253,24 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetMajorEngineVersion()
         {
             return this._majorEngineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Migration. 
+        /// <para>
+        /// Provides a summary of the migration status for the serverless cache.
+        /// </para>
+        /// </summary>
+        public MigrationSummary Migration
+        {
+            get { return this._migration; }
+            set { this._migration = value; }
+        }
+
+        // Check to see if Migration property is set
+        internal bool IsSetMigration()
+        {
+            return this._migration != null;
         }
 
         /// <summary>

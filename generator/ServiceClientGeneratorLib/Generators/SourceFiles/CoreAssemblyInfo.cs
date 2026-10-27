@@ -51,8 +51,6 @@ using System.Runtime.CompilerServices;
             
             #line default
             #line hidden
-            this.Write("\n");
-            
             #line 1 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(i == 0 ? "#if" : "#elif"));
             
@@ -81,49 +79,49 @@ using System.Runtime.CompilerServices;
             
             #line default
             #line hidden
-            this.Write("\n#else\n#error Unknown platform constant - unable to set correct AssemblyDescripti" +
-                    "on\n#endif\n[assembly: InternalsVisibleTo(\"AWSSDK.Extensions.CborProtocol, PublicK" +
-                    "ey=0024000004800000940000000602000000240000525341310004000001000100db5f59f098d27" +
-                    "276c7833875a6263a3cc74ab17ba9a9df0b52aedbe7252745db7274d5271fd79c1f08f668ecfa8ea" +
-                    "ab5626fa76adc811d3c8fc55859b0d09d3bc0a84eecd0ba891f2b8a2fc55141cdcc37c2053d53491" +
-                    "e650a479967c3622762977900eddbf1252ed08a2413f00a28f3a0752a81203f03ccb7f684db37351" +
-                    "8b4\")]\n[assembly: InternalsVisibleTo(\"AWSSDK.UnitTests.NetFramework, PublicKey=0" +
-                    "024000004800000940000000602000000240000525341310004000001000100db5f59f098d27276c" +
-                    "7833875a6263a3cc74ab17ba9a9df0b52aedbe7252745db7274d5271fd79c1f08f668ecfa8eaab56" +
-                    "26fa76adc811d3c8fc55859b0d09d3bc0a84eecd0ba891f2b8a2fc55141cdcc37c2053d53491e650" +
-                    "a479967c3622762977900eddbf1252ed08a2413f00a28f3a0752a81203f03ccb7f684db373518b4\"" +
-                    ")]\n[assembly: InternalsVisibleTo(\"AWSSDK.UnitTests.NetStandard, PublicKey=002400" +
-                    "0004800000940000000602000000240000525341310004000001000100db5f59f098d27276c78338" +
-                    "75a6263a3cc74ab17ba9a9df0b52aedbe7252745db7274d5271fd79c1f08f668ecfa8eaab5626fa7" +
-                    "6adc811d3c8fc55859b0d09d3bc0a84eecd0ba891f2b8a2fc55141cdcc37c2053d53491e650a4799" +
-                    "67c3622762977900eddbf1252ed08a2413f00a28f3a0752a81203f03ccb7f684db373518b4\")]\n[a" +
-                    "ssembly: InternalsVisibleTo(\"AWSSDK.UnitTestUtilities, PublicKey=002400000480000" +
-                    "0940000000602000000240000525341310004000001000100db5f59f098d27276c7833875a6263a3" +
-                    "cc74ab17ba9a9df0b52aedbe7252745db7274d5271fd79c1f08f668ecfa8eaab5626fa76adc811d3" +
-                    "c8fc55859b0d09d3bc0a84eecd0ba891f2b8a2fc55141cdcc37c2053d53491e650a479967c362276" +
-                    "2977900eddbf1252ed08a2413f00a28f3a0752a81203f03ccb7f684db373518b4\")]\n[assembly: " +
-                    "InternalsVisibleTo(\"AWSSDK.UnitTests.Core, PublicKey=002400000480000094000000060" +
-                    "2000000240000525341310004000001000100db5f59f098d27276c7833875a6263a3cc74ab17ba9a" +
-                    "9df0b52aedbe7252745db7274d5271fd79c1f08f668ecfa8eaab5626fa76adc811d3c8fc55859b0d" +
-                    "09d3bc0a84eecd0ba891f2b8a2fc55141cdcc37c2053d53491e650a479967c3622762977900eddbf" +
-                    "1252ed08a2413f00a28f3a0752a81203f03ccb7f684db373518b4\")]\n// Allows moq to access" +
-                    " internals for testing\n[assembly: InternalsVisibleTo(\"DynamicProxyGenAssembly2, " +
-                    "PublicKey=0024000004800000940000000602000000240000525341310004000001000100c547ca" +
-                    "c37abd99c8db225ef2f6c8a3602f3b3606cc9891605d02baa56104f4cfc0734aa39b93bf7852f7d9" +
-                    "266654753cc297e7d2edfe0bac1cdcf9f717241550e0a7b191195b7667bb4f64bcb8e2121380fd1d" +
-                    "9d46ad2d92d2d15605093924cceaf74c4861eff62abf69b9291ed0a340e113be11e6a7d3113e9248" +
-                    "4cf7045cc7\")]\n[assembly: AssemblyConfiguration(\"\")]\n[assembly: AssemblyProduct(\"" +
-                    "Amazon Web Services SDK for .NET\")]\n[assembly: AssemblyCompany(\"Amazon.com, Inc\"" +
-                    ")]\n[assembly: AssemblyCopyright(\"Copyright Amazon.com, Inc. or its affiliates. A" +
-                    "ll Rights Reserved.\")]\n[assembly: AssemblyTrademark(\"\")]\n[assembly: AssemblyCult" +
-                    "ure(\"\")]\n\n// Setting ComVisible to false makes the types in this assembly not vi" +
-                    "sible \n// to COM components.  If you need to access a type in this assembly from" +
-                    " \n// COM, set the ComVisible attribute to true on that type.\n[assembly: ComVisib" +
-                    "le(false)]\n\n// Version information for an assembly consists of the following fou" +
-                    "r values:\n//\n//      Major Version\n//      Minor Version \n//      Build Number\n/" +
-                    "/      Revision\n//\n// You can specify all the values or you can default the Buil" +
-                    "d and Revision Numbers \n// by using the \'*\' as shown below:\n// [assembly: Assemb" +
-                    "lyVersion(\"1.0.*\")]\n\n[assembly: AssemblyVersion(\"");
+            this.Write("#else\n#error Unknown platform constant - unable to set correct AssemblyDescript" +
+                    "ion\n#endif\n\n[assembly: InternalsVisibleTo(\"AWSSDK.Extensions.CborProtocol, P" +
+                    "ublicKey=0024000004800000940000000602000000240000525341310004000001000100db5f59f" +
+                    "098d27276c7833875a6263a3cc74ab17ba9a9df0b52aedbe7252745db7274d5271fd79c1f08f668e" +
+                    "cfa8eaab5626fa76adc811d3c8fc55859b0d09d3bc0a84eecd0ba891f2b8a2fc55141cdcc37c2053" +
+                    "d53491e650a479967c3622762977900eddbf1252ed08a2413f00a28f3a0752a81203f03ccb7f684d" +
+                    "b373518b4\")]\n[assembly: InternalsVisibleTo(\"AWSSDK.UnitTests.NetFramework, Pu" +
+                    "blicKey=0024000004800000940000000602000000240000525341310004000001000100db5f59f0" +
+                    "98d27276c7833875a6263a3cc74ab17ba9a9df0b52aedbe7252745db7274d5271fd79c1f08f668ec" +
+                    "fa8eaab5626fa76adc811d3c8fc55859b0d09d3bc0a84eecd0ba891f2b8a2fc55141cdcc37c2053d" +
+                    "53491e650a479967c3622762977900eddbf1252ed08a2413f00a28f3a0752a81203f03ccb7f684db" +
+                    "373518b4\")]\n[assembly: InternalsVisibleTo(\"AWSSDK.UnitTests.NetStandard, Publ" +
+                    "icKey=0024000004800000940000000602000000240000525341310004000001000100db5f59f098" +
+                    "d27276c7833875a6263a3cc74ab17ba9a9df0b52aedbe7252745db7274d5271fd79c1f08f668ecfa" +
+                    "8eaab5626fa76adc811d3c8fc55859b0d09d3bc0a84eecd0ba891f2b8a2fc55141cdcc37c2053d53" +
+                    "491e650a479967c3622762977900eddbf1252ed08a2413f00a28f3a0752a81203f03ccb7f684db37" +
+                    "3518b4\")]\n[assembly: InternalsVisibleTo(\"AWSSDK.UnitTestUtilities, PublicKey=" +
+                    "0024000004800000940000000602000000240000525341310004000001000100db5f59f098d27276" +
+                    "c7833875a6263a3cc74ab17ba9a9df0b52aedbe7252745db7274d5271fd79c1f08f668ecfa8eaab5" +
+                    "626fa76adc811d3c8fc55859b0d09d3bc0a84eecd0ba891f2b8a2fc55141cdcc37c2053d53491e65" +
+                    "0a479967c3622762977900eddbf1252ed08a2413f00a28f3a0752a81203f03ccb7f684db373518b4" +
+                    "\")]\n[assembly: InternalsVisibleTo(\"AWSSDK.UnitTests.Core, PublicKey=002400000" +
+                    "4800000940000000602000000240000525341310004000001000100db5f59f098d27276c7833875a" +
+                    "6263a3cc74ab17ba9a9df0b52aedbe7252745db7274d5271fd79c1f08f668ecfa8eaab5626fa76ad" +
+                    "c811d3c8fc55859b0d09d3bc0a84eecd0ba891f2b8a2fc55141cdcc37c2053d53491e650a479967c" +
+                    "3622762977900eddbf1252ed08a2413f00a28f3a0752a81203f03ccb7f684db373518b4\")]\n[as" +
+                    "sembly: InternalsVisibleTo(\"DynamicProxyGenAssembly2, PublicKey=002400000480000" +
+                    "0940000000602000000240000525341310004000001000100c547cac37abd99c8db225ef2f6c8a36" +
+                    "02f3b3606cc9891605d02baa56104f4cfc0734aa39b93bf7852f7d9266654753cc297e7d2edfe0ba" +
+                    "c1cdcf9f717241550e0a7b191195b7667bb4f64bcb8e2121380fd1d9d46ad2d92d2d15605093924c" +
+                    "ceaf74c4861eff62abf69b9291ed0a340e113be11e6a7d3113e92484cf7045cc7\")]\n\n[assemb" +
+                    "ly: AssemblyConfiguration(\"\")]\n[assembly: AssemblyProduct(\"Amazon Web Servic" +
+                    "es SDK for .NET\")]\n[assembly: AssemblyCompany(\"Amazon.com, Inc\")]\n[assembly" +
+                    ": AssemblyCopyright(\"Copyright Amazon.com, Inc. or its affiliates. All Rights R" +
+                    "eserved.\")]\n[assembly: AssemblyTrademark(\"\")]\n[assembly: AssemblyCulture(\"" +
+                    "\")]\n\n// Setting ComVisible to false makes the types in this assembly not visi" +
+                    "ble\n// to COM components.  If you need to access a type in this assembly from\n" +
+                    "// COM, set the ComVisible attribute to true on that type.\n[assembly: ComVisibl" +
+                    "e(false)]\n\n// Version information for an assembly consists of the following fo" +
+                    "ur values:\n// \n//      Major Version\n//      Minor Version \n//      Build Nu" +
+                    "mber\n//      Revision\n// \n// You can specify all the values or you can defaul" +
+                    "t the Build and Revision Numbers \n// by using the \'*\' as shown below:\n// [as" +
+                    "sembly: AssemblyVersion(\"1.0.*\")]\n[assembly: AssemblyVersion(\"");
             
             #line 1 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["Version"]));
@@ -139,7 +137,7 @@ using System.Runtime.CompilerServices;
             #line hidden
             this.Write(@""")]
 
-#if BCL
+#if NETFRAMEWORK
 [assembly: System.Security.AllowPartiallyTrustedCallers]
 
 // Setting SecurityRules to level 1 to match .NET 2.0 rules and allow the

@@ -1,0 +1,137 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.OpenSearchServerless.Model
+{
+    /// <summary>
+    /// Container for the parameters to the CreateSecurityConfig operation. Specifies a security
+    /// configuration for OpenSearch Serverless. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-saml.html">SAML
+    /// authentication for Amazon OpenSearch Serverless</a>.
+    /// </summary>
+    public partial class CreateSecurityConfigRequest : AmazonOpenSearchServerlessRequest
+    {
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// Unique, case-sensitive identifier to ensure idempotency of the request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 512)]
+        public string ClientToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ClientToken property is set.
+        /// </summary>
+        internal bool IsSetClientToken() => this.ClientToken != null;
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description of the security configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 1000)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Description property is set.
+        /// </summary>
+        internal bool IsSetDescription() => this.Description != null;
+
+        /// <summary>
+        /// Gets and sets the property IamFederationOptions. 
+        /// <para>
+        /// Describes IAM federation options in the form of a key-value map. This field is required
+        /// if you specify <c>iamFederation</c> for the <c>type</c> parameter.
+        /// </para>
+        /// </summary>
+        public IamFederationConfigOptions IamFederationOptions { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IamFederationOptions property is set.
+        /// </summary>
+        internal bool IsSetIamFederationOptions() => this.IamFederationOptions != null;
+
+        /// <summary>
+        /// Gets and sets the property IamIdentityCenterOptions. 
+        /// <para>
+        /// Describes IAM Identity Center options in the form of a key-value map. This field is
+        /// required if you specify <c>iamidentitycenter</c> for the <c>type</c> parameter.
+        /// </para>
+        /// </summary>
+        public CreateIamIdentityCenterConfigOptions IamIdentityCenterOptions { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IamIdentityCenterOptions property is set.
+        /// </summary>
+        internal bool IsSetIamIdentityCenterOptions() => this.IamIdentityCenterOptions != null;
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the security configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 3, Max = 32)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Name property is set.
+        /// </summary>
+        internal bool IsSetName() => this.Name != null;
+
+        /// <summary>
+        /// Gets and sets the property SamlOptions. 
+        /// <para>
+        /// Describes SAML options in the form of a key-value map. This field is required if you
+        /// specify <c>SAML</c> for the <c>type</c> parameter.
+        /// </para>
+        /// </summary>
+        public SamlConfigOptions SamlOptions { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SamlOptions property is set.
+        /// </summary>
+        internal bool IsSetSamlOptions() => this.SamlOptions != null;
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of security configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public SecurityConfigType Type { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Type property is set.
+        /// </summary>
+        internal bool IsSetType() => this.Type != null;
+    }
+}

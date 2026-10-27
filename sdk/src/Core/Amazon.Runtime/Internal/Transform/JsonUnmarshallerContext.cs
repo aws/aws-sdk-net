@@ -249,7 +249,7 @@ namespace Amazon.Runtime.Internal.Transform
             bool result = reader.Read();
             if (result)
             {
-                currentToken = reader.Reader.TokenType;
+                currentToken = reader.TokenType;
                 UpdateContext(ref reader);
             }
             else
@@ -293,19 +293,19 @@ namespace Amazon.Runtime.Internal.Transform
                     break;
                 case JsonTokenType.True:
                 case JsonTokenType.False:
-                    text = reader.Reader.GetBoolean().ToString();
+                    text = reader.GetBoolean().ToString();
                     break;
                 case JsonTokenType.PropertyName:
                 case JsonTokenType.String:
-                    text = reader.Reader.GetString();
+                    text = reader.GetString();
                     break;
                  // For numbers we grab the raw value b/ c we don't want to lose precision.
                 case JsonTokenType.Number:
 #if NETSTANDARD2_0 || NETFRAMEWORK
                     // overload which accepts a ReadOnlySpan<byte> is only available in netstandard2.1 and netcore2.1+
-                    text = Encoding.UTF8.GetString(reader.Reader.ValueSpan.ToArray());
+                    text = Encoding.UTF8.GetString(reader.ValueSpan.ToArray());
 #else
-                    text = Encoding.UTF8.GetString(reader.Reader.ValueSpan);
+                    text = Encoding.UTF8.GetString(reader.ValueSpan);
 #endif
                     break;
                 default:
@@ -418,11 +418,11 @@ namespace Amazon.Runtime.Internal.Transform
             }
             else if (currentToken.Value == JsonTokenType.PropertyName)
             {
-                ReadOnlySpan<byte> name = reader.Reader.ValueSpan;
+                ReadOnlySpan<byte> name = reader.ValueSpan;
                 if (name.IndexOf((byte)'\\') >= 0)
                 {
                     // The name contains JSON escape sequences; decode it so the path shows the unescaped name.
-                    stack.PushPropertyName(reader.Reader.GetString());
+                    stack.PushPropertyName(reader.GetString());
                 }
                 else
                 {

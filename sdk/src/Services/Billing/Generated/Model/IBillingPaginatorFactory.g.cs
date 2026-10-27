@@ -63,6 +63,30 @@ namespace Amazon.Billing.Model
         IListBusinessSupportSubscriptionHistoryPaginator ListBusinessSupportSubscriptionHistory(ListBusinessSupportSubscriptionHistoryRequest request);
 
         /// <summary>
+        /// Paginator for ListContracts operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListContractsPaginator ListContracts(ListContractsRequest request);
+
+        /// <summary>
+        /// Paginator for ListContractualInvestmentAttestations operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListContractualInvestmentAttestationsPaginator ListContractualInvestmentAttestations(ListContractualInvestmentAttestationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListContractualInvestmentSummaries operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListContractualInvestmentSummariesPaginator ListContractualInvestmentSummaries(ListContractualInvestmentSummariesRequest request);
+
+        /// <summary>
+        /// Paginator for ListContractualInvestments operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListContractualInvestmentsPaginator ListContractualInvestments(ListContractualInvestmentsRequest request);
+
+        /// <summary>
         /// Paginator for ListEnterpriseSupportLinkedAccountCharges operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]

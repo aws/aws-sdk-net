@@ -2462,6 +2462,10 @@
         "TenantId":{
           "shape":"TenantId",
           "documentation":"<p>The tenant identifier for the chained invocation.</p>"
+        },
+        "XAmznTraceId":{
+          "shape":"XAmznTraceId",
+          "documentation":"<p>The optional X-Ray trace header to use when starting the chained invocation. If you omit this value, the child invocation inherits the parent durable execution's trace header.</p> <p>Specify this value on the <code>START</code> update for the chained invocation operation. For more information about the header format, see <a href=\"https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader\">Tracing header</a> in the <i>X-Ray Developer Guide</i>.</p>"
         }
       },
       "documentation":"<p>Configuration options for chained function invocations in durable executions, including retry settings and timeout configuration.</p>"
@@ -5140,15 +5144,15 @@
         },
         "InputPayload":{
           "shape":"InputPayload",
-          "documentation":"<p>The JSON input payload that was provided when the durable execution was started. For asynchronous invocations, this is limited to 256 KB. For synchronous invocations, this can be up to 6 MB.</p>"
+          "documentation":"<p>The JSON input payload that you provided when you started the durable execution. Asynchronous invocations support up to 1 MB, and synchronous invocations support up to 6 MB.</p>"
         },
         "Result":{
           "shape":"OutputPayload",
-          "documentation":"<p>The JSON result returned by the durable execution if it completed successfully. This field is only present when the execution status is <code>SUCCEEDED</code>. The result is limited to 256 KB.</p>"
+          "documentation":"<p>The JSON result returned by the durable execution if it completed successfully. This field is only present when the execution status is <code>SUCCEEDED</code>. Asynchronous invocations support up to 1 MB, and synchronous invocations support up to 6 MB.</p>"
         },
         "Error":{
           "shape":"ErrorObject",
-          "documentation":"<p>Error information if the durable execution failed. This field is only present when the execution status is <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>STOPPED</code>. The combined size of all error fields is limited to 256 KB.</p>"
+          "documentation":"<p>Error information if the durable execution failed. This field is only present when the execution status is <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>STOPPED</code>. The combined size of all error fields is limited to 1 MB.</p>"
         },
         "StartTimestamp":{
           "shape":"ExecutionTimestamp",
@@ -7628,11 +7632,11 @@
         },
         "Payload":{
           "shape":"OperationPayload",
-          "documentation":"<p>The payload for successful operations. The maximum payload size is 6 MB for synchronous <code>EXECUTION</code> operations (RequestResponse invocationType), 1 MB for asynchronous <code>EXECUTION</code> (Event invocationType) and <code>CHAINED_INVOKE</code> operations, and 256 KB for <code>CONTEXT</code>, <code>STEP</code>, <code>WAIT</code>, and <code>CALLBACK</code> operations.</p>"
+          "documentation":"<p>The payload for successful operations. The maximum payload size is 6 MB for synchronous <code>EXECUTION</code> operations (RequestResponse invocationType), and 1 MB for asynchronous <code>EXECUTION</code> (Event invocationType), <code>CHAINED_INVOKE</code>, <code>CONTEXT</code>, <code>STEP</code>, <code>WAIT</code>, and <code>CALLBACK</code> operations.</p>"
         },
         "Error":{
           "shape":"ErrorObject",
-          "documentation":"<p>The error information for failed operations.</p>"
+          "documentation":"<p>The error information for failed operations. The combined size of all error fields is limited to 1 MB.</p>"
         },
         "ContextOptions":{
           "shape":"ContextOptions",
@@ -8613,7 +8617,7 @@
       "type":"string",
       "max":2048,
       "min":26,
-      "pattern":"arn:(aws[a-zA-Z-]*):lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\\d{1}::runtime:.+"
+      "pattern":"((arn:(aws[a-zA-Z-]*):lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\\d{1}::runtime:.+)|(arn:(aws[a-zA-Z-]*):lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\\d{1}:\\d{12}:runtime/[A-Za-z0-9_.-]{1,128}/version/[A-Za-z0-9_.-]{1,128}))"
     },
     "RuntimeVersionConfig":{
       "type":"structure",
@@ -8807,7 +8811,7 @@
         },
         "Error":{
           "shape":"ErrorObject",
-          "documentation":"<p>Error details describing why the callback operation failed.</p>"
+          "documentation":"<p>Error details describing why the callback operation failed. The combined size of all error fields is limited to 1 MB.</p>"
         }
       },
       "payload":"Error"
@@ -8844,7 +8848,7 @@
         },
         "Result":{
           "shape":"BinaryOperationPayload",
-          "documentation":"<p>The result data from the successful callback operation. Maximum size is 256 KB.</p>"
+          "documentation":"<p>The result data from the successful callback operation. Maximum size is 1 MB.</p>"
         }
       },
       "payload":"Result"
@@ -9220,7 +9224,7 @@
         },
         "Error":{
           "shape":"ErrorObject",
-          "documentation":"<p>Optional error details explaining why the execution is being stopped.</p>"
+          "documentation":"<p>Optional error details explaining why the execution is being stopped. The combined size of all error fields is limited to 1 MB.</p>"
         }
       },
       "payload":"Error"

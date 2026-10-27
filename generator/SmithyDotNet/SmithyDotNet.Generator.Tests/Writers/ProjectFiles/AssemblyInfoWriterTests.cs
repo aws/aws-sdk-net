@@ -1,4 +1,6 @@
 using Microsoft.CodeAnalysis.CSharp;
+using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Manifests;
 using SmithyDotNet.Generator.Generation.ProjectFiles;
 using SmithyDotNet.Generator.Writers.ProjectFiles;
 using Xunit;
@@ -10,10 +12,12 @@ public class AssemblyInfoWriterTests
 {
     private const string ServiceFileVersion = "4.0.100.3";
 
+    private readonly CloudTrailModelFixture _fixture;
     private readonly string _output;
 
     public AssemblyInfoWriterTests(CloudTrailModelFixture fixture)
     {
+        _fixture = fixture;
         var writer = new AssemblyInfoWriter(fixture.Context, ServiceFileVersion);
         _output = writer.Write(TestContext.Current.CancellationToken);
     }
@@ -80,9 +84,20 @@ public class AssemblyInfoWriterTests
     }
 
     [Fact]
-    public void DoesNotEmitInternalsVisibleTo()
+    public void DoesNotEmitInternalsVisibleTo_WithoutMetadataEntries()
     {
         Assert.DoesNotContain("InternalsVisibleTo", _output);
+    }
+
+    [Fact]
+    public void EmitsInternalsVisibleTo_PerMetadataEntry_WithSdkKeyUnlessGiven()
+    {
+        var metadata = new ServiceMetadata { InternalsVisibleTo = ["AWSSDK.UnitTests.Core", "DynamicProxyGenAssembly2, PublicKey=00240000c547cac3"] };
+        var context = new GenerationContext(_fixture.Index, TestManifests.CloudTrailData(), metadata);
+        var output = new AssemblyInfoWriter(context, ServiceFileVersion).Write(TestContext.Current.CancellationToken);
+
+        Assert.Contains("""[assembly: InternalsVisibleTo("AWSSDK.UnitTests.Core, PublicKey=0024000004800000940000000602000000240000525341310004000001000100db5f59f098d27276c7833875a6263a3cc74ab17ba9a9df0b52aedbe7252745db7274d5271fd79c1f08f668ecfa8eaab5626fa76adc811d3c8fc55859b0d09d3bc0a84eecd0ba891f2b8a2fc55141cdcc37c2053d53491e650a479967c3622762977900eddbf1252ed08a2413f00a28f3a0752a81203f03ccb7f684db373518b4")]""", output);
+        Assert.Contains("""[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2, PublicKey=00240000c547cac3")]""", output);
     }
 
     [Theory]

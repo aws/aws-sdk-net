@@ -1,3 +1,4 @@
+using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Writers.Serialization;
 using Xunit;
 
@@ -108,6 +109,19 @@ public class JsonResponseUnmarshallerWriterTests
         AssertHelper("private static PutAuditEventsResponseUnmarshaller _instance = new PutAuditEventsResponseUnmarshaller();");
         AssertHelper("internal static PutAuditEventsResponseUnmarshaller GetInstance() => _instance;");
         AssertHelper("public static PutAuditEventsResponseUnmarshaller Instance => _instance;");
+    }
+
+    [Fact]
+    public void WrappedOutputIsReadFromTheWholeBody()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.OperationModifiers["GetCount"] = new OperationModifier { UseWrappingResult = true, WrappedResultShape = "Count", WrappedResultMember = "Count" };
+        var context = TestModels.Context(TestModels.Load("Codegen/awsjson11-model.json"), customizations);
+
+        var output = new JsonResponseUnmarshallerWriter(context, "smithy.json").Write(context.Operations.Single(o => o.Name == "GetCount"), TestContext.Current.CancellationToken);
+
+        Assert.Contains("unmarshalledObject.Count = unmarshaller.Unmarshall(context, ref reader);", output);
+        Assert.DoesNotContain("context.ReadAtDepth", output);
     }
 
     private void AssertHelper(string expectedCode)

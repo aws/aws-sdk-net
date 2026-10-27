@@ -143,6 +143,19 @@ namespace Amazon.TaxSettings.Model
         internal bool IsSetGeorgiaAdditionalInfo() => this.GeorgiaAdditionalInfo != null;
 
         /// <summary>
+        /// Gets and sets the property GermanyAdditionalInfo. 
+        /// <para>
+        /// Additional tax information associated with your Tax Registration Number (TRN) in Germany.
+        /// </para>
+        /// </summary>
+        public GermanyAdditionalInfo GermanyAdditionalInfo { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GermanyAdditionalInfo property is set.
+        /// </summary>
+        internal bool IsSetGermanyAdditionalInfo() => this.GermanyAdditionalInfo != null;
+
+        /// <summary>
         /// Gets and sets the property GreeceAdditionalInfo. 
         /// <para>
         /// Additional tax information to specify for a TRN in Greece. 
@@ -232,6 +245,19 @@ namespace Amazon.TaxSettings.Model
         /// Checks to see if the MalaysiaAdditionalInfo property is set.
         /// </summary>
         internal bool IsSetMalaysiaAdditionalInfo() => this.MalaysiaAdditionalInfo != null;
+
+        /// <summary>
+        /// Gets and sets the property MexicoAdditionalInfo. 
+        /// <para>
+        /// Additional tax information associated with your Tax Registration Number (TRN) in Mexico.
+        /// </para>
+        /// </summary>
+        public MexicoAdditionalInfo MexicoAdditionalInfo { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MexicoAdditionalInfo property is set.
+        /// </summary>
+        internal bool IsSetMexicoAdditionalInfo() => this.MexicoAdditionalInfo != null;
 
         /// <summary>
         /// Gets and sets the property MonacoAdditionalInfo. 

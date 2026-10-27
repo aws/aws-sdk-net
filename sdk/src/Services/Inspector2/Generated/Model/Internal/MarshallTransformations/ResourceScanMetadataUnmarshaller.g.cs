@@ -1,0 +1,136 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.Inspector2.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for ResourceScanMetadata Object
+    /// </summary>
+    public partial class ResourceScanMetadataUnmarshaller : IJsonUnmarshaller<ResourceScanMetadata, JsonUnmarshallerContext>
+    {
+        /// <summary>
+        /// Unmarshall the response from the service to the response class.
+        /// </summary>
+        /// <returns>The unmarshalled object</returns>
+        public ResourceScanMetadata Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        {
+            var unmarshalledObject = new ResourceScanMetadata();
+            if (context.IsEmptyResponse) return null;
+
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) return null;
+
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth, ref reader))
+            {
+                if (context.TestExpression("codeRepository", targetDepth, ref reader))
+                {
+                    var unmarshaller = CodeRepositoryMetadataUnmarshaller.Instance;
+                    unmarshalledObject.CodeRepository = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("containerImage", targetDepth, ref reader))
+                {
+                    var unmarshaller = ContainerImageMetadataUnmarshaller.Instance;
+                    unmarshalledObject.ContainerImage = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("containerRegistry", targetDepth, ref reader))
+                {
+                    var unmarshaller = ContainerRegistryMetadataUnmarshaller.Instance;
+                    unmarshalledObject.ContainerRegistry = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("containerRepository", targetDepth, ref reader))
+                {
+                    var unmarshaller = ContainerRepositoryMetadataUnmarshaller.Instance;
+                    unmarshalledObject.ContainerRepository = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("ec2", targetDepth, ref reader))
+                {
+                    var unmarshaller = Ec2MetadataUnmarshaller.Instance;
+                    unmarshalledObject.Ec2 = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("ecrImage", targetDepth, ref reader))
+                {
+                    var unmarshaller = EcrContainerImageMetadataUnmarshaller.Instance;
+                    unmarshalledObject.EcrImage = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("ecrRepository", targetDepth, ref reader))
+                {
+                    var unmarshaller = EcrRepositoryMetadataUnmarshaller.Instance;
+                    unmarshalledObject.EcrRepository = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("lambdaFunction", targetDepth, ref reader))
+                {
+                    var unmarshaller = LambdaFunctionMetadataUnmarshaller.Instance;
+                    unmarshalledObject.LambdaFunction = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("serverlessFunction", targetDepth, ref reader))
+                {
+                    var unmarshaller = ServerlessFunctionMetadataUnmarshaller.Instance;
+                    unmarshalledObject.ServerlessFunction = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("vmInstance", targetDepth, ref reader))
+                {
+                    var unmarshaller = VmInstanceMetadataUnmarshaller.Instance;
+                    unmarshalledObject.VmInstance = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+            }
+            return unmarshalledObject;
+        }
+
+        private static ResourceScanMetadataUnmarshaller _instance = new ResourceScanMetadataUnmarshaller();
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static ResourceScanMetadataUnmarshaller Instance => _instance;
+    }
+}

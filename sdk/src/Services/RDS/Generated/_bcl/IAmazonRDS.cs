@@ -304,6 +304,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.BlueGreenDeploymentNotFoundException">
         /// <c>BlueGreenDeploymentIdentifier</c> doesn't refer to an existing blue/green deployment.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBCapacityReservationNotFoundException">
+        /// <c>DBCapacityReservationIdentifier</c> doesn't refer to an existing DB capacity reservation.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <c>DBClusterIdentifier</c> doesn't refer to an existing DB cluster.
         /// </exception>
@@ -371,6 +374,9 @@ namespace Amazon.RDS
         /// <returns>The response from the AddTagsToResource service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.BlueGreenDeploymentNotFoundException">
         /// <c>BlueGreenDeploymentIdentifier</c> doesn't refer to an existing blue/green deployment.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBCapacityReservationNotFoundException">
+        /// <c>DBCapacityReservationIdentifier</c> doesn't refer to an existing DB capacity reservation.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <c>DBClusterIdentifier</c> doesn't refer to an existing DB cluster.
@@ -632,6 +638,108 @@ namespace Amazon.RDS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/BacktrackDBCluster">REST API Reference for BacktrackDBCluster Operation</seealso>
         Task<BacktrackDBClusterResponse> BacktrackDBClusterAsync(BacktrackDBClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CancelDBCapacityReservation
+
+
+        /// <summary>
+        /// Cancels a DB capacity reservation. Amazon RDS changes the state of the reservation
+        /// to <c>cancelled</c> and stops reporting available capacity for it. Amazon RDS then
+        /// releases the reserved capacity.
+        /// 
+        ///  
+        /// <para>
+        /// A DB instance that uses the reservation keeps running. It continues on unreserved
+        /// capacity, and Amazon RDS doesn't stop it or modify it. However, Amazon RDS no longer
+        /// reserves capacity for the DB instance. If Amazon RDS later moves the DB instance to
+        /// different hardware, for example during hardware maintenance, that move can fail when
+        /// the Amazon Web Services Region has insufficient capacity for the DB instance class.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't cancel a reservation in the <c>active</c> state during a capacity commitment.
+        /// The response of <c>DescribeDBCapacityReservations</c> reports the end of the commitment
+        /// in <c>CommitmentInfo</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The reservation must be in the <c>active</c>, <c>assessing</c>, or <c>delayed</c>
+        /// state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The reservation must not be past its end date.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelDBCapacityReservation service method.</param>
+        /// 
+        /// <returns>The response from the CancelDBCapacityReservation service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBCapacityReservationNotFoundException">
+        /// <c>DBCapacityReservationIdentifier</c> doesn't refer to an existing DB capacity reservation.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBCapacityReservationStateException">
+        /// The DB capacity reservation isn't in a valid state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CancelDBCapacityReservation">REST API Reference for CancelDBCapacityReservation Operation</seealso>
+        CancelDBCapacityReservationResponse CancelDBCapacityReservation(CancelDBCapacityReservationRequest request);
+
+
+
+        /// <summary>
+        /// Cancels a DB capacity reservation. Amazon RDS changes the state of the reservation
+        /// to <c>cancelled</c> and stops reporting available capacity for it. Amazon RDS then
+        /// releases the reserved capacity.
+        /// 
+        ///  
+        /// <para>
+        /// A DB instance that uses the reservation keeps running. It continues on unreserved
+        /// capacity, and Amazon RDS doesn't stop it or modify it. However, Amazon RDS no longer
+        /// reserves capacity for the DB instance. If Amazon RDS later moves the DB instance to
+        /// different hardware, for example during hardware maintenance, that move can fail when
+        /// the Amazon Web Services Region has insufficient capacity for the DB instance class.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't cancel a reservation in the <c>active</c> state during a capacity commitment.
+        /// The response of <c>DescribeDBCapacityReservations</c> reports the end of the commitment
+        /// in <c>CommitmentInfo</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The reservation must be in the <c>active</c>, <c>assessing</c>, or <c>delayed</c>
+        /// state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The reservation must not be past its end date.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelDBCapacityReservation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelDBCapacityReservation service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBCapacityReservationNotFoundException">
+        /// <c>DBCapacityReservationIdentifier</c> doesn't refer to an existing DB capacity reservation.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBCapacityReservationStateException">
+        /// The DB capacity reservation isn't in a valid state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CancelDBCapacityReservation">REST API Reference for CancelDBCapacityReservation Operation</seealso>
+        Task<CancelDBCapacityReservationResponse> CancelDBCapacityReservationAsync(CancelDBCapacityReservationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1349,6 +1457,190 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  CreateDBCapacityReservation
+
+
+        /// <summary>
+        /// Creates a DB capacity reservation. A DB capacity reservation reserves compute and
+        /// memory capacity for DB instances of one DB instance class and one database engine.
+        /// Amazon RDS reserves that capacity in each Availability Zone that you specify.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon RDS reserves the same amount of capacity in every Availability Zone in the
+        /// request. You set that amount with <c>CapacityPerAvailabilityZone</c>, and you set
+        /// the Availability Zones with <c>AvailabilityZones</c>. The total reserved capacity
+        /// is <c>CapacityPerAvailabilityZone</c> multiplied by the number of Availability Zones.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify <c>StartDate</c> and <c>CommitmentDuration</c> together to create a future-dated
+        /// reservation. A future-dated reservation reserves capacity for a period that starts
+        /// later. Amazon RDS holds that capacity for the length of the commitment.
+        /// </para>
+        ///  
+        /// <para>
+        /// A future-dated reservation has the following additional constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DBInstanceClass</c> must be a <c>db.c</c>, <c>db.m</c>, <c>db.r</c>, <c>db.t</c>,
+        /// or <c>db.x</c> DB instance class. The letter after <c>db.</c> gives the DB instance
+        /// class family. For example, <c>db.x2g.xlarge</c> qualifies, and <c>db.z1d.xlarge</c>
+        /// doesn't.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If <c>DBInstanceClass</c> is a <c>db.m</c> or <c>db.r</c> DB instance class, it must
+        /// be from generation 7 or later. The digit after the family letter gives the generation.
+        /// For example, <c>db.m7g.xlarge</c> qualifies, and <c>db.m5.xlarge</c> doesn't. A <c>db.c</c>,
+        /// <c>db.t</c>, or <c>db.x</c> DB instance class has no generation requirement.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The reserved capacity must total at least 32 vCPUs in each Availability Zone. Multiply
+        /// <c>CapacityPerAvailabilityZone</c> by the number of vCPUs of the DB instance class.
+        /// The product must be 32 or more.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CommitmentDuration</c> must be at least 14 days. For a <c>db.x</c> DB instance
+        /// class, it must be at least 84 days.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>StartDate</c> must be from 5 to 120 days in the future.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Therefore, a DB instance class with 2 vCPUs needs a <c>CapacityPerAvailabilityZone</c>
+        /// of 16 or more, a class with 4 vCPUs needs 8 or more, a class with 8 vCPUs needs 4
+        /// or more, and a class with 16 vCPUs needs 2 or more. For the number of vCPUs of each
+        /// DB instance class, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+        /// instance classes</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can't modify a future-dated reservation before it starts. You can't cancel a future-dated
+        /// reservation in the <c>scheduled</c> state. You can't cancel a reservation in the <c>active</c>
+        /// state during its capacity commitment. Therefore, you can't cancel a future-dated reservation
+        /// from the time that Amazon RDS schedules it until the commitment ends.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBCapacityReservation service method.</param>
+        /// 
+        /// <returns>The response from the CreateDBCapacityReservation service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBCapacityReservationAlreadyExistsException">
+        /// You already have a DB capacity reservation with the given name. Choose a different
+        /// name for the new reservation, or use the existing reservation.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBCapacityReservationUnsupportedException">
+        /// The specified configuration isn't supported for DB capacity reservations.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InstanceQuotaExceededException">
+        /// The request would result in the user exceeding the allowed number of DB instances.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
+        /// The specified DB instance class isn't available in the specified Availability Zone.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBCapacityReservation">REST API Reference for CreateDBCapacityReservation Operation</seealso>
+        CreateDBCapacityReservationResponse CreateDBCapacityReservation(CreateDBCapacityReservationRequest request);
+
+
+
+        /// <summary>
+        /// Creates a DB capacity reservation. A DB capacity reservation reserves compute and
+        /// memory capacity for DB instances of one DB instance class and one database engine.
+        /// Amazon RDS reserves that capacity in each Availability Zone that you specify.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon RDS reserves the same amount of capacity in every Availability Zone in the
+        /// request. You set that amount with <c>CapacityPerAvailabilityZone</c>, and you set
+        /// the Availability Zones with <c>AvailabilityZones</c>. The total reserved capacity
+        /// is <c>CapacityPerAvailabilityZone</c> multiplied by the number of Availability Zones.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify <c>StartDate</c> and <c>CommitmentDuration</c> together to create a future-dated
+        /// reservation. A future-dated reservation reserves capacity for a period that starts
+        /// later. Amazon RDS holds that capacity for the length of the commitment.
+        /// </para>
+        ///  
+        /// <para>
+        /// A future-dated reservation has the following additional constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DBInstanceClass</c> must be a <c>db.c</c>, <c>db.m</c>, <c>db.r</c>, <c>db.t</c>,
+        /// or <c>db.x</c> DB instance class. The letter after <c>db.</c> gives the DB instance
+        /// class family. For example, <c>db.x2g.xlarge</c> qualifies, and <c>db.z1d.xlarge</c>
+        /// doesn't.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If <c>DBInstanceClass</c> is a <c>db.m</c> or <c>db.r</c> DB instance class, it must
+        /// be from generation 7 or later. The digit after the family letter gives the generation.
+        /// For example, <c>db.m7g.xlarge</c> qualifies, and <c>db.m5.xlarge</c> doesn't. A <c>db.c</c>,
+        /// <c>db.t</c>, or <c>db.x</c> DB instance class has no generation requirement.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The reserved capacity must total at least 32 vCPUs in each Availability Zone. Multiply
+        /// <c>CapacityPerAvailabilityZone</c> by the number of vCPUs of the DB instance class.
+        /// The product must be 32 or more.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CommitmentDuration</c> must be at least 14 days. For a <c>db.x</c> DB instance
+        /// class, it must be at least 84 days.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>StartDate</c> must be from 5 to 120 days in the future.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Therefore, a DB instance class with 2 vCPUs needs a <c>CapacityPerAvailabilityZone</c>
+        /// of 16 or more, a class with 4 vCPUs needs 8 or more, a class with 8 vCPUs needs 4
+        /// or more, and a class with 16 vCPUs needs 2 or more. For the number of vCPUs of each
+        /// DB instance class, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+        /// instance classes</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can't modify a future-dated reservation before it starts. You can't cancel a future-dated
+        /// reservation in the <c>scheduled</c> state. You can't cancel a reservation in the <c>active</c>
+        /// state during its capacity commitment. Therefore, you can't cancel a future-dated reservation
+        /// from the time that Amazon RDS schedules it until the commitment ends.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBCapacityReservation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDBCapacityReservation service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBCapacityReservationAlreadyExistsException">
+        /// You already have a DB capacity reservation with the given name. Choose a different
+        /// name for the new reservation, or use the existing reservation.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBCapacityReservationUnsupportedException">
+        /// The specified configuration isn't supported for DB capacity reservations.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InstanceQuotaExceededException">
+        /// The request would result in the user exceeding the allowed number of DB instances.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
+        /// The specified DB instance class isn't available in the specified Availability Zone.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBCapacityReservation">REST API Reference for CreateDBCapacityReservation Operation</seealso>
+        Task<CreateDBCapacityReservationResponse> CreateDBCapacityReservationAsync(CreateDBCapacityReservationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateDBCluster
 
 
@@ -1963,6 +2255,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
         /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBCapacityReservationNotFoundException">
+        /// <c>DBCapacityReservationIdentifier</c> doesn't refer to an existing DB capacity reservation.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <c>DBClusterIdentifier</c> doesn't refer to an existing DB cluster.
         /// </exception>
@@ -1990,6 +2285,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
         /// The specified DB instance class isn't available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBCapacityReservationStateException">
+        /// The DB capacity reservation isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
@@ -2078,6 +2376,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
         /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBCapacityReservationNotFoundException">
+        /// <c>DBCapacityReservationIdentifier</c> doesn't refer to an existing DB capacity reservation.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <c>DBClusterIdentifier</c> doesn't refer to an existing DB cluster.
         /// </exception>
@@ -2105,6 +2406,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
         /// The specified DB instance class isn't available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBCapacityReservationStateException">
+        /// The DB capacity reservation isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
@@ -2186,6 +2490,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
         /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBCapacityReservationNotFoundException">
+        /// <c>DBCapacityReservationIdentifier</c> doesn't refer to an existing DB capacity reservation.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <c>DBClusterIdentifier</c> doesn't refer to an existing DB cluster.
         /// </exception>
@@ -2220,6 +2527,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
         /// The specified DB instance class isn't available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBCapacityReservationStateException">
+        /// The DB capacity reservation isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
@@ -2308,6 +2618,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
         /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBCapacityReservationNotFoundException">
+        /// <c>DBCapacityReservationIdentifier</c> doesn't refer to an existing DB capacity reservation.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <c>DBClusterIdentifier</c> doesn't refer to an existing DB cluster.
         /// </exception>
@@ -2342,6 +2655,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
         /// The specified DB instance class isn't available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBCapacityReservationStateException">
+        /// The DB capacity reservation isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
@@ -4875,6 +5191,62 @@ namespace Amazon.RDS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeCertificates">REST API Reference for DescribeCertificates Operation</seealso>
         Task<DescribeCertificatesResponse> DescribeCertificatesAsync(DescribeCertificatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeDBCapacityReservations
+
+
+        /// <summary>
+        /// Describes one or more DB capacity reservations. A DB capacity reservation reserves
+        /// capacity for Amazon RDS DB instances in one or more Availability Zones.
+        /// 
+        ///  
+        /// <para>
+        /// If you don't specify a <c>DBCapacityReservationIdentifier</c>, this operation returns
+        /// information about all DB capacity reservations for your Amazon Web Services account.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation supports pagination.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBCapacityReservations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDBCapacityReservations service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBCapacityReservationNotFoundException">
+        /// <c>DBCapacityReservationIdentifier</c> doesn't refer to an existing DB capacity reservation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBCapacityReservations">REST API Reference for DescribeDBCapacityReservations Operation</seealso>
+        DescribeDBCapacityReservationsResponse DescribeDBCapacityReservations(DescribeDBCapacityReservationsRequest request);
+
+
+
+        /// <summary>
+        /// Describes one or more DB capacity reservations. A DB capacity reservation reserves
+        /// capacity for Amazon RDS DB instances in one or more Availability Zones.
+        /// 
+        ///  
+        /// <para>
+        /// If you don't specify a <c>DBCapacityReservationIdentifier</c>, this operation returns
+        /// information about all DB capacity reservations for your Amazon Web Services account.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation supports pagination.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBCapacityReservations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDBCapacityReservations service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBCapacityReservationNotFoundException">
+        /// <c>DBCapacityReservationIdentifier</c> doesn't refer to an existing DB capacity reservation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBCapacityReservations">REST API Reference for DescribeDBCapacityReservations Operation</seealso>
+        Task<DescribeDBCapacityReservationsResponse> DescribeDBCapacityReservationsAsync(DescribeDBCapacityReservationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -7821,6 +8193,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.BlueGreenDeploymentNotFoundException">
         /// <c>BlueGreenDeploymentIdentifier</c> doesn't refer to an existing blue/green deployment.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBCapacityReservationNotFoundException">
+        /// <c>DBCapacityReservationIdentifier</c> doesn't refer to an existing DB capacity reservation.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <c>DBClusterIdentifier</c> doesn't refer to an existing DB cluster.
         /// </exception>
@@ -7876,6 +8251,9 @@ namespace Amazon.RDS
         /// <returns>The response from the ListTagsForResource service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.BlueGreenDeploymentNotFoundException">
         /// <c>BlueGreenDeploymentIdentifier</c> doesn't refer to an existing blue/green deployment.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBCapacityReservationNotFoundException">
+        /// <c>DBCapacityReservationIdentifier</c> doesn't refer to an existing DB capacity reservation.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <c>DBClusterIdentifier</c> doesn't refer to an existing DB cluster.
@@ -8269,6 +8647,88 @@ namespace Amazon.RDS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyCustomDBEngineVersion">REST API Reference for ModifyCustomDBEngineVersion Operation</seealso>
         Task<ModifyCustomDBEngineVersionResponse> ModifyCustomDBEngineVersionAsync(ModifyCustomDBEngineVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ModifyDBCapacityReservation
+
+
+        /// <summary>
+        /// Modifies a DB capacity reservation. You can change the reserved capacity in each Availability
+        /// Zone of the reservation, and you can change the end date of the reservation. You can't
+        /// change the Availability Zones of an existing reservation.
+        /// 
+        ///  
+        /// <para>
+        /// The reservation must be in the <c>active</c> state. A future-dated reservation that
+        /// hasn't started isn't modifiable, and neither is a reservation that Amazon RDS is already
+        /// modifying.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify <c>CapacityPerAvailabilityZone</c>, <c>EndDateType</c>, or <c>EndDate</c>.
+        /// A request that specifies none of the three changes nothing, and Amazon RDS rejects
+        /// it.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBCapacityReservation service method.</param>
+        /// 
+        /// <returns>The response from the ModifyDBCapacityReservation service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBCapacityReservationNotFoundException">
+        /// <c>DBCapacityReservationIdentifier</c> doesn't refer to an existing DB capacity reservation.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InstanceQuotaExceededException">
+        /// The request would result in the user exceeding the allowed number of DB instances.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
+        /// The specified DB instance class isn't available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBCapacityReservationStateException">
+        /// The DB capacity reservation isn't in a valid state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBCapacityReservation">REST API Reference for ModifyDBCapacityReservation Operation</seealso>
+        ModifyDBCapacityReservationResponse ModifyDBCapacityReservation(ModifyDBCapacityReservationRequest request);
+
+
+
+        /// <summary>
+        /// Modifies a DB capacity reservation. You can change the reserved capacity in each Availability
+        /// Zone of the reservation, and you can change the end date of the reservation. You can't
+        /// change the Availability Zones of an existing reservation.
+        /// 
+        ///  
+        /// <para>
+        /// The reservation must be in the <c>active</c> state. A future-dated reservation that
+        /// hasn't started isn't modifiable, and neither is a reservation that Amazon RDS is already
+        /// modifying.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify <c>CapacityPerAvailabilityZone</c>, <c>EndDateType</c>, or <c>EndDate</c>.
+        /// A request that specifies none of the three changes nothing, and Amazon RDS rejects
+        /// it.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBCapacityReservation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyDBCapacityReservation service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBCapacityReservationNotFoundException">
+        /// <c>DBCapacityReservationIdentifier</c> doesn't refer to an existing DB capacity reservation.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InstanceQuotaExceededException">
+        /// The request would result in the user exceeding the allowed number of DB instances.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
+        /// The specified DB instance class isn't available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBCapacityReservationStateException">
+        /// The DB capacity reservation isn't in a valid state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBCapacityReservation">REST API Reference for ModifyDBCapacityReservation Operation</seealso>
+        Task<ModifyDBCapacityReservationResponse> ModifyDBCapacityReservationAsync(ModifyDBCapacityReservationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -8763,6 +9223,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
         /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBCapacityReservationNotFoundException">
+        /// <c>DBCapacityReservationIdentifier</c> doesn't refer to an existing DB capacity reservation.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// The user already has a DB instance with the given identifier.
         /// </exception>
@@ -8783,6 +9246,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
         /// The specified DB instance class isn't available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBCapacityReservationStateException">
+        /// The DB capacity reservation isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
@@ -8858,6 +9324,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
         /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBCapacityReservationNotFoundException">
+        /// <c>DBCapacityReservationIdentifier</c> doesn't refer to an existing DB capacity reservation.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// The user already has a DB instance with the given identifier.
         /// </exception>
@@ -8878,6 +9347,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
         /// The specified DB instance class isn't available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBCapacityReservationStateException">
+        /// The DB capacity reservation isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
@@ -10507,6 +10979,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.BlueGreenDeploymentNotFoundException">
         /// <c>BlueGreenDeploymentIdentifier</c> doesn't refer to an existing blue/green deployment.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBCapacityReservationNotFoundException">
+        /// <c>DBCapacityReservationIdentifier</c> doesn't refer to an existing DB capacity reservation.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <c>DBClusterIdentifier</c> doesn't refer to an existing DB cluster.
         /// </exception>
@@ -10572,6 +11047,9 @@ namespace Amazon.RDS
         /// <returns>The response from the RemoveTagsFromResource service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.BlueGreenDeploymentNotFoundException">
         /// <c>BlueGreenDeploymentIdentifier</c> doesn't refer to an existing blue/green deployment.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBCapacityReservationNotFoundException">
+        /// <c>DBCapacityReservationIdentifier</c> doesn't refer to an existing DB capacity reservation.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <c>DBClusterIdentifier</c> doesn't refer to an existing DB cluster.
@@ -11596,6 +12074,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
         /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBCapacityReservationNotFoundException">
+        /// <c>DBCapacityReservationIdentifier</c> doesn't refer to an existing DB capacity reservation.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotNotFoundException">
         /// <c>DBClusterSnapshotIdentifier</c> doesn't refer to an existing DB cluster snapshot.
         /// </exception>
@@ -11626,6 +12107,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
         /// The specified DB instance class isn't available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBCapacityReservationStateException">
+        /// The DB capacity reservation isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBSnapshotStateException">
         /// The state of the DB snapshot doesn't allow deletion.
@@ -11735,6 +12219,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
         /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBCapacityReservationNotFoundException">
+        /// <c>DBCapacityReservationIdentifier</c> doesn't refer to an existing DB capacity reservation.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotNotFoundException">
         /// <c>DBClusterSnapshotIdentifier</c> doesn't refer to an existing DB cluster snapshot.
         /// </exception>
@@ -11765,6 +12252,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
         /// The specified DB instance class isn't available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBCapacityReservationStateException">
+        /// The DB capacity reservation isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBSnapshotStateException">
         /// The state of the DB snapshot doesn't allow deletion.
@@ -11848,6 +12338,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
         /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBCapacityReservationNotFoundException">
+        /// <c>DBCapacityReservationIdentifier</c> doesn't refer to an existing DB capacity reservation.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// The user already has a DB instance with the given identifier.
         /// </exception>
@@ -11869,6 +12362,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
         /// The specified DB instance class isn't available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBCapacityReservationStateException">
+        /// The DB capacity reservation isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidS3BucketException">
         /// The specified Amazon S3 bucket name can't be found or Amazon RDS isn't authorized
@@ -11947,6 +12443,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
         /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBCapacityReservationNotFoundException">
+        /// <c>DBCapacityReservationIdentifier</c> doesn't refer to an existing DB capacity reservation.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// The user already has a DB instance with the given identifier.
         /// </exception>
@@ -11968,6 +12467,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
         /// The specified DB instance class isn't available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBCapacityReservationStateException">
+        /// The DB capacity reservation isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidS3BucketException">
         /// The specified Amazon S3 bucket name can't be found or Amazon RDS isn't authorized
@@ -12055,6 +12557,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
         /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBCapacityReservationNotFoundException">
+        /// <c>DBCapacityReservationIdentifier</c> doesn't refer to an existing DB capacity reservation.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// The user already has a DB instance with the given identifier.
         /// </exception>
@@ -12085,6 +12590,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
         /// The specified DB instance class isn't available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBCapacityReservationStateException">
+        /// The DB capacity reservation isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
@@ -12181,6 +12689,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
         /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBCapacityReservationNotFoundException">
+        /// <c>DBCapacityReservationIdentifier</c> doesn't refer to an existing DB capacity reservation.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// The user already has a DB instance with the given identifier.
         /// </exception>
@@ -12211,6 +12722,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
         /// The specified DB instance class isn't available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBCapacityReservationStateException">
+        /// The DB capacity reservation isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
@@ -12546,6 +13060,9 @@ namespace Amazon.RDS
         /// Or, RDS might not be authorized to perform necessary actions using IAM on your behalf.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBCapacityReservationNotFoundException">
+        /// <c>DBCapacityReservationIdentifier</c> doesn't refer to an existing DB capacity reservation.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <c>DBClusterIdentifier</c> doesn't refer to an existing DB cluster.
         /// </exception>
@@ -12561,6 +13078,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
         /// The specified DB instance class isn't available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBCapacityReservationStateException">
+        /// The DB capacity reservation isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
@@ -12621,6 +13141,9 @@ namespace Amazon.RDS
         /// Or, RDS might not be authorized to perform necessary actions using IAM on your behalf.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBCapacityReservationNotFoundException">
+        /// <c>DBCapacityReservationIdentifier</c> doesn't refer to an existing DB capacity reservation.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <c>DBClusterIdentifier</c> doesn't refer to an existing DB cluster.
         /// </exception>
@@ -12636,6 +13159,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
         /// The specified DB instance class isn't available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBCapacityReservationStateException">
+        /// The DB capacity reservation isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
@@ -13074,6 +13600,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSnapshotAlreadyExistsException">
         /// <c>DBSnapshotIdentifier</c> is already used by an existing snapshot.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBCapacityReservationStateException">
+        /// The DB capacity reservation isn't in a valid state.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
         /// </exception>
@@ -13119,6 +13648,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotAlreadyExistsException">
         /// <c>DBSnapshotIdentifier</c> is already used by an existing snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBCapacityReservationStateException">
+        /// The DB capacity reservation isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.

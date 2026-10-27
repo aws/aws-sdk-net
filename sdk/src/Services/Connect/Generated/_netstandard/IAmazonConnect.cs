@@ -10146,6 +10146,43 @@ namespace Amazon.Connect
 
         #endregion
                 
+        #region  ListReplicationFindings
+
+
+
+        /// <summary>
+        /// Lists replication findings for resources of a specified resource type in a specified
+        /// Connect Customer instance. A replication finding describes a single resource whose
+        /// replication to one or more Regions is incomplete or has encountered an error. Results
+        /// are returned in pages. This operation is available only for instances that are set
+        /// up for Global Resiliency.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReplicationFindings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListReplicationFindings service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListReplicationFindings">REST API Reference for ListReplicationFindings Operation</seealso>
+        Task<ListReplicationFindingsResponse> ListReplicationFindingsAsync(ListReplicationFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListRoutingProfileManualAssignmentQueues
 
 
@@ -15493,6 +15530,45 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateNotificationContent">REST API Reference for UpdateNotificationContent Operation</seealso>
         Task<UpdateNotificationContentResponse> UpdateNotificationContentAsync(UpdateNotificationContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateOutboundEmailContactMessage
+
+
+
+        /// <summary>
+        /// Updates the draft outbound email message for a contact. Use this operation to save
+        /// changes to an in-progress outbound email reply before you send it. This operation
+        /// applies only to contacts with an <c>OUTBOUND</c> or <c>AGENT_REPLY</c> initiation
+        /// method; it isn't supported for flow-initiated emails.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOutboundEmailContactMessage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateOutboundEmailContactMessage service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateOutboundEmailContactMessage">REST API Reference for UpdateOutboundEmailContactMessage Operation</seealso>
+        Task<UpdateOutboundEmailContactMessageResponse> UpdateOutboundEmailContactMessageAsync(UpdateOutboundEmailContactMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

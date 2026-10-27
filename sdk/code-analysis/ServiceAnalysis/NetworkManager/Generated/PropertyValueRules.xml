@@ -1075,6 +1075,23 @@
     <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkManager.Model.GetNetworkRoutesRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.GetNetworkRoutesRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.GetNetworkRoutesResponse.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkManager.Model.GetNetworkRoutesResponse.RouteTableArn</property>
     <min>0</min>
     <max>1500</max>
@@ -1255,6 +1272,35 @@
     <min>0</min>
     <max>50</max>
     <pattern>^attachment-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListAttachmentNatConfigurationsRequest.AttachmentId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^attachment-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListAttachmentNatConfigurationsRequest.CoreNetworkId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^core-network-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListAttachmentNatConfigurationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListAttachmentNatConfigurationsRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListAttachmentNatConfigurationsResponse.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkManager.Model.ListAttachmentRoutingPolicyAssociationsRequest.AttachmentId</property>
@@ -1655,6 +1701,24 @@
     <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkManager.Model.UpdateAttachmentNatConfigurationRequest.AttachmentId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^attachment-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.UpdateAttachmentNatConfigurationRequest.ClientToken</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.UpdateAttachmentNatConfigurationResponse.AttachmentId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^attachment-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkManager.Model.UpdateConnectionRequest.ConnectedLinkId</property>
     <min>0</min>
     <max>50</max>
@@ -1919,6 +1983,12 @@
     <min>0</min>
     <max>1500</max>
     <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.AttachmentNatConfiguration.AttachmentId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^attachment-([0-9a-f]{8,17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkManager.Model.AttachmentRoutingPolicyAssociationSummary.AttachmentId</property>
@@ -2573,6 +2643,40 @@
     <min>0</min>
     <max>256</max>
     <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.NatRule.MatchSourceCidr</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.NatRule.NatCidr</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.NatRule.RuleNumber</property>
+    <min>1</min>
+    <max>32766</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.NatRuleRequest.MatchSourceCidr</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.NatRuleRequest.NatCidr</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.NatRuleRequest.RuleNumber</property>
+    <min>1</min>
+    <max>32766</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkManager.Model.NetworkFunctionGroup.Name</property>

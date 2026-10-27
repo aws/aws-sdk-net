@@ -30,10 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSMarketplaceMetering.Model
 {
     /// <summary>
-    /// Container for the parameters to the BatchMeterUsage operation. <important> <para>
-    /// Amazon Web Services Marketplace is introducing Concurrent Agreements, enabling buyers
-    /// to make multiple purchases per Amazon Web Services account. Starting June 1, 2026,
-    /// new SaaS products must use <c>CustomerAWSAccountId</c> (instead of <c>CustomerIdentifier</c>),
+    /// Container for the parameters to the BatchMeterUsage operation. <note> <para> The Amazon
+    /// Web Services Marketplace AI Metering Agent Skill (<c>aws-marketplace-metering</c>)
+    /// helps an AI coding agent integrate your SaaS product's usage reporting with the <c>BatchMeterUsage</c>
+    /// API. The skill is a curated package of instructions and reference material that guides
+    /// your AI coding agent through building, deploying, and testing the metering integration.
+    /// To get the skill on demand without checking it out locally, install the <a href="https://docs.aws.amazon.com/agent-toolkit/latest/userguide/mcp-server.html">Amazon
+    /// Web Services MCP Server</a> in your coding agent; the agent then discovers and loads
+    /// the skill at runtime. The skill source is also available on <a href="https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/aws-marketplace-skills/aws-marketplace-metering">GitHub</a>.
+    /// For more information, see <a href="https://aws.amazon.com/blogs/awsmarketplace/build-aws-marketplace-saas-metering-with-the-metering-agent-skill/">Get
+    /// started with the Amazon Web Services Marketplace AI Metering Agent Skill</a> on the
+    /// Amazon Web Services Marketplace blog. </para> </note> <important> <para> Amazon Web
+    /// Services Marketplace is introducing Concurrent Agreements, enabling buyers to make
+    /// multiple purchases per Amazon Web Services account. Starting June 1, 2026, new SaaS
+    /// products must use <c>CustomerAWSAccountId</c> (instead of <c>CustomerIdentifier</c>),
     /// <c>LicenseArn</c> (instead of <c>ProductCode</c>) to support this feature. <c>BatchMeterUsage</c>
     /// does not support <c>CustomerIdentifier</c> for new integrations. Existing integrations
     /// continue to work. Review the new integration for Concurrent Agreements <a href="https://catalog.workshops.aws/mpseller/en-US/saas/integration-for-concurrent-agreements">here</a>.

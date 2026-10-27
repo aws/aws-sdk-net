@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.Inspector2.Generated
     {
         public void Inspector2BatchGetFindingDetails()
         {
-            #region example-1
+            #region BatchGetFindingDetails-1
 
             var client = new AmazonInspector2Client();
-            var response = client.BatchGetFindingDetails(new BatchGetFindingDetailsRequest 
+            var response = client.BatchGetFindingDetails(new BatchGetFindingDetailsRequest
             {
                 FindingArns = new List<string> {
                     "arn:aws:inspector2:eu-west-1:123456789012:finding/78b88cc9aa1d78b6e14fde90d774dde7",
@@ -32,10 +33,10 @@ namespace AWSSDKDocSamples.Amazon.Inspector2.Generated
 
         public void Inspector2CreateCisScanConfiguration()
         {
-            #region example-1
+            #region CreateCisScanConfiguration-1
 
             var client = new AmazonInspector2Client();
-            var response = client.CreateCisScanConfiguration(new CreateCisScanConfigurationRequest 
+            var response = client.CreateCisScanConfiguration(new CreateCisScanConfigurationRequest
             {
                 ScanName = "sample",
                 Schedule = new Schedule { Daily = new DailySchedule { StartTime = new Time {
@@ -62,13 +63,13 @@ namespace AWSSDKDocSamples.Amazon.Inspector2.Generated
 
         public void Inspector2CreateConnector()
         {
-            #region example-1
+            #region CreateConnector-1
 
             var client = new AmazonInspector2Client();
-            var response = client.CreateConnector(new CreateConnectorRequest 
+            var response = client.CreateConnector(new CreateConnectorRequest
             {
-                Name = "my-azure-connector",
                 Description = "Azure subscription scanner",
+                Name = "my-azure-connector",
                 Provider = "AZURE",
                 ProviderDetail = new ProviderDetailCreate { Azure = new AzureProviderDetailCreate {
                     AutoInstallVMScanner = true,
@@ -96,10 +97,10 @@ namespace AWSSDKDocSamples.Amazon.Inspector2.Generated
 
         public void Inspector2DeleteCisScanConfiguration()
         {
-            #region example-1
+            #region DeleteCisScanConfiguration-1
 
             var client = new AmazonInspector2Client();
-            var response = client.DeleteCisScanConfiguration(new DeleteCisScanConfigurationRequest 
+            var response = client.DeleteCisScanConfiguration(new DeleteCisScanConfigurationRequest
             {
                 ScanConfigurationArn = "arn:aws:inspector2:us-east-1:123412341234:owner/123412341234/cis-configuration/624b746d-e080-44ae-8c1d-48e653365a38"
             });
@@ -111,10 +112,10 @@ namespace AWSSDKDocSamples.Amazon.Inspector2.Generated
 
         public void Inspector2DeleteConnector()
         {
-            #region example-1
+            #region DeleteConnector-1
 
             var client = new AmazonInspector2Client();
-            var response = client.DeleteConnector(new DeleteConnectorRequest 
+            var response = client.DeleteConnector(new DeleteConnectorRequest
             {
                 ConnectorArn = "arn:aws:inspector2:us-east-1:123456789012:connector/6ccf8549-b52b-57ca-bf52-a2266da3c53a"
             });
@@ -125,16 +126,16 @@ namespace AWSSDKDocSamples.Amazon.Inspector2.Generated
 
         public void Inspector2GetCisScanReport()
         {
-            #region example-1
+            #region GetCisScanReport-1
 
             var client = new AmazonInspector2Client();
-            var response = client.GetCisScanReport(new GetCisScanReportRequest 
+            var response = client.GetCisScanReport(new GetCisScanReportRequest
             {
                 ReportFormat = "PDF",
                 ScanArn = "arn:aws:inspector2:us-east-1:123412341234:owner/123412341234/cis-scan/624b746d-e080-44ae-8c1d-48e653365a38"
             });
 
-            string status = response.Status;
+            CisReportStatus status = response.Status;
             string url = response.Url;
 
             #endregion
@@ -142,10 +143,10 @@ namespace AWSSDKDocSamples.Amazon.Inspector2.Generated
 
         public void Inspector2GetCisScanResultDetails()
         {
-            #region example-1
+            #region GetCisScanResultDetails-1
 
             var client = new AmazonInspector2Client();
-            var response = client.GetCisScanResultDetails(new GetCisScanResultDetailsRequest 
+            var response = client.GetCisScanResultDetails(new GetCisScanResultDetailsRequest
             {
                 AccountId = "123412341234",
                 ScanArn = "arn:aws:inspector2:us-east-1:123412341234:owner/123412341234/cis-scan/624b746d-e080-44ae-8c1d-48e653365a38",
@@ -159,10 +160,10 @@ namespace AWSSDKDocSamples.Amazon.Inspector2.Generated
 
         public void Inspector2ListCisScanConfigurations()
         {
-            #region example-1
+            #region ListCisScanConfigurations-1
 
             var client = new AmazonInspector2Client();
-            var response = client.ListCisScanConfigurations(new ListCisScanConfigurationsRequest 
+            var response = client.ListCisScanConfigurations(new ListCisScanConfigurationsRequest
             {
             });
 
@@ -173,10 +174,10 @@ namespace AWSSDKDocSamples.Amazon.Inspector2.Generated
 
         public void Inspector2ListCisScanResultsAggregatedByChecks()
         {
-            #region example-1
+            #region ListCisScanResultsAggregatedByChecks-1
 
             var client = new AmazonInspector2Client();
-            var response = client.ListCisScanResultsAggregatedByChecks(new ListCisScanResultsAggregatedByChecksRequest 
+            var response = client.ListCisScanResultsAggregatedByChecks(new ListCisScanResultsAggregatedByChecksRequest
             {
                 ScanArn = "arn:aws:inspector2:us-east-1:123412341234:owner/123412341234/cis-scan/624b746d-e080-44ae-8c1d-48e653365a38"
             });
@@ -188,10 +189,10 @@ namespace AWSSDKDocSamples.Amazon.Inspector2.Generated
 
         public void Inspector2ListCisScanResultsAggregatedByTargetResource()
         {
-            #region example-1
+            #region ListCisScanResultsAggregatedByTargetResource-1
 
             var client = new AmazonInspector2Client();
-            var response = client.ListCisScanResultsAggregatedByTargetResource(new ListCisScanResultsAggregatedByTargetResourceRequest 
+            var response = client.ListCisScanResultsAggregatedByTargetResource(new ListCisScanResultsAggregatedByTargetResourceRequest
             {
                 ScanArn = "arn:aws:inspector2:us-east-1:123412341234:owner/123412341234/cis-scan/624b746d-e080-44ae-8c1d-48e653365a38"
             });
@@ -203,10 +204,10 @@ namespace AWSSDKDocSamples.Amazon.Inspector2.Generated
 
         public void Inspector2ListCisScans()
         {
-            #region example-1
+            #region ListCisScans-1
 
             var client = new AmazonInspector2Client();
-            var response = client.ListCisScans(new ListCisScansRequest 
+            var response = client.ListCisScans(new ListCisScansRequest
             {
             });
 
@@ -217,22 +218,22 @@ namespace AWSSDKDocSamples.Amazon.Inspector2.Generated
 
         public void Inspector2ListConnectors()
         {
-            #region example-1
+            #region ListConnectors-1
 
             var client = new AmazonInspector2Client();
-            var response = client.ListConnectors(new ListConnectorsRequest 
+            var response = client.ListConnectors(new ListConnectorsRequest
             {
                 FilterCriteria = new ConnectorFilterCriteria {
                     ConnectorType = new List<ConnectorTypeFilter> {
                         new ConnectorTypeFilter {
-                            Value = "CUSTOMER_MANAGED",
-                            Comparison = "EQUALS"
+                            Comparison = "EQUALS",
+                            Value = "CUSTOMER_MANAGED"
                         }
                     },
                     Provider = new List<ProviderFilter> {
                         new ProviderFilter {
-                            Value = "AZURE",
-                            Comparison = "EQUALS"
+                            Comparison = "EQUALS",
+                            Value = "AZURE"
                         }
                     }
                 },
@@ -246,10 +247,10 @@ namespace AWSSDKDocSamples.Amazon.Inspector2.Generated
 
         public void Inspector2ListConnectorScanConfigurations()
         {
-            #region example-1
+            #region ListConnectorScanConfigurations-1
 
             var client = new AmazonInspector2Client();
-            var response = client.ListConnectorScanConfigurations(new ListConnectorScanConfigurationsRequest 
+            var response = client.ListConnectorScanConfigurations(new ListConnectorScanConfigurationsRequest
             {
                 AwsConfigConnectorArns = new List<string> {
                     "arn:aws:config:us-east-1:123456789012:connector/azure/a7bc5463-04ce-4b52-901e-f26f7292a4a7/2fbed4bd-5b95-4947-a751-8defc76ecdae"
@@ -264,10 +265,10 @@ namespace AWSSDKDocSamples.Amazon.Inspector2.Generated
 
         public void Inspector2SendCisSessionHealth()
         {
-            #region example-1
+            #region SendCisSessionHealth-1
 
             var client = new AmazonInspector2Client();
-            var response = client.SendCisSessionHealth(new SendCisSessionHealthRequest 
+            var response = client.SendCisSessionHealth(new SendCisSessionHealthRequest
             {
                 ScanJobId = "624b746d-e080-44ae-8c1d-48e653365a38",
                 SessionToken = "624b746d-e080-44ae-8c1d-48e653365a31"
@@ -279,10 +280,10 @@ namespace AWSSDKDocSamples.Amazon.Inspector2.Generated
 
         public void Inspector2SendCisSessionTelemetry()
         {
-            #region example-1
+            #region SendCisSessionTelemetry-1
 
             var client = new AmazonInspector2Client();
-            var response = client.SendCisSessionTelemetry(new SendCisSessionTelemetryRequest 
+            var response = client.SendCisSessionTelemetry(new SendCisSessionTelemetryRequest
             {
                 Messages = new List<CisSessionMessage> {
                     new CisSessionMessage {
@@ -306,10 +307,10 @@ namespace AWSSDKDocSamples.Amazon.Inspector2.Generated
 
         public void Inspector2StartCisSession()
         {
-            #region example-1
+            #region StartCisSession-1
 
             var client = new AmazonInspector2Client();
-            var response = client.StartCisSession(new StartCisSessionRequest 
+            var response = client.StartCisSession(new StartCisSessionRequest
             {
                 Message = new StartCisSessionMessage { SessionToken = "624b746d-e080-44ae-8c1d-48e653365a31" },
                 ScanJobId = "624b746d-e080-44ae-8c1d-48e653365a38"
@@ -321,18 +322,18 @@ namespace AWSSDKDocSamples.Amazon.Inspector2.Generated
 
         public void Inspector2StopCisSession()
         {
-            #region example-1
+            #region StopCisSession-1
 
             var client = new AmazonInspector2Client();
-            var response = client.StopCisSession(new StopCisSessionRequest 
+            var response = client.StopCisSession(new StopCisSessionRequest
             {
                 Message = new StopCisSessionMessage {
                     BenchmarkProfile = "xccdf_org.cisecurity.benchmarks_profile_Level_1",
                     BenchmarkVersion = "2.0.0",
                     ComputePlatform = new ComputePlatform {
-                        Version = "20.04",
                         Product = "ubuntu",
-                        Vendor = "canonical"
+                        Vendor = "canonical",
+                        Version = "20.04"
                     },
                     Progress = new StopCisMessageProgress {
                         ErrorChecks = 1,
@@ -357,10 +358,10 @@ namespace AWSSDKDocSamples.Amazon.Inspector2.Generated
 
         public void Inspector2UpdateCisScanConfiguration()
         {
-            #region example-1
+            #region UpdateCisScanConfiguration-1
 
             var client = new AmazonInspector2Client();
-            var response = client.UpdateCisScanConfiguration(new UpdateCisScanConfigurationRequest 
+            var response = client.UpdateCisScanConfiguration(new UpdateCisScanConfigurationRequest
             {
                 ScanConfigurationArn = "arn:aws:inspector2:us-east-1:123412341234:owner/123412341234/cis-configuration/624b746d-e080-44ae-8c1d-48e653365a38",
                 ScanName = "sample_new",
@@ -388,10 +389,10 @@ namespace AWSSDKDocSamples.Amazon.Inspector2.Generated
 
         public void Inspector2UpdateConnector()
         {
-            #region example-1
+            #region UpdateConnector-1
 
             var client = new AmazonInspector2Client();
-            var response = client.UpdateConnector(new UpdateConnectorRequest 
+            var response = client.UpdateConnector(new UpdateConnectorRequest
             {
                 ConnectorArn = "arn:aws:inspector2:us-east-1:123456789012:connector/6ccf8549-b52b-57ca-bf52-a2266da3c53a",
                 ProviderDetail = new ProviderDetailUpdate { Azure = new AzureProviderDetailUpdate { AzureRegions = new List<string> {
@@ -407,10 +408,10 @@ namespace AWSSDKDocSamples.Amazon.Inspector2.Generated
 
         public void Inspector2UpdateConnectorScanConfiguration()
         {
-            #region example-1
+            #region UpdateConnectorScanConfiguration-1
 
             var client = new AmazonInspector2Client();
-            var response = client.UpdateConnectorScanConfiguration(new UpdateConnectorScanConfigurationRequest 
+            var response = client.UpdateConnectorScanConfiguration(new UpdateConnectorScanConfigurationRequest
             {
                 AwsConfigConnectorArn = "arn:aws:config:us-east-1:123456789012:connector/azure/a7bc5463-04ce-4b52-901e-f26f7292a4a7/2fbed4bd-5b95-4947-a751-8defc76ecdae",
                 ScanConfiguration = new ConnectorScanConfiguration { ContainerImageScanning = new ConnectorContainerImageScanConfiguration {
@@ -423,13 +424,10 @@ namespace AWSSDKDocSamples.Amazon.Inspector2.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

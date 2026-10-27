@@ -90,6 +90,25 @@ public class CustomizationsModelTests
     }
 
     [Fact]
+    public void Load_ExcludeAndWrappingResult_ReadsHooks()
+    {
+        var model = LoadFiles("""
+            {
+              "shapeModifiers": { "PutTargetsResponse": { "exclude": ["FailedEntryCount"] } },
+              "operationModifiers": {
+                "InvokeAsync": { "exclude": true },
+                "DescribeDomain": { "useWrappingResult": true, "wrappedResultShape": "DomainDetail", "wrappedResultMember": "DomainDetail" }
+              }
+            }
+            """);
+
+        Assert.Equal(["FailedEntryCount"], model.ShapeModifiers["PutTargetsResponse"].Exclude);
+        Assert.True(model.OperationModifiers["InvokeAsync"].Exclude);
+        var wrap = model.OperationModifiers["DescribeDomain"];
+        Assert.Equal((true, "DomainDetail", "DomainDetail"), (wrap.UseWrappingResult, wrap.WrappedResultShape, wrap.WrappedResultMember));
+    }
+
+    [Fact]
     public void Load_ShapeSubstitutions_EmitAsShape_Throws()
     {
         var ex = Assert.Throws<GeneratorException>(() => LoadFiles("""{ "shapeSubstitutions": { "Thing": { "emitAsShape": "String" } } }"""));
@@ -163,6 +182,17 @@ public class CustomizationsModelTests
         Assert.Contains("overrideContentType appears in more than one customizations file", ex.Message);
     }
 
+    [Fact]
+    public void Load_SkipUriPropertyValidationAndGenerateUnmarshaller_CombineAcrossFiles()
+    {
+        var model = LoadFiles(
+            """{ "skipUriPropertyValidation": ["AccountId"], "generateUnmarshaller": ["Event"] }""",
+            """{ "generateUnmarshaller": ["Session"] }""");
+
+        Assert.Equal(["AccountId"], model.SkipUriPropertyValidation);
+        Assert.Equal(["Event", "Session"], model.GenerateUnmarshaller);
+    }
+
     // The entry fields (Type, Marshaller, Unmarshaller) are capitalized, unlike every other hook's; Unmarshaller may be omitted.
     [Fact]
     public void Load_DataTypeSwap_ParsesEntry()
@@ -170,5 +200,30 @@ public class CustomizationsModelTests
         var customizations = LoadFiles("""{ "dataTypeSwap": { "Spend": { "Amount": { "Type": "decimal?", "Marshaller": "M" } } } }""");
 
         Assert.Equal(new DataTypeSwap { Type = "decimal?", Marshaller = "M" }, customizations.DataTypeSwaps["Spend"]["Amount"]);
+    }
+
+    // acm splits simpleMethods and simpleConstructors into their own sibling files alongside noArgOverloads.
+    [Fact]
+    public void Load_ConvenienceHooks_ReadAndMergeAcrossFiles()
+    {
+        var customizations = LoadFiles(
+            """{ "noArgOverloads": [ "ListKeys" ] }""",
+            """{ "simpleMethods": { "operations": { "DeleteCertificate": { "methodForms": [ [ "CertificateArn" ] ] } } } }""",
+            """{ "simpleConstructors": { "constructors": { "DeleteCertificateRequest": { "constructorForms": [ [ "CertificateArn" ] ] } } } }""");
+
+        Assert.True(customizations.CreateNoArgOverload("listkeys"));
+        Assert.Equal([["CertificateArn"]], customizations.MethodFormsFor("DeleteCertificate"));
+        Assert.Equal([["CertificateArn"]], customizations.ConstructorFormsFor("DeleteCertificateRequest"));
+        Assert.Null(customizations.MethodFormsFor("Missing"));
+        Assert.Null(customizations.ConstructorFormsFor("Missing"));
+    }
+
+    [Fact]
+    public void Load_SimpleMethods_SameOperationInTwoFiles_Throws()
+    {
+        var ex = Assert.Throws<GeneratorException>(() => LoadFiles(
+            """{ "simpleMethods": { "operations": { "DoThing": { "methodForms": [ [ "A" ] ] } } } }""",
+            """{ "simpleMethods": { "operations": { "DoThing": { "methodForms": [ [ "B" ] ] } } } }"""));
+        Assert.Contains("simpleMethods['DoThing'] appears in more than one customizations file", ex.Message);
     }
 }

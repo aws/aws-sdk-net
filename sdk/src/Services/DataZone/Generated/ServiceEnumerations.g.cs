@@ -533,6 +533,11 @@ namespace Amazon.DataZone
         public static readonly ConnectionType DATABRICKS = new ConnectionType("DATABRICKS");
 
         /// <summary>
+        /// Constant DATABRICKSICEBERGRESTCATALOG for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType DATABRICKSICEBERGRESTCATALOG = new ConnectionType("DATABRICKSICEBERGRESTCATALOG");
+
+        /// <summary>
         /// Constant DOCUMENTDB for ConnectionType
         /// </summary>
         public static readonly ConnectionType DOCUMENTDB = new ConnectionType("DOCUMENTDB");
@@ -556,6 +561,11 @@ namespace Amazon.DataZone
         /// Constant IAM for ConnectionType
         /// </summary>
         public static readonly ConnectionType IAM = new ConnectionType("IAM");
+
+        /// <summary>
+        /// Constant ICEBERGRESTCATALOG for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType ICEBERGRESTCATALOG = new ConnectionType("ICEBERGRESTCATALOG");
 
         /// <summary>
         /// Constant MLFLOW for ConnectionType
@@ -601,6 +611,11 @@ namespace Amazon.DataZone
         /// Constant SNOWFLAKE for ConnectionType
         /// </summary>
         public static readonly ConnectionType SNOWFLAKE = new ConnectionType("SNOWFLAKE");
+
+        /// <summary>
+        /// Constant SNOWFLAKEICEBERGRESTCATALOG for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType SNOWFLAKEICEBERGRESTCATALOG = new ConnectionType("SNOWFLAKEICEBERGRESTCATALOG");
 
         /// <summary>
         /// Constant SPARK for ConnectionType
@@ -1214,6 +1229,47 @@ namespace Amazon.DataZone
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DeploymentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DesignationType.
+    /// </summary>
+    public class DesignationType : ConstantClass
+    {
+        /// <summary>
+        /// Constant MANAGED for DesignationType
+        /// </summary>
+        public static readonly DesignationType MANAGED = new DesignationType("MANAGED");
+
+        /// <summary>
+        /// Constant USER_CREATED for DesignationType
+        /// </summary>
+        public static readonly DesignationType USER_CREATED = new DesignationType("USER_CREATED");
+
+        /// <summary>
+        /// Constructs a custom DesignationType for a value not among the defined constants.
+        /// </summary>
+        public DesignationType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DesignationType FindValue(string value)
+        {
+            return FindValue<DesignationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DesignationType(string value)
         {
             return FindValue(value);
         }
@@ -1930,6 +1986,11 @@ namespace Amazon.DataZone
         public static readonly GlueConnectionType BIGQUERY = new GlueConnectionType("BIGQUERY");
 
         /// <summary>
+        /// Constant DATABRICKSICEBERGRESTCATALOG for GlueConnectionType
+        /// </summary>
+        public static readonly GlueConnectionType DATABRICKSICEBERGRESTCATALOG = new GlueConnectionType("DATABRICKSICEBERGRESTCATALOG");
+
+        /// <summary>
         /// Constant DOCUMENTDB for GlueConnectionType
         /// </summary>
         public static readonly GlueConnectionType DOCUMENTDB = new GlueConnectionType("DOCUMENTDB");
@@ -1938,6 +1999,11 @@ namespace Amazon.DataZone
         /// Constant DYNAMODB for GlueConnectionType
         /// </summary>
         public static readonly GlueConnectionType DYNAMODB = new GlueConnectionType("DYNAMODB");
+
+        /// <summary>
+        /// Constant ICEBERGRESTCATALOG for GlueConnectionType
+        /// </summary>
+        public static readonly GlueConnectionType ICEBERGRESTCATALOG = new GlueConnectionType("ICEBERGRESTCATALOG");
 
         /// <summary>
         /// Constant MYSQL for GlueConnectionType
@@ -1973,6 +2039,11 @@ namespace Amazon.DataZone
         /// Constant SNOWFLAKE for GlueConnectionType
         /// </summary>
         public static readonly GlueConnectionType SNOWFLAKE = new GlueConnectionType("SNOWFLAKE");
+
+        /// <summary>
+        /// Constant SNOWFLAKEICEBERGRESTCATALOG for GlueConnectionType
+        /// </summary>
+        public static readonly GlueConnectionType SNOWFLAKEICEBERGRESTCATALOG = new GlueConnectionType("SNOWFLAKEICEBERGRESTCATALOG");
 
         /// <summary>
         /// Constant SQLSERVER for GlueConnectionType
@@ -3509,6 +3580,11 @@ namespace Amazon.DataZone
         /// Constant PROJECT_CATALOG_STEWARD for ProjectDesignation
         /// </summary>
         public static readonly ProjectDesignation PROJECT_CATALOG_STEWARD = new ProjectDesignation("PROJECT_CATALOG_STEWARD");
+
+        /// <summary>
+        /// Constant USER_CREATED_DESIGNATION for ProjectDesignation
+        /// </summary>
+        public static readonly ProjectDesignation USER_CREATED_DESIGNATION = new ProjectDesignation("USER_CREATED_DESIGNATION");
 
         /// <summary>
         /// Constructs a custom ProjectDesignation for a value not among the defined constants.
@@ -5317,6 +5393,11 @@ namespace Amazon.DataZone
         /// Constant PROJECT_OWNER for UserDesignation
         /// </summary>
         public static readonly UserDesignation PROJECT_OWNER = new UserDesignation("PROJECT_OWNER");
+
+        /// <summary>
+        /// Constant USER_CREATED_DESIGNATION for UserDesignation
+        /// </summary>
+        public static readonly UserDesignation USER_CREATED_DESIGNATION = new UserDesignation("USER_CREATED_DESIGNATION");
 
         /// <summary>
         /// Constructs a custom UserDesignation for a value not among the defined constants.

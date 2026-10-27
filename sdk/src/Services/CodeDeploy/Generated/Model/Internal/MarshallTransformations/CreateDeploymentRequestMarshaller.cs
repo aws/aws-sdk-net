@@ -116,6 +116,17 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
 
+            if(publicRequest.IsSetEc2DeploymentOptions())
+            {
+                context.Writer.WritePropertyName("ec2DeploymentOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EC2DeploymentOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Ec2DeploymentOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetFileExistsBehavior())
             {
                 context.Writer.WritePropertyName("fileExistsBehavior");

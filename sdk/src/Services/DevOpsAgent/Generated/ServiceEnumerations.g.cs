@@ -1399,6 +1399,11 @@ namespace Amazon.DevOpsAgent
         public static readonly Service Mcpserversplunk = new Service("mcpserversplunk");
 
         /// <summary>
+        /// Constant Msteams for Service
+        /// </summary>
+        public static readonly Service Msteams = new Service("msteams");
+
+        /// <summary>
         /// Constant Pagerduty for Service
         /// </summary>
         public static readonly Service Pagerduty = new Service("pagerduty");

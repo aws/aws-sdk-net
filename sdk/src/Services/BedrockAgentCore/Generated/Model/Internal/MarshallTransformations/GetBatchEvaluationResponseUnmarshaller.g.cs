@@ -129,6 +129,13 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("insightResults", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<InsightResult, InsightResultUnmarshaller>(InsightResultUnmarshaller.Instance);
+                    unmarshalledObject.InsightResults = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("insights", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Insight, InsightUnmarshaller>(InsightUnmarshaller.Instance);

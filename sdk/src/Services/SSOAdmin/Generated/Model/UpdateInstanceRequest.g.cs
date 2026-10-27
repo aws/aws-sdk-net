@@ -36,10 +36,10 @@ namespace Amazon.SSOAdmin.Model
     /// following operations: </para> <ul> <li> <para> Update the encryption configuration
     /// of the instance by specifying <c>EncryptionConfiguration</c>. </para> </li> <li> <para>
     /// Enable permission sets for the instance by specifying <c>PermissionSetsEnabled</c>.
-    /// </para> </li> </ul> <para> A request that specifies both <c>EncryptionConfiguration</c>
-    /// and <c>PermissionSetsEnabled</c> returns a <c>ValidationException</c>. To perform
-    /// both operations, call <c>UpdateInstance</c> separately for each. The two calls can
-    /// be made in parallel. </para>
+    /// </para> </li> </ul> <para> If you specify both <c>EncryptionConfiguration</c> and
+    /// <c>PermissionSetsEnabled</c> in a request, the request returns a <c>ValidationException</c>.
+    /// To perform both operations, call <c>UpdateInstance</c> separately for each. You can
+    /// make the two calls in parallel. </para>
     /// </summary>
     public partial class UpdateInstanceRequest : AmazonSSOAdminRequest
     {
@@ -98,8 +98,8 @@ namespace Amazon.SSOAdmin.Model
         ///  <note> 
         /// <para>
         /// You can't set <c>EncryptionConfiguration</c> and <c>PermissionSetsEnabled</c> in the
-        /// same request. To configure both, make two separate <c>UpdateInstance</c> calls. These
-        /// calls can be made in parallel.
+        /// same request. To configure both, make two separate <c>UpdateInstance</c> calls. You
+        /// can make these calls in parallel.
         /// </para>
         ///  </note>
         /// </summary>

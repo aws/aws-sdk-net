@@ -103,7 +103,7 @@ namespace Amazon.DynamoDBv2.Internal
                         {
                             throw new AmazonClientException("Invalid Configuration: Dualstack and local endpoint are not supported");
                         }
-                        return new Endpoint("http://localhost:8000", InterpolateJson(@"{""authSchemes"":[{""signingRegion"":""us-east-1"",""signingName"":""dynamodb"",""name"":""sigv4""}]}", refs), InterpolateJson(@"", refs));
+                        return new Endpoint("http://localhost:8000", InterpolateJson(@"{""authSchemes"":[{""signingRegion"":""us-east-1"",""name"":""sigv4"",""signingName"":""dynamodb""}]}", refs), InterpolateJson(@"", refs));
                     }
                     if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
                     {
@@ -112,6 +112,14 @@ namespace Amazon.DynamoDBv2.Internal
                             if (IsSet(refs["AccountIdEndpointMode"]) && Equals(refs["AccountIdEndpointMode"], "required"))
                             {
                                 throw new AmazonClientException("Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported");
+                            }
+                            if (!Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && !Equals(refs["Region"], "us-gov-east-1") && !Equals(refs["Region"], "us-gov-west-1") && !Equals(refs["Region"], "cn-north-1") && !Equals(refs["Region"], "cn-northwest-1"))
+                            {
+                                if (IsSet(refs["IsSearchOperation"]) && Equals(refs["IsSearchOperation"], true))
+                                {
+                                    return new Endpoint(Interpolate(@"https://search-dynamodb-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                                }
+                                return new Endpoint(Interpolate(@"https://dynamodb-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                             }
                             if (IsSet(refs["IsSearchOperation"]) && Equals(refs["IsSearchOperation"], true))
                             {
@@ -125,11 +133,19 @@ namespace Amazon.DynamoDBv2.Internal
                     {
                         if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
                         {
+                            if (IsSet(refs["AccountIdEndpointMode"]) && Equals(refs["AccountIdEndpointMode"], "required"))
+                            {
+                                throw new AmazonClientException("Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported");
+                            }
                             if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov"))
                             {
-                                if (IsSet(refs["AccountIdEndpointMode"]) && Equals(refs["AccountIdEndpointMode"], "required"))
+                                if (!Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && !Equals(refs["Region"], "us-gov-east-1") && !Equals(refs["Region"], "us-gov-west-1") && !Equals(refs["Region"], "cn-north-1") && !Equals(refs["Region"], "cn-northwest-1"))
                                 {
-                                    throw new AmazonClientException("Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported");
+                                    if (IsSet(refs["IsSearchOperation"]) && Equals(refs["IsSearchOperation"], true))
+                                    {
+                                        return new Endpoint(Interpolate(@"https://search-dynamodb.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                                    }
+                                    return new Endpoint(Interpolate(@"https://dynamodb.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                                 }
                                 if (IsSet(refs["IsSearchOperation"]) && Equals(refs["IsSearchOperation"], true))
                                 {
@@ -137,9 +153,13 @@ namespace Amazon.DynamoDBv2.Internal
                                 }
                                 return new Endpoint(Interpolate(@"https://dynamodb.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                             }
-                            if (IsSet(refs["AccountIdEndpointMode"]) && Equals(refs["AccountIdEndpointMode"], "required"))
+                            if (!Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && !Equals(refs["Region"], "us-gov-east-1") && !Equals(refs["Region"], "us-gov-west-1") && !Equals(refs["Region"], "cn-north-1") && !Equals(refs["Region"], "cn-northwest-1"))
                             {
-                                throw new AmazonClientException("Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported");
+                                if (IsSet(refs["IsSearchOperation"]) && Equals(refs["IsSearchOperation"], true))
+                                {
+                                    return new Endpoint(Interpolate(@"https://search-dynamodb-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                                }
+                                return new Endpoint(Interpolate(@"https://dynamodb-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                             }
                             if (IsSet(refs["IsSearchOperation"]) && Equals(refs["IsSearchOperation"], true))
                             {
@@ -153,7 +173,19 @@ namespace Amazon.DynamoDBv2.Internal
                     {
                         if (Equals(GetAttr(refs["PartitionResult"], "supportsDualStack"), true))
                         {
-                            if (IsSet(refs["AccountIdEndpointMode"]) && !Equals(refs["AccountIdEndpointMode"], "disabled") && Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && !Equals(refs["UseFIPS"], true) && IsSet(refs["ResourceArn"]) && (refs["ParsedArn"] = ParseArn((string)refs["ResourceArn"])) != null && Equals(GetAttr(refs["ParsedArn"], "service"), "dynamodb") && IsValidHostLabel((string)GetAttr(refs["ParsedArn"], "region"), false) && Equals(GetAttr(refs["ParsedArn"], "region"), Interpolate(@"{Region}", refs)) && IsValidHostLabel((string)GetAttr(refs["ParsedArn"], "accountId"), false))
+                            if (!Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && !Equals(refs["Region"], "us-gov-east-1") && !Equals(refs["Region"], "us-gov-west-1") && !Equals(refs["Region"], "cn-north-1") && !Equals(refs["Region"], "cn-northwest-1"))
+                            {
+                                if (IsSet(refs["AccountIdEndpointMode"]) && Equals(refs["AccountIdEndpointMode"], "required"))
+                                {
+                                    throw new AmazonClientException("Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this region");
+                                }
+                                if (IsSet(refs["IsSearchOperation"]) && Equals(refs["IsSearchOperation"], true))
+                                {
+                                    return new Endpoint(Interpolate(@"https://search-dynamodb.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                                }
+                                return new Endpoint(Interpolate(@"https://dynamodb.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            }
+                            if (IsSet(refs["AccountIdEndpointMode"]) && !Equals(refs["AccountIdEndpointMode"], "disabled") && !Equals(refs["UseFIPS"], true) && IsSet(refs["ResourceArn"]) && (refs["ParsedArn"] = ParseArn((string)refs["ResourceArn"])) != null && Equals(GetAttr(refs["ParsedArn"], "service"), "dynamodb") && IsValidHostLabel((string)GetAttr(refs["ParsedArn"], "region"), false) && Equals(GetAttr(refs["ParsedArn"], "region"), Interpolate(@"{Region}", refs)) && IsValidHostLabel((string)GetAttr(refs["ParsedArn"], "accountId"), false))
                             {
                                 if (IsSet(refs["IsSearchOperation"]) && Equals(refs["IsSearchOperation"], true))
                                 {
@@ -161,7 +193,7 @@ namespace Amazon.DynamoDBv2.Internal
                                 }
                                 return new Endpoint(Interpolate(@"https://{ParsedArn#accountId}.ddb.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{""metricValues"":[""O""]}", refs), InterpolateJson(@"", refs));
                             }
-                            if (IsSet(refs["AccountIdEndpointMode"]) && !Equals(refs["AccountIdEndpointMode"], "disabled") && Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && !Equals(refs["UseFIPS"], true) && IsSet(refs["ResourceArnList"]) && (refs["FirstArn"] = GetAttr(refs["ResourceArnList"], "[0]")) != null && (refs["ParsedArn"] = ParseArn((string)refs["FirstArn"])) != null && Equals(GetAttr(refs["ParsedArn"], "service"), "dynamodb") && IsValidHostLabel((string)GetAttr(refs["ParsedArn"], "region"), false) && Equals(GetAttr(refs["ParsedArn"], "region"), Interpolate(@"{Region}", refs)) && IsValidHostLabel((string)GetAttr(refs["ParsedArn"], "accountId"), false))
+                            if (IsSet(refs["AccountIdEndpointMode"]) && !Equals(refs["AccountIdEndpointMode"], "disabled") && !Equals(refs["UseFIPS"], true) && IsSet(refs["ResourceArnList"]) && (refs["FirstArn"] = GetAttr(refs["ResourceArnList"], "[0]")) != null && (refs["ParsedArn"] = ParseArn((string)refs["FirstArn"])) != null && Equals(GetAttr(refs["ParsedArn"], "service"), "dynamodb") && IsValidHostLabel((string)GetAttr(refs["ParsedArn"], "region"), false) && Equals(GetAttr(refs["ParsedArn"], "region"), Interpolate(@"{Region}", refs)) && IsValidHostLabel((string)GetAttr(refs["ParsedArn"], "accountId"), false))
                             {
                                 if (IsSet(refs["IsSearchOperation"]) && Equals(refs["IsSearchOperation"], true))
                                 {
@@ -169,7 +201,7 @@ namespace Amazon.DynamoDBv2.Internal
                                 }
                                 return new Endpoint(Interpolate(@"https://{ParsedArn#accountId}.ddb.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{""metricValues"":[""O""]}", refs), InterpolateJson(@"", refs));
                             }
-                            if (IsSet(refs["AccountIdEndpointMode"]) && !Equals(refs["AccountIdEndpointMode"], "disabled") && Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && !Equals(refs["UseFIPS"], true) && IsSet(refs["AccountId"]))
+                            if (IsSet(refs["AccountIdEndpointMode"]) && !Equals(refs["AccountIdEndpointMode"], "disabled") && !Equals(refs["UseFIPS"], true) && IsSet(refs["AccountId"]))
                             {
                                 if (IsValidHostLabel((string)refs["AccountId"], false))
                                 {
@@ -183,15 +215,7 @@ namespace Amazon.DynamoDBv2.Internal
                             }
                             if (IsSet(refs["AccountIdEndpointMode"]) && Equals(refs["AccountIdEndpointMode"], "required"))
                             {
-                                if (!Equals(refs["UseFIPS"], true))
-                                {
-                                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws"))
-                                    {
-                                        throw new AmazonClientException("AccountIdEndpointMode is required but no AccountID was provided or able to be loaded");
-                                    }
-                                    throw new AmazonClientException("Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition");
-                                }
-                                throw new AmazonClientException("Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported");
+                                throw new AmazonClientException("AccountIdEndpointMode is required but no AccountID was provided or able to be loaded");
                             }
                             if (IsSet(refs["IsSearchOperation"]) && Equals(refs["IsSearchOperation"], true))
                             {
@@ -201,7 +225,19 @@ namespace Amazon.DynamoDBv2.Internal
                         }
                         throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
                     }
-                    if (IsSet(refs["AccountIdEndpointMode"]) && !Equals(refs["AccountIdEndpointMode"], "disabled") && Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && !Equals(refs["UseFIPS"], true) && IsSet(refs["ResourceArn"]) && (refs["ParsedArn"] = ParseArn((string)refs["ResourceArn"])) != null && Equals(GetAttr(refs["ParsedArn"], "service"), "dynamodb") && IsValidHostLabel((string)GetAttr(refs["ParsedArn"], "region"), false) && Equals(GetAttr(refs["ParsedArn"], "region"), Interpolate(@"{Region}", refs)) && IsValidHostLabel((string)GetAttr(refs["ParsedArn"], "accountId"), false))
+                    if (!Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && !Equals(refs["Region"], "us-gov-east-1") && !Equals(refs["Region"], "us-gov-west-1") && !Equals(refs["Region"], "cn-north-1") && !Equals(refs["Region"], "cn-northwest-1"))
+                    {
+                        if (IsSet(refs["AccountIdEndpointMode"]) && Equals(refs["AccountIdEndpointMode"], "required"))
+                        {
+                            throw new AmazonClientException("Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this region");
+                        }
+                        if (IsSet(refs["IsSearchOperation"]) && Equals(refs["IsSearchOperation"], true))
+                        {
+                            return new Endpoint(Interpolate(@"https://search-dynamodb.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
+                        return new Endpoint(Interpolate(@"https://dynamodb.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (IsSet(refs["AccountIdEndpointMode"]) && !Equals(refs["AccountIdEndpointMode"], "disabled") && !Equals(refs["UseFIPS"], true) && IsSet(refs["ResourceArn"]) && (refs["ParsedArn"] = ParseArn((string)refs["ResourceArn"])) != null && Equals(GetAttr(refs["ParsedArn"], "service"), "dynamodb") && IsValidHostLabel((string)GetAttr(refs["ParsedArn"], "region"), false) && Equals(GetAttr(refs["ParsedArn"], "region"), Interpolate(@"{Region}", refs)) && IsValidHostLabel((string)GetAttr(refs["ParsedArn"], "accountId"), false))
                     {
                         if (IsSet(refs["IsSearchOperation"]) && Equals(refs["IsSearchOperation"], true))
                         {
@@ -209,7 +245,7 @@ namespace Amazon.DynamoDBv2.Internal
                         }
                         return new Endpoint(Interpolate(@"https://{ParsedArn#accountId}.ddb.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"{""metricValues"":[""O""]}", refs), InterpolateJson(@"", refs));
                     }
-                    if (IsSet(refs["AccountIdEndpointMode"]) && !Equals(refs["AccountIdEndpointMode"], "disabled") && Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && !Equals(refs["UseFIPS"], true) && IsSet(refs["ResourceArnList"]) && (refs["FirstArn"] = GetAttr(refs["ResourceArnList"], "[0]")) != null && (refs["ParsedArn"] = ParseArn((string)refs["FirstArn"])) != null && Equals(GetAttr(refs["ParsedArn"], "service"), "dynamodb") && IsValidHostLabel((string)GetAttr(refs["ParsedArn"], "region"), false) && Equals(GetAttr(refs["ParsedArn"], "region"), Interpolate(@"{Region}", refs)) && IsValidHostLabel((string)GetAttr(refs["ParsedArn"], "accountId"), false))
+                    if (IsSet(refs["AccountIdEndpointMode"]) && !Equals(refs["AccountIdEndpointMode"], "disabled") && !Equals(refs["UseFIPS"], true) && IsSet(refs["ResourceArnList"]) && (refs["FirstArn"] = GetAttr(refs["ResourceArnList"], "[0]")) != null && (refs["ParsedArn"] = ParseArn((string)refs["FirstArn"])) != null && Equals(GetAttr(refs["ParsedArn"], "service"), "dynamodb") && IsValidHostLabel((string)GetAttr(refs["ParsedArn"], "region"), false) && Equals(GetAttr(refs["ParsedArn"], "region"), Interpolate(@"{Region}", refs)) && IsValidHostLabel((string)GetAttr(refs["ParsedArn"], "accountId"), false))
                     {
                         if (IsSet(refs["IsSearchOperation"]) && Equals(refs["IsSearchOperation"], true))
                         {
@@ -217,7 +253,7 @@ namespace Amazon.DynamoDBv2.Internal
                         }
                         return new Endpoint(Interpolate(@"https://{ParsedArn#accountId}.ddb.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"{""metricValues"":[""O""]}", refs), InterpolateJson(@"", refs));
                     }
-                    if (IsSet(refs["AccountIdEndpointMode"]) && !Equals(refs["AccountIdEndpointMode"], "disabled") && Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && !Equals(refs["UseFIPS"], true) && IsSet(refs["AccountId"]))
+                    if (IsSet(refs["AccountIdEndpointMode"]) && !Equals(refs["AccountIdEndpointMode"], "disabled") && !Equals(refs["UseFIPS"], true) && IsSet(refs["AccountId"]))
                     {
                         if (IsValidHostLabel((string)refs["AccountId"], false))
                         {
@@ -231,15 +267,7 @@ namespace Amazon.DynamoDBv2.Internal
                     }
                     if (IsSet(refs["AccountIdEndpointMode"]) && Equals(refs["AccountIdEndpointMode"], "required"))
                     {
-                        if (!Equals(refs["UseFIPS"], true))
-                        {
-                            if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws"))
-                            {
-                                throw new AmazonClientException("AccountIdEndpointMode is required but no AccountID was provided or able to be loaded");
-                            }
-                            throw new AmazonClientException("Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition");
-                        }
-                        throw new AmazonClientException("Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported");
+                        throw new AmazonClientException("AccountIdEndpointMode is required but no AccountID was provided or able to be loaded");
                     }
                     if (IsSet(refs["IsSearchOperation"]) && Equals(refs["IsSearchOperation"], true))
                     {

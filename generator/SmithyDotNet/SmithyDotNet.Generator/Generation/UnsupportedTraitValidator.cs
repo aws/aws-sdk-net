@@ -35,7 +35,8 @@ public static class UnsupportedTraitValidator
 
         // rpcv2Cbor has no document encoding and no content streaming
         // (https://smithy.io/2.0/additional-specs/protocols/smithy-rpc-v2-cbor.html), and no CBOR model uses either.
-        var documentsSupported = protocol != AWSProtocol.RpcV2Cbor;
+        // restXml has no document shape either (XML can't carry an untyped document).
+        var documentsSupported = protocol is not (AWSProtocol.RpcV2Cbor or AWSProtocol.RestXml);
         var streamingBlobsSupported = protocol != AWSProtocol.RpcV2Cbor;
 
         foreach (var op in index.Operations)
@@ -78,7 +79,8 @@ public static class UnsupportedTraitValidator
 
             if (!documentsSupported && shape is DocumentShape)
             {
-                found.Add("document (rpcv2Cbor)");
+                var label = protocol == AWSProtocol.RestXml ? "restXml" : "rpcv2Cbor";
+                found.Add($"document ({label})");
             }
 
             if (!streamingBlobsSupported && shape is BlobShape && shape.IsStreaming())

@@ -1,3 +1,5 @@
+using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Writers.Service;
 using Xunit;
 
@@ -8,10 +10,12 @@ public class ClientInterfaceWriterTests
 {
     private const string ModelFileName = "cloudtrail-data-2021-08-11.normal.json";
 
+    private readonly CloudTrailModelFixture _fixture;
     private readonly string _output;
 
     public ClientInterfaceWriterTests(CloudTrailModelFixture fixture)
     {
+        _fixture = fixture;
         var writer = new ClientInterfaceWriter(fixture.Context, ModelFileName);
         _output = writer.Write(TestContext.Current.CancellationToken);
     }
@@ -54,6 +58,29 @@ public class ClientInterfaceWriterTests
         Assert.Contains(
             "Task<PutAuditEventsResponse> PutAuditEventsAsync(PutAuditEventsRequest request, CancellationToken cancellationToken = default(CancellationToken));",
             _output);
+    }
+
+    [Fact]
+    public void SimpleMethods_DeclareSyncAndAsyncOverloadsCarryingMemberDocs()
+    {
+        var customizations = new CustomizationsModel
+        {
+            SimpleMethods = new SimpleMethodsCustomization { Operations = { ["PutAuditEvents"] = new SimpleMethodForms { Forms = [["ChannelArn"]] } } },
+        };
+        var output = WriteWith(customizations);
+
+        Assert.Contains("PutAuditEventsResponse PutAuditEvents(string channelArn);", output);
+        Assert.Contains("Task<PutAuditEventsResponse> PutAuditEventsAsync(string channelArn, CancellationToken cancellationToken = default(CancellationToken));", output);
+        Assert.Contains("""<param name="channelArn">The ARN or ID (the ARN suffix) of a channel.</param>""", output);
+    }
+
+    [Fact]
+    public void NoArgOverload_DeclaresParameterlessSyncAndAsyncOverloads()
+    {
+        var output = WriteWith(new CustomizationsModel { NoArgOverloads = ["PutAuditEvents"] });
+
+        Assert.Contains("PutAuditEventsResponse PutAuditEvents();", output);
+        Assert.Contains("Task<PutAuditEventsResponse> PutAuditEventsAsync(CancellationToken cancellationToken = default(CancellationToken));", output);
     }
 
     [Fact]
@@ -132,5 +159,11 @@ public class ClientInterfaceWriterTests
         Assert.InRange(syncIndex, ifIndex, endifIndex);
         // The asynchronous signature sits outside (after) the guard.
         Assert.True(asyncIndex > endifIndex, "Async overload must not be inside the #if NETFRAMEWORK guard.");
+    }
+
+    private string WriteWith(CustomizationsModel customizations)
+    {
+        var context = new GenerationContext(_fixture.Index, _fixture.Context.Manifest, customizations: customizations);
+        return new ClientInterfaceWriter(context, ModelFileName).Write(TestContext.Current.CancellationToken);
     }
 }

@@ -7,7 +7,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceEntitlementService.Model.GetEntitlementsRequest.NextToken</property>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceEntitlementService.Model.GetEntitlementsRequest.ProductCode</property>
@@ -16,19 +16,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceEntitlementService.Model.GetEntitlementsResponse.NextToken</property>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceEntitlementService.Model.Entitlement.CustomerAWSAccountId</property>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceEntitlementService.Model.Entitlement.CustomerIdentifier</property>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceEntitlementService.Model.Entitlement.Dimension</property>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceEntitlementService.Model.Entitlement.ProductCode</property>

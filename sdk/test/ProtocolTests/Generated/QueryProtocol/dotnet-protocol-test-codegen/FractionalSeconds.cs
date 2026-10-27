@@ -32,6 +32,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.AwsQuery
 {
@@ -46,27 +47,34 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("AwsQuery")]
-        public void AwsQueryDateTimeWithFractionalSecondsResponse()
+        public async Task AwsQueryDateTimeWithFractionalSecondsResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "text/xml";
-            byte[] bytes = Encoding.ASCII.GetBytes("<FractionalSecondsResponse xmlns=\"https://example.com/\">\n    <FractionalSecondsResult>\n        <datetime>2000-01-02T20:34:56.123Z</datetime>\n    </FractionalSecondsResult>\n</FractionalSecondsResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonQueryProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonQueryProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("<FractionalSecondsResponse xmlns=\"https://example.com/\">\n    <FractionalSecondsResult>\n        <datetime>2000-01-02T20:34:56.123Z</datetime>\n    </FractionalSecondsResult>\n</FractionalSecondsResponse>\n"),
+            };
+            mockResponse.Headers["Content-Type"] = "text/xml";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new FractionalSecondsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.FractionalSecondsAsync(new FractionalSecondsRequest()).ConfigureAwait(false);
             var expectedResponse = new FractionalSecondsResponse
             {
                 Datetime = ProtocolTestConstants.epoch.AddSeconds(9.46845296123E8),
             };
 
             // Assert
-            var actualResponse = (FractionalSecondsResponse)unmarshalledResponse;
             Comparer.CompareObjects<FractionalSecondsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
     }

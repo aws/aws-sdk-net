@@ -2,6 +2,22 @@
 <docs>
   <doc>
     <members>
+      <member name="M:Amazon.Billing.IAmazonBilling.AssociateContract(Amazon.Billing.Model.AssociateContractRequest)" />
+      <member name="M:Amazon.Billing.AmazonBillingClient.AssociateContract(Amazon.Billing.Model.AssociateContractRequest)" />
+      <member name="T:Amazon.Billing.Model.AssociateContractRequest" />
+      <member name="T:Amazon.Billing.Model.AssociateContractResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Invoke AssociateContract" source=".\AWSSDKDocSamples\Billing\Billing.GeneratedSamples.cs" region="AssociateContract-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.Billing.IAmazonBilling.AssociateSourceViews(Amazon.Billing.Model.AssociateSourceViewsRequest)" />
       <member name="M:Amazon.Billing.AmazonBillingClient.AssociateSourceViews(Amazon.Billing.Model.AssociateSourceViewsRequest)" />
       <member name="T:Amazon.Billing.Model.AssociateSourceViewsRequest" />
@@ -13,6 +29,22 @@
 
         </para>
         <code title="Invoke AssociateSourceViews" source=".\AWSSDKDocSamples\Billing\Billing.GeneratedSamples.cs" region="AssociateSourceViews-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Billing.IAmazonBilling.CancelContractualInvestmentAttestation(Amazon.Billing.Model.CancelContractualInvestmentAttestationRequest)" />
+      <member name="M:Amazon.Billing.AmazonBillingClient.CancelContractualInvestmentAttestation(Amazon.Billing.Model.CancelContractualInvestmentAttestationRequest)" />
+      <member name="T:Amazon.Billing.Model.CancelContractualInvestmentAttestationRequest" />
+      <member name="T:Amazon.Billing.Model.CancelContractualInvestmentAttestationResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Invoke CancelContractualInvestmentAttestation" source=".\AWSSDKDocSamples\Billing\Billing.GeneratedSamples.cs" region="CancelContractualInvestmentAttestation-1" />
       </example>
     </value>
   </doc>
@@ -34,6 +66,54 @@
   </doc>
   <doc>
     <members>
+      <member name="M:Amazon.Billing.IAmazonBilling.CreateContractualInvestmentAttestation(Amazon.Billing.Model.CreateContractualInvestmentAttestationRequest)" />
+      <member name="M:Amazon.Billing.AmazonBillingClient.CreateContractualInvestmentAttestation(Amazon.Billing.Model.CreateContractualInvestmentAttestationRequest)" />
+      <member name="T:Amazon.Billing.Model.CreateContractualInvestmentAttestationRequest" />
+      <member name="T:Amazon.Billing.Model.CreateContractualInvestmentAttestationResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Invoke CreateContractualInvestmentAttestation with a direct amount" source=".\AWSSDKDocSamples\Billing\Billing.GeneratedSamples.cs" region="CreateContractualInvestmentAttestation-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Billing.IAmazonBilling.CreateContractualInvestmentAttestation(Amazon.Billing.Model.CreateContractualInvestmentAttestationRequest)" />
+      <member name="M:Amazon.Billing.AmazonBillingClient.CreateContractualInvestmentAttestation(Amazon.Billing.Model.CreateContractualInvestmentAttestationRequest)" />
+      <member name="T:Amazon.Billing.Model.CreateContractualInvestmentAttestationRequest" />
+      <member name="T:Amazon.Billing.Model.CreateContractualInvestmentAttestationResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Invoke CreateContractualInvestmentAttestation with a flat rate multiplier" source=".\AWSSDKDocSamples\Billing\Billing.GeneratedSamples.cs" region="CreateContractualInvestmentAttestation-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Billing.IAmazonBilling.CreateContractualInvestmentAttestation(Amazon.Billing.Model.CreateContractualInvestmentAttestationRequest)" />
+      <member name="M:Amazon.Billing.AmazonBillingClient.CreateContractualInvestmentAttestation(Amazon.Billing.Model.CreateContractualInvestmentAttestationRequest)" />
+      <member name="T:Amazon.Billing.Model.CreateContractualInvestmentAttestationRequest" />
+      <member name="T:Amazon.Billing.Model.CreateContractualInvestmentAttestationResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Invoke CreateContractualInvestmentAttestation with a percentage multiplier" source=".\AWSSDKDocSamples\Billing\Billing.GeneratedSamples.cs" region="CreateContractualInvestmentAttestation-3" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.Billing.IAmazonBilling.DeleteBillingView(Amazon.Billing.Model.DeleteBillingViewRequest)" />
       <member name="M:Amazon.Billing.AmazonBillingClient.DeleteBillingView(Amazon.Billing.Model.DeleteBillingViewRequest)" />
       <member name="T:Amazon.Billing.Model.DeleteBillingViewRequest" />
@@ -45,6 +125,22 @@
 
         </para>
         <code title="Invoke DeleteBillingView" source=".\AWSSDKDocSamples\Billing\Billing.GeneratedSamples.cs" region="DeleteBillingView-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Billing.IAmazonBilling.DisassociateContract(Amazon.Billing.Model.DisassociateContractRequest)" />
+      <member name="M:Amazon.Billing.AmazonBillingClient.DisassociateContract(Amazon.Billing.Model.DisassociateContractRequest)" />
+      <member name="T:Amazon.Billing.Model.DisassociateContractRequest" />
+      <member name="T:Amazon.Billing.Model.DisassociateContractResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Invoke DisassociateContract" source=".\AWSSDKDocSamples\Billing\Billing.GeneratedSamples.cs" region="DisassociateContract-1" />
       </example>
     </value>
   </doc>
@@ -77,6 +173,22 @@
 
         </para>
         <code title="Invoke GetBillingView" source=".\AWSSDKDocSamples\Billing\Billing.GeneratedSamples.cs" region="GetBillingView-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Billing.IAmazonBilling.GetContractInformation(Amazon.Billing.Model.GetContractInformationRequest)" />
+      <member name="M:Amazon.Billing.AmazonBillingClient.GetContractInformation(Amazon.Billing.Model.GetContractInformationRequest)" />
+      <member name="T:Amazon.Billing.Model.GetContractInformationRequest" />
+      <member name="T:Amazon.Billing.Model.GetContractInformationResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Invoke GetContractInformation" source=".\AWSSDKDocSamples\Billing\Billing.GeneratedSamples.cs" region="GetContractInformation-1" />
       </example>
     </value>
   </doc>
@@ -157,6 +269,70 @@
 
         </para>
         <code title="Error example for ListBillingViewSegments" source=".\AWSSDKDocSamples\Billing\Billing.GeneratedSamples.cs" region="ListBillingViewSegments-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Billing.IAmazonBilling.ListContracts(Amazon.Billing.Model.ListContractsRequest)" />
+      <member name="M:Amazon.Billing.AmazonBillingClient.ListContracts(Amazon.Billing.Model.ListContractsRequest)" />
+      <member name="T:Amazon.Billing.Model.ListContractsRequest" />
+      <member name="T:Amazon.Billing.Model.ListContractsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Invoke ListContracts" source=".\AWSSDKDocSamples\Billing\Billing.GeneratedSamples.cs" region="ListContracts-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Billing.IAmazonBilling.ListContractualInvestmentAttestations(Amazon.Billing.Model.ListContractualInvestmentAttestationsRequest)" />
+      <member name="M:Amazon.Billing.AmazonBillingClient.ListContractualInvestmentAttestations(Amazon.Billing.Model.ListContractualInvestmentAttestationsRequest)" />
+      <member name="T:Amazon.Billing.Model.ListContractualInvestmentAttestationsRequest" />
+      <member name="T:Amazon.Billing.Model.ListContractualInvestmentAttestationsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Invoke ListContractualInvestmentAttestations" source=".\AWSSDKDocSamples\Billing\Billing.GeneratedSamples.cs" region="ListContractualInvestmentAttestations-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Billing.IAmazonBilling.ListContractualInvestments(Amazon.Billing.Model.ListContractualInvestmentsRequest)" />
+      <member name="M:Amazon.Billing.AmazonBillingClient.ListContractualInvestments(Amazon.Billing.Model.ListContractualInvestmentsRequest)" />
+      <member name="T:Amazon.Billing.Model.ListContractualInvestmentsRequest" />
+      <member name="T:Amazon.Billing.Model.ListContractualInvestmentsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Invoke ListContractualInvestments" source=".\AWSSDKDocSamples\Billing\Billing.GeneratedSamples.cs" region="ListContractualInvestments-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Billing.IAmazonBilling.ListContractualInvestmentSummaries(Amazon.Billing.Model.ListContractualInvestmentSummariesRequest)" />
+      <member name="M:Amazon.Billing.AmazonBillingClient.ListContractualInvestmentSummaries(Amazon.Billing.Model.ListContractualInvestmentSummariesRequest)" />
+      <member name="T:Amazon.Billing.Model.ListContractualInvestmentSummariesRequest" />
+      <member name="T:Amazon.Billing.Model.ListContractualInvestmentSummariesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Invoke ListContractualInvestmentSummaries" source=".\AWSSDKDocSamples\Billing\Billing.GeneratedSamples.cs" region="ListContractualInvestmentSummaries-1" />
       </example>
     </value>
   </doc>

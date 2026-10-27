@@ -81,6 +81,17 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(publicRequest.Limit.Value);
             }
 
+            if(publicRequest.IsSetNames())
+            {
+                context.Writer.WritePropertyName("names");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestNamesListValue in publicRequest.Names)
+                {
+                        context.Writer.WriteStringValue(publicRequestNamesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetNextToken())
             {
                 context.Writer.WritePropertyName("nextToken");

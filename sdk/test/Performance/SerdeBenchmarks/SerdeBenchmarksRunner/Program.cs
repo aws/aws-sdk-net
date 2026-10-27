@@ -33,6 +33,15 @@ namespace AWSSDK.Benchmarks.Serde;
 ///   dotnet run -c Release -- --suite serde --filter '*RestJson1*'  # Serde RestJson1 only
 ///   dotnet run -c Release -- --cpu-time                      # Run E2E with CPU time measurement
 ///   dotnet run -c Release -- --cpu-time --iterations 5000    # Custom iteration count
+///   dotnet run -c Release -- --cpu-time --transport https    # Through the real HTTP client to a loopback fixture server
+///
+/// --cpu-time options:
+///   --warmup N                Warmup iterations per case (default 100000)
+///   --min-iterations N        Stop measuring after N iterations or S CPU seconds,
+///   --min-cpu-seconds S       whichever comes first (defaults 50000 and 5)
+///   --transport stub|https    stub (default): in-process MockHttpHandler. https: see README.md, HTTPS loopback mode
+///   --https-server IP:PORT    The fixture server's HTTPS address (default 127.0.0.1:18443)
+///   --fixture-control IP:PORT The fixture server's control address (default 127.0.0.1:18080)
 ///
 /// Suites:
 ///   e2e    - Full SDK client pipeline with mocked HTTP (default)
@@ -64,21 +73,38 @@ internal class Program
         typeof(AwsQueryE2EBenchmarks)
     };
 
-    static async Task Main(string[] args)
+    static async Task<int> Main(string[] args)
     {
         // Parse custom arguments before passing remaining args to BDN
         var suite = "e2e";
         var cpuTimeMode = false;
-        // ops/CPU-sec defaults (warmup 1000 — sits on .NET's JIT plateau per D2 sweep; min 50000
-        // iters OR 5s CPU, first wins).
-        var warmup = 1000;
+        // ops/CPU-sec defaults: warmup 100000, then min 50000 iters OR 5s CPU (first wins). Tiered
+        // compilation keeps recompiling hot methods in the background for a while after the first calls,
+        // so a short warmup lets that JIT work (and slower code) land in the measured window, mostly for
+        // the first cases of each protocol.
+        var warmup = 100000;
         var minIterations = 50000;
         var minCpuSeconds = 5.0;
+        // --cpu-time transport (see README.md, HTTPS loopback mode).
+        var transport = "stub";
+        var httpsServer = BenchmarkTransport.DefaultHttpsServer;
+        var fixtureControl = BenchmarkTransport.DefaultFixtureControl;
+        var transportOptionUsed = false;
         var bdnArgs = new List<string>();
 
         for (int i = 0; i < args.Length; i++)
         {
-            if (args[i] == "--suite" && i + 1 < args.Length)
+            if (args[i] is "--transport" or "--https-server" or "--fixture-control")
+            {
+                if (i + 1 >= args.Length)
+                    return Fail($"{args[i]} requires a value");
+                transportOptionUsed = true;
+                var value = args[++i];
+                if (args[i - 1] == "--transport") transport = value;
+                else if (args[i - 1] == "--https-server") httpsServer = value;
+                else fixtureControl = value;
+            }
+            else if (args[i] == "--suite" && i + 1 < args.Length)
             {
                 suite = args[++i].ToLowerInvariant();
             }
@@ -104,14 +130,27 @@ internal class Program
             }
         }
 
+        if (transportOptionUsed && !cpuTimeMode)
+            return Fail("--transport, --https-server and --fixture-control apply only with --cpu-time");
+
         if (cpuTimeMode)
         {
             // Wire CLI config into the measurement runner (applies to all 71 cases).
             CpuTimeRunner.DefaultWarmupIterations = warmup;
             CpuTimeRunner.DefaultMinIterations = minIterations;
             CpuTimeRunner.DefaultMinCpuSeconds = minCpuSeconds;
+            try
+            {
+                BenchmarkTransport.Configure(transport, httpsServer, fixtureControl);
+                if (BenchmarkTransport.Kind == BenchmarkTransportKind.Https)
+                    BenchmarkTransport.CheckFixtureServer();
+            }
+            catch (Exception e) when (e is ArgumentException or InvalidOperationException)
+            {
+                return Fail(e.Message);
+            }
             await RunCpuTimeMode();
-            return;
+            return 0;
         }
 
         var types = suite switch
@@ -148,6 +187,14 @@ internal class Program
 
         Console.WriteLine($"Running suite: {suite} ({types.Length} benchmark classes)");
         BenchmarkSwitcher.FromTypes(types).Run(bdnArgs.ToArray(), config);
+        return 0;
+    }
+
+    /// <summary>Reports an invalid command line and returns exit code 2.</summary>
+    private static int Fail(string message)
+    {
+        Console.Error.WriteLine($"error: {message}");
+        return 2;
     }
 
     /// <summary>
@@ -159,6 +206,7 @@ internal class Program
         Console.WriteLine($"CPU Time Mode: min {CpuTimeRunner.DefaultMinIterations} iterations OR {CpuTimeRunner.DefaultMinCpuSeconds} sec CPU (first met wins)");
         Console.WriteLine($"Check interval: every 100 iterations");
         Console.WriteLine($"Warmup: {CpuTimeRunner.DefaultWarmupIterations} iterations");
+        Console.WriteLine($"Transport: {BenchmarkTransport.Describe()}");
         Console.WriteLine($"Process: {Environment.ProcessPath}");
         Console.WriteLine($"Runtime: {System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription}");
         Console.WriteLine($"OS: {System.Runtime.InteropServices.RuntimeInformation.OSDescription}");

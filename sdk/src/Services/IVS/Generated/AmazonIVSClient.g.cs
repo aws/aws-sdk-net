@@ -778,6 +778,86 @@ namespace Amazon.IVS
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates a new failover slate configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFailoverSlateConfiguration service method.</param>
+        /// <returns>The response from the CreateFailoverSlateConfiguration service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreateFailoverSlateConfiguration">REST API Reference for CreateFailoverSlateConfiguration Operation</seealso>
+        public virtual CreateFailoverSlateConfigurationResponse CreateFailoverSlateConfiguration(CreateFailoverSlateConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateFailoverSlateConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFailoverSlateConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFailoverSlateConfigurationResponse>(request, options);
+        }
+#else
+        internal virtual CreateFailoverSlateConfigurationResponse CreateFailoverSlateConfiguration(CreateFailoverSlateConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateFailoverSlateConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFailoverSlateConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFailoverSlateConfigurationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Creates a new failover slate configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFailoverSlateConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateFailoverSlateConfiguration service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreateFailoverSlateConfiguration">REST API Reference for CreateFailoverSlateConfiguration Operation</seealso>
+        public virtual Task<CreateFailoverSlateConfigurationResponse> CreateFailoverSlateConfigurationAsync(CreateFailoverSlateConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateFailoverSlateConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFailoverSlateConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateFailoverSlateConfigurationResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Creates a new playback restriction policy, for constraining playback by countries
         /// and/or origins.
         /// </summary>
@@ -1222,6 +1302,80 @@ namespace Amazon.IVS
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Deletes the specified failover slate configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFailoverSlateConfiguration service method.</param>
+        /// <returns>The response from the DeleteFailoverSlateConfiguration service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeleteFailoverSlateConfiguration">REST API Reference for DeleteFailoverSlateConfiguration Operation</seealso>
+        public virtual DeleteFailoverSlateConfigurationResponse DeleteFailoverSlateConfiguration(DeleteFailoverSlateConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteFailoverSlateConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFailoverSlateConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFailoverSlateConfigurationResponse>(request, options);
+        }
+#else
+        internal virtual DeleteFailoverSlateConfigurationResponse DeleteFailoverSlateConfiguration(DeleteFailoverSlateConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteFailoverSlateConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFailoverSlateConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFailoverSlateConfigurationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Deletes the specified failover slate configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFailoverSlateConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteFailoverSlateConfiguration service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeleteFailoverSlateConfiguration">REST API Reference for DeleteFailoverSlateConfiguration Operation</seealso>
+        public virtual Task<DeleteFailoverSlateConfigurationResponse> DeleteFailoverSlateConfigurationAsync(DeleteFailoverSlateConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteFailoverSlateConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFailoverSlateConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteFailoverSlateConfigurationResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Deletes a specified authorization key pair. This invalidates future viewer tokens
         /// generated using the key pair’s <c>privateKey</c>. For more information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting
         /// Up Private Channels</a> in the <i>Amazon IVS User Guide</i>.
@@ -1652,6 +1806,74 @@ namespace Amazon.IVS
             options.ResponseUnmarshaller = GetChannelResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetChannelResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets the failover slate configuration for the specified ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFailoverSlateConfiguration service method.</param>
+        /// <returns>The response from the GetFailoverSlateConfiguration service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetFailoverSlateConfiguration">REST API Reference for GetFailoverSlateConfiguration Operation</seealso>
+        public virtual GetFailoverSlateConfigurationResponse GetFailoverSlateConfiguration(GetFailoverSlateConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetFailoverSlateConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFailoverSlateConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetFailoverSlateConfigurationResponse>(request, options);
+        }
+#else
+        internal virtual GetFailoverSlateConfigurationResponse GetFailoverSlateConfiguration(GetFailoverSlateConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetFailoverSlateConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFailoverSlateConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetFailoverSlateConfigurationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Gets the failover slate configuration for the specified ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFailoverSlateConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetFailoverSlateConfiguration service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetFailoverSlateConfiguration">REST API Reference for GetFailoverSlateConfiguration Operation</seealso>
+        public virtual Task<GetFailoverSlateConfigurationResponse> GetFailoverSlateConfigurationAsync(GetFailoverSlateConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetFailoverSlateConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFailoverSlateConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetFailoverSlateConfigurationResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -2368,6 +2590,70 @@ namespace Amazon.IVS
             options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListChannelsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets summary information about all failover slate configurations in your account,
+        /// in the Amazon Web Services region where the API request is processed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFailoverSlateConfigurations service method.</param>
+        /// <returns>The response from the ListFailoverSlateConfigurations service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListFailoverSlateConfigurations">REST API Reference for ListFailoverSlateConfigurations Operation</seealso>
+        public virtual ListFailoverSlateConfigurationsResponse ListFailoverSlateConfigurations(ListFailoverSlateConfigurationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListFailoverSlateConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFailoverSlateConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListFailoverSlateConfigurationsResponse>(request, options);
+        }
+#else
+        internal virtual ListFailoverSlateConfigurationsResponse ListFailoverSlateConfigurations(ListFailoverSlateConfigurationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListFailoverSlateConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFailoverSlateConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListFailoverSlateConfigurationsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Gets summary information about all failover slate configurations in your account,
+        /// in the Amazon Web Services region where the API request is processed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFailoverSlateConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListFailoverSlateConfigurations service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListFailoverSlateConfigurations">REST API Reference for ListFailoverSlateConfigurations Operation</seealso>
+        public virtual Task<ListFailoverSlateConfigurationsResponse> ListFailoverSlateConfigurationsAsync(ListFailoverSlateConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListFailoverSlateConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFailoverSlateConfigurationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListFailoverSlateConfigurationsResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -3304,6 +3590,9 @@ namespace Amazon.IVS
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
         /// Request references a resource which does not exist.
         /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
@@ -3349,6 +3638,9 @@ namespace Amazon.IVS
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
         /// Request references a resource which does not exist.
         /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
@@ -3360,6 +3652,92 @@ namespace Amazon.IVS
             options.ResponseUnmarshaller = UpdateChannelResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateChannelResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates a specified failover slate configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFailoverSlateConfiguration service method.</param>
+        /// <returns>The response from the UpdateFailoverSlateConfiguration service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/UpdateFailoverSlateConfiguration">REST API Reference for UpdateFailoverSlateConfiguration Operation</seealso>
+        public virtual UpdateFailoverSlateConfigurationResponse UpdateFailoverSlateConfiguration(UpdateFailoverSlateConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateFailoverSlateConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFailoverSlateConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFailoverSlateConfigurationResponse>(request, options);
+        }
+#else
+        internal virtual UpdateFailoverSlateConfigurationResponse UpdateFailoverSlateConfiguration(UpdateFailoverSlateConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateFailoverSlateConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFailoverSlateConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFailoverSlateConfigurationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Updates a specified failover slate configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFailoverSlateConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateFailoverSlateConfiguration service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/UpdateFailoverSlateConfiguration">REST API Reference for UpdateFailoverSlateConfiguration Operation</seealso>
+        public virtual Task<UpdateFailoverSlateConfigurationResponse> UpdateFailoverSlateConfigurationAsync(UpdateFailoverSlateConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateFailoverSlateConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFailoverSlateConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateFailoverSlateConfigurationResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK

@@ -12,7 +12,7 @@ public static class ProjectFileNames
     public const string IntegrationTestUtility = "AWSSDK.IntegrationTestUtilities.csproj";
 }
 
-/// <summary>A NuGet package reference emitted with <c>PrivateAssets=all</c>.</summary>
+/// <summary>A NuGet package id and version.</summary>
 public sealed record PackageRef(string Id, string Version);
 
 /// <summary>
@@ -118,4 +118,16 @@ public static class ServiceProjectConfigurations
     {
         CoreProjectReference = Utils.PathCombineAlt(SdkTreeLayout.SrcRootFromServiceTests, "Core", "AWSSDK.Core.NetStandard.csproj"),
     };
+}
+
+/// <summary>The packages Core's nuspec depends on per target framework: polyfills for what the framework doesn't ship.</summary>
+public static class CoreNuspecDependencies
+{
+    private static readonly Dictionary<string, PackageRef[]> ByTargetFramework = new()
+    {
+        ["net472"] = [new("System.Buffers", "4.5.1"), new("System.Memory", "4.5.5"), new("System.Text.Json", "8.0.6")],
+        ["netstandard2.0"] = [new("Microsoft.Bcl.AsyncInterfaces", "8.0.0"), new("System.Buffers", "4.5.1"), new("System.Memory", "4.5.5"), new("System.Text.Json", "8.0.6")],
+    };
+
+    public static IReadOnlyList<PackageRef> For(string targetFramework) => ByTargetFramework.GetValueOrDefault(targetFramework, []);
 }

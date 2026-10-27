@@ -39,7 +39,7 @@ namespace Amazon.ControlTower.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon Web Services Control Tower does not detect drift on the baselines that apply
+    ///  Amazon Web Services Control Tower does not detect drift on the baselines that apply
     /// to your landing zone: <c>IdentityCenterBaseline</c>, <c>AuditBaseline</c>, <c>LogArchiveBaseline</c>,
     /// <c>BackupCentralVaultBaseline</c>, or <c>BackupAdminBaseline</c>. For more information,
     /// see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/types-of-baselines.html">Types

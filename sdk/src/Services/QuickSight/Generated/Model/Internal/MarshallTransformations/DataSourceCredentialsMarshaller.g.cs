@@ -84,10 +84,43 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetOneDriveClientCredentials())
+            {
+                context.Writer.WritePropertyName("OneDriveClientCredentials");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OneDriveClientCredentialsMarshaller.Instance;
+                marshaller.Marshall(requestObject.OneDriveClientCredentials, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetSecretArn())
             {
                 context.Writer.WritePropertyName("SecretArn");
                 context.Writer.WriteStringValue(requestObject.SecretArn);
+            }
+
+            if (requestObject.IsSetServiceAccountCredentials())
+            {
+                context.Writer.WritePropertyName("ServiceAccountCredentials");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ServiceAccountCredentialsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ServiceAccountCredentials, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetSharePointClientCredentials())
+            {
+                context.Writer.WritePropertyName("SharePointClientCredentials");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SharePointClientCredentialsMarshaller.Instance;
+                marshaller.Marshall(requestObject.SharePointClientCredentials, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if (requestObject.IsSetWebProxyCredentials())

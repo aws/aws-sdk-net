@@ -12,6 +12,7 @@
     <Project Path="../../../../generator/ServiceClientGeneratorLib/ServiceClientGeneratorLib.csproj" />
     <Project Path="../../../test/Common/AWSSDK.CommonTest.csproj" />
     <Project Path="../../../test/IntegrationTests/AWSSDK.IntegrationTestUtilities.csproj" />
+    <Project Path="../../../test/Services/IotData/IntegrationTests/AWSSDK.IntegrationTests.IotData.csproj" />
     <Project Path="../../../test/Services/IotData/UnitTests/AWSSDK.UnitTests.IotData.csproj" />
     <Project Path="../../../test/UnitTests/AWSSDK.UnitTests.Core.csproj" />
     <Project Path="../../../test/UnitTests/Custom/AWSSDK.UnitTestUtilities.csproj" />
@@ -27,5 +28,7 @@
     <Project Path="../SimpleNotificationService/AWSSDK.SimpleNotificationService.NetFramework.csproj" />
     <Project Path="../DynamoDBv2/AWSSDK.DynamoDBv2.NetFramework.csproj" />
     <Project Path="../../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.NetFramework.csproj" />
+    <Project Path="../IoT/AWSSDK.IoT.NetFramework.csproj" />
+    <Project Path="../IoT/AWSSDK.IoT.NetStandard.csproj" />
   </Folder>
 </Solution>

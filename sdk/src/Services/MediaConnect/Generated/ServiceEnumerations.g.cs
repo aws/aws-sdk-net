@@ -460,6 +460,241 @@ namespace Amazon.MediaConnect
     }
 
     /// <summary>
+    /// Constants used for properties of type DestinationEndpointConnectionState.
+    /// </summary>
+    public class DestinationEndpointConnectionState : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONNECTED for DestinationEndpointConnectionState
+        /// </summary>
+        public static readonly DestinationEndpointConnectionState CONNECTED = new DestinationEndpointConnectionState("CONNECTED");
+
+        /// <summary>
+        /// Constant CONNECTING for DestinationEndpointConnectionState
+        /// </summary>
+        public static readonly DestinationEndpointConnectionState CONNECTING = new DestinationEndpointConnectionState("CONNECTING");
+
+        /// <summary>
+        /// Constant DISCONNECTED for DestinationEndpointConnectionState
+        /// </summary>
+        public static readonly DestinationEndpointConnectionState DISCONNECTED = new DestinationEndpointConnectionState("DISCONNECTED");
+
+        /// <summary>
+        /// Constant DISCONNECTING for DestinationEndpointConnectionState
+        /// </summary>
+        public static readonly DestinationEndpointConnectionState DISCONNECTING = new DestinationEndpointConnectionState("DISCONNECTING");
+
+        /// <summary>
+        /// Constructs a custom DestinationEndpointConnectionState for a value not among the defined constants.
+        /// </summary>
+        public DestinationEndpointConnectionState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DestinationEndpointConnectionState FindValue(string value)
+        {
+            return FindValue<DestinationEndpointConnectionState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DestinationEndpointConnectionState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DestinationEndpointNetworkingType.
+    /// </summary>
+    public class DestinationEndpointNetworkingType : ConstantClass
+    {
+        /// <summary>
+        /// Constant PUBLIC for DestinationEndpointNetworkingType
+        /// </summary>
+        public static readonly DestinationEndpointNetworkingType PUBLIC = new DestinationEndpointNetworkingType("PUBLIC");
+
+        /// <summary>
+        /// Constant VPC for DestinationEndpointNetworkingType
+        /// </summary>
+        public static readonly DestinationEndpointNetworkingType VPC = new DestinationEndpointNetworkingType("VPC");
+
+        /// <summary>
+        /// Constructs a custom DestinationEndpointNetworkingType for a value not among the defined constants.
+        /// </summary>
+        public DestinationEndpointNetworkingType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DestinationEndpointNetworkingType FindValue(string value)
+        {
+            return FindValue<DestinationEndpointNetworkingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DestinationEndpointNetworkingType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DestinationEndpointProtocol.
+    /// </summary>
+    public class DestinationEndpointProtocol : ConstantClass
+    {
+        /// <summary>
+        /// Constant RIST for DestinationEndpointProtocol
+        /// </summary>
+        public static readonly DestinationEndpointProtocol RIST = new DestinationEndpointProtocol("RIST");
+
+        /// <summary>
+        /// Constant RTP for DestinationEndpointProtocol
+        /// </summary>
+        public static readonly DestinationEndpointProtocol RTP = new DestinationEndpointProtocol("RTP");
+
+        /// <summary>
+        /// Constant SRT_CALLER for DestinationEndpointProtocol
+        /// </summary>
+        public static readonly DestinationEndpointProtocol SRT_CALLER = new DestinationEndpointProtocol("SRT_CALLER");
+
+        /// <summary>
+        /// Constant SRT_LISTENER for DestinationEndpointProtocol
+        /// </summary>
+        public static readonly DestinationEndpointProtocol SRT_LISTENER = new DestinationEndpointProtocol("SRT_LISTENER");
+
+        /// <summary>
+        /// Constructs a custom DestinationEndpointProtocol for a value not among the defined constants.
+        /// </summary>
+        public DestinationEndpointProtocol(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DestinationEndpointProtocol FindValue(string value)
+        {
+            return FindValue<DestinationEndpointProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DestinationEndpointProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DestinationEndpointRegistrationState.
+    /// </summary>
+    public class DestinationEndpointRegistrationState : ConstantClass
+    {
+        /// <summary>
+        /// Constant DEREGISTERING for DestinationEndpointRegistrationState
+        /// </summary>
+        public static readonly DestinationEndpointRegistrationState DEREGISTERING = new DestinationEndpointRegistrationState("DEREGISTERING");
+
+        /// <summary>
+        /// Constant REGISTERED for DestinationEndpointRegistrationState
+        /// </summary>
+        public static readonly DestinationEndpointRegistrationState REGISTERED = new DestinationEndpointRegistrationState("REGISTERED");
+
+        /// <summary>
+        /// Constant REGISTERING for DestinationEndpointRegistrationState
+        /// </summary>
+        public static readonly DestinationEndpointRegistrationState REGISTERING = new DestinationEndpointRegistrationState("REGISTERING");
+
+        /// <summary>
+        /// Constant REGISTRATION_FAILED for DestinationEndpointRegistrationState
+        /// </summary>
+        public static readonly DestinationEndpointRegistrationState REGISTRATION_FAILED = new DestinationEndpointRegistrationState("REGISTRATION_FAILED");
+
+        /// <summary>
+        /// Constructs a custom DestinationEndpointRegistrationState for a value not among the defined constants.
+        /// </summary>
+        public DestinationEndpointRegistrationState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DestinationEndpointRegistrationState FindValue(string value)
+        {
+            return FindValue<DestinationEndpointRegistrationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DestinationEndpointRegistrationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DestinationEndpointType.
+    /// </summary>
+    public class DestinationEndpointType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ROUTER_INPUT for DestinationEndpointType
+        /// </summary>
+        public static readonly DestinationEndpointType ROUTER_INPUT = new DestinationEndpointType("ROUTER_INPUT");
+
+        /// <summary>
+        /// Constant STANDARD for DestinationEndpointType
+        /// </summary>
+        public static readonly DestinationEndpointType STANDARD = new DestinationEndpointType("STANDARD");
+
+        /// <summary>
+        /// Constructs a custom DestinationEndpointType for a value not among the defined constants.
+        /// </summary>
+        public DestinationEndpointType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DestinationEndpointType FindValue(string value)
+        {
+            return FindValue<DestinationEndpointType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DestinationEndpointType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type DurationUnits.
     /// </summary>
     public class DurationUnits : ConstantClass
@@ -623,6 +858,139 @@ namespace Amazon.MediaConnect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EncodingProfile(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EndpointEncryptionSecretType.
+    /// </summary>
+    public class EndpointEncryptionSecretType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AES_128_KEY for EndpointEncryptionSecretType
+        /// </summary>
+        public static readonly EndpointEncryptionSecretType AES_128_KEY = new EndpointEncryptionSecretType("AES_128_KEY");
+
+        /// <summary>
+        /// Constant AES_192_KEY for EndpointEncryptionSecretType
+        /// </summary>
+        public static readonly EndpointEncryptionSecretType AES_192_KEY = new EndpointEncryptionSecretType("AES_192_KEY");
+
+        /// <summary>
+        /// Constant AES_256_KEY for EndpointEncryptionSecretType
+        /// </summary>
+        public static readonly EndpointEncryptionSecretType AES_256_KEY = new EndpointEncryptionSecretType("AES_256_KEY");
+
+        /// <summary>
+        /// Constant SRT_PASSPHRASE for EndpointEncryptionSecretType
+        /// </summary>
+        public static readonly EndpointEncryptionSecretType SRT_PASSPHRASE = new EndpointEncryptionSecretType("SRT_PASSPHRASE");
+
+        /// <summary>
+        /// Constructs a custom EndpointEncryptionSecretType for a value not among the defined constants.
+        /// </summary>
+        public EndpointEncryptionSecretType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EndpointEncryptionSecretType FindValue(string value)
+        {
+            return FindValue<EndpointEncryptionSecretType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EndpointEncryptionSecretType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EndpointEncryptionType.
+    /// </summary>
+    public class EndpointEncryptionType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AUTOMATIC for EndpointEncryptionType
+        /// </summary>
+        public static readonly EndpointEncryptionType AUTOMATIC = new EndpointEncryptionType("AUTOMATIC");
+
+        /// <summary>
+        /// Constant SECRETS_MANAGER for EndpointEncryptionType
+        /// </summary>
+        public static readonly EndpointEncryptionType SECRETS_MANAGER = new EndpointEncryptionType("SECRETS_MANAGER");
+
+        /// <summary>
+        /// Constructs a custom EndpointEncryptionType for a value not among the defined constants.
+        /// </summary>
+        public EndpointEncryptionType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EndpointEncryptionType FindValue(string value)
+        {
+            return FindValue<EndpointEncryptionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EndpointEncryptionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EndpointLifecycle.
+    /// </summary>
+    public class EndpointLifecycle : ConstantClass
+    {
+        /// <summary>
+        /// Constant MANAGED for EndpointLifecycle
+        /// </summary>
+        public static readonly EndpointLifecycle MANAGED = new EndpointLifecycle("MANAGED");
+
+        /// <summary>
+        /// Constant UNMANAGED for EndpointLifecycle
+        /// </summary>
+        public static readonly EndpointLifecycle UNMANAGED = new EndpointLifecycle("UNMANAGED");
+
+        /// <summary>
+        /// Constructs a custom EndpointLifecycle for a value not among the defined constants.
+        /// </summary>
+        public EndpointLifecycle(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EndpointLifecycle FindValue(string value)
+        {
+            return FindValue<EndpointLifecycle>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EndpointLifecycle(string value)
         {
             return FindValue(value);
         }
@@ -1789,6 +2157,88 @@ namespace Amazon.MediaConnect
     }
 
     /// <summary>
+    /// Constants used for properties of type ResourceShareOwnership.
+    /// </summary>
+    public class ResourceShareOwnership : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONSUMED for ResourceShareOwnership
+        /// </summary>
+        public static readonly ResourceShareOwnership CONSUMED = new ResourceShareOwnership("CONSUMED");
+
+        /// <summary>
+        /// Constant OWNED for ResourceShareOwnership
+        /// </summary>
+        public static readonly ResourceShareOwnership OWNED = new ResourceShareOwnership("OWNED");
+
+        /// <summary>
+        /// Constructs a custom ResourceShareOwnership for a value not among the defined constants.
+        /// </summary>
+        public ResourceShareOwnership(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceShareOwnership FindValue(string value)
+        {
+            return FindValue<ResourceShareOwnership>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceShareOwnership(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ResourceShareState.
+    /// </summary>
+    public class ResourceShareState : ConstantClass
+    {
+        /// <summary>
+        /// Constant SHARED for ResourceShareState
+        /// </summary>
+        public static readonly ResourceShareState SHARED = new ResourceShareState("SHARED");
+
+        /// <summary>
+        /// Constant UNSHARED for ResourceShareState
+        /// </summary>
+        public static readonly ResourceShareState UNSHARED = new ResourceShareState("UNSHARED");
+
+        /// <summary>
+        /// Constructs a custom ResourceShareState for a value not among the defined constants.
+        /// </summary>
+        public ResourceShareState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceShareState FindValue(string value)
+        {
+            return FindValue<ResourceShareState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceShareState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ResourceType.
     /// </summary>
     public class ResourceType : ConstantClass
@@ -2094,6 +2544,11 @@ namespace Amazon.MediaConnect
     /// </summary>
     public class RouterInputType : ConstantClass
     {
+        /// <summary>
+        /// Constant DESTINATION_ENDPOINT for RouterInputType
+        /// </summary>
+        public static readonly RouterInputType DESTINATION_ENDPOINT = new RouterInputType("DESTINATION_ENDPOINT");
+
         /// <summary>
         /// Constant FAILOVER for RouterInputType
         /// </summary>
@@ -2502,6 +2957,11 @@ namespace Amazon.MediaConnect
         public static readonly RouterOutputType MEDIALIVE_INPUT = new RouterOutputType("MEDIALIVE_INPUT");
 
         /// <summary>
+        /// Constant SOURCE_ENDPOINT for RouterOutputType
+        /// </summary>
+        public static readonly RouterOutputType SOURCE_ENDPOINT = new RouterOutputType("SOURCE_ENDPOINT");
+
+        /// <summary>
         /// Constant STANDARD for RouterOutputType
         /// </summary>
         public static readonly RouterOutputType STANDARD = new RouterOutputType("STANDARD");
@@ -2614,6 +3074,241 @@ namespace Amazon.MediaConnect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ScanMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SourceEndpointConnectionState.
+    /// </summary>
+    public class SourceEndpointConnectionState : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONNECTED for SourceEndpointConnectionState
+        /// </summary>
+        public static readonly SourceEndpointConnectionState CONNECTED = new SourceEndpointConnectionState("CONNECTED");
+
+        /// <summary>
+        /// Constant CONNECTING for SourceEndpointConnectionState
+        /// </summary>
+        public static readonly SourceEndpointConnectionState CONNECTING = new SourceEndpointConnectionState("CONNECTING");
+
+        /// <summary>
+        /// Constant DISCONNECTED for SourceEndpointConnectionState
+        /// </summary>
+        public static readonly SourceEndpointConnectionState DISCONNECTED = new SourceEndpointConnectionState("DISCONNECTED");
+
+        /// <summary>
+        /// Constant DISCONNECTING for SourceEndpointConnectionState
+        /// </summary>
+        public static readonly SourceEndpointConnectionState DISCONNECTING = new SourceEndpointConnectionState("DISCONNECTING");
+
+        /// <summary>
+        /// Constructs a custom SourceEndpointConnectionState for a value not among the defined constants.
+        /// </summary>
+        public SourceEndpointConnectionState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SourceEndpointConnectionState FindValue(string value)
+        {
+            return FindValue<SourceEndpointConnectionState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SourceEndpointConnectionState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SourceEndpointNetworkingType.
+    /// </summary>
+    public class SourceEndpointNetworkingType : ConstantClass
+    {
+        /// <summary>
+        /// Constant PUBLIC for SourceEndpointNetworkingType
+        /// </summary>
+        public static readonly SourceEndpointNetworkingType PUBLIC = new SourceEndpointNetworkingType("PUBLIC");
+
+        /// <summary>
+        /// Constant VPC for SourceEndpointNetworkingType
+        /// </summary>
+        public static readonly SourceEndpointNetworkingType VPC = new SourceEndpointNetworkingType("VPC");
+
+        /// <summary>
+        /// Constructs a custom SourceEndpointNetworkingType for a value not among the defined constants.
+        /// </summary>
+        public SourceEndpointNetworkingType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SourceEndpointNetworkingType FindValue(string value)
+        {
+            return FindValue<SourceEndpointNetworkingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SourceEndpointNetworkingType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SourceEndpointProtocol.
+    /// </summary>
+    public class SourceEndpointProtocol : ConstantClass
+    {
+        /// <summary>
+        /// Constant RIST for SourceEndpointProtocol
+        /// </summary>
+        public static readonly SourceEndpointProtocol RIST = new SourceEndpointProtocol("RIST");
+
+        /// <summary>
+        /// Constant RTP for SourceEndpointProtocol
+        /// </summary>
+        public static readonly SourceEndpointProtocol RTP = new SourceEndpointProtocol("RTP");
+
+        /// <summary>
+        /// Constant SRT_CALLER for SourceEndpointProtocol
+        /// </summary>
+        public static readonly SourceEndpointProtocol SRT_CALLER = new SourceEndpointProtocol("SRT_CALLER");
+
+        /// <summary>
+        /// Constant SRT_LISTENER for SourceEndpointProtocol
+        /// </summary>
+        public static readonly SourceEndpointProtocol SRT_LISTENER = new SourceEndpointProtocol("SRT_LISTENER");
+
+        /// <summary>
+        /// Constructs a custom SourceEndpointProtocol for a value not among the defined constants.
+        /// </summary>
+        public SourceEndpointProtocol(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SourceEndpointProtocol FindValue(string value)
+        {
+            return FindValue<SourceEndpointProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SourceEndpointProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SourceEndpointRegistrationState.
+    /// </summary>
+    public class SourceEndpointRegistrationState : ConstantClass
+    {
+        /// <summary>
+        /// Constant DEREGISTERING for SourceEndpointRegistrationState
+        /// </summary>
+        public static readonly SourceEndpointRegistrationState DEREGISTERING = new SourceEndpointRegistrationState("DEREGISTERING");
+
+        /// <summary>
+        /// Constant REGISTERED for SourceEndpointRegistrationState
+        /// </summary>
+        public static readonly SourceEndpointRegistrationState REGISTERED = new SourceEndpointRegistrationState("REGISTERED");
+
+        /// <summary>
+        /// Constant REGISTERING for SourceEndpointRegistrationState
+        /// </summary>
+        public static readonly SourceEndpointRegistrationState REGISTERING = new SourceEndpointRegistrationState("REGISTERING");
+
+        /// <summary>
+        /// Constant REGISTRATION_FAILED for SourceEndpointRegistrationState
+        /// </summary>
+        public static readonly SourceEndpointRegistrationState REGISTRATION_FAILED = new SourceEndpointRegistrationState("REGISTRATION_FAILED");
+
+        /// <summary>
+        /// Constructs a custom SourceEndpointRegistrationState for a value not among the defined constants.
+        /// </summary>
+        public SourceEndpointRegistrationState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SourceEndpointRegistrationState FindValue(string value)
+        {
+            return FindValue<SourceEndpointRegistrationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SourceEndpointRegistrationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SourceEndpointType.
+    /// </summary>
+    public class SourceEndpointType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ROUTER_OUTPUT for SourceEndpointType
+        /// </summary>
+        public static readonly SourceEndpointType ROUTER_OUTPUT = new SourceEndpointType("ROUTER_OUTPUT");
+
+        /// <summary>
+        /// Constant STANDARD for SourceEndpointType
+        /// </summary>
+        public static readonly SourceEndpointType STANDARD = new SourceEndpointType("STANDARD");
+
+        /// <summary>
+        /// Constructs a custom SourceEndpointType for a value not among the defined constants.
+        /// </summary>
+        public SourceEndpointType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SourceEndpointType FindValue(string value)
+        {
+            return FindValue<SourceEndpointType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SourceEndpointType(string value)
         {
             return FindValue(value);
         }

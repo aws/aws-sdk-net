@@ -1,0 +1,204 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Lightsail.Model
+{
+    /// <summary>
+    /// Container for the parameters to the GetContainerLog operation. Returns the log events
+    /// of a container of your Amazon Lightsail container service. <para> If your container
+    /// service has more than one node (i.e., a scale greater than 1), then the log events
+    /// that are returned for the specified container are merged from all nodes on your container
+    /// service. </para> <note> <para> Container logs are retained for a certain amount of
+    /// time. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon
+    /// Lightsail endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
+    /// </para> </note>
+    /// </summary>
+    public partial class GetContainerLogRequest : AmazonLightsailRequest
+    {
+        /// <summary>
+        /// Gets and sets the property ContainerName. 
+        /// <para>
+        /// The name of the container that is either running or previously ran on the container
+        /// service for which to return a log.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string ContainerName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ContainerName property is set.
+        /// </summary>
+        internal bool IsSetContainerName() => this.ContainerName != null;
+
+        /// <summary>
+        /// Gets and sets the property EndTime. 
+        /// <para>
+        /// The end of the time interval for which to get log data.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Specified in Coordinated Universal Time (UTC).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specified in the Unix time format.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify
+        /// <c>1538427600</c> as the end time.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can convert a human-friendly time to Unix time format using a converter like <a
+        /// href="https://www.epochconverter.com/">Epoch converter</a>.
+        /// </para>
+        /// </summary>
+        public DateTime? EndTime { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EndTime property is set.
+        /// </summary>
+        internal bool IsSetEndTime() => this.EndTime.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property FilterPattern. 
+        /// <para>
+        /// The pattern to use to filter the returned log events to a specific term.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following are a few examples of filter patterns that you can specify:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To return all log events, specify a filter pattern of <c>""</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To exclude log events that contain the <c>ERROR</c> term, and return all other log
+        /// events, specify a filter pattern of <c>"-ERROR"</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To return log events that contain the <c>ERROR</c> term, specify a filter pattern
+        /// of <c>"ERROR"</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To return log events that contain both the <c>ERROR</c> and <c>Exception</c> terms,
+        /// specify a filter pattern of <c>"ERROR Exception"</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To return log events that contain the <c>ERROR</c> <i>or</i> the <c>Exception</c>
+        /// term, specify a filter pattern of <c>"?ERROR ?Exception"</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string FilterPattern { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FilterPattern property is set.
+        /// </summary>
+        internal bool IsSetFilterPattern() => this.FilterPattern != null;
+
+        /// <summary>
+        /// Gets and sets the property PageToken. 
+        /// <para>
+        /// The token to advance to the next page of results from your request.
+        /// </para>
+        ///  
+        /// <para>
+        /// To get a page token, perform an initial <c>GetContainerLog</c> request. If your results
+        /// are paginated, the response will return a next page token that you can specify as
+        /// the page token in a subsequent request.
+        /// </para>
+        /// </summary>
+        public string PageToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PageToken property is set.
+        /// </summary>
+        internal bool IsSetPageToken() => this.PageToken != null;
+
+        /// <summary>
+        /// Gets and sets the property ServiceName. 
+        /// <para>
+        /// The name of the container service for which to get a container log.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 63)]
+        public string ServiceName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ServiceName property is set.
+        /// </summary>
+        internal bool IsSetServiceName() => this.ServiceName != null;
+
+        /// <summary>
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        /// The start of the time interval for which to get log data.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Specified in Coordinated Universal Time (UTC).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specified in the Unix time format.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify
+        /// <c>1538424000</c> as the start time.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can convert a human-friendly time to Unix time format using a converter like <a
+        /// href="https://www.epochconverter.com/">Epoch converter</a>.
+        /// </para>
+        /// </summary>
+        public DateTime? StartTime { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StartTime property is set.
+        /// </summary>
+        internal bool IsSetStartTime() => this.StartTime.HasValue;
+    }
+}

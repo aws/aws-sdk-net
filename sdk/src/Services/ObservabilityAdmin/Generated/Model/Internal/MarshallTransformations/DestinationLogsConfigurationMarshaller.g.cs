@@ -56,6 +56,12 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetLogGroupDeletionProtection())
+            {
+                context.Writer.WritePropertyName("LogGroupDeletionProtection");
+                context.Writer.WriteStringValue(requestObject.LogGroupDeletionProtection);
+            }
+
             if (requestObject.IsSetLogGroupNameConfiguration())
             {
                 context.Writer.WritePropertyName("LogGroupNameConfiguration");

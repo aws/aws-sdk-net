@@ -1,0 +1,120 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.ECR.Model
+{
+    /// <summary>
+    /// The details of an image scan.
+    /// </summary>
+    public partial class ImageScanFindings
+    {
+        /// <summary>
+        /// Gets and sets the property EnhancedFindings. 
+        /// <para>
+        /// Details about the enhanced scan findings from Amazon Inspector.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<EnhancedImageScanFinding> EnhancedFindings { get; set; } = AWSConfigs.InitializeCollections ? new List<EnhancedImageScanFinding>() : null;
+
+        /// <summary>
+        /// Checks to see if the EnhancedFindings property is set.
+        /// </summary>
+        internal bool IsSetEnhancedFindings() => this.EnhancedFindings != null && (this.EnhancedFindings.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property FindingSeverityCounts. 
+        /// <para>
+        /// The image vulnerability counts, sorted by severity.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, int> FindingSeverityCounts { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
+
+        /// <summary>
+        /// Checks to see if the FindingSeverityCounts property is set.
+        /// </summary>
+        internal bool IsSetFindingSeverityCounts() => this.FindingSeverityCounts != null && (this.FindingSeverityCounts.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property Findings. 
+        /// <para>
+        /// The findings from the image scan.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<ImageScanFinding> Findings { get; set; } = AWSConfigs.InitializeCollections ? new List<ImageScanFinding>() : null;
+
+        /// <summary>
+        /// Checks to see if the Findings property is set.
+        /// </summary>
+        internal bool IsSetFindings() => this.Findings != null && (this.Findings.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property ImageScanCompletedAt. 
+        /// <para>
+        /// The time of the last completed image scan.
+        /// </para>
+        /// </summary>
+        public DateTime? ImageScanCompletedAt { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ImageScanCompletedAt property is set.
+        /// </summary>
+        internal bool IsSetImageScanCompletedAt() => this.ImageScanCompletedAt.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property VulnerabilitySourceUpdatedAt. 
+        /// <para>
+        /// The time when the vulnerability data was last scanned.
+        /// </para>
+        /// </summary>
+        public DateTime? VulnerabilitySourceUpdatedAt { get; set; }
+
+        /// <summary>
+        /// Checks to see if the VulnerabilitySourceUpdatedAt property is set.
+        /// </summary>
+        internal bool IsSetVulnerabilitySourceUpdatedAt() => this.VulnerabilitySourceUpdatedAt.HasValue;
+    }
+}

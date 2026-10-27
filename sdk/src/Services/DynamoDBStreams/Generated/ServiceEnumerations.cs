@@ -189,6 +189,10 @@ namespace Amazon.DynamoDBStreams
         /// </summary>
         public static readonly ShardIteratorType AT_SEQUENCE_NUMBER = new ShardIteratorType("AT_SEQUENCE_NUMBER");
         /// <summary>
+        /// Constant AT_TIMESTAMP for ShardIteratorType
+        /// </summary>
+        public static readonly ShardIteratorType AT_TIMESTAMP = new ShardIteratorType("AT_TIMESTAMP");
+        /// <summary>
         /// Constant LATEST for ShardIteratorType
         /// </summary>
         public static readonly ShardIteratorType LATEST = new ShardIteratorType("LATEST");

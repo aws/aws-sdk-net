@@ -4,7 +4,45 @@
     "com.example#Service": {
       "type": "service",
       "version": "2023-01-01",
-      "rename": { "com.example#Moved": "MovedAway" }
+      "rename": { "com.example#Moved": "MovedAway" },
+      "operations": [{ "target": "com.example#ListBuckets" }],
+      "resources": [{ "target": "com.example#BucketResource" }]
+    },
+    "com.example#BucketResource": {
+      "type": "resource",
+      "operations": [{ "target": "com.example#TagBucket" }],
+      "collectionOperations": [{ "target": "com.example#DeleteBucket" }]
+    },
+    "com.example#TagBucket": {
+      "type": "operation"
+    },
+    "com.example#ListBuckets": {
+      "type": "operation",
+      "output": { "target": "com.example#BucketPage" },
+      "traits": { "smithy.api#paginated": { "inputToken": "nextToken", "outputToken": "nextToken", "items": "buckets" } }
+    },
+    "com.example#BucketPage": {
+      "type": "structure",
+      "members": {
+        "nextToken": { "target": "smithy.api#String" },
+        "buckets": { "target": "com.example#BucketList" }
+      },
+      "traits": { "smithy.api#output": {} }
+    },
+    "com.example#BucketList": {
+      "type": "list",
+      "member": { "target": "com.example#Bucket" }
+    },
+    "com.example#DeleteBucket": {
+      "type": "operation"
+    },
+    "com.example#Orphan": {
+      "type": "operation",
+      "output": { "target": "com.example#Chunk" }
+    },
+    "com.example#OrphanWrappedOutput": {
+      "type": "structure",
+      "members": {}
     },
     "com.example#Bucket": {
       "type": "structure",
@@ -52,7 +90,7 @@
     "com.example#PermissionInput": {
       "type": "structure",
       "members": {
-        "action": { "target": "com.example#Action" },
+        "action": { "target": "com.example#Action", "traits": { "smithy.api#httpLabel": {} } },
         "principal": { "target": "com.example#Principal" }
       }
     },

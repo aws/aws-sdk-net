@@ -25,12 +25,25 @@ public sealed record CustomizationsModel
     [JsonPropertyName("operationModifiers")]
     public Dictionary<string, OperationModifier> OperationModifiers { get; init; } = [];
 
+    /// <summary>True when <c>useWrappingResult</c> wraps <paramref name="operationName"/>'s output.</summary>
+    public bool WrapsOutput(string operationName) => OperationModifiers.TryGetValue(operationName, out var modifier) && modifier.UseWrappingResult;
+
     /// <summary>Handlers the client adds to its runtime pipeline in <c>CustomizeRuntimePipeline</c>.</summary>
     [JsonPropertyName("runtimePipelineOverride")]
     public RuntimePipelineOverride? RuntimePipelineOverride { get; init; }
 
     [JsonPropertyName("overrideContentType")]
     public string? OverrideContentType { get; init; }
+
+    /// <summary>
+    /// restXml-only (route53): members keep the model's declaration order instead of being sorted by
+    /// property name. Route 53 requires XML elements in declaration order, which the sort would break.
+    /// </summary>
+    [JsonPropertyName("retainOriginalMemberOrdering")]
+    public bool RetainOriginalMemberOrdering { get; init; }
+
+    /// <summary>True when <c>operationModifiers.{op}.allowEmptyResult</c> is set for <paramref name="operationName"/>.</summary>
+    public bool AllowsEmptyResult(string operationName) => OperationModifiers.TryGetValue(operationName, out var modifier) && modifier.AllowEmptyResult;
 
     /// <summary>
     /// Usage:
@@ -63,6 +76,40 @@ public sealed record CustomizationsModel
     [JsonPropertyName("paginators")]
     public Dictionary<string, PaginatorCustomization> Paginators { get; init; } = [];
 
+    /// <summary>Operations given a parameterless client overload (<c>client.ListKeys()</c>), sync and async. C2J: <c>noArgOverloads</c>.</summary>
+    [JsonPropertyName("noArgOverloads")]
+    public List<string> NoArgOverloads { get; init; } = [];
+
+    /// <summary>Client overloads taking listed request members as positional parameters, sync and async. C2J: <c>simpleMethods</c>.</summary>
+    [JsonPropertyName("simpleMethods")]
+    public SimpleMethodsCustomization? SimpleMethods { get; init; }
+
+    /// <summary>Request/structure constructors taking listed members as parameters. C2J: <c>simpleConstructors</c>.</summary>
+    [JsonPropertyName("simpleConstructors")]
+    public SimpleConstructorsCustomization? SimpleConstructors { get; init; }
+
+    /// <summary>True when <paramref name="operationName"/> is listed in <c>noArgOverloads</c> (case-insensitive, as C2J).</summary>
+    public bool CreateNoArgOverload(string operationName) => NoArgOverloads.Contains(operationName, StringComparer.OrdinalIgnoreCase);
+
+    /// <summary>The <c>simpleMethods</c> forms for <paramref name="operationName"/>, or null when the operation has none.</summary>
+    public IReadOnlyList<IReadOnlyList<string>>? MethodFormsFor(string operationName) =>
+        SimpleMethods is { } methods && methods.Operations.TryGetValue(operationName, out var entry) ? entry.Forms : null;
+
+    /// <summary>The <c>simpleConstructors</c> forms for the structure/request class <paramref name="className"/>, or null when it has none.</summary>
+    public IReadOnlyList<IReadOnlyList<string>>? ConstructorFormsFor(string className) =>
+        SimpleConstructors is { } constructors && constructors.Constructors.TryGetValue(className, out var entry) ? entry.Forms : null;
+
+    /// <summary>
+    /// Property names of path labels that are sent empty when unset instead of failing the request; glacier's
+    /// ProcessRequestHandler then fills in its "-" (current account) default.
+    /// </summary>
+    [JsonPropertyName("skipUriPropertyValidation")]
+    public List<string> SkipUriPropertyValidation { get; init; } = [];
+
+    /// <summary>Structures that get an unmarshaller though no response returns them.</summary>
+    [JsonPropertyName("generateUnmarshaller")]
+    public List<string> GenerateUnmarshaller { get; init; } = [];
+
     /// <summary>
     /// The <c>emitPropertyName</c> of modeled member <paramref name="memberName"/>, or the modeled name when it isn't
     /// renamed. C2J keys <c>emitIsSetProperties</c> and <c>dataTypeSwap</c> by this name.
@@ -93,7 +140,13 @@ public sealed record CustomizationsModel
         var shapeSubstitutions = new Dictionary<string, ShapeSubstitution>();
         RuntimePipelineOverride? runtimePipelineOverride = null;
         var paginators = new Dictionary<string, PaginatorCustomization>();
+        var noArgOverloads = new List<string>();
+        var simpleMethods = new Dictionary<string, SimpleMethodForms>();
+        var simpleConstructors = new Dictionary<string, SimpleConstructorForms>();
         string? overrideContentType = null;
+        var skipUriPropertyValidation = new List<string>();
+        var generateUnmarshaller = new List<string>();
+        var retainOriginalMemberOrdering = false;
 
         foreach (var path in paths)
         {
@@ -195,6 +248,32 @@ public sealed record CustomizationsModel
 
                 overrideContentType = file.OverrideContentType;
             }
+
+            retainOriginalMemberOrdering |= file.RetainOriginalMemberOrdering;
+
+            // A service often splits these across files (acm keeps simpleMethods and simpleConstructors in
+            // their own siblings); concatenate the lists and merge the per-operation/per-class dictionaries,
+            // failing on a repeated key the way the other hooks do.
+            noArgOverloads.AddRange(file.NoArgOverloads);
+
+            foreach (var (operationName, forms) in file.SimpleMethods?.Operations ?? [])
+            {
+                if (!simpleMethods.TryAdd(operationName, forms))
+                {
+                    throw new GeneratorException($"'{path}': simpleMethods['{operationName}'] appears in more than one customizations file; merging is not supported yet.");
+                }
+            }
+
+            foreach (var (className, forms) in file.SimpleConstructors?.Constructors ?? [])
+            {
+                if (!simpleConstructors.TryAdd(className, forms))
+                {
+                    throw new GeneratorException($"'{path}': simpleConstructors['{className}'] appears in more than one customizations file; merging is not supported yet.");
+                }
+            }
+
+            skipUriPropertyValidation.AddRange(file.SkipUriPropertyValidation);
+            generateUnmarshaller.AddRange(file.GenerateUnmarshaller);
         }
 
         return new CustomizationsModel
@@ -206,9 +285,43 @@ public sealed record CustomizationsModel
             ShapeSubstitutions = shapeSubstitutions,
             RuntimePipelineOverride = runtimePipelineOverride,
             Paginators = paginators,
-            OverrideContentType = overrideContentType
+            NoArgOverloads = noArgOverloads,
+            SimpleMethods = simpleMethods.Count > 0 ? new SimpleMethodsCustomization { Operations = simpleMethods } : null,
+            SimpleConstructors = simpleConstructors.Count > 0 ? new SimpleConstructorsCustomization { Constructors = simpleConstructors } : null,
+            OverrideContentType = overrideContentType,
+            SkipUriPropertyValidation = skipUriPropertyValidation,
+            GenerateUnmarshaller = generateUnmarshaller,
+            RetainOriginalMemberOrdering = retainOriginalMemberOrdering
         };
     }
+}
+
+/// <summary>The <c>simpleMethods</c> hook: convenience client overloads keyed by operation name.</summary>
+public sealed record SimpleMethodsCustomization
+{
+    [JsonPropertyName("operations")]
+    public Dictionary<string, SimpleMethodForms> Operations { get; init; } = [];
+}
+
+/// <summary>One operation's <c>simpleMethods</c> entry: each form lists the request members an overload takes.</summary>
+public sealed record SimpleMethodForms
+{
+    [JsonPropertyName("methodForms")]
+    public List<List<string>> Forms { get; init; } = [];
+}
+
+/// <summary>The <c>simpleConstructors</c> hook: convenience constructors keyed by request/structure class name.</summary>
+public sealed record SimpleConstructorsCustomization
+{
+    [JsonPropertyName("constructors")]
+    public Dictionary<string, SimpleConstructorForms> Constructors { get; init; } = [];
+}
+
+/// <summary>One class's <c>simpleConstructors</c> entry: each form lists the members a constructor takes.</summary>
+public sealed record SimpleConstructorForms
+{
+    [JsonPropertyName("constructorForms")]
+    public List<List<string>> Forms { get; init; } = [];
 }
 
 /// <summary>A <c>shapeModifiers</c> entry: <c>modify</c> is a list of single-key objects mapping a member name to its modifier.</summary>
@@ -216,6 +329,10 @@ public sealed record ShapeModifier
 {
     [JsonPropertyName("modify")]
     public List<Dictionary<string, PropertyModifier>> Modify { get; init; } = [];
+
+    /// <summary>Members dropped from the shape, so they are neither emitted nor sent or read.</summary>
+    [JsonPropertyName("exclude")]
+    public List<string> Exclude { get; init; } = [];
 
     /// <summary>The <c>[Obsolete]</c> message for the shape (e.g. a request/response class); applied only when the shape is already <c>@deprecated</c>.</summary>
     [JsonPropertyName("deprecatedMessage")]
@@ -247,6 +364,32 @@ public sealed record OperationModifier
     /// </summary>
     [JsonPropertyName("stopPaginationOnSameToken")]
     public bool StopPaginationOnSameToken { get; init; }
+
+    /// <summary>Drops the operation, and with it the structures only it uses.</summary>
+    [JsonPropertyName("exclude")]
+    public bool Exclude { get; init; }
+
+    /// <summary>
+    /// The response exposes the output, <c>wrappedResultShape</c>, as a single <c>wrappedResultMember</c> property
+    /// instead of flattening its members.
+    /// </summary>
+    [JsonPropertyName("useWrappingResult")]
+    public bool UseWrappingResult { get; init; }
+
+    /// <summary>The name of the operation's output shape that <c>useWrappingResult</c> wraps.</summary>
+    [JsonPropertyName("wrappedResultShape")]
+    public string? WrappedResultShape { get; init; }
+
+    /// <summary>The name of the response's single property that holds the wrapped output.</summary>
+    [JsonPropertyName("wrappedResultMember")]
+    public string? WrappedResultMember { get; init; }
+
+    /// <summary>
+    /// restXml-only (s3control): a successful empty-body response returns the response object without
+    /// parsing the body, instead of running the XML result loop (which an empty body would make throw).
+    /// </summary>
+    [JsonPropertyName("allowEmptyResult")]
+    public bool AllowEmptyResult { get; init; }
 }
 
 /// <summary>

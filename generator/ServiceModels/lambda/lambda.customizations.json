@@ -25,13 +25,6 @@
                     ]
                 ]
             },
-            "GetEventSource": {
-                "methodForms": [
-                    [
-                        "UUID"
-                    ]
-                ]
-            },
             "GetFunction": {
                 "methodForms": [
                     [
@@ -49,13 +42,6 @@
             "ListFunctions": {
                 "methodForms": [
                     [
-                    ]
-                ]
-            },
-            "RemoveEventSource": {
-                "methodForms": [
-                    [
-                        "UUID"
                     ]
                 ]
             }

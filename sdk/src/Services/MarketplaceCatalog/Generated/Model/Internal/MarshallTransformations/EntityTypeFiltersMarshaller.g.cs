@@ -78,6 +78,17 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetExpressPrivateOfferConfigurationFilters())
+            {
+                context.Writer.WritePropertyName("ExpressPrivateOfferConfigurationFilters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ExpressPrivateOfferConfigurationFiltersMarshaller.Instance;
+                marshaller.Marshall(requestObject.ExpressPrivateOfferConfigurationFilters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetMachineLearningProductFilters())
             {
                 context.Writer.WritePropertyName("MachineLearningProductFilters");
@@ -129,6 +140,17 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
 
                 var marshaller = SaaSProductFiltersMarshaller.Instance;
                 marshaller.Marshall(requestObject.SaaSProductFilters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetSubsidiaryAuthorizationFilters())
+            {
+                context.Writer.WritePropertyName("SubsidiaryAuthorizationFilters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SubsidiaryAuthorizationFiltersMarshaller.Instance;
+                marshaller.Marshall(requestObject.SubsidiaryAuthorizationFilters, context);
 
                 context.Writer.WriteEndObject();
             }

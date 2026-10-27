@@ -144,6 +144,26 @@
     <pattern>^[a-zA-Z0-9-_.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.DecapsulateRequest.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.DecapsulateRequest.SharedSecretCiphertextBlob</property>
+    <min>1</min>
+    <max>6144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.DecapsulateResponse.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.DecapsulateResponse.SharedSecret</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KeyManagementService.Model.DecryptRequest.CiphertextBlob</property>
     <min>1</min>
     <max>6144</max>
@@ -293,6 +313,26 @@
     <property>Amazon.KeyManagementService.Model.EnableKeyRotationRequest.RotationPeriodInDays</property>
     <min>90</min>
     <max>2560</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.EncapsulateRequest.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.EncapsulateResponse.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.EncapsulateResponse.SharedSecret</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.EncapsulateResponse.SharedSecretCiphertextBlob</property>
+    <min>1</min>
+    <max>6144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.EncryptRequest.KeyId</property>

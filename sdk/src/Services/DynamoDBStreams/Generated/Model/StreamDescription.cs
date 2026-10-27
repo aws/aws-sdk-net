@@ -73,7 +73,7 @@ namespace Amazon.DynamoDBStreams.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=1, Max=2)]
+        [AWSProperty(Min=1)]
         public List<KeySchemaElement> KeySchema
         {
             get { return this._keySchema; }

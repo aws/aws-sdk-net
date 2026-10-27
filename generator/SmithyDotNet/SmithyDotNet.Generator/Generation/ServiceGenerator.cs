@@ -171,6 +171,24 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             EmitUnder(testsOutputPath, writtenTests, testsRelativePath, endpointProviderTestSuiteWriter.Write(cancellationToken));
         }
 
+        // Convenience-customization tests live beside the endpoint tests under the test tree, each
+        // gated (like C2J's GenerateCustomizationTests) on the service carrying that hook. Reflection
+        // tests, so they pin the public surface simpleConstructors/simpleMethods add.
+        if (testsOutputPath is not null)
+        {
+            if (context.Customizations.SimpleConstructors is { Constructors.Count: > 0 })
+            {
+                var simpleConstructorTestsWriter = new SimpleConstructorTestsWriter(context, modelFileName);
+                EmitUnder(testsOutputPath, writtenTests, Path.Combine("UnitTests", "Generated", "Customizations", "Constructors", $"{context.BaseName}ConstructorTests.cs"), simpleConstructorTestsWriter.Write(cancellationToken));
+            }
+
+            if (context.Customizations.SimpleMethods is { Operations.Count: > 0 })
+            {
+                var simpleMethodTestsWriter = new SimpleMethodTestsWriter(context, modelFileName);
+                EmitUnder(testsOutputPath, writtenTests, Path.Combine("UnitTests", "Generated", "Customizations", "SimpleMethods", $"{context.BaseName}MethodTests.cs"), simpleMethodTestsWriter.Write(cancellationToken));
+            }
+        }
+
         // Every service gets a unit-test project so the files under UnitTests/ (generated endpoint
         // tests today, hand-written tests as they are added) have a project to compile under. Not
         // gated on endpoint tests — the legacy generator emits it for every service.
@@ -251,6 +269,23 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         var marshalledStructures = new HashSet<ShapeId>();
         var unmarshalledStructures = new HashSet<ShapeId>();
 
+        void EmitStructureUnmarshaller(StructureShape structure)
+        {
+            if (!unmarshalledStructures.Add(structure.Id))
+            {
+                return;
+            }
+
+            var structureUnmarshallerCode = context.Protocol switch
+            {
+                AWSProtocol.RpcV2Cbor => new CborStructureUnmarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
+                AWSProtocol.RestXml => new XmlStructureUnmarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
+                _ => new JsonStructureUnmarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
+            };
+
+            Emit(Path.Combine(marshalling, $"{context.StructureUnmarshallerName(structure.Id)}.g.cs"), structureUnmarshallerCode);
+        }
+
         foreach (var operation in context.Operations)
         {
             // smithy.api#Unit as an operation input/output means "no value" — it is not a model
@@ -270,6 +305,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             var requestMarshallerCode = context.Protocol switch
             {
                 AWSProtocol.RpcV2Cbor => new CborRequestMarshallerWriter(context, modelFileName).Write(operation, cancellationToken),
+                AWSProtocol.RestXml => new XmlRequestMarshallerWriter(context, modelFileName).Write(operation, cancellationToken),
                 _ => new JsonRequestMarshallerWriter(context, modelFileName).Write(operation, cancellationToken),
             };
 
@@ -278,6 +314,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             var responseUnmarshallerCode = context.Protocol switch
             {
                 AWSProtocol.RpcV2Cbor => new CborResponseUnmarshallerWriter(context, modelFileName).Write(operation, cancellationToken),
+                AWSProtocol.RestXml => new XmlResponseUnmarshallerWriter(context, modelFileName).Write(operation, cancellationToken),
                 _ => new JsonResponseUnmarshallerWriter(context, modelFileName).Write(operation, cancellationToken),
             };
 
@@ -295,6 +332,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
                     var structureMarshallerCode = context.Protocol switch
                     {
                         AWSProtocol.RpcV2Cbor => new CborStructureMarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
+                        AWSProtocol.RestXml => new XmlStructureMarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
                         _ => new JsonStructureMarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
                     };
 
@@ -313,16 +351,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
                     continue;
                 }
 
-                if (unmarshalledStructures.Add(structure.Id))
-                {
-                    var structureUnmarshallerCode = context.Protocol switch
-                    {
-                        AWSProtocol.RpcV2Cbor => new CborStructureUnmarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
-                        _ => new JsonStructureUnmarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
-                    };
-
-                    Emit(Path.Combine(marshalling, $"{context.StructureUnmarshallerName(structure.Id)}.g.cs"), structureUnmarshallerCode);
-                }
+                EmitStructureUnmarshaller(structure);
             }
         }
 
@@ -335,6 +364,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             var exceptionUnmarshallerCode = context.Protocol switch
             {
                 AWSProtocol.RpcV2Cbor => new CborExceptionUnmarshallerWriter(context, modelFileName).Write(errorShape, cancellationToken),
+                AWSProtocol.RestXml => new XmlExceptionUnmarshallerWriter(context, modelFileName).Write(errorShape, cancellationToken),
                 _ => new JsonExceptionUnmarshallerWriter(context, modelFileName).Write(errorShape, cancellationToken),
             };
 
@@ -347,17 +377,14 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             // so a structure also reachable from an output isn't emitted twice.
             foreach (var structure in ReferencedStructures(errorShape))
             {
-                if (unmarshalledStructures.Add(structure.Id))
-                {
-                    var structureUnmarshallerCode = context.Protocol switch
-                    {
-                        AWSProtocol.RpcV2Cbor => new CborStructureUnmarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
-                        _ => new JsonStructureUnmarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
-                    };
-
-                    Emit(Path.Combine(marshalling, $"{context.StructureUnmarshallerName(structure.Id)}.g.cs"), structureUnmarshallerCode);
-                }
+                EmitStructureUnmarshaller(structure);
             }
+        }
+
+        // Structures only requests use, whose unmarshallers C2J still ships as public types.
+        foreach (var structure in context.Structures.Values.Where(structure => context.Customizations.GenerateUnmarshaller.Contains(structure.Id.Name)))
+        {
+            EmitStructureUnmarshaller(structure);
         }
 
         // Every service gets an auth resolver: a service that models no auth falls back to noAuth, so

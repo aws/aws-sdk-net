@@ -1,0 +1,2069 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using Amazon.Runtime;
+
+namespace Amazon.NetworkFirewall
+{
+    /// <summary>
+    /// Constants used for properties of type AttachmentStatus.
+    /// </summary>
+    public class AttachmentStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant CREATING for AttachmentStatus
+        /// </summary>
+        public static readonly AttachmentStatus CREATING = new AttachmentStatus("CREATING");
+
+        /// <summary>
+        /// Constant DELETING for AttachmentStatus
+        /// </summary>
+        public static readonly AttachmentStatus DELETING = new AttachmentStatus("DELETING");
+
+        /// <summary>
+        /// Constant ERROR for AttachmentStatus
+        /// </summary>
+        public static readonly AttachmentStatus ERROR = new AttachmentStatus("ERROR");
+
+        /// <summary>
+        /// Constant FAILED for AttachmentStatus
+        /// </summary>
+        public static readonly AttachmentStatus FAILED = new AttachmentStatus("FAILED");
+
+        /// <summary>
+        /// Constant READY for AttachmentStatus
+        /// </summary>
+        public static readonly AttachmentStatus READY = new AttachmentStatus("READY");
+
+        /// <summary>
+        /// Constant SCALING for AttachmentStatus
+        /// </summary>
+        public static readonly AttachmentStatus SCALING = new AttachmentStatus("SCALING");
+
+        /// <summary>
+        /// Constructs a custom AttachmentStatus for a value not among the defined constants.
+        /// </summary>
+        public AttachmentStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AttachmentStatus FindValue(string value)
+        {
+            return FindValue<AttachmentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AttachmentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ConfigurationSyncState.
+    /// </summary>
+    public class ConfigurationSyncState : ConstantClass
+    {
+        /// <summary>
+        /// Constant CAPACITY_CONSTRAINED for ConfigurationSyncState
+        /// </summary>
+        public static readonly ConfigurationSyncState CAPACITY_CONSTRAINED = new ConfigurationSyncState("CAPACITY_CONSTRAINED");
+
+        /// <summary>
+        /// Constant IN_SYNC for ConfigurationSyncState
+        /// </summary>
+        public static readonly ConfigurationSyncState IN_SYNC = new ConfigurationSyncState("IN_SYNC");
+
+        /// <summary>
+        /// Constant PENDING for ConfigurationSyncState
+        /// </summary>
+        public static readonly ConfigurationSyncState PENDING = new ConfigurationSyncState("PENDING");
+
+        /// <summary>
+        /// Constructs a custom ConfigurationSyncState for a value not among the defined constants.
+        /// </summary>
+        public ConfigurationSyncState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfigurationSyncState FindValue(string value)
+        {
+            return FindValue<ConfigurationSyncState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfigurationSyncState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ContainerAssociationStatus.
+    /// </summary>
+    public class ContainerAssociationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for ContainerAssociationStatus
+        /// </summary>
+        public static readonly ContainerAssociationStatus ACTIVE = new ContainerAssociationStatus("ACTIVE");
+
+        /// <summary>
+        /// Constant CREATING for ContainerAssociationStatus
+        /// </summary>
+        public static readonly ContainerAssociationStatus CREATING = new ContainerAssociationStatus("CREATING");
+
+        /// <summary>
+        /// Constant DELETING for ContainerAssociationStatus
+        /// </summary>
+        public static readonly ContainerAssociationStatus DELETING = new ContainerAssociationStatus("DELETING");
+
+        /// <summary>
+        /// Constant UPDATING for ContainerAssociationStatus
+        /// </summary>
+        public static readonly ContainerAssociationStatus UPDATING = new ContainerAssociationStatus("UPDATING");
+
+        /// <summary>
+        /// Constructs a custom ContainerAssociationStatus for a value not among the defined constants.
+        /// </summary>
+        public ContainerAssociationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContainerAssociationStatus FindValue(string value)
+        {
+            return FindValue<ContainerAssociationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContainerAssociationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ContainerMonitoringType.
+    /// </summary>
+    public class ContainerMonitoringType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ECS for ContainerMonitoringType
+        /// </summary>
+        public static readonly ContainerMonitoringType ECS = new ContainerMonitoringType("ECS");
+
+        /// <summary>
+        /// Constant EKS for ContainerMonitoringType
+        /// </summary>
+        public static readonly ContainerMonitoringType EKS = new ContainerMonitoringType("EKS");
+
+        /// <summary>
+        /// Constructs a custom ContainerMonitoringType for a value not among the defined constants.
+        /// </summary>
+        public ContainerMonitoringType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContainerMonitoringType FindValue(string value)
+        {
+            return FindValue<ContainerMonitoringType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContainerMonitoringType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DNSExpiryExceptionPolicy.
+    /// </summary>
+    public class DNSExpiryExceptionPolicy : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONTINUE for DNSExpiryExceptionPolicy
+        /// </summary>
+        public static readonly DNSExpiryExceptionPolicy CONTINUE = new DNSExpiryExceptionPolicy("CONTINUE");
+
+        /// <summary>
+        /// Constant DROP for DNSExpiryExceptionPolicy
+        /// </summary>
+        public static readonly DNSExpiryExceptionPolicy DROP = new DNSExpiryExceptionPolicy("DROP");
+
+        /// <summary>
+        /// Constant REJECT for DNSExpiryExceptionPolicy
+        /// </summary>
+        public static readonly DNSExpiryExceptionPolicy REJECT = new DNSExpiryExceptionPolicy("REJECT");
+
+        /// <summary>
+        /// Constructs a custom DNSExpiryExceptionPolicy for a value not among the defined constants.
+        /// </summary>
+        public DNSExpiryExceptionPolicy(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DNSExpiryExceptionPolicy FindValue(string value)
+        {
+            return FindValue<DNSExpiryExceptionPolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DNSExpiryExceptionPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EnabledAnalysisType.
+    /// </summary>
+    public class EnabledAnalysisType : ConstantClass
+    {
+        /// <summary>
+        /// Constant HTTP_HOST for EnabledAnalysisType
+        /// </summary>
+        public static readonly EnabledAnalysisType HTTP_HOST = new EnabledAnalysisType("HTTP_HOST");
+
+        /// <summary>
+        /// Constant TLS_SNI for EnabledAnalysisType
+        /// </summary>
+        public static readonly EnabledAnalysisType TLS_SNI = new EnabledAnalysisType("TLS_SNI");
+
+        /// <summary>
+        /// Constructs a custom EnabledAnalysisType for a value not among the defined constants.
+        /// </summary>
+        public EnabledAnalysisType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EnabledAnalysisType FindValue(string value)
+        {
+            return FindValue<EnabledAnalysisType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EnabledAnalysisType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EncryptionType.
+    /// </summary>
+    public class EncryptionType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AWS_OWNED_KMS_KEY for EncryptionType
+        /// </summary>
+        public static readonly EncryptionType AWS_OWNED_KMS_KEY = new EncryptionType("AWS_OWNED_KMS_KEY");
+
+        /// <summary>
+        /// Constant CUSTOMER_KMS for EncryptionType
+        /// </summary>
+        public static readonly EncryptionType CUSTOMER_KMS = new EncryptionType("CUSTOMER_KMS");
+
+        /// <summary>
+        /// Constructs a custom EncryptionType for a value not among the defined constants.
+        /// </summary>
+        public EncryptionType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EncryptionType FindValue(string value)
+        {
+            return FindValue<EncryptionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EncryptionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FirewallPolicyErrorCode.
+    /// </summary>
+    public class FirewallPolicyErrorCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant DNS_FIREWALL_RULE_GROUP_UNAVAILABLE for FirewallPolicyErrorCode
+        /// </summary>
+        public static readonly FirewallPolicyErrorCode DNS_FIREWALL_RULE_GROUP_UNAVAILABLE = new FirewallPolicyErrorCode("DNS_FIREWALL_RULE_GROUP_UNAVAILABLE");
+
+        /// <summary>
+        /// Constant ROUTE53_RESOLVED_IP_VALIDATION_MISSING for FirewallPolicyErrorCode
+        /// </summary>
+        public static readonly FirewallPolicyErrorCode ROUTE53_RESOLVED_IP_VALIDATION_MISSING = new FirewallPolicyErrorCode("ROUTE53_RESOLVED_IP_VALIDATION_MISSING");
+
+        /// <summary>
+        /// Constructs a custom FirewallPolicyErrorCode for a value not among the defined constants.
+        /// </summary>
+        public FirewallPolicyErrorCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FirewallPolicyErrorCode FindValue(string value)
+        {
+            return FindValue<FirewallPolicyErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FirewallPolicyErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FirewallStatusValue.
+    /// </summary>
+    public class FirewallStatusValue : ConstantClass
+    {
+        /// <summary>
+        /// Constant DELETING for FirewallStatusValue
+        /// </summary>
+        public static readonly FirewallStatusValue DELETING = new FirewallStatusValue("DELETING");
+
+        /// <summary>
+        /// Constant FAILED for FirewallStatusValue
+        /// </summary>
+        public static readonly FirewallStatusValue FAILED = new FirewallStatusValue("FAILED");
+
+        /// <summary>
+        /// Constant PROVISIONING for FirewallStatusValue
+        /// </summary>
+        public static readonly FirewallStatusValue PROVISIONING = new FirewallStatusValue("PROVISIONING");
+
+        /// <summary>
+        /// Constant READY for FirewallStatusValue
+        /// </summary>
+        public static readonly FirewallStatusValue READY = new FirewallStatusValue("READY");
+
+        /// <summary>
+        /// Constructs a custom FirewallStatusValue for a value not among the defined constants.
+        /// </summary>
+        public FirewallStatusValue(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FirewallStatusValue FindValue(string value)
+        {
+            return FindValue<FirewallStatusValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FirewallStatusValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FlowOperationStatus.
+    /// </summary>
+    public class FlowOperationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant COMPLETED for FlowOperationStatus
+        /// </summary>
+        public static readonly FlowOperationStatus COMPLETED = new FlowOperationStatus("COMPLETED");
+
+        /// <summary>
+        /// Constant COMPLETED_WITH_ERRORS for FlowOperationStatus
+        /// </summary>
+        public static readonly FlowOperationStatus COMPLETED_WITH_ERRORS = new FlowOperationStatus("COMPLETED_WITH_ERRORS");
+
+        /// <summary>
+        /// Constant FAILED for FlowOperationStatus
+        /// </summary>
+        public static readonly FlowOperationStatus FAILED = new FlowOperationStatus("FAILED");
+
+        /// <summary>
+        /// Constant IN_PROGRESS for FlowOperationStatus
+        /// </summary>
+        public static readonly FlowOperationStatus IN_PROGRESS = new FlowOperationStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// Constructs a custom FlowOperationStatus for a value not among the defined constants.
+        /// </summary>
+        public FlowOperationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlowOperationStatus FindValue(string value)
+        {
+            return FindValue<FlowOperationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlowOperationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FlowOperationType.
+    /// </summary>
+    public class FlowOperationType : ConstantClass
+    {
+        /// <summary>
+        /// Constant FLOW_CAPTURE for FlowOperationType
+        /// </summary>
+        public static readonly FlowOperationType FLOW_CAPTURE = new FlowOperationType("FLOW_CAPTURE");
+
+        /// <summary>
+        /// Constant FLOW_FLUSH for FlowOperationType
+        /// </summary>
+        public static readonly FlowOperationType FLOW_FLUSH = new FlowOperationType("FLOW_FLUSH");
+
+        /// <summary>
+        /// Constructs a custom FlowOperationType for a value not among the defined constants.
+        /// </summary>
+        public FlowOperationType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlowOperationType FindValue(string value)
+        {
+            return FindValue<FlowOperationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlowOperationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type GeneratedRulesType.
+    /// </summary>
+    public class GeneratedRulesType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ALERTLIST for GeneratedRulesType
+        /// </summary>
+        public static readonly GeneratedRulesType ALERTLIST = new GeneratedRulesType("ALERTLIST");
+
+        /// <summary>
+        /// Constant ALLOWLIST for GeneratedRulesType
+        /// </summary>
+        public static readonly GeneratedRulesType ALLOWLIST = new GeneratedRulesType("ALLOWLIST");
+
+        /// <summary>
+        /// Constant DENYLIST for GeneratedRulesType
+        /// </summary>
+        public static readonly GeneratedRulesType DENYLIST = new GeneratedRulesType("DENYLIST");
+
+        /// <summary>
+        /// Constant REJECTLIST for GeneratedRulesType
+        /// </summary>
+        public static readonly GeneratedRulesType REJECTLIST = new GeneratedRulesType("REJECTLIST");
+
+        /// <summary>
+        /// Constructs a custom GeneratedRulesType for a value not among the defined constants.
+        /// </summary>
+        public GeneratedRulesType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GeneratedRulesType FindValue(string value)
+        {
+            return FindValue<GeneratedRulesType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GeneratedRulesType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type IPAddressType.
+    /// </summary>
+    public class IPAddressType : ConstantClass
+    {
+        /// <summary>
+        /// Constant DUALSTACK for IPAddressType
+        /// </summary>
+        public static readonly IPAddressType DUALSTACK = new IPAddressType("DUALSTACK");
+
+        /// <summary>
+        /// Constant IPV4 for IPAddressType
+        /// </summary>
+        public static readonly IPAddressType IPV4 = new IPAddressType("IPV4");
+
+        /// <summary>
+        /// Constant IPV6 for IPAddressType
+        /// </summary>
+        public static readonly IPAddressType IPV6 = new IPAddressType("IPV6");
+
+        /// <summary>
+        /// Constructs a custom IPAddressType for a value not among the defined constants.
+        /// </summary>
+        public IPAddressType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IPAddressType FindValue(string value)
+        {
+            return FindValue<IPAddressType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IPAddressType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type IdentifiedType.
+    /// </summary>
+    public class IdentifiedType : ConstantClass
+    {
+        /// <summary>
+        /// Constant STATELESS_RULE_CONTAINS_TCP_FLAGS for IdentifiedType
+        /// </summary>
+        public static readonly IdentifiedType STATELESS_RULE_CONTAINS_TCP_FLAGS = new IdentifiedType("STATELESS_RULE_CONTAINS_TCP_FLAGS");
+
+        /// <summary>
+        /// Constant STATELESS_RULE_FORWARDING_ASYMMETRICALLY for IdentifiedType
+        /// </summary>
+        public static readonly IdentifiedType STATELESS_RULE_FORWARDING_ASYMMETRICALLY = new IdentifiedType("STATELESS_RULE_FORWARDING_ASYMMETRICALLY");
+
+        /// <summary>
+        /// Constructs a custom IdentifiedType for a value not among the defined constants.
+        /// </summary>
+        public IdentifiedType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IdentifiedType FindValue(string value)
+        {
+            return FindValue<IdentifiedType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IdentifiedType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ListenerPropertyType.
+    /// </summary>
+    public class ListenerPropertyType : ConstantClass
+    {
+        /// <summary>
+        /// Constant HTTP for ListenerPropertyType
+        /// </summary>
+        public static readonly ListenerPropertyType HTTP = new ListenerPropertyType("HTTP");
+
+        /// <summary>
+        /// Constant HTTPS for ListenerPropertyType
+        /// </summary>
+        public static readonly ListenerPropertyType HTTPS = new ListenerPropertyType("HTTPS");
+
+        /// <summary>
+        /// Constructs a custom ListenerPropertyType for a value not among the defined constants.
+        /// </summary>
+        public ListenerPropertyType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListenerPropertyType FindValue(string value)
+        {
+            return FindValue<ListenerPropertyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListenerPropertyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type LogDestinationType.
+    /// </summary>
+    public class LogDestinationType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CloudWatchLogs for LogDestinationType
+        /// </summary>
+        public static readonly LogDestinationType CloudWatchLogs = new LogDestinationType("CloudWatchLogs");
+
+        /// <summary>
+        /// Constant KinesisDataFirehose for LogDestinationType
+        /// </summary>
+        public static readonly LogDestinationType KinesisDataFirehose = new LogDestinationType("KinesisDataFirehose");
+
+        /// <summary>
+        /// Constant S3 for LogDestinationType
+        /// </summary>
+        public static readonly LogDestinationType S3 = new LogDestinationType("S3");
+
+        /// <summary>
+        /// Constructs a custom LogDestinationType for a value not among the defined constants.
+        /// </summary>
+        public LogDestinationType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LogDestinationType FindValue(string value)
+        {
+            return FindValue<LogDestinationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LogDestinationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type LogType.
+    /// </summary>
+    public class LogType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ALERT for LogType
+        /// </summary>
+        public static readonly LogType ALERT = new LogType("ALERT");
+
+        /// <summary>
+        /// Constant FLOW for LogType
+        /// </summary>
+        public static readonly LogType FLOW = new LogType("FLOW");
+
+        /// <summary>
+        /// Constant TLS for LogType
+        /// </summary>
+        public static readonly LogType TLS = new LogType("TLS");
+
+        /// <summary>
+        /// Constructs a custom LogType for a value not among the defined constants.
+        /// </summary>
+        public LogType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LogType FindValue(string value)
+        {
+            return FindValue<LogType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LogType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type NatGatewayAttachmentStatus.
+    /// </summary>
+    public class NatGatewayAttachmentStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant CREATING for NatGatewayAttachmentStatus
+        /// </summary>
+        public static readonly NatGatewayAttachmentStatus CREATING = new NatGatewayAttachmentStatus("CREATING");
+
+        /// <summary>
+        /// Constant DELETING for NatGatewayAttachmentStatus
+        /// </summary>
+        public static readonly NatGatewayAttachmentStatus DELETING = new NatGatewayAttachmentStatus("DELETING");
+
+        /// <summary>
+        /// Constant FAILED for NatGatewayAttachmentStatus
+        /// </summary>
+        public static readonly NatGatewayAttachmentStatus FAILED = new NatGatewayAttachmentStatus("FAILED");
+
+        /// <summary>
+        /// Constant READY for NatGatewayAttachmentStatus
+        /// </summary>
+        public static readonly NatGatewayAttachmentStatus READY = new NatGatewayAttachmentStatus("READY");
+
+        /// <summary>
+        /// Constant UPDATING for NatGatewayAttachmentStatus
+        /// </summary>
+        public static readonly NatGatewayAttachmentStatus UPDATING = new NatGatewayAttachmentStatus("UPDATING");
+
+        /// <summary>
+        /// Constructs a custom NatGatewayAttachmentStatus for a value not among the defined constants.
+        /// </summary>
+        public NatGatewayAttachmentStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NatGatewayAttachmentStatus FindValue(string value)
+        {
+            return FindValue<NatGatewayAttachmentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NatGatewayAttachmentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type OverrideAction.
+    /// </summary>
+    public class OverrideAction : ConstantClass
+    {
+        /// <summary>
+        /// Constant DROP_TO_ALERT for OverrideAction
+        /// </summary>
+        public static readonly OverrideAction DROP_TO_ALERT = new OverrideAction("DROP_TO_ALERT");
+
+        /// <summary>
+        /// Constructs a custom OverrideAction for a value not among the defined constants.
+        /// </summary>
+        public OverrideAction(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OverrideAction FindValue(string value)
+        {
+            return FindValue<OverrideAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OverrideAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PerObjectSyncStatus.
+    /// </summary>
+    public class PerObjectSyncStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant CAPACITY_CONSTRAINED for PerObjectSyncStatus
+        /// </summary>
+        public static readonly PerObjectSyncStatus CAPACITY_CONSTRAINED = new PerObjectSyncStatus("CAPACITY_CONSTRAINED");
+
+        /// <summary>
+        /// Constant DEPRECATED for PerObjectSyncStatus
+        /// </summary>
+        public static readonly PerObjectSyncStatus DEPRECATED = new PerObjectSyncStatus("DEPRECATED");
+
+        /// <summary>
+        /// Constant IN_SYNC for PerObjectSyncStatus
+        /// </summary>
+        public static readonly PerObjectSyncStatus IN_SYNC = new PerObjectSyncStatus("IN_SYNC");
+
+        /// <summary>
+        /// Constant NOT_SUBSCRIBED for PerObjectSyncStatus
+        /// </summary>
+        public static readonly PerObjectSyncStatus NOT_SUBSCRIBED = new PerObjectSyncStatus("NOT_SUBSCRIBED");
+
+        /// <summary>
+        /// Constant PENDING for PerObjectSyncStatus
+        /// </summary>
+        public static readonly PerObjectSyncStatus PENDING = new PerObjectSyncStatus("PENDING");
+
+        /// <summary>
+        /// Constructs a custom PerObjectSyncStatus for a value not among the defined constants.
+        /// </summary>
+        public PerObjectSyncStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PerObjectSyncStatus FindValue(string value)
+        {
+            return FindValue<PerObjectSyncStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PerObjectSyncStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ProxyModifyState.
+    /// </summary>
+    public class ProxyModifyState : ConstantClass
+    {
+        /// <summary>
+        /// Constant COMPLETED for ProxyModifyState
+        /// </summary>
+        public static readonly ProxyModifyState COMPLETED = new ProxyModifyState("COMPLETED");
+
+        /// <summary>
+        /// Constant FAILED for ProxyModifyState
+        /// </summary>
+        public static readonly ProxyModifyState FAILED = new ProxyModifyState("FAILED");
+
+        /// <summary>
+        /// Constant MODIFYING for ProxyModifyState
+        /// </summary>
+        public static readonly ProxyModifyState MODIFYING = new ProxyModifyState("MODIFYING");
+
+        /// <summary>
+        /// Constructs a custom ProxyModifyState for a value not among the defined constants.
+        /// </summary>
+        public ProxyModifyState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProxyModifyState FindValue(string value)
+        {
+            return FindValue<ProxyModifyState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProxyModifyState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ProxyRulePhaseAction.
+    /// </summary>
+    public class ProxyRulePhaseAction : ConstantClass
+    {
+        /// <summary>
+        /// Constant ALERT for ProxyRulePhaseAction
+        /// </summary>
+        public static readonly ProxyRulePhaseAction ALERT = new ProxyRulePhaseAction("ALERT");
+
+        /// <summary>
+        /// Constant ALLOW for ProxyRulePhaseAction
+        /// </summary>
+        public static readonly ProxyRulePhaseAction ALLOW = new ProxyRulePhaseAction("ALLOW");
+
+        /// <summary>
+        /// Constant DENY for ProxyRulePhaseAction
+        /// </summary>
+        public static readonly ProxyRulePhaseAction DENY = new ProxyRulePhaseAction("DENY");
+
+        /// <summary>
+        /// Constructs a custom ProxyRulePhaseAction for a value not among the defined constants.
+        /// </summary>
+        public ProxyRulePhaseAction(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProxyRulePhaseAction FindValue(string value)
+        {
+            return FindValue<ProxyRulePhaseAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProxyRulePhaseAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ProxyState.
+    /// </summary>
+    public class ProxyState : ConstantClass
+    {
+        /// <summary>
+        /// Constant ATTACHED for ProxyState
+        /// </summary>
+        public static readonly ProxyState ATTACHED = new ProxyState("ATTACHED");
+
+        /// <summary>
+        /// Constant ATTACHING for ProxyState
+        /// </summary>
+        public static readonly ProxyState ATTACHING = new ProxyState("ATTACHING");
+
+        /// <summary>
+        /// Constant ATTACH_FAILED for ProxyState
+        /// </summary>
+        public static readonly ProxyState ATTACH_FAILED = new ProxyState("ATTACH_FAILED");
+
+        /// <summary>
+        /// Constant DETACHED for ProxyState
+        /// </summary>
+        public static readonly ProxyState DETACHED = new ProxyState("DETACHED");
+
+        /// <summary>
+        /// Constant DETACHING for ProxyState
+        /// </summary>
+        public static readonly ProxyState DETACHING = new ProxyState("DETACHING");
+
+        /// <summary>
+        /// Constant DETACH_FAILED for ProxyState
+        /// </summary>
+        public static readonly ProxyState DETACH_FAILED = new ProxyState("DETACH_FAILED");
+
+        /// <summary>
+        /// Constructs a custom ProxyState for a value not among the defined constants.
+        /// </summary>
+        public ProxyState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProxyState FindValue(string value)
+        {
+            return FindValue<ProxyState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProxyState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ResourceManagedStatus.
+    /// </summary>
+    public class ResourceManagedStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACCOUNT for ResourceManagedStatus
+        /// </summary>
+        public static readonly ResourceManagedStatus ACCOUNT = new ResourceManagedStatus("ACCOUNT");
+
+        /// <summary>
+        /// Constant MANAGED for ResourceManagedStatus
+        /// </summary>
+        public static readonly ResourceManagedStatus MANAGED = new ResourceManagedStatus("MANAGED");
+
+        /// <summary>
+        /// Constructs a custom ResourceManagedStatus for a value not among the defined constants.
+        /// </summary>
+        public ResourceManagedStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceManagedStatus FindValue(string value)
+        {
+            return FindValue<ResourceManagedStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceManagedStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ResourceManagedType.
+    /// </summary>
+    public class ResourceManagedType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE_THREAT_DEFENSE for ResourceManagedType
+        /// </summary>
+        public static readonly ResourceManagedType ACTIVE_THREAT_DEFENSE = new ResourceManagedType("ACTIVE_THREAT_DEFENSE");
+
+        /// <summary>
+        /// Constant AWS_MANAGED_DOMAIN_LISTS for ResourceManagedType
+        /// </summary>
+        public static readonly ResourceManagedType AWS_MANAGED_DOMAIN_LISTS = new ResourceManagedType("AWS_MANAGED_DOMAIN_LISTS");
+
+        /// <summary>
+        /// Constant AWS_MANAGED_THREAT_SIGNATURES for ResourceManagedType
+        /// </summary>
+        public static readonly ResourceManagedType AWS_MANAGED_THREAT_SIGNATURES = new ResourceManagedType("AWS_MANAGED_THREAT_SIGNATURES");
+
+        /// <summary>
+        /// Constant PARTNER_MANAGED for ResourceManagedType
+        /// </summary>
+        public static readonly ResourceManagedType PARTNER_MANAGED = new ResourceManagedType("PARTNER_MANAGED");
+
+        /// <summary>
+        /// Constructs a custom ResourceManagedType for a value not among the defined constants.
+        /// </summary>
+        public ResourceManagedType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceManagedType FindValue(string value)
+        {
+            return FindValue<ResourceManagedType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceManagedType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ResourceStatus.
+    /// </summary>
+    public class ResourceStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus ACTIVE = new ResourceStatus("ACTIVE");
+
+        /// <summary>
+        /// Constant DELETING for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus DELETING = new ResourceStatus("DELETING");
+
+        /// <summary>
+        /// Constant ERROR for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus ERROR = new ResourceStatus("ERROR");
+
+        /// <summary>
+        /// Constant UPDATING for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus UPDATING = new ResourceStatus("UPDATING");
+
+        /// <summary>
+        /// Constructs a custom ResourceStatus for a value not among the defined constants.
+        /// </summary>
+        public ResourceStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceStatus FindValue(string value)
+        {
+            return FindValue<ResourceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RevocationCheckAction.
+    /// </summary>
+    public class RevocationCheckAction : ConstantClass
+    {
+        /// <summary>
+        /// Constant DROP for RevocationCheckAction
+        /// </summary>
+        public static readonly RevocationCheckAction DROP = new RevocationCheckAction("DROP");
+
+        /// <summary>
+        /// Constant PASS for RevocationCheckAction
+        /// </summary>
+        public static readonly RevocationCheckAction PASS = new RevocationCheckAction("PASS");
+
+        /// <summary>
+        /// Constant REJECT for RevocationCheckAction
+        /// </summary>
+        public static readonly RevocationCheckAction REJECT = new RevocationCheckAction("REJECT");
+
+        /// <summary>
+        /// Constructs a custom RevocationCheckAction for a value not among the defined constants.
+        /// </summary>
+        public RevocationCheckAction(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RevocationCheckAction FindValue(string value)
+        {
+            return FindValue<RevocationCheckAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RevocationCheckAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type Route53ResolvedIPValidationAction.
+    /// </summary>
+    public class Route53ResolvedIPValidationAction : ConstantClass
+    {
+        /// <summary>
+        /// Constant ALERT for Route53ResolvedIPValidationAction
+        /// </summary>
+        public static readonly Route53ResolvedIPValidationAction ALERT = new Route53ResolvedIPValidationAction("ALERT");
+
+        /// <summary>
+        /// Constant DROP for Route53ResolvedIPValidationAction
+        /// </summary>
+        public static readonly Route53ResolvedIPValidationAction DROP = new Route53ResolvedIPValidationAction("DROP");
+
+        /// <summary>
+        /// Constant REJECT for Route53ResolvedIPValidationAction
+        /// </summary>
+        public static readonly Route53ResolvedIPValidationAction REJECT = new Route53ResolvedIPValidationAction("REJECT");
+
+        /// <summary>
+        /// Constructs a custom Route53ResolvedIPValidationAction for a value not among the defined constants.
+        /// </summary>
+        public Route53ResolvedIPValidationAction(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Route53ResolvedIPValidationAction FindValue(string value)
+        {
+            return FindValue<Route53ResolvedIPValidationAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Route53ResolvedIPValidationAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RuleGroupRequestPhase.
+    /// </summary>
+    public class RuleGroupRequestPhase : ConstantClass
+    {
+        /// <summary>
+        /// Constant POST_RES for RuleGroupRequestPhase
+        /// </summary>
+        public static readonly RuleGroupRequestPhase POST_RES = new RuleGroupRequestPhase("POST_RES");
+
+        /// <summary>
+        /// Constant PRE_DNS for RuleGroupRequestPhase
+        /// </summary>
+        public static readonly RuleGroupRequestPhase PRE_DNS = new RuleGroupRequestPhase("PRE_DNS");
+
+        /// <summary>
+        /// Constant PRE_REQ for RuleGroupRequestPhase
+        /// </summary>
+        public static readonly RuleGroupRequestPhase PRE_REQ = new RuleGroupRequestPhase("PRE_REQ");
+
+        /// <summary>
+        /// Constructs a custom RuleGroupRequestPhase for a value not among the defined constants.
+        /// </summary>
+        public RuleGroupRequestPhase(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuleGroupRequestPhase FindValue(string value)
+        {
+            return FindValue<RuleGroupRequestPhase>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuleGroupRequestPhase(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RuleGroupType.
+    /// </summary>
+    public class RuleGroupType : ConstantClass
+    {
+        /// <summary>
+        /// Constant STATEFUL for RuleGroupType
+        /// </summary>
+        public static readonly RuleGroupType STATEFUL = new RuleGroupType("STATEFUL");
+
+        /// <summary>
+        /// Constant STATEFUL_DOMAIN for RuleGroupType
+        /// </summary>
+        public static readonly RuleGroupType STATEFUL_DOMAIN = new RuleGroupType("STATEFUL_DOMAIN");
+
+        /// <summary>
+        /// Constant STATELESS for RuleGroupType
+        /// </summary>
+        public static readonly RuleGroupType STATELESS = new RuleGroupType("STATELESS");
+
+        /// <summary>
+        /// Constructs a custom RuleGroupType for a value not among the defined constants.
+        /// </summary>
+        public RuleGroupType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuleGroupType FindValue(string value)
+        {
+            return FindValue<RuleGroupType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuleGroupType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RuleOrder.
+    /// </summary>
+    public class RuleOrder : ConstantClass
+    {
+        /// <summary>
+        /// Constant DEFAULT_ACTION_ORDER for RuleOrder
+        /// </summary>
+        public static readonly RuleOrder DEFAULT_ACTION_ORDER = new RuleOrder("DEFAULT_ACTION_ORDER");
+
+        /// <summary>
+        /// Constant STRICT_ORDER for RuleOrder
+        /// </summary>
+        public static readonly RuleOrder STRICT_ORDER = new RuleOrder("STRICT_ORDER");
+
+        /// <summary>
+        /// Constructs a custom RuleOrder for a value not among the defined constants.
+        /// </summary>
+        public RuleOrder(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuleOrder FindValue(string value)
+        {
+            return FindValue<RuleOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuleOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type StatefulAction.
+    /// </summary>
+    public class StatefulAction : ConstantClass
+    {
+        /// <summary>
+        /// Constant ALERT for StatefulAction
+        /// </summary>
+        public static readonly StatefulAction ALERT = new StatefulAction("ALERT");
+
+        /// <summary>
+        /// Constant DROP for StatefulAction
+        /// </summary>
+        public static readonly StatefulAction DROP = new StatefulAction("DROP");
+
+        /// <summary>
+        /// Constant PASS for StatefulAction
+        /// </summary>
+        public static readonly StatefulAction PASS = new StatefulAction("PASS");
+
+        /// <summary>
+        /// Constant REJECT for StatefulAction
+        /// </summary>
+        public static readonly StatefulAction REJECT = new StatefulAction("REJECT");
+
+        /// <summary>
+        /// Constructs a custom StatefulAction for a value not among the defined constants.
+        /// </summary>
+        public StatefulAction(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StatefulAction FindValue(string value)
+        {
+            return FindValue<StatefulAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StatefulAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type StatefulRuleDirection.
+    /// </summary>
+    public class StatefulRuleDirection : ConstantClass
+    {
+        /// <summary>
+        /// Constant ANY for StatefulRuleDirection
+        /// </summary>
+        public static readonly StatefulRuleDirection ANY = new StatefulRuleDirection("ANY");
+
+        /// <summary>
+        /// Constant FORWARD for StatefulRuleDirection
+        /// </summary>
+        public static readonly StatefulRuleDirection FORWARD = new StatefulRuleDirection("FORWARD");
+
+        /// <summary>
+        /// Constructs a custom StatefulRuleDirection for a value not among the defined constants.
+        /// </summary>
+        public StatefulRuleDirection(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StatefulRuleDirection FindValue(string value)
+        {
+            return FindValue<StatefulRuleDirection>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StatefulRuleDirection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type StatefulRuleProtocol.
+    /// </summary>
+    public class StatefulRuleProtocol : ConstantClass
+    {
+        /// <summary>
+        /// Constant DCERPC for StatefulRuleProtocol
+        /// </summary>
+        public static readonly StatefulRuleProtocol DCERPC = new StatefulRuleProtocol("DCERPC");
+
+        /// <summary>
+        /// Constant DHCP for StatefulRuleProtocol
+        /// </summary>
+        public static readonly StatefulRuleProtocol DHCP = new StatefulRuleProtocol("DHCP");
+
+        /// <summary>
+        /// Constant DNS for StatefulRuleProtocol
+        /// </summary>
+        public static readonly StatefulRuleProtocol DNS = new StatefulRuleProtocol("DNS");
+
+        /// <summary>
+        /// Constant FTP for StatefulRuleProtocol
+        /// </summary>
+        public static readonly StatefulRuleProtocol FTP = new StatefulRuleProtocol("FTP");
+
+        /// <summary>
+        /// Constant HTTP for StatefulRuleProtocol
+        /// </summary>
+        public static readonly StatefulRuleProtocol HTTP = new StatefulRuleProtocol("HTTP");
+
+        /// <summary>
+        /// Constant HTTP2 for StatefulRuleProtocol
+        /// </summary>
+        public static readonly StatefulRuleProtocol HTTP2 = new StatefulRuleProtocol("HTTP2");
+
+        /// <summary>
+        /// Constant ICMP for StatefulRuleProtocol
+        /// </summary>
+        public static readonly StatefulRuleProtocol ICMP = new StatefulRuleProtocol("ICMP");
+
+        /// <summary>
+        /// Constant IKEV2 for StatefulRuleProtocol
+        /// </summary>
+        public static readonly StatefulRuleProtocol IKEV2 = new StatefulRuleProtocol("IKEV2");
+
+        /// <summary>
+        /// Constant IMAP for StatefulRuleProtocol
+        /// </summary>
+        public static readonly StatefulRuleProtocol IMAP = new StatefulRuleProtocol("IMAP");
+
+        /// <summary>
+        /// Constant IP for StatefulRuleProtocol
+        /// </summary>
+        public static readonly StatefulRuleProtocol IP = new StatefulRuleProtocol("IP");
+
+        /// <summary>
+        /// Constant KRB5 for StatefulRuleProtocol
+        /// </summary>
+        public static readonly StatefulRuleProtocol KRB5 = new StatefulRuleProtocol("KRB5");
+
+        /// <summary>
+        /// Constant MSN for StatefulRuleProtocol
+        /// </summary>
+        public static readonly StatefulRuleProtocol MSN = new StatefulRuleProtocol("MSN");
+
+        /// <summary>
+        /// Constant NTP for StatefulRuleProtocol
+        /// </summary>
+        public static readonly StatefulRuleProtocol NTP = new StatefulRuleProtocol("NTP");
+
+        /// <summary>
+        /// Constant QUIC for StatefulRuleProtocol
+        /// </summary>
+        public static readonly StatefulRuleProtocol QUIC = new StatefulRuleProtocol("QUIC");
+
+        /// <summary>
+        /// Constant SMB for StatefulRuleProtocol
+        /// </summary>
+        public static readonly StatefulRuleProtocol SMB = new StatefulRuleProtocol("SMB");
+
+        /// <summary>
+        /// Constant SMTP for StatefulRuleProtocol
+        /// </summary>
+        public static readonly StatefulRuleProtocol SMTP = new StatefulRuleProtocol("SMTP");
+
+        /// <summary>
+        /// Constant SSH for StatefulRuleProtocol
+        /// </summary>
+        public static readonly StatefulRuleProtocol SSH = new StatefulRuleProtocol("SSH");
+
+        /// <summary>
+        /// Constant TCP for StatefulRuleProtocol
+        /// </summary>
+        public static readonly StatefulRuleProtocol TCP = new StatefulRuleProtocol("TCP");
+
+        /// <summary>
+        /// Constant TFTP for StatefulRuleProtocol
+        /// </summary>
+        public static readonly StatefulRuleProtocol TFTP = new StatefulRuleProtocol("TFTP");
+
+        /// <summary>
+        /// Constant TLS for StatefulRuleProtocol
+        /// </summary>
+        public static readonly StatefulRuleProtocol TLS = new StatefulRuleProtocol("TLS");
+
+        /// <summary>
+        /// Constant UDP for StatefulRuleProtocol
+        /// </summary>
+        public static readonly StatefulRuleProtocol UDP = new StatefulRuleProtocol("UDP");
+
+        /// <summary>
+        /// Constructs a custom StatefulRuleProtocol for a value not among the defined constants.
+        /// </summary>
+        public StatefulRuleProtocol(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StatefulRuleProtocol FindValue(string value)
+        {
+            return FindValue<StatefulRuleProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StatefulRuleProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type StreamExceptionPolicy.
+    /// </summary>
+    public class StreamExceptionPolicy : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONTINUE for StreamExceptionPolicy
+        /// </summary>
+        public static readonly StreamExceptionPolicy CONTINUE = new StreamExceptionPolicy("CONTINUE");
+
+        /// <summary>
+        /// Constant DROP for StreamExceptionPolicy
+        /// </summary>
+        public static readonly StreamExceptionPolicy DROP = new StreamExceptionPolicy("DROP");
+
+        /// <summary>
+        /// Constant REJECT for StreamExceptionPolicy
+        /// </summary>
+        public static readonly StreamExceptionPolicy REJECT = new StreamExceptionPolicy("REJECT");
+
+        /// <summary>
+        /// Constructs a custom StreamExceptionPolicy for a value not among the defined constants.
+        /// </summary>
+        public StreamExceptionPolicy(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StreamExceptionPolicy FindValue(string value)
+        {
+            return FindValue<StreamExceptionPolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StreamExceptionPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SubscriptionStatus.
+    /// </summary>
+    public class SubscriptionStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant NOT_SUBSCRIBED for SubscriptionStatus
+        /// </summary>
+        public static readonly SubscriptionStatus NOT_SUBSCRIBED = new SubscriptionStatus("NOT_SUBSCRIBED");
+
+        /// <summary>
+        /// Constant SUBSCRIBED for SubscriptionStatus
+        /// </summary>
+        public static readonly SubscriptionStatus SUBSCRIBED = new SubscriptionStatus("SUBSCRIBED");
+
+        /// <summary>
+        /// Constructs a custom SubscriptionStatus for a value not among the defined constants.
+        /// </summary>
+        public SubscriptionStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SubscriptionStatus FindValue(string value)
+        {
+            return FindValue<SubscriptionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SubscriptionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SummaryRuleOption.
+    /// </summary>
+    public class SummaryRuleOption : ConstantClass
+    {
+        /// <summary>
+        /// Constant METADATA for SummaryRuleOption
+        /// </summary>
+        public static readonly SummaryRuleOption METADATA = new SummaryRuleOption("METADATA");
+
+        /// <summary>
+        /// Constant MSG for SummaryRuleOption
+        /// </summary>
+        public static readonly SummaryRuleOption MSG = new SummaryRuleOption("MSG");
+
+        /// <summary>
+        /// Constant SID for SummaryRuleOption
+        /// </summary>
+        public static readonly SummaryRuleOption SID = new SummaryRuleOption("SID");
+
+        /// <summary>
+        /// Constructs a custom SummaryRuleOption for a value not among the defined constants.
+        /// </summary>
+        public SummaryRuleOption(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SummaryRuleOption FindValue(string value)
+        {
+            return FindValue<SummaryRuleOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SummaryRuleOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TCPFlag.
+    /// </summary>
+    public class TCPFlag : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACK for TCPFlag
+        /// </summary>
+        public static readonly TCPFlag ACK = new TCPFlag("ACK");
+
+        /// <summary>
+        /// Constant CWR for TCPFlag
+        /// </summary>
+        public static readonly TCPFlag CWR = new TCPFlag("CWR");
+
+        /// <summary>
+        /// Constant ECE for TCPFlag
+        /// </summary>
+        public static readonly TCPFlag ECE = new TCPFlag("ECE");
+
+        /// <summary>
+        /// Constant FIN for TCPFlag
+        /// </summary>
+        public static readonly TCPFlag FIN = new TCPFlag("FIN");
+
+        /// <summary>
+        /// Constant PSH for TCPFlag
+        /// </summary>
+        public static readonly TCPFlag PSH = new TCPFlag("PSH");
+
+        /// <summary>
+        /// Constant RST for TCPFlag
+        /// </summary>
+        public static readonly TCPFlag RST = new TCPFlag("RST");
+
+        /// <summary>
+        /// Constant SYN for TCPFlag
+        /// </summary>
+        public static readonly TCPFlag SYN = new TCPFlag("SYN");
+
+        /// <summary>
+        /// Constant URG for TCPFlag
+        /// </summary>
+        public static readonly TCPFlag URG = new TCPFlag("URG");
+
+        /// <summary>
+        /// Constructs a custom TCPFlag for a value not among the defined constants.
+        /// </summary>
+        public TCPFlag(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TCPFlag FindValue(string value)
+        {
+            return FindValue<TCPFlag>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TCPFlag(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TargetType.
+    /// </summary>
+    public class TargetType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AWS_ROUTE_53_RESOLVED_DOMAIN for TargetType
+        /// </summary>
+        public static readonly TargetType AWS_ROUTE_53_RESOLVED_DOMAIN = new TargetType("AWS_ROUTE_53_RESOLVED_DOMAIN");
+
+        /// <summary>
+        /// Constant HTTP_HOST for TargetType
+        /// </summary>
+        public static readonly TargetType HTTP_HOST = new TargetType("HTTP_HOST");
+
+        /// <summary>
+        /// Constant TLS_SNI for TargetType
+        /// </summary>
+        public static readonly TargetType TLS_SNI = new TargetType("TLS_SNI");
+
+        /// <summary>
+        /// Constructs a custom TargetType for a value not among the defined constants.
+        /// </summary>
+        public TargetType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetType FindValue(string value)
+        {
+            return FindValue<TargetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TlsInterceptMode.
+    /// </summary>
+    public class TlsInterceptMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for TlsInterceptMode
+        /// </summary>
+        public static readonly TlsInterceptMode DISABLED = new TlsInterceptMode("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for TlsInterceptMode
+        /// </summary>
+        public static readonly TlsInterceptMode ENABLED = new TlsInterceptMode("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom TlsInterceptMode for a value not among the defined constants.
+        /// </summary>
+        public TlsInterceptMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TlsInterceptMode FindValue(string value)
+        {
+            return FindValue<TlsInterceptMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TlsInterceptMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TransitGatewayAttachmentStatus.
+    /// </summary>
+    public class TransitGatewayAttachmentStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant CREATING for TransitGatewayAttachmentStatus
+        /// </summary>
+        public static readonly TransitGatewayAttachmentStatus CREATING = new TransitGatewayAttachmentStatus("CREATING");
+
+        /// <summary>
+        /// Constant DELETED for TransitGatewayAttachmentStatus
+        /// </summary>
+        public static readonly TransitGatewayAttachmentStatus DELETED = new TransitGatewayAttachmentStatus("DELETED");
+
+        /// <summary>
+        /// Constant DELETING for TransitGatewayAttachmentStatus
+        /// </summary>
+        public static readonly TransitGatewayAttachmentStatus DELETING = new TransitGatewayAttachmentStatus("DELETING");
+
+        /// <summary>
+        /// Constant ERROR for TransitGatewayAttachmentStatus
+        /// </summary>
+        public static readonly TransitGatewayAttachmentStatus ERROR = new TransitGatewayAttachmentStatus("ERROR");
+
+        /// <summary>
+        /// Constant FAILED for TransitGatewayAttachmentStatus
+        /// </summary>
+        public static readonly TransitGatewayAttachmentStatus FAILED = new TransitGatewayAttachmentStatus("FAILED");
+
+        /// <summary>
+        /// Constant PENDING_ACCEPTANCE for TransitGatewayAttachmentStatus
+        /// </summary>
+        public static readonly TransitGatewayAttachmentStatus PENDING_ACCEPTANCE = new TransitGatewayAttachmentStatus("PENDING_ACCEPTANCE");
+
+        /// <summary>
+        /// Constant READY for TransitGatewayAttachmentStatus
+        /// </summary>
+        public static readonly TransitGatewayAttachmentStatus READY = new TransitGatewayAttachmentStatus("READY");
+
+        /// <summary>
+        /// Constant REJECTED for TransitGatewayAttachmentStatus
+        /// </summary>
+        public static readonly TransitGatewayAttachmentStatus REJECTED = new TransitGatewayAttachmentStatus("REJECTED");
+
+        /// <summary>
+        /// Constant REJECTING for TransitGatewayAttachmentStatus
+        /// </summary>
+        public static readonly TransitGatewayAttachmentStatus REJECTING = new TransitGatewayAttachmentStatus("REJECTING");
+
+        /// <summary>
+        /// Constructs a custom TransitGatewayAttachmentStatus for a value not among the defined constants.
+        /// </summary>
+        public TransitGatewayAttachmentStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TransitGatewayAttachmentStatus FindValue(string value)
+        {
+            return FindValue<TransitGatewayAttachmentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TransitGatewayAttachmentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+}

@@ -690,6 +690,12 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ExpressPrivateOfferConfigurationSummary.ProductId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9][.a-zA-Z0-9/-]+[a-zA-Z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.Filter.Name</property>
     <min>1</min>
     <max>255</max>
@@ -1030,6 +1036,74 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.SubsidiaryAuthorizationCreatedDateFilterDateRange.AfterValue</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^([\d]{4})\-(1[0-2]|0[1-9])\-(3[01]|0[1-9]|[12][\d])T(2[0-3]|[01][\d]):([0-5][\d]):([0-5][\d])Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.SubsidiaryAuthorizationCreatedDateFilterDateRange.BeforeValue</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^([\d]{4})\-(1[0-2]|0[1-9])\-(3[01]|0[1-9]|[12][\d])T(2[0-3]|[01][\d]):([0-5][\d]):([0-5][\d])Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.SubsidiaryAuthorizationLastModifiedDateFilterDateRange.AfterValue</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^([\d]{4})\-(1[0-2]|0[1-9])\-(3[01]|0[1-9]|[12][\d])T(2[0-3]|[01][\d]):([0-5][\d]):([0-5][\d])Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.SubsidiaryAuthorizationLastModifiedDateFilterDateRange.BeforeValue</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^([\d]{4})\-(1[0-2]|0[1-9])\-(3[01]|0[1-9]|[12][\d])T(2[0-3]|[01][\d]):([0-5][\d]):([0-5][\d])Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.SubsidiaryAuthorizationNameFilter.WildCardValue</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>^(.)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.SubsidiaryAuthorizationResourceNameFilter.WildCardValue</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>^(.)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.SubsidiaryAuthorizationSummary.CreatedDate</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^([\d]{4})\-(1[0-2]|0[1-9])\-(3[01]|0[1-9]|[12][\d])T(2[0-3]|[01][\d]):([0-5][\d]):([0-5][\d])Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.SubsidiaryAuthorizationSummary.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.SubsidiaryAuthorizationSummary.ResourceId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.SubsidiaryAuthorizationSummary.ResourceName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.SubsidiaryAuthorizationSummary.Status</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.SubsidiaryAuthorizationSummary.SubsidiaryAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.Tag.Key</property>

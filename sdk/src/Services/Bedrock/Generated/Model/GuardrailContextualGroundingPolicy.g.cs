@@ -53,5 +53,18 @@ namespace Amazon.Bedrock.Model
         /// Checks to see if the Filters property is set.
         /// </summary>
         internal bool IsSetFilters() => this.Filters != null && (this.Filters.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property Tier. 
+        /// <para>
+        /// The tier that your guardrail uses for contextual grounding.
+        /// </para>
+        /// </summary>
+        public GuardrailContextualGroundingTier Tier { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Tier property is set.
+        /// </summary>
+        internal bool IsSetTier() => this.Tier != null;
     }
 }

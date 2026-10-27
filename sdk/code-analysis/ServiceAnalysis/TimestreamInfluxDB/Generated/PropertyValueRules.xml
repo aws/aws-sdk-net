@@ -1257,6 +1257,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv3EnterpriseParameters.WalBufferSize</property>
+    <min>1</min>
+    <max>1073741824</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv3EnterpriseParameters.WalMaxWriteBufferSize</property>
     <min>1</min>
     <max>1000000</max>

@@ -1,0 +1,88 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.ECS.Model
+{
+    /// <summary>
+    /// The Service Connect resource. Each configuration maps a discovery name to a Cloud
+    /// Map service name. The data is stored in Cloud Map as part of the Service Connect configuration
+    /// for each discovery name of this Amazon ECS service.
+    /// 
+    ///  
+    /// <para>
+    /// A task can resolve the <c>dnsName</c> for each of the <c>clientAliases</c> of a service.
+    /// However a task can't resolve the discovery names. If you want to connect to a service,
+    /// refer to the <c>ServiceConnectConfiguration</c> of that service for the list of <c>clientAliases</c>
+    /// that you can use.
+    /// </para>
+    /// </summary>
+    public partial class ServiceConnectServiceResource
+    {
+        /// <summary>
+        /// Gets and sets the property DiscoveryArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the service in Cloud Map that matches the discovery
+        /// name for this Service Connect resource. You can use this ARN in other integrations
+        /// with Cloud Map. However, Service Connect can't ensure connectivity outside of Amazon
+        /// ECS.
+        /// </para>
+        /// </summary>
+        public string DiscoveryArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DiscoveryArn property is set.
+        /// </summary>
+        internal bool IsSetDiscoveryArn() => this.DiscoveryArn != null;
+
+        /// <summary>
+        /// Gets and sets the property DiscoveryName. 
+        /// <para>
+        /// The discovery name of this Service Connect resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>discoveryName</c> is the name of the new Cloud Map service that Amazon ECS
+        /// creates for this Amazon ECS service. This must be unique within the Cloud Map namespace.
+        /// The name can contain up to 64 characters. The name can include lowercase letters,
+        /// numbers, underscores (_), and hyphens (-). The name can't start with a hyphen.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <c>discoveryName</c> isn't specified, the port mapping name from the task definition
+        /// is used in <c>portName.namespace</c>.
+        /// </para>
+        /// </summary>
+        public string DiscoveryName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DiscoveryName property is set.
+        /// </summary>
+        internal bool IsSetDiscoveryName() => this.DiscoveryName != null;
+    }
+}

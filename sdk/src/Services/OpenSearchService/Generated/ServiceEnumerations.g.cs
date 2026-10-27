@@ -3887,6 +3887,11 @@ namespace Amazon.OpenSearchService
         public static readonly TLSSecurityPolicy PolicyMinTLS12201907 = new TLSSecurityPolicy("Policy-Min-TLS-1-2-2019-07");
 
         /// <summary>
+        /// Constant PolicyMinTLS12FIPSPQ202610 for TLSSecurityPolicy
+        /// </summary>
+        public static readonly TLSSecurityPolicy PolicyMinTLS12FIPSPQ202610 = new TLSSecurityPolicy("Policy-Min-TLS-1-2-FIPS-PQ-2026-10");
+
+        /// <summary>
         /// Constant PolicyMinTLS12PFS202310 for TLSSecurityPolicy
         /// </summary>
         public static readonly TLSSecurityPolicy PolicyMinTLS12PFS202310 = new TLSSecurityPolicy("Policy-Min-TLS-1-2-PFS-2023-10");

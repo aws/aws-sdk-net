@@ -1,0 +1,1798 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Runtime.ExceptionServices;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.Net;
+using Amazon.RedshiftDataAPIService.Model;
+using Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations;
+using Amazon.RedshiftDataAPIService.Internal;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Endpoints;
+
+#pragma warning disable CS1570
+
+namespace Amazon.RedshiftDataAPIService
+{
+    /// <summary>
+    /// <para>Implementation for accessing RedshiftDataAPIService</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
+    ///
+    /// You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables.
+    /// You can run SQL statements, which are committed if the statement succeeds. 
+    /// 
+    ///  
+    /// <para>
+    /// For more information about the Amazon Redshift Data API and CLI usage examples, see
+    /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+    /// Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. 
+    /// </para>
+    /// </summary>
+    public partial class AmazonRedshiftDataAPIServiceClient : AmazonServiceClient, IAmazonRedshiftDataAPIService
+    {
+        private static IServiceMetadata serviceMetadata = new AmazonRedshiftDataAPIServiceMetadata();
+        private IRedshiftDataAPIServicePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IRedshiftDataAPIServicePaginatorFactory Paginators
+        {
+            get
+            {
+                if (this._paginators == null)
+                {
+                    this._paginators = new RedshiftDataAPIServicePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+        /// <summary>
+        /// Constructs AmazonRedshiftDataAPIServiceClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// 
+        /// </summary>
+        public AmazonRedshiftDataAPIServiceClient() : base(new AmazonRedshiftDataAPIServiceConfig()) { }
+
+        /// <summary>
+        /// Constructs AmazonRedshiftDataAPIServiceClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// 
+        /// </summary>
+        /// <param name="region">The region to connect.</param>
+        public AmazonRedshiftDataAPIServiceClient(RegionEndpoint region) : base(new AmazonRedshiftDataAPIServiceConfig { RegionEndpoint = region }) { }
+
+        /// <summary>
+        /// Constructs AmazonRedshiftDataAPIServiceClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// 
+        /// </summary>
+        /// <param name="config">The AmazonRedshiftDataAPIServiceClient Configuration Object</param>
+        public AmazonRedshiftDataAPIServiceClient(AmazonRedshiftDataAPIServiceConfig config) : base(config) { }
+
+        /// <summary>
+        /// Constructs AmazonRedshiftDataAPIServiceClient with AWS Credentials
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        public AmazonRedshiftDataAPIServiceClient(AWSCredentials credentials)
+            : this(credentials, new AmazonRedshiftDataAPIServiceConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonRedshiftDataAPIServiceClient with AWS Credentials
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonRedshiftDataAPIServiceClient(AWSCredentials credentials, RegionEndpoint region)
+            : this(credentials, new AmazonRedshiftDataAPIServiceConfig { RegionEndpoint = region })
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonRedshiftDataAPIServiceClient with AWS Credentials and an
+        /// AmazonRedshiftDataAPIServiceClient Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="clientConfig">The AmazonRedshiftDataAPIServiceClient Configuration Object</param>
+        public AmazonRedshiftDataAPIServiceClient(AWSCredentials credentials, AmazonRedshiftDataAPIServiceConfig clientConfig)
+            : base(credentials, clientConfig)
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonRedshiftDataAPIServiceClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        public AmazonRedshiftDataAPIServiceClient(string awsAccessKeyId, string awsSecretAccessKey)
+            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonRedshiftDataAPIServiceConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonRedshiftDataAPIServiceClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonRedshiftDataAPIServiceClient(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonRedshiftDataAPIServiceConfig { RegionEndpoint = region })
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonRedshiftDataAPIServiceClient with AWS Access Key ID, AWS Secret Key and an
+        /// AmazonRedshiftDataAPIServiceClient Configuration object. 
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="clientConfig">The AmazonRedshiftDataAPIServiceClient Configuration Object</param>
+        public AmazonRedshiftDataAPIServiceClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonRedshiftDataAPIServiceConfig clientConfig)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonRedshiftDataAPIServiceClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        public AmazonRedshiftDataAPIServiceClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken)
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonRedshiftDataAPIServiceConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonRedshiftDataAPIServiceClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonRedshiftDataAPIServiceClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonRedshiftDataAPIServiceConfig { RegionEndpoint = region })
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonRedshiftDataAPIServiceClient with AWS Access Key ID, AWS Secret Key and an
+        /// AmazonRedshiftDataAPIServiceClient Configuration object. 
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        /// <param name="clientConfig">The AmazonRedshiftDataAPIServiceClient Configuration Object</param>
+        public AmazonRedshiftDataAPIServiceClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonRedshiftDataAPIServiceConfig clientConfig)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)
+        {
+        }
+
+        /// <summary>
+        /// Customizes the runtime pipeline.
+        /// </summary>
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRedshiftDataAPIServiceEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRedshiftDataAPIServiceAuthSchemeHandler());
+        }
+
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
+
+        /// <summary>
+        /// Disposes the service client.
+        /// </summary>
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Runs one or more SQL statements, which can be data manipulation language (DML) or
+        /// data definition language (DDL). Depending on the authorization method, use one of
+        /// the following combinations of request parameters: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Secrets Manager - when connecting to a cluster, provide the <c>secret-arn</c> of a
+        /// secret stored in Secrets Manager which has <c>username</c> and <c>password</c>. The
+        /// specified secret contains credentials to connect to the <c>database</c> you specify.
+        /// When you are connecting to a cluster, you also supply the database name, If you provide
+        /// a cluster identifier (<c>dbClusterIdentifier</c>), it must match the cluster identifier
+        /// stored in the secret. When you are connecting to a serverless workgroup, you also
+        /// supply the database name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Temporary credentials - when connecting to your data warehouse, choose one of the
+        /// following options:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When connecting to a serverless workgroup, specify the workgroup name and database
+        /// name. The database user name is derived from the IAM identity. For example, <c>arn:iam::123456789012:user:foo</c>
+        /// has the database user name <c>IAM:foo</c>. Also, permission to call the <c>redshift-serverless:GetCredentials</c>
+        /// operation is required.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When connecting to a cluster as an IAM identity, specify the cluster identifier and
+        /// the database name. The database user name is derived from the IAM identity. For example,
+        /// <c>arn:iam::123456789012:user:foo</c> has the database user name <c>IAM:foo</c>. Also,
+        /// permission to call the <c>redshift:GetClusterCredentialsWithIAM</c> operation is required.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When connecting to a cluster as a database user, specify the cluster identifier, the
+        /// database name, and the database user name. Also, permission to call the <c>redshift:GetClusterCredentials</c>
+        /// operation is required.
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
+        /// <para>
+        /// For more information about the Amazon Redshift Data API and CLI usage examples, see
+        /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+        /// Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchExecuteStatement service method.</param>
+        /// <returns>The response from the BatchExecuteStatement service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ActiveSessionsExceededException">
+        /// The Amazon Redshift Data API operation failed because the maximum number of active
+        /// sessions exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ActiveStatementsExceededException">
+        /// The number of active statements exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.BatchExecuteStatementException">
+        /// An SQL statement encountered an environmental error while running.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/BatchExecuteStatement">REST API Reference for BatchExecuteStatement Operation</seealso>
+        public virtual BatchExecuteStatementResponse BatchExecuteStatement(BatchExecuteStatementRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchExecuteStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchExecuteStatementResponseUnmarshaller.Instance;
+
+            return Invoke<BatchExecuteStatementResponse>(request, options);
+        }
+#else
+        internal virtual BatchExecuteStatementResponse BatchExecuteStatement(BatchExecuteStatementRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchExecuteStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchExecuteStatementResponseUnmarshaller.Instance;
+
+            return Invoke<BatchExecuteStatementResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Runs one or more SQL statements, which can be data manipulation language (DML) or
+        /// data definition language (DDL). Depending on the authorization method, use one of
+        /// the following combinations of request parameters: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Secrets Manager - when connecting to a cluster, provide the <c>secret-arn</c> of a
+        /// secret stored in Secrets Manager which has <c>username</c> and <c>password</c>. The
+        /// specified secret contains credentials to connect to the <c>database</c> you specify.
+        /// When you are connecting to a cluster, you also supply the database name, If you provide
+        /// a cluster identifier (<c>dbClusterIdentifier</c>), it must match the cluster identifier
+        /// stored in the secret. When you are connecting to a serverless workgroup, you also
+        /// supply the database name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Temporary credentials - when connecting to your data warehouse, choose one of the
+        /// following options:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When connecting to a serverless workgroup, specify the workgroup name and database
+        /// name. The database user name is derived from the IAM identity. For example, <c>arn:iam::123456789012:user:foo</c>
+        /// has the database user name <c>IAM:foo</c>. Also, permission to call the <c>redshift-serverless:GetCredentials</c>
+        /// operation is required.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When connecting to a cluster as an IAM identity, specify the cluster identifier and
+        /// the database name. The database user name is derived from the IAM identity. For example,
+        /// <c>arn:iam::123456789012:user:foo</c> has the database user name <c>IAM:foo</c>. Also,
+        /// permission to call the <c>redshift:GetClusterCredentialsWithIAM</c> operation is required.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When connecting to a cluster as a database user, specify the cluster identifier, the
+        /// database name, and the database user name. Also, permission to call the <c>redshift:GetClusterCredentials</c>
+        /// operation is required.
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
+        /// <para>
+        /// For more information about the Amazon Redshift Data API and CLI usage examples, see
+        /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+        /// Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchExecuteStatement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the BatchExecuteStatement service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ActiveSessionsExceededException">
+        /// The Amazon Redshift Data API operation failed because the maximum number of active
+        /// sessions exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ActiveStatementsExceededException">
+        /// The number of active statements exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.BatchExecuteStatementException">
+        /// An SQL statement encountered an environmental error while running.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/BatchExecuteStatement">REST API Reference for BatchExecuteStatement Operation</seealso>
+        public virtual Task<BatchExecuteStatementResponse> BatchExecuteStatementAsync(BatchExecuteStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchExecuteStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchExecuteStatementResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchExecuteStatementResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Cancels a running query. To be canceled, a query must be running. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information about the Amazon Redshift Data API and CLI usage examples, see
+        /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+        /// Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelStatement service method.</param>
+        /// <returns>The response from the CancelStatement service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.DatabaseConnectionException">
+        /// Connection to a database failed.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.QueryTimeoutException">
+        /// The Amazon Redshift Data API operation failed due to timeout.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/CancelStatement">REST API Reference for CancelStatement Operation</seealso>
+        public virtual CancelStatementResponse CancelStatement(CancelStatementRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CancelStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelStatementResponseUnmarshaller.Instance;
+
+            return Invoke<CancelStatementResponse>(request, options);
+        }
+#else
+        internal virtual CancelStatementResponse CancelStatement(CancelStatementRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CancelStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelStatementResponseUnmarshaller.Instance;
+
+            return Invoke<CancelStatementResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Cancels a running query. To be canceled, a query must be running. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information about the Amazon Redshift Data API and CLI usage examples, see
+        /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+        /// Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelStatement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CancelStatement service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.DatabaseConnectionException">
+        /// Connection to a database failed.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.QueryTimeoutException">
+        /// The Amazon Redshift Data API operation failed due to timeout.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/CancelStatement">REST API Reference for CancelStatement Operation</seealso>
+        public virtual Task<CancelStatementResponse> CancelStatementAsync(CancelStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CancelStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelStatementResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelStatementResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Describes the details about a specific instance when a query was run by the Amazon
+        /// Redshift Data API. The information includes when the query started, when it finished,
+        /// the query status, the number of rows returned, and the SQL statement. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information about the Amazon Redshift Data API and CLI usage examples, see
+        /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+        /// Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStatement service method.</param>
+        /// <returns>The response from the DescribeStatement service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ActiveWaitingRequestsExceededException">
+        /// The number of active requests with <c>WaitTimeSeconds</c> for the same SQL statement
+        /// exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/DescribeStatement">REST API Reference for DescribeStatement Operation</seealso>
+        public virtual DescribeStatementResponse DescribeStatement(DescribeStatementRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeStatementResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeStatementResponse>(request, options);
+        }
+#else
+        internal virtual DescribeStatementResponse DescribeStatement(DescribeStatementRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeStatementResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeStatementResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Describes the details about a specific instance when a query was run by the Amazon
+        /// Redshift Data API. The information includes when the query started, when it finished,
+        /// the query status, the number of rows returned, and the SQL statement. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information about the Amazon Redshift Data API and CLI usage examples, see
+        /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+        /// Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStatement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeStatement service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ActiveWaitingRequestsExceededException">
+        /// The number of active requests with <c>WaitTimeSeconds</c> for the same SQL statement
+        /// exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/DescribeStatement">REST API Reference for DescribeStatement Operation</seealso>
+        public virtual Task<DescribeStatementResponse> DescribeStatementAsync(DescribeStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeStatementResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeStatementResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Describes the detailed information about a table from metadata in the cluster. The
+        /// information includes its columns. A token is returned to page through the column list.
+        /// Depending on the authorization method, use one of the following combinations of request
+        /// parameters: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Secrets Manager - when connecting to a cluster, provide the <c>secret-arn</c> of a
+        /// secret stored in Secrets Manager which has <c>username</c> and <c>password</c>. The
+        /// specified secret contains credentials to connect to the <c>database</c> you specify.
+        /// When you are connecting to a cluster, you also supply the database name, If you provide
+        /// a cluster identifier (<c>dbClusterIdentifier</c>), it must match the cluster identifier
+        /// stored in the secret. When you are connecting to a serverless workgroup, you also
+        /// supply the database name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Temporary credentials - when connecting to your data warehouse, choose one of the
+        /// following options:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When connecting to a serverless workgroup, specify the workgroup name and database
+        /// name. The database user name is derived from the IAM identity. For example, <c>arn:iam::123456789012:user:foo</c>
+        /// has the database user name <c>IAM:foo</c>. Also, permission to call the <c>redshift-serverless:GetCredentials</c>
+        /// operation is required.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When connecting to a cluster as an IAM identity, specify the cluster identifier and
+        /// the database name. The database user name is derived from the IAM identity. For example,
+        /// <c>arn:iam::123456789012:user:foo</c> has the database user name <c>IAM:foo</c>. Also,
+        /// permission to call the <c>redshift:GetClusterCredentialsWithIAM</c> operation is required.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When connecting to a cluster as a database user, specify the cluster identifier, the
+        /// database name, and the database user name. Also, permission to call the <c>redshift:GetClusterCredentials</c>
+        /// operation is required.
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
+        /// <para>
+        /// For more information about the Amazon Redshift Data API and CLI usage examples, see
+        /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+        /// Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTable service method.</param>
+        /// <returns>The response from the DescribeTable service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.DatabaseConnectionException">
+        /// Connection to a database failed.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.QueryTimeoutException">
+        /// The Amazon Redshift Data API operation failed due to timeout.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/DescribeTable">REST API Reference for DescribeTable Operation</seealso>
+        public virtual DescribeTableResponse DescribeTable(DescribeTableRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTableResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTableResponse>(request, options);
+        }
+#else
+        internal virtual DescribeTableResponse DescribeTable(DescribeTableRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTableResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTableResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Describes the detailed information about a table from metadata in the cluster. The
+        /// information includes its columns. A token is returned to page through the column list.
+        /// Depending on the authorization method, use one of the following combinations of request
+        /// parameters: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Secrets Manager - when connecting to a cluster, provide the <c>secret-arn</c> of a
+        /// secret stored in Secrets Manager which has <c>username</c> and <c>password</c>. The
+        /// specified secret contains credentials to connect to the <c>database</c> you specify.
+        /// When you are connecting to a cluster, you also supply the database name, If you provide
+        /// a cluster identifier (<c>dbClusterIdentifier</c>), it must match the cluster identifier
+        /// stored in the secret. When you are connecting to a serverless workgroup, you also
+        /// supply the database name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Temporary credentials - when connecting to your data warehouse, choose one of the
+        /// following options:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When connecting to a serverless workgroup, specify the workgroup name and database
+        /// name. The database user name is derived from the IAM identity. For example, <c>arn:iam::123456789012:user:foo</c>
+        /// has the database user name <c>IAM:foo</c>. Also, permission to call the <c>redshift-serverless:GetCredentials</c>
+        /// operation is required.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When connecting to a cluster as an IAM identity, specify the cluster identifier and
+        /// the database name. The database user name is derived from the IAM identity. For example,
+        /// <c>arn:iam::123456789012:user:foo</c> has the database user name <c>IAM:foo</c>. Also,
+        /// permission to call the <c>redshift:GetClusterCredentialsWithIAM</c> operation is required.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When connecting to a cluster as a database user, specify the cluster identifier, the
+        /// database name, and the database user name. Also, permission to call the <c>redshift:GetClusterCredentials</c>
+        /// operation is required.
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
+        /// <para>
+        /// For more information about the Amazon Redshift Data API and CLI usage examples, see
+        /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+        /// Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeTable service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.DatabaseConnectionException">
+        /// Connection to a database failed.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.QueryTimeoutException">
+        /// The Amazon Redshift Data API operation failed due to timeout.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/DescribeTable">REST API Reference for DescribeTable Operation</seealso>
+        public virtual Task<DescribeTableResponse> DescribeTableAsync(DescribeTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTableResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Runs an SQL statement, which can be data manipulation language (DML) or data definition
+        /// language (DDL). This statement must be a single SQL statement. Depending on the authorization
+        /// method, use one of the following combinations of request parameters: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Secrets Manager - when connecting to a cluster, provide the <c>secret-arn</c> of a
+        /// secret stored in Secrets Manager which has <c>username</c> and <c>password</c>. The
+        /// specified secret contains credentials to connect to the <c>database</c> you specify.
+        /// When you are connecting to a cluster, you also supply the database name, If you provide
+        /// a cluster identifier (<c>dbClusterIdentifier</c>), it must match the cluster identifier
+        /// stored in the secret. When you are connecting to a serverless workgroup, you also
+        /// supply the database name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Temporary credentials - when connecting to your data warehouse, choose one of the
+        /// following options:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When connecting to a serverless workgroup, specify the workgroup name and database
+        /// name. The database user name is derived from the IAM identity. For example, <c>arn:iam::123456789012:user:foo</c>
+        /// has the database user name <c>IAM:foo</c>. Also, permission to call the <c>redshift-serverless:GetCredentials</c>
+        /// operation is required.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When connecting to a cluster as an IAM identity, specify the cluster identifier and
+        /// the database name. The database user name is derived from the IAM identity. For example,
+        /// <c>arn:iam::123456789012:user:foo</c> has the database user name <c>IAM:foo</c>. Also,
+        /// permission to call the <c>redshift:GetClusterCredentialsWithIAM</c> operation is required.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When connecting to a cluster as a database user, specify the cluster identifier, the
+        /// database name, and the database user name. Also, permission to call the <c>redshift:GetClusterCredentials</c>
+        /// operation is required.
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
+        /// <para>
+        /// For more information about the Amazon Redshift Data API and CLI usage examples, see
+        /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+        /// Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteStatement service method.</param>
+        /// <returns>The response from the ExecuteStatement service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ActiveSessionsExceededException">
+        /// The Amazon Redshift Data API operation failed because the maximum number of active
+        /// sessions exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ActiveStatementsExceededException">
+        /// The number of active statements exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ExecuteStatementException">
+        /// The SQL statement encountered an environmental error while running.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ExecuteStatement">REST API Reference for ExecuteStatement Operation</seealso>
+        public virtual ExecuteStatementResponse ExecuteStatement(ExecuteStatementRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ExecuteStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExecuteStatementResponseUnmarshaller.Instance;
+
+            return Invoke<ExecuteStatementResponse>(request, options);
+        }
+#else
+        internal virtual ExecuteStatementResponse ExecuteStatement(ExecuteStatementRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ExecuteStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExecuteStatementResponseUnmarshaller.Instance;
+
+            return Invoke<ExecuteStatementResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Runs an SQL statement, which can be data manipulation language (DML) or data definition
+        /// language (DDL). This statement must be a single SQL statement. Depending on the authorization
+        /// method, use one of the following combinations of request parameters: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Secrets Manager - when connecting to a cluster, provide the <c>secret-arn</c> of a
+        /// secret stored in Secrets Manager which has <c>username</c> and <c>password</c>. The
+        /// specified secret contains credentials to connect to the <c>database</c> you specify.
+        /// When you are connecting to a cluster, you also supply the database name, If you provide
+        /// a cluster identifier (<c>dbClusterIdentifier</c>), it must match the cluster identifier
+        /// stored in the secret. When you are connecting to a serverless workgroup, you also
+        /// supply the database name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Temporary credentials - when connecting to your data warehouse, choose one of the
+        /// following options:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When connecting to a serverless workgroup, specify the workgroup name and database
+        /// name. The database user name is derived from the IAM identity. For example, <c>arn:iam::123456789012:user:foo</c>
+        /// has the database user name <c>IAM:foo</c>. Also, permission to call the <c>redshift-serverless:GetCredentials</c>
+        /// operation is required.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When connecting to a cluster as an IAM identity, specify the cluster identifier and
+        /// the database name. The database user name is derived from the IAM identity. For example,
+        /// <c>arn:iam::123456789012:user:foo</c> has the database user name <c>IAM:foo</c>. Also,
+        /// permission to call the <c>redshift:GetClusterCredentialsWithIAM</c> operation is required.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When connecting to a cluster as a database user, specify the cluster identifier, the
+        /// database name, and the database user name. Also, permission to call the <c>redshift:GetClusterCredentials</c>
+        /// operation is required.
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
+        /// <para>
+        /// For more information about the Amazon Redshift Data API and CLI usage examples, see
+        /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+        /// Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteStatement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ExecuteStatement service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ActiveSessionsExceededException">
+        /// The Amazon Redshift Data API operation failed because the maximum number of active
+        /// sessions exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ActiveStatementsExceededException">
+        /// The number of active statements exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ExecuteStatementException">
+        /// The SQL statement encountered an environmental error while running.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ExecuteStatement">REST API Reference for ExecuteStatement Operation</seealso>
+        public virtual Task<ExecuteStatementResponse> ExecuteStatementAsync(ExecuteStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ExecuteStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExecuteStatementResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ExecuteStatementResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Fetches the temporarily cached result of an SQL statement in JSON format. The <c>ExecuteStatement</c>
+        /// or <c>BatchExecuteStatement</c> operation that ran the SQL statement must have specified
+        /// <c>ResultFormat</c> as <c>JSON</c> , or let the format default to JSON. A token is
+        /// returned to page through the statement results.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about the Amazon Redshift Data API and CLI usage examples, see
+        /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+        /// Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStatementResult service method.</param>
+        /// <returns>The response from the GetStatementResult service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ActiveWaitingRequestsExceededException">
+        /// The number of active requests with <c>WaitTimeSeconds</c> for the same SQL statement
+        /// exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/GetStatementResult">REST API Reference for GetStatementResult Operation</seealso>
+        public virtual GetStatementResultResponse GetStatementResult(GetStatementResultRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetStatementResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStatementResultResponseUnmarshaller.Instance;
+
+            return Invoke<GetStatementResultResponse>(request, options);
+        }
+#else
+        internal virtual GetStatementResultResponse GetStatementResult(GetStatementResultRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetStatementResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStatementResultResponseUnmarshaller.Instance;
+
+            return Invoke<GetStatementResultResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Fetches the temporarily cached result of an SQL statement in JSON format. The <c>ExecuteStatement</c>
+        /// or <c>BatchExecuteStatement</c> operation that ran the SQL statement must have specified
+        /// <c>ResultFormat</c> as <c>JSON</c> , or let the format default to JSON. A token is
+        /// returned to page through the statement results.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about the Amazon Redshift Data API and CLI usage examples, see
+        /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+        /// Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStatementResult service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetStatementResult service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ActiveWaitingRequestsExceededException">
+        /// The number of active requests with <c>WaitTimeSeconds</c> for the same SQL statement
+        /// exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/GetStatementResult">REST API Reference for GetStatementResult Operation</seealso>
+        public virtual Task<GetStatementResultResponse> GetStatementResultAsync(GetStatementResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetStatementResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStatementResultResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetStatementResultResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Fetches the temporarily cached result of an SQL statement in CSV format. The <c>ExecuteStatement</c>
+        /// or <c>BatchExecuteStatement</c> operation that ran the SQL statement must have specified
+        /// <c>ResultFormat</c> as <c>CSV</c>. A token is returned to page through the statement
+        /// results.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about the Amazon Redshift Data API and CLI usage examples, see
+        /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+        /// Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStatementResultV2 service method.</param>
+        /// <returns>The response from the GetStatementResultV2 service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ActiveWaitingRequestsExceededException">
+        /// The number of active requests with <c>WaitTimeSeconds</c> for the same SQL statement
+        /// exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/GetStatementResultV2">REST API Reference for GetStatementResultV2 Operation</seealso>
+        public virtual GetStatementResultV2Response GetStatementResultV2(GetStatementResultV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetStatementResultV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStatementResultV2ResponseUnmarshaller.Instance;
+
+            return Invoke<GetStatementResultV2Response>(request, options);
+        }
+#else
+        internal virtual GetStatementResultV2Response GetStatementResultV2(GetStatementResultV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetStatementResultV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStatementResultV2ResponseUnmarshaller.Instance;
+
+            return Invoke<GetStatementResultV2Response>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Fetches the temporarily cached result of an SQL statement in CSV format. The <c>ExecuteStatement</c>
+        /// or <c>BatchExecuteStatement</c> operation that ran the SQL statement must have specified
+        /// <c>ResultFormat</c> as <c>CSV</c>. A token is returned to page through the statement
+        /// results.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about the Amazon Redshift Data API and CLI usage examples, see
+        /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+        /// Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStatementResultV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetStatementResultV2 service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ActiveWaitingRequestsExceededException">
+        /// The number of active requests with <c>WaitTimeSeconds</c> for the same SQL statement
+        /// exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/GetStatementResultV2">REST API Reference for GetStatementResultV2 Operation</seealso>
+        public virtual Task<GetStatementResultV2Response> GetStatementResultV2Async(GetStatementResultV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetStatementResultV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStatementResultV2ResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetStatementResultV2Response>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// List the databases in a cluster. A token is returned to page through the database
+        /// list. Depending on the authorization method, use one of the following combinations
+        /// of request parameters: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Secrets Manager - when connecting to a cluster, provide the <c>secret-arn</c> of a
+        /// secret stored in Secrets Manager which has <c>username</c> and <c>password</c>. The
+        /// specified secret contains credentials to connect to the <c>database</c> you specify.
+        /// When you are connecting to a cluster, you also supply the database name, If you provide
+        /// a cluster identifier (<c>dbClusterIdentifier</c>), it must match the cluster identifier
+        /// stored in the secret. When you are connecting to a serverless workgroup, you also
+        /// supply the database name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Temporary credentials - when connecting to your data warehouse, choose one of the
+        /// following options:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When connecting to a serverless workgroup, specify the workgroup name and database
+        /// name. The database user name is derived from the IAM identity. For example, <c>arn:iam::123456789012:user:foo</c>
+        /// has the database user name <c>IAM:foo</c>. Also, permission to call the <c>redshift-serverless:GetCredentials</c>
+        /// operation is required.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When connecting to a cluster as an IAM identity, specify the cluster identifier and
+        /// the database name. The database user name is derived from the IAM identity. For example,
+        /// <c>arn:iam::123456789012:user:foo</c> has the database user name <c>IAM:foo</c>. Also,
+        /// permission to call the <c>redshift:GetClusterCredentialsWithIAM</c> operation is required.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When connecting to a cluster as a database user, specify the cluster identifier, the
+        /// database name, and the database user name. Also, permission to call the <c>redshift:GetClusterCredentials</c>
+        /// operation is required.
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
+        /// <para>
+        /// For more information about the Amazon Redshift Data API and CLI usage examples, see
+        /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+        /// Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDatabases service method.</param>
+        /// <returns>The response from the ListDatabases service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.DatabaseConnectionException">
+        /// Connection to a database failed.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.QueryTimeoutException">
+        /// The Amazon Redshift Data API operation failed due to timeout.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListDatabases">REST API Reference for ListDatabases Operation</seealso>
+        public virtual ListDatabasesResponse ListDatabases(ListDatabasesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDatabasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatabasesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDatabasesResponse>(request, options);
+        }
+#else
+        internal virtual ListDatabasesResponse ListDatabases(ListDatabasesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDatabasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatabasesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDatabasesResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// List the databases in a cluster. A token is returned to page through the database
+        /// list. Depending on the authorization method, use one of the following combinations
+        /// of request parameters: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Secrets Manager - when connecting to a cluster, provide the <c>secret-arn</c> of a
+        /// secret stored in Secrets Manager which has <c>username</c> and <c>password</c>. The
+        /// specified secret contains credentials to connect to the <c>database</c> you specify.
+        /// When you are connecting to a cluster, you also supply the database name, If you provide
+        /// a cluster identifier (<c>dbClusterIdentifier</c>), it must match the cluster identifier
+        /// stored in the secret. When you are connecting to a serverless workgroup, you also
+        /// supply the database name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Temporary credentials - when connecting to your data warehouse, choose one of the
+        /// following options:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When connecting to a serverless workgroup, specify the workgroup name and database
+        /// name. The database user name is derived from the IAM identity. For example, <c>arn:iam::123456789012:user:foo</c>
+        /// has the database user name <c>IAM:foo</c>. Also, permission to call the <c>redshift-serverless:GetCredentials</c>
+        /// operation is required.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When connecting to a cluster as an IAM identity, specify the cluster identifier and
+        /// the database name. The database user name is derived from the IAM identity. For example,
+        /// <c>arn:iam::123456789012:user:foo</c> has the database user name <c>IAM:foo</c>. Also,
+        /// permission to call the <c>redshift:GetClusterCredentialsWithIAM</c> operation is required.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When connecting to a cluster as a database user, specify the cluster identifier, the
+        /// database name, and the database user name. Also, permission to call the <c>redshift:GetClusterCredentials</c>
+        /// operation is required.
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
+        /// <para>
+        /// For more information about the Amazon Redshift Data API and CLI usage examples, see
+        /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+        /// Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDatabases service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListDatabases service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.DatabaseConnectionException">
+        /// Connection to a database failed.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.QueryTimeoutException">
+        /// The Amazon Redshift Data API operation failed due to timeout.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListDatabases">REST API Reference for ListDatabases Operation</seealso>
+        public virtual Task<ListDatabasesResponse> ListDatabasesAsync(ListDatabasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDatabasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatabasesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDatabasesResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the schemas in a database. A token is returned to page through the schema list.
+        /// Depending on the authorization method, use one of the following combinations of request
+        /// parameters: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Secrets Manager - when connecting to a cluster, provide the <c>secret-arn</c> of a
+        /// secret stored in Secrets Manager which has <c>username</c> and <c>password</c>. The
+        /// specified secret contains credentials to connect to the <c>database</c> you specify.
+        /// When you are connecting to a cluster, you also supply the database name, If you provide
+        /// a cluster identifier (<c>dbClusterIdentifier</c>), it must match the cluster identifier
+        /// stored in the secret. When you are connecting to a serverless workgroup, you also
+        /// supply the database name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Temporary credentials - when connecting to your data warehouse, choose one of the
+        /// following options:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When connecting to a serverless workgroup, specify the workgroup name and database
+        /// name. The database user name is derived from the IAM identity. For example, <c>arn:iam::123456789012:user:foo</c>
+        /// has the database user name <c>IAM:foo</c>. Also, permission to call the <c>redshift-serverless:GetCredentials</c>
+        /// operation is required.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When connecting to a cluster as an IAM identity, specify the cluster identifier and
+        /// the database name. The database user name is derived from the IAM identity. For example,
+        /// <c>arn:iam::123456789012:user:foo</c> has the database user name <c>IAM:foo</c>. Also,
+        /// permission to call the <c>redshift:GetClusterCredentialsWithIAM</c> operation is required.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When connecting to a cluster as a database user, specify the cluster identifier, the
+        /// database name, and the database user name. Also, permission to call the <c>redshift:GetClusterCredentials</c>
+        /// operation is required.
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
+        /// <para>
+        /// For more information about the Amazon Redshift Data API and CLI usage examples, see
+        /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+        /// Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSchemas service method.</param>
+        /// <returns>The response from the ListSchemas service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.DatabaseConnectionException">
+        /// Connection to a database failed.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.QueryTimeoutException">
+        /// The Amazon Redshift Data API operation failed due to timeout.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListSchemas">REST API Reference for ListSchemas Operation</seealso>
+        public virtual ListSchemasResponse ListSchemas(ListSchemasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSchemasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSchemasResponseUnmarshaller.Instance;
+
+            return Invoke<ListSchemasResponse>(request, options);
+        }
+#else
+        internal virtual ListSchemasResponse ListSchemas(ListSchemasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSchemasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSchemasResponseUnmarshaller.Instance;
+
+            return Invoke<ListSchemasResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Lists the schemas in a database. A token is returned to page through the schema list.
+        /// Depending on the authorization method, use one of the following combinations of request
+        /// parameters: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Secrets Manager - when connecting to a cluster, provide the <c>secret-arn</c> of a
+        /// secret stored in Secrets Manager which has <c>username</c> and <c>password</c>. The
+        /// specified secret contains credentials to connect to the <c>database</c> you specify.
+        /// When you are connecting to a cluster, you also supply the database name, If you provide
+        /// a cluster identifier (<c>dbClusterIdentifier</c>), it must match the cluster identifier
+        /// stored in the secret. When you are connecting to a serverless workgroup, you also
+        /// supply the database name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Temporary credentials - when connecting to your data warehouse, choose one of the
+        /// following options:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When connecting to a serverless workgroup, specify the workgroup name and database
+        /// name. The database user name is derived from the IAM identity. For example, <c>arn:iam::123456789012:user:foo</c>
+        /// has the database user name <c>IAM:foo</c>. Also, permission to call the <c>redshift-serverless:GetCredentials</c>
+        /// operation is required.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When connecting to a cluster as an IAM identity, specify the cluster identifier and
+        /// the database name. The database user name is derived from the IAM identity. For example,
+        /// <c>arn:iam::123456789012:user:foo</c> has the database user name <c>IAM:foo</c>. Also,
+        /// permission to call the <c>redshift:GetClusterCredentialsWithIAM</c> operation is required.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When connecting to a cluster as a database user, specify the cluster identifier, the
+        /// database name, and the database user name. Also, permission to call the <c>redshift:GetClusterCredentials</c>
+        /// operation is required.
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
+        /// <para>
+        /// For more information about the Amazon Redshift Data API and CLI usage examples, see
+        /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+        /// Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSchemas service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListSchemas service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.DatabaseConnectionException">
+        /// Connection to a database failed.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.QueryTimeoutException">
+        /// The Amazon Redshift Data API operation failed due to timeout.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListSchemas">REST API Reference for ListSchemas Operation</seealso>
+        public virtual Task<ListSchemasResponse> ListSchemasAsync(ListSchemasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSchemasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSchemasResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSchemasResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the sessions that the caller created in the last 24 hours. By default, only
+        /// sessions with a status of <c>AVAILABLE</c> or <c>BUSY</c> are returned. You can filter
+        /// the results by session status, compute target (cluster or serverless workgroup), or
+        /// database. To retrieve the metadata for a single session, provide the <c>SessionId</c>
+        /// parameter. Use <c>NextToken</c> to page through the session list.
+        /// 
+        ///  
+        /// <para>
+        /// Returns only the sessions that the caller created. When identity-enhanced role sessions
+        /// are used, you must provide either the <c>ClusterIdentifier</c> or <c>WorkgroupName</c>
+        /// parameter to ensure that the IAM Identity Center user can only access the Amazon Redshift
+        /// IAM Identity Center applications they are assigned. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-overview.html">
+        /// Trusted identity propagation overview</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSessions service method.</param>
+        /// <returns>The response from the ListSessions service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListSessions">REST API Reference for ListSessions Operation</seealso>
+        public virtual ListSessionsResponse ListSessions(ListSessionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSessionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSessionsResponse>(request, options);
+        }
+#else
+        internal virtual ListSessionsResponse ListSessions(ListSessionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSessionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSessionsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Lists the sessions that the caller created in the last 24 hours. By default, only
+        /// sessions with a status of <c>AVAILABLE</c> or <c>BUSY</c> are returned. You can filter
+        /// the results by session status, compute target (cluster or serverless workgroup), or
+        /// database. To retrieve the metadata for a single session, provide the <c>SessionId</c>
+        /// parameter. Use <c>NextToken</c> to page through the session list.
+        /// 
+        ///  
+        /// <para>
+        /// Returns only the sessions that the caller created. When identity-enhanced role sessions
+        /// are used, you must provide either the <c>ClusterIdentifier</c> or <c>WorkgroupName</c>
+        /// parameter to ensure that the IAM Identity Center user can only access the Amazon Redshift
+        /// IAM Identity Center applications they are assigned. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-overview.html">
+        /// Trusted identity propagation overview</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSessions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListSessions service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListSessions">REST API Reference for ListSessions Operation</seealso>
+        public virtual Task<ListSessionsResponse> ListSessionsAsync(ListSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSessionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSessionsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// List of SQL statements. By default, only finished statements are shown. A token is
+        /// returned to page through the statement list. 
+        /// 
+        ///  
+        /// <para>
+        /// When you use identity-enhanced role sessions to list statements, you must provide
+        /// either the <c>cluster-identifier</c> or <c>workgroup-name</c> parameter. This ensures
+        /// that the IdC user can only access the Amazon Redshift IdC applications they are assigned.
+        /// For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-overview.html">
+        /// Trusted identity propagation overview</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about the Amazon Redshift Data API and CLI usage examples, see
+        /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+        /// Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStatements service method.</param>
+        /// <returns>The response from the ListStatements service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListStatements">REST API Reference for ListStatements Operation</seealso>
+        public virtual ListStatementsResponse ListStatements(ListStatementsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListStatementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStatementsResponseUnmarshaller.Instance;
+
+            return Invoke<ListStatementsResponse>(request, options);
+        }
+#else
+        internal virtual ListStatementsResponse ListStatements(ListStatementsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListStatementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStatementsResponseUnmarshaller.Instance;
+
+            return Invoke<ListStatementsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// List of SQL statements. By default, only finished statements are shown. A token is
+        /// returned to page through the statement list. 
+        /// 
+        ///  
+        /// <para>
+        /// When you use identity-enhanced role sessions to list statements, you must provide
+        /// either the <c>cluster-identifier</c> or <c>workgroup-name</c> parameter. This ensures
+        /// that the IdC user can only access the Amazon Redshift IdC applications they are assigned.
+        /// For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-overview.html">
+        /// Trusted identity propagation overview</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about the Amazon Redshift Data API and CLI usage examples, see
+        /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+        /// Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStatements service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListStatements service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListStatements">REST API Reference for ListStatements Operation</seealso>
+        public virtual Task<ListStatementsResponse> ListStatementsAsync(ListStatementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListStatementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStatementsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListStatementsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// List the tables in a database. If neither <c>SchemaPattern</c> nor <c>TablePattern</c>
+        /// are specified, then all tables in the database are returned. A token is returned to
+        /// page through the table list. Depending on the authorization method, use one of the
+        /// following combinations of request parameters: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Secrets Manager - when connecting to a cluster, provide the <c>secret-arn</c> of a
+        /// secret stored in Secrets Manager which has <c>username</c> and <c>password</c>. The
+        /// specified secret contains credentials to connect to the <c>database</c> you specify.
+        /// When you are connecting to a cluster, you also supply the database name, If you provide
+        /// a cluster identifier (<c>dbClusterIdentifier</c>), it must match the cluster identifier
+        /// stored in the secret. When you are connecting to a serverless workgroup, you also
+        /// supply the database name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Temporary credentials - when connecting to your data warehouse, choose one of the
+        /// following options:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When connecting to a serverless workgroup, specify the workgroup name and database
+        /// name. The database user name is derived from the IAM identity. For example, <c>arn:iam::123456789012:user:foo</c>
+        /// has the database user name <c>IAM:foo</c>. Also, permission to call the <c>redshift-serverless:GetCredentials</c>
+        /// operation is required.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When connecting to a cluster as an IAM identity, specify the cluster identifier and
+        /// the database name. The database user name is derived from the IAM identity. For example,
+        /// <c>arn:iam::123456789012:user:foo</c> has the database user name <c>IAM:foo</c>. Also,
+        /// permission to call the <c>redshift:GetClusterCredentialsWithIAM</c> operation is required.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When connecting to a cluster as a database user, specify the cluster identifier, the
+        /// database name, and the database user name. Also, permission to call the <c>redshift:GetClusterCredentials</c>
+        /// operation is required.
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
+        /// <para>
+        /// For more information about the Amazon Redshift Data API and CLI usage examples, see
+        /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+        /// Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTables service method.</param>
+        /// <returns>The response from the ListTables service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.DatabaseConnectionException">
+        /// Connection to a database failed.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.QueryTimeoutException">
+        /// The Amazon Redshift Data API operation failed due to timeout.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListTables">REST API Reference for ListTables Operation</seealso>
+        public virtual ListTablesResponse ListTables(ListTablesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTablesResponseUnmarshaller.Instance;
+
+            return Invoke<ListTablesResponse>(request, options);
+        }
+#else
+        internal virtual ListTablesResponse ListTables(ListTablesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTablesResponseUnmarshaller.Instance;
+
+            return Invoke<ListTablesResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// List the tables in a database. If neither <c>SchemaPattern</c> nor <c>TablePattern</c>
+        /// are specified, then all tables in the database are returned. A token is returned to
+        /// page through the table list. Depending on the authorization method, use one of the
+        /// following combinations of request parameters: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Secrets Manager - when connecting to a cluster, provide the <c>secret-arn</c> of a
+        /// secret stored in Secrets Manager which has <c>username</c> and <c>password</c>. The
+        /// specified secret contains credentials to connect to the <c>database</c> you specify.
+        /// When you are connecting to a cluster, you also supply the database name, If you provide
+        /// a cluster identifier (<c>dbClusterIdentifier</c>), it must match the cluster identifier
+        /// stored in the secret. When you are connecting to a serverless workgroup, you also
+        /// supply the database name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Temporary credentials - when connecting to your data warehouse, choose one of the
+        /// following options:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When connecting to a serverless workgroup, specify the workgroup name and database
+        /// name. The database user name is derived from the IAM identity. For example, <c>arn:iam::123456789012:user:foo</c>
+        /// has the database user name <c>IAM:foo</c>. Also, permission to call the <c>redshift-serverless:GetCredentials</c>
+        /// operation is required.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When connecting to a cluster as an IAM identity, specify the cluster identifier and
+        /// the database name. The database user name is derived from the IAM identity. For example,
+        /// <c>arn:iam::123456789012:user:foo</c> has the database user name <c>IAM:foo</c>. Also,
+        /// permission to call the <c>redshift:GetClusterCredentialsWithIAM</c> operation is required.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When connecting to a cluster as a database user, specify the cluster identifier, the
+        /// database name, and the database user name. Also, permission to call the <c>redshift:GetClusterCredentials</c>
+        /// operation is required.
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
+        /// <para>
+        /// For more information about the Amazon Redshift Data API and CLI usage examples, see
+        /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+        /// Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTables service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListTables service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.DatabaseConnectionException">
+        /// Connection to a database failed.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.QueryTimeoutException">
+        /// The Amazon Redshift Data API operation failed due to timeout.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListTables">REST API Reference for ListTables Operation</seealso>
+        public virtual Task<ListTablesResponse> ListTablesAsync(ListTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTablesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTablesResponse>(request, options, cancellationToken);
+        }
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
+        {
+            var parameters = new ServiceOperationEndpointParameters(request);
+            return Config.DetermineServiceOperationEndpoint(parameters);
+        }
+    }
+}

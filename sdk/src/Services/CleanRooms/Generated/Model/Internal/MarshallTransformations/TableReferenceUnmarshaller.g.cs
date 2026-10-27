@@ -60,6 +60,13 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("databricks", targetDepth, ref reader))
+                {
+                    var unmarshaller = DatabricksTableReferenceUnmarshaller.Instance;
+                    unmarshalledObject.Databricks = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("glue", targetDepth, ref reader))
                 {
                     var unmarshaller = GlueTableReferenceUnmarshaller.Instance;

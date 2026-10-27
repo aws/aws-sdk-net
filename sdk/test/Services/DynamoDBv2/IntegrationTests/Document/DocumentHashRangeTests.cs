@@ -427,22 +427,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             }).GetRemainingAsync();
             Assert.Equal(2, items.Count);
 
-            // GSI updates are eventually consistent; wait until all 4 items are indexed before querying.
-            await UtilityMethods.WaitUntilAsync(async () =>
-            {
-                var indexed = await hashRangeTable.Scan(new ScanOperationConfig { IndexName = "GlobalIndex" }).GetRemainingAsync();
-                return indexed.Count >= 4;
-            }, sleepSeconds: 1, maxWaitSeconds: 30);
-
             // Query global index
             var queryFilter = new QueryFilter("Company", QueryOperator.Equal, "Big River");
             queryFilter.AddCondition("Score", QueryOperator.GreaterThan, 100);
-            items = await hashRangeTable.Query(new QueryOperationConfig
+            items = await Extensions.WaitForItemsAsync(() => hashRangeTable.Query(new QueryOperationConfig
             {
                 IndexName = "GlobalIndex",
                 Filter = queryFilter
-            }).GetRemainingAsync();
-            Assert.Equal(1, items.Count);
+            }).GetRemainingAsync(), 1);
 
             // Additional Query scenarios using QueryDocumentOperationRequest
             // 1) Basic key condition expression
@@ -544,12 +536,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             scanFilter = new ScanFilter();
             scanFilter.AddCondition("Company", ScanOperator.Equal, "Big River");
             scanFilter.AddCondition("Score", ScanOperator.GreaterThan, 100);
-            items = await hashRangeTable.Query(new QueryOperationConfig
+            items = await Extensions.WaitForItemsAsync(() => hashRangeTable.Query(new QueryOperationConfig
             {
                 IndexName = "GlobalIndex",
                 Filter = queryFilter
-            }).GetRemainingAsync();
-            Assert.Equal(1, items.Count);
+            }).GetRemainingAsync(), 1);
         }
 
         private async Task TestExpressionsOnQueryHelper(ITable hashRangeTable)

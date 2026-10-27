@@ -472,8 +472,7 @@ namespace Amazon.Odb.Model
         /// <summary>
         /// Gets and sets the property ScanListenerPortTcpSsl. 
         /// <para>
-        /// The port number for TCP connections with SSL to the Single Client Access Name (SCAN)
-        /// listener for the Exascale VM cluster.
+        /// Reserved for future use.
         /// </para>
         /// </summary>
         public int? ScanListenerPortTcpSsl { get; set; }

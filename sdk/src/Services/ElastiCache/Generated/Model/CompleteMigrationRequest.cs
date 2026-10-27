@@ -31,12 +31,13 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the CompleteMigration operation.
-    /// Complete the migration of data.
+    /// Completes the migration of data.
     /// </summary>
     public partial class CompleteMigrationRequest : AmazonElastiCacheRequest
     {
         private bool? _force;
         private string _replicationGroupId;
+        private string _serverlessCacheName;
 
         /// <summary>
         /// Gets and sets the property Force. 
@@ -64,7 +65,6 @@ namespace Amazon.ElastiCache.Model
         /// The ID of the replication group to which data is being migrated.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string ReplicationGroupId
         {
             get { return this._replicationGroupId; }
@@ -75,6 +75,24 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetReplicationGroupId()
         {
             return this._replicationGroupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerlessCacheName. 
+        /// <para>
+        /// The name of the serverless cache to which data is being migrated.
+        /// </para>
+        /// </summary>
+        public string ServerlessCacheName
+        {
+            get { return this._serverlessCacheName; }
+            set { this._serverlessCacheName = value; }
+        }
+
+        // Check to see if ServerlessCacheName property is set
+        internal bool IsSetServerlessCacheName()
+        {
+            return this._serverlessCacheName != null;
         }
 
     }

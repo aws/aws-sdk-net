@@ -2361,6 +2361,56 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type ContentDisposition.
+    /// </summary>
+    public class ContentDisposition : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ATTACHMENT for ContentDisposition
+        /// </summary>
+        public static readonly ContentDisposition ATTACHMENT = new ContentDisposition("ATTACHMENT");
+        /// <summary>
+        /// Constant INLINE for ContentDisposition
+        /// </summary>
+        public static readonly ContentDisposition INLINE = new ContentDisposition("INLINE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContentDisposition(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContentDisposition FindValue(string value)
+        {
+            return FindValue<ContentDisposition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContentDisposition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CurrentMetricName.
     /// </summary>
     public class CurrentMetricName : ConstantClass
@@ -4686,6 +4736,10 @@ namespace Amazon.Connect
         /// Constant APPROVED for FileStatusType
         /// </summary>
         public static readonly FileStatusType APPROVED = new FileStatusType("APPROVED");
+        /// <summary>
+        /// Constant DRAFTING for FileStatusType
+        /// </summary>
+        public static readonly FileStatusType DRAFTING = new FileStatusType("DRAFTING");
         /// <summary>
         /// Constant FAILED for FileStatusType
         /// </summary>
@@ -10155,6 +10209,10 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly ReferenceStatus DELETED = new ReferenceStatus("DELETED");
         /// <summary>
+        /// Constant DRAFTING for ReferenceStatus
+        /// </summary>
+        public static readonly ReferenceStatus DRAFTING = new ReferenceStatus("DRAFTING");
+        /// <summary>
         /// Constant FAILED for ReferenceStatus
         /// </summary>
         public static readonly ReferenceStatus FAILED = new ReferenceStatus("FAILED");
@@ -10868,6 +10926,56 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SearchContactsTimeRangeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SecurityProfileType.
+    /// </summary>
+    public class SecurityProfileType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_MANAGED for SecurityProfileType
+        /// </summary>
+        public static readonly SecurityProfileType AWS_MANAGED = new SecurityProfileType("AWS_MANAGED");
+        /// <summary>
+        /// Constant CUSTOMER_MANAGED for SecurityProfileType
+        /// </summary>
+        public static readonly SecurityProfileType CUSTOMER_MANAGED = new SecurityProfileType("CUSTOMER_MANAGED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SecurityProfileType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SecurityProfileType FindValue(string value)
+        {
+            return FindValue<SecurityProfileType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SecurityProfileType(string value)
         {
             return FindValue(value);
         }
@@ -12088,6 +12196,52 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Unit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UpdateOutboundEmailMessageSourceType.
+    /// </summary>
+    public class UpdateOutboundEmailMessageSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RAW for UpdateOutboundEmailMessageSourceType
+        /// </summary>
+        public static readonly UpdateOutboundEmailMessageSourceType RAW = new UpdateOutboundEmailMessageSourceType("RAW");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UpdateOutboundEmailMessageSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UpdateOutboundEmailMessageSourceType FindValue(string value)
+        {
+            return FindValue<UpdateOutboundEmailMessageSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UpdateOutboundEmailMessageSourceType(string value)
         {
             return FindValue(value);
         }

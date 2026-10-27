@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.Imagebuilder.Generated
     {
         public void ImagebuilderCancelImageCreation()
         {
-            #region cancel-an-image-build
+            #region CancelImageCreation-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.CancelImageCreation(new CancelImageCreationRequest 
+            var response = client.CancelImageCreation(new CancelImageCreationRequest
             {
                 ClientToken = "a1b2c3d4-5678-90ab-cdef-EXAMPLE77777",
                 ImageBuildVersionArn = "arn:aws:imagebuilder:us-west-2:111122223333:image/my-example-recipe/1.0.0/1"
@@ -31,10 +32,10 @@ namespace AWSSDKDocSamples.Amazon.Imagebuilder.Generated
 
         public void ImagebuilderCancelLifecycleExecution()
         {
-            #region cancel-a-lifecycle-execution
+            #region CancelLifecycleExecution-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.CancelLifecycleExecution(new CancelLifecycleExecutionRequest 
+            var response = client.CancelLifecycleExecution(new CancelLifecycleExecutionRequest
             {
                 ClientToken = "a1b2c3d4-5678-90ab-cdef-EXAMPLE97531",
                 LifecycleExecutionId = "lce-401aefc3-a829-46f6-8fc2-91497988a503"
@@ -47,48 +48,14 @@ namespace AWSSDKDocSamples.Amazon.Imagebuilder.Generated
 
         public void ImagebuilderCreateComponent()
         {
-            #region create-a-component-from-an-inline-document
+            #region CreateComponent-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.CreateComponent(new CreateComponentRequest 
+            var response = client.CreateComponent(new CreateComponentRequest
             {
-                Name = "my-example-component",
-                ClientToken = "a1b2c3d4-5678-90ab-cdef-EXAMPLE11111",
-                Data = "name: InstallMyApp
-description: Installs my application
-schemaVersion: 1.0
-phases:
-  - name: build
-    steps:
-      - name: InstallApp
-        action: ExecuteBash
-        inputs:
-          commands:
-            - sudo yum -y install my-app
-",
-                Description = "Installs the latest version of my application",
-                Platform = "Linux",
-                SemanticVersion = "1.0.0"
-            });
-
-            string clientToken = response.ClientToken;
-            string componentBuildVersionArn = response.ComponentBuildVersionArn;
-            LatestVersionReferences latestVersionReferences = response.LatestVersionReferences;
-            string requestId = response.RequestId;
-
-            #endregion
-        }
-
-        public void ImagebuilderCreateComponent()
-        {
-            #region create-a-component-from-a-document-stored-in-amazon-s3
-
-            var client = new AmazonImagebuilderClient();
-            var response = client.CreateComponent(new CreateComponentRequest 
-            {
-                Name = "my-example-parameterized-component",
                 ClientToken = "a1b2c3d4-5678-90ab-cdef-EXAMPLE10101",
                 Description = "Installs a configurable version of my application",
+                Name = "my-example-parameterized-component",
                 Platform = "Linux",
                 SemanticVersion = "1.0.0",
                 Uri = "s3://amzn-s3-demo-bucket/components/install-my-app.yaml"
@@ -102,33 +69,23 @@ phases:
             #endregion
         }
 
-        public void ImagebuilderCreateContainerRecipe()
+        public void ImagebuilderCreateComponent()
         {
-            #region create-a-container-recipe-with-an-inline-dockerfile-template
+            #region CreateComponent-2
 
             var client = new AmazonImagebuilderClient();
-            var response = client.CreateContainerRecipe(new CreateContainerRecipeRequest 
+            var response = client.CreateComponent(new CreateComponentRequest
             {
-                Name = "my-example-container-recipe",
-                ClientToken = "a1b2c3d4-5678-90ab-cdef-EXAMPLE99999",
-                Components = new List<ComponentConfiguration> {
-                    new ComponentConfiguration { ComponentArn = "arn:aws:imagebuilder:us-west-2:111122223333:component/my-example-container-component/1.0.0/1" }
-                },
-                ContainerType = "DOCKER",
-                DockerfileTemplateData = "FROM {{{ imagebuilder:parentImage }}}
-{{{ imagebuilder:environments }}}
-{{{ imagebuilder:components }}}
-",
-                ParentImage = "amazonlinux:latest",
-                SemanticVersion = "1.0.0",
-                TargetRepository = new TargetContainerRepository {
-                    RepositoryName = "my-example-container-repo",
-                    Service = "ECR"
-                }
+                ClientToken = "a1b2c3d4-5678-90ab-cdef-EXAMPLE11111",
+                Data = "name: InstallMyApp\ndescription: Installs my application\nschemaVersion: 1.0\nphases:\n  - name: build\n    steps:\n      - name: InstallApp\n        action: ExecuteBash\n        inputs:\n          commands:\n            - sudo yum -y install my-app\n",
+                Description = "Installs the latest version of my application",
+                Name = "my-example-component",
+                Platform = "Linux",
+                SemanticVersion = "1.0.0"
             });
 
             string clientToken = response.ClientToken;
-            string containerRecipeArn = response.ContainerRecipeArn;
+            string componentBuildVersionArn = response.ComponentBuildVersionArn;
             LatestVersionReferences latestVersionReferences = response.LatestVersionReferences;
             string requestId = response.RequestId;
 
@@ -137,22 +94,18 @@ phases:
 
         public void ImagebuilderCreateContainerRecipe()
         {
-            #region create-a-container-recipe-with-a-custom-build-instance-configuration
+            #region CreateContainerRecipe-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.CreateContainerRecipe(new CreateContainerRecipeRequest 
+            var response = client.CreateContainerRecipe(new CreateContainerRecipeRequest
             {
-                Name = "my-example-container-recipe",
                 ClientToken = "a1b2c3d4-5678-90ab-cdef-EXAMPLE40404",
                 Components = new List<ComponentConfiguration> {
                     new ComponentConfiguration { ComponentArn = "arn:aws:imagebuilder:us-west-2:111122223333:component/my-example-container-component/1.0.0/1" }
                 },
                 ContainerType = "DOCKER",
                 Description = "A container recipe that builds on an ECS-optimized instance image with a larger build volume",
-                DockerfileTemplateData = "FROM {{{ imagebuilder:parentImage }}}
-{{{ imagebuilder:environments }}}
-{{{ imagebuilder:components }}}
-",
+                DockerfileTemplateData = "FROM {{{ imagebuilder:parentImage }}}\n{{{ imagebuilder:environments }}}\n{{{ imagebuilder:components }}}\n",
                 InstanceConfiguration = new InstanceConfiguration {
                     BlockDeviceMappings = new List<InstanceBlockDeviceMapping> {
                         new InstanceBlockDeviceMapping {
@@ -166,6 +119,7 @@ phases:
                     },
                     Image = "ami-1234567890abcdef0"
                 },
+                Name = "my-example-container-recipe",
                 ParentImage = "amazonlinux:latest",
                 SemanticVersion = "1.1.0",
                 TargetRepository = new TargetContainerRepository {
@@ -182,14 +136,43 @@ phases:
             #endregion
         }
 
-        public void ImagebuilderCreateDistributionConfiguration()
+        public void ImagebuilderCreateContainerRecipe()
         {
-            #region create-a-distribution-configuration
+            #region CreateContainerRecipe-2
 
             var client = new AmazonImagebuilderClient();
-            var response = client.CreateDistributionConfiguration(new CreateDistributionConfigurationRequest 
+            var response = client.CreateContainerRecipe(new CreateContainerRecipeRequest
             {
-                Name = "my-example-distribution",
+                ClientToken = "a1b2c3d4-5678-90ab-cdef-EXAMPLE99999",
+                Components = new List<ComponentConfiguration> {
+                    new ComponentConfiguration { ComponentArn = "arn:aws:imagebuilder:us-west-2:111122223333:component/my-example-container-component/1.0.0/1" }
+                },
+                ContainerType = "DOCKER",
+                DockerfileTemplateData = "FROM {{{ imagebuilder:parentImage }}}\n{{{ imagebuilder:environments }}}\n{{{ imagebuilder:components }}}\n",
+                Name = "my-example-container-recipe",
+                ParentImage = "amazonlinux:latest",
+                SemanticVersion = "1.0.0",
+                TargetRepository = new TargetContainerRepository {
+                    RepositoryName = "my-example-container-repo",
+                    Service = "ECR"
+                }
+            });
+
+            string clientToken = response.ClientToken;
+            string containerRecipeArn = response.ContainerRecipeArn;
+            LatestVersionReferences latestVersionReferences = response.LatestVersionReferences;
+            string requestId = response.RequestId;
+
+            #endregion
+        }
+
+        public void ImagebuilderCreateDistributionConfiguration()
+        {
+            #region CreateDistributionConfiguration-1
+
+            var client = new AmazonImagebuilderClient();
+            var response = client.CreateDistributionConfiguration(new CreateDistributionConfigurationRequest
+            {
                 ClientToken = "a1b2c3d4-5678-90ab-cdef-EXAMPLE44444",
                 Description = "Copies the output AMI to a second Region",
                 Distributions = new List<Distribution> {
@@ -201,7 +184,8 @@ phases:
                         AmiDistributionConfiguration = new AmiDistributionConfiguration { Name = "my-example-image-{{ imagebuilder:buildDate }}" },
                         Region = "us-east-1"
                     }
-                }
+                },
+                Name = "my-example-distribution"
             });
 
             string clientToken = response.ClientToken;
@@ -213,12 +197,11 @@ phases:
 
         public void ImagebuilderCreateDistributionConfiguration()
         {
-            #region create-a-distribution-configuration-with-launch-permissions-and-a-launch-template-update
+            #region CreateDistributionConfiguration-2
 
             var client = new AmazonImagebuilderClient();
-            var response = client.CreateDistributionConfiguration(new CreateDistributionConfigurationRequest 
+            var response = client.CreateDistributionConfiguration(new CreateDistributionConfigurationRequest
             {
-                Name = "my-example-distribution",
                 ClientToken = "a1b2c3d4-5678-90ab-cdef-EXAMPLE56789",
                 Description = "Distributes the output AMI to two Regions and shares it with another account",
                 Distributions = new List<Distribution> {
@@ -234,14 +217,15 @@ phases:
                     },
                     new Distribution {
                         AmiDistributionConfiguration = new AmiDistributionConfiguration {
-                            Name = "my-example-image-{{ imagebuilder:buildDate }}",
                             LaunchPermission = new LaunchPermissionConfiguration { UserIds = new List<string> {
                                 "444455556666"
-                            } }
+                            } },
+                            Name = "my-example-image-{{ imagebuilder:buildDate }}"
                         },
                         Region = "us-east-1"
                     }
-                }
+                },
+                Name = "my-example-distribution"
             });
 
             string clientToken = response.ClientToken;
@@ -253,10 +237,10 @@ phases:
 
         public void ImagebuilderCreateImage()
         {
-            #region create-an-image
+            #region CreateImage-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.CreateImage(new CreateImageRequest 
+            var response = client.CreateImage(new CreateImageRequest
             {
                 ClientToken = "a1b2c3d4-5678-90ab-cdef-EXAMPLEeeeee",
                 ImageRecipeArn = "arn:aws:imagebuilder:us-west-2:111122223333:image-recipe/my-example-recipe/1.0.0",
@@ -273,10 +257,10 @@ phases:
 
         public void ImagebuilderCreateImage()
         {
-            #region create-an-image-with-custom-build-and-parallel-test-workflows
+            #region CreateImage-2
 
             var client = new AmazonImagebuilderClient();
-            var response = client.CreateImage(new CreateImageRequest 
+            var response = client.CreateImage(new CreateImageRequest
             {
                 ClientToken = "a1b2c3d4-5678-90ab-cdef-EXAMPLE01234",
                 ExecutionRole = "arn:aws:iam::111122223333:role/aws-service-role/imagebuilder.amazonaws.com/AWSServiceRoleForImageBuilder",
@@ -305,17 +289,17 @@ phases:
 
         public void ImagebuilderCreateImagePipeline()
         {
-            #region create-an-image-pipeline
+            #region CreateImagePipeline-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.CreateImagePipeline(new CreateImagePipelineRequest 
+            var response = client.CreateImagePipeline(new CreateImagePipelineRequest
             {
-                Name = "my-example-pipeline",
                 ClientToken = "a1b2c3d4-5678-90ab-cdef-EXAMPLE55555",
                 Description = "Builds a new version of my image every Sunday",
                 DistributionConfigurationArn = "arn:aws:imagebuilder:us-west-2:111122223333:distribution-configuration/my-example-distribution",
                 ImageRecipeArn = "arn:aws:imagebuilder:us-west-2:111122223333:image-recipe/my-example-recipe/1.0.0",
                 InfrastructureConfigurationArn = "arn:aws:imagebuilder:us-west-2:111122223333:infrastructure-configuration/my-example-infrastructure",
+                Name = "my-example-pipeline",
                 Schedule = new Schedule {
                     PipelineExecutionStartCondition = "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE",
                     ScheduleExpression = "cron(0 9 ? * SUN *)"
@@ -332,12 +316,11 @@ phases:
 
         public void ImagebuilderCreateImagePipeline()
         {
-            #region create-an-image-pipeline-with-scanning-custom-workflows-and-an-auto-disable-policy
+            #region CreateImagePipeline-2
 
             var client = new AmazonImagebuilderClient();
-            var response = client.CreateImagePipeline(new CreateImagePipelineRequest 
+            var response = client.CreateImagePipeline(new CreateImagePipelineRequest
             {
-                Name = "my-example-pipeline",
                 ClientToken = "a1b2c3d4-5678-90ab-cdef-EXAMPLE30303",
                 Description = "Builds a scanned image with my custom build workflow on Sunday mornings when dependency updates are available",
                 DistributionConfigurationArn = "arn:aws:imagebuilder:us-west-2:111122223333:distribution-configuration/my-example-distribution",
@@ -345,6 +328,7 @@ phases:
                 ImageRecipeArn = "arn:aws:imagebuilder:us-west-2:111122223333:image-recipe/my-example-recipe/1.1.0",
                 ImageScanningConfiguration = new ImageScanningConfiguration { ImageScanningEnabled = true },
                 InfrastructureConfigurationArn = "arn:aws:imagebuilder:us-west-2:111122223333:infrastructure-configuration/my-example-infrastructure",
+                Name = "my-example-pipeline",
                 Schedule = new Schedule {
                     AutoDisablePolicy = new AutoDisablePolicy { FailureCount = 3 },
                     PipelineExecutionStartCondition = "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE",
@@ -366,17 +350,17 @@ phases:
 
         public void ImagebuilderCreateImageRecipe()
         {
-            #region create-an-image-recipe
+            #region CreateImageRecipe-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.CreateImageRecipe(new CreateImageRecipeRequest 
+            var response = client.CreateImageRecipe(new CreateImageRecipeRequest
             {
-                Name = "my-example-recipe",
                 ClientToken = "a1b2c3d4-5678-90ab-cdef-EXAMPLE22222",
                 Components = new List<ComponentConfiguration> {
                     new ComponentConfiguration { ComponentArn = "arn:aws:imagebuilder:us-west-2:111122223333:component/my-example-component/1.0.0/1" }
                 },
                 Description = "An image recipe that installs my application on Amazon Linux 2023",
+                Name = "my-example-recipe",
                 ParentImage = "arn:aws:imagebuilder:us-west-2:aws:image/amazon-linux-2023-x86/x.x.x",
                 SemanticVersion = "1.0.0"
             });
@@ -391,12 +375,11 @@ phases:
 
         public void ImagebuilderCreateImageRecipe()
         {
-            #region create-an-image-recipe-with-component-parameters-and-block-device-mappings
+            #region CreateImageRecipe-2
 
             var client = new AmazonImagebuilderClient();
-            var response = client.CreateImageRecipe(new CreateImageRecipeRequest 
+            var response = client.CreateImageRecipe(new CreateImageRecipeRequest
             {
-                Name = "my-example-recipe",
                 BlockDeviceMappings = new List<InstanceBlockDeviceMapping> {
                     new InstanceBlockDeviceMapping {
                         DeviceName = "/dev/xvda",
@@ -423,6 +406,7 @@ phases:
                     }
                 },
                 Description = "Installs a specific version of my application on Amazon Linux 2023 with a larger encrypted root volume",
+                Name = "my-example-recipe",
                 ParentImage = "arn:aws:imagebuilder:us-west-2:aws:image/amazon-linux-2023-x86/x.x.x",
                 SemanticVersion = "1.1.0"
             });
@@ -437,12 +421,11 @@ phases:
 
         public void ImagebuilderCreateInfrastructureConfiguration()
         {
-            #region create-an-infrastructure-configuration
+            #region CreateInfrastructureConfiguration-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.CreateInfrastructureConfiguration(new CreateInfrastructureConfigurationRequest 
+            var response = client.CreateInfrastructureConfiguration(new CreateInfrastructureConfigurationRequest
             {
-                Name = "my-example-infrastructure",
                 ClientToken = "a1b2c3d4-5678-90ab-cdef-EXAMPLE33333",
                 Description = "An infrastructure configuration for Amazon Linux builds",
                 InstanceProfileName = "EC2InstanceProfileForImageBuilder",
@@ -450,6 +433,7 @@ phases:
                     "t3.medium",
                     "t3.large"
                 },
+                Name = "my-example-infrastructure",
                 TerminateInstanceOnFailure = true
             });
 
@@ -462,12 +446,11 @@ phases:
 
         public void ImagebuilderCreateInfrastructureConfiguration()
         {
-            #region create-an-infrastructure-configuration-with-instance-placement-and-metadata-options
+            #region CreateInfrastructureConfiguration-2
 
             var client = new AmazonImagebuilderClient();
-            var response = client.CreateInfrastructureConfiguration(new CreateInfrastructureConfigurationRequest 
+            var response = client.CreateInfrastructureConfiguration(new CreateInfrastructureConfigurationRequest
             {
-                Name = "my-example-infrastructure",
                 ClientToken = "a1b2c3d4-5678-90ab-cdef-EXAMPLE98765",
                 Description = "An infrastructure configuration that pins build instances to one Availability Zone and requires IMDSv2",
                 InstanceMetadataOptions = new InstanceMetadataOptions {
@@ -475,6 +458,7 @@ phases:
                     HttpTokens = "required"
                 },
                 InstanceProfileName = "my-example-instance-role",
+                Name = "my-example-infrastructure",
                 Placement = new Placement { AvailabilityZone = "us-west-2a" },
                 ResourceTags = new Dictionary<string, string> {
                     { "CostCenter", "12345" },
@@ -492,21 +476,21 @@ phases:
 
         public void ImagebuilderCreateLifecyclePolicy()
         {
-            #region create-a-lifecycle-policy
+            #region CreateLifecyclePolicy-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.CreateLifecyclePolicy(new CreateLifecyclePolicyRequest 
+            var response = client.CreateLifecyclePolicy(new CreateLifecyclePolicyRequest
             {
-                Name = "my-example-lifecycle-policy",
                 ClientToken = "a1b2c3d4-5678-90ab-cdef-EXAMPLE13579",
                 ExecutionRole = "arn:aws:iam::111122223333:role/my-example-lifecycle-role",
+                Name = "my-example-lifecycle-policy",
                 PolicyDetails = new List<LifecyclePolicyDetail> {
                     new LifecyclePolicyDetail {
                         Action = new LifecyclePolicyDetailAction { Type = "DELETE" },
                         Filter = new LifecyclePolicyDetailFilter {
                             Type = "AGE",
-                            Value = 6,
-                            Unit = "MONTHS"
+                            Unit = "MONTHS",
+                            Value = 6
                         }
                     }
                 },
@@ -524,21 +508,21 @@ phases:
 
         public void ImagebuilderCreateLifecyclePolicy()
         {
-            #region create-a-lifecycle-policy-with-exclusion-rules
+            #region CreateLifecyclePolicy-2
 
             var client = new AmazonImagebuilderClient();
-            var response = client.CreateLifecyclePolicy(new CreateLifecyclePolicyRequest 
+            var response = client.CreateLifecyclePolicy(new CreateLifecyclePolicyRequest
             {
-                Name = "my-example-lifecycle-policy",
                 ClientToken = "a1b2c3d4-5678-90ab-cdef-EXAMPLE43210",
                 ExecutionRole = "arn:aws:iam::111122223333:role/my-example-lifecycle-role",
+                Name = "my-example-lifecycle-policy",
                 PolicyDetails = new List<LifecyclePolicyDetail> {
                     new LifecyclePolicyDetail {
                         Action = new LifecyclePolicyDetailAction { Type = "DELETE" },
                         ExclusionRules = new LifecyclePolicyDetailExclusionRules { Amis = new LifecyclePolicyDetailExclusionRulesAmis {
                             LastLaunched = new LifecyclePolicyDetailExclusionRulesAmisLastLaunched {
-                                Value = 30,
-                                Unit = "DAYS"
+                                Unit = "DAYS",
+                                Value = 30
                             },
                             TagMap = new Dictionary<string, string> {
                                 { "Retention", "keep" }
@@ -546,8 +530,8 @@ phases:
                         } },
                         Filter = new LifecyclePolicyDetailFilter {
                             Type = "AGE",
-                            Value = 6,
-                            Unit = "MONTHS"
+                            Unit = "MONTHS",
+                            Value = 6
                         }
                     }
                 },
@@ -568,41 +552,17 @@ phases:
 
         public void ImagebuilderCreateWorkflow()
         {
-            #region create-a-build-workflow-from-an-inline-document
+            #region CreateWorkflow-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.CreateWorkflow(new CreateWorkflowRequest 
+            var response = client.CreateWorkflow(new CreateWorkflowRequest
             {
-                Name = "my-example-workflow",
-                Type = "BUILD",
                 ClientToken = "a1b2c3d4-5678-90ab-cdef-EXAMPLE54321",
-                Data = "name: my-example-workflow
-description: Workflow to build an AMI
-schemaVersion: 1.0
-steps:
-  - name: LaunchBuildInstance
-    action: LaunchInstance
-    onFailure: Abort
-    inputs:
-      waitFor: ssmAgent
-  - name: ApplyBuildComponents
-    action: ExecuteComponents
-    onFailure: Abort
-    inputs:
-      instanceId.$: $.stepOutputs.LaunchBuildInstance.instanceId
-  - name: CreateOutputAMI
-    action: CreateImage
-    onFailure: Abort
-    inputs:
-      instanceId.$: $.stepOutputs.LaunchBuildInstance.instanceId
-  - name: TerminateBuildInstance
-    action: TerminateInstance
-    onFailure: Continue
-    inputs:
-      instanceId.$: $.stepOutputs.LaunchBuildInstance.instanceId
-",
+                Data = "name: my-example-workflow\ndescription: Workflow to build an AMI\nschemaVersion: 1.0\nsteps:\n  - name: LaunchBuildInstance\n    action: LaunchInstance\n    onFailure: Abort\n    inputs:\n      waitFor: ssmAgent\n  - name: ApplyBuildComponents\n    action: ExecuteComponents\n    onFailure: Abort\n    inputs:\n      instanceId.$: $.stepOutputs.LaunchBuildInstance.instanceId\n  - name: CreateOutputAMI\n    action: CreateImage\n    onFailure: Abort\n    inputs:\n      instanceId.$: $.stepOutputs.LaunchBuildInstance.instanceId\n  - name: TerminateBuildInstance\n    action: TerminateInstance\n    onFailure: Continue\n    inputs:\n      instanceId.$: $.stepOutputs.LaunchBuildInstance.instanceId\n",
                 Description = "Workflow to build an AMI",
-                SemanticVersion = "1.0.0"
+                Name = "my-example-workflow",
+                SemanticVersion = "1.0.0",
+                Type = "BUILD"
             });
 
             string clientToken = response.ClientToken;
@@ -614,10 +574,10 @@ steps:
 
         public void ImagebuilderDeleteComponent()
         {
-            #region delete-a-component-build-version
+            #region DeleteComponent-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.DeleteComponent(new DeleteComponentRequest 
+            var response = client.DeleteComponent(new DeleteComponentRequest
             {
                 ComponentBuildVersionArn = "arn:aws:imagebuilder:us-west-2:111122223333:component/my-example-component/1.0.0/1"
             });
@@ -630,10 +590,10 @@ steps:
 
         public void ImagebuilderDeleteContainerRecipe()
         {
-            #region delete-a-container-recipe
+            #region DeleteContainerRecipe-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.DeleteContainerRecipe(new DeleteContainerRecipeRequest 
+            var response = client.DeleteContainerRecipe(new DeleteContainerRecipeRequest
             {
                 ContainerRecipeArn = "arn:aws:imagebuilder:us-west-2:111122223333:container-recipe/my-example-container-recipe/1.0.0"
             });
@@ -646,10 +606,10 @@ steps:
 
         public void ImagebuilderDeleteDistributionConfiguration()
         {
-            #region delete-a-distribution-configuration
+            #region DeleteDistributionConfiguration-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.DeleteDistributionConfiguration(new DeleteDistributionConfigurationRequest 
+            var response = client.DeleteDistributionConfiguration(new DeleteDistributionConfigurationRequest
             {
                 DistributionConfigurationArn = "arn:aws:imagebuilder:us-west-2:111122223333:distribution-configuration/my-example-distribution-configuration"
             });
@@ -662,10 +622,10 @@ steps:
 
         public void ImagebuilderDeleteImage()
         {
-            #region delete-an-image-build-version
+            #region DeleteImage-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.DeleteImage(new DeleteImageRequest 
+            var response = client.DeleteImage(new DeleteImageRequest
             {
                 ImageBuildVersionArn = "arn:aws:imagebuilder:us-west-2:111122223333:image/my-example-recipe/1.0.0/1"
             });
@@ -678,10 +638,10 @@ steps:
 
         public void ImagebuilderDeleteImagePipeline()
         {
-            #region delete-an-image-pipeline
+            #region DeleteImagePipeline-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.DeleteImagePipeline(new DeleteImagePipelineRequest 
+            var response = client.DeleteImagePipeline(new DeleteImagePipelineRequest
             {
                 ImagePipelineArn = "arn:aws:imagebuilder:us-west-2:111122223333:image-pipeline/my-example-pipeline"
             });
@@ -694,10 +654,10 @@ steps:
 
         public void ImagebuilderDeleteImageRecipe()
         {
-            #region delete-an-image-recipe
+            #region DeleteImageRecipe-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.DeleteImageRecipe(new DeleteImageRecipeRequest 
+            var response = client.DeleteImageRecipe(new DeleteImageRecipeRequest
             {
                 ImageRecipeArn = "arn:aws:imagebuilder:us-west-2:111122223333:image-recipe/my-example-recipe/1.0.0"
             });
@@ -710,10 +670,10 @@ steps:
 
         public void ImagebuilderDeleteInfrastructureConfiguration()
         {
-            #region delete-an-infrastructure-configuration
+            #region DeleteInfrastructureConfiguration-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.DeleteInfrastructureConfiguration(new DeleteInfrastructureConfigurationRequest 
+            var response = client.DeleteInfrastructureConfiguration(new DeleteInfrastructureConfigurationRequest
             {
                 InfrastructureConfigurationArn = "arn:aws:imagebuilder:us-west-2:111122223333:infrastructure-configuration/my-example-infrastructure"
             });
@@ -726,10 +686,10 @@ steps:
 
         public void ImagebuilderDeleteLifecyclePolicy()
         {
-            #region delete-a-lifecycle-policy
+            #region DeleteLifecyclePolicy-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.DeleteLifecyclePolicy(new DeleteLifecyclePolicyRequest 
+            var response = client.DeleteLifecyclePolicy(new DeleteLifecyclePolicyRequest
             {
                 LifecyclePolicyArn = "arn:aws:imagebuilder:us-west-2:111122223333:lifecycle-policy/my-example-lifecycle-policy"
             });
@@ -741,10 +701,10 @@ steps:
 
         public void ImagebuilderDeleteWorkflow()
         {
-            #region delete-a-workflow-build-version
+            #region DeleteWorkflow-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.DeleteWorkflow(new DeleteWorkflowRequest 
+            var response = client.DeleteWorkflow(new DeleteWorkflowRequest
             {
                 WorkflowBuildVersionArn = "arn:aws:imagebuilder:us-west-2:111122223333:workflow/build/my-example-workflow/1.0.0/1"
             });
@@ -756,10 +716,10 @@ steps:
 
         public void ImagebuilderDistributeImage()
         {
-            #region distribute-an-existing-ami
+            #region DistributeImage-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.DistributeImage(new DistributeImageRequest 
+            var response = client.DistributeImage(new DistributeImageRequest
             {
                 ClientToken = "a1b2c3d4-5678-90ab-cdef-EXAMPLE86420",
                 DistributionConfigurationArn = "arn:aws:imagebuilder:us-west-2:111122223333:distribution-configuration/my-example-distribution-configuration",
@@ -775,10 +735,10 @@ steps:
 
         public void ImagebuilderGetComponent()
         {
-            #region get-the-details-of-a-component-build-version
+            #region GetComponent-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.GetComponent(new GetComponentRequest 
+            var response = client.GetComponent(new GetComponentRequest
             {
                 ComponentBuildVersionArn = "arn:aws:imagebuilder:us-west-2:111122223333:component/my-example-component/1.0.0/1"
             });
@@ -792,10 +752,10 @@ steps:
 
         public void ImagebuilderGetComponentPolicy()
         {
-            #region get-the-resource-policy-for-a-component
+            #region GetComponentPolicy-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.GetComponentPolicy(new GetComponentPolicyRequest 
+            var response = client.GetComponentPolicy(new GetComponentPolicyRequest
             {
                 ComponentArn = "arn:aws:imagebuilder:us-west-2:111122223333:component/my-shared-component/1.0.0/1"
             });
@@ -808,10 +768,10 @@ steps:
 
         public void ImagebuilderGetContainerRecipe()
         {
-            #region get-the-details-of-a-container-recipe
+            #region GetContainerRecipe-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.GetContainerRecipe(new GetContainerRecipeRequest 
+            var response = client.GetContainerRecipe(new GetContainerRecipeRequest
             {
                 ContainerRecipeArn = "arn:aws:imagebuilder:us-west-2:111122223333:container-recipe/my-example-container-recipe/1.0.0"
             });
@@ -825,10 +785,10 @@ steps:
 
         public void ImagebuilderGetContainerRecipePolicy()
         {
-            #region get-the-policy-attached-to-a-container-recipe
+            #region GetContainerRecipePolicy-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.GetContainerRecipePolicy(new GetContainerRecipePolicyRequest 
+            var response = client.GetContainerRecipePolicy(new GetContainerRecipePolicyRequest
             {
                 ContainerRecipeArn = "arn:aws:imagebuilder:us-west-2:111122223333:container-recipe/my-example-container-recipe-shared/1.0.0"
             });
@@ -841,10 +801,10 @@ steps:
 
         public void ImagebuilderGetDistributionConfiguration()
         {
-            #region get-the-details-of-a-distribution-configuration
+            #region GetDistributionConfiguration-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.GetDistributionConfiguration(new GetDistributionConfigurationRequest 
+            var response = client.GetDistributionConfiguration(new GetDistributionConfigurationRequest
             {
                 DistributionConfigurationArn = "arn:aws:imagebuilder:us-west-2:111122223333:distribution-configuration/my-example-distribution"
             });
@@ -857,10 +817,10 @@ steps:
 
         public void ImagebuilderGetImage()
         {
-            #region check-the-status-of-an-image-build
+            #region GetImage-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.GetImage(new GetImageRequest 
+            var response = client.GetImage(new GetImageRequest
             {
                 ImageBuildVersionArn = "arn:aws:imagebuilder:us-west-2:111122223333:image/my-example-recipe/1.0.0/1"
             });
@@ -873,10 +833,10 @@ steps:
 
         public void ImagebuilderGetImagePipeline()
         {
-            #region get-the-details-of-an-image-pipeline
+            #region GetImagePipeline-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.GetImagePipeline(new GetImagePipelineRequest 
+            var response = client.GetImagePipeline(new GetImagePipelineRequest
             {
                 ImagePipelineArn = "arn:aws:imagebuilder:us-west-2:111122223333:image-pipeline/my-example-pipeline"
             });
@@ -889,10 +849,10 @@ steps:
 
         public void ImagebuilderGetImagePolicy()
         {
-            #region retrieve-the-resource-policy-for-an-image
+            #region GetImagePolicy-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.GetImagePolicy(new GetImagePolicyRequest 
+            var response = client.GetImagePolicy(new GetImagePolicyRequest
             {
                 ImageArn = "arn:aws:imagebuilder:us-west-2:111122223333:image/my-example-recipe/1.0.0/1"
             });
@@ -905,10 +865,10 @@ steps:
 
         public void ImagebuilderGetImageRecipe()
         {
-            #region get-the-details-of-an-image-recipe
+            #region GetImageRecipe-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.GetImageRecipe(new GetImageRecipeRequest 
+            var response = client.GetImageRecipe(new GetImageRecipeRequest
             {
                 ImageRecipeArn = "arn:aws:imagebuilder:us-west-2:111122223333:image-recipe/my-example-app-recipe/1.0.0"
             });
@@ -922,10 +882,10 @@ steps:
 
         public void ImagebuilderGetImageRecipePolicy()
         {
-            #region get-the-resource-policy-for-an-image-recipe
+            #region GetImageRecipePolicy-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.GetImageRecipePolicy(new GetImageRecipePolicyRequest 
+            var response = client.GetImageRecipePolicy(new GetImageRecipePolicyRequest
             {
                 ImageRecipeArn = "arn:aws:imagebuilder:us-west-2:111122223333:image-recipe/my-example-recipe/1.0.0"
             });
@@ -938,10 +898,10 @@ steps:
 
         public void ImagebuilderGetInfrastructureConfiguration()
         {
-            #region get-the-details-of-an-infrastructure-configuration
+            #region GetInfrastructureConfiguration-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.GetInfrastructureConfiguration(new GetInfrastructureConfigurationRequest 
+            var response = client.GetInfrastructureConfiguration(new GetInfrastructureConfigurationRequest
             {
                 InfrastructureConfigurationArn = "arn:aws:imagebuilder:us-west-2:111122223333:infrastructure-configuration/my-example-infrastructure-configuration"
             });
@@ -954,10 +914,10 @@ steps:
 
         public void ImagebuilderGetLifecycleExecution()
         {
-            #region get-the-details-of-a-lifecycle-execution
+            #region GetLifecycleExecution-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.GetLifecycleExecution(new GetLifecycleExecutionRequest 
+            var response = client.GetLifecycleExecution(new GetLifecycleExecutionRequest
             {
                 LifecycleExecutionId = "lce-401aefc3-a829-46f6-8fc2-91497988a503"
             });
@@ -969,10 +929,10 @@ steps:
 
         public void ImagebuilderGetLifecyclePolicy()
         {
-            #region get-the-details-of-a-lifecycle-policy
+            #region GetLifecyclePolicy-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.GetLifecyclePolicy(new GetLifecyclePolicyRequest 
+            var response = client.GetLifecyclePolicy(new GetLifecyclePolicyRequest
             {
                 LifecyclePolicyArn = "arn:aws:imagebuilder:us-west-2:111122223333:lifecycle-policy/my-example-lifecycle-policy"
             });
@@ -984,10 +944,10 @@ steps:
 
         public void ImagebuilderGetWorkflow()
         {
-            #region get-the-details-of-a-workflow-build-version
+            #region GetWorkflow-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.GetWorkflow(new GetWorkflowRequest 
+            var response = client.GetWorkflow(new GetWorkflowRequest
             {
                 WorkflowBuildVersionArn = "arn:aws:imagebuilder:us-west-2:111122223333:workflow/build/my-example-workflow/1.0.0/1"
             });
@@ -1000,24 +960,24 @@ steps:
 
         public void ImagebuilderGetWorkflowExecution()
         {
-            #region get-the-runtime-details-for-a-workflow-execution
+            #region GetWorkflowExecution-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.GetWorkflowExecution(new GetWorkflowExecutionRequest 
+            var response = client.GetWorkflowExecution(new GetWorkflowExecutionRequest
             {
                 WorkflowExecutionId = "wf-165b1cb6-3a62-4618-a021-94ddcbe32908"
             });
 
-            string type = response.Type;
             string endTime = response.EndTime;
             string imageBuildVersionArn = response.ImageBuildVersionArn;
             string requestId = response.RequestId;
             string startTime = response.StartTime;
-            string status = response.Status;
-            int totalStepCount = response.TotalStepCount;
-            int totalStepsFailed = response.TotalStepsFailed;
-            int totalStepsSkipped = response.TotalStepsSkipped;
-            int totalStepsSucceeded = response.TotalStepsSucceeded;
+            WorkflowExecutionStatus status = response.Status;
+            int? totalStepCount = response.TotalStepCount;
+            int? totalStepsFailed = response.TotalStepsFailed;
+            int? totalStepsSkipped = response.TotalStepsSkipped;
+            int? totalStepsSucceeded = response.TotalStepsSucceeded;
+            WorkflowType type = response.Type;
             string workflowBuildVersionArn = response.WorkflowBuildVersionArn;
             string workflowExecutionId = response.WorkflowExecutionId;
 
@@ -1026,26 +986,26 @@ steps:
 
         public void ImagebuilderGetWorkflowStepExecution()
         {
-            #region get-the-runtime-details-of-a-workflow-step
+            #region GetWorkflowStepExecution-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.GetWorkflowStepExecution(new GetWorkflowStepExecutionRequest 
+            var response = client.GetWorkflowStepExecution(new GetWorkflowStepExecutionRequest
             {
                 StepExecutionId = "step-2e6fef0d-657c-4b7e-8706-ff24da9afa01"
             });
 
-            string name = response.Name;
             string action = response.Action;
             string endTime = response.EndTime;
             string imageBuildVersionArn = response.ImageBuildVersionArn;
             string inputs = response.Inputs;
+            string name = response.Name;
             string onFailure = response.OnFailure;
             string outputs = response.Outputs;
             string requestId = response.RequestId;
             string startTime = response.StartTime;
-            string status = response.Status;
+            WorkflowStepExecutionStatus status = response.Status;
             string stepExecutionId = response.StepExecutionId;
-            int timeoutSeconds = response.TimeoutSeconds;
+            int? timeoutSeconds = response.TimeoutSeconds;
             string workflowBuildVersionArn = response.WorkflowBuildVersionArn;
             string workflowExecutionId = response.WorkflowExecutionId;
 
@@ -1054,21 +1014,19 @@ steps:
 
         public void ImagebuilderImportComponent()
         {
-            #region import-a-component-from-a-shell-script
+            #region ImportComponent-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.ImportComponent(new ImportComponentRequest 
+            var response = client.ImportComponent(new ImportComponentRequest
             {
-                Name = "my-example-imported-component",
-                Type = "BUILD",
                 ClientToken = "a1b2c3d4-5678-90ab-cdef-EXAMPLE88888",
-                Data = "sudo yum update -y
-sudo yum -y install my-app
-",
+                Data = "sudo yum update -y\nsudo yum -y install my-app\n",
                 Description = "Installs my application from an imported shell script",
                 Format = "SHELL",
+                Name = "my-example-imported-component",
                 Platform = "Linux",
-                SemanticVersion = "1.0.0"
+                SemanticVersion = "1.0.0",
+                Type = "BUILD"
             });
 
             string clientToken = response.ClientToken;
@@ -1080,14 +1038,14 @@ sudo yum -y install my-app
 
         public void ImagebuilderImportDiskImage()
         {
-            #region import-a-windows-11-iso-disk-image
+            #region ImportDiskImage-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.ImportDiskImage(new ImportDiskImageRequest 
+            var response = client.ImportDiskImage(new ImportDiskImageRequest
             {
-                Name = "my-example-imported-image",
                 ClientToken = "a1b2c3d4-5678-90ab-cdef-EXAMPLE12345",
                 InfrastructureConfigurationArn = "arn:aws:imagebuilder:us-west-2:111122223333:infrastructure-configuration/my-example-infrastructure",
+                Name = "my-example-imported-image",
                 OsVersion = "Microsoft Windows 11",
                 Platform = "Windows",
                 SemanticVersion = "1.0.0",
@@ -1102,13 +1060,13 @@ sudo yum -y install my-app
 
         public void ImagebuilderImportVmImage()
         {
-            #region import-a-virtual-machine-as-an-image-builder-image
+            #region ImportVmImage-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.ImportVmImage(new ImportVmImageRequest 
+            var response = client.ImportVmImage(new ImportVmImageRequest
             {
-                Name = "my-example-imported-image",
                 ClientToken = "a1b2c3d4-5678-90ab-cdef-EXAMPLE00000",
+                Name = "my-example-imported-image",
                 OsVersion = "Amazon Linux 2",
                 Platform = "Linux",
                 SemanticVersion = "1.0.0",
@@ -1124,10 +1082,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderListComponentBuildVersions()
         {
-            #region list-the-build-versions-of-a-component
+            #region ListComponentBuildVersions-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.ListComponentBuildVersions(new ListComponentBuildVersionsRequest 
+            var response = client.ListComponentBuildVersions(new ListComponentBuildVersionsRequest
             {
                 ComponentVersionArn = "arn:aws:imagebuilder:us-west-2:111122223333:component/my-example-component/1.0.0"
             });
@@ -1140,10 +1098,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderListComponents()
         {
-            #region list-components-that-you-own
+            #region ListComponents-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.ListComponents(new ListComponentsRequest 
+            var response = client.ListComponents(new ListComponentsRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -1164,10 +1122,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderListContainerRecipes()
         {
-            #region list-the-container-recipes-you-own
+            #region ListContainerRecipes-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.ListContainerRecipes(new ListContainerRecipesRequest 
+            var response = client.ListContainerRecipes(new ListContainerRecipesRequest
             {
                 Owner = "Self"
             });
@@ -1180,10 +1138,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderListDistributionConfigurations()
         {
-            #region list-distribution-configurations-that-match-a-name-filter
+            #region ListDistributionConfigurations-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.ListDistributionConfigurations(new ListDistributionConfigurationsRequest 
+            var response = client.ListDistributionConfigurations(new ListDistributionConfigurationsRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -1203,10 +1161,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderListImageBuildVersions()
         {
-            #region list-the-build-versions-of-an-image
+            #region ListImageBuildVersions-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.ListImageBuildVersions(new ListImageBuildVersionsRequest 
+            var response = client.ListImageBuildVersions(new ListImageBuildVersionsRequest
             {
                 ImageVersionArn = "arn:aws:imagebuilder:us-west-2:111122223333:image/my-example-recipe/1.0.0"
             });
@@ -1219,10 +1177,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderListImagePackages()
         {
-            #region list-the-packages-in-an-image-build-version
+            #region ListImagePackages-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.ListImagePackages(new ListImagePackagesRequest 
+            var response = client.ListImagePackages(new ListImagePackagesRequest
             {
                 ImageBuildVersionArn = "arn:aws:imagebuilder:us-west-2:111122223333:image/my-example-recipe/1.0.0/1"
             });
@@ -1235,10 +1193,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderListImagePipelineImages()
         {
-            #region list-the-images-that-an-image-pipeline-created
+            #region ListImagePipelineImages-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.ListImagePipelineImages(new ListImagePipelineImagesRequest 
+            var response = client.ListImagePipelineImages(new ListImagePipelineImagesRequest
             {
                 ImagePipelineArn = "arn:aws:imagebuilder:us-west-2:111122223333:image-pipeline/my-example-pipeline"
             });
@@ -1251,10 +1209,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderListImagePipelines()
         {
-            #region list-image-pipelines-filtered-by-name
+            #region ListImagePipelines-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.ListImagePipelines(new ListImagePipelinesRequest 
+            var response = client.ListImagePipelines(new ListImagePipelinesRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -1274,10 +1232,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderListImageRecipes()
         {
-            #region list-the-image-recipes-that-you-own
+            #region ListImageRecipes-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.ListImageRecipes(new ListImageRecipesRequest 
+            var response = client.ListImageRecipes(new ListImageRecipesRequest
             {
                 Owner = "Self"
             });
@@ -1290,10 +1248,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderListImages()
         {
-            #region list-images-that-you-own
+            #region ListImages-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.ListImages(new ListImagesRequest 
+            var response = client.ListImages(new ListImagesRequest
             {
                 ByName = false,
                 Owner = "Self"
@@ -1307,10 +1265,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderListImageScanFindingAggregations()
         {
-            #region list-image-scan-finding-aggregations-for-an-image-pipeline
+            #region ListImageScanFindingAggregations-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.ListImageScanFindingAggregations(new ListImageScanFindingAggregationsRequest 
+            var response = client.ListImageScanFindingAggregations(new ListImageScanFindingAggregationsRequest
             {
                 Filter = new Filter {
                     Name = "imagePipelineArn",
@@ -1328,10 +1286,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderListImageScanFindings()
         {
-            #region list-vulnerability-findings-for-an-image-build
+            #region ListImageScanFindings-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.ListImageScanFindings(new ListImageScanFindingsRequest 
+            var response = client.ListImageScanFindings(new ListImageScanFindingsRequest
             {
                 Filters = new List<ImageScanFindingsFilter> {
                     new ImageScanFindingsFilter {
@@ -1351,10 +1309,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderListInfrastructureConfigurations()
         {
-            #region list-infrastructure-configurations-by-name
+            #region ListInfrastructureConfigurations-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.ListInfrastructureConfigurations(new ListInfrastructureConfigurationsRequest 
+            var response = client.ListInfrastructureConfigurations(new ListInfrastructureConfigurationsRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -1374,10 +1332,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderListLifecycleExecutionResources()
         {
-            #region list-the-resources-that-a-lifecycle-execution-acted-on
+            #region ListLifecycleExecutionResources-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.ListLifecycleExecutionResources(new ListLifecycleExecutionResourcesRequest 
+            var response = client.ListLifecycleExecutionResources(new ListLifecycleExecutionResourcesRequest
             {
                 LifecycleExecutionId = "lce-401aefc3-a829-46f6-8fc2-91497988a503"
             });
@@ -1391,10 +1349,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderListLifecycleExecutions()
         {
-            #region list-lifecycle-executions-for-an-image-build-version
+            #region ListLifecycleExecutions-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.ListLifecycleExecutions(new ListLifecycleExecutionsRequest 
+            var response = client.ListLifecycleExecutions(new ListLifecycleExecutionsRequest
             {
                 ResourceArn = "arn:aws:imagebuilder:us-west-2:111122223333:image/my-example-recipe/1.0.0/1"
             });
@@ -1406,10 +1364,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderListLifecyclePolicies()
         {
-            #region list-enabled-lifecycle-policies
+            #region ListLifecyclePolicies-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.ListLifecyclePolicies(new ListLifecyclePoliciesRequest 
+            var response = client.ListLifecyclePolicies(new ListLifecyclePoliciesRequest
             {
                 Filters = new List<Filter> {
                     new Filter {
@@ -1428,10 +1386,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderListTagsForResource()
         {
-            #region list-the-tags-for-a-resource
+            #region ListTagsForResource-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.ListTagsForResource(new ListTagsForResourceRequest 
+            var response = client.ListTagsForResource(new ListTagsForResourceRequest
             {
                 ResourceArn = "arn:aws:imagebuilder:us-west-2:111122223333:component/my-example-component/1.0.0/1"
             });
@@ -1443,10 +1401,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderListWaitingWorkflowSteps()
         {
-            #region list-workflow-steps-that-are-waiting-for-an-action
+            #region ListWaitingWorkflowSteps-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.ListWaitingWorkflowSteps(new ListWaitingWorkflowStepsRequest 
+            var response = client.ListWaitingWorkflowSteps(new ListWaitingWorkflowStepsRequest
             {
                 MaxResults = 25
             });
@@ -1458,10 +1416,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderListWorkflowBuildVersions()
         {
-            #region list-the-build-versions-of-a-workflow
+            #region ListWorkflowBuildVersions-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.ListWorkflowBuildVersions(new ListWorkflowBuildVersionsRequest 
+            var response = client.ListWorkflowBuildVersions(new ListWorkflowBuildVersionsRequest
             {
                 WorkflowVersionArn = "arn:aws:imagebuilder:us-west-2:111122223333:workflow/build/my-example-workflow/1.0.0"
             });
@@ -1473,10 +1431,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderListWorkflowExecutions()
         {
-            #region list-the-workflow-runtime-instances-for-an-image-build-version
+            #region ListWorkflowExecutions-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.ListWorkflowExecutions(new ListWorkflowExecutionsRequest 
+            var response = client.ListWorkflowExecutions(new ListWorkflowExecutionsRequest
             {
                 ImageBuildVersionArn = "arn:aws:imagebuilder:us-west-2:111122223333:image/my-example-recipe/1.0.0/1"
             });
@@ -1490,10 +1448,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderListWorkflows()
         {
-            #region list-workflows-that-you-own
+            #region ListWorkflows-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.ListWorkflows(new ListWorkflowsRequest 
+            var response = client.ListWorkflows(new ListWorkflowsRequest
             {
                 Owner = "Self"
             });
@@ -1505,10 +1463,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderListWorkflowStepExecutions()
         {
-            #region list-the-steps-that-ran-in-a-workflow-execution
+            #region ListWorkflowStepExecutions-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.ListWorkflowStepExecutions(new ListWorkflowStepExecutionsRequest 
+            var response = client.ListWorkflowStepExecutions(new ListWorkflowStepExecutionsRequest
             {
                 WorkflowExecutionId = "wf-165b1cb6-3a62-4618-a021-94ddcbe32908"
             });
@@ -1524,10 +1482,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderPutComponentPolicy()
         {
-            #region share-a-component-with-another-account
+            #region PutComponentPolicy-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.PutComponentPolicy(new PutComponentPolicyRequest 
+            var response = client.PutComponentPolicy(new PutComponentPolicyRequest
             {
                 ComponentArn = "arn:aws:imagebuilder:us-west-2:111122223333:component/my-shared-component/1.0.0/1",
                 Policy = "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"AWS\": \"arn:aws:iam::444455556666:root\"}, \"Action\": [\"imagebuilder:GetComponent\", \"imagebuilder:ListComponents\"], \"Resource\": [\"arn:aws:imagebuilder:us-west-2:111122223333:component/my-shared-component/1.0.0/1\"]}]}"
@@ -1541,10 +1499,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderPutContainerRecipePolicy()
         {
-            #region share-a-container-recipe-with-another-account
+            #region PutContainerRecipePolicy-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.PutContainerRecipePolicy(new PutContainerRecipePolicyRequest 
+            var response = client.PutContainerRecipePolicy(new PutContainerRecipePolicyRequest
             {
                 ContainerRecipeArn = "arn:aws:imagebuilder:us-west-2:111122223333:container-recipe/my-example-container-recipe-shared/1.0.0",
                 Policy = "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Sid\": \"AllowSharedAccountContainerRecipeAccess\", \"Effect\": \"Allow\", \"Principal\": {\"AWS\": \"arn:aws:iam::444455556666:root\"}, \"Action\": [\"imagebuilder:GetContainerRecipe\", \"imagebuilder:ListContainerRecipes\"], \"Resource\": \"arn:aws:imagebuilder:us-west-2:111122223333:container-recipe/my-example-container-recipe-shared/1.0.0\"}]}"
@@ -1558,10 +1516,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderPutImagePolicy()
         {
-            #region share-an-image-with-another-aws-account
+            #region PutImagePolicy-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.PutImagePolicy(new PutImagePolicyRequest 
+            var response = client.PutImagePolicy(new PutImagePolicyRequest
             {
                 ImageArn = "arn:aws:imagebuilder:us-west-2:111122223333:image/my-example-recipe/1.0.0/1",
                 Policy = "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"AWS\": \"arn:aws:iam::444455556666:root\"}, \"Action\": [\"imagebuilder:GetImage\", \"imagebuilder:ListImages\"], \"Resource\": [\"arn:aws:imagebuilder:us-west-2:111122223333:image/my-example-recipe/1.0.0/1\"]}]}"
@@ -1575,10 +1533,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderPutImageRecipePolicy()
         {
-            #region share-an-image-recipe-with-another-account
+            #region PutImageRecipePolicy-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.PutImageRecipePolicy(new PutImageRecipePolicyRequest 
+            var response = client.PutImageRecipePolicy(new PutImageRecipePolicyRequest
             {
                 ImageRecipeArn = "arn:aws:imagebuilder:us-west-2:111122223333:image-recipe/my-example-recipe/1.0.0",
                 Policy = "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Principal\": {\"AWS\": \"arn:aws:iam::444455556666:root\"}, \"Action\": [\"imagebuilder:GetImageRecipe\", \"imagebuilder:ListImageRecipes\"], \"Resource\": \"arn:aws:imagebuilder:us-west-2:111122223333:image-recipe/my-example-recipe/1.0.0\"}]}"
@@ -1592,10 +1550,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderRetryImage()
         {
-            #region retry-an-image-build
+            #region RetryImage-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.RetryImage(new RetryImageRequest 
+            var response = client.RetryImage(new RetryImageRequest
             {
                 ClientToken = "a1b2c3d4-5678-90ab-cdef-EXAMPLEfffff",
                 ImageBuildVersionArn = "arn:aws:imagebuilder:us-west-2:111122223333:image/my-example-recipe/1.0.0/1"
@@ -1609,10 +1567,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderSendWorkflowStepAction()
         {
-            #region stop-a-workflow-step-that-is-waiting-for-action
+            #region SendWorkflowStepAction-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.SendWorkflowStepAction(new SendWorkflowStepActionRequest 
+            var response = client.SendWorkflowStepAction(new SendWorkflowStepActionRequest
             {
                 Action = "STOP",
                 ClientToken = "a1b2c3d4-5678-90ab-cdef-EXAMPLE67890",
@@ -1629,10 +1587,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderStartImagePipelineExecution()
         {
-            #region start-a-pipeline-build-manually
+            #region StartImagePipelineExecution-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.StartImagePipelineExecution(new StartImagePipelineExecutionRequest 
+            var response = client.StartImagePipelineExecution(new StartImagePipelineExecutionRequest
             {
                 ClientToken = "a1b2c3d4-5678-90ab-cdef-EXAMPLE66666",
                 ImagePipelineArn = "arn:aws:imagebuilder:us-west-2:111122223333:image-pipeline/my-example-pipeline"
@@ -1647,17 +1605,17 @@ sudo yum -y install my-app
 
         public void ImagebuilderStartResourceStateUpdate()
         {
-            #region schedule-an-image-build-version-for-deprecation
+            #region StartResourceStateUpdate-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.StartResourceStateUpdate(new StartResourceStateUpdateRequest 
+            var response = client.StartResourceStateUpdate(new StartResourceStateUpdateRequest
             {
                 ClientToken = "a1b2c3d4-5678-90ab-cdef-EXAMPLE24680",
                 ExecutionRole = "arn:aws:iam::111122223333:role/my-example-state-update-role",
                 IncludeResources = new ResourceStateUpdateIncludeResources { Amis = true },
                 ResourceArn = "arn:aws:imagebuilder:us-west-2:111122223333:image/my-example-recipe/1.0.0/1",
                 State = new ResourceState { Status = "DEPRECATED" },
-                UpdateAt = new DateTime(2026, 9, 11, 9, 20, 0, DateTimeKind.Utc)
+                UpdateAt = new DateTime(2026, 9, 11, 21, 20, 0, DateTimeKind.Utc)
             });
 
             string lifecycleExecutionId = response.LifecycleExecutionId;
@@ -1668,10 +1626,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderTagResource()
         {
-            #region add-tags-to-a-component-build-version
+            #region TagResource-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.TagResource(new TagResourceRequest 
+            var response = client.TagResource(new TagResourceRequest
             {
                 ResourceArn = "arn:aws:imagebuilder:us-west-2:111122223333:component/my-example-tagged-component/1.0.0/1",
                 Tags = new Dictionary<string, string> {
@@ -1686,10 +1644,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderUntagResource()
         {
-            #region remove-a-tag-from-a-resource
+            #region UntagResource-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.UntagResource(new UntagResourceRequest 
+            var response = client.UntagResource(new UntagResourceRequest
             {
                 ResourceArn = "arn:aws:imagebuilder:us-west-2:111122223333:component/my-example-tagged-component/1.0.0/1",
                 TagKeys = new List<string> {
@@ -1703,10 +1661,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderUpdateDistributionConfiguration()
         {
-            #region update-a-distribution-configuration
+            #region UpdateDistributionConfiguration-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.UpdateDistributionConfiguration(new UpdateDistributionConfigurationRequest 
+            var response = client.UpdateDistributionConfiguration(new UpdateDistributionConfigurationRequest
             {
                 ClientToken = "a1b2c3d4-5678-90ab-cdef-EXAMPLEccccc",
                 DistributionConfigurationArn = "arn:aws:imagebuilder:us-west-2:111122223333:distribution-configuration/my-example-distribution",
@@ -1726,10 +1684,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderUpdateImagePipeline()
         {
-            #region update-an-image-pipeline
+            #region UpdateImagePipeline-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.UpdateImagePipeline(new UpdateImagePipelineRequest 
+            var response = client.UpdateImagePipeline(new UpdateImagePipelineRequest
             {
                 ClientToken = "a1b2c3d4-5678-90ab-cdef-EXAMPLEddddd",
                 ImagePipelineArn = "arn:aws:imagebuilder:us-west-2:111122223333:image-pipeline/my-example-pipeline",
@@ -1750,10 +1708,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderUpdateInfrastructureConfiguration()
         {
-            #region update-an-infrastructure-configuration
+            #region UpdateInfrastructureConfiguration-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.UpdateInfrastructureConfiguration(new UpdateInfrastructureConfigurationRequest 
+            var response = client.UpdateInfrastructureConfiguration(new UpdateInfrastructureConfigurationRequest
             {
                 ClientToken = "a1b2c3d4-5678-90ab-cdef-EXAMPLEbbbbb",
                 Description = "An infrastructure configuration for Amazon Linux builds",
@@ -1774,10 +1732,10 @@ sudo yum -y install my-app
 
         public void ImagebuilderUpdateLifecyclePolicy()
         {
-            #region update-a-lifecycle-policy
+            #region UpdateLifecyclePolicy-1
 
             var client = new AmazonImagebuilderClient();
-            var response = client.UpdateLifecyclePolicy(new UpdateLifecyclePolicyRequest 
+            var response = client.UpdateLifecyclePolicy(new UpdateLifecyclePolicyRequest
             {
                 ClientToken = "a1b2c3d4-5678-90ab-cdef-EXAMPLEaaaaa",
                 Description = "Deletes AMI images and their snapshots after 12 months, retaining the 3 most recent",
@@ -1786,17 +1744,17 @@ sudo yum -y install my-app
                 PolicyDetails = new List<LifecyclePolicyDetail> {
                     new LifecyclePolicyDetail {
                         Action = new LifecyclePolicyDetailAction {
-                            Type = "DELETE",
                             IncludeResources = new LifecyclePolicyDetailActionIncludeResources {
                                 Amis = true,
                                 Snapshots = true
-                            }
+                            },
+                            Type = "DELETE"
                         },
                         Filter = new LifecyclePolicyDetailFilter {
-                            Type = "AGE",
-                            Value = 12,
                             RetainAtLeast = 3,
-                            Unit = "MONTHS"
+                            Type = "AGE",
+                            Unit = "MONTHS",
+                            Value = 12
                         }
                     }
                 },
@@ -1812,13 +1770,10 @@ sudo yum -y install my-app
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

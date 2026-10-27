@@ -28,6 +28,10 @@ A **removed** line in generated output is a red flag — investigate it, do not 
 - Namespace structure (`{Namespace}`, `{Namespace}.Model`)
 - `internal bool IsSet{Property}()` per member — the public `AWSSDKUtils.IsPropertySet`
   reflection API and existing marshallers invoke these by name
+- `[InternalsVisibleTo]` grants, from metadata.json `internals-visible-to` (DynamoDBv2 and S3 unit tests
+  reach internals; an entry without its own `PublicKey=` gets the SDK's)
+- The config constructor's region fallback, from metadata.json `default-region` (iam only: a partition-global
+  service still needs a region to sign and resolve an endpoint when the environment supplies none)
 
 ## What Can Differ
 
@@ -51,6 +55,8 @@ Every generated file starts with the full Apache 2.0 license block followed by t
 "Do not modify this file. This file is generated from the {model-filename} service model." notice,
 where `{model-filename}` is the Smithy model file name (e.g. `cloudtrail-data-2021-08-11.normal.json`).
 The exact text lives in `Writers/FileHeader.cs`.
+Core's `.generated.cs` files (below) instead carry C2J's headers: the ASCII-art `FileHeader.WriteCoreLicense`, or
+`FileHeader.WriteLicenseWithNotice` for `InternalSDKUtils.generated.cs`.
 
 ## Naming Rules
 
@@ -149,6 +155,32 @@ Differences from C2J:
 - The writers' own layout follows `CodeWriter` (platform newlines, 2-space XML indent); documentation text
   is written as it is. The docs build parses the XML and left-justifies each region, so the rendered docs
   don't change.
+
+## Core and Extension Files
+
+Each batch run writes Core's repo-level files before the services, byte-identical to what C2J produces (apart from the
+git-ignored nuspec, which C2J rewrites after this generator). C2J still writes them too, and the release runs C2J
+alone for its partitions and endpoints merges, so any change to them has to be made in both generators. From `sdk/src/Core/partitions.json` (`PartitionsManifest`):
+
+- `RegionEndpoint/RegionEndpoint.generated.cs` (`RegionEndpointWriter`): a public `RegionEndpoint` constant per
+  region, skipping each partition's `*-global` pseudo-region. Names upper-case the first dash-separated part and
+  capitalize the rest (`us-east-1` is `USEast1`), keeping the shipped `NorthWest` and `GovCloud` spellings. A
+  private `USEast1Regional` precedes `USEast1` for S3.
+- `Amazon.Runtime/Internal/Endpoints/StandardLibrary/Partition.generated.cs` (`PartitionWriter`): the endpoint
+  rules' partition lookup tables, including the `*-global` regions.
+
+From `_sdk-versions.json` (`CoreVersionWriter`): Core's `Properties/AssemblyInfo.cs`,
+`Amazon.Util/Internal/InternalSDKUtils.generated.cs` and the git-ignored `AWSSDK.Core.nuspec`. `AssemblyInfo.cs`
+shares the services' `FileHeader.WriteAssemblyInfoBody`, and C2J's `CoreAssemblyInfo.tt` matches it. From
+`sdk-default-configuration.json` (`DefaultConfigurationModeWriter`): `Amazon.Runtime/DefaultConfigurationMode.generated.cs`.
+
+Core's files are written unformatted and, as C2J trims them, without a final newline. S3's `S3Enumerations.cs`,
+built from `partitions.json`, stays with C2J until S3 migrates: C2J deletes any file under an unmigrated service's
+`Generated/` folder that it didn't write in that run, and it runs after the Smithy generator.
+
+Each extension under `extensions/src` with a nuspec gets its `ExtensionVersions` entry stamped into the nuspec and
+`Properties/AssemblyInfo.cs` (`ExtensionVersionUpdater`). Those files are hand-written, so they're edited in place;
+C2J's `GeneratorExtensionsDriver` still makes the same edits.
 
 ## Event Streams
 
@@ -258,7 +290,7 @@ internal bool IsSetAuditEvents() => this.AuditEvents != null && (this.AuditEvent
 ## Customizations (`*.customizations.json`)
 
 The .NET-owned override layer (not part of the shared, upstream Smithy model). A hook with a Smithy
-trait equivalent (`deprecatedMessage`, `renameShape`), or a structural edit (a member-keyed `renameShape`), is folded into the model in-memory by
+trait equivalent (`deprecatedMessage`, `renameShape`), or a structural edit (a member-keyed `renameShape`, `exclude`, `useWrappingResult`), is folded into the model in-memory by
 `CustomizationTransform.Apply` before the `ServiceIndex` is built; every other hook is checked by
 `CustomizationTransform` and read from `GenerationContext.Customizations` by shape and member
 name where the member is resolved (`TypeMapper.ResolveMembers`), never stored on a shape. An unknown
@@ -267,7 +299,8 @@ hook key fails deserialization (fail-closed) rather than silently diverging from
 `shapeSubstitutions.renameShape` is applied first, as an entry in the service's `rename` map (the shape ID
 is unchanged, so targets still resolve). Every hook keys a renamed shape by its modeled name. C2J keys a renamed
 structure by its new name, so S3's entries for its renamed structures must be rekeyed on migration. Wire error codes
-keep the modeled name. A model that already renames the shape fails.
+keep the modeled name. A model that already renames the shape fails; so does a name another shape already emits, except
+service, resource and operation shapes, which emit no type.
 A Smithy-only `"Structure$member"` key instead copies that member's target under the new name (QApps: one
 `Action` enum is C2J's `PermissionInputActionEnum` and `PermissionOutputActionEnum`); the original is dropped once
 nothing targets it.
@@ -283,6 +316,22 @@ added to the modeled one. A field the trait already has fails generation.
 `operationModifiers.{Operation}.stopPaginationOnSameToken` stops on a repeated token (CloudWatch Logs `GetLogEvents`).
 Unlike the C2J-inherited hooks above, `paginators` names members as the model does (like `@paginated`), not by their
 emitted name.
+
+Three convenience hooks add hand-picked public members, read from `GenerationContext.Customizations` (not folded into the
+model). A form names members by C# property name (case-insensitive); a stale operation/class/member reference fails
+generation, as the other hooks do (`CustomizationTransform.Validate` for the operation/class key, `ConvenienceMembers.Resolve`
+for a form member). All three carry the member `@documentation` onto the parameters via `DocumentationFormatter.ParamDocFor*`.
+- `noArgOverloads` — parameterless client overloads (sync + async), via `ClientClassWriter`/`ClientInterfaceWriter`.
+- `simpleMethods` — client overloads taking listed request members positionally (sync + async), same writers.
+- `simpleConstructors` — request/structure constructors taking listed members, via `OperationWriter`/`StructureWriter` using
+  `SimpleConstructorWriter` (assigns the property, not C2J's backing field — same constructor signature).
+
+`ServiceGenerator` emits C2J's reflection tests under `UnitTests/Generated/Customizations/` when the hook is present
+(`SimpleConstructorTestsWriter`, `SimpleMethodTestsWriter`); `noArgOverloads` has no generated test.
+`operationModifiers.{Operation}.exclude` unbinds the operation from its service or resource and `shapeModifiers.{Shape}.exclude`
+removes members, so whatever is no longer reachable is not emitted. `useWrappingResult` moves the output under one member,
+`wrappedResultMember`, of a new output structure: the response has a single property of the output's type, paginator paths go
+through it, and the JSON response unmarshaller reads it from the whole body.
 
 - What Smithy supports today is whatever `Generation/Customizations/CustomizationsModel.cs` parses;
   each hook's per-level behavior lives on that record, its `Apply`/`Validate` step, and its lookup.

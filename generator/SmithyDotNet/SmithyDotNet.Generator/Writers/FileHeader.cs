@@ -1,3 +1,5 @@
+using SmithyDotNet.Generator.Generation.ProjectFiles;
+
 namespace SmithyDotNet.Generator.Writers;
 
 /// <summary>
@@ -7,6 +9,9 @@ namespace SmithyDotNet.Generator.Writers;
 /// </summary>
 public static class FileHeader
 {
+    // The public half of sdk/awssdk.dll.snk, which signs every SDK assembly.
+    private const string SdkPublicKey = "0024000004800000940000000602000000240000525341310004000001000100db5f59f098d27276c7833875a6263a3cc74ab17ba9a9df0b52aedbe7252745db7274d5271fd79c1f08f668ecfa8eaab5626fa76adc811d3c8fc55859b0d09d3bc0a84eecd0ba891f2b8a2fc55141cdcc37c2053d53491e650a479967c3622762977900eddbf1252ed08a2413f00a28f3a0752a81203f03ccb7f684db373518b4";
+
     /// <summary>
     /// The default warning codes suppressed in model-level generated files.
     /// </summary>
@@ -150,6 +155,31 @@ public static class FileHeader
     ];
 
     /// <summary>
+    /// Usings for the <c>simpleConstructors</c> tests file. The caller appends the service namespace
+    /// and its <c>.Model</c> namespace.
+    /// </summary>
+    public static IReadOnlyList<string> SimpleConstructorTestsUsings { get; } =
+    [
+        "System.Collections.Generic",
+        "System.IO",
+        "Microsoft.VisualStudio.TestTools.UnitTesting",
+    ];
+
+    /// <summary>
+    /// Usings for the <c>simpleMethods</c> tests file. The caller appends, as a second group, the
+    /// service's <c>.Model</c> namespace and the service namespace.
+    /// </summary>
+    public static IReadOnlyList<string> SimpleMethodTestsUsings { get; } =
+    [
+        "System",
+        "System.Collections.Generic",
+        "System.IO",
+        "System.Linq",
+        "System.Text",
+        "Microsoft.VisualStudio.TestTools.UnitTesting",
+    ];
+
+    /// <summary>
     /// Usings for the auth resolver file: the runtime, auth, and identity namespaces the resolver references.
     /// </summary>
     public static IReadOnlyList<string> AuthResolverUsings { get; } =
@@ -180,6 +210,23 @@ public static class FileHeader
         "Amazon.Runtime.Internal.Util",
         "System.Text.Json",
         "System.Buffers",
+    ];
+
+    /// <summary>
+    /// Usings for restXml request marshaller files.
+    /// </summary>
+    public static IReadOnlyList<string> XmlRequestMarshallerUsings { get; } =
+    [
+        "System",
+        "System.Collections.Generic",
+        "System.Globalization",
+        "System.IO",
+        "System.Text",
+        "System.Xml",
+        "Amazon.Runtime",
+        "Amazon.Runtime.Internal",
+        "Amazon.Runtime.Internal.Transform",
+        "Amazon.Runtime.Internal.Util",
     ];
 
     /// <summary>
@@ -243,8 +290,8 @@ public static class FileHeader
     ];
 
     /// <summary>
-    /// Writes the shared assembly attribute body that appears in both the service and
-    /// code-analysis <c>AssemblyInfo.cs</c> files: the title, configuration, product, company,
+    /// Writes the shared assembly attribute body that appears in the service, code-analysis and Core
+    /// <c>AssemblyInfo.cs</c> files: the title, configuration, product, company,
     /// copyright, trademark, culture, ComVisible, and version attributes. The caller supplies
     /// an <paramref name="assemblyDescription"/> action to emit the description attribute(s),
     /// since the service file uses a platform-conditional <c>#if</c> chain while the
@@ -295,11 +342,51 @@ public static class FileHeader
         writer.WriteLine($"""[assembly: AssemblyFileVersion("{fileVersion}")]""");
     }
 
+    /// <summary>Writes the <c>#if</c> chain giving each target platform its <paramref name="description"/>.</summary>
+    public static void WritePlatformDescriptions(CodeWriter writer, Func<string, string> description)
+    {
+        var platforms = TargetPlatforms.Platforms;
+        for (var i = 0; i < platforms.Count; i++)
+        {
+            var platform = platforms[i];
+            var directive = i == 0 ? "#if" : "#elif";
+            writer.WriteLine($"{directive} {platform.Symbol}");
+            writer.WriteLine($"""[assembly: AssemblyDescription("{description(platform.Label)}")]""");
+        }
+
+        writer.WriteLine("#else");
+        writer.WriteLine("#error Unknown platform constant - unable to set correct AssemblyDescription");
+        writer.WriteLine("#endif");
+    }
+
+    /// <summary>
+    /// Writes an <c>[InternalsVisibleTo]</c> per assembly, signed with the SDK's key unless the entry names its own.
+    /// </summary>
+    public static void WriteInternalsVisibleTo(CodeWriter writer, IReadOnlyList<string> assemblies)
+    {
+        if (assemblies.Count == 0)
+        {
+            return;
+        }
+
+        writer.WriteLine();
+        foreach (var assembly in assemblies)
+        {
+            var target = assembly.Contains("PublicKey=") ? assembly : $"{assembly}, PublicKey={SdkPublicKey}";
+            writer.WriteLine($"""[assembly: InternalsVisibleTo("{target}")]""");
+        }
+        writer.WriteLine();
+    }
+
     /// <summary>
     /// Writes the Apache 2.0 license block and the "do not modify" generation notice,
     /// referencing <paramref name="modelFileName"/>.
     /// </summary>
-    public static void WriteLicense(CodeWriter writer, string modelFileName)
+    public static void WriteLicense(CodeWriter writer, string modelFileName) =>
+        WriteLicenseWithNotice(writer, $"This file is generated from the {modelFileName} service model.");
+
+    /// <summary>Writes the Apache 2.0 license block and a "do not modify" notice ending in <paramref name="notice"/>.</summary>
+    public static void WriteLicenseWithNotice(CodeWriter writer, string notice)
     {
         writer.WriteLine("/*");
         writer.WriteLine(" * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.");
@@ -317,7 +404,35 @@ public static class FileHeader
         writer.WriteLine(" */");
         writer.WriteLine();
         writer.WriteLine("/*");
-        writer.WriteLine($" * Do not modify this file. This file is generated from the {modelFileName} service model.");
+        writer.WriteLine($" * Do not modify this file. {notice}");
+        writer.WriteLine(" */");
+    }
+
+    /// <summary>
+    /// Writes the license header of Core's generated files, which C2J's templates carry and the service files don't.
+    /// It stays while C2J writes the same files, since both outputs must match.
+    /// </summary>
+    public static void WriteCoreLicense(CodeWriter writer)
+    {
+        writer.WriteLine("/*******************************************************************************");
+        writer.WriteLine(" *  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.");
+        writer.WriteLine(""" *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use""");
+        writer.WriteLine(" *  this file except in compliance with the License. A copy of the License is located at");
+        writer.WriteLine(" *");
+        writer.WriteLine(" *  http://aws.amazon.com/apache2.0");
+        writer.WriteLine(" *");
+        writer.WriteLine(""" *  or in the "license" file accompanying this file.""");
+        writer.WriteLine(""" *  This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR""");
+        writer.WriteLine(" *  CONDITIONS OF ANY KIND, either express or implied. See the License for the");
+        writer.WriteLine(" *  specific language governing permissions and limitations under the License.");
+        writer.WriteLine(" * *****************************************************************************");
+        writer.WriteLine(" *    __  _    _  ___");
+        writer.WriteLine(""" *   (  )( \/\/ )/ __)""");
+        writer.WriteLine(""" *   /__\ \    / \__ \""");
+        writer.WriteLine(""" *  (_)(_) \/\/  (___/""");
+        writer.WriteLine(" *");
+        writer.WriteLine(" *  AWS SDK for .NET");
+        writer.WriteLine(" *");
         writer.WriteLine(" */");
     }
 

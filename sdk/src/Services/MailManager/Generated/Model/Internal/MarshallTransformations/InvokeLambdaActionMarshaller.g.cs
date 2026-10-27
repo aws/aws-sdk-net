@@ -1,0 +1,87 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.MailManager.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.MailManager.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// InvokeLambdaAction Marshaller
+    /// </summary>
+    public partial class InvokeLambdaActionMarshaller : IRequestMarshaller<InvokeLambdaAction, CborMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(InvokeLambdaAction requestObject, CborMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetActionFailurePolicy())
+            {
+                context.Writer.WriteTextString("ActionFailurePolicy");
+                context.Writer.WriteTextString(requestObject.ActionFailurePolicy);
+            }
+
+            if (requestObject.IsSetFunctionArn())
+            {
+                context.Writer.WriteTextString("FunctionArn");
+                context.Writer.WriteTextString(requestObject.FunctionArn);
+            }
+
+            if (requestObject.IsSetInvocationType())
+            {
+                context.Writer.WriteTextString("InvocationType");
+                context.Writer.WriteTextString(requestObject.InvocationType);
+            }
+
+            if (requestObject.IsSetRetryTimeMinutes())
+            {
+                context.Writer.WriteTextString("RetryTimeMinutes");
+                context.Writer.WriteInt32(requestObject.RetryTimeMinutes.Value);
+            }
+
+            if (requestObject.IsSetRoleArn())
+            {
+                context.Writer.WriteTextString("RoleArn");
+                context.Writer.WriteTextString(requestObject.RoleArn);
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static InvokeLambdaActionMarshaller Instance = new InvokeLambdaActionMarshaller();
+    }
+}

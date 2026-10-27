@@ -94,8 +94,8 @@ namespace Amazon.CodePipeline.Model
         /// You can migrate (update) a polling pipeline to use event-based change detection. For
         /// example, for a pipeline with a CodeCommit source, we recommend you migrate (update)
         /// your pipeline to use CloudWatch Events. To learn more, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/update-change-detection.html">Migrate
-        /// polling pipelines to use event-based change detection</a> in the <i>CodePipeline User
-        /// Guide</i>.
+        /// polling pipelines to use event-based change detection</a> in the <i> CodePipeline
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         public DateTime? PollingDisabledAt

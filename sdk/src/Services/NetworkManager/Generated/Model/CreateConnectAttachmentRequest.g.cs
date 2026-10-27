@@ -81,6 +81,43 @@ namespace Amazon.NetworkManager.Model
         internal bool IsSetEdgeLocation() => this.EdgeLocation != null;
 
         /// <summary>
+        /// Gets and sets the property NatGatewayRules. 
+        /// <para>
+        /// The NAT rules for the Connect attachment, up to 50 rules.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 50)]
+        public List<NatRuleRequest> NatGatewayRules { get; set; } = AWSConfigs.InitializeCollections ? new List<NatRuleRequest>() : null;
+
+        /// <summary>
+        /// Checks to see if the NatGatewayRules property is set.
+        /// </summary>
+        internal bool IsSetNatGatewayRules() => this.NatGatewayRules != null && (this.NatGatewayRules.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property NatGatewaySupport. 
+        /// <para>
+        /// Specifies whether to enable NAT gateway support on the Connect attachment. NAT is
+        /// supported only on Connect attachments that use the GRE tunnel protocol. Tunnel-less
+        /// Connect attachments aren't supported. To enable NAT gateway support, you must also
+        /// specify at least one NAT rule. If you don't specify a value, NAT gateway support is
+        /// disabled. Only the core network owner can configure NAT on an attachment.
+        /// </para>
+        /// </summary>
+        public NatGatewaySupportValue NatGatewaySupport { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NatGatewaySupport property is set.
+        /// </summary>
+        internal bool IsSetNatGatewaySupport() => this.NatGatewaySupport != null;
+
+        /// <summary>
         /// Gets and sets the property Options. 
         /// <para>
         /// Options for creating an attachment.

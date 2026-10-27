@@ -69,8 +69,8 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace prefix to filter memory records by. Searches for memory records in namespaces
-        /// that start with the provided prefix. Either <c>namespace</c> or <c>namespacePath</c>
+        /// The exact namespace to filter memory records by. Searches for memory records that
+        /// matches the provided namespace value. Either <c>namespace</c> or <c>namespacePath</c>
         /// is required.
         /// </para>
         /// </summary>

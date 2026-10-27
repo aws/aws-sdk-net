@@ -66,6 +66,7 @@ namespace Amazon.RDS.Model
         private bool? _customerOwnedIpEnabled;
         private string _customIamInstanceProfile;
         private DatabaseInsightsMode _databaseInsightsMode;
+        private string _dbCapacityReservationIdentifier;
         private string _dbClusterIdentifier;
         private string _dbInstanceArn;
         private List<DBInstanceAutomatedBackupsReplication> _dbInstanceAutomatedBackupsReplications = AWSConfigs.InitializeCollections ? new List<DBInstanceAutomatedBackupsReplication>() : null;
@@ -625,6 +626,26 @@ namespace Amazon.RDS.Model
         internal bool IsSetDatabaseInsightsMode()
         {
             return this._databaseInsightsMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBCapacityReservationIdentifier. 
+        /// <para>
+        /// The identifier of the DB capacity reservation associated with this DB instance. Amazon
+        /// RDS doesn't return this value if the DB instance doesn't use a DB capacity reservation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=63)]
+        public string DBCapacityReservationIdentifier
+        {
+            get { return this._dbCapacityReservationIdentifier; }
+            set { this._dbCapacityReservationIdentifier = value; }
+        }
+
+        // Check to see if DBCapacityReservationIdentifier property is set
+        internal bool IsSetDBCapacityReservationIdentifier()
+        {
+            return this._dbCapacityReservationIdentifier != null;
         }
 
         /// <summary>

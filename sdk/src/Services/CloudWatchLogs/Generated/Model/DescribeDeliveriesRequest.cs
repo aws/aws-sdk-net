@@ -50,8 +50,34 @@ namespace Amazon.CloudWatchLogs.Model
     /// </summary>
     public partial class DescribeDeliveriesRequest : AmazonCloudWatchLogsRequest
     {
+        private List<string> _deliverySourceNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _limit;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property DeliverySourceNames. 
+        /// <para>
+        /// An array of delivery source names that filters the results to deliveries associated
+        /// with any specified delivery source.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=20)]
+        public List<string> DeliverySourceNames
+        {
+            get { return this._deliverySourceNames; }
+            set { this._deliverySourceNames = value; }
+        }
+
+        // Check to see if DeliverySourceNames property is set
+        internal bool IsSetDeliverySourceNames()
+        {
+            return this._deliverySourceNames != null && (this._deliverySourceNames.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Limit. 

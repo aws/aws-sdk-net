@@ -75,6 +75,17 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDeliverySourceNames())
+            {
+                context.Writer.WritePropertyName("deliverySourceNames");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDeliverySourceNamesListValue in publicRequest.DeliverySourceNames)
+                {
+                        context.Writer.WriteStringValue(publicRequestDeliverySourceNamesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetLimit())
             {
                 context.Writer.WritePropertyName("limit");

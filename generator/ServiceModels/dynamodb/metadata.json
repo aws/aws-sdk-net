@@ -2,5 +2,11 @@
   "active": true,
   "namespace": "Amazon.DynamoDBv2",
   "synopsis": "Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale.",
+  "internals-visible-to": [
+    "AWSSDK.UnitTests.DynamoDBv2",
+    "AWSSDK.UnitTests.Core",
+    "AWSSDK.UnitTests.NetFramework",
+    "AWSSDK.UnitTests.NetStandard"
+  ],
   "legacy-service-id": "DynamoDB"
 }

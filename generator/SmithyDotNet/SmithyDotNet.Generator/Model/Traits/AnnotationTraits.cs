@@ -58,6 +58,14 @@ public static class AnnotationTraits
     /// <remarks><see href="https://smithy.io/2.0/spec/type-refinement-traits.html#sparse-trait" /></remarks>
     public static bool IsSparse(this Shape shape) => shape.Traits.ContainsKey("smithy.api#sparse");
 
+    /// <summary>A collection member whose XML elements are not wrapped in an outer element (restXml).</summary>
+    /// <remarks><see href="https://smithy.io/2.0/spec/protocol-traits.html#xmlflattened-trait" /></remarks>
+    public static bool IsXmlFlattened(this Shape shape) => shape.Traits.ContainsKey("smithy.api#xmlFlattened");
+
+    /// <summary>A structure member serialized as an XML attribute of its enclosing element (restXml).</summary>
+    /// <remarks><see href="https://smithy.io/2.0/spec/protocol-traits.html#xmlattribute-trait" /></remarks>
+    public static bool IsXmlAttribute(this Shape shape) => shape.Traits.ContainsKey("smithy.api#xmlAttribute");
+
     /// <summary>
     /// Whether a blob (or a member targeting one) requires the body length to be known up front,
     /// forbidding chunked Transfer-Encoding. Drives the marshaller to require a seekable stream.

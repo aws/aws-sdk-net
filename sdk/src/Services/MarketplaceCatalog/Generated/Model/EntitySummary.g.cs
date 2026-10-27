@@ -118,6 +118,19 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetEntityType() => this.EntityType != null;
 
         /// <summary>
+        /// Gets and sets the property ExpressPrivateOfferConfigurationSummary. 
+        /// <para>
+        /// An object that contains summary information about the express private offer configuration.
+        /// </para>
+        /// </summary>
+        public ExpressPrivateOfferConfigurationSummary ExpressPrivateOfferConfigurationSummary { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExpressPrivateOfferConfigurationSummary property is set.
+        /// </summary>
+        internal bool IsSetExpressPrivateOfferConfigurationSummary() => this.ExpressPrivateOfferConfigurationSummary != null;
+
+        /// <summary>
         /// Gets and sets the property LastModifiedDate. 
         /// <para>
         /// The last time the entity was published, using ISO 8601 format (2018-02-27T13:45:22Z).
@@ -206,6 +219,20 @@ namespace Amazon.MarketplaceCatalog.Model
         /// Checks to see if the SaaSProductSummary property is set.
         /// </summary>
         internal bool IsSetSaaSProductSummary() => this.SaaSProductSummary != null;
+
+        /// <summary>
+        /// Gets and sets the property SubsidiaryAuthorizationSummary. 
+        /// <para>
+        /// An object that contains summary information about the subsidiary authorization, such
+        /// as its status and authorized resource, when the entity type is <c>SubsidiaryAuthorization</c>.
+        /// </para>
+        /// </summary>
+        public SubsidiaryAuthorizationSummary SubsidiaryAuthorizationSummary { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SubsidiaryAuthorizationSummary property is set.
+        /// </summary>
+        internal bool IsSetSubsidiaryAuthorizationSummary() => this.SubsidiaryAuthorizationSummary != null;
 
         /// <summary>
         /// Gets and sets the property Visibility. 

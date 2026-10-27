@@ -1,0 +1,70 @@
+{
+    "paginators": {
+        "DescribeOrganizationResourceCollectionHealth": {
+            "items": [
+                "CloudFormation",
+                "Account",
+                "Service",
+                "Tags"
+            ]
+        },
+        "DescribeResourceCollectionHealth": {
+            "items": [
+                "CloudFormation",
+                "Service",
+                "Tags"
+            ]
+        },
+        "GetCostEstimation": {
+            "items": [
+                "Costs"
+            ]
+        },
+        "GetResourceCollection": {
+            "items": [
+                "ResourceCollection.CloudFormation.StackNames",
+                "ResourceCollection.Tags"
+            ]
+        },
+        "ListAnomaliesForInsight": {
+            "items": [
+                "ReactiveAnomalies",
+                "ProactiveAnomalies"
+            ]
+        },
+        "ListAnomalousLogGroups": {
+            "items": [
+                "AnomalousLogGroups"
+            ]
+        },
+        "ListInsights": {
+            "items": [
+                "ProactiveInsights",
+                "ReactiveInsights"
+            ]
+        },
+        "ListMonitoredResources": {
+            "items": [
+                "MonitoredResourceIdentifiers"
+            ]
+        },
+        "ListOrganizationInsights": {
+            "items": [
+                "ProactiveInsights",
+                "ReactiveInsights"
+            ]
+        },
+        "SearchInsights": {
+            "items": [
+                "ProactiveInsights",
+                "ReactiveInsights"
+            ]
+        },
+        "SearchOrganizationInsights": {
+            "items": [
+                "ProactiveInsights",
+                "ReactiveInsights"
+            ]
+        }
+    }
+}

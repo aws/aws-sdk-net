@@ -55,7 +55,48 @@ dotnet run -c Release --project sdk/test/Performance/SerdeBenchmarks/SerdeBenchm
 
 # Filter to a specific protocol (serde only)
 dotnet run -c Release --project sdk/test/Performance/SerdeBenchmarks/SerdeBenchmarksRunner/SerdeBenchmarksRunner.csproj -- --suite serde --filter '*AwsQuery*'
+
+# ops/CPU-sec: all 71 --cpu-time cases with the in-process stub (the default transport)
+dotnet run -c Release --project sdk/test/Performance/SerdeBenchmarks/SerdeBenchmarksRunner/SerdeBenchmarksRunner.csproj -- --cpu-time
+
+# ops/CPU-sec through the real HTTP client to a loopback fixture server (see below)
+dotnet run -c Release --project sdk/test/Performance/SerdeBenchmarks/SerdeBenchmarksRunner/SerdeBenchmarksRunner.csproj -- --cpu-time --transport https
 ```
+
+`--cpu-time` options:
+
+| Option | Default | Meaning |
+|---|---|---|
+| `--warmup N` | 100000 | Warmup iterations per case, not measured |
+| `--min-iterations N`, `--min-cpu-seconds S` | 50000, 5 | Stop measuring a case after N iterations or S seconds of process CPU, whichever comes first |
+| `--transport stub\|https` | `stub` | `stub`: the in-process `MockHttpHandler`. `https`: see [HTTPS loopback mode](#https-loopback-mode) |
+| `--https-server IP:PORT` | `127.0.0.1:18443` | The fixture server's HTTPS address (https only; loopback addresses only) |
+| `--fixture-control IP:PORT` | `127.0.0.1:18080` | The fixture server's control address (https only; loopback addresses only) |
+
+An invalid value, or a transport option without `--cpu-time`, exits with code 2. The run banner prints the transport used.
+
+## HTTPS loopback mode
+
+`--cpu-time --transport https` sends every call through a real `SocketsHttpHandler` (HTTP/1.1 over TLS, keep-alive) to a fixture server running as a separate process on the same host, so the server's CPU is not part of the measurement. The server must:
+
+- serve HTTPS (HTTP/1.1, keep-alive) on `--https-server` and answer every request with the current fixture;
+- accept `POST /fixture` on the plaintext `--fixture-control` address, where the body is a complete HTTP/1.1 response (status line, headers, a `Content-Length` that matches the body, the body), and answer `204`.
+
+The smithy-java e2e benchmark `FixtureServer` ([smithy-lang/smithy-java](https://github.com/smithy-lang/smithy-java), `benchmarks/e2e-benchmarks`) implements this. For example, with its jar built from that module (it needs Java 21 or later; its TLS library is bundled for Linux):
+
+```bash
+java -cp smithy-java-e2e-benchmark.jar software.amazon.smithy.java.benchmarks.fixture.FixtureServer \
+  --listen 127.0.0.1:18443 --control 127.0.0.1:18080 &
+dotnet run -c Release --project sdk/test/Performance/SerdeBenchmarks/SerdeBenchmarksRunner/SerdeBenchmarksRunner.csproj -- --cpu-time --transport https
+```
+
+- **Fixtures:** before each case, the harness posts that case's canned response: the stub's status, body and headers, plus `Content-Type`, `Content-Length` and `x-amzn-RequestId`.
+- **Redirect:** only the socket is redirected, via `SocketsHttpHandler.ConnectCallback`. Endpoint resolution, the URL, the `Host` header, TLS SNI and SigV4 signing stay those of the real endpoint.
+- **Client settings:** the `SocketsHttpHandler` and `HttpClient` are configured from the service client's config the same way the SDK configures its own default client. The only differences are the `ConnectCallback` and the certificate check below.
+- **Certificate:** not verified, since the server's certificate is expected to be self-signed.
+- **Fail fast:** the run stops right away if either address doesn't accept connections, or if the control address doesn't answer `204`.
+- **CPU/wall ratio:** above 1 in this mode, because socket I/O completes on other threads.
+- **Platform:** use Linux. On other systems the loopback cost is larger and noisier.
 
 ## Regenerating the benchmark payloads
 

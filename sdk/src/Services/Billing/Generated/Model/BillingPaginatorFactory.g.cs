@@ -73,6 +73,38 @@ namespace Amazon.Billing.Model
         }
 
         /// <summary>
+        /// Paginator for ListContracts operation
+        /// </summary>
+        public IListContractsPaginator ListContracts(ListContractsRequest request)
+        {
+            return new ListContractsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListContractualInvestmentAttestations operation
+        /// </summary>
+        public IListContractualInvestmentAttestationsPaginator ListContractualInvestmentAttestations(ListContractualInvestmentAttestationsRequest request)
+        {
+            return new ListContractualInvestmentAttestationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListContractualInvestmentSummaries operation
+        /// </summary>
+        public IListContractualInvestmentSummariesPaginator ListContractualInvestmentSummaries(ListContractualInvestmentSummariesRequest request)
+        {
+            return new ListContractualInvestmentSummariesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListContractualInvestments operation
+        /// </summary>
+        public IListContractualInvestmentsPaginator ListContractualInvestments(ListContractualInvestmentsRequest request)
+        {
+            return new ListContractualInvestmentsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEnterpriseSupportLinkedAccountCharges operation
         /// </summary>
         public IListEnterpriseSupportLinkedAccountChargesPaginator ListEnterpriseSupportLinkedAccountCharges(ListEnterpriseSupportLinkedAccountChargesRequest request)

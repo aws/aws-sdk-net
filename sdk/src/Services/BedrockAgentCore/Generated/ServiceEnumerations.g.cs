@@ -936,6 +936,52 @@ namespace Amazon.BedrockAgentCore
     }
 
     /// <summary>
+    /// Constants used for properties of type FindingTargetType.
+    /// </summary>
+    public class FindingTargetType : ConstantClass
+    {
+        /// <summary>
+        /// Constant SPAN_ID for FindingTargetType
+        /// </summary>
+        public static readonly FindingTargetType SPAN_ID = new FindingTargetType("SPAN_ID");
+
+        /// <summary>
+        /// Constant SPAN_NAME for FindingTargetType
+        /// </summary>
+        public static readonly FindingTargetType SPAN_NAME = new FindingTargetType("SPAN_NAME");
+
+        /// <summary>
+        /// Constant TRACE_ID for FindingTargetType
+        /// </summary>
+        public static readonly FindingTargetType TRACE_ID = new FindingTargetType("TRACE_ID");
+
+        /// <summary>
+        /// Constructs a custom FindingTargetType for a value not among the defined constants.
+        /// </summary>
+        public FindingTargetType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FindingTargetType FindValue(string value)
+        {
+            return FindValue<FindingTargetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FindingTargetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type HarnessBedrockApiFormat.
     /// </summary>
     public class HarnessBedrockApiFormat : ConstantClass
@@ -1399,6 +1445,42 @@ namespace Amazon.BedrockAgentCore
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator HarnessToolUseType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type InsightType.
+    /// </summary>
+    public class InsightType : ConstantClass
+    {
+        /// <summary>
+        /// Constant FAILURE for InsightType
+        /// </summary>
+        public static readonly InsightType FAILURE = new InsightType("FAILURE");
+
+        /// <summary>
+        /// Constructs a custom InsightType for a value not among the defined constants.
+        /// </summary>
+        public InsightType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InsightType FindValue(string value)
+        {
+            return FindValue<InsightType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InsightType(string value)
         {
             return FindValue(value);
         }

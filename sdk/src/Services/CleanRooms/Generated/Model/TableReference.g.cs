@@ -48,6 +48,19 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetAthena() => this.Athena != null;
 
         /// <summary>
+        /// Gets and sets the property Databricks. 
+        /// <para>
+        ///  If present, a reference to the Databricks table referred to by this table reference.
+        /// </para>
+        /// </summary>
+        public DatabricksTableReference Databricks { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Databricks property is set.
+        /// </summary>
+        internal bool IsSetDatabricks() => this.Databricks != null;
+
+        /// <summary>
         /// Gets and sets the property Glue. 
         /// <para>
         /// If present, a reference to the Glue table referred to by this table reference.

@@ -47,6 +47,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class UpdateContactRequest : AmazonConnectRequest
     {
+        private NullableAdditionalRecipients _additionalRecipients;
         private string _contactId;
         private Endpoint _customerEndpoint;
         private string _description;
@@ -57,6 +58,25 @@ namespace Amazon.Connect.Model
         private Dictionary<string, SegmentAttributeValue> _segmentAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, SegmentAttributeValue>() : null;
         private Endpoint _systemEndpoint;
         private UserInfo _userInfo;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalRecipients. 
+        /// <para>
+        /// The additional recipients of an outbound email. Use this field to update the CC email
+        /// address recipients of a contact. An empty list clears the existing CC recipients.
+        /// </para>
+        /// </summary>
+        public NullableAdditionalRecipients AdditionalRecipients
+        {
+            get { return this._additionalRecipients; }
+            set { this._additionalRecipients = value; }
+        }
+
+        // Check to see if AdditionalRecipients property is set
+        internal bool IsSetAdditionalRecipients()
+        {
+            return this._additionalRecipients != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ContactId. 
@@ -85,6 +105,9 @@ namespace Amazon.Connect.Model
         /// contacts, this is usually the end customer's phone number. This value can only be
         /// updated for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Connect
         /// Customer Contact Lens integration</a> in the <i>Connect Customer Administrator Guide</i>.
+        /// For email contacts with an <c>OUTBOUND</c> or <c>AGENT_REPLY</c> initiation method,
+        /// this value can be updated while the outbound email is still a draft, before you send
+        /// it.
         /// </para>
         /// </summary>
         public Endpoint CustomerEndpoint
@@ -246,6 +269,9 @@ namespace Amazon.Connect.Model
         /// this is the phone number of the external system such as the contact center. This value
         /// can only be updated for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Connect
         /// Customer Contact Lens integration</a> in the <i>Connect Customer Administrator Guide</i>.
+        /// For email contacts with an <c>OUTBOUND</c> or <c>AGENT_REPLY</c> initiation method,
+        /// this value can be updated while the outbound email is still a draft, before you send
+        /// it.
         /// </para>
         /// </summary>
         public Endpoint SystemEndpoint

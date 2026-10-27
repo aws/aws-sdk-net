@@ -97,7 +97,9 @@ namespace Amazon.NetworkManager.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The route type. The possible values are <c>propagated</c> and <c>static</c>.
+        /// The route type. The possible values are <c>PROPAGATED</c>, <c>STATIC</c>, and <c>SYSTEM</c>.
+        /// A <c>SYSTEM</c> route is installed by the core network for the NAT CIDR block of an
+        /// attachment's NAT rule.
         /// </para>
         /// </summary>
         public RouteType Type { get; set; }

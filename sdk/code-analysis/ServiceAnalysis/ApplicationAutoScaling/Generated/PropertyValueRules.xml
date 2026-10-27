@@ -109,7 +109,7 @@
     <property>Amazon.ApplicationAutoScaling.Model.PutScheduledActionRequest.ScheduledActionName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(?!((^[ ]+.*)|(.*([\u0000-\u001f]|[\u007f-\u009f]|[:/|])+.*)|(.*[ ]+$))).+</pattern>
+    <pattern>^(?!((^[ ]+.*)|(.*([\u0000-\u001f]|[\u007f-\u009f]|[:/|])+.*)|(.*[ ]+$))).+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationAutoScaling.Model.PutScheduledActionRequest.Timezone</property>
@@ -309,7 +309,7 @@
     <property>Amazon.ApplicationAutoScaling.Model.ScheduledAction.ScheduledActionName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(?!((^[ ]+.*)|(.*([\u0000-\u001f]|[\u007f-\u009f]|[:/|])+.*)|(.*[ ]+$))).+</pattern>
+    <pattern>^(?!((^[ ]+.*)|(.*([\u0000-\u001f]|[\u007f-\u009f]|[:/|])+.*)|(.*[ ]+$))).+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationAutoScaling.Model.ScheduledAction.Timezone</property>

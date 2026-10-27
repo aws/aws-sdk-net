@@ -44,6 +44,7 @@ public sealed class EventStreamPublisherCodegenTests : IDisposable
         Assert.Contains("public partial class InputStreamPublisherMarshaller : EventStreamPublisher", source);
         Assert.Contains("Func<Task<IInputStreamEvent>> _publisher;", source);
         Assert.Contains("public InputStreamPublisherMarshaller(Func<Task<IInputStreamEvent>> publisher)", source);
+        Assert.DoesNotContain("initial-request", source);
 
         Assert.Contains("if (evnt is ChunkEvent)", source);
         Assert.Contains("ChunkEventMarshaller.Instance.Marshall((ChunkEvent)evnt, context);", source);
@@ -89,8 +90,20 @@ public sealed class EventStreamPublisherCodegenTests : IDisposable
 
         Assert.Contains("public partial class InputStreamPublisherMarshaller : CborEventStreamPublisher", source);
         Assert.Contains("var context = CreateCborMarshallerContext(writer);", source);
+        Assert.Contains("internal InputStreamPublisherMarshaller(Func<Task<IInputStreamEvent>> publisher, byte[] initialRequest) : this(publisher)", source);
+        Assert.Contains("""return CreateEventStreamMessage(eventType: "initial-request", contentType: "application/cbor", marshalledEventHeaders: null, eventPayload: initialRequest);""", source);
         AssertBranch(source, wireName: "audio", contentType: "application/octet-stream", payload: "context.Request.Content");
         AssertBranch(source, wireName: "metadata", contentType: "application/cbor", payload: "writer.Encode()");
+    }
+
+    [Fact]
+    public void PublisherMarshaller_Json_SendsTheInitialRequestFirst()
+    {
+        var context = TestModels.Context("Codegen/awsjson11-model.json");
+        var source = new EventStreamPublisherMarshallerWriter(context, ModelFileName).Write(context.RequestEventStreams.Single(), TestContext.Current.CancellationToken);
+
+        Assert.Contains("internal ChatStreamPublisherMarshaller(Func<Task<IChatStreamEvent>> publisher, byte[] initialRequest) : this(publisher)", source);
+        Assert.Contains("""return CreateEventStreamMessage(eventType: "initial-request", contentType: "application/json", marshalledEventHeaders: null, eventPayload: initialRequest);""", source);
     }
 
     // The class and Func interface follow the union's renamed name; the request marshaller already

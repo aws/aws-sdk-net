@@ -1,4 +1,6 @@
 using System.Text.RegularExpressions;
+using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Writers.Serialization;
 using SmithyDotNet.Generator.Writers.Service;
 using Xunit;
@@ -10,17 +12,40 @@ public class OperationWriterTests
 {
     private const string ModelFileName = "cloudtrail-data-2021-08-11.normal.json";
 
+    private readonly CloudTrailModelFixture _fixture;
     private readonly string _serviceRequest;
     private readonly string _request;
     private readonly string _response;
 
     public OperationWriterTests(CloudTrailModelFixture fixture)
     {
+        _fixture = fixture;
         var writer = new OperationWriter(fixture.Context, ModelFileName);
         var operation = fixture.Context.Operations.Single(o => o.Name == "PutAuditEvents");
         _serviceRequest = writer.WriteServiceRequest(TestContext.Current.CancellationToken);
         _request = writer.WriteRequest(operation, TestContext.Current.CancellationToken);
         _response = writer.WriteResponse(operation, TestContext.Current.CancellationToken);
+    }
+
+    [Fact]
+    public void Request_SimpleConstructors_EmitEmptyAndParameterizedConstructors()
+    {
+        var customizations = new CustomizationsModel
+        {
+            SimpleConstructors = new SimpleConstructorsCustomization { Constructors = { ["PutAuditEventsRequest"] = new SimpleConstructorForms { Forms = [["ChannelArn"]] } } },
+        };
+        var context = new GenerationContext(_fixture.Index, _fixture.Context.Manifest, customizations: customizations);
+        var operation = context.Operations.Single(o => o.Name == "PutAuditEvents");
+        var output = new OperationWriter(context, ModelFileName).WriteRequest(operation, TestContext.Current.CancellationToken);
+
+        // Explicit empty constructor (the parameterized one removes the implicit default).
+        Assert.Contains("public PutAuditEventsRequest() { }", output);
+        // Parameterized constructor sets the property through its public setter.
+        Assert.Contains("public PutAuditEventsRequest(string channelArn)", output);
+        Assert.Contains("this.ChannelArn = channelArn;", output);
+        // Constructor doc summary and the member's carried parameter doc.
+        Assert.Contains("Instantiates PutAuditEventsRequest with the parameterized properties", output);
+        Assert.Contains("""<param name="channelArn">The ARN or ID (the ARN suffix) of a channel.</param>""", output);
     }
 
     [Fact]

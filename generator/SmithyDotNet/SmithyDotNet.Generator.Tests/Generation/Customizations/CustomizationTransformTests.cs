@@ -48,9 +48,12 @@ public class CustomizationTransformTests
     // shapeSubstitutions
 
     // The error AccessDenied emits AccessDeniedException, so renaming it to Grant doesn't clash with the Grant structure.
+    // Operation and resource shapes emit no type, so their names are free as well.
     [Theory]
     [InlineData("Bucket", "S3Bucket")]
     [InlineData("AccessDenied", "Grant")]
+    [InlineData("StorageClass", "ListBuckets")]
+    [InlineData("Grant", "BucketResource")]
     public void ShapeSubstitution_RenamesViaServiceRename(string shape, string newName)
     {
         var model = Apply(Substitute(shape, newName));
@@ -179,16 +182,77 @@ public class CustomizationTransformTests
         Assert.Contains("which the shape already has", ex.Message);
     }
 
-    // operationModifiers and paginators
-
     [Fact]
-    public void OperationModifiers_OnNonOperation_Throws()
+    public void ShapeModifiers_Exclude_RemovesMember()
     {
         var customizations = new CustomizationsModel();
-        customizations.OperationModifiers["Bucket"] = new OperationModifier { DeprecatedMessage = "x" };
+        customizations.ShapeModifiers["Bucket"] = new ShapeModifier { Exclude = ["arn"] };
 
-        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
-        Assert.Contains("not an operation", ex.Message);
+        Assert.Equal(["name", "created"], Structure(Apply(customizations), "Bucket").Members.Keys);
+    }
+
+    [Fact]
+    public void ShapeModifiers_ExcludeUnknownMember_Throws()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ShapeModifiers["Bucket"] = new ShapeModifier { Exclude = ["missing"] };
+
+        var ex = Assert.Throws<GeneratorException>(() => Apply(customizations));
+        Assert.Contains("excludes member 'missing', which the shape does not have", ex.Message);
+    }
+
+    // operationModifiers and paginators
+
+    // ListBuckets is bound to the service; TagBucket and DeleteBucket are a resource's instance and collection operations.
+    [Theory]
+    [InlineData("ListBuckets")]
+    [InlineData("TagBucket")]
+    [InlineData("DeleteBucket")]
+    public void OperationModifiers_Exclude_UnbindsOperation(string operation)
+    {
+        var customizations = new CustomizationsModel();
+        customizations.OperationModifiers[operation] = new OperationModifier { Exclude = true };
+
+        var model = Apply(customizations);
+
+        var id = ShapeId.Parse($"com.example#{operation}");
+        Assert.DoesNotContain(model.Shapes.Values, shape => (shape as ServiceShape)?.Operations.Contains(id) == true || (shape as ResourceShape)?.AllOperations().Contains(id) == true);
+    }
+
+    [Fact]
+    public void OperationModifiers_UseWrappingResult_MovesOutputUnderOneMember()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.OperationModifiers["ListBuckets"] = new OperationModifier { UseWrappingResult = true, WrappedResultShape = "BucketPage", WrappedResultMember = "Page" };
+
+        var model = Apply(customizations);
+
+        var operation = Assert.IsType<OperationShape>(model.Shapes["com.example#ListBuckets"]);
+        var member = Assert.Single(Structure(model, operation.Output.Name).Members);
+        Assert.Equal(("Page", "BucketPage"), (member.Key, member.Value.Target.Name));
+        Assert.False(Structure(model, "BucketPage").IsOutput());
+    }
+
+    [Theory]
+    [InlineData("Bucket", false, false, null, "not an operation")]
+    [InlineData("Orphan", true, false, null, "excludes an operation that no service or resource lists")]
+    [InlineData("ListBuckets", false, true, "Bucket", "wrappedResultShape must name the output, 'BucketPage'")]
+    [InlineData("TagBucket", false, true, "Unit", "wrappedResultShape must name the output, 'Unit'")]
+    [InlineData("ListBuckets", false, false, "BucketPage", "needs both useWrappingResult and a wrappedResultMember")]
+    [InlineData("Orphan", false, true, "Chunk", "'com.example#OrphanWrappedOutput', which is already a shape in the model")]
+    public void OperationModifiers_Invalid_Throws(string operation, bool exclude, bool useWrappingResult, string? wrappedResultShape, string expectedInMessage)
+    {
+        var customizations = new CustomizationsModel();
+        customizations.OperationModifiers[operation] = new OperationModifier
+        {
+            Exclude = exclude,
+            UseWrappingResult = useWrappingResult,
+            WrappedResultShape = wrappedResultShape,
+            WrappedResultMember = wrappedResultShape is null ? null : "Page",
+        };
+
+        var ex = Assert.Throws<GeneratorException>(() => Apply(customizations));
+        Assert.Contains(expectedInMessage, ex.Message);
     }
 
     [Fact]
@@ -244,5 +308,84 @@ public class CustomizationTransformTests
 
         var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
         Assert.Contains(expectedInMessage, ex.Message);
+    }
+
+    // convenience hooks (noArgOverloads / simpleMethods / simpleConstructors)
+
+    [Fact]
+    public void NoArgOverloads_OnNonOperation_Throws()
+    {
+        var customizations = new CustomizationsModel { NoArgOverloads = ["Bucket"] };
+
+        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
+        Assert.Contains("noArgOverloads['Bucket'] targets a shape that is not an operation", ex.Message);
+    }
+
+    [Fact]
+    public void SimpleMethods_OnStaleOperation_Throws()
+    {
+        var customizations = new CustomizationsModel { SimpleMethods = new SimpleMethodsCustomization { Operations = { ["Ghost"] = new SimpleMethodForms() } } };
+
+        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
+        Assert.Contains("simpleMethods['Ghost'] does not match any shape", ex.Message);
+    }
+
+    [Fact]
+    public void SimpleConstructors_OnStaleClass_Throws()
+    {
+        var customizations = new CustomizationsModel { SimpleConstructors = new SimpleConstructorsCustomization { Constructors = { ["Ghost"] = new SimpleConstructorForms() } } };
+
+        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
+        Assert.Contains("simpleConstructors['Ghost'] does not match any shape", ex.Message);
+    }
+
+    [Fact]
+    public void SimpleConstructors_OnExistingStructure_Validates()
+    {
+        var customizations = new CustomizationsModel { SimpleConstructors = new SimpleConstructorsCustomization { Constructors = { ["Bucket"] = new SimpleConstructorForms() } } };
+
+        // Existence check passes; no throw.
+        ApplyAndValidate(customizations);
+    }
+
+    // A shared customizations file serves every API version; a key that is a structure in one version can be a
+    // map/list here. A present-but-non-structure key is tolerated (the writers skip it), unlike a stale one.
+    [Fact]
+    public void SimpleConstructors_OnPresentNonStructure_Tolerated()
+    {
+        var customizations = new CustomizationsModel { SimpleConstructors = new SimpleConstructorsCustomization { Constructors = { ["LegacyId"] = new SimpleConstructorForms() } } };
+
+        ApplyAndValidate(customizations);
+    }
+
+    // generateUnmarshaller
+
+    [Theory]
+    [InlineData("NoSuchShape", "generateUnmarshaller['NoSuchShape'] does not match any shape")]
+    [InlineData("LegacyId", "generateUnmarshaller['LegacyId'] targets a shape that is not a structure")]
+    [InlineData("Dup", "generateUnmarshaller['Dup'] matches more than one shape")]
+    public void GenerateUnmarshaller_Invalid_Throws(string shape, string expectedInMessage)
+    {
+        var customizations = new CustomizationsModel();
+        customizations.GenerateUnmarshaller.Add(shape);
+
+        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
+        Assert.Contains(expectedInMessage, ex.Message);
+    }
+
+    // skipUriPropertyValidation
+
+    [Theory]
+    // PermissionInput's action is an @httpLabel, so this fails on the name rather than on a model with no labels.
+    [InlineData("Missing")]
+    // Bucket's name is a member but not an @httpLabel.
+    [InlineData("Name")]
+    public void SkipUriPropertyValidation_NotALabelProperty_Throws(string propertyName)
+    {
+        var customizations = new CustomizationsModel();
+        customizations.SkipUriPropertyValidation.Add(propertyName);
+
+        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
+        Assert.Contains($"skipUriPropertyValidation['{propertyName}'] is not the property of any @httpLabel member.", ex.Message);
     }
 }

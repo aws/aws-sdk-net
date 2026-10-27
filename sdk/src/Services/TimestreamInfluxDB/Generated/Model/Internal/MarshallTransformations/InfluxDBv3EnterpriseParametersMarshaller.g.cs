@@ -429,6 +429,28 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetSnapshotDuration())
+            {
+                context.Writer.WritePropertyName("snapshotDuration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SnapshotDuration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetSnapshotSize())
+            {
+                context.Writer.WritePropertyName("snapshotSize");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PercentOrAbsoluteLongMarshaller.Instance;
+                marshaller.Marshall(requestObject.SnapshotSize, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetSnapshottedWalFilesToKeep())
             {
                 context.Writer.WritePropertyName("snapshottedWalFilesToKeep");
@@ -445,6 +467,18 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("tableIndexCacheMaxEntries");
                 context.Writer.WriteNumberValue(requestObject.TableIndexCacheMaxEntries.Value);
+            }
+
+            if (requestObject.IsSetUpgradePachaTree())
+            {
+                context.Writer.WritePropertyName("upgradePachaTree");
+                context.Writer.WriteBooleanValue(requestObject.UpgradePachaTree.Value);
+            }
+
+            if (requestObject.IsSetWalBufferSize())
+            {
+                context.Writer.WritePropertyName("walBufferSize");
+                context.Writer.WriteNumberValue(requestObject.WalBufferSize.Value);
             }
 
             if (requestObject.IsSetWalMaxWriteBufferSize())

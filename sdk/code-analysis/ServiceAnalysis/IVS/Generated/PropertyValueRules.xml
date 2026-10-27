@@ -13,6 +13,12 @@
     <pattern>^^$|^arn:aws:ivs:[a-z0-9-]+:[0-9]+:ad-configuration/[a-zA-Z0-9-]+$$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVS.Model.CreateChannelRequest.FailoverSlateConfigurationArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^^$|^arn:aws:ivs:[a-z0-9-]+:[0-9]+:failover-slate-configuration/[a-zA-Z0-9-]+$$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVS.Model.CreateChannelRequest.Name</property>
     <min>0</min>
     <max>128</max>
@@ -29,6 +35,27 @@
     <min>0</min>
     <max>128</max>
     <pattern>^^$|^arn:aws:ivs:[a-z0-9-]+:[0-9]+:recording-configuration/[a-zA-Z0-9-]+$$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.CreateFailoverSlateConfigurationRequest.ActivationThresholdSeconds</property>
+    <min>3</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.CreateFailoverSlateConfigurationRequest.MaxSlateDisplaySeconds</property>
+    <min>60</min>
+    <max>180</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.CreateFailoverSlateConfigurationRequest.MinSlateDisplaySeconds</property>
+    <min>3</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.CreateFailoverSlateConfigurationRequest.Name</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVS.Model.CreatePlaybackRestrictionPolicyRequest.Name</property>
@@ -66,6 +93,12 @@
     <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVS.Model.DeleteFailoverSlateConfigurationRequest.Arn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:failover-slate-configuration/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVS.Model.DeletePlaybackKeyPairRequest.Arn</property>
     <min>1</min>
     <max>128</max>
@@ -100,6 +133,12 @@
     <min>1</min>
     <max>128</max>
     <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.GetFailoverSlateConfigurationRequest.Arn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:failover-slate-configuration/[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVS.Model.GetPlaybackKeyPairRequest.Arn</property>
@@ -190,6 +229,12 @@
     <pattern>^^$|^arn:aws:ivs:[a-z0-9-]+:[0-9]+:ad-configuration/[a-zA-Z0-9-]+$$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVS.Model.ListChannelsRequest.FilterByFailoverSlateConfigurationArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^^$|^arn:aws:ivs:[a-z0-9-]+:[0-9]+:failover-slate-configuration/[a-zA-Z0-9-]+$$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVS.Model.ListChannelsRequest.FilterByName</property>
     <min>0</min>
     <max>128</max>
@@ -220,6 +265,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVS.Model.ListChannelsResponse.NextToken</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>^[a-zA-Z0-9+/=_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.ListFailoverSlateConfigurationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.ListFailoverSlateConfigurationsRequest.NextToken</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>^[a-zA-Z0-9+/=_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.ListFailoverSlateConfigurationsResponse.NextToken</property>
     <min>0</min>
     <max>1024</max>
     <pattern>^[a-zA-Z0-9+/=_-]*$</pattern>
@@ -412,6 +474,12 @@
     <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVS.Model.UpdateChannelRequest.FailoverSlateConfigurationArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^^$|^arn:aws:ivs:[a-z0-9-]+:[0-9]+:failover-slate-configuration/[a-zA-Z0-9-]+$$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVS.Model.UpdateChannelRequest.Name</property>
     <min>0</min>
     <max>128</max>
@@ -428,6 +496,33 @@
     <min>0</min>
     <max>128</max>
     <pattern>^^$|^arn:aws:ivs:[a-z0-9-]+:[0-9]+:recording-configuration/[a-zA-Z0-9-]+$$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.UpdateFailoverSlateConfigurationRequest.ActivationThresholdSeconds</property>
+    <min>3</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.UpdateFailoverSlateConfigurationRequest.Arn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:failover-slate-configuration/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.UpdateFailoverSlateConfigurationRequest.MaxSlateDisplaySeconds</property>
+    <min>60</min>
+    <max>180</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.UpdateFailoverSlateConfigurationRequest.MinSlateDisplaySeconds</property>
+    <min>3</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.UpdateFailoverSlateConfigurationRequest.Name</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVS.Model.UpdatePlaybackRestrictionPolicyRequest.Arn</property>
@@ -510,6 +605,12 @@
     <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVS.Model.Channel.FailoverSlateConfigurationArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^^$|^arn:aws:ivs:[a-z0-9-]+:[0-9]+:failover-slate-configuration/[a-zA-Z0-9-]+$$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVS.Model.Channel.Name</property>
     <min>0</min>
     <max>128</max>
@@ -540,6 +641,12 @@
     <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVS.Model.ChannelSummary.FailoverSlateConfigurationArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^^$|^arn:aws:ivs:[a-z0-9-]+:[0-9]+:failover-slate-configuration/[a-zA-Z0-9-]+$$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVS.Model.ChannelSummary.Name</property>
     <min>0</min>
     <max>128</max>
@@ -556,6 +663,60 @@
     <min>0</min>
     <max>128</max>
     <pattern>^^$|^arn:aws:ivs:[a-z0-9-]+:[0-9]+:recording-configuration/[a-zA-Z0-9-]+$$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.FailoverSlateConfiguration.ActivationThresholdSeconds</property>
+    <min>3</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.FailoverSlateConfiguration.Arn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:failover-slate-configuration/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.FailoverSlateConfiguration.MaxSlateDisplaySeconds</property>
+    <min>60</min>
+    <max>180</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.FailoverSlateConfiguration.MinSlateDisplaySeconds</property>
+    <min>3</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.FailoverSlateConfiguration.Name</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.FailoverSlateConfigurationSummary.ActivationThresholdSeconds</property>
+    <min>3</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.FailoverSlateConfigurationSummary.Arn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:failover-slate-configuration/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.FailoverSlateConfigurationSummary.MaxSlateDisplaySeconds</property>
+    <min>60</min>
+    <max>180</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.FailoverSlateConfigurationSummary.MinSlateDisplaySeconds</property>
+    <min>3</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.FailoverSlateConfigurationSummary.Name</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVS.Model.MediaTailorPlaybackConfiguration.PlaybackConfigurationArn</property>

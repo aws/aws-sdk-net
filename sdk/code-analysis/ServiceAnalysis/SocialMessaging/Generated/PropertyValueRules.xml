@@ -657,6 +657,11 @@
     <pattern>^[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.LinkedWhatsAppBusinessAccount.DirectSendEnforcementStatus</property>
+    <min>1</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SocialMessaging.Model.LinkedWhatsAppBusinessAccount.Id</property>
     <min>1</min>
     <max>115</max>
@@ -695,6 +700,11 @@
     <min>10</min>
     <max>20</max>
     <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.LinkedWhatsAppBusinessAccountSummary.DirectSendEnforcementStatus</property>
+    <min>1</min>
+    <max>30</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.LinkedWhatsAppBusinessAccountSummary.Id</property>
@@ -898,6 +908,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.TemplateSummary.CorrectCategory</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SocialMessaging.Model.TemplateSummary.MetaTemplateId</property>
     <min>1</min>
     <max>100</max>
@@ -920,6 +935,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.TemplateSummary.TemplateQualityScore</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.TemplateSummary.TemplateSource</property>
     <min>1</min>
     <max>20</max>
   </property-value-rule>

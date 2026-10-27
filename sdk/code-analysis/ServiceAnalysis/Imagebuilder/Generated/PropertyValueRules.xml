@@ -50,7 +50,7 @@
     <property>Amazon.Imagebuilder.Model.CreateComponentRequest.Data</property>
     <min>1</min>
     <max>16000</max>
-    <pattern>[^\x00]+</pattern>
+    <pattern>^[^\x00]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateComponentRequest.Description</property>
@@ -98,7 +98,7 @@
     <property>Amazon.Imagebuilder.Model.CreateContainerRecipeRequest.DockerfileTemplateData</property>
     <min>1</min>
     <max>16000</max>
-    <pattern>[^\x00]+</pattern>
+    <pattern>^[^\x00]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateContainerRecipeRequest.ImageOsVersionOverride</property>
@@ -378,6 +378,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateLifecyclePolicyResponse.LifecyclePolicyArn</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>^arn:aws(?:-[a-z]+)*:imagebuilder:[a-z]{2,}(?:-[a-z]+)+-[0-9]+:(?:[0-9]{12}|aws):lifecycle-policy/[a-z0-9-_]+$</pattern>
   </property-value-rule>
@@ -395,7 +396,7 @@
     <property>Amazon.Imagebuilder.Model.CreateWorkflowRequest.Data</property>
     <min>1</min>
     <max>16000</max>
-    <pattern>[^\x00]+</pattern>
+    <pattern>^[^\x00]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateWorkflowRequest.Description</property>
@@ -422,6 +423,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateWorkflowResponse.WorkflowBuildVersionArn</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>^arn:aws(?:-[a-z]+)*:imagebuilder:[a-z]{2,}(?:-[a-z]+)+-[0-9]+:(?:[0-9]{12}|aws(?:-[a-z-]+)?):workflow/(build|test|distribution)/[a-z0-9-_]+/[0-9]+\.[0-9]+\.[0-9]+/[0-9]+$</pattern>
   </property-value-rule>
@@ -518,21 +520,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.DeleteLifecyclePolicyRequest.LifecyclePolicyArn</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>^arn:aws(?:-[a-z]+)*:imagebuilder:[a-z]{2,}(?:-[a-z]+)+-[0-9]+:(?:[0-9]{12}|aws):lifecycle-policy/[a-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.DeleteLifecyclePolicyResponse.LifecyclePolicyArn</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>^arn:aws(?:-[a-z]+)*:imagebuilder:[a-z]{2,}(?:-[a-z]+)+-[0-9]+:(?:[0-9]{12}|aws):lifecycle-policy/[a-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.DeleteWorkflowRequest.WorkflowBuildVersionArn</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>^arn:aws(?:-[a-z]+)*:imagebuilder:[a-z]{2,}(?:-[a-z]+)+-[0-9]+:(?:[0-9]{12}|aws(?:-[a-z-]+)?):workflow/(build|test|distribution)/[a-z0-9-_]+/[0-9]+\.[0-9]+\.[0-9]+/[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.DeleteWorkflowResponse.WorkflowBuildVersionArn</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>^arn:aws(?:-[a-z]+)*:imagebuilder:[a-z]{2,}(?:-[a-z]+)+-[0-9]+:(?:[0-9]{12}|aws(?:-[a-z-]+)?):workflow/(build|test|distribution)/[a-z0-9-_]+/[0-9]+\.[0-9]+\.[0-9]+/[0-9]+$</pattern>
   </property-value-rule>
@@ -690,6 +696,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.GetLifecyclePolicyRequest.LifecyclePolicyArn</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>^arn:aws(?:-[a-z]+)*:imagebuilder:[a-z]{2,}(?:-[a-z]+)+-[0-9]+:(?:[0-9]{12}|aws):lifecycle-policy/[a-z0-9-_]+$</pattern>
   </property-value-rule>
@@ -699,6 +706,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.GetMarketplaceResourceRequest.ResourceLocation</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>^s3://[^/]+/.+[^/]$</pattern>
   </property-value-rule>
@@ -746,6 +754,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.GetWorkflowExecutionResponse.WorkflowBuildVersionArn</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>^arn:aws(?:-[a-z]+)*:imagebuilder:[a-z]{2,}(?:-[a-z]+)+-[0-9]+:(?:[0-9]{12}|aws(?:-[a-z-]+)?):workflow/(build|test|distribution)/[a-z0-9-_]+/[0-9]+\.[0-9]+\.[0-9]+/[0-9]+$</pattern>
   </property-value-rule>
@@ -808,6 +817,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.GetWorkflowStepExecutionResponse.WorkflowBuildVersionArn</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>^arn:aws(?:-[a-z]+)*:imagebuilder:[a-z]{2,}(?:-[a-z]+)+-[0-9]+:(?:[0-9]{12}|aws(?:-[a-z-]+)?):workflow/(build|test|distribution)/[a-z0-9-_]+/[0-9]+\.[0-9]+\.[0-9]+/[0-9]+$</pattern>
   </property-value-rule>
@@ -1143,26 +1153,6 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Imagebuilder.Model.ListImagesRequest.MaxResults</property>
-    <min>1</min>
-    <max>25</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Imagebuilder.Model.ListImagesRequest.NextToken</property>
-    <min>1</min>
-    <max>65535</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Imagebuilder.Model.ListImagesResponse.NextToken</property>
-    <min>1</min>
-    <max>65535</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Imagebuilder.Model.ListImagesResponse.RequestId</property>
-    <min>1</min>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListImageScanFindingAggregationsRequest.NextToken</property>
     <min>1</min>
     <max>65535</max>
@@ -1199,6 +1189,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListImageScanFindingsResponse.RequestId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ListImagesRequest.MaxResults</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ListImagesRequest.NextToken</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ListImagesResponse.NextToken</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ListImagesResponse.RequestId</property>
     <min>1</min>
     <max>1024</max>
   </property-value-rule>
@@ -1356,21 +1366,6 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Imagebuilder.Model.ListWorkflowsRequest.MaxResults</property>
-    <min>1</min>
-    <max>25</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Imagebuilder.Model.ListWorkflowsRequest.NextToken</property>
-    <min>1</min>
-    <max>65535</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Imagebuilder.Model.ListWorkflowsResponse.NextToken</property>
-    <min>1</min>
-    <max>65535</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListWorkflowStepExecutionsRequest.MaxResults</property>
     <min>1</min>
     <max>25</max>
@@ -1405,12 +1400,28 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListWorkflowStepExecutionsResponse.WorkflowBuildVersionArn</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>^arn:aws(?:-[a-z]+)*:imagebuilder:[a-z]{2,}(?:-[a-z]+)+-[0-9]+:(?:[0-9]{12}|aws(?:-[a-z-]+)?):workflow/(build|test|distribution)/[a-z0-9-_]+/[0-9]+\.[0-9]+\.[0-9]+/[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListWorkflowStepExecutionsResponse.WorkflowExecutionId</property>
     <pattern>^wf-[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ListWorkflowsRequest.MaxResults</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ListWorkflowsRequest.NextToken</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ListWorkflowsResponse.NextToken</property>
+    <min>1</min>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.PutComponentPolicyRequest.ComponentArn</property>
@@ -1731,11 +1742,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.UpdateLifecyclePolicyRequest.LifecyclePolicyArn</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>^arn:aws(?:-[a-z]+)*:imagebuilder:[a-z]{2,}(?:-[a-z]+)+-[0-9]+:(?:[0-9]{12}|aws):lifecycle-policy/[a-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.UpdateLifecyclePolicyResponse.LifecyclePolicyArn</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>^arn:aws(?:-[a-z]+)*:imagebuilder:[a-z]{2,}(?:-[a-z]+)+-[0-9]+:(?:[0-9]{12}|aws):lifecycle-policy/[a-z0-9-_]+$</pattern>
   </property-value-rule>
@@ -1795,6 +1808,16 @@
     <property>Amazon.Imagebuilder.Model.AutoDisablePolicy.FailureCount</property>
     <min>1</min>
     <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.AutoScalingGroupConfiguration.CapacityWaitTimeoutSeconds</property>
+    <min>0</min>
+    <max>3600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.AutoScalingGroupConfiguration.Name</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.Component.Arn</property>
@@ -1865,19 +1888,19 @@
     <property>Amazon.Imagebuilder.Model.ComponentParameter.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[^\x00]+</pattern>
+    <pattern>^[^\x00]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ComponentParameterDetail.Description</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[^\x00]+</pattern>
+    <pattern>^[^\x00]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ComponentParameterDetail.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[^\x00]+</pattern>
+    <pattern>^[^\x00]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ComponentParameterDetail.Type</property>
@@ -2215,6 +2238,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ImageFailureContext.WorkflowArn</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>^arn:aws(?:-[a-z]+)*:imagebuilder:[a-z]{2,}(?:-[a-z]+)+-[0-9]+:(?:[0-9]{12}|aws(?:-[a-z-]+)?):workflow/(build|test|distribution)/[a-z0-9-_]+/[0-9]+\.[0-9]+\.[0-9]+/[0-9]+$</pattern>
   </property-value-rule>
@@ -2504,7 +2528,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.InstanceMetadataOptions.HttpTokens</property>
-    <pattern>optional|required</pattern>
+    <pattern>^optional|required$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.LatestVersionReferences.LatestMajorVersionArn</property>
@@ -2536,6 +2560,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.LifecycleExecution.LifecyclePolicyArn</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>^arn:aws(?:-[a-z]+)*:imagebuilder:[a-z]{2,}(?:-[a-z]+)+-[0-9]+:(?:[0-9]{12}|aws):lifecycle-policy/[a-z0-9-_]+$</pattern>
   </property-value-rule>
@@ -2576,6 +2601,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.LifecyclePolicy.Arn</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>^arn:aws(?:-[a-z]+)*:imagebuilder:[a-z]{2,}(?:-[a-z]+)+-[0-9]+:(?:[0-9]{12}|aws):lifecycle-policy/[a-z0-9-_]+$</pattern>
   </property-value-rule>
@@ -2619,6 +2645,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.LifecyclePolicySummary.Arn</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>^arn:aws(?:-[a-z]+)*:imagebuilder:[a-z]{2,}(?:-[a-z]+)+-[0-9]+:(?:[0-9]{12}|aws):lifecycle-policy/[a-z0-9-_]+$</pattern>
   </property-value-rule>
@@ -2746,7 +2773,7 @@
     <property>Amazon.Imagebuilder.Model.Schedule.Timezone</property>
     <min>3</min>
     <max>100</max>
-    <pattern>[a-zA-Z0-9]{2,}(?:\/[a-zA-Z0-9-_+]+)*</pattern>
+    <pattern>^[a-zA-Z0-9]{2,}(?:\/[a-zA-Z0-9-_+]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.SsmParameterConfiguration.AmiAccountId</property>
@@ -2810,6 +2837,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.Workflow.Arn</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>^arn:aws(?:-[a-z]+)*:imagebuilder:[a-z]{2,}(?:-[a-z]+)+-[0-9]+:(?:[0-9]{12}|aws(?:-[a-z-]+)?):workflow/(build|test|distribution)/[a-z0-9-_]+/[0-9]+\.[0-9]+\.[0-9]+/[0-9]+$</pattern>
   </property-value-rule>
@@ -2864,6 +2892,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.WorkflowExecutionMetadata.WorkflowBuildVersionArn</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>^arn:aws(?:-[a-z]+)*:imagebuilder:[a-z]{2,}(?:-[a-z]+)+-[0-9]+:(?:[0-9]{12}|aws(?:-[a-z-]+)?):workflow/(build|test|distribution)/[a-z0-9-_]+/[0-9]+\.[0-9]+\.[0-9]+/[0-9]+$</pattern>
   </property-value-rule>
@@ -2875,19 +2904,19 @@
     <property>Amazon.Imagebuilder.Model.WorkflowParameter.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[^\x00]+</pattern>
+    <pattern>^[^\x00]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.WorkflowParameterDetail.Description</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>[^\x00]+</pattern>
+    <pattern>^[^\x00]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.WorkflowParameterDetail.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[^\x00]+</pattern>
+    <pattern>^[^\x00]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.WorkflowParameterDetail.Type</property>
@@ -2918,6 +2947,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.WorkflowStepExecution.WorkflowBuildVersionArn</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>^arn:aws(?:-[a-z]+)*:imagebuilder:[a-z]{2,}(?:-[a-z]+)+-[0-9]+:(?:[0-9]{12}|aws(?:-[a-z-]+)?):workflow/(build|test|distribution)/[a-z0-9-_]+/[0-9]+\.[0-9]+\.[0-9]+/[0-9]+$</pattern>
   </property-value-rule>
@@ -2957,6 +2987,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.WorkflowSummary.Arn</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>^arn:aws(?:-[a-z]+)*:imagebuilder:[a-z]{2,}(?:-[a-z]+)+-[0-9]+:(?:[0-9]{12}|aws(?:-[a-z-]+)?):workflow/(build|test|distribution)/[a-z0-9-_]+/[0-9]+\.[0-9]+\.[0-9]+/[0-9]+$</pattern>
   </property-value-rule>

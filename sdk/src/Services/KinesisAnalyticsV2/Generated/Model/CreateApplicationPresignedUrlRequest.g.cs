@@ -1,0 +1,90 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.KinesisAnalyticsV2.Model
+{
+    /// <summary>
+    /// Container for the parameters to the CreateApplicationPresignedUrl operation. Creates
+    /// and returns a URL that you can use to connect to an application's extension. <para>
+    /// The IAM role or user used to call this API defines the permissions to access the extension.
+    /// After the presigned URL is created, no additional permission is required to access
+    /// this URL. IAM authorization policies for this API are also enforced for every HTTP
+    /// request that attempts to connect to the extension. </para> <para> You control the
+    /// amount of time that the URL will be valid using the <c>SessionExpirationDurationInSeconds</c>
+    /// parameter. If you do not provide this parameter, the returned URL is valid for twelve
+    /// hours. </para> <note> <para> The URL that you get from a call to CreateApplicationPresignedUrl
+    /// must be used within 3 minutes to be valid. If you first try to use the URL after the
+    /// 3-minute limit expires, the service returns an HTTP 403 Forbidden error. </para> </note>
+    /// </summary>
+    public partial class CreateApplicationPresignedUrlRequest : AmazonKinesisAnalyticsV2Request
+    {
+        /// <summary>
+        /// Gets and sets the property ApplicationName. 
+        /// <para>
+        /// The name of the application.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 128)]
+        public string ApplicationName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ApplicationName property is set.
+        /// </summary>
+        internal bool IsSetApplicationName() => this.ApplicationName != null;
+
+        /// <summary>
+        /// Gets and sets the property SessionExpirationDurationInSeconds. 
+        /// <para>
+        /// The duration in seconds for which the returned URL will be valid.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1800, Max = 43200)]
+        public long? SessionExpirationDurationInSeconds { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SessionExpirationDurationInSeconds property is set.
+        /// </summary>
+        internal bool IsSetSessionExpirationDurationInSeconds() => this.SessionExpirationDurationInSeconds.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property UrlType. 
+        /// <para>
+        /// The type of the extension for which to create and return a URL. Currently, the only
+        /// valid extension URL type is <c>FLINK_DASHBOARD_URL</c>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public UrlType UrlType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UrlType property is set.
+        /// </summary>
+        internal bool IsSetUrlType() => this.UrlType != null;
+    }
+}

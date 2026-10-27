@@ -1,0 +1,70 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.ResourceGroupsTaggingAPI.Model
+{
+    /// <summary>
+    /// The metadata that you apply to Amazon Web Services resources to help you categorize
+    /// and organize them. Each tag consists of a key and a value, both of which you define.
+    /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+    /// Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
+    /// </summary>
+    public partial class Tag
+    {
+        /// <summary>
+        /// Gets and sets the property Key. 
+        /// <para>
+        /// One part of a key-value pair that makes up a tag. A key is a general label that acts
+        /// like a category for more specific tag values.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 128)]
+        public string Key { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Key property is set.
+        /// </summary>
+        internal bool IsSetKey() => this.Key != null;
+
+        /// <summary>
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// One part of a key-value pair that make up a tag. A value acts as a descriptor within
+        /// a tag category (key). The value can be empty or null.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 0, Max = 256)]
+        public string Value { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Value property is set.
+        /// </summary>
+        internal bool IsSetValue() => this.Value != null;
+    }
+}

@@ -158,7 +158,7 @@ namespace Amazon.ManagedGrafana.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+        ///  Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
         /// </para>
         ///  </note>
         /// </summary>
@@ -177,7 +177,7 @@ namespace Amazon.ManagedGrafana.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+        ///  Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
         /// </para>
         ///  </note>
         /// </summary>
@@ -283,7 +283,7 @@ namespace Amazon.ManagedGrafana.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+        ///  Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
         /// </para>
         ///  </note>
         /// </summary>
@@ -416,9 +416,9 @@ namespace Amazon.ManagedGrafana.Model
         /// href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing
         /// permissions for data sources and notification channels</a>. For more information about
         /// the roles and permissions that must be managed for customer managed workspaces, see
-        /// <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon
-        /// Managed Grafana permissions and policies for Amazon Web Services data sources and
-        /// notification channels</a> 
+        /// <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">
+        /// Amazon Managed Grafana permissions and policies for Amazon Web Services data sources
+        /// and notification channels</a> 
         /// </para>
         /// </summary>
         public PermissionType PermissionType { get; set; }

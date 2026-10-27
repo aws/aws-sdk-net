@@ -92,6 +92,24 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetCodecSpecification() => this.CodecSpecification != null;
 
         /// <summary>
+        /// Gets and sets the property DashAdaptationSetGrouping. Specify additional criteria
+        /// for partitioning video outputs into separate AdaptationSets. These criteria are applied
+        /// on top of the grouping produced by DashManifestStyle.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> DashAdaptationSetGrouping { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the DashAdaptationSetGrouping property is set.
+        /// </summary>
+        internal bool IsSetDashAdaptationSetGrouping() => this.DashAdaptationSetGrouping != null && (this.DashAdaptationSetGrouping.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property DashIFrameTrickPlayNameModifier. Specify whether MediaConvert
         /// generates I-frame only video segments for DASH trick play, also known as trick mode.
         /// When specified, the I-frame only video segments are included within an additional

@@ -65,6 +65,36 @@ namespace Amazon.SocialMessaging.Model
         internal bool IsSetDatasetId() => this.DatasetId != null;
 
         /// <summary>
+        /// Gets and sets the property DirectSendEnforcementStatus. 
+        /// <para>
+        /// The Direct Send enforcement status for the WhatsApp Business Account. Enforcement
+        /// applies when an account repeatedly sends messages in a category that does not match
+        /// the content. This field is not present when no enforcement is active.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 30)]
+        public string DirectSendEnforcementStatus { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DirectSendEnforcementStatus property is set.
+        /// </summary>
+        internal bool IsSetDirectSendEnforcementStatus() => this.DirectSendEnforcementStatus != null;
+
+        /// <summary>
+        /// Gets and sets the property DirectSendEnforcementStatusExpiresAt. 
+        /// <para>
+        /// The time when the current Direct Send enforcement is expected to lift. This field
+        /// is not present for permanent enforcement or when no enforcement is active.
+        /// </para>
+        /// </summary>
+        public DateTime? DirectSendEnforcementStatusExpiresAt { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DirectSendEnforcementStatusExpiresAt property is set.
+        /// </summary>
+        internal bool IsSetDirectSendEnforcementStatusExpiresAt() => this.DirectSendEnforcementStatusExpiresAt.HasValue;
+
+        /// <summary>
         /// Gets and sets the property EventDestinations. 
         /// <para>
         /// The event destinations for the linked WhatsApp Business Account.

@@ -38,6 +38,7 @@ namespace Amazon.CloudFront.Model
         private string _arn;
         private DateTime? _createdTime;
         private string _id;
+        private VpcIpAddressType _ipAddressType;
         private DateTime? _lastModifiedTime;
         private string _name;
         private string _originEndpointArn;
@@ -116,6 +117,25 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type of the CloudFront VPC origin. Valid values are <c>ipv4</c> and
+        /// <c>dualstack</c>. IPv6-only is not supported for VPC origins.
+        /// </para>
+        /// </summary>
+        public VpcIpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
         }
 
         /// <summary>

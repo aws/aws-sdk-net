@@ -145,6 +145,22 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
+        /// Paginator for ListRetrievalInstructionVersions operation
+        /// </summary>
+        public IListRetrievalInstructionVersionsPaginator ListRetrievalInstructionVersions(ListRetrievalInstructionVersionsRequest request)
+        {
+            return new ListRetrievalInstructionVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRetrievalInstructions operation
+        /// </summary>
+        public IListRetrievalInstructionsPaginator ListRetrievalInstructions(ListRetrievalInstructionsRequest request)
+        {
+            return new ListRetrievalInstructionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListVpcConfigurations operation
         /// </summary>
         public IListVpcConfigurationsPaginator ListVpcConfigurations(ListVpcConfigurationsRequest request)

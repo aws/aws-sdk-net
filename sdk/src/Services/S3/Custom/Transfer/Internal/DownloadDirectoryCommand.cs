@@ -44,6 +44,7 @@ namespace Amazon.S3.Transfer.Internal
         private readonly bool _useMultipartDownload;
         int _totalNumberOfFilesToDownload;
         int _numberOfFilesDownloaded;
+        int _numberOfFilesSuccessfullyDownloaded;
         long _totalBytes;
         long _transferredBytes;        
         string _currentFile;
@@ -63,7 +64,7 @@ namespace Amazon.S3.Transfer.Internal
                 response, 
                 Interlocked.Read(ref _transferredBytes), 
                 _totalBytes, 
-                _numberOfFilesDownloaded, 
+                _numberOfFilesSuccessfullyDownloaded, 
                 _totalNumberOfFilesToDownload);
             _request.OnRaiseDownloadDirectoryCompletedEvent(transferCompletedEventArgs);
         }
@@ -74,7 +75,7 @@ namespace Amazon.S3.Transfer.Internal
                 _request, 
                 Interlocked.Read(ref _transferredBytes), 
                 _totalBytes, 
-                _numberOfFilesDownloaded, 
+                _numberOfFilesSuccessfullyDownloaded, 
                 _totalNumberOfFilesToDownload);
             _request.OnRaiseDownloadDirectoryFailedEvent(eventArgs);
         }

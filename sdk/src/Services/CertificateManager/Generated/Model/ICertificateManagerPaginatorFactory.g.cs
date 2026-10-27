@@ -1,0 +1,77 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.CertificateManager.Model
+{
+    /// <summary>
+    /// Paginators for the CertificateManager service
+    /// </summary>
+    public interface ICertificateManagerPaginatorFactory
+    {
+        /// <summary>
+        /// Paginator for ListAcmeAccounts operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListAcmeAccountsPaginator ListAcmeAccounts(ListAcmeAccountsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAcmeDomainValidations operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListAcmeDomainValidationsPaginator ListAcmeDomainValidations(ListAcmeDomainValidationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAcmeEndpoints operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListAcmeEndpointsPaginator ListAcmeEndpoints(ListAcmeEndpointsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAcmeExternalAccountBindings operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListAcmeExternalAccountBindingsPaginator ListAcmeExternalAccountBindings(ListAcmeExternalAccountBindingsRequest request);
+
+        /// <summary>
+        /// Paginator for ListCertificateDomainValidations operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxItems", OutputToken = ["NextToken"])]
+        IListCertificateDomainValidationsPaginator ListCertificateDomainValidations(ListCertificateDomainValidationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListCertificates operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxItems", OutputToken = ["NextToken"])]
+        IListCertificatesPaginator ListCertificates(ListCertificatesRequest request);
+
+        /// <summary>
+        /// Paginator for SearchCertificates operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        ISearchCertificatesPaginator SearchCertificates(SearchCertificatesRequest request);
+    }
+}

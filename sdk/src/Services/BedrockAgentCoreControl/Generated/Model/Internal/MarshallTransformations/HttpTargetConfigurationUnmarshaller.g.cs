@@ -1,0 +1,87 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.BedrockAgentCoreControl.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for HttpTargetConfiguration Object
+    /// </summary>
+    public partial class HttpTargetConfigurationUnmarshaller : IJsonUnmarshaller<HttpTargetConfiguration, JsonUnmarshallerContext>
+    {
+        /// <summary>
+        /// Unmarshall the response from the service to the response class.
+        /// </summary>
+        /// <returns>The unmarshalled object</returns>
+        public HttpTargetConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        {
+            var unmarshalledObject = new HttpTargetConfiguration();
+            if (context.IsEmptyResponse) return null;
+
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) return null;
+
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth, ref reader))
+            {
+                if (context.TestExpression("agentcoreRuntime", targetDepth, ref reader))
+                {
+                    var unmarshaller = RuntimeTargetConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.AgentcoreRuntime = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("connector", targetDepth, ref reader))
+                {
+                    var unmarshaller = HttpConnectorTargetConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.Connector = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("passthrough", targetDepth, ref reader))
+                {
+                    var unmarshaller = PassthroughTargetConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.Passthrough = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+            }
+            return unmarshalledObject;
+        }
+
+        private static HttpTargetConfigurationUnmarshaller _instance = new HttpTargetConfigurationUnmarshaller();
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static HttpTargetConfigurationUnmarshaller Instance => _instance;
+    }
+}

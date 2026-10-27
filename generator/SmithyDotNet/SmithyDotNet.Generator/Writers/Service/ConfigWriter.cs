@@ -120,9 +120,17 @@ public sealed class ConfigWriter(GenerationContext context, string modelFileName
         writer.OpenBlock($"    : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider({context.ClientName}DefaultConfiguration.GetAllConfigurations()))", () =>
         {
             writer.WriteLine($"base.ServiceId = {CodeWriter.Literal(context.SdkId)};");
+
             // AuthenticationServiceName is always present (EndpointPrefix is required and is the
             // fallback), so it is emitted unconditionally.
             writer.WriteLine($"this.AuthenticationServiceName = {CodeWriter.Literal(context.AuthenticationServiceName)};");
+
+            if (context.Metadata?.DefaultRegion is { } defaultRegion)
+            {
+                writer.WriteLine("var region = FallbackRegionFactory.GetRegionEndpoint(false);");
+                writer.WriteLine($"this.RegionEndpoint = region ?? RegionEndpoint.{defaultRegion};");
+            }
+
             if (context.HasEndpointRuleSet)
             {
                 writer.WriteLine($"this.EndpointProvider = new {context.ClientName}EndpointProvider();");

@@ -72,5 +72,31 @@ namespace Amazon.ARCRegionswitch.Model
         /// Checks to see if the ExternalId property is set.
         /// </summary>
         internal bool IsSetExternalId() => this.ExternalId != null;
+
+        /// <summary>
+        /// Gets and sets the property Payload. 
+        /// <para>
+        /// The JSON payload to send to the Lambda function invocation. If you don't specify a
+        /// payload, Region switch invokes the function with only the execution metadata.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you provide a JSON object, Region switch merges execution metadata keys (<c>InvokedBy</c>,
+        /// <c>PlanArn</c>, <c>ExecutionId</c>, <c>StepName</c>) into the top level. If one of
+        /// your keys has the same name as a metadata key, your key takes precedence.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you provide any other JSON type (string, number, boolean, or array), Region switch
+        /// forwards it to the Lambda function unchanged, without adding metadata.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true, Min = 1, Max = 786432)]
+        public string Payload { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Payload property is set.
+        /// </summary>
+        internal bool IsSetPayload() => this.Payload != null;
     }
 }

@@ -2,33 +2,37 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.AssociateConfigurationItemsToApplicationRequest.ApplicationConfigurationId</property>
+    <min>0</min>
     <max>200</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.CreateApplicationRequest.Description</property>
+    <min>0</min>
     <max>1000</max>
-    <pattern>(^$|[\s\S]*\S[\s\S]*)</pattern>
+    <pattern>^(^$|[\s\S]*\S[\s\S]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.CreateApplicationRequest.Name</property>
+    <min>0</min>
     <max>127</max>
-    <pattern>[\s\S]*\S[\s\S]*</pattern>
+    <pattern>^[\s\S]*\S[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.CreateApplicationRequest.Wave</property>
     <min>0</min>
     <max>256</max>
-    <pattern>^($|[^\s\x00]( *[^\s\x00])*$)</pattern>
+    <pattern>^($|[^\s\x00]( *[^\s\x00])*$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.CreateApplicationResponse.ConfigurationId</property>
+    <min>0</min>
     <max>10000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.DescribeBatchDeleteConfigurationTaskRequest.TaskId</property>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.DescribeContinuousExportsRequest.MaxResults</property>
@@ -42,42 +46,49 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.DisassociateConfigurationItemsFromApplicationRequest.ApplicationConfigurationId</property>
+    <min>0</min>
     <max>200</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.ExportConfigurationsResponse.ExportId</property>
+    <min>0</min>
     <max>200</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.ListServerNeighborsRequest.ConfigurationId</property>
+    <min>0</min>
     <max>200</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.ListServerNeighborsRequest.NextToken</property>
+    <min>0</min>
     <max>10000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.ListServerNeighborsResponse.NextToken</property>
+    <min>0</min>
     <max>10000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.StartBatchDeleteConfigurationTaskResponse.TaskId</property>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.StartContinuousExportResponse.ExportId</property>
+    <min>0</min>
     <max>200</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.StartExportTaskResponse.ExportId</property>
+    <min>0</min>
     <max>200</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.StartImportTaskRequest.ClientRequestToken</property>
@@ -88,183 +99,209 @@
     <property>Amazon.ApplicationDiscoveryService.Model.StartImportTaskRequest.ImportUrl</property>
     <min>1</min>
     <max>4000</max>
-    <pattern>\S+://\S+/[\s\S]*\S[\s\S]*</pattern>
+    <pattern>^\S+://\S+/[\s\S]*\S[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.StartImportTaskRequest.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[\s\S]*\S[\s\S]*</pattern>
+    <pattern>^[\s\S]*\S[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.StopContinuousExportRequest.ExportId</property>
+    <min>0</min>
     <max>200</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.UpdateApplicationRequest.ConfigurationId</property>
+    <min>0</min>
     <max>200</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.UpdateApplicationRequest.Description</property>
+    <min>0</min>
     <max>1000</max>
-    <pattern>(^$|[\s\S]*\S[\s\S]*)</pattern>
+    <pattern>^(^$|[\s\S]*\S[\s\S]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.UpdateApplicationRequest.Name</property>
+    <min>0</min>
     <max>127</max>
-    <pattern>[\s\S]*\S[\s\S]*</pattern>
+    <pattern>^[\s\S]*\S[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.UpdateApplicationRequest.Wave</property>
     <min>0</min>
     <max>256</max>
-    <pattern>^($|[^\s\x00]( *[^\s\x00])*$)</pattern>
+    <pattern>^($|[^\s\x00]( *[^\s\x00])*$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.AgentConfigurationStatus.AgentId</property>
+    <min>0</min>
     <max>10000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.AgentConfigurationStatus.Description</property>
+    <min>0</min>
     <max>10000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.AgentInfo.AgentId</property>
     <min>10</min>
     <max>20</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.AgentInfo.AgentType</property>
+    <min>0</min>
     <max>10000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.AgentInfo.CollectionStatus</property>
+    <min>0</min>
     <max>10000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.AgentInfo.ConnectorId</property>
+    <min>0</min>
     <max>10000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.AgentInfo.HostName</property>
+    <min>0</min>
     <max>10000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.AgentInfo.LastHealthPingTime</property>
+    <min>0</min>
     <max>10000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.AgentInfo.RegisteredTime</property>
+    <min>0</min>
     <max>10000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.AgentInfo.Version</property>
+    <min>0</min>
     <max>10000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.AgentNetworkInfo.IpAddress</property>
+    <min>0</min>
     <max>10000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.AgentNetworkInfo.MacAddress</property>
+    <min>0</min>
     <max>10000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.BatchDeleteAgentError.AgentId</property>
     <min>10</min>
     <max>20</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.BatchDeleteAgentError.ErrorMessage</property>
+    <min>0</min>
     <max>10000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.BatchDeleteConfigurationTask.TaskId</property>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.BatchDeleteImportDataError.ImportTaskId</property>
+    <min>0</min>
     <max>200</max>
     <pattern>^import-task-[a-fA-F0-9]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.ConfigurationTag.ConfigurationId</property>
+    <min>0</min>
     <max>200</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.ContinuousExportDescription.ExportId</property>
+    <min>0</min>
     <max>200</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.ContinuousExportDescription.StatusDetail</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[\s\S]*\S[\s\S]*</pattern>
+    <pattern>^[\s\S]*\S[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.DeleteAgent.AgentId</property>
     <min>10</min>
     <max>20</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.DeletionWarning.ConfigurationId</property>
+    <min>0</min>
     <max>200</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.Ec2RecommendationsExportPreferences.PreferredRegion</property>
     <min>1</min>
     <max>30</max>
-    <pattern>[a-z]{2}-[a-z\-]+-[0-9]+</pattern>
+    <pattern>^[a-z]{2}-[a-z\-]+-[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.ExportFilter.Condition</property>
+    <min>0</min>
     <max>200</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.ExportFilter.Name</property>
+    <min>0</min>
     <max>1000</max>
-    <pattern>[\s\S]*\S[\s\S]*</pattern>
+    <pattern>^[\s\S]*\S[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.ExportInfo.ExportId</property>
+    <min>0</min>
     <max>200</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.FailedConfiguration.ConfigurationId</property>
+    <min>0</min>
     <max>200</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.Filter.Condition</property>
+    <min>0</min>
     <max>200</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.Filter.Name</property>
+    <min>0</min>
     <max>10000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.ImportTask.ClientRequestToken</property>
@@ -273,6 +310,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.ImportTask.ImportTaskId</property>
+    <min>0</min>
     <max>200</max>
     <pattern>^import-task-[a-fA-F0-9]{32}$</pattern>
   </property-value-rule>
@@ -280,38 +318,43 @@
     <property>Amazon.ApplicationDiscoveryService.Model.ImportTask.ImportUrl</property>
     <min>1</min>
     <max>4000</max>
-    <pattern>\S+://\S+/[\s\S]*\S[\s\S]*</pattern>
+    <pattern>^\S+://\S+/[\s\S]*\S[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.ImportTask.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[\s\S]*\S[\s\S]*</pattern>
+    <pattern>^[\s\S]*\S[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.NeighborConnectionDetail.DestinationServerId</property>
+    <min>0</min>
     <max>200</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.NeighborConnectionDetail.SourceServerId</property>
+    <min>0</min>
     <max>200</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.NeighborConnectionDetail.TransportProtocol</property>
+    <min>0</min>
     <max>10000</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.OrderByElement.FieldName</property>
+    <min>0</min>
     <max>1000</max>
-    <pattern>[\s\S]*\S[\s\S]*</pattern>
+    <pattern>^[\s\S]*\S[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.TagFilter.Name</property>
+    <min>0</min>
     <max>1000</max>
-    <pattern>[\s\S]*\S[\s\S]*</pattern>
+    <pattern>^[\s\S]*\S[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.UsageMetricBasis.Name</property>

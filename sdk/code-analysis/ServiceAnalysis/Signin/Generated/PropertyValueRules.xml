@@ -2,7 +2,7 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.Signin.Model.CreateOAuth2TokenWithIAMRequest.GrantType</property>
-    <pattern>client_credentials</pattern>
+    <pattern>^client_credentials$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.CreateOAuth2TokenWithIAMRequest.Resource</property>
@@ -21,61 +21,107 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.CreateOAuth2TokenWithIAMResponse.TokenType</property>
-    <pattern>Bearer</pattern>
+    <pattern>^Bearer$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.CreateOAuth2TokenWithTokenExchangeRequest.GrantType</property>
+    <pattern>^urn:ietf:params:oauth:grant-type:token-exchange$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.CreateOAuth2TokenWithTokenExchangeRequest.Resource</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.CreateOAuth2TokenWithTokenExchangeRequest.Scope</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.CreateOAuth2TokenWithTokenExchangeRequest.SubjectToken</property>
+    <min>4</min>
+    <max>20000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.CreateOAuth2TokenWithTokenExchangeRequest.SubjectTokenType</property>
+    <pattern>^urn:ietf:params:oauth:token-type:.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.CreateOAuth2TokenWithTokenExchangeResponse.AccessToken</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.CreateOAuth2TokenWithTokenExchangeResponse.ExpiresIn</property>
+    <min>1</min>
+    <max>3600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.CreateOAuth2TokenWithTokenExchangeResponse.IssuedTokenType</property>
+    <pattern>^urn:ietf:params:oauth:token-type:access_token$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.CreateOAuth2TokenWithTokenExchangeResponse.TokenType</property>
+    <pattern>^Bearer$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.DeleteConsoleAuthorizationConfigurationRequest.TargetId</property>
     <min>12</min>
     <max>32</max>
-    <pattern>(\d{12}|o-[a-z0-9]{10}|r-[0-9a-z]{4,32})</pattern>
+    <pattern>^(\d{12}|o-[a-z0-9]{10}|r-[0-9a-z]{4,32})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.DeleteConsoleAuthorizationConfigurationResponse.TargetId</property>
     <min>12</min>
     <max>32</max>
-    <pattern>(\d{12}|o-[a-z0-9]{10}|r-[0-9a-z]{4,32})</pattern>
+    <pattern>^(\d{12}|o-[a-z0-9]{10}|r-[0-9a-z]{4,32})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.DeleteResourcePermissionStatementRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[!-~]+</pattern>
+    <pattern>^[!-~]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.DeleteResourcePermissionStatementRequest.StatementId</property>
-    <pattern>[A-Za-z0-9+/]{64}=?</pattern>
+    <pattern>^[A-Za-z0-9+/]{64}=?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.GetConsoleAuthorizationConfigurationRequest.TargetId</property>
     <min>12</min>
     <max>32</max>
-    <pattern>(\d{12}|o-[a-z0-9]{10}|r-[0-9a-z]{4,32})</pattern>
+    <pattern>^(\d{12}|o-[a-z0-9]{10}|r-[0-9a-z]{4,32})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.GetConsoleAuthorizationConfigurationResponse.TargetId</property>
     <min>12</min>
     <max>32</max>
-    <pattern>(\d{12}|o-[a-z0-9]{10}|r-[0-9a-z]{4,32})</pattern>
+    <pattern>^(\d{12}|o-[a-z0-9]{10}|r-[0-9a-z]{4,32})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.IntrospectOAuth2TokenWithIAMRequest.Token</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>ASO[AR][A-Za-z0-9+/=_\-]+</pattern>
+    <pattern>^ASO[AR][A-Za-z0-9+/=_\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.IntrospectOAuth2TokenWithIAMRequest.TokenTypeHint</property>
-    <pattern>(access_token|refresh_token)</pattern>
+    <pattern>^(access_token|refresh_token)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.IntrospectOAuth2TokenWithIAMResponse.AccountId</property>
     <min>12</min>
     <max>12</max>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.IntrospectOAuth2TokenWithIAMResponse.Resource</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.IntrospectOAuth2TokenWithIAMResponse.TokenType</property>
-    <pattern>(access_token|refresh_token)</pattern>
+    <pattern>^(access_token|refresh_token)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.ListResourcePermissionStatementsRequest.MaxResults</property>
@@ -86,67 +132,67 @@
     <property>Amazon.Signin.Model.ListResourcePermissionStatementsRequest.NextToken</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>[-a-zA-Z0-9+=/_]*</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.ListResourcePermissionStatementsResponse.NextToken</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>[-a-zA-Z0-9+=/_]*</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.PutConsoleAuthorizationConfigurationRequest.TargetId</property>
     <min>12</min>
     <max>32</max>
-    <pattern>(\d{12}|o-[a-z0-9]{10}|r-[0-9a-z]{4,32})</pattern>
+    <pattern>^(\d{12}|o-[a-z0-9]{10}|r-[0-9a-z]{4,32})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.PutConsoleAuthorizationConfigurationResponse.TargetId</property>
     <min>12</min>
     <max>32</max>
-    <pattern>(\d{12}|o-[a-z0-9]{10}|r-[0-9a-z]{4,32})</pattern>
+    <pattern>^(\d{12}|o-[a-z0-9]{10}|r-[0-9a-z]{4,32})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.PutResourcePermissionStatementRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[!-~]+</pattern>
+    <pattern>^[!-~]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.PutResourcePermissionStatementRequest.ConsoleSourceVpce</property>
-    <pattern>vpce-[a-z0-9]{8,20}</pattern>
+    <pattern>^vpce-[a-z0-9]{8,20}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.PutResourcePermissionStatementRequest.ExcludedPrincipal</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws:((iam::[0-9]{12}:role/[a-zA-Z0-9_+=,.@-]{1,64})|(iam::[0-9]{12}:user/[a-zA-Z0-9_+=,.@-]{1,64})|(sts::[0-9]{12}:federated-user/[a-zA-Z0-9_+=,.@-]{2,193})|(iam::[0-9]{12}:root))</pattern>
+    <pattern>^arn:aws:((iam::[0-9]{12}:role/[a-zA-Z0-9_+=,.@-]{1,64})|(iam::[0-9]{12}:user/[a-zA-Z0-9_+=,.@-]{1,64})|(sts::[0-9]{12}:federated-user/[a-zA-Z0-9_+=,.@-]{2,193})|(iam::[0-9]{12}:root))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.PutResourcePermissionStatementRequest.RequestedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+)+-\d+</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+)+-\d+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.PutResourcePermissionStatementRequest.SigninSourceVpce</property>
-    <pattern>vpce-[a-z0-9]{8,20}</pattern>
+    <pattern>^vpce-[a-z0-9]{8,20}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.PutResourcePermissionStatementRequest.SourceVpc</property>
-    <pattern>vpc-([0-9a-f]{8}|[0-9a-f]{17})</pattern>
+    <pattern>^vpc-([0-9a-f]{8}|[0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.PutResourcePermissionStatementResponse.StatementId</property>
-    <pattern>[A-Za-z0-9+/]{64}=?</pattern>
+    <pattern>^[A-Za-z0-9+/]{64}=?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.RevokeOAuth2TokenWithIAMRequest.Token</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>ASOR[A-Za-z0-9+/=_\-]+</pattern>
+    <pattern>^ASOR[A-Za-z0-9+/=_\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.CreateOAuth2TokenRequestBody.ClientId</property>
-    <pattern>arn:aws:signin:::devtools/(cross-device|same-device)</pattern>
+    <pattern>^arn:aws:signin:::devtools/(cross-device|same-device)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.CreateOAuth2TokenRequestBody.Code</property>
@@ -157,11 +203,11 @@
     <property>Amazon.Signin.Model.CreateOAuth2TokenRequestBody.CodeVerifier</property>
     <min>43</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9\-._~]+</pattern>
+    <pattern>^[A-Za-z0-9\-._~]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.CreateOAuth2TokenRequestBody.GrantType</property>
-    <pattern>(authorization_code|refresh_token)</pattern>
+    <pattern>^(authorization_code|refresh_token)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.CreateOAuth2TokenRequestBody.RedirectUri</property>
@@ -190,10 +236,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.CreateOAuth2TokenResponseBody.TokenType</property>
-    <pattern>aws_sigv4</pattern>
+    <pattern>^aws_sigv4$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.PermissionStatementSummary.Sid</property>
-    <pattern>[A-Za-z0-9+/]{64}=?</pattern>
+    <pattern>^[A-Za-z0-9+/]{64}=?$</pattern>
   </property-value-rule>
 </property-value-rules>

@@ -67,6 +67,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ReplicationGroupId", StringUtils.FromString(publicRequest.ReplicationGroupId));
                 }
+                if(publicRequest.IsSetServerlessCacheName())
+                {
+                    request.Parameters.Add("ServerlessCacheName", StringUtils.FromString(publicRequest.ServerlessCacheName));
+                }
             }
 
 #if !NETFRAMEWORK

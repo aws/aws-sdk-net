@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,15 +14,15 @@ namespace AWSSDKDocSamples.Amazon.Pinpoint.Generated
     {
         public void PinpointGetJourneyRunExecutionActivityMetrics()
         {
-            #region to-get-the-activity-execution-metrics-for-a-journey-run
+            #region GetJourneyRunExecutionActivityMetrics-1
 
             var client = new AmazonPinpointClient();
-            var response = client.GetJourneyRunExecutionActivityMetrics(new GetJourneyRunExecutionActivityMetricsRequest 
+            var response = client.GetJourneyRunExecutionActivityMetrics(new GetJourneyRunExecutionActivityMetricsRequest
             {
                 ApplicationId = "11111111112222222222333333333344",
+                JourneyActivityId = "AAAAAAAAAA",
                 JourneyId = "aaaaaaaaaabbbbbbbbbbccccccccccdd",
-                RunId = "99999999998888888888777777777766",
-                JourneyActivityId = "AAAAAAAAAA"
+                RunId = "99999999998888888888777777777766"
             });
 
             JourneyRunExecutionActivityMetricsResponse journeyRunExecutionActivityMetricsResponse = response.JourneyRunExecutionActivityMetricsResponse;
@@ -31,10 +32,10 @@ namespace AWSSDKDocSamples.Amazon.Pinpoint.Generated
 
         public void PinpointGetJourneyRunExecutionMetrics()
         {
-            #region to-get-the-execution-metrics-for-a-journey-run
+            #region GetJourneyRunExecutionMetrics-1
 
             var client = new AmazonPinpointClient();
-            var response = client.GetJourneyRunExecutionMetrics(new GetJourneyRunExecutionMetricsRequest 
+            var response = client.GetJourneyRunExecutionMetrics(new GetJourneyRunExecutionMetricsRequest
             {
                 ApplicationId = "11111111112222222222333333333344",
                 JourneyId = "aaaaaaaaaabbbbbbbbbbccccccccccdd",
@@ -48,10 +49,10 @@ namespace AWSSDKDocSamples.Amazon.Pinpoint.Generated
 
         public void PinpointGetJourneyRuns()
         {
-            #region to-get-the-runs-of-a-journey
+            #region GetJourneyRuns-1
 
             var client = new AmazonPinpointClient();
-            var response = client.GetJourneyRuns(new GetJourneyRunsRequest 
+            var response = client.GetJourneyRuns(new GetJourneyRunsRequest
             {
                 ApplicationId = "11111111112222222222333333333344",
                 JourneyId = "aaaaaaaaaabbbbbbbbbbccccccccccdd"
@@ -62,13 +63,10 @@ namespace AWSSDKDocSamples.Amazon.Pinpoint.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

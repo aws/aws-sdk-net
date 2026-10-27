@@ -9,19 +9,19 @@
     <property>Amazon.Interconnect.Model.AcceptConnectionProposalRequest.Description</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[-a-zA-Z0-9_ ]+</pattern>
+    <pattern>^[-a-zA-Z0-9_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.CreateConnectionRequest.Bandwidth</property>
     <min>1</min>
     <max>8</max>
-    <pattern>\d+[MG]bps</pattern>
+    <pattern>^\d+[MG]bps$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.CreateConnectionRequest.Description</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[-a-zA-Z0-9_ ]+</pattern>
+    <pattern>^[-a-zA-Z0-9_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.CreateConnectionRequest.EnvironmentId</property>
@@ -32,7 +32,7 @@
     <property>Amazon.Interconnect.Model.DeleteConnectionRequest.Identifier</property>
     <min>1</min>
     <max>32</max>
-    <pattern>(mcc|lmcc)-[a-z0-9]{8}</pattern>
+    <pattern>^(mcc|lmcc)-[a-z0-9]{8}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.DescribeConnectionProposalRequest.ActivationKey</property>
@@ -43,7 +43,7 @@
     <property>Amazon.Interconnect.Model.DescribeConnectionProposalResponse.Bandwidth</property>
     <min>1</min>
     <max>8</max>
-    <pattern>\d+[MG]bps</pattern>
+    <pattern>^\d+[MG]bps$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.DescribeConnectionProposalResponse.EnvironmentId</property>
@@ -52,14 +52,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.DescribeConnectionProposalResponse.Location</property>
-    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.GetConnectionRequest.Identifier</property>
     <min>1</min>
     <max>32</max>
-    <pattern>(mcc|lmcc)-[a-z0-9]{8}</pattern>
+    <pattern>^(mcc|lmcc)-[a-z0-9]{8}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.GetEnvironmentRequest.Id</property>
@@ -108,7 +107,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.ListEnvironmentsRequest.Location</property>
-    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -125,49 +123,49 @@
     <property>Amazon.Interconnect.Model.ListTagsForResourceRequest.Arn</property>
     <min>59</min>
     <max>150</max>
-    <pattern>arn:aws[a-z-]*:interconnect:[^:]+:[0-9]{12}:connection/(mcc|lmcc)-[a-z0-9]{8}</pattern>
+    <pattern>^arn:aws[a-z-]*:interconnect:[^:]+:[0-9]{12}:connection/(mcc|lmcc)-[a-z0-9]{8}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.TagResourceRequest.Arn</property>
     <min>59</min>
     <max>150</max>
-    <pattern>arn:aws[a-z-]*:interconnect:[^:]+:[0-9]{12}:connection/(mcc|lmcc)-[a-z0-9]{8}</pattern>
+    <pattern>^arn:aws[a-z-]*:interconnect:[^:]+:[0-9]{12}:connection/(mcc|lmcc)-[a-z0-9]{8}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.UntagResourceRequest.Arn</property>
     <min>59</min>
     <max>150</max>
-    <pattern>arn:aws[a-z-]*:interconnect:[^:]+:[0-9]{12}:connection/(mcc|lmcc)-[a-z0-9]{8}</pattern>
+    <pattern>^arn:aws[a-z-]*:interconnect:[^:]+:[0-9]{12}:connection/(mcc|lmcc)-[a-z0-9]{8}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.UpdateConnectionRequest.Bandwidth</property>
     <min>1</min>
     <max>8</max>
-    <pattern>\d+[MG]bps</pattern>
+    <pattern>^\d+[MG]bps$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.UpdateConnectionRequest.Description</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[-a-zA-Z0-9_ ]+</pattern>
+    <pattern>^[-a-zA-Z0-9_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.UpdateConnectionRequest.Identifier</property>
     <min>1</min>
     <max>32</max>
-    <pattern>(mcc|lmcc)-[a-z0-9]{8}</pattern>
+    <pattern>^(mcc|lmcc)-[a-z0-9]{8}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.AttachPoint.Arn</property>
     <min>59</min>
     <max>150</max>
-    <pattern>arn:aws[a-z-]*:interconnect:[^:]+:[0-9]{12}:connection/(mcc|lmcc)-[a-z0-9]{8}</pattern>
+    <pattern>^arn:aws[a-z-]*:interconnect:[^:]+:[0-9]{12}:connection/(mcc|lmcc)-[a-z0-9]{8}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.AttachPoint.DirectConnectGateway</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.Connection.ActivationKey</property>
@@ -178,13 +176,13 @@
     <property>Amazon.Interconnect.Model.Connection.Arn</property>
     <min>59</min>
     <max>150</max>
-    <pattern>arn:aws[a-z-]*:interconnect:[^:]+:[0-9]{12}:connection/(mcc|lmcc)-[a-z0-9]{8}</pattern>
+    <pattern>^arn:aws[a-z-]*:interconnect:[^:]+:[0-9]{12}:connection/(mcc|lmcc)-[a-z0-9]{8}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.Connection.Bandwidth</property>
     <min>1</min>
     <max>8</max>
-    <pattern>\d+[MG]bps</pattern>
+    <pattern>^\d+[MG]bps$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.Connection.BillingTier</property>
@@ -195,7 +193,7 @@
     <property>Amazon.Interconnect.Model.Connection.Description</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[-a-zA-Z0-9_ ]+</pattern>
+    <pattern>^[-a-zA-Z0-9_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.Connection.EnvironmentId</property>
@@ -206,24 +204,23 @@
     <property>Amazon.Interconnect.Model.Connection.Id</property>
     <min>1</min>
     <max>32</max>
-    <pattern>(mcc|lmcc)-[a-z0-9]{8}</pattern>
+    <pattern>^(mcc|lmcc)-[a-z0-9]{8}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.Connection.Location</property>
-    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.Connection.OwnerAccount</property>
     <min>12</min>
     <max>12</max>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.Connection.SharedId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.Connection.Type</property>
@@ -234,13 +231,13 @@
     <property>Amazon.Interconnect.Model.ConnectionSummary.Arn</property>
     <min>59</min>
     <max>150</max>
-    <pattern>arn:aws[a-z-]*:interconnect:[^:]+:[0-9]{12}:connection/(mcc|lmcc)-[a-z0-9]{8}</pattern>
+    <pattern>^arn:aws[a-z-]*:interconnect:[^:]+:[0-9]{12}:connection/(mcc|lmcc)-[a-z0-9]{8}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.ConnectionSummary.Bandwidth</property>
     <min>1</min>
     <max>8</max>
-    <pattern>\d+[MG]bps</pattern>
+    <pattern>^\d+[MG]bps$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.ConnectionSummary.BillingTier</property>
@@ -251,7 +248,7 @@
     <property>Amazon.Interconnect.Model.ConnectionSummary.Description</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[-a-zA-Z0-9_ ]+</pattern>
+    <pattern>^[-a-zA-Z0-9_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.ConnectionSummary.EnvironmentId</property>
@@ -262,18 +259,17 @@
     <property>Amazon.Interconnect.Model.ConnectionSummary.Id</property>
     <min>1</min>
     <max>32</max>
-    <pattern>(mcc|lmcc)-[a-z0-9]{8}</pattern>
+    <pattern>^(mcc|lmcc)-[a-z0-9]{8}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.ConnectionSummary.Location</property>
-    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.ConnectionSummary.SharedId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.ConnectionSummary.Type</property>
@@ -287,7 +283,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.Environment.Location</property>
-    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -297,18 +292,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.Provider.CloudServiceProvider</property>
-    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.Provider.LastMileProvider</property>
-    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Interconnect.Model.RemoteAccountIdentifier.Identifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[-a-zA-Z0-9_@\.]+</pattern>
+    <pattern>^[-a-zA-Z0-9_@\.]+$</pattern>
   </property-value-rule>
 </property-value-rules>

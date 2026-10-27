@@ -1,0 +1,179 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+using System.Buffers;
+
+using Amazon.GlobalAccelerator.Model;
+using System.Globalization;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// CreateEndpointGroup Request Marshaller
+    /// </summary>
+    public partial class CreateEndpointGroupRequestMarshaller : IMarshaller<IRequest, CreateEndpointGroupRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    {
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((CreateEndpointGroupRequest)input);
+        }
+
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(CreateEndpointGroupRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.GlobalAccelerator");
+            string target = "GlobalAccelerator_V20180706.CreateEndpointGroup";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-08-08";
+            request.HttpMethod = "POST";
+
+            request.ResourcePath = "/";
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using var writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetEndpointConfigurations())
+            {
+                context.Writer.WritePropertyName("EndpointConfigurations");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestEndpointConfigurationsListValue in publicRequest.EndpointConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = EndpointConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestEndpointConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetEndpointGroupRegion())
+            {
+                context.Writer.WritePropertyName("EndpointGroupRegion");
+                context.Writer.WriteStringValue(publicRequest.EndpointGroupRegion);
+            }
+            if (publicRequest.IsSetHealthCheckIntervalSeconds())
+            {
+                context.Writer.WritePropertyName("HealthCheckIntervalSeconds");
+                context.Writer.WriteNumberValue(publicRequest.HealthCheckIntervalSeconds.Value);
+            }
+            if (publicRequest.IsSetHealthCheckPath())
+            {
+                context.Writer.WritePropertyName("HealthCheckPath");
+                context.Writer.WriteStringValue(publicRequest.HealthCheckPath);
+            }
+            if (publicRequest.IsSetHealthCheckPort())
+            {
+                context.Writer.WritePropertyName("HealthCheckPort");
+                context.Writer.WriteNumberValue(publicRequest.HealthCheckPort.Value);
+            }
+            if (publicRequest.IsSetHealthCheckProtocol())
+            {
+                context.Writer.WritePropertyName("HealthCheckProtocol");
+                context.Writer.WriteStringValue(publicRequest.HealthCheckProtocol);
+            }
+            if (publicRequest.IsSetIdempotencyToken())
+            {
+                context.Writer.WritePropertyName("IdempotencyToken");
+                context.Writer.WriteStringValue(publicRequest.IdempotencyToken);
+            }
+            else
+            {
+                context.Writer.WritePropertyName("IdempotencyToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if (publicRequest.IsSetListenerArn())
+            {
+                context.Writer.WritePropertyName("ListenerArn");
+                context.Writer.WriteStringValue(publicRequest.ListenerArn);
+            }
+            if (publicRequest.IsSetPortOverrides())
+            {
+                context.Writer.WritePropertyName("PortOverrides");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestPortOverridesListValue in publicRequest.PortOverrides)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = PortOverrideMarshaller.Instance;
+                    marshaller.Marshall(publicRequestPortOverridesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetThresholdCount())
+            {
+                context.Writer.WritePropertyName("ThresholdCount");
+                context.Writer.WriteNumberValue(publicRequest.ThresholdCount.Value);
+            }
+            if (publicRequest.IsSetTrafficDialPercentage())
+            {
+                context.Writer.WritePropertyName("TrafficDialPercentage");
+                if (StringUtils.IsSpecialFloatValue(publicRequest.TrafficDialPercentage.Value))
+                {
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(publicRequest.TrafficDialPercentage.Value));
+                }
+                else
+                {
+                    context.Writer.WriteNumberValue(publicRequest.TrafficDialPercentage.Value);
+                }
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETFRAMEWORK
+            request.Content = memoryStream.ToArray();
+#endif
+
+            return request;
+        }
+
+        private static readonly CreateEndpointGroupRequestMarshaller _instance = new();
+
+        internal static CreateEndpointGroupRequestMarshaller GetInstance() => _instance;
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static CreateEndpointGroupRequestMarshaller Instance => _instance;
+    }
+}

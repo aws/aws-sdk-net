@@ -2362,6 +2362,100 @@ namespace Amazon.DataZone
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates a new user-defined designation with a Cedar permit policy. The designation
+        /// defines a named role that can be assigned to project members.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDesignation service method.</param>
+        /// <returns>The response from the CreateDesignation service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateDesignation">REST API Reference for CreateDesignation Operation</seealso>
+        public virtual CreateDesignationResponse CreateDesignation(CreateDesignationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateDesignationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDesignationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDesignationResponse>(request, options);
+        }
+#else
+        internal virtual CreateDesignationResponse CreateDesignation(CreateDesignationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateDesignationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDesignationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDesignationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Creates a new user-defined designation with a Cedar permit policy. The designation
+        /// defines a named role that can be assigned to project members.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDesignation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateDesignation service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateDesignation">REST API Reference for CreateDesignation Operation</seealso>
+        public virtual Task<CreateDesignationResponse> CreateDesignationAsync(CreateDesignationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateDesignationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDesignationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDesignationResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Creates an Amazon DataZone domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDomain service method.</param>
@@ -5214,6 +5308,92 @@ namespace Amazon.DataZone
             options.ResponseUnmarshaller = DeleteDataSourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDataSourceResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes a designation. Managed designations cannot be deleted. This operation is idempotent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDesignation service method.</param>
+        /// <returns>The response from the DeleteDesignation service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteDesignation">REST API Reference for DeleteDesignation Operation</seealso>
+        public virtual DeleteDesignationResponse DeleteDesignation(DeleteDesignationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDesignationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDesignationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDesignationResponse>(request, options);
+        }
+#else
+        internal virtual DeleteDesignationResponse DeleteDesignation(DeleteDesignationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDesignationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDesignationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDesignationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Deletes a designation. Managed designations cannot be deleted. This operation is idempotent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDesignation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteDesignation service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteDesignation">REST API Reference for DeleteDesignation Operation</seealso>
+        public virtual Task<DeleteDesignationResponse> DeleteDesignationAsync(DeleteDesignationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDesignationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDesignationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDesignationResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -8238,6 +8418,86 @@ namespace Amazon.DataZone
             options.ResponseUnmarshaller = GetDataSourceRunResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDataSourceRunResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets the details of a designation, including its Cedar policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDesignation service method.</param>
+        /// <returns>The response from the GetDesignation service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetDesignation">REST API Reference for GetDesignation Operation</seealso>
+        public virtual GetDesignationResponse GetDesignation(GetDesignationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDesignationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDesignationResponseUnmarshaller.Instance;
+
+            return Invoke<GetDesignationResponse>(request, options);
+        }
+#else
+        internal virtual GetDesignationResponse GetDesignation(GetDesignationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDesignationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDesignationResponseUnmarshaller.Instance;
+
+            return Invoke<GetDesignationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Gets the details of a designation, including its Cedar policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDesignation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetDesignation service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetDesignation">REST API Reference for GetDesignation Operation</seealso>
+        public virtual Task<GetDesignationResponse> GetDesignationAsync(GetDesignationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDesignationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDesignationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDesignationResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -11714,6 +11974,88 @@ namespace Amazon.DataZone
             options.ResponseUnmarshaller = ListDataSourcesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListDataSourcesResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the designations in a domain. Returns system-managed designations first, followed
+        /// by user-created designations sorted alphabetically by name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDesignations service method.</param>
+        /// <returns>The response from the ListDesignations service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListDesignations">REST API Reference for ListDesignations Operation</seealso>
+        public virtual ListDesignationsResponse ListDesignations(ListDesignationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDesignationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDesignationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDesignationsResponse>(request, options);
+        }
+#else
+        internal virtual ListDesignationsResponse ListDesignations(ListDesignationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDesignationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDesignationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDesignationsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Lists the designations in a domain. Returns system-managed designations first, followed
+        /// by user-created designations sorted alphabetically by name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDesignations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListDesignations service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListDesignations">REST API Reference for ListDesignations Operation</seealso>
+        public virtual Task<ListDesignationsResponse> ListDesignationsAsync(ListDesignationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDesignationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDesignationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDesignationsResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -16664,6 +17006,92 @@ namespace Amazon.DataZone
             options.ResponseUnmarshaller = UpdateDataSourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateDataSourceResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates an existing designation. Managed designations cannot be modified.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDesignation service method.</param>
+        /// <returns>The response from the UpdateDesignation service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateDesignation">REST API Reference for UpdateDesignation Operation</seealso>
+        public virtual UpdateDesignationResponse UpdateDesignation(UpdateDesignationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDesignationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDesignationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDesignationResponse>(request, options);
+        }
+#else
+        internal virtual UpdateDesignationResponse UpdateDesignation(UpdateDesignationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDesignationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDesignationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDesignationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Updates an existing designation. Managed designations cannot be modified.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDesignation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateDesignation service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateDesignation">REST API Reference for UpdateDesignation Operation</seealso>
+        public virtual Task<UpdateDesignationResponse> UpdateDesignationAsync(UpdateDesignationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDesignationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDesignationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDesignationResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK

@@ -6,7 +6,9 @@
       "version": "2023-01-01",
       "operations": [
         { "target": "com.example#DoScalars" },
-        { "target": "com.example#DoNothing" }
+        { "target": "com.example#DoNothing" },
+        { "target": "com.example#GetCount" },
+        { "target": "com.example#Chat" }
       ],
       "errors": [
         { "target": "com.example#BadThing" }
@@ -46,6 +48,51 @@
       "type": "operation",
       "input": { "target": "smithy.api#Unit" },
       "output": { "target": "smithy.api#Unit" }
+    },
+    "com.example#GetCount": {
+      "type": "operation",
+      "output": { "target": "com.example#Count" }
+    },
+    "com.example#Count": {
+      "type": "structure",
+      "members": {
+        "value": { "target": "smithy.api#Integer" }
+      }
+    },
+    "com.example#Chat": {
+      "type": "operation",
+      "input": { "target": "com.example#ChatRequest" },
+      "output": { "target": "com.example#ChatResponse" }
+    },
+    "com.example#ChatRequest": {
+      "type": "structure",
+      "members": {
+        "sessionId": { "target": "smithy.api#String" },
+        "input": { "target": "com.example#ChatStream" }
+      },
+      "traits": { "smithy.api#input": {} }
+    },
+    "com.example#ChatResponse": {
+      "type": "structure",
+      "members": {
+        "output": { "target": "com.example#ChatStream" },
+        "sessionId": { "target": "smithy.api#String", "traits": { "smithy.api#required": {} } },
+        "sequenceNumber": { "target": "smithy.api#Integer", "traits": { "smithy.api#required": {} } }
+      },
+      "traits": { "smithy.api#output": {} }
+    },
+    "com.example#ChatStream": {
+      "type": "union",
+      "members": {
+        "message": { "target": "com.example#ChatMessage" }
+      },
+      "traits": { "smithy.api#streaming": {} }
+    },
+    "com.example#ChatMessage": {
+      "type": "structure",
+      "members": {
+        "text": { "target": "smithy.api#String" }
+      }
     },
     "com.example#BadThing": {
       "type": "structure",

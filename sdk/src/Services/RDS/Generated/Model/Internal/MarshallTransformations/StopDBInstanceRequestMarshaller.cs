@@ -67,6 +67,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DBSnapshotIdentifier", StringUtils.FromString(publicRequest.DBSnapshotIdentifier));
                 }
+                if(publicRequest.IsSetDetachFromDBCapacityReservation())
+                {
+                    request.Parameters.Add("DetachFromDBCapacityReservation", StringUtils.FromBool(publicRequest.DetachFromDBCapacityReservation));
+                }
             }
 
 #if !NETFRAMEWORK

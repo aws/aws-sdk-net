@@ -6,7 +6,8 @@ namespace SmithyDotNet.Generator.Writers.Serialization;
 
 /// <summary>
 /// rpcv2Cbor response unmarshaller: the output read as a CBOR map, errors dispatched on the shape name. An
-/// output event stream IS the body and is handed to the generated event-stream class instead.
+/// output event stream is handed to the generated event-stream class; its siblings come from the
+/// initial-response message.
 /// </summary>
 public sealed class CborResponseUnmarshallerWriter(GenerationContext context, string modelFileName)
 {
@@ -15,14 +16,7 @@ public sealed class CborResponseUnmarshallerWriter(GenerationContext context, st
         var className = $"{operation.Name}Response";
         var unmarshallerClassName = $"{className}Unmarshaller";
         var members = TypeMapper.ResolveMembers(operation.Output, context);
-
-        // Every member is a body member, so an output event stream can only be the whole body: the other
-        // members would arrive in an initial-response message, which Core cannot decode.
         var hasEventStream = members.Any(member => member.Type.IsEventStream);
-        if (hasEventStream && members.Count > 1)
-        {
-            throw new GeneratorException($"Operation '{operation.Name}' has an output event stream alongside other members, which is not supported.");
-        }
 
         var writer = new CodeWriter();
         FileHeader.WriteLicense(writer, modelFileName);
@@ -37,6 +31,12 @@ public sealed class CborResponseUnmarshallerWriter(GenerationContext context, st
             writer.OpenBlock($"public partial class {unmarshallerClassName} : CborResponseUnmarshaller", () =>
             {
                 WriteUnmarshallMethod(writer, className, operation.Name, members);
+                if (hasEventStream && members.Count > 1)
+                {
+                    writer.WriteLine("");
+                    WriteInitialResponseUnmarshaller(writer, className, operation.Name, members.Where(member => !member.Type.IsEventStream).ToList());
+                }
+
                 writer.WriteLine("");
                 WriteUnmarshallExceptionMethod(writer, operation);
                 writer.WriteLine("");
@@ -73,6 +73,10 @@ public sealed class CborResponseUnmarshallerWriter(GenerationContext context, st
             if (members.FirstOrDefault(member => member.Type.IsEventStream) is { } eventStream)
             {
                 MarshallerCommon.WriteEventStreamMember(writer, eventStream);
+                if (members.Count > 1)
+                {
+                    writer.WriteLine($"unmarshalledObject.{eventStream.PropertyName}.InitialResponseReceived += (sender, args) => UnmarshallInitialResponse(unmarshalledObject, args.EventStreamEvent);");
+                }
             }
             else if (members.Count > 0)
             {
@@ -84,6 +88,19 @@ public sealed class CborResponseUnmarshallerWriter(GenerationContext context, st
             }
             writer.WriteLine("");
             writer.WriteLine("return unmarshalledObject;");
+        });
+    }
+
+    private static void WriteInitialResponseUnmarshaller(CodeWriter writer, string className, string operationName, List<Member> members)
+    {
+        writer.OpenBlock($"private static void UnmarshallInitialResponse({className} unmarshalledObject, Amazon.Runtime.EventStreams.Internal.InitialResponseEvent initialResponse)", () =>
+        {
+            writer.WriteLine("var context = new CborUnmarshallerContext(initialResponse.Payload, false, null);");
+            writer.WriteLine("var reader = context.Reader;");
+            writer.WriteLine();
+            writer.WriteLine($"""context.AddPathSegment("{operationName}");""");
+            CborBodyMemberUnmarshaller.WriteMapReadLoop(writer, members);
+            writer.WriteLine("context.PopPathSegment();");
         });
     }
 

@@ -50,6 +50,7 @@ namespace Amazon.KeyManagementService.Model
         private DateTime? _deletionDate;
         private string _description;
         private bool? _enabled;
+        private List<string> _encapsulationAlgorithms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _encryptionAlgorithms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ExpirationModelType _expirationModel;
         private List<string> _keyAgreementAlgorithms = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -277,6 +278,30 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetEnabled()
         {
             return this._enabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncapsulationAlgorithms. 
+        /// <para>
+        /// The key encapsulation algorithm that the KMS key supports. This field appears only
+        /// for KMS keys with a <c>KeyUsage</c> value of <c>ENCAPSULATE_DECAPSULATE</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> EncapsulationAlgorithms
+        {
+            get { return this._encapsulationAlgorithms; }
+            set { this._encapsulationAlgorithms = value; }
+        }
+
+        // Check to see if EncapsulationAlgorithms property is set
+        internal bool IsSetEncapsulationAlgorithms()
+        {
+            return this._encapsulationAlgorithms != null && (this._encapsulationAlgorithms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

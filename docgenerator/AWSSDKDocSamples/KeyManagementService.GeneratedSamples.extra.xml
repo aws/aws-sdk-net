@@ -325,6 +325,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.Decapsulate(Amazon.KeyManagementService.Model.DecapsulateRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.Decapsulate(Amazon.KeyManagementService.Model.DecapsulateRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.DecapsulateRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.DecapsulateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Recovers a shared secret from its encapsulated ciphertext (SharedSecretCiphertextBlob) using the private key in an asymmetric ML-KEM KMS key. Your peer calls Encapsulate to generate the shared secret and ciphertext.
+                </para>
+                <code
+                    title="To recover a shared secret from its encapsulated ciphertext"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-recover-a-shared-secret-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.Decrypt(Amazon.KeyManagementService.Model.DecryptRequest)" />
             <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.Decrypt(Amazon.KeyManagementService.Model.DecryptRequest)" />
             <member name="T:Amazon.KeyManagementService.Model.DecryptRequest" />
@@ -757,6 +776,25 @@
                     title="To enable automatic rotation of key material"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
                     region="to-enable-automatic-rotation-of-key-material-1712499675853" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.Encapsulate(Amazon.KeyManagementService.Model.EncapsulateRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.Encapsulate(Amazon.KeyManagementService.Model.EncapsulateRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.EncapsulateRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.EncapsulateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Generates a shared secret and its encapsulated ciphertext (SharedSecretCiphertextBlob) using the public key in an asymmetric ML-KEM KMS key. Send the ciphertext to your peer, who calls Decapsulate to recover the same shared secret.
+                </para>
+                <code
+                    title="To generate a shared secret and its encapsulated ciphertext"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-generate-a-shared-secret-1" />
             </example>
         </value>
     </doc>

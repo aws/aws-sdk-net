@@ -608,21 +608,27 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// R.1X: 1 M-DPU (4 vCPUs, 32 GB memory)
+        /// R.1X: 1 M-DPU (4 vCPUs, 32 GB memory, 94GB disk)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// R.2X: 2 M-DPU (8 vCPUs, 64 GB memory)
+        /// R.2X: 2 M-DPU (8 vCPUs, 64 GB memory, 138GB disk)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// R.4X: 4 M-DPU (16 vCPUs, 128 GB memory)
+        /// R.4X: 4 M-DPU (16 vCPUs, 128 GB memory, 256GB disk)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// R.8X: 8 M-DPU (32 vCPUs, 256 GB memory)
+        /// R.8X: 8 M-DPU (32 vCPUs, 256 GB memory, 512GB disk)
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// The <c>G.12X</c>, <c>G.16X</c>, and <c>R.1X</c> through <c>R.8X</c> worker types are
+        /// available only for Glue version 4.0 or later Spark ETL jobs in select Amazon Web Services
+        /// Regions. For the supported Regions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Configuring
+        /// job properties for Spark jobs</a> in the developer guide.
+        /// </para>
         /// </summary>
         public WorkerType WorkerType { get; set; }
 

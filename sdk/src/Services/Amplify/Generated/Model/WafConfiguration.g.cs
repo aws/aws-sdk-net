@@ -33,7 +33,7 @@ namespace Amazon.Amplify.Model
     /// Describes the Firewall configuration for a hosted Amplify application. Firewall support
     /// enables you to protect your web applications with a direct integration with WAF. For
     /// more information about using WAF protections for an Amplify application, see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/WAF-integration.html">Firewall
-    /// support for hosted sites</a> in the <i>Amplify User Guide</i>.
+    /// support for hosted sites</a> in the <i> Amplify User Guide</i>.
     /// </summary>
     public partial class WafConfiguration
     {

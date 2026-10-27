@@ -139,6 +139,11 @@ namespace Amazon.S3Files
         public static readonly LifeCycleState Error = new LifeCycleState("error");
 
         /// <summary>
+        /// Constant Misconfigured for LifeCycleState
+        /// </summary>
+        public static readonly LifeCycleState Misconfigured = new LifeCycleState("misconfigured");
+
+        /// <summary>
         /// Constant Updating for LifeCycleState
         /// </summary>
         public static readonly LifeCycleState Updating = new LifeCycleState("updating");

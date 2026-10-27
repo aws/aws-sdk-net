@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.MailManager.Generated
     {
         public void MailManagerCreateIngressPoint()
         {
-            #region example-1
+            #region CreateIngressPoint-1
 
             var client = new AmazonMailManagerClient();
-            var response = client.CreateIngressPoint(new CreateIngressPointRequest 
+            var response = client.CreateIngressPoint(new CreateIngressPointRequest
             {
                 IngressPointName = "ingressPointName",
                 RuleSetId = "rs-12345",
@@ -37,10 +38,10 @@ namespace AWSSDKDocSamples.Amazon.MailManager.Generated
 
         public void MailManagerCreateIngressPoint()
         {
-            #region example-2
+            #region CreateIngressPoint-2
 
             var client = new AmazonMailManagerClient();
-            var response = client.CreateIngressPoint(new CreateIngressPointRequest 
+            var response = client.CreateIngressPoint(new CreateIngressPointRequest
             {
                 IngressPointConfiguration = new IngressPointConfiguration { SmtpPassword = "smtpPassword" },
                 IngressPointName = "ingressPointName",
@@ -62,10 +63,10 @@ namespace AWSSDKDocSamples.Amazon.MailManager.Generated
 
         public void MailManagerCreateIngressPoint()
         {
-            #region example-3
+            #region CreateIngressPoint-3
 
             var client = new AmazonMailManagerClient();
-            var response = client.CreateIngressPoint(new CreateIngressPointRequest 
+            var response = client.CreateIngressPoint(new CreateIngressPointRequest
             {
                 IngressPointConfiguration = new IngressPointConfiguration { SecretArn = "arn:aws:secretsmanager:us-west-2:123456789012:secret:abcde" },
                 IngressPointName = "ingressPointName",
@@ -87,10 +88,10 @@ namespace AWSSDKDocSamples.Amazon.MailManager.Generated
 
         public void MailManagerCreateTrafficPolicy()
         {
-            #region example-1
+            #region CreateTrafficPolicy-1
 
             var client = new AmazonMailManagerClient();
-            var response = client.CreateTrafficPolicy(new CreateTrafficPolicyRequest 
+            var response = client.CreateTrafficPolicy(new CreateTrafficPolicyRequest
             {
                 DefaultAction = "DENY",
                 PolicyStatements = new List<PolicyStatement> {
@@ -117,10 +118,10 @@ namespace AWSSDKDocSamples.Amazon.MailManager.Generated
 
         public void MailManagerDeleteIngressPoint()
         {
-            #region example-1
+            #region DeleteIngressPoint-1
 
             var client = new AmazonMailManagerClient();
-            var response = client.DeleteIngressPoint(new DeleteIngressPointRequest 
+            var response = client.DeleteIngressPoint(new DeleteIngressPointRequest
             {
                 IngressPointId = "inp-12345"
             });
@@ -131,10 +132,10 @@ namespace AWSSDKDocSamples.Amazon.MailManager.Generated
 
         public void MailManagerDeleteTrafficPolicy()
         {
-            #region example-1
+            #region DeleteTrafficPolicy-1
 
             var client = new AmazonMailManagerClient();
-            var response = client.DeleteTrafficPolicy(new DeleteTrafficPolicyRequest 
+            var response = client.DeleteTrafficPolicy(new DeleteTrafficPolicyRequest
             {
                 TrafficPolicyId = "tp-12345"
             });
@@ -145,10 +146,10 @@ namespace AWSSDKDocSamples.Amazon.MailManager.Generated
 
         public void MailManagerGetIngressPoint()
         {
-            #region example-1
+            #region GetIngressPoint-1
 
             var client = new AmazonMailManagerClient();
-            var response = client.GetIngressPoint(new GetIngressPointRequest 
+            var response = client.GetIngressPoint(new GetIngressPointRequest
             {
                 IngressPointId = "inp-12345"
             });
@@ -157,18 +158,18 @@ namespace AWSSDKDocSamples.Amazon.MailManager.Generated
             string ingressPointArn = response.IngressPointArn;
             string ingressPointId = response.IngressPointId;
             string ingressPointName = response.IngressPointName;
-            string status = response.Status;
-            string type = response.Type;
+            IngressPointStatus status = response.Status;
+            IngressPointType type = response.Type;
 
             #endregion
         }
 
         public void MailManagerGetIngressPoint()
         {
-            #region example-2
+            #region GetIngressPoint-2
 
             var client = new AmazonMailManagerClient();
-            var response = client.GetIngressPoint(new GetIngressPointRequest 
+            var response = client.GetIngressPoint(new GetIngressPointRequest
             {
                 IngressPointId = "inp-12345"
             });
@@ -178,24 +179,24 @@ namespace AWSSDKDocSamples.Amazon.MailManager.Generated
             IngressPointAuthConfiguration ingressPointAuthConfiguration = response.IngressPointAuthConfiguration;
             string ingressPointId = response.IngressPointId;
             string ingressPointName = response.IngressPointName;
-            string status = response.Status;
-            string type = response.Type;
+            IngressPointStatus status = response.Status;
+            IngressPointType type = response.Type;
 
             #endregion
         }
 
         public void MailManagerGetTrafficPolicy()
         {
-            #region example-1
+            #region GetTrafficPolicy-1
 
             var client = new AmazonMailManagerClient();
-            var response = client.GetTrafficPolicy(new GetTrafficPolicyRequest 
+            var response = client.GetTrafficPolicy(new GetTrafficPolicyRequest
             {
                 TrafficPolicyId = "tp-12345"
             });
 
-            string defaultAction = response.DefaultAction;
-            int maxMessageSizeBytes = response.MaxMessageSizeBytes;
+            AcceptAction defaultAction = response.DefaultAction;
+            int? maxMessageSizeBytes = response.MaxMessageSizeBytes;
             List<PolicyStatement> policyStatements = response.PolicyStatements;
             string trafficPolicyArn = response.TrafficPolicyArn;
             string trafficPolicyId = response.TrafficPolicyId;
@@ -206,10 +207,10 @@ namespace AWSSDKDocSamples.Amazon.MailManager.Generated
 
         public void MailManagerListIngressPoints()
         {
-            #region example-1
+            #region ListIngressPoints-1
 
             var client = new AmazonMailManagerClient();
-            var response = client.ListIngressPoints(new ListIngressPointsRequest 
+            var response = client.ListIngressPoints(new ListIngressPointsRequest
             {
             });
 
@@ -220,10 +221,10 @@ namespace AWSSDKDocSamples.Amazon.MailManager.Generated
 
         public void MailManagerListIngressPoints()
         {
-            #region example-2
+            #region ListIngressPoints-2
 
             var client = new AmazonMailManagerClient();
-            var response = client.ListIngressPoints(new ListIngressPointsRequest 
+            var response = client.ListIngressPoints(new ListIngressPointsRequest
             {
                 PageSize = 10
             });
@@ -235,10 +236,10 @@ namespace AWSSDKDocSamples.Amazon.MailManager.Generated
 
         public void MailManagerListIngressPoints()
         {
-            #region example-3
+            #region ListIngressPoints-3
 
             var client = new AmazonMailManagerClient();
-            var response = client.ListIngressPoints(new ListIngressPointsRequest 
+            var response = client.ListIngressPoints(new ListIngressPointsRequest
             {
                 NextToken = "nextToken"
             });
@@ -250,10 +251,10 @@ namespace AWSSDKDocSamples.Amazon.MailManager.Generated
 
         public void MailManagerListTrafficPolicies()
         {
-            #region example-1
+            #region ListTrafficPolicies-1
 
             var client = new AmazonMailManagerClient();
-            var response = client.ListTrafficPolicies(new ListTrafficPoliciesRequest 
+            var response = client.ListTrafficPolicies(new ListTrafficPoliciesRequest
             {
             });
 
@@ -264,10 +265,10 @@ namespace AWSSDKDocSamples.Amazon.MailManager.Generated
 
         public void MailManagerListTrafficPolicies()
         {
-            #region example-2
+            #region ListTrafficPolicies-2
 
             var client = new AmazonMailManagerClient();
-            var response = client.ListTrafficPolicies(new ListTrafficPoliciesRequest 
+            var response = client.ListTrafficPolicies(new ListTrafficPoliciesRequest
             {
                 PageSize = 10
             });
@@ -279,10 +280,10 @@ namespace AWSSDKDocSamples.Amazon.MailManager.Generated
 
         public void MailManagerListTrafficPolicies()
         {
-            #region example-3
+            #region ListTrafficPolicies-3
 
             var client = new AmazonMailManagerClient();
-            var response = client.ListTrafficPolicies(new ListTrafficPoliciesRequest 
+            var response = client.ListTrafficPolicies(new ListTrafficPoliciesRequest
             {
                 NextToken = "nextToken"
             });
@@ -294,10 +295,10 @@ namespace AWSSDKDocSamples.Amazon.MailManager.Generated
 
         public void MailManagerUpdateIngressPoint()
         {
-            #region example-1
+            #region UpdateIngressPoint-1
 
             var client = new AmazonMailManagerClient();
-            var response = client.UpdateIngressPoint(new UpdateIngressPointRequest 
+            var response = client.UpdateIngressPoint(new UpdateIngressPointRequest
             {
                 IngressPointId = "inp-12345",
                 IngressPointName = "ingressPointNewName"
@@ -309,10 +310,10 @@ namespace AWSSDKDocSamples.Amazon.MailManager.Generated
 
         public void MailManagerUpdateIngressPoint()
         {
-            #region example-2
+            #region UpdateIngressPoint-2
 
             var client = new AmazonMailManagerClient();
-            var response = client.UpdateIngressPoint(new UpdateIngressPointRequest 
+            var response = client.UpdateIngressPoint(new UpdateIngressPointRequest
             {
                 IngressPointId = "inp-12345",
                 RuleSetId = "rs-12345",
@@ -325,10 +326,10 @@ namespace AWSSDKDocSamples.Amazon.MailManager.Generated
 
         public void MailManagerUpdateIngressPoint()
         {
-            #region example-3
+            #region UpdateIngressPoint-3
 
             var client = new AmazonMailManagerClient();
-            var response = client.UpdateIngressPoint(new UpdateIngressPointRequest 
+            var response = client.UpdateIngressPoint(new UpdateIngressPointRequest
             {
                 IngressPointConfiguration = new IngressPointConfiguration { SmtpPassword = "newSmtpPassword" },
                 IngressPointId = "inp-12345"
@@ -340,10 +341,10 @@ namespace AWSSDKDocSamples.Amazon.MailManager.Generated
 
         public void MailManagerUpdateIngressPoint()
         {
-            #region example-4
+            #region UpdateIngressPoint-4
 
             var client = new AmazonMailManagerClient();
-            var response = client.UpdateIngressPoint(new UpdateIngressPointRequest 
+            var response = client.UpdateIngressPoint(new UpdateIngressPointRequest
             {
                 IngressPointConfiguration = new IngressPointConfiguration { SecretArn = "arn:aws:secretsmanager:us-west-2:123456789012:secret:abcde" },
                 IngressPointId = "inp-12345"
@@ -355,10 +356,10 @@ namespace AWSSDKDocSamples.Amazon.MailManager.Generated
 
         public void MailManagerUpdateTrafficPolicy()
         {
-            #region example-1
+            #region UpdateTrafficPolicy-1
 
             var client = new AmazonMailManagerClient();
-            var response = client.UpdateTrafficPolicy(new UpdateTrafficPolicyRequest 
+            var response = client.UpdateTrafficPolicy(new UpdateTrafficPolicyRequest
             {
                 TrafficPolicyId = "tp-12345",
                 TrafficPolicyName = "trafficPolicyNewName"
@@ -370,10 +371,10 @@ namespace AWSSDKDocSamples.Amazon.MailManager.Generated
 
         public void MailManagerUpdateTrafficPolicy()
         {
-            #region example-2
+            #region UpdateTrafficPolicy-2
 
             var client = new AmazonMailManagerClient();
-            var response = client.UpdateTrafficPolicy(new UpdateTrafficPolicyRequest 
+            var response = client.UpdateTrafficPolicy(new UpdateTrafficPolicyRequest
             {
                 PolicyStatements = new List<PolicyStatement> {
                     new PolicyStatement {
@@ -399,10 +400,10 @@ namespace AWSSDKDocSamples.Amazon.MailManager.Generated
 
         public void MailManagerUpdateTrafficPolicy()
         {
-            #region example-3
+            #region UpdateTrafficPolicy-3
 
             var client = new AmazonMailManagerClient();
-            var response = client.UpdateTrafficPolicy(new UpdateTrafficPolicyRequest 
+            var response = client.UpdateTrafficPolicy(new UpdateTrafficPolicyRequest
             {
                 DefaultAction = "ALLOW",
                 TrafficPolicyId = "tp-12345"
@@ -412,13 +413,10 @@ namespace AWSSDKDocSamples.Amazon.MailManager.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

@@ -164,10 +164,83 @@ public sealed class ClientInterfaceWriter(GenerationContext context, string mode
         }
         writer.WriteLine($"Task<{responseType}> {operation.Name}Async({requestType} request, CancellationToken cancellationToken = default(CancellationToken));");
 
+        // Convenience declarations (simpleMethods, then noArgOverloads) sit inside the same h2 guard.
+        WriteSimpleMethods(writer, operation, obsolete);
+        WriteNoArgOverloads(writer, operation, obsolete);
+
         if (operation.RequiresHttp2)
         {
             writer.WriteLine("#endif");
         }
     }
 
+    // simpleMethods declarations: a NETFRAMEWORK-only sync overload and an all-targets async overload per
+    // form, matching the client's convenience methods.
+    private void WriteSimpleMethods(CodeWriter writer, Operation operation, string? obsolete)
+    {
+        if (context.Customizations.MethodFormsFor(operation.Name) is not { } forms)
+        {
+            return;
+        }
+
+        var responseType = $"{operation.Name}Response";
+        var members = TypeMapper.ResolveMembers(operation.Input, context);
+
+        foreach (var form in forms)
+        {
+            var formMembers = ConvenienceMembers.Resolve(form, members);
+            var parameters = ConvenienceMembers.ParameterList(formMembers, remapStream: true);
+            var paramTags = formMembers.Select(m => (SdkNaming.ToParameterName(m.PropertyName), DocumentationFormatter.ParamDocForOperation(m.Documentation, operation.Name))).ToList();
+
+            writer.WriteLine();
+            writer.WriteLine("#if NETFRAMEWORK");
+            DocumentationFormatter.WriteOperationDocumentation(writer, context, operation, isAsync: false, parameters: paramTags);
+            if (obsolete is not null)
+            {
+                writer.WriteLine(obsolete);
+            }
+            writer.WriteLine($"{responseType} {operation.Name}({parameters});");
+            writer.WriteLine("#endif");
+
+            writer.WriteLine();
+            DocumentationFormatter.WriteOperationDocumentation(writer, context, operation, isAsync: true, parameters: paramTags);
+            if (obsolete is not null)
+            {
+                writer.WriteLine(obsolete);
+            }
+
+            var asyncParameters = parameters.Length > 0 ? $"{parameters}, " : parameters;
+            writer.WriteLine($"Task<{responseType}> {operation.Name}Async({asyncParameters}CancellationToken cancellationToken = default(CancellationToken));");
+        }
+    }
+
+    // noArgOverloads declarations: a NETFRAMEWORK-only parameterless sync overload and an all-targets
+    // parameterless async overload.
+    private void WriteNoArgOverloads(CodeWriter writer, Operation operation, string? obsolete)
+    {
+        if (!context.Customizations.CreateNoArgOverload(operation.Name))
+        {
+            return;
+        }
+
+        var responseType = $"{operation.Name}Response";
+
+        writer.WriteLine();
+        writer.WriteLine("#if NETFRAMEWORK");
+        DocumentationFormatter.WriteOperationDocumentation(writer, context, operation, isAsync: false, parameters: []);
+        if (obsolete is not null)
+        {
+            writer.WriteLine(obsolete);
+        }
+        writer.WriteLine($"{responseType} {operation.Name}();");
+        writer.WriteLine("#endif");
+
+        writer.WriteLine();
+        DocumentationFormatter.WriteOperationDocumentation(writer, context, operation, isAsync: true, parameters: []);
+        if (obsolete is not null)
+        {
+            writer.WriteLine(obsolete);
+        }
+        writer.WriteLine($"Task<{responseType}> {operation.Name}Async(CancellationToken cancellationToken = default(CancellationToken));");
+    }
 }

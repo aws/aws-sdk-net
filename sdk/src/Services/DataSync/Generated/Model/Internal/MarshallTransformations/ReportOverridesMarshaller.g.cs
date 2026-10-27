@@ -1,0 +1,98 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.DataSync.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.DataSync.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// ReportOverrides Marshaller
+    /// </summary>
+    public partial class ReportOverridesMarshaller : IRequestMarshaller<ReportOverrides, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(ReportOverrides requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetDeleted())
+            {
+                context.Writer.WritePropertyName("Deleted");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ReportOverrideMarshaller.Instance;
+                marshaller.Marshall(requestObject.Deleted, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetSkipped())
+            {
+                context.Writer.WritePropertyName("Skipped");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ReportOverrideMarshaller.Instance;
+                marshaller.Marshall(requestObject.Skipped, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetTransferred())
+            {
+                context.Writer.WritePropertyName("Transferred");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ReportOverrideMarshaller.Instance;
+                marshaller.Marshall(requestObject.Transferred, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetVerified())
+            {
+                context.Writer.WritePropertyName("Verified");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ReportOverrideMarshaller.Instance;
+                marshaller.Marshall(requestObject.Verified, context);
+
+                context.Writer.WriteEndObject();
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static ReportOverridesMarshaller Instance = new ReportOverridesMarshaller();
+    }
+}

@@ -87,6 +87,12 @@ namespace Amazon.DataZone.Model
         IListDataSourcesPaginator ListDataSources(ListDataSourcesRequest request);
 
         /// <summary>
+        /// Paginator for ListDesignations operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListDesignationsPaginator ListDesignations(ListDesignationsRequest request);
+
+        /// <summary>
         /// Paginator for ListDomainUnitsForParent operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]

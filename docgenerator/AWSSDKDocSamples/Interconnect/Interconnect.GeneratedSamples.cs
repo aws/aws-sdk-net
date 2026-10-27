@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.Interconnect.Generated
     {
         public void InterconnectAcceptConnectionProposal()
         {
-            #region example-1
+            #region AcceptConnectionProposal-1
 
             var client = new AmazonInterconnectClient();
-            var response = client.AcceptConnectionProposal(new AcceptConnectionProposalRequest 
+            var response = client.AcceptConnectionProposal(new AcceptConnectionProposalRequest
             {
                 ActivationKey = "<Activation Key Data>",
                 AttachPoint = new AttachPoint { DirectConnectGateway = "90392BE3-219C-47FD-BBA5-03DF76D2542A" }
@@ -29,10 +30,10 @@ namespace AWSSDKDocSamples.Amazon.Interconnect.Generated
 
         public void InterconnectCreateConnection()
         {
-            #region example-1
+            #region CreateConnection-1
 
             var client = new AmazonInterconnectClient();
-            var response = client.CreateConnection(new CreateConnectionRequest 
+            var response = client.CreateConnection(new CreateConnectionRequest
             {
                 AttachPoint = new AttachPoint { DirectConnectGateway = "90392BE3-219C-47FD-BBA5-03DF76D2542A" },
                 Bandwidth = "1Gbps",
@@ -47,10 +48,10 @@ namespace AWSSDKDocSamples.Amazon.Interconnect.Generated
 
         public void InterconnectDeleteConnection()
         {
-            #region example-1
+            #region DeleteConnection-1
 
             var client = new AmazonInterconnectClient();
-            var response = client.DeleteConnection(new DeleteConnectionRequest 
+            var response = client.DeleteConnection(new DeleteConnectionRequest
             {
                 Identifier = "mcc-abc12345"
             });
@@ -62,10 +63,10 @@ namespace AWSSDKDocSamples.Amazon.Interconnect.Generated
 
         public void InterconnectDescribeConnectionProposal()
         {
-            #region example-1
+            #region DescribeConnectionProposal-1
 
             var client = new AmazonInterconnectClient();
-            var response = client.DescribeConnectionProposal(new DescribeConnectionProposalRequest 
+            var response = client.DescribeConnectionProposal(new DescribeConnectionProposalRequest
             {
                 ActivationKey = "<Activation Key Data>"
             });
@@ -80,10 +81,10 @@ namespace AWSSDKDocSamples.Amazon.Interconnect.Generated
 
         public void InterconnectGetConnection()
         {
-            #region example-1
+            #region GetConnection-1
 
             var client = new AmazonInterconnectClient();
-            var response = client.GetConnection(new GetConnectionRequest 
+            var response = client.GetConnection(new GetConnectionRequest
             {
                 Identifier = "mcc-abc12345"
             });
@@ -95,10 +96,10 @@ namespace AWSSDKDocSamples.Amazon.Interconnect.Generated
 
         public void InterconnectGetEnvironment()
         {
-            #region example-1
+            #region GetEnvironment-1
 
             var client = new AmazonInterconnectClient();
-            var response = client.GetEnvironment(new GetEnvironmentRequest 
+            var response = client.GetEnvironment(new GetEnvironmentRequest
             {
                 Id = "mce-aws-acme-1"
             });
@@ -110,10 +111,10 @@ namespace AWSSDKDocSamples.Amazon.Interconnect.Generated
 
         public void InterconnectListAttachPoints()
         {
-            #region example-1
+            #region ListAttachPoints-1
 
             var client = new AmazonInterconnectClient();
-            var response = client.ListAttachPoints(new ListAttachPointsRequest 
+            var response = client.ListAttachPoints(new ListAttachPointsRequest
             {
                 EnvironmentId = "mce-aws-acme-1"
             });
@@ -125,10 +126,10 @@ namespace AWSSDKDocSamples.Amazon.Interconnect.Generated
 
         public void InterconnectListConnections()
         {
-            #region example-1
+            #region ListConnections-1
 
             var client = new AmazonInterconnectClient();
-            var response = client.ListConnections(new ListConnectionsRequest 
+            var response = client.ListConnections(new ListConnectionsRequest
             {
             });
 
@@ -139,10 +140,10 @@ namespace AWSSDKDocSamples.Amazon.Interconnect.Generated
 
         public void InterconnectListConnections()
         {
-            #region example-2
+            #region ListConnections-2
 
             var client = new AmazonInterconnectClient();
-            var response = client.ListConnections(new ListConnectionsRequest 
+            var response = client.ListConnections(new ListConnectionsRequest
             {
                 State = "available"
             });
@@ -154,10 +155,10 @@ namespace AWSSDKDocSamples.Amazon.Interconnect.Generated
 
         public void InterconnectListConnections()
         {
-            #region example-3
+            #region ListConnections-3
 
             var client = new AmazonInterconnectClient();
-            var response = client.ListConnections(new ListConnectionsRequest 
+            var response = client.ListConnections(new ListConnectionsRequest
             {
                 EnvironmentId = "mce-aws-acme-1"
             });
@@ -169,10 +170,10 @@ namespace AWSSDKDocSamples.Amazon.Interconnect.Generated
 
         public void InterconnectListEnvironments()
         {
-            #region example-1
+            #region ListEnvironments-1
 
             var client = new AmazonInterconnectClient();
-            var response = client.ListEnvironments(new ListEnvironmentsRequest 
+            var response = client.ListEnvironments(new ListEnvironmentsRequest
             {
             });
 
@@ -183,10 +184,10 @@ namespace AWSSDKDocSamples.Amazon.Interconnect.Generated
 
         public void InterconnectListTagsForResource()
         {
-            #region example-1
+            #region ListTagsForResource-1
 
             var client = new AmazonInterconnectClient();
-            var response = client.ListTagsForResource(new ListTagsForResourceRequest 
+            var response = client.ListTagsForResource(new ListTagsForResourceRequest
             {
                 Arn = "arn:aws:interconnect:us-east-1:000000000000:connection/mcc-abc12345"
             });
@@ -198,10 +199,10 @@ namespace AWSSDKDocSamples.Amazon.Interconnect.Generated
 
         public void InterconnectTagResource()
         {
-            #region example-1
+            #region TagResource-1
 
             var client = new AmazonInterconnectClient();
-            var response = client.TagResource(new TagResourceRequest 
+            var response = client.TagResource(new TagResourceRequest
             {
                 Arn = "arn:aws:interconnect:us-east-1:000000000000:connection/mcc-abc12345",
                 Tags = new Dictionary<string, string> {
@@ -216,10 +217,10 @@ namespace AWSSDKDocSamples.Amazon.Interconnect.Generated
 
         public void InterconnectUntagResource()
         {
-            #region example-1
+            #region UntagResource-1
 
             var client = new AmazonInterconnectClient();
-            var response = client.UntagResource(new UntagResourceRequest 
+            var response = client.UntagResource(new UntagResourceRequest
             {
                 Arn = "arn:aws:interconnect:us-east-1:000000000000:connection/mcc-abc12345",
                 TagKeys = new List<string> {
@@ -234,10 +235,10 @@ namespace AWSSDKDocSamples.Amazon.Interconnect.Generated
 
         public void InterconnectUpdateConnection()
         {
-            #region example-1
+            #region UpdateConnection-1
 
             var client = new AmazonInterconnectClient();
-            var response = client.UpdateConnection(new UpdateConnectionRequest 
+            var response = client.UpdateConnection(new UpdateConnectionRequest
             {
                 Description = "Changed Description",
                 Identifier = "mcc-abc12345"
@@ -250,10 +251,10 @@ namespace AWSSDKDocSamples.Amazon.Interconnect.Generated
 
         public void InterconnectUpdateConnection()
         {
-            #region example-2
+            #region UpdateConnection-2
 
             var client = new AmazonInterconnectClient();
-            var response = client.UpdateConnection(new UpdateConnectionRequest 
+            var response = client.UpdateConnection(new UpdateConnectionRequest
             {
                 Bandwidth = "2Gbps",
                 Identifier = "mcc-abc12345"
@@ -264,13 +265,10 @@ namespace AWSSDKDocSamples.Amazon.Interconnect.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

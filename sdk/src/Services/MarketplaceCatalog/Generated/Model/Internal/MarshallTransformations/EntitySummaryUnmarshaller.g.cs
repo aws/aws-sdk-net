@@ -95,6 +95,13 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("ExpressPrivateOfferConfigurationSummary", targetDepth, ref reader))
+                {
+                    var unmarshaller = ExpressPrivateOfferConfigurationSummaryUnmarshaller.Instance;
+                    unmarshalledObject.ExpressPrivateOfferConfigurationSummary = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("LastModifiedDate", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -141,6 +148,13 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = SaaSProductSummaryUnmarshaller.Instance;
                     unmarshalledObject.SaaSProductSummary = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("SubsidiaryAuthorizationSummary", targetDepth, ref reader))
+                {
+                    var unmarshaller = SubsidiaryAuthorizationSummaryUnmarshaller.Instance;
+                    unmarshalledObject.SubsidiaryAuthorizationSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 

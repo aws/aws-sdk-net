@@ -12,6 +12,7 @@
     <Project Path="../../../../generator/ServiceClientGeneratorLib/ServiceClientGeneratorLib.csproj" />
     <Project Path="../../../test/Common/AWSSDK.CommonTest.csproj" />
     <Project Path="../../../test/IntegrationTests/AWSSDK.IntegrationTestUtilities.csproj" />
+    <Project Path="../../../test/Services/TranscribeStreaming/IntegrationTests/AWSSDK.IntegrationTests.TranscribeStreaming.csproj" />
     <Project Path="../../../test/Services/TranscribeStreaming/UnitTests/AWSSDK.UnitTests.TranscribeStreaming.csproj" />
     <Project Path="../../../test/UnitTests/AWSSDK.UnitTests.Core.csproj" />
     <Project Path="../../../test/UnitTests/Custom/AWSSDK.UnitTestUtilities.csproj" />

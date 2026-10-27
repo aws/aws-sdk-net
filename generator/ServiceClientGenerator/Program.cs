@@ -77,7 +77,7 @@ namespace ServiceClientGenerator
                     });
 
                     // Process extensions
-                    Parallel.ForEach(generationManifest.ExtensionConfigurations, new ParallelOptions { MaxDegreeOfParallelism = maxDegreeOfParallelism }, (extensionConfig, state) =>
+                    Parallel.ForEach(generationManifest.ExtensionConfigurations, new ParallelOptions { MaxDegreeOfParallelism = 1 }, (extensionConfig, state) =>
                     {
                         Console.WriteLine("Processing extension: {0} ({1})", extensionConfig.Id,
                             extensionConfig.Path);

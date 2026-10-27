@@ -38,6 +38,12 @@ namespace Amazon.Polly
     /// from plain text and Speech Synthesis Markup Language (SSML), along with managing pronunciations
     /// lexicons that enable you to get the best results for your application domain.
     /// </para>
+    ///  
+    /// <para>
+    /// Authenticated API calls must be signed using the Signature Version 4 Signing Process.
+    /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html">Signing
+    /// Amazon Web Services API Requests</a> in the <i>IAM User Guide</i>.
+    /// </para>
     /// </summary>
     public partial interface IAmazonPolly : IAmazonService, IDisposable
     {
@@ -395,7 +401,9 @@ namespace Amazon.Polly
         /// </exception>
         /// <exception cref="Amazon.Polly.Model.UnsupportedPlsAlphabetException">
         /// The alphabet specified by the lexicon is not a supported alphabet. Valid values are
-        /// <c>x-sampa</c> and <c>ipa</c>.
+        /// <c>ipa</c>, <c>x-sampa</c>, <c>x-amazon-pinyin</c>, <c>x-amazon-jyutping</c>, <c>x-amazon-pron-kana</c>,
+        /// and <c>x-amazon-yomigana</c>. Replace the unsupported alphabet with one of the valid
+        /// values and resubmit your request.
         /// </exception>
         /// <exception cref="Amazon.Polly.Model.UnsupportedPlsLanguageException">
         /// The language specified in the lexicon is unsupported. For a list of supported languages,
@@ -441,7 +449,9 @@ namespace Amazon.Polly
         /// </exception>
         /// <exception cref="Amazon.Polly.Model.UnsupportedPlsAlphabetException">
         /// The alphabet specified by the lexicon is not a supported alphabet. Valid values are
-        /// <c>x-sampa</c> and <c>ipa</c>.
+        /// <c>ipa</c>, <c>x-sampa</c>, <c>x-amazon-pinyin</c>, <c>x-amazon-jyutping</c>, <c>x-amazon-pron-kana</c>,
+        /// and <c>x-amazon-yomigana</c>. Replace the unsupported alphabet with one of the valid
+        /// values and resubmit your request.
         /// </exception>
         /// <exception cref="Amazon.Polly.Model.UnsupportedPlsLanguageException">
         /// The language specified in the lexicon is unsupported. For a list of supported languages,
@@ -464,7 +474,7 @@ namespace Amazon.Polly
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/polly/latest/API/API_SynthesizeSpeech.html">SynthesizeSpeech</a>
+        ///  <a href="https://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html">SynthesizeSpeech</a>
         /// 
         /// </para>
         ///  </li> </ul>
@@ -498,7 +508,7 @@ namespace Amazon.Polly
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/polly/latest/API/API_SynthesizeSpeech.html">SynthesizeSpeech</a>
+        ///  <a href="https://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html">SynthesizeSpeech</a>
         /// 
         /// </para>
         ///  </li> </ul>

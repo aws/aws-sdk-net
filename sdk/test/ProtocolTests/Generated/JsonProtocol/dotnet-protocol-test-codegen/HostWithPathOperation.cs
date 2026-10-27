@@ -33,6 +33,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.JsonProtocol
 {
@@ -46,7 +47,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonProtocol")]
-        public void AwsJson11HostWithPathRequest()
+        public async Task AwsJson11HostWithPathRequest()
         {
             // Arrange
             var request = new HostWithPathOperationRequest
@@ -54,21 +55,28 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             };
             var config = new AmazonJsonProtocolConfig
             {
-              ServiceURL = "https://example.com/custom"
+              ServiceURL = "https://example.com/custom",
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new HostWithPathOperationRequestMarshaller();
+            using var client = new AmazonJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.HostWithPathOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/custom/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonProtocol.HostWithPathOperation".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/custom/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonProtocol.HostWithPathOperation".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
         }
 
     }

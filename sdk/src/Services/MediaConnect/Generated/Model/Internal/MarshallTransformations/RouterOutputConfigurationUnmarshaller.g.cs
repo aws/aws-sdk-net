@@ -67,6 +67,13 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("sourceEndpoint", targetDepth, ref reader))
+                {
+                    var unmarshaller = SourceEndpointRouterOutputConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SourceEndpoint = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("standard", targetDepth, ref reader))
                 {
                     var unmarshaller = StandardRouterOutputConfigurationUnmarshaller.Instance;

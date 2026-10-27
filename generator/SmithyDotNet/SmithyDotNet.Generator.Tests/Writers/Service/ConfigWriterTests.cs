@@ -1,3 +1,5 @@
+using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Manifests;
 using SmithyDotNet.Generator.Writers.Service;
 using Xunit;
 
@@ -12,10 +14,12 @@ public class ConfigWriterTests
     // "4.0.1.29"), so it is passed as a constructor argument.
     private const string ServiceFileVersion = "4.0.1.29";
 
+    private readonly CloudTrailModelFixture _fixture;
     private readonly string _output;
 
     public ConfigWriterTests(CloudTrailModelFixture fixture)
     {
+        _fixture = fixture;
         var writer = new ConfigWriter(fixture.Context, ModelFileName, ServiceFileVersion);
         _output = writer.Write(TestContext.Current.CancellationToken);
     }
@@ -102,6 +106,20 @@ public class ConfigWriterTests
         Assert.Contains("""this.AuthenticationServiceName = "cloudtrail-data";""", _output);
         // EndpointProvider wiring is part of the endpointRuleSet branch.
         Assert.Contains("this.EndpointProvider = new AmazonCloudTrailDataEndpointProvider();", _output);
+    }
+
+    [Fact]
+    public void EmitsRegionFallback_OnlyWhenMetadataSetsDefaultRegion()
+    {
+        // iam's metadata.json sets default-region; the constructor then pins the region when the
+        // environment supplies none.
+        var metadata = new ServiceMetadata { DefaultRegion = "USEast1" };
+        var context = new GenerationContext(_fixture.Index, _fixture.Context.Manifest, metadata);
+        var output = new ConfigWriter(context, ModelFileName, ServiceFileVersion).Write(TestContext.Current.CancellationToken);
+
+        Assert.Contains("var region = FallbackRegionFactory.GetRegionEndpoint(false);", output);
+        Assert.Contains("this.RegionEndpoint = region ?? RegionEndpoint.USEast1;", output);
+        Assert.DoesNotContain("this.RegionEndpoint =", _output);
     }
 
     [Fact]

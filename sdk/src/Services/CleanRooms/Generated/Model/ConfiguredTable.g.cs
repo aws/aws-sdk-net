@@ -206,6 +206,19 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetTableReference() => this.TableReference != null;
 
         /// <summary>
+        /// Gets and sets the property TableType. 
+        /// <para>
+        /// Type of the Configured Table DataSource, example: Glue, Snowflake, Athena, Databricks
+        /// </para>
+        /// </summary>
+        public TableReferenceType TableType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TableType property is set.
+        /// </summary>
+        internal bool IsSetTableType() => this.TableType != null;
+
+        /// <summary>
         /// Gets and sets the property UpdateTime. 
         /// <para>
         /// The time the configured table was last updated

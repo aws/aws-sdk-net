@@ -416,19 +416,41 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Complete the migration of data.
+        /// Completes the migration of data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CompleteMigration service method.</param>
         /// 
         /// <returns>The response from the CompleteMigration service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
+        /// The requested cluster is not in the <c>available</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
         /// The requested replication group is not in the <c>available</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheStateException">
+        /// The account for these credentials is not currently active.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.MigrationHealthException">
+        /// The migration is not healthy. Check the events for this serverless cache for more
+        /// details. For <c>CompleteMigration</c>, set <c>Force</c> to true to bypass this check.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
         /// The specified replication group does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotUnderMigrationException">
         /// The designated replication group is not available for data migration.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheNotFoundException">
+        /// The serverless cache was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheNotUnderMigrationException">
+        /// The serverless cache is not currently under migration.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CompleteMigration">REST API Reference for CompleteMigration Operation</seealso>
         CompleteMigrationResponse CompleteMigration(CompleteMigrationRequest request);
@@ -436,7 +458,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Complete the migration of data.
+        /// Completes the migration of data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CompleteMigration service method.</param>
         /// <param name="cancellationToken">
@@ -444,14 +466,36 @@ namespace Amazon.ElastiCache
         /// </param>
         /// 
         /// <returns>The response from the CompleteMigration service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
+        /// The requested cluster is not in the <c>available</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
         /// The requested replication group is not in the <c>available</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheStateException">
+        /// The account for these credentials is not currently active.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.MigrationHealthException">
+        /// The migration is not healthy. Check the events for this serverless cache for more
+        /// details. For <c>CompleteMigration</c>, set <c>Force</c> to true to bypass this check.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
         /// The specified replication group does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotUnderMigrationException">
         /// The designated replication group is not available for data migration.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheNotFoundException">
+        /// The serverless cache was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheNotUnderMigrationException">
+        /// The serverless cache is not currently under migration.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CompleteMigration">REST API Reference for CompleteMigration Operation</seealso>
         Task<CompleteMigrationResponse> CompleteMigrationAsync(CompleteMigrationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -5976,6 +6020,62 @@ namespace Amazon.ElastiCache
 
         #endregion
         
+        #region  PrepareMigration
+
+
+        /// <summary>
+        /// Prepares the serverless cache for data migration by validating the configuration and
+        /// setting up the migration resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PrepareMigration service method.</param>
+        /// 
+        /// <returns>The response from the PrepareMigration service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheStateException">
+        /// The account for these credentials is not currently active.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheAlreadyUnderMigrationException">
+        /// A migration is already in progress for this serverless cache. You cannot start another
+        /// migration until the current one completes.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheNotFoundException">
+        /// The serverless cache was not found or does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/PrepareMigration">REST API Reference for PrepareMigration Operation</seealso>
+        PrepareMigrationResponse PrepareMigration(PrepareMigrationRequest request);
+
+
+
+        /// <summary>
+        /// Prepares the serverless cache for data migration by validating the configuration and
+        /// setting up the migration resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PrepareMigration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PrepareMigration service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheStateException">
+        /// The account for these credentials is not currently active.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheAlreadyUnderMigrationException">
+        /// A migration is already in progress for this serverless cache. You cannot start another
+        /// migration until the current one completes.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheNotFoundException">
+        /// The serverless cache was not found or does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/PrepareMigration">REST API Reference for PrepareMigration Operation</seealso>
+        Task<PrepareMigrationResponse> PrepareMigrationAsync(PrepareMigrationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  PurchaseReservedCacheNodesOffering
 
 
@@ -6474,22 +6574,41 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Start the migration of data.
+        /// Starts the migration of data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartMigration service method.</param>
         /// 
         /// <returns>The response from the StartMigration service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
+        /// The requested cluster is not in the <c>available</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
         /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheStateException">
+        /// The account for these credentials is not currently active.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.MigrationHealthException">
+        /// The migration is not healthy. Check the events for this serverless cache for more
+        /// details. For <c>CompleteMigration</c>, set <c>Force</c> to true to bypass this check.
+        /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupAlreadyUnderMigrationException">
         /// The targeted replication group is not available.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
         /// The specified replication group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheNotFoundException">
+        /// The serverless cache was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheNotUnderMigrationException">
+        /// The serverless cache is not currently under migration.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/StartMigration">REST API Reference for StartMigration Operation</seealso>
         StartMigrationResponse StartMigration(StartMigrationRequest request);
@@ -6497,7 +6616,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Start the migration of data.
+        /// Starts the migration of data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartMigration service method.</param>
         /// <param name="cancellationToken">
@@ -6505,11 +6624,24 @@ namespace Amazon.ElastiCache
         /// </param>
         /// 
         /// <returns>The response from the StartMigration service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
+        /// The requested cluster is not in the <c>available</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
         /// The requested replication group is not in the <c>available</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheStateException">
+        /// The account for these credentials is not currently active.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.MigrationHealthException">
+        /// The migration is not healthy. Check the events for this serverless cache for more
+        /// details. For <c>CompleteMigration</c>, set <c>Force</c> to true to bypass this check.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupAlreadyUnderMigrationException">
         /// The targeted replication group is not available.
@@ -6517,8 +6649,70 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
         /// The specified replication group does not exist.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheNotFoundException">
+        /// The serverless cache was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheNotUnderMigrationException">
+        /// The serverless cache is not currently under migration.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/StartMigration">REST API Reference for StartMigration Operation</seealso>
         Task<StartMigrationResponse> StartMigrationAsync(StartMigrationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StopMigration
+
+
+        /// <summary>
+        /// Stops an ongoing data sync between the source and the serverless cache. The migration
+        /// remains open and the data sync can be restarted. This operation is valid only while
+        /// the migration is syncing; during cutover it returns <c>InvalidServerlessCacheStateFault</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopMigration service method.</param>
+        /// 
+        /// <returns>The response from the StopMigration service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheStateException">
+        /// The account for these credentials is not currently active.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheNotFoundException">
+        /// The serverless cache was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheNotUnderMigrationException">
+        /// The serverless cache is not currently under migration.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/StopMigration">REST API Reference for StopMigration Operation</seealso>
+        StopMigrationResponse StopMigration(StopMigrationRequest request);
+
+
+
+        /// <summary>
+        /// Stops an ongoing data sync between the source and the serverless cache. The migration
+        /// remains open and the data sync can be restarted. This operation is valid only while
+        /// the migration is syncing; during cutover it returns <c>InvalidServerlessCacheStateFault</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopMigration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopMigration service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheStateException">
+        /// The account for these credentials is not currently active.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheNotFoundException">
+        /// The serverless cache was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheNotUnderMigrationException">
+        /// The serverless cache is not currently under migration.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/StopMigration">REST API Reference for StopMigration Operation</seealso>
+        Task<StopMigrationResponse> StopMigrationAsync(StopMigrationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -6781,6 +6975,12 @@ namespace Amazon.ElastiCache
         /// <param name="request">Container for the necessary parameters to execute the TestMigration service method.</param>
         /// 
         /// <returns>The response from the TestMigration service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
+        /// The requested cluster is not in the <c>available</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
@@ -6807,6 +7007,12 @@ namespace Amazon.ElastiCache
         /// </param>
         /// 
         /// <returns>The response from the TestMigration service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
+        /// The requested cluster is not in the <c>available</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>

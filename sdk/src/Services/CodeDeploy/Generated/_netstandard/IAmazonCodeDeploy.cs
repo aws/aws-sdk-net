@@ -630,6 +630,11 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidAutoScalingGroupException">
         /// The Auto Scaling group was specified in an invalid format or does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidAutoScalingGroupProcessToSuspendException">
+        /// The <c>autoScalingGroupProcessesToSuspend</c> list in <c>ec2DeploymentOptions</c>
+        /// contains a process that is not valid. Valid values are <c>Terminate</c>, <c>AZRebalance</c>,
+        /// <c>InstanceRefresh</c>, and <c>ScheduledActions</c>. Process names are case sensitive.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidComputePlatformException">
         /// The computePlatform is invalid. The computePlatform should be <c>Lambda</c>, <c>Server</c>,
         /// or <c>ECS</c>.
@@ -830,6 +835,11 @@ namespace Amazon.CodeDeploy
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidAutoScalingGroupException">
         /// The Auto Scaling group was specified in an invalid format or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidAutoScalingGroupProcessToSuspendException">
+        /// The <c>autoScalingGroupProcessesToSuspend</c> list in <c>ec2DeploymentOptions</c>
+        /// contains a process that is not valid. Valid values are <c>Terminate</c>, <c>AZRebalance</c>,
+        /// <c>InstanceRefresh</c>, and <c>ScheduledActions</c>. Process names are case sensitive.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidBlueGreenDeploymentConfigurationException">
         /// The configuration for the blue/green deployment group was provided in an invalid format.
@@ -2235,6 +2245,11 @@ namespace Amazon.CodeDeploy
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidAutoScalingGroupException">
         /// The Auto Scaling group was specified in an invalid format or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidAutoScalingGroupProcessToSuspendException">
+        /// The <c>autoScalingGroupProcessesToSuspend</c> list in <c>ec2DeploymentOptions</c>
+        /// contains a process that is not valid. Valid values are <c>Terminate</c>, <c>AZRebalance</c>,
+        /// <c>InstanceRefresh</c>, and <c>ScheduledActions</c>. Process names are case sensitive.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidBlueGreenDeploymentConfigurationException">
         /// The configuration for the blue/green deployment group was provided in an invalid format.

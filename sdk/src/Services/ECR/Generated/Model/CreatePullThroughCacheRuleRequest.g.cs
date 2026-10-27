@@ -1,0 +1,187 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.ECR.Model
+{
+    /// <summary>
+    /// Container for the parameters to the CreatePullThroughCacheRule operation. Creates
+    /// a pull through cache rule. A pull through cache rule provides a way to cache images
+    /// from an upstream registry source in your Amazon ECR private registry. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/pull-through-cache.html">Using
+    /// pull through cache rules</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+    /// </summary>
+    public partial class CreatePullThroughCacheRuleRequest : AmazonECRRequest
+    {
+        /// <summary>
+        /// Gets and sets the property CredentialArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that
+        /// identifies the credentials to authenticate to the upstream registry.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 50, Max = 612)]
+        public string CredentialArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CredentialArn property is set.
+        /// </summary>
+        internal bool IsSetCredentialArn() => this.CredentialArn != null;
+
+        /// <summary>
+        /// Gets and sets the property CustomRoleArn. 
+        /// <para>
+        /// Amazon Resource Name (ARN) of the IAM role to be assumed by Amazon ECR to authenticate
+        /// to the ECR upstream registry. This role must be in the same account as the registry
+        /// that you are configuring.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 2048)]
+        public string CustomRoleArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CustomRoleArn property is set.
+        /// </summary>
+        internal bool IsSetCustomRoleArn() => this.CustomRoleArn != null;
+
+        /// <summary>
+        /// Gets and sets the property EcrRepositoryPrefix. 
+        /// <para>
+        /// The repository name prefix to use when caching images from the source registry.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// There is always an assumed <c>/</c> applied to the end of the prefix. If you specify
+        /// <c>ecr-public</c> as the prefix, Amazon ECR treats that as <c>ecr-public/</c>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 2, Max = 30)]
+        public string EcrRepositoryPrefix { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EcrRepositoryPrefix property is set.
+        /// </summary>
+        internal bool IsSetEcrRepositoryPrefix() => this.EcrRepositoryPrefix != null;
+
+        /// <summary>
+        /// Gets and sets the property RegistryId. 
+        /// <para>
+        /// The Amazon Web Services account ID associated with the registry to create the pull
+        /// through cache rule for. If you do not specify a registry, the default registry is
+        /// assumed.
+        /// </para>
+        /// </summary>
+        public string RegistryId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RegistryId property is set.
+        /// </summary>
+        internal bool IsSetRegistryId() => this.RegistryId != null;
+
+        /// <summary>
+        /// Gets and sets the property UpstreamRegistry. 
+        /// <para>
+        /// The name of the upstream registry.
+        /// </para>
+        /// </summary>
+        public UpstreamRegistry UpstreamRegistry { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpstreamRegistry property is set.
+        /// </summary>
+        internal bool IsSetUpstreamRegistry() => this.UpstreamRegistry != null;
+
+        /// <summary>
+        /// Gets and sets the property UpstreamRegistryUrl. 
+        /// <para>
+        /// The registry URL of the upstream public registry to use as the source for the pull
+        /// through cache rule. The following is the syntax to use for each supported upstream
+        /// registry.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Amazon ECR (<c>ecr</c>) – <c>&lt;accountId&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon ECR Public (<c>ecr-public</c>) – <c>public.ecr.aws</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Docker Hub (<c>docker-hub</c>) – <c>registry-1.docker.io</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// GitHub Container Registry (<c>github-container-registry</c>) – <c>ghcr.io</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// GitLab Container Registry (<c>gitlab-container-registry</c>) – <c>registry.gitlab.com</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Kubernetes (<c>k8s</c>) – <c>registry.k8s.io</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft Azure Container Registry (<c>azure-container-registry</c>) – <c>&lt;custom&gt;.azurecr.io</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Quay (<c>quay</c>) – <c>quay.io</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string UpstreamRegistryUrl { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpstreamRegistryUrl property is set.
+        /// </summary>
+        internal bool IsSetUpstreamRegistryUrl() => this.UpstreamRegistryUrl != null;
+
+        /// <summary>
+        /// Gets and sets the property UpstreamRepositoryPrefix. 
+        /// <para>
+        /// The repository name prefix of the upstream registry to match with the upstream repository
+        /// name. When this field isn't specified, Amazon ECR will use the <c>ROOT</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 2, Max = 30)]
+        public string UpstreamRepositoryPrefix { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpstreamRepositoryPrefix property is set.
+        /// </summary>
+        internal bool IsSetUpstreamRepositoryPrefix() => this.UpstreamRepositoryPrefix != null;
+    }
+}

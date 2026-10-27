@@ -47,6 +47,7 @@ namespace Amazon.DynamoDBStreams.Model
         private string _shardId;
         private ShardIteratorType _shardIteratorType;
         private string _streamArn;
+        private DateTime? _timestamp;
 
         /// <summary>
         /// Gets and sets the property SequenceNumber. 
@@ -114,6 +115,11 @@ namespace Amazon.DynamoDBStreams.Model
         ///  <c>LATEST</c> - Start reading just after the most recent stream record in the shard,
         /// so that you always read the most recent data in the shard.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AT_TIMESTAMP</c> - Start reading from the position denoted by a specific timestamp,
+        /// provided in the parameter <c>Timestamp</c>.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -146,6 +152,31 @@ namespace Amazon.DynamoDBStreams.Model
         internal bool IsSetStreamArn()
         {
             return this._streamArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Timestamp. 
+        /// <para>
+        /// The timestamp of the stream record from which to start reading. Used with shard iterator
+        /// type <c>AT_TIMESTAMP</c>. A timestamp is the Unix epoch date with precision in milliseconds.
+        /// For example, <c>1791316726.480</c>. The iterator points to the first stream record
+        /// whose <c>ApproximateCreationDateTime</c> is at or after the specified timestamp. If
+        /// no record with that exact timestamp exists, the iterator points to the next (later)
+        /// record. If the timestamp is older than the current trim horizon, the iterator points
+        /// to the oldest untrimmed stream record (<c>TRIM_HORIZON</c>). If the timestamp is in
+        /// the future, the request returns a <c>ValidationException</c>.
+        /// </para>
+        /// </summary>
+        public DateTime? Timestamp
+        {
+            get { return this._timestamp; }
+            set { this._timestamp = value; }
+        }
+
+        // Check to see if Timestamp property is set
+        internal bool IsSetTimestamp()
+        {
+            return this._timestamp.HasValue; 
         }
 
     }

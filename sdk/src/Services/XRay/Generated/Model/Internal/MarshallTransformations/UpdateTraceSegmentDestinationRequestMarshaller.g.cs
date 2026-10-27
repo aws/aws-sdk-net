@@ -68,6 +68,16 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetCloudWatchLogsConfiguration())
+            {
+                context.Writer.WritePropertyName("CloudWatchLogsConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CloudWatchLogsConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CloudWatchLogsConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetDestination())
             {
                 context.Writer.WritePropertyName("Destination");

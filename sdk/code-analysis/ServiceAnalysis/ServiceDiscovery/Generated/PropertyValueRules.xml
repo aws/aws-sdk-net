@@ -2,101 +2,124 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.CreateHttpNamespaceRequest.CreatorRequestId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.CreateHttpNamespaceRequest.Description</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.CreateHttpNamespaceRequest.Name</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>^(?!arn:)[!-~]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.CreateHttpNamespaceResponse.OperationId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.CreatePrivateDnsNamespaceRequest.CreatorRequestId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.CreatePrivateDnsNamespaceRequest.Description</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.CreatePrivateDnsNamespaceRequest.Name</property>
+    <min>0</min>
     <max>253</max>
     <pattern>^(?!arn:)[!-~]{1,253}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.CreatePrivateDnsNamespaceRequest.Vpc</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.CreatePrivateDnsNamespaceResponse.OperationId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.CreatePublicDnsNamespaceRequest.CreatorRequestId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.CreatePublicDnsNamespaceRequest.Description</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.CreatePublicDnsNamespaceRequest.Name</property>
+    <min>0</min>
     <max>253</max>
     <pattern>^([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.CreatePublicDnsNamespaceResponse.OperationId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.CreateServiceRequest.CreatorRequestId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.CreateServiceRequest.Description</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.CreateServiceRequest.Name</property>
-    <pattern>((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$)</pattern>
+    <pattern>^((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.CreateServiceRequest.NamespaceId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.DeleteNamespaceRequest.Id</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.DeleteNamespaceResponse.OperationId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.DeleteServiceRequest.Id</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.DeleteServiceAttributesRequest.ServiceId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.DeregisterInstanceRequest.InstanceId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.DeregisterInstanceRequest.ServiceId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.DeregisterInstanceResponse.OperationId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -106,6 +129,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.DiscoverInstancesRequest.NamespaceName</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>^[!-~]{1,1024}$</pattern>
   </property-value-rule>
@@ -116,10 +140,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.DiscoverInstancesRequest.ServiceName</property>
-    <pattern>((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$)</pattern>
+    <pattern>^((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.DiscoverInstancesRevisionRequest.NamespaceName</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>^[!-~]{1,1024}$</pattern>
   </property-value-rule>
@@ -130,14 +155,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.DiscoverInstancesRevisionRequest.ServiceName</property>
-    <pattern>((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$)</pattern>
+    <pattern>^((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.GetInstanceRequest.InstanceId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.GetInstanceRequest.ServiceId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -152,22 +179,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.GetInstancesHealthStatusRequest.NextToken</property>
+    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.GetInstancesHealthStatusRequest.ServiceId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.GetInstancesHealthStatusResponse.NextToken</property>
+    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.GetNamespaceRequest.Id</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.GetOperationRequest.OperationId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -177,10 +209,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.GetServiceRequest.Id</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.GetServiceAttributesRequest.ServiceId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -190,14 +224,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.ListInstancesRequest.NextToken</property>
+    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.ListInstancesRequest.ServiceId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.ListInstancesResponse.NextToken</property>
+    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
@@ -212,10 +249,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.ListNamespacesRequest.NextToken</property>
+    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.ListNamespacesResponse.NextToken</property>
+    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
@@ -225,10 +264,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.ListOperationsRequest.NextToken</property>
+    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.ListOperationsResponse.NextToken</property>
+    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
@@ -238,10 +279,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.ListServicesRequest.NextToken</property>
+    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.ListServicesResponse.NextToken</property>
+    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
@@ -251,19 +294,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.RegisterInstanceRequest.CreatorRequestId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.RegisterInstanceRequest.InstanceId</property>
+    <min>0</min>
     <max>64</max>
     <pattern>^[0-9a-zA-Z_/:.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.RegisterInstanceRequest.ServiceId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.RegisterInstanceResponse.OperationId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -278,66 +325,82 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.UpdateHttpNamespaceRequest.Id</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.UpdateHttpNamespaceRequest.UpdaterRequestId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.UpdateHttpNamespaceResponse.OperationId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.UpdateInstanceCustomHealthStatusRequest.InstanceId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.UpdateInstanceCustomHealthStatusRequest.ServiceId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.UpdatePrivateDnsNamespaceRequest.Id</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.UpdatePrivateDnsNamespaceRequest.UpdaterRequestId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.UpdatePrivateDnsNamespaceResponse.OperationId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.UpdatePublicDnsNamespaceRequest.Id</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.UpdatePublicDnsNamespaceRequest.UpdaterRequestId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.UpdatePublicDnsNamespaceResponse.OperationId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.UpdateServiceRequest.Id</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.UpdateServiceResponse.OperationId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.UpdateServiceAttributesRequest.ServiceId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.DnsConfig.NamespaceId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.DnsProperties.HostedZoneId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -347,6 +410,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.DuplicateRequestException.DuplicateOperationId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -356,6 +420,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.HealthCheckConfig.ResourcePath</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -365,23 +430,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.HttpInstanceSummary.InstanceId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.HttpInstanceSummary.NamespaceName</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>^(?!arn:)[!-~]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.HttpInstanceSummary.ServiceName</property>
-    <pattern>((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$)</pattern>
+    <pattern>^((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.HttpNamespaceChange.Description</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.HttpProperties.HttpName</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>^[!-~]{1,1024}$</pattern>
   </property-value-rule>
@@ -392,10 +461,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.Instance.CreatorRequestId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.Instance.Id</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -405,26 +476,32 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.InstanceSummary.Id</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.Namespace.Arn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.Namespace.CreatorRequestId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.Namespace.Description</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.Namespace.Id</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.Namespace.Name</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>^[!-~]{1,1024}$</pattern>
   </property-value-rule>
@@ -435,26 +512,32 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.NamespaceAlreadyExistsException.CreatorRequestId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.NamespaceAlreadyExistsException.NamespaceId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.NamespaceSummary.Arn</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.NamespaceSummary.Description</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.NamespaceSummary.Id</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.NamespaceSummary.Name</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>^[!-~]{1,1024}$</pattern>
   </property-value-rule>
@@ -465,6 +548,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.Operation.Id</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -474,100 +558,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.OperationSummary.Id</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.PrivateDnsNamespaceChange.Description</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.PublicDnsNamespaceChange.Description</property>
+    <min>0</min>
     <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ServiceDiscovery.Model.Service.Arn</property>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ServiceDiscovery.Model.Service.CreatedByAccount</property>
-    <min>12</min>
-    <max>12</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ServiceDiscovery.Model.Service.CreatorRequestId</property>
-    <max>64</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ServiceDiscovery.Model.Service.Description</property>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ServiceDiscovery.Model.Service.Id</property>
-    <max>64</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ServiceDiscovery.Model.Service.Name</property>
-    <pattern>((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$)</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ServiceDiscovery.Model.Service.NamespaceId</property>
-    <max>64</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ServiceDiscovery.Model.Service.ResourceOwner</property>
-    <min>12</min>
-    <max>12</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ServiceDiscovery.Model.ServiceAlreadyExistsException.CreatorRequestId</property>
-    <max>64</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ServiceDiscovery.Model.ServiceAlreadyExistsException.ServiceArn</property>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ServiceDiscovery.Model.ServiceAlreadyExistsException.ServiceId</property>
-    <max>64</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ServiceDiscovery.Model.ServiceAttributes.ResourceOwner</property>
-    <min>12</min>
-    <max>12</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ServiceDiscovery.Model.ServiceAttributes.ServiceArn</property>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ServiceDiscovery.Model.ServiceChange.Description</property>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ServiceDiscovery.Model.ServiceSummary.Arn</property>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ServiceDiscovery.Model.ServiceSummary.CreatedByAccount</property>
-    <min>12</min>
-    <max>12</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ServiceDiscovery.Model.ServiceSummary.Description</property>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ServiceDiscovery.Model.ServiceSummary.Id</property>
-    <max>64</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ServiceDiscovery.Model.ServiceSummary.Name</property>
-    <pattern>((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$)</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ServiceDiscovery.Model.ServiceSummary.ResourceOwner</property>
-    <min>12</min>
-    <max>12</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.SOA.TTL</property>
@@ -578,6 +580,104 @@
     <property>Amazon.ServiceDiscovery.Model.SOAChange.TTL</property>
     <min>0</min>
     <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.Service.Arn</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.Service.CreatedByAccount</property>
+    <min>12</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.Service.CreatorRequestId</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.Service.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.Service.Id</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.Service.Name</property>
+    <pattern>^((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.Service.NamespaceId</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.Service.ResourceOwner</property>
+    <min>12</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.ServiceAlreadyExistsException.CreatorRequestId</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.ServiceAlreadyExistsException.ServiceArn</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.ServiceAlreadyExistsException.ServiceId</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.ServiceAttributes.ResourceOwner</property>
+    <min>12</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.ServiceAttributes.ServiceArn</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.ServiceChange.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.ServiceSummary.Arn</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.ServiceSummary.CreatedByAccount</property>
+    <min>12</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.ServiceSummary.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.ServiceSummary.Id</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.ServiceSummary.Name</property>
+    <pattern>^((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.ServiceSummary.ResourceOwner</property>
+    <min>12</min>
+    <max>12</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.Tag.Key</property>

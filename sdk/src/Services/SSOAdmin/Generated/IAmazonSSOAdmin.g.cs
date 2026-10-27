@@ -5275,9 +5275,9 @@ namespace Amazon.SSOAdmin
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// A request that specifies both <c>EncryptionConfiguration</c> and <c>PermissionSetsEnabled</c>
-        /// returns a <c>ValidationException</c>. To perform both operations, call <c>UpdateInstance</c>
-        /// separately for each. The two calls can be made in parallel.
+        /// If you specify both <c>EncryptionConfiguration</c> and <c>PermissionSetsEnabled</c>
+        /// in a request, the request returns a <c>ValidationException</c>. To perform both operations,
+        /// call <c>UpdateInstance</c> separately for each. You can make the two calls in parallel.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateInstance service method.</param>
@@ -5327,9 +5327,9 @@ namespace Amazon.SSOAdmin
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// A request that specifies both <c>EncryptionConfiguration</c> and <c>PermissionSetsEnabled</c>
-        /// returns a <c>ValidationException</c>. To perform both operations, call <c>UpdateInstance</c>
-        /// separately for each. The two calls can be made in parallel.
+        /// If you specify both <c>EncryptionConfiguration</c> and <c>PermissionSetsEnabled</c>
+        /// in a request, the request returns a <c>ValidationException</c>. To perform both operations,
+        /// call <c>UpdateInstance</c> separately for each. You can make the two calls in parallel.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateInstance service method.</param>

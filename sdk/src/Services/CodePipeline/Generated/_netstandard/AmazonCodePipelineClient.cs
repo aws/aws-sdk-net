@@ -45,7 +45,7 @@ namespace Amazon.CodePipeline
     /// for the lifetime of your application.
     /// </para>
     ///
-    /// CodePipeline 
+    /// CodePipeline  
     /// <para>
     ///  <b>Overview</b> 
     /// </para>
@@ -53,8 +53,8 @@ namespace Amazon.CodePipeline
     /// <para>
     /// This is the CodePipeline API Reference. This guide provides descriptions of the actions
     /// and data types for CodePipeline. Some functionality for your pipeline can only be
-    /// configured through the API. For more information, see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">CodePipeline
-    /// User Guide</a>.
+    /// configured through the API. For more information, see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">
+    /// CodePipeline User Guide</a>.
     /// </para>
     ///  
     /// <para>
@@ -134,8 +134,8 @@ namespace Amazon.CodePipeline
     /// which displays the status of a pipeline, including the status of stages in the pipeline,
     /// or <a>GetPipeline</a>, which returns the entire structure of the pipeline, including
     /// the stages of that pipeline. For more information about the structure of stages and
-    /// actions, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">CodePipeline
-    /// Pipeline Structure Reference</a>.
+    /// actions, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">
+    /// CodePipeline Pipeline Structure Reference</a>.
     /// </para>
     ///  
     /// <para>
@@ -195,7 +195,7 @@ namespace Amazon.CodePipeline
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <b>Using the API to integrate with CodePipeline</b> 
+    ///  <b>Using the API to integrate with CodePipeline </b> 
     /// </para>
     ///  
     /// <para>
@@ -1900,8 +1900,8 @@ namespace Amazon.CodePipeline
         /// <summary>
         /// Lists the rules for the condition. For more information about conditions, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/stage-conditions.html">Stage
         /// conditions</a> and <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts-how-it-works-conditions.html">How
-        /// do stage conditions work?</a>.For more information about rules, see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/rule-reference.html">CodePipeline
-        /// rule reference</a>.
+        /// do stage conditions work?</a>.For more information about rules, see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/rule-reference.html">
+        /// CodePipeline rule reference</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRuleTypes service method.</param>
         /// <param name="cancellationToken">

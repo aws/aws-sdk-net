@@ -79,6 +79,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAdditionalRecipients())
+            {
+                context.Writer.WritePropertyName("AdditionalRecipients");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NullableAdditionalRecipientsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AdditionalRecipients, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetCustomerEndpoint())
             {
                 context.Writer.WritePropertyName("CustomerEndpoint");

@@ -33,8 +33,8 @@ namespace Amazon.CodePipeline.Model
     /// The condition for the stage. A condition is made up of the rules and the result for
     /// the condition. For more information about conditions, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/stage-conditions.html">Stage
     /// conditions</a> and <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts-how-it-works-conditions.html">How
-    /// do stage conditions work?</a>.. For more information about rules, see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/rule-reference.html">CodePipeline
-    /// rule reference</a>.
+    /// do stage conditions work?</a>.. For more information about rules, see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/rule-reference.html">
+    /// CodePipeline rule reference</a>.
     /// </summary>
     public partial class Condition
     {

@@ -59,6 +59,13 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     unmarshalledObject.Filters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("tier", targetDepth, ref reader))
+                {
+                    var unmarshaller = GuardrailContextualGroundingTierUnmarshaller.Instance;
+                    unmarshalledObject.Tier = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

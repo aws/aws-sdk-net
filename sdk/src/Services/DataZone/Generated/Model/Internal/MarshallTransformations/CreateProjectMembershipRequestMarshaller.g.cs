@@ -95,6 +95,11 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+            if (publicRequest.IsSetUserCreatedDesignationId())
+            {
+                context.Writer.WritePropertyName("userCreatedDesignationId");
+                context.Writer.WriteStringValue(publicRequest.UserCreatedDesignationId);
+            }
 
             writer.WriteEndObject();
             writer.Flush();

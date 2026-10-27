@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
     {
         public void ServiceDiscoveryCreateHttpNamespace()
         {
-            #region createhttpnamespace-example-1590114811304
+            #region CreateHttpNamespace-1
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.CreateHttpNamespace(new CreateHttpNamespaceRequest 
+            var response = client.CreateHttpNamespace(new CreateHttpNamespaceRequest
             {
                 CreatorRequestId = "example-creator-request-id-0001",
                 Description = "Example.com AWS Cloud Map HTTP Namespace",
@@ -30,10 +31,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryCreatePrivateDnsNamespace()
         {
-            #region example-create-private-dns-namespace-1587058592930
+            #region CreatePrivateDnsNamespace-1
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.CreatePrivateDnsNamespace(new CreatePrivateDnsNamespaceRequest 
+            var response = client.CreatePrivateDnsNamespace(new CreatePrivateDnsNamespaceRequest
             {
                 CreatorRequestId = "eedd6892-50f3-41b2-8af9-611d6e1d1a8c",
                 Name = "example.com",
@@ -47,10 +48,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryCreatePublicDnsNamespace()
         {
-            #region createpublicdnsnamespace-example-1590114940910
+            #region CreatePublicDnsNamespace-1
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.CreatePublicDnsNamespace(new CreatePublicDnsNamespaceRequest 
+            var response = client.CreatePublicDnsNamespace(new CreatePublicDnsNamespaceRequest
             {
                 CreatorRequestId = "example-creator-request-id-0003",
                 Description = "Example.com AWS Cloud Map Public DNS Namespace",
@@ -64,10 +65,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryCreateService()
         {
-            #region example-create-service-1587235913584
+            #region CreateService-1
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.CreateService(new CreateServiceRequest 
+            var response = client.CreateService(new CreateServiceRequest
             {
                 CreatorRequestId = "567c1193-6b00-4308-bd57-ad38a8822d25",
                 DnsConfig = new DnsConfig {
@@ -91,10 +92,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryCreateService()
         {
-            #region example-create-service-namespace-arn-1692720000000
+            #region CreateService-2
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.CreateService(new CreateServiceRequest 
+            var response = client.CreateService(new CreateServiceRequest
             {
                 Description = "Example service using namespace ARN",
                 DnsConfig = new DnsConfig {
@@ -117,10 +118,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryDeleteNamespace()
         {
-            #region example-delete-namespace-1587416093508
+            #region DeleteNamespace-1
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.DeleteNamespace(new DeleteNamespaceRequest 
+            var response = client.DeleteNamespace(new DeleteNamespaceRequest
             {
                 Id = "ns-ylexjili4cdxy3xm"
             });
@@ -132,10 +133,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryDeleteNamespace()
         {
-            #region example-delete-namespace-arn-1692720000000
+            #region DeleteNamespace-2
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.DeleteNamespace(new DeleteNamespaceRequest 
+            var response = client.DeleteNamespace(new DeleteNamespaceRequest
             {
                 Id = "arn:aws:servicediscovery:us-west-2:123456789012:namespace/ns-abcd1234xmpl5678"
             });
@@ -147,10 +148,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryDeleteService()
         {
-            #region example-delete-service-1587416462902
+            #region DeleteService-1
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.DeleteService(new DeleteServiceRequest 
+            var response = client.DeleteService(new DeleteServiceRequest
             {
                 Id = "srv-p5zdwlg5uvvzjita"
             });
@@ -161,10 +162,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryDeleteService()
         {
-            #region example-delete-service-arn-1692720000000
+            #region DeleteService-2
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.DeleteService(new DeleteServiceRequest 
+            var response = client.DeleteService(new DeleteServiceRequest
             {
                 Id = "arn:aws:servicediscovery:us-west-2:123456789012:service/srv-abcd1234xmpl5678"
             });
@@ -175,10 +176,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryDeleteServiceAttributes()
         {
-            #region example-delete-service-attributes-1587416462902
+            #region DeleteServiceAttributes-1
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.DeleteServiceAttributes(new DeleteServiceAttributesRequest 
+            var response = client.DeleteServiceAttributes(new DeleteServiceAttributesRequest
             {
                 Attributes = new List<string> {
                     "port"
@@ -192,10 +193,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryDeleteServiceAttributes()
         {
-            #region example-delete-service-attributes-arn-1692720000000
+            #region DeleteServiceAttributes-2
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.DeleteServiceAttributes(new DeleteServiceAttributesRequest 
+            var response = client.DeleteServiceAttributes(new DeleteServiceAttributesRequest
             {
                 Attributes = new List<string> {
                     "Port"
@@ -209,10 +210,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryDeregisterInstance()
         {
-            #region example-deregister-a-service-instance-1587416305738
+            #region DeregisterInstance-1
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.DeregisterInstance(new DeregisterInstanceRequest 
+            var response = client.DeregisterInstance(new DeregisterInstanceRequest
             {
                 InstanceId = "myservice-53",
                 ServiceId = "srv-p5zdwlg5uvvzjita"
@@ -225,10 +226,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryDeregisterInstance()
         {
-            #region example-deregister-instance-arn-1692720000000
+            #region DeregisterInstance-2
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.DeregisterInstance(new DeregisterInstanceRequest 
+            var response = client.DeregisterInstance(new DeregisterInstanceRequest
             {
                 InstanceId = "i-abcd1234xmpl5678",
                 ServiceId = "arn:aws:servicediscovery:us-west-2:123456789012:service/srv-abcd1234xmpl5678"
@@ -241,10 +242,27 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryDiscoverInstances()
         {
-            #region example-discover-registered-instances-1587236343568
+            #region DiscoverInstances-1
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.DiscoverInstances(new DiscoverInstancesRequest 
+            var response = client.DiscoverInstances(new DiscoverInstancesRequest
+            {
+                NamespaceName = "example-shared-namespace",
+                OwnerAccount = "123456789012",
+                ServiceName = "shared-namespace-service"
+            });
+
+            List<HttpInstanceSummary> instances = response.Instances;
+
+            #endregion
+        }
+
+        public void ServiceDiscoveryDiscoverInstances()
+        {
+            #region DiscoverInstances-2
+
+            var client = new AmazonServiceDiscoveryClient();
+            var response = client.DiscoverInstances(new DiscoverInstancesRequest
             {
                 HealthStatus = "ALL",
                 MaxResults = 10,
@@ -257,62 +275,45 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
             #endregion
         }
 
-        public void ServiceDiscoveryDiscoverInstances()
-        {
-            #region discover-instances-owner-account-1692720000000
-
-            var client = new AmazonServiceDiscoveryClient();
-            var response = client.DiscoverInstances(new DiscoverInstancesRequest 
-            {
-                NamespaceName = "example-shared-namespace",
-                OwnerAccount = "123456789012",
-                ServiceName = "shared-namespace-service"
-            });
-
-            List<HttpInstanceSummary> instances = response.Instances;
-
-            #endregion
-        }
-
         public void ServiceDiscoveryDiscoverInstancesRevision()
         {
-            #region to-discover-the-revision-for-a-registered-instance-1712867460953
+            #region DiscoverInstancesRevision-1
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.DiscoverInstancesRevision(new DiscoverInstancesRevisionRequest 
-            {
-                NamespaceName = "example-namespace",
-                ServiceName = "example-service"
-            });
-
-            long instancesRevision = response.InstancesRevision;
-
-            #endregion
-        }
-
-        public void ServiceDiscoveryDiscoverInstancesRevision()
-        {
-            #region discover-instances-revision-owner-account-1692720000000
-
-            var client = new AmazonServiceDiscoveryClient();
-            var response = client.DiscoverInstancesRevision(new DiscoverInstancesRevisionRequest 
+            var response = client.DiscoverInstancesRevision(new DiscoverInstancesRevisionRequest
             {
                 NamespaceName = "example-shared-namespace",
                 OwnerAccount = "123456789012",
                 ServiceName = "shared-service"
             });
 
-            long instancesRevision = response.InstancesRevision;
+            long? instancesRevision = response.InstancesRevision;
+
+            #endregion
+        }
+
+        public void ServiceDiscoveryDiscoverInstancesRevision()
+        {
+            #region DiscoverInstancesRevision-2
+
+            var client = new AmazonServiceDiscoveryClient();
+            var response = client.DiscoverInstancesRevision(new DiscoverInstancesRevisionRequest
+            {
+                NamespaceName = "example-namespace",
+                ServiceName = "example-service"
+            });
+
+            long? instancesRevision = response.InstancesRevision;
 
             #endregion
         }
 
         public void ServiceDiscoveryGetInstance()
         {
-            #region getinstance-example-1590115065598
+            #region GetInstance-1
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.GetInstance(new GetInstanceRequest 
+            var response = client.GetInstance(new GetInstanceRequest
             {
                 InstanceId = "i-abcd1234",
                 ServiceId = "srv-e4anhexample0004"
@@ -326,10 +327,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryGetInstance()
         {
-            #region getinstance-shared-namespace-1642680000000
+            #region GetInstance-2
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.GetInstance(new GetInstanceRequest 
+            var response = client.GetInstance(new GetInstanceRequest
             {
                 InstanceId = "i-abcd1234",
                 ServiceId = "arn:aws:servicediscovery:us-west-2:123456789012:service/srv-e4anhexample0004"
@@ -343,10 +344,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryGetInstancesHealthStatus()
         {
-            #region getinstanceshealthstatus-example-1590115176146
+            #region GetInstancesHealthStatus-1
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.GetInstancesHealthStatus(new GetInstancesHealthStatusRequest 
+            var response = client.GetInstancesHealthStatus(new GetInstancesHealthStatusRequest
             {
                 ServiceId = "srv-e4anhexample0004"
             });
@@ -358,55 +359,25 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryGetInstancesHealthStatus()
         {
-            #region getinstanceshealthstatus-shared-namespace-1642680000000
+            #region GetInstancesHealthStatus-2
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.GetInstancesHealthStatus(new GetInstancesHealthStatusRequest 
+            var response = client.GetInstancesHealthStatus(new GetInstancesHealthStatusRequest
             {
                 ServiceId = "arn:aws:servicediscovery:us-west-2:123456789012:service/srv-e4anhexample0004"
             });
 
             Dictionary<string, string> status = response.Status;
-
-            #endregion
-        }
-
-        public void ServiceDiscoveryGetNamespace()
-        {
-            #region getnamespace-example-1590115383708
-
-            var client = new AmazonServiceDiscoveryClient();
-            var response = client.GetNamespace(new GetNamespaceRequest 
-            {
-                Id = "ns-e4anhexample0004"
-            });
-
-            Namespace awsNamespace = response.Namespace;
-
-            #endregion
-        }
-
-        public void ServiceDiscoveryGetNamespace()
-        {
-            #region get-namespace-arn-1692720000000
-
-            var client = new AmazonServiceDiscoveryClient();
-            var response = client.GetNamespace(new GetNamespaceRequest 
-            {
-                Id = "arn:aws:servicediscovery:us-west-2:123456789012:namespace/ns-abcd1234xmpl5678"
-            });
-
-            Namespace awsNamespace = response.Namespace;
 
             #endregion
         }
 
         public void ServiceDiscoveryGetOperation()
         {
-            #region example-get-operation-result-1587073807124
+            #region GetOperation-1
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.GetOperation(new GetOperationRequest 
+            var response = client.GetOperation(new GetOperationRequest
             {
                 OperationId = "gv4g5meo7ndmeh4fqskygvk23d2fijwa-k9302yzd"
             });
@@ -416,43 +387,12 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
             #endregion
         }
 
-        public void ServiceDiscoveryGetOperation()
-        {
-            #region get-operation-owner-account-1692720000000
-
-            var client = new AmazonServiceDiscoveryClient();
-            var response = client.GetOperation(new GetOperationRequest 
-            {
-                OperationId = "abcd1234-xmpl-5678-9012-abcd1234xmpl",
-                OwnerAccount = "123456789012"
-            });
-
-            Operation operation = response.Operation;
-
-            #endregion
-        }
-
         public void ServiceDiscoveryGetService()
         {
-            #region getservice-example-1590117234294
+            #region GetService-1
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.GetService(new GetServiceRequest 
-            {
-                Id = "srv-e4anhexample0004"
-            });
-
-            Service service = response.Service;
-
-            #endregion
-        }
-
-        public void ServiceDiscoveryGetService()
-        {
-            #region get-service-arn-1692720000000
-
-            var client = new AmazonServiceDiscoveryClient();
-            var response = client.GetService(new GetServiceRequest 
+            var response = client.GetService(new GetServiceRequest
             {
                 Id = "arn:aws:servicediscovery:us-west-2:123456789012:service/srv-abcd1234xmpl5678"
             });
@@ -464,25 +404,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryGetServiceAttributes()
         {
-            #region get-service-attributes-example-1590117234294
+            #region GetServiceAttributes-1
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.GetServiceAttributes(new GetServiceAttributesRequest 
-            {
-                ServiceId = "srv-e4anhexample0004"
-            });
-
-            ServiceAttributes serviceAttributes = response.ServiceAttributes;
-
-            #endregion
-        }
-
-        public void ServiceDiscoveryGetServiceAttributes()
-        {
-            #region get-service-attributes-arn-1692720000000
-
-            var client = new AmazonServiceDiscoveryClient();
-            var response = client.GetServiceAttributes(new GetServiceAttributesRequest 
+            var response = client.GetServiceAttributes(new GetServiceAttributesRequest
             {
                 ServiceId = "arn:aws:servicediscovery:us-west-2:123456789012:service/srv-abcd1234xmpl5678"
             });
@@ -492,12 +417,27 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
             #endregion
         }
 
-        public void ServiceDiscoveryListInstances()
+        public void ServiceDiscoveryGetServiceAttributes()
         {
-            #region example-list-service-instances-1587236237008
+            #region GetServiceAttributes-2
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.ListInstances(new ListInstancesRequest 
+            var response = client.GetServiceAttributes(new GetServiceAttributesRequest
+            {
+                ServiceId = "srv-e4anhexample0004"
+            });
+
+            ServiceAttributes serviceAttributes = response.ServiceAttributes;
+
+            #endregion
+        }
+
+        public void ServiceDiscoveryListInstances()
+        {
+            #region ListInstances-1
+
+            var client = new AmazonServiceDiscoveryClient();
+            var response = client.ListInstances(new ListInstancesRequest
             {
                 ServiceId = "srv-qzpwvt2tfqcegapy"
             });
@@ -509,10 +449,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryListInstances()
         {
-            #region listinstances-shared-namespace-1642680000000
+            #region ListInstances-2
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.ListInstances(new ListInstancesRequest 
+            var response = client.ListInstances(new ListInstancesRequest
             {
                 ServiceId = "arn:aws:servicediscovery:us-west-2:123456789012:service/srv-e4anhexample0004"
             });
@@ -525,10 +465,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryListNamespaces()
         {
-            #region example-list-namespaces-1587401553154
+            #region ListNamespaces-1
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.ListNamespaces(new ListNamespacesRequest 
+            var response = client.ListNamespaces(new ListNamespacesRequest
             {
             });
 
@@ -539,10 +479,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryListNamespaces()
         {
-            #region list-namespaces-resource-owner-1642089600000
+            #region ListNamespaces-2
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.ListNamespaces(new ListNamespacesRequest 
+            var response = client.ListNamespaces(new ListNamespacesRequest
             {
                 Filters = new List<NamespaceFilter> {
                     new NamespaceFilter {
@@ -561,10 +501,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryListOperations()
         {
-            #region listoperations-example-1590117354396
+            #region ListOperations-1
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.ListOperations(new ListOperationsRequest 
+            var response = client.ListOperations(new ListOperationsRequest
             {
                 Filters = new List<OperationFilter> {
                     new OperationFilter {
@@ -585,34 +525,11 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryListServices()
         {
-            #region example-list-services-1587236889840
+            #region ListServices-1
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.ListServices(new ListServicesRequest 
+            var response = client.ListServices(new ListServicesRequest
             {
-            });
-
-            List<ServiceSummary> services = response.Services;
-
-            #endregion
-        }
-
-        public void ServiceDiscoveryListServices()
-        {
-            #region list-services-resource-owner-1692720000000
-
-            var client = new AmazonServiceDiscoveryClient();
-            var response = client.ListServices(new ListServicesRequest 
-            {
-                Filters = new List<ServiceFilter> {
-                    new ServiceFilter {
-                        Condition = "EQ",
-                        Name = "RESOURCE_OWNER",
-                        Values = new List<string> {
-                            "OTHER_ACCOUNTS"
-                        }
-                    }
-                }
             });
 
             List<ServiceSummary> services = response.Services;
@@ -622,10 +539,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryListTagsForResource()
         {
-            #region listtagsforresource-example-1590093928416
+            #region ListTagsForResource-1
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.ListTagsForResource(new ListTagsForResourceRequest 
+            var response = client.ListTagsForResource(new ListTagsForResourceRequest
             {
                 ResourceARN = "arn:aws:servicediscovery:us-east-1:123456789012:namespace/ns-ylexjili4cdxy3xm"
             });
@@ -637,10 +554,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryRegisterInstance()
         {
-            #region example-register-instance-1587236116314
+            #region RegisterInstance-1
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.RegisterInstance(new RegisterInstanceRequest 
+            var response = client.RegisterInstance(new RegisterInstanceRequest
             {
                 Attributes = new Dictionary<string, string> {
                     { "AWS_INSTANCE_IPV4", "172.2.1.3" },
@@ -658,10 +575,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryRegisterInstance()
         {
-            #region register-instance-arn-1692720000000
+            #region RegisterInstance-2
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.RegisterInstance(new RegisterInstanceRequest 
+            var response = client.RegisterInstance(new RegisterInstanceRequest
             {
                 Attributes = new Dictionary<string, string> {
                     { "AWS_INSTANCE_IPV4", "192.0.2.44" },
@@ -678,10 +595,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryTagResource()
         {
-            #region tagresource-example-1590093532240
+            #region TagResource-1
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.TagResource(new TagResourceRequest 
+            var response = client.TagResource(new TagResourceRequest
             {
                 ResourceARN = "arn:aws:servicediscovery:us-east-1:123456789012:namespace/ns-ylexjili4cdxy3xm",
                 Tags = new List<Tag> {
@@ -702,10 +619,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryUntagResource()
         {
-            #region untagresource-example-1590094024672
+            #region UntagResource-1
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.UntagResource(new UntagResourceRequest 
+            var response = client.UntagResource(new UntagResourceRequest
             {
                 ResourceARN = "arn:aws:servicediscovery:us-east-1:123456789012:namespace/ns-ylexjili4cdxy3xm",
                 TagKeys = new List<string> {
@@ -720,10 +637,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryUpdateHttpNamespace()
         {
-            #region to-update-a-http-namespace-17128EXAMPLE
+            #region UpdateHttpNamespace-1
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.UpdateHttpNamespace(new UpdateHttpNamespaceRequest 
+            var response = client.UpdateHttpNamespace(new UpdateHttpNamespaceRequest
             {
                 Id = "ns-vh4nbmEXAMPLE",
                 Namespace = new HttpNamespaceChange { Description = "The updated namespace description." }
@@ -736,10 +653,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryUpdateHttpNamespace()
         {
-            #region updatehttpnamespace-shared-namespace-1642680000000
+            #region UpdateHttpNamespace-2
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.UpdateHttpNamespace(new UpdateHttpNamespaceRequest 
+            var response = client.UpdateHttpNamespace(new UpdateHttpNamespaceRequest
             {
                 Id = "arn:aws:servicediscovery:us-west-2:123456789012:namespace/ns-vh4nbmexample",
                 Namespace = new HttpNamespaceChange { Description = "Updated description for shared HTTP namespace." }
@@ -752,26 +669,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryUpdateInstanceCustomHealthStatus()
         {
-            #region updateinstancecustomhealthstatus-example-1590118408574
+            #region UpdateInstanceCustomHealthStatus-1
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.UpdateInstanceCustomHealthStatus(new UpdateInstanceCustomHealthStatusRequest 
-            {
-                InstanceId = "i-abcd1234",
-                ServiceId = "srv-e4anhexample0004",
-                Status = "HEALTHY"
-            });
-
-
-            #endregion
-        }
-
-        public void ServiceDiscoveryUpdateInstanceCustomHealthStatus()
-        {
-            #region update-instance-custom-health-status-arn-1692720000000
-
-            var client = new AmazonServiceDiscoveryClient();
-            var response = client.UpdateInstanceCustomHealthStatus(new UpdateInstanceCustomHealthStatusRequest 
+            var response = client.UpdateInstanceCustomHealthStatus(new UpdateInstanceCustomHealthStatusRequest
             {
                 InstanceId = "i-abcd1234xmpl5678",
                 ServiceId = "arn:aws:servicediscovery:us-west-2:123456789012:service/srv-abcd1234xmpl5678",
@@ -782,12 +683,28 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
             #endregion
         }
 
-        public void ServiceDiscoveryUpdatePrivateDnsNamespace()
+        public void ServiceDiscoveryUpdateInstanceCustomHealthStatus()
         {
-            #region to-update-a-private-dns-namespace-1712868389604
+            #region UpdateInstanceCustomHealthStatus-2
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.UpdatePrivateDnsNamespace(new UpdatePrivateDnsNamespaceRequest 
+            var response = client.UpdateInstanceCustomHealthStatus(new UpdateInstanceCustomHealthStatusRequest
+            {
+                InstanceId = "i-abcd1234",
+                ServiceId = "srv-e4anhexample0004",
+                Status = "HEALTHY"
+            });
+
+
+            #endregion
+        }
+
+        public void ServiceDiscoveryUpdatePrivateDnsNamespace()
+        {
+            #region UpdatePrivateDnsNamespace-1
+
+            var client = new AmazonServiceDiscoveryClient();
+            var response = client.UpdatePrivateDnsNamespace(new UpdatePrivateDnsNamespaceRequest
             {
                 Id = "ns-bk3aEXAMPLE",
                 Namespace = new PrivateDnsNamespaceChange { Description = "The updated namespace description." },
@@ -801,10 +718,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryUpdatePrivateDnsNamespace()
         {
-            #region updateprivatednsnamespace-shared-namespace-1642680000000
+            #region UpdatePrivateDnsNamespace-2
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.UpdatePrivateDnsNamespace(new UpdatePrivateDnsNamespaceRequest 
+            var response = client.UpdatePrivateDnsNamespace(new UpdatePrivateDnsNamespaceRequest
             {
                 Id = "arn:aws:servicediscovery:us-west-2:123456789012:namespace/ns-bk3aexample",
                 Namespace = new PrivateDnsNamespaceChange { Description = "Updated description for shared private DNS namespace." }
@@ -817,10 +734,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryUpdatePublicDnsNamespace()
         {
-            #region to-update-a-public-dns-namespace-1712868389604
+            #region UpdatePublicDnsNamespace-1
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.UpdatePublicDnsNamespace(new UpdatePublicDnsNamespaceRequest 
+            var response = client.UpdatePublicDnsNamespace(new UpdatePublicDnsNamespaceRequest
             {
                 Id = "ns-bk3aEXAMPLE",
                 Namespace = new PublicDnsNamespaceChange { Description = "The updated namespace description." },
@@ -834,10 +751,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryUpdatePublicDnsNamespace()
         {
-            #region updatepublicdnsnamespace-shared-namespace-1642680000000
+            #region UpdatePublicDnsNamespace-2
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.UpdatePublicDnsNamespace(new UpdatePublicDnsNamespaceRequest 
+            var response = client.UpdatePublicDnsNamespace(new UpdatePublicDnsNamespaceRequest
             {
                 Id = "arn:aws:servicediscovery:us-west-2:123456789012:namespace/ns-bk3aexample",
                 Namespace = new PublicDnsNamespaceChange { Description = "Updated description for shared public DNS namespace." }
@@ -850,10 +767,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryUpdateService()
         {
-            #region updateservice-example-1590117830880
+            #region UpdateService-1
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.UpdateService(new UpdateServiceRequest 
+            var response = client.UpdateService(new UpdateServiceRequest
             {
                 Id = "srv-e4anhexample0004",
                 Service = new ServiceChange {
@@ -878,10 +795,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryUpdateService()
         {
-            #region updateservice-shared-namespace-1642680000000
+            #region UpdateService-2
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.UpdateService(new UpdateServiceRequest 
+            var response = client.UpdateService(new UpdateServiceRequest
             {
                 Id = "arn:aws:servicediscovery:us-west-2:123456789012:service/srv-e4anhexample0004",
                 Service = new ServiceChange { Description = "Updated service description for shared namespace" }
@@ -894,27 +811,10 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryUpdateServiceAttributes()
         {
-            #region update-service-attributes-example-1590117830880
+            #region UpdateServiceAttributes-1
 
             var client = new AmazonServiceDiscoveryClient();
-            var response = client.UpdateServiceAttributes(new UpdateServiceAttributesRequest 
-            {
-                Attributes = new Dictionary<string, string> {
-                    { "port", "80" }
-                },
-                ServiceId = "srv-e4anhexample0004"
-            });
-
-
-            #endregion
-        }
-
-        public void ServiceDiscoveryUpdateServiceAttributes()
-        {
-            #region update-service-attributes-arn-1692720000000
-
-            var client = new AmazonServiceDiscoveryClient();
-            var response = client.UpdateServiceAttributes(new UpdateServiceAttributesRequest 
+            var response = client.UpdateServiceAttributes(new UpdateServiceAttributesRequest
             {
                 Attributes = new Dictionary<string, string> {
                     { "Port", "8080" },
@@ -927,13 +827,27 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        public void ServiceDiscoveryUpdateServiceAttributes()
+        {
+            #region UpdateServiceAttributes-2
+
+            var client = new AmazonServiceDiscoveryClient();
+            var response = client.UpdateServiceAttributes(new UpdateServiceAttributesRequest
+            {
+                Attributes = new Dictionary<string, string> {
+                    { "port", "80" }
+                },
+                ServiceId = "srv-e4anhexample0004"
+            });
+
+
+            #endregion
+        }
+
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

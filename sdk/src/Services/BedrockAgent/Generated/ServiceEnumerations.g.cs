@@ -3263,6 +3263,205 @@ namespace Amazon.BedrockAgent
     }
 
     /// <summary>
+    /// Constants used for properties of type RetrievalInstructionFailureReasonCode.
+    /// </summary>
+    public class RetrievalInstructionFailureReasonCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant CLIENT_ERROR for RetrievalInstructionFailureReasonCode
+        /// </summary>
+        public static readonly RetrievalInstructionFailureReasonCode CLIENT_ERROR = new RetrievalInstructionFailureReasonCode("CLIENT_ERROR");
+
+        /// <summary>
+        /// Constant CONTENT_REJECTED for RetrievalInstructionFailureReasonCode
+        /// </summary>
+        public static readonly RetrievalInstructionFailureReasonCode CONTENT_REJECTED = new RetrievalInstructionFailureReasonCode("CONTENT_REJECTED");
+
+        /// <summary>
+        /// Constant INTERNAL_ERROR for RetrievalInstructionFailureReasonCode
+        /// </summary>
+        public static readonly RetrievalInstructionFailureReasonCode INTERNAL_ERROR = new RetrievalInstructionFailureReasonCode("INTERNAL_ERROR");
+
+        /// <summary>
+        /// Constructs a custom RetrievalInstructionFailureReasonCode for a value not among the defined constants.
+        /// </summary>
+        public RetrievalInstructionFailureReasonCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RetrievalInstructionFailureReasonCode FindValue(string value)
+        {
+            return FindValue<RetrievalInstructionFailureReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RetrievalInstructionFailureReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RetrievalInstructionFieldName.
+    /// </summary>
+    public class RetrievalInstructionFieldName : ConstantClass
+    {
+        /// <summary>
+        /// Constant ANSWER_FORMAT for RetrievalInstructionFieldName
+        /// </summary>
+        public static readonly RetrievalInstructionFieldName ANSWER_FORMAT = new RetrievalInstructionFieldName("ANSWER_FORMAT");
+
+        /// <summary>
+        /// Constant ANSWER_POLICY for RetrievalInstructionFieldName
+        /// </summary>
+        public static readonly RetrievalInstructionFieldName ANSWER_POLICY = new RetrievalInstructionFieldName("ANSWER_POLICY");
+
+        /// <summary>
+        /// Constant PERSONA for RetrievalInstructionFieldName
+        /// </summary>
+        public static readonly RetrievalInstructionFieldName PERSONA = new RetrievalInstructionFieldName("PERSONA");
+
+        /// <summary>
+        /// Constant RETRIEVAL_GUIDANCE for RetrievalInstructionFieldName
+        /// </summary>
+        public static readonly RetrievalInstructionFieldName RETRIEVAL_GUIDANCE = new RetrievalInstructionFieldName("RETRIEVAL_GUIDANCE");
+
+        /// <summary>
+        /// Constructs a custom RetrievalInstructionFieldName for a value not among the defined constants.
+        /// </summary>
+        public RetrievalInstructionFieldName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RetrievalInstructionFieldName FindValue(string value)
+        {
+            return FindValue<RetrievalInstructionFieldName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RetrievalInstructionFieldName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RetrievalInstructionLastTransitionStatus.
+    /// </summary>
+    public class RetrievalInstructionLastTransitionStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant CREATE_FAILED for RetrievalInstructionLastTransitionStatus
+        /// </summary>
+        public static readonly RetrievalInstructionLastTransitionStatus CREATE_FAILED = new RetrievalInstructionLastTransitionStatus("CREATE_FAILED");
+
+        /// <summary>
+        /// Constant CREATE_SUCCESSFUL for RetrievalInstructionLastTransitionStatus
+        /// </summary>
+        public static readonly RetrievalInstructionLastTransitionStatus CREATE_SUCCESSFUL = new RetrievalInstructionLastTransitionStatus("CREATE_SUCCESSFUL");
+
+        /// <summary>
+        /// Constant CREATING for RetrievalInstructionLastTransitionStatus
+        /// </summary>
+        public static readonly RetrievalInstructionLastTransitionStatus CREATING = new RetrievalInstructionLastTransitionStatus("CREATING");
+
+        /// <summary>
+        /// Constant UPDATE_FAILED for RetrievalInstructionLastTransitionStatus
+        /// </summary>
+        public static readonly RetrievalInstructionLastTransitionStatus UPDATE_FAILED = new RetrievalInstructionLastTransitionStatus("UPDATE_FAILED");
+
+        /// <summary>
+        /// Constant UPDATE_SUCCESSFUL for RetrievalInstructionLastTransitionStatus
+        /// </summary>
+        public static readonly RetrievalInstructionLastTransitionStatus UPDATE_SUCCESSFUL = new RetrievalInstructionLastTransitionStatus("UPDATE_SUCCESSFUL");
+
+        /// <summary>
+        /// Constant UPDATING for RetrievalInstructionLastTransitionStatus
+        /// </summary>
+        public static readonly RetrievalInstructionLastTransitionStatus UPDATING = new RetrievalInstructionLastTransitionStatus("UPDATING");
+
+        /// <summary>
+        /// Constructs a custom RetrievalInstructionLastTransitionStatus for a value not among the defined constants.
+        /// </summary>
+        public RetrievalInstructionLastTransitionStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RetrievalInstructionLastTransitionStatus FindValue(string value)
+        {
+            return FindValue<RetrievalInstructionLastTransitionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RetrievalInstructionLastTransitionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RetrievalInstructionStatus.
+    /// </summary>
+    public class RetrievalInstructionStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for RetrievalInstructionStatus
+        /// </summary>
+        public static readonly RetrievalInstructionStatus ACTIVE = new RetrievalInstructionStatus("ACTIVE");
+
+        /// <summary>
+        /// Constant INACTIVE for RetrievalInstructionStatus
+        /// </summary>
+        public static readonly RetrievalInstructionStatus INACTIVE = new RetrievalInstructionStatus("INACTIVE");
+
+        /// <summary>
+        /// Constructs a custom RetrievalInstructionStatus for a value not among the defined constants.
+        /// </summary>
+        public RetrievalInstructionStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RetrievalInstructionStatus FindValue(string value)
+        {
+            return FindValue<RetrievalInstructionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RetrievalInstructionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type SalesforceAuthType.
     /// </summary>
     public class SalesforceAuthType : ConstantClass

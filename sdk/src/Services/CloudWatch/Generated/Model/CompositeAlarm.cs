@@ -34,6 +34,7 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class CompositeAlarm
     {
+        private ActionConfiguration _actionConfiguration;
         private bool? _actionsEnabled;
         private ActionsSuppressedBy _actionsSuppressedBy;
         private string _actionsSuppressedReason;
@@ -53,6 +54,26 @@ namespace Amazon.CloudWatch.Model
         private DateTime? _stateTransitionedTimestamp;
         private DateTime? _stateUpdatedTimestamp;
         private StateValue _stateValue;
+
+        /// <summary>
+        /// Gets and sets the property ActionConfiguration. 
+        /// <para>
+        /// Settings that change the content of the notifications and events that the alarm sends
+        /// when its state changes. These settings apply to the alarm's actions, whichever state
+        /// triggers them.
+        /// </para>
+        /// </summary>
+        public ActionConfiguration ActionConfiguration
+        {
+            get { return this._actionConfiguration; }
+            set { this._actionConfiguration = value; }
+        }
+
+        // Check to see if ActionConfiguration property is set
+        internal bool IsSetActionConfiguration()
+        {
+            return this._actionConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ActionsEnabled. 

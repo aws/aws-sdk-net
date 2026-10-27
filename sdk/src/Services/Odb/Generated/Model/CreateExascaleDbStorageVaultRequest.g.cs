@@ -31,7 +31,8 @@ namespace Amazon.Odb.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateExascaleDbStorageVault operation. Creates
-    /// an Exascale storage vault.
+    /// an Exascale storage vault. <para> To create the Exascale storage vault on dedicated
+    /// Exadata infrastructure, specify <c>cloudExadataInfrastructureId</c>. </para>
     /// </summary>
     public partial class CreateExascaleDbStorageVaultRequest : AmazonOdbRequest
     {
@@ -108,6 +109,25 @@ namespace Amazon.Odb.Model
         /// Checks to see if the ClientToken property is set.
         /// </summary>
         internal bool IsSetClientToken() => this.ClientToken != null;
+
+        /// <summary>
+        /// Gets and sets the property CloudExadataInfrastructureId. 
+        /// <para>
+        /// The unique identifier or Amazon Resource Name (ARN) of the Exadata infrastructure
+        /// on which to create the Exascale storage vault. Specify this value to create the Exascale
+        /// storage vault on dedicated Exadata infrastructure that has Exascale storage configured.
+        /// If you specify <c>availabilityZone</c> or <c>availabilityZoneId</c>, the value must
+        /// match the Availability Zone of the Exadata infrastructure. If you specify neither,
+        /// the service uses the Availability Zone of the Exadata infrastructure.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 6, Max = 2048)]
+        public string CloudExadataInfrastructureId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CloudExadataInfrastructureId property is set.
+        /// </summary>
+        internal bool IsSetCloudExadataInfrastructureId() => this.CloudExadataInfrastructureId != null;
 
         /// <summary>
         /// Gets and sets the property Description. 

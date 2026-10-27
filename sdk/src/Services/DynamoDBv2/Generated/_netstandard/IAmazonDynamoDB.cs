@@ -6477,8 +6477,8 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// Modifies the provisioned throughput settings, global secondary indexes, or DynamoDB
-        /// Streams settings for a given table.
+        /// Modifies the provisioned throughput settings, global secondary indexes, DynamoDB Streams
+        /// settings, or global table replica settings for a given table.
         /// 
         ///  
         /// <para>
@@ -6497,12 +6497,40 @@ namespace Amazon.DynamoDBv2
         /// Create a new global secondary index on the table. After the index begins backfilling,
         /// you can use <c>UpdateTable</c> to perform other operations.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Enable or disable disassociation protection for the local global table replica.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Disassociate the local global table replica and keep it as a standalone regional table.
+        /// The <c>Disassociate</c> action must be the only replica update in the request. If
+        /// the request includes any other update, <c>UpdateTable</c> fails with a <c>ValidationException</c>
+        /// and the disassociation does not start.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         ///  <c>UpdateTable</c> is an asynchronous operation; while it's executing, the table
         /// status changes from <c>ACTIVE</c> to <c>UPDATING</c>. While it's <c>UPDATING</c>,
-        /// you can't issue another <c>UpdateTable</c> request. When the table returns to the
-        /// <c>ACTIVE</c> state, the <c>UpdateTable</c> operation is complete.
+        /// you can't issue another <c>UpdateTable</c> request. Use <c>DescribeTable</c> to monitor
+        /// the table's status.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation to disassociate a local replica, you must have the <c>dynamodb:UpdateTable</c>
+        /// and <c>dynamodb:DisassociateTableReplica</c> IAM permissions on the local replica.
+        /// Send disassociation and disassociation protection requests to the replica's Region
+        /// using credentials for the account that owns the replica. For prerequisites and the
+        /// procedure, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables-disassociate.html">Disassociating
+        /// a global table replica</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To confirm successful disassociation, call <c>DescribeTable</c> in the replica's Region
+        /// and verify that <c>TableStatus</c> is <c>ACTIVE</c> and <c>Replicas</c> is absent
+        /// or empty. If <c>TableStatus</c> returns to <c>ACTIVE</c> but the response still includes
+        /// a <c>Replicas</c> list, the disassociation did not complete. Check <c>ReplicaStatus</c>
+        /// for a replication-permission or encryption-access problem, resolve it, and retry.
         /// </para>
         /// </summary>
         /// <param name="tableName">The name of the table to be updated. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
@@ -6579,8 +6607,8 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// Modifies the provisioned throughput settings, global secondary indexes, or DynamoDB
-        /// Streams settings for a given table.
+        /// Modifies the provisioned throughput settings, global secondary indexes, DynamoDB Streams
+        /// settings, or global table replica settings for a given table.
         /// 
         ///  
         /// <para>
@@ -6599,12 +6627,40 @@ namespace Amazon.DynamoDBv2
         /// Create a new global secondary index on the table. After the index begins backfilling,
         /// you can use <c>UpdateTable</c> to perform other operations.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Enable or disable disassociation protection for the local global table replica.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Disassociate the local global table replica and keep it as a standalone regional table.
+        /// The <c>Disassociate</c> action must be the only replica update in the request. If
+        /// the request includes any other update, <c>UpdateTable</c> fails with a <c>ValidationException</c>
+        /// and the disassociation does not start.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         ///  <c>UpdateTable</c> is an asynchronous operation; while it's executing, the table
         /// status changes from <c>ACTIVE</c> to <c>UPDATING</c>. While it's <c>UPDATING</c>,
-        /// you can't issue another <c>UpdateTable</c> request. When the table returns to the
-        /// <c>ACTIVE</c> state, the <c>UpdateTable</c> operation is complete.
+        /// you can't issue another <c>UpdateTable</c> request. Use <c>DescribeTable</c> to monitor
+        /// the table's status.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation to disassociate a local replica, you must have the <c>dynamodb:UpdateTable</c>
+        /// and <c>dynamodb:DisassociateTableReplica</c> IAM permissions on the local replica.
+        /// Send disassociation and disassociation protection requests to the replica's Region
+        /// using credentials for the account that owns the replica. For prerequisites and the
+        /// procedure, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables-disassociate.html">Disassociating
+        /// a global table replica</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To confirm successful disassociation, call <c>DescribeTable</c> in the replica's Region
+        /// and verify that <c>TableStatus</c> is <c>ACTIVE</c> and <c>Replicas</c> is absent
+        /// or empty. If <c>TableStatus</c> returns to <c>ACTIVE</c> but the response still includes
+        /// a <c>Replicas</c> list, the disassociation did not complete. Check <c>ReplicaStatus</c>
+        /// for a replication-permission or encryption-access problem, resolve it, and retry.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTable service method.</param>

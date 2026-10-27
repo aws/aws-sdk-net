@@ -25,6 +25,10 @@ An operation output already named `{Operation}Response` that a member also targe
 `{Shape}StructureUnmarshaller`, since `{Shape}Unmarshaller` is the operation's response unmarshaller.
 No C2J service has this shape, so there is no parity target.
 
+A structure named in the `generateUnmarshaller` customization also gets a `{Shape}Unmarshaller`,
+though only requests use it (mobileanalytics `Event`, `Session`). Its nested structures need their own
+entries.
+
 Structure (un)marshaller class names come only from `GenerationContext.StructureMarshallerName` /
 `StructureUnmarshallerName`. `TypeDescriptor.MarshallerName` / `UnmarshallerName` carry them for a
 structure target; writers read those (or the context, when declaring the class or naming the file)
@@ -66,9 +70,8 @@ read into `GenerationContext.Customizations.OverrideContentType`) hard-codes the
 `request.Headers["Content-Type"] = "{value}";`. On restJson1 it replaces the per-operation value
 (including the blob-payload default) but is still skipped for input event streams and GET/DELETE; it's
 emitted even for body-less operations. On awsJson it replaces only the versioned Content-Type;
-`X-Amz-Target` is unchanged. A handful of restJson1 services use it to send
-`application/x-amz-json-1.1` instead of the default `application/json` (finspace, finspace-data,
-lex.v2), matching C2J.
+`X-Amz-Target` is unchanged. lex.v2 uses it to send `application/x-amz-json-1.1`
+instead of the default `application/json`, matching C2J.
 
 ## Member Placement
 
@@ -93,6 +96,10 @@ Every query/header/label member is `IsSet`-guarded. A `@required` query member (
 excepted) first throws `Amazon{BaseName}Exception("Request object does not have required field {Prop} set")`
 when unset: `string.IsNullOrEmpty` for a string/enum, `== null` for anything else. Body members get no
 required check.
+
+A label whose property is listed in the `skipUriPropertyValidation` customization gets no required check
+and is sent empty when unset: `request.AddPathResource("{name}", publicRequest.IsSetProp() ? <conversion> : string.Empty)`.
+Glacier lists `AccountId`, which its `ProcessRequestHandler` then replaces with `-` (the caller's account).
 
 List query/header bindings accept `list<string>`/`list<enum>` (an enum element is a plain `string`, see
 type-mapping) and value-type element lists (int, long, bool, double, float, timestamp, intEnum), matching
@@ -233,11 +240,14 @@ to the body like any ordinary member.
 
 ### Event streams (response)
 
-An output member targeting a `@streaming` union/structure is an event stream. It IS the body: the
-unmarshaller emits `unmarshalledObject.{Prop} = new {UnionClass}(context.Stream);` instead of a JSON
-reader loop (C2J parity), and the class overrides `HasStreamingProperty => true` and
-`ShouldReadEntireResponse(...) => false` so Core never buffers the body. The `{UnionClass}` itself, and
-everything else event streams emit, is in sdk-conventions → Event Streams.
+An output member targeting a `@streaming` union/structure is an event stream. It owns the HTTP body: the
+unmarshaller hands `context.Stream` to `{UnionClass}` instead of reading that stream as a normal JSON body
+(C2J parity), and the class overrides `HasStreamingProperty => true` and
+`ShouldReadEntireResponse(...) => false` so Core never buffers the body. On RPC protocols, output
+siblings arrive in the `initial-response` event ahead of the modeled events and are decoded into the
+response when the stream is processed. `InitialResponseEvent` is still raised through `EventReceived`,
+so enumeration yields it before the modeled events. The `{UnionClass}` itself, and everything else event
+streams emit, is in sdk-conventions → Event Streams.
 
 Each non-error union member targets an **event structure** that gets its own `{Event}Unmarshaller`,
 invoked per event from the event-stream class's `EventMapping`. A member carries at most one of
@@ -280,6 +290,7 @@ members still get marshallers.
   `[AWSProperty]`/`[Obsolete]`, no `IsSet`). The request marshaller wires it:
   `request.EventStreamPublisher = new {Union}PublisherMarshaller(publicRequest.{Member}Publisher)` with
   `Content-Type: application/vnd.amazon.eventstream`, replacing body serialization.
+- On RPC protocols, input siblings are serialized into an `initial-request` event before the first modeled event.
 
 ## Response Header Unmarshalling
 
@@ -413,8 +424,7 @@ Core handles the `__type` difference transparently, so the generator only varies
 Every one of those decisions is gated on `GenerationContext.UsesHttpBindings`; `AwsJsonCodegenTests`
 pins the emitted code and the JSONRPC10/JsonProtocol protocol tests verify it end to end.
 
-An event stream must be the input's or output's only member: Core has no initial-request/response message, so
-siblings fail loud. The publisher's `Content-Type` replaces the x-amz-json one. The rest is the restJson1 path.
+Event stream siblings use `initial-request` and `initial-response` events. The publisher's `Content-Type` replaces the x-amz-json one. The rest is the restJson1 path.
 
 ## rpcv2Cbor
 
@@ -430,7 +440,41 @@ list, but no CBOR service model uses `@sparse`. Documents and streaming blobs ar
 `UnsupportedTraitValidator`.
 
 Event streams follow the awsJson rules, plus `Accept: application/vnd.amazon.eventstream` for an output stream.
-Each event is a CBOR map decoded without its message headers, so a response `@eventHeader` fails loud.
+Initial messages and modeled events are CBOR maps. Each modeled event is decoded without its message headers, so a response `@eventHeader` fails loud.
+
+## restXml
+
+Spec: [aws.protocols#restXml](https://smithy.io/2.0/aws/protocols/aws-restxml-protocol.html). The HTTP
+bindings (query/header/label/path, host prefix, `@httpPrefixHeaders`) are the same emitters as restJson1;
+only the body differs — an XML document instead of JSON. Wire names come from `@xmlName` (member, then
+target), with `@xmlFlattened`/`@xmlAttribute`/`@xmlNamespace` shaping elements; body timestamps default to
+`date-time` per the spec. Every scalar (member, list element, or map value) goes through the same
+`StringUtils.From*` conversion, so special floats serialize as `Infinity`/`-Infinity`/`NaN` and bools/
+timestamps stay culture-invariant (never `XmlWriter.WriteValue(double)`'s `INF` or `kvp.Value.ToString()`).
+Writers and their output are pinned by `RestXmlCodegenTests` and the restXml protocol tests.
+
+- **Request body** — `XmlRequestMarshallerWriter` writes the body with `XmlWriter` over a
+  `PooledContentStream` (`MemoryStream` on .NET Framework). The root element is the input shape (or the
+  `@httpPayload` structure) carrying the service `@xmlNamespace`. The input's own members are written inline
+  by `XmlBodyMemberMarshaller`, which delegates each nested structure to its generated marshaller
+  (`XmlStructureMarshallerWriter`, a per-structure class like the JSON side has); a structure `@httpPayload`
+  is marshalled by that structure's own marshaller into the root. `Content-Type: application/xml` and
+  `x-amz-api-version` are set only when there is an XML body, inside a `try`/`catch` that maps an
+  `EncoderFallbackException` to an `AmazonServiceException`. A structure/union `@httpPayload` is `IsSet`-guarded
+  so an unset payload sends an empty body, not `<Root />` (as C2J and the JSON writer do). A non-structure
+  `@httpPayload` (string/blob) takes the raw-content path with `text/plain`/`application/octet-stream` (or
+  `@mediaType`). The `@endpoint` host prefix is skipped when a `@hostLabel` member is also a `@contextParam`
+  (the endpoint ruleset already consumes it into the host; only S3 Control matches today) — derived from the
+  model, not hard-coded.
+- **Response body** — `XmlResponseUnmarshallerWriter` (base `XmlResponseUnmarshaller`) reads the body
+  through a `UnmarshallResult` element loop matching on `context.TestExpression("{xmlName}", targetDepth)`
+  (C2J parity), not a JSON reader. A structure `@httpPayload` is matched by its root element name through
+  that loop; string/blob/streaming payloads read the raw stream via the shared,
+  protocol-aware `MarshallerCommon.WritePayloadUnmarshall`. Header/`@httpResponseCode` reads are the
+  restJson1 emitters. The s3control `allowEmptyResult` customization returns early on a successful empty
+  body (the loop would otherwise throw); it is rejected at generation time on any non-restXml protocol.
+- **Errors** — `XmlErrorResponseUnmarshaller` parses the `ErrorResponse/Error/Code` envelope; dispatch is
+  on `errorResponse.Code` against the Smithy shape name, same structure as the JSON path.
 
 ## awsQueryCompatible
 
@@ -440,12 +484,9 @@ request announces query mode and errors still dispatch on the shape name, not th
 
 ## Other Protocols (not yet implemented)
 
-restXml, awsQuery and ec2Query: the target output is defined by the C2J templates
-(`generator/ServiceClientGeneratorLib/Generators/Marshallers/*.tt`). awsQuery/ec2Query route via an
-`Action={Operation}` param with URL-encoded bodies; restXml keeps the HTTP binding traits with an XML
-body (`@xmlName`/`@xmlFlattened`/`@xmlAttribute`/`@xmlNamespace`) and, per the Smithy spec, defaults
-body timestamps to `date-time`. The XML-response family uses `XmlResponseUnmarshaller`. Wire names:
-restXml `@xmlName`, awsQuery the member name verbatim, ec2Query `@ec2QueryName` or the member name with
-its first letter upper-cased.
+awsQuery and ec2Query: the target output is defined by the C2J templates
+(`generator/ServiceClientGeneratorLib/Generators/Marshallers/*.tt`). Both route via an
+`Action={Operation}` param with URL-encoded bodies. Wire names: awsQuery the member name verbatim,
+ec2Query `@ec2QueryName` or the member name with its first letter upper-cased.
 
 When implementing one, replace this note with the real patterns and pin the emitted code in codegen tests.

@@ -33,7 +33,7 @@ namespace Amazon.CodeCommit.Model
     /// The description for the approval rule template is not valid because it exceeds the
     /// maximum characters allowed for a description. For more information about limits in
     /// CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a>
-    /// in the <i>CodeCommit User Guide</i>.
+    /// in the <i> CodeCommit User Guide</i>.
     /// </summary>
 #if !NETSTANDARD
     [Serializable]

@@ -1,0 +1,161 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.KinesisAnalyticsV2.Model
+{
+    /// <summary>
+    /// Specifies the creation parameters for a Managed Service for Apache Flink application.
+    /// </summary>
+    public partial class ApplicationConfiguration
+    {
+        /// <summary>
+        /// Gets and sets the property ApplicationCodeConfiguration. 
+        /// <para>
+        /// The code location and type parameters for a Managed Service for Apache Flink application.
+        /// </para>
+        /// </summary>
+        public ApplicationCodeConfiguration ApplicationCodeConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ApplicationCodeConfiguration property is set.
+        /// </summary>
+        internal bool IsSetApplicationCodeConfiguration() => this.ApplicationCodeConfiguration != null;
+
+        /// <summary>
+        /// Gets and sets the property ApplicationEncryptionConfiguration. 
+        /// <para>
+        /// The configuration to manage encryption at rest.
+        /// </para>
+        /// </summary>
+        public ApplicationEncryptionConfiguration ApplicationEncryptionConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ApplicationEncryptionConfiguration property is set.
+        /// </summary>
+        internal bool IsSetApplicationEncryptionConfiguration() => this.ApplicationEncryptionConfiguration != null;
+
+        /// <summary>
+        /// Gets and sets the property ApplicationSnapshotConfiguration. 
+        /// <para>
+        /// Describes whether snapshots are enabled for a Managed Service for Apache Flink application.
+        /// </para>
+        /// </summary>
+        public ApplicationSnapshotConfiguration ApplicationSnapshotConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ApplicationSnapshotConfiguration property is set.
+        /// </summary>
+        internal bool IsSetApplicationSnapshotConfiguration() => this.ApplicationSnapshotConfiguration != null;
+
+        /// <summary>
+        /// Gets and sets the property ApplicationSystemRollbackConfiguration. 
+        /// <para>
+        /// Describes whether system rollbacks are enabled for a Managed Service for Apache Flink
+        /// application.
+        /// </para>
+        /// </summary>
+        public ApplicationSystemRollbackConfiguration ApplicationSystemRollbackConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ApplicationSystemRollbackConfiguration property is set.
+        /// </summary>
+        internal bool IsSetApplicationSystemRollbackConfiguration() => this.ApplicationSystemRollbackConfiguration != null;
+
+        /// <summary>
+        /// Gets and sets the property EnvironmentProperties. 
+        /// <para>
+        /// Describes execution properties for a Managed Service for Apache Flink application.
+        /// </para>
+        /// </summary>
+        public EnvironmentProperties EnvironmentProperties { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EnvironmentProperties property is set.
+        /// </summary>
+        internal bool IsSetEnvironmentProperties() => this.EnvironmentProperties != null;
+
+        /// <summary>
+        /// Gets and sets the property FlinkApplicationConfiguration. 
+        /// <para>
+        /// The creation and update parameters for a Managed Service for Apache Flink application.
+        /// </para>
+        /// </summary>
+        public FlinkApplicationConfiguration FlinkApplicationConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FlinkApplicationConfiguration property is set.
+        /// </summary>
+        internal bool IsSetFlinkApplicationConfiguration() => this.FlinkApplicationConfiguration != null;
+
+        /// <summary>
+        /// Gets and sets the property SqlApplicationConfiguration. 
+        /// <para>
+        /// The creation and update parameters for a SQL-based Kinesis Data Analytics application.
+        /// </para>
+        /// </summary>
+        public SqlApplicationConfiguration SqlApplicationConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SqlApplicationConfiguration property is set.
+        /// </summary>
+        internal bool IsSetSqlApplicationConfiguration() => this.SqlApplicationConfiguration != null;
+
+        /// <summary>
+        /// Gets and sets the property VpcConfigurations. 
+        /// <para>
+        /// The array of descriptions of VPC configurations available to the application.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<VpcConfiguration> VpcConfigurations { get; set; } = AWSConfigs.InitializeCollections ? new List<VpcConfiguration>() : null;
+
+        /// <summary>
+        /// Checks to see if the VpcConfigurations property is set.
+        /// </summary>
+        internal bool IsSetVpcConfigurations() => this.VpcConfigurations != null && (this.VpcConfigurations.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property ZeppelinApplicationConfiguration. 
+        /// <para>
+        /// The configuration parameters for a Managed Service for Apache Flink Studio notebook.
+        /// </para>
+        /// </summary>
+        public ZeppelinApplicationConfiguration ZeppelinApplicationConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ZeppelinApplicationConfiguration property is set.
+        /// </summary>
+        internal bool IsSetZeppelinApplicationConfiguration() => this.ZeppelinApplicationConfiguration != null;
+    }
+}

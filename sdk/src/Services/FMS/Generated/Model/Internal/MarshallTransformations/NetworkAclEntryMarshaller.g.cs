@@ -1,0 +1,109 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.FMS.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.FMS.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// NetworkAclEntry Marshaller
+    /// </summary>
+    public partial class NetworkAclEntryMarshaller : IRequestMarshaller<NetworkAclEntry, CborMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(NetworkAclEntry requestObject, CborMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetCidrBlock())
+            {
+                context.Writer.WriteTextString("CidrBlock");
+                context.Writer.WriteTextString(requestObject.CidrBlock);
+            }
+
+            if (requestObject.IsSetEgress())
+            {
+                context.Writer.WriteTextString("Egress");
+                context.Writer.WriteBoolean(requestObject.Egress.Value);
+            }
+
+            if (requestObject.IsSetIcmpTypeCode())
+            {
+                context.Writer.WriteTextString("IcmpTypeCode");
+                context.Writer.WriteStartMap(null);
+
+                var marshaller = NetworkAclIcmpTypeCodeMarshaller.Instance;
+                marshaller.Marshall(requestObject.IcmpTypeCode, context);
+
+                context.Writer.WriteEndMap();
+            }
+
+            if (requestObject.IsSetIpv6CidrBlock())
+            {
+                context.Writer.WriteTextString("Ipv6CidrBlock");
+                context.Writer.WriteTextString(requestObject.Ipv6CidrBlock);
+            }
+
+            if (requestObject.IsSetPortRange())
+            {
+                context.Writer.WriteTextString("PortRange");
+                context.Writer.WriteStartMap(null);
+
+                var marshaller = NetworkAclPortRangeMarshaller.Instance;
+                marshaller.Marshall(requestObject.PortRange, context);
+
+                context.Writer.WriteEndMap();
+            }
+
+            if (requestObject.IsSetProtocol())
+            {
+                context.Writer.WriteTextString("Protocol");
+                context.Writer.WriteTextString(requestObject.Protocol);
+            }
+
+            if (requestObject.IsSetRuleAction())
+            {
+                context.Writer.WriteTextString("RuleAction");
+                context.Writer.WriteTextString(requestObject.RuleAction);
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static NetworkAclEntryMarshaller Instance = new NetworkAclEntryMarshaller();
+    }
+}

@@ -187,6 +187,114 @@ namespace Amazon.CloudWatch
 
 
     /// <summary>
+    /// Constants used for properties of type AnomalyDetectorAdaptationSpeed.
+    /// </summary>
+    public class AnomalyDetectorAdaptationSpeed : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAST for AnomalyDetectorAdaptationSpeed
+        /// </summary>
+        public static readonly AnomalyDetectorAdaptationSpeed FAST = new AnomalyDetectorAdaptationSpeed("FAST");
+        /// <summary>
+        /// Constant NORMAL for AnomalyDetectorAdaptationSpeed
+        /// </summary>
+        public static readonly AnomalyDetectorAdaptationSpeed NORMAL = new AnomalyDetectorAdaptationSpeed("NORMAL");
+        /// <summary>
+        /// Constant SLOW for AnomalyDetectorAdaptationSpeed
+        /// </summary>
+        public static readonly AnomalyDetectorAdaptationSpeed SLOW = new AnomalyDetectorAdaptationSpeed("SLOW");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnomalyDetectorAdaptationSpeed(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnomalyDetectorAdaptationSpeed FindValue(string value)
+        {
+            return FindValue<AnomalyDetectorAdaptationSpeed>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnomalyDetectorAdaptationSpeed(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AnomalyDetectorOutlierFilteringStrength.
+    /// </summary>
+    public class AnomalyDetectorOutlierFilteringStrength : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MINIMAL for AnomalyDetectorOutlierFilteringStrength
+        /// </summary>
+        public static readonly AnomalyDetectorOutlierFilteringStrength MINIMAL = new AnomalyDetectorOutlierFilteringStrength("MINIMAL");
+        /// <summary>
+        /// Constant MODERATE for AnomalyDetectorOutlierFilteringStrength
+        /// </summary>
+        public static readonly AnomalyDetectorOutlierFilteringStrength MODERATE = new AnomalyDetectorOutlierFilteringStrength("MODERATE");
+        /// <summary>
+        /// Constant STRICT for AnomalyDetectorOutlierFilteringStrength
+        /// </summary>
+        public static readonly AnomalyDetectorOutlierFilteringStrength STRICT = new AnomalyDetectorOutlierFilteringStrength("STRICT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnomalyDetectorOutlierFilteringStrength(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnomalyDetectorOutlierFilteringStrength FindValue(string value)
+        {
+            return FindValue<AnomalyDetectorOutlierFilteringStrength>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnomalyDetectorOutlierFilteringStrength(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AnomalyDetectorStateValue.
     /// </summary>
     public class AnomalyDetectorStateValue : ConstantClass

@@ -50,6 +50,7 @@ namespace Amazon.CodeDeploy.Model
         private List<string> _deploymentStatusMessages = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DeploymentStyle _deploymentStyle;
         private string _description;
+        private EC2DeploymentOptions _ec2DeploymentOptions;
         private ErrorInformation _errorInformation;
         private string _externalId;
         private FileExistsBehavior _fileExistsBehavior;
@@ -397,6 +398,21 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ec2DeploymentOptions.
+        /// </summary>
+        public EC2DeploymentOptions Ec2DeploymentOptions
+        {
+            get { return this._ec2DeploymentOptions; }
+            set { this._ec2DeploymentOptions = value; }
+        }
+
+        // Check to see if Ec2DeploymentOptions property is set
+        internal bool IsSetEc2DeploymentOptions()
+        {
+            return this._ec2DeploymentOptions != null;
         }
 
         /// <summary>

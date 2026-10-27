@@ -175,6 +175,42 @@ namespace Amazon.ObservabilityAdmin
     }
 
     /// <summary>
+    /// Constants used for properties of type DeletionProtection.
+    /// </summary>
+    public class DeletionProtection : ConstantClass
+    {
+        /// <summary>
+        /// Constant ENABLED for DeletionProtection
+        /// </summary>
+        public static readonly DeletionProtection ENABLED = new DeletionProtection("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom DeletionProtection for a value not among the defined constants.
+        /// </summary>
+        public DeletionProtection(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeletionProtection FindValue(string value)
+        {
+            return FindValue<DeletionProtection>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeletionProtection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type DestinationType.
     /// </summary>
     public class DestinationType : ConstantClass
@@ -1398,6 +1434,11 @@ namespace Amazon.ObservabilityAdmin
     /// </summary>
     public class TelemetryType : ConstantClass
     {
+        /// <summary>
+        /// Constant Insights for TelemetryType
+        /// </summary>
+        public static readonly TelemetryType Insights = new TelemetryType("Insights");
+
         /// <summary>
         /// Constant Logs for TelemetryType
         /// </summary>

@@ -1,0 +1,109 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.BedrockAgentCoreControl.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// MemoryStrategyInput Marshaller
+    /// </summary>
+    public partial class MemoryStrategyInputMarshaller : IRequestMarshaller<MemoryStrategyInput, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(MemoryStrategyInput requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetCustomMemoryStrategy())
+            {
+                context.Writer.WritePropertyName("customMemoryStrategy");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CustomMemoryStrategyInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomMemoryStrategy, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetEpisodicMemoryStrategy())
+            {
+                context.Writer.WritePropertyName("episodicMemoryStrategy");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EpisodicMemoryStrategyInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.EpisodicMemoryStrategy, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetSemanticMemoryStrategy())
+            {
+                context.Writer.WritePropertyName("semanticMemoryStrategy");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SemanticMemoryStrategyInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.SemanticMemoryStrategy, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetSummaryMemoryStrategy())
+            {
+                context.Writer.WritePropertyName("summaryMemoryStrategy");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SummaryMemoryStrategyInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.SummaryMemoryStrategy, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetUserPreferenceMemoryStrategy())
+            {
+                context.Writer.WritePropertyName("userPreferenceMemoryStrategy");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UserPreferenceMemoryStrategyInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.UserPreferenceMemoryStrategy, context);
+
+                context.Writer.WriteEndObject();
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static MemoryStrategyInputMarshaller Instance = new MemoryStrategyInputMarshaller();
+    }
+}

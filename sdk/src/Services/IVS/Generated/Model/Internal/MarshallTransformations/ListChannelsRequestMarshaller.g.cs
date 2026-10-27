@@ -73,6 +73,11 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("filterByAdConfigurationArn");
                 context.Writer.WriteStringValue(publicRequest.FilterByAdConfigurationArn);
             }
+            if (publicRequest.IsSetFilterByFailoverSlateConfigurationArn())
+            {
+                context.Writer.WritePropertyName("filterByFailoverSlateConfigurationArn");
+                context.Writer.WriteStringValue(publicRequest.FilterByFailoverSlateConfigurationArn);
+            }
             if (publicRequest.IsSetFilterByName())
             {
                 context.Writer.WritePropertyName("filterByName");

@@ -1,0 +1,293 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Linq;
+using System.Collections.Generic;
+using Amazon.CertificateManager.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Endpoints;
+using Amazon.Util;
+using Amazon.CertificateManager.Endpoints;
+
+#pragma warning disable 1591
+
+namespace Amazon.CertificateManager.Internal
+{
+    /// <summary>
+    /// Amazon CertificateManager endpoint resolver.
+    /// <para />
+    /// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for CertificateManager service requests.
+    /// <para />
+    /// Collects values for <see cref="CertificateManagerEndpointParameters"/> and then tries to resolve endpoint by calling
+    /// <c>ResolveEndpoint</c> method on <see cref="GlobalEndpoints.Provider"/> if present, otherwise uses <see cref="AmazonCertificateManagerEndpointProvider"/>.
+    /// <para />
+    /// Responsible for setting authentication and HTTP headers provided by resolved endpoint.
+    /// </summary>
+    public class AmazonCertificateManagerEndpointResolver : BaseEndpointResolver
+    {
+        protected override void ServiceSpecificHandler(IExecutionContext executionContext, EndpointParameters parameters)
+        {
+            InjectHostPrefix(executionContext.RequestContext);
+        }
+
+        protected override EndpointParameters MapEndpointsParameters(IRequestContext requestContext)
+        {
+            var config = (AmazonCertificateManagerConfig)requestContext.ClientConfig;
+            var result = new CertificateManagerEndpointParameters();
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;
+            result.Endpoint = config.ServiceURL;
+            result.UseFIPS = config.UseFIPSEndpoint;
+            result.UseDualStack = config.UseDualstackEndpoint;
+            result.ServiceType = config.ServiceType;
+
+            // The region needs to be determined from the ServiceURL if not set.
+            var regionEndpoint = config.RegionEndpoint;
+            if (regionEndpoint == null && !string.IsNullOrEmpty(config.ServiceURL))
+            {
+                // Use the specified signing region if it was provided alongside a custom ServiceURL
+                if (!string.IsNullOrEmpty(config.AuthenticationRegion))
+                {
+                    result.Region = config.AuthenticationRegion;
+                }
+                else // try to extract a region from the custom ServiceURL
+                {
+                    var regionName = AWSSDKUtils.DetermineRegion(config.ServiceURL);
+                    result.Region = RegionEndpoint.GetBySystemName(regionName).SystemName;
+                }
+            }
+
+            // To support legacy endpoint overriding rules in the endpoints.json
+            if (result.Region == "us-east-1-regional")
+            {
+                result.Region = "us-east-1";
+            }
+
+            // Use AlternateEndpoint region override if set
+            if (requestContext.Request.AlternateEndpoint != null)
+            {
+                result.Region = requestContext.Request.AlternateEndpoint.SystemName;
+            }
+
+            // Assign staticContextParams and contextParam per operation
+            if (requestContext.RequestName == "AddTagsToCertificateRequest")
+            {
+                result.ServiceType = "ACM";
+                return result;
+            }
+            if (requestContext.RequestName == "CreateAcmeDomainValidationRequest")
+            {
+                result.ServiceType = "ACM-ACME";
+                return result;
+            }
+            if (requestContext.RequestName == "CreateAcmeEndpointRequest")
+            {
+                result.ServiceType = "ACM-ACME";
+                return result;
+            }
+            if (requestContext.RequestName == "CreateAcmeExternalAccountBindingRequest")
+            {
+                result.ServiceType = "ACM-ACME";
+                return result;
+            }
+            if (requestContext.RequestName == "DeleteAcmeDomainValidationRequest")
+            {
+                result.ServiceType = "ACM-ACME";
+                return result;
+            }
+            if (requestContext.RequestName == "DeleteAcmeEndpointRequest")
+            {
+                result.ServiceType = "ACM-ACME";
+                return result;
+            }
+            if (requestContext.RequestName == "DeleteAcmeExternalAccountBindingRequest")
+            {
+                result.ServiceType = "ACM-ACME";
+                return result;
+            }
+            if (requestContext.RequestName == "DeleteCertificateRequest")
+            {
+                result.ServiceType = "ACM";
+                return result;
+            }
+            if (requestContext.RequestName == "DescribeAcmeAccountRequest")
+            {
+                result.ServiceType = "ACM-ACME";
+                return result;
+            }
+            if (requestContext.RequestName == "DescribeAcmeDomainValidationRequest")
+            {
+                result.ServiceType = "ACM-ACME";
+                return result;
+            }
+            if (requestContext.RequestName == "DescribeAcmeEndpointRequest")
+            {
+                result.ServiceType = "ACM-ACME";
+                return result;
+            }
+            if (requestContext.RequestName == "DescribeAcmeExternalAccountBindingRequest")
+            {
+                result.ServiceType = "ACM-ACME";
+                return result;
+            }
+            if (requestContext.RequestName == "DescribeCertificateRequest")
+            {
+                result.ServiceType = "ACM";
+                return result;
+            }
+            if (requestContext.RequestName == "ExportCertificateRequest")
+            {
+                result.ServiceType = "ACM";
+                return result;
+            }
+            if (requestContext.RequestName == "GetAccountConfigurationRequest")
+            {
+                result.ServiceType = "ACM";
+                return result;
+            }
+            if (requestContext.RequestName == "GetAcmeExternalAccountBindingCredentialsRequest")
+            {
+                result.ServiceType = "ACM-ACME";
+                return result;
+            }
+            if (requestContext.RequestName == "GetCertificateRequest")
+            {
+                result.ServiceType = "ACM";
+                return result;
+            }
+            if (requestContext.RequestName == "ImportCertificateRequest")
+            {
+                result.ServiceType = "ACM";
+                return result;
+            }
+            if (requestContext.RequestName == "ListAcmeAccountsRequest")
+            {
+                result.ServiceType = "ACM-ACME";
+                return result;
+            }
+            if (requestContext.RequestName == "ListAcmeDomainValidationsRequest")
+            {
+                result.ServiceType = "ACM-ACME";
+                return result;
+            }
+            if (requestContext.RequestName == "ListAcmeEndpointsRequest")
+            {
+                result.ServiceType = "ACM-ACME";
+                return result;
+            }
+            if (requestContext.RequestName == "ListAcmeExternalAccountBindingsRequest")
+            {
+                result.ServiceType = "ACM-ACME";
+                return result;
+            }
+            if (requestContext.RequestName == "ListCertificateDomainValidationsRequest")
+            {
+                result.ServiceType = "ACM";
+                return result;
+            }
+            if (requestContext.RequestName == "ListCertificatesRequest")
+            {
+                result.ServiceType = "ACM";
+                return result;
+            }
+            if (requestContext.RequestName == "ListTagsForCertificateRequest")
+            {
+                result.ServiceType = "ACM";
+                return result;
+            }
+            if (requestContext.RequestName == "ListTagsForResourceRequest")
+            {
+                result.ServiceType = "ACM";
+                return result;
+            }
+            if (requestContext.RequestName == "PutAccountConfigurationRequest")
+            {
+                result.ServiceType = "ACM";
+                return result;
+            }
+            if (requestContext.RequestName == "RemoveTagsFromCertificateRequest")
+            {
+                result.ServiceType = "ACM";
+                return result;
+            }
+            if (requestContext.RequestName == "RenewCertificateRequest")
+            {
+                result.ServiceType = "ACM";
+                return result;
+            }
+            if (requestContext.RequestName == "RequestCertificateRequest")
+            {
+                result.ServiceType = "ACM";
+                return result;
+            }
+            if (requestContext.RequestName == "ResendValidationEmailRequest")
+            {
+                result.ServiceType = "ACM";
+                return result;
+            }
+            if (requestContext.RequestName == "RevokeAcmeAccountRequest")
+            {
+                result.ServiceType = "ACM-ACME";
+                return result;
+            }
+            if (requestContext.RequestName == "RevokeAcmeExternalAccountBindingRequest")
+            {
+                result.ServiceType = "ACM-ACME";
+                return result;
+            }
+            if (requestContext.RequestName == "RevokeCertificateRequest")
+            {
+                result.ServiceType = "ACM";
+                return result;
+            }
+            if (requestContext.RequestName == "SearchCertificatesRequest")
+            {
+                result.ServiceType = "ACM";
+                return result;
+            }
+            if (requestContext.RequestName == "TagResourceRequest")
+            {
+                result.ServiceType = "ACM";
+                return result;
+            }
+            if (requestContext.RequestName == "UntagResourceRequest")
+            {
+                result.ServiceType = "ACM";
+                return result;
+            }
+            if (requestContext.RequestName == "UpdateAcmeDomainValidationRequest")
+            {
+                result.ServiceType = "ACM-ACME";
+                return result;
+            }
+            if (requestContext.RequestName == "UpdateAcmeEndpointRequest")
+            {
+                result.ServiceType = "ACM-ACME";
+                return result;
+            }
+            if (requestContext.RequestName == "UpdateCertificateOptionsRequest")
+            {
+                result.ServiceType = "ACM";
+                return result;
+            }
+
+            return result;
+        }
+    }
+}

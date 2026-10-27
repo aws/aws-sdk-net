@@ -60,6 +60,13 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("LogGroupDeletionProtection", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LogGroupDeletionProtection = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("LogGroupNameConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = LogGroupNameConfigurationUnmarshaller.Instance;

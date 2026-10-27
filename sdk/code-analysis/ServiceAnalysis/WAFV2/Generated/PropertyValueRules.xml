@@ -527,23 +527,6 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.WAFV2.Model.ListAvailableManagedRuleGroupsRequest.Limit</property>
-    <min>1</min>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WAFV2.Model.ListAvailableManagedRuleGroupsRequest.NextMarker</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>.*\S.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WAFV2.Model.ListAvailableManagedRuleGroupsResponse.NextMarker</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>.*\S.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.WAFV2.Model.ListAvailableManagedRuleGroupVersionsRequest.Limit</property>
     <min>1</min>
     <max>100</max>
@@ -574,6 +557,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.ListAvailableManagedRuleGroupVersionsResponse.NextMarker</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListAvailableManagedRuleGroupsRequest.Limit</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListAvailableManagedRuleGroupsRequest.NextMarker</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListAvailableManagedRuleGroupsResponse.NextMarker</property>
     <min>1</min>
     <max>256</max>
     <pattern>.*\S.*</pattern>
@@ -954,12 +954,6 @@
     <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.WAFV2.Model.AddressField.Identifier</property>
-    <min>1</min>
-    <max>512</max>
-    <pattern>.*\S.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.WAFV2.Model.APIKeySummary.APIKey</property>
     <min>1</min>
     <max>2048</max>
@@ -968,12 +962,6 @@
   <property-value-rule>
     <property>Amazon.WAFV2.Model.APIKeySummary.Version</property>
     <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.WAFV2.Model.ApplicationAttribute.Name</property>
-    <min>1</min>
-    <max>64</max>
-    <pattern>^[\w\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.AWSManagedRulesACFPRuleSet.CreationPath</property>
@@ -986,6 +974,18 @@
     <min>1</min>
     <max>256</max>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.AddressField.Identifier</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ApplicationAttribute.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\w\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.BotStatistics.BotName</property>
@@ -1029,7 +1029,7 @@
     <property>Amazon.WAFV2.Model.CustomResponseBody.Content</property>
     <min>1</min>
     <max>10240</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.DataPointEntry.Category</property>
@@ -1116,11 +1116,6 @@
     <pattern>^[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.WAFV2.Model.ImmunityTimeProperty.ImmunityTime</property>
-    <min>60</min>
-    <max>259200</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.WAFV2.Model.IPSet.ARN</property>
     <min>20</min>
     <max>2048</max>
@@ -1185,6 +1180,11 @@
     <min>1</min>
     <max>128</max>
     <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ImmunityTimeProperty.ImmunityTime</property>
+    <min>60</min>
+    <max>259200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.Label.Name</property>

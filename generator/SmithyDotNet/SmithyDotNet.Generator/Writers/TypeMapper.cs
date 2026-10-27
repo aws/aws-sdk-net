@@ -189,7 +189,9 @@ public static class TypeMapper
 {
     /// <summary>
     /// Resolves every member of <paramref name="structure"/> into a <see cref="Member"/>,
-    /// sorted by property name for stable output.
+    /// sorted by property name for stable output — unless the <c>retainOriginalMemberOrdering</c>
+    /// customization is set (route53), where the model's declaration order is kept because the
+    /// restXml wire order follows it.
     /// </summary>
     public static List<Member> ResolveMembers(StructureShape structure, GenerationContext context)
     {
@@ -224,7 +226,9 @@ public static class TypeMapper
             );
         }
 
-        return [.. resolved.OrderBy(m => m.PropertyName, StringComparer.Ordinal)];
+        return context.Customizations.RetainOriginalMemberOrdering
+            ? resolved
+            : [.. resolved.OrderBy(m => m.PropertyName, StringComparer.Ordinal)];
     }
 
     /// <summary>

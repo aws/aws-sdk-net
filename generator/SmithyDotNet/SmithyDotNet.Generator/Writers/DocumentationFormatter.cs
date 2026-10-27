@@ -207,12 +207,14 @@ public static partial class DocumentationFormatter
     }
 
     /// <summary>
-    /// Writes the XML doc comment for an operation method — summary, the <c>request</c> (and, for the
-    /// async overload, <c>cancellationToken</c>) <c>&lt;param&gt;</c> tags, the <c>&lt;returns&gt;</c>
-    /// tag, an <c>&lt;exception&gt;</c> tag per modeled error, and the REST-API-reference
-    /// <c>&lt;seealso&gt;</c>. Shared by the client and interface writers so the two cannot drift.
+    /// Writes the XML doc comment for an operation method — summary, the <c>&lt;param&gt;</c> tags, the
+    /// async <c>cancellationToken</c>, the <c>&lt;returns&gt;</c> tag, an <c>&lt;exception&gt;</c> tag per
+    /// modeled error, and the REST-API-reference <c>&lt;seealso&gt;</c>. Shared by the client and
+    /// interface writers so the two cannot drift. <paramref name="parameters"/> defaults to the single
+    /// <c>request</c> parameter of the request-taking overload; a <c>simpleMethods</c> overload passes its
+    /// member parameters, and a <c>noArgOverloads</c> overload passes an empty list.
     /// </summary>
-    public static void WriteOperationDocumentation(CodeWriter writer, GenerationContext context, Operation operation, bool isAsync)
+    public static void WriteOperationDocumentation(CodeWriter writer, GenerationContext context, Operation operation, bool isAsync, IReadOnlyList<(string Name, string Doc)>? parameters = null)
     {
         var cleaned = Cleanup(operation.Shape.GetDocumentation());
         writer.WriteLine("/// <summary>");
@@ -222,11 +224,16 @@ public static partial class DocumentationFormatter
         }
 
         writer.WriteLine("/// </summary>");
-        writer.WriteLine($"/// <param name=\"request\">Container for the necessary parameters to execute the {operation.Name} service method.</param>");
+
+        var paramTags = parameters ?? [("request", $"Container for the necessary parameters to execute the {operation.Name} service method.")];
+        foreach (var (name, doc) in paramTags)
+        {
+            writer.WriteLine($"""/// <param name="{name}">{doc}</param>""");
+        }
 
         if (isAsync)
         {
-            writer.WriteLine("/// <param name=\"cancellationToken\">");
+            writer.WriteLine("""/// <param name="cancellationToken">""");
             writer.WriteLine("///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.");
             writer.WriteLine("/// </param>");
         }
@@ -242,13 +249,63 @@ public static partial class DocumentationFormatter
     }
 
     /// <summary>
+    /// Writes a constructor's XML doc: the <c>&lt;summary&gt;</c> (one line per entry in
+    /// <paramref name="summaryLines"/>, a blank entry emitting a blank <c>///</c> line) and one
+    /// <c>&lt;param&gt;</c> per entry in <paramref name="paramTags"/>. Shared by the client's
+    /// credential constructors and the <c>simpleConstructors</c> request/structure constructors.
+    /// </summary>
+    public static void WriteConstructorDocumentation(CodeWriter writer, IReadOnlyList<string> summaryLines, params (string Name, string Doc)[] paramTags)
+    {
+        writer.WriteLine("/// <summary>");
+        foreach (var line in summaryLines)
+        {
+            writer.WriteLine(line.Length == 0 ? "/// " : $"/// {line}");
+        }
+
+        writer.WriteLine("/// </summary>");
+        foreach (var (name, doc) in paramTags)
+        {
+            writer.WriteLine($"""/// <param name="{name}">{doc}</param>""");
+        }
+    }
+
+    /// <summary>
+    /// The <c>&lt;param&gt;</c> body for a <c>simpleMethods</c> parameter: the member's raw
+    /// documentation lightly sanitized, or C2J's fallback sentence when the member has none. Ports
+    /// C2J's <c>Member.GetParamDocumentationForOperation</c> — a lighter transform than
+    /// <see cref="Cleanup"/> (it only strips <c>&lt;p&gt;</c>/newlines and maps <c>&lt;code&gt;</c>).
+    /// </summary>
+    public static string ParamDocForOperation(string documentation, string operationName) =>
+        documentation.Length == 0
+            ? $"A property of {operationName}Request used to execute the {operationName} service method."
+            : SanitizeParamDoc(documentation);
+
+    /// <summary>
+    /// The <c>&lt;param&gt;</c> body for a <c>simpleConstructors</c> parameter: the member's raw
+    /// documentation lightly sanitized, or C2J's fallback sentence when the member has none. Ports
+    /// C2J's <c>Member.GetParamDocumentationForConstructor</c>.
+    /// </summary>
+    public static string ParamDocForConstructor(string documentation, string className, string propertyName) =>
+        documentation.Length == 0
+            ? $"Sets the {className} {propertyName} property"
+            : SanitizeParamDoc(documentation);
+
+    private static string SanitizeParamDoc(string documentation) => documentation
+        .Replace("<p>", string.Empty)
+        .Replace("</p>", string.Empty)
+        .Replace("\n", string.Empty)
+        .Replace("    ", " ")
+        .Replace("<code>", "<c>")
+        .Replace("</code>", "</c>");
+
+    /// <summary>
     /// Writes an <c>&lt;exception cref="..."&gt;</c> doc tag for a single modeled operation error,
     /// with the error shape's cleaned documentation as the tag body.
     /// </summary>
     public static void WriteExceptionTag(CodeWriter writer, GenerationContext context, StructureShape error)
     {
         var exceptionName = ExceptionWriter.ToExceptionName(context.ToDotNetName(error.Id));
-        writer.WriteLine($"/// <exception cref=\"{context.Namespace}.Model.{exceptionName}\">");
+        writer.WriteLine($"""/// <exception cref="{context.Namespace}.Model.{exceptionName}">""");
 
         var cleaned = Cleanup(error.GetDocumentation());
         if (cleaned.Length > 0)

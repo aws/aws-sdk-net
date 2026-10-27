@@ -186,7 +186,7 @@ namespace Amazon.ManagedGrafana
 #if NETFRAMEWORK
         /// <summary>
         /// Creates a Grafana API key for the workspace. This key can be used to authenticate
-        /// requests sent to the workspace's HTTP API. See <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a>
+        /// requests sent to the workspace's HTTP API. See &lt;a href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html"/&gt;
         /// for available APIs and example requests.
         /// 
         ///  <note> 
@@ -225,7 +225,7 @@ namespace Amazon.ManagedGrafana
 
         /// <summary>
         /// Creates a Grafana API key for the workspace. This key can be used to authenticate
-        /// requests sent to the workspace's HTTP API. See <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a>
+        /// requests sent to the workspace's HTTP API. See &lt;a href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html"/&gt;
         /// for available APIs and example requests.
         /// 
         ///  <note> 
@@ -280,12 +280,12 @@ namespace Amazon.ManagedGrafana
         ///  <note> 
         /// <para>
         /// For more information about service accounts, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/service-accounts.html">Service
-        /// accounts</a> in the <i>Amazon Managed Grafana User Guide</i>.
+        /// accounts</a> in the <i> Amazon Managed Grafana User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information about the Grafana HTTP APIs, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">Using
-        /// Grafana HTTP APIs</a> in the <i>Amazon Managed Grafana User Guide</i>.
+        /// Grafana HTTP APIs</a> in the <i> Amazon Managed Grafana User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -331,12 +331,12 @@ namespace Amazon.ManagedGrafana
         ///  <note> 
         /// <para>
         /// For more information about service accounts, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/service-accounts.html">Service
-        /// accounts</a> in the <i>Amazon Managed Grafana User Guide</i>.
+        /// accounts</a> in the <i> Amazon Managed Grafana User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information about the Grafana HTTP APIs, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">Using
-        /// Grafana HTTP APIs</a> in the <i>Amazon Managed Grafana User Guide</i>.
+        /// Grafana HTTP APIs</a> in the <i> Amazon Managed Grafana User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>

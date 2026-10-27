@@ -109,6 +109,16 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 }
                 context.Writer.WriteEndArray();
             }
+            if (publicRequest.IsSetExactPrefixMatches())
+            {
+                context.Writer.WritePropertyName("ExactPrefixMatches");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestExactPrefixMatchesListValue in publicRequest.ExactPrefixMatches)
+                {
+                    context.Writer.WriteStringValue(publicRequestExactPrefixMatchesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
             if (publicRequest.IsSetLocalPreferenceMatches())
             {
                 context.Writer.WritePropertyName("LocalPreferenceMatches");
@@ -116,6 +126,16 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 foreach (var publicRequestLocalPreferenceMatchesListValue in publicRequest.LocalPreferenceMatches)
                 {
                     context.Writer.WriteStringValue(publicRequestLocalPreferenceMatchesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetLongestPrefixMatches())
+            {
+                context.Writer.WritePropertyName("LongestPrefixMatches");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestLongestPrefixMatchesListValue in publicRequest.LongestPrefixMatches)
+                {
+                    context.Writer.WriteStringValue(publicRequestLongestPrefixMatchesListValue);
                 }
                 context.Writer.WriteEndArray();
             }
@@ -150,6 +170,26 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("SegmentName");
                 context.Writer.WriteStringValue(publicRequest.SegmentName);
+            }
+            if (publicRequest.IsSetSubnetOfMatches())
+            {
+                context.Writer.WritePropertyName("SubnetOfMatches");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestSubnetOfMatchesListValue in publicRequest.SubnetOfMatches)
+                {
+                    context.Writer.WriteStringValue(publicRequestSubnetOfMatchesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetSupernetOfMatches())
+            {
+                context.Writer.WritePropertyName("SupernetOfMatches");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestSupernetOfMatchesListValue in publicRequest.SupernetOfMatches)
+                {
+                    context.Writer.WriteStringValue(publicRequestSupernetOfMatchesListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
             writer.WriteEndObject();

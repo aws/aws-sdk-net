@@ -421,7 +421,7 @@
     <property>Amazon.DevOpsGuru.Model.MonitoredResourceIdentifier.MonitoredResourceName</property>
     <min>1</min>
     <max>512</max>
-    <pattern>[\.\-_\/#A-Za-z0-9]+</pattern>
+    <pattern>^[\.\-_\/#A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsGuru.Model.MonitoredResourceIdentifier.Type</property>
@@ -514,6 +514,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsGuru.Model.ProactiveOrganizationInsightSummary.OrganizationalUnitId</property>
+    <min>0</min>
     <max>68</max>
     <pattern>^ou-[0-9a-z]{4,32}-[a-z0-9]{8,32}$</pattern>
   </property-value-rule>
@@ -603,6 +604,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsGuru.Model.ReactiveOrganizationInsightSummary.OrganizationalUnitId</property>
+    <min>0</min>
     <max>68</max>
     <pattern>^ou-[0-9a-z]{4,32}-[a-z0-9]{8,32}$</pattern>
   </property-value-rule>

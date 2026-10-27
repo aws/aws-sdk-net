@@ -53,6 +53,20 @@ namespace Amazon.IVS.Model
         internal bool IsSetFilterByAdConfigurationArn() => this.FilterByAdConfigurationArn != null;
 
         /// <summary>
+        /// Gets and sets the property FilterByFailoverSlateConfigurationArn. 
+        /// <para>
+        /// Filters the channel list to match the specified failover-slate-configuration ARN.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 128)]
+        public string FilterByFailoverSlateConfigurationArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FilterByFailoverSlateConfigurationArn property is set.
+        /// </summary>
+        internal bool IsSetFilterByFailoverSlateConfigurationArn() => this.FilterByFailoverSlateConfigurationArn != null;
+
+        /// <summary>
         /// Gets and sets the property FilterByName. 
         /// <para>
         /// Filters the channel list to match the specified name.

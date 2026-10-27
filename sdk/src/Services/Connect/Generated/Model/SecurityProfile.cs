@@ -47,6 +47,7 @@ namespace Amazon.Connect.Model
         private string _securityProfileName;
         private List<string> _tagRestrictedResources = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private SecurityProfileType _type;
 
         /// <summary>
         /// Gets and sets the property AllowedAccessControlHierarchyGroupId. 
@@ -311,6 +312,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of the security profile: <c>AWS_MANAGED</c> or <c>CUSTOMER_MANAGED</c>.
+        /// </para>
+        /// </summary>
+        public SecurityProfileType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

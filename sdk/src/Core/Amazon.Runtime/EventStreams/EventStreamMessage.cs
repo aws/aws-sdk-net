@@ -248,20 +248,39 @@ namespace Amazon.Runtime.EventStreams
         /// </summary>
         public byte[] ToByteArray()
         {
-            int headersWireLength = 0;
+            //accumulate in long so an oversized message cannot silently wrap the 32-bit
+            //length fields written below. Both lengths are validated before anything is written.
+            long headersWireLengthLong = 0;
 
             //first we need to figure out how much space the headers will take up.
             if (Headers != null)
             {
                 foreach (var header in Headers)
                 {
-                    headersWireLength += header.Value.GetWireSize();
+                    headersWireLengthLong += header.Value.GetWireSize();
                 }
             }
 
             var payloadLength = Payload?.Length ?? 0;
             //total message length is the framing size + the payload size + the headers wire size.
-            var totalLength = headersWireLength + payloadLength + FramingSize;
+            var totalLengthLong = headersWireLengthLong + payloadLength + FramingSize;
+
+            if (headersWireLengthLong > int.MaxValue)
+            {
+                throw new EventStreamParseException(string.Format(CultureInfo.InvariantCulture,
+                    "Encoded headers length of {0} bytes exceeds the maximum of {1} bytes.",
+                    headersWireLengthLong, int.MaxValue));
+            }
+
+            if (totalLengthLong > int.MaxValue)
+            {
+                throw new EventStreamParseException(string.Format(CultureInfo.InvariantCulture,
+                    "Encoded message length of {0} bytes exceeds the maximum of {1} bytes.",
+                    totalLengthLong, int.MaxValue));
+            }
+
+            var headersWireLength = (int)headersWireLengthLong;
+            var totalLength = (int)totalLengthLong;
 
             var messageBuffer = new byte[totalLength];
 

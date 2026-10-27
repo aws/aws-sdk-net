@@ -171,6 +171,35 @@ namespace Amazon.NetworkManager.Model
         internal bool IsSetLastModificationErrors() => this.LastModificationErrors != null && (this.LastModificationErrors.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property NatGatewaySupport. 
+        /// <para>
+        /// The state of NAT gateway support on the attachment. This is returned only to the core
+        /// network owner for attachment types that support NAT.
+        /// </para>
+        /// </summary>
+        public NatGatewaySupportState NatGatewaySupport { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NatGatewaySupport property is set.
+        /// </summary>
+        internal bool IsSetNatGatewaySupport() => this.NatGatewaySupport != null;
+
+        /// <summary>
+        /// Gets and sets the property NatSystemRouteSupport. 
+        /// <para>
+        /// Indicates whether the core network installs system routes for the NAT CIDR blocks
+        /// of the attachment's NAT rules. This is returned only to the core network owner for
+        /// attachment types that support NAT.
+        /// </para>
+        /// </summary>
+        public bool? NatSystemRouteSupport { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NatSystemRouteSupport property is set.
+        /// </summary>
+        internal bool IsSetNatSystemRouteSupport() => this.NatSystemRouteSupport.HasValue;
+
+        /// <summary>
         /// Gets and sets the property NetworkFunctionGroupName. 
         /// <para>
         /// The name of the network function group.

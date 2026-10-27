@@ -158,6 +158,27 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("exascaleDbStorageVaultArn", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExascaleDbStorageVaultArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("exascaleDbStorageVaultId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExascaleDbStorageVaultId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("fileSystemConfigurationDetails", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<FileSystemConfigurationDetails, FileSystemConfigurationDetailsUnmarshaller>(FileSystemConfigurationDetailsUnmarshaller.Instance);
+                    unmarshalledObject.FileSystemConfigurationDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("giVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -326,6 +347,13 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("storageManagementType", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StorageManagementType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("storageSizeInGBs", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
@@ -351,6 +379,20 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.VipIds = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("vmBackupStorageType", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VmBackupStorageType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("vmFileSystemStorageType", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VmFileSystemStorageType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

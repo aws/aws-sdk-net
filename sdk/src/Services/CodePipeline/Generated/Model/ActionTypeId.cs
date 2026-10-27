@@ -95,7 +95,7 @@ namespace Amazon.CodePipeline.Model
         /// The creator of the action being called. There are three valid values for the <c>Owner</c>
         /// field in the action category section within your pipeline structure: <c>AWS</c>, <c>ThirdParty</c>,
         /// and <c>Custom</c>. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid
-        /// Action Types and Providers in CodePipeline</a>.
+        /// Action Types and Providers in CodePipeline </a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -118,7 +118,7 @@ namespace Amazon.CodePipeline.Model
         /// by the action category. For example, an action in the Deploy category type might have
         /// a provider of CodeDeploy, which would be specified as <c>CodeDeploy</c>. For more
         /// information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid
-        /// Action Types and Providers in CodePipeline</a>.
+        /// Action Types and Providers in CodePipeline </a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=35)]

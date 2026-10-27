@@ -9,7 +9,8 @@ namespace SmithyDotNet.Generator.Generation.Customizations;
 /// Applies model-shaped customization hooks to the Smithy model in place, before the
 /// <see cref="ServiceIndex"/> is built. Only a hook with a Smithy trait equivalent (<c>deprecatedMessage</c>;
 /// <c>renameShape</c> adds a service <c>rename</c> entry) or a structural edit (a member-keyed <c>renameShape</c>
-/// copies the member's target) is applied to the model; the rest, member renames included, are checked here and
+/// copies the member's target; <c>exclude</c> unbinds an operation or drops members; <c>useWrappingResult</c> wraps an
+/// output) is applied to the model; the rest, member renames included, are checked here and
 /// read from <see cref="GenerationContext.Customizations"/> by shape and member name where the member is resolved.
 /// A stale shape/member reference throws — it must fail the build, not silently stop applying.
 /// </summary>
@@ -44,6 +45,16 @@ public static class CustomizationTransform
                 shape.SetDeprecatedMessage(shapeMessage);
             }
 
+            // TODO: S3's excludeFromMarshalling and excludeFromUnmarshalling keep the member on the class but off the
+            // wire, so they need a marshalling-level flag rather than this removal.
+            foreach (var memberName in modifier.Exclude)
+            {
+                if (shape is not StructureShape excluded || !excluded.Members.Remove(memberName))
+                {
+                    throw new GeneratorException($"shapeModifiers['{shapeName}'] excludes member '{memberName}', which the shape does not have.");
+                }
+            }
+
             // The structure/enum restriction only bites member modifications - a shape-level hook (e.g.
             // deprecatedMessage on a string shape) applies to any shape.
             if (modifier.Modify.Count == 0)
@@ -71,14 +82,24 @@ public static class CustomizationTransform
         foreach (var (operationName, modifier) in customizations.OperationModifiers)
         {
             var shape = FindSingleShape(model, operationName, $"operationModifiers['{operationName}']");
-            if (shape is not OperationShape)
+            if (shape is not OperationShape operation)
             {
                 throw new GeneratorException($"operationModifiers['{operationName}'] targets a '{shape.Type}' shape, not an operation.");
             }
 
             if (modifier.DeprecatedMessage is { } message)
             {
-                shape.SetDeprecatedMessage(message);
+                operation.SetDeprecatedMessage(message);
+            }
+
+            if (modifier.Exclude)
+            {
+                ExcludeOperation(model, operation, operationName);
+            }
+
+            if (modifier.UseWrappingResult || modifier.WrappedResultShape is not null || modifier.WrappedResultMember is not null)
+            {
+                WrapOutput(model, operation, operationName, modifier);
             }
         }
     }
@@ -129,6 +150,126 @@ public static class CustomizationTransform
                 ValidateDataTypeSwap(model, member, memberName, swap, shapeName);
             }
         }
+
+        // The convenience hooks name an operation (noArgOverloads, simpleMethods) or a request/structure
+        // class (simpleConstructors). The writers only consult them for shapes the model actually has, so a
+        // stale key would otherwise be silently skipped (as in C2J). Fail loudly instead, like every hook
+        // above — the stale entry must be removed from the customizations file.
+        foreach (var operationName in customizations.NoArgOverloads)
+        {
+            if (FindSingleShape(model, operationName, $"noArgOverloads['{operationName}']") is not OperationShape)
+            {
+                throw new GeneratorException($"noArgOverloads['{operationName}'] targets a shape that is not an operation.");
+            }
+        }
+
+        if (customizations.SimpleMethods is { } simpleMethods)
+        {
+            foreach (var operationName in simpleMethods.Operations.Keys)
+            {
+                if (FindSingleShape(model, operationName, $"simpleMethods['{operationName}']") is not OperationShape)
+                {
+                    throw new GeneratorException($"simpleMethods['{operationName}'] targets a shape that is not an operation.");
+                }
+            }
+        }
+
+        if (customizations.SimpleConstructors is { } simpleConstructors)
+        {
+            foreach (var className in simpleConstructors.Constructors.Keys)
+            {
+                // A request class is always emitted as {Op}Request; its Smithy input shape is often named
+                // differently (e.g. PutItemInput), so accept the key when the operation exists.
+                if (className.EndsWith("Request", StringComparison.Ordinal)
+                    && ModelHasShape<OperationShape>(model, className[..^"Request".Length]))
+                {
+                    continue;
+                }
+
+                // Otherwise the key must name a shape in the model; a stale (absent) one throws. Unlike the
+                // other hooks, a present-but-non-structure key is tolerated (the writers only emit a
+                // constructor for an emitted class, skipping it as C2J does): one shared customizations file
+                // serves every API version, and a shape that is a structure in one can be a map/list in
+                // another (DynamoDB's Key/KeySchema are structures in 2011-12-05, a map/list in 2012-08-10).
+                FindSingleShape(model, className, $"simpleConstructors['{className}']");
+            }
+        }
+
+        foreach (var name in customizations.GenerateUnmarshaller)
+        {
+            if (FindSingleShape(model, name, $"generateUnmarshaller['{name}']") is not StructureShape)
+            {
+                throw new GeneratorException($"generateUnmarshaller['{name}'] targets a shape that is not a structure.");
+            }
+        }
+
+        foreach (var propertyName in customizations.SkipUriPropertyValidation)
+        {
+            var found = false;
+            foreach (var structure in model.Shapes.Values.OfType<StructureShape>())
+            {
+                foreach (var (memberName, member) in structure.Members)
+                {
+                    if (member.IsHttpLabel() && customizations.PropertyName(structure.Id.Name, memberName) == propertyName)
+                    {
+                        found = true;
+                    }
+                }
+            }
+
+            if (!found)
+            {
+                throw new GeneratorException($"skipUriPropertyValidation['{propertyName}'] is not the property of any @httpLabel member.");
+            }
+        }
+    }
+
+    private static bool ModelHasShape<T>(SmithyModel model, string bareName) where T : Shape =>
+        model.Shapes.Any(entry => ShapeId.Parse(entry.Key).Name == bareName && entry.Value is T);
+    // Structures are emitted only when reachable from the service's operations, so the ones only this operation used go too.
+    private static void ExcludeOperation(SmithyModel model, OperationShape operation, string operationName)
+    {
+        var unbound = model.Shapes.Values.Sum(shape => shape switch
+        {
+            ServiceShape service => service.Operations.RemoveAll(id => id == operation.Id),
+            ResourceShape resource => resource.Operations.RemoveAll(id => id == operation.Id) + resource.CollectionOperations.RemoveAll(id => id == operation.Id),
+            _ => 0,
+        });
+        if (unbound == 0)
+        {
+            throw new GeneratorException($"operationModifiers['{operationName}'] excludes an operation that no service or resource lists in its operations; resource lifecycle bindings are not supported.");
+        }
+    }
+
+    // The response keeps one property, wrappedResultMember, typed as the modeled output: a new structure with that
+    // single member becomes the operation's output, and the modeled output turns into an ordinary class.
+    // JsonResponseUnmarshallerWriter reads that member from the whole body, and PaginationResolver resolves output
+    // paths through it.
+    private static void WrapOutput(SmithyModel model, OperationShape operation, string operationName, OperationModifier modifier)
+    {
+        var memberName = modifier.WrappedResultMember;
+        if (!modifier.UseWrappingResult || string.IsNullOrWhiteSpace(memberName))
+        {
+            throw new GeneratorException($"operationModifiers['{operationName}'] needs both useWrappingResult and a wrappedResultMember.");
+        }
+
+        if (modifier.WrappedResultShape != operation.Output.Name || model.Shapes.GetValueOrDefault(operation.Output.AbsoluteName) is not { } output)
+        {
+            throw new GeneratorException($"operationModifiers['{operationName}'] wrappedResultShape must name the output, '{operation.Output.Name}'.");
+        }
+
+        var wrapperId = new ShapeId(operation.Id.Namespace, $"{operation.Id.Name}WrappedOutput");
+        if (model.Shapes.ContainsKey(wrapperId.AbsoluteName))
+        {
+            throw new GeneratorException($"operationModifiers['{operationName}'] wraps the output as '{wrapperId}', which is already a shape in the model.");
+        }
+
+        var wrapper = new StructureShape { Id = wrapperId };
+        wrapper.Members[memberName] = new MemberShape { Target = output.Id };
+        model.Shapes[wrapperId.AbsoluteName] = wrapper;
+
+        output.Traits.Remove("smithy.api#output");
+        model.Shapes[operation.Id.AbsoluteName] = operation with { Output = wrapperId };
     }
 
     // A C# rename is exactly what Smithy's service `rename` expresses, and ServiceIndex.ToDotNetName already
@@ -194,13 +335,23 @@ public static class CustomizationTransform
     // TODO: C2J merges shapes renamed to one name (S3's Grant and TargetGrant both become S3Grant). This also
     // scans unreachable shapes: S3 renames Rule, used only by operations it excludes, to its existing LifecycleRule.
     // Exceptions share the model namespace, so compare the generated type names (error Foo emits FooException).
+    // Service, resource and operation shapes emit no type of their own (an operation emits FooRequest and
+    // FooResponse), so a rename may take their name, as C2J's models do (Pinpoint's CreateRecommenderConfiguration).
     private static void ThrowIfEmitted(SmithyModel model, Dictionary<string, string> renames, Shape? renamed, string newName, string context)
     {
         var typeName = TypeName(renamed, newName);
-        var clash = model.Shapes.FirstOrDefault(kvp => TypeName(kvp.Value, EmittedName(renames, ShapeId.Parse(kvp.Key))) == typeName).Key;
-        if (clash is not null)
+        foreach (var (id, shape) in model.Shapes)
         {
-            throw new GeneratorException($"{context}, which '{clash}' is already emitted as.");
+            if (shape is ServiceShape or ResourceShape or OperationShape)
+            {
+                continue;
+            }
+
+            var emittedName = EmittedName(renames, ShapeId.Parse(id));
+            if (TypeName(shape, emittedName) == typeName)
+            {
+                throw new GeneratorException($"{context}, which '{id}' is already emitted as.");
+            }
         }
     }
 

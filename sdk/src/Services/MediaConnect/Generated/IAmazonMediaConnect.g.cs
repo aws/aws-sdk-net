@@ -456,6 +456,61 @@ namespace Amazon.MediaConnect
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Retrieves information about multiple destination endpoints in a single request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetDestinationEndpoint service method.</param>
+        /// <returns>The response from the BatchGetDestinationEndpoint service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/BatchGetDestinationEndpoint">REST API Reference for BatchGetDestinationEndpoint Operation</seealso>
+        BatchGetDestinationEndpointResponse BatchGetDestinationEndpoint(BatchGetDestinationEndpointRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves information about multiple destination endpoints in a single request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetDestinationEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the BatchGetDestinationEndpoint service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/BatchGetDestinationEndpoint">REST API Reference for BatchGetDestinationEndpoint Operation</seealso>
+        Task<BatchGetDestinationEndpointResponse> BatchGetDestinationEndpointAsync(BatchGetDestinationEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Retrieves information about multiple router inputs in AWS Elemental MediaConnect.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetRouterInput service method.</param>
@@ -618,6 +673,128 @@ namespace Amazon.MediaConnect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/BatchGetRouterOutput">REST API Reference for BatchGetRouterOutput Operation</seealso>
         Task<BatchGetRouterOutputResponse> BatchGetRouterOutputAsync(BatchGetRouterOutputRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves information about multiple source endpoints in a single request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetSourceEndpoint service method.</param>
+        /// <returns>The response from the BatchGetSourceEndpoint service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/BatchGetSourceEndpoint">REST API Reference for BatchGetSourceEndpoint Operation</seealso>
+        BatchGetSourceEndpointResponse BatchGetSourceEndpoint(BatchGetSourceEndpointRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves information about multiple source endpoints in a single request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetSourceEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the BatchGetSourceEndpoint service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/BatchGetSourceEndpoint">REST API Reference for BatchGetSourceEndpoint Operation</seealso>
+        Task<BatchGetSourceEndpointResponse> BatchGetSourceEndpointAsync(BatchGetSourceEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Connects a source endpoint to a destination endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ConnectEndpoints service method.</param>
+        /// <returns>The response from the ConnectEndpoints service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ConnectEndpoints">REST API Reference for ConnectEndpoints Operation</seealso>
+        ConnectEndpointsResponse ConnectEndpoints(ConnectEndpointsRequest request);
+#endif
+
+        /// <summary>
+        /// Connects a source endpoint to a destination endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ConnectEndpoints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ConnectEndpoints service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ConnectEndpoints">REST API Reference for ConnectEndpoints Operation</seealso>
+        Task<ConnectEndpointsResponse> ConnectEndpointsAsync(ConnectEndpointsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -1423,6 +1600,73 @@ namespace Amazon.MediaConnect
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Deregisters a destination endpoint from MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterDestinationEndpoint service method.</param>
+        /// <returns>The response from the DeregisterDestinationEndpoint service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeregisterDestinationEndpoint">REST API Reference for DeregisterDestinationEndpoint Operation</seealso>
+        DeregisterDestinationEndpointResponse DeregisterDestinationEndpoint(DeregisterDestinationEndpointRequest request);
+#endif
+
+        /// <summary>
+        /// Deregisters a destination endpoint from MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterDestinationEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeregisterDestinationEndpoint service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeregisterDestinationEndpoint">REST API Reference for DeregisterDestinationEndpoint Operation</seealso>
+        Task<DeregisterDestinationEndpointResponse> DeregisterDestinationEndpointAsync(DeregisterDestinationEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Deregisters an instance. Before you deregister an instance, all bridges running on
         /// the instance must be stopped. If you want to deregister an instance without stopping
         /// the bridges, you must use the --force option.
@@ -1491,6 +1735,73 @@ namespace Amazon.MediaConnect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeregisterGatewayInstance">REST API Reference for DeregisterGatewayInstance Operation</seealso>
         Task<DeregisterGatewayInstanceResponse> DeregisterGatewayInstanceAsync(DeregisterGatewayInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deregisters a source endpoint from MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterSourceEndpoint service method.</param>
+        /// <returns>The response from the DeregisterSourceEndpoint service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeregisterSourceEndpoint">REST API Reference for DeregisterSourceEndpoint Operation</seealso>
+        DeregisterSourceEndpointResponse DeregisterSourceEndpoint(DeregisterSourceEndpointRequest request);
+#endif
+
+        /// <summary>
+        /// Deregisters a source endpoint from MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterSourceEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeregisterSourceEndpoint service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeregisterSourceEndpoint">REST API Reference for DeregisterSourceEndpoint Operation</seealso>
+        Task<DeregisterSourceEndpointResponse> DeregisterSourceEndpointAsync(DeregisterSourceEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -1994,6 +2305,140 @@ namespace Amazon.MediaConnect
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Disconnects a source endpoint from a destination endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisconnectEndpoints service method.</param>
+        /// <returns>The response from the DisconnectEndpoints service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DisconnectEndpoints">REST API Reference for DisconnectEndpoints Operation</seealso>
+        DisconnectEndpointsResponse DisconnectEndpoints(DisconnectEndpointsRequest request);
+#endif
+
+        /// <summary>
+        /// Disconnects a source endpoint from a destination endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisconnectEndpoints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DisconnectEndpoints service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DisconnectEndpoints">REST API Reference for DisconnectEndpoints Operation</seealso>
+        Task<DisconnectEndpointsResponse> DisconnectEndpointsAsync(DisconnectEndpointsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves information about a destination endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDestinationEndpoint service method.</param>
+        /// <returns>The response from the GetDestinationEndpoint service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GetDestinationEndpoint">REST API Reference for GetDestinationEndpoint Operation</seealso>
+        GetDestinationEndpointResponse GetDestinationEndpoint(GetDestinationEndpointRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves information about a destination endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDestinationEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetDestinationEndpoint service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GetDestinationEndpoint">REST API Reference for GetDestinationEndpoint Operation</seealso>
+        Task<GetDestinationEndpointResponse> GetDestinationEndpointAsync(GetDestinationEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Retrieves information about a specific router input in AWS Elemental MediaConnect.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRouterInput service method.</param>
@@ -2315,6 +2760,65 @@ namespace Amazon.MediaConnect
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Retrieves information about a source endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSourceEndpoint service method.</param>
+        /// <returns>The response from the GetSourceEndpoint service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GetSourceEndpoint">REST API Reference for GetSourceEndpoint Operation</seealso>
+        GetSourceEndpointResponse GetSourceEndpoint(GetSourceEndpointRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves information about a source endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSourceEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetSourceEndpoint service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GetSourceEndpoint">REST API Reference for GetSourceEndpoint Operation</seealso>
+        Task<GetSourceEndpointResponse> GetSourceEndpointAsync(GetSourceEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Grants entitlements to an existing flow.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GrantFlowEntitlements service method.</param>
@@ -2436,6 +2940,63 @@ namespace Amazon.MediaConnect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListBridges">REST API Reference for ListBridges Operation</seealso>
         Task<ListBridgesResponse> ListBridgesAsync(ListBridgesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves a list of the destination endpoints in your account. The results are paginated.
+        /// Use the NextToken value that's returned to retrieve additional results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDestinationEndpoints service method.</param>
+        /// <returns>The response from the ListDestinationEndpoints service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListDestinationEndpoints">REST API Reference for ListDestinationEndpoints Operation</seealso>
+        ListDestinationEndpointsResponse ListDestinationEndpoints(ListDestinationEndpointsRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves a list of the destination endpoints in your account. The results are paginated.
+        /// Use the NextToken value that's returned to retrieve additional results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDestinationEndpoints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListDestinationEndpoints service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListDestinationEndpoints">REST API Reference for ListDestinationEndpoints Operation</seealso>
+        Task<ListDestinationEndpointsResponse> ListDestinationEndpointsAsync(ListDestinationEndpointsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -2922,6 +3483,63 @@ namespace Amazon.MediaConnect
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Retrieves a list of the source endpoints in your account. The results are paginated.
+        /// Use the NextToken value that's returned to retrieve additional results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSourceEndpoints service method.</param>
+        /// <returns>The response from the ListSourceEndpoints service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListSourceEndpoints">REST API Reference for ListSourceEndpoints Operation</seealso>
+        ListSourceEndpointsResponse ListSourceEndpoints(ListSourceEndpointsRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves a list of the source endpoints in your account. The results are paginated.
+        /// Use the NextToken value that's returned to retrieve additional results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSourceEndpoints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListSourceEndpoints service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListSourceEndpoints">REST API Reference for ListSourceEndpoints Operation</seealso>
+        Task<ListSourceEndpointsResponse> ListSourceEndpointsAsync(ListSourceEndpointsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Lists the tags associated with a global resource in AWS Elemental MediaConnect. The
         /// API supports the following global resources: router inputs, router outputs and router
         /// network interfaces.
@@ -3066,6 +3684,144 @@ namespace Amazon.MediaConnect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/PurchaseOffering">REST API Reference for PurchaseOffering Operation</seealso>
         Task<PurchaseOfferingResponse> PurchaseOfferingAsync(PurchaseOfferingRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Registers a new destination endpoint in MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterDestinationEndpoint service method.</param>
+        /// <returns>The response from the RegisterDestinationEndpoint service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.DestinationEndpointServiceQuotaExceededException">
+        /// The request would cause you to exceed a service quota for destination endpoints. Delete
+        /// unused destination endpoints or request a quota increase, then try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RegisterDestinationEndpoint">REST API Reference for RegisterDestinationEndpoint Operation</seealso>
+        RegisterDestinationEndpointResponse RegisterDestinationEndpoint(RegisterDestinationEndpointRequest request);
+#endif
+
+        /// <summary>
+        /// Registers a new destination endpoint in MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterDestinationEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the RegisterDestinationEndpoint service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.DestinationEndpointServiceQuotaExceededException">
+        /// The request would cause you to exceed a service quota for destination endpoints. Delete
+        /// unused destination endpoints or request a quota increase, then try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RegisterDestinationEndpoint">REST API Reference for RegisterDestinationEndpoint Operation</seealso>
+        Task<RegisterDestinationEndpointResponse> RegisterDestinationEndpointAsync(RegisterDestinationEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Registers a new source endpoint in MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterSourceEndpoint service method.</param>
+        /// <returns>The response from the RegisterSourceEndpoint service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.SourceEndpointServiceQuotaExceededException">
+        /// The request would cause you to exceed a service quota for source endpoints. Delete
+        /// unused source endpoints or request a quota increase, then try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RegisterSourceEndpoint">REST API Reference for RegisterSourceEndpoint Operation</seealso>
+        RegisterSourceEndpointResponse RegisterSourceEndpoint(RegisterSourceEndpointRequest request);
+#endif
+
+        /// <summary>
+        /// Registers a new source endpoint in MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterSourceEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the RegisterSourceEndpoint service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.SourceEndpointServiceQuotaExceededException">
+        /// The request would cause you to exceed a service quota for source endpoints. Delete
+        /// unused source endpoints or request a quota increase, then try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RegisterSourceEndpoint">REST API Reference for RegisterSourceEndpoint Operation</seealso>
+        Task<RegisterSourceEndpointResponse> RegisterSourceEndpointAsync(RegisterSourceEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -4549,6 +5305,73 @@ namespace Amazon.MediaConnect
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Updates the configuration of a destination endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDestinationEndpoint service method.</param>
+        /// <returns>The response from the UpdateDestinationEndpoint service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateDestinationEndpoint">REST API Reference for UpdateDestinationEndpoint Operation</seealso>
+        UpdateDestinationEndpointResponse UpdateDestinationEndpoint(UpdateDestinationEndpointRequest request);
+#endif
+
+        /// <summary>
+        /// Updates the configuration of a destination endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDestinationEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateDestinationEndpoint service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateDestinationEndpoint">REST API Reference for UpdateDestinationEndpoint Operation</seealso>
+        Task<UpdateDestinationEndpointResponse> UpdateDestinationEndpointAsync(UpdateDestinationEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Updates an existing flow.
         /// 
         ///  <note> 
@@ -5249,6 +6072,73 @@ namespace Amazon.MediaConnect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateRouterOutput">REST API Reference for UpdateRouterOutput Operation</seealso>
         Task<UpdateRouterOutputResponse> UpdateRouterOutputAsync(UpdateRouterOutputRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the configuration of a source endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSourceEndpoint service method.</param>
+        /// <returns>The response from the UpdateSourceEndpoint service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateSourceEndpoint">REST API Reference for UpdateSourceEndpoint Operation</seealso>
+        UpdateSourceEndpointResponse UpdateSourceEndpoint(UpdateSourceEndpointRequest request);
+#endif
+
+        /// <summary>
+        /// Updates the configuration of a source endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSourceEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateSourceEndpoint service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateSourceEndpoint">REST API Reference for UpdateSourceEndpoint Operation</seealso>
+        Task<UpdateSourceEndpointResponse> UpdateSourceEndpointAsync(UpdateSourceEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceAgreement.Generated
     {
         public void MarketplaceAgreementBatchCreateBillingAdjustmentRequest()
         {
-            #region example-1
+            #region BatchCreateBillingAdjustmentRequest-1
 
             var client = new AmazonMarketplaceAgreementClient();
-            var response = client.BatchCreateBillingAdjustmentRequest(new BatchCreateBillingAdjustmentRequestRequest 
+            var response = client.BatchCreateBillingAdjustmentRequest(new BatchCreateBillingAdjustmentRequestRequest
             {
                 BillingAdjustmentRequestEntries = new List<BatchCreateBillingAdjustmentRequestEntry> {
                     new BatchCreateBillingAdjustmentRequestEntry {
@@ -39,10 +40,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceAgreement.Generated
 
         public void MarketplaceAgreementCancelAgreementCancellationRequest()
         {
-            #region example-1
+            #region CancelAgreementCancellationRequest-1
 
             var client = new AmazonMarketplaceAgreementClient();
-            var response = client.CancelAgreementCancellationRequest(new CancelAgreementCancellationRequestRequest 
+            var response = client.CancelAgreementCancellationRequest(new CancelAgreementCancellationRequestRequest
             {
                 AgreementCancellationRequestId = "acr-752jqvg74yo7k4h56cakk6396",
                 AgreementId = "agmt-752jqvg74yo7k4h56cakk6396",
@@ -51,22 +52,22 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceAgreement.Generated
 
             string agreementCancellationRequestId = response.AgreementCancellationRequestId;
             string agreementId = response.AgreementId;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string description = response.Description;
-            string reasonCode = response.ReasonCode;
-            string status = response.Status;
+            AgreementCancellationRequestReasonCode reasonCode = response.ReasonCode;
+            AgreementCancellationRequestStatus status = response.Status;
             string statusMessage = response.StatusMessage;
-            DateTime updatedAt = response.UpdatedAt;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void MarketplaceAgreementGetAgreementCancellationRequest()
         {
-            #region example-1
+            #region GetAgreementCancellationRequest-1
 
             var client = new AmazonMarketplaceAgreementClient();
-            var response = client.GetAgreementCancellationRequest(new GetAgreementCancellationRequestRequest 
+            var response = client.GetAgreementCancellationRequest(new GetAgreementCancellationRequestRequest
             {
                 AgreementCancellationRequestId = "acr-sgew33rhsds",
                 AgreementId = "agmt-752jqvg74yo7k"
@@ -74,47 +75,47 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceAgreement.Generated
 
             string agreementCancellationRequestId = response.AgreementCancellationRequestId;
             string agreementId = response.AgreementId;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string description = response.Description;
-            string reasonCode = response.ReasonCode;
-            string status = response.Status;
+            AgreementCancellationRequestReasonCode reasonCode = response.ReasonCode;
+            AgreementCancellationRequestStatus status = response.Status;
             string statusMessage = response.StatusMessage;
-            DateTime updatedAt = response.UpdatedAt;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void MarketplaceAgreementGetBillingAdjustmentRequest()
         {
-            #region example-1
+            #region GetBillingAdjustmentRequest-1
 
             var client = new AmazonMarketplaceAgreementClient();
-            var response = client.GetBillingAdjustmentRequest(new GetBillingAdjustmentRequestRequest 
+            var response = client.GetBillingAdjustmentRequest(new GetBillingAdjustmentRequestRequest
             {
                 AgreementId = "agmt-SvIzsqYMyQwI3GWgJAe17URx",
                 BillingAdjustmentRequestId = "ba-1a2b3c4d5e6f7g"
             });
 
             string adjustmentAmount = response.AdjustmentAmount;
-            string adjustmentReasonCode = response.AdjustmentReasonCode;
+            BillingAdjustmentReasonCode adjustmentReasonCode = response.AdjustmentReasonCode;
             string agreementId = response.AgreementId;
             string billingAdjustmentRequestId = response.BillingAdjustmentRequestId;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string currencyCode = response.CurrencyCode;
             string description = response.Description;
             string originalInvoiceId = response.OriginalInvoiceId;
-            string status = response.Status;
-            DateTime updatedAt = response.UpdatedAt;
+            BillingAdjustmentStatus status = response.Status;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void MarketplaceAgreementListAgreementCancellationRequests()
         {
-            #region example-1
+            #region ListAgreementCancellationRequests-1
 
             var client = new AmazonMarketplaceAgreementClient();
-            var response = client.ListAgreementCancellationRequests(new ListAgreementCancellationRequestsRequest 
+            var response = client.ListAgreementCancellationRequests(new ListAgreementCancellationRequestsRequest
             {
                 MaxResults = 10,
                 PartyType = "Proposer"
@@ -127,10 +128,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceAgreement.Generated
 
         public void MarketplaceAgreementListAgreementInvoiceLineItems()
         {
-            #region example-1
+            #region ListAgreementInvoiceLineItems-1
 
             var client = new AmazonMarketplaceAgreementClient();
-            var response = client.ListAgreementInvoiceLineItems(new ListAgreementInvoiceLineItemsRequest 
+            var response = client.ListAgreementInvoiceLineItems(new ListAgreementInvoiceLineItemsRequest
             {
                 AgreementId = "agmt-EXAMPLESvIzsqYMyQwI3",
                 GroupBy = "INVOICE_ID"
@@ -143,10 +144,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceAgreement.Generated
 
         public void MarketplaceAgreementListBillingAdjustmentRequests()
         {
-            #region example-1
+            #region ListBillingAdjustmentRequests-1
 
             var client = new AmazonMarketplaceAgreementClient();
-            var response = client.ListBillingAdjustmentRequests(new ListBillingAdjustmentRequestsRequest 
+            var response = client.ListBillingAdjustmentRequests(new ListBillingAdjustmentRequestsRequest
             {
                 AgreementId = "agmt-SvIzsqYMyQwI3GWgJAe17URx"
             });
@@ -158,10 +159,10 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceAgreement.Generated
 
         public void MarketplaceAgreementSendAgreementCancellationRequest()
         {
-            #region example-1
+            #region SendAgreementCancellationRequest-1
 
             var client = new AmazonMarketplaceAgreementClient();
-            var response = client.SendAgreementCancellationRequest(new SendAgreementCancellationRequestRequest 
+            var response = client.SendAgreementCancellationRequest(new SendAgreementCancellationRequestRequest
             {
                 AgreementId = "agmt-752jqvg74yo7k4h56cakk6396",
                 ClientToken = "53nQSKWt6AjrsiZPhzQyZT",
@@ -171,22 +172,19 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceAgreement.Generated
 
             string agreementCancellationRequestId = response.AgreementCancellationRequestId;
             string agreementId = response.AgreementId;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string description = response.Description;
-            string reasonCode = response.ReasonCode;
-            string status = response.Status;
-            DateTime updatedAt = response.UpdatedAt;
+            AgreementCancellationRequestReasonCode reasonCode = response.ReasonCode;
+            AgreementCancellationRequestStatus status = response.Status;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

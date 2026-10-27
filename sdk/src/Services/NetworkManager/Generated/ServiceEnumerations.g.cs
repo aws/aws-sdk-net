@@ -27,6 +27,16 @@ namespace Amazon.NetworkManager
     public class AttachmentErrorCode : ConstantClass
     {
         /// <summary>
+        /// Constant CREATION_FAILED for AttachmentErrorCode
+        /// </summary>
+        public static readonly AttachmentErrorCode CREATION_FAILED = new AttachmentErrorCode("CREATION_FAILED");
+
+        /// <summary>
+        /// Constant DELETION_FAILED for AttachmentErrorCode
+        /// </summary>
+        public static readonly AttachmentErrorCode DELETION_FAILED = new AttachmentErrorCode("DELETION_FAILED");
+
+        /// <summary>
         /// Constant DIRECT_CONNECT_GATEWAY_EXISTING_ATTACHMENTS for AttachmentErrorCode
         /// </summary>
         public static readonly AttachmentErrorCode DIRECT_CONNECT_GATEWAY_EXISTING_ATTACHMENTS = new AttachmentErrorCode("DIRECT_CONNECT_GATEWAY_EXISTING_ATTACHMENTS");
@@ -42,9 +52,19 @@ namespace Amazon.NetworkManager
         public static readonly AttachmentErrorCode DIRECT_CONNECT_GATEWAY_NO_PRIVATE_VIF = new AttachmentErrorCode("DIRECT_CONNECT_GATEWAY_NO_PRIVATE_VIF");
 
         /// <summary>
+        /// Constant DIRECT_CONNECT_GATEWAY_TOPOLOGY_RESTRICTIONS for AttachmentErrorCode
+        /// </summary>
+        public static readonly AttachmentErrorCode DIRECT_CONNECT_GATEWAY_TOPOLOGY_RESTRICTIONS = new AttachmentErrorCode("DIRECT_CONNECT_GATEWAY_TOPOLOGY_RESTRICTIONS");
+
+        /// <summary>
         /// Constant MAXIMUM_NO_ENCAP_LIMIT_EXCEEDED for AttachmentErrorCode
         /// </summary>
         public static readonly AttachmentErrorCode MAXIMUM_NO_ENCAP_LIMIT_EXCEEDED = new AttachmentErrorCode("MAXIMUM_NO_ENCAP_LIMIT_EXCEEDED");
+
+        /// <summary>
+        /// Constant SECURITY_GROUP_REFERENCING_UNSUPPORTED_AVAILABILITY_ZONE for AttachmentErrorCode
+        /// </summary>
+        public static readonly AttachmentErrorCode SECURITY_GROUP_REFERENCING_UNSUPPORTED_AVAILABILITY_ZONE = new AttachmentErrorCode("SECURITY_GROUP_REFERENCING_UNSUPPORTED_AVAILABILITY_ZONE");
 
         /// <summary>
         /// Constant SUBNET_DUPLICATED_IN_AVAILABILITY_ZONE for AttachmentErrorCode
@@ -72,6 +92,11 @@ namespace Amazon.NetworkManager
         public static readonly AttachmentErrorCode SUBNET_UNSUPPORTED_AVAILABILITY_ZONE = new AttachmentErrorCode("SUBNET_UNSUPPORTED_AVAILABILITY_ZONE");
 
         /// <summary>
+        /// Constant UPDATE_FAILED for AttachmentErrorCode
+        /// </summary>
+        public static readonly AttachmentErrorCode UPDATE_FAILED = new AttachmentErrorCode("UPDATE_FAILED");
+
+        /// <summary>
         /// Constant VPC_NOT_FOUND for AttachmentErrorCode
         /// </summary>
         public static readonly AttachmentErrorCode VPC_NOT_FOUND = new AttachmentErrorCode("VPC_NOT_FOUND");
@@ -90,6 +115,11 @@ namespace Amazon.NetworkManager
         /// Constant VPN_EXISTING_ASSOCIATIONS for AttachmentErrorCode
         /// </summary>
         public static readonly AttachmentErrorCode VPN_EXISTING_ASSOCIATIONS = new AttachmentErrorCode("VPN_EXISTING_ASSOCIATIONS");
+
+        /// <summary>
+        /// Constant VPN_STATIC_ROUTES_NAT_UNSUPPORTED for AttachmentErrorCode
+        /// </summary>
+        public static readonly AttachmentErrorCode VPN_STATIC_ROUTES_NAT_UNSUPPORTED = new AttachmentErrorCode("VPN_STATIC_ROUTES_NAT_UNSUPPORTED");
 
         /// <summary>
         /// Constructs a custom AttachmentErrorCode for a value not among the defined constants.
@@ -564,6 +594,16 @@ namespace Amazon.NetworkManager
     /// </summary>
     public class ConnectPeerErrorCode : ConstantClass
     {
+        /// <summary>
+        /// Constant CREATION_FAILED for ConnectPeerErrorCode
+        /// </summary>
+        public static readonly ConnectPeerErrorCode CREATION_FAILED = new ConnectPeerErrorCode("CREATION_FAILED");
+
+        /// <summary>
+        /// Constant DELETION_FAILED for ConnectPeerErrorCode
+        /// </summary>
+        public static readonly ConnectPeerErrorCode DELETION_FAILED = new ConnectPeerErrorCode("DELETION_FAILED");
+
         /// <summary>
         /// Constant EDGE_LOCATION_NO_FREE_IPS for ConnectPeerErrorCode
         /// </summary>
@@ -1152,10 +1192,193 @@ namespace Amazon.NetworkManager
     }
 
     /// <summary>
+    /// Constants used for properties of type NatGatewaySupportState.
+    /// </summary>
+    public class NatGatewaySupportState : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for NatGatewaySupportState
+        /// </summary>
+        public static readonly NatGatewaySupportState DISABLED = new NatGatewaySupportState("DISABLED");
+
+        /// <summary>
+        /// Constant DISABLING for NatGatewaySupportState
+        /// </summary>
+        public static readonly NatGatewaySupportState DISABLING = new NatGatewaySupportState("DISABLING");
+
+        /// <summary>
+        /// Constant ENABLED for NatGatewaySupportState
+        /// </summary>
+        public static readonly NatGatewaySupportState ENABLED = new NatGatewaySupportState("ENABLED");
+
+        /// <summary>
+        /// Constant ENABLING for NatGatewaySupportState
+        /// </summary>
+        public static readonly NatGatewaySupportState ENABLING = new NatGatewaySupportState("ENABLING");
+
+        /// <summary>
+        /// Constant PENDING_ATTACHMENT_ACCEPTANCE for NatGatewaySupportState
+        /// </summary>
+        public static readonly NatGatewaySupportState PENDING_ATTACHMENT_ACCEPTANCE = new NatGatewaySupportState("PENDING_ATTACHMENT_ACCEPTANCE");
+
+        /// <summary>
+        /// Constructs a custom NatGatewaySupportState for a value not among the defined constants.
+        /// </summary>
+        public NatGatewaySupportState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NatGatewaySupportState FindValue(string value)
+        {
+            return FindValue<NatGatewaySupportState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NatGatewaySupportState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type NatGatewaySupportValue.
+    /// </summary>
+    public class NatGatewaySupportValue : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLE for NatGatewaySupportValue
+        /// </summary>
+        public static readonly NatGatewaySupportValue DISABLE = new NatGatewaySupportValue("DISABLE");
+
+        /// <summary>
+        /// Constant ENABLE for NatGatewaySupportValue
+        /// </summary>
+        public static readonly NatGatewaySupportValue ENABLE = new NatGatewaySupportValue("ENABLE");
+
+        /// <summary>
+        /// Constructs a custom NatGatewaySupportValue for a value not among the defined constants.
+        /// </summary>
+        public NatGatewaySupportValue(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NatGatewaySupportValue FindValue(string value)
+        {
+            return FindValue<NatGatewaySupportValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NatGatewaySupportValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type NatRuleState.
+    /// </summary>
+    public class NatRuleState : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVATED for NatRuleState
+        /// </summary>
+        public static readonly NatRuleState ACTIVATED = new NatRuleState("ACTIVATED");
+
+        /// <summary>
+        /// Constant ACTIVATING for NatRuleState
+        /// </summary>
+        public static readonly NatRuleState ACTIVATING = new NatRuleState("ACTIVATING");
+
+        /// <summary>
+        /// Constant CREATING for NatRuleState
+        /// </summary>
+        public static readonly NatRuleState CREATING = new NatRuleState("CREATING");
+
+        /// <summary>
+        /// Constant DEACTIVATED for NatRuleState
+        /// </summary>
+        public static readonly NatRuleState DEACTIVATED = new NatRuleState("DEACTIVATED");
+
+        /// <summary>
+        /// Constant DEACTIVATING for NatRuleState
+        /// </summary>
+        public static readonly NatRuleState DEACTIVATING = new NatRuleState("DEACTIVATING");
+
+        /// <summary>
+        /// Constant DELETING for NatRuleState
+        /// </summary>
+        public static readonly NatRuleState DELETING = new NatRuleState("DELETING");
+
+        /// <summary>
+        /// Constant FAILED for NatRuleState
+        /// </summary>
+        public static readonly NatRuleState FAILED = new NatRuleState("FAILED");
+
+        /// <summary>
+        /// Constant MODIFYING for NatRuleState
+        /// </summary>
+        public static readonly NatRuleState MODIFYING = new NatRuleState("MODIFYING");
+
+        /// <summary>
+        /// Constant PENDING_ATTACHMENT_ACCEPTANCE for NatRuleState
+        /// </summary>
+        public static readonly NatRuleState PENDING_ATTACHMENT_ACCEPTANCE = new NatRuleState("PENDING_ATTACHMENT_ACCEPTANCE");
+
+        /// <summary>
+        /// Constructs a custom NatRuleState for a value not among the defined constants.
+        /// </summary>
+        public NatRuleState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NatRuleState FindValue(string value)
+        {
+            return FindValue<NatRuleState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NatRuleState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type PeeringErrorCode.
     /// </summary>
     public class PeeringErrorCode : ConstantClass
     {
+        /// <summary>
+        /// Constant CREATION_FAILED for PeeringErrorCode
+        /// </summary>
+        public static readonly PeeringErrorCode CREATION_FAILED = new PeeringErrorCode("CREATION_FAILED");
+
+        /// <summary>
+        /// Constant DELETION_FAILED for PeeringErrorCode
+        /// </summary>
+        public static readonly PeeringErrorCode DELETION_FAILED = new PeeringErrorCode("DELETION_FAILED");
+
         /// <summary>
         /// Constant EDGE_LOCATION_PEER_DUPLICATE for PeeringErrorCode
         /// </summary>
@@ -1175,6 +1398,11 @@ namespace Amazon.NetworkManager
         /// Constant MISSING_PERMISSIONS for PeeringErrorCode
         /// </summary>
         public static readonly PeeringErrorCode MISSING_PERMISSIONS = new PeeringErrorCode("MISSING_PERMISSIONS");
+
+        /// <summary>
+        /// Constant TRANSIT_GATEWAY_ENCRYPTION_NOT_SUPPORTED for PeeringErrorCode
+        /// </summary>
+        public static readonly PeeringErrorCode TRANSIT_GATEWAY_ENCRYPTION_NOT_SUPPORTED = new PeeringErrorCode("TRANSIT_GATEWAY_ENCRYPTION_NOT_SUPPORTED");
 
         /// <summary>
         /// Constant TRANSIT_GATEWAY_NOT_FOUND for PeeringErrorCode
@@ -1573,6 +1801,11 @@ namespace Amazon.NetworkManager
         /// Constant STATIC for RouteType
         /// </summary>
         public static readonly RouteType STATIC = new RouteType("STATIC");
+
+        /// <summary>
+        /// Constant SYSTEM for RouteType
+        /// </summary>
+        public static readonly RouteType SYSTEM = new RouteType("SYSTEM");
 
         /// <summary>
         /// Constructs a custom RouteType for a value not among the defined constants.

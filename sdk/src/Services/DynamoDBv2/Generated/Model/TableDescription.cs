@@ -39,6 +39,7 @@ namespace Amazon.DynamoDBv2.Model
         private BillingModeSummary _billingModeSummary;
         private DateTime? _creationDateTime;
         private bool? _deletionProtectionEnabled;
+        private bool? _disassociationProtectionEnabled;
         private List<GlobalSecondaryIndexDescription> _globalSecondaryIndexes = AWSConfigs.InitializeCollections ? new List<GlobalSecondaryIndexDescription>() : null;
         private GlobalTableSettingsReplicationMode _globalTableSettingsReplicationMode;
         private string _globalTableVersion;
@@ -178,6 +179,25 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetDeletionProtectionEnabled()
         {
             return this._deletionProtectionEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisassociationProtectionEnabled. 
+        /// <para>
+        /// Specifies whether disassociation protection is enabled (<c>true</c>) or disabled (<c>false</c>)
+        /// for the local global table replica. Protection is enabled by default.
+        /// </para>
+        /// </summary>
+        public bool? DisassociationProtectionEnabled
+        {
+            get { return this._disassociationProtectionEnabled; }
+            set { this._disassociationProtectionEnabled = value; }
+        }
+
+        // Check to see if DisassociationProtectionEnabled property is set
+        internal bool IsSetDisassociationProtectionEnabled()
+        {
+            return this._disassociationProtectionEnabled.HasValue; 
         }
 
         /// <summary>
@@ -681,6 +701,11 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property Replicas. 
         /// <para>
         /// Represents replicas of the table.
+        /// </para>
+        ///  
+        /// <para>
+        /// After a successful disassociation, this list is absent or empty. To confirm disassociation,
+        /// also verify that <c>TableStatus</c> is <c>ACTIVE</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

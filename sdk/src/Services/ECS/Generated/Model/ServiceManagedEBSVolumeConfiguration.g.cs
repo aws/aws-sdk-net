@@ -1,0 +1,335 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.ECS.Model
+{
+    /// <summary>
+    /// The configuration for the Amazon EBS volume that Amazon ECS creates and manages on
+    /// your behalf. These settings are used to create each Amazon EBS volume, with one volume
+    /// created for each task in the service. For information about the supported launch types
+    /// and operating systems, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volumes-configuration">Supported
+    /// operating systems and launch types</a> in the<i> Amazon Elastic Container Service
+    /// Developer Guide</i>.
+    /// 
+    ///  
+    /// <para>
+    /// Many of these parameters map 1:1 with the Amazon EBS <c>CreateVolume</c> API request
+    /// parameters.
+    /// </para>
+    /// </summary>
+    public partial class ServiceManagedEBSVolumeConfiguration
+    {
+        /// <summary>
+        /// Gets and sets the property Encrypted. 
+        /// <para>
+        /// Indicates whether the volume should be encrypted. If you turn on Region-level Amazon
+        /// EBS encryption by default but set this value as <c>false</c>, the setting is overridden
+        /// and the volume is encrypted with the KMS key specified for Amazon EBS encryption by
+        /// default. This parameter maps 1:1 with the <c>Encrypted</c> parameter of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume
+        /// API</a> in the <i>Amazon EC2 API Reference</i>.
+        /// </para>
+        /// </summary>
+        public bool? Encrypted { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Encrypted property is set.
+        /// </summary>
+        internal bool IsSetEncrypted() => this.Encrypted.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property FilesystemType. 
+        /// <para>
+        /// The filesystem type for the volume. For volumes created from a snapshot, you must
+        /// specify the same filesystem type that the volume was using when the snapshot was created.
+        /// If there is a filesystem type mismatch, the tasks will fail to start.
+        /// </para>
+        ///  
+        /// <para>
+        /// The available Linux filesystem types are <c>ext3</c>, <c>ext4</c>, and <c>xfs</c>.
+        /// If no value is specified, the <c>xfs</c> filesystem type is used by default.
+        /// </para>
+        ///  
+        /// <para>
+        /// The available Windows filesystem types are <c>NTFS</c>.
+        /// </para>
+        /// </summary>
+        public TaskFilesystemType FilesystemType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FilesystemType property is set.
+        /// </summary>
+        internal bool IsSetFilesystemType() => this.FilesystemType != null;
+
+        /// <summary>
+        /// Gets and sets the property Iops. 
+        /// <para>
+        /// The number of I/O operations per second (IOPS). For <c>gp3</c>, <c>io1</c>, and <c>io2</c>
+        /// volumes, this represents the number of IOPS that are provisioned for the volume. For
+        /// <c>gp2</c> volumes, this represents the baseline performance of the volume and the
+        /// rate at which the volume accumulates I/O credits for bursting.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following are the supported values for each volume type.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>gp3</c>: 3,000 - 16,000 IOPS
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>io1</c>: 100 - 64,000 IOPS
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>io2</c>: 100 - 256,000 IOPS
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// This parameter is required for <c>io1</c> and <c>io2</c> volume types. The default
+        /// for <c>gp3</c> volumes is <c>3,000 IOPS</c>. This parameter is not supported for <c>st1</c>,
+        /// <c>sc1</c>, or <c>standard</c> volume types.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter maps 1:1 with the <c>Iops</c> parameter of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume
+        /// API</a> in the <i>Amazon EC2 API Reference</i>.
+        /// </para>
+        /// </summary>
+        public int? Iops { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Iops property is set.
+        /// </summary>
+        internal bool IsSetIops() => this.Iops.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) identifier of the Amazon Web Services Key Management
+        /// Service key to use for Amazon EBS encryption. When a key is specified using this parameter,
+        /// it overrides Amazon EBS default encryption or any KMS key that you specified for cluster-level
+        /// managed storage encryption. This parameter maps 1:1 with the <c>KmsKeyId</c> parameter
+        /// of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume
+        /// API</a> in the <i>Amazon EC2 API Reference</i>. For more information about encrypting
+        /// Amazon EBS volumes attached to tasks, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-kms-encryption.html">Encrypt
+        /// data stored in Amazon EBS volumes attached to Amazon ECS tasks</a>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Amazon Web Services authenticates the Amazon Web Services Key Management Service key
+        /// asynchronously. Therefore, if you specify an ID, alias, or ARN that is invalid, the
+        /// action can appear to complete, but eventually fails.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public string KmsKeyId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the KmsKeyId property is set.
+        /// </summary>
+        internal bool IsSetKmsKeyId() => this.KmsKeyId != null;
+
+        /// <summary>
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// The ARN of the IAM role to associate with this volume. This is the Amazon ECS infrastructure
+        /// IAM role that is used to manage your Amazon Web Services infrastructure. We recommend
+        /// using the Amazon ECS-managed <c>AmazonECSInfrastructureRolePolicyForVolumes</c> IAM
+        /// policy with this role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/infrastructure_IAM_role.html">Amazon
+        /// ECS infrastructure IAM role</a> in the <i>Amazon ECS Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string RoleArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RoleArn property is set.
+        /// </summary>
+        internal bool IsSetRoleArn() => this.RoleArn != null;
+
+        /// <summary>
+        /// Gets and sets the property SizeInGiB. 
+        /// <para>
+        /// The size of the volume in GiB. You must specify either a volume size or a snapshot
+        /// ID. If you specify a snapshot ID, the snapshot size is used for the volume size by
+        /// default. You can optionally specify a volume size greater than or equal to the snapshot
+        /// size. This parameter maps 1:1 with the <c>Size</c> parameter of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume
+        /// API</a> in the <i>Amazon EC2 API Reference</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following are the supported volume size values for each volume type.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>gp2</c> and <c>gp3</c>: 1-16,384
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>io1</c> and <c>io2</c>: 4-16,384
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>st1</c> and <c>sc1</c>: 125-16,384
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>standard</c>: 1-1,024
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public int? SizeInGiB { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SizeInGiB property is set.
+        /// </summary>
+        internal bool IsSetSizeInGiB() => this.SizeInGiB.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property SnapshotId. 
+        /// <para>
+        /// The snapshot that Amazon ECS uses to create volumes for attachment to tasks maintained
+        /// by the service. You must specify either <c>snapshotId</c> or <c>sizeInGiB</c> in your
+        /// volume configuration. This parameter maps 1:1 with the <c>SnapshotId</c> parameter
+        /// of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume
+        /// API</a> in the <i>Amazon EC2 API Reference</i>.
+        /// </para>
+        /// </summary>
+        public string SnapshotId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SnapshotId property is set.
+        /// </summary>
+        internal bool IsSetSnapshotId() => this.SnapshotId != null;
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// The tags to apply to the volume. Amazon ECS applies service-managed tags by default.
+        /// This parameter maps 1:1 with the <c>TagSpecifications.N</c> parameter of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume
+        /// API</a> in the <i>Amazon EC2 API Reference</i>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<EBSTagSpecification> TagSpecifications { get; set; } = AWSConfigs.InitializeCollections ? new List<EBSTagSpecification>() : null;
+
+        /// <summary>
+        /// Checks to see if the TagSpecifications property is set.
+        /// </summary>
+        internal bool IsSetTagSpecifications() => this.TagSpecifications != null && (this.TagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property Throughput. 
+        /// <para>
+        /// The throughput to provision for a volume, in MiB/s, with a maximum of 1,000 MiB/s.
+        /// This parameter maps 1:1 with the <c>Throughput</c> parameter of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume
+        /// API</a> in the <i>Amazon EC2 API Reference</i>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// This parameter is only supported for the <c>gp3</c> volume type.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public int? Throughput { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Throughput property is set.
+        /// </summary>
+        internal bool IsSetThroughput() => this.Throughput.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property VolumeInitializationRate. 
+        /// <para>
+        /// The rate, in MiB/s, at which data is fetched from a snapshot of an existing EBS volume
+        /// to create new volumes for attachment to the tasks maintained by the service. This
+        /// property can be specified only if you specify a <c>snapshotId</c>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html">Initialize
+        /// Amazon EBS volumes</a> in the <i>Amazon EBS User Guide</i>.
+        /// </para>
+        /// </summary>
+        public int? VolumeInitializationRate { get; set; }
+
+        /// <summary>
+        /// Checks to see if the VolumeInitializationRate property is set.
+        /// </summary>
+        internal bool IsSetVolumeInitializationRate() => this.VolumeInitializationRate.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property VolumeType. 
+        /// <para>
+        /// The volume type. This parameter maps 1:1 with the <c>VolumeType</c> parameter of the
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume
+        /// API</a> in the <i>Amazon EC2 API Reference</i>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html">Amazon
+        /// EBS volume types</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following are the supported volume types.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// General Purpose SSD: <c>gp2</c>|<c>gp3</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Provisioned IOPS SSD: <c>io1</c>|<c>io2</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Throughput Optimized HDD: <c>st1</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cold HDD: <c>sc1</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Magnetic: <c>standard</c> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The magnetic volume type is not supported on Fargate.
+        /// </para>
+        ///  </note> </li> </ul>
+        /// </summary>
+        public string VolumeType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the VolumeType property is set.
+        /// </summary>
+        internal bool IsSetVolumeType() => this.VolumeType != null;
+    }
+}

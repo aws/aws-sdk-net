@@ -1,0 +1,95 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Comprehend.Model
+{
+    /// <summary>
+    /// Provides information for filtering a list of event detection jobs.
+    /// </summary>
+    public partial class EventsDetectionJobFilter
+    {
+        /// <summary>
+        /// Gets and sets the property JobName. 
+        /// <para>
+        /// Filters on the name of the events detection job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 256)]
+        public string JobName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the JobName property is set.
+        /// </summary>
+        internal bool IsSetJobName() => this.JobName != null;
+
+        /// <summary>
+        /// Gets and sets the property JobStatus. 
+        /// <para>
+        /// Filters the list of jobs based on job status. Returns only jobs with the specified
+        /// status.
+        /// </para>
+        /// </summary>
+        public JobStatus JobStatus { get; set; }
+
+        /// <summary>
+        /// Checks to see if the JobStatus property is set.
+        /// </summary>
+        internal bool IsSetJobStatus() => this.JobStatus != null;
+
+        /// <summary>
+        /// Gets and sets the property SubmitTimeAfter. 
+        /// <para>
+        /// Filters the list of jobs based on the time that the job was submitted for processing.
+        /// Returns only jobs submitted after the specified time. Jobs are returned in descending
+        /// order, newest to oldest.
+        /// </para>
+        /// </summary>
+        public DateTime? SubmitTimeAfter { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SubmitTimeAfter property is set.
+        /// </summary>
+        internal bool IsSetSubmitTimeAfter() => this.SubmitTimeAfter.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property SubmitTimeBefore. 
+        /// <para>
+        /// Filters the list of jobs based on the time that the job was submitted for processing.
+        /// Returns only jobs submitted before the specified time. Jobs are returned in ascending
+        /// order, oldest to newest.
+        /// </para>
+        /// </summary>
+        public DateTime? SubmitTimeBefore { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SubmitTimeBefore property is set.
+        /// </summary>
+        internal bool IsSetSubmitTimeBefore() => this.SubmitTimeBefore.HasValue;
+    }
+}

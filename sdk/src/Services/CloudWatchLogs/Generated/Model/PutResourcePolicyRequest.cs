@@ -43,7 +43,7 @@ namespace Amazon.CloudWatchLogs.Model
     ///  </li> <li> 
     /// <para>
     ///  <b>Supported principals</b> - Policy only applies when operations are invoked by
-    /// Amazon Web Services service principals (not IAM users, roles, or cross-account principals
+    /// Amazon Web Services service principals (not IAM users, roles, or cross-account principals)
     /// </para>
     ///  </li> <li> 
     /// <para>

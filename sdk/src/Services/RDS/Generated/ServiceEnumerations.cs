@@ -603,6 +603,84 @@ namespace Amazon.RDS
 
 
     /// <summary>
+    /// Constants used for properties of type DBCapacityReservationState.
+    /// </summary>
+    public class DBCapacityReservationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for DBCapacityReservationState
+        /// </summary>
+        public static readonly DBCapacityReservationState Active = new DBCapacityReservationState("active");
+        /// <summary>
+        /// Constant Assessing for DBCapacityReservationState
+        /// </summary>
+        public static readonly DBCapacityReservationState Assessing = new DBCapacityReservationState("assessing");
+        /// <summary>
+        /// Constant Cancelled for DBCapacityReservationState
+        /// </summary>
+        public static readonly DBCapacityReservationState Cancelled = new DBCapacityReservationState("cancelled");
+        /// <summary>
+        /// Constant Delayed for DBCapacityReservationState
+        /// </summary>
+        public static readonly DBCapacityReservationState Delayed = new DBCapacityReservationState("delayed");
+        /// <summary>
+        /// Constant Expired for DBCapacityReservationState
+        /// </summary>
+        public static readonly DBCapacityReservationState Expired = new DBCapacityReservationState("expired");
+        /// <summary>
+        /// Constant Failed for DBCapacityReservationState
+        /// </summary>
+        public static readonly DBCapacityReservationState Failed = new DBCapacityReservationState("failed");
+        /// <summary>
+        /// Constant Pending for DBCapacityReservationState
+        /// </summary>
+        public static readonly DBCapacityReservationState Pending = new DBCapacityReservationState("pending");
+        /// <summary>
+        /// Constant Scheduled for DBCapacityReservationState
+        /// </summary>
+        public static readonly DBCapacityReservationState Scheduled = new DBCapacityReservationState("scheduled");
+        /// <summary>
+        /// Constant Unsupported for DBCapacityReservationState
+        /// </summary>
+        public static readonly DBCapacityReservationState Unsupported = new DBCapacityReservationState("unsupported");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DBCapacityReservationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DBCapacityReservationState FindValue(string value)
+        {
+            return FindValue<DBCapacityReservationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DBCapacityReservationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DBProxyEndpointStatus.
     /// </summary>
     public class DBProxyEndpointStatus : ConstantClass
@@ -840,6 +918,56 @@ namespace Amazon.RDS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DefaultAuthScheme(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EndDateType.
+    /// </summary>
+    public class EndDateType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Limited for EndDateType
+        /// </summary>
+        public static readonly EndDateType Limited = new EndDateType("limited");
+        /// <summary>
+        /// Constant Unlimited for EndDateType
+        /// </summary>
+        public static readonly EndDateType Unlimited = new EndDateType("unlimited");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EndDateType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EndDateType FindValue(string value)
+        {
+            return FindValue<EndDateType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EndDateType(string value)
         {
             return FindValue(value);
         }

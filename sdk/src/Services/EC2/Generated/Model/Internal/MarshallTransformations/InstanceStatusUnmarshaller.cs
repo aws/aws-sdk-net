@@ -114,6 +114,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.OutpostArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("performanceStatus", targetDepth))
+                    {
+                        var unmarshaller = PerformanceStatusSummaryUnmarshaller.Instance;
+                        unmarshalledObject.PerformanceStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("instanceStatus", targetDepth))
                     {
                         var unmarshaller = InstanceStatusSummaryUnmarshaller.Instance;

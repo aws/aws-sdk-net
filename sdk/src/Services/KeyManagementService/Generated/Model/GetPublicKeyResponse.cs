@@ -35,6 +35,7 @@ namespace Amazon.KeyManagementService.Model
     public partial class GetPublicKeyResponse : AmazonWebServiceResponse
     {
         private CustomerMasterKeySpec _customerMasterKeySpec;
+        private List<string> _encapsulationAlgorithms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _encryptionAlgorithms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _keyAgreementAlgorithms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _keyId;
@@ -66,6 +67,30 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetCustomerMasterKeySpec()
         {
             return this._customerMasterKeySpec != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncapsulationAlgorithms. 
+        /// <para>
+        /// The key encapsulation algorithm used to establish a shared secret. This field is present
+        /// only when the KMS key has a <c>KeyUsage</c> value of <c>ENCAPSULATE_DECAPSULATE</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> EncapsulationAlgorithms
+        {
+            get { return this._encapsulationAlgorithms; }
+            set { this._encapsulationAlgorithms = value; }
+        }
+
+        // Check to see if EncapsulationAlgorithms property is set
+        internal bool IsSetEncapsulationAlgorithms()
+        {
+            return this._encapsulationAlgorithms != null && (this._encapsulationAlgorithms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -1,0 +1,139 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Transfer.Model
+{
+    /// <summary>
+    /// Each step type has its own <c>StepDetails</c> structure.
+    /// </summary>
+    public partial class CopyStepDetails
+    {
+        /// <summary>
+        /// Gets and sets the property DestinationFileLocation. 
+        /// <para>
+        /// Specifies the location for the file being copied. Use <c>${Transfer:UserName}</c>
+        /// or <c>${Transfer:UploadDate}</c> in this field to parametrize the destination prefix
+        /// by username or uploaded date.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Set the value of <c>DestinationFileLocation</c> to <c>${Transfer:UserName}</c> to
+        /// copy uploaded files to an Amazon S3 bucket that is prefixed with the name of the Transfer
+        /// Family user that uploaded the file.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Set the value of <c>DestinationFileLocation</c> to <c>${Transfer:UploadDate}</c> to
+        /// copy uploaded files to an Amazon S3 bucket that is prefixed with the date of the upload.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The system resolves <c>UploadDate</c> to a date format of <i>YYYY-MM-DD</i>, based
+        /// on the date the file is uploaded in UTC.
+        /// </para>
+        ///  </note> </li> </ul>
+        /// </summary>
+        public InputFileLocation DestinationFileLocation { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DestinationFileLocation property is set.
+        /// </summary>
+        internal bool IsSetDestinationFileLocation() => this.DestinationFileLocation != null;
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the step, used as an identifier.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 30)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Name property is set.
+        /// </summary>
+        internal bool IsSetName() => this.Name != null;
+
+        /// <summary>
+        /// Gets and sets the property OverwriteExisting. 
+        /// <para>
+        /// A flag that indicates whether to overwrite an existing file of the same name. The
+        /// default is <c>FALSE</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the workflow is processing a file that has the same name as an existing file, the
+        /// behavior is as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If <c>OverwriteExisting</c> is <c>TRUE</c>, the existing file is replaced with the
+        /// file being processed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If <c>OverwriteExisting</c> is <c>FALSE</c>, nothing happens, and the workflow processing
+        /// stops.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public OverwriteExisting OverwriteExisting { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OverwriteExisting property is set.
+        /// </summary>
+        internal bool IsSetOverwriteExisting() => this.OverwriteExisting != null;
+
+        /// <summary>
+        /// Gets and sets the property SourceFileLocation. 
+        /// <para>
+        /// Specifies which file to use as input to the workflow step: either the output from
+        /// the previous step, or the originally uploaded file for the workflow.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To use the previous file as the input, enter <c>${previous.file}</c>. In this case,
+        /// this workflow step uses the output file from the previous workflow step as input.
+        /// This is the default value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To use the originally uploaded file location as input for this step, enter <c>${original.file}</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 256)]
+        public string SourceFileLocation { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SourceFileLocation property is set.
+        /// </summary>
+        internal bool IsSetSourceFileLocation() => this.SourceFileLocation != null;
+    }
+}

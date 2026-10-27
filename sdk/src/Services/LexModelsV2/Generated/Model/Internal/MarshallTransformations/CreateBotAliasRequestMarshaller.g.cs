@@ -1,0 +1,160 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+using System.Buffers;
+
+using Amazon.LexModelsV2.Model;
+using System.Globalization;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// CreateBotAlias Request Marshaller
+    /// </summary>
+    public partial class CreateBotAliasRequestMarshaller : IMarshaller<IRequest, CreateBotAliasRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    {
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((CreateBotAliasRequest)input);
+        }
+
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(CreateBotAliasRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.LexModelsV2");
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-07";
+            request.HttpMethod = "PUT";
+
+            if (!publicRequest.IsSetBotId())
+            {
+                throw new AmazonLexModelsV2Exception("Request object does not have required field BotId set");
+            }
+            request.AddPathResource("{botId}", StringUtils.FromString(publicRequest.BotId));
+
+            request.ResourcePath = "/bots/{botId}/botaliases";
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using var writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetBotAliasLocaleSettings())
+            {
+                context.Writer.WritePropertyName("botAliasLocaleSettings");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestBotAliasLocaleSettingsKvp in publicRequest.BotAliasLocaleSettings)
+                {
+                    context.Writer.WritePropertyName(publicRequestBotAliasLocaleSettingsKvp.Key);
+                    var publicRequestBotAliasLocaleSettingsValue = publicRequestBotAliasLocaleSettingsKvp.Value;
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = BotAliasLocaleSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequestBotAliasLocaleSettingsValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetBotAliasName())
+            {
+                context.Writer.WritePropertyName("botAliasName");
+                context.Writer.WriteStringValue(publicRequest.BotAliasName);
+            }
+            if (publicRequest.IsSetBotVersion())
+            {
+                context.Writer.WritePropertyName("botVersion");
+                context.Writer.WriteStringValue(publicRequest.BotVersion);
+            }
+            if (publicRequest.IsSetConversationLogSettings())
+            {
+                context.Writer.WritePropertyName("conversationLogSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ConversationLogSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ConversationLogSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+            if (publicRequest.IsSetSentimentAnalysisSettings())
+            {
+                context.Writer.WritePropertyName("sentimentAnalysisSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SentimentAnalysisSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SentimentAnalysisSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+                    context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETFRAMEWORK
+            request.Content = memoryStream.ToArray();
+#endif
+
+            return request;
+        }
+
+        private static readonly CreateBotAliasRequestMarshaller _instance = new();
+
+        internal static CreateBotAliasRequestMarshaller GetInstance() => _instance;
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static CreateBotAliasRequestMarshaller Instance => _instance;
+    }
+}

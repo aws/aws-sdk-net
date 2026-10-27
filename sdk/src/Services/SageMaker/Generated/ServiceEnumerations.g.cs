@@ -7225,6 +7225,11 @@ namespace Amazon.SageMaker
         public static readonly DeepHealthCheckType InstanceStress = new DeepHealthCheckType("InstanceStress");
 
         /// <summary>
+        /// Constant MultiNodeTrainingValidation for DeepHealthCheckType
+        /// </summary>
+        public static readonly DeepHealthCheckType MultiNodeTrainingValidation = new DeepHealthCheckType("MultiNodeTrainingValidation");
+
+        /// <summary>
         /// Constructs a custom DeepHealthCheckType for a value not among the defined constants.
         /// </summary>
         public DeepHealthCheckType(string value) : base(value) { }

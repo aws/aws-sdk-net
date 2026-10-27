@@ -258,6 +258,96 @@ namespace Amazon.Billing
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Private Pricing contracts let eligible payer accounts manage private pricing agreements
+        /// with Amazon Web Services. This operation associates a private pricing contract with
+        /// the caller's Amazon Web Services account. The caller must be a payer (management)
+        /// account listed on the contract. This operation is idempotent, so retrying a request
+        /// that already succeeded is safe.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateContract service method.</param>
+        /// <returns>The response from the AssociateContract service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/AssociateContract">REST API Reference for AssociateContract Operation</seealso>
+        public virtual AssociateContractResponse AssociateContract(AssociateContractRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateContractRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateContractResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateContractResponse>(request, options);
+        }
+#else
+        internal virtual AssociateContractResponse AssociateContract(AssociateContractRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateContractRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateContractResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateContractResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Private Pricing contracts let eligible payer accounts manage private pricing agreements
+        /// with Amazon Web Services. This operation associates a private pricing contract with
+        /// the caller's Amazon Web Services account. The caller must be a payer (management)
+        /// account listed on the contract. This operation is idempotent, so retrying a request
+        /// that already succeeded is safe.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateContract service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the AssociateContract service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/AssociateContract">REST API Reference for AssociateContract Operation</seealso>
+        public virtual Task<AssociateContractResponse> AssociateContractAsync(AssociateContractRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateContractRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateContractResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateContractResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Associates one or more source billing views with an existing billing view. This allows
         /// creating aggregate billing views that combine data from multiple sources.
         /// </summary>
@@ -354,6 +444,92 @@ namespace Amazon.Billing
             options.ResponseUnmarshaller = AssociateSourceViewsResponseUnmarshaller.Instance;
 
             return InvokeAsync<AssociateSourceViewsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Cancels a contractual investment attestation. This operation is idempotent, so retrying
+        /// is safe. You can cancel an attestation only while it is still pending (its <c>isCancellable</c>
+        /// value is <c>true</c>).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelContractualInvestmentAttestation service method.</param>
+        /// <returns>The response from the CancelContractualInvestmentAttestation service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/CancelContractualInvestmentAttestation">REST API Reference for CancelContractualInvestmentAttestation Operation</seealso>
+        public virtual CancelContractualInvestmentAttestationResponse CancelContractualInvestmentAttestation(CancelContractualInvestmentAttestationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CancelContractualInvestmentAttestationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelContractualInvestmentAttestationResponseUnmarshaller.Instance;
+
+            return Invoke<CancelContractualInvestmentAttestationResponse>(request, options);
+        }
+#else
+        internal virtual CancelContractualInvestmentAttestationResponse CancelContractualInvestmentAttestation(CancelContractualInvestmentAttestationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CancelContractualInvestmentAttestationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelContractualInvestmentAttestationResponseUnmarshaller.Instance;
+
+            return Invoke<CancelContractualInvestmentAttestationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Cancels a contractual investment attestation. This operation is idempotent, so retrying
+        /// is safe. You can cancel an attestation only while it is still pending (its <c>isCancellable</c>
+        /// value is <c>true</c>).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelContractualInvestmentAttestation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CancelContractualInvestmentAttestation service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/CancelContractualInvestmentAttestation">REST API Reference for CancelContractualInvestmentAttestation Operation</seealso>
+        public virtual Task<CancelContractualInvestmentAttestationResponse> CancelContractualInvestmentAttestationAsync(CancelContractualInvestmentAttestationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CancelContractualInvestmentAttestationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelContractualInvestmentAttestationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelContractualInvestmentAttestationResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -456,6 +632,96 @@ namespace Amazon.Billing
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates an attestation that claims an investment award for a completed milestone or
+        /// outcome within a private pricing contract. Supply a <c>clientToken</c> to make the
+        /// request idempotent so a safe retry does not create a duplicate attestation. This operation
+        /// starts an asynchronous review and returns an <c>attestationId</c> while the attestation
+        /// is pending.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContractualInvestmentAttestation service method.</param>
+        /// <returns>The response from the CreateContractualInvestmentAttestation service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/CreateContractualInvestmentAttestation">REST API Reference for CreateContractualInvestmentAttestation Operation</seealso>
+        public virtual CreateContractualInvestmentAttestationResponse CreateContractualInvestmentAttestation(CreateContractualInvestmentAttestationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateContractualInvestmentAttestationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContractualInvestmentAttestationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateContractualInvestmentAttestationResponse>(request, options);
+        }
+#else
+        internal virtual CreateContractualInvestmentAttestationResponse CreateContractualInvestmentAttestation(CreateContractualInvestmentAttestationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateContractualInvestmentAttestationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContractualInvestmentAttestationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateContractualInvestmentAttestationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Creates an attestation that claims an investment award for a completed milestone or
+        /// outcome within a private pricing contract. Supply a <c>clientToken</c> to make the
+        /// request idempotent so a safe retry does not create a duplicate attestation. This operation
+        /// starts an asynchronous review and returns an <c>attestationId</c> while the attestation
+        /// is pending.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContractualInvestmentAttestation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateContractualInvestmentAttestation service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/CreateContractualInvestmentAttestation">REST API Reference for CreateContractualInvestmentAttestation Operation</seealso>
+        public virtual Task<CreateContractualInvestmentAttestationResponse> CreateContractualInvestmentAttestationAsync(CreateContractualInvestmentAttestationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateContractualInvestmentAttestationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContractualInvestmentAttestationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateContractualInvestmentAttestationResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Deletes the specified billing view.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBillingView service method.</param>
@@ -528,6 +794,84 @@ namespace Amazon.Billing
             options.ResponseUnmarshaller = DeleteBillingViewResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteBillingViewResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Removes the association between a private pricing contract and your Amazon Web Services
+        /// account. The account must have been associated with the contract previously. This
+        /// operation is idempotent, so retrying is safe.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateContract service method.</param>
+        /// <returns>The response from the DisassociateContract service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/DisassociateContract">REST API Reference for DisassociateContract Operation</seealso>
+        public virtual DisassociateContractResponse DisassociateContract(DisassociateContractRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateContractRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateContractResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateContractResponse>(request, options);
+        }
+#else
+        internal virtual DisassociateContractResponse DisassociateContract(DisassociateContractRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateContractRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateContractResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateContractResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Removes the association between a private pricing contract and your Amazon Web Services
+        /// account. The account must have been associated with the contract previously. This
+        /// operation is idempotent, so retrying is safe.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateContract service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DisassociateContract service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/DisassociateContract">REST API Reference for DisassociateContract Operation</seealso>
+        public virtual Task<DisassociateContractResponse> DisassociateContractAsync(DisassociateContractRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateContractRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateContractResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateContractResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -768,6 +1112,84 @@ namespace Amazon.Billing
             options.ResponseUnmarshaller = GetBillingViewResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetBillingViewResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns information about a specific private pricing contract, including its term
+        /// (duration), eligible payer accounts, investment accounts, and legal entities. This
+        /// operation is read-only.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContractInformation service method.</param>
+        /// <returns>The response from the GetContractInformation service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetContractInformation">REST API Reference for GetContractInformation Operation</seealso>
+        public virtual GetContractInformationResponse GetContractInformation(GetContractInformationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetContractInformationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContractInformationResponseUnmarshaller.Instance;
+
+            return Invoke<GetContractInformationResponse>(request, options);
+        }
+#else
+        internal virtual GetContractInformationResponse GetContractInformation(GetContractInformationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetContractInformationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContractInformationResponseUnmarshaller.Instance;
+
+            return Invoke<GetContractInformationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns information about a specific private pricing contract, including its term
+        /// (duration), eligible payer accounts, investment accounts, and legal entities. This
+        /// operation is read-only.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContractInformation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetContractInformation service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetContractInformation">REST API Reference for GetContractInformation Operation</seealso>
+        public virtual Task<GetContractInformationResponse> GetContractInformationAsync(GetContractInformationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetContractInformationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContractInformationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetContractInformationResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -1498,6 +1920,306 @@ namespace Amazon.Billing
             options.ResponseUnmarshaller = ListBusinessSupportSubscriptionHistoryResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListBusinessSupportSubscriptionHistoryResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the private pricing contracts that your Amazon Web Services account is an eligible
+        /// payer account of. This operation is read-only and paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContracts service method.</param>
+        /// <returns>The response from the ListContracts service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListContracts">REST API Reference for ListContracts Operation</seealso>
+        public virtual ListContractsResponse ListContracts(ListContractsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContractsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContractsResponseUnmarshaller.Instance;
+
+            return Invoke<ListContractsResponse>(request, options);
+        }
+#else
+        internal virtual ListContractsResponse ListContracts(ListContractsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContractsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContractsResponseUnmarshaller.Instance;
+
+            return Invoke<ListContractsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Lists the private pricing contracts that your Amazon Web Services account is an eligible
+        /// payer account of. This operation is read-only and paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContracts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListContracts service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListContracts">REST API Reference for ListContracts Operation</seealso>
+        public virtual Task<ListContractsResponse> ListContractsAsync(ListContractsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContractsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContractsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListContractsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the investment attestations submitted under a specific private pricing contract.
+        /// Use this operation to track attestation status, including the terminal statuses <c>DISBURSED</c>,
+        /// <c>REJECTED</c>, and <c>CANCELLED</c>. This operation is read-only and paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContractualInvestmentAttestations service method.</param>
+        /// <returns>The response from the ListContractualInvestmentAttestations service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListContractualInvestmentAttestations">REST API Reference for ListContractualInvestmentAttestations Operation</seealso>
+        public virtual ListContractualInvestmentAttestationsResponse ListContractualInvestmentAttestations(ListContractualInvestmentAttestationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContractualInvestmentAttestationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContractualInvestmentAttestationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListContractualInvestmentAttestationsResponse>(request, options);
+        }
+#else
+        internal virtual ListContractualInvestmentAttestationsResponse ListContractualInvestmentAttestations(ListContractualInvestmentAttestationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContractualInvestmentAttestationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContractualInvestmentAttestationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListContractualInvestmentAttestationsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Lists the investment attestations submitted under a specific private pricing contract.
+        /// Use this operation to track attestation status, including the terminal statuses <c>DISBURSED</c>,
+        /// <c>REJECTED</c>, and <c>CANCELLED</c>. This operation is read-only and paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContractualInvestmentAttestations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListContractualInvestmentAttestations service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListContractualInvestmentAttestations">REST API Reference for ListContractualInvestmentAttestations Operation</seealso>
+        public virtual Task<ListContractualInvestmentAttestationsResponse> ListContractualInvestmentAttestationsAsync(ListContractualInvestmentAttestationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContractualInvestmentAttestationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContractualInvestmentAttestationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListContractualInvestmentAttestationsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the investment summaries within a specific private pricing contract. This operation
+        /// is read-only and paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContractualInvestmentSummaries service method.</param>
+        /// <returns>The response from the ListContractualInvestmentSummaries service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListContractualInvestmentSummaries">REST API Reference for ListContractualInvestmentSummaries Operation</seealso>
+        public virtual ListContractualInvestmentSummariesResponse ListContractualInvestmentSummaries(ListContractualInvestmentSummariesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContractualInvestmentSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContractualInvestmentSummariesResponseUnmarshaller.Instance;
+
+            return Invoke<ListContractualInvestmentSummariesResponse>(request, options);
+        }
+#else
+        internal virtual ListContractualInvestmentSummariesResponse ListContractualInvestmentSummaries(ListContractualInvestmentSummariesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContractualInvestmentSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContractualInvestmentSummariesResponseUnmarshaller.Instance;
+
+            return Invoke<ListContractualInvestmentSummariesResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Lists the investment summaries within a specific private pricing contract. This operation
+        /// is read-only and paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContractualInvestmentSummaries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListContractualInvestmentSummaries service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListContractualInvestmentSummaries">REST API Reference for ListContractualInvestmentSummaries Operation</seealso>
+        public virtual Task<ListContractualInvestmentSummariesResponse> ListContractualInvestmentSummariesAsync(ListContractualInvestmentSummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContractualInvestmentSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContractualInvestmentSummariesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListContractualInvestmentSummariesResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the investments within a specific investment summary. This operation is read-only
+        /// and paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContractualInvestments service method.</param>
+        /// <returns>The response from the ListContractualInvestments service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListContractualInvestments">REST API Reference for ListContractualInvestments Operation</seealso>
+        public virtual ListContractualInvestmentsResponse ListContractualInvestments(ListContractualInvestmentsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContractualInvestmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContractualInvestmentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListContractualInvestmentsResponse>(request, options);
+        }
+#else
+        internal virtual ListContractualInvestmentsResponse ListContractualInvestments(ListContractualInvestmentsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContractualInvestmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContractualInvestmentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListContractualInvestmentsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Lists the investments within a specific investment summary. This operation is read-only
+        /// and paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContractualInvestments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListContractualInvestments service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListContractualInvestments">REST API Reference for ListContractualInvestments Operation</seealso>
+        public virtual Task<ListContractualInvestmentsResponse> ListContractualInvestmentsAsync(ListContractualInvestmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContractualInvestmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContractualInvestmentsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListContractualInvestmentsResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
