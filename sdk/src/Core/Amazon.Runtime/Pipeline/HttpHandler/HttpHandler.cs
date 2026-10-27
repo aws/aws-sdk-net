@@ -28,6 +28,7 @@ using System.Globalization;
 using System.Net;
 using System.Reflection;
 using System.Text;
+using System.Threading;
 using Amazon.Runtime.Internal.UserAgent;
 
 namespace Amazon.Runtime.Internal
@@ -42,7 +43,11 @@ namespace Amazon.Runtime.Internal
         private bool _disposed;
         private IHttpRequestFactory<TRequestContent> _requestFactory;
         private const string CachedChecksumKey = "ConsumedCachedChecksum";
-        private volatile GeneratedUserAgent _lastUserAgent;
+        // The last few generated User-Agent strings with their inputs. A client that alternates between a few
+        // request shapes (sync and async calls, operations that add different feature ids) reuses one per shape.
+        private const int UserAgentCacheSize = 4;
+        private readonly GeneratedUserAgent[] _userAgentCache = new GeneratedUserAgent[UserAgentCacheSize];
+        private int _nextUserAgentCacheSlot;
 #if !BCL
         private volatile ComposedUri _lastComposedUri;
 #endif
@@ -659,6 +664,26 @@ namespace Amazon.Runtime.Internal
             return originalStream;
         }
 
+        /// <summary>
+        /// Returns the same string as <see cref="UserAgentDetails.GenerateUserAgentWithMetrics"/>, reusing a cached
+        /// string generated from the same components and features. Requests from one client usually produce one
+        /// of a few User-Agents.
+        /// </summary>
+        internal string GetUserAgent(UserAgentDetails userAgentDetails)
+        {
+            for (int i = 0; i < UserAgentCacheSize; i++)
+            {
+                var cached = Volatile.Read(ref _userAgentCache[i]);
+                if (userAgentDetails.Matches(cached))
+                    return cached.Value;
+            }
+
+            var generated = userAgentDetails.GetOrGenerateUserAgentWithMetrics(null);
+            var slot = (Interlocked.Increment(ref _nextUserAgentCacheSlot) - 1) & (UserAgentCacheSize - 1);
+            Volatile.Write(ref _userAgentCache[slot], generated);
+            return generated.Value;
+        }
+
         private void SetUserAgentHeader(IRequestContext requestContext)
         {
             if (requestContext.Request.SignatureVersion == SignatureVersion.SigV4a)
@@ -668,13 +693,7 @@ namespace Amazon.Runtime.Internal
 
             requestContext.UserAgentDetails.MergeFrom(originalRequest.UserAgentDetails);
 
-            // Requests from the same client usually produce the same User-Agent, so reuse the last generated
-            // string when the components and features are unchanged.
-            var cachedUserAgent = _lastUserAgent;
-            var generatedUserAgent = requestContext.UserAgentDetails.GetOrGenerateUserAgentWithMetrics(cachedUserAgent);
-            if (!ReferenceEquals(generatedUserAgent, cachedUserAgent))
-                _lastUserAgent = generatedUserAgent;
-            var metricsUserAgent = generatedUserAgent.Value;
+            var metricsUserAgent = GetUserAgent(requestContext.UserAgentDetails);
             Logger.DebugFormat("User-Agent Header: {0}", metricsUserAgent);
 
             if (requestContext.ClientConfig.UseAlternateUserAgentHeader)

@@ -86,9 +86,7 @@ namespace Amazon.Runtime.Internal.UserAgent
         /// </summary>
         internal GeneratedUserAgent GetOrGenerateUserAgentWithMetrics(GeneratedUserAgent cached)
         {
-            if (cached != null &&
-                SequenceEqual(_userAgentCustomComponents, cached.Components) &&
-                SequenceEqual(_trackedFeatureIds, cached.FeatureIds))
+            if (Matches(cached))
             {
                 return cached;
             }
@@ -98,6 +96,17 @@ namespace Amazon.Runtime.Internal.UserAgent
             var featureIds = new string[_trackedFeatureIds.Count];
             _trackedFeatureIds.CopyTo(featureIds);
             return new GeneratedUserAgent(components, featureIds, GenerateUserAgentWithMetrics());
+        }
+
+        /// <summary>
+        /// Returns true if <paramref name="cached"/> was generated from the same components and features
+        /// (same values in the same order) as this instance.
+        /// </summary>
+        internal bool Matches(GeneratedUserAgent cached)
+        {
+            return cached != null &&
+                SequenceEqual(_userAgentCustomComponents, cached.Components) &&
+                SequenceEqual(_trackedFeatureIds, cached.FeatureIds);
         }
 
         private static bool SequenceEqual(HashSet<string> set, string[] values)

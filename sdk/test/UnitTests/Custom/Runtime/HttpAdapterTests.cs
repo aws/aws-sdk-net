@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -158,6 +158,43 @@ namespace AWSSDK.UnitTests
                 Assert.AreNotSame(cached, result);
                 Assert.AreEqual(variant.GenerateUserAgentWithMetrics(), result.Value);
                 Assert.AreNotEqual(cached.Value, result.Value);
+            }
+        }
+
+        [TestMethod]
+        public void GetUserAgent_ReusesOneEntryPerShapeWhenAlternating()
+        {
+            var handler = new HttpHandler<Stream>(CreateFactory(), new object());
+            Func<UserAgentDetails> sync = () => CreateDetails(new[] { "ua/2.1", "md/ClientSync" }, new[] { "E" });
+            Func<UserAgentDetails> async = () => CreateDetails(new[] { "ua/2.1", "md/ClientAsync" }, new[] { "E" });
+            Func<UserAgentDetails> paginated = () => CreateDetails(new[] { "ua/2.1", "md/ClientAsync" }, new[] { "E", "C" });
+
+            var syncValue = handler.GetUserAgent(sync());
+            var asyncValue = handler.GetUserAgent(async());
+            var paginatedValue = handler.GetUserAgent(paginated());
+            Assert.AreEqual("ua/2.1 md/ClientSync m/E", syncValue);
+            Assert.AreEqual("ua/2.1 md/ClientAsync m/E", asyncValue);
+            Assert.AreEqual("ua/2.1 md/ClientAsync m/E,C", paginatedValue);
+
+            for (int i = 0; i < 3; i++)
+            {
+                Assert.AreSame(syncValue, handler.GetUserAgent(sync()));
+                Assert.AreSame(asyncValue, handler.GetUserAgent(async()));
+                Assert.AreSame(paginatedValue, handler.GetUserAgent(paginated()));
+            }
+        }
+
+        [TestMethod]
+        public void GetUserAgent_MatchesGenerateWithMoreShapesThanEntries()
+        {
+            var handler = new HttpHandler<Stream>(CreateFactory(), new object());
+            for (int round = 0; round < 3; round++)
+            {
+                for (int shape = 0; shape < 9; shape++)
+                {
+                    var details = CreateDetails(new[] { "ua/2.1", "md/shape" + shape }, new[] { "E" });
+                    Assert.AreEqual(details.GenerateUserAgentWithMetrics(), handler.GetUserAgent(details));
+                }
             }
         }
 
@@ -411,6 +448,21 @@ namespace AWSSDK.UnitTests
             Assert.IsFalse(data.IsHeaderPresent(null));
             Assert.AreEqual(7, data.ContentLength);
             Assert.AreEqual("application/json", data.ContentType);
+        }
+
+        [TestMethod]
+        public void HttpClientResponseData_CaseOnlyNameCollisionKeepsResponseHeader()
+        {
+            // The previous copy loop compared names case-sensitively and threw ArgumentException here.
+            var response = new HttpResponseMessage(HttpStatusCode.OK) { Content = new ByteArrayContent(new byte[0]) };
+            response.Headers.TryAddWithoutValidation("x-amz-dup", "from-response");
+            response.Content.Headers.TryAddWithoutValidation("X-Amz-Dup", "from-content");
+
+            var data = new HttpClientResponseData(response);
+
+            Assert.AreEqual("from-response", data.GetHeaderValue("X-AMZ-DUP"));
+            Assert.AreEqual(1, data.GetHeaderNames().Count(n => string.Equals(n, "x-amz-dup", StringComparison.OrdinalIgnoreCase)));
+            Assert.AreEqual("x-amz-dup", data.GetHeaderNames().Single(n => string.Equals(n, "x-amz-dup", StringComparison.OrdinalIgnoreCase)));
         }
 
         [TestMethod]
