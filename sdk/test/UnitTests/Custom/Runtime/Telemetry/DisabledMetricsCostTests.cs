@@ -33,12 +33,16 @@ namespace AWSSDK.UnitTests
     /// <summary>
     /// Disabled metrics/telemetry (LogMetrics off, NoOp providers) must not allocate on hot calls,
     /// and enabled metrics/telemetry must keep recording the same data.
+    /// The allocation assertions (category <c>Allocation</c>) measure exact allocated bytes on the test thread.
+    /// They are stable, but depend on runtime behavior, so they can be excluded with
+    /// <c>--filter TestCategory!=Allocation</c> if a runtime update changes what the JIT or BCL allocates.
     /// </summary>
     [TestClass]
     [TestCategory("UnitTest")]
     [TestCategory("Runtime")]
     public class DisabledMetricsCostTests
     {
+        private const string AllocationCategory = "Allocation";
         private const int Iterations = 100;
         private const int WarmupIterations = 1000;
 
@@ -113,6 +117,7 @@ namespace AWSSDK.UnitTests
 
 #if NETCOREAPP
         [TestMethod]
+        [TestCategory(AllocationCategory)]
         public void Disabled_HotCallsDoNotAllocate()
         {
             var metrics = new RequestMetrics();
@@ -129,6 +134,7 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
+        [TestCategory(AllocationCategory)]
         public void Disabled_ConstructorIsSmall()
         {
             RequestMetrics metrics = null;
@@ -224,6 +230,7 @@ namespace AWSSDK.UnitTests
 
 #if NETCOREAPP
         [TestMethod]
+        [TestCategory(AllocationCategory)]
         public void NoOp_TelemetryCallsDoNotAllocate()
         {
             var requestContext = CreateRequestContext(new DefaultTelemetryProvider(), enableMetrics: false);
@@ -244,6 +251,7 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
+        [TestCategory(AllocationCategory)]
         public void NoOp_MetricsHandlerDoesNotAllocate()
         {
             var executionContext = CreateExecutionContext(new DefaultTelemetryProvider(), enableMetrics: false);
