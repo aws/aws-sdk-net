@@ -12,6 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+#if NETFRAMEWORK
 using System.Collections.Generic;
 
 using Amazon.Runtime;
@@ -83,3 +84,4 @@ namespace Amazon.SQS
         }
     }
 }
+#endif

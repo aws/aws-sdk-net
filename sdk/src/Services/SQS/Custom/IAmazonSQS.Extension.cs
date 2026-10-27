@@ -21,7 +21,7 @@ namespace Amazon.SQS
     public partial interface IAmazonSQS : IDisposable, ICoreAmazonSQS
     {
 
-#if BCL
+#if NETFRAMEWORK
         /// <summary>
         /// This is a utility method which updates the policy of a queue to allow the
         /// S3 bucket to publish events to it.

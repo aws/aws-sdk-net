@@ -12,6 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+#if NETFRAMEWORK
 using System;
 using System.Net;
 using System.Threading;
@@ -142,3 +143,4 @@ namespace Amazon.StorageGateway.Util
         }
     }
 }
+#endif
