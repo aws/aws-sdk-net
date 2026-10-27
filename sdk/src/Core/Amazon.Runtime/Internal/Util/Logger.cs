@@ -77,7 +77,10 @@ namespace Amazon.Runtime.Internal.Util
             if (type == null) throw new ArgumentNullException("type");
 
             // ConcurrentDictionary already synchronizes; a lock here would serialize every caller on the hot path.
-            return _cachedLoggers.GetOrAdd(type, t => new Logger(t));
+            // GetOrAdd may run the factory more than once for the same type if two threads race on first use; the
+            // extra Logger is discarded and building one has no side effects, so that is cheaper than a Lazy<T>
+            // indirection on every lookup.
+            return _cachedLoggers.GetOrAdd(type, static t => new Logger(t));
         }
 
         public static void ClearLoggerCache()

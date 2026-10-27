@@ -524,10 +524,11 @@ namespace Amazon.Util
             var logger = Logger.GetLogger(typeof(AWSSDKUtils));
             if (logger.IsEnabled(Amazon.Runtime.Logging.SdkLogLevel.Debug))
             {
-                logger.DebugFormat("{0} encoded {1}{2} for canonicalization: {3}",
+                logger.DebugFormat("{0} encoded {1}{2}{3} for canonicalization: {4}",
                     pathWasPreEncoded ? "Double" : "Single",
                     resourcePath,
-                    endpoint == null ? "" : " with endpoint " + endpoint.AbsoluteUri,
+                    endpoint == null ? "" : " with endpoint ",
+                    endpoint == null ? "" : endpoint.AbsoluteUri,
                     canonicalizedResourcePath);
             }
 
