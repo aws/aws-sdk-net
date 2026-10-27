@@ -45,6 +45,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetSharingStrategy())
+            {
+                context.Writer.WritePropertyName("sharingStrategy");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SharingStrategyMarshaller.Instance;
+                marshaller.Marshall(requestObject.SharingStrategy, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
