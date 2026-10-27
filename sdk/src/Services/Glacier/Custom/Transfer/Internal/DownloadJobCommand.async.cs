@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Threading;
+using System.Threading.Tasks;
 
 using Amazon.Glacier.Model;
 using Amazon.Util;
@@ -24,9 +25,13 @@ using System.Globalization;
 
 namespace Amazon.Glacier.Transfer.Internal
 {
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("ArchiveTransferManager has not been updated to support Native AOT compilations.")]
+#endif
     internal partial class DownloadJobCommand
     {
-        internal void Execute()
+
+        internal async Task ExecuteAsync()
         {
             long contentLength = -1;
             string glacierProvidedCheckSum = null;
@@ -63,14 +68,18 @@ namespace Amazon.Glacier.Transfer.Internal
                             };
 
                             ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)getJobOutputRequest).AddBeforeRequestHandler(new ArchiveTransferManager.UserAgentPostFix("DownloadArchive").UserAgentRequestEventHandlerSync);
-                            GetJobOutputResponse jobOutputResponse = this.manager.GlacierClient.GetJobOutput(getJobOutputRequest);
+                            GetJobOutputResponse jobOutputResponse = await this.manager.GlacierClient.GetJobOutputAsync(getJobOutputRequest).ConfigureAwait(false);
                             if (contentLength < 0)
                             {
                                 contentLength = jobOutputResponse.ContentLength;
                                 glacierProvidedCheckSum = jobOutputResponse.Checksum;
                             }
-
+#if !NETFRAMEWORK
+                            input = jobOutputResponse.Body;
+#else
                             input = new BufferedStream(jobOutputResponse.Body);
+#endif
+
 
                             long totalBytesFromGetJobOutput = jobOutputResponse.ContentLength;
                             long bytesReadFromGetJobOutput = 0;
@@ -134,9 +143,10 @@ namespace Amazon.Glacier.Transfer.Internal
                         }
                         finally
                         {
-                            output.Close();
+                            output.Dispose();
                             output = null;
-                            try { if (input != null) input.Close(); }
+
+                            try { if (input != null) input.Dispose(); }
                             catch (Exception) { }
                         }
                     }
@@ -165,7 +175,7 @@ namespace Amazon.Glacier.Transfer.Internal
                 }
 
                 // If the job output is a vault inventory then Glacier does not return back a tree hash.
-                if (!string.IsNullOrEmpty(glacierProvidedCheckSum))
+                if(!string.IsNullOrEmpty(glacierProvidedCheckSum))
                 {
                     var computedCheckSum = TreeHashGenerator.CalculateTreeHash(hashes);
                     if (!string.Equals(glacierProvidedCheckSum, computedCheckSum, StringComparison.OrdinalIgnoreCase))
@@ -181,9 +191,9 @@ namespace Amazon.Glacier.Transfer.Internal
             }
             finally
             {
-                try { if (input != null) input.Close(); }
+                try { if (input != null) input.Dispose(); }
                 catch (Exception) { }
-                try { if (output != null) output.Close(); }
+                try { if (output != null) output.Dispose(); }
                 catch (Exception) { }
             }
         }
