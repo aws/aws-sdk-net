@@ -1,3 +1,20 @@
+### 4.0.359.0 (2026-10-27 18:12 UTC)
+* BedrockAgentCoreControl (4.0.124.0)
+	* Adds the ResetTokenVaultKeyMaterial API, which restores a token vault whose customer managed key was deleted by moving it to an AWS owned key. The reset permanently deletes the stored OAuth 2.0 tokens, users must consent again. Adds on-behalf-of token exchange client authentication override option.
+* DynamoDBv2 (4.0.109.3)
+	* DynamoDBv2 is now generated from its Smithy model. There are no changes to the public API.
+	* Added the InvalidEndpointException type. Operations that return HTTP 421 now throw InvalidEndpointException, a subclass of AmazonDynamoDBException, instead of the base exception.
+* EC2 (4.0.130.0)
+	* EC2 AMIs can now show vulnerability data and be targeted directly for scanning.
+* ECS (4.0.109.0)
+	* ECS now supports GPU sharing via NVIDIA Multi-Process Service (MPS) on ECS Managed Instances and ECS EC2, allowing multiple ECS tasks to share a single Nvidia GPU for improved utilization.
+* Inspector2 (4.0.107.0)
+	* Adding support for Machine Image scan
+* LicenseManager (4.0.102.0)
+	* AWS License Manager now supports delegate grants for read-only visibility into license distributions. CreateGrant accepts a new GrantType (BuyerGrant or DelegateGrant) and a desired status at distribution time.
+* Lightsail (4.0.105.0)
+	* Added the attributeUpdates parameter to the Lightsail StartInstance API, which allows customers to update the attributes of a stopped instance when starting it.
+
 ### 4.0.358.0 (2026-10-26 18:11 UTC)
 * APIGateway (4.0.101.7)
 	* APIGateway is now generated from its Smithy model. The RetryAfterSeconds property on LimitExceededException, ServiceUnavailableException and TooManyRequestsException is now populated from the Retry-After response header.
