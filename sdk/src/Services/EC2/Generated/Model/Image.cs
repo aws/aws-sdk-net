@@ -64,6 +64,7 @@ namespace Amazon.EC2.Model
         private string _ramdiskId;
         private string _rootDeviceName;
         private DeviceType _rootDeviceType;
+        private ScanResults _scanResults;
         private string _sourceImageId;
         private string _sourceImageRegion;
         private string _sourceInstanceId;
@@ -670,6 +671,31 @@ namespace Amazon.EC2.Model
         internal bool IsSetRootDeviceType()
         {
             return this._rootDeviceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScanResults. 
+        /// <para>
+        /// The Amazon Inspector scan results for the AMI. This information is present only for
+        /// AMIs that Amazon Inspector has scanned.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you share an AMI with other accounts, organizations, or organizational units
+        /// (OUs), or make it public, its scan results are available to the accounts that can
+        /// use the AMI.
+        /// </para>
+        /// </summary>
+        public ScanResults ScanResults
+        {
+            get { return this._scanResults; }
+            set { this._scanResults = value; }
+        }
+
+        // Check to see if ScanResults property is set
+        internal bool IsSetScanResults()
+        {
+            return this._scanResults != null;
         }
 
         /// <summary>

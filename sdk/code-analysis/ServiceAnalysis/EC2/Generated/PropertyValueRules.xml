@@ -872,6 +872,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.GetImageFindingsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.GetIpamAddressHistoryRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -1622,6 +1627,66 @@
     <property>Amazon.EC2.Model.RuleGroupTypePair.RuleGroupArn</property>
     <min>1</min>
     <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.ScanResultCondition.MaxDaysSinceCriticalFixAvailable</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.ScanResultCondition.MaxDaysSinceHighFixAvailable</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.ScanResultCondition.MaxDaysSinceInformationalFixAvailable</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.ScanResultCondition.MaxDaysSinceLastFindingScan</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.ScanResultCondition.MaxDaysSinceLowFixAvailable</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.ScanResultCondition.MaxDaysSinceMediumFixAvailable</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.ScanResultConditionRequest.MaxDaysSinceCriticalFixAvailable</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.ScanResultConditionRequest.MaxDaysSinceHighFixAvailable</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.ScanResultConditionRequest.MaxDaysSinceInformationalFixAvailable</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.ScanResultConditionRequest.MaxDaysSinceLastFindingScan</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.ScanResultConditionRequest.MaxDaysSinceLowFixAvailable</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.ScanResultConditionRequest.MaxDaysSinceMediumFixAvailable</property>
+    <min>0</min>
+    <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.ServiceLinkVirtualInterface.ServiceLinkVirtualInterfaceArn</property>

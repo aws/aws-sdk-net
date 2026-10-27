@@ -75,6 +75,7 @@ namespace Amazon.EC2.Model
         private List<string> _imageProviders = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<ImageWatermarkFilterRequest> _imageWatermarks = AWSConfigs.InitializeCollections ? new List<ImageWatermarkFilterRequest>() : null;
         private List<string> _marketplaceProductCodes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private ScanResultConditionRequest _scanResultCondition;
 
         /// <summary>
         /// Gets and sets the property CreationDateCondition. 
@@ -280,6 +281,27 @@ namespace Amazon.EC2.Model
         internal bool IsSetMarketplaceProductCodes()
         {
             return this._marketplaceProductCodes != null && (this._marketplaceProductCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScanResultCondition. 
+        /// <para>
+        /// The Amazon Inspector scan-result criteria that an AMI must meet to be allowed. The
+        /// criteria can limit the highest finding severity, the number of days since Amazon Inspector
+        /// last scanned the AMI, and the number of days since Amazon Inspector reported a fix
+        /// as available.
+        /// </para>
+        /// </summary>
+        public ScanResultConditionRequest ScanResultCondition
+        {
+            get { return this._scanResultCondition; }
+            set { this._scanResultCondition = value; }
+        }
+
+        // Check to see if ScanResultCondition property is set
+        internal bool IsSetScanResultCondition()
+        {
+            return this._scanResultCondition != null;
         }
 
     }

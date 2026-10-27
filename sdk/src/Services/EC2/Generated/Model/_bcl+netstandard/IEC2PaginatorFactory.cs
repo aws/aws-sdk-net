@@ -1458,6 +1458,16 @@ namespace Amazon.EC2.Model
         IGetGroupsForCapacityReservationPaginator GetGroupsForCapacityReservation(GetGroupsForCapacityReservationRequest request);
 
         /// <summary>
+        /// Paginator for GetImageFindings operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IGetImageFindingsPaginator GetImageFindings(GetImageFindingsRequest request);
+
+        /// <summary>
         /// Paginator for GetInstanceTypesFromInstanceRequirements operation
         ///</summary>
         [AWSPaginator(

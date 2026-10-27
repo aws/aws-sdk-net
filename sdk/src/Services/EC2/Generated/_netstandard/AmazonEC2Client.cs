@@ -25499,6 +25499,45 @@ namespace Amazon.EC2
         }
         #endregion
         
+        #region  GetImageFindings
+
+        internal virtual GetImageFindingsResponse GetImageFindings(GetImageFindingsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetImageFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetImageFindingsResponseUnmarshaller.Instance;
+
+            return Invoke<GetImageFindingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the Amazon Inspector vulnerability findings for the specified AMI.
+        /// 
+        ///  
+        /// <para>
+        /// You can get findings for AMIs that you own, AMIs that are shared with you, and public
+        /// AMIs. Amazon Inspector returns findings only for AMIs that it has scanned.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetImageFindings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetImageFindings service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetImageFindings">REST API Reference for GetImageFindings Operation</seealso>
+        public virtual Task<GetImageFindingsResponse> GetImageFindingsAsync(GetImageFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetImageFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetImageFindingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetImageFindingsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetInstanceMetadataDefaults
 
         internal virtual GetInstanceMetadataDefaultsResponse GetInstanceMetadataDefaults(GetInstanceMetadataDefaultsRequest request)
