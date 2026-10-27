@@ -44,6 +44,19 @@ namespace Amazon.Lightsail.Model
     public partial class StartInstanceRequest : AmazonLightsailRequest
     {
         /// <summary>
+        /// Gets and sets the property AttributeUpdates. 
+        /// <para>
+        /// An object that describes the attributes to update on the instance before it starts.
+        /// </para>
+        /// </summary>
+        public InstanceAttributeUpdates AttributeUpdates { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AttributeUpdates property is set.
+        /// </summary>
+        internal bool IsSetAttributeUpdates() => this.AttributeUpdates != null;
+
+        /// <summary>
         /// Gets and sets the property InstanceName. 
         /// <para>
         /// The name of the instance (a virtual private server) to start.

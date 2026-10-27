@@ -70,6 +70,16 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetAttributeUpdates())
+            {
+                context.Writer.WritePropertyName("attributeUpdates");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InstanceAttributeUpdatesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AttributeUpdates, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetInstanceName())
             {
                 context.Writer.WritePropertyName("instanceName");
