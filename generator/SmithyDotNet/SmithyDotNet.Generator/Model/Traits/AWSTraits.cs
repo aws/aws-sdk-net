@@ -5,7 +5,8 @@ namespace SmithyDotNet.Generator.Model.Traits;
 
 /// <summary>
 /// Extension methods for the service traits the generator reads: the <c>aws.*</c> traits, the
-/// <c>smithy.api#httpBearerAuth</c> auth trait, plus the <c>smithy.rules#endpointRuleSet</c> trait.
+/// <c>smithy.api#httpBearerAuth</c> auth trait, the <c>smithy.rules#endpointRuleSet</c> trait,
+/// plus the <c>smithy.rules#endpointBdd</c> trait.
 /// </summary>
 public static class AWSTraits
 {
@@ -75,6 +76,21 @@ public static class AWSTraits
     /// </summary>
     /// <remarks><see href="https://smithy.io/2.0/additional-specs/rules-engine/specification.html#smithy-rules-endpointruleset-trait" /></remarks>
     public static EndpointRuleSet? GetEndpointRuleSet(this Shape shape) => DeserializeTrait<EndpointRuleSet>(shape, "smithy.rules#endpointRuleSet");
+
+    /// <summary>
+    /// Whether the service shape carries a Smithy endpoint BDD. When present, the generator emits a
+    /// BddEvaluator-driven endpoint provider, prioritized over endpointRuleSet. Reports trait presence
+    /// only, not rule-set evaluation.
+    /// </summary>
+    /// <remarks><see href="https://smithy.io/2.0/additional-specs/rules-engine/specification.html#smithy-rules-endpointbdd-trait" /></remarks>
+    public static bool HasEndpointBdd(this Shape shape) => shape.Traits.ContainsKey("smithy.rules#endpointBdd");
+
+    /// <summary>
+    /// The service's endpoint BDD, or <c>null</c> when the trait is absent. The BDD endpoint writer
+    /// decodes its node array and emits the provider.
+    /// </summary>
+    /// <remarks><see href="https://smithy.io/2.0/additional-specs/rules-engine/specification.html#smithy-rules-endpointbdd-trait" /></remarks>
+    public static EndpointBdd? GetEndpointBdd(this Shape shape) => DeserializeTrait<EndpointBdd>(shape, "smithy.rules#endpointBdd");
 
     /// <summary>
     /// The service's <c>clientContextParams</c>, keyed by rule-set parameter name, or <c>null</c> when

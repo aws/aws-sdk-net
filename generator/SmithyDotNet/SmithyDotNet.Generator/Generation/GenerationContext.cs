@@ -68,6 +68,18 @@ public class GenerationContext
     public EndpointRuleSet? EndpointRuleSet { get; }
 
     /// <summary>
+    /// Whether the service carries a Smithy endpoint BDD (<c>smithy.rules#endpointBdd</c>). When present,
+    /// the BDD provider writer is emitted. This trait is prioritized over <see cref="HasEndpointRuleSet"/>.
+    /// </summary>
+    public bool HasEndpointBdd { get; }
+
+    /// <summary>
+    /// The parsed endpoint BDD, or <c>null</c> when <see cref="HasEndpointBdd"/> is false.
+    /// The Bdd writer decodes its node array and emits the endpoint provider.
+    /// </summary>
+    public EndpointBdd? EndpointBdd { get; }
+
+    /// <summary>
     /// The service's <c>clientContextParams</c> as client-config properties, empty when the trait is
     /// absent. The config writer emits a property per entry; the endpoint resolver assigns from it.
     /// </summary>
@@ -83,8 +95,9 @@ public class GenerationContext
     /// <summary>
     /// Whether the service carries a Smithy endpoint test suite (<c>smithy.rules#endpointTests</c>).
     /// The endpoint provider tests file is emitted only when this is true. The constructor throws if
-    /// this is true while <see cref="HasEndpointRuleSet"/> is false: the generated tests reference the
-    /// endpoint parameters/provider types, which only exist when a rule set is also present.
+    /// this is true while both <see cref="HasEndpointRuleSet"/> and <see cref="HasEndpointBdd"/> are
+    /// false: the generated tests reference the endpoint parameters/provider types, which only exist
+    /// when a rule set or BDD is present.
     /// </summary>
     public bool HasEndpointTests { get; }
 
@@ -258,13 +271,15 @@ public class GenerationContext
 
         EndpointRuleSet = index.Service.GetEndpointRuleSet();
         HasEndpointRuleSet = EndpointRuleSet is not null;
+        EndpointBdd = index.Service.GetEndpointBdd();
+        HasEndpointBdd = EndpointBdd is not null;
         ClientContextParameters = EndpointContextResolver.ResolveClientParameters(index, SdkId);
 
         EndpointTests = index.Service.GetEndpointTests();
         HasEndpointTests = EndpointTests is not null;
-        if (HasEndpointTests && !HasEndpointRuleSet)
+        if (HasEndpointTests && !HasEndpointRuleSet && !HasEndpointBdd)
         {
-            throw new GeneratorException("Service carries smithy.rules#endpointTests but no smithy.rules#endpointRuleSet.");
+            throw new GeneratorException("Service carries smithy.rules#endpointTests but no smithy.rules#endpointRuleSet or smithy.rules#endpointBdd.");
         }
 
         ServiceDocumentation = index.Service.GetDocumentation();

@@ -120,6 +120,59 @@ public static partial class SdkNaming
         return sigV4Name ?? arnNamespace ?? shapeName.ToLowerInvariant();
     }
 
+    // Separators for splitting a Smithy endpoint-rules assign name into PascalCase tokens. Unlike
+    // EnumMemberSeparators, underscore IS present, so '_s3e_fips' becomes three tokens and mangles
+    // to 'S3eFips' rather than keeping the underscores an identifier would otherwise carry.
+    private static readonly char[] PropertyIdentifierSeparators = ['-', '.', ' ', '_', '/', ':'];
+
+    /// <summary>
+    /// Derives a unique, valid PascalCase C# property name from an endpoint-rules <c>assign</c> name,
+    /// for the BDD provider's typed context fields: split on <see cref="PropertyIdentifierSeparators"/>,
+    /// uppercase each token's first character, drop other non-alphanumerics, and prefix a leading digit
+    /// with <c>_</c>. Collisions are disambiguated with a numeric suffix tracked in <paramref name="usedNames"/>.
+    /// <para />
+    /// Examples: <c>_s3e_fips</c> → <c>S3eFips</c>, <c>partitionResult</c> → <c>PartitionResult</c>,
+    /// <c>url</c> → <c>Url</c>.
+    /// </summary>
+    public static string ToPropertyIdentifier(string assignName, IDictionary<string, int> usedNames)
+    {
+        var builder = new StringBuilder(assignName.Length);
+        foreach (var token in assignName.Split(PropertyIdentifierSeparators, StringSplitOptions.RemoveEmptyEntries))
+        {
+            var cleaned = AlphaNumericOnlyRegex().Replace(token, string.Empty);
+            if (cleaned.Length == 0)
+            {
+                continue;
+            }
+
+            builder.Append(char.ToUpperInvariant(cleaned[0]));
+            if (cleaned.Length > 1)
+            {
+                builder.Append(cleaned[1..]);
+            }
+        }
+
+        var name = builder.ToString();
+        if (name.Length == 0)
+        {
+            name = "Assign";
+        }
+        if (char.IsDigit(name[0]))
+        {
+            name = "_" + name;
+        }
+
+        if (!usedNames.TryGetValue(name, out var count))
+        {
+            usedNames[name] = 0;
+            return name;
+        }
+
+        count++;
+        usedNames[name] = count;
+        return $"{name}_{count}";
+    }
+
     [GeneratedRegex("[^a-zA-Z0-9]")]
     private static partial Regex AlphaNumericOnlyRegex();
 }

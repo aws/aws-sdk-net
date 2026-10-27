@@ -27,6 +27,38 @@ public record EndpointRuleSet : TraitRecord
     public required IReadOnlyList<EndpointRule> Rules { get; init; }
 }
 
+
+// Typed records for the smithy.rules#endpointBdd trait. A BDD (binary decision diagram) resolves an
+// endpoint by walking a directed graph of decision nodes: each node tests one condition and branches
+// to another node, a terminal, or a result. Conditions and results are flat, index-addressed lists;
+// the graph that wires them together is the base64-encoded node array (root/nodeCount/nodes). The
+// endpoint writer decodes the nodes and emits a provider that drives BddEvaluator over them, so a
+// single pass evaluates each condition at most once. Function arguments and endpoint URLs inside the
+// conditions/results stay as raw JsonElement, interpreted by the compiler rather than modeled as a
+// type hierarchy.
+//
+/// <remarks><see href="https://smithy.io/2.0/additional-specs/rules-engine/specification.html#smithy-rules-endpointbdd-trait" /></remarks>
+public record EndpointBdd : TraitRecord
+{
+    [JsonPropertyName("version")] public string? Version { get; init; }
+    [JsonPropertyName("parameters")] public IReadOnlyDictionary<string, EndpointParameter> Parameters { get; init; } = new Dictionary<string, EndpointParameter>();
+
+    /// <summary>The conditions tested during traversal.</summary>
+    [JsonPropertyName("conditions")] public required IReadOnlyList<EndpointCondition> Conditions { get; init; }
+
+    /// <summary>The possible endpoint/error results a terminal can resolve to, addressed by index.</summary>
+    [JsonPropertyName("results")] public required IReadOnlyList<EndpointRule> Results { get; init; }
+
+    /// <summary>The node reference where traversal starts.</summary>
+    [JsonPropertyName("root")] public required int Root { get; init; }
+
+    /// <summary>Total node count, including the reserved index-0 terminal node.</summary>
+    [JsonPropertyName("nodeCount")] public required int NodeCount { get; init; }
+
+    /// <summary>Base64-encoded node graph: big-endian int32 triples [conditionIndex, highRef, lowRef].</summary>
+    [JsonPropertyName("nodes")] public required string Nodes { get; init; }
+}
+
 /// <summary>A rule-set parameter (e.g. Region, UseFIPS). <see cref="BuiltIn"/> names the config
 /// source; <see cref="Default"/> supplies the parameters-class constructor default when present.</summary>
 public record EndpointParameter
