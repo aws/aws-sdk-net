@@ -255,6 +255,8 @@
         "greeting":{"shape":"String"}
       }
     },
+    "Byte":{"type":"byte"},
+    "Short":{"type":"short"},
     "Integer":{
       "type":"integer",
       "box":true
@@ -370,12 +372,12 @@
       "members":{
         "trueBooleanValue":{"shape":"Boolean"},
         "falseBooleanValue":{"shape":"Boolean"},
-        "byteValue":{"shape":"Integer"},
+        "byteValue":{"shape":"Byte"},
         "doubleValue":{"shape":"Double"},
         "floatValue":{"shape":"Float"},
         "integerValue":{"shape":"Integer"},
         "longValue":{"shape":"Long"},
-        "shortValue":{"shape":"Integer"},
+        "shortValue":{"shape":"Short"},
         "stringValue":{"shape":"String"},
         "blobValue":{"shape":"Blob"}
       }

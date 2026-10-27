@@ -14,6 +14,13 @@
       "changeLogMessages": [
         "Breaking Change: The assembly now has AssemblyVersion 4.0.0.0 and AssemblyFileVersion 4.0.0.x. Version 4.0.0.2 shipped with 0.0.0.0 because the project was missing Properties/AssemblyInfo.cs, so the version from _sdk-versions.json was never applied."
       ]
+    },
+    {
+      "extensionName": "Extensions.CborProtocol",
+      "type": "minor",
+      "changeLogMessages": [
+        "Added Smithy RPC v2 CBOR support for the byte, short, bigInteger and bigDecimal types (Full Numeric Type Support SEP): byte and short as CBOR integers, bigInteger as a bignum (tags 2/3) and bigDecimal as a decimal fraction (tag 4) via the new CborWriterExtensions.WriteBigDecimal."
+      ]
     }
   ]
 }

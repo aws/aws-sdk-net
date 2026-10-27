@@ -277,7 +277,7 @@ protected void DetermineNormalCborWriteMethod(Shape shape, string memberProperty
 <#+
 			}
 		}
-		else if (shape.IsInt)
+		else if (shape.IsInt || shape.IsByte || shape.IsShort)
 		{
 			if (isSparse)
 			{
@@ -292,6 +292,24 @@ protected void DetermineNormalCborWriteMethod(Shape shape, string memberProperty
 			{
 #>
 <#=new string(' ', level * 4)#>                context.Writer.WriteInt32(<#=memberProperty#>);
+<#+
+			}
+		}
+		else if (shape.IsArbitraryPrecisionNumber)
+		{
+			if (isSparse)
+			{
+#>
+<#=new string(' ', level * 4)#>					if (<#=variableName#> == null)
+<#=new string(' ', level * 4)#>						context.Writer.WriteNull();
+<#=new string(' ', level * 4)#>					else
+<#=new string(' ', level * 4)#>						context.Writer.Write<#=shape.GetPrimitiveType()#>(<#=memberProperty#>.Value);
+<#+
+			}
+			else
+			{
+#>
+<#=new string(' ', level * 4)#>                context.Writer.Write<#=shape.GetPrimitiveType()#>(<#=memberProperty#>);
 <#+
 			}
 		}
