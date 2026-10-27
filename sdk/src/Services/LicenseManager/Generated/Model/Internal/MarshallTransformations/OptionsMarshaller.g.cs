@@ -50,6 +50,12 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("ActivationOverrideBehavior");
                 context.Writer.WriteStringValue(requestObject.ActivationOverrideBehavior);
             }
+
+            if (requestObject.IsSetDesiredStatus())
+            {
+                context.Writer.WritePropertyName("DesiredStatus");
+                context.Writer.WriteStringValue(requestObject.DesiredStatus);
+            }
         }
 
         /// <summary>
