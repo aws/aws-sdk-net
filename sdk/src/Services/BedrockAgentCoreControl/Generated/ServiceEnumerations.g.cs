@@ -3582,6 +3582,42 @@ namespace Amazon.BedrockAgentCoreControl
     }
 
     /// <summary>
+    /// Constants used for properties of type OnBehalfOfClientAuthenticationMethod.
+    /// </summary>
+    public class OnBehalfOfClientAuthenticationMethod : ConstantClass
+    {
+        /// <summary>
+        /// Constant NO_CLIENT for OnBehalfOfClientAuthenticationMethod
+        /// </summary>
+        public static readonly OnBehalfOfClientAuthenticationMethod NO_CLIENT = new OnBehalfOfClientAuthenticationMethod("NO_CLIENT");
+
+        /// <summary>
+        /// Constructs a custom OnBehalfOfClientAuthenticationMethod for a value not among the defined constants.
+        /// </summary>
+        public OnBehalfOfClientAuthenticationMethod(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OnBehalfOfClientAuthenticationMethod FindValue(string value)
+        {
+            return FindValue<OnBehalfOfClientAuthenticationMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OnBehalfOfClientAuthenticationMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type OnBehalfOfTokenExchangeGrantTypeType.
     /// </summary>
     public class OnBehalfOfTokenExchangeGrantTypeType : ConstantClass
