@@ -6,5 +6,14 @@
       "Added support for the byte, short, bigInteger and bigDecimal model types (Full Numeric Type Support SEP): byte maps to sbyte, short to short, bigInteger to System.Numerics.BigInteger and bigDecimal to Amazon.Extensions.Numerics.BigDecimal, serialized without losing digits or scale.",
       "AWSSDK.Core now depends on AWSSDK.Extensions.Numerics, which provides BigDecimal."
     ]
-  }
+  },
+  "extensions": [
+    {
+      "extensionName": "Extensions.Numerics",
+      "type": "patch",
+      "changeLogMessages": [
+        "Breaking Change: The assembly now has AssemblyVersion 4.0.0.0 and AssemblyFileVersion 4.0.0.x. Version 4.0.0.2 shipped with 0.0.0.0 because the project was missing Properties/AssemblyInfo.cs, so the version from _sdk-versions.json was never applied."
+      ]
+    }
+  ]
 }
