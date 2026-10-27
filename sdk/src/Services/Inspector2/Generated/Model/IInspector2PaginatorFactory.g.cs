@@ -129,6 +129,12 @@ namespace Amazon.Inspector2.Model
         IListMembersPaginator ListMembers(ListMembersRequest request);
 
         /// <summary>
+        /// Paginator for ListOnDemandScans operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListOnDemandScansPaginator ListOnDemandScans(ListOnDemandScansRequest request);
+
+        /// <summary>
         /// Paginator for ListUsageTotals operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]

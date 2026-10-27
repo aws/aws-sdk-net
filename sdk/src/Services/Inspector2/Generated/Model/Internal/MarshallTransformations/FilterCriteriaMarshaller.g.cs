@@ -877,6 +877,70 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if (requestObject.IsSetMachineImageId())
+            {
+                context.Writer.WritePropertyName("machineImageId");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectMachineImageIdListValue in requestObject.MachineImageId)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectMachineImageIdListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetMachineImageName())
+            {
+                context.Writer.WritePropertyName("machineImageName");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectMachineImageNameListValue in requestObject.MachineImageName)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectMachineImageNameListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetMachineImageOwnerAccountId())
+            {
+                context.Writer.WritePropertyName("machineImageOwnerAccountId");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectMachineImageOwnerAccountIdListValue in requestObject.MachineImageOwnerAccountId)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectMachineImageOwnerAccountIdListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetMachineImagePlatform())
+            {
+                context.Writer.WritePropertyName("machineImagePlatform");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectMachineImagePlatformListValue in requestObject.MachineImagePlatform)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectMachineImagePlatformListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if (requestObject.IsSetNetworkProtocol())
             {
                 context.Writer.WritePropertyName("networkProtocol");

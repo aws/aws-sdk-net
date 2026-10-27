@@ -104,6 +104,11 @@ namespace Amazon.Inspector2.Model
         /// </para>
         ///  
         /// <para>
+        ///  <c>INVALID_ARTIFACT</c> - Amazon Inspector couldn't scan this resource because its
+        /// artifact is malformed and couldn't be safely extracted.
+        /// </para>
+        ///  
+        /// <para>
         ///  <c>NO_INVENTORY</c> - Amazon Inspector couldn't find software application inventory
         /// to scan for vulnerabilities. This might be caused due to required Amazon Inspector
         /// associations being deleted or failing to run on your resource. Please verify the status

@@ -49,6 +49,21 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetBucketName() => this.BucketName != null;
 
         /// <summary>
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The Amazon Web Services account ID of the expected owner of the Amazon S3 bucket.
+        /// If the actual bucket owner does not match, the export request fails.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 12, Max = 12)]
+        public string ExpectedBucketOwner { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExpectedBucketOwner property is set.
+        /// </summary>
+        internal bool IsSetExpectedBucketOwner() => this.ExpectedBucketOwner != null;
+
+        /// <summary>
         /// Gets and sets the property KeyPrefix. 
         /// <para>
         /// The prefix that the findings will be written under.

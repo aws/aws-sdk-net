@@ -52,6 +52,13 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("amiConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = AmiConfigurationStateUnmarshaller.Instance;
+                    unmarshalledObject.AmiConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("ec2Configuration", targetDepth, ref reader))
                 {
                     var unmarshaller = Ec2ConfigurationStateUnmarshaller.Instance;

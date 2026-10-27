@@ -139,6 +139,19 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetLambdaFunction() => this.LambdaFunction != null;
 
         /// <summary>
+        /// Gets and sets the property MachineImage. 
+        /// <para>
+        /// The machine image metadata associated with a covered resource.
+        /// </para>
+        /// </summary>
+        public MachineImageMetadata MachineImage { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MachineImage property is set.
+        /// </summary>
+        internal bool IsSetMachineImage() => this.MachineImage != null;
+
+        /// <summary>
         /// Gets and sets the property ServerlessFunction. 
         /// <para>
         /// The serverless function metadata associated with a covered resource.

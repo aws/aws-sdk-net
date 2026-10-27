@@ -558,6 +558,26 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetLastScannedCommitId() => this.LastScannedCommitId != null && (this.LastScannedCommitId.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property MachineImageTags. 
+        /// <para>
+        /// The machine image tags to filter coverage results by.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 10)]
+        public List<CoverageMapFilter> MachineImageTags { get; set; } = AWSConfigs.InitializeCollections ? new List<CoverageMapFilter>() : null;
+
+        /// <summary>
+        /// Checks to see if the MachineImageTags property is set.
+        /// </summary>
+        internal bool IsSetMachineImageTags() => this.MachineImageTags != null && (this.MachineImageTags.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
         /// An array of Amazon Web Services resource IDs to return coverage statistics for.

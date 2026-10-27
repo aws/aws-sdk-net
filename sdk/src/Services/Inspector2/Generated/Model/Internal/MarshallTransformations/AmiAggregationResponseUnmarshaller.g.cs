@@ -109,6 +109,13 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("scanSource", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ScanSource = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("severityCounts", targetDepth, ref reader))
                 {
                     var unmarshaller = SeverityCountsUnmarshaller.Instance;

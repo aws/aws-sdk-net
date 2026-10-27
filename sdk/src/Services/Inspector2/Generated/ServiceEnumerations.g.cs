@@ -286,6 +286,154 @@ namespace Amazon.Inspector2
     }
 
     /// <summary>
+    /// Constants used for properties of type AmiConfigurationStatus.
+    /// </summary>
+    public class AmiConfigurationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant FAILED for AmiConfigurationStatus
+        /// </summary>
+        public static readonly AmiConfigurationStatus FAILED = new AmiConfigurationStatus("FAILED");
+
+        /// <summary>
+        /// Constant PENDING for AmiConfigurationStatus
+        /// </summary>
+        public static readonly AmiConfigurationStatus PENDING = new AmiConfigurationStatus("PENDING");
+
+        /// <summary>
+        /// Constant SUCCESS for AmiConfigurationStatus
+        /// </summary>
+        public static readonly AmiConfigurationStatus SUCCESS = new AmiConfigurationStatus("SUCCESS");
+
+        /// <summary>
+        /// Constructs a custom AmiConfigurationStatus for a value not among the defined constants.
+        /// </summary>
+        public AmiConfigurationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AmiConfigurationStatus FindValue(string value)
+        {
+            return FindValue<AmiConfigurationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AmiConfigurationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AmiScanDuration.
+    /// </summary>
+    public class AmiScanDuration : ConstantClass
+    {
+        /// <summary>
+        /// Constant DAYS_14 for AmiScanDuration
+        /// </summary>
+        public static readonly AmiScanDuration DAYS_14 = new AmiScanDuration("DAYS_14");
+
+        /// <summary>
+        /// Constant DAYS_180 for AmiScanDuration
+        /// </summary>
+        public static readonly AmiScanDuration DAYS_180 = new AmiScanDuration("DAYS_180");
+
+        /// <summary>
+        /// Constant DAYS_30 for AmiScanDuration
+        /// </summary>
+        public static readonly AmiScanDuration DAYS_30 = new AmiScanDuration("DAYS_30");
+
+        /// <summary>
+        /// Constant DAYS_60 for AmiScanDuration
+        /// </summary>
+        public static readonly AmiScanDuration DAYS_60 = new AmiScanDuration("DAYS_60");
+
+        /// <summary>
+        /// Constant DAYS_7 for AmiScanDuration
+        /// </summary>
+        public static readonly AmiScanDuration DAYS_7 = new AmiScanDuration("DAYS_7");
+
+        /// <summary>
+        /// Constant DAYS_90 for AmiScanDuration
+        /// </summary>
+        public static readonly AmiScanDuration DAYS_90 = new AmiScanDuration("DAYS_90");
+
+        /// <summary>
+        /// Constructs a custom AmiScanDuration for a value not among the defined constants.
+        /// </summary>
+        public AmiScanDuration(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AmiScanDuration FindValue(string value)
+        {
+            return FindValue<AmiScanDuration>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AmiScanDuration(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AmiScanMode.
+    /// </summary>
+    public class AmiScanMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant SCAN_ALL for AmiScanMode
+        /// </summary>
+        public static readonly AmiScanMode SCAN_ALL = new AmiScanMode("SCAN_ALL");
+
+        /// <summary>
+        /// Constant TARGET_SCANNING for AmiScanMode
+        /// </summary>
+        public static readonly AmiScanMode TARGET_SCANNING = new AmiScanMode("TARGET_SCANNING");
+
+        /// <summary>
+        /// Constructs a custom AmiScanMode for a value not among the defined constants.
+        /// </summary>
+        public AmiScanMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AmiScanMode FindValue(string value)
+        {
+            return FindValue<AmiScanMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AmiScanMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type AmiSortBy.
     /// </summary>
     public class AmiSortBy : ConstantClass
@@ -2192,6 +2340,11 @@ namespace Amazon.Inspector2
         public static readonly CoverageResourceType CODE_REPOSITORY = new CoverageResourceType("CODE_REPOSITORY");
 
         /// <summary>
+        /// Constant MACHINE_IMAGE for CoverageResourceType
+        /// </summary>
+        public static readonly CoverageResourceType MACHINE_IMAGE = new CoverageResourceType("MACHINE_IMAGE");
+
+        /// <summary>
         /// Constant MicrosoftComputeVirtualMachines for CoverageResourceType
         /// </summary>
         public static readonly CoverageResourceType MicrosoftComputeVirtualMachines = new CoverageResourceType("Microsoft.Compute/virtualMachines");
@@ -3604,6 +3757,11 @@ namespace Amazon.Inspector2
         public static readonly FreeTrialType LAMBDA_CODE = new FreeTrialType("LAMBDA_CODE");
 
         /// <summary>
+        /// Constant MACHINE_IMAGE for FreeTrialType
+        /// </summary>
+        public static readonly FreeTrialType MACHINE_IMAGE = new FreeTrialType("MACHINE_IMAGE");
+
+        /// <summary>
         /// Constant SERVERLESS_FUNCTION for FreeTrialType
         /// </summary>
         public static readonly FreeTrialType SERVERLESS_FUNCTION = new FreeTrialType("SERVERLESS_FUNCTION");
@@ -4079,6 +4237,52 @@ namespace Amazon.Inspector2
     }
 
     /// <summary>
+    /// Constants used for properties of type MachineImagePlatform.
+    /// </summary>
+    public class MachineImagePlatform : ConstantClass
+    {
+        /// <summary>
+        /// Constant LINUX for MachineImagePlatform
+        /// </summary>
+        public static readonly MachineImagePlatform LINUX = new MachineImagePlatform("LINUX");
+
+        /// <summary>
+        /// Constant UNKNOWN for MachineImagePlatform
+        /// </summary>
+        public static readonly MachineImagePlatform UNKNOWN = new MachineImagePlatform("UNKNOWN");
+
+        /// <summary>
+        /// Constant WINDOWS for MachineImagePlatform
+        /// </summary>
+        public static readonly MachineImagePlatform WINDOWS = new MachineImagePlatform("WINDOWS");
+
+        /// <summary>
+        /// Constructs a custom MachineImagePlatform for a value not among the defined constants.
+        /// </summary>
+        public MachineImagePlatform(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MachineImagePlatform FindValue(string value)
+        {
+            return FindValue<MachineImagePlatform>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MachineImagePlatform(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type MapComparison.
     /// </summary>
     public class MapComparison : ConstantClass
@@ -4150,6 +4354,149 @@ namespace Amazon.Inspector2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NetworkProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type OnDemandResourceType.
+    /// </summary>
+    public class OnDemandResourceType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AMI for OnDemandResourceType
+        /// </summary>
+        public static readonly OnDemandResourceType AMI = new OnDemandResourceType("AMI");
+
+        /// <summary>
+        /// Constructs a custom OnDemandResourceType for a value not among the defined constants.
+        /// </summary>
+        public OnDemandResourceType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OnDemandResourceType FindValue(string value)
+        {
+            return FindValue<OnDemandResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OnDemandResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type OnDemandScanStatus.
+    /// </summary>
+    public class OnDemandScanStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant FAILED for OnDemandScanStatus
+        /// </summary>
+        public static readonly OnDemandScanStatus FAILED = new OnDemandScanStatus("FAILED");
+
+        /// <summary>
+        /// Constant IN_PROGRESS for OnDemandScanStatus
+        /// </summary>
+        public static readonly OnDemandScanStatus IN_PROGRESS = new OnDemandScanStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// Constant SUCCESSFUL for OnDemandScanStatus
+        /// </summary>
+        public static readonly OnDemandScanStatus SUCCESSFUL = new OnDemandScanStatus("SUCCESSFUL");
+
+        /// <summary>
+        /// Constructs a custom OnDemandScanStatus for a value not among the defined constants.
+        /// </summary>
+        public OnDemandScanStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OnDemandScanStatus FindValue(string value)
+        {
+            return FindValue<OnDemandScanStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OnDemandScanStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type OnDemandScanStatusReason.
+    /// </summary>
+    public class OnDemandScanStatusReason : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACCESS_DENIED for OnDemandScanStatusReason
+        /// </summary>
+        public static readonly OnDemandScanStatusReason ACCESS_DENIED = new OnDemandScanStatusReason("ACCESS_DENIED");
+
+        /// <summary>
+        /// Constant EXTRACTION_COLLECTION_TIME_LIMIT_EXCEEDED for OnDemandScanStatusReason
+        /// </summary>
+        public static readonly OnDemandScanStatusReason EXTRACTION_COLLECTION_TIME_LIMIT_EXCEEDED = new OnDemandScanStatusReason("EXTRACTION_COLLECTION_TIME_LIMIT_EXCEEDED");
+
+        /// <summary>
+        /// Constant INTERNAL_ERROR for OnDemandScanStatusReason
+        /// </summary>
+        public static readonly OnDemandScanStatusReason INTERNAL_ERROR = new OnDemandScanStatusReason("INTERNAL_ERROR");
+
+        /// <summary>
+        /// Constant RESOURCE_TERMINATED for OnDemandScanStatusReason
+        /// </summary>
+        public static readonly OnDemandScanStatusReason RESOURCE_TERMINATED = new OnDemandScanStatusReason("RESOURCE_TERMINATED");
+
+        /// <summary>
+        /// Constant STORAGE_LIMIT_EXCEEDED for OnDemandScanStatusReason
+        /// </summary>
+        public static readonly OnDemandScanStatusReason STORAGE_LIMIT_EXCEEDED = new OnDemandScanStatusReason("STORAGE_LIMIT_EXCEEDED");
+
+        /// <summary>
+        /// Constant UNSUPPORTED_OS for OnDemandScanStatusReason
+        /// </summary>
+        public static readonly OnDemandScanStatusReason UNSUPPORTED_OS = new OnDemandScanStatusReason("UNSUPPORTED_OS");
+
+        /// <summary>
+        /// Constructs a custom OnDemandScanStatusReason for a value not among the defined constants.
+        /// </summary>
+        public OnDemandScanStatusReason(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OnDemandScanStatusReason FindValue(string value)
+        {
+            return FindValue<OnDemandScanStatusReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OnDemandScanStatusReason(string value)
         {
             return FindValue(value);
         }
@@ -4981,6 +5328,11 @@ namespace Amazon.Inspector2
         public static readonly ResourceType CODE_REPOSITORY = new ResourceType("CODE_REPOSITORY");
 
         /// <summary>
+        /// Constant MACHINE_IMAGE for ResourceType
+        /// </summary>
+        public static readonly ResourceType MACHINE_IMAGE = new ResourceType("MACHINE_IMAGE");
+
+        /// <summary>
         /// Constant MicrosoftComputeVirtualMachines for ResourceType
         /// </summary>
         public static readonly ResourceType MicrosoftComputeVirtualMachines = new ResourceType("Microsoft.Compute/virtualMachines");
@@ -5351,6 +5703,47 @@ namespace Amazon.Inspector2
     }
 
     /// <summary>
+    /// Constants used for properties of type ScanSource.
+    /// </summary>
+    public class ScanSource : ConstantClass
+    {
+        /// <summary>
+        /// Constant INSTANCE_SCAN for ScanSource
+        /// </summary>
+        public static readonly ScanSource INSTANCE_SCAN = new ScanSource("INSTANCE_SCAN");
+
+        /// <summary>
+        /// Constant MACHINE_IMAGE_SCAN for ScanSource
+        /// </summary>
+        public static readonly ScanSource MACHINE_IMAGE_SCAN = new ScanSource("MACHINE_IMAGE_SCAN");
+
+        /// <summary>
+        /// Constructs a custom ScanSource for a value not among the defined constants.
+        /// </summary>
+        public ScanSource(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScanSource FindValue(string value)
+        {
+            return FindValue<ScanSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScanSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ScanStatusCode.
     /// </summary>
     public class ScanStatusCode : ConstantClass
@@ -5447,6 +5840,11 @@ namespace Amazon.Inspector2
         public static readonly ScanStatusReason EXCLUDED_BY_TAG = new ScanStatusReason("EXCLUDED_BY_TAG");
 
         /// <summary>
+        /// Constant EXTRACTION_COLLECTION_TIME_LIMIT_EXCEEDED for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason EXTRACTION_COLLECTION_TIME_LIMIT_EXCEEDED = new ScanStatusReason("EXTRACTION_COLLECTION_TIME_LIMIT_EXCEEDED");
+
+        /// <summary>
         /// Constant IMAGE_ARCHIVED for ScanStatusReason
         /// </summary>
         public static readonly ScanStatusReason IMAGE_ARCHIVED = new ScanStatusReason("IMAGE_ARCHIVED");
@@ -5465,6 +5863,11 @@ namespace Amazon.Inspector2
         /// Constant INTERNAL_ERROR for ScanStatusReason
         /// </summary>
         public static readonly ScanStatusReason INTERNAL_ERROR = new ScanStatusReason("INTERNAL_ERROR");
+
+        /// <summary>
+        /// Constant INVALID_ARTIFACT for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason INVALID_ARTIFACT = new ScanStatusReason("INVALID_ARTIFACT");
 
         /// <summary>
         /// Constant NO_INVENTORY for ScanStatusReason
@@ -5535,6 +5938,11 @@ namespace Amazon.Inspector2
         /// Constant STALE_INVENTORY for ScanStatusReason
         /// </summary>
         public static readonly ScanStatusReason STALE_INVENTORY = new ScanStatusReason("STALE_INVENTORY");
+
+        /// <summary>
+        /// Constant STORAGE_LIMIT_EXCEEDED for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason STORAGE_LIMIT_EXCEEDED = new ScanStatusReason("STORAGE_LIMIT_EXCEEDED");
 
         /// <summary>
         /// Constant SUCCESSFUL for ScanStatusReason
@@ -6334,6 +6742,11 @@ namespace Amazon.Inspector2
         /// Constant EC2_AGENTLESS_INSTANCE_HOURS for UsageType
         /// </summary>
         public static readonly UsageType EC2_AGENTLESS_INSTANCE_HOURS = new UsageType("EC2_AGENTLESS_INSTANCE_HOURS");
+
+        /// <summary>
+        /// Constant EC2_AMI_HOURS for UsageType
+        /// </summary>
+        public static readonly UsageType EC2_AMI_HOURS = new UsageType("EC2_AMI_HOURS");
 
         /// <summary>
         /// Constant EC2_INSTANCE_HOURS for UsageType

@@ -58,6 +58,19 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetAccountId() => this.AccountId != null;
 
         /// <summary>
+        /// Gets and sets the property AmiConfiguration. 
+        /// <para>
+        /// The Amazon Machine Image (AMI) scan configuration to apply to the account.
+        /// </para>
+        /// </summary>
+        public AmiConfiguration AmiConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AmiConfiguration property is set.
+        /// </summary>
+        internal bool IsSetAmiConfiguration() => this.AmiConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property Ec2Configuration. 
         /// <para>
         /// Specifies how the Amazon EC2 automated scan will be updated for your environment.

@@ -1091,6 +1091,87 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetLastObservedAt() => this.LastObservedAt != null && (this.LastObservedAt.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property MachineImageId. 
+        /// <para>
+        /// The ID of the Amazon Machine Image (AMI) used to filter findings.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 10)]
+        public List<StringFilter> MachineImageId { get; set; } = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+
+        /// <summary>
+        /// Checks to see if the MachineImageId property is set.
+        /// </summary>
+        internal bool IsSetMachineImageId() => this.MachineImageId != null && (this.MachineImageId.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property MachineImageName. 
+        /// <para>
+        /// The name of the Amazon Machine Image (AMI) used to filter findings.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 10)]
+        public List<StringFilter> MachineImageName { get; set; } = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+
+        /// <summary>
+        /// Checks to see if the MachineImageName property is set.
+        /// </summary>
+        internal bool IsSetMachineImageName() => this.MachineImageName != null && (this.MachineImageName.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property MachineImageOwnerAccountId. 
+        /// <para>
+        /// The ID of the Amazon Web Services account that owns the Amazon Machine Image (AMI)
+        /// used to filter findings.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 10)]
+        public List<StringFilter> MachineImageOwnerAccountId { get; set; } = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+
+        /// <summary>
+        /// Checks to see if the MachineImageOwnerAccountId property is set.
+        /// </summary>
+        internal bool IsSetMachineImageOwnerAccountId() => this.MachineImageOwnerAccountId != null && (this.MachineImageOwnerAccountId.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property MachineImagePlatform. 
+        /// <para>
+        /// The platform of the Amazon Machine Image (AMI) used to filter findings.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 10)]
+        public List<StringFilter> MachineImagePlatform { get; set; } = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+
+        /// <summary>
+        /// Checks to see if the MachineImagePlatform property is set.
+        /// </summary>
+        internal bool IsSetMachineImagePlatform() => this.MachineImagePlatform != null && (this.MachineImagePlatform.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property NetworkProtocol. 
         /// <para>
         /// Details on network protocol used to filter findings.

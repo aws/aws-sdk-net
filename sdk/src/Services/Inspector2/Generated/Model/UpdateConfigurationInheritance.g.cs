@@ -37,6 +37,16 @@ namespace Amazon.Inspector2.Model
     public partial class UpdateConfigurationInheritance
     {
         /// <summary>
+        /// Gets and sets the property AmiConfiguration.
+        /// </summary>
+        public InheritanceMode AmiConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AmiConfiguration property is set.
+        /// </summary>
+        internal bool IsSetAmiConfiguration() => this.AmiConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property Ec2Configuration. 
         /// <para>
         /// The inheritance mode for Amazon EC2 scan configuration. Set to <c>INHERIT_FROM_ADMIN</c>

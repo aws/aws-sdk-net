@@ -45,6 +45,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetAmiConfiguration())
+            {
+                context.Writer.WritePropertyName("amiConfiguration");
+                context.Writer.WriteStringValue(requestObject.AmiConfiguration);
+            }
+
             if (requestObject.IsSetEc2Configuration())
             {
                 context.Writer.WritePropertyName("ec2Configuration");

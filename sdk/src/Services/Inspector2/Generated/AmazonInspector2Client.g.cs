@@ -3990,6 +3990,96 @@ namespace Amazon.Inspector2
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Retrieves the status of a specific on-demand scan for a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOnDemandScanStatus service method.</param>
+        /// <returns>The response from the GetOnDemandScanStatus service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetOnDemandScanStatus">REST API Reference for GetOnDemandScanStatus Operation</seealso>
+        public virtual GetOnDemandScanStatusResponse GetOnDemandScanStatus(GetOnDemandScanStatusRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetOnDemandScanStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOnDemandScanStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetOnDemandScanStatusResponse>(request, options);
+        }
+#else
+        internal virtual GetOnDemandScanStatusResponse GetOnDemandScanStatus(GetOnDemandScanStatusRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetOnDemandScanStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOnDemandScanStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetOnDemandScanStatusResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Retrieves the status of a specific on-demand scan for a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOnDemandScanStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetOnDemandScanStatus service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetOnDemandScanStatus">REST API Reference for GetOnDemandScanStatus Operation</seealso>
+        public virtual Task<GetOnDemandScanStatusResponse> GetOnDemandScanStatusAsync(GetOnDemandScanStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetOnDemandScanStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOnDemandScanStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetOnDemandScanStatusResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Gets details of a software bill of materials (SBOM) report.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSbomExport service method.</param>
@@ -5430,6 +5520,88 @@ namespace Amazon.Inspector2
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Lists the on-demand scans for a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOnDemandScans service method.</param>
+        /// <returns>The response from the ListOnDemandScans service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListOnDemandScans">REST API Reference for ListOnDemandScans Operation</seealso>
+        public virtual ListOnDemandScansResponse ListOnDemandScans(ListOnDemandScansRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListOnDemandScansRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOnDemandScansResponseUnmarshaller.Instance;
+
+            return Invoke<ListOnDemandScansResponse>(request, options);
+        }
+#else
+        internal virtual ListOnDemandScansResponse ListOnDemandScans(ListOnDemandScansRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListOnDemandScansRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOnDemandScansResponseUnmarshaller.Instance;
+
+            return Invoke<ListOnDemandScansResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Lists the on-demand scans for a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOnDemandScans service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListOnDemandScans service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListOnDemandScans">REST API Reference for ListOnDemandScans Operation</seealso>
+        public virtual Task<ListOnDemandScansResponse> ListOnDemandScansAsync(ListOnDemandScansRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListOnDemandScansRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOnDemandScansResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListOnDemandScansResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Lists all tags attached to a given resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -6138,6 +6310,98 @@ namespace Amazon.Inspector2
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Starts an on-demand scan of the specified resource, such as an Amazon Machine Image
+        /// (AMI).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartOnDemandScan service method.</param>
+        /// <returns>The response from the StartOnDemandScan service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ConflictException">
+        /// A conflict occurred. This exception occurs when the same resource is being modified
+        /// by concurrent requests.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/StartOnDemandScan">REST API Reference for StartOnDemandScan Operation</seealso>
+        public virtual StartOnDemandScanResponse StartOnDemandScan(StartOnDemandScanRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartOnDemandScanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartOnDemandScanResponseUnmarshaller.Instance;
+
+            return Invoke<StartOnDemandScanResponse>(request, options);
+        }
+#else
+        internal virtual StartOnDemandScanResponse StartOnDemandScan(StartOnDemandScanRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartOnDemandScanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartOnDemandScanResponseUnmarshaller.Instance;
+
+            return Invoke<StartOnDemandScanResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Starts an on-demand scan of the specified resource, such as an Amazon Machine Image
+        /// (AMI).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartOnDemandScan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the StartOnDemandScan service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ConflictException">
+        /// A conflict occurred. This exception occurs when the same resource is being modified
+        /// by concurrent requests.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/StartOnDemandScan">REST API Reference for StartOnDemandScan Operation</seealso>
+        public virtual Task<StartOnDemandScanResponse> StartOnDemandScanAsync(StartOnDemandScanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartOnDemandScanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartOnDemandScanResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartOnDemandScanResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Stops a CIS session. This API is used by the Amazon Inspector SSM plugin to communicate
         /// with the Amazon Inspector service. The Amazon Inspector SSM plugin calls this API
         /// to stop a CIS scan session for the scan ID supplied by the service.
@@ -6700,6 +6964,10 @@ namespace Amazon.Inspector2
         /// Amazon Web Services Region. 
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ConflictException">
+        /// A conflict occurred. This exception occurs when the same resource is being modified
+        /// by concurrent requests.
+        /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
         /// </exception>
@@ -6751,6 +7019,10 @@ namespace Amazon.Inspector2
         ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
         /// Amazon Web Services Region. 
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ConflictException">
+        /// A conflict occurred. This exception occurs when the same resource is being modified
+        /// by concurrent requests.
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
