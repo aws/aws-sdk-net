@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "AWS Import/Export accelerates moving large amounts of data into and out of the AWS cloud using portable storage devices for transport.",
+  "base-name": "ImportExport",
   "legacy-service-id": "ImportExport"
 }

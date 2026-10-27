@@ -115,39 +115,9 @@ namespace ServiceClientGenerator
                     return _className;
                 }
 
-                if (ClassNameOverride != null)
-                {
-                    _className = ClassNameOverride;
-                }
-                else if (!string.IsNullOrEmpty(this.LegacyServiceId))
-                {
-                    //Use legacy service class name calculation
-                    if (this.ServiceModel.ServiceAbbreviation != null)
-                    {
-                        _className = SanitizeStringForClassName(_serviceModel.ServiceAbbreviation);
-                    }
-                    else if (this.ServiceModel.ServiceFullName != null)
-                    {
-                        _className = SanitizeStringForClassName(_serviceModel.ServiceFullName);
-                    }
-                    else
-                    {
-                        throw new InvalidDataException("Generator was not able to determine the ClassName for a service.");
-                    }
-                }
-                else
-                {
-                    //All new services will not have a legacy-service-id metadata property value which indicates that they
-                    //must use the ServiceId for the class name.
-                    if (string.IsNullOrEmpty(this.ServiceId))
-                    {
-                        throw new InvalidDataException(
-                            "Generator was not able to determine the ClassName for a service.");
-                    }
-
-                    _className = SanitizeStringForClassName(this.ServiceId);
-                }
-
+                // Never derive from serviceFullName/serviceAbbreviation: a display-name change would rename
+                // public types. Names that differ from the serviceId are pinned by metadata.json base-name.
+                _className = ClassNameOverride ?? SanitizeStringForClassName(this.ServiceId);
                 return _className;
             }
         }

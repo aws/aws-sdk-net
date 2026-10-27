@@ -2,5 +2,6 @@
   "active": true,
   "synopsis": "This is the initial release of Amazon Detective.",
   "generate-client-constructors": true,
+  "base-name": "Detective",
   "legacy-service-id": "Detective"
 }

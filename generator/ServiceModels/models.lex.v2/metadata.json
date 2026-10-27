@@ -2,5 +2,6 @@
   "active": true,
   "synopsis": "This release adds support for Amazon Lex V2 APIs for model building.",
   "generate-client-constructors": true,
+  "base-name": "LexModelsV2",
   "legacy-service-id": "Lex Models V2"
 }

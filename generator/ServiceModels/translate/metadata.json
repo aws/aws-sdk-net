@@ -2,5 +2,6 @@
   "active": true,
   "synopsis": "Public preview release of Amazon Translate and the Amazon Translate Developer Guide. For more information, see the Amazon Translate Developer Guide.",
   "generate-client-constructors": true,
+  "base-name": "Translate",
   "legacy-service-id": "Translate"
 }

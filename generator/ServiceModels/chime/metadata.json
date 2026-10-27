@@ -2,5 +2,6 @@
   "active": true,
   "synopsis": "The Amazon Chime API (application programming interface) is designed for administrators to use to perform key tasks, such as creating and managing Amazon Chime accounts and users.",
   "generate-client-constructors": true,
+  "base-name": "Chime",
   "legacy-service-id": "Chime"
 }

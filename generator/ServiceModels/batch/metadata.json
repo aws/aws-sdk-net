@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "AWS Batch enables developers, scientists, and engineers to easily and efficiently run hundreds of thousands of batch computing jobs on AWS. ",
+  "base-name": "Batch",
   "legacy-service-id": "Batch"
 }

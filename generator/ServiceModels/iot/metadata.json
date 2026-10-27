@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "AWS IoT allows you to leverage AWS to build your Internet of Things.",
+  "base-name": "IoT",
   "legacy-service-id": "IoT"
 }

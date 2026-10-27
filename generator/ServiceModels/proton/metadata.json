@@ -2,5 +2,6 @@
   "active": true,
   "synopsis": "This is the initial SDK release for AWS Proton",
   "generate-client-constructors": true,
+  "base-name": "Proton",
   "legacy-service-id": "Proton"
 }

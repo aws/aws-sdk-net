@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "AWS Organizations is a web service that enables you to consolidate your multiple AWS accounts into an organization and centrally manage your accounts and their resources.",
+  "base-name": "Organizations",
   "legacy-service-id": "Organizations"
 }

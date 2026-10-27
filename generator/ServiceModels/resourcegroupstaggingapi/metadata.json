@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "Resource Groups Tagging APIs can help you organize your resources and enable you to simplify resource management, access management, and cost allocation.",
+  "base-name": "ResourceGroupsTaggingAPI",
   "legacy-service-id": "Resource Groups Tagging API"
 }
