@@ -76,16 +76,8 @@ namespace Amazon.Runtime.Internal.Util
         {
             if (type == null) throw new ArgumentNullException("type");
 
-            Logger l;
-            lock (_cachedLoggers)
-            {
-                if (!_cachedLoggers.TryGetValue(type, out l))
-                {
-                    l = new Logger(type);
-                    _cachedLoggers[type] = l;
-                }
-            }
-            return l;
+            // ConcurrentDictionary already synchronizes; a lock here would serialize every caller on the hot path.
+            return _cachedLoggers.GetOrAdd(type, t => new Logger(t));
         }
 
         public static void ClearLoggerCache()
@@ -119,6 +111,23 @@ namespace Amazon.Runtime.Internal.Util
                     logger.Log(SdkLogLevel.Debug, messageFormat, exception, args);
                 }
             }
+        }
+
+        /// <summary>
+        /// Returns true if at least one registered adaptor logger is enabled for <paramref name="level"/>.
+        /// Callers can use this to skip building expensive log arguments.
+        /// </summary>
+        internal bool IsEnabled(SdkLogLevel level)
+        {
+            foreach (var logger in _loggers)
+            {
+                if (logger.IsEnabled(level))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         public void DebugFormat(string messageFormat, params object[] args)

@@ -521,12 +521,15 @@ namespace Amazon.Util
             }
             string canonicalizedResourcePath = JoinResourcePathSegmentsV2(encodedSegments);
 
-            // Get the logger each time (it's cached) because we shouldn't store it in a static variable.
-            Logger.GetLogger(typeof(AWSSDKUtils)).DebugFormat("{0} encoded {1}{2} for canonicalization: {3}",
-                pathWasPreEncoded ? "Double" : "Single",
-                resourcePath,
-                endpoint == null ? "" : " with endpoint " + endpoint.AbsoluteUri,
-                canonicalizedResourcePath);
+            var logger = Logger.GetLogger(typeof(AWSSDKUtils));
+            if (logger.IsEnabled(Amazon.Runtime.Logging.SdkLogLevel.Debug))
+            {
+                logger.DebugFormat("{0} encoded {1}{2} for canonicalization: {3}",
+                    pathWasPreEncoded ? "Double" : "Single",
+                    resourcePath,
+                    endpoint == null ? "" : " with endpoint " + endpoint.AbsoluteUri,
+                    canonicalizedResourcePath);
+            }
 
             return canonicalizedResourcePath;
         }
