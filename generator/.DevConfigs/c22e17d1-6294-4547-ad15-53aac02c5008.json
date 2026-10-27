@@ -1,0 +1,226 @@
+{
+  "services": [
+    {
+      "serviceName": "AppMesh",
+      "type": "patch",
+      "changeLogMessages": [
+        "AppMesh is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "AWSSupport",
+      "type": "patch",
+      "changeLogMessages": [
+        "AWSSupport is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "CloudHSM",
+      "type": "patch",
+      "changeLogMessages": [
+        "CloudHSM is now generated from its Smithy model. CloudHsmInternalException and InvalidRequestException now expose the Retryable property that the service returns, as CloudHsmServiceException already did."
+      ]
+    },
+    {
+      "serviceName": "CloudTrail",
+      "type": "patch",
+      "changeLogMessages": [
+        "CloudTrail is now generated from its Smithy model. There are no changes to the public API.",
+        "The X-Amz-Target request header now uses the service shape name (CloudTrail_20131101.{Operation}) instead of the legacy namespaced prefix; the service accepts both and other AWS SDKs already send the new form."
+      ]
+    },
+    {
+      "serviceName": "CodeDeploy",
+      "type": "patch",
+      "changeLogMessages": [
+        "CodeDeploy is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "CodePipeline",
+      "type": "patch",
+      "changeLogMessages": [
+        "CodePipeline is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "CognitoSync",
+      "type": "patch",
+      "changeLogMessages": [
+        "CognitoSync is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "ConfigService",
+      "type": "patch",
+      "changeLogMessages": [
+        "ConfigService is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "Connect",
+      "type": "patch",
+      "changeLogMessages": [
+        "Connect is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "DataPipeline",
+      "type": "patch",
+      "changeLogMessages": [
+        "DataPipeline is now generated from its Smithy model. There are no changes to the public API.",
+        "The DescribeObjects, ListPipelines and QueryObjects paginators now stop when the response carries no marker instead of checking the HasMoreResults flag; the service omits the marker on the last page."
+      ]
+    },
+    {
+      "serviceName": "DeviceFarm",
+      "type": "patch",
+      "changeLogMessages": [
+        "DeviceFarm is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "DirectConnect",
+      "type": "patch",
+      "changeLogMessages": [
+        "DirectConnect is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "DirectoryService",
+      "type": "patch",
+      "changeLogMessages": [
+        "DirectoryService is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "DynamoDBStreams",
+      "type": "patch",
+      "changeLogMessages": [
+        "DynamoDBStreams is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "ElasticFileSystem",
+      "type": "patch",
+      "changeLogMessages": [
+        "ElasticFileSystem is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "ElasticMapReduce",
+      "type": "patch",
+      "changeLogMessages": [
+        "ElasticMapReduce is now generated from its Smithy model. BlockPublicAccessConfiguration now exposes the Classification, Configurations and Properties members that the service returns."
+      ]
+    },
+    {
+      "serviceName": "GameLift",
+      "type": "patch",
+      "changeLogMessages": [
+        "GameLift is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "IoT",
+      "type": "patch",
+      "changeLogMessages": [
+        "IoT is now generated from its Smithy model.",
+        "Added the ListPrincipalThings, ListThings and ListTopicRules paginators (IIoTPaginatorFactory). The operations were always declared as paginated, but the previous generator skipped them."
+      ]
+    },
+    {
+      "serviceName": "KeyManagementService",
+      "type": "patch",
+      "changeLogMessages": [
+        "KeyManagementService is now generated from its Smithy model. There are no changes to the public API.",
+        "The DescribeCustomKeyStores, ListAliases, ListGrants, ListKeyPolicies, ListKeyRotations, ListKeys, ListResourceTags and ListRetirableGrants paginators now stop when the response carries no NextMarker instead of checking the Truncated flag; the service omits NextMarker on the last page."
+      ]
+    },
+    {
+      "serviceName": "Kinesis",
+      "type": "patch",
+      "changeLogMessages": [
+        "Kinesis is now generated from its Smithy model. There are no changes to the public API.",
+        "The ListStreams paginator now stops when the response carries no NextToken instead of checking the HasMoreStreams flag."
+      ]
+    },
+    {
+      "serviceName": "KinesisFirehose",
+      "type": "patch",
+      "changeLogMessages": [
+        "KinesisFirehose is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "MachineLearning",
+      "type": "patch",
+      "changeLogMessages": [
+        "MachineLearning is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "Route53Domains",
+      "type": "patch",
+      "changeLogMessages": [
+        "Route53Domains is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "SimpleSystemsManagement",
+      "type": "patch",
+      "changeLogMessages": [
+        "SimpleSystemsManagement is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "SQS",
+      "type": "patch",
+      "changeLogMessages": [
+        "SQS is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "StorageGateway",
+      "type": "patch",
+      "changeLogMessages": [
+        "StorageGateway is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "TimestreamQuery",
+      "type": "patch",
+      "changeLogMessages": [
+        "TimestreamQuery is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "TimestreamWrite",
+      "type": "patch",
+      "changeLogMessages": [
+        "TimestreamWrite is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "WAF",
+      "type": "patch",
+      "changeLogMessages": [
+        "WAF is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "WAFRegional",
+      "type": "patch",
+      "changeLogMessages": [
+        "WAFRegional is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "WorkSpaces",
+      "type": "patch",
+      "changeLogMessages": [
+        "WorkSpaces is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    }
+  ]
+}
