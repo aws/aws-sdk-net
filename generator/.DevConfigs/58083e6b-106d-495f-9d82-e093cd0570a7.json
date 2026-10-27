@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Create and cache S3 Express sessions using the credentials of the requesting client."
+      ]
+    }
+  ]
+}

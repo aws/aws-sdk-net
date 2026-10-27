@@ -16,6 +16,7 @@
 using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+using Amazon.S3.Model;
 using Amazon.S3.Util;
 using System.Threading.Tasks;
 
@@ -48,6 +49,9 @@ namespace Amazon.S3.Internal.S3Express
         /// </param>
         protected static void PreInvoke(IExecutionContext executionContext)
         {
+            if (executionContext.RequestContext.OriginalRequest is CreateSessionRequest { SigningCredentials: not null } createSession)
+                executionContext.RequestContext.Identity = createSession.SigningCredentials;
+
             var config = (AmazonS3Config)executionContext.RequestContext.ClientConfig;
             if (ShouldSign(executionContext.RequestContext, config))
             {
@@ -74,7 +78,10 @@ namespace Amazon.S3.Internal.S3Express
         /// <param name="config">S3 Configuration Object</param>
         private static void PreSignRequest(IRequestContext requestContext, AmazonS3Config config)
         {
-            var sessionCredentials = config.S3ExpressCredentialProvider.ResolveSessionCredentials(GetRequestBucketName(requestContext.Request));
+            var bucketName = GetRequestBucketName(requestContext.Request);
+            var sessionCredentials = config.S3ExpressCredentialProvider is DefaultS3ExpressCredentialProvider defaultProvider
+                ? defaultProvider.ResolveSessionCredentials(bucketName, (AWSCredentials)requestContext.Identity)
+                : config.S3ExpressCredentialProvider.ResolveSessionCredentials(bucketName);
             if (sessionCredentials == null) 
             {
                 // Couldn't resolve session credentials, fallback to regular authentication
@@ -107,6 +114,9 @@ namespace Amazon.S3.Internal.S3Express
         /// </param>
         protected static async System.Threading.Tasks.Task PreInvokeAsync(IExecutionContext executionContext)
         {
+            if (executionContext.RequestContext.OriginalRequest is CreateSessionRequest { SigningCredentials: not null } createSession)
+                executionContext.RequestContext.Identity = createSession.SigningCredentials;
+
             var config = (AmazonS3Config)executionContext.RequestContext.ClientConfig;
             if (ShouldSign(executionContext.RequestContext, config))
             {
@@ -121,9 +131,10 @@ namespace Amazon.S3.Internal.S3Express
         /// <param name="config">S3 Configuration Object</param>
         private static async Task PreSignRequestAsync(IRequestContext requestContext, AmazonS3Config config)
         {
-            var sessionCredentials = await config.S3ExpressCredentialProvider
-                    .ResolveSessionCredentialsAsync(GetRequestBucketName(requestContext.Request))
-                    .ConfigureAwait(false);
+            var bucketName = GetRequestBucketName(requestContext.Request);
+            var sessionCredentials = config.S3ExpressCredentialProvider is DefaultS3ExpressCredentialProvider defaultProvider
+                ? await defaultProvider.ResolveSessionCredentialsAsync(bucketName, (AWSCredentials)requestContext.Identity).ConfigureAwait(false)
+                : await config.S3ExpressCredentialProvider.ResolveSessionCredentialsAsync(bucketName).ConfigureAwait(false);
             if (sessionCredentials == null)
             {
                 // Couldn't resolve session credentials, fallback to regular authentication

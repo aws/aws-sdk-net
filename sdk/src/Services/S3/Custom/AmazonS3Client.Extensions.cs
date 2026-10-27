@@ -80,6 +80,13 @@ namespace Amazon.S3
             base.Initialize();
         }
 
+        internal AWSCredentials ResolveCredentials()
+        {
+            return ExplicitAWSCredentials ??
+                Config.DefaultAWSCredentials ??
+                DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
+        }
+
         /// <summary>
         /// Create a signed URL allowing access to a resource that would 
         /// usually require authentication.
@@ -103,10 +110,7 @@ namespace Amazon.S3
         /// <exception cref="T:System.ArgumentNullException" />
         internal string GetPreSignedURLInternal(GetPreSignedUrlRequest request)
         {
-            var credentials = 
-                ExplicitAWSCredentials ??
-                Config.DefaultAWSCredentials ?? 
-                DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
+            var credentials = ResolveCredentials();
 
             if(credentials == null)
                 throw new AmazonS3Exception("Credentials must be specified, cannot call method anonymously");
@@ -135,7 +139,9 @@ namespace Amazon.S3
             if (context.RequestContext.Request.IsDirectoryBucket() && !expressConfig.DisableS3ExpressSessionAuth)
             {
                 ConvertToS3Express(immutableCredentials, context, ref signatureVersionToUse, expressConfig);
-                var s3ExpressCredentials = expressConfig.S3ExpressCredentialProvider.ResolveSessionCredentials(request.BucketName);
+                var s3ExpressCredentials = expressConfig.S3ExpressCredentialProvider is DefaultS3ExpressCredentialProvider defaultProvider
+                    ? defaultProvider.ResolveSessionCredentials(request.BucketName, credentials)
+                    : expressConfig.S3ExpressCredentialProvider.ResolveSessionCredentials(request.BucketName);
 
                 // Only use SessionCredentials if it was resolved correctly.
                 // Otherwise skip overriding ImmutableCredentials and use the regular credentials.
@@ -174,10 +180,7 @@ namespace Amazon.S3
         [SuppressMessage("AWSSDKRules", "CR1004")]
         internal async Task<string> GetPreSignedURLInternalAsync(GetPreSignedUrlRequest request)
         {
-            var credentials = 
-                ExplicitAWSCredentials ??
-                Config.DefaultAWSCredentials ?? 
-                DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
+            var credentials = ResolveCredentials();
 
             if (credentials == null)
                 throw new AmazonS3Exception("Credentials must be specified, cannot call method anonymously");
@@ -206,7 +209,9 @@ namespace Amazon.S3
             if (context.RequestContext.Request.IsDirectoryBucket() && !expressConfig.DisableS3ExpressSessionAuth)
             {
                 ConvertToS3Express(immutableCredentials, context, ref signatureVersionToUse, expressConfig);
-                var s3ExpressCredentials = await expressConfig.S3ExpressCredentialProvider.ResolveSessionCredentialsAsync(request.BucketName).ConfigureAwait(false);
+                var s3ExpressCredentials = expressConfig.S3ExpressCredentialProvider is DefaultS3ExpressCredentialProvider defaultProvider
+                    ? await defaultProvider.ResolveSessionCredentialsAsync(request.BucketName, credentials).ConfigureAwait(false)
+                    : await expressConfig.S3ExpressCredentialProvider.ResolveSessionCredentialsAsync(request.BucketName).ConfigureAwait(false);
 
                 irequest.Parameters.Add(HeaderKeys.XAmzS3ExpressSessionTokenQueryParam, s3ExpressCredentials.SessionToken);
                 immutableCredentials = new ImmutableCredentials(s3ExpressCredentials.AccessKeyId, s3ExpressCredentials.SecretAccessKey, null);
