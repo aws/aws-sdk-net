@@ -777,7 +777,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             List<ConsumedCapacity> consumedCapacity;
             try
             {
-#if NETSTANDARD
+#if !NETFRAMEWORK
                 // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
                 var internalClient = Items[0].TransactionPart.TargetTable.DDBClient as AmazonDynamoDBClient;
                 if (internalClient == null)

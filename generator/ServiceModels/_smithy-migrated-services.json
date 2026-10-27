@@ -121,6 +121,7 @@
     "DirectoryServiceData",
     "DocDBElastic",
     "Drs",
+    "DynamoDBv2",
     "EBS",
     "EC2InstanceConnect",
     "ECR",
