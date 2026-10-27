@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Return the streaming JSON reader's pooled buffer once the root value has been read, and dispose the unmarshaller context for non-streaming responses, so JSON responses no longer allocate a fresh buffer per request."
+    ],
+    "type": "patch",
+    "updateMinimum": false
+  }
+}
