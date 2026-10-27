@@ -4,7 +4,7 @@
     <property>Amazon.DynamoDBv2.Model.CreateBackupRequest.BackupName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.CreateBackupRequest.TableName</property>
@@ -15,7 +15,7 @@
     <property>Amazon.DynamoDBv2.Model.CreateGlobalTableRequest.GlobalTableName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.CreateTableRequest.GlobalTableSourceArn</property>
@@ -71,7 +71,7 @@
     <property>Amazon.DynamoDBv2.Model.DescribeContributorInsightsRequest.IndexName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.DescribeContributorInsightsRequest.TableName</property>
@@ -82,13 +82,13 @@
     <property>Amazon.DynamoDBv2.Model.DescribeContributorInsightsResponse.IndexName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.DescribeContributorInsightsResponse.TableName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.DescribeExportRequest.ExportArn</property>
@@ -99,19 +99,19 @@
     <property>Amazon.DynamoDBv2.Model.DescribeGlobalTableRequest.GlobalTableName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.DescribeGlobalTableSettingsRequest.GlobalTableName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.DescribeGlobalTableSettingsResponse.GlobalTableName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.DescribeImportRequest.ImportArn</property>
@@ -127,7 +127,7 @@
     <property>Amazon.DynamoDBv2.Model.DescribeKinesisStreamingDestinationResponse.TableName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.DescribeLimitsResponse.AccountMaxReadCapacityUnits</property>
@@ -179,7 +179,7 @@
     <property>Amazon.DynamoDBv2.Model.DisableKinesisStreamingDestinationResponse.TableName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.EnableKinesisStreamingDestinationRequest.StreamArn</property>
@@ -200,7 +200,7 @@
     <property>Amazon.DynamoDBv2.Model.EnableKinesisStreamingDestinationResponse.TableName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ExecuteStatementRequest.Limit</property>
@@ -232,15 +232,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ExportTableToPointInTimeRequest.S3Bucket</property>
+    <min>0</min>
     <max>255</max>
     <pattern>^[a-z0-9A-Z]+[\.\-\w]*[a-z0-9A-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ExportTableToPointInTimeRequest.S3BucketOwner</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ExportTableToPointInTimeRequest.S3Prefix</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -315,7 +317,7 @@
     <property>Amazon.DynamoDBv2.Model.ListGlobalTablesRequest.ExclusiveStartGlobalTableName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ListGlobalTablesRequest.Limit</property>
@@ -325,13 +327,13 @@
     <property>Amazon.DynamoDBv2.Model.ListGlobalTablesResponse.LastEvaluatedGlobalTableName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ListImportsRequest.NextToken</property>
     <min>112</min>
     <max>1024</max>
-    <pattern>([0-9a-f]{16})+</pattern>
+    <pattern>^([0-9a-f]{16})+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ListImportsRequest.PageSize</property>
@@ -347,13 +349,13 @@
     <property>Amazon.DynamoDBv2.Model.ListImportsResponse.NextToken</property>
     <min>112</min>
     <max>1024</max>
-    <pattern>([0-9a-f]{16})+</pattern>
+    <pattern>^([0-9a-f]{16})+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ListTablesRequest.ExclusiveStartTableName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ListTablesRequest.Limit</property>
@@ -364,7 +366,7 @@
     <property>Amazon.DynamoDBv2.Model.ListTablesResponse.LastEvaluatedTableName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ListTagsOfResourceRequest.ResourceArn</property>
@@ -395,7 +397,7 @@
     <property>Amazon.DynamoDBv2.Model.QueryRequest.IndexName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.QueryRequest.Limit</property>
@@ -415,7 +417,7 @@
     <property>Amazon.DynamoDBv2.Model.RestoreTableFromBackupRequest.TargetTableName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.RestoreTableToPointInTimeRequest.SourceTableArn</property>
@@ -426,19 +428,19 @@
     <property>Amazon.DynamoDBv2.Model.RestoreTableToPointInTimeRequest.SourceTableName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.RestoreTableToPointInTimeRequest.TargetTableName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ScanRequest.IndexName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ScanRequest.Limit</property>
@@ -463,7 +465,7 @@
     <property>Amazon.DynamoDBv2.Model.SearchVectorsRequest.IndexName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.SearchVectorsRequest.TableName</property>
@@ -498,7 +500,7 @@
     <property>Amazon.DynamoDBv2.Model.UpdateContributorInsightsRequest.IndexName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.UpdateContributorInsightsRequest.TableName</property>
@@ -509,25 +511,25 @@
     <property>Amazon.DynamoDBv2.Model.UpdateContributorInsightsResponse.IndexName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.UpdateContributorInsightsResponse.TableName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.UpdateGlobalTableRequest.GlobalTableName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.UpdateGlobalTableSettingsRequest.GlobalTableName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.UpdateGlobalTableSettingsRequest.GlobalTableProvisionedWriteCapacityUnits</property>
@@ -537,7 +539,7 @@
     <property>Amazon.DynamoDBv2.Model.UpdateGlobalTableSettingsResponse.GlobalTableName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.UpdateItemRequest.TableName</property>
@@ -563,7 +565,7 @@
     <property>Amazon.DynamoDBv2.Model.UpdateKinesisStreamingDestinationResponse.TableName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.UpdateTableRequest.TableName</property>
@@ -630,7 +632,7 @@
     <property>Amazon.DynamoDBv2.Model.BackupDetails.BackupName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.BackupDetails.BackupSizeBytes</property>
@@ -645,7 +647,7 @@
     <property>Amazon.DynamoDBv2.Model.BackupSummary.BackupName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.BackupSummary.BackupSizeBytes</property>
@@ -658,13 +660,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.BackupSummary.TableId</property>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.BackupSummary.TableName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.BatchStatementRequest.Statement</property>
@@ -675,7 +677,7 @@
     <property>Amazon.DynamoDBv2.Model.BatchStatementResponse.TableName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ConditionCheck.TableName</property>
@@ -691,19 +693,19 @@
     <property>Amazon.DynamoDBv2.Model.ContributorInsightsSummary.IndexName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ContributorInsightsSummary.TableName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.CreateGlobalSecondaryIndexAction.IndexName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.CreateVectorIndexAction.Dimensions</property>
@@ -713,13 +715,13 @@
     <property>Amazon.DynamoDBv2.Model.CreateVectorIndexAction.IndexName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.CsvOptions.Delimiter</property>
     <min>1</min>
     <max>1</max>
-    <pattern>[,;:|\t ]</pattern>
+    <pattern>^[,;:|\t ]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.Delete.TableName</property>
@@ -730,13 +732,13 @@
     <property>Amazon.DynamoDBv2.Model.DeleteGlobalSecondaryIndexAction.IndexName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.DeleteVectorIndexAction.IndexName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ExportDescription.BilledSizeBytes</property>
@@ -757,15 +759,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ExportDescription.S3Bucket</property>
+    <min>0</min>
     <max>255</max>
     <pattern>^[a-z0-9A-Z]+[\.\-\w]*[a-z0-9A-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ExportDescription.S3BucketOwner</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ExportDescription.S3Prefix</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -780,7 +784,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ExportDescription.TableId</property>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ExportSummary.ExportArn</property>
@@ -796,25 +800,25 @@
     <property>Amazon.DynamoDBv2.Model.GlobalSecondaryIndex.IndexName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.GlobalSecondaryIndexAutoScalingUpdate.IndexName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.GlobalSecondaryIndexDescription.IndexName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.GlobalSecondaryIndexInfo.IndexName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.GlobalSecondaryIndexWarmThroughputDescription.ReadUnitsPerSecond</property>
@@ -828,19 +832,19 @@
     <property>Amazon.DynamoDBv2.Model.GlobalTable.GlobalTableName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.GlobalTableDescription.GlobalTableName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.GlobalTableGlobalSecondaryIndexSettingsUpdate.IndexName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.GlobalTableGlobalSecondaryIndexSettingsUpdate.ProvisionedWriteCapacityUnits</property>
@@ -894,7 +898,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ImportTableDescription.TableId</property>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.KeySchemaElement.AttributeName</property>
@@ -910,19 +914,19 @@
     <property>Amazon.DynamoDBv2.Model.LocalSecondaryIndex.IndexName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.LocalSecondaryIndexDescription.IndexName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.LocalSecondaryIndexInfo.IndexName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ParameterizedStatement.Statement</property>
@@ -972,31 +976,31 @@
     <property>Amazon.DynamoDBv2.Model.ReplicaGlobalSecondaryIndex.IndexName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ReplicaGlobalSecondaryIndexAutoScalingDescription.IndexName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ReplicaGlobalSecondaryIndexAutoScalingUpdate.IndexName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ReplicaGlobalSecondaryIndexDescription.IndexName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ReplicaGlobalSecondaryIndexSettingsDescription.IndexName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ReplicaGlobalSecondaryIndexSettingsDescription.ProvisionedReadCapacityUnits</property>
@@ -1010,7 +1014,7 @@
     <property>Amazon.DynamoDBv2.Model.ReplicaGlobalSecondaryIndexSettingsUpdate.IndexName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ReplicaGlobalSecondaryIndexSettingsUpdate.ProvisionedReadCapacityUnits</property>
@@ -1040,19 +1044,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.S3BucketSource.S3Bucket</property>
+    <min>0</min>
     <max>255</max>
     <pattern>^[a-z0-9A-Z]+[\.\-\w]*[a-z0-9A-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.S3BucketSource.S3BucketOwner</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.S3BucketSource.S3KeyPrefix</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.SearchSchemaElement.AttributeName</property>
+    <min>0</min>
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
@@ -1066,25 +1073,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.SourceTableDetails.TableId</property>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.SourceTableDetails.TableName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.TableAutoScalingDescription.TableName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.TableCreationParameters.TableName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.TableDescription.LatestStreamArn</property>
@@ -1093,13 +1100,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.TableDescription.TableId</property>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.TableDescription.TableName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.TableWarmThroughputDescription.ReadUnitsPerSecond</property>
@@ -1138,7 +1145,7 @@
     <property>Amazon.DynamoDBv2.Model.UpdateGlobalSecondaryIndexAction.IndexName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.VectorAttributeDefinition.AttributeName</property>
@@ -1153,7 +1160,7 @@
     <property>Amazon.DynamoDBv2.Model.VectorIndex.IndexName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.VectorIndexDescription.Dimensions</property>
@@ -1163,7 +1170,7 @@
     <property>Amazon.DynamoDBv2.Model.VectorIndexDescription.IndexName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.VectorIndexInfo.Dimensions</property>
@@ -1173,6 +1180,6 @@
     <property>Amazon.DynamoDBv2.Model.VectorIndexInfo.IndexName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
 </property-value-rules>

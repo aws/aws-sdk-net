@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -60,7 +60,7 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
             EnsureSimpleMethodExists(typeof(Amazon.DynamoDBv2.AmazonDynamoDBClient), "UpdateItem", new Type[] { typeof(string), typeof(Dictionary<string, AttributeValue>), typeof(Dictionary<string, AttributeValueUpdate>), typeof(ReturnValue), });
             EnsureSimpleMethodExists(typeof(Amazon.DynamoDBv2.AmazonDynamoDBClient), "UpdateTable", new Type[] { typeof(string), typeof(ProvisionedThroughput), });
         }
-        
+
         void EnsureSimpleMethodExists(Type type, string methodName, Type[] simpleParams)
         {
             Assert.IsNotNull(type.GetMethod(methodName, simpleParams), "Failed to find simple method " + methodName);

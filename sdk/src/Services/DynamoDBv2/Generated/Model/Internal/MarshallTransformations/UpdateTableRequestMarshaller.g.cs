@@ -1,0 +1,252 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+using System.Buffers;
+
+using Amazon.DynamoDBv2.Model;
+using System.Globalization;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// UpdateTable Request Marshaller
+    /// </summary>
+    public partial class UpdateTableRequestMarshaller : IMarshaller<IRequest, UpdateTableRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    {
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((UpdateTableRequest)input);
+        }
+
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(UpdateTableRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.DynamoDBv2");
+            string target = "DynamoDB_20120810.UpdateTable";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-08-10";
+            request.HttpMethod = "POST";
+
+            request.ResourcePath = "/";
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using var writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetAttributeDefinitions())
+            {
+                context.Writer.WritePropertyName("AttributeDefinitions");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestAttributeDefinitionsListValue in publicRequest.AttributeDefinitions)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AttributeDefinitionMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAttributeDefinitionsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetBillingMode())
+            {
+                context.Writer.WritePropertyName("BillingMode");
+                context.Writer.WriteStringValue(publicRequest.BillingMode);
+            }
+            if (publicRequest.IsSetDeletionProtectionEnabled())
+            {
+                context.Writer.WritePropertyName("DeletionProtectionEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.DeletionProtectionEnabled.Value);
+            }
+            if (publicRequest.IsSetDisassociationProtectionEnabled())
+            {
+                context.Writer.WritePropertyName("DisassociationProtectionEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.DisassociationProtectionEnabled.Value);
+            }
+            if (publicRequest.IsSetGlobalSecondaryIndexUpdates())
+            {
+                context.Writer.WritePropertyName("GlobalSecondaryIndexUpdates");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestGlobalSecondaryIndexUpdatesListValue in publicRequest.GlobalSecondaryIndexUpdates)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = GlobalSecondaryIndexUpdateMarshaller.Instance;
+                    marshaller.Marshall(publicRequestGlobalSecondaryIndexUpdatesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetGlobalTableSettingsReplicationMode())
+            {
+                context.Writer.WritePropertyName("GlobalTableSettingsReplicationMode");
+                context.Writer.WriteStringValue(publicRequest.GlobalTableSettingsReplicationMode);
+            }
+            if (publicRequest.IsSetGlobalTableWitnessUpdates())
+            {
+                context.Writer.WritePropertyName("GlobalTableWitnessUpdates");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestGlobalTableWitnessUpdatesListValue in publicRequest.GlobalTableWitnessUpdates)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = GlobalTableWitnessGroupUpdateMarshaller.Instance;
+                    marshaller.Marshall(publicRequestGlobalTableWitnessUpdatesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetMultiRegionConsistency())
+            {
+                context.Writer.WritePropertyName("MultiRegionConsistency");
+                context.Writer.WriteStringValue(publicRequest.MultiRegionConsistency);
+            }
+            if (publicRequest.IsSetOnDemandThroughput())
+            {
+                context.Writer.WritePropertyName("OnDemandThroughput");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OnDemandThroughputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.OnDemandThroughput, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetProvisionedThroughput())
+            {
+                context.Writer.WritePropertyName("ProvisionedThroughput");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ProvisionedThroughputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ProvisionedThroughput, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetReplicaUpdates())
+            {
+                context.Writer.WritePropertyName("ReplicaUpdates");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestReplicaUpdatesListValue in publicRequest.ReplicaUpdates)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ReplicationGroupUpdateMarshaller.Instance;
+                    marshaller.Marshall(publicRequestReplicaUpdatesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetSSESpecification())
+            {
+                context.Writer.WritePropertyName("SSESpecification");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SSESpecificationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SSESpecification, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetStreamSpecification())
+            {
+                context.Writer.WritePropertyName("StreamSpecification");
+                context.Writer.WriteStartObject();
+
+                var marshaller = StreamSpecificationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.StreamSpecification, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetTableClass())
+            {
+                context.Writer.WritePropertyName("TableClass");
+                context.Writer.WriteStringValue(publicRequest.TableClass);
+            }
+            if (publicRequest.IsSetTableName())
+            {
+                context.Writer.WritePropertyName("TableName");
+                context.Writer.WriteStringValue(publicRequest.TableName);
+            }
+            if (publicRequest.IsSetVectorIndexUpdates())
+            {
+                context.Writer.WritePropertyName("VectorIndexUpdates");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestVectorIndexUpdatesListValue in publicRequest.VectorIndexUpdates)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = VectorIndexUpdateMarshaller.Instance;
+                    marshaller.Marshall(publicRequestVectorIndexUpdatesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetWarmThroughput())
+            {
+                context.Writer.WritePropertyName("WarmThroughput");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WarmThroughputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.WarmThroughput, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETFRAMEWORK
+            request.Content = memoryStream.ToArray();
+#endif
+
+            return request;
+        }
+
+        private static readonly UpdateTableRequestMarshaller _instance = new();
+
+        internal static UpdateTableRequestMarshaller GetInstance() => _instance;
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static UpdateTableRequestMarshaller Instance => _instance;
+    }
+}
