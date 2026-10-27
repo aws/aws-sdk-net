@@ -14,52 +14,47 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudtrail-2013-11-01.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
-using System.Text;
-using System.Xml.Serialization;
-
-using Amazon.CloudTrail.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Text.Json;
 using System.Buffers;
+
+using Amazon.CloudTrail.Model;
+using System.Globalization;
 #if !NETFRAMEWORK
 using ThirdParty.RuntimeBackports;
 #endif
 #pragma warning disable CS0612,CS0618
+
 namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LookupEvents Request Marshaller
-    /// </summary>       
-    public class LookupEventsRequestMarshaller : IMarshaller<IRequest, LookupEventsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    /// </summary>
+    public partial class LookupEventsRequestMarshaller : IMarshaller<IRequest, LookupEventsRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
     {
         /// <summary>
-        /// Marshaller the request object to the HTTP request.
-        /// </summary>  
-        /// <param name="input"></param>
-        /// <returns></returns>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return this.Marshall((LookupEventsRequest)input);
         }
 
         /// <summary>
-        /// Marshaller the request object to the HTTP request.
-        /// </summary>  
-        /// <param name="publicRequest"></param>
-        /// <returns></returns>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
         public IRequest Marshall(LookupEventsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudTrail");
-            string target = "com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.LookupEvents";
+            string target = "CloudTrail_20131101.LookupEvents";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2013-11-01";
@@ -68,30 +63,28 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             request.ResourcePath = "/";
 #if !NETFRAMEWORK
             request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
 #else
             using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+            using var writer = new Utf8JsonWriter(memoryStream);
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetEndTime())
+            if (publicRequest.IsSetEndTime())
             {
                 context.Writer.WritePropertyName("EndTime");
                 context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.EndTime.Value));
             }
-
-            if(publicRequest.IsSetEventCategory())
+            if (publicRequest.IsSetEventCategory())
             {
                 context.Writer.WritePropertyName("EventCategory");
                 context.Writer.WriteStringValue(publicRequest.EventCategory);
             }
-
-            if(publicRequest.IsSetLookupAttributes())
+            if (publicRequest.IsSetLookupAttributes())
             {
                 context.Writer.WritePropertyName("LookupAttributes");
                 context.Writer.WriteStartArray();
-                foreach(var publicRequestLookupAttributesListValue in publicRequest.LookupAttributes)
+                foreach (var publicRequestLookupAttributesListValue in publicRequest.LookupAttributes)
                 {
                     context.Writer.WriteStartObject();
 
@@ -102,20 +95,17 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(publicRequest.IsSetMaxResults())
+            if (publicRequest.IsSetMaxResults())
             {
                 context.Writer.WritePropertyName("MaxResults");
                 context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
             }
-
-            if(publicRequest.IsSetNextToken())
+            if (publicRequest.IsSetNextToken())
             {
                 context.Writer.WritePropertyName("NextToken");
                 context.Writer.WriteStringValue(publicRequest.NextToken);
             }
-
-            if(publicRequest.IsSetStartTime())
+            if (publicRequest.IsSetStartTime())
             {
                 context.Writer.WritePropertyName("StartTime");
                 context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.StartTime.Value));
@@ -126,28 +116,17 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 #if NETFRAMEWORK
             request.Content = memoryStream.ToArray();
 #endif
-            
-
 
             return request;
         }
-        private static LookupEventsRequestMarshaller _instance = new LookupEventsRequestMarshaller();        
 
-        internal static LookupEventsRequestMarshaller GetInstance()
-        {
-            return _instance;
-        }
+        private static readonly LookupEventsRequestMarshaller _instance = new();
+
+        internal static LookupEventsRequestMarshaller GetInstance() => _instance;
 
         /// <summary>
         /// Gets the singleton.
-        /// </summary>  
-        public static LookupEventsRequestMarshaller Instance
-        {
-            get
-            {
-                return _instance;
-            }
-        }
-
+        /// </summary>
+        public static LookupEventsRequestMarshaller Instance => _instance;
     }
 }

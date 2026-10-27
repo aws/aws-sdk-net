@@ -14,29 +14,28 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
+
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// Base class for ListStreams paginators.
+    /// Paginator for the ListStreams operation
     /// </summary>
     internal sealed partial class ListStreamsPaginator : IPaginator<ListStreamsResponse>, IListStreamsPaginator
     {
         private readonly IAmazonKinesis _client;
         private readonly ListStreamsRequest _request;
         private int _isPaginatorInUse = 0;
-        
+
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
@@ -45,13 +44,13 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Enumerable containing all of the StreamNames
         /// </summary>
-        public IPaginatedEnumerable<string> StreamNames => 
+        public IPaginatedEnumerable<string> StreamNames =>
             new PaginatedResultKeyResponse<ListStreamsResponse, string>(this, (i) => i.StreamNames ?? new List<string>());
 
         /// <summary>
         /// Enumerable containing all of the StreamSummaries
         /// </summary>
-        public IPaginatedEnumerable<StreamSummary> StreamSummaries => 
+        public IPaginatedEnumerable<StreamSummary> StreamSummaries =>
             new PaginatedResultKeyResponse<ListStreamsResponse, StreamSummary>(this, (i) => i.StreamSummaries ?? new List<StreamSummary>());
 
         internal ListStreamsPaginator(IAmazonKinesis client, ListStreamsRequest request)
@@ -59,7 +58,7 @@ namespace Amazon.Kinesis.Model
             this._client = client;
             this._request = request;
         }
-#if BCL
+#if NETFRAMEWORK
         IEnumerable<ListStreamsResponse> IPaginator<ListStreamsResponse>.Paginate()
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
@@ -76,7 +75,7 @@ namespace Amazon.Kinesis.Model
                 nextToken = response.NextToken;
                 yield return response;
             }
-            while (response.HasMoreStreams.GetValueOrDefault());
+            while (!string.IsNullOrEmpty(nextToken));
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
@@ -97,7 +96,7 @@ namespace Amazon.Kinesis.Model
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;
             }
-            while (response.HasMoreStreams.GetValueOrDefault());
+            while (!string.IsNullOrEmpty(nextToken));
         }
 #endif
     }

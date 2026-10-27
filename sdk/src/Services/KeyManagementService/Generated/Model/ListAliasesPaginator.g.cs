@@ -14,84 +14,83 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
-namespace Amazon.DataPipeline.Model
+
+namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// Base class for ListPipelines paginators.
+    /// Paginator for the ListAliases operation
     /// </summary>
-    internal sealed partial class ListPipelinesPaginator : IPaginator<ListPipelinesResponse>, IListPipelinesPaginator
+    internal sealed partial class ListAliasesPaginator : IPaginator<ListAliasesResponse>, IListAliasesPaginator
     {
-        private readonly IAmazonDataPipeline _client;
-        private readonly ListPipelinesRequest _request;
+        private readonly IAmazonKeyManagementService _client;
+        private readonly ListAliasesRequest _request;
         private int _isPaginatorInUse = 0;
-        
+
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        public IPaginatedEnumerable<ListPipelinesResponse> Responses => new PaginatedResponse<ListPipelinesResponse>(this);
+        public IPaginatedEnumerable<ListAliasesResponse> Responses => new PaginatedResponse<ListAliasesResponse>(this);
 
         /// <summary>
-        /// Enumerable containing all of the PipelineIdList
+        /// Enumerable containing all of the Aliases
         /// </summary>
-        public IPaginatedEnumerable<PipelineIdName> PipelineIdList => 
-            new PaginatedResultKeyResponse<ListPipelinesResponse, PipelineIdName>(this, (i) => i.PipelineIdList ?? new List<PipelineIdName>());
+        public IPaginatedEnumerable<AliasListEntry> Aliases =>
+            new PaginatedResultKeyResponse<ListAliasesResponse, AliasListEntry>(this, (i) => i.Aliases ?? new List<AliasListEntry>());
 
-        internal ListPipelinesPaginator(IAmazonDataPipeline client, ListPipelinesRequest request)
+        internal ListAliasesPaginator(IAmazonKeyManagementService client, ListAliasesRequest request)
         {
             this._client = client;
             this._request = request;
         }
-#if BCL
-        IEnumerable<ListPipelinesResponse> IPaginator<ListPipelinesResponse>.Paginate()
+#if NETFRAMEWORK
+        IEnumerable<ListAliasesResponse> IPaginator<ListAliasesResponse>.Paginate()
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
-            var marker = _request.Marker;
-            ListPipelinesResponse response;
+            var nextToken = _request.Marker;
+            ListAliasesResponse response;
             do
             {
-                _request.Marker = marker;
-                response = _client.ListPipelines(_request);
-                marker = response.Marker;
+                _request.Marker = nextToken;
+                response = _client.ListAliases(_request);
+                nextToken = response.NextMarker;
                 yield return response;
             }
-            while (response.HasMoreResults.GetValueOrDefault());
+            while (!string.IsNullOrEmpty(nextToken));
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListPipelinesResponse> IPaginator<ListPipelinesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
+        async IAsyncEnumerable<ListAliasesResponse> IPaginator<ListAliasesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
-            var marker = _request.Marker;
-            ListPipelinesResponse response;
+            var nextToken = _request.Marker;
+            ListAliasesResponse response;
             do
             {
-                _request.Marker = marker;
-                response = await _client.ListPipelinesAsync(_request, cancellationToken).ConfigureAwait(false);
-                marker = response.Marker;
+                _request.Marker = nextToken;
+                response = await _client.ListAliasesAsync(_request, cancellationToken).ConfigureAwait(false);
+                nextToken = response.NextMarker;
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;
             }
-            while (response.HasMoreResults.GetValueOrDefault());
+            while (!string.IsNullOrEmpty(nextToken));
         }
 #endif
     }
