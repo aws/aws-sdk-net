@@ -12,7 +12,6 @@ extensions\CborProtocol\System.Runtime.CompilerServices.Unsafe.dll
 extensions\CborProtocol\System.Text.Encodings.Web.dll
 extensions\CborProtocol\System.Text.Json.dll
 extensions\CborProtocol\System.Threading.Tasks.Extensions.dll
-extensions\CborProtocol\System.ValueTuple.dll
 extensions\CloudFrontSigners\AWSSDK.Extensions.CloudFront.Signers.dll
 extensions\CloudFrontSigners\BouncyCastle.Cryptography.dll
 extensions\CloudFrontSigners\Microsoft.Bcl.AsyncInterfaces.dll
