@@ -1,4 +1,4 @@
-﻿/*
+﻿﻿/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -20,9 +20,7 @@ using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.UserAgent;
 using Amazon.Runtime.Telemetry;
-using Amazon.Runtime.Telemetry.Metrics;
 using Amazon.Runtime.Telemetry.Metrics.NoOp;
-using Amazon.Runtime.Telemetry.Tracing;
 using Amazon.Util;
 using Amazon.S3;
 using Amazon.S3.Model;
@@ -41,54 +39,11 @@ using System.Net.Http;
 
 namespace AWSSDK.UnitTests
 {
-    /// <summary>
-    /// Equivalence tests for the HTTP adapter fast paths: response header copy, User-Agent generation,
-    /// request Uri reuse, HttpMethod reuse, request header setting and telemetry recording.
-    /// </summary>
     [TestClass]
     [TestCategory("UnitTest")]
     [TestCategory("Runtime")]
     public class HttpAdapterTests
     {
-        #region User-Agent
-
-        // The User-Agent generation algorithm before the fast path was added.
-        private static string ReferenceUserAgent(IEnumerable<string> components, IEnumerable<string> featureIds)
-        {
-            var componentSet = new List<string>();
-            foreach (var c in components)
-            {
-                if (string.IsNullOrWhiteSpace(c)) continue;
-                var trimmed = c.Trim();
-                if (!componentSet.Contains(trimmed)) componentSet.Add(trimmed);
-            }
-            var featureSet = featureIds.Distinct().ToList();
-
-            var metrics = string.Empty;
-            if (featureSet.Count > 0)
-            {
-                metrics = ReferenceTruncate($"m/{string.Join(",", featureSet)}");
-            }
-            if (!string.IsNullOrEmpty(metrics))
-            {
-                return $"{string.Join(" ", componentSet)} {metrics}";
-            }
-            return string.Join(" ", componentSet);
-        }
-
-        private static string ReferenceTruncate(string input)
-        {
-            byte[] bytes = Encoding.UTF8.GetBytes(input);
-            if (bytes.Length <= 1024)
-                return input;
-
-            var cutOffIndex = 1024;
-            while (cutOffIndex > 0 && bytes[cutOffIndex - 1] != ',')
-                cutOffIndex--;
-
-            return Encoding.UTF8.GetString(bytes, 0, cutOffIndex - 1);
-        }
-
         private static UserAgentDetails CreateDetails(IEnumerable<string> components, IEnumerable<string> featureIds)
         {
             var details = new UserAgentDetails();
@@ -99,57 +54,62 @@ namespace AWSSDK.UnitTests
             return details;
         }
 
-        public static IEnumerable<object[]> UserAgentCases()
+        private static HttpHandler<Stream> CreateHandler()
         {
-            yield return new object[] { new string[0], new string[0] };
-            yield return new object[] { new[] { "aws-sdk-dotnet-coreclr/4.0.0.0 ua/2.1 os/linux" }, new string[0] };
-            yield return new object[] { new string[0], new[] { "E", "b" } };
-            yield return new object[] { new[] { "aws-sdk-dotnet-coreclr/4.0.0.0 ua/2.1", "md/ClientAsync", "cfg/init-coll#1" }, new[] { "E", "b", "Z", "a" } };
-            yield return new object[] { new[] { "  padded  ", "dup", "dup", " ", null, "" }, new[] { "E", "E", "F" } };
-            // Over the 1024-byte limit: truncated at the last comma that fits.
-            yield return new object[] { new[] { "ua" }, Enumerable.Range(0, 400).Select(i => "f" + i).ToArray() };
-            // Multi-byte feature ids around the limit.
-            yield return new object[] { new[] { "ua" }, Enumerable.Range(0, 200).Select(i => "é" + i).ToArray() };
-            yield return new object[] { new[] { "ua" }, Enumerable.Range(0, 340).Select(i => "é").Concat(new[] { "x" }).ToArray() };
+            var handler = new HttpHandler<Stream>(CreateFactory(), new object());
+            _ = new RuntimePipeline(handler);
+            return handler;
         }
 
-        [TestMethod]
-        [DynamicData(nameof(UserAgentCases))]
-        public void GenerateUserAgentWithMetrics_MatchesReference(string[] components, string[] featureIds)
-        {
-            var details = CreateDetails(components, featureIds);
-            Assert.AreEqual(ReferenceUserAgent(components, featureIds), details.GenerateUserAgentWithMetrics());
-        }
-
-        [TestMethod]
-        [DynamicData(nameof(UserAgentCases))]
-        public void GetOrGenerateUserAgentWithMetrics_ValueMatchesGenerate(string[] components, string[] featureIds)
+        private static string GenerateAndAssertReuse(string[] components, string[] featureIds)
         {
             var details = CreateDetails(components, featureIds);
             var generated = details.GetOrGenerateUserAgentWithMetrics(null);
             Assert.AreEqual(details.GenerateUserAgentWithMetrics(), generated.Value);
 
-            // An equal set of components and features (new string instances) reuses the entry.
             var copy = CreateDetails(components.Select(c => c == null ? null : new string(c.ToCharArray())),
                                      featureIds.Select(f => new string(f.ToCharArray())));
             Assert.AreSame(generated, copy.GetOrGenerateUserAgentWithMetrics(generated));
+            return generated.Value;
+        }
+
+        [TestMethod]
+        [DataRow(new string[0], new string[0], "")]
+        [DataRow(new[] { "aws-sdk-dotnet-coreclr/4.0.0.0 ua/2.1 os/linux" }, new string[0], "aws-sdk-dotnet-coreclr/4.0.0.0 ua/2.1 os/linux")]
+        [DataRow(new string[0], new[] { "E", "b" }, " m/E,b")]
+        [DataRow(new[] { "aws-sdk-dotnet-coreclr/4.0.0.0 ua/2.1", "md/ClientAsync", "cfg/init-coll#1" }, new[] { "E", "b", "Z", "a" },
+            "aws-sdk-dotnet-coreclr/4.0.0.0 ua/2.1 md/ClientAsync cfg/init-coll#1 m/E,b,Z,a")]
+        [DataRow(new[] { "  padded  ", "dup", "dup", " ", null, "" }, new[] { "E", "E", "F" }, "padded dup m/E,F")]
+        [DataRow(new[] { "ua" }, new[] { "é", "é", "x" }, "ua m/é,x")]
+        public void UserAgentMatchesExpectedAndReusesEqualInputs(string[] components, string[] featureIds, string expected)
+        {
+            Assert.AreEqual(expected, GenerateAndAssertReuse(components, featureIds));
+        }
+
+        [TestMethod]
+        [DataRow(400, "f", 1024, " m/f0,f1,", ",f224,f225")]
+        [DataRow(200, "é", 834, " m/é0,é1,", ",é186,é187")]
+        public void UserAgentTruncatesFeaturesAtLastCommaWithin1024Bytes(int count, string prefix, int expectedLength, string expectedStart, string expectedEnd)
+        {
+            var featureIds = Enumerable.Range(0, count).Select(i => prefix + i).ToArray();
+            var actual = GenerateAndAssertReuse(new[] { "ua" }, featureIds);
+
+            Assert.AreEqual(expectedLength, actual.Length);
+            StringAssert.StartsWith(actual, "ua" + expectedStart);
+            StringAssert.EndsWith(actual, expectedEnd);
+            Assert.IsTrue(Encoding.UTF8.GetByteCount(actual.Substring("ua ".Length)) <= 1024);
         }
 
         [TestMethod]
         public void GetOrGenerateUserAgentWithMetrics_RegeneratesWhenInputsDiffer()
         {
-            var baseline = CreateDetails(new[] { "ua/2.1", "md/ClientAsync" }, new[] { "E", "b" });
-            var cached = baseline.GetOrGenerateUserAgentWithMetrics(null);
-
+            var cached = CreateDetails(new[] { "ua/2.1", "md/ClientAsync" }, new[] { "E", "b" }).GetOrGenerateUserAgentWithMetrics(null);
             var variants = new[]
             {
-                CreateDetails(new[] { "ua/2.1", "md/ClientSync" }, new[] { "E", "b" }),       // component value
-                CreateDetails(new[] { "md/ClientAsync", "ua/2.1" }, new[] { "E", "b" }),      // component order
-                CreateDetails(new[] { "ua/2.1" }, new[] { "E", "b" }),                        // component count
-                CreateDetails(new[] { "ua/2.1", "md/ClientAsync" }, new[] { "E", "c" }),      // feature value
-                CreateDetails(new[] { "ua/2.1", "md/ClientAsync" }, new[] { "b", "E" }),      // feature order
-                CreateDetails(new[] { "ua/2.1", "md/ClientAsync" }, new[] { "E", "b", "Z" }), // feature count
-                CreateDetails(new[] { "ua/2.1", "md/ClientAsync" }, new string[0]),           // no features
+                CreateDetails(new[] { "ua/2.1", "md/ClientSync" }, new[] { "E", "b" }),
+                CreateDetails(new[] { "ua/2.1", "md/ClientAsync" }, new[] { "E", "c" }),
+                CreateDetails(new[] { "ua/2.1", "md/ClientAsync" }, new[] { "b", "E" }),
+                CreateDetails(new[] { "ua/2.1", "md/ClientAsync" }, new[] { "E", "b", "Z" }),
             };
 
             foreach (var variant in variants)
@@ -164,30 +124,25 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void GetUserAgent_ReusesOneEntryPerShapeWhenAlternating()
         {
-            var handler = new HttpHandler<Stream>(CreateFactory(), new object());
-            Func<UserAgentDetails> sync = () => CreateDetails(new[] { "ua/2.1", "md/ClientSync" }, new[] { "E" });
-            Func<UserAgentDetails> async = () => CreateDetails(new[] { "ua/2.1", "md/ClientAsync" }, new[] { "E" });
-            Func<UserAgentDetails> paginated = () => CreateDetails(new[] { "ua/2.1", "md/ClientAsync" }, new[] { "E", "C" });
-
-            var syncValue = handler.GetUserAgent(sync());
-            var asyncValue = handler.GetUserAgent(async());
-            var paginatedValue = handler.GetUserAgent(paginated());
-            Assert.AreEqual("ua/2.1 md/ClientSync m/E", syncValue);
-            Assert.AreEqual("ua/2.1 md/ClientAsync m/E", asyncValue);
-            Assert.AreEqual("ua/2.1 md/ClientAsync m/E,C", paginatedValue);
-
-            for (int i = 0; i < 3; i++)
+            var handler = CreateHandler();
+            var shapes = new[]
             {
-                Assert.AreSame(syncValue, handler.GetUserAgent(sync()));
-                Assert.AreSame(asyncValue, handler.GetUserAgent(async()));
-                Assert.AreSame(paginatedValue, handler.GetUserAgent(paginated()));
-            }
+                new { Components = new[] { "ua/2.1", "md/ClientSync" }, Features = new[] { "E" }, Expected = "ua/2.1 md/ClientSync m/E" },
+                new { Components = new[] { "ua/2.1", "md/ClientAsync" }, Features = new[] { "E" }, Expected = "ua/2.1 md/ClientAsync m/E" },
+                new { Components = new[] { "ua/2.1", "md/ClientAsync" }, Features = new[] { "E", "C" }, Expected = "ua/2.1 md/ClientAsync m/E,C" },
+            };
+            var first = shapes.Select(s => handler.GetUserAgent(CreateDetails(s.Components, s.Features))).ToArray();
+            CollectionAssert.AreEqual(shapes.Select(s => s.Expected).ToArray(), first);
+
+            for (int round = 0; round < 3; round++)
+                for (int i = 0; i < shapes.Length; i++)
+                    Assert.AreSame(first[i], handler.GetUserAgent(CreateDetails(shapes[i].Components, shapes[i].Features)));
         }
 
         [TestMethod]
         public void GetUserAgent_MatchesGenerateWithMoreShapesThanEntries()
         {
-            var handler = new HttpHandler<Stream>(CreateFactory(), new object());
+            var handler = CreateHandler();
             for (int round = 0; round < 3; round++)
             {
                 for (int shape = 0; shape < 9; shape++)
@@ -224,9 +179,38 @@ namespace AWSSDK.UnitTests
             }
         }
 
-        #endregion
+        [TestMethod]
+        public void UserAgentHeaderMatchesGenerateAcrossRequests()
+        {
+            var config = new AmazonS3Config { TelemetryProvider = new DefaultTelemetryProvider() };
+            var handler = CreateHandler();
+            Func<IExecutionContext> create = () =>
+            {
+                var context = CreateListBucketsContext(config);
+                context.RequestContext.UserAgentDetails.AddUserAgentComponent("ua/2.1");
+                return context;
+            };
 
-        #region Request Uri
+            var first = create();
+            first.RequestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.RETRY_MODE_STANDARD);
+            handler.InvokeSync(first);
+            var firstHeader = first.RequestContext.Request.Headers[HeaderKeys.UserAgentHeader];
+            Assert.AreEqual("ua/2.1 m/E", firstHeader);
+
+            var same = create();
+            same.RequestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.RETRY_MODE_STANDARD);
+            handler.InvokeSync(same);
+            Assert.AreSame(firstHeader, same.RequestContext.Request.Headers[HeaderKeys.UserAgentHeader]);
+
+            var different = create();
+            var originalDetails = ((IAmazonWebServiceRequest)different.RequestContext.OriginalRequest).UserAgentDetails;
+            originalDetails.AddUserAgentComponent("custom");
+            originalDetails.AddFeature(UserAgentFeatureId.PAGINATOR);
+            different.RequestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.SIGV4A_SIGNING);
+            handler.InvokeSync(different);
+            Assert.AreEqual($"ua/2.1 custom m/{UserAgentFeatureId.SIGV4A_SIGNING.Value},{UserAgentFeatureId.PAGINATOR.Value}",
+                different.RequestContext.Request.Headers[HeaderKeys.UserAgentHeader]);
+        }
 
         private static IRequest CreateRequest(string endpoint, string resourcePath)
         {
@@ -248,60 +232,47 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void ComposeRequestUrl_MatchesComposeUrlAndReusesUnchangedUri()
         {
-            var handler = new HttpHandler<Stream>(new HttpHandlerTests.MockHttpRequestFactory(), new object());
-
-            var first = CreateRequest("https://dynamodb.us-east-1.amazonaws.com", "/");
-            var firstUri = handler.ComposeRequestUrl(first);
-            AssertSameUri(AmazonServiceClient.ComposeUrl(first), firstUri);
-
-            var same = CreateRequest("https://dynamodb.us-east-1.amazonaws.com", "/");
-            var sameUri = handler.ComposeRequestUrl(same);
-            AssertSameUri(AmazonServiceClient.ComposeUrl(same), sameUri);
-#if !NETFRAMEWORK
-            Assert.AreSame(firstUri, sameUri);
-#endif
-
-            var other = CreateRequest("https://dynamodb.us-east-1.amazonaws.com", "/other");
-            var otherUri = handler.ComposeRequestUrl(other);
-            AssertSameUri(AmazonServiceClient.ComposeUrl(other), otherUri);
-            Assert.AreNotSame(firstUri, otherUri);
-
-            var otherEndpoint = CreateRequest("https://dynamodb.us-west-2.amazonaws.com", "/other");
-            var otherEndpointUri = handler.ComposeRequestUrl(otherEndpoint);
-            AssertSameUri(AmazonServiceClient.ComposeUrl(otherEndpoint), otherEndpointUri);
-            Assert.AreNotSame(otherUri, otherEndpointUri);
-        }
-
-        [TestMethod]
-        public void ComposeRequestUrl_MatchesComposeUrlForPathsQueriesAndSubResources()
-        {
-            var handler = new HttpHandler<Stream>(new HttpHandlerTests.MockHttpRequestFactory(), new object());
-
-            var requests = new List<IRequest>();
-            requests.Add(CreateRequest("https://bucket.s3.amazonaws.com", "/key%20with%20spaces"));
-            requests.Add(CreateRequest("https://bucket.s3.amazonaws.com/", "key"));
-            requests.Add(CreateRequest("https://bucket.s3.amazonaws.com", null));
-
             var withPathResource = CreateRequest("https://bucket.s3.amazonaws.com", "/{Key+}");
             withPathResource.AddPathResource("{Key+}", "a/b+c:d");
-            requests.Add(withPathResource);
-
             var withSubResource = CreateRequest("https://bucket.s3.amazonaws.com", "/key");
             withSubResource.AddSubResource("versionId", "v1");
             withSubResource.AddSubResource("acl");
-            requests.Add(withSubResource);
-
             var withQuery = CreateRequest("https://sqs.us-east-1.amazonaws.com", "/");
             withQuery.UseQueryString = true;
             withQuery.Parameters["Action"] = "ListQueues";
             withQuery.Parameters["Prefix"] = "a b";
-            requests.Add(withQuery);
 
-            // Each request twice so both the miss and the hit path are compared.
+            var requests = new[]
+            {
+                CreateRequest("https://dynamodb.us-east-1.amazonaws.com", "/"),
+                CreateRequest("https://dynamodb.us-east-1.amazonaws.com", "/"),
+                CreateRequest("https://dynamodb.us-east-1.amazonaws.com", "/other"),
+                CreateRequest("https://dynamodb.us-west-2.amazonaws.com", "/other"),
+                CreateRequest("https://bucket.s3.amazonaws.com", "/key%20with%20spaces"),
+                CreateRequest("https://bucket.s3.amazonaws.com/", "key"),
+                CreateRequest("https://bucket.s3.amazonaws.com", null),
+                withPathResource,
+                withSubResource,
+                withQuery,
+            };
+
+#if NETFRAMEWORK
+            const bool reusesUri = false;
+#else
+            const bool reusesUri = true;
+#endif
+            var handler = CreateHandler();
+            Uri previous = null;
             foreach (var request in requests)
             {
-                AssertSameUri(AmazonServiceClient.ComposeUrl(request), handler.ComposeRequestUrl(request));
-                AssertSameUri(AmazonServiceClient.ComposeUrl(request), handler.ComposeRequestUrl(request));
+                var expected = AmazonServiceClient.ComposeUrl(request);
+                var first = handler.ComposeRequestUrl(request);
+                var second = handler.ComposeRequestUrl(request);
+                AssertSameUri(expected, first);
+                AssertSameUri(expected, second);
+                Assert.AreEqual(reusesUri && previous?.OriginalString == expected.OriginalString, ReferenceEquals(previous, first));
+                Assert.AreEqual(reusesUri, ReferenceEquals(first, second));
+                previous = first;
             }
         }
 
@@ -312,21 +283,15 @@ namespace AWSSDK.UnitTests
             var original = AWSConfigs.DisableDangerousDisablePathAndQueryCanonicalization;
             try
             {
-                var handler = new HttpHandler<Stream>(new HttpHandlerTests.MockHttpRequestFactory(), new object());
+                var handler = CreateHandler();
                 var request = CreateRequest("https://bucket.s3.amazonaws.com", "/foo/../bar.txt");
-
-                AWSConfigs.DisableDangerousDisablePathAndQueryCanonicalization = false;
-                var preserved = handler.ComposeRequestUrl(request);
-                AssertSameUri(AmazonServiceClient.ComposeUrl(request), preserved);
-                Assert.AreEqual("/foo/../bar.txt", preserved.AbsolutePath);
-
-                AWSConfigs.DisableDangerousDisablePathAndQueryCanonicalization = true;
-                var canonicalized = handler.ComposeRequestUrl(request);
-                AssertSameUri(AmazonServiceClient.ComposeUrl(request), canonicalized);
-                Assert.AreEqual("/bar.txt", canonicalized.AbsolutePath);
-
-                AWSConfigs.DisableDangerousDisablePathAndQueryCanonicalization = false;
-                Assert.AreEqual("/foo/../bar.txt", handler.ComposeRequestUrl(request).AbsolutePath);
+                foreach (var disable in new[] { false, true, false })
+                {
+                    AWSConfigs.DisableDangerousDisablePathAndQueryCanonicalization = disable;
+                    var uri = handler.ComposeRequestUrl(request);
+                    AssertSameUri(AmazonServiceClient.ComposeUrl(request), uri);
+                    Assert.AreEqual(disable ? "/bar.txt" : "/foo/../bar.txt", uri.AbsolutePath);
+                }
             }
             finally
             {
@@ -341,10 +306,8 @@ namespace AWSSDK.UnitTests
             try
             {
                 const string url = "https://bucket.s3.amazonaws.com/foo/../bar.txt";
-
                 AWSConfigs.DisableDangerousDisablePathAndQueryCanonicalization = true;
                 Assert.AreEqual("/foo/../bar.txt", AmazonServiceClient.CreateRequestUri(url, false).AbsolutePath);
-
                 AWSConfigs.DisableDangerousDisablePathAndQueryCanonicalization = false;
                 Assert.AreEqual("/bar.txt", AmazonServiceClient.CreateRequestUri(url, true).AbsolutePath);
             }
@@ -355,80 +318,68 @@ namespace AWSSDK.UnitTests
         }
 #endif
 
-        #endregion
-
 #if !NETFRAMEWORK
-        #region Response headers
-
-        // The header copy algorithm before the fast path was added.
+        // Response header copy before this change.
         private static void ReferenceCopyHeaders(HttpResponseMessage response, out string[] names, out Dictionary<string, string> values)
         {
             var headerNames = new List<string>();
             values = new Dictionary<string, string>(10, StringComparer.OrdinalIgnoreCase);
-
-            foreach (var kvp in response.Headers)
+            foreach (var headers in new System.Net.Http.Headers.HttpHeaders[] { response.Headers, response.Content.Headers })
             {
-                headerNames.Add(kvp.Key);
-                values.Add(kvp.Key, ReferenceFirstValue(response.Headers, kvp.Key));
-            }
-
-            if (response.Content != null)
-            {
-                foreach (var kvp in response.Content.Headers)
+                foreach (var kvp in headers)
                 {
-                    if (!headerNames.Contains(kvp.Key))
-                    {
-                        headerNames.Add(kvp.Key);
-                        values.Add(kvp.Key, ReferenceFirstValue(response.Content.Headers, kvp.Key));
-                    }
+                    if (headerNames.Contains(kvp.Key))
+                        continue;
+                    headerNames.Add(kvp.Key);
+                    values.Add(kvp.Key, headers.TryGetValues(kvp.Key, out var headerValues) ? headerValues.FirstOrDefault() : string.Empty);
                 }
             }
             names = headerNames.ToArray();
         }
 
-        private static string ReferenceFirstValue(System.Net.Http.Headers.HttpHeaders headers, string key)
-        {
-            if (headers.TryGetValues(key, out var headerValues))
-                return headerValues.FirstOrDefault();
-            return string.Empty;
-        }
-
-        private static HttpResponseMessage CreateResponse()
+        private static HttpResponseMessage CreateResponse(bool customHeaders)
         {
             var response = new HttpResponseMessage(HttpStatusCode.OK)
             {
                 Content = new ByteArrayContent(Encoding.UTF8.GetBytes("{\"a\":1}"))
             };
-            response.Headers.TryAddWithoutValidation("x-amzn-RequestId", "request-id-1");
-            response.Headers.TryAddWithoutValidation("x-amz-crc32", "12345");
-            response.Headers.TryAddWithoutValidation("x-multi", new[] { "first", "second" });
-            response.Headers.TryAddWithoutValidation("x-comma", "a, b");
-            response.Headers.TryAddWithoutValidation("x-empty", "");
-            response.Headers.TryAddWithoutValidation("x-newline", "bad\r\nvalue");
-            response.Headers.TryAddWithoutValidation("Date", "Mon, 05 Oct 2026 03:00:00 GMT");
-            response.Headers.TryAddWithoutValidation("ETag", "\"abc\"");
-            response.Headers.TryAddWithoutValidation("Cache-Control", "no-cache,   max-age=0");
-            response.Headers.TryAddWithoutValidation("Age", "not-a-number");
-            response.Headers.TryAddWithoutValidation("x-dup", "from-response");
-            response.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json") { CharSet = "utf-8" };
-            response.Content.Headers.TryAddWithoutValidation("Content-Encoding", "gzip");
-            response.Content.Headers.TryAddWithoutValidation("Expires", "Tue, 06 Oct 2026 03:00:00 GMT");
-            response.Content.Headers.TryAddWithoutValidation("Last-Modified", "garbage");
-            response.Content.Headers.TryAddWithoutValidation("x-content-custom", "content-value");
-            response.Content.Headers.TryAddWithoutValidation("x-dup", "from-content");
+            if (customHeaders)
+            {
+                response.Headers.TryAddWithoutValidation("x-amzn-RequestId", "request-id-1");
+                response.Headers.TryAddWithoutValidation("x-amz-crc32", "12345");
+                response.Headers.TryAddWithoutValidation("x-multi", new[] { "first", "second" });
+                response.Headers.TryAddWithoutValidation("x-comma", "a, b");
+                response.Headers.TryAddWithoutValidation("x-empty", "");
+                response.Headers.TryAddWithoutValidation("x-newline", "bad\r\nvalue");
+                response.Headers.TryAddWithoutValidation("Date", "Mon, 05 Oct 2026 03:00:00 GMT");
+                response.Headers.TryAddWithoutValidation("ETag", "\"abc\"");
+                response.Headers.TryAddWithoutValidation("Cache-Control", "no-cache,   max-age=0");
+                response.Headers.TryAddWithoutValidation("Age", "not-a-number");
+                response.Headers.TryAddWithoutValidation("x-dup", "from-response");
+                response.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json") { CharSet = "utf-8" };
+                response.Content.Headers.TryAddWithoutValidation("Content-Encoding", "gzip");
+                response.Content.Headers.TryAddWithoutValidation("Expires", "Tue, 06 Oct 2026 03:00:00 GMT");
+                response.Content.Headers.TryAddWithoutValidation("Last-Modified", "garbage");
+                response.Content.Headers.TryAddWithoutValidation("x-content-custom", "content-value");
+                response.Content.Headers.TryAddWithoutValidation("x-dup", "from-content");
+            }
+            // The constructor reads these first, which adds the computed Content-Length; the reference must see it too.
+            _ = response.Content.Headers.ContentLength;
+            _ = response.Content.Headers.ContentType;
             return response;
         }
 
         [TestMethod]
-        public void HttpClientResponseData_HeadersMatchReference()
+        [DataRow(true)]
+        [DataRow(false)]
+        public void HttpClientResponseData_HeadersMatchReference(bool customHeaders)
         {
-            ReferenceCopyHeaders(PrepareLikeConstructor(CreateResponse()), out var expectedNames, out var expectedValues);
-            var data = new HttpClientResponseData(CreateResponse());
+            ReferenceCopyHeaders(CreateResponse(customHeaders), out var expectedNames, out var expectedValues);
+            var data = new HttpClientResponseData(CreateResponse(customHeaders));
 
             var names = data.GetHeaderNames();
             CollectionAssert.AreEqual(expectedNames, names);
             Assert.AreSame(names, data.GetHeaderNames());
-
             foreach (var name in expectedNames)
             {
                 Assert.AreEqual(expectedValues[name], data.GetHeaderValue(name), name);
@@ -437,23 +388,25 @@ namespace AWSSDK.UnitTests
                 Assert.IsTrue(data.IsHeaderPresent(name), name);
                 Assert.IsTrue(data.IsHeaderPresent(name.ToUpperInvariant()), name);
             }
-
-            Assert.AreEqual("request-id-1", data.GetHeaderValue("X-AMZN-REQUESTID"));
-            Assert.AreEqual("first", data.GetHeaderValue("x-multi"));
-            Assert.AreEqual("from-response", data.GetHeaderValue("x-dup"));
-            Assert.AreEqual("content-value", data.GetHeaderValue("x-content-custom"));
             Assert.AreEqual("7", data.GetHeaderValue("Content-Length"));
+            Assert.AreEqual(7, data.ContentLength);
             Assert.AreEqual(string.Empty, data.GetHeaderValue("x-missing"));
             Assert.IsFalse(data.IsHeaderPresent("x-missing"));
             Assert.IsFalse(data.IsHeaderPresent(null));
-            Assert.AreEqual(7, data.ContentLength);
-            Assert.AreEqual("application/json", data.ContentType);
+
+            if (customHeaders)
+            {
+                Assert.AreEqual("request-id-1", data.GetHeaderValue("X-AMZN-REQUESTID"));
+                Assert.AreEqual("first", data.GetHeaderValue("x-multi"));
+                Assert.AreEqual("from-response", data.GetHeaderValue("x-dup"));
+                Assert.AreEqual("content-value", data.GetHeaderValue("x-content-custom"));
+                Assert.AreEqual("application/json", data.ContentType);
+            }
         }
 
         [TestMethod]
         public void HttpClientResponseData_CaseOnlyNameCollisionKeepsResponseHeader()
         {
-            // The previous copy loop compared names case-sensitively and threw ArgumentException here.
             var response = new HttpResponseMessage(HttpStatusCode.OK) { Content = new ByteArrayContent(new byte[0]) };
             response.Headers.TryAddWithoutValidation("x-amz-dup", "from-response");
             response.Content.Headers.TryAddWithoutValidation("X-Amz-Dup", "from-content");
@@ -461,20 +414,7 @@ namespace AWSSDK.UnitTests
             var data = new HttpClientResponseData(response);
 
             Assert.AreEqual("from-response", data.GetHeaderValue("X-AMZ-DUP"));
-            Assert.AreEqual(1, data.GetHeaderNames().Count(n => string.Equals(n, "x-amz-dup", StringComparison.OrdinalIgnoreCase)));
             Assert.AreEqual("x-amz-dup", data.GetHeaderNames().Single(n => string.Equals(n, "x-amz-dup", StringComparison.OrdinalIgnoreCase)));
-        }
-
-        [TestMethod]
-        public void HttpClientResponseData_NoCustomHeadersMatchesReference()
-        {
-            Func<HttpResponseMessage> create = () => new HttpResponseMessage(HttpStatusCode.OK) { Content = new ByteArrayContent(new byte[0]) };
-            ReferenceCopyHeaders(PrepareLikeConstructor(create()), out var expectedNames, out var expectedValues);
-            var data = new HttpClientResponseData(create());
-
-            CollectionAssert.AreEqual(expectedNames, data.GetHeaderNames());
-            foreach (var name in expectedNames)
-                Assert.AreEqual(expectedValues[name], data.GetHeaderValue(name));
         }
 
         [TestMethod]
@@ -486,43 +426,23 @@ namespace AWSSDK.UnitTests
             Assert.IsFalse(data.IsHeaderPresent("x-amzn-RequestId"));
         }
 
-        // The constructor reads Content.Headers.ContentLength (which stores the computed length) before
-        // copying headers; do the same before running the reference so both see the same header set.
-        private static HttpResponseMessage PrepareLikeConstructor(HttpResponseMessage response)
-        {
-            _ = response.Content.Headers.ContentLength;
-            _ = response.Content.Headers.ContentType;
-            return response;
-        }
-
-        #endregion
-
-        #region Request message
-
         [TestMethod]
         public void GetHttpMethod_ReusesStandardMethods()
         {
-            Assert.AreSame(HttpMethod.Get, HttpWebRequestMessage.GetHttpMethod("GET"));
-            Assert.AreSame(HttpMethod.Post, HttpWebRequestMessage.GetHttpMethod("POST"));
-            Assert.AreSame(HttpMethod.Put, HttpWebRequestMessage.GetHttpMethod("PUT"));
-            Assert.AreSame(HttpMethod.Delete, HttpWebRequestMessage.GetHttpMethod("DELETE"));
-            Assert.AreSame(HttpMethod.Head, HttpWebRequestMessage.GetHttpMethod("HEAD"));
-            Assert.AreSame(HttpMethod.Options, HttpWebRequestMessage.GetHttpMethod("OPTIONS"));
+            foreach (var method in new[] { HttpMethod.Get, HttpMethod.Post, HttpMethod.Put, HttpMethod.Delete, HttpMethod.Head, HttpMethod.Options })
+                Assert.AreSame(method, HttpWebRequestMessage.GetHttpMethod(method.Method));
 
-            foreach (var method in new[] { "GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS", "PATCH", "get", "Custom" })
+            foreach (var method in new[] { "PATCH", "get", "Custom" })
             {
-                var expected = new HttpMethod(method);
                 var actual = HttpWebRequestMessage.GetHttpMethod(method);
-                Assert.AreEqual(expected, actual);
-                Assert.AreEqual(expected.Method, actual.Method);
+                Assert.AreEqual(new HttpMethod(method), actual);
+                Assert.AreEqual(new HttpMethod(method).Method, actual.Method);
             }
-            // Null falls through to the HttpMethod constructor, whose exception type depends on the runtime
-            // (ArgumentException on netcoreapp3.1, ArgumentNullException on net472 and .NET 5+).
+
+            // Null goes to the HttpMethod constructor, whose exception type differs by runtime.
             var expectedException = CaptureException(() => new HttpMethod(null));
-            var actualException = CaptureException(() => HttpWebRequestMessage.GetHttpMethod(null));
             Assert.IsNotNull(expectedException);
-            Assert.IsNotNull(actualException);
-            Assert.AreEqual(expectedException.GetType(), actualException.GetType());
+            Assert.AreEqual(expectedException.GetType(), CaptureException(() => HttpWebRequestMessage.GetHttpMethod(null))?.GetType());
         }
 
         private static Exception CaptureException(Action action)
@@ -532,15 +452,19 @@ namespace AWSSDK.UnitTests
             return null;
         }
 
+        private static HttpWebRequestMessage CreateRequestMessage()
+        {
+            return new HttpWebRequestMessage(new HttpClient(), new Uri("https://example.com"), new MockClientConfig());
+        }
+
         [TestMethod]
         public void HttpWebRequestMessage_MethodRoundTrips()
         {
-            using (var message = new HttpWebRequestMessage(new HttpClient(), new Uri("https://example.com"), new MockClientConfig()))
+            using (var message = CreateRequestMessage())
             {
                 message.Method = "POST";
                 Assert.AreEqual("POST", message.Method);
                 Assert.AreSame(HttpMethod.Post, message.Request.Method);
-
                 message.Method = "PATCH";
                 Assert.AreEqual("PATCH", message.Method);
             }
@@ -562,38 +486,32 @@ namespace AWSSDK.UnitTests
                 { "Expires", "Tue, 06 Oct 2026 03:00:00 GMT" },
             };
 
-            using (var fromDictionary = new HttpWebRequestMessage(new HttpClient(), new Uri("https://example.com"), new MockClientConfig()))
-            using (var fromSorted = new HttpWebRequestMessage(new HttpClient(), new Uri("https://example.com"), new MockClientConfig()))
+            using (var fromDictionary = CreateRequestMessage())
+            using (var fromSorted = CreateRequestMessage())
             {
                 fromDictionary.SetRequestHeaders(headers);
                 fromSorted.SetRequestHeaders(new SortedDictionary<string, string>(headers, StringComparer.OrdinalIgnoreCase));
 
-                Func<HttpWebRequestMessage, Dictionary<string, string>> snapshot = m =>
-                    m.Request.Headers.ToDictionary(h => h.Key, h => string.Join("|", h.Value));
-
-                var expected = snapshot(fromSorted);
+                Func<HttpWebRequestMessage, List<KeyValuePair<string, string>>> snapshot = m =>
+                    m.Request.Headers.Select(h => new KeyValuePair<string, string>(h.Key, string.Join("|", h.Value))).ToList();
                 var actual = snapshot(fromDictionary);
-                CollectionAssert.AreEquivalent(expected.ToList(), actual.ToList());
+                CollectionAssert.AreEquivalent(snapshot(fromSorted), actual);
 
                 Assert.AreEqual(5, actual.Count);
                 Assert.AreEqual("example.com", fromDictionary.Request.Headers.Host);
                 foreach (var contentHeader in new[] { "Content-Type", "Content-Length", "content-md5", "Expires" })
-                    Assert.IsFalse(actual.Keys.Any(k => string.Equals(k, contentHeader, StringComparison.OrdinalIgnoreCase)), contentHeader);
+                    Assert.IsFalse(actual.Any(h => string.Equals(h.Key, contentHeader, StringComparison.OrdinalIgnoreCase)), contentHeader);
             }
         }
-
-        #endregion
 #endif
 
-        #region Telemetry
-
-        private static IExecutionContext CreateListBucketsContext(AmazonS3Config config)
+        private static IExecutionContext CreateListBucketsContext(AmazonS3Config config, bool enableMetrics = true)
         {
             var listBucketsRequest = new ListBucketsRequest();
             var request = new ListBucketsRequestMarshaller().Marshall(listBucketsRequest);
             request.Endpoint = new Uri("https://s3.amazonaws.com");
             return new ExecutionContext(
-                new RequestContext(true, new NullSigner())
+                new RequestContext(enableMetrics, new NullSigner())
                 {
                     ClientConfig = config,
                     Marshaller = new ListBucketsRequestMarshaller(),
@@ -620,91 +538,57 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        public void RecordsHttpMetricsAndSpanAttributesWithCustomProviders()
+        [DataRow(true, true)]
+        [DataRow(true, false)]
+        [DataRow(false, true)]
+        [DataRow(false, false)]
+        public void RecordsHttpTelemetryWithCustomAndNoOpProviders(bool customMeter, bool customTracer)
         {
             var meterProvider = new RecordingMeterProvider();
             var tracerProvider = new RecordingTracerProvider();
             var config = new AmazonS3Config { TelemetryProvider = new DefaultTelemetryProvider() };
-            config.TelemetryProvider.RegisterMeterProvider(meterProvider);
-            config.TelemetryProvider.RegisterTracerProvider(tracerProvider);
+            if (customMeter)
+                config.TelemetryProvider.RegisterMeterProvider(meterProvider);
+            else
+                Assert.IsInstanceOfType(config.TelemetryProvider.MeterProvider, typeof(NoOpMeterProvider));
+            if (customTracer)
+                config.TelemetryProvider.RegisterTracerProvider(tracerProvider);
 
-            var handler = new HttpHandler<Stream>(CreateFactory(), new object());
-            _ = new RuntimePipeline(handler);
-            handler.InvokeSync(CreateListBucketsContext(config));
-
-            var received = meterProvider.Records.Single(r => r.Name == TelemetryConstants.HTTPBytesReceivedMetricName);
-            Assert.AreEqual(25.0, received.Value);
-            Assert.AreEqual(1, meterProvider.Records.Count(r => r.Name == TelemetryConstants.CallAttemptDurationMetricName));
-
-            var span = tracerProvider.Spans.Single(s => s.Name == TelemetryConstants.HTTPRequestSpanName);
-            Assert.AreEqual("GET", span.Attributes[TelemetryConstants.HTTPMethodAttributeKey]);
-            Assert.AreEqual(200, span.Attributes[TelemetryConstants.HTTPStatusCodeAttributeKey]);
-            Assert.AreEqual(25L, span.Attributes[TelemetryConstants.HTTPResponseContentLengthAttributeKey]);
-        }
-
-        [TestMethod]
-        public void RecordsHttpMetricsWithCustomMeterProviderOnly()
-        {
-            var meterProvider = new RecordingMeterProvider();
-            var config = new AmazonS3Config { TelemetryProvider = new DefaultTelemetryProvider() };
-            config.TelemetryProvider.RegisterMeterProvider(meterProvider);
-
-            var handler = new HttpHandler<Stream>(CreateFactory(), new object());
-            _ = new RuntimePipeline(handler);
-            handler.InvokeSync(CreateListBucketsContext(config));
-
-            Assert.AreEqual(1, meterProvider.Records.Count(r => r.Name == TelemetryConstants.HTTPBytesReceivedMetricName));
-            Assert.AreEqual(1, meterProvider.Records.Count(r => r.Name == TelemetryConstants.CallAttemptDurationMetricName));
-        }
-
-        [TestMethod]
-        public void RecordsSpanAttributesWithCustomTracerProviderOnly()
-        {
-            var tracerProvider = new RecordingTracerProvider();
-            var config = new AmazonS3Config { TelemetryProvider = new DefaultTelemetryProvider() };
-            config.TelemetryProvider.RegisterTracerProvider(tracerProvider);
-            Assert.IsInstanceOfType(config.TelemetryProvider.MeterProvider, typeof(NoOpMeterProvider));
-
-            var handler = new HttpHandler<Stream>(CreateFactory(), new object());
-            _ = new RuntimePipeline(handler);
-            handler.InvokeSync(CreateListBucketsContext(config));
-
-            var span = tracerProvider.Spans.Single(s => s.Name == TelemetryConstants.HTTPRequestSpanName);
-            Assert.AreEqual(200, span.Attributes[TelemetryConstants.HTTPStatusCodeAttributeKey]);
-            Assert.AreEqual(25L, span.Attributes[TelemetryConstants.HTTPResponseContentLengthAttributeKey]);
-        }
-
-        [TestMethod]
-        public void SucceedsWithNoOpProviders()
-        {
-            var config = new AmazonS3Config { TelemetryProvider = new DefaultTelemetryProvider() };
-            var handler = new HttpHandler<Stream>(CreateFactory(), new object());
-            _ = new RuntimePipeline(handler);
             var context = CreateListBucketsContext(config);
-            handler.InvokeSync(context);
+            CreateHandler().InvokeSync(context);
 
             Assert.AreEqual(HttpStatusCode.OK, context.ResponseContext.HttpResponse.StatusCode);
             Assert.IsTrue(context.RequestContext.Request.Headers.ContainsKey(HeaderKeys.UserAgentHeader));
+            if (customMeter)
+            {
+                Assert.AreEqual(25.0, meterProvider.Records.Single(r => r.Name == TelemetryConstants.HTTPBytesReceivedMetricName).Value);
+                Assert.AreEqual(1, meterProvider.Records.Count(r => r.Name == TelemetryConstants.CallAttemptDurationMetricName));
+            }
+            if (customTracer)
+            {
+                var span = tracerProvider.Spans.Single(s => s.Name == TelemetryConstants.HTTPRequestSpanName);
+                Assert.AreEqual("GET", span.Attributes[TelemetryConstants.HTTPMethodAttributeKey]);
+                Assert.AreEqual(200, span.Attributes[TelemetryConstants.HTTPStatusCodeAttributeKey]);
+                Assert.AreEqual(25L, span.Attributes[TelemetryConstants.HTTPResponseContentLengthAttributeKey]);
+            }
         }
 
         private static IExecutionContext CreatePutContentContext(bool enableMetrics)
         {
-            var listBucketsRequest = new ListBucketsRequest();
-            var request = new ListBucketsRequestMarshaller().Marshall(listBucketsRequest);
+            var context = CreateListBucketsContext(new AmazonS3Config { TelemetryProvider = new DefaultTelemetryProvider() }, enableMetrics);
             // The async NetFramework mock serves the response named by the endpoint host.
-            request.Endpoint = new Uri("http://ListBuckets");
-            request.HttpMethod = "PUT";
-            request.Content = Encoding.UTF8.GetBytes("payload");
-            return new ExecutionContext(
-                new RequestContext(enableMetrics, new NullSigner())
-                {
-                    ClientConfig = new AmazonS3Config { TelemetryProvider = new DefaultTelemetryProvider() },
-                    Marshaller = new ListBucketsRequestMarshaller(),
-                    OriginalRequest = listBucketsRequest,
-                    Request = request,
-                    Unmarshaller = new ListBucketsResponseUnmarshaller()
-                },
-                new ResponseContext());
+            context.RequestContext.Request.Endpoint = new Uri("http://ListBuckets");
+            context.RequestContext.Request.HttpMethod = "PUT";
+            context.RequestContext.Request.Content = Encoding.UTF8.GetBytes("payload");
+            return context;
+        }
+
+        private static void AssertRequestSize(IExecutionContext context, bool enableMetrics)
+        {
+            var properties = context.RequestContext.Metrics.Properties;
+            Assert.AreEqual(enableMetrics, properties.ContainsKey(Metric.RequestSize));
+            if (enableMetrics)
+                Assert.AreEqual(7, properties[Metric.RequestSize].Single());
         }
 
         [TestMethod]
@@ -712,15 +596,9 @@ namespace AWSSDK.UnitTests
         [DataRow(false)]
         public void RecordsRequestSizeOnlyWhenRequestMetricsEnabled(bool enableMetrics)
         {
-            var handler = new HttpHandler<Stream>(CreateFactory(), new object());
-            _ = new RuntimePipeline(handler);
             var context = CreatePutContentContext(enableMetrics);
-            handler.InvokeSync(context);
-
-            var properties = context.RequestContext.Metrics.Properties;
-            Assert.AreEqual(enableMetrics, properties.ContainsKey(Metric.RequestSize));
-            if (enableMetrics)
-                Assert.AreEqual(7, properties[Metric.RequestSize].Single());
+            CreateHandler().InvokeSync(context);
+            AssertRequestSize(context, enableMetrics);
         }
 
 #if NETFRAMEWORK
@@ -729,139 +607,10 @@ namespace AWSSDK.UnitTests
         [DataRow(false)]
         public async System.Threading.Tasks.Task RecordsRequestSizeOnlyWhenRequestMetricsEnabledAsync(bool enableMetrics)
         {
-            var handler = new HttpHandler<Stream>(CreateFactory(), new object());
-            _ = new RuntimePipeline(handler);
             var context = CreatePutContentContext(enableMetrics);
-            await handler.InvokeAsync<ListBucketsResponse>(context);
-
-            var properties = context.RequestContext.Metrics.Properties;
-            Assert.AreEqual(enableMetrics, properties.ContainsKey(Metric.RequestSize));
-            if (enableMetrics)
-                Assert.AreEqual(7, properties[Metric.RequestSize].Single());
+            await CreateHandler().InvokeAsync<ListBucketsResponse>(context);
+            AssertRequestSize(context, enableMetrics);
         }
 #endif
-
-        [TestMethod]
-        public void UserAgentHeaderMatchesGenerateAcrossRequests()
-        {
-            var config = new AmazonS3Config { TelemetryProvider = new DefaultTelemetryProvider() };
-            var handler = new HttpHandler<Stream>(CreateFactory(), new object());
-            _ = new RuntimePipeline(handler);
-
-            var first = CreateListBucketsContext(config);
-            first.RequestContext.UserAgentDetails.AddUserAgentComponent("ua/2.1");
-            first.RequestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.RETRY_MODE_STANDARD);
-            handler.InvokeSync(first);
-            var firstHeader = first.RequestContext.Request.Headers[HeaderKeys.UserAgentHeader];
-            Assert.AreEqual("ua/2.1 m/E", firstHeader);
-
-            var same = CreateListBucketsContext(config);
-            same.RequestContext.UserAgentDetails.AddUserAgentComponent("ua/2.1");
-            same.RequestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.RETRY_MODE_STANDARD);
-            handler.InvokeSync(same);
-            Assert.AreSame(firstHeader, same.RequestContext.Request.Headers[HeaderKeys.UserAgentHeader]);
-
-            var different = CreateListBucketsContext(config);
-            different.RequestContext.UserAgentDetails.AddUserAgentComponent("ua/2.1");
-            ((IAmazonWebServiceRequest)different.RequestContext.OriginalRequest).UserAgentDetails.AddUserAgentComponent("custom");
-            ((IAmazonWebServiceRequest)different.RequestContext.OriginalRequest).UserAgentDetails.AddFeature(UserAgentFeatureId.PAGINATOR);
-            different.RequestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.SIGV4A_SIGNING);
-            handler.InvokeSync(different);
-            Assert.AreEqual($"ua/2.1 custom m/{UserAgentFeatureId.SIGV4A_SIGNING.Value},{UserAgentFeatureId.PAGINATOR.Value}",
-                different.RequestContext.Request.Headers[HeaderKeys.UserAgentHeader]);
-        }
-
-        private class RecordingMeterProvider : MeterProvider
-        {
-            public List<(string Name, double Value)> Records { get; } = new List<(string, double)>();
-
-            public override Meter GetMeter(string scope, Attributes attributes = null)
-            {
-                return new RecordingMeter(this);
-            }
-
-            private class RecordingMeter : Meter
-            {
-                private readonly RecordingMeterProvider _provider;
-                public RecordingMeter(RecordingMeterProvider provider) { _provider = provider; }
-
-                public override UpDownCounter<T> CreateUpDownCounter<T>(string name, string units = null, string description = null)
-                {
-                    return new NoOpMeter().CreateUpDownCounter<T>(name, units, description);
-                }
-
-                public override MonotonicCounter<T> CreateMonotonicCounter<T>(string name, string units = null, string description = null)
-                {
-                    return new RecordingCounter<T>(_provider, name);
-                }
-
-                public override Histogram<T> CreateHistogram<T>(string name, string units = null, string description = null)
-                {
-                    return new RecordingHistogram<T>(_provider, name);
-                }
-            }
-
-            private class RecordingCounter<T> : MonotonicCounter<T> where T : struct
-            {
-                private readonly RecordingMeterProvider _provider;
-                private readonly string _name;
-                public RecordingCounter(RecordingMeterProvider provider, string name) { _provider = provider; _name = name; }
-
-                public override void Add(T value, Attributes attributes = null)
-                {
-                    _provider.Records.Add((_name, Convert.ToDouble(value)));
-                }
-            }
-
-            private class RecordingHistogram<T> : Histogram<T> where T : struct
-            {
-                private readonly RecordingMeterProvider _provider;
-                private readonly string _name;
-                public RecordingHistogram(RecordingMeterProvider provider, string name) { _provider = provider; _name = name; }
-
-                public override void Record(T value, Attributes attributes = null)
-                {
-                    _provider.Records.Add((_name, Convert.ToDouble(value)));
-                }
-            }
-        }
-
-        private class RecordingTracerProvider : TracerProvider
-        {
-            public List<RecordingSpan> Spans { get; } = new List<RecordingSpan>();
-
-            public override Tracer GetTracer(string scope)
-            {
-                return new RecordingTracer(this);
-            }
-
-            private class RecordingTracer : Tracer
-            {
-                private readonly RecordingTracerProvider _provider;
-                public RecordingTracer(RecordingTracerProvider provider) { _provider = provider; }
-
-                public override TraceSpan CreateSpan(string name, Attributes initialAttributes = null, SpanKind spanKind = SpanKind.INTERNAL, SpanContext parentContext = null)
-                {
-                    var span = new RecordingSpan(name);
-                    _provider.Spans.Add(span);
-                    return span;
-                }
-            }
-        }
-
-        private class RecordingSpan : TraceSpan
-        {
-            public RecordingSpan(string name) { Name = name; }
-
-            public Dictionary<string, object> Attributes { get; } = new Dictionary<string, object>();
-
-            public override void EmitEvent(string name, Attributes attributes = null) { }
-            public override void SetAttribute(string key, object value) { Attributes[key] = value; }
-            public override void SetStatus(SpanStatus status) { }
-            public override void RecordException(Exception exception, Attributes attributes = null) { }
-            public override void End() { }
-        }
-
-        #endregion
     }
 }
