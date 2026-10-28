@@ -6,7 +6,7 @@ using Xunit;
 namespace SmithyDotNet.Generator.Tests.Writers.Serialization;
 
 /// <summary>
-/// The byte, short, bigInteger and bigDecimal shapes from the Full Numeric Type Support SEP, in body, collection,
+/// The byte, short, bigInteger and bigDecimal shapes from the Full Numeric Type Support specification, in body, collection,
 /// query, header and label positions on restJson1.
 /// </summary>
 public class NumericTypeCodegenTests

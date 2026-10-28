@@ -28,7 +28,7 @@ using CborSvc = Amazon.NumericTypesCbor;
 namespace AWSSDK.ProtocolTests.NumericTypes
 {
     /// <summary>
-    /// Full Numeric Type Support SEP tests for Smithy RPC v2 CBOR: byte and short are CBOR integers, bigInteger is a
+    /// Full Numeric Type Support specification tests for Smithy RPC v2 CBOR: byte and short are CBOR integers, bigInteger is a
     /// bignum (tags 2/3) and bigDecimal a decimal fraction (tag 4), so no digits or scale are lost.
     /// </summary>
     [TestClass]

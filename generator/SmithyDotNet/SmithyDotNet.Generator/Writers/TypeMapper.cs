@@ -445,7 +445,7 @@ public static class TypeMapper
         FloatShape => "float",
         DoubleShape => "double",
         TimestampShape => "DateTime",
-        // Full Numeric Type Support SEP: Smithy's byte is signed, so it is sbyte, not System.Byte. BigDecimal
+        // Full Numeric Type Support specification: Smithy's byte is signed, so it is sbyte, not System.Byte. BigDecimal
         // comes from AWSSDK.Extensions.Numerics, which AWSSDK.Core depends on.
         ByteShape => "sbyte",
         ShortShape => "short",

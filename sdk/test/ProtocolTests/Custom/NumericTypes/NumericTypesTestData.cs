@@ -22,7 +22,7 @@ using System.Threading.Tasks;
 namespace AWSSDK.ProtocolTests.NumericTypes
 {
     /// <summary>
-    /// Values for the Full Numeric Type Support SEP tests. They are chosen so that losing digits, scale or sign,
+    /// Values for the Full Numeric Type Support specification tests. They are chosen so that losing digits, scale or sign,
     /// or going through double or decimal, changes the value.
     /// </summary>
     internal static class NumericTypesTestData

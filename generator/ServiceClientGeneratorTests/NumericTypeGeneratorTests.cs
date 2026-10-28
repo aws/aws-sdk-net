@@ -9,7 +9,7 @@ using Xunit;
 namespace ServiceClientGeneratorTests
 {
     /// <summary>
-    /// Tests for the byte, short, bigInteger and bigDecimal shape types from the Full Numeric Type Support SEP.
+    /// Tests for the byte, short, bigInteger and bigDecimal shape types from the Full Numeric Type Support specification.
     /// </summary>
     [Trait("Category", "UnitTests")]
     public class NumericTypeGeneratorTests
@@ -62,7 +62,7 @@ namespace ServiceClientGeneratorTests
             Assert.Equal(expectedUnmarshaller, member.DetermineTypeUnmarshallerInstantiate());
             Assert.Equal(expectedMarshaller, member.PrimitiveMarshaller);
             Assert.True(member.IsNullable);
-            Assert.True(member.Shape.IsSepNumericType);
+            Assert.True(member.Shape.IsExtendedNumericType);
         }
 
         [Theory]
@@ -114,14 +114,14 @@ namespace ServiceClientGeneratorTests
         [Fact]
         public void ExistingTypesKeepTheirGeneratedNames()
         {
-            // The helpers added for the SEP types must not change what is generated for existing types.
+            // The helpers added for the new numeric types must not change what is generated for existing types.
             var model = CreateModel("rest-json");
             var stringShape = model.FindShape("String");
             Assert.Equal("string", stringShape.PrimitiveParseTypeName);
             Assert.Equal("String", stringShape.QueryMapValueTypeName);
             Assert.Equal(string.Empty, stringShape.HeaderListParseArgument);
             Assert.Equal(string.Empty, stringShape.HeaderListFormatArgument);
-            Assert.False(stringShape.IsSepNumericType);
+            Assert.False(stringShape.IsExtendedNumericType);
         }
 
         [Theory]

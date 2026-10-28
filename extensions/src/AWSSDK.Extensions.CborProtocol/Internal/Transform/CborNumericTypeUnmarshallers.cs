@@ -21,7 +21,7 @@ using Amazon.Extensions.Numerics;
 namespace Amazon.Extensions.CborProtocol.Internal.Transform
 {
     /// <summary>
-    /// Reads the byte, short, bigInteger and bigDecimal types from the Full Numeric Type Support SEP.
+    /// Reads the byte, short, bigInteger and bigDecimal types from the Full Numeric Type Support specification.
     /// <para>
     /// Smithy RPC v2 CBOR encodes byte and short as major type 0/1 integers, bigInteger as a bignum (tags 2 and 3)
     /// and bigDecimal as a decimal fraction (tag 4). The readers also accept a plain integer for bigInteger and
