@@ -35,6 +35,17 @@ namespace Amazon.Util
 
         static CryptoUtil util = new CryptoUtil();
 
+#if NET8_0_OR_GREATER
+        /// <summary>
+        /// Computes the SHA-256 hash of <paramref name="data"/> into <paramref name="destination"/>,
+        /// reusing this thread's SHA-256 instance.
+        /// </summary>
+        internal static void ComputeSHA256Hash(ReadOnlySpan<byte> data, Span<byte> destination)
+        {
+            CryptoUtil.ComputeSHA256Hash(data, destination);
+        }
+
+#endif
         public static ICryptoUtil CryptoInstance
         {
             get { return util; }
@@ -403,6 +414,14 @@ namespace Amazon.Util
                 return algorithm;
             }
 
+#if NET8_0_OR_GREATER
+            internal static void ComputeSHA256Hash(ReadOnlySpan<byte> data, Span<byte> destination)
+            {
+                if (!SHA256HashAlgorithmInstance.TryComputeHash(data, destination, out _))
+                    throw new ArgumentException("Destination is too small for a SHA-256 hash.", nameof(destination));
+            }
+
+#endif
             [ThreadStatic]
             private static HashAlgorithm _hashAlgorithm = null;
             private static HashAlgorithm SHA256HashAlgorithmInstance

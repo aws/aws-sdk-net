@@ -1377,7 +1377,7 @@ namespace Amazon.Util
         private static readonly char[] lowerHex = new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
         private static readonly char[] upperHex = new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
 
-        private static void ToHexString(ReadOnlySpan<byte> source, Span<char> destination, bool lowercase)
+        internal static void ToHexString(ReadOnlySpan<byte> source, Span<char> destination, bool lowercase)
         {
             var converter = lowercase ? lowerHex : upperHex;
             for (int i = source.Length - 1; i >= 0; i--)
