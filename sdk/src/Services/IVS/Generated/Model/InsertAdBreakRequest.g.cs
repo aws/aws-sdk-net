@@ -41,6 +41,20 @@ namespace Amazon.IVS.Model
     public partial class InsertAdBreakRequest : AmazonIVSRequest
     {
         /// <summary>
+        /// Gets and sets the property AdBreakId. 
+        /// <para>
+        /// Caller-specified unique identifier for the ad break to insert into the playlist.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 12, Max = 12)]
+        public string AdBreakId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AdBreakId property is set.
+        /// </summary>
+        internal bool IsSetAdBreakId() => this.AdBreakId != null;
+
+        /// <summary>
         /// Gets and sets the property ChannelArn. 
         /// <para>
         /// ARN of the channel into which the ad break is inserted.
@@ -67,5 +81,18 @@ namespace Amazon.IVS.Model
         /// Checks to see if the DurationSeconds property is set.
         /// </summary>
         internal bool IsSetDurationSeconds() => this.DurationSeconds.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property TargetStartAt. 
+        /// <para>
+        /// Target time at which the ad break starts.
+        /// </para>
+        /// </summary>
+        public DateTime? TargetStartAt { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TargetStartAt property is set.
+        /// </summary>
+        internal bool IsSetTargetStartAt() => this.TargetStartAt.HasValue;
     }
 }

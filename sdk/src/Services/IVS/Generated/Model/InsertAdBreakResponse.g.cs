@@ -47,5 +47,18 @@ namespace Amazon.IVS.Model
         /// Checks to see if the AdBreakId property is set.
         /// </summary>
         internal bool IsSetAdBreakId() => this.AdBreakId != null;
+
+        /// <summary>
+        /// Gets and sets the property TargetStartAt. 
+        /// <para>
+        /// Target start time for the inserted ad break.
+        /// </para>
+        /// </summary>
+        public DateTime? TargetStartAt { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TargetStartAt property is set.
+        /// </summary>
+        internal bool IsSetTargetStartAt() => this.TargetStartAt.HasValue;
     }
 }
