@@ -1,0 +1,19 @@
+{
+  "services": [
+    {
+      "serviceName": "CloudWatchLogs",
+      "type": "patch",
+      "changeLogMessages": [
+        "CloudWatchLogs is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "Glacier",
+      "type": "patch",
+      "changeLogMessages": [
+        "Glacier is now generated from its Smithy model.",
+        "Added the ListMultipartUploads paginator (IGlacierPaginatorFactory.ListMultipartUploads). The operation was always declared as paginated, but the previous generator skipped it."
+      ]
+    }
+  ]
+}
