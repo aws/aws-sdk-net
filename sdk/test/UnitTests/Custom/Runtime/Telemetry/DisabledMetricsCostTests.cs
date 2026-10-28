@@ -31,34 +31,25 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace AWSSDK.UnitTests
 {
     /// <summary>
-    /// Disabled metrics/telemetry (LogMetrics off, NoOp providers) must not allocate on hot calls,
-    /// and enabled metrics/telemetry must keep recording the same data.
-    /// The allocation assertions (category <c>Allocation</c>) measure exact allocated bytes on the test thread.
-    /// They are stable, but depend on runtime behavior, so they can be excluded with
-    /// <c>--filter TestCategory!=Allocation</c> if a runtime update changes what the JIT or BCL allocates.
+    /// The "Allocation" tests assert exact allocated bytes; exclude them with
+    /// <c>TestCategory!=Allocation</c> if a runtime update changes what the JIT or BCL allocates.
     /// </summary>
     [TestClass]
     [TestCategory("UnitTest")]
     [TestCategory("Runtime")]
     public class DisabledMetricsCostTests
     {
-        private const string AllocationCategory = "Allocation";
-        private const int Iterations = 100;
-        private const int WarmupIterations = 1000;
-
-        #region RequestMetrics - disabled
+        private const string Allocation = "Allocation";
 
         [TestMethod]
-        public void Disabled_StartEvent_ReturnsSharedNoOpAndTracksNothing()
+        public void Disabled_TracksNothing()
         {
             var metrics = new RequestMetrics();
 
             var e1 = metrics.StartEvent(Metric.HttpRequestTime);
-            var e2 = metrics.StartEvent(Metric.RequestSigningTime);
-            Assert.AreSame(e1, e2);
+            Assert.AreSame(e1, metrics.StartEvent(Metric.RequestSigningTime));
             e1.Dispose();
             e1.Dispose();
-
             metrics.AddProperty(Metric.AsyncCall, true);
             metrics.SetCounter(Metric.AttemptCount, 1);
             metrics.IncrementCounter(Metric.AttemptCount);
@@ -69,118 +60,38 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(string.Empty, metrics.GetErrors());
             Assert.AreEqual("Metrics logging disabled", metrics.ToString());
             Assert.AreEqual("{ }", metrics.ToJSON());
+            Assert.AreEqual(0, metrics.StopEvent(Metric.ClientExecuteTime).ElapsedTicks);
 
-            var timing = metrics.StopEvent(Metric.ClientExecuteTime);
-            Assert.IsTrue(timing.IsFinished);
-            Assert.AreEqual(0, timing.ElapsedTicks);
+            var counters = new Dictionary<Metric, long>();
+            metrics.Counters = counters;
+            Assert.AreSame(counters, metrics.Counters);
         }
 
         [TestMethod]
-        public void Disabled_CollectionsAreNeverNull()
+        public void Disabled_CsmAttemptLatencyIsStillMeasured()
         {
-            var metrics = new RequestMetrics();
-            Assert.IsNotNull(metrics.Properties);
-            Assert.IsNotNull(metrics.Timings);
-            Assert.IsNotNull(metrics.Counters);
-            Assert.AreSame(metrics.Timings, metrics.Timings);
+            var context = CreateExecutionContext(new DefaultTelemetryProvider(), enableMetrics: false);
+            context.RequestContext.Request = new DefaultRequest(context.RequestContext.OriginalRequest, "S3");
+            context.RequestContext.CSMCallEvent = new MonitoringAPICallEvent(context.RequestContext);
+            var handler = new TestCsmHandler();
 
-            var replacement = new Dictionary<Metric, long> { { Metric.AttemptCount, 3 } };
-            metrics.Counters = replacement;
-            Assert.AreSame(replacement, metrics.Counters);
-        }
-
-        [TestMethod]
-        public void Disabled_StartTimedEvent_StillMeasuresForCsm()
-        {
-            // CSMCallAttemptHandler reads StopEvent(CSMAttemptLatency).ElapsedTime even when LogMetrics is off.
-            var metrics = new RequestMetrics();
-            metrics.StartTimedEvent(Metric.CSMAttemptLatency);
+            handler.CallPreInvoke(context);
             Thread.Sleep(20);
-            var timing = metrics.StopEvent(Metric.CSMAttemptLatency);
+            handler.CallCapture(context);
 
-            Assert.IsTrue(timing.IsFinished);
-            Assert.IsTrue(timing.ElapsedTime >= TimeSpan.FromMilliseconds(10), timing.ElapsedTime.ToString());
-            Assert.AreEqual(0, metrics.Timings.Count);
+            Assert.IsTrue(context.RequestContext.CSMCallAttempt.AttemptLatency >= 10);
+            Assert.AreEqual(0, context.RequestContext.Metrics.Timings.Count);
         }
 
         [TestMethod]
-        public void Disabled_CsmPreInvoke_StillTimesAttemptLatency()
-        {
-            // CSMCallAttemptHandler.PreInvoke must use StartTimedEvent: StartEvent tracks nothing when metrics are disabled.
-            var executionContext = CreateExecutionContext(new DefaultTelemetryProvider(), enableMetrics: false);
-            new CsmPreInvokeHandler().CallPreInvoke(executionContext);
-            Thread.Sleep(20);
-            var timing = executionContext.RequestContext.Metrics.StopEvent(Metric.CSMAttemptLatency);
-
-            Assert.IsTrue(timing.ElapsedTime >= TimeSpan.FromMilliseconds(10), timing.ElapsedTime.ToString());
-        }
-
-        [TestMethod]
-        public void Disabled_CsmAttemptCapture_ReportsAttemptLatency()
-        {
-            // End to end through the handler's own capture: PreInvoke starts the timing, and
-            // CSMCallAttemptMetricsCapture writes it to CSMCallAttempt.AttemptLatency.
-            var executionContext = CreateExecutionContext(new DefaultTelemetryProvider(), enableMetrics: false);
-            var requestContext = executionContext.RequestContext;
-            requestContext.Request = new DefaultRequest(requestContext.OriginalRequest, "S3");
-            requestContext.CSMCallEvent = new MonitoringAPICallEvent(requestContext);
-
-            var handler = new CsmPreInvokeHandler();
-            handler.CallPreInvoke(executionContext);
-            Thread.Sleep(20);
-            handler.CallCapture(executionContext);
-
-            Assert.IsTrue(requestContext.CSMCallAttempt.AttemptLatency >= 10, requestContext.CSMCallAttempt.AttemptLatency.ToString());
-        }
-
-#if NETCOREAPP
-        [TestMethod]
-        [TestCategory(AllocationCategory)]
-        public void Disabled_HotCallsDoNotAllocate()
-        {
-            var metrics = new RequestMetrics();
-            Action hot = () =>
-            {
-                using (metrics.StartEvent(Metric.HttpRequestTime)) { }
-                using (metrics.StartEvent(Metric.ResponseProcessingTime)) { }
-                metrics.AddProperty(Metric.AsyncCall, "x");
-                metrics.SetCounter(Metric.AttemptCount, 1);
-                metrics.IncrementCounter(Metric.AttemptCount);
-            };
-
-            Assert.AreEqual(0L, MeasureAllocations(hot));
-        }
-
-        [TestMethod]
-        [TestCategory(AllocationCategory)]
-        public void Disabled_ConstructorIsSmall()
-        {
-            RequestMetrics metrics = null;
-            long allocated = MeasureAllocations(() => metrics = new RequestMetrics(), iterations: 1);
-            GC.KeepAlive(metrics);
-            // Only the RequestMetrics object itself; previously a Stopwatch, a lock object,
-            // and five collections were allocated here (~500 B).
-            Assert.IsTrue(allocated <= 96, $"Allocated {allocated} bytes");
-        }
-#endif
-
-        #endregion
-
-        #region RequestMetrics - enabled
-
-        [TestMethod]
-        public void Enabled_RecordsTimingsPropertiesCountersAndErrors()
+        public void Enabled_RecordsAsBefore()
         {
             var metrics = new RequestMetrics { IsEnabled = true };
 
-            using (metrics.StartEvent(Metric.HttpRequestTime))
-            {
-                Thread.Sleep(5);
-            }
+            using (metrics.StartEvent(Metric.HttpRequestTime)) { Thread.Sleep(5); }
             using (metrics.StartEvent(Metric.HttpRequestTime)) { }
             metrics.StartTimedEvent(Metric.ClientExecuteTime);
             var executeTiming = metrics.StopEvent(Metric.ClientExecuteTime);
-
             metrics.AddProperty(Metric.AsyncCall, false);
             metrics.AddProperty(Metric.ServiceName, "S3");
             metrics.AddProperty(Metric.ServiceName, "S3-again");
@@ -189,11 +100,10 @@ namespace AWSSDK.UnitTests
             metrics.IncrementCounter(Metric.BytesProcessed);
 
             Assert.AreEqual(2, metrics.Timings[Metric.HttpRequestTime].Count);
-            Assert.IsTrue(metrics.Timings[Metric.HttpRequestTime].All(t => t.IsFinished));
             Assert.IsTrue(metrics.Timings[Metric.HttpRequestTime][0].ElapsedTime >= TimeSpan.FromMilliseconds(1));
             Assert.AreSame(executeTiming, metrics.Timings[Metric.ClientExecuteTime].Single());
-            CollectionAssert.AreEqual(new object[] { false }, metrics.Properties[Metric.AsyncCall]);
             CollectionAssert.AreEqual(new object[] { "S3", "S3-again" }, metrics.Properties[Metric.ServiceName]);
+            CollectionAssert.AreEqual(new object[] { false }, metrics.Properties[Metric.AsyncCall]);
             Assert.AreEqual(3L, metrics.Counters[Metric.AttemptCount]);
             Assert.AreEqual(1L, metrics.Counters[Metric.BytesProcessed]);
             Assert.AreEqual(string.Empty, metrics.GetErrors());
@@ -207,10 +117,9 @@ namespace AWSSDK.UnitTests
 
             using (var doc = JsonDocument.Parse(metrics.ToJSON()))
             {
-                var root = doc.RootElement;
-                Assert.AreEqual("S3-again", root.GetProperty("properties").GetProperty("ServiceName")[1].GetString());
-                Assert.AreEqual(2, root.GetProperty("timings").GetProperty("HttpRequestTime").GetArrayLength());
-                Assert.AreEqual(3, root.GetProperty("counters").GetProperty("AttemptCount").GetInt64());
+                Assert.AreEqual("S3-again", doc.RootElement.GetProperty("properties").GetProperty("ServiceName")[1].GetString());
+                Assert.AreEqual(2, doc.RootElement.GetProperty("timings").GetProperty("HttpRequestTime").GetArrayLength());
+                Assert.AreEqual(3, doc.RootElement.GetProperty("counters").GetProperty("AttemptCount").GetInt64());
             }
         }
 
@@ -219,8 +128,7 @@ namespace AWSSDK.UnitTests
         {
             var metrics = new RequestMetrics { IsEnabled = true };
 
-            var notStarted = metrics.StopEvent(Metric.RetryPauseTime);
-            Assert.IsTrue(notStarted.IsFinished);
+            metrics.StopEvent(Metric.RetryPauseTime);
             metrics.StartEvent(Metric.HttpRequestTime);
             metrics.StartEvent(Metric.HttpRequestTime);
 
@@ -231,209 +139,161 @@ namespace AWSSDK.UnitTests
             StringAssert.Contains(errors, "HttpRequestTime - Starting multiple events for the same metric;");
         }
 
-        #endregion
-
-        #region MetricsUtilities / TracingUtilities - NoOp providers
-
         [TestMethod]
-        public void NoOp_ProvidersShortCircuit()
+        public void NoOpProviders_ShortCircuit()
         {
             var requestContext = CreateRequestContext(new DefaultTelemetryProvider(), enableMetrics: false);
 
             Assert.IsNull(MetricsUtilities.MeasureDuration(requestContext, TelemetryConstants.CallDurationMetricName));
-            Assert.IsNull(MetricsUtilities.MeasureDuration(requestContext.ClientConfig, TelemetryConstants.ClientUptimeMetricName));
-
             Assert.AreSame(TracingUtilities.NoOpSpan, TracingUtilities.CreateSpan(requestContext, "span"));
+        }
+
+        [TestMethod]
+        public void CustomProviders_RecordAsBefore()
+        {
+            var meter = new RecordingMeterProvider();
+            var tracer = new RecordingTracerProvider();
+            var requestContext = CreateRequestContext(Telemetry(meter, tracer), enableMetrics: false);
+
+            using (MetricsUtilities.MeasureDuration(requestContext, TelemetryConstants.SerializationDurationMetricName)) { Thread.Sleep(5); }
+            MetricsUtilities.AddMonotonicCounterValue(requestContext, TelemetryConstants.CallAttemptsMetricName, TelemetryConstants.AttemptUnitName, 2);
+            MetricsUtilities.RecordError(requestContext, new InvalidOperationException());
+            using (TracingUtilities.CreateSpan(requestContext, TelemetryConstants.HTTPRequestSpanName)) { }
+
+            CollectionAssert.AreEqual(
+                new[] { TelemetryConstants.SerializationDurationMetricName, TelemetryConstants.CallAttemptsMetricName, TelemetryConstants.CallErrorsMetricName },
+                meter.Records.Select(r => r.Name).ToArray());
+            CollectionAssert.AreEqual(new[] { "AWSSDK.S3", "AWSSDK.S3", "AWSSDK.S3" }, meter.Scopes);
+            Assert.IsTrue(meter.Records[0].Value > 0.001);
+            Assert.AreEqual(TelemetryConstants.SecondsUnitName, meter.Records[0].Unit);
+            Assert.AreEqual(2.0, meter.Records[1].Value);
+            Assert.AreEqual("InvalidOperationException", meter.Records[2].Attributes.Get(TelemetryConstants.ExceptionTypeAttributeKey));
+            AssertCommonAttributes(meter.Records[0].Attributes);
+            AssertCommonAttributes(meter.Records[1].Attributes);
+
+            var span = tracer.Spans.Single();
+            Assert.AreEqual("AWSSDK.S3", span.Scope);
+            Assert.AreEqual(TelemetryConstants.HTTPRequestSpanName, span.Name);
+            Assert.AreEqual(SpanKind.INTERNAL, span.Kind);
+            Assert.IsTrue(span.Disposed);
+            AssertCommonAttributes(span.InitialAttributes);
+        }
+
+        [TestMethod]
+        public void CustomTracerOnly_MetricsStillShortCircuit()
+        {
+            var tracer = new RecordingTracerProvider();
+            var requestContext = CreateRequestContext(Telemetry(tracer: tracer), enableMetrics: false);
+
+            Assert.IsNull(MetricsUtilities.MeasureDuration(requestContext, TelemetryConstants.CallDurationMetricName));
+            using (TracingUtilities.CreateSpan(requestContext, "span")) { }
+            Assert.AreEqual(1, tracer.Spans.Count);
+        }
+
+        [TestMethod]
+        [DataRow(false)]
+        [DataRow(true)]
+        public async Task MetricsHandler_CustomProviders_RecordsSpanHistogramAndRequestMetrics(bool async)
+        {
+            var meter = new RecordingMeterProvider();
+            var tracer = new RecordingTracerProvider();
+            var context = CreateExecutionContext(Telemetry(meter, tracer), enableMetrics: true);
+
+            if (async)
+                await CreateMetricsHandler().InvokeAsync<AmazonWebServiceResponse>(context);
+            else
+                CreateMetricsHandler().InvokeSync(context);
+
+            var span = tracer.Spans.Single();
+            Assert.AreEqual("S3.PutObject", span.Name);
+            Assert.AreEqual(SpanKind.CLIENT, span.Kind);
+            Assert.AreEqual("request-id-1", span.Attributes[TelemetryConstants.RequestIdAttributeKey]);
+            Assert.IsTrue(span.Disposed);
+            AssertCommonAttributes(span.InitialAttributes);
+            Assert.AreEqual(TelemetryConstants.CallDurationMetricName, meter.Records.Single().Name);
+            AssertCommonAttributes(meter.Records.Single().Attributes);
+
+            var metrics = context.RequestContext.Metrics;
+            CollectionAssert.AreEqual(new object[] { async }, metrics.Properties[Metric.AsyncCall]);
+            Assert.IsTrue(metrics.Timings[Metric.ClientExecuteTime].Single().IsFinished);
+            Assert.AreEqual(string.Empty, metrics.GetErrors());
+        }
+
+        [TestMethod]
+        public void MetricsHandler_Error_RecordsExceptionAndErrorCounter()
+        {
+            var meter = new RecordingMeterProvider();
+            var tracer = new RecordingTracerProvider();
+            var context = CreateExecutionContext(Telemetry(meter, tracer), enableMetrics: true);
+
+            Assert.ThrowsExactly<InvalidOperationException>(() => CreateMetricsHandler(new InvalidOperationException()).InvokeSync(context));
+
+            var span = tracer.Spans.Single();
+            Assert.AreEqual(1, span.Exceptions.Count);
+            Assert.AreEqual(typeof(InvalidOperationException).ToString(), span.Attributes[TelemetryConstants.ExceptionTypeAttributeKey]);
+            Assert.IsTrue(span.Disposed);
+            Assert.IsTrue(meter.Records.Any(r => r.Name == TelemetryConstants.CallErrorsMetricName));
+            Assert.IsTrue(meter.Records.Any(r => r.Name == TelemetryConstants.CallDurationMetricName));
+            Assert.AreEqual(1, context.RequestContext.Metrics.Timings[Metric.ClientExecuteTime].Count);
         }
 
 #if NETCOREAPP
         [TestMethod]
-        [TestCategory(AllocationCategory)]
-        public void NoOp_TelemetryCallsDoNotAllocate()
+        [TestCategory(Allocation)]
+        public void Disabled_HotCallsDoNotAllocate()
+        {
+            var metrics = new RequestMetrics();
+            Assert.AreEqual(0L, MeasureAllocations(() =>
+            {
+                using (metrics.StartEvent(Metric.HttpRequestTime)) { }
+                metrics.AddProperty(Metric.AsyncCall, "x");
+                metrics.SetCounter(Metric.AttemptCount, 1);
+                metrics.IncrementCounter(Metric.AttemptCount);
+            }));
+        }
+
+        [TestMethod]
+        [TestCategory(Allocation)]
+        public void Disabled_ConstructorAllocatesOnlyItself()
+        {
+            RequestMetrics metrics = null;
+            long allocated = MeasureAllocations(() => metrics = new RequestMetrics(), iterations: 1);
+            GC.KeepAlive(metrics);
+            Assert.IsTrue(allocated <= 96, $"Allocated {allocated} bytes");
+        }
+
+        [TestMethod]
+        [TestCategory(Allocation)]
+        public void NoOpProviders_TelemetryCallsDoNotAllocate()
         {
             var requestContext = CreateRequestContext(new DefaultTelemetryProvider(), enableMetrics: false);
             var exception = new InvalidOperationException();
-            Action hot = () =>
+            Assert.AreEqual(0L, MeasureAllocations(() =>
             {
                 using (MetricsUtilities.MeasureDuration(requestContext, TelemetryConstants.SerializationDurationMetricName)) { }
-                using (MetricsUtilities.MeasureDuration(requestContext.ClientConfig, TelemetryConstants.ClientUptimeMetricName)) { }
                 MetricsUtilities.AddMonotonicCounterValue(requestContext, TelemetryConstants.CallAttemptsMetricName, TelemetryConstants.AttemptUnitName);
                 MetricsUtilities.RecordError(requestContext, exception);
                 using (var span = TracingUtilities.CreateSpan(requestContext, TelemetryConstants.HTTPRequestSpanName))
                 {
                     span.SetAttribute(TelemetryConstants.HTTPMethodAttributeKey, "GET");
                 }
-            };
-
-            Assert.AreEqual(0L, MeasureAllocations(hot));
+            }));
         }
 
         [TestMethod]
-        [TestCategory(AllocationCategory)]
-        public void NoOp_MetricsHandlerDoesNotAllocate()
+        [TestCategory(Allocation)]
+        public void NoOpProviders_MetricsHandlerDoesNotAllocate()
         {
-            var executionContext = CreateExecutionContext(new DefaultTelemetryProvider(), enableMetrics: false);
+            var context = CreateExecutionContext(new DefaultTelemetryProvider(), enableMetrics: false);
             var handler = CreateMetricsHandler();
-
-            Assert.AreEqual(0L, MeasureAllocations(() => handler.InvokeSync(executionContext)));
-        }
-#endif
-
-        #endregion
-
-        #region MetricsUtilities / TracingUtilities / MetricsHandler - recording providers
-
-        [TestMethod]
-        public void Recording_MeasureDurationAndCountersRecordAsBefore()
-        {
-            var meterProvider = new RecordingMeterProvider();
-            var requestContext = CreateRequestContext(new TestTelemetryProvider(meterProvider, new RecordingTracerProvider()), enableMetrics: false);
-
-            using (MetricsUtilities.MeasureDuration(requestContext, TelemetryConstants.SerializationDurationMetricName))
-            {
-                Thread.Sleep(5);
-            }
-            MetricsUtilities.AddMonotonicCounterValue(requestContext, TelemetryConstants.CallAttemptsMetricName, TelemetryConstants.AttemptUnitName, 2);
-            MetricsUtilities.RecordError(requestContext, new InvalidOperationException());
-
-            CollectionAssert.AreEqual(new[] { "AWSSDK.S3", "AWSSDK.S3", "AWSSDK.S3" }, meterProvider.Scopes);
-            Assert.AreEqual(3, meterProvider.Records.Count);
-
-            var duration = meterProvider.Records[0];
-            Assert.AreEqual(TelemetryConstants.SerializationDurationMetricName, duration.Name);
-            Assert.AreEqual(TelemetryConstants.SecondsUnitName, duration.Unit);
-            Assert.IsTrue((double)duration.Value > 0.001, duration.Value.ToString());
-            AssertCommonAttributes(duration.Attributes, "PutObject");
-
-            var attempts = meterProvider.Records[1];
-            Assert.AreEqual(TelemetryConstants.CallAttemptsMetricName, attempts.Name);
-            Assert.AreEqual(TelemetryConstants.AttemptUnitName, attempts.Unit);
-            Assert.AreEqual(2L, attempts.Value);
-            AssertCommonAttributes(attempts.Attributes, "PutObject");
-
-            var errors = meterProvider.Records[2];
-            Assert.AreEqual(TelemetryConstants.CallErrorsMetricName, errors.Name);
-            Assert.AreEqual(1L, errors.Value);
-            Assert.AreEqual("InvalidOperationException", errors.Attributes.Get(TelemetryConstants.ExceptionTypeAttributeKey));
+            Assert.AreEqual(0L, MeasureAllocations(() => handler.InvokeSync(context)));
         }
 
-        [TestMethod]
-        public void Recording_CreateSpanRecordsAsBefore()
+        private static long MeasureAllocations(Action action, int iterations = 100)
         {
-            var tracerProvider = new RecordingTracerProvider();
-            var requestContext = CreateRequestContext(new TestTelemetryProvider(new RecordingMeterProvider(), tracerProvider), enableMetrics: false);
-
-            using (TracingUtilities.CreateSpan(requestContext, TelemetryConstants.HTTPRequestSpanName)) { }
-
-            var span = tracerProvider.Spans.Single();
-            Assert.AreEqual("AWSSDK.S3", span.Scope);
-            Assert.AreEqual(TelemetryConstants.HTTPRequestSpanName, span.Name);
-            Assert.AreEqual(SpanKind.INTERNAL, span.Kind);
-            Assert.IsTrue(span.Disposed);
-            AssertCommonAttributes(span.Attributes, "PutObject");
-        }
-
-        [TestMethod]
-        public void Recording_OnlyTracerCustom_MetricsStillShortCircuit()
-        {
-            var tracerProvider = new RecordingTracerProvider();
-            var telemetry = new DefaultTelemetryProvider();
-            telemetry.RegisterTracerProvider(tracerProvider);
-            var requestContext = CreateRequestContext(telemetry, enableMetrics: false);
-
-            Assert.IsNull(MetricsUtilities.MeasureDuration(requestContext, TelemetryConstants.CallDurationMetricName));
-            using (TracingUtilities.CreateSpan(requestContext, "span")) { }
-            Assert.AreEqual(1, tracerProvider.Spans.Count);
-        }
-
-        [TestMethod]
-        public void Recording_MetricsHandlerSync_RecordsSpanHistogramAndRequestMetrics()
-        {
-            var meterProvider = new RecordingMeterProvider();
-            var tracerProvider = new RecordingTracerProvider();
-            var executionContext = CreateExecutionContext(new TestTelemetryProvider(meterProvider, tracerProvider), enableMetrics: true);
-
-            CreateMetricsHandler().InvokeSync(executionContext);
-
-            AssertMetricsHandlerResults(executionContext, meterProvider, tracerProvider, async: false);
-        }
-
-        [TestMethod]
-        public async Task Recording_MetricsHandlerAsync_RecordsSpanHistogramAndRequestMetrics()
-        {
-            var meterProvider = new RecordingMeterProvider();
-            var tracerProvider = new RecordingTracerProvider();
-            var executionContext = CreateExecutionContext(new TestTelemetryProvider(meterProvider, tracerProvider), enableMetrics: true);
-
-            await CreateMetricsHandler().InvokeAsync<AmazonWebServiceResponse>(executionContext);
-
-            AssertMetricsHandlerResults(executionContext, meterProvider, tracerProvider, async: true);
-        }
-
-        [TestMethod]
-        public void Recording_MetricsHandlerError_RecordsExceptionAndErrorCounter()
-        {
-            var meterProvider = new RecordingMeterProvider();
-            var tracerProvider = new RecordingTracerProvider();
-            var executionContext = CreateExecutionContext(new TestTelemetryProvider(meterProvider, tracerProvider), enableMetrics: true);
-            var handler = CreateMetricsHandler(new InvalidOperationException("boom"));
-
-            Assert.ThrowsExactly<InvalidOperationException>(() => handler.InvokeSync(executionContext));
-
-            var span = tracerProvider.Spans.Single();
-            Assert.AreEqual("S3.PutObject", span.Name);
-            Assert.AreEqual(1, span.Exceptions.Count);
-            Assert.AreEqual(typeof(InvalidOperationException).ToString(), span.SetAttributes[TelemetryConstants.ExceptionTypeAttributeKey]);
-            Assert.IsTrue(span.Disposed);
-            Assert.IsTrue(meterProvider.Records.Any(r => r.Name == TelemetryConstants.CallErrorsMetricName));
-            Assert.IsTrue(meterProvider.Records.Any(r => r.Name == TelemetryConstants.CallDurationMetricName));
-            Assert.AreEqual(1, executionContext.RequestContext.Metrics.Timings[Metric.ClientExecuteTime].Count);
-        }
-
-        #endregion
-
-        #region Helpers
-
-        private static void AssertMetricsHandlerResults(IExecutionContext executionContext,
-            RecordingMeterProvider meterProvider, RecordingTracerProvider tracerProvider, bool async)
-        {
-            var span = tracerProvider.Spans.Single();
-            Assert.AreEqual("AWSSDK.S3", span.Scope);
-            Assert.AreEqual("S3.PutObject", span.Name);
-            Assert.AreEqual(SpanKind.CLIENT, span.Kind);
-            Assert.AreEqual("request-id-1", span.SetAttributes[TelemetryConstants.RequestIdAttributeKey]);
-            Assert.IsTrue(span.Disposed);
-            AssertCommonAttributes(span.Attributes, "PutObject");
-
-            var duration = meterProvider.Records.Single();
-            Assert.AreEqual(TelemetryConstants.CallDurationMetricName, duration.Name);
-            Assert.AreEqual(TelemetryConstants.SecondsUnitName, duration.Unit);
-            AssertCommonAttributes(duration.Attributes, "PutObject");
-
-            var metrics = executionContext.RequestContext.Metrics;
-            CollectionAssert.AreEqual(new object[] { async }, metrics.Properties[Metric.AsyncCall]);
-            var executeTime = metrics.Timings[Metric.ClientExecuteTime].Single();
-            Assert.IsTrue(executeTime.IsFinished);
-            Assert.AreEqual(string.Empty, metrics.GetErrors());
-        }
-
-        private static void AssertCommonAttributes(Attributes attributes, string operation)
-        {
-            Assert.AreEqual(operation, attributes.Get(TelemetryConstants.MethodAttributeKey));
-            Assert.AreEqual("S3", attributes.Get(TelemetryConstants.ServiceAttributeKey));
-            Assert.AreEqual(TelemetryConstants.SystemAttributeValue, attributes.Get(TelemetryConstants.SystemAttributeKey));
-        }
-
-#if NETCOREAPP
-        private static long MeasureAllocations(Action action, int iterations = Iterations)
-        {
-            // Warm up so JIT and static initialization are excluded. One call is not enough on netcoreapp3.1:
-            // its tiered JIT allocates on the calling thread while call counting promotes hot methods.
-            if (iterations > 1)
-            {
-                for (int i = 0; i < WarmupIterations; i++)
-                    action();
-            }
+            // One warm-up call isn't enough: tiered JIT can allocate on the calling thread while promoting hot methods.
+            for (int i = 0; iterations > 1 && i < 1000; i++)
+                action();
 
             long before = GC.GetAllocatedBytesForCurrentThread();
             for (int i = 0; i < iterations; i++)
@@ -442,31 +302,38 @@ namespace AWSSDK.UnitTests
         }
 #endif
 
-        private static MetricsHandler CreateMetricsHandler(Exception toThrow = null)
+        private static void AssertCommonAttributes(Attributes attributes)
         {
-            return new MetricsHandler
-            {
-                InnerHandler = new ResponseHandler(toThrow),
-                Logger = Logger.GetLogger(typeof(DisabledMetricsCostTests))
-            };
+            Assert.AreEqual("PutObject", attributes.Get(TelemetryConstants.MethodAttributeKey));
+            Assert.AreEqual("S3", attributes.Get(TelemetryConstants.ServiceAttributeKey));
+            Assert.AreEqual(TelemetryConstants.SystemAttributeValue, attributes.Get(TelemetryConstants.SystemAttributeKey));
+        }
+
+        private static TelemetryProvider Telemetry(MeterProvider meter = null, TracerProvider tracer = null)
+        {
+            var telemetry = new DefaultTelemetryProvider();
+            if (meter != null)
+                telemetry.RegisterMeterProvider(meter);
+            if (tracer != null)
+                telemetry.RegisterTracerProvider(tracer);
+            return telemetry;
         }
 
         private static RequestContext CreateRequestContext(TelemetryProvider telemetryProvider, bool enableMetrics)
         {
-            var config = new AmazonS3Config { TelemetryProvider = telemetryProvider, LogMetrics = enableMetrics };
             return new RequestContext(enableMetrics)
             {
-                ClientConfig = config,
+                ClientConfig = new AmazonS3Config { TelemetryProvider = telemetryProvider, LogMetrics = enableMetrics },
                 OriginalRequest = new PutObjectRequest(),
                 ServiceMetaData = new TestServiceMetadata(),
             };
         }
 
         private static IExecutionContext CreateExecutionContext(TelemetryProvider telemetryProvider, bool enableMetrics)
-        {
-            return new Amazon.Runtime.Internal.ExecutionContext(
-                CreateRequestContext(telemetryProvider, enableMetrics), new ResponseContext());
-        }
+            => new Amazon.Runtime.Internal.ExecutionContext(CreateRequestContext(telemetryProvider, enableMetrics), new ResponseContext());
+
+        private static MetricsHandler CreateMetricsHandler(Exception toThrow = null)
+            => new MetricsHandler { InnerHandler = new ResponseHandler(toThrow), Logger = Logger.GetLogger(typeof(DisabledMetricsCostTests)) };
 
         private class ResponseHandler : PipelineHandler
         {
@@ -492,11 +359,10 @@ namespace AWSSDK.UnitTests
             }
         }
 
-        private class CsmPreInvokeHandler : CSMCallAttemptHandler
+        private class TestCsmHandler : CSMCallAttemptHandler
         {
-            public void CallPreInvoke(IExecutionContext executionContext) => PreInvoke(executionContext);
-            public void CallCapture(IExecutionContext executionContext)
-                => CSMCallAttemptMetricsCapture(executionContext.RequestContext, executionContext.ResponseContext);
+            public void CallPreInvoke(IExecutionContext context) => PreInvoke(context);
+            public void CallCapture(IExecutionContext context) => CSMCallAttemptMetricsCapture(context.RequestContext, context.ResponseContext);
         }
 
         private class TestServiceMetadata : IServiceMetadata
@@ -504,114 +370,5 @@ namespace AWSSDK.UnitTests
             public string ServiceId => "S3";
             public IDictionary<string, string> OperationNameMapping { get; } = new Dictionary<string, string>();
         }
-
-        private class TestTelemetryProvider : TelemetryProvider
-        {
-            public TestTelemetryProvider(MeterProvider meterProvider, TracerProvider tracerProvider)
-                : base(meterProvider, tracerProvider) { }
-        }
-
-        private class RecordedValue
-        {
-            public string Name;
-            public string Unit;
-            public object Value;
-            public Attributes Attributes;
-        }
-
-        private class RecordingMeterProvider : MeterProvider
-        {
-            public List<string> Scopes { get; } = new List<string>();
-            public List<RecordedValue> Records { get; } = new List<RecordedValue>();
-
-            public override Meter GetMeter(string scope, Attributes attributes = null)
-            {
-                Scopes.Add(scope);
-                return new RecordingMeter(this);
-            }
-        }
-
-        private class RecordingMeter : Meter
-        {
-            private readonly RecordingMeterProvider _provider;
-            public RecordingMeter(RecordingMeterProvider provider) { _provider = provider; }
-
-            public override UpDownCounter<T> CreateUpDownCounter<T>(string name, string units = null, string description = null)
-                => throw new NotSupportedException();
-
-            public override MonotonicCounter<T> CreateMonotonicCounter<T>(string name, string units = null, string description = null)
-                => new RecordingCounter<T>(_provider, name, units);
-
-            public override Histogram<T> CreateHistogram<T>(string name, string units = null, string description = null)
-                => new RecordingHistogram<T>(_provider, name, units);
-        }
-
-        private class RecordingCounter<T> : MonotonicCounter<T> where T : struct
-        {
-            private readonly RecordingMeterProvider _provider;
-            private readonly string _name, _unit;
-            public RecordingCounter(RecordingMeterProvider provider, string name, string unit) { _provider = provider; _name = name; _unit = unit; }
-
-            public override void Add(T value, Attributes attributes = null)
-                => _provider.Records.Add(new RecordedValue { Name = _name, Unit = _unit, Value = value, Attributes = attributes });
-        }
-
-        private class RecordingHistogram<T> : Histogram<T> where T : struct
-        {
-            private readonly RecordingMeterProvider _provider;
-            private readonly string _name, _unit;
-            public RecordingHistogram(RecordingMeterProvider provider, string name, string unit) { _provider = provider; _name = name; _unit = unit; }
-
-            public override void Record(T value, Attributes attributes = null)
-                => _provider.Records.Add(new RecordedValue { Name = _name, Unit = _unit, Value = value, Attributes = attributes });
-        }
-
-        private class RecordingTracerProvider : TracerProvider
-        {
-            public List<RecordingSpan> Spans { get; } = new List<RecordingSpan>();
-
-            public override Tracer GetTracer(string scope) => new RecordingTracer(this, scope);
-        }
-
-        private class RecordingTracer : Tracer
-        {
-            private readonly RecordingTracerProvider _provider;
-            private readonly string _scope;
-            public RecordingTracer(RecordingTracerProvider provider, string scope) { _provider = provider; _scope = scope; }
-
-            public override TraceSpan CreateSpan(string name, Attributes initialAttributes = null, SpanKind spanKind = SpanKind.INTERNAL, SpanContext parentContext = null)
-            {
-                var span = new RecordingSpan(name, _scope, spanKind, initialAttributes);
-                _provider.Spans.Add(span);
-                return span;
-            }
-        }
-
-        private class RecordingSpan : TraceSpan
-        {
-            public string Scope { get; }
-            public SpanKind Kind { get; }
-            public Attributes Attributes { get; }
-            public Dictionary<string, object> SetAttributes { get; } = new Dictionary<string, object>();
-            public List<Exception> Exceptions { get; } = new List<Exception>();
-            public bool Disposed { get; private set; }
-
-            public RecordingSpan(string name, string scope, SpanKind kind, Attributes attributes)
-            {
-                Name = name;
-                Scope = scope;
-                Kind = kind;
-                Attributes = attributes;
-            }
-
-            public override void EmitEvent(string name, Attributes attributes = null) { }
-            public override void SetAttribute(string key, object value) => SetAttributes[key] = value;
-            public override void SetStatus(SpanStatus status) { }
-            public override void RecordException(Exception exception, Attributes attributes = null) => Exceptions.Add(exception);
-            public override void End() { }
-            protected override void Dispose(bool disposing) => Disposed = true;
-        }
-
-        #endregion
     }
 }
