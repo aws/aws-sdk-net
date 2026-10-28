@@ -623,19 +623,29 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         }
 
         [TestMethod]
-        [Description("ACM-ACME in us-gov-west-1 returns partition error")]
-        public void ACMACME_in_usgovwest1_returns_partition_error_Test()
+        [Description("ACM-ACME standard endpoint for us-gov-west-1")]
+        public void ACMACME_standard_endpoint_for_usgovwest1_Test()
         {
             var parameters = new CertificateManagerEndpointParameters();
             parameters["Region"] = "us-gov-west-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["ServiceType"] = "ACM-ACME";
-            var exception = Assert.ThrowsExactly<AmazonClientException>(() =>
-            {
-                new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
-            });
-            Assert.AreEqual(@"ACME operations are only available in commercial AWS partitions", exception.Message);
+            var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://acm-acme.us-gov-west-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("ACM-ACME standard endpoint for us-gov-east-1")]
+        public void ACMACME_standard_endpoint_for_usgoveast1_Test()
+        {
+            var parameters = new CertificateManagerEndpointParameters();
+            parameters["Region"] = "us-gov-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM-ACME";
+            var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://acm-acme.us-gov-east-1.api.aws", endpoint.URL);
         }
 
         [TestMethod]
@@ -651,7 +661,52 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             {
                 new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             });
-            Assert.AreEqual(@"ACME operations are only available in commercial AWS partitions", exception.Message);
+            Assert.AreEqual(@"ACME operations are only available in the aws and aws-us-gov partitions", exception.Message);
+        }
+
+        [TestMethod]
+        [Description("ACM-ACME in cn-northwest-1 returns partition error")]
+        public void ACMACME_in_cnnorthwest1_returns_partition_error_Test()
+        {
+            var parameters = new CertificateManagerEndpointParameters();
+            parameters["Region"] = "cn-northwest-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM-ACME";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() =>
+            {
+                new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"ACME operations are only available in the aws and aws-us-gov partitions", exception.Message);
+        }
+
+        [TestMethod]
+        [Description("ACM-ACME with DualStack enabled for us-gov-west-1")]
+        public void ACMACME_with_DualStack_enabled_for_usgovwest1_Test()
+        {
+            var parameters = new CertificateManagerEndpointParameters();
+            parameters["Region"] = "us-gov-west-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["ServiceType"] = "ACM-ACME";
+            var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://acm-acme.us-gov-west-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("ACM-ACME FIPS in us-gov-west-1 returns error")]
+        public void ACMACME_FIPS_in_usgovwest1_returns_error_Test()
+        {
+            var parameters = new CertificateManagerEndpointParameters();
+            parameters["Region"] = "us-gov-west-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM-ACME";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() =>
+            {
+                new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"FIPS endpoints are not available for ACME operations", exception.Message);
         }
     }
 }
