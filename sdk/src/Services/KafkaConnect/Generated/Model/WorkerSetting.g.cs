@@ -35,7 +35,10 @@ namespace Amazon.KafkaConnect.Model
     public partial class WorkerSetting
     {
         /// <summary>
-        /// Gets and sets the property Capacity.
+        /// Gets and sets the property Capacity. 
+        /// <para>
+        /// Specifies the compute capacity settings of the connector.
+        /// </para>
         /// </summary>
         public CapacityDescription Capacity { get; set; }
 
@@ -43,5 +46,51 @@ namespace Amazon.KafkaConnect.Model
         /// Checks to see if the Capacity property is set.
         /// </summary>
         internal bool IsSetCapacity() => this.Capacity != null;
+
+        /// <summary>
+        /// Gets and sets the property Plugins. 
+        /// <para>
+        /// Specifies which plugins the connector uses.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<PluginDescription> Plugins { get; set; } = AWSConfigs.InitializeCollections ? new List<PluginDescription>() : null;
+
+        /// <summary>
+        /// Checks to see if the Plugins property is set.
+        /// </summary>
+        internal bool IsSetPlugins() => this.Plugins != null && (this.Plugins.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property UseDefaultWorkerConfiguration. 
+        /// <para>
+        /// Specifies whether the connector uses the default worker configuration instead of a
+        /// custom worker configuration.
+        /// </para>
+        /// </summary>
+        public bool? UseDefaultWorkerConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UseDefaultWorkerConfiguration property is set.
+        /// </summary>
+        internal bool IsSetUseDefaultWorkerConfiguration() => this.UseDefaultWorkerConfiguration.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property WorkerConfiguration. 
+        /// <para>
+        /// Specifies which worker configuration the connector uses.
+        /// </para>
+        /// </summary>
+        public WorkerConfigurationDescription WorkerConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the WorkerConfiguration property is set.
+        /// </summary>
+        internal bool IsSetWorkerConfiguration() => this.WorkerConfiguration != null;
     }
 }

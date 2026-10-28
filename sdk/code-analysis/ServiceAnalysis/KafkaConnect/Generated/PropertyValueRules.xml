@@ -66,6 +66,11 @@
     <max>9223372036854775807</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KafkaConnect.Model.CustomPluginUpdate.Revision</property>
+    <min>1</min>
+    <max>9223372036854775807</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KafkaConnect.Model.ProvisionedCapacity.McuCount</property>
     <min>1</min>
     <max>8</max>
@@ -97,6 +102,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KafkaConnect.Model.WorkerConfiguration.Revision</property>
+    <min>1</min>
+    <max>9223372036854775807</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KafkaConnect.Model.WorkerConfigurationUpdate.Revision</property>
     <min>1</min>
     <max>9223372036854775807</max>
   </property-value-rule>
