@@ -1369,4 +1369,109 @@ public class CborStreamReaderTests : IClassFixture<BufferSizeConfigFixture>
         Assert.True(GetBuffer(reader).Length < payload.Length,
             $"Buffer ({GetBuffer(reader).Length}) should stay below the full payload size ({payload.Length}).");
     }
+
+    // Indefinite-length strings and decimals span several CBOR items, so they can straddle a chunk edge even with
+    // the header buffered. Sweep the value across several buffer lengths to hit every boundary position.
+    public enum CompositeValueKind { IndefiniteTextString, IndefiniteByteString, Decimal }
+
+    private const int SweepOffsets = 400;
+    private const int Sentinel = 424242;
+    private static readonly string[] TextChunks = { "alpha-", "bravo-", "charlie-", "delta-", "echo" };
+    private static readonly byte[][] ByteChunks = { new byte[] { 1, 2, 3 }, Enumerable.Range(0, 40).Select(i => (byte)i).ToArray(), new byte[] { 9 } };
+    private const decimal DecimalValue = 1234567890.123456789m;
+
+    private static byte[] BuildCompositePayload(CompositeValueKind kind, int offset)
+    {
+        // [ padding byte string, value, sentinel ]. The padding length shifts where the value starts.
+        var writer = new CborWriter(CborConformanceMode.Lax);
+        writer.WriteStartArray(3);
+        writer.WriteByteString(new byte[offset]);
+        switch (kind)
+        {
+            case CompositeValueKind.IndefiniteTextString:
+                writer.WriteStartIndefiniteLengthTextString();
+                foreach (var c in TextChunks) writer.WriteTextString(c);
+                writer.WriteEndIndefiniteLengthTextString();
+                break;
+            case CompositeValueKind.IndefiniteByteString:
+                writer.WriteStartIndefiniteLengthByteString();
+                foreach (var c in ByteChunks) writer.WriteByteString(c);
+                writer.WriteEndIndefiniteLengthByteString();
+                break;
+            case CompositeValueKind.Decimal:
+                writer.WriteDecimal(DecimalValue);
+                break;
+        }
+        writer.WriteInt32(Sentinel);
+        writer.WriteEndArray();
+        return writer.Encode();
+    }
+
+    private static void ReadAndAssertCompositeValue(CborStreamReader reader, CompositeValueKind kind)
+    {
+        switch (kind)
+        {
+            case CompositeValueKind.IndefiniteTextString:
+                Assert.Equal(string.Concat(TextChunks), reader.ReadTextString());
+                break;
+            case CompositeValueKind.IndefiniteByteString:
+                Assert.Equal(ByteChunks.SelectMany(c => c).ToArray(), reader.ReadByteString());
+                break;
+            case CompositeValueKind.Decimal:
+                Assert.Equal(DecimalValue, reader.ReadDecimal());
+                break;
+        }
+    }
+
+    [Theory]
+    [InlineData(CompositeValueKind.IndefiniteTextString)]
+    [InlineData(CompositeValueKind.IndefiniteByteString)]
+    [InlineData(CompositeValueKind.Decimal)]
+    public void CompositeValue_StraddlingChunkEdge_ReadsAtEveryOffset(CompositeValueKind kind)
+    {
+        var failures = new System.Collections.Generic.List<string>();
+        for (int offset = 0; offset < SweepOffsets; offset++)
+        {
+            try
+            {
+                using var reader = new CborStreamReader(new MemoryStream(BuildCompositePayload(kind, offset)));
+                Assert.Equal(3, reader.ReadStartArray());
+                Assert.Equal(offset, reader.ReadByteString().Length);
+                ReadAndAssertCompositeValue(reader, kind);
+                Assert.Equal(Sentinel, reader.ReadInt32());
+                reader.ReadEndArray();
+            }
+            catch (Exception ex)
+            {
+                failures.Add($"offset {offset}: {ex.GetType().Name}: {ex.Message}");
+            }
+        }
+
+        Assert.True(failures.Count == 0,
+            $"{kind}: {failures.Count}/{SweepOffsets} offsets failed. First: {failures.FirstOrDefault()}");
+    }
+
+    [Theory]
+    [InlineData(CompositeValueKind.IndefiniteTextString)]
+    [InlineData(CompositeValueKind.IndefiniteByteString)]
+    [InlineData(CompositeValueKind.Decimal)]
+    public void CompositeValue_TruncatedInsideValue_ThrowsCborContentException(CompositeValueKind kind)
+    {
+        // Starts the value just before the first refill boundary, so the read must refill before it hits the truncation.
+        int offset = AWSConfigs.CborReaderInitialBufferSize - 4;
+        var truncated = BuildCompositePayload(kind, offset).Take(CompositeValueStart(offset) + 3).ToArray();
+
+        using var reader = new CborStreamReader(new MemoryStream(truncated));
+        reader.ReadStartArray();
+        reader.ReadByteString();
+        Assert.Throws<CborContentException>(() => ReadAndAssertCompositeValue(reader, kind));
+    }
+
+    private static int CompositeValueStart(int offset)
+    {
+        var writer = new CborWriter(CborConformanceMode.Lax);
+        writer.WriteStartArray(3);
+        writer.WriteByteString(new byte[offset]);
+        return writer.BytesWritten;
+    }
 }

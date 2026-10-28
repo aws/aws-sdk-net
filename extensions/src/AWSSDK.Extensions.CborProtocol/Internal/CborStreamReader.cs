@@ -108,26 +108,55 @@ namespace Amazon.Extensions.CborProtocol.Internal
         }
 
         /// <summary>
-        /// Executes a single-token CBOR read, refilling first while the reader reports
-        /// <see cref="CborReaderState.NeedsMoreData"/> so the token is fully buffered. A
-        /// <see cref="CborContentException"/> from the read is a malformed payload and propagates.
+        /// Executes a CBOR read, refilling while the reader reports <see cref="CborReaderState.NeedsMoreData"/>.
+        /// That only covers the next item's header, so multi-item values (indefinite-length strings, decimal
+        /// fractions) are also retried after a refill until they succeed or the stream is exhausted.
         /// </summary>
         private T ExecuteRead<T>(Func<CborStreamReader, CborReader, T> readOperation)
         {
             EnsureStarted();
-            FillWhileNeedsMoreData();
 
-            try
+            while (true)
             {
-                return readOperation(this, _internalCborReader);
+                FillWhileNeedsMoreData();
+
+                try
+                {
+                    return readOperation(this, _internalCborReader);
+                }
+                catch (Exception ex) when ((ex is CborContentException || ex is InvalidOperationException)
+                    && !_streamExhausted && NextItemIsMultiItemValue())
+                {
+                    // A failed read leaves the reader at the start of the value. Scoped to multi-item values so a malformed
+                    // ordinary value fails fast instead of pulling the rest of the stream into the buffer.
+                    _logger.DebugFormat("Multi-item CBOR value spans a chunk boundary; refilling and retrying.");
+                    Fill();
+                }
+                catch (InvalidOperationException ex)
+                {
+                    // The incremental reader raises InvalidOperationException for structural misuse, such as
+                    // ending the wrong container type or reading a value as the wrong major type on a malformed
+                    // payload. Surface it as a content error so callers see the same exception as with the previous reader.
+                    throw new CborContentException(ex.Message, ex);
+                }
             }
-            catch (InvalidOperationException ex)
-            {
-                // The incremental reader raises InvalidOperationException for structural misuse, such as
-                // ending the wrong container type or reading a value as the wrong major type on a malformed
-                // payload. Surface it as a content error so callers see the same exception as on other targets.
-                throw new CborContentException(ex.Message, ex);
-            }
+        }
+
+        // Initial bytes of values the reader decodes as several CBOR items in one call (RFC 8949 §3.2.3, §3.4.4).
+        private const byte IndefiniteLengthByteString = 0x5F;
+        private const byte IndefiniteLengthTextString = 0x7F;
+        private const byte DecimalFractionTag = 0xC4;
+
+        private bool NextItemIsMultiItemValue()
+        {
+            int remaining = _internalCborReader.BytesRemaining;
+            if (remaining <= 0)
+                return false;
+
+            byte initialByte = _buffer[_slidLength - remaining];
+            return initialByte == IndefiniteLengthByteString
+                || initialByte == IndefiniteLengthTextString
+                || initialByte == DecimalFractionTag;
         }
 
         private void EnsureStarted()
