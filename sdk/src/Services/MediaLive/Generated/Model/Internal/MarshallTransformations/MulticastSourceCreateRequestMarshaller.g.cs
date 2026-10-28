@@ -45,6 +45,18 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetSecondarySourceIp())
+            {
+                context.Writer.WritePropertyName("secondarySourceIp");
+                context.Writer.WriteStringValue(requestObject.SecondarySourceIp);
+            }
+
+            if (requestObject.IsSetSecondaryUrl())
+            {
+                context.Writer.WritePropertyName("secondaryUrl");
+                context.Writer.WriteStringValue(requestObject.SecondaryUrl);
+            }
+
             if (requestObject.IsSetSourceIp())
             {
                 context.Writer.WritePropertyName("sourceIp");
