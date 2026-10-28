@@ -18,7 +18,7 @@
       "serviceName": "CloudHSM",
       "type": "patch",
       "changeLogMessages": [
-        "CloudHSM is now generated from its Smithy model. CloudHsmInternalException and InvalidRequestException now expose the Retryable property that the service returns, as CloudHsmServiceException already did."
+        "CloudHSM is now generated from its Smithy model. CloudHsmInternalException and InvalidRequestException now expose the Retryable flag (bool?) that the service returns, hiding the base RetryableDetails property as CloudHsmServiceException already does."
       ]
     },
     {
@@ -142,7 +142,7 @@
       "type": "patch",
       "changeLogMessages": [
         "Kinesis is now generated from its Smithy model. There are no changes to the public API.",
-        "The ListStreams paginator now stops when the response carries no NextToken instead of checking the HasMoreStreams flag."
+        "The ListStreams paginator now stops when the response carries no NextToken instead of checking the HasMoreStreams flag; the service omits NextToken on the last page, which is how the other Smithy-based SDKs already paginate it."
       ]
     },
     {
