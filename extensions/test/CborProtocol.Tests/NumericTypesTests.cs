@@ -11,7 +11,7 @@ using Xunit;
 namespace Amazon.CborProtocol.Tests;
 
 /// <summary>
-/// The byte, short, bigInteger and bigDecimal types from the Full Numeric Type Support SEP, encoded as Smithy RPC v2
+/// The byte, short, bigInteger and bigDecimal types from the Full Numeric Type Support specification, encoded as Smithy RPC v2
 /// CBOR requires: integers, bignums (tags 2/3) and decimal fractions (tag 4). Hex examples are from RFC 8949.
 /// </summary>
 public class NumericTypesTests

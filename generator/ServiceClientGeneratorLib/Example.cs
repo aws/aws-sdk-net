@@ -374,7 +374,7 @@ namespace ServiceClientGenerator
                 return "float";
             if (shape.IsDouble)
                 return "double";
-            if (shape.IsSepNumericType)
+            if (shape.IsExtendedNumericType)
                 return shape.PrimitiveCSharpTypeName;
             if (shape.IsTimeStamp)
                 return "DateTime";

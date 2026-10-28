@@ -15,7 +15,7 @@ description: Smithy shape to .NET type mapping, nullability, collection element 
 | `float` | `float?` | |
 | `double` | `double?` | |
 | `timestamp` | `DateTime?` | |
-| `byte` | `sbyte?` | Smithy's byte is signed (Full Numeric Type Support SEP), so not `System.Byte` |
+| `byte` | `sbyte?` | Smithy's byte is signed (Full Numeric Type Support specification), so not `System.Byte` |
 | `short` | `short?` | |
 | `bigInteger` | `System.Numerics.BigInteger?` | Fully qualified; no `using` is added |
 | `bigDecimal` | `Amazon.Extensions.Numerics.BigDecimal?` | From `AWSSDK.Extensions.Numerics`, which `AWSSDK.Core` depends on |

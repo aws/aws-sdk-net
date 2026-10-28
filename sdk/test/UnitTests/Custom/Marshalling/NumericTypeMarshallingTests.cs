@@ -29,7 +29,7 @@ using System.Threading;
 namespace AWSSDK.UnitTests
 {
     /// <summary>
-    /// Tests for the byte, short, bigInteger and bigDecimal types from the Full Numeric Type Support SEP.
+    /// Tests for the byte, short, bigInteger and bigDecimal types from the Full Numeric Type Support specification.
     /// </summary>
     [TestClass]
     [TestCategory("UnitTest")]
@@ -255,8 +255,6 @@ namespace AWSSDK.UnitTests
             Assert.ThrowsExactly<ArgumentNullException>(() => StringUtils.FromValueTypeList(new List<short> { 1 }, (Func<short, string>)null));
         }
 
-        // BigDecimal cases below are ported from the boblod-bigdecimal-stj-test branch (2026-07-21) and now
-        // run through the real SDK unmarshallers and writers instead of System.Text.Json directly.
 
         [TestMethod]
         [DataRow("0", "0", 0)]

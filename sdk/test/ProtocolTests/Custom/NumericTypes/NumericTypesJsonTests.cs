@@ -33,7 +33,7 @@ using RestJsonSvc = Amazon.NumericTypesRestJson;
 namespace AWSSDK.ProtocolTests.NumericTypes
 {
     /// <summary>
-    /// Full Numeric Type Support SEP tests for awsJson1.1 and restJson1: byte, short, bigInteger and bigDecimal
+    /// Full Numeric Type Support specification tests for awsJson1.1 and restJson1: byte, short, bigInteger and bigDecimal
     /// are JSON numbers, written and read without losing digits or scale.
     /// </summary>
     [TestClass]

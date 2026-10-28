@@ -38,7 +38,7 @@ public class RpcV2CborCodegenTests
         Assert.Contains("""context.Writer.WriteTextString("name");""", source);
         Assert.Contains("context.Writer.WriteInt32(publicRequest.Count.Value);", source);
         Assert.Contains("context.Writer.WriteInt64(publicRequest.Big.Value);", source);
-        // Full Numeric Type Support SEP: byte/short are plain integers, bigInteger a bignum, bigDecimal a decimal fraction.
+        // Full Numeric Type Support specification: byte/short are plain integers, bigInteger a bignum, bigDecimal a decimal fraction.
         Assert.Contains("context.Writer.WriteInt32(publicRequest.Tiny.Value);", source);
         Assert.Contains("context.Writer.WriteInt32(publicRequest.Small.Value);", source);
         Assert.Contains("context.Writer.WriteBigInteger(publicRequest.Huge.Value);", source);

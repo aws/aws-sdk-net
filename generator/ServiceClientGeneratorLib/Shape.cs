@@ -555,10 +555,10 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// Determines if the shape is one of the numeric types added by the Full Numeric Type Support SEP
+        /// Determines if the shape is one of the numeric types added by the Full Numeric Type Support specification
         /// (byte, short, bigInteger, bigDecimal).
         /// </summary>
-        public bool IsSepNumericType
+        public bool IsExtendedNumericType
         {
             get { return IsByte || IsShort || IsArbitraryPrecisionNumber; }
         }
@@ -593,14 +593,14 @@ namespace ServiceClientGenerator
 
         /// <summary>
         /// Extra argument for MultiValueHeaderParser.ToValueTypeList when parsing a list header of this shape.
-        /// The numeric types from the Full Numeric Type Support SEP pass an invariant-culture parse function;
+        /// The numeric types from the Full Numeric Type Support specification pass an invariant-culture parse function;
         /// existing types pass nothing and keep using the Convert.ChangeType based overload.
         /// </summary>
         public string HeaderListParseArgument
         {
             get
             {
-                return IsSepNumericType
+                return IsExtendedNumericType
                     ? $", s => {PrimitiveParseTypeName}.Parse(s, CultureInfo.InvariantCulture)"
                     : string.Empty;
             }
@@ -608,17 +608,17 @@ namespace ServiceClientGenerator
 
         /// <summary>
         /// Extra argument for StringUtils.FromValueTypeList when marshalling a list header of this shape.
-        /// The numeric types from the Full Numeric Type Support SEP pass their invariant-culture StringUtils.From*
+        /// The numeric types from the Full Numeric Type Support specification pass their invariant-culture StringUtils.From*
         /// method; existing types pass nothing and keep using the ToString() based overload.
         /// </summary>
         public string HeaderListFormatArgument
         {
-            get { return IsSepNumericType ? $", {PrimitiveMarshaller(MarshallLocation.Header)}" : string.Empty; }
+            get { return IsExtendedNumericType ? $", {PrimitiveMarshaller(MarshallLocation.Header)}" : string.Empty; }
         }
 
         /// <summary>
         /// The text conversion the REST XML marshaller appends to a map value of this shape. Existing types keep
-        /// the current-culture ToString() the template has always emitted; the SEP numeric types use invariant
+        /// the current-culture ToString() the template has always emitted; the numeric types from the specification use invariant
         /// culture, with bigDecimal as plain decimal text to match StringUtils.FromBigDecimal.
         /// </summary>
         public string RestXmlMapValueSuffix
@@ -629,7 +629,7 @@ namespace ServiceClientGenerator
                 {
                     return string.Empty;
                 }
-                return IsSepNumericType ? InvariantTextSuffix : ".ToString()";
+                return IsExtendedNumericType ? InvariantTextSuffix : ".ToString()";
             }
         }
 
@@ -656,11 +656,11 @@ namespace ServiceClientGenerator
         /// <summary>
         /// The variable type the AWS Query marshaller declares for a map value of this primitive shape.
         /// Existing types keep the primitive name the template has always emitted, so generated code for
-        /// current services does not change; the SEP numeric types use their C# type.
+        /// current services does not change; the numeric types from the specification use their C# type.
         /// </summary>
         public string QueryMapValueTypeName
         {
-            get { return IsSepNumericType ? PrimitiveCSharpTypeName : GetPrimitiveType(); }
+            get { return IsExtendedNumericType ? PrimitiveCSharpTypeName : GetPrimitiveType(); }
         }
 
         /// <summary>

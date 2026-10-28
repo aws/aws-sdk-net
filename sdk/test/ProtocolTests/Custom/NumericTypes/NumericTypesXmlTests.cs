@@ -35,7 +35,7 @@ using RestXmlSvc = Amazon.NumericTypesRestXml;
 namespace AWSSDK.ProtocolTests.NumericTypes
 {
     /// <summary>
-    /// Full Numeric Type Support SEP tests for restXml, awsQuery and ec2Query (decimal text), plus the REST header,
+    /// Full Numeric Type Support specification tests for restXml, awsQuery and ec2Query (decimal text), plus the REST header,
     /// query string and URI label bindings shared by restJson1 and restXml.
     /// </summary>
     [TestClass]
