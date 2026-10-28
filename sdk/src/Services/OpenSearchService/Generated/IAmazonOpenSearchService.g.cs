@@ -216,6 +216,73 @@ namespace Amazon.OpenSearchService
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Starts replicating a domain to a peer domain in another AWS Region. A domain can have
+        /// one peer. The domain you call becomes the primary and the peer becomes the secondary,
+        /// which receives a copy of the primary's indexes and serves read requests.
+        /// 
+        ///  
+        /// <para>
+        /// Replication is established asynchronously. Use the <c>DescribeDomainReplication</c>
+        /// operation to check whether the relationship has reached the <c>ACTIVE</c> state.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddReplicationPeer service method.</param>
+        /// <returns>The response from the AddReplicationPeer service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceAlreadyExistsException">
+        /// An exception for creating a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AddReplicationPeer">REST API Reference for AddReplicationPeer Operation</seealso>
+        AddReplicationPeerResponse AddReplicationPeer(AddReplicationPeerRequest request);
+#endif
+
+        /// <summary>
+        /// Starts replicating a domain to a peer domain in another AWS Region. A domain can have
+        /// one peer. The domain you call becomes the primary and the peer becomes the secondary,
+        /// which receives a copy of the primary's indexes and serves read requests.
+        /// 
+        ///  
+        /// <para>
+        /// Replication is established asynchronously. Use the <c>DescribeDomainReplication</c>
+        /// operation to check whether the relationship has reached the <c>ACTIVE</c> state.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddReplicationPeer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the AddReplicationPeer service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceAlreadyExistsException">
+        /// An exception for creating a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AddReplicationPeer">REST API Reference for AddReplicationPeer Operation</seealso>
+        Task<AddReplicationPeerResponse> AddReplicationPeerAsync(AddReplicationPeerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Attaches tags to an existing Amazon OpenSearch Service domain, data source, or application.
         /// 
         /// 
@@ -632,6 +699,69 @@ namespace Amazon.OpenSearchService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CancelServiceSoftwareUpdate">REST API Reference for CancelServiceSoftwareUpdate Operation</seealso>
         Task<CancelServiceSoftwareUpdateResponse> CancelServiceSoftwareUpdateAsync(CancelServiceSoftwareUpdateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Compares the metadata of two domains and reports where they differ. Use this operation
+        /// to check that a secondary domain is configured consistently with its primary before
+        /// you rely on it, because replication copies index data but does not copy domain metadata
+        /// such as index templates, ingest pipelines, or security roles.
+        /// 
+        ///  
+        /// <para>
+        /// You choose which categories to compare. The response reports, for each category, how
+        /// many items match, how many exist on only one domain, and which fields diverge.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CompareDomainConfiguration service method.</param>
+        /// <returns>The response from the CompareDomainConfiguration service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CompareDomainConfiguration">REST API Reference for CompareDomainConfiguration Operation</seealso>
+        CompareDomainConfigurationResponse CompareDomainConfiguration(CompareDomainConfigurationRequest request);
+#endif
+
+        /// <summary>
+        /// Compares the metadata of two domains and reports where they differ. Use this operation
+        /// to check that a secondary domain is configured consistently with its primary before
+        /// you rely on it, because replication copies index data but does not copy domain metadata
+        /// such as index templates, ingest pipelines, or security roles.
+        /// 
+        ///  
+        /// <para>
+        /// You choose which categories to compare. The response reports, for each category, how
+        /// many items match, how many exist on only one domain, and which fields diverge.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CompareDomainConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CompareDomainConfiguration service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CompareDomainConfiguration">REST API Reference for CompareDomainConfiguration Operation</seealso>
+        Task<CompareDomainConfigurationResponse> CompareDomainConfigurationAsync(CompareDomainConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -1918,6 +2048,65 @@ namespace Amazon.OpenSearchService
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Describes the replication arrangement that a domain participates in, including the
+        /// domain's role and the state of its relationship with each peer.
+        /// 
+        ///  
+        /// <para>
+        /// A domain that is not replicating is returned with an empty <c>Peers</c> list and no
+        /// <c>Role</c>. Returns <c>ResourceNotFoundException</c> if the domain does not exist.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDomainReplication service method.</param>
+        /// <returns>The response from the DescribeDomainReplication service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainReplication">REST API Reference for DescribeDomainReplication Operation</seealso>
+        DescribeDomainReplicationResponse DescribeDomainReplication(DescribeDomainReplicationRequest request);
+#endif
+
+        /// <summary>
+        /// Describes the replication arrangement that a domain participates in, including the
+        /// domain's role and the state of its relationship with each peer.
+        /// 
+        ///  
+        /// <para>
+        /// A domain that is not replicating is returned with an empty <c>Peers</c> list and no
+        /// <c>Role</c>. Returns <c>ResourceNotFoundException</c> if the domain does not exist.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDomainReplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeDomainReplication service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainReplication">REST API Reference for DescribeDomainReplication Operation</seealso>
+        Task<DescribeDomainReplicationResponse> DescribeDomainReplicationAsync(DescribeDomainReplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Returns domain configuration information about the specified Amazon OpenSearch Service
         /// domains.
         /// </summary>
@@ -2598,6 +2787,75 @@ namespace Amazon.OpenSearchService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DissociatePackages">REST API Reference for DissociatePackages Operation</seealso>
         Task<DissociatePackagesResponse> DissociatePackagesAsync(DissociatePackagesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Promotes a secondary domain to primary without coordinating with the current primary.
+        /// Use this operation when the primary is unreachable and you cannot wait for it to recover.
+        /// 
+        ///  
+        /// <para>
+        /// Writes that had not yet replicated when the primary became unreachable are lost. You
+        /// must set <c>AllowDataLoss</c> to acknowledge this. To promote a domain without losing
+        /// writes, use the <c>SwitchoverReplication</c> operation instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// Call this operation in the Region of the domain you want to promote.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the FailoverReplication service method.</param>
+        /// <returns>The response from the FailoverReplication service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/FailoverReplication">REST API Reference for FailoverReplication Operation</seealso>
+        FailoverReplicationResponse FailoverReplication(FailoverReplicationRequest request);
+#endif
+
+        /// <summary>
+        /// Promotes a secondary domain to primary without coordinating with the current primary.
+        /// Use this operation when the primary is unreachable and you cannot wait for it to recover.
+        /// 
+        ///  
+        /// <para>
+        /// Writes that had not yet replicated when the primary became unreachable are lost. You
+        /// must set <c>AllowDataLoss</c> to acknowledge this. To promote a domain without losing
+        /// writes, use the <c>SwitchoverReplication</c> operation instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// Call this operation in the Region of the domain you want to promote.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the FailoverReplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the FailoverReplication service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/FailoverReplication">REST API Reference for FailoverReplication Operation</seealso>
+        Task<FailoverReplicationResponse> FailoverReplicationAsync(FailoverReplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -4425,6 +4683,53 @@ namespace Amazon.OpenSearchService
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Stops replicating a domain to its peer. Replication ends for both domains, and each
+        /// domain keeps the data it holds at that point. Neither domain is deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveReplicationPeer service method.</param>
+        /// <returns>The response from the RemoveReplicationPeer service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RemoveReplicationPeer">REST API Reference for RemoveReplicationPeer Operation</seealso>
+        RemoveReplicationPeerResponse RemoveReplicationPeer(RemoveReplicationPeerRequest request);
+#endif
+
+        /// <summary>
+        /// Stops replicating a domain to its peer. Replication ends for both domains, and each
+        /// domain keeps the data it holds at that point. Neither domain is deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveReplicationPeer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the RemoveReplicationPeer service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RemoveReplicationPeer">REST API Reference for RemoveReplicationPeer Operation</seealso>
+        Task<RemoveReplicationPeerResponse> RemoveReplicationPeerAsync(RemoveReplicationPeerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Removes the specified set of tags from an Amazon OpenSearch Service domain, data source,
         /// or application. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-awsresorcetagging">
         /// Tagging Amazon OpenSearch Service resources</a>.
@@ -4744,6 +5049,67 @@ namespace Amazon.OpenSearchService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/StartServiceSoftwareUpdate">REST API Reference for StartServiceSoftwareUpdate Operation</seealso>
         Task<StartServiceSoftwareUpdateResponse> StartServiceSoftwareUpdateAsync(StartServiceSoftwareUpdateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Promotes a secondary domain to primary, coordinating with the current primary so that
+        /// no writes are lost. Use this operation for planned role changes, such as testing your
+        /// recovery procedure or moving write traffic to another Region.
+        /// 
+        ///  
+        /// <para>
+        /// Call this operation in the Region of the domain you want to promote. If the current
+        /// primary is unreachable, use the <c>FailoverReplication</c> operation instead.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SwitchoverReplication service method.</param>
+        /// <returns>The response from the SwitchoverReplication service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/SwitchoverReplication">REST API Reference for SwitchoverReplication Operation</seealso>
+        SwitchoverReplicationResponse SwitchoverReplication(SwitchoverReplicationRequest request);
+#endif
+
+        /// <summary>
+        /// Promotes a secondary domain to primary, coordinating with the current primary so that
+        /// no writes are lost. Use this operation for planned role changes, such as testing your
+        /// recovery procedure or moving write traffic to another Region.
+        /// 
+        ///  
+        /// <para>
+        /// Call this operation in the Region of the domain you want to promote. If the current
+        /// primary is unreachable, use the <c>FailoverReplication</c> operation instead.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SwitchoverReplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the SwitchoverReplication service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/SwitchoverReplication">REST API Reference for SwitchoverReplication Operation</seealso>
+        Task<SwitchoverReplicationResponse> SwitchoverReplicationAsync(SwitchoverReplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>

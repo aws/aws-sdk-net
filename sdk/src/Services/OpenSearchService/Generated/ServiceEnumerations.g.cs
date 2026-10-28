@@ -920,6 +920,83 @@ namespace Amazon.OpenSearchService
     }
 
     /// <summary>
+    /// Constants used for properties of type DiffFieldPolicy.
+    /// </summary>
+    public class DiffFieldPolicy : ConstantClass
+    {
+        /// <summary>
+        /// Constant Redacted for DiffFieldPolicy
+        /// </summary>
+        public static readonly DiffFieldPolicy Redacted = new DiffFieldPolicy("redacted");
+
+        /// <summary>
+        /// Constructs a custom DiffFieldPolicy for a value not among the defined constants.
+        /// </summary>
+        public DiffFieldPolicy(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DiffFieldPolicy FindValue(string value)
+        {
+            return FindValue<DiffFieldPolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DiffFieldPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DiffStatus.
+    /// </summary>
+    public class DiffStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant Compared for DiffStatus
+        /// </summary>
+        public static readonly DiffStatus Compared = new DiffStatus("compared");
+
+        /// <summary>
+        /// Constant Error for DiffStatus
+        /// </summary>
+        public static readonly DiffStatus Error = new DiffStatus("error");
+
+        /// <summary>
+        /// Constructs a custom DiffStatus for a value not among the defined constants.
+        /// </summary>
+        public DiffStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DiffStatus FindValue(string value)
+        {
+            return FindValue<DiffStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DiffStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type DomainHealth.
     /// </summary>
     public class DomainHealth : ConstantClass
@@ -3431,6 +3508,118 @@ namespace Amazon.OpenSearchService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PropertyValueType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ReplicationRole.
+    /// </summary>
+    public class ReplicationRole : ConstantClass
+    {
+        /// <summary>
+        /// Constant PRIMARY for ReplicationRole
+        /// </summary>
+        public static readonly ReplicationRole PRIMARY = new ReplicationRole("PRIMARY");
+
+        /// <summary>
+        /// Constant SECONDARY for ReplicationRole
+        /// </summary>
+        public static readonly ReplicationRole SECONDARY = new ReplicationRole("SECONDARY");
+
+        /// <summary>
+        /// Constructs a custom ReplicationRole for a value not among the defined constants.
+        /// </summary>
+        public ReplicationRole(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReplicationRole FindValue(string value)
+        {
+            return FindValue<ReplicationRole>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReplicationRole(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ReplicationStatus.
+    /// </summary>
+    public class ReplicationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for ReplicationStatus
+        /// </summary>
+        public static readonly ReplicationStatus ACTIVE = new ReplicationStatus("ACTIVE");
+
+        /// <summary>
+        /// Constant DETACHED for ReplicationStatus
+        /// </summary>
+        public static readonly ReplicationStatus DETACHED = new ReplicationStatus("DETACHED");
+
+        /// <summary>
+        /// Constant EJECTED for ReplicationStatus
+        /// </summary>
+        public static readonly ReplicationStatus EJECTED = new ReplicationStatus("EJECTED");
+
+        /// <summary>
+        /// Constant FAILED for ReplicationStatus
+        /// </summary>
+        public static readonly ReplicationStatus FAILED = new ReplicationStatus("FAILED");
+
+        /// <summary>
+        /// Constant FAILING_OVER for ReplicationStatus
+        /// </summary>
+        public static readonly ReplicationStatus FAILING_OVER = new ReplicationStatus("FAILING_OVER");
+
+        /// <summary>
+        /// Constant PENDING_REMOVAL for ReplicationStatus
+        /// </summary>
+        public static readonly ReplicationStatus PENDING_REMOVAL = new ReplicationStatus("PENDING_REMOVAL");
+
+        /// <summary>
+        /// Constant PENDING_SETUP for ReplicationStatus
+        /// </summary>
+        public static readonly ReplicationStatus PENDING_SETUP = new ReplicationStatus("PENDING_SETUP");
+
+        /// <summary>
+        /// Constant SWITCHING_OVER for ReplicationStatus
+        /// </summary>
+        public static readonly ReplicationStatus SWITCHING_OVER = new ReplicationStatus("SWITCHING_OVER");
+
+        /// <summary>
+        /// Constructs a custom ReplicationStatus for a value not among the defined constants.
+        /// </summary>
+        public ReplicationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReplicationStatus FindValue(string value)
+        {
+            return FindValue<ReplicationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReplicationStatus(string value)
         {
             return FindValue(value);
         }

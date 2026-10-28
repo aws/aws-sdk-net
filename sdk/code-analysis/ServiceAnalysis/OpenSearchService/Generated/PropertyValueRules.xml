@@ -43,6 +43,24 @@
     <pattern>^([a-zA-Z0-9_])*[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.AddReplicationPeerRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.AddReplicationPeerRequest.PeerDomainArn</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^arn:aws[a-z\-]*:[a-z]+:[a-z0-9\-]+:[0-9]+:domain\/[a-z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.AddReplicationPeerResponse.DomainArn</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^arn:aws[a-z\-]*:[a-z]+:[a-z0-9\-]+:[0-9]+:domain\/[a-z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.AddTagsRequest.ARN</property>
     <min>20</min>
     <max>2048</max>
@@ -116,6 +134,30 @@
     <min>3</min>
     <max>28</max>
     <pattern>^[a-z][a-z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.CompareDomainConfigurationRequest.SourceDomainArn</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^arn:aws[a-z\-]*:[a-z]+:[a-z0-9\-]+:[0-9]+:domain\/[a-z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.CompareDomainConfigurationRequest.TargetDomainArn</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^arn:aws[a-z\-]*:[a-z]+:[a-z0-9\-]+:[0-9]+:domain\/[a-z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.CompareDomainConfigurationResponse.SourceDomainArn</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^arn:aws[a-z\-]*:[a-z]+:[a-z0-9\-]+:[0-9]+:domain\/[a-z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.CompareDomainConfigurationResponse.TargetDomainArn</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^arn:aws[a-z\-]*:[a-z]+:[a-z0-9\-]+:[0-9]+:domain\/[a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.CreateApplicationRequest.ClientToken</property>
@@ -404,6 +446,18 @@
     <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDomainReplicationRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDomainReplicationResponse.DomainArn</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^arn:aws[a-z\-]*:[a-z]+:[a-z0-9\-]+:[0-9]+:domain\/[a-z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DescribeDryRunProgressRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
@@ -502,6 +556,24 @@
     <min>3</min>
     <max>28</max>
     <pattern>^[a-z][a-z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.FailoverReplicationRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.FailoverReplicationRequest.PeerDomainArn</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^arn:aws[a-z\-]*:[a-z]+:[a-z0-9\-]+:[0-9]+:domain\/[a-z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.FailoverReplicationResponse.DomainArn</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^arn:aws[a-z\-]*:[a-z]+:[a-z0-9\-]+:[0-9]+:domain\/[a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.GetApplicationRequest.Id</property>
@@ -856,6 +928,24 @@
     <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.RemoveReplicationPeerRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.RemoveReplicationPeerRequest.PeerDomainArn</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^arn:aws[a-z\-]*:[a-z]+:[a-z0-9\-]+:[0-9]+:domain\/[a-z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.RemoveReplicationPeerResponse.DomainArn</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^arn:aws[a-z\-]*:[a-z]+:[a-z0-9\-]+:[0-9]+:domain\/[a-z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.RemoveTagsRequest.ARN</property>
     <min>20</min>
     <max>2048</max>
@@ -908,6 +998,24 @@
     <min>3</min>
     <max>28</max>
     <pattern>^[a-z][a-z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.SwitchoverReplicationRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.SwitchoverReplicationRequest.PeerDomainArn</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^arn:aws[a-z\-]*:[a-z]+:[a-z0-9\-]+:[0-9]+:domain\/[a-z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.SwitchoverReplicationResponse.DomainArn</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^arn:aws[a-z\-]*:[a-z]+:[a-z0-9\-]+:[0-9]+:domain\/[a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.UpdateApplicationRequest.Id</property>
@@ -1118,6 +1226,22 @@
     <pattern>^((\d+)|(NotAvailable))$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.CategoryDiffResult.Diverged</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.CategoryDiffResult.InSync</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.CategoryDiffResult.SourceOnly</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.CategoryDiffResult.TargetOnly</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.ChangeProgressDetails.ChangeId</property>
     <min>36</min>
     <max>36</max>
@@ -1223,6 +1347,26 @@
     <min>0</min>
     <max>1000</max>
     <pattern>^([a-zA-Z0-9_])*[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DivergentField.Path</property>
+    <min>0</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DivergentField.SourceValue</property>
+    <min>0</min>
+    <max>10240</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DivergentField.TargetValue</property>
+    <min>0</min>
+    <max>10240</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DivergentItem.Name</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DomainEndpointOptions.CustomEndpoint</property>
@@ -1625,6 +1769,17 @@
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.PrometheusDirectQueryDataSource.WorkspaceArn</property>
     <pattern>^arn:aws[a-zA-Z-]*:aps:[a-z0-9-]+:[0-9]{12}:workspace\/ws-[a-z0-9-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.ReplicationPeer.PeerDomainArn</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^arn:aws[a-z\-]*:[a-z]+:[a-z0-9\-]+:[0-9]+:domain\/[a-z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.ReplicationPeer.StatusMessage</property>
+    <min>0</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.ReservedInstance.ReservationName</property>
