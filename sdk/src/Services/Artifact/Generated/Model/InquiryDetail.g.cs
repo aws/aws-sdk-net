@@ -135,8 +135,7 @@ namespace Amazon.Artifact.Model
         /// <summary>
         /// Gets and sets the property SupportMode. 
         /// <para>
-        /// Support mode for this inquiry. AI_ONLY provides AI-generated responses. FULL_SUPPORT
-        /// includes human expert review.
+        /// Support mode for this inquiry. AI_ONLY provides AI-generated responses.
         /// </para>
         /// </summary>
         public InquirySupportMode SupportMode { get; set; }
