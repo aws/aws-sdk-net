@@ -455,7 +455,7 @@ def input_response(m):
 def emit_protocol(proto, cases):
     P = PROTO[proto]
     lines = [
-        f"    private static async Task<List<CpuTimeRunner.CpuTimeResult>> {RUN_METHOD[proto]}()",
+        f"    private static async Task<List<CpuTimeRunner.CpuTimeResult?>> {RUN_METHOD[proto]}()",
         "    {",
         f"        {P['client']} CreateClient(byte[] body, string ct, Dictionary<string,string>? rh)",
         "        {",
@@ -463,7 +463,7 @@ def emit_protocol(proto, cases):
         f"            var config = new {P['cfg']} {{ RegionEndpoint = Amazon.RegionEndpoint.USWest2, HttpClientFactory = new MockHttpClientFactory(handler) }};",
         f"            return new {P['client']}(new BasicAWSCredentials(\"AKID\",\"SECRET\"), config);",
         "        }",
-        "        var results = new List<CpuTimeRunner.CpuTimeResult>();",
+        "        var results = new List<CpuTimeRunner.CpuTimeResult?>();",
     ]
     fx = f"ModelFixtures.{FIXTURE_CLASS[proto]}"
     for m in cases:
@@ -641,9 +641,9 @@ namespace AWSSDK.Benchmarks.Serde;
 /// <summary>71 canonical serde-benchmark cases, payloads sourced byte-for-byte from the model.</summary>
 public static class CpuTimeBenchmarks
 {
-    public static async Task<List<CpuTimeRunner.CpuTimeResult>> RunAll()
+    public static async Task<List<CpuTimeRunner.CpuTimeResult?>> RunAll()
     {
-        var all = new List<CpuTimeRunner.CpuTimeResult>();
+        var all = new List<CpuTimeRunner.CpuTimeResult?>();
         all.AddRange(await RunAwsJson10());
         all.AddRange(await RunRpcV2Cbor());
         all.AddRange(await RunAwsQuery());
