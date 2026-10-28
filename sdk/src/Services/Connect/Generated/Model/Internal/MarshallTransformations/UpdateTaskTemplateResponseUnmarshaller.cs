@@ -70,6 +70,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     response.ContactFlowId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ContactHooks", targetDepth, ref reader))
+                {
+                    var unmarshaller = TaskTemplateContactHooksUnmarshaller.Instance;
+                    response.ContactHooks = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("CreatedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

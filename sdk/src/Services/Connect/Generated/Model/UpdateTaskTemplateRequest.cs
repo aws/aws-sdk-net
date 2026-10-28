@@ -39,6 +39,7 @@ namespace Amazon.Connect.Model
     {
         private TaskTemplateConstraints _constraints;
         private string _contactFlowId;
+        private TaskTemplateContactHooks _contactHooks;
         private TaskTemplateDefaults _defaults;
         private string _description;
         private List<TaskTemplateField> _fields = AWSConfigs.InitializeCollections ? new List<TaskTemplateField>() : null;
@@ -92,6 +93,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetContactFlowId()
         {
             return this._contactFlowId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContactHooks. 
+        /// <para>
+        /// The event hooks that are set on tasks created by using this template.
+        /// </para>
+        /// </summary>
+        public TaskTemplateContactHooks ContactHooks
+        {
+            get { return this._contactHooks; }
+            set { this._contactHooks = value; }
+        }
+
+        // Check to see if ContactHooks property is set
+        internal bool IsSetContactHooks()
+        {
+            return this._contactHooks != null;
         }
 
         /// <summary>

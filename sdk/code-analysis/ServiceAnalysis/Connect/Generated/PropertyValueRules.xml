@@ -8287,6 +8287,11 @@
     <max>2000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.TaskTemplateContactHooks.WrapUpFlowId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.TaskTemplateDefaultFieldValue.DefaultValue</property>
     <min>0</min>
     <max>4096</max>

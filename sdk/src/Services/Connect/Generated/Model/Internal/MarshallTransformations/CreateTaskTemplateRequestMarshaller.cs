@@ -104,6 +104,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ContactFlowId);
             }
 
+            if(publicRequest.IsSetContactHooks())
+            {
+                context.Writer.WritePropertyName("ContactHooks");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TaskTemplateContactHooksMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ContactHooks, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetDefaults())
             {
                 context.Writer.WritePropertyName("Defaults");
