@@ -55,6 +55,27 @@ namespace Amazon.SecurityAgent.Model
         internal bool IsSetActors() => this.Actors != null && (this.Actors.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property ClientCertificates. 
+        /// <para>
+        /// The client certificates for mutual TLS (mTLS) authentication to target hosts. Each
+        /// certificate is stored in Secrets Manager and scoped to specific target origins.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max = 10)]
+        public List<ClientCertificate> ClientCertificates { get; set; } = AWSConfigs.InitializeCollections ? new List<ClientCertificate>() : null;
+
+        /// <summary>
+        /// Checks to see if the ClientCertificates property is set.
+        /// </summary>
+        internal bool IsSetClientCertificates() => this.ClientCertificates != null && (this.ClientCertificates.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property Documents. 
         /// <para>
         /// The list of documents that provide context for the pentest.
