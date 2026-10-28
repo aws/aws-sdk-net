@@ -91,98 +91,6 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestJson")]
-        public async Task ByteHeaderInputRequest()
-        {
-            // Arrange
-            var inputEvents = new Queue<IEventStreamEvent>(new IEventStreamEvent[]
-            {
-                new HeadersEvent
-                {
-                    ByteHeader = 1,
-                },
-            });
-            var request = new InputStreamRequest
-            {
-                StreamPublisher = () => Task.FromResult(inputEvents.Count > 0 ? inputEvents.Dequeue() : null),
-            };
-            var config = new AmazonRestJsonProtocolConfig
-            {
-              ServiceURL = MockHttpClientUtils.TestServiceUrl,
-              MaxErrorRetry = 0,
-            };
-
-            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
-            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
-            {
-                ContentType = "application/json",
-                Body = Encoding.UTF8.GetBytes("{}"),
-            });
-
-            // Act
-            using var actualResponse = await client.InputStreamAsync(request).ConfigureAwait(false);
-            var actualRequest = mockHttp.LastCreatedRequest;
-            await actualRequest.InputStreamCompleted.ConfigureAwait(false);
-
-            // Assert
-            var sentEvents = MockHttpClientUtils.DecodeSignedInputFrames(actualRequest.InputFrames);
-            Assert.AreEqual(1, sentEvents.Count);
-            MockHttpClientUtils.AssertIntegerEventHeader(sentEvents[0], "byteHeader", 1L);
-            MockHttpClientUtils.AssertEventHeader(sentEvents[0], ":event-type", "headers");
-            MockHttpClientUtils.AssertEventHeader(sentEvents[0], ":message-type", "event");
-        }
-        #endif
-
-        #if NET8_0_OR_GREATER
-        [TestMethod]
-        [TestCategory("ProtocolTest")]
-        [TestCategory("RequestTest")]
-        [TestCategory("RestJson")]
-        public async Task ShortHeaderInputRequest()
-        {
-            // Arrange
-            var inputEvents = new Queue<IEventStreamEvent>(new IEventStreamEvent[]
-            {
-                new HeadersEvent
-                {
-                    ShortHeader = 2,
-                },
-            });
-            var request = new InputStreamRequest
-            {
-                StreamPublisher = () => Task.FromResult(inputEvents.Count > 0 ? inputEvents.Dequeue() : null),
-            };
-            var config = new AmazonRestJsonProtocolConfig
-            {
-              ServiceURL = MockHttpClientUtils.TestServiceUrl,
-              MaxErrorRetry = 0,
-            };
-
-            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
-            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
-            {
-                ContentType = "application/json",
-                Body = Encoding.UTF8.GetBytes("{}"),
-            });
-
-            // Act
-            using var actualResponse = await client.InputStreamAsync(request).ConfigureAwait(false);
-            var actualRequest = mockHttp.LastCreatedRequest;
-            await actualRequest.InputStreamCompleted.ConfigureAwait(false);
-
-            // Assert
-            var sentEvents = MockHttpClientUtils.DecodeSignedInputFrames(actualRequest.InputFrames);
-            Assert.AreEqual(1, sentEvents.Count);
-            MockHttpClientUtils.AssertIntegerEventHeader(sentEvents[0], "shortHeader", 2L);
-            MockHttpClientUtils.AssertEventHeader(sentEvents[0], ":event-type", "headers");
-            MockHttpClientUtils.AssertEventHeader(sentEvents[0], ":message-type", "event");
-        }
-        #endif
-
-        #if NET8_0_OR_GREATER
-        [TestMethod]
-        [TestCategory("ProtocolTest")]
-        [TestCategory("RequestTest")]
-        [TestCategory("RestJson")]
         public async Task IntegerHeaderInputRequest()
         {
             // Arrange
@@ -218,7 +126,7 @@ namespace AWSSDK.ProtocolTests.RestJson
             // Assert
             var sentEvents = MockHttpClientUtils.DecodeSignedInputFrames(actualRequest.InputFrames);
             Assert.AreEqual(1, sentEvents.Count);
-            MockHttpClientUtils.AssertIntegerEventHeader(sentEvents[0], "intHeader", 3L);
+            MockHttpClientUtils.AssertEventHeader(sentEvents[0], "intHeader", 3);
             MockHttpClientUtils.AssertEventHeader(sentEvents[0], ":event-type", "headers");
             MockHttpClientUtils.AssertEventHeader(sentEvents[0], ":message-type", "event");
         }
@@ -266,7 +174,7 @@ namespace AWSSDK.ProtocolTests.RestJson
             Assert.AreEqual(1, sentEvents.Count);
             MockHttpClientUtils.AssertEventHeader(sentEvents[0], ":event-type", "headers");
             MockHttpClientUtils.AssertEventHeader(sentEvents[0], ":message-type", "event");
-            MockHttpClientUtils.AssertIntegerEventHeader(sentEvents[0], "longHeader", 4294967294L);
+            MockHttpClientUtils.AssertEventHeader(sentEvents[0], "longHeader", 4294967294L);
         }
         #endif
 

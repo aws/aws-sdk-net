@@ -528,20 +528,9 @@ public final class HttpProtocolTestGenerator implements Runnable {
 
     private void assertSentEvent(String actualEvent, Event event) {
         for (var header : event.getHeaders().entrySet()) {
-            var name = header.getKey();
-            var value = header.getValue();
-            switch (value.getType()) {
-                case BOOLEAN -> writer.write("MockHttpClientUtils.AssertEventHeader($L, $S, $L);", actualEvent, name, value.asBoolean());
-                // The SDK models byte and short members as int, so integer headers are compared by value regardless of width.
-                case BYTE, SHORT, INTEGER, LONG -> writer.write("MockHttpClientUtils.AssertIntegerEventHeader($L, $S, $LL);",
-                        actualEvent, name, ((Number) value.getValue()).longValue());
-                case BLOB -> writer.write("MockHttpClientUtils.AssertEventHeader($L, $S, Convert.FromBase64String($S));",
-                        actualEvent, name, Base64.getEncoder().encodeToString(value.asBlob()));
-                case STRING -> writer.write("MockHttpClientUtils.AssertEventHeader($L, $S, $S);", actualEvent, name, value.asString());
-                case TIMESTAMP -> writer.write("MockHttpClientUtils.AssertEventHeader($L, $S, ProtocolTestConstants.epoch.AddMilliseconds($L));",
-                        actualEvent, name, value.asTimestamp().toEpochMilli());
-                default -> throw new CodegenException("Unsupported event header type: " + value.getType());
-            }
+            // The value's CLR type picks the AssertEventHeader overload, which checks the exact wire type.
+            writer.write("MockHttpClientUtils.AssertEventHeader($L, $S, $C);", actualEvent, header.getKey(),
+                    (Runnable) () -> writeEventHeaderValue(header.getValue()));
         }
         for (var forbidHeader : event.getForbidHeaders()) {
             writer.write("Assert.IsFalse($L.Headers.ContainsKey($S));", actualEvent, forbidHeader);
