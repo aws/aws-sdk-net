@@ -32,7 +32,7 @@ namespace Amazon.IVS
     public partial class AmazonIVSConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ivs", "4.0.102.0");
+            InternalSDKUtils.BuildUserAgentString("ivs", "4.0.103.0");
 
         private static readonly AmazonIVSEndpointResolver EndpointResolver =
             new AmazonIVSEndpointResolver();
