@@ -34959,6 +34959,81 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetCapacityManagerSupportabilityScores
+
+
+        /// <summary>
+        /// Scores how well each instance type and Availability Zone combination can support
+        /// a capacity request, based on current Amazon EC2 capacity. The response includes a
+        /// score for each combination and an aggregate score for all combinations in the request.
+        /// This action doesn't launch or reserve instances, and a score doesn't guarantee that
+        /// a later launch will succeed. 
+        /// 
+        ///  
+        /// <para>
+        ///  Call this action in the Region where you turned on Capacity Manager. A single request
+        /// can include Availability Zones in any Region. Real-time supportability checks are
+        /// available only to Amazon Web Services Support customers on the Unified Operations
+        /// plan. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-manager-supportability.html">Check
+        /// supportability</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityManagerSupportabilityScores service method.</param>
+        /// 
+        /// <returns>The response from the GetCapacityManagerSupportabilityScores service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityManagerSupportabilityScores">REST API Reference for GetCapacityManagerSupportabilityScores Operation</seealso>
+        public virtual GetCapacityManagerSupportabilityScoresResponse GetCapacityManagerSupportabilityScores(GetCapacityManagerSupportabilityScoresRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCapacityManagerSupportabilityScoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCapacityManagerSupportabilityScoresResponseUnmarshaller.Instance;
+
+            return Invoke<GetCapacityManagerSupportabilityScoresResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Scores how well each instance type and Availability Zone combination can support
+        /// a capacity request, based on current Amazon EC2 capacity. The response includes a
+        /// score for each combination and an aggregate score for all combinations in the request.
+        /// This action doesn't launch or reserve instances, and a score doesn't guarantee that
+        /// a later launch will succeed. 
+        /// 
+        ///  
+        /// <para>
+        ///  Call this action in the Region where you turned on Capacity Manager. A single request
+        /// can include Availability Zones in any Region. Real-time supportability checks are
+        /// available only to Amazon Web Services Support customers on the Unified Operations
+        /// plan. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-manager-supportability.html">Check
+        /// supportability</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityManagerSupportabilityScores service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCapacityManagerSupportabilityScores service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityManagerSupportabilityScores">REST API Reference for GetCapacityManagerSupportabilityScores Operation</seealso>
+        public virtual Task<GetCapacityManagerSupportabilityScoresResponse> GetCapacityManagerSupportabilityScoresAsync(GetCapacityManagerSupportabilityScoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCapacityManagerSupportabilityScoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCapacityManagerSupportabilityScoresResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetCapacityManagerSupportabilityScoresResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetCapacityReservationUsage
 
 

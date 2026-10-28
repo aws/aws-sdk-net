@@ -4355,6 +4355,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type CapacityUnit.
+    /// </summary>
+    public class CapacityUnit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Instances for CapacityUnit
+        /// </summary>
+        public static readonly CapacityUnit Instances = new CapacityUnit("instances");
+        /// <summary>
+        /// Constant Vcpus for CapacityUnit
+        /// </summary>
+        public static readonly CapacityUnit Vcpus = new CapacityUnit("vcpus");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityUnit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityUnit FindValue(string value)
+        {
+            return FindValue<CapacityUnit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityUnit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CarrierGatewayState.
     /// </summary>
     public class CarrierGatewayState : ConstantClass
@@ -21907,6 +21957,26 @@ namespace Amazon.EC2
     {
 
         /// <summary>
+        /// Constant AvgInstAzCountPerRequestedVcpu for Metric
+        /// </summary>
+        public static readonly Metric AvgInstAzCountPerRequestedVcpu = new Metric("avg-inst-az-count-per-requested-vcpu");
+        /// <summary>
+        /// Constant CapacityRequestFulfillmentRate for Metric
+        /// </summary>
+        public static readonly Metric CapacityRequestFulfillmentRate = new Metric("capacity-request-fulfillment-rate");
+        /// <summary>
+        /// Constant CapacityTotalFulfilledVcpu for Metric
+        /// </summary>
+        public static readonly Metric CapacityTotalFulfilledVcpu = new Metric("capacity-total-fulfilled-vcpu");
+        /// <summary>
+        /// Constant CapacityTotalRequestedVcpu for Metric
+        /// </summary>
+        public static readonly Metric CapacityTotalRequestedVcpu = new Metric("capacity-total-requested-vcpu");
+        /// <summary>
+        /// Constant InstAzFulfillmentRate for Metric
+        /// </summary>
+        public static readonly Metric InstAzFulfillmentRate = new Metric("inst-az-fulfillment-rate");
+        /// <summary>
         /// Constant ReservationAvgCommittedSizeInst for Metric
         /// </summary>
         public static readonly Metric ReservationAvgCommittedSizeInst = new Metric("reservation-avg-committed-size-inst");
@@ -22043,9 +22113,29 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly Metric ReservedTotalUsageHrsVcpu = new Metric("reserved-total-usage-hrs-vcpu");
         /// <summary>
+        /// Constant SpotAvgInstAzCountPerRequestedVcpu for Metric
+        /// </summary>
+        public static readonly Metric SpotAvgInstAzCountPerRequestedVcpu = new Metric("spot-avg-inst-az-count-per-requested-vcpu");
+        /// <summary>
         /// Constant SpotAvgRunTimeBeforeInterruptionInst for Metric
         /// </summary>
         public static readonly Metric SpotAvgRunTimeBeforeInterruptionInst = new Metric("spot-avg-run-time-before-interruption-inst");
+        /// <summary>
+        /// Constant SpotCapacityRequestFulfillmentRate for Metric
+        /// </summary>
+        public static readonly Metric SpotCapacityRequestFulfillmentRate = new Metric("spot-capacity-request-fulfillment-rate");
+        /// <summary>
+        /// Constant SpotCapacityTotalFulfilledVcpu for Metric
+        /// </summary>
+        public static readonly Metric SpotCapacityTotalFulfilledVcpu = new Metric("spot-capacity-total-fulfilled-vcpu");
+        /// <summary>
+        /// Constant SpotCapacityTotalRequestedVcpu for Metric
+        /// </summary>
+        public static readonly Metric SpotCapacityTotalRequestedVcpu = new Metric("spot-capacity-total-requested-vcpu");
+        /// <summary>
+        /// Constant SpotInstAzFulfillmentRate for Metric
+        /// </summary>
+        public static readonly Metric SpotInstAzFulfillmentRate = new Metric("spot-inst-az-fulfillment-rate");
         /// <summary>
         /// Constant SpotInterruptionRateInst for Metric
         /// </summary>
@@ -29296,6 +29386,110 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SummaryStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SupportabilityMarketType.
+    /// </summary>
+    public class SupportabilityMarketType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OnDemand for SupportabilityMarketType
+        /// </summary>
+        public static readonly SupportabilityMarketType OnDemand = new SupportabilityMarketType("on-demand");
+        /// <summary>
+        /// Constant Spot for SupportabilityMarketType
+        /// </summary>
+        public static readonly SupportabilityMarketType Spot = new SupportabilityMarketType("spot");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SupportabilityMarketType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SupportabilityMarketType FindValue(string value)
+        {
+            return FindValue<SupportabilityMarketType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SupportabilityMarketType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SupportabilityScore.
+    /// </summary>
+    public class SupportabilityScore : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant High for SupportabilityScore
+        /// </summary>
+        public static readonly SupportabilityScore High = new SupportabilityScore("high");
+        /// <summary>
+        /// Constant Low for SupportabilityScore
+        /// </summary>
+        public static readonly SupportabilityScore Low = new SupportabilityScore("low");
+        /// <summary>
+        /// Constant Medium for SupportabilityScore
+        /// </summary>
+        public static readonly SupportabilityScore Medium = new SupportabilityScore("medium");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SupportabilityScore(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SupportabilityScore FindValue(string value)
+        {
+            return FindValue<SupportabilityScore>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SupportabilityScore(string value)
         {
             return FindValue(value);
         }
