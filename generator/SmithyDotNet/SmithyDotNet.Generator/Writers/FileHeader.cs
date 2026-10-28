@@ -230,6 +230,22 @@ public static class FileHeader
     ];
 
     /// <summary>
+    /// Usings for awsQuery request marshaller files. The request body is URL-encoded form parameters
+    /// (no XML writer), so this drops <c>System.Xml</c>/<c>System.Text</c> from the restXml set.
+    /// </summary>
+    public static IReadOnlyList<string> QueryRequestMarshallerUsings { get; } =
+    [
+        "System",
+        "System.Collections.Generic",
+        "System.Globalization",
+        "System.IO",
+        "Amazon.Runtime",
+        "Amazon.Runtime.Internal",
+        "Amazon.Runtime.Internal.Transform",
+        "Amazon.Runtime.Internal.Util",
+    ];
+
+    /// <summary>
     /// Usings for the default-configuration file.
     /// </summary>
     public static IReadOnlyList<string> DefaultConfigurationUsings { get; } =

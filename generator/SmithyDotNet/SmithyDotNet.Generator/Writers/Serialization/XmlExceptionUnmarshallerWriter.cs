@@ -1,4 +1,5 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Protocols;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Writers.Shapes;
 
@@ -8,8 +9,9 @@ namespace SmithyDotNet.Generator.Writers.Serialization;
 /// Emits the C# source for a restXml error-response (exception) unmarshaller: an
 /// <c>IXmlErrorResponseUnmarshaller</c> that builds the exception from the parsed <c>ErrorResponse</c>
 /// envelope and reads any extra modeled error members out of the XML body (and response headers).
-/// Protocol-neutral XML; the awsQuery task reuses it. The parameterless <c>Unmarshall(context)</c> is never
-/// called (errors are dispatched through the <c>(context, errorResponse)</c> overload) and throws.
+/// Shared by restXml and awsQuery. The single-argument <c>Unmarshall(context)</c> is never called (errors
+/// are dispatched through the <c>(context, errorResponse)</c> overload) but is public API, so its body
+/// follows each protocol's C2J template: restXml throws, awsQuery delegates with an empty envelope.
 /// </summary>
 public sealed class XmlExceptionUnmarshallerWriter(GenerationContext context, string modelFileName)
 {
@@ -39,9 +41,9 @@ public sealed class XmlExceptionUnmarshallerWriter(GenerationContext context, st
             writer.WriteLine("/// </summary>");
             writer.OpenBlock($"public partial class {unmarshallerClassName} : IXmlErrorResponseUnmarshaller<{exceptionName}, XmlUnmarshallerContext>", () =>
             {
-                WriteUnusedUnmarshallMethod(writer, exceptionName);
+                WriteSingleArgUnmarshallMethod(writer, exceptionName, context.Protocol);
                 writer.WriteLine("");
-                WriteMainUnmarshallMethod(writer, exceptionName, structure, bindings);
+                WriteMainUnmarshallMethod(writer, exceptionName, structure, bindings, context.Protocol);
                 writer.WriteLine("");
                 MarshallerCommon.WriteUnmarshallerSingleton(writer, unmarshallerClassName);
             });
@@ -49,18 +51,31 @@ public sealed class XmlExceptionUnmarshallerWriter(GenerationContext context, st
         return writer.ToFormattedString(cancellationToken);
     }
 
-    private static void WriteUnusedUnmarshallMethod(CodeWriter writer, string exceptionName)
+    // The single-argument overload the base IXmlUnmarshaller contract requires. Error dispatch always
+    // goes through the (context, errorResponse) overload, so nothing in generated code calls this — but
+    // the class is public API, so each protocol keeps the body its C2J template shipped rather than the
+    // one that happens to be convenient: restXml throws (RestXmlExceptionUnmarshaller.tt), awsQuery
+    // delegates with an empty envelope (AWSQueryExceptionUnmarshaller.tt), which returns a non-null
+    // exception with null Message/Code/RequestId.
+    private static void WriteSingleArgUnmarshallMethod(CodeWriter writer, string exceptionName, AWSProtocol protocol)
     {
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Unmarshaller error response to exception.");
         writer.WriteLine("/// </summary>");
         writer.OpenBlock($"public {exceptionName} Unmarshall(XmlUnmarshallerContext context)", () =>
         {
-            writer.WriteLine("throw new NotImplementedException();");
+            if (protocol == AWSProtocol.AwsQuery)
+            {
+                writer.WriteLine("return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());");
+            }
+            else
+            {
+                writer.WriteLine("throw new NotImplementedException();");
+            }
         });
     }
 
-    private static void WriteMainUnmarshallMethod(CodeWriter writer, string exceptionName, StructureShape structure, JsonResponseUnmarshallerWriter.PartitionedMembers bindings)
+    private static void WriteMainUnmarshallMethod(CodeWriter writer, string exceptionName, StructureShape structure, JsonResponseUnmarshallerWriter.PartitionedMembers bindings, AWSProtocol protocol)
     {
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Unmarshaller error response to exception.");
@@ -69,18 +84,28 @@ public sealed class XmlExceptionUnmarshallerWriter(GenerationContext context, st
         {
             writer.WriteLine($"{exceptionName} unmarshalledObject = new {exceptionName}(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);");
 
-            // Extra modeled error members are read from the body; the match is on the element suffix
-            // alone (no depth), matching C2J's exception loop.
-            writer.OpenBlock("while (context.Read())", () =>
+            // Extra modeled error members are read from the body. The two C2J templates differ and each is
+            // kept: restXml matches on the element suffix at any depth (RestXmlExceptionUnmarshaller.tt),
+            // awsQuery pins the match to the member depth (AWSQueryExceptionUnmarshaller.tt) so an envelope
+            // element at another depth — <RequestId> at 2, <Type>/<Code> at 3 — can't be read into a member
+            // that happens to share its name.
+            if (protocol == AWSProtocol.AwsQuery)
             {
-                writer.OpenBlock("if (context.IsStartElement || context.IsAttribute)", () =>
+                WriteDepthQualifiedBodyLoop(writer, structure, bindings.BodyMembers, protocol);
+            }
+            else
+            {
+                writer.OpenBlock("while (context.Read())", () =>
                 {
-                    if (bindings.BodyMembers.Count > 0)
+                    writer.OpenBlock("if (context.IsStartElement || context.IsAttribute)", () =>
                     {
-                        XmlBodyMemberUnmarshaller.WriteMemberBlocks(writer, structure, bindings.BodyMembers, depthExpr: null);
-                    }
+                        if (bindings.BodyMembers.Count > 0)
+                        {
+                            XmlBodyMemberUnmarshaller.WriteMemberBlocks(writer, structure, bindings.BodyMembers, depthExpr: null, protocol);
+                        }
+                    });
                 });
-            });
+            }
 
             JsonResponseUnmarshallerWriter.WriteHeaderUnmarshallers(writer, bindings.HeaderMembers);
             if (bindings.PrefixHeadersMember is { } prefixHeaders)
@@ -89,6 +114,31 @@ public sealed class XmlExceptionUnmarshallerWriter(GenerationContext context, st
             }
 
             writer.WriteLine("return unmarshalledObject;");
+        });
+    }
+
+    // The awsQuery error body loop (AWSQueryExceptionUnmarshaller.tt): reading is bounded to the current
+    // subtree by ReadAtDepth, and each member matched at targetDepth. On a fresh context positioned at the
+    // start of the body, originalDepth is 0 and targetDepth resolves to 3 — the depth of an error member
+    // under <ErrorResponse><Error>.
+    private static void WriteDepthQualifiedBodyLoop(CodeWriter writer, StructureShape structure, List<Member> bodyMembers, AWSProtocol protocol)
+    {
+        writer.WriteLine("int originalDepth = context.CurrentDepth;");
+        writer.WriteLine("int targetDepth = originalDepth + 1;");
+        writer.OpenBlock("if (context.IsStartOfDocument)", () =>
+        {
+            writer.WriteLine("targetDepth += 2;");
+        });
+        writer.WriteLine("");
+        writer.OpenBlock("while (context.ReadAtDepth(originalDepth))", () =>
+        {
+            writer.OpenBlock("if (context.IsStartElement || context.IsAttribute)", () =>
+            {
+                if (bodyMembers.Count > 0)
+                {
+                    XmlBodyMemberUnmarshaller.WriteMemberBlocks(writer, structure, bodyMembers, "targetDepth", protocol);
+                }
+            });
         });
     }
 

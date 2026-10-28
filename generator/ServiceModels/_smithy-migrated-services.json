@@ -293,6 +293,7 @@
     "QConnect",
     "QueryCompatibleJSONRPC10",
     "QueryCompatibleRpcV2Protocol",
+    "QueryProtocol",
     "QuickSight",
     "RAM",
     "RDSDataService",

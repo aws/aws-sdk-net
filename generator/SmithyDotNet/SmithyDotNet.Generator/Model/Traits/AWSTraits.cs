@@ -30,6 +30,13 @@ public static class AWSTraits
     /// <remarks><see href="https://smithy.io/2.0/aws/protocols/aws-restxml-protocol.html#aws-protocols-restxml-trait" /></remarks>
     public static ProtocolTrait? GetRestXml(this Shape shape) => DeserializeTrait<ProtocolTrait>(shape, "aws.protocols#restXml");
 
+    /// <remarks><see href="https://smithy.io/2.0/aws/protocols/aws-query-protocol.html#aws-protocols-awsquery-trait" /></remarks>
+    public static ProtocolTrait? GetAwsQuery(this Shape shape) => DeserializeTrait<ProtocolTrait>(shape, "aws.protocols#awsQuery");
+
+    /// <summary>The error's <c>aws.protocols#awsQueryError</c> customization (the wire <c>Code</c> awsQuery dispatches on), or null.</summary>
+    /// <remarks><see href="https://smithy.io/2.0/aws/protocols/aws-query-protocol.html#aws-protocols-awsqueryerror-trait" /></remarks>
+    public static AwsQueryErrorTrait? GetAwsQueryError(this Shape shape) => DeserializeTrait<AwsQueryErrorTrait>(shape, "aws.protocols#awsQueryError");
+
     /// <summary>Whether the service carries <c>aws.protocols#awsQueryCompatible</c>: it moved off awsQuery and still reports its old error codes in the <c>x-amzn-query-error</c> header.</summary>
     /// <remarks><see href="https://smithy.io/2.0/aws/protocols/aws-query-protocol.html#aws-protocols-awsquerycompatible-trait" /></remarks>
     public static bool HasAwsQueryCompatible(this Shape shape) => shape.Traits.ContainsKey("aws.protocols#awsQueryCompatible");

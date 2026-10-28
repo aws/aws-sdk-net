@@ -1,4 +1,5 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Protocols;
 using SmithyDotNet.Generator.Model.Shapes;
 
 namespace SmithyDotNet.Generator.Writers.Serialization;
@@ -29,7 +30,7 @@ public sealed class XmlStructureUnmarshallerWriter(GenerationContext context, st
             writer.WriteLine("/// </summary>");
             writer.OpenBlock($"public partial class {unmarshallerClassName} : IXmlUnmarshaller<{className}, XmlUnmarshallerContext>", () =>
             {
-                WriteUnmarshallMethod(writer, className, structure, members);
+                WriteUnmarshallMethod(writer, className, structure, members, context.Protocol);
                 writer.WriteLine("");
                 MarshallerCommon.WriteUnmarshallerSingleton(writer, unmarshallerClassName);
             });
@@ -37,7 +38,7 @@ public sealed class XmlStructureUnmarshallerWriter(GenerationContext context, st
         return writer.ToFormattedString(cancellationToken);
     }
 
-    private static void WriteUnmarshallMethod(CodeWriter writer, string className, StructureShape structure, List<Member> members)
+    private static void WriteUnmarshallMethod(CodeWriter writer, string className, StructureShape structure, List<Member> members, AWSProtocol protocol)
     {
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Unmarshall the response from the service to the response class.");
@@ -61,7 +62,7 @@ public sealed class XmlStructureUnmarshallerWriter(GenerationContext context, st
                 {
                     if (members.Count > 0)
                     {
-                        XmlBodyMemberUnmarshaller.WriteMemberBlocks(writer, structure, members, "targetDepth");
+                        XmlBodyMemberUnmarshaller.WriteMemberBlocks(writer, structure, members, "targetDepth", protocol);
                     }
                 });
                 writer.OpenBlock("else if (context.IsEndElement && context.CurrentDepth < originalDepth)", () =>

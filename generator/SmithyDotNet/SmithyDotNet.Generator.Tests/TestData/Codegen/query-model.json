@@ -1,0 +1,144 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.example#Example": {
+      "type": "service",
+      "version": "2023-01-01",
+      "operations": [
+        { "target": "com.example#DoThing" },
+        { "target": "com.example#NoOutput" }
+      ],
+      "traits": {
+        "aws.api#service": { "sdkId": "Example", "endpointPrefix": "example" },
+        "aws.protocols#awsQuery": {},
+        "aws.auth#sigv4": { "name": "example" }
+      }
+    },
+
+    "com.example#DoThing": {
+      "type": "operation",
+      "input": { "target": "com.example#DoThingRequest" },
+      "output": { "target": "com.example#DoThingResponse" },
+      "errors": [ { "target": "com.example#BadThing" }, { "target": "com.example#CustomCodeError" } ]
+    },
+    "com.example#DoThingRequest": {
+      "type": "structure",
+      "members": {
+        "name":    { "target": "smithy.api#String", "traits": { "smithy.api#xmlName": "ThingName" } },
+        "count":   { "target": "smithy.api#Integer" },
+        "big":     { "target": "smithy.api#Long" },
+        "flag":    { "target": "smithy.api#Boolean" },
+        "ratio":   { "target": "smithy.api#Double" },
+        "when":    { "target": "smithy.api#Timestamp" },
+        "data":    { "target": "smithy.api#Blob" },
+        "status":  { "target": "com.example#StatusEnum" },
+        "nested":  { "target": "com.example#NestedThing" },
+        "items":   { "target": "com.example#ItemList" },
+        "aliases": { "target": "com.example#AliasList", "traits": { "smithy.api#xmlFlattened": {}, "smithy.api#xmlName": "Alias" } },
+        "structs": { "target": "com.example#StructList" },
+        "tags":    { "target": "com.example#TagMap" },
+        "flatTags": { "target": "com.example#TagMap", "traits": { "smithy.api#xmlFlattened": {} } },
+        "scores":  { "target": "com.example#ScoreMap" },
+        "token":   { "target": "smithy.api#String", "traits": { "smithy.api#idempotencyToken": {} } }
+      }
+    },
+    "com.example#DoThingResponse": {
+      "type": "structure",
+      "members": {
+        "result": { "target": "smithy.api#String" },
+        "things": { "target": "com.example#ThingList" },
+        "props":  { "target": "com.example#TagMap" }
+      }
+    },
+
+    "com.example#NoOutput": {
+      "type": "operation",
+      "input": { "target": "com.example#NoOutputRequest" },
+      "output": { "target": "smithy.api#Unit" }
+    },
+    "com.example#NoOutputRequest": {
+      "type": "structure",
+      "members": {
+        "id": { "target": "smithy.api#String" }
+      }
+    },
+
+    "com.example#StatusEnum": {
+      "type": "enum",
+      "members": {
+        "ON":  { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "ON" } },
+        "OFF": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "OFF" } }
+      }
+    },
+    "com.example#NestedThing": {
+      "type": "structure",
+      "members": {
+        "note":  { "target": "smithy.api#String" },
+        "level": { "target": "smithy.api#Integer" }
+      }
+    },
+    "com.example#Tag": {
+      "type": "structure",
+      "members": {
+        "key":   { "target": "smithy.api#String" },
+        "value": { "target": "smithy.api#String" },
+        "names": { "target": "com.example#StringList" }
+      }
+    },
+    "com.example#ItemList": {
+      "type": "list",
+      "member": { "target": "smithy.api#String" }
+    },
+    "com.example#AliasList": {
+      "type": "list",
+      "member": { "target": "smithy.api#String" }
+    },
+    "com.example#StructList": {
+      "type": "list",
+      "member": { "target": "com.example#Tag", "traits": { "smithy.api#xmlName": "Item" } }
+    },
+    "com.example#StringList": {
+      "type": "list",
+      "member": { "target": "smithy.api#String" }
+    },
+    "com.example#TagMap": {
+      "type": "map",
+      "key":   { "target": "smithy.api#String" },
+      "value": { "target": "smithy.api#String" }
+    },
+    "com.example#ScoreMap": {
+      "type": "map",
+      "key":   { "target": "smithy.api#String" },
+      "value": { "target": "com.example#StringList" }
+    },
+    "com.example#Thing": {
+      "type": "structure",
+      "members": {
+        "arn": { "target": "smithy.api#String" }
+      }
+    },
+    "com.example#ThingList": {
+      "type": "list",
+      "member": { "target": "com.example#Thing" }
+    },
+
+    "com.example#BadThing": {
+      "type": "structure",
+      "members": {
+        "message": { "target": "smithy.api#String" },
+        "reason":  { "target": "smithy.api#String" }
+      },
+      "traits": { "smithy.api#error": "client" }
+    },
+    "com.example#CustomCodeError": {
+      "type": "structure",
+      "members": {
+        "message": { "target": "smithy.api#String" }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "aws.protocols#awsQueryError": { "code": "Customized", "httpResponseCode": 402 }
+      }
+    }
+  }
+}

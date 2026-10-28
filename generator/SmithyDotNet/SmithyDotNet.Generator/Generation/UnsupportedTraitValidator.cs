@@ -35,9 +35,18 @@ public static class UnsupportedTraitValidator
 
         // rpcv2Cbor has no document encoding and no content streaming
         // (https://smithy.io/2.0/additional-specs/protocols/smithy-rpc-v2-cbor.html), and no CBOR model uses either.
-        // restXml has no document shape either (XML can't carry an untyped document).
-        var documentsSupported = protocol is not (AWSProtocol.RpcV2Cbor or AWSProtocol.RestXml);
-        var streamingBlobsSupported = protocol != AWSProtocol.RpcV2Cbor;
+        // restXml and awsQuery have no document shape either (neither XML nor a query string can carry an
+        // untyped document). awsQuery has no streaming of any kind
+        // (https://smithy.io/2.0/aws/protocols/aws-query-protocol.html).
+        var documentsSupported = protocol is not (AWSProtocol.RpcV2Cbor or AWSProtocol.RestXml or AWSProtocol.AwsQuery);
+        var streamingBlobsSupported = protocol is not (AWSProtocol.RpcV2Cbor or AWSProtocol.AwsQuery);
+        var eventStreamsSupported = protocol is not AWSProtocol.AwsQuery;
+        var protocolLabel = protocol switch
+        {
+            AWSProtocol.RestXml => "restXml",
+            AWSProtocol.AwsQuery => "awsQuery",
+            _ => "rpcv2Cbor",
+        };
 
         foreach (var op in index.Operations)
         {
@@ -79,13 +88,17 @@ public static class UnsupportedTraitValidator
 
             if (!documentsSupported && shape is DocumentShape)
             {
-                var label = protocol == AWSProtocol.RestXml ? "restXml" : "rpcv2Cbor";
-                found.Add($"document ({label})");
+                found.Add($"document ({protocolLabel})");
             }
 
             if (!streamingBlobsSupported && shape is BlobShape && shape.IsStreaming())
             {
-                found.Add("@streaming (blob, rpcv2Cbor)");
+                found.Add($"@streaming (blob, {protocolLabel})");
+            }
+
+            if (!eventStreamsSupported && shape is UnionShape && shape.IsStreaming())
+            {
+                found.Add($"@streaming (event stream, {protocolLabel})");
             }
 
             // @sparse on a list of lists/maps would generate a foreach over a possibly-null element

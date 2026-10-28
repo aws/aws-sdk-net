@@ -482,11 +482,46 @@ Service trait for awsJson1.0 and rpcv2Cbor services that moved off awsQuery
 ([spec](https://smithy.io/2.0/aws/protocols/aws-query-protocol.html#aws-protocols-awsquerycompatible-trait)): the
 request announces query mode and errors still dispatch on the shape name, not the rewritten query error code.
 
+## awsQuery
+
+Spec: [aws.protocols#awsQuery](https://smithy.io/2.0/aws/protocols/aws-query-protocol.html). Every
+operation is a `POST /` whose body is a URL-encoded form; the response is XML wrapped in
+`{Operation}Response`/`{Operation}Result`. There are no HTTP binding traits (every member is body-bound),
+no per-operation Content-Type (the runtime sets `application/x-www-form-urlencoded`), and no XML request
+body. Wire names reuse the XML naming traits via `XmlNames` (member `@xmlName` else member name;
+`@xmlFlattened`; list item = list value `@xmlName` else `member`; map key/value `@xmlName` else `key`/
+`value`). Pinned by `QueryCodegenTests`.
+
+- **Request body** — `QueryRequestMarshallerWriter` sets `request.HttpMethod = "POST"`, adds
+  `Action={Operation}` and `Version={apiVersion}`, then `QueryBodyMemberMarshaller` writes every input
+  member inline into `request.Parameters` (awsQuery has **no** per-structure marshaller class — nested
+  structures/lists/maps are expanded recursively here, so `ServiceGenerator` skips structure-marshaller
+  emission for this protocol). Parameter names: a nested structure dot-joins (`Outer.Inner`); a list is
+  `{name}.member.{i}` (or `{name}.{i}` flattened), an empty set-list emitting the bare `{name}` with an
+  empty value (C2J); a map is `{name}.entry.{i}.key`/`.value` (or `{name}.{i}.*` flattened), a map-of-list
+  value expanding under `.value.member.{j}`. Indices are 1-based. Scalars go through the same
+  `StringUtils.From*` conversions as restXml (value types unwrap `.Value`; body timestamps default to
+  `date-time`; blobs are base64; enums are `FromString`); an idempotency token fills a GUID when unset.
+  Nested list-of-collection and map-of-map/map-of-struct-list fail loud (C2J has no path for them). The
+  body is cached up front via `AWSSDKUtils.WriteParametersToPooledStream` / `GetRequestPayloadBytes`. An
+  `@endpoint` host prefix is emitted like restJson1; streaming (blobs and event streams) and documents are
+  rejected.
+- **Response body** — `QueryResponseUnmarshallerWriter` (base `XmlResponseUnmarshaller`) descends the
+  outer loop into `{Operation}Result` (depth 2) and reads the output members through the shared
+  `XmlBodyMemberUnmarshaller` (same element loop as restXml), and hands `ResponseMetadata` to
+  `ResponseMetadataUnmarshaller`. An output with no members still emits `UnmarshallResult` and its dispatch
+  (C2J parity), with the unused-parameter analyzer suppressed. Nested structures reuse
+  `XmlStructureUnmarshallerWriter`.
+- **Errors** — the runtime `XmlErrorResponseUnmarshaller` parses the `ErrorResponse/Error/Code` envelope;
+  dispatch is on `errorResponse.Code` against the error's `@awsQueryError` `code` when present, else the
+  Smithy shape name, handing off to the per-error unmarshaller from `XmlExceptionUnmarshallerWriter`
+  (shared with restXml).
+
 ## Other Protocols (not yet implemented)
 
-awsQuery and ec2Query: the target output is defined by the C2J templates
-(`generator/ServiceClientGeneratorLib/Generators/Marshallers/*.tt`). Both route via an
-`Action={Operation}` param with URL-encoded bodies. Wire names: awsQuery the member name verbatim,
-ec2Query `@ec2QueryName` or the member name with its first letter upper-cased.
+ec2Query: the target output is defined by the C2J templates
+(`generator/ServiceClientGeneratorLib/Generators/Marshallers/*.tt`). Like awsQuery it routes via an
+`Action={Operation}` param with a URL-encoded body, but every list is flattened and wire names use
+`@ec2QueryName` or the member name with its first letter upper-cased.
 
-When implementing one, replace this note with the real patterns and pin the emitted code in codegen tests.
+When implementing it, replace this note with the real patterns and pin the emitted code in codegen tests.
