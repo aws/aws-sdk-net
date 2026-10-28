@@ -1889,20 +1889,9 @@ namespace Amazon.Util
         /// Utility method that accepts a string and replaces white spaces with a space.
         /// </summary>
         /// <param name="data">The input string to process.</param>
-        /// <returns>The processed string with compressed spaces.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static string CompressSpaces(string data)
-        {
-            return CompressSpaces(data, false);
-        }
-
-        /// <summary>
-        /// Utility method that accepts a string and replaces white spaces with a space.
-        /// </summary>
-        /// <param name="data">The input string to process.</param>
         /// <param name="trim">When <see langword="true"/>, leading and trailing whitespace is also removed.</param>
         /// <returns>The processed string with compressed spaces.</returns>
-        public static string CompressSpaces(string data, bool trim)
+        public static string CompressSpaces(string data, bool trim = false)
         {
             const char SPACE = ' ';
             if (data == null)
