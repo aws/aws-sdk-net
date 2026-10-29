@@ -26,7 +26,7 @@ namespace Amazon.Runtime.Endpoints
             string signingName,
             string signingRegion,
             IList<string> signingRegionSet,
-            bool disableDoubleEncoding)
+            bool? disableDoubleEncoding)
         {
             Name = name;
             SigningName = signingName;
@@ -39,6 +39,6 @@ namespace Amazon.Runtime.Endpoints
         public string SigningName { get; }
         public string SigningRegion { get; }
         public IList<string> SigningRegionSet { get; }
-        public bool DisableDoubleEncoding { get; }
+        public bool? DisableDoubleEncoding { get; }
     }
 }

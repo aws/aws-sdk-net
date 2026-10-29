@@ -375,6 +375,16 @@ namespace Amazon.S3.Util
         /// <returns>True if the request should use S3Express session authentication, false otherwise</returns>
         public static bool UseS3ExpressSessionAuth(this IRequest request)
         {
+            if (request.EndpointAuthSchemes != null)
+            {
+                foreach (var scheme in request.EndpointAuthSchemes)
+                {
+                    if (scheme.Name == "sigv4-s3express")
+                        return true;
+                }
+                return false;
+            }
+
             if (request.EndpointAttributes == null) return false;
 
             var authSchemes = (IList)request.EndpointAttributes["authSchemes"];

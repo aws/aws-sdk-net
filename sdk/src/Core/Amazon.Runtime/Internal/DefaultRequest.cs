@@ -620,6 +620,12 @@ namespace Amazon.Runtime.Internal
         public IPropertyBag EndpointAttributes { get; set; }
 
         /// <summary>
+        /// Typed endpoint auth schemes, set when the resolved endpoint carries them.
+        /// Preferred over EndpointAttributes["authSchemes"].
+        /// </summary>
+        public IReadOnlyList<AuthScheme> EndpointAuthSchemes { get; set; }
+
+        /// <summary>
         /// The version of the HTTP protocol to use. The default is HTTP 1.1.
         /// </summary>
         public Version HttpProtocolVersion { get; set; } = HttpVersion.Version11;
