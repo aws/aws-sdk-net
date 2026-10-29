@@ -262,24 +262,5 @@ namespace ThirdParty.MD5
         {
             return ((i << s) | (i >> (32 - s)));
         }
-
-        //Convert input array into array of UInts
-        private static uint[] Converter(byte[] input, int ibStart)
-        {
-            if (null == input)
-                throw new System.ArgumentNullException("input", "Unable convert null array to array of uInts");
-
-            uint[] result = new uint[16];
-
-            for (int i = 0; i < 16; i++)
-            {
-                result[i] = (uint)input[ibStart + i * 4];
-                result[i] += (uint)input[ibStart + i * 4 + 1] << 8;
-                result[i] += (uint)input[ibStart + i * 4 + 2] << 16;
-                result[i] += (uint)input[ibStart + i * 4 + 3] << 24;
-            }
-
-            return result;
-        }
     }
 }

@@ -12,6 +12,8 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+// Only used by Crc32Managed on targets older than .NET 10; .NET 10+ uses System.IO.Hashing instead.
+#if !NET10_0_OR_GREATER
 using System;
 
 namespace Amazon.Runtime.Internal.Util
@@ -137,3 +139,4 @@ namespace Amazon.Runtime.Internal.Util
         }
     }
 }
+#endif

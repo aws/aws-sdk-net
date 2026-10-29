@@ -24,7 +24,7 @@ namespace Amazon.Runtime.Internal.Util
     /// <remarks>
     /// On .NET 10 and later this uses System.IO.Hashing, which is vectorized (tens of GB/s). The System.IO.Hashing
     /// builds used by the .NET 8, netstandard2.0 and .NET Framework targets compute CRC32 about as slowly as a
-    /// byte-at-a-time table, so those targets use the slicing-by-16 implementation in <see cref="Crc32Slicing"/>
+    /// byte-at-a-time table, so those targets use the slicing-by-16 implementation in Crc32Slicing
     /// (roughly 3-6x faster there). Both produce identical values.
     /// </remarks>
     public class Crc32Managed : HashAlgorithm

@@ -96,6 +96,7 @@ namespace AWSSDK.UnitTests
             }
         }
 
+#if !NET10_0_OR_GREATER // Crc32Slicing is only compiled for targets older than .NET 10
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
@@ -109,6 +110,7 @@ namespace AWSSDK.UnitTests
                 Assert.AreEqual(Crc32Slicing.UpdateSafe(0x12345678, data), Crc32Slicing.Update(0x12345678, data));
             }
         }
+#endif
 
         [TestMethod]
         [TestCategory("UnitTest")]
