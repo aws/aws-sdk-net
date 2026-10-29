@@ -1,0 +1,83 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.GameLift.Model
+{
+    /// <summary>
+    /// Container for the parameters to the ResumeGameServerGroup operation. <b>This API works
+    /// with the following fleet types:</b> EC2 (FleetIQ) <para> Reinstates activity on a
+    /// game server group after it has been suspended. A game server group might be suspended
+    /// by the <a href="gamelift/latest/apireference/API_SuspendGameServerGroup.html">SuspendGameServerGroup</a>
+    /// operation, or it might be suspended involuntarily due to a configuration problem.
+    /// In the second case, you can manually resume activity on the group once the configuration
+    /// problem has been resolved. Refer to the game server group status and status reason
+    /// for more information on why group activity is suspended. </para> <para> To resume
+    /// activity, specify a game server group ARN and the type of activity to be resumed.
+    /// If successful, a <c>GameServerGroup</c> object is returned showing that the resumed
+    /// activity is no longer listed in <c>SuspendedActions</c>. </para> <para> <b>Learn more</b>
+    /// </para> <para> <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
+    /// GameLift Servers FleetIQ Guide</a> </para>
+    /// </summary>
+    public partial class ResumeGameServerGroupRequest : AmazonGameLiftRequest
+    {
+        /// <summary>
+        /// Gets and sets the property GameServerGroupName. 
+        /// <para>
+        /// A unique identifier for the game server group. Use either the name or ARN value.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 256)]
+        public string GameServerGroupName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GameServerGroupName property is set.
+        /// </summary>
+        internal bool IsSetGameServerGroupName() => this.GameServerGroupName != null;
+
+        /// <summary>
+        /// Gets and sets the property ResumeActions. 
+        /// <para>
+        /// The activity to resume for this game server group.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 1)]
+        public List<string> ResumeActions { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the ResumeActions property is set.
+        /// </summary>
+        internal bool IsSetResumeActions() => this.ResumeActions != null && (this.ResumeActions.Count > 0 || !AWSConfigs.InitializeCollections);
+    }
+}

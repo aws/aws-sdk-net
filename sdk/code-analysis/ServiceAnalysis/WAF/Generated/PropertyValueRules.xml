@@ -231,7 +231,7 @@
     <property>Amazon.WAF.Model.CreateWebACLMigrationStackRequest.S3BucketName</property>
     <min>3</min>
     <max>63</max>
-    <pattern>^aws-waf-migration-[0-9A-Za-z\.\-_]*</pattern>
+    <pattern>^aws-waf-migration-[0-9A-Za-z\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.CreateWebACLMigrationStackRequest.WebACLId</property>

@@ -1,0 +1,129 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.GameLift.Model
+{
+    /// <summary>
+    /// Container for the parameters to the UpdateGameServer operation. <b>This API works
+    /// with the following fleet types:</b> EC2 (FleetIQ) <para> Updates information about
+    /// a registered game server to help Amazon GameLift Servers FleetIQ track game server
+    /// availability. This operation is called by a game server process that is running on
+    /// an instance in a game server group. </para> <para> Use this operation to update the
+    /// following types of game server information. You can make all three types of updates
+    /// in the same request: </para> <ul> <li> <para> To update the game server's utilization
+    /// status from <c>AVAILABLE</c> (when the game server is available to be claimed) to
+    /// <c>UTILIZED</c> (when the game server is currently hosting games). Identify the game
+    /// server and game server group and specify the new utilization status. You can't change
+    /// the status from <c>UTILIZED</c> to <c>AVAILABLE</c> . </para> </li> <li> <para> To
+    /// report health status, identify the game server and game server group and set health
+    /// check to <c>HEALTHY</c>. If a game server does not report health status for a certain
+    /// length of time, the game server is no longer considered healthy. As a result, it will
+    /// be eventually deregistered from the game server group to avoid affecting utilization
+    /// metrics. The best practice is to report health every 60 seconds. </para> </li> <li>
+    /// <para> To change game server metadata, provide updated game server data. </para> </li>
+    /// </ul> <para> Once a game server is successfully updated, the relevant statuses and
+    /// timestamps are updated. </para> <para> <b>Learn more</b> </para> <para> <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
+    /// GameLift Servers FleetIQ Guide</a> </para>
+    /// </summary>
+    public partial class UpdateGameServerRequest : AmazonGameLiftRequest
+    {
+        /// <summary>
+        /// Gets and sets the property GameServerData. 
+        /// <para>
+        /// A set of custom game server properties, formatted as a single string value. This data
+        /// is passed to a game client or service when it requests information on game servers.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true, Min = 1, Max = 1024)]
+        public string GameServerData { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GameServerData property is set.
+        /// </summary>
+        internal bool IsSetGameServerData() => this.GameServerData != null;
+
+        /// <summary>
+        /// Gets and sets the property GameServerGroupName. 
+        /// <para>
+        /// A unique identifier for the game server group where the game server is running.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 256)]
+        public string GameServerGroupName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GameServerGroupName property is set.
+        /// </summary>
+        internal bool IsSetGameServerGroupName() => this.GameServerGroupName != null;
+
+        /// <summary>
+        /// Gets and sets the property GameServerId. 
+        /// <para>
+        /// A custom string that uniquely identifies the game server to update.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 3, Max = 128)]
+        public string GameServerId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GameServerId property is set.
+        /// </summary>
+        internal bool IsSetGameServerId() => this.GameServerId != null;
+
+        /// <summary>
+        /// Gets and sets the property HealthCheck. 
+        /// <para>
+        /// Indicates health status of the game server. A request that includes this parameter
+        /// updates the game server's <i>LastHealthCheckTime</i> timestamp. 
+        /// </para>
+        /// </summary>
+        public GameServerHealthCheck HealthCheck { get; set; }
+
+        /// <summary>
+        /// Checks to see if the HealthCheck property is set.
+        /// </summary>
+        internal bool IsSetHealthCheck() => this.HealthCheck != null;
+
+        /// <summary>
+        /// Gets and sets the property UtilizationStatus. 
+        /// <para>
+        /// Indicates if the game server is available or is currently hosting gameplay. You can
+        /// update a game server status from <c>AVAILABLE</c> to <c>UTILIZED</c>, but you can't
+        /// change the status from <c>UTILIZED</c> to <c>AVAILABLE</c>.
+        /// </para>
+        /// </summary>
+        public GameServerUtilizationStatus UtilizationStatus { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UtilizationStatus property is set.
+        /// </summary>
+        internal bool IsSetUtilizationStatus() => this.UtilizationStatus != null;
+    }
+}

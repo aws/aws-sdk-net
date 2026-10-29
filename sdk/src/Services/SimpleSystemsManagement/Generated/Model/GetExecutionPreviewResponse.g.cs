@@ -1,0 +1,100 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.SimpleSystemsManagement.Model
+{
+    /// <summary>
+    /// This is the response object from the GetExecutionPreview operation.
+    /// </summary>
+    public partial class GetExecutionPreviewResponse : AmazonWebServiceResponse
+    {
+        /// <summary>
+        /// Gets and sets the property EndedAt. 
+        /// <para>
+        /// A UTC timestamp indicating when the execution preview operation ended.
+        /// </para>
+        /// </summary>
+        public DateTime? EndedAt { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EndedAt property is set.
+        /// </summary>
+        internal bool IsSetEndedAt() => this.EndedAt.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property ExecutionPreview.
+        /// </summary>
+        public ExecutionPreview ExecutionPreview { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExecutionPreview property is set.
+        /// </summary>
+        internal bool IsSetExecutionPreview() => this.ExecutionPreview != null;
+
+        /// <summary>
+        /// Gets and sets the property ExecutionPreviewId. 
+        /// <para>
+        /// The generated ID for the existing execution preview.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 36, Max = 36)]
+        public string ExecutionPreviewId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExecutionPreviewId property is set.
+        /// </summary>
+        internal bool IsSetExecutionPreviewId() => this.ExecutionPreviewId != null;
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The current status of the execution preview operation.
+        /// </para>
+        /// </summary>
+        public ExecutionPreviewStatus Status { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Status property is set.
+        /// </summary>
+        internal bool IsSetStatus() => this.Status != null;
+
+        /// <summary>
+        /// Gets and sets the property StatusMessage. 
+        /// <para>
+        /// Supplemental information about the current status of the execution preview.
+        /// </para>
+        /// </summary>
+        public string StatusMessage { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StatusMessage property is set.
+        /// </summary>
+        internal bool IsSetStatusMessage() => this.StatusMessage != null;
+    }
+}

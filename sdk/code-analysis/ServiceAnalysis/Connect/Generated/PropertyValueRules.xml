@@ -32,6 +32,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AssociateApprovedOriginRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -41,10 +42,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AssociateApprovedOriginRequest.Origin</property>
+    <min>0</min>
     <max>267</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AssociateBotRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -79,6 +82,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AssociateEmailAddressAliasRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -103,6 +107,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AssociateInstanceStorageConfigRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -117,6 +122,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AssociateLambdaFunctionRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -131,6 +137,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AssociateLexBotRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -140,6 +147,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AssociatePhoneNumberContactFlowRequest.ContactFlowId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -149,6 +157,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AssociateQueueEmailAddressesRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -168,6 +177,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AssociateSecurityKeyRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -270,6 +280,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.BatchPutContactRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -289,6 +300,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ClaimPhoneNumberRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -298,13 +310,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ClaimPhoneNumberRequest.PhoneNumber</property>
-    <pattern>\\+[1-9]\\d{1,14}$</pattern>
+    <pattern>^\\+[1-9]\\d{1,14}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ClaimPhoneNumberRequest.PhoneNumberDescription</property>
     <min>0</min>
     <max>500</max>
-    <pattern>^[\W\S_]*</pattern>
+    <pattern>^[\W\S_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CompleteAttachedFileUploadRequest.FileId</property>
@@ -338,6 +350,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateAttachedFileRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -378,10 +391,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateAuthCodeResponse.SessionId</property>
+    <min>0</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateContactRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -425,6 +440,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateContactFlowResponse.ContactFlowId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -454,6 +470,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateContactFlowModuleRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -547,7 +564,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateContactFlowVersionRequest.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateContactFlowVersionResponse.Version</property>
@@ -610,6 +627,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateEmailAddressRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -626,7 +644,7 @@
     <property>Amazon.Connect.Model.CreateEmailAddressRequest.EmailAddress</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^\s@]+@[^\s@]+\.[^\s@]+</pattern>
+    <pattern>^[^\s@]+@[^\s@]+\.[^\s@]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateEmailAddressRequest.InstanceId</property>
@@ -650,6 +668,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateEvaluationFormRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -664,6 +683,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateExtractionDefinitionRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -724,6 +744,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateInstanceRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -766,6 +787,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateMetricRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -790,6 +812,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateNotificationRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -809,6 +832,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateParticipantRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -828,6 +852,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreatePersistentContactAssociationRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -879,7 +904,7 @@
     <property>Amazon.Connect.Model.CreatePromptRequest.S3Uri</property>
     <min>1</min>
     <max>2000</max>
-    <pattern>s3://\S+/.+|https://\\S+\\.s3\\.\\S+\\.amazonaws\\.com/\\S+</pattern>
+    <pattern>^s3://\S+/.+|https://\\S+\\.s3\\.\\S+\\.amazonaws\\.com/\\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreatePromptResponse.PromptId</property>
@@ -888,6 +913,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreatePushNotificationRegistrationRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -956,6 +982,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateRuleRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -967,7 +994,7 @@
     <property>Amazon.Connect.Model.CreateRuleRequest.Name</property>
     <min>1</min>
     <max>200</max>
-    <pattern>^[0-9a-zA-Z._-]+</pattern>
+    <pattern>^[0-9a-zA-Z._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateRuleResponse.RuleId</property>
@@ -976,6 +1003,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateSecurityProfileRequest.Description</property>
+    <min>0</min>
     <max>250</max>
   </property-value-rule>
   <property-value-rule>
@@ -991,10 +1019,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateTaskTemplateRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateTaskTemplateRequest.ContactFlowId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -1014,6 +1044,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateTaskTemplateRequest.SelfAssignFlowId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -1034,7 +1065,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateTestCaseRequest.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateTestCaseRequest.Name</property>
@@ -1042,21 +1073,24 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateTestCaseRequest.TestCaseId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateTestCaseResponse.TestCaseId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateTrafficDistributionGroupRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateTrafficDistributionGroupRequest.Description</property>
     <min>1</min>
     <max>250</max>
-    <pattern>(^[\S].*[\S]$)|(^[\S]$)</pattern>
+    <pattern>^(^[\S].*[\S]$)|(^[\S]$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateTrafficDistributionGroupRequest.InstanceId</property>
@@ -1068,7 +1102,7 @@
     <property>Amazon.Connect.Model.CreateTrafficDistributionGroupRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>(^[\S].*[\S]$)|(^[\S]$)</pattern>
+    <pattern>^(^[\S].*[\S]$)|(^[\S]$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateTrafficDistributionGroupResponse.Arn</property>
@@ -1100,7 +1134,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateUserRequest.Password</property>
-    <pattern>/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\S]{8,64}$/</pattern>
+    <pattern>^/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\S]{8,64}$/$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateUserRequest.Username</property>
@@ -1114,6 +1148,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateViewRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:\/=+\-@]*)$</pattern>
   </property-value-rule>
@@ -1158,6 +1193,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateVocabularyRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -1174,7 +1210,7 @@
     <property>Amazon.Connect.Model.CreateVocabularyRequest.VocabularyName</property>
     <min>1</min>
     <max>140</max>
-    <pattern>^[0-9a-zA-Z._-]+</pattern>
+    <pattern>^[0-9a-zA-Z._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateVocabularyResponse.VocabularyId</property>
@@ -1283,6 +1319,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DeleteContactFlowRequest.ContactFlowId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -1418,6 +1455,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DeleteInstanceRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -1527,6 +1565,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DeleteSessionRequest.SessionId</property>
+    <min>0</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
@@ -1547,6 +1586,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DeleteTestCaseRequest.TestCaseId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -1691,6 +1731,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribeContactFlowRequest.ContactFlowId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -1785,7 +1826,7 @@
     <property>Amazon.Connect.Model.DescribeEmailAddressResponse.EmailAddress</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^\s@]+@[^\s@]+\.[^\s@]+</pattern>
+    <pattern>^[^\s@]+@[^\s@]+\.[^\s@]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribeEmailAddressResponse.EmailAddressArn</property>
@@ -1930,6 +1971,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribeTestCaseRequest.TestCaseId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -1993,6 +2035,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateApprovedOriginRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -2002,10 +2045,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateApprovedOriginRequest.Origin</property>
+    <min>0</min>
     <max>267</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateBotRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -2015,6 +2060,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateEmailAddressAliasRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -2044,6 +2090,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateInstanceStorageConfigRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -2053,6 +2100,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateLambdaFunctionRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -2067,10 +2115,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateLexBotRequest.BotName</property>
+    <min>0</min>
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateLexBotRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -2080,6 +2130,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateLexBotRequest.LexRegion</property>
+    <min>0</min>
     <max>60</max>
   </property-value-rule>
   <property-value-rule>
@@ -2089,6 +2140,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateQueueEmailAddressesRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -2113,6 +2165,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateSecurityKeyRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -2341,7 +2394,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.GetPromptFileResponse.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.GetPromptFileResponse.PromptPresignedUrl</property>
@@ -2365,6 +2418,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.GetTaskTemplateResponse.ContactFlowId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -2389,6 +2443,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.GetTaskTemplateResponse.SelfAssignFlowId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -2398,10 +2453,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.GetTestCaseExecutionSummaryRequest.TestCaseExecutionId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.GetTestCaseExecutionSummaryRequest.TestCaseId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -2418,6 +2475,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ImportPhoneNumberRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -2429,7 +2487,7 @@
     <property>Amazon.Connect.Model.ImportPhoneNumberRequest.PhoneNumberDescription</property>
     <min>0</min>
     <max>500</max>
-    <pattern>^[\W\S_]*</pattern>
+    <pattern>^[\W\S_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ImportWorkspaceMediaRequest.InstanceId</property>
@@ -2549,7 +2607,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListChildHoursOfOperationsResponse.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListContactEvaluationsRequest.ContactId</property>
@@ -2584,16 +2642,6 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Connect.Model.ListContactFlowModulesRequest.InstanceId</property>
-    <min>1</min>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Connect.Model.ListContactFlowModulesRequest.MaxResults</property>
-    <min>1</min>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Connect.Model.ListContactFlowModuleVersionsRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -2604,12 +2652,12 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Connect.Model.ListContactFlowsRequest.InstanceId</property>
+    <property>Amazon.Connect.Model.ListContactFlowModulesRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Connect.Model.ListContactFlowsRequest.MaxResults</property>
+    <property>Amazon.Connect.Model.ListContactFlowModulesRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
   </property-value-rule>
@@ -2620,6 +2668,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListContactFlowVersionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListContactFlowsRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListContactFlowsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
   </property-value-rule>
@@ -2664,16 +2722,6 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Connect.Model.ListDataTablesRequest.InstanceId</property>
-    <min>1</min>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Connect.Model.ListDataTablesRequest.MaxResults</property>
-    <min>1</min>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Connect.Model.ListDataTableValuesRequest.DataTableId</property>
     <min>1</min>
     <max>256</max>
@@ -2685,6 +2733,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListDataTableValuesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListDataTablesRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListDataTablesRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
   </property-value-rule>
@@ -2745,16 +2803,6 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Connect.Model.ListEvaluationFormsRequest.InstanceId</property>
-    <min>1</min>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Connect.Model.ListEvaluationFormsRequest.MaxResults</property>
-    <min>1</min>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Connect.Model.ListEvaluationFormVersionsRequest.EvaluationFormId</property>
     <min>1</min>
     <max>500</max>
@@ -2766,6 +2814,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListEvaluationFormVersionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListEvaluationFormsRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListEvaluationFormsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>
@@ -2801,7 +2859,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListHoursOfOperationOverridesResponse.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListHoursOfOperationsRequest.InstanceId</property>
@@ -2824,17 +2882,17 @@
     <max>7</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Connect.Model.ListInstancesRequest.MaxResults</property>
-    <min>1</min>
-    <max>10</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Connect.Model.ListInstanceStorageConfigsRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListInstanceStorageConfigsRequest.MaxResults</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListInstancesRequest.MaxResults</property>
     <min>1</min>
     <max>10</max>
   </property-value-rule>
@@ -2915,7 +2973,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListPhoneNumbersV2Request.PhoneNumberPrefix</property>
-    <pattern>\\+?[0-9]{1,11}</pattern>
+    <pattern>^\\+?[0-9]{1,11}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListPhoneNumbersV2Response.NextToken</property>
@@ -2954,7 +3012,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListQueueEmailAddressesResponse.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListQueueQuickConnectsRequest.InstanceId</property>
@@ -2968,7 +3026,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListQueueQuickConnectsResponse.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListQueuesRequest.InstanceId</property>
@@ -3053,7 +3111,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListRoutingProfileManualAssignmentQueuesResponse.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListRoutingProfileQueuesRequest.InstanceId</property>
@@ -3067,7 +3125,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListRoutingProfileQueuesResponse.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListRoutingProfilesRequest.InstanceId</property>
@@ -3111,7 +3169,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListSecurityProfileAIAgentsResponse.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListSecurityProfileApplicationsRequest.InstanceId</property>
@@ -3125,7 +3183,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListSecurityProfileApplicationsResponse.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListSecurityProfileFlowModulesRequest.InstanceId</property>
@@ -3139,7 +3197,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListSecurityProfileFlowModulesResponse.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListSecurityProfilePermissionsRequest.InstanceId</property>
@@ -3153,7 +3211,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListSecurityProfilePermissionsResponse.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListSecurityProfilesRequest.InstanceId</property>
@@ -3192,10 +3250,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListTestCaseExecutionRecordsRequest.TestCaseExecutionId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListTestCaseExecutionRecordsRequest.TestCaseId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -3223,6 +3283,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListTestCaseExecutionsRequest.TestCaseId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -3240,6 +3301,15 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.ListTrafficDistributionGroupUsersRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListTrafficDistributionGroupUsersRequest.TrafficDistributionGroupId</property>
+    <pattern>^(arn:(aws|aws-us-gov):connect:[a-z]{2}-[a-z-]+-[0-9]{1}:[0-9]{1,20}:traffic-distribution-group/)?[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.ListTrafficDistributionGroupsRequest.InstanceId</property>
     <min>1</min>
     <max>250</max>
@@ -3249,15 +3319,6 @@
     <property>Amazon.Connect.Model.ListTrafficDistributionGroupsRequest.MaxResults</property>
     <min>1</min>
     <max>10</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Connect.Model.ListTrafficDistributionGroupUsersRequest.MaxResults</property>
-    <min>1</min>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Connect.Model.ListTrafficDistributionGroupUsersRequest.TrafficDistributionGroupId</property>
-    <pattern>^(arn:(aws|aws-us-gov):connect:[a-z]{2}-[a-z-]+-[0-9]{1}:[0-9]{1,20}:traffic-distribution-group/)?[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListUseCasesRequest.InstanceId</property>
@@ -3306,7 +3367,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListUserProficienciesResponse.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListUsersRequest.InstanceId</property>
@@ -3317,28 +3378,6 @@
     <property>Amazon.Connect.Model.ListUsersRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Connect.Model.ListViewsRequest.InstanceId</property>
-    <min>1</min>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Connect.Model.ListViewsRequest.MaxResults</property>
-    <min>1</min>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Connect.Model.ListViewsRequest.NextToken</property>
-    <min>1</min>
-    <max>4096</max>
-    <pattern>^[a-zA-Z0-9=\/+_.-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Connect.Model.ListViewsResponse.NextToken</property>
-    <min>1</min>
-    <max>4096</max>
-    <pattern>^[a-zA-Z0-9=\/+_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListViewVersionsRequest.InstanceId</property>
@@ -3363,6 +3402,28 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListViewVersionsResponse.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^[a-zA-Z0-9=\/+_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListViewsRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListViewsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListViewsRequest.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^[a-zA-Z0-9=\/+_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListViewsResponse.NextToken</property>
     <min>1</min>
     <max>4096</max>
     <pattern>^[a-zA-Z0-9=\/+_.-]+$</pattern>
@@ -3404,6 +3465,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.MonitorContactRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -3428,6 +3490,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.PauseContactRequest.ContactFlowId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -3447,10 +3510,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ReleasePhoneNumberRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ReplicateInstanceRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -3469,7 +3534,7 @@
     <property>Amazon.Connect.Model.ReplicateInstanceRequest.ReplicaRegion</property>
     <min>8</min>
     <max>31</max>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ReplicateInstanceResponse.Id</property>
@@ -3478,6 +3543,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ResumeContactRequest.ContactFlowId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -3542,7 +3608,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.SearchAvailablePhoneNumbersRequest.PhoneNumberPrefix</property>
-    <pattern>\\+?[0-9]{1,11}</pattern>
+    <pattern>^\\+?[0-9]{1,11}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.SearchAvailablePhoneNumbersResponse.NextToken</property>
@@ -3971,7 +4037,7 @@
     <property>Amazon.Connect.Model.SearchVocabulariesRequest.NameStartsWith</property>
     <min>1</min>
     <max>140</max>
-    <pattern>^[0-9a-zA-Z._-]+</pattern>
+    <pattern>^[0-9a-zA-Z._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.SearchVocabulariesRequest.NextToken</property>
@@ -4037,6 +4103,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.SendOutboundEmailRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -4051,6 +4118,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.SendOutboundWebNotificationRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -4065,6 +4133,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartAssistantContactRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -4099,6 +4168,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartAttachedFileUploadRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -4133,10 +4203,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartChatContactRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartChatContactRequest.ContactFlowId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -4181,6 +4253,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartContactConversationalAnalyticsJobRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -4205,6 +4278,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartContactEvaluationRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -4254,6 +4328,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartContactStreamingRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -4273,10 +4348,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartEmailContactRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartEmailContactRequest.ContactFlowId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -4288,7 +4365,7 @@
     <property>Amazon.Connect.Model.StartEmailContactRequest.DestinationEmailAddress</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^\s@]+@[^\s@]+\.[^\s@]+</pattern>
+    <pattern>^[^\s@]+@[^\s@]+\.[^\s@]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartEmailContactRequest.InstanceId</property>
@@ -4332,10 +4409,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartOutboundChatContactRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartOutboundChatContactRequest.ContactFlowId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -4355,6 +4434,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartOutboundEmailContactRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -4379,10 +4459,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartOutboundVoiceContactRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartOutboundVoiceContactRequest.ContactFlowId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -4392,7 +4474,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartOutboundVoiceContactRequest.DestinationPhoneNumber</property>
-    <pattern>\\+[1-9]\\d{1,14}$</pattern>
+    <pattern>^\\+[1-9]\\d{1,14}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartOutboundVoiceContactRequest.InstanceId</property>
@@ -4416,7 +4498,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartOutboundVoiceContactRequest.SourcePhoneNumber</property>
-    <pattern>\\+[1-9]\\d{1,14}$</pattern>
+    <pattern>^\\+[1-9]\\d{1,14}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartOutboundVoiceContactResponse.ContactId</property>
@@ -4425,6 +4507,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartScreenSharingRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -4439,10 +4522,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartTaskContactRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartTaskContactRequest.ContactFlowId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -4482,6 +4567,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartTestCaseExecutionRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -4491,22 +4577,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartTestCaseExecutionRequest.TestCaseId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartTestCaseExecutionResponse.TestCaseExecutionId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartTestCaseExecutionResponse.TestCaseId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartWebRTCContactRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartWebRTCContactRequest.ContactFlowId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -4591,6 +4682,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StopTestCaseExecutionRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -4600,10 +4692,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StopTestCaseExecutionRequest.TestCaseExecutionId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StopTestCaseExecutionRequest.TestCaseId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -4648,10 +4742,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.TransferContactRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.TransferContactRequest.ContactFlowId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -4820,6 +4916,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateContactFlowContentRequest.ContactFlowId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -4829,6 +4926,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateContactFlowMetadataRequest.ContactFlowId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -4911,6 +5009,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateContactFlowNameRequest.ContactFlowId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -5036,6 +5135,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateEmailAddressMetadataRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -5075,6 +5175,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateEvaluationFormRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -5094,6 +5195,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateExtractionDefinitionRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -5154,6 +5256,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateInstanceAttributeRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -5173,6 +5276,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateInstanceStorageConfigRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -5274,6 +5378,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdatePhoneNumberRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -5283,13 +5388,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdatePhoneNumberMetadataRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdatePhoneNumberMetadataRequest.PhoneNumberDescription</property>
     <min>0</min>
     <max>500</max>
-    <pattern>^[\W\S_]*</pattern>
+    <pattern>^[\W\S_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdatePredefinedAttributeRequest.InstanceId</property>
@@ -5325,7 +5431,7 @@
     <property>Amazon.Connect.Model.UpdatePromptRequest.S3Uri</property>
     <min>1</min>
     <max>2000</max>
-    <pattern>s3://\S+/.+|https://\\S+\\.s3\\.\\S+\\.amazonaws\\.com/\\S+</pattern>
+    <pattern>^s3://\S+/.+|https://\\S+\\.s3\\.\\S+\\.amazonaws\\.com/\\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdatePromptResponse.PromptId</property>
@@ -5440,7 +5546,7 @@
     <property>Amazon.Connect.Model.UpdateRuleRequest.Name</property>
     <min>1</min>
     <max>200</max>
-    <pattern>^[0-9a-zA-Z._-]+</pattern>
+    <pattern>^[0-9a-zA-Z._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateRuleRequest.RuleId</property>
@@ -5449,6 +5555,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateSecurityProfileRequest.Description</property>
+    <min>0</min>
     <max>250</max>
   </property-value-rule>
   <property-value-rule>
@@ -5458,6 +5565,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateTaskTemplateRequest.ContactFlowId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -5477,6 +5585,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateTaskTemplateRequest.SelfAssignFlowId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -5491,6 +5600,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateTaskTemplateResponse.ContactFlowId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -5515,6 +5625,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateTaskTemplateResponse.SelfAssignFlowId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -5525,7 +5636,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateTestCaseRequest.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateTestCaseRequest.Name</property>
@@ -5533,6 +5644,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateTestCaseRequest.TestCaseId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -5571,7 +5683,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateUserNotificationStatusRequest.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateUserNotificationStatusRequest.NotificationId</property>
@@ -5754,7 +5866,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AgentStatus.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AgentStatus.Name</property>
@@ -5768,7 +5880,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AgentStatusSummary.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AgentStatusSummary.Name</property>
@@ -5784,13 +5896,13 @@
     <property>Amazon.Connect.Model.AiAgentInput.AiAgentId</property>
     <min>0</min>
     <max>128</max>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}){0,2}(:[A-Z0-9_$]+){0,1}</pattern>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}){0,2}(:[A-Z0-9_$]+){0,1}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AiAgentSearchCriteria.Id</property>
     <min>0</min>
     <max>128</max>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}){0,2}(:[A-Z0-9_$]+){0,1}</pattern>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}){0,2}(:[A-Z0-9_$]+){0,1}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AliasConfiguration.EmailAddressId</property>
@@ -5822,7 +5934,7 @@
     <property>Amazon.Connect.Model.ApproximateDriftedResourceCount.Region</property>
     <min>8</min>
     <max>31</max>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AssociatedContactSummary.ContactId</property>
@@ -5888,7 +6000,7 @@
     <property>Amazon.Connect.Model.AttachmentReference.Arn</property>
     <min>20</min>
     <max>256</max>
-    <pattern>^[-:/A-Za-z0-9]+</pattern>
+    <pattern>^[-:/A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AttachmentReference.Name</property>
@@ -5926,6 +6038,18 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.AuthScope.DomainName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AuthScope.EntityId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.AuthenticationProfile.Description</property>
     <min>1</min>
     <max>250</max>
@@ -5937,7 +6061,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AuthenticationProfile.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AuthenticationProfile.MaxSessionDuration</property>
@@ -5966,24 +6090,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AuthenticationProfileSummary.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AuthenticationProfileSummary.Name</property>
     <min>1</min>
     <max>128</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Connect.Model.AuthScope.DomainName</property>
-    <min>1</min>
-    <max>64</max>
-    <pattern>^[a-zA-Z0-9_-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Connect.Model.AuthScope.EntityId</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AvailableFilter.Id</property>
@@ -5992,7 +6104,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AvailableNumberSummary.PhoneNumber</property>
-    <pattern>\\+[1-9]\\d{1,14}$</pattern>
+    <pattern>^\\+[1-9]\\d{1,14}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.BatchCreateDataTableValueFailureResult.AttributeName</property>
@@ -6042,7 +6154,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.BatchDescribeDataTableValueSuccessResult.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.BatchDescribeDataTableValueSuccessResult.RecordId</property>
@@ -6107,6 +6219,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ChatEntryPointParameters.FlowId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -6141,13 +6254,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ClaimedPhoneNumberSummary.PhoneNumber</property>
-    <pattern>\\+[1-9]\\d{1,14}$</pattern>
+    <pattern>^\\+[1-9]\\d{1,14}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ClaimedPhoneNumberSummary.PhoneNumberDescription</property>
     <min>0</min>
     <max>500</max>
-    <pattern>^[\W\S_]*</pattern>
+    <pattern>^[\W\S_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ConnectionCredentials.ConnectionToken</property>
@@ -6225,6 +6338,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ContactDataRequest.RequestIdentifier</property>
+    <min>0</min>
     <max>80</max>
   </property-value-rule>
   <property-value-rule>
@@ -6245,11 +6359,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ContactFlow.Id</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ContactFlow.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ContactFlow.Name</property>
@@ -6271,7 +6386,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ContactFlowAliasInfo.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ContactFlowAliasInfo.Name</property>
@@ -6292,7 +6407,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ContactFlowAliasSummary.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ContactFlowAliasSummary.Version</property>
@@ -6355,7 +6470,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ContactFlowModuleAliasInfo.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ContactFlowModuleAliasInfo.Name</property>
@@ -6411,6 +6526,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ContactFlowSummary.Id</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -6419,7 +6535,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ContactFlowVersionSummary.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ContactFlowVersionSummary.Version</property>
@@ -6482,7 +6598,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DataTable.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DataTable.Name</property>
@@ -6519,7 +6635,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DataTableAttribute.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DataTableAttribute.Name</property>
@@ -6556,7 +6672,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DataTableSummary.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DataTableSummary.Name</property>
@@ -6572,7 +6688,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DataTableValue.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DataTableValueIdentifier.AttributeName</property>
@@ -6593,7 +6709,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DataTableValueSummary.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DataTableValueSummary.RecordId</property>
@@ -6636,7 +6752,7 @@
     <property>Amazon.Connect.Model.DefaultVocabulary.VocabularyName</property>
     <min>1</min>
     <max>140</max>
-    <pattern>^[0-9a-zA-Z._-]+</pattern>
+    <pattern>^[0-9a-zA-Z._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DeviceInfo.OperatingSystem</property>
@@ -6677,7 +6793,7 @@
     <property>Amazon.Connect.Model.Distribution.Region</property>
     <min>8</min>
     <max>31</max>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DownloadUrlMetadata.Url</property>
@@ -6706,7 +6822,7 @@
     <property>Amazon.Connect.Model.EmailAddressInfo.EmailAddress</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^\s@]+@[^\s@]+\.[^\s@]+</pattern>
+    <pattern>^[^\s@]+@[^\s@]+\.[^\s@]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.EmailAddressMetadata.Description</property>
@@ -6722,7 +6838,7 @@
     <property>Amazon.Connect.Model.EmailAddressMetadata.EmailAddress</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^\s@]+@[^\s@]+\.[^\s@]+</pattern>
+    <pattern>^[^\s@]+@[^\s@]+\.[^\s@]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.EmailAddressMetadata.EmailAddressArn</property>
@@ -6759,7 +6875,7 @@
     <property>Amazon.Connect.Model.EmailMessageReference.Arn</property>
     <min>20</min>
     <max>256</max>
-    <pattern>^[-:/A-Za-z0-9]+</pattern>
+    <pattern>^[-:/A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.EmailMessageReference.Name</property>
@@ -6928,6 +7044,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationReviewRequestComment.Comment</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -7021,10 +7138,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ExtractionDefinitionDisplay.Label</property>
+    <min>0</min>
     <max>25</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ExtractionDefinitionNotFoundBehavior.DefaultValue</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -7048,6 +7167,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.FailedRequest.RequestIdentifier</property>
+    <min>0</min>
     <max>80</max>
   </property-value-rule>
   <property-value-rule>
@@ -7072,6 +7192,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.FlowQuickConnectConfig.ContactFlowId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -7090,15 +7211,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.HierarchyGroup.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.HierarchyGroupSummary.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.HierarchyLevel.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.HoursOfOperation.Description</property>
@@ -7107,7 +7228,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.HoursOfOperation.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.HoursOfOperation.Name</property>
@@ -7136,13 +7257,8 @@
     <pattern>^[\P{C}\r\n\t]{1,127}$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Connect.Model.HoursOfOperationsIdentifier.Name</property>
-    <min>1</min>
-    <max>127</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Connect.Model.HoursOfOperationSummary.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.HoursOfOperationTimeSlice.Hours</property>
@@ -7153,6 +7269,11 @@
     <property>Amazon.Connect.Model.HoursOfOperationTimeSlice.Minutes</property>
     <min>0</min>
     <max>59</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.HoursOfOperationsIdentifier.Name</property>
+    <min>1</min>
+    <max>127</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ImagesLogo.Default</property>
@@ -7241,10 +7362,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.LexBot.LexRegion</property>
+    <min>0</min>
     <max>60</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.LexBot.Name</property>
+    <min>0</min>
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
@@ -7259,13 +7382,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListPhoneNumbersSummary.PhoneNumber</property>
-    <pattern>\\+[1-9]\\d{1,14}$</pattern>
+    <pattern>^\\+[1-9]\\d{1,14}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListPhoneNumbersSummary.PhoneNumberDescription</property>
     <min>0</min>
     <max>500</max>
-    <pattern>^[\W\S_]*</pattern>
+    <pattern>^[\W\S_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.MediaConcurrency.Concurrency</property>
@@ -7330,7 +7453,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.MetricDefinition.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.MetricDefinition.Name</property>
@@ -7359,7 +7482,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.MetricSummary.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.MetricSummary.Name</property>
@@ -7383,7 +7506,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.Notification.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.NotificationSearchSummary.Id</property>
@@ -7397,7 +7520,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.NotificationSearchSummary.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.NumberReference.Name</property>
@@ -7416,6 +7539,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.OutboundCallerConfig.OutboundFlowId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -7582,21 +7706,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.PhoneNumberConfig.PhoneNumber</property>
-    <pattern>\+[1-9]\d{1,14}$</pattern>
+    <pattern>^\+[1-9]\d{1,14}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.PhoneNumberQuickConnectConfig.PhoneNumber</property>
-    <pattern>\\+[1-9]\\d{1,14}$</pattern>
+    <pattern>^\\+[1-9]\\d{1,14}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.PhoneNumberStatus.Message</property>
     <min>0</min>
     <max>255</max>
-    <pattern>^[\W\S_]*</pattern>
+    <pattern>^[\W\S_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.PhoneNumberSummary.PhoneNumber</property>
-    <pattern>\\+[1-9]\\d{1,14}$</pattern>
+    <pattern>^\\+[1-9]\\d{1,14}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.PostAcceptTimeoutConfig.DurationInSeconds</property>
@@ -7604,7 +7728,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.PredefinedAttribute.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.PredefinedAttribute.Name</property>
@@ -7613,7 +7737,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.PredefinedAttributeSummary.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.PredefinedAttributeSummary.Name</property>
@@ -7624,7 +7748,7 @@
     <property>Amazon.Connect.Model.PrimaryAttributeValue.AttributeName</property>
     <min>1</min>
     <max>127</max>
-    <pattern>(?!aws:|connect:)[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]+$</pattern>
+    <pattern>^(?!aws:|connect:)[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.PrimaryAttributeValueFilter.AttributeName</property>
@@ -7661,7 +7785,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.Prompt.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.Prompt.Name</property>
@@ -7680,7 +7804,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.PromptSummary.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.PromptSummary.Name</property>
@@ -7709,7 +7833,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.Queue.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.Queue.MaxContacts</property>
@@ -7722,11 +7846,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.QueueQuickConnectConfig.ContactFlowId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.QueueSummary.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.QueueSummary.Name</property>
@@ -7740,7 +7865,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.QuickConnect.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.QuickConnect.Name</property>
@@ -7759,7 +7884,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.QuickConnectSummary.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.QuickConnectSummary.Name</property>
@@ -7841,6 +7966,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.RealTimeContactAnalysisSegmentExtractedInformation.ExtractionDefinitionDisplayLabel</property>
+    <min>0</min>
     <max>25</max>
   </property-value-rule>
   <property-value-rule>
@@ -7909,6 +8035,15 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.RecordPrimaryValue.LastModifiedRegion</property>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RecordPrimaryValue.RecordId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.RecordingInfo.FragmentStartNumber</property>
     <min>0</min>
     <max>128</max>
@@ -7929,15 +8064,6 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Connect.Model.RecordPrimaryValue.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Connect.Model.RecordPrimaryValue.RecordId</property>
-    <min>1</min>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Connect.Model.RecurrencePattern.Interval</property>
     <min>1</min>
     <max>6</max>
@@ -7946,7 +8072,7 @@
     <property>Amazon.Connect.Model.Reference.Arn</property>
     <min>20</min>
     <max>256</max>
-    <pattern>^[-:/A-Za-z0-9]+</pattern>
+    <pattern>^[-:/A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.Reference.StatusReason</property>
@@ -7967,7 +8093,7 @@
     <property>Amazon.Connect.Model.ReplicationConfiguration.SourceRegion</property>
     <min>8</min>
     <max>31</max>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ReplicationFinding.Id</property>
@@ -7976,6 +8102,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ReplicationFinding.Message</property>
+    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
@@ -7997,7 +8124,7 @@
     <property>Amazon.Connect.Model.ReplicationFinding.Region</property>
     <min>8</min>
     <max>31</max>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ReplicationFinding.ResourceType</property>
@@ -8008,7 +8135,7 @@
     <property>Amazon.Connect.Model.ReplicationStatusSummary.Region</property>
     <min>8</min>
     <max>31</max>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ReplicationStatusSummary.ReplicationStatusReason</property>
@@ -8019,7 +8146,7 @@
     <property>Amazon.Connect.Model.ResourceReplicationStatus.Region</property>
     <min>8</min>
     <max>31</max>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ResourceReplicationStatus.Status</property>
@@ -8038,7 +8165,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.RoutingProfile.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.RoutingProfile.Name</property>
@@ -8077,7 +8204,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.RoutingProfileSummary.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.RoutingProfileSummary.Name</property>
@@ -8088,7 +8215,7 @@
     <property>Amazon.Connect.Model.Rule.Name</property>
     <min>1</min>
     <max>200</max>
-    <pattern>^[0-9a-zA-Z._-]+</pattern>
+    <pattern>^[0-9a-zA-Z._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.Rule.RuleId</property>
@@ -8099,7 +8226,7 @@
     <property>Amazon.Connect.Model.RuleSearchSummary.Name</property>
     <min>1</min>
     <max>200</max>
-    <pattern>^[0-9a-zA-Z._-]+</pattern>
+    <pattern>^[0-9a-zA-Z._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.RuleSearchSummary.RuleId</property>
@@ -8107,15 +8234,10 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Connect.Model.RulesExtractionDefinitionIdentifier.Identifier</property>
-    <min>1</min>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Connect.Model.RuleSummary.Name</property>
     <min>1</min>
     <max>200</max>
-    <pattern>^[0-9a-zA-Z._-]+</pattern>
+    <pattern>^[0-9a-zA-Z._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.RuleSummary.RuleId</property>
@@ -8126,6 +8248,11 @@
     <property>Amazon.Connect.Model.RuleTriggerEventSource.IntegrationAssociationId</property>
     <min>1</min>
     <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RulesExtractionDefinitionIdentifier.Identifier</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.S3Config.BucketName</property>
@@ -8159,11 +8286,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.SecurityProfile.Description</property>
+    <min>0</min>
     <max>250</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.SecurityProfile.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.SecurityProfile.OrganizationResourceId</property>
@@ -8172,6 +8300,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.SecurityProfileSearchSummary.Description</property>
+    <min>0</min>
     <max>250</max>
   </property-value-rule>
   <property-value-rule>
@@ -8181,7 +8310,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.SecurityProfileSummary.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.SegmentAttributeValue.ValueArn</property>
@@ -8207,7 +8336,7 @@
     <property>Amazon.Connect.Model.SignInDistribution.Region</property>
     <min>8</min>
     <max>31</max>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.SourceCampaign.CampaignId</property>
@@ -8241,14 +8370,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.SuccessfulRequest.RequestIdentifier</property>
+    <min>0</min>
     <max>80</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.TagSearchCondition.TagKey</property>
+    <min>0</min>
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.TagSearchCondition.TagValue</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -8259,10 +8391,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.TagSet.Value</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.TaskActionDefinition.ContactFlowId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -8343,11 +8477,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.TestCase.Id</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.TestCase.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.TestCase.Name</property>
@@ -8361,19 +8496,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.TestCaseExecution.TestCaseExecutionId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.TestCaseExecution.TestCaseId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.TestCaseSummary.Id</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.TestCaseSummary.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.TestCaseSummary.Name</property>
@@ -8392,7 +8530,7 @@
     <property>Amazon.Connect.Model.TrafficDistributionGroup.Description</property>
     <min>1</min>
     <max>250</max>
-    <pattern>(^[\S].*[\S]$)|(^[\S]$)</pattern>
+    <pattern>^(^[\S].*[\S]$)|(^[\S]$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.TrafficDistributionGroup.Id</property>
@@ -8406,7 +8544,7 @@
     <property>Amazon.Connect.Model.TrafficDistributionGroup.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>(^[\S].*[\S]$)|(^[\S]$)</pattern>
+    <pattern>^(^[\S].*[\S]$)|(^[\S]$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.TrafficDistributionGroupSummary.Arn</property>
@@ -8424,7 +8562,7 @@
     <property>Amazon.Connect.Model.TrafficDistributionGroupSummary.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>(^[\S].*[\S]$)|(^[\S]$)</pattern>
+    <pattern>^(^[\S].*[\S]$)|(^[\S]$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateOutboundRawMessage.Body</property>
@@ -8458,7 +8596,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.User.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.User.Username</property>
@@ -8482,7 +8620,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UserIdentityInfo.Mobile</property>
-    <pattern>\\+[1-9]\\d{1,14}$</pattern>
+    <pattern>^\\+[1-9]\\d{1,14}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UserIdentityInfoLite.FirstName</property>
@@ -8511,6 +8649,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UserNotificationSummary.RecipientId</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -8519,7 +8658,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UserPhoneConfig.DeskPhoneNumber</property>
-    <pattern>\+[1-9]\d{1,14}$</pattern>
+    <pattern>^\+[1-9]\d{1,14}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UserProficiency.AttributeName</property>
@@ -8548,6 +8687,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UserQuickConnectConfig.ContactFlowId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -8557,7 +8697,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UserSummary.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UserSummary.Username</property>
@@ -8671,7 +8811,7 @@
     <property>Amazon.Connect.Model.Vocabulary.Name</property>
     <min>1</min>
     <max>140</max>
-    <pattern>^[0-9a-zA-Z._-]+</pattern>
+    <pattern>^[0-9a-zA-Z._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.VocabularySummary.Id</property>
@@ -8682,19 +8822,20 @@
     <property>Amazon.Connect.Model.VocabularySummary.Name</property>
     <min>1</min>
     <max>140</max>
-    <pattern>^[0-9a-zA-Z._-]+</pattern>
+    <pattern>^[0-9a-zA-Z._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.VoiceCallEntryPointParameters.DestinationPhoneNumber</property>
-    <pattern>\\+[1-9]\\d{1,14}$</pattern>
+    <pattern>^\\+[1-9]\\d{1,14}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.VoiceCallEntryPointParameters.FlowId</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.VoiceCallEntryPointParameters.SourcePhoneNumber</property>
-    <pattern>\\+[1-9]\\d{1,14}$</pattern>
+    <pattern>^\\+[1-9]\\d{1,14}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.WebNotificationContent.ViewArn</property>
@@ -8734,7 +8875,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.Workspace.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.Workspace.Name</property>
@@ -8816,7 +8957,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.WorkspaceSummary.LastModifiedRegion</property>
-    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.WorkspaceSummary.Name</property>

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the waf-regional-2016-11-28.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -57,7 +57,7 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
             EnsureSimpleMethodExists(typeof(Amazon.WAFRegional.AmazonWAFRegionalClient), "UpdateRule", new Type[] { typeof(string), typeof(List<RuleUpdate>), typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.WAFRegional.AmazonWAFRegionalClient), "UpdateSqlInjectionMatchSet", new Type[] { typeof(string), typeof(List<SqlInjectionMatchSetUpdate>), typeof(string), });
         }
-        
+
         void EnsureSimpleMethodExists(Type type, string methodName, Type[] simpleParams)
         {
             Assert.IsNotNull(type.GetMethod(methodName, simpleParams), "Failed to find simple method " + methodName);

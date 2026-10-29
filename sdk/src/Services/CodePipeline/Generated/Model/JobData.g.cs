@@ -1,0 +1,166 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.CodePipeline.Model
+{
+    /// <summary>
+    /// Represents other information about a job required for a job worker to complete the
+    /// job.
+    /// </summary>
+    public partial class JobData
+    {
+        /// <summary>
+        /// Gets and sets the property ActionConfiguration. 
+        /// <para>
+        /// Represents information about an action configuration.
+        /// </para>
+        /// </summary>
+        public ActionConfiguration ActionConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ActionConfiguration property is set.
+        /// </summary>
+        internal bool IsSetActionConfiguration() => this.ActionConfiguration != null;
+
+        /// <summary>
+        /// Gets and sets the property ActionTypeId. 
+        /// <para>
+        /// Represents information about an action type.
+        /// </para>
+        /// </summary>
+        public ActionTypeId ActionTypeId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ActionTypeId property is set.
+        /// </summary>
+        internal bool IsSetActionTypeId() => this.ActionTypeId != null;
+
+        /// <summary>
+        /// Gets and sets the property ArtifactCredentials. 
+        /// <para>
+        /// Represents an Amazon Web Services session credentials object. These credentials are
+        /// temporary credentials that are issued by Amazon Web Services Secure Token Service
+        /// (STS). They can be used to access input and output artifacts in the S3 bucket used
+        /// to store artifacts for the pipeline in CodePipeline.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true)]
+        public AWSSessionCredentials ArtifactCredentials { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ArtifactCredentials property is set.
+        /// </summary>
+        internal bool IsSetArtifactCredentials() => this.ArtifactCredentials != null;
+
+        /// <summary>
+        /// Gets and sets the property ContinuationToken. 
+        /// <para>
+        /// A system-generated token, such as a deployment ID, required by a job to continue the
+        /// job asynchronously.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2048)]
+        public string ContinuationToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ContinuationToken property is set.
+        /// </summary>
+        internal bool IsSetContinuationToken() => this.ContinuationToken != null;
+
+        /// <summary>
+        /// Gets and sets the property EncryptionKey. 
+        /// <para>
+        /// Represents information about the key used to encrypt data in the artifact store, such
+        /// as an KMS key. 
+        /// </para>
+        /// </summary>
+        public EncryptionKey EncryptionKey { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EncryptionKey property is set.
+        /// </summary>
+        internal bool IsSetEncryptionKey() => this.EncryptionKey != null;
+
+        /// <summary>
+        /// Gets and sets the property InputArtifacts. 
+        /// <para>
+        /// The artifact supplied to the job.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<Artifact> InputArtifacts { get; set; } = AWSConfigs.InitializeCollections ? new List<Artifact>() : null;
+
+        /// <summary>
+        /// Checks to see if the InputArtifacts property is set.
+        /// </summary>
+        internal bool IsSetInputArtifacts() => this.InputArtifacts != null && (this.InputArtifacts.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property OutputArtifacts. 
+        /// <para>
+        /// The output of the job.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<Artifact> OutputArtifacts { get; set; } = AWSConfigs.InitializeCollections ? new List<Artifact>() : null;
+
+        /// <summary>
+        /// Checks to see if the OutputArtifacts property is set.
+        /// </summary>
+        internal bool IsSetOutputArtifacts() => this.OutputArtifacts != null && (this.OutputArtifacts.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property PipelineContext. 
+        /// <para>
+        /// Represents information about a pipeline to a job worker.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Includes <c>pipelineArn</c> and <c>pipelineExecutionId</c> for custom jobs.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public PipelineContext PipelineContext { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PipelineContext property is set.
+        /// </summary>
+        internal bool IsSetPipelineContext() => this.PipelineContext != null;
+    }
+}

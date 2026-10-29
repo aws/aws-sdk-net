@@ -1,0 +1,119 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.DataPipeline.Model
+{
+    /// <summary>
+    /// Container for the parameters to the PutPipelineDefinition operation. Adds tasks, schedules,
+    /// and preconditions to the specified pipeline. You can use <c>PutPipelineDefinition</c>
+    /// to populate a new pipeline. <para> <c>PutPipelineDefinition</c> also validates the
+    /// configuration as it adds it to the pipeline. Changes to the pipeline are saved unless
+    /// one of the following three validation errors exists in the pipeline. </para> <ol>
+    /// <li>An object is missing a name or identifier field.</li> <li>A string or reference
+    /// field is empty.</li> <li>The number of objects in the pipeline exceeds the maximum
+    /// allowed objects.</li> <li>The pipeline is in a FINISHED state.</li> </ol> <para> Pipeline
+    /// object definitions are passed to the <c>PutPipelineDefinition</c> action and returned
+    /// by the <a>GetPipelineDefinition</a> action. </para>
+    /// </summary>
+    public partial class PutPipelineDefinitionRequest : AmazonDataPipelineRequest
+    {
+        /// <summary>
+        /// Gets and sets the property ParameterObjects. 
+        /// <para>
+        /// The parameter objects used with the pipeline.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<ParameterObject> ParameterObjects { get; set; } = AWSConfigs.InitializeCollections ? new List<ParameterObject>() : null;
+
+        /// <summary>
+        /// Checks to see if the ParameterObjects property is set.
+        /// </summary>
+        internal bool IsSetParameterObjects() => this.ParameterObjects != null && (this.ParameterObjects.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property ParameterValues. 
+        /// <para>
+        /// The parameter values used with the pipeline.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<ParameterValue> ParameterValues { get; set; } = AWSConfigs.InitializeCollections ? new List<ParameterValue>() : null;
+
+        /// <summary>
+        /// Checks to see if the ParameterValues property is set.
+        /// </summary>
+        internal bool IsSetParameterValues() => this.ParameterValues != null && (this.ParameterValues.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property PipelineId. 
+        /// <para>
+        /// The ID of the pipeline.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 1024)]
+        public string PipelineId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PipelineId property is set.
+        /// </summary>
+        internal bool IsSetPipelineId() => this.PipelineId != null;
+
+        /// <summary>
+        /// Gets and sets the property PipelineObjects. 
+        /// <para>
+        /// The objects that define the pipeline. These objects overwrite the existing pipeline
+        /// definition.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public List<PipelineObject> PipelineObjects { get; set; } = AWSConfigs.InitializeCollections ? new List<PipelineObject>() : null;
+
+        /// <summary>
+        /// Checks to see if the PipelineObjects property is set.
+        /// </summary>
+        internal bool IsSetPipelineObjects() => this.PipelineObjects != null && (this.PipelineObjects.Count > 0 || !AWSConfigs.InitializeCollections);
+    }
+}

@@ -1,0 +1,158 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.TimestreamWrite.Model
+{
+    /// <summary>
+    /// WriteRecords would throw this exception in the following cases: 
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// Records with duplicate data where there are multiple records with the same dimensions,
+    /// timestamps, and measure names but: 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Measure values are different
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Version is not present in the request <i>or</i> the value of version in the new record
+    /// is equal to or lower than the existing value
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  In this case, if Timestream rejects data, the <c>ExistingVersion</c> field in the
+    /// <c>RejectedRecords</c> response will indicate the current record’s version. To force
+    /// an update, you can resend the request with a version for the record set to a value
+    /// greater than the <c>ExistingVersion</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  Records with timestamps that lie outside the retention duration of the memory store.
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  Records with dimensions or measures that exceed the Timestream defined limits. 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Quotas</a>
+    /// in the Amazon Timestream Developer Guide. 
+    /// </para>
+    /// </summary>
+#if !NETSTANDARD
+    [Serializable]
+#endif
+    public partial class RejectedRecordsException : AmazonTimestreamWriteException
+    {
+        /// <summary>
+        /// Default constructor for RejectedRecordsException
+        /// message.
+        /// </summary>
+        public RejectedRecordsException() : base() { }
+
+        /// <summary>
+        /// Constructs a new RejectedRecordsException with the specified error
+        /// message.
+        /// </summary>
+        /// <param name="message">
+        /// Describes the error encountered.
+        /// </param>
+        public RejectedRecordsException(string message) : base(message) { }
+
+        /// <summary>
+        /// Construct instance of RejectedRecordsException
+        /// </summary>
+        public RejectedRecordsException(string message, Exception innerException) : base(message, innerException) { }
+
+        /// <summary>
+        /// Construct instance of RejectedRecordsException
+        /// </summary>
+        public RejectedRecordsException(Exception innerException) : base(innerException) { }
+
+        /// <summary>
+        /// Construct instance of RejectedRecordsException
+        /// </summary>
+        public RejectedRecordsException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) : base(message, innerException, errorType, errorCode, requestId, statusCode) { }
+
+        /// <summary>
+        /// Construct instance of RejectedRecordsException
+        /// </summary>
+        public RejectedRecordsException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) : base(message, errorType, errorCode, requestId, statusCode) { }
+
+        /// <summary>
+        /// Gets and sets the property RejectedRecords. 
+        /// <para>
+        ///  
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<RejectedRecord> RejectedRecords { get; set; } = AWSConfigs.InitializeCollections ? new List<RejectedRecord>() : null;
+
+        /// <summary>
+        /// Checks to see if the RejectedRecords property is set.
+        /// </summary>
+        internal bool IsSetRejectedRecords() => this.RejectedRecords != null && (this.RejectedRecords.Count > 0 || !AWSConfigs.InitializeCollections);
+
+#if !NETSTANDARD
+        /// <summary>
+        /// Constructs a new instance of the RejectedRecordsException class with serialized data.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
+        /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
+        protected RejectedRecordsException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+            : base(info, context)
+        {
+            this.RejectedRecords = (List<RejectedRecord>)info.GetValue("RejectedRecords", typeof(List<RejectedRecord>));
+        }
+
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+        [System.Security.SecurityCritical]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("RejectedRecords", this.RejectedRecords);
+        }
+#endif
+    }
+}

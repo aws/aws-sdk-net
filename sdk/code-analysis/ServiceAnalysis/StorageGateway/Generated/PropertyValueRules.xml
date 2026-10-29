@@ -90,16 +90,17 @@
     <property>Amazon.StorageGateway.Model.AssignTapePoolRequest.TapeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.AssignTapePoolResponse.TapeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.AssociateFileSystemRequest.AuditDestinationARN</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -154,7 +155,7 @@
     <property>Amazon.StorageGateway.Model.AttachVolumeRequest.VolumeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.AttachVolumeResponse.TargetARN</property>
@@ -165,7 +166,7 @@
     <property>Amazon.StorageGateway.Model.AttachVolumeResponse.VolumeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CancelArchivalRequest.GatewayARN</property>
@@ -176,13 +177,13 @@
     <property>Amazon.StorageGateway.Model.CancelArchivalRequest.TapeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CancelArchivalResponse.TapeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CancelCacheReportRequest.CacheReportARN</property>
@@ -203,13 +204,13 @@
     <property>Amazon.StorageGateway.Model.CancelRetrievalRequest.TapeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CancelRetrievalResponse.TapeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateCachediSCSIVolumeRequest.ClientToken</property>
@@ -225,17 +226,17 @@
     <property>Amazon.StorageGateway.Model.CreateCachediSCSIVolumeRequest.KMSKey</property>
     <min>7</min>
     <max>2048</max>
-    <pattern>(^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
+    <pattern>^(^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateCachediSCSIVolumeRequest.SnapshotId</property>
-    <pattern>\Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z</pattern>
+    <pattern>^\Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateCachediSCSIVolumeRequest.SourceVolumeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateCachediSCSIVolumeRequest.TargetName</property>
@@ -252,10 +253,11 @@
     <property>Amazon.StorageGateway.Model.CreateCachediSCSIVolumeResponse.VolumeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateNFSFileShareRequest.AuditDestinationARN</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -287,7 +289,7 @@
     <property>Amazon.StorageGateway.Model.CreateNFSFileShareRequest.KMSKey</property>
     <min>7</min>
     <max>2048</max>
-    <pattern>(^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
+    <pattern>^(^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateNFSFileShareRequest.LocationARN</property>
@@ -324,6 +326,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateSMBFileShareRequest.AuditDestinationARN</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -360,7 +363,7 @@
     <property>Amazon.StorageGateway.Model.CreateSMBFileShareRequest.KMSKey</property>
     <min>7</min>
     <max>2048</max>
-    <pattern>(^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
+    <pattern>^(^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateSMBFileShareRequest.LocationARN</property>
@@ -399,17 +402,17 @@
     <property>Amazon.StorageGateway.Model.CreateSnapshotRequest.VolumeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateSnapshotResponse.SnapshotId</property>
-    <pattern>\Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z</pattern>
+    <pattern>^\Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateSnapshotResponse.VolumeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateSnapshotFromVolumeRecoveryPointRequest.SnapshotDescription</property>
@@ -420,17 +423,17 @@
     <property>Amazon.StorageGateway.Model.CreateSnapshotFromVolumeRecoveryPointRequest.VolumeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateSnapshotFromVolumeRecoveryPointResponse.SnapshotId</property>
-    <pattern>\Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z</pattern>
+    <pattern>^\Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateSnapshotFromVolumeRecoveryPointResponse.VolumeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateStorediSCSIVolumeRequest.DiskId</property>
@@ -446,11 +449,11 @@
     <property>Amazon.StorageGateway.Model.CreateStorediSCSIVolumeRequest.KMSKey</property>
     <min>7</min>
     <max>2048</max>
-    <pattern>(^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
+    <pattern>^(^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateStorediSCSIVolumeRequest.SnapshotId</property>
-    <pattern>\Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z</pattern>
+    <pattern>^\Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateStorediSCSIVolumeRequest.TargetName</property>
@@ -467,7 +470,7 @@
     <property>Amazon.StorageGateway.Model.CreateStorediSCSIVolumeResponse.VolumeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateTapePoolRequest.PoolName</property>
@@ -486,38 +489,6 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.StorageGateway.Model.CreateTapesRequest.ClientToken</property>
-    <min>5</min>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.StorageGateway.Model.CreateTapesRequest.GatewayARN</property>
-    <min>50</min>
-    <max>500</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.StorageGateway.Model.CreateTapesRequest.KMSKey</property>
-    <min>7</min>
-    <max>2048</max>
-    <pattern>(^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.StorageGateway.Model.CreateTapesRequest.NumTapesToCreate</property>
-    <min>1</min>
-    <max>10</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.StorageGateway.Model.CreateTapesRequest.PoolId</property>
-    <min>1</min>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.StorageGateway.Model.CreateTapesRequest.TapeBarcodePrefix</property>
-    <min>1</min>
-    <max>4</max>
-    <pattern>^[A-Z]*$</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateTapeWithBarcodeRequest.GatewayARN</property>
     <min>50</min>
     <max>500</max>
@@ -526,7 +497,7 @@
     <property>Amazon.StorageGateway.Model.CreateTapeWithBarcodeRequest.KMSKey</property>
     <min>7</min>
     <max>2048</max>
-    <pattern>(^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
+    <pattern>^(^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateTapeWithBarcodeRequest.PoolId</property>
@@ -543,7 +514,39 @@
     <property>Amazon.StorageGateway.Model.CreateTapeWithBarcodeResponse.TapeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateTapesRequest.ClientToken</property>
+    <min>5</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateTapesRequest.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateTapesRequest.KMSKey</property>
+    <min>7</min>
+    <max>2048</max>
+    <pattern>^(^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateTapesRequest.NumTapesToCreate</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateTapesRequest.PoolId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateTapesRequest.TapeBarcodePrefix</property>
+    <min>1</min>
+    <max>4</max>
+    <pattern>^[A-Z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DeleteAutomaticTapeCreationPolicyRequest.GatewayARN</property>
@@ -584,7 +587,7 @@
     <property>Amazon.StorageGateway.Model.DeleteChapCredentialsRequest.InitiatorName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[0-9a-z:.-]+</pattern>
+    <pattern>^[0-9a-z:.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DeleteChapCredentialsRequest.TargetARN</property>
@@ -595,7 +598,7 @@
     <property>Amazon.StorageGateway.Model.DeleteChapCredentialsResponse.InitiatorName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[0-9a-z:.-]+</pattern>
+    <pattern>^[0-9a-z:.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DeleteChapCredentialsResponse.TargetARN</property>
@@ -626,13 +629,13 @@
     <property>Amazon.StorageGateway.Model.DeleteSnapshotScheduleRequest.VolumeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DeleteSnapshotScheduleResponse.VolumeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DeleteTapeRequest.GatewayARN</property>
@@ -643,25 +646,25 @@
     <property>Amazon.StorageGateway.Model.DeleteTapeRequest.TapeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DeleteTapeResponse.TapeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DeleteTapeArchiveRequest.TapeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DeleteTapeArchiveResponse.TapeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DeleteTapePoolRequest.PoolARN</property>
@@ -677,13 +680,13 @@
     <property>Amazon.StorageGateway.Model.DeleteVolumeRequest.VolumeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DeleteVolumeResponse.VolumeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DescribeAvailabilityMonitorTestRequest.GatewayARN</property>
@@ -750,6 +753,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DescribeGatewayInformationResponse.CloudWatchLogGroupARN</property>
+    <min>0</min>
     <max>562</max>
   </property-value-rule>
   <property-value-rule>
@@ -862,7 +866,7 @@
     <property>Amazon.StorageGateway.Model.DescribeSnapshotScheduleRequest.VolumeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DescribeSnapshotScheduleResponse.Description</property>
@@ -888,7 +892,7 @@
     <property>Amazon.StorageGateway.Model.DescribeSnapshotScheduleResponse.VolumeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DescribeTapeArchivesRequest.Limit</property>
@@ -995,13 +999,13 @@
     <property>Amazon.StorageGateway.Model.DetachVolumeRequest.VolumeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DetachVolumeResponse.VolumeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DisableGatewayRequest.GatewayARN</property>
@@ -1209,7 +1213,7 @@
     <property>Amazon.StorageGateway.Model.ListVolumeInitiatorsRequest.VolumeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.ListVolumeRecoveryPointsRequest.GatewayARN</property>
@@ -1304,13 +1308,13 @@
     <property>Amazon.StorageGateway.Model.RetrieveTapeArchiveRequest.TapeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.RetrieveTapeArchiveResponse.TapeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.RetrieveTapeRecoveryPointRequest.GatewayARN</property>
@@ -1321,13 +1325,13 @@
     <property>Amazon.StorageGateway.Model.RetrieveTapeRecoveryPointRequest.TapeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.RetrieveTapeRecoveryPointResponse.TapeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.SetLocalConsolePasswordRequest.GatewayARN</property>
@@ -1470,7 +1474,7 @@
     <property>Amazon.StorageGateway.Model.UpdateChapCredentialsRequest.InitiatorName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[0-9a-z:.-]+</pattern>
+    <pattern>^[0-9a-z:.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateChapCredentialsRequest.SecretToAuthenticateInitiator</property>
@@ -1491,7 +1495,7 @@
     <property>Amazon.StorageGateway.Model.UpdateChapCredentialsResponse.InitiatorName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[0-9a-z:.-]+</pattern>
+    <pattern>^[0-9a-z:.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateChapCredentialsResponse.TargetARN</property>
@@ -1500,6 +1504,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateFileSystemAssociationRequest.AuditDestinationARN</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -1526,6 +1531,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateGatewayInformationRequest.CloudWatchLogGroupARN</property>
+    <min>0</min>
     <max>562</max>
   </property-value-rule>
   <property-value-rule>
@@ -1591,6 +1597,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateNFSFileShareRequest.AuditDestinationARN</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -1612,7 +1619,7 @@
     <property>Amazon.StorageGateway.Model.UpdateNFSFileShareRequest.KMSKey</property>
     <min>7</min>
     <max>2048</max>
-    <pattern>(^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
+    <pattern>^(^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateNFSFileShareRequest.NotificationPolicy</property>
@@ -1632,6 +1639,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateSMBFileShareRequest.AuditDestinationARN</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -1653,7 +1661,7 @@
     <property>Amazon.StorageGateway.Model.UpdateSMBFileShareRequest.KMSKey</property>
     <min>7</min>
     <max>2048</max>
-    <pattern>(^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
+    <pattern>^(^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateSMBFileShareRequest.NotificationPolicy</property>
@@ -1715,13 +1723,13 @@
     <property>Amazon.StorageGateway.Model.UpdateSnapshotScheduleRequest.VolumeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateSnapshotScheduleResponse.VolumeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateVTLDeviceTypeRequest.DeviceType</property>
@@ -1788,48 +1796,6 @@
     <max>59</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.StorageGateway.Model.CachediSCSIVolume.KMSKey</property>
-    <min>7</min>
-    <max>2048</max>
-    <pattern>(^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.StorageGateway.Model.CachediSCSIVolume.SourceSnapshotId</property>
-    <pattern>\Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.StorageGateway.Model.CachediSCSIVolume.TargetName</property>
-    <min>1</min>
-    <max>200</max>
-    <pattern>^[-\.;a-z0-9]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.StorageGateway.Model.CachediSCSIVolume.VolumeARN</property>
-    <min>50</min>
-    <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.StorageGateway.Model.CachediSCSIVolume.VolumeAttachmentStatus</property>
-    <min>3</min>
-    <max>50</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.StorageGateway.Model.CachediSCSIVolume.VolumeId</property>
-    <min>12</min>
-    <max>30</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.StorageGateway.Model.CachediSCSIVolume.VolumeStatus</property>
-    <min>3</min>
-    <max>50</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.StorageGateway.Model.CachediSCSIVolume.VolumeType</property>
-    <min>3</min>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.StorageGateway.Model.CacheReportInfo.CacheReportARN</property>
     <min>50</min>
     <max>500</max>
@@ -1861,10 +1827,52 @@
     <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):iam::([0-9]+):role/(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CachediSCSIVolume.KMSKey</property>
+    <min>7</min>
+    <max>2048</max>
+    <pattern>^(^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CachediSCSIVolume.SourceSnapshotId</property>
+    <pattern>^\Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CachediSCSIVolume.TargetName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[-\.;a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CachediSCSIVolume.VolumeARN</property>
+    <min>50</min>
+    <max>500</max>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CachediSCSIVolume.VolumeAttachmentStatus</property>
+    <min>3</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CachediSCSIVolume.VolumeId</property>
+    <min>12</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CachediSCSIVolume.VolumeStatus</property>
+    <min>3</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CachediSCSIVolume.VolumeType</property>
+    <min>3</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.ChapInfo.InitiatorName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[0-9a-z:.-]+</pattern>
+    <pattern>^[0-9a-z:.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.ChapInfo.SecretToAuthenticateInitiator</property>
@@ -1918,6 +1926,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.FileSystemAssociationInfo.AuditDestinationARN</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -2014,6 +2023,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.NFSFileShareInfo.AuditDestinationARN</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -2055,7 +2065,7 @@
     <property>Amazon.StorageGateway.Model.NFSFileShareInfo.KMSKey</property>
     <min>7</min>
     <max>2048</max>
-    <pattern>(^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
+    <pattern>^(^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.NFSFileShareInfo.LocationARN</property>
@@ -2103,6 +2113,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.SMBFileShareInfo.AuditDestinationARN</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -2149,7 +2160,7 @@
     <property>Amazon.StorageGateway.Model.SMBFileShareInfo.KMSKey</property>
     <min>7</min>
     <max>2048</max>
-    <pattern>(^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
+    <pattern>^(^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.SMBFileShareInfo.LocationARN</property>
@@ -2178,11 +2189,11 @@
     <property>Amazon.StorageGateway.Model.StorediSCSIVolume.KMSKey</property>
     <min>7</min>
     <max>2048</max>
-    <pattern>(^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
+    <pattern>^(^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.StorediSCSIVolume.SourceSnapshotId</property>
-    <pattern>\Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z</pattern>
+    <pattern>^\Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.StorediSCSIVolume.TargetName</property>
@@ -2194,7 +2205,7 @@
     <property>Amazon.StorageGateway.Model.StorediSCSIVolume.VolumeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.StorediSCSIVolume.VolumeAttachmentStatus</property>
@@ -2229,13 +2240,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.Tag.Value</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.Tape.KMSKey</property>
     <min>7</min>
     <max>2048</max>
-    <pattern>(^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
+    <pattern>^(^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.Tape.PoolId</property>
@@ -2246,7 +2258,7 @@
     <property>Amazon.StorageGateway.Model.Tape.TapeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.Tape.TapeBarcode</property>
@@ -2263,7 +2275,7 @@
     <property>Amazon.StorageGateway.Model.TapeArchive.KMSKey</property>
     <min>7</min>
     <max>2048</max>
-    <pattern>(^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
+    <pattern>^(^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.TapeArchive.PoolId</property>
@@ -2279,7 +2291,7 @@
     <property>Amazon.StorageGateway.Model.TapeArchive.TapeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.TapeArchive.TapeBarcode</property>
@@ -2301,7 +2313,7 @@
     <property>Amazon.StorageGateway.Model.TapeInfo.TapeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.TapeInfo.TapeBarcode</property>
@@ -2313,7 +2325,12 @@
     <property>Amazon.StorageGateway.Model.TapeRecoveryPointInfo.TapeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{5,16}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.VTLDevice.VTLDeviceARN</property>
+    <min>50</min>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.VolumeInfo.GatewayARN</property>
@@ -2329,7 +2346,7 @@
     <property>Amazon.StorageGateway.Model.VolumeInfo.VolumeARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)</pattern>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.VolumeInfo.VolumeAttachmentStatus</property>
@@ -2347,6 +2364,12 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.VolumeRecoveryPointInfo.VolumeARN</property>
+    <min>50</min>
+    <max>500</max>
+    <pattern>^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.VolumeiSCSIAttributes.LunNumber</property>
     <min>1</min>
   </property-value-rule>
@@ -2354,16 +2377,5 @@
     <property>Amazon.StorageGateway.Model.VolumeiSCSIAttributes.TargetARN</property>
     <min>50</min>
     <max>800</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.StorageGateway.Model.VolumeRecoveryPointInfo.VolumeARN</property>
-    <min>50</min>
-    <max>500</max>
-    <pattern>arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*|-eusc)):storagegateway:[a-z\-0-9]+:[0-9]+:gateway\/(.+)\/volume\/vol-(\S+)</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.StorageGateway.Model.VTLDevice.VTLDeviceARN</property>
-    <min>50</min>
-    <max>500</max>
   </property-value-rule>
 </property-value-rules>

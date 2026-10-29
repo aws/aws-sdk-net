@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
     {
         public void DirectoryServiceAddIpRoutes()
         {
-            #region to-add-a-cidr-address-block-that-routes-traffic-for-microsoft-ad-1481580074651
+            #region AddIpRoutes-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.AddIpRoutes(new AddIpRoutesRequest 
+            var response = client.AddIpRoutes(new AddIpRoutesRequest
             {
                 DirectoryId = "d-92654abfed",
                 IpRoutes = new List<IpRoute> {
@@ -33,10 +34,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceAddTagsToResource()
         {
-            #region to-add-tags-to-a-directory-1481582596354
+            #region AddTagsToResource-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.AddTagsToResource(new AddTagsToResourceRequest 
+            var response = client.AddTagsToResource(new AddTagsToResourceRequest
             {
                 ResourceId = "d-92654abfed",
                 Tags = new List<Tag> {
@@ -53,10 +54,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceCancelSchemaExtension()
         {
-            #region to-cancel-a-microsoft-ad-schema-extension-that-is-in-progress-1481583276240
+            #region CancelSchemaExtension-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.CancelSchemaExtension(new CancelSchemaExtensionRequest 
+            var response = client.CancelSchemaExtension(new CancelSchemaExtensionRequest
             {
                 DirectoryId = "d-92654abfed",
                 SchemaExtensionId = "e-926731d2a0"
@@ -68,10 +69,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceConnectDirectory()
         {
-            #region to-connect-to-an-on-premises-directory-1481586749640
+            #region ConnectDirectory-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.ConnectDirectory(new ConnectDirectoryRequest 
+            var response = client.ConnectDirectory(new ConnectDirectoryRequest
             {
                 ConnectSettings = new DirectoryConnectSettings {
                     CustomerDnsIps = new List<string> {
@@ -98,10 +99,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceCreateAlias()
         {
-            #region to-create-an-alias-for-a-directory-1481147295279
+            #region CreateAlias-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.CreateAlias(new CreateAliasRequest 
+            var response = client.CreateAlias(new CreateAliasRequest
             {
                 Alias = "salesorg",
                 DirectoryId = "d-92654abfed"
@@ -115,10 +116,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceCreateComputer()
         {
-            #region to-create-a-computer-account-1481676943652
+            #region CreateComputer-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.CreateComputer(new CreateComputerRequest 
+            var response = client.CreateComputer(new CreateComputerRequest
             {
                 ComputerAttributes = new List<Attribute> {
                     new Attribute {
@@ -139,10 +140,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceCreateConditionalForwarder()
         {
-            #region to-create-a-conditional-forwarder-1481667053089
+            #region CreateConditionalForwarder-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.CreateConditionalForwarder(new CreateConditionalForwarderRequest 
+            var response = client.CreateConditionalForwarder(new CreateConditionalForwarderRequest
             {
                 DirectoryId = "d-92654abfed",
                 DnsIpAddrs = new List<string> {
@@ -157,10 +158,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceCreateDirectory()
         {
-            #region to-create-a-simple-ad-directory-1481669101098
+            #region CreateDirectory-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.CreateDirectory(new CreateDirectoryRequest 
+            var response = client.CreateDirectory(new CreateDirectoryRequest
             {
                 Description = "Regional directory for example.com",
                 Name = "seattle.example.com",
@@ -183,10 +184,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceCreateMicrosoftAD()
         {
-            #region to-create-a-microsoft-ad-directory-1481670169383
+            #region CreateMicrosoftAD-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.CreateMicrosoftAD(new CreateMicrosoftADRequest 
+            var response = client.CreateMicrosoftAD(new CreateMicrosoftADRequest
             {
                 Description = "Corporate AD directory",
                 Name = "ad.example.com",
@@ -208,10 +209,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceCreateSnapshot()
         {
-            #region to-create-a-snapshot-of-a-directory-1481671628145
+            #region CreateSnapshot-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.CreateSnapshot(new CreateSnapshotRequest 
+            var response = client.CreateSnapshot(new CreateSnapshotRequest
             {
                 DirectoryId = "d-92654abfed",
                 Name = "ad.example.com"
@@ -224,10 +225,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceCreateTrust()
         {
-            #region to-create-a-trust-1481673599473
+            #region CreateTrust-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.CreateTrust(new CreateTrustRequest 
+            var response = client.CreateTrust(new CreateTrustRequest
             {
                 ConditionalForwarderIpAddrs = new List<string> {
                     "172.30.21.228"
@@ -246,10 +247,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceDeleteConditionalForwarder()
         {
-            #region to-delete-a-conditional-forwarder-1481673924488
+            #region DeleteConditionalForwarder-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.DeleteConditionalForwarder(new DeleteConditionalForwarderRequest 
+            var response = client.DeleteConditionalForwarder(new DeleteConditionalForwarderRequest
             {
                 DirectoryId = "d-92654abfed",
                 RemoteDomainName = "sales.example.com"
@@ -261,10 +262,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceDeleteDirectory()
         {
-            #region to-delete-a-directory-1481674940318
+            #region DeleteDirectory-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.DeleteDirectory(new DeleteDirectoryRequest 
+            var response = client.DeleteDirectory(new DeleteDirectoryRequest
             {
                 DirectoryId = "d-92654abfed"
             });
@@ -276,10 +277,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceDeleteSnapshot()
         {
-            #region to-delete-a-snapshot-1481678726239
+            #region DeleteSnapshot-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.DeleteSnapshot(new DeleteSnapshotRequest 
+            var response = client.DeleteSnapshot(new DeleteSnapshotRequest
             {
                 SnapshotId = "s-9267f8d3f0"
             });
@@ -291,10 +292,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceDeleteTrust()
         {
-            #region to-delete-a-trust-1481678937261
+            #region DeleteTrust-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.DeleteTrust(new DeleteTrustRequest 
+            var response = client.DeleteTrust(new DeleteTrustRequest
             {
                 DeleteAssociatedConditionalForwarder = true,
                 TrustId = "t-9267353743"
@@ -307,10 +308,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceDeregisterEventTopic()
         {
-            #region to-remove-an-event-topic-1481679683016
+            #region DeregisterEventTopic-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.DeregisterEventTopic(new DeregisterEventTopicRequest 
+            var response = client.DeregisterEventTopic(new DeregisterEventTopicRequest
             {
                 DirectoryId = "d-92654abfed",
                 TopicName = "snstopicexample"
@@ -322,10 +323,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceDescribeConditionalForwarders()
         {
-            #region to-describe-conditional-forwarders-1481681337122
+            #region DescribeConditionalForwarders-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.DescribeConditionalForwarders(new DescribeConditionalForwardersRequest 
+            var response = client.DescribeConditionalForwarders(new DescribeConditionalForwardersRequest
             {
                 DirectoryId = "d-92654abfed",
                 RemoteDomainNames = new List<string> {
@@ -340,10 +341,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceDescribeDirectories()
         {
-            #region to-describe-one-or-more-directories-1481681592059
+            #region DescribeDirectories-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.DescribeDirectories(new DescribeDirectoriesRequest 
+            var response = client.DescribeDirectories(new DescribeDirectoriesRequest
             {
                 DirectoryIds = new List<string> {
                     "d-92654abfed"
@@ -358,10 +359,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceDescribeEventTopics()
         {
-            #region to-describe-event-topics-1481683733380
+            #region DescribeEventTopics-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.DescribeEventTopics(new DescribeEventTopicsRequest 
+            var response = client.DescribeEventTopics(new DescribeEventTopicsRequest
             {
                 DirectoryId = "d-92654abfed",
                 TopicNames = new List<string> {
@@ -376,10 +377,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceDescribeSnapshots()
         {
-            #region to-describe-snapshots-1481742829912
+            #region DescribeSnapshots-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.DescribeSnapshots(new DescribeSnapshotsRequest 
+            var response = client.DescribeSnapshots(new DescribeSnapshotsRequest
             {
                 DirectoryId = "d-92654abfed",
                 Limit = 0,
@@ -395,10 +396,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceDescribeTrusts()
         {
-            #region to-describe-a-trust--1481749974009
+            #region DescribeTrusts-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.DescribeTrusts(new DescribeTrustsRequest 
+            var response = client.DescribeTrusts(new DescribeTrustsRequest
             {
                 DirectoryId = "d-92654abfed",
                 Limit = 0,
@@ -414,10 +415,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceDisableRadius()
         {
-            #region to-disable-radius-1481752373128
+            #region DisableRadius-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.DisableRadius(new DisableRadiusRequest 
+            var response = client.DisableRadius(new DisableRadiusRequest
             {
                 DirectoryId = "d-92654abfed"
             });
@@ -428,10 +429,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceDisableSso()
         {
-            #region to-disable-sso-1481753731802
+            #region DisableSso-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.DisableSso(new DisableSsoRequest 
+            var response = client.DisableSso(new DisableSsoRequest
             {
                 DirectoryId = "d-92654abfed",
                 Password = "Str0ngP@ssw0rd",
@@ -444,10 +445,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceEnableRadius()
         {
-            #region to-enable-radius-1481751944293
+            #region EnableRadius-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.EnableRadius(new EnableRadiusRequest 
+            var response = client.EnableRadius(new EnableRadiusRequest
             {
                 DirectoryId = "d-92654abfed",
                 RadiusSettings = new RadiusSettings {
@@ -470,10 +471,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceEnableSso()
         {
-            #region to-enable-sso-1481753527694
+            #region EnableSso-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.EnableSso(new EnableSsoRequest 
+            var response = client.EnableSso(new EnableSsoRequest
             {
                 DirectoryId = "d-92654abfed",
                 Password = "Str0ngP@ssw0rd",
@@ -486,10 +487,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceGetDirectoryLimits()
         {
-            #region to-get-directory-limits-1481754781592
+            #region GetDirectoryLimits-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.GetDirectoryLimits(new GetDirectoryLimitsRequest 
+            var response = client.GetDirectoryLimits(new GetDirectoryLimitsRequest
             {
             });
 
@@ -500,10 +501,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceGetSnapshotLimits()
         {
-            #region to-get-snapshot-limits-1481755393694
+            #region GetSnapshotLimits-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.GetSnapshotLimits(new GetSnapshotLimitsRequest 
+            var response = client.GetSnapshotLimits(new GetSnapshotLimitsRequest
             {
                 DirectoryId = "d-92654abfed"
             });
@@ -515,10 +516,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceListIpRoutes()
         {
-            #region to-list-ip-routes-1481755837685
+            #region ListIpRoutes-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.ListIpRoutes(new ListIpRoutesRequest 
+            var response = client.ListIpRoutes(new ListIpRoutesRequest
             {
                 DirectoryId = "d-92654abfed",
                 Limit = 0
@@ -531,10 +532,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceListSchemaExtensions()
         {
-            #region to-list-schema-extensions-1481756433064
+            #region ListSchemaExtensions-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.ListSchemaExtensions(new ListSchemaExtensionsRequest 
+            var response = client.ListSchemaExtensions(new ListSchemaExtensionsRequest
             {
                 DirectoryId = "d-92654abfed",
                 Limit = 0
@@ -547,10 +548,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceListTagsForResource()
         {
-            #region to-list-tags-for-a-directory-1481757084225
+            #region ListTagsForResource-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.ListTagsForResource(new ListTagsForResourceRequest 
+            var response = client.ListTagsForResource(new ListTagsForResourceRequest
             {
                 Limit = 0,
                 ResourceId = "d-92654abfed"
@@ -563,10 +564,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceRegisterEventTopic()
         {
-            #region to-register-an-event-topic-1481757657323
+            #region RegisterEventTopic-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.RegisterEventTopic(new RegisterEventTopicRequest 
+            var response = client.RegisterEventTopic(new RegisterEventTopicRequest
             {
                 DirectoryId = "d-92654abfed",
                 TopicName = "snstopicexample"
@@ -578,10 +579,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceRemoveIpRoutes()
         {
-            #region to-remove-ip-routes-1481758003547
+            #region RemoveIpRoutes-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.RemoveIpRoutes(new RemoveIpRoutesRequest 
+            var response = client.RemoveIpRoutes(new RemoveIpRoutesRequest
             {
                 CidrIps = new List<string> {
                     "12.12.12.12/32"
@@ -595,10 +596,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceRemoveTagsFromResource()
         {
-            #region to-remove-tags-from-a-directory-1481759009957
+            #region RemoveTagsFromResource-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.RemoveTagsFromResource(new RemoveTagsFromResourceRequest 
+            var response = client.RemoveTagsFromResource(new RemoveTagsFromResourceRequest
             {
                 ResourceId = "d-92654abfed",
                 TagKeys = new List<string> {
@@ -612,10 +613,10 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceRestoreFromSnapshot()
         {
-            #region to-restore-a-snapshot-1481759429095
+            #region RestoreFromSnapshot-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.RestoreFromSnapshot(new RestoreFromSnapshotRequest 
+            var response = client.RestoreFromSnapshot(new RestoreFromSnapshotRequest
             {
                 SnapshotId = "s-9267f6da4e"
             });
@@ -626,25 +627,15 @@ namespace AWSSDKDocSamples.Amazon.DirectoryService.Generated
 
         public void DirectoryServiceStartSchemaExtension()
         {
-            #region to-start-a-schema-extension-1481830079414
+            #region StartSchemaExtension-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.StartSchemaExtension(new StartSchemaExtensionRequest 
+            var response = client.StartSchemaExtension(new StartSchemaExtensionRequest
             {
                 CreateSnapshotBeforeSchemaExtension = true,
                 Description = "Adds maycontain attribute to user class. Precede each line as it would be formatted in an ldif file.",
                 DirectoryId = "d-92654abfed",
-                LdifContent = "dn: CN=User,CN=Schema,CN=Configuration,DC=sales,DC=example,DC=com
-changetype: modify
-add: mayContain
-mayContain: drink
--
-
-DN:
-changetype: modify
-replace: schemaupdatenow
-schemaupdatenow: 1
--"
+                LdifContent = "dn: CN=User,CN=Schema,CN=Configuration,DC=sales,DC=example,DC=com\nchangetype: modify\nadd: mayContain\nmayContain: drink\n-\n\nDN:\nchangetype: modify\nreplace: schemaupdatenow\nschemaupdatenow: 1\n-"
             });
 
             string schemaExtensionId = response.SchemaExtensionId;
@@ -654,10 +645,10 @@ schemaupdatenow: 1
 
         public void DirectoryServiceUpdateConditionalForwarder()
         {
-            #region to-update-a-conditional-forwarder-1481826693698
+            #region UpdateConditionalForwarder-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.UpdateConditionalForwarder(new UpdateConditionalForwarderRequest 
+            var response = client.UpdateConditionalForwarder(new UpdateConditionalForwarderRequest
             {
                 DirectoryId = "d-92654abfed",
                 DnsIpAddrs = new List<string> {
@@ -672,10 +663,10 @@ schemaupdatenow: 1
 
         public void DirectoryServiceUpdateRadius()
         {
-            #region to-update-radius-1481827441016
+            #region UpdateRadius-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.UpdateRadius(new UpdateRadiusRequest 
+            var response = client.UpdateRadius(new UpdateRadiusRequest
             {
                 DirectoryId = "d-92654abfed",
                 RadiusSettings = new RadiusSettings {
@@ -698,10 +689,10 @@ schemaupdatenow: 1
 
         public void DirectoryServiceVerifyTrust()
         {
-            #region to-verify-a-trust-1481828755113
+            #region VerifyTrust-1
 
             var client = new AmazonDirectoryServiceClient();
-            var response = client.VerifyTrust(new VerifyTrustRequest 
+            var response = client.VerifyTrust(new VerifyTrustRequest
             {
                 TrustId = "t-9267353df0"
             });
@@ -711,13 +702,10 @@ schemaupdatenow: 1
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

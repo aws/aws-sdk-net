@@ -4,28 +4,29 @@
     <property>Amazon.MachineLearning.Model.AddTagsRequest.ResourceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.AddTagsResponse.ResourceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.CreateBatchPredictionRequest.BatchPredictionDataSourceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.CreateBatchPredictionRequest.BatchPredictionId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.CreateBatchPredictionRequest.BatchPredictionName</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
@@ -33,27 +34,29 @@
     <property>Amazon.MachineLearning.Model.CreateBatchPredictionRequest.MLModelId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.CreateBatchPredictionRequest.OutputUri</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>s3://([^/]+)(/.*)?</pattern>
+    <pattern>^s3://([^/]+)(/.*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.CreateBatchPredictionResponse.BatchPredictionId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.CreateDataSourceFromRDSRequest.DataSourceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.CreateDataSourceFromRDSRequest.DataSourceName</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
@@ -66,16 +69,17 @@
     <property>Amazon.MachineLearning.Model.CreateDataSourceFromRDSResponse.DataSourceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.CreateDataSourceFromRedshiftRequest.DataSourceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.CreateDataSourceFromRedshiftRequest.DataSourceName</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
@@ -88,16 +92,17 @@
     <property>Amazon.MachineLearning.Model.CreateDataSourceFromRedshiftResponse.DataSourceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.CreateDataSourceFromS3Request.DataSourceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.CreateDataSourceFromS3Request.DataSourceName</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
@@ -105,22 +110,23 @@
     <property>Amazon.MachineLearning.Model.CreateDataSourceFromS3Response.DataSourceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.CreateEvaluationRequest.EvaluationDataSourceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.CreateEvaluationRequest.EvaluationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.CreateEvaluationRequest.EvaluationName</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
@@ -128,147 +134,160 @@
     <property>Amazon.MachineLearning.Model.CreateEvaluationRequest.MLModelId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.CreateEvaluationResponse.EvaluationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.CreateMLModelRequest.MLModelId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.CreateMLModelRequest.MLModelName</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.CreateMLModelRequest.Recipe</property>
+    <min>0</min>
     <max>131071</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.CreateMLModelRequest.RecipeUri</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>s3://([^/]+)(/.*)?</pattern>
+    <pattern>^s3://([^/]+)(/.*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.CreateMLModelRequest.TrainingDataSourceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.CreateMLModelResponse.MLModelId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.CreateRealtimeEndpointRequest.MLModelId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.CreateRealtimeEndpointResponse.MLModelId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DeleteBatchPredictionRequest.BatchPredictionId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DeleteBatchPredictionResponse.BatchPredictionId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DeleteDataSourceRequest.DataSourceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DeleteDataSourceResponse.DataSourceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DeleteEvaluationRequest.EvaluationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DeleteEvaluationResponse.EvaluationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DeleteMLModelRequest.MLModelId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DeleteMLModelResponse.MLModelId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DeleteRealtimeEndpointRequest.MLModelId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DeleteRealtimeEndpointResponse.MLModelId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DeleteTagsRequest.ResourceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DeleteTagsResponse.ResourceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DescribeBatchPredictionsRequest.EQ</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DescribeBatchPredictionsRequest.GE</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DescribeBatchPredictionsRequest.GT</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DescribeBatchPredictionsRequest.LE</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*\S.*|^$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MachineLearning.Model.DescribeBatchPredictionsRequest.LT</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
@@ -278,37 +297,44 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.MachineLearning.Model.DescribeBatchPredictionsRequest.LT</property>
-    <max>1024</max>
-    <pattern>.*\S.*|^$</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.MachineLearning.Model.DescribeBatchPredictionsRequest.NE</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DescribeBatchPredictionsRequest.Prefix</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DescribeDataSourcesRequest.EQ</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DescribeDataSourcesRequest.GE</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DescribeDataSourcesRequest.GT</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DescribeDataSourcesRequest.LE</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*\S.*|^$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MachineLearning.Model.DescribeDataSourcesRequest.LT</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
@@ -318,37 +344,44 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.MachineLearning.Model.DescribeDataSourcesRequest.LT</property>
-    <max>1024</max>
-    <pattern>.*\S.*|^$</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.MachineLearning.Model.DescribeDataSourcesRequest.NE</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DescribeDataSourcesRequest.Prefix</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DescribeEvaluationsRequest.EQ</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DescribeEvaluationsRequest.GE</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DescribeEvaluationsRequest.GT</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DescribeEvaluationsRequest.LE</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*\S.*|^$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MachineLearning.Model.DescribeEvaluationsRequest.LT</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
@@ -358,37 +391,44 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.MachineLearning.Model.DescribeEvaluationsRequest.LT</property>
-    <max>1024</max>
-    <pattern>.*\S.*|^$</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.MachineLearning.Model.DescribeEvaluationsRequest.NE</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DescribeEvaluationsRequest.Prefix</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DescribeMLModelsRequest.EQ</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DescribeMLModelsRequest.GE</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DescribeMLModelsRequest.GT</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DescribeMLModelsRequest.LE</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*\S.*|^$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MachineLearning.Model.DescribeMLModelsRequest.LT</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
@@ -398,17 +438,14 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.MachineLearning.Model.DescribeMLModelsRequest.LT</property>
-    <max>1024</max>
-    <pattern>.*\S.*|^$</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.MachineLearning.Model.DescribeMLModelsRequest.NE</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DescribeMLModelsRequest.Prefix</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
@@ -416,92 +453,100 @@
     <property>Amazon.MachineLearning.Model.DescribeTagsRequest.ResourceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DescribeTagsResponse.ResourceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.GetBatchPredictionRequest.BatchPredictionId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.GetBatchPredictionResponse.BatchPredictionDataSourceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.GetBatchPredictionResponse.BatchPredictionId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.GetBatchPredictionResponse.CreatedByIamUser</property>
-    <pattern>arn:aws:iam::[0-9]+:((user/.+)|(root))</pattern>
+    <pattern>^arn:aws:iam::[0-9]+:((user/.+)|(root))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.GetBatchPredictionResponse.InputDataLocationS3</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>s3://([^/]+)(/.*)?</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MachineLearning.Model.GetBatchPredictionResponse.Message</property>
-    <max>10240</max>
+    <pattern>^s3://([^/]+)(/.*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.GetBatchPredictionResponse.MLModelId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MachineLearning.Model.GetBatchPredictionResponse.Message</property>
+    <min>0</min>
+    <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.GetBatchPredictionResponse.Name</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.GetBatchPredictionResponse.OutputUri</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>s3://([^/]+)(/.*)?</pattern>
+    <pattern>^s3://([^/]+)(/.*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.GetDataSourceRequest.DataSourceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.GetDataSourceResponse.CreatedByIamUser</property>
-    <pattern>arn:aws:iam::[0-9]+:((user/.+)|(root))</pattern>
+    <pattern>^arn:aws:iam::[0-9]+:((user/.+)|(root))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.GetDataSourceResponse.DataLocationS3</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>s3://([^/]+)(/.*)?</pattern>
+    <pattern>^s3://([^/]+)(/.*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.GetDataSourceResponse.DataSourceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.GetDataSourceResponse.DataSourceSchema</property>
+    <min>0</min>
     <max>131071</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.GetDataSourceResponse.Message</property>
+    <min>0</min>
     <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.GetDataSourceResponse.Name</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
@@ -514,41 +559,44 @@
     <property>Amazon.MachineLearning.Model.GetEvaluationRequest.EvaluationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.GetEvaluationResponse.CreatedByIamUser</property>
-    <pattern>arn:aws:iam::[0-9]+:((user/.+)|(root))</pattern>
+    <pattern>^arn:aws:iam::[0-9]+:((user/.+)|(root))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.GetEvaluationResponse.EvaluationDataSourceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.GetEvaluationResponse.EvaluationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.GetEvaluationResponse.InputDataLocationS3</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>s3://([^/]+)(/.*)?</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MachineLearning.Model.GetEvaluationResponse.Message</property>
-    <max>10240</max>
+    <pattern>^s3://([^/]+)(/.*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.GetEvaluationResponse.MLModelId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MachineLearning.Model.GetEvaluationResponse.Message</property>
+    <min>0</min>
+    <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.GetEvaluationResponse.Name</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
@@ -556,64 +604,71 @@
     <property>Amazon.MachineLearning.Model.GetMLModelRequest.MLModelId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.GetMLModelResponse.CreatedByIamUser</property>
-    <pattern>arn:aws:iam::[0-9]+:((user/.+)|(root))</pattern>
+    <pattern>^arn:aws:iam::[0-9]+:((user/.+)|(root))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.GetMLModelResponse.InputDataLocationS3</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>s3://([^/]+)(/.*)?</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MachineLearning.Model.GetMLModelResponse.Message</property>
-    <max>10240</max>
+    <pattern>^s3://([^/]+)(/.*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.GetMLModelResponse.MLModelId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MachineLearning.Model.GetMLModelResponse.Message</property>
+    <min>0</min>
+    <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.GetMLModelResponse.Name</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.GetMLModelResponse.Recipe</property>
+    <min>0</min>
     <max>131071</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.GetMLModelResponse.Schema</property>
+    <min>0</min>
     <max>131071</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.GetMLModelResponse.TrainingDataSourceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.PredictRequest.MLModelId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.PredictRequest.PredictEndpoint</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>https://[a-zA-Z0-9-.]*\.amazon(aws)?\.com[/]?</pattern>
+    <pattern>^https://[a-zA-Z0-9-.]*\.amazon(aws)?\.com[/]?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.UpdateBatchPredictionRequest.BatchPredictionId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.UpdateBatchPredictionRequest.BatchPredictionName</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
@@ -621,16 +676,17 @@
     <property>Amazon.MachineLearning.Model.UpdateBatchPredictionResponse.BatchPredictionId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.UpdateDataSourceRequest.DataSourceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.UpdateDataSourceRequest.DataSourceName</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
@@ -638,16 +694,17 @@
     <property>Amazon.MachineLearning.Model.UpdateDataSourceResponse.DataSourceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.UpdateEvaluationRequest.EvaluationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.UpdateEvaluationRequest.EvaluationName</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
@@ -655,16 +712,17 @@
     <property>Amazon.MachineLearning.Model.UpdateEvaluationResponse.EvaluationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.UpdateMLModelRequest.MLModelId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.UpdateMLModelRequest.MLModelName</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
@@ -672,70 +730,77 @@
     <property>Amazon.MachineLearning.Model.UpdateMLModelResponse.MLModelId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.BatchPrediction.BatchPredictionDataSourceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.BatchPrediction.BatchPredictionId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.BatchPrediction.CreatedByIamUser</property>
-    <pattern>arn:aws:iam::[0-9]+:((user/.+)|(root))</pattern>
+    <pattern>^arn:aws:iam::[0-9]+:((user/.+)|(root))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.BatchPrediction.InputDataLocationS3</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>s3://([^/]+)(/.*)?</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MachineLearning.Model.BatchPrediction.Message</property>
-    <max>10240</max>
+    <pattern>^s3://([^/]+)(/.*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.BatchPrediction.MLModelId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MachineLearning.Model.BatchPrediction.Message</property>
+    <min>0</min>
+    <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.BatchPrediction.Name</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.BatchPrediction.OutputUri</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>s3://([^/]+)(/.*)?</pattern>
+    <pattern>^s3://([^/]+)(/.*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DataSource.CreatedByIamUser</property>
-    <pattern>arn:aws:iam::[0-9]+:((user/.+)|(root))</pattern>
+    <pattern>^arn:aws:iam::[0-9]+:((user/.+)|(root))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DataSource.DataLocationS3</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>s3://([^/]+)(/.*)?</pattern>
+    <pattern>^s3://([^/]+)(/.*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DataSource.DataSourceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DataSource.Message</property>
+    <min>0</min>
     <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DataSource.Name</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
@@ -746,102 +811,89 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.Evaluation.CreatedByIamUser</property>
-    <pattern>arn:aws:iam::[0-9]+:((user/.+)|(root))</pattern>
+    <pattern>^arn:aws:iam::[0-9]+:((user/.+)|(root))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.Evaluation.EvaluationDataSourceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.Evaluation.EvaluationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.Evaluation.InputDataLocationS3</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>s3://([^/]+)(/.*)?</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MachineLearning.Model.Evaluation.Message</property>
-    <max>10240</max>
+    <pattern>^s3://([^/]+)(/.*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.Evaluation.MLModelId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MachineLearning.Model.Evaluation.Message</property>
+    <min>0</min>
+    <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.Evaluation.Name</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.MLModel.CreatedByIamUser</property>
-    <pattern>arn:aws:iam::[0-9]+:((user/.+)|(root))</pattern>
+    <pattern>^arn:aws:iam::[0-9]+:((user/.+)|(root))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.MLModel.InputDataLocationS3</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>s3://([^/]+)(/.*)?</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MachineLearning.Model.MLModel.Message</property>
-    <max>10240</max>
+    <pattern>^s3://([^/]+)(/.*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.MLModel.MLModelId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MachineLearning.Model.MLModel.Message</property>
+    <min>0</min>
+    <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.MLModel.Name</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.MLModel.TrainingDataSourceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.Prediction.PredictedLabel</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.MachineLearning.Model.RDSDatabase.DatabaseName</property>
-    <min>1</min>
-    <max>64</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MachineLearning.Model.RDSDatabase.InstanceIdentifier</property>
-    <min>1</min>
-    <max>63</max>
-    <pattern>[a-z0-9-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MachineLearning.Model.RDSDatabaseCredentials.Password</property>
-    <min>8</min>
-    <max>128</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MachineLearning.Model.RDSDatabaseCredentials.Username</property>
-    <min>1</min>
-    <max>128</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.MachineLearning.Model.RDSDataSpec.DataSchema</property>
+    <min>0</min>
     <max>131071</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.RDSDataSpec.DataSchemaUri</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>s3://([^/]+)(/.*)?</pattern>
+    <pattern>^s3://([^/]+)(/.*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.RDSDataSpec.ResourceRole</property>
@@ -850,8 +902,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.RDSDataSpec.S3StagingLocation</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>s3://([^/]+)(/.*)?</pattern>
+    <pattern>^s3://([^/]+)(/.*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.RDSDataSpec.SelectSqlQuery</property>
@@ -869,7 +922,23 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.MachineLearning.Model.RDSMetadata.DatabaseUserName</property>
+    <property>Amazon.MachineLearning.Model.RDSDatabase.DatabaseName</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MachineLearning.Model.RDSDatabase.InstanceIdentifier</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MachineLearning.Model.RDSDatabaseCredentials.Password</property>
+    <min>8</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MachineLearning.Model.RDSDatabaseCredentials.Username</property>
     <min>1</min>
     <max>128</max>
   </property-value-rule>
@@ -877,6 +946,11 @@
     <property>Amazon.MachineLearning.Model.RDSMetadata.DataPipelineId</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MachineLearning.Model.RDSMetadata.DatabaseUserName</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.RDSMetadata.ResourceRole</property>
@@ -895,20 +969,43 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.RealtimeEndpointInfo.EndpointUrl</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>https://[a-zA-Z0-9-.]*\.amazon(aws)?\.com[/]?</pattern>
+    <pattern>^https://[a-zA-Z0-9-.]*\.amazon(aws)?\.com[/]?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MachineLearning.Model.RedshiftDataSpec.DataSchema</property>
+    <min>0</min>
+    <max>131071</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MachineLearning.Model.RedshiftDataSpec.DataSchemaUri</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^s3://([^/]+)(/.*)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MachineLearning.Model.RedshiftDataSpec.S3StagingLocation</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^s3://([^/]+)(/.*)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MachineLearning.Model.RedshiftDataSpec.SelectSqlQuery</property>
+    <min>1</min>
+    <max>16777216</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.RedshiftDatabase.ClusterIdentifier</property>
     <min>1</min>
     <max>63</max>
-    <pattern>[a-z0-9-]+</pattern>
+    <pattern>^[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.RedshiftDatabase.DatabaseName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-z0-9]+</pattern>
+    <pattern>^[a-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.RedshiftDatabaseCredentials.Password</property>
@@ -919,25 +1016,6 @@
     <property>Amazon.MachineLearning.Model.RedshiftDatabaseCredentials.Username</property>
     <min>1</min>
     <max>128</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MachineLearning.Model.RedshiftDataSpec.DataSchema</property>
-    <max>131071</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MachineLearning.Model.RedshiftDataSpec.DataSchemaUri</property>
-    <max>2048</max>
-    <pattern>s3://([^/]+)(/.*)?</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MachineLearning.Model.RedshiftDataSpec.S3StagingLocation</property>
-    <max>2048</max>
-    <pattern>s3://([^/]+)(/.*)?</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MachineLearning.Model.RedshiftDataSpec.SelectSqlQuery</property>
-    <min>1</min>
-    <max>16777216</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.RedshiftMetadata.DatabaseUserName</property>
@@ -951,17 +1029,20 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.S3DataSpec.DataLocationS3</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>s3://([^/]+)(/.*)?</pattern>
+    <pattern>^s3://([^/]+)(/.*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.S3DataSpec.DataSchema</property>
+    <min>0</min>
     <max>131071</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.S3DataSpec.DataSchemaLocationS3</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>s3://([^/]+)(/.*)?</pattern>
+    <pattern>^s3://([^/]+)(/.*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.Tag.Key</property>

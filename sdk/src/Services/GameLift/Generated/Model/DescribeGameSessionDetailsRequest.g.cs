@@ -1,0 +1,168 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.GameLift.Model
+{
+    /// <summary>
+    /// Container for the parameters to the DescribeGameSessionDetails operation. <b>This
+    /// API works with the following fleet types:</b> EC2, Anywhere, Container <para> Retrieves
+    /// additional game session properties, including the game session protection policy in
+    /// force, for a set of one or more game sessions in a specific fleet location. You can
+    /// optionally filter the results by current game session status. </para> <para> This
+    /// operation can be used in the following ways: </para> <ul> <li> <para> To retrieve
+    /// details for all game sessions that are currently running on all locations in a fleet,
+    /// provide a fleet or alias ID, with an optional status filter. This approach returns
+    /// details from the fleet's home Region and all remote locations. </para> </li> <li>
+    /// <para> To retrieve details for all game sessions that are currently running on a specific
+    /// fleet location, provide a fleet or alias ID and a location name, with optional status
+    /// filter. The location can be the fleet's home Region or any remote location. </para>
+    /// </li> <li> <para> To retrieve details for a specific game session, provide the game
+    /// session ID. This approach looks for the game session ID in all fleets that reside
+    /// in the Amazon Web Services Region defined in the request. </para> </li> </ul> <para>
+    /// Use the pagination parameters to retrieve results as a set of sequential pages. </para>
+    /// <para> If successful, a <c>GameSessionDetail</c> object is returned for each game
+    /// session that matches the request. </para> <para> <b>Learn more</b> </para> <para>
+    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-find">Find
+    /// a game session</a> </para> <para> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    /// APIs by task</a> </para>
+    /// </summary>
+    public partial class DescribeGameSessionDetailsRequest : AmazonGameLiftRequest
+    {
+        /// <summary>
+        /// Gets and sets the property AliasId. 
+        /// <para>
+        /// A unique identifier for the alias associated with the fleet to retrieve all game sessions
+        /// for. You can use either the alias ID or ARN value.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 512)]
+        public string AliasId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AliasId property is set.
+        /// </summary>
+        internal bool IsSetAliasId() => this.AliasId != null;
+
+        /// <summary>
+        /// Gets and sets the property FleetId. 
+        /// <para>
+        /// A unique identifier for the fleet to retrieve all game sessions active on the fleet.
+        /// You can use either the fleet ID or ARN value.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 512)]
+        public string FleetId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FleetId property is set.
+        /// </summary>
+        internal bool IsSetFleetId() => this.FleetId != null;
+
+        /// <summary>
+        /// Gets and sets the property GameSessionId. 
+        /// <para>
+        /// An identifier for the game session that is unique across all regions to retrieve.
+        /// The value is always a full ARN in the following format: For Home Region game session
+        /// - <c>arn:aws:gamelift:&lt;home_region&gt;::gamesession/&lt;fleet ID&gt;/&lt;ID string&gt;</c>.
+        /// For Remote Location game session - <c>arn:aws:gamelift:&lt;home_region&gt;::gamesession/&lt;fleet
+        /// ID&gt;/&lt;location&gt;/&lt;ID string&gt;</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 512)]
+        public string GameSessionId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GameSessionId property is set.
+        /// </summary>
+        internal bool IsSetGameSessionId() => this.GameSessionId != null;
+
+        /// <summary>
+        /// Gets and sets the property Limit. 
+        /// <para>
+        /// The maximum number of results to return. Use this parameter with <c>NextToken</c>
+        /// to get results as a set of sequential pages.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1)]
+        public int? Limit { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Limit property is set.
+        /// </summary>
+        internal bool IsSetLimit() => this.Limit.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Location. 
+        /// <para>
+        /// A fleet location to get game session details for. You can specify a fleet's home Region
+        /// or a remote location. Use the Amazon Web Services Region code format, such as <c>us-west-2</c>.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 64)]
+        public string Location { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Location property is set.
+        /// </summary>
+        internal bool IsSetLocation() => this.Location != null;
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// A token that indicates the start of the next sequential page of results. Use the token
+        /// that is returned with a previous call to this operation. To start at the beginning
+        /// of the result set, do not specify a value.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 1024)]
+        public string NextToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NextToken property is set.
+        /// </summary>
+        internal bool IsSetNextToken() => this.NextToken != null;
+
+        /// <summary>
+        /// Gets and sets the property StatusFilter. 
+        /// <para>
+        /// Game session status to filter results on. Possible game session statuses include <c>ACTIVE</c>,
+        /// <c>TERMINATED</c>, <c>ACTIVATING</c> and <c>TERMINATING</c> (the last two are transitory).
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 1024)]
+        public string StatusFilter { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StatusFilter property is set.
+        /// </summary>
+        internal bool IsSetStatusFilter() => this.StatusFilter != null;
+    }
+}

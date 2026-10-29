@@ -1,0 +1,128 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.GameLift.Model
+{
+    /// <summary>
+    /// Container for the parameters to the RegisterGameServer operation. <b>This API works
+    /// with the following fleet types:</b> EC2 (FleetIQ) <para> Creates a new game server
+    /// resource and notifies Amazon GameLift Servers FleetIQ that the game server is ready
+    /// to host gameplay and players. This operation is called by a game server process that
+    /// is running on an instance in a game server group. Registering game servers enables
+    /// Amazon GameLift Servers FleetIQ to track available game servers and enables game clients
+    /// and services to claim a game server for a new game session. </para> <para> To register
+    /// a game server, identify the game server group and instance where the game server is
+    /// running, and provide a unique identifier for the game server. You can also include
+    /// connection and game server data. </para> <para> Once a game server is successfully
+    /// registered, it is put in status <c>AVAILABLE</c>. A request to register a game server
+    /// may fail if the instance it is running on is in the process of shutting down as part
+    /// of instance balancing or scale-down activity. </para> <para> <b>Learn more</b> </para>
+    /// <para> <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
+    /// GameLift Servers FleetIQ Guide</a> </para>
+    /// </summary>
+    public partial class RegisterGameServerRequest : AmazonGameLiftRequest
+    {
+        /// <summary>
+        /// Gets and sets the property ConnectionInfo. 
+        /// <para>
+        /// Information that is needed to make inbound client connections to the game server.
+        /// This might include the IP address and port, DNS name, and other information.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 512)]
+        public string ConnectionInfo { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ConnectionInfo property is set.
+        /// </summary>
+        internal bool IsSetConnectionInfo() => this.ConnectionInfo != null;
+
+        /// <summary>
+        /// Gets and sets the property GameServerData. 
+        /// <para>
+        /// A set of custom game server properties, formatted as a single string value. This data
+        /// is passed to a game client or service when it requests information on game servers.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true, Min = 1, Max = 1024)]
+        public string GameServerData { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GameServerData property is set.
+        /// </summary>
+        internal bool IsSetGameServerData() => this.GameServerData != null;
+
+        /// <summary>
+        /// Gets and sets the property GameServerGroupName. 
+        /// <para>
+        /// A unique identifier for the game server group where the game server is running.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 256)]
+        public string GameServerGroupName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GameServerGroupName property is set.
+        /// </summary>
+        internal bool IsSetGameServerGroupName() => this.GameServerGroupName != null;
+
+        /// <summary>
+        /// Gets and sets the property GameServerId. 
+        /// <para>
+        /// A custom string that uniquely identifies the game server to register. Game server
+        /// IDs are developer-defined and must be unique across all game server groups in your
+        /// Amazon Web Services account.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 3, Max = 128)]
+        public string GameServerId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GameServerId property is set.
+        /// </summary>
+        internal bool IsSetGameServerId() => this.GameServerId != null;
+
+        /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The unique identifier for the instance where the game server is running. This ID is
+        /// available in the instance metadata. EC2 instance IDs use a 17-character format, for
+        /// example: <c>i-1234567890abcdef0</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 19, Max = 19)]
+        public string InstanceId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the InstanceId property is set.
+        /// </summary>
+        internal bool IsSetInstanceId() => this.InstanceId != null;
+    }
+}

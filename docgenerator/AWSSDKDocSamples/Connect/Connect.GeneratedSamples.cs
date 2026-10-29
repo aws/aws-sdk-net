@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.Connect.Generated
     {
         public void ConnectSearchRules()
         {
-            #region searchrules-1719100000000
+            #region SearchRules-1
 
             var client = new AmazonConnectClient();
-            var response = client.SearchRules(new SearchRulesRequest 
+            var response = client.SearchRules(new SearchRulesRequest
             {
                 InstanceId = "12345678-1234-1234-1234-123456789012",
                 MaxResults = 10,
@@ -27,19 +28,16 @@ namespace AWSSDKDocSamples.Amazon.Connect.Generated
                 } }
             });
 
-            long approximateTotalCount = response.ApproximateTotalCount;
+            long? approximateTotalCount = response.ApproximateTotalCount;
             List<RuleSearchSummary> rules = response.Rules;
 
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

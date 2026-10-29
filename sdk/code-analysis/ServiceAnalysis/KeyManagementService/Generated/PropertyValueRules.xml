@@ -30,7 +30,7 @@
     <property>Amazon.KeyManagementService.Model.CreateCustomKeyStoreRequest.CloudHsmClusterId</property>
     <min>19</min>
     <max>24</max>
-    <pattern>cluster-[2-7a-zA-Z]{11,16}</pattern>
+    <pattern>^cluster-[2-7a-zA-Z]{11,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.CreateCustomKeyStoreRequest.CustomKeyStoreName</property>
@@ -69,7 +69,7 @@
     <property>Amazon.KeyManagementService.Model.CreateCustomKeyStoreRequest.XksProxyVpcEndpointServiceOwner</property>
     <min>12</min>
     <max>12</max>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.CreateCustomKeyStoreResponse.CustomKeyStoreId</property>
@@ -135,7 +135,7 @@
     <property>Amazon.KeyManagementService.Model.CreateKeyRequest.Policy</property>
     <min>1</min>
     <max>131072</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.CreateKeyRequest.XksKeyId</property>
@@ -271,13 +271,13 @@
     <property>Amazon.KeyManagementService.Model.DescribeCustomKeyStoresRequest.Marker</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\u0020-\u00FF]*</pattern>
+    <pattern>^[\u0020-\u00FF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.DescribeCustomKeyStoresResponse.NextMarker</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\u0020-\u00FF]*</pattern>
+    <pattern>^[\u0020-\u00FF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.DescribeKeyRequest.KeyId</property>
@@ -537,19 +537,19 @@
     <property>Amazon.KeyManagementService.Model.GetKeyPolicyRequest.PolicyName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w]+</pattern>
+    <pattern>^[\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GetKeyPolicyResponse.Policy</property>
     <min>1</min>
     <max>131072</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GetKeyPolicyResponse.PolicyName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w]+</pattern>
+    <pattern>^[\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GetKeyRotationStatusRequest.KeyId</property>
@@ -653,13 +653,18 @@
     <property>Amazon.KeyManagementService.Model.ListAliasesRequest.Marker</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\u0020-\u00FF]*</pattern>
+    <pattern>^[\u0020-\u00FF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListAliasesResponse.NextMarker</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\u0020-\u00FF]*</pattern>
+    <pattern>^[\u0020-\u00FF]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.ListGrantsRequest.GrantId</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListGrantsRequest.GranteePrincipal</property>
@@ -672,11 +677,6 @@
     <min>1</min>
     <max>128</max>
     <pattern>^([A-Za-z0-9\-]+)\.([A-Za-z0-9\-]+)(\.[A-Za-z0-9\-]+)+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.KeyManagementService.Model.ListGrantsRequest.GrantId</property>
-    <min>1</min>
-    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListGrantsRequest.KeyId</property>
@@ -692,13 +692,13 @@
     <property>Amazon.KeyManagementService.Model.ListGrantsRequest.Marker</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\u0020-\u00FF]*</pattern>
+    <pattern>^[\u0020-\u00FF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListGrantsResponse.NextMarker</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\u0020-\u00FF]*</pattern>
+    <pattern>^[\u0020-\u00FF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListKeyPoliciesRequest.KeyId</property>
@@ -714,13 +714,13 @@
     <property>Amazon.KeyManagementService.Model.ListKeyPoliciesRequest.Marker</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\u0020-\u00FF]*</pattern>
+    <pattern>^[\u0020-\u00FF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListKeyPoliciesResponse.NextMarker</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\u0020-\u00FF]*</pattern>
+    <pattern>^[\u0020-\u00FF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListKeyRotationsRequest.KeyId</property>
@@ -736,13 +736,13 @@
     <property>Amazon.KeyManagementService.Model.ListKeyRotationsRequest.Marker</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\u0020-\u00FF]*</pattern>
+    <pattern>^[\u0020-\u00FF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListKeyRotationsResponse.NextMarker</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\u0020-\u00FF]*</pattern>
+    <pattern>^[\u0020-\u00FF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListKeysRequest.Limit</property>
@@ -753,13 +753,13 @@
     <property>Amazon.KeyManagementService.Model.ListKeysRequest.Marker</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\u0020-\u00FF]*</pattern>
+    <pattern>^[\u0020-\u00FF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListKeysResponse.NextMarker</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\u0020-\u00FF]*</pattern>
+    <pattern>^[\u0020-\u00FF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListResourceTagsRequest.KeyId</property>
@@ -775,13 +775,13 @@
     <property>Amazon.KeyManagementService.Model.ListResourceTagsRequest.Marker</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\u0020-\u00FF]*</pattern>
+    <pattern>^[\u0020-\u00FF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListResourceTagsResponse.NextMarker</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\u0020-\u00FF]*</pattern>
+    <pattern>^[\u0020-\u00FF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListRetirableGrantsRequest.Limit</property>
@@ -792,7 +792,7 @@
     <property>Amazon.KeyManagementService.Model.ListRetirableGrantsRequest.Marker</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\u0020-\u00FF]*</pattern>
+    <pattern>^[\u0020-\u00FF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListRetirableGrantsRequest.RetiringPrincipal</property>
@@ -810,7 +810,7 @@
     <property>Amazon.KeyManagementService.Model.ListRetirableGrantsResponse.NextMarker</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\u0020-\u00FF]*</pattern>
+    <pattern>^[\u0020-\u00FF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.PutKeyPolicyRequest.KeyId</property>
@@ -821,13 +821,13 @@
     <property>Amazon.KeyManagementService.Model.PutKeyPolicyRequest.Policy</property>
     <min>1</min>
     <max>131072</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.PutKeyPolicyRequest.PolicyName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w]+</pattern>
+    <pattern>^[\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ReEncryptRequest.CiphertextBlob</property>
@@ -885,7 +885,7 @@
     <property>Amazon.KeyManagementService.Model.ReplicateKeyRequest.Policy</property>
     <min>1</min>
     <max>131072</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ReplicateKeyRequest.ReplicaRegion</property>
@@ -897,7 +897,7 @@
     <property>Amazon.KeyManagementService.Model.ReplicateKeyResponse.ReplicaPolicy</property>
     <min>1</min>
     <max>131072</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.RetireGrantRequest.GrantId</property>
@@ -999,7 +999,7 @@
     <property>Amazon.KeyManagementService.Model.UpdateCustomKeyStoreRequest.CloudHsmClusterId</property>
     <min>19</min>
     <max>24</max>
-    <pattern>cluster-[2-7a-zA-Z]{11,16}</pattern>
+    <pattern>^cluster-[2-7a-zA-Z]{11,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.UpdateCustomKeyStoreRequest.CustomKeyStoreId</property>
@@ -1038,7 +1038,7 @@
     <property>Amazon.KeyManagementService.Model.UpdateCustomKeyStoreRequest.XksProxyVpcEndpointServiceOwner</property>
     <min>12</min>
     <max>12</max>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.UpdateKeyDescriptionRequest.Description</property>
@@ -1121,7 +1121,7 @@
     <property>Amazon.KeyManagementService.Model.CustomKeyStoresListEntry.CloudHsmClusterId</property>
     <min>19</min>
     <max>24</max>
-    <pattern>cluster-[2-7a-zA-Z]{11,16}</pattern>
+    <pattern>^cluster-[2-7a-zA-Z]{11,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.CustomKeyStoresListEntry.CustomKeyStoreId</property>
@@ -1145,6 +1145,11 @@
     <pattern>^arn:aws[a-z0-9-]*:[a-z0-9-]+:[a-z0-9-]*:[0-9]{12}:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GrantListEntry.GrantId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GrantListEntry.GranteePrincipal</property>
     <min>1</min>
     <max>256</max>
@@ -1155,11 +1160,6 @@
     <min>1</min>
     <max>128</max>
     <pattern>^([A-Za-z0-9\-]+)\.([A-Za-z0-9\-]+)(\.[A-Za-z0-9\-]+)+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.KeyManagementService.Model.GrantListEntry.GrantId</property>
-    <min>1</min>
-    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GrantListEntry.IssuingAccount</property>
@@ -1209,7 +1209,7 @@
     <property>Amazon.KeyManagementService.Model.KeyMetadata.CloudHsmClusterId</property>
     <min>19</min>
     <max>24</max>
-    <pattern>cluster-[2-7a-zA-Z]{11,16}</pattern>
+    <pattern>^cluster-[2-7a-zA-Z]{11,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.KeyMetadata.CurrentKeyMaterialId</property>
@@ -1326,6 +1326,6 @@
     <property>Amazon.KeyManagementService.Model.XksProxyConfigurationType.VpcEndpointServiceOwner</property>
     <min>12</min>
     <max>12</max>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
 </property-value-rules>

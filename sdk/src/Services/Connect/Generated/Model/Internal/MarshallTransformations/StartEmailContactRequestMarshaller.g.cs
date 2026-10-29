@@ -1,0 +1,221 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+using System.Buffers;
+
+using Amazon.Connect.Model;
+using System.Globalization;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.Connect.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// StartEmailContact Request Marshaller
+    /// </summary>
+    public partial class StartEmailContactRequestMarshaller : IMarshaller<IRequest, StartEmailContactRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    {
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((StartEmailContactRequest)input);
+        }
+
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(StartEmailContactRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Connect");
+            request.Headers["Content-Type"] = "application/json";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-08";
+            request.HttpMethod = "PUT";
+
+            request.ResourcePath = "/contact/email";
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using var writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetAdditionalRecipients())
+            {
+                context.Writer.WritePropertyName("AdditionalRecipients");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InboundAdditionalRecipientsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AdditionalRecipients, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetAttachments())
+            {
+                context.Writer.WritePropertyName("Attachments");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestAttachmentsListValue in publicRequest.Attachments)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = EmailAttachmentMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAttachmentsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetAttributes())
+            {
+                context.Writer.WritePropertyName("Attributes");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestAttributesKvp in publicRequest.Attributes)
+                {
+                    context.Writer.WritePropertyName(publicRequestAttributesKvp.Key);
+                    var publicRequestAttributesValue = publicRequestAttributesKvp.Value;
+                    context.Writer.WriteStringValue(publicRequestAttributesValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+            else
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if (publicRequest.IsSetContactFlowId())
+            {
+                context.Writer.WritePropertyName("ContactFlowId");
+                context.Writer.WriteStringValue(publicRequest.ContactFlowId);
+            }
+            if (publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+            if (publicRequest.IsSetDestinationEmailAddress())
+            {
+                context.Writer.WritePropertyName("DestinationEmailAddress");
+                context.Writer.WriteStringValue(publicRequest.DestinationEmailAddress);
+            }
+            if (publicRequest.IsSetEmailMessage())
+            {
+                context.Writer.WritePropertyName("EmailMessage");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InboundEmailContentMarshaller.Instance;
+                marshaller.Marshall(publicRequest.EmailMessage, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetFromEmailAddress())
+            {
+                context.Writer.WritePropertyName("FromEmailAddress");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EmailAddressInfoMarshaller.Instance;
+                marshaller.Marshall(publicRequest.FromEmailAddress, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetInstanceId())
+            {
+                context.Writer.WritePropertyName("InstanceId");
+                context.Writer.WriteStringValue(publicRequest.InstanceId);
+            }
+            if (publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+            if (publicRequest.IsSetReferences())
+            {
+                context.Writer.WritePropertyName("References");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestReferencesKvp in publicRequest.References)
+                {
+                    context.Writer.WritePropertyName(publicRequestReferencesKvp.Key);
+                    var publicRequestReferencesValue = publicRequestReferencesKvp.Value;
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ReferenceMarshaller.Instance;
+                    marshaller.Marshall(publicRequestReferencesValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetRelatedContactId())
+            {
+                context.Writer.WritePropertyName("RelatedContactId");
+                context.Writer.WriteStringValue(publicRequest.RelatedContactId);
+            }
+            if (publicRequest.IsSetSegmentAttributes())
+            {
+                context.Writer.WritePropertyName("SegmentAttributes");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestSegmentAttributesKvp in publicRequest.SegmentAttributes)
+                {
+                    context.Writer.WritePropertyName(publicRequestSegmentAttributesKvp.Key);
+                    var publicRequestSegmentAttributesValue = publicRequestSegmentAttributesKvp.Value;
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SegmentAttributeValueMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSegmentAttributesValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETFRAMEWORK
+            request.Content = memoryStream.ToArray();
+#endif
+
+            return request;
+        }
+
+        private static readonly StartEmailContactRequestMarshaller _instance = new();
+
+        internal static StartEmailContactRequestMarshaller GetInstance() => _instance;
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static StartEmailContactRequestMarshaller Instance => _instance;
+    }
+}

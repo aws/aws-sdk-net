@@ -1,0 +1,11651 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using Amazon.Runtime;
+
+namespace Amazon.Connect
+{
+    /// <summary>
+    /// Constants used for properties of type AIAgentType.
+    /// </summary>
+    public class AIAgentType : ConstantClass
+    {
+        /// <summary>
+        /// Constant THIRD_PARTY for AIAgentType
+        /// </summary>
+        public static readonly AIAgentType THIRD_PARTY = new AIAgentType("THIRD_PARTY");
+
+        /// <summary>
+        /// Constructs a custom AIAgentType for a value not among the defined constants.
+        /// </summary>
+        public AIAgentType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AIAgentType FindValue(string value)
+        {
+            return FindValue<AIAgentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AIAgentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AccessType.
+    /// </summary>
+    public class AccessType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ALLOW for AccessType
+        /// </summary>
+        public static readonly AccessType ALLOW = new AccessType("ALLOW");
+
+        /// <summary>
+        /// Constructs a custom AccessType for a value not among the defined constants.
+        /// </summary>
+        public AccessType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccessType FindValue(string value)
+        {
+            return FindValue<AccessType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccessType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ActionType.
+    /// </summary>
+    public class ActionType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ASSIGN_CONTACT_CATEGORY for ActionType
+        /// </summary>
+        public static readonly ActionType ASSIGN_CONTACT_CATEGORY = new ActionType("ASSIGN_CONTACT_CATEGORY");
+
+        /// <summary>
+        /// Constant ASSIGN_SLA for ActionType
+        /// </summary>
+        public static readonly ActionType ASSIGN_SLA = new ActionType("ASSIGN_SLA");
+
+        /// <summary>
+        /// Constant CREATE_CASE for ActionType
+        /// </summary>
+        public static readonly ActionType CREATE_CASE = new ActionType("CREATE_CASE");
+
+        /// <summary>
+        /// Constant CREATE_TASK for ActionType
+        /// </summary>
+        public static readonly ActionType CREATE_TASK = new ActionType("CREATE_TASK");
+
+        /// <summary>
+        /// Constant END_ASSOCIATED_TASKS for ActionType
+        /// </summary>
+        public static readonly ActionType END_ASSOCIATED_TASKS = new ActionType("END_ASSOCIATED_TASKS");
+
+        /// <summary>
+        /// Constant EXTRACT_INFORMATION for ActionType
+        /// </summary>
+        public static readonly ActionType EXTRACT_INFORMATION = new ActionType("EXTRACT_INFORMATION");
+
+        /// <summary>
+        /// Constant GENERATE_EVENTBRIDGE_EVENT for ActionType
+        /// </summary>
+        public static readonly ActionType GENERATE_EVENTBRIDGE_EVENT = new ActionType("GENERATE_EVENTBRIDGE_EVENT");
+
+        /// <summary>
+        /// Constant SEND_IN_APP_NOTIFICATION for ActionType
+        /// </summary>
+        public static readonly ActionType SEND_IN_APP_NOTIFICATION = new ActionType("SEND_IN_APP_NOTIFICATION");
+
+        /// <summary>
+        /// Constant SEND_NOTIFICATION for ActionType
+        /// </summary>
+        public static readonly ActionType SEND_NOTIFICATION = new ActionType("SEND_NOTIFICATION");
+
+        /// <summary>
+        /// Constant SUBMIT_AUTO_EVALUATION for ActionType
+        /// </summary>
+        public static readonly ActionType SUBMIT_AUTO_EVALUATION = new ActionType("SUBMIT_AUTO_EVALUATION");
+
+        /// <summary>
+        /// Constant UPDATE_CASE for ActionType
+        /// </summary>
+        public static readonly ActionType UPDATE_CASE = new ActionType("UPDATE_CASE");
+
+        /// <summary>
+        /// Constructs a custom ActionType for a value not among the defined constants.
+        /// </summary>
+        public ActionType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ActionType FindValue(string value)
+        {
+            return FindValue<ActionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ActionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AgentAvailabilityTimer.
+    /// </summary>
+    public class AgentAvailabilityTimer : ConstantClass
+    {
+        /// <summary>
+        /// Constant TIME_SINCE_LAST_ACTIVITY for AgentAvailabilityTimer
+        /// </summary>
+        public static readonly AgentAvailabilityTimer TIME_SINCE_LAST_ACTIVITY = new AgentAvailabilityTimer("TIME_SINCE_LAST_ACTIVITY");
+
+        /// <summary>
+        /// Constant TIME_SINCE_LAST_INBOUND for AgentAvailabilityTimer
+        /// </summary>
+        public static readonly AgentAvailabilityTimer TIME_SINCE_LAST_INBOUND = new AgentAvailabilityTimer("TIME_SINCE_LAST_INBOUND");
+
+        /// <summary>
+        /// Constructs a custom AgentAvailabilityTimer for a value not among the defined constants.
+        /// </summary>
+        public AgentAvailabilityTimer(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgentAvailabilityTimer FindValue(string value)
+        {
+            return FindValue<AgentAvailabilityTimer>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgentAvailabilityTimer(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AgentStatusState.
+    /// </summary>
+    public class AgentStatusState : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for AgentStatusState
+        /// </summary>
+        public static readonly AgentStatusState DISABLED = new AgentStatusState("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for AgentStatusState
+        /// </summary>
+        public static readonly AgentStatusState ENABLED = new AgentStatusState("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom AgentStatusState for a value not among the defined constants.
+        /// </summary>
+        public AgentStatusState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgentStatusState FindValue(string value)
+        {
+            return FindValue<AgentStatusState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgentStatusState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AgentStatusType.
+    /// </summary>
+    public class AgentStatusType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CUSTOM for AgentStatusType
+        /// </summary>
+        public static readonly AgentStatusType CUSTOM = new AgentStatusType("CUSTOM");
+
+        /// <summary>
+        /// Constant OFFLINE for AgentStatusType
+        /// </summary>
+        public static readonly AgentStatusType OFFLINE = new AgentStatusType("OFFLINE");
+
+        /// <summary>
+        /// Constant ROUTABLE for AgentStatusType
+        /// </summary>
+        public static readonly AgentStatusType ROUTABLE = new AgentStatusType("ROUTABLE");
+
+        /// <summary>
+        /// Constructs a custom AgentStatusType for a value not among the defined constants.
+        /// </summary>
+        public AgentStatusType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgentStatusType FindValue(string value)
+        {
+            return FindValue<AgentStatusType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgentStatusType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AiUseCase.
+    /// </summary>
+    public class AiUseCase : ConstantClass
+    {
+        /// <summary>
+        /// Constant AgentAssistance for AiUseCase
+        /// </summary>
+        public static readonly AiUseCase AgentAssistance = new AiUseCase("AgentAssistance");
+
+        /// <summary>
+        /// Constant SelfService for AiUseCase
+        /// </summary>
+        public static readonly AiUseCase SelfService = new AiUseCase("SelfService");
+
+        /// <summary>
+        /// Constructs a custom AiUseCase for a value not among the defined constants.
+        /// </summary>
+        public AiUseCase(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AiUseCase FindValue(string value)
+        {
+            return FindValue<AiUseCase>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AiUseCase(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AllowedUserAction.
+    /// </summary>
+    public class AllowedUserAction : ConstantClass
+    {
+        /// <summary>
+        /// Constant CALL for AllowedUserAction
+        /// </summary>
+        public static readonly AllowedUserAction CALL = new AllowedUserAction("CALL");
+
+        /// <summary>
+        /// Constant DISCARD for AllowedUserAction
+        /// </summary>
+        public static readonly AllowedUserAction DISCARD = new AllowedUserAction("DISCARD");
+
+        /// <summary>
+        /// Constructs a custom AllowedUserAction for a value not among the defined constants.
+        /// </summary>
+        public AllowedUserAction(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AllowedUserAction FindValue(string value)
+        {
+            return FindValue<AllowedUserAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AllowedUserAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AnalyticsMode.
+    /// </summary>
+    public class AnalyticsMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant AutomatedInteraction for AnalyticsMode
+        /// </summary>
+        public static readonly AnalyticsMode AutomatedInteraction = new AnalyticsMode("AutomatedInteraction");
+
+        /// <summary>
+        /// Constant ContactLens for AnalyticsMode
+        /// </summary>
+        public static readonly AnalyticsMode ContactLens = new AnalyticsMode("ContactLens");
+
+        /// <summary>
+        /// Constant PostContact for AnalyticsMode
+        /// </summary>
+        public static readonly AnalyticsMode PostContact = new AnalyticsMode("PostContact");
+
+        /// <summary>
+        /// Constant RealTime for AnalyticsMode
+        /// </summary>
+        public static readonly AnalyticsMode RealTime = new AnalyticsMode("RealTime");
+
+        /// <summary>
+        /// Constructs a custom AnalyticsMode for a value not among the defined constants.
+        /// </summary>
+        public AnalyticsMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalyticsMode FindValue(string value)
+        {
+            return FindValue<AnalyticsMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalyticsMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AnsweringMachineDetectionStatus.
+    /// </summary>
+    public class AnsweringMachineDetectionStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant AMD_ERROR for AnsweringMachineDetectionStatus
+        /// </summary>
+        public static readonly AnsweringMachineDetectionStatus AMD_ERROR = new AnsweringMachineDetectionStatus("AMD_ERROR");
+
+        /// <summary>
+        /// Constant AMD_NOT_APPLICABLE for AnsweringMachineDetectionStatus
+        /// </summary>
+        public static readonly AnsweringMachineDetectionStatus AMD_NOT_APPLICABLE = new AnsweringMachineDetectionStatus("AMD_NOT_APPLICABLE");
+
+        /// <summary>
+        /// Constant AMD_UNANSWERED for AnsweringMachineDetectionStatus
+        /// </summary>
+        public static readonly AnsweringMachineDetectionStatus AMD_UNANSWERED = new AnsweringMachineDetectionStatus("AMD_UNANSWERED");
+
+        /// <summary>
+        /// Constant AMD_UNRESOLVED for AnsweringMachineDetectionStatus
+        /// </summary>
+        public static readonly AnsweringMachineDetectionStatus AMD_UNRESOLVED = new AnsweringMachineDetectionStatus("AMD_UNRESOLVED");
+
+        /// <summary>
+        /// Constant ANSWERED for AnsweringMachineDetectionStatus
+        /// </summary>
+        public static readonly AnsweringMachineDetectionStatus ANSWERED = new AnsweringMachineDetectionStatus("ANSWERED");
+
+        /// <summary>
+        /// Constant ERROR for AnsweringMachineDetectionStatus
+        /// </summary>
+        public static readonly AnsweringMachineDetectionStatus ERROR = new AnsweringMachineDetectionStatus("ERROR");
+
+        /// <summary>
+        /// Constant FAX_MACHINE_DETECTED for AnsweringMachineDetectionStatus
+        /// </summary>
+        public static readonly AnsweringMachineDetectionStatus FAX_MACHINE_DETECTED = new AnsweringMachineDetectionStatus("FAX_MACHINE_DETECTED");
+
+        /// <summary>
+        /// Constant HUMAN_ANSWERED for AnsweringMachineDetectionStatus
+        /// </summary>
+        public static readonly AnsweringMachineDetectionStatus HUMAN_ANSWERED = new AnsweringMachineDetectionStatus("HUMAN_ANSWERED");
+
+        /// <summary>
+        /// Constant SIT_TONE_BUSY for AnsweringMachineDetectionStatus
+        /// </summary>
+        public static readonly AnsweringMachineDetectionStatus SIT_TONE_BUSY = new AnsweringMachineDetectionStatus("SIT_TONE_BUSY");
+
+        /// <summary>
+        /// Constant SIT_TONE_DETECTED for AnsweringMachineDetectionStatus
+        /// </summary>
+        public static readonly AnsweringMachineDetectionStatus SIT_TONE_DETECTED = new AnsweringMachineDetectionStatus("SIT_TONE_DETECTED");
+
+        /// <summary>
+        /// Constant SIT_TONE_INVALID_NUMBER for AnsweringMachineDetectionStatus
+        /// </summary>
+        public static readonly AnsweringMachineDetectionStatus SIT_TONE_INVALID_NUMBER = new AnsweringMachineDetectionStatus("SIT_TONE_INVALID_NUMBER");
+
+        /// <summary>
+        /// Constant UNDETECTED for AnsweringMachineDetectionStatus
+        /// </summary>
+        public static readonly AnsweringMachineDetectionStatus UNDETECTED = new AnsweringMachineDetectionStatus("UNDETECTED");
+
+        /// <summary>
+        /// Constant VOICEMAIL_BEEP for AnsweringMachineDetectionStatus
+        /// </summary>
+        public static readonly AnsweringMachineDetectionStatus VOICEMAIL_BEEP = new AnsweringMachineDetectionStatus("VOICEMAIL_BEEP");
+
+        /// <summary>
+        /// Constant VOICEMAIL_NO_BEEP for AnsweringMachineDetectionStatus
+        /// </summary>
+        public static readonly AnsweringMachineDetectionStatus VOICEMAIL_NO_BEEP = new AnsweringMachineDetectionStatus("VOICEMAIL_NO_BEEP");
+
+        /// <summary>
+        /// Constructs a custom AnsweringMachineDetectionStatus for a value not among the defined constants.
+        /// </summary>
+        public AnsweringMachineDetectionStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnsweringMachineDetectionStatus FindValue(string value)
+        {
+            return FindValue<AnsweringMachineDetectionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnsweringMachineDetectionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ApplicationType.
+    /// </summary>
+    public class ApplicationType : ConstantClass
+    {
+        /// <summary>
+        /// Constant MCP for ApplicationType
+        /// </summary>
+        public static readonly ApplicationType MCP = new ApplicationType("MCP");
+
+        /// <summary>
+        /// Constant THIRD_PARTY_APPLICATION for ApplicationType
+        /// </summary>
+        public static readonly ApplicationType THIRD_PARTY_APPLICATION = new ApplicationType("THIRD_PARTY_APPLICATION");
+
+        /// <summary>
+        /// Constructs a custom ApplicationType for a value not among the defined constants.
+        /// </summary>
+        public ApplicationType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApplicationType FindValue(string value)
+        {
+            return FindValue<ApplicationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApplicationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ArtifactStatus.
+    /// </summary>
+    public class ArtifactStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant APPROVED for ArtifactStatus
+        /// </summary>
+        public static readonly ArtifactStatus APPROVED = new ArtifactStatus("APPROVED");
+
+        /// <summary>
+        /// Constant IN_PROGRESS for ArtifactStatus
+        /// </summary>
+        public static readonly ArtifactStatus IN_PROGRESS = new ArtifactStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// Constant REJECTED for ArtifactStatus
+        /// </summary>
+        public static readonly ArtifactStatus REJECTED = new ArtifactStatus("REJECTED");
+
+        /// <summary>
+        /// Constructs a custom ArtifactStatus for a value not among the defined constants.
+        /// </summary>
+        public ArtifactStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ArtifactStatus FindValue(string value)
+        {
+            return FindValue<ArtifactStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ArtifactStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AttachedFileInvalidRequestExceptionReason.
+    /// </summary>
+    public class AttachedFileInvalidRequestExceptionReason : ConstantClass
+    {
+        /// <summary>
+        /// Constant INVALID_FILE_NAME for AttachedFileInvalidRequestExceptionReason
+        /// </summary>
+        public static readonly AttachedFileInvalidRequestExceptionReason INVALID_FILE_NAME = new AttachedFileInvalidRequestExceptionReason("INVALID_FILE_NAME");
+
+        /// <summary>
+        /// Constant INVALID_FILE_SIZE for AttachedFileInvalidRequestExceptionReason
+        /// </summary>
+        public static readonly AttachedFileInvalidRequestExceptionReason INVALID_FILE_SIZE = new AttachedFileInvalidRequestExceptionReason("INVALID_FILE_SIZE");
+
+        /// <summary>
+        /// Constant INVALID_FILE_TYPE for AttachedFileInvalidRequestExceptionReason
+        /// </summary>
+        public static readonly AttachedFileInvalidRequestExceptionReason INVALID_FILE_TYPE = new AttachedFileInvalidRequestExceptionReason("INVALID_FILE_TYPE");
+
+        /// <summary>
+        /// Constructs a custom AttachedFileInvalidRequestExceptionReason for a value not among the defined constants.
+        /// </summary>
+        public AttachedFileInvalidRequestExceptionReason(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AttachedFileInvalidRequestExceptionReason FindValue(string value)
+        {
+            return FindValue<AttachedFileInvalidRequestExceptionReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AttachedFileInvalidRequestExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AttachedFileServiceQuotaExceededExceptionReason.
+    /// </summary>
+    public class AttachedFileServiceQuotaExceededExceptionReason : ConstantClass
+    {
+        /// <summary>
+        /// Constant TOTAL_FILE_COUNT_EXCEEDED for AttachedFileServiceQuotaExceededExceptionReason
+        /// </summary>
+        public static readonly AttachedFileServiceQuotaExceededExceptionReason TOTAL_FILE_COUNT_EXCEEDED = new AttachedFileServiceQuotaExceededExceptionReason("TOTAL_FILE_COUNT_EXCEEDED");
+
+        /// <summary>
+        /// Constant TOTAL_FILE_SIZE_EXCEEDED for AttachedFileServiceQuotaExceededExceptionReason
+        /// </summary>
+        public static readonly AttachedFileServiceQuotaExceededExceptionReason TOTAL_FILE_SIZE_EXCEEDED = new AttachedFileServiceQuotaExceededExceptionReason("TOTAL_FILE_SIZE_EXCEEDED");
+
+        /// <summary>
+        /// Constructs a custom AttachedFileServiceQuotaExceededExceptionReason for a value not among the defined constants.
+        /// </summary>
+        public AttachedFileServiceQuotaExceededExceptionReason(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AttachedFileServiceQuotaExceededExceptionReason FindValue(string value)
+        {
+            return FindValue<AttachedFileServiceQuotaExceededExceptionReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AttachedFileServiceQuotaExceededExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AttachmentScope.
+    /// </summary>
+    public class AttachmentScope : ConstantClass
+    {
+        /// <summary>
+        /// Constant CASE for AttachmentScope
+        /// </summary>
+        public static readonly AttachmentScope CASE = new AttachmentScope("CASE");
+
+        /// <summary>
+        /// Constant CHAT for AttachmentScope
+        /// </summary>
+        public static readonly AttachmentScope CHAT = new AttachmentScope("CHAT");
+
+        /// <summary>
+        /// Constant EMAIL for AttachmentScope
+        /// </summary>
+        public static readonly AttachmentScope EMAIL = new AttachmentScope("EMAIL");
+
+        /// <summary>
+        /// Constant TASK for AttachmentScope
+        /// </summary>
+        public static readonly AttachmentScope TASK = new AttachmentScope("TASK");
+
+        /// <summary>
+        /// Constructs a custom AttachmentScope for a value not among the defined constants.
+        /// </summary>
+        public AttachmentScope(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AttachmentScope FindValue(string value)
+        {
+            return FindValue<AttachmentScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AttachmentScope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AuthCodeEntityType.
+    /// </summary>
+    public class AuthCodeEntityType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CUSTOMER_PROFILE for AuthCodeEntityType
+        /// </summary>
+        public static readonly AuthCodeEntityType CUSTOMER_PROFILE = new AuthCodeEntityType("CUSTOMER_PROFILE");
+
+        /// <summary>
+        /// Constructs a custom AuthCodeEntityType for a value not among the defined constants.
+        /// </summary>
+        public AuthCodeEntityType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuthCodeEntityType FindValue(string value)
+        {
+            return FindValue<AuthCodeEntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuthCodeEntityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AutoEvaluationStatus.
+    /// </summary>
+    public class AutoEvaluationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant FAILED for AutoEvaluationStatus
+        /// </summary>
+        public static readonly AutoEvaluationStatus FAILED = new AutoEvaluationStatus("FAILED");
+
+        /// <summary>
+        /// Constant IN_PROGRESS for AutoEvaluationStatus
+        /// </summary>
+        public static readonly AutoEvaluationStatus IN_PROGRESS = new AutoEvaluationStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// Constant SUCCEEDED for AutoEvaluationStatus
+        /// </summary>
+        public static readonly AutoEvaluationStatus SUCCEEDED = new AutoEvaluationStatus("SUCCEEDED");
+
+        /// <summary>
+        /// Constructs a custom AutoEvaluationStatus for a value not among the defined constants.
+        /// </summary>
+        public AutoEvaluationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoEvaluationStatus FindValue(string value)
+        {
+            return FindValue<AutoEvaluationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoEvaluationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AvailableFilterType.
+    /// </summary>
+    public class AvailableFilterType : ConstantClass
+    {
+        /// <summary>
+        /// Constant METRIC_LEVEL for AvailableFilterType
+        /// </summary>
+        public static readonly AvailableFilterType METRIC_LEVEL = new AvailableFilterType("METRIC_LEVEL");
+
+        /// <summary>
+        /// Constant RESOURCE_LEVEL for AvailableFilterType
+        /// </summary>
+        public static readonly AvailableFilterType RESOURCE_LEVEL = new AvailableFilterType("RESOURCE_LEVEL");
+
+        /// <summary>
+        /// Constructs a custom AvailableFilterType for a value not among the defined constants.
+        /// </summary>
+        public AvailableFilterType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AvailableFilterType FindValue(string value)
+        {
+            return FindValue<AvailableFilterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AvailableFilterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type Behavior.
+    /// </summary>
+    public class Behavior : ConstantClass
+    {
+        /// <summary>
+        /// Constant Disable for Behavior
+        /// </summary>
+        public static readonly Behavior Disable = new Behavior("Disable");
+
+        /// <summary>
+        /// Constant Enable for Behavior
+        /// </summary>
+        public static readonly Behavior Enable = new Behavior("Enable");
+
+        /// <summary>
+        /// Constructs a custom Behavior for a value not among the defined constants.
+        /// </summary>
+        public Behavior(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Behavior FindValue(string value)
+        {
+            return FindValue<Behavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Behavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type BehaviorType.
+    /// </summary>
+    public class BehaviorType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ROUTE_ANY_CHANNEL for BehaviorType
+        /// </summary>
+        public static readonly BehaviorType ROUTE_ANY_CHANNEL = new BehaviorType("ROUTE_ANY_CHANNEL");
+
+        /// <summary>
+        /// Constant ROUTE_CURRENT_CHANNEL_ONLY for BehaviorType
+        /// </summary>
+        public static readonly BehaviorType ROUTE_CURRENT_CHANNEL_ONLY = new BehaviorType("ROUTE_CURRENT_CHANNEL_ONLY");
+
+        /// <summary>
+        /// Constructs a custom BehaviorType for a value not among the defined constants.
+        /// </summary>
+        public BehaviorType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BehaviorType FindValue(string value)
+        {
+            return FindValue<BehaviorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BehaviorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type BooleanComparisonType.
+    /// </summary>
+    public class BooleanComparisonType : ConstantClass
+    {
+        /// <summary>
+        /// Constant IS_FALSE for BooleanComparisonType
+        /// </summary>
+        public static readonly BooleanComparisonType IS_FALSE = new BooleanComparisonType("IS_FALSE");
+
+        /// <summary>
+        /// Constant IS_TRUE for BooleanComparisonType
+        /// </summary>
+        public static readonly BooleanComparisonType IS_TRUE = new BooleanComparisonType("IS_TRUE");
+
+        /// <summary>
+        /// Constructs a custom BooleanComparisonType for a value not among the defined constants.
+        /// </summary>
+        public BooleanComparisonType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BooleanComparisonType FindValue(string value)
+        {
+            return FindValue<BooleanComparisonType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BooleanComparisonType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type Channel.
+    /// </summary>
+    public class Channel : ConstantClass
+    {
+        /// <summary>
+        /// Constant CHAT for Channel
+        /// </summary>
+        public static readonly Channel CHAT = new Channel("CHAT");
+
+        /// <summary>
+        /// Constant EMAIL for Channel
+        /// </summary>
+        public static readonly Channel EMAIL = new Channel("EMAIL");
+
+        /// <summary>
+        /// Constant TASK for Channel
+        /// </summary>
+        public static readonly Channel TASK = new Channel("TASK");
+
+        /// <summary>
+        /// Constant VOICE for Channel
+        /// </summary>
+        public static readonly Channel VOICE = new Channel("VOICE");
+
+        /// <summary>
+        /// Constructs a custom Channel for a value not among the defined constants.
+        /// </summary>
+        public Channel(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Channel FindValue(string value)
+        {
+            return FindValue<Channel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Channel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ChannelWorkloadBehaviorType.
+    /// </summary>
+    public class ChannelWorkloadBehaviorType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ROUTE_ANY_CHANNEL_ANY_WORKLOAD_TYPE for ChannelWorkloadBehaviorType
+        /// </summary>
+        public static readonly ChannelWorkloadBehaviorType ROUTE_ANY_CHANNEL_ANY_WORKLOAD_TYPE = new ChannelWorkloadBehaviorType("ROUTE_ANY_CHANNEL_ANY_WORKLOAD_TYPE");
+
+        /// <summary>
+        /// Constant ROUTE_CURRENT_CHANNEL_ANY_WORKLOADTYPE_ONLY for ChannelWorkloadBehaviorType
+        /// </summary>
+        public static readonly ChannelWorkloadBehaviorType ROUTE_CURRENT_CHANNEL_ANY_WORKLOADTYPE_ONLY = new ChannelWorkloadBehaviorType("ROUTE_CURRENT_CHANNEL_ANY_WORKLOADTYPE_ONLY");
+
+        /// <summary>
+        /// Constant ROUTE_CURRENT_CHANNEL_CURRENT_WORKLOADTYPE_ONLY for ChannelWorkloadBehaviorType
+        /// </summary>
+        public static readonly ChannelWorkloadBehaviorType ROUTE_CURRENT_CHANNEL_CURRENT_WORKLOADTYPE_ONLY = new ChannelWorkloadBehaviorType("ROUTE_CURRENT_CHANNEL_CURRENT_WORKLOADTYPE_ONLY");
+
+        /// <summary>
+        /// Constructs a custom ChannelWorkloadBehaviorType for a value not among the defined constants.
+        /// </summary>
+        public ChannelWorkloadBehaviorType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChannelWorkloadBehaviorType FindValue(string value)
+        {
+            return FindValue<ChannelWorkloadBehaviorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChannelWorkloadBehaviorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ChatEventType.
+    /// </summary>
+    public class ChatEventType : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISCONNECT for ChatEventType
+        /// </summary>
+        public static readonly ChatEventType DISCONNECT = new ChatEventType("DISCONNECT");
+
+        /// <summary>
+        /// Constant EVENT for ChatEventType
+        /// </summary>
+        public static readonly ChatEventType EVENT = new ChatEventType("EVENT");
+
+        /// <summary>
+        /// Constant MESSAGE for ChatEventType
+        /// </summary>
+        public static readonly ChatEventType MESSAGE = new ChatEventType("MESSAGE");
+
+        /// <summary>
+        /// Constructs a custom ChatEventType for a value not among the defined constants.
+        /// </summary>
+        public ChatEventType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChatEventType FindValue(string value)
+        {
+            return FindValue<ChatEventType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChatEventType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type Comparison.
+    /// </summary>
+    public class Comparison : ConstantClass
+    {
+        /// <summary>
+        /// Constant LT for Comparison
+        /// </summary>
+        public static readonly Comparison LT = new Comparison("LT");
+
+        /// <summary>
+        /// Constructs a custom Comparison for a value not among the defined constants.
+        /// </summary>
+        public Comparison(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Comparison FindValue(string value)
+        {
+            return FindValue<Comparison>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Comparison(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ConfigurableNotificationPriority.
+    /// </summary>
+    public class ConfigurableNotificationPriority : ConstantClass
+    {
+        /// <summary>
+        /// Constant HIGH for ConfigurableNotificationPriority
+        /// </summary>
+        public static readonly ConfigurableNotificationPriority HIGH = new ConfigurableNotificationPriority("HIGH");
+
+        /// <summary>
+        /// Constant LOW for ConfigurableNotificationPriority
+        /// </summary>
+        public static readonly ConfigurableNotificationPriority LOW = new ConfigurableNotificationPriority("LOW");
+
+        /// <summary>
+        /// Constructs a custom ConfigurableNotificationPriority for a value not among the defined constants.
+        /// </summary>
+        public ConfigurableNotificationPriority(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfigurableNotificationPriority FindValue(string value)
+        {
+            return FindValue<ConfigurableNotificationPriority>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfigurableNotificationPriority(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ConnectionType.
+    /// </summary>
+    public class ConnectionType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AUTHENTICATION_SESSION for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType AUTHENTICATION_SESSION = new ConnectionType("AUTHENTICATION_SESSION");
+
+        /// <summary>
+        /// Constant CONNECTION_CREDENTIALS for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType CONNECTION_CREDENTIALS = new ConnectionType("CONNECTION_CREDENTIALS");
+
+        /// <summary>
+        /// Constant WEBRTC_CONNECTION for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType WEBRTC_CONNECTION = new ConnectionType("WEBRTC_CONNECTION");
+
+        /// <summary>
+        /// Constant WEBSOCKET for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType WEBSOCKET = new ConnectionType("WEBSOCKET");
+
+        /// <summary>
+        /// Constructs a custom ConnectionType for a value not among the defined constants.
+        /// </summary>
+        public ConnectionType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectionType FindValue(string value)
+        {
+            return FindValue<ConnectionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ContactEvaluationAttributeComparisonType.
+    /// </summary>
+    public class ContactEvaluationAttributeComparisonType : ConstantClass
+    {
+        /// <summary>
+        /// Constant EXACT for ContactEvaluationAttributeComparisonType
+        /// </summary>
+        public static readonly ContactEvaluationAttributeComparisonType EXACT = new ContactEvaluationAttributeComparisonType("EXACT");
+
+        /// <summary>
+        /// Constructs a custom ContactEvaluationAttributeComparisonType for a value not among the defined constants.
+        /// </summary>
+        public ContactEvaluationAttributeComparisonType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContactEvaluationAttributeComparisonType FindValue(string value)
+        {
+            return FindValue<ContactEvaluationAttributeComparisonType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContactEvaluationAttributeComparisonType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ContactEvaluationAttributeKey.
+    /// </summary>
+    public class ContactEvaluationAttributeKey : ConstantClass
+    {
+        /// <summary>
+        /// Constant ContactAgentId for ContactEvaluationAttributeKey
+        /// </summary>
+        public static readonly ContactEvaluationAttributeKey ContactAgentId = new ContactEvaluationAttributeKey("ContactAgentId");
+
+        /// <summary>
+        /// Constructs a custom ContactEvaluationAttributeKey for a value not among the defined constants.
+        /// </summary>
+        public ContactEvaluationAttributeKey(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContactEvaluationAttributeKey FindValue(string value)
+        {
+            return FindValue<ContactEvaluationAttributeKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContactEvaluationAttributeKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ContactField.
+    /// </summary>
+    public class ContactField : ConstantClass
+    {
+        /// <summary>
+        /// Constant ADDITIONAL_EMAIL_RECIPIENTS for ContactField
+        /// </summary>
+        public static readonly ContactField ADDITIONAL_EMAIL_RECIPIENTS = new ContactField("ADDITIONAL_EMAIL_RECIPIENTS");
+
+        /// <summary>
+        /// Constant CUSTOMER_ENDPOINT for ContactField
+        /// </summary>
+        public static readonly ContactField CUSTOMER_ENDPOINT = new ContactField("CUSTOMER_ENDPOINT");
+
+        /// <summary>
+        /// Constant EMAIL_SUBJECT for ContactField
+        /// </summary>
+        public static readonly ContactField EMAIL_SUBJECT = new ContactField("EMAIL_SUBJECT");
+
+        /// <summary>
+        /// Constructs a custom ContactField for a value not among the defined constants.
+        /// </summary>
+        public ContactField(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContactField FindValue(string value)
+        {
+            return FindValue<ContactField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContactField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ContactFlowModuleState.
+    /// </summary>
+    public class ContactFlowModuleState : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for ContactFlowModuleState
+        /// </summary>
+        public static readonly ContactFlowModuleState ACTIVE = new ContactFlowModuleState("ACTIVE");
+
+        /// <summary>
+        /// Constant ARCHIVED for ContactFlowModuleState
+        /// </summary>
+        public static readonly ContactFlowModuleState ARCHIVED = new ContactFlowModuleState("ARCHIVED");
+
+        /// <summary>
+        /// Constructs a custom ContactFlowModuleState for a value not among the defined constants.
+        /// </summary>
+        public ContactFlowModuleState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContactFlowModuleState FindValue(string value)
+        {
+            return FindValue<ContactFlowModuleState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContactFlowModuleState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ContactFlowModuleStatus.
+    /// </summary>
+    public class ContactFlowModuleStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant PUBLISHED for ContactFlowModuleStatus
+        /// </summary>
+        public static readonly ContactFlowModuleStatus PUBLISHED = new ContactFlowModuleStatus("PUBLISHED");
+
+        /// <summary>
+        /// Constant SAVED for ContactFlowModuleStatus
+        /// </summary>
+        public static readonly ContactFlowModuleStatus SAVED = new ContactFlowModuleStatus("SAVED");
+
+        /// <summary>
+        /// Constructs a custom ContactFlowModuleStatus for a value not among the defined constants.
+        /// </summary>
+        public ContactFlowModuleStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContactFlowModuleStatus FindValue(string value)
+        {
+            return FindValue<ContactFlowModuleStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContactFlowModuleStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ContactFlowState.
+    /// </summary>
+    public class ContactFlowState : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for ContactFlowState
+        /// </summary>
+        public static readonly ContactFlowState ACTIVE = new ContactFlowState("ACTIVE");
+
+        /// <summary>
+        /// Constant ARCHIVED for ContactFlowState
+        /// </summary>
+        public static readonly ContactFlowState ARCHIVED = new ContactFlowState("ARCHIVED");
+
+        /// <summary>
+        /// Constructs a custom ContactFlowState for a value not among the defined constants.
+        /// </summary>
+        public ContactFlowState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContactFlowState FindValue(string value)
+        {
+            return FindValue<ContactFlowState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContactFlowState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ContactFlowStatus.
+    /// </summary>
+    public class ContactFlowStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant PUBLISHED for ContactFlowStatus
+        /// </summary>
+        public static readonly ContactFlowStatus PUBLISHED = new ContactFlowStatus("PUBLISHED");
+
+        /// <summary>
+        /// Constant SAVED for ContactFlowStatus
+        /// </summary>
+        public static readonly ContactFlowStatus SAVED = new ContactFlowStatus("SAVED");
+
+        /// <summary>
+        /// Constructs a custom ContactFlowStatus for a value not among the defined constants.
+        /// </summary>
+        public ContactFlowStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContactFlowStatus FindValue(string value)
+        {
+            return FindValue<ContactFlowStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContactFlowStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ContactFlowType.
+    /// </summary>
+    public class ContactFlowType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AGENT_HOLD for ContactFlowType
+        /// </summary>
+        public static readonly ContactFlowType AGENT_HOLD = new ContactFlowType("AGENT_HOLD");
+
+        /// <summary>
+        /// Constant AGENT_TRANSFER for ContactFlowType
+        /// </summary>
+        public static readonly ContactFlowType AGENT_TRANSFER = new ContactFlowType("AGENT_TRANSFER");
+
+        /// <summary>
+        /// Constant AGENT_WHISPER for ContactFlowType
+        /// </summary>
+        public static readonly ContactFlowType AGENT_WHISPER = new ContactFlowType("AGENT_WHISPER");
+
+        /// <summary>
+        /// Constant CAMPAIGN for ContactFlowType
+        /// </summary>
+        public static readonly ContactFlowType CAMPAIGN = new ContactFlowType("CAMPAIGN");
+
+        /// <summary>
+        /// Constant CONTACT_FLOW for ContactFlowType
+        /// </summary>
+        public static readonly ContactFlowType CONTACT_FLOW = new ContactFlowType("CONTACT_FLOW");
+
+        /// <summary>
+        /// Constant CUSTOMER_HOLD for ContactFlowType
+        /// </summary>
+        public static readonly ContactFlowType CUSTOMER_HOLD = new ContactFlowType("CUSTOMER_HOLD");
+
+        /// <summary>
+        /// Constant CUSTOMER_QUEUE for ContactFlowType
+        /// </summary>
+        public static readonly ContactFlowType CUSTOMER_QUEUE = new ContactFlowType("CUSTOMER_QUEUE");
+
+        /// <summary>
+        /// Constant CUSTOMER_WHISPER for ContactFlowType
+        /// </summary>
+        public static readonly ContactFlowType CUSTOMER_WHISPER = new ContactFlowType("CUSTOMER_WHISPER");
+
+        /// <summary>
+        /// Constant OUTBOUND_WHISPER for ContactFlowType
+        /// </summary>
+        public static readonly ContactFlowType OUTBOUND_WHISPER = new ContactFlowType("OUTBOUND_WHISPER");
+
+        /// <summary>
+        /// Constant QUEUE_TRANSFER for ContactFlowType
+        /// </summary>
+        public static readonly ContactFlowType QUEUE_TRANSFER = new ContactFlowType("QUEUE_TRANSFER");
+
+        /// <summary>
+        /// Constructs a custom ContactFlowType for a value not among the defined constants.
+        /// </summary>
+        public ContactFlowType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContactFlowType FindValue(string value)
+        {
+            return FindValue<ContactFlowType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContactFlowType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ContactInitiationMethod.
+    /// </summary>
+    public class ContactInitiationMethod : ConstantClass
+    {
+        /// <summary>
+        /// Constant AGENT_REPLY for ContactInitiationMethod
+        /// </summary>
+        public static readonly ContactInitiationMethod AGENT_REPLY = new ContactInitiationMethod("AGENT_REPLY");
+
+        /// <summary>
+        /// Constant API for ContactInitiationMethod
+        /// </summary>
+        public static readonly ContactInitiationMethod API = new ContactInitiationMethod("API");
+
+        /// <summary>
+        /// Constant CALLBACK for ContactInitiationMethod
+        /// </summary>
+        public static readonly ContactInitiationMethod CALLBACK = new ContactInitiationMethod("CALLBACK");
+
+        /// <summary>
+        /// Constant DISCONNECT for ContactInitiationMethod
+        /// </summary>
+        public static readonly ContactInitiationMethod DISCONNECT = new ContactInitiationMethod("DISCONNECT");
+
+        /// <summary>
+        /// Constant EXTERNAL_OUTBOUND for ContactInitiationMethod
+        /// </summary>
+        public static readonly ContactInitiationMethod EXTERNAL_OUTBOUND = new ContactInitiationMethod("EXTERNAL_OUTBOUND");
+
+        /// <summary>
+        /// Constant FLOW for ContactInitiationMethod
+        /// </summary>
+        public static readonly ContactInitiationMethod FLOW = new ContactInitiationMethod("FLOW");
+
+        /// <summary>
+        /// Constant INBOUND for ContactInitiationMethod
+        /// </summary>
+        public static readonly ContactInitiationMethod INBOUND = new ContactInitiationMethod("INBOUND");
+
+        /// <summary>
+        /// Constant MONITOR for ContactInitiationMethod
+        /// </summary>
+        public static readonly ContactInitiationMethod MONITOR = new ContactInitiationMethod("MONITOR");
+
+        /// <summary>
+        /// Constant OUTBOUND for ContactInitiationMethod
+        /// </summary>
+        public static readonly ContactInitiationMethod OUTBOUND = new ContactInitiationMethod("OUTBOUND");
+
+        /// <summary>
+        /// Constant QUEUE_TRANSFER for ContactInitiationMethod
+        /// </summary>
+        public static readonly ContactInitiationMethod QUEUE_TRANSFER = new ContactInitiationMethod("QUEUE_TRANSFER");
+
+        /// <summary>
+        /// Constant TRANSFER for ContactInitiationMethod
+        /// </summary>
+        public static readonly ContactInitiationMethod TRANSFER = new ContactInitiationMethod("TRANSFER");
+
+        /// <summary>
+        /// Constant WEBRTC_API for ContactInitiationMethod
+        /// </summary>
+        public static readonly ContactInitiationMethod WEBRTC_API = new ContactInitiationMethod("WEBRTC_API");
+
+        /// <summary>
+        /// Constructs a custom ContactInitiationMethod for a value not among the defined constants.
+        /// </summary>
+        public ContactInitiationMethod(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContactInitiationMethod FindValue(string value)
+        {
+            return FindValue<ContactInitiationMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContactInitiationMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ContactInteractionType.
+    /// </summary>
+    public class ContactInteractionType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AGENT for ContactInteractionType
+        /// </summary>
+        public static readonly ContactInteractionType AGENT = new ContactInteractionType("AGENT");
+
+        /// <summary>
+        /// Constant AUTOMATED for ContactInteractionType
+        /// </summary>
+        public static readonly ContactInteractionType AUTOMATED = new ContactInteractionType("AUTOMATED");
+
+        /// <summary>
+        /// Constant CUSTOMER for ContactInteractionType
+        /// </summary>
+        public static readonly ContactInteractionType CUSTOMER = new ContactInteractionType("CUSTOMER");
+
+        /// <summary>
+        /// Constructs a custom ContactInteractionType for a value not among the defined constants.
+        /// </summary>
+        public ContactInteractionType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContactInteractionType FindValue(string value)
+        {
+            return FindValue<ContactInteractionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContactInteractionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ContactMediaProcessingFailureMode.
+    /// </summary>
+    public class ContactMediaProcessingFailureMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant DELIVER_UNPROCESSED_MESSAGE for ContactMediaProcessingFailureMode
+        /// </summary>
+        public static readonly ContactMediaProcessingFailureMode DELIVER_UNPROCESSED_MESSAGE = new ContactMediaProcessingFailureMode("DELIVER_UNPROCESSED_MESSAGE");
+
+        /// <summary>
+        /// Constant DO_NOT_DELIVER_UNPROCESSED_MESSAGE for ContactMediaProcessingFailureMode
+        /// </summary>
+        public static readonly ContactMediaProcessingFailureMode DO_NOT_DELIVER_UNPROCESSED_MESSAGE = new ContactMediaProcessingFailureMode("DO_NOT_DELIVER_UNPROCESSED_MESSAGE");
+
+        /// <summary>
+        /// Constructs a custom ContactMediaProcessingFailureMode for a value not among the defined constants.
+        /// </summary>
+        public ContactMediaProcessingFailureMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContactMediaProcessingFailureMode FindValue(string value)
+        {
+            return FindValue<ContactMediaProcessingFailureMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContactMediaProcessingFailureMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ContactMetricName.
+    /// </summary>
+    public class ContactMetricName : ConstantClass
+    {
+        /// <summary>
+        /// Constant ESTIMATED_WAIT_TIME for ContactMetricName
+        /// </summary>
+        public static readonly ContactMetricName ESTIMATED_WAIT_TIME = new ContactMetricName("ESTIMATED_WAIT_TIME");
+
+        /// <summary>
+        /// Constant POSITION_IN_QUEUE for ContactMetricName
+        /// </summary>
+        public static readonly ContactMetricName POSITION_IN_QUEUE = new ContactMetricName("POSITION_IN_QUEUE");
+
+        /// <summary>
+        /// Constructs a custom ContactMetricName for a value not among the defined constants.
+        /// </summary>
+        public ContactMetricName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContactMetricName FindValue(string value)
+        {
+            return FindValue<ContactMetricName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContactMetricName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ContactParticipantRole.
+    /// </summary>
+    public class ContactParticipantRole : ConstantClass
+    {
+        /// <summary>
+        /// Constant AGENT for ContactParticipantRole
+        /// </summary>
+        public static readonly ContactParticipantRole AGENT = new ContactParticipantRole("AGENT");
+
+        /// <summary>
+        /// Constant CUSTOMER for ContactParticipantRole
+        /// </summary>
+        public static readonly ContactParticipantRole CUSTOMER = new ContactParticipantRole("CUSTOMER");
+
+        /// <summary>
+        /// Constant CUSTOM_BOT for ContactParticipantRole
+        /// </summary>
+        public static readonly ContactParticipantRole CUSTOM_BOT = new ContactParticipantRole("CUSTOM_BOT");
+
+        /// <summary>
+        /// Constant SYSTEM for ContactParticipantRole
+        /// </summary>
+        public static readonly ContactParticipantRole SYSTEM = new ContactParticipantRole("SYSTEM");
+
+        /// <summary>
+        /// Constructs a custom ContactParticipantRole for a value not among the defined constants.
+        /// </summary>
+        public ContactParticipantRole(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContactParticipantRole FindValue(string value)
+        {
+            return FindValue<ContactParticipantRole>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContactParticipantRole(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ContactRecordingType.
+    /// </summary>
+    public class ContactRecordingType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AGENT for ContactRecordingType
+        /// </summary>
+        public static readonly ContactRecordingType AGENT = new ContactRecordingType("AGENT");
+
+        /// <summary>
+        /// Constant IVR for ContactRecordingType
+        /// </summary>
+        public static readonly ContactRecordingType IVR = new ContactRecordingType("IVR");
+
+        /// <summary>
+        /// Constant SCREEN for ContactRecordingType
+        /// </summary>
+        public static readonly ContactRecordingType SCREEN = new ContactRecordingType("SCREEN");
+
+        /// <summary>
+        /// Constructs a custom ContactRecordingType for a value not among the defined constants.
+        /// </summary>
+        public ContactRecordingType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContactRecordingType FindValue(string value)
+        {
+            return FindValue<ContactRecordingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContactRecordingType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ContactState.
+    /// </summary>
+    public class ContactState : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONNECTED for ContactState
+        /// </summary>
+        public static readonly ContactState CONNECTED = new ContactState("CONNECTED");
+
+        /// <summary>
+        /// Constant CONNECTED_ONHOLD for ContactState
+        /// </summary>
+        public static readonly ContactState CONNECTED_ONHOLD = new ContactState("CONNECTED_ONHOLD");
+
+        /// <summary>
+        /// Constant CONNECTING for ContactState
+        /// </summary>
+        public static readonly ContactState CONNECTING = new ContactState("CONNECTING");
+
+        /// <summary>
+        /// Constant ENDED for ContactState
+        /// </summary>
+        public static readonly ContactState ENDED = new ContactState("ENDED");
+
+        /// <summary>
+        /// Constant ERROR for ContactState
+        /// </summary>
+        public static readonly ContactState ERROR = new ContactState("ERROR");
+
+        /// <summary>
+        /// Constant INCOMING for ContactState
+        /// </summary>
+        public static readonly ContactState INCOMING = new ContactState("INCOMING");
+
+        /// <summary>
+        /// Constant MISSED for ContactState
+        /// </summary>
+        public static readonly ContactState MISSED = new ContactState("MISSED");
+
+        /// <summary>
+        /// Constant PENDING for ContactState
+        /// </summary>
+        public static readonly ContactState PENDING = new ContactState("PENDING");
+
+        /// <summary>
+        /// Constant REJECTED for ContactState
+        /// </summary>
+        public static readonly ContactState REJECTED = new ContactState("REJECTED");
+
+        /// <summary>
+        /// Constructs a custom ContactState for a value not among the defined constants.
+        /// </summary>
+        public ContactState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContactState FindValue(string value)
+        {
+            return FindValue<ContactState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContactState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ContentDisposition.
+    /// </summary>
+    public class ContentDisposition : ConstantClass
+    {
+        /// <summary>
+        /// Constant ATTACHMENT for ContentDisposition
+        /// </summary>
+        public static readonly ContentDisposition ATTACHMENT = new ContentDisposition("ATTACHMENT");
+
+        /// <summary>
+        /// Constant INLINE for ContentDisposition
+        /// </summary>
+        public static readonly ContentDisposition INLINE = new ContentDisposition("INLINE");
+
+        /// <summary>
+        /// Constructs a custom ContentDisposition for a value not among the defined constants.
+        /// </summary>
+        public ContentDisposition(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContentDisposition FindValue(string value)
+        {
+            return FindValue<ContentDisposition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContentDisposition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type CurrentMetricName.
+    /// </summary>
+    public class CurrentMetricName : ConstantClass
+    {
+        /// <summary>
+        /// Constant AGENTS_AFTER_CONTACT_WORK for CurrentMetricName
+        /// </summary>
+        public static readonly CurrentMetricName AGENTS_AFTER_CONTACT_WORK = new CurrentMetricName("AGENTS_AFTER_CONTACT_WORK");
+
+        /// <summary>
+        /// Constant AGENTS_AVAILABLE for CurrentMetricName
+        /// </summary>
+        public static readonly CurrentMetricName AGENTS_AVAILABLE = new CurrentMetricName("AGENTS_AVAILABLE");
+
+        /// <summary>
+        /// Constant AGENTS_ERROR for CurrentMetricName
+        /// </summary>
+        public static readonly CurrentMetricName AGENTS_ERROR = new CurrentMetricName("AGENTS_ERROR");
+
+        /// <summary>
+        /// Constant AGENTS_NON_PRODUCTIVE for CurrentMetricName
+        /// </summary>
+        public static readonly CurrentMetricName AGENTS_NON_PRODUCTIVE = new CurrentMetricName("AGENTS_NON_PRODUCTIVE");
+
+        /// <summary>
+        /// Constant AGENTS_ONLINE for CurrentMetricName
+        /// </summary>
+        public static readonly CurrentMetricName AGENTS_ONLINE = new CurrentMetricName("AGENTS_ONLINE");
+
+        /// <summary>
+        /// Constant AGENTS_ON_CALL for CurrentMetricName
+        /// </summary>
+        public static readonly CurrentMetricName AGENTS_ON_CALL = new CurrentMetricName("AGENTS_ON_CALL");
+
+        /// <summary>
+        /// Constant AGENTS_ON_CONTACT for CurrentMetricName
+        /// </summary>
+        public static readonly CurrentMetricName AGENTS_ON_CONTACT = new CurrentMetricName("AGENTS_ON_CONTACT");
+
+        /// <summary>
+        /// Constant AGENTS_STAFFED for CurrentMetricName
+        /// </summary>
+        public static readonly CurrentMetricName AGENTS_STAFFED = new CurrentMetricName("AGENTS_STAFFED");
+
+        /// <summary>
+        /// Constant CONTACTS_IN_QUEUE for CurrentMetricName
+        /// </summary>
+        public static readonly CurrentMetricName CONTACTS_IN_QUEUE = new CurrentMetricName("CONTACTS_IN_QUEUE");
+
+        /// <summary>
+        /// Constant CONTACTS_SCHEDULED for CurrentMetricName
+        /// </summary>
+        public static readonly CurrentMetricName CONTACTS_SCHEDULED = new CurrentMetricName("CONTACTS_SCHEDULED");
+
+        /// <summary>
+        /// Constant ESTIMATED_WAIT_TIME for CurrentMetricName
+        /// </summary>
+        public static readonly CurrentMetricName ESTIMATED_WAIT_TIME = new CurrentMetricName("ESTIMATED_WAIT_TIME");
+
+        /// <summary>
+        /// Constant OLDEST_CONTACT_AGE for CurrentMetricName
+        /// </summary>
+        public static readonly CurrentMetricName OLDEST_CONTACT_AGE = new CurrentMetricName("OLDEST_CONTACT_AGE");
+
+        /// <summary>
+        /// Constant SLOTS_ACTIVE for CurrentMetricName
+        /// </summary>
+        public static readonly CurrentMetricName SLOTS_ACTIVE = new CurrentMetricName("SLOTS_ACTIVE");
+
+        /// <summary>
+        /// Constant SLOTS_AVAILABLE for CurrentMetricName
+        /// </summary>
+        public static readonly CurrentMetricName SLOTS_AVAILABLE = new CurrentMetricName("SLOTS_AVAILABLE");
+
+        /// <summary>
+        /// Constructs a custom CurrentMetricName for a value not among the defined constants.
+        /// </summary>
+        public CurrentMetricName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CurrentMetricName FindValue(string value)
+        {
+            return FindValue<CurrentMetricName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CurrentMetricName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DataTableAttributeValueType.
+    /// </summary>
+    public class DataTableAttributeValueType : ConstantClass
+    {
+        /// <summary>
+        /// Constant BOOLEAN for DataTableAttributeValueType
+        /// </summary>
+        public static readonly DataTableAttributeValueType BOOLEAN = new DataTableAttributeValueType("BOOLEAN");
+
+        /// <summary>
+        /// Constant NUMBER for DataTableAttributeValueType
+        /// </summary>
+        public static readonly DataTableAttributeValueType NUMBER = new DataTableAttributeValueType("NUMBER");
+
+        /// <summary>
+        /// Constant NUMBER_LIST for DataTableAttributeValueType
+        /// </summary>
+        public static readonly DataTableAttributeValueType NUMBER_LIST = new DataTableAttributeValueType("NUMBER_LIST");
+
+        /// <summary>
+        /// Constant TEXT for DataTableAttributeValueType
+        /// </summary>
+        public static readonly DataTableAttributeValueType TEXT = new DataTableAttributeValueType("TEXT");
+
+        /// <summary>
+        /// Constant TEXT_LIST for DataTableAttributeValueType
+        /// </summary>
+        public static readonly DataTableAttributeValueType TEXT_LIST = new DataTableAttributeValueType("TEXT_LIST");
+
+        /// <summary>
+        /// Constructs a custom DataTableAttributeValueType for a value not among the defined constants.
+        /// </summary>
+        public DataTableAttributeValueType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataTableAttributeValueType FindValue(string value)
+        {
+            return FindValue<DataTableAttributeValueType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataTableAttributeValueType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DataTableLockLevel.
+    /// </summary>
+    public class DataTableLockLevel : ConstantClass
+    {
+        /// <summary>
+        /// Constant ATTRIBUTE for DataTableLockLevel
+        /// </summary>
+        public static readonly DataTableLockLevel ATTRIBUTE = new DataTableLockLevel("ATTRIBUTE");
+
+        /// <summary>
+        /// Constant DATA_TABLE for DataTableLockLevel
+        /// </summary>
+        public static readonly DataTableLockLevel DATA_TABLE = new DataTableLockLevel("DATA_TABLE");
+
+        /// <summary>
+        /// Constant NONE for DataTableLockLevel
+        /// </summary>
+        public static readonly DataTableLockLevel NONE = new DataTableLockLevel("NONE");
+
+        /// <summary>
+        /// Constant PRIMARY_VALUE for DataTableLockLevel
+        /// </summary>
+        public static readonly DataTableLockLevel PRIMARY_VALUE = new DataTableLockLevel("PRIMARY_VALUE");
+
+        /// <summary>
+        /// Constant VALUE for DataTableLockLevel
+        /// </summary>
+        public static readonly DataTableLockLevel VALUE = new DataTableLockLevel("VALUE");
+
+        /// <summary>
+        /// Constructs a custom DataTableLockLevel for a value not among the defined constants.
+        /// </summary>
+        public DataTableLockLevel(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataTableLockLevel FindValue(string value)
+        {
+            return FindValue<DataTableLockLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataTableLockLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DataTableStatus.
+    /// </summary>
+    public class DataTableStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant PUBLISHED for DataTableStatus
+        /// </summary>
+        public static readonly DataTableStatus PUBLISHED = new DataTableStatus("PUBLISHED");
+
+        /// <summary>
+        /// Constructs a custom DataTableStatus for a value not among the defined constants.
+        /// </summary>
+        public DataTableStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataTableStatus FindValue(string value)
+        {
+            return FindValue<DataTableStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataTableStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DateComparisonType.
+    /// </summary>
+    public class DateComparisonType : ConstantClass
+    {
+        /// <summary>
+        /// Constant EQUAL_TO for DateComparisonType
+        /// </summary>
+        public static readonly DateComparisonType EQUAL_TO = new DateComparisonType("EQUAL_TO");
+
+        /// <summary>
+        /// Constant GREATER_THAN for DateComparisonType
+        /// </summary>
+        public static readonly DateComparisonType GREATER_THAN = new DateComparisonType("GREATER_THAN");
+
+        /// <summary>
+        /// Constant GREATER_THAN_OR_EQUAL_TO for DateComparisonType
+        /// </summary>
+        public static readonly DateComparisonType GREATER_THAN_OR_EQUAL_TO = new DateComparisonType("GREATER_THAN_OR_EQUAL_TO");
+
+        /// <summary>
+        /// Constant LESS_THAN for DateComparisonType
+        /// </summary>
+        public static readonly DateComparisonType LESS_THAN = new DateComparisonType("LESS_THAN");
+
+        /// <summary>
+        /// Constant LESS_THAN_OR_EQUAL_TO for DateComparisonType
+        /// </summary>
+        public static readonly DateComparisonType LESS_THAN_OR_EQUAL_TO = new DateComparisonType("LESS_THAN_OR_EQUAL_TO");
+
+        /// <summary>
+        /// Constructs a custom DateComparisonType for a value not among the defined constants.
+        /// </summary>
+        public DateComparisonType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DateComparisonType FindValue(string value)
+        {
+            return FindValue<DateComparisonType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DateComparisonType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DateTimeComparisonType.
+    /// </summary>
+    public class DateTimeComparisonType : ConstantClass
+    {
+        /// <summary>
+        /// Constant EQUAL_TO for DateTimeComparisonType
+        /// </summary>
+        public static readonly DateTimeComparisonType EQUAL_TO = new DateTimeComparisonType("EQUAL_TO");
+
+        /// <summary>
+        /// Constant GREATER_THAN for DateTimeComparisonType
+        /// </summary>
+        public static readonly DateTimeComparisonType GREATER_THAN = new DateTimeComparisonType("GREATER_THAN");
+
+        /// <summary>
+        /// Constant GREATER_THAN_OR_EQUAL_TO for DateTimeComparisonType
+        /// </summary>
+        public static readonly DateTimeComparisonType GREATER_THAN_OR_EQUAL_TO = new DateTimeComparisonType("GREATER_THAN_OR_EQUAL_TO");
+
+        /// <summary>
+        /// Constant LESS_THAN for DateTimeComparisonType
+        /// </summary>
+        public static readonly DateTimeComparisonType LESS_THAN = new DateTimeComparisonType("LESS_THAN");
+
+        /// <summary>
+        /// Constant LESS_THAN_OR_EQUAL_TO for DateTimeComparisonType
+        /// </summary>
+        public static readonly DateTimeComparisonType LESS_THAN_OR_EQUAL_TO = new DateTimeComparisonType("LESS_THAN_OR_EQUAL_TO");
+
+        /// <summary>
+        /// Constant RANGE for DateTimeComparisonType
+        /// </summary>
+        public static readonly DateTimeComparisonType RANGE = new DateTimeComparisonType("RANGE");
+
+        /// <summary>
+        /// Constructs a custom DateTimeComparisonType for a value not among the defined constants.
+        /// </summary>
+        public DateTimeComparisonType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DateTimeComparisonType FindValue(string value)
+        {
+            return FindValue<DateTimeComparisonType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DateTimeComparisonType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DecimalComparisonType.
+    /// </summary>
+    public class DecimalComparisonType : ConstantClass
+    {
+        /// <summary>
+        /// Constant EQUAL for DecimalComparisonType
+        /// </summary>
+        public static readonly DecimalComparisonType EQUAL = new DecimalComparisonType("EQUAL");
+
+        /// <summary>
+        /// Constant GREATER for DecimalComparisonType
+        /// </summary>
+        public static readonly DecimalComparisonType GREATER = new DecimalComparisonType("GREATER");
+
+        /// <summary>
+        /// Constant GREATER_OR_EQUAL for DecimalComparisonType
+        /// </summary>
+        public static readonly DecimalComparisonType GREATER_OR_EQUAL = new DecimalComparisonType("GREATER_OR_EQUAL");
+
+        /// <summary>
+        /// Constant LESSER for DecimalComparisonType
+        /// </summary>
+        public static readonly DecimalComparisonType LESSER = new DecimalComparisonType("LESSER");
+
+        /// <summary>
+        /// Constant LESSER_OR_EQUAL for DecimalComparisonType
+        /// </summary>
+        public static readonly DecimalComparisonType LESSER_OR_EQUAL = new DecimalComparisonType("LESSER_OR_EQUAL");
+
+        /// <summary>
+        /// Constant NOT_EQUAL for DecimalComparisonType
+        /// </summary>
+        public static readonly DecimalComparisonType NOT_EQUAL = new DecimalComparisonType("NOT_EQUAL");
+
+        /// <summary>
+        /// Constant RANGE for DecimalComparisonType
+        /// </summary>
+        public static readonly DecimalComparisonType RANGE = new DecimalComparisonType("RANGE");
+
+        /// <summary>
+        /// Constructs a custom DecimalComparisonType for a value not among the defined constants.
+        /// </summary>
+        public DecimalComparisonType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DecimalComparisonType FindValue(string value)
+        {
+            return FindValue<DecimalComparisonType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DecimalComparisonType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DeviceType.
+    /// </summary>
+    public class DeviceType : ConstantClass
+    {
+        /// <summary>
+        /// Constant APNS for DeviceType
+        /// </summary>
+        public static readonly DeviceType APNS = new DeviceType("APNS");
+
+        /// <summary>
+        /// Constant APNS_SANDBOX for DeviceType
+        /// </summary>
+        public static readonly DeviceType APNS_SANDBOX = new DeviceType("APNS_SANDBOX");
+
+        /// <summary>
+        /// Constant GCM for DeviceType
+        /// </summary>
+        public static readonly DeviceType GCM = new DeviceType("GCM");
+
+        /// <summary>
+        /// Constructs a custom DeviceType for a value not among the defined constants.
+        /// </summary>
+        public DeviceType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeviceType FindValue(string value)
+        {
+            return FindValue<DeviceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeviceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DirectoryType.
+    /// </summary>
+    public class DirectoryType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONNECT_MANAGED for DirectoryType
+        /// </summary>
+        public static readonly DirectoryType CONNECT_MANAGED = new DirectoryType("CONNECT_MANAGED");
+
+        /// <summary>
+        /// Constant EXISTING_DIRECTORY for DirectoryType
+        /// </summary>
+        public static readonly DirectoryType EXISTING_DIRECTORY = new DirectoryType("EXISTING_DIRECTORY");
+
+        /// <summary>
+        /// Constant SAML for DirectoryType
+        /// </summary>
+        public static readonly DirectoryType SAML = new DirectoryType("SAML");
+
+        /// <summary>
+        /// Constructs a custom DirectoryType for a value not among the defined constants.
+        /// </summary>
+        public DirectoryType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DirectoryType FindValue(string value)
+        {
+            return FindValue<DirectoryType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DirectoryType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DisconnectOnCustomerExitParticipantType.
+    /// </summary>
+    public class DisconnectOnCustomerExitParticipantType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AGENT for DisconnectOnCustomerExitParticipantType
+        /// </summary>
+        public static readonly DisconnectOnCustomerExitParticipantType AGENT = new DisconnectOnCustomerExitParticipantType("AGENT");
+
+        /// <summary>
+        /// Constructs a custom DisconnectOnCustomerExitParticipantType for a value not among the defined constants.
+        /// </summary>
+        public DisconnectOnCustomerExitParticipantType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DisconnectOnCustomerExitParticipantType FindValue(string value)
+        {
+            return FindValue<DisconnectOnCustomerExitParticipantType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DisconnectOnCustomerExitParticipantType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EmailHeaderType.
+    /// </summary>
+    public class EmailHeaderType : ConstantClass
+    {
+        /// <summary>
+        /// Constant IN_REPLY_TO for EmailHeaderType
+        /// </summary>
+        public static readonly EmailHeaderType IN_REPLY_TO = new EmailHeaderType("IN_REPLY_TO");
+
+        /// <summary>
+        /// Constant MESSAGE_ID for EmailHeaderType
+        /// </summary>
+        public static readonly EmailHeaderType MESSAGE_ID = new EmailHeaderType("MESSAGE_ID");
+
+        /// <summary>
+        /// Constant REFERENCES for EmailHeaderType
+        /// </summary>
+        public static readonly EmailHeaderType REFERENCES = new EmailHeaderType("REFERENCES");
+
+        /// <summary>
+        /// Constant X_SES_SPAM_VERDICT for EmailHeaderType
+        /// </summary>
+        public static readonly EmailHeaderType X_SES_SPAM_VERDICT = new EmailHeaderType("X_SES_SPAM_VERDICT");
+
+        /// <summary>
+        /// Constant X_SES_VIRUS_VERDICT for EmailHeaderType
+        /// </summary>
+        public static readonly EmailHeaderType X_SES_VIRUS_VERDICT = new EmailHeaderType("X_SES_VIRUS_VERDICT");
+
+        /// <summary>
+        /// Constructs a custom EmailHeaderType for a value not among the defined constants.
+        /// </summary>
+        public EmailHeaderType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EmailHeaderType FindValue(string value)
+        {
+            return FindValue<EmailHeaderType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EmailHeaderType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EncryptionType.
+    /// </summary>
+    public class EncryptionType : ConstantClass
+    {
+        /// <summary>
+        /// Constant KMS for EncryptionType
+        /// </summary>
+        public static readonly EncryptionType KMS = new EncryptionType("KMS");
+
+        /// <summary>
+        /// Constructs a custom EncryptionType for a value not among the defined constants.
+        /// </summary>
+        public EncryptionType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EncryptionType FindValue(string value)
+        {
+            return FindValue<EncryptionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EncryptionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EndpointType.
+    /// </summary>
+    public class EndpointType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONNECT_PHONENUMBER_ARN for EndpointType
+        /// </summary>
+        public static readonly EndpointType CONNECT_PHONENUMBER_ARN = new EndpointType("CONNECT_PHONENUMBER_ARN");
+
+        /// <summary>
+        /// Constant CONTACT_FLOW for EndpointType
+        /// </summary>
+        public static readonly EndpointType CONTACT_FLOW = new EndpointType("CONTACT_FLOW");
+
+        /// <summary>
+        /// Constant EMAIL_ADDRESS for EndpointType
+        /// </summary>
+        public static readonly EndpointType EMAIL_ADDRESS = new EndpointType("EMAIL_ADDRESS");
+
+        /// <summary>
+        /// Constant TELEPHONE_NUMBER for EndpointType
+        /// </summary>
+        public static readonly EndpointType TELEPHONE_NUMBER = new EndpointType("TELEPHONE_NUMBER");
+
+        /// <summary>
+        /// Constant VOIP for EndpointType
+        /// </summary>
+        public static readonly EndpointType VOIP = new EndpointType("VOIP");
+
+        /// <summary>
+        /// Constructs a custom EndpointType for a value not among the defined constants.
+        /// </summary>
+        public EndpointType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EndpointType FindValue(string value)
+        {
+            return FindValue<EndpointType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EndpointType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EntityType.
+    /// </summary>
+    public class EntityType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AI_AGENT for EntityType
+        /// </summary>
+        public static readonly EntityType AI_AGENT = new EntityType("AI_AGENT");
+
+        /// <summary>
+        /// Constant USER for EntityType
+        /// </summary>
+        public static readonly EntityType USER = new EntityType("USER");
+
+        /// <summary>
+        /// Constructs a custom EntityType for a value not among the defined constants.
+        /// </summary>
+        public EntityType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EntityType FindValue(string value)
+        {
+            return FindValue<EntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EntityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EvaluationFormAIVersionStatus.
+    /// </summary>
+    public class EvaluationFormAIVersionStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for EvaluationFormAIVersionStatus
+        /// </summary>
+        public static readonly EvaluationFormAIVersionStatus ACTIVE = new EvaluationFormAIVersionStatus("ACTIVE");
+
+        /// <summary>
+        /// Constant DEPRECATED for EvaluationFormAIVersionStatus
+        /// </summary>
+        public static readonly EvaluationFormAIVersionStatus DEPRECATED = new EvaluationFormAIVersionStatus("DEPRECATED");
+
+        /// <summary>
+        /// Constant LATEST for EvaluationFormAIVersionStatus
+        /// </summary>
+        public static readonly EvaluationFormAIVersionStatus LATEST = new EvaluationFormAIVersionStatus("LATEST");
+
+        /// <summary>
+        /// Constant PREVIEW for EvaluationFormAIVersionStatus
+        /// </summary>
+        public static readonly EvaluationFormAIVersionStatus PREVIEW = new EvaluationFormAIVersionStatus("PREVIEW");
+
+        /// <summary>
+        /// Constructs a custom EvaluationFormAIVersionStatus for a value not among the defined constants.
+        /// </summary>
+        public EvaluationFormAIVersionStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationFormAIVersionStatus FindValue(string value)
+        {
+            return FindValue<EvaluationFormAIVersionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationFormAIVersionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EvaluationFormItemEnablementAction.
+    /// </summary>
+    public class EvaluationFormItemEnablementAction : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLE for EvaluationFormItemEnablementAction
+        /// </summary>
+        public static readonly EvaluationFormItemEnablementAction DISABLE = new EvaluationFormItemEnablementAction("DISABLE");
+
+        /// <summary>
+        /// Constant ENABLE for EvaluationFormItemEnablementAction
+        /// </summary>
+        public static readonly EvaluationFormItemEnablementAction ENABLE = new EvaluationFormItemEnablementAction("ENABLE");
+
+        /// <summary>
+        /// Constructs a custom EvaluationFormItemEnablementAction for a value not among the defined constants.
+        /// </summary>
+        public EvaluationFormItemEnablementAction(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationFormItemEnablementAction FindValue(string value)
+        {
+            return FindValue<EvaluationFormItemEnablementAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationFormItemEnablementAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EvaluationFormItemEnablementOperator.
+    /// </summary>
+    public class EvaluationFormItemEnablementOperator : ConstantClass
+    {
+        /// <summary>
+        /// Constant AND for EvaluationFormItemEnablementOperator
+        /// </summary>
+        public static readonly EvaluationFormItemEnablementOperator AND = new EvaluationFormItemEnablementOperator("AND");
+
+        /// <summary>
+        /// Constant OR for EvaluationFormItemEnablementOperator
+        /// </summary>
+        public static readonly EvaluationFormItemEnablementOperator OR = new EvaluationFormItemEnablementOperator("OR");
+
+        /// <summary>
+        /// Constructs a custom EvaluationFormItemEnablementOperator for a value not among the defined constants.
+        /// </summary>
+        public EvaluationFormItemEnablementOperator(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationFormItemEnablementOperator FindValue(string value)
+        {
+            return FindValue<EvaluationFormItemEnablementOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationFormItemEnablementOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EvaluationFormItemEnablementSourceType.
+    /// </summary>
+    public class EvaluationFormItemEnablementSourceType : ConstantClass
+    {
+        /// <summary>
+        /// Constant QUESTION_REF_ID for EvaluationFormItemEnablementSourceType
+        /// </summary>
+        public static readonly EvaluationFormItemEnablementSourceType QUESTION_REF_ID = new EvaluationFormItemEnablementSourceType("QUESTION_REF_ID");
+
+        /// <summary>
+        /// Constructs a custom EvaluationFormItemEnablementSourceType for a value not among the defined constants.
+        /// </summary>
+        public EvaluationFormItemEnablementSourceType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationFormItemEnablementSourceType FindValue(string value)
+        {
+            return FindValue<EvaluationFormItemEnablementSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationFormItemEnablementSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EvaluationFormItemEnablementSourceValueType.
+    /// </summary>
+    public class EvaluationFormItemEnablementSourceValueType : ConstantClass
+    {
+        /// <summary>
+        /// Constant OPTION_REF_ID for EvaluationFormItemEnablementSourceValueType
+        /// </summary>
+        public static readonly EvaluationFormItemEnablementSourceValueType OPTION_REF_ID = new EvaluationFormItemEnablementSourceValueType("OPTION_REF_ID");
+
+        /// <summary>
+        /// Constructs a custom EvaluationFormItemEnablementSourceValueType for a value not among the defined constants.
+        /// </summary>
+        public EvaluationFormItemEnablementSourceValueType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationFormItemEnablementSourceValueType FindValue(string value)
+        {
+            return FindValue<EvaluationFormItemEnablementSourceValueType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationFormItemEnablementSourceValueType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EvaluationFormItemSourceValuesComparator.
+    /// </summary>
+    public class EvaluationFormItemSourceValuesComparator : ConstantClass
+    {
+        /// <summary>
+        /// Constant ALL_IN for EvaluationFormItemSourceValuesComparator
+        /// </summary>
+        public static readonly EvaluationFormItemSourceValuesComparator ALL_IN = new EvaluationFormItemSourceValuesComparator("ALL_IN");
+
+        /// <summary>
+        /// Constant EXACT for EvaluationFormItemSourceValuesComparator
+        /// </summary>
+        public static readonly EvaluationFormItemSourceValuesComparator EXACT = new EvaluationFormItemSourceValuesComparator("EXACT");
+
+        /// <summary>
+        /// Constant IN for EvaluationFormItemSourceValuesComparator
+        /// </summary>
+        public static readonly EvaluationFormItemSourceValuesComparator IN = new EvaluationFormItemSourceValuesComparator("IN");
+
+        /// <summary>
+        /// Constant NOT_IN for EvaluationFormItemSourceValuesComparator
+        /// </summary>
+        public static readonly EvaluationFormItemSourceValuesComparator NOT_IN = new EvaluationFormItemSourceValuesComparator("NOT_IN");
+
+        /// <summary>
+        /// Constructs a custom EvaluationFormItemSourceValuesComparator for a value not among the defined constants.
+        /// </summary>
+        public EvaluationFormItemSourceValuesComparator(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationFormItemSourceValuesComparator FindValue(string value)
+        {
+            return FindValue<EvaluationFormItemSourceValuesComparator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationFormItemSourceValuesComparator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EvaluationFormLanguageCode.
+    /// </summary>
+    public class EvaluationFormLanguageCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant DeDE for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode DeDE = new EvaluationFormLanguageCode("de-DE");
+
+        /// <summary>
+        /// Constant EnUS for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode EnUS = new EvaluationFormLanguageCode("en-US");
+
+        /// <summary>
+        /// Constant EsES for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode EsES = new EvaluationFormLanguageCode("es-ES");
+
+        /// <summary>
+        /// Constant FrFR for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode FrFR = new EvaluationFormLanguageCode("fr-FR");
+
+        /// <summary>
+        /// Constant ItIT for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode ItIT = new EvaluationFormLanguageCode("it-IT");
+
+        /// <summary>
+        /// Constant JaJP for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode JaJP = new EvaluationFormLanguageCode("ja-JP");
+
+        /// <summary>
+        /// Constant KoKR for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode KoKR = new EvaluationFormLanguageCode("ko-KR");
+
+        /// <summary>
+        /// Constant MsMY for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode MsMY = new EvaluationFormLanguageCode("ms-MY");
+
+        /// <summary>
+        /// Constant PtBR for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode PtBR = new EvaluationFormLanguageCode("pt-BR");
+
+        /// <summary>
+        /// Constant ZhCN for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode ZhCN = new EvaluationFormLanguageCode("zh-CN");
+
+        /// <summary>
+        /// Constructs a custom EvaluationFormLanguageCode for a value not among the defined constants.
+        /// </summary>
+        public EvaluationFormLanguageCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationFormLanguageCode FindValue(string value)
+        {
+            return FindValue<EvaluationFormLanguageCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationFormLanguageCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EvaluationFormMetricType.
+    /// </summary>
+    public class EvaluationFormMetricType : ConstantClass
+    {
+        /// <summary>
+        /// Constant BUSINESS_OUTCOME for EvaluationFormMetricType
+        /// </summary>
+        public static readonly EvaluationFormMetricType BUSINESS_OUTCOME = new EvaluationFormMetricType("BUSINESS_OUTCOME");
+
+        /// <summary>
+        /// Constructs a custom EvaluationFormMetricType for a value not among the defined constants.
+        /// </summary>
+        public EvaluationFormMetricType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationFormMetricType FindValue(string value)
+        {
+            return FindValue<EvaluationFormMetricType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationFormMetricType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EvaluationFormMultiSelectQuestionDisplayMode.
+    /// </summary>
+    public class EvaluationFormMultiSelectQuestionDisplayMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant CHECKBOX for EvaluationFormMultiSelectQuestionDisplayMode
+        /// </summary>
+        public static readonly EvaluationFormMultiSelectQuestionDisplayMode CHECKBOX = new EvaluationFormMultiSelectQuestionDisplayMode("CHECKBOX");
+
+        /// <summary>
+        /// Constant DROPDOWN for EvaluationFormMultiSelectQuestionDisplayMode
+        /// </summary>
+        public static readonly EvaluationFormMultiSelectQuestionDisplayMode DROPDOWN = new EvaluationFormMultiSelectQuestionDisplayMode("DROPDOWN");
+
+        /// <summary>
+        /// Constructs a custom EvaluationFormMultiSelectQuestionDisplayMode for a value not among the defined constants.
+        /// </summary>
+        public EvaluationFormMultiSelectQuestionDisplayMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationFormMultiSelectQuestionDisplayMode FindValue(string value)
+        {
+            return FindValue<EvaluationFormMultiSelectQuestionDisplayMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationFormMultiSelectQuestionDisplayMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EvaluationFormQuestionAutomationAnswerSourceType.
+    /// </summary>
+    public class EvaluationFormQuestionAutomationAnswerSourceType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONTACT_LENS_DATA for EvaluationFormQuestionAutomationAnswerSourceType
+        /// </summary>
+        public static readonly EvaluationFormQuestionAutomationAnswerSourceType CONTACT_LENS_DATA = new EvaluationFormQuestionAutomationAnswerSourceType("CONTACT_LENS_DATA");
+
+        /// <summary>
+        /// Constant GEN_AI for EvaluationFormQuestionAutomationAnswerSourceType
+        /// </summary>
+        public static readonly EvaluationFormQuestionAutomationAnswerSourceType GEN_AI = new EvaluationFormQuestionAutomationAnswerSourceType("GEN_AI");
+
+        /// <summary>
+        /// Constructs a custom EvaluationFormQuestionAutomationAnswerSourceType for a value not among the defined constants.
+        /// </summary>
+        public EvaluationFormQuestionAutomationAnswerSourceType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationFormQuestionAutomationAnswerSourceType FindValue(string value)
+        {
+            return FindValue<EvaluationFormQuestionAutomationAnswerSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationFormQuestionAutomationAnswerSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EvaluationFormQuestionType.
+    /// </summary>
+    public class EvaluationFormQuestionType : ConstantClass
+    {
+        /// <summary>
+        /// Constant DATETIME for EvaluationFormQuestionType
+        /// </summary>
+        public static readonly EvaluationFormQuestionType DATETIME = new EvaluationFormQuestionType("DATETIME");
+
+        /// <summary>
+        /// Constant MULTISELECT for EvaluationFormQuestionType
+        /// </summary>
+        public static readonly EvaluationFormQuestionType MULTISELECT = new EvaluationFormQuestionType("MULTISELECT");
+
+        /// <summary>
+        /// Constant NUMERIC for EvaluationFormQuestionType
+        /// </summary>
+        public static readonly EvaluationFormQuestionType NUMERIC = new EvaluationFormQuestionType("NUMERIC");
+
+        /// <summary>
+        /// Constant SINGLESELECT for EvaluationFormQuestionType
+        /// </summary>
+        public static readonly EvaluationFormQuestionType SINGLESELECT = new EvaluationFormQuestionType("SINGLESELECT");
+
+        /// <summary>
+        /// Constant TEXT for EvaluationFormQuestionType
+        /// </summary>
+        public static readonly EvaluationFormQuestionType TEXT = new EvaluationFormQuestionType("TEXT");
+
+        /// <summary>
+        /// Constructs a custom EvaluationFormQuestionType for a value not among the defined constants.
+        /// </summary>
+        public EvaluationFormQuestionType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationFormQuestionType FindValue(string value)
+        {
+            return FindValue<EvaluationFormQuestionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationFormQuestionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EvaluationFormScoringMode.
+    /// </summary>
+    public class EvaluationFormScoringMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant POINTS_BASED for EvaluationFormScoringMode
+        /// </summary>
+        public static readonly EvaluationFormScoringMode POINTS_BASED = new EvaluationFormScoringMode("POINTS_BASED");
+
+        /// <summary>
+        /// Constant QUESTION_ONLY for EvaluationFormScoringMode
+        /// </summary>
+        public static readonly EvaluationFormScoringMode QUESTION_ONLY = new EvaluationFormScoringMode("QUESTION_ONLY");
+
+        /// <summary>
+        /// Constant SECTION_ONLY for EvaluationFormScoringMode
+        /// </summary>
+        public static readonly EvaluationFormScoringMode SECTION_ONLY = new EvaluationFormScoringMode("SECTION_ONLY");
+
+        /// <summary>
+        /// Constructs a custom EvaluationFormScoringMode for a value not among the defined constants.
+        /// </summary>
+        public EvaluationFormScoringMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationFormScoringMode FindValue(string value)
+        {
+            return FindValue<EvaluationFormScoringMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationFormScoringMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EvaluationFormScoringStatus.
+    /// </summary>
+    public class EvaluationFormScoringStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for EvaluationFormScoringStatus
+        /// </summary>
+        public static readonly EvaluationFormScoringStatus DISABLED = new EvaluationFormScoringStatus("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for EvaluationFormScoringStatus
+        /// </summary>
+        public static readonly EvaluationFormScoringStatus ENABLED = new EvaluationFormScoringStatus("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom EvaluationFormScoringStatus for a value not among the defined constants.
+        /// </summary>
+        public EvaluationFormScoringStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationFormScoringStatus FindValue(string value)
+        {
+            return FindValue<EvaluationFormScoringStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationFormScoringStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EvaluationFormSingleSelectQuestionDisplayMode.
+    /// </summary>
+    public class EvaluationFormSingleSelectQuestionDisplayMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant DROPDOWN for EvaluationFormSingleSelectQuestionDisplayMode
+        /// </summary>
+        public static readonly EvaluationFormSingleSelectQuestionDisplayMode DROPDOWN = new EvaluationFormSingleSelectQuestionDisplayMode("DROPDOWN");
+
+        /// <summary>
+        /// Constant RADIO for EvaluationFormSingleSelectQuestionDisplayMode
+        /// </summary>
+        public static readonly EvaluationFormSingleSelectQuestionDisplayMode RADIO = new EvaluationFormSingleSelectQuestionDisplayMode("RADIO");
+
+        /// <summary>
+        /// Constructs a custom EvaluationFormSingleSelectQuestionDisplayMode for a value not among the defined constants.
+        /// </summary>
+        public EvaluationFormSingleSelectQuestionDisplayMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationFormSingleSelectQuestionDisplayMode FindValue(string value)
+        {
+            return FindValue<EvaluationFormSingleSelectQuestionDisplayMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationFormSingleSelectQuestionDisplayMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EvaluationFormValidationFindingSeverity.
+    /// </summary>
+    public class EvaluationFormValidationFindingSeverity : ConstantClass
+    {
+        /// <summary>
+        /// Constant ERROR for EvaluationFormValidationFindingSeverity
+        /// </summary>
+        public static readonly EvaluationFormValidationFindingSeverity ERROR = new EvaluationFormValidationFindingSeverity("ERROR");
+
+        /// <summary>
+        /// Constant WARNING for EvaluationFormValidationFindingSeverity
+        /// </summary>
+        public static readonly EvaluationFormValidationFindingSeverity WARNING = new EvaluationFormValidationFindingSeverity("WARNING");
+
+        /// <summary>
+        /// Constructs a custom EvaluationFormValidationFindingSeverity for a value not among the defined constants.
+        /// </summary>
+        public EvaluationFormValidationFindingSeverity(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationFormValidationFindingSeverity FindValue(string value)
+        {
+            return FindValue<EvaluationFormValidationFindingSeverity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationFormValidationFindingSeverity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EvaluationFormValidationStatus.
+    /// </summary>
+    public class EvaluationFormValidationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant COMPLETED for EvaluationFormValidationStatus
+        /// </summary>
+        public static readonly EvaluationFormValidationStatus COMPLETED = new EvaluationFormValidationStatus("COMPLETED");
+
+        /// <summary>
+        /// Constant FAILED for EvaluationFormValidationStatus
+        /// </summary>
+        public static readonly EvaluationFormValidationStatus FAILED = new EvaluationFormValidationStatus("FAILED");
+
+        /// <summary>
+        /// Constant IN_PROGRESS for EvaluationFormValidationStatus
+        /// </summary>
+        public static readonly EvaluationFormValidationStatus IN_PROGRESS = new EvaluationFormValidationStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// Constructs a custom EvaluationFormValidationStatus for a value not among the defined constants.
+        /// </summary>
+        public EvaluationFormValidationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationFormValidationStatus FindValue(string value)
+        {
+            return FindValue<EvaluationFormValidationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationFormValidationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EvaluationFormVersionStatus.
+    /// </summary>
+    public class EvaluationFormVersionStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for EvaluationFormVersionStatus
+        /// </summary>
+        public static readonly EvaluationFormVersionStatus ACTIVE = new EvaluationFormVersionStatus("ACTIVE");
+
+        /// <summary>
+        /// Constant DRAFT for EvaluationFormVersionStatus
+        /// </summary>
+        public static readonly EvaluationFormVersionStatus DRAFT = new EvaluationFormVersionStatus("DRAFT");
+
+        /// <summary>
+        /// Constructs a custom EvaluationFormVersionStatus for a value not among the defined constants.
+        /// </summary>
+        public EvaluationFormVersionStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationFormVersionStatus FindValue(string value)
+        {
+            return FindValue<EvaluationFormVersionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationFormVersionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EvaluationQuestionAnswerAnalysisType.
+    /// </summary>
+    public class EvaluationQuestionAnswerAnalysisType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONTACT_LENS_DATA for EvaluationQuestionAnswerAnalysisType
+        /// </summary>
+        public static readonly EvaluationQuestionAnswerAnalysisType CONTACT_LENS_DATA = new EvaluationQuestionAnswerAnalysisType("CONTACT_LENS_DATA");
+
+        /// <summary>
+        /// Constant GEN_AI for EvaluationQuestionAnswerAnalysisType
+        /// </summary>
+        public static readonly EvaluationQuestionAnswerAnalysisType GEN_AI = new EvaluationQuestionAnswerAnalysisType("GEN_AI");
+
+        /// <summary>
+        /// Constructs a custom EvaluationQuestionAnswerAnalysisType for a value not among the defined constants.
+        /// </summary>
+        public EvaluationQuestionAnswerAnalysisType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationQuestionAnswerAnalysisType FindValue(string value)
+        {
+            return FindValue<EvaluationQuestionAnswerAnalysisType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationQuestionAnswerAnalysisType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EvaluationReviewNotificationRecipientType.
+    /// </summary>
+    public class EvaluationReviewNotificationRecipientType : ConstantClass
+    {
+        /// <summary>
+        /// Constant USER_ID for EvaluationReviewNotificationRecipientType
+        /// </summary>
+        public static readonly EvaluationReviewNotificationRecipientType USER_ID = new EvaluationReviewNotificationRecipientType("USER_ID");
+
+        /// <summary>
+        /// Constructs a custom EvaluationReviewNotificationRecipientType for a value not among the defined constants.
+        /// </summary>
+        public EvaluationReviewNotificationRecipientType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationReviewNotificationRecipientType FindValue(string value)
+        {
+            return FindValue<EvaluationReviewNotificationRecipientType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationReviewNotificationRecipientType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EvaluationStatus.
+    /// </summary>
+    public class EvaluationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant DRAFT for EvaluationStatus
+        /// </summary>
+        public static readonly EvaluationStatus DRAFT = new EvaluationStatus("DRAFT");
+
+        /// <summary>
+        /// Constant REVIEW_REQUESTED for EvaluationStatus
+        /// </summary>
+        public static readonly EvaluationStatus REVIEW_REQUESTED = new EvaluationStatus("REVIEW_REQUESTED");
+
+        /// <summary>
+        /// Constant SUBMITTED for EvaluationStatus
+        /// </summary>
+        public static readonly EvaluationStatus SUBMITTED = new EvaluationStatus("SUBMITTED");
+
+        /// <summary>
+        /// Constant UNDER_REVIEW for EvaluationStatus
+        /// </summary>
+        public static readonly EvaluationStatus UNDER_REVIEW = new EvaluationStatus("UNDER_REVIEW");
+
+        /// <summary>
+        /// Constructs a custom EvaluationStatus for a value not among the defined constants.
+        /// </summary>
+        public EvaluationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationStatus FindValue(string value)
+        {
+            return FindValue<EvaluationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EvaluationSuggestedAnswerStatus.
+    /// </summary>
+    public class EvaluationSuggestedAnswerStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant FAILED for EvaluationSuggestedAnswerStatus
+        /// </summary>
+        public static readonly EvaluationSuggestedAnswerStatus FAILED = new EvaluationSuggestedAnswerStatus("FAILED");
+
+        /// <summary>
+        /// Constant IN_PROGRESS for EvaluationSuggestedAnswerStatus
+        /// </summary>
+        public static readonly EvaluationSuggestedAnswerStatus IN_PROGRESS = new EvaluationSuggestedAnswerStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// Constant SUCCEEDED for EvaluationSuggestedAnswerStatus
+        /// </summary>
+        public static readonly EvaluationSuggestedAnswerStatus SUCCEEDED = new EvaluationSuggestedAnswerStatus("SUCCEEDED");
+
+        /// <summary>
+        /// Constructs a custom EvaluationSuggestedAnswerStatus for a value not among the defined constants.
+        /// </summary>
+        public EvaluationSuggestedAnswerStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationSuggestedAnswerStatus FindValue(string value)
+        {
+            return FindValue<EvaluationSuggestedAnswerStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationSuggestedAnswerStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EvaluationTranscriptType.
+    /// </summary>
+    public class EvaluationTranscriptType : ConstantClass
+    {
+        /// <summary>
+        /// Constant RAW for EvaluationTranscriptType
+        /// </summary>
+        public static readonly EvaluationTranscriptType RAW = new EvaluationTranscriptType("RAW");
+
+        /// <summary>
+        /// Constant REDACTED for EvaluationTranscriptType
+        /// </summary>
+        public static readonly EvaluationTranscriptType REDACTED = new EvaluationTranscriptType("REDACTED");
+
+        /// <summary>
+        /// Constructs a custom EvaluationTranscriptType for a value not among the defined constants.
+        /// </summary>
+        public EvaluationTranscriptType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationTranscriptType FindValue(string value)
+        {
+            return FindValue<EvaluationTranscriptType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationTranscriptType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EvaluationType.
+    /// </summary>
+    public class EvaluationType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CALIBRATION for EvaluationType
+        /// </summary>
+        public static readonly EvaluationType CALIBRATION = new EvaluationType("CALIBRATION");
+
+        /// <summary>
+        /// Constant STANDARD for EvaluationType
+        /// </summary>
+        public static readonly EvaluationType STANDARD = new EvaluationType("STANDARD");
+
+        /// <summary>
+        /// Constructs a custom EvaluationType for a value not among the defined constants.
+        /// </summary>
+        public EvaluationType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationType FindValue(string value)
+        {
+            return FindValue<EvaluationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EventSourceName.
+    /// </summary>
+    public class EventSourceName : ConstantClass
+    {
+        /// <summary>
+        /// Constant OnAfterCallWorkAvailable for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnAfterCallWorkAvailable = new EventSourceName("OnAfterCallWorkAvailable");
+
+        /// <summary>
+        /// Constant OnAfterChatWorkAvailable for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnAfterChatWorkAvailable = new EventSourceName("OnAfterChatWorkAvailable");
+
+        /// <summary>
+        /// Constant OnAlertUpdate for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnAlertUpdate = new EventSourceName("OnAlertUpdate");
+
+        /// <summary>
+        /// Constant OnCaseCreate for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnCaseCreate = new EventSourceName("OnCaseCreate");
+
+        /// <summary>
+        /// Constant OnCaseUpdate for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnCaseUpdate = new EventSourceName("OnCaseUpdate");
+
+        /// <summary>
+        /// Constant OnContactEvaluationSubmit for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnContactEvaluationSubmit = new EventSourceName("OnContactEvaluationSubmit");
+
+        /// <summary>
+        /// Constant OnEmailAnalysisAvailable for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnEmailAnalysisAvailable = new EventSourceName("OnEmailAnalysisAvailable");
+
+        /// <summary>
+        /// Constant OnMetricDataUpdate for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnMetricDataUpdate = new EventSourceName("OnMetricDataUpdate");
+
+        /// <summary>
+        /// Constant OnPostCallAnalysisAvailable for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnPostCallAnalysisAvailable = new EventSourceName("OnPostCallAnalysisAvailable");
+
+        /// <summary>
+        /// Constant OnPostChatAnalysisAvailable for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnPostChatAnalysisAvailable = new EventSourceName("OnPostChatAnalysisAvailable");
+
+        /// <summary>
+        /// Constant OnRealTimeCallAnalysisAvailable for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnRealTimeCallAnalysisAvailable = new EventSourceName("OnRealTimeCallAnalysisAvailable");
+
+        /// <summary>
+        /// Constant OnRealTimeChatAnalysisAvailable for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnRealTimeChatAnalysisAvailable = new EventSourceName("OnRealTimeChatAnalysisAvailable");
+
+        /// <summary>
+        /// Constant OnSalesforceCaseCreate for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnSalesforceCaseCreate = new EventSourceName("OnSalesforceCaseCreate");
+
+        /// <summary>
+        /// Constant OnSchedulePublish for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnSchedulePublish = new EventSourceName("OnSchedulePublish");
+
+        /// <summary>
+        /// Constant OnScheduleTimeOffRequestActivity for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnScheduleTimeOffRequestActivity = new EventSourceName("OnScheduleTimeOffRequestActivity");
+
+        /// <summary>
+        /// Constant OnScheduleUpdate for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnScheduleUpdate = new EventSourceName("OnScheduleUpdate");
+
+        /// <summary>
+        /// Constant OnSlaBreach for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnSlaBreach = new EventSourceName("OnSlaBreach");
+
+        /// <summary>
+        /// Constant OnZendeskTicketCreate for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnZendeskTicketCreate = new EventSourceName("OnZendeskTicketCreate");
+
+        /// <summary>
+        /// Constant OnZendeskTicketStatusUpdate for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnZendeskTicketStatusUpdate = new EventSourceName("OnZendeskTicketStatusUpdate");
+
+        /// <summary>
+        /// Constructs a custom EventSourceName for a value not among the defined constants.
+        /// </summary>
+        public EventSourceName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventSourceName FindValue(string value)
+        {
+            return FindValue<EventSourceName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventSourceName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ExecutionRecordStatus.
+    /// </summary>
+    public class ExecutionRecordStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant FAILED for ExecutionRecordStatus
+        /// </summary>
+        public static readonly ExecutionRecordStatus FAILED = new ExecutionRecordStatus("FAILED");
+
+        /// <summary>
+        /// Constant IN_PROGRESS for ExecutionRecordStatus
+        /// </summary>
+        public static readonly ExecutionRecordStatus IN_PROGRESS = new ExecutionRecordStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// Constant PASSED for ExecutionRecordStatus
+        /// </summary>
+        public static readonly ExecutionRecordStatus PASSED = new ExecutionRecordStatus("PASSED");
+
+        /// <summary>
+        /// Constant STOPPED for ExecutionRecordStatus
+        /// </summary>
+        public static readonly ExecutionRecordStatus STOPPED = new ExecutionRecordStatus("STOPPED");
+
+        /// <summary>
+        /// Constructs a custom ExecutionRecordStatus for a value not among the defined constants.
+        /// </summary>
+        public ExecutionRecordStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExecutionRecordStatus FindValue(string value)
+        {
+            return FindValue<ExecutionRecordStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExecutionRecordStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FailureReasonCode.
+    /// </summary>
+    public class FailureReasonCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant IDEMPOTENCY_EXCEPTION for FailureReasonCode
+        /// </summary>
+        public static readonly FailureReasonCode IDEMPOTENCY_EXCEPTION = new FailureReasonCode("IDEMPOTENCY_EXCEPTION");
+
+        /// <summary>
+        /// Constant INTERNAL_ERROR for FailureReasonCode
+        /// </summary>
+        public static readonly FailureReasonCode INTERNAL_ERROR = new FailureReasonCode("INTERNAL_ERROR");
+
+        /// <summary>
+        /// Constant INVALID_ATTRIBUTE_KEY for FailureReasonCode
+        /// </summary>
+        public static readonly FailureReasonCode INVALID_ATTRIBUTE_KEY = new FailureReasonCode("INVALID_ATTRIBUTE_KEY");
+
+        /// <summary>
+        /// Constant INVALID_CUSTOMER_ENDPOINT for FailureReasonCode
+        /// </summary>
+        public static readonly FailureReasonCode INVALID_CUSTOMER_ENDPOINT = new FailureReasonCode("INVALID_CUSTOMER_ENDPOINT");
+
+        /// <summary>
+        /// Constant INVALID_OUTBOUND_STRATEGY for FailureReasonCode
+        /// </summary>
+        public static readonly FailureReasonCode INVALID_OUTBOUND_STRATEGY = new FailureReasonCode("INVALID_OUTBOUND_STRATEGY");
+
+        /// <summary>
+        /// Constant INVALID_QUEUE for FailureReasonCode
+        /// </summary>
+        public static readonly FailureReasonCode INVALID_QUEUE = new FailureReasonCode("INVALID_QUEUE");
+
+        /// <summary>
+        /// Constant INVALID_SYSTEM_ENDPOINT for FailureReasonCode
+        /// </summary>
+        public static readonly FailureReasonCode INVALID_SYSTEM_ENDPOINT = new FailureReasonCode("INVALID_SYSTEM_ENDPOINT");
+
+        /// <summary>
+        /// Constant MISSING_CAMPAIGN for FailureReasonCode
+        /// </summary>
+        public static readonly FailureReasonCode MISSING_CAMPAIGN = new FailureReasonCode("MISSING_CAMPAIGN");
+
+        /// <summary>
+        /// Constant MISSING_CUSTOMER_ENDPOINT for FailureReasonCode
+        /// </summary>
+        public static readonly FailureReasonCode MISSING_CUSTOMER_ENDPOINT = new FailureReasonCode("MISSING_CUSTOMER_ENDPOINT");
+
+        /// <summary>
+        /// Constant MISSING_QUEUE_ID_AND_SYSTEM_ENDPOINT for FailureReasonCode
+        /// </summary>
+        public static readonly FailureReasonCode MISSING_QUEUE_ID_AND_SYSTEM_ENDPOINT = new FailureReasonCode("MISSING_QUEUE_ID_AND_SYSTEM_ENDPOINT");
+
+        /// <summary>
+        /// Constant REQUEST_THROTTLED for FailureReasonCode
+        /// </summary>
+        public static readonly FailureReasonCode REQUEST_THROTTLED = new FailureReasonCode("REQUEST_THROTTLED");
+
+        /// <summary>
+        /// Constructs a custom FailureReasonCode for a value not among the defined constants.
+        /// </summary>
+        public FailureReasonCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FailureReasonCode FindValue(string value)
+        {
+            return FindValue<FailureReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FailureReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FileStatusType.
+    /// </summary>
+    public class FileStatusType : ConstantClass
+    {
+        /// <summary>
+        /// Constant APPROVED for FileStatusType
+        /// </summary>
+        public static readonly FileStatusType APPROVED = new FileStatusType("APPROVED");
+
+        /// <summary>
+        /// Constant DRAFTING for FileStatusType
+        /// </summary>
+        public static readonly FileStatusType DRAFTING = new FileStatusType("DRAFTING");
+
+        /// <summary>
+        /// Constant FAILED for FileStatusType
+        /// </summary>
+        public static readonly FileStatusType FAILED = new FileStatusType("FAILED");
+
+        /// <summary>
+        /// Constant PROCESSING for FileStatusType
+        /// </summary>
+        public static readonly FileStatusType PROCESSING = new FileStatusType("PROCESSING");
+
+        /// <summary>
+        /// Constant REJECTED for FileStatusType
+        /// </summary>
+        public static readonly FileStatusType REJECTED = new FileStatusType("REJECTED");
+
+        /// <summary>
+        /// Constructs a custom FileStatusType for a value not among the defined constants.
+        /// </summary>
+        public FileStatusType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FileStatusType FindValue(string value)
+        {
+            return FindValue<FileStatusType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FileStatusType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FileUseCaseType.
+    /// </summary>
+    public class FileUseCaseType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ATTACHMENT for FileUseCaseType
+        /// </summary>
+        public static readonly FileUseCaseType ATTACHMENT = new FileUseCaseType("ATTACHMENT");
+
+        /// <summary>
+        /// Constant CONTACT_ANALYSIS for FileUseCaseType
+        /// </summary>
+        public static readonly FileUseCaseType CONTACT_ANALYSIS = new FileUseCaseType("CONTACT_ANALYSIS");
+
+        /// <summary>
+        /// Constant EMAIL_MESSAGE for FileUseCaseType
+        /// </summary>
+        public static readonly FileUseCaseType EMAIL_MESSAGE = new FileUseCaseType("EMAIL_MESSAGE");
+
+        /// <summary>
+        /// Constant EMAIL_MESSAGE_PLAIN_TEXT for FileUseCaseType
+        /// </summary>
+        public static readonly FileUseCaseType EMAIL_MESSAGE_PLAIN_TEXT = new FileUseCaseType("EMAIL_MESSAGE_PLAIN_TEXT");
+
+        /// <summary>
+        /// Constant EMAIL_MESSAGE_PLAIN_TEXT_REDACTED for FileUseCaseType
+        /// </summary>
+        public static readonly FileUseCaseType EMAIL_MESSAGE_PLAIN_TEXT_REDACTED = new FileUseCaseType("EMAIL_MESSAGE_PLAIN_TEXT_REDACTED");
+
+        /// <summary>
+        /// Constant EMAIL_MESSAGE_REDACTED for FileUseCaseType
+        /// </summary>
+        public static readonly FileUseCaseType EMAIL_MESSAGE_REDACTED = new FileUseCaseType("EMAIL_MESSAGE_REDACTED");
+
+        /// <summary>
+        /// Constant VOICE_RECORDING for FileUseCaseType
+        /// </summary>
+        public static readonly FileUseCaseType VOICE_RECORDING = new FileUseCaseType("VOICE_RECORDING");
+
+        /// <summary>
+        /// Constructs a custom FileUseCaseType for a value not among the defined constants.
+        /// </summary>
+        public FileUseCaseType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FileUseCaseType FindValue(string value)
+        {
+            return FindValue<FileUseCaseType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FileUseCaseType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FilterV2StringConditionComparisonOperator.
+    /// </summary>
+    public class FilterV2StringConditionComparisonOperator : ConstantClass
+    {
+        /// <summary>
+        /// Constant NOT_EXISTS for FilterV2StringConditionComparisonOperator
+        /// </summary>
+        public static readonly FilterV2StringConditionComparisonOperator NOT_EXISTS = new FilterV2StringConditionComparisonOperator("NOT_EXISTS");
+
+        /// <summary>
+        /// Constructs a custom FilterV2StringConditionComparisonOperator for a value not among the defined constants.
+        /// </summary>
+        public FilterV2StringConditionComparisonOperator(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FilterV2StringConditionComparisonOperator FindValue(string value)
+        {
+            return FindValue<FilterV2StringConditionComparisonOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FilterV2StringConditionComparisonOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FlowAssociationResourceType.
+    /// </summary>
+    public class FlowAssociationResourceType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ANALYTICS_CONNECTOR for FlowAssociationResourceType
+        /// </summary>
+        public static readonly FlowAssociationResourceType ANALYTICS_CONNECTOR = new FlowAssociationResourceType("ANALYTICS_CONNECTOR");
+
+        /// <summary>
+        /// Constant INBOUND_EMAIL for FlowAssociationResourceType
+        /// </summary>
+        public static readonly FlowAssociationResourceType INBOUND_EMAIL = new FlowAssociationResourceType("INBOUND_EMAIL");
+
+        /// <summary>
+        /// Constant OUTBOUND_EMAIL for FlowAssociationResourceType
+        /// </summary>
+        public static readonly FlowAssociationResourceType OUTBOUND_EMAIL = new FlowAssociationResourceType("OUTBOUND_EMAIL");
+
+        /// <summary>
+        /// Constant SMS_PHONE_NUMBER for FlowAssociationResourceType
+        /// </summary>
+        public static readonly FlowAssociationResourceType SMS_PHONE_NUMBER = new FlowAssociationResourceType("SMS_PHONE_NUMBER");
+
+        /// <summary>
+        /// Constant WHATSAPP_MESSAGING_PHONE_NUMBER for FlowAssociationResourceType
+        /// </summary>
+        public static readonly FlowAssociationResourceType WHATSAPP_MESSAGING_PHONE_NUMBER = new FlowAssociationResourceType("WHATSAPP_MESSAGING_PHONE_NUMBER");
+
+        /// <summary>
+        /// Constructs a custom FlowAssociationResourceType for a value not among the defined constants.
+        /// </summary>
+        public FlowAssociationResourceType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlowAssociationResourceType FindValue(string value)
+        {
+            return FindValue<FlowAssociationResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlowAssociationResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FlowModuleType.
+    /// </summary>
+    public class FlowModuleType : ConstantClass
+    {
+        /// <summary>
+        /// Constant MCP for FlowModuleType
+        /// </summary>
+        public static readonly FlowModuleType MCP = new FlowModuleType("MCP");
+
+        /// <summary>
+        /// Constructs a custom FlowModuleType for a value not among the defined constants.
+        /// </summary>
+        public FlowModuleType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlowModuleType FindValue(string value)
+        {
+            return FindValue<FlowModuleType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlowModuleType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type Grouping.
+    /// </summary>
+    public class Grouping : ConstantClass
+    {
+        /// <summary>
+        /// Constant AGENT_STATUS for Grouping
+        /// </summary>
+        public static readonly Grouping AGENT_STATUS = new Grouping("AGENT_STATUS");
+
+        /// <summary>
+        /// Constant CHANNEL for Grouping
+        /// </summary>
+        public static readonly Grouping CHANNEL = new Grouping("CHANNEL");
+
+        /// <summary>
+        /// Constant QUEUE for Grouping
+        /// </summary>
+        public static readonly Grouping QUEUE = new Grouping("QUEUE");
+
+        /// <summary>
+        /// Constant ROUTING_PROFILE for Grouping
+        /// </summary>
+        public static readonly Grouping ROUTING_PROFILE = new Grouping("ROUTING_PROFILE");
+
+        /// <summary>
+        /// Constant ROUTING_STEP_EXPRESSION for Grouping
+        /// </summary>
+        public static readonly Grouping ROUTING_STEP_EXPRESSION = new Grouping("ROUTING_STEP_EXPRESSION");
+
+        /// <summary>
+        /// Constant SUBTYPE for Grouping
+        /// </summary>
+        public static readonly Grouping SUBTYPE = new Grouping("SUBTYPE");
+
+        /// <summary>
+        /// Constant VALIDATION_TEST_TYPE for Grouping
+        /// </summary>
+        public static readonly Grouping VALIDATION_TEST_TYPE = new Grouping("VALIDATION_TEST_TYPE");
+
+        /// <summary>
+        /// Constructs a custom Grouping for a value not among the defined constants.
+        /// </summary>
+        public Grouping(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Grouping FindValue(string value)
+        {
+            return FindValue<Grouping>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Grouping(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type HierarchyGroupMatchType.
+    /// </summary>
+    public class HierarchyGroupMatchType : ConstantClass
+    {
+        /// <summary>
+        /// Constant EXACT for HierarchyGroupMatchType
+        /// </summary>
+        public static readonly HierarchyGroupMatchType EXACT = new HierarchyGroupMatchType("EXACT");
+
+        /// <summary>
+        /// Constant WITH_CHILD_GROUPS for HierarchyGroupMatchType
+        /// </summary>
+        public static readonly HierarchyGroupMatchType WITH_CHILD_GROUPS = new HierarchyGroupMatchType("WITH_CHILD_GROUPS");
+
+        /// <summary>
+        /// Constructs a custom HierarchyGroupMatchType for a value not among the defined constants.
+        /// </summary>
+        public HierarchyGroupMatchType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HierarchyGroupMatchType FindValue(string value)
+        {
+            return FindValue<HierarchyGroupMatchType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HierarchyGroupMatchType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type HistoricalMetricName.
+    /// </summary>
+    public class HistoricalMetricName : ConstantClass
+    {
+        /// <summary>
+        /// Constant ABANDON_TIME for HistoricalMetricName
+        /// </summary>
+        public static readonly HistoricalMetricName ABANDON_TIME = new HistoricalMetricName("ABANDON_TIME");
+
+        /// <summary>
+        /// Constant AFTER_CONTACT_WORK_TIME for HistoricalMetricName
+        /// </summary>
+        public static readonly HistoricalMetricName AFTER_CONTACT_WORK_TIME = new HistoricalMetricName("AFTER_CONTACT_WORK_TIME");
+
+        /// <summary>
+        /// Constant API_CONTACTS_HANDLED for HistoricalMetricName
+        /// </summary>
+        public static readonly HistoricalMetricName API_CONTACTS_HANDLED = new HistoricalMetricName("API_CONTACTS_HANDLED");
+
+        /// <summary>
+        /// Constant CALLBACK_CONTACTS_HANDLED for HistoricalMetricName
+        /// </summary>
+        public static readonly HistoricalMetricName CALLBACK_CONTACTS_HANDLED = new HistoricalMetricName("CALLBACK_CONTACTS_HANDLED");
+
+        /// <summary>
+        /// Constant CONTACTS_ABANDONED for HistoricalMetricName
+        /// </summary>
+        public static readonly HistoricalMetricName CONTACTS_ABANDONED = new HistoricalMetricName("CONTACTS_ABANDONED");
+
+        /// <summary>
+        /// Constant CONTACTS_AGENT_HUNG_UP_FIRST for HistoricalMetricName
+        /// </summary>
+        public static readonly HistoricalMetricName CONTACTS_AGENT_HUNG_UP_FIRST = new HistoricalMetricName("CONTACTS_AGENT_HUNG_UP_FIRST");
+
+        /// <summary>
+        /// Constant CONTACTS_CONSULTED for HistoricalMetricName
+        /// </summary>
+        public static readonly HistoricalMetricName CONTACTS_CONSULTED = new HistoricalMetricName("CONTACTS_CONSULTED");
+
+        /// <summary>
+        /// Constant CONTACTS_HANDLED for HistoricalMetricName
+        /// </summary>
+        public static readonly HistoricalMetricName CONTACTS_HANDLED = new HistoricalMetricName("CONTACTS_HANDLED");
+
+        /// <summary>
+        /// Constant CONTACTS_HANDLED_INCOMING for HistoricalMetricName
+        /// </summary>
+        public static readonly HistoricalMetricName CONTACTS_HANDLED_INCOMING = new HistoricalMetricName("CONTACTS_HANDLED_INCOMING");
+
+        /// <summary>
+        /// Constant CONTACTS_HANDLED_OUTBOUND for HistoricalMetricName
+        /// </summary>
+        public static readonly HistoricalMetricName CONTACTS_HANDLED_OUTBOUND = new HistoricalMetricName("CONTACTS_HANDLED_OUTBOUND");
+
+        /// <summary>
+        /// Constant CONTACTS_HOLD_ABANDONS for HistoricalMetricName
+        /// </summary>
+        public static readonly HistoricalMetricName CONTACTS_HOLD_ABANDONS = new HistoricalMetricName("CONTACTS_HOLD_ABANDONS");
+
+        /// <summary>
+        /// Constant CONTACTS_MISSED for HistoricalMetricName
+        /// </summary>
+        public static readonly HistoricalMetricName CONTACTS_MISSED = new HistoricalMetricName("CONTACTS_MISSED");
+
+        /// <summary>
+        /// Constant CONTACTS_QUEUED for HistoricalMetricName
+        /// </summary>
+        public static readonly HistoricalMetricName CONTACTS_QUEUED = new HistoricalMetricName("CONTACTS_QUEUED");
+
+        /// <summary>
+        /// Constant CONTACTS_TRANSFERRED_IN for HistoricalMetricName
+        /// </summary>
+        public static readonly HistoricalMetricName CONTACTS_TRANSFERRED_IN = new HistoricalMetricName("CONTACTS_TRANSFERRED_IN");
+
+        /// <summary>
+        /// Constant CONTACTS_TRANSFERRED_IN_FROM_QUEUE for HistoricalMetricName
+        /// </summary>
+        public static readonly HistoricalMetricName CONTACTS_TRANSFERRED_IN_FROM_QUEUE = new HistoricalMetricName("CONTACTS_TRANSFERRED_IN_FROM_QUEUE");
+
+        /// <summary>
+        /// Constant CONTACTS_TRANSFERRED_OUT for HistoricalMetricName
+        /// </summary>
+        public static readonly HistoricalMetricName CONTACTS_TRANSFERRED_OUT = new HistoricalMetricName("CONTACTS_TRANSFERRED_OUT");
+
+        /// <summary>
+        /// Constant CONTACTS_TRANSFERRED_OUT_FROM_QUEUE for HistoricalMetricName
+        /// </summary>
+        public static readonly HistoricalMetricName CONTACTS_TRANSFERRED_OUT_FROM_QUEUE = new HistoricalMetricName("CONTACTS_TRANSFERRED_OUT_FROM_QUEUE");
+
+        /// <summary>
+        /// Constant HANDLE_TIME for HistoricalMetricName
+        /// </summary>
+        public static readonly HistoricalMetricName HANDLE_TIME = new HistoricalMetricName("HANDLE_TIME");
+
+        /// <summary>
+        /// Constant HOLD_TIME for HistoricalMetricName
+        /// </summary>
+        public static readonly HistoricalMetricName HOLD_TIME = new HistoricalMetricName("HOLD_TIME");
+
+        /// <summary>
+        /// Constant INTERACTION_AND_HOLD_TIME for HistoricalMetricName
+        /// </summary>
+        public static readonly HistoricalMetricName INTERACTION_AND_HOLD_TIME = new HistoricalMetricName("INTERACTION_AND_HOLD_TIME");
+
+        /// <summary>
+        /// Constant INTERACTION_TIME for HistoricalMetricName
+        /// </summary>
+        public static readonly HistoricalMetricName INTERACTION_TIME = new HistoricalMetricName("INTERACTION_TIME");
+
+        /// <summary>
+        /// Constant OCCUPANCY for HistoricalMetricName
+        /// </summary>
+        public static readonly HistoricalMetricName OCCUPANCY = new HistoricalMetricName("OCCUPANCY");
+
+        /// <summary>
+        /// Constant QUEUED_TIME for HistoricalMetricName
+        /// </summary>
+        public static readonly HistoricalMetricName QUEUED_TIME = new HistoricalMetricName("QUEUED_TIME");
+
+        /// <summary>
+        /// Constant QUEUE_ANSWER_TIME for HistoricalMetricName
+        /// </summary>
+        public static readonly HistoricalMetricName QUEUE_ANSWER_TIME = new HistoricalMetricName("QUEUE_ANSWER_TIME");
+
+        /// <summary>
+        /// Constant SERVICE_LEVEL for HistoricalMetricName
+        /// </summary>
+        public static readonly HistoricalMetricName SERVICE_LEVEL = new HistoricalMetricName("SERVICE_LEVEL");
+
+        /// <summary>
+        /// Constructs a custom HistoricalMetricName for a value not among the defined constants.
+        /// </summary>
+        public HistoricalMetricName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HistoricalMetricName FindValue(string value)
+        {
+            return FindValue<HistoricalMetricName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HistoricalMetricName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type HoursOfOperationDays.
+    /// </summary>
+    public class HoursOfOperationDays : ConstantClass
+    {
+        /// <summary>
+        /// Constant FRIDAY for HoursOfOperationDays
+        /// </summary>
+        public static readonly HoursOfOperationDays FRIDAY = new HoursOfOperationDays("FRIDAY");
+
+        /// <summary>
+        /// Constant MONDAY for HoursOfOperationDays
+        /// </summary>
+        public static readonly HoursOfOperationDays MONDAY = new HoursOfOperationDays("MONDAY");
+
+        /// <summary>
+        /// Constant SATURDAY for HoursOfOperationDays
+        /// </summary>
+        public static readonly HoursOfOperationDays SATURDAY = new HoursOfOperationDays("SATURDAY");
+
+        /// <summary>
+        /// Constant SUNDAY for HoursOfOperationDays
+        /// </summary>
+        public static readonly HoursOfOperationDays SUNDAY = new HoursOfOperationDays("SUNDAY");
+
+        /// <summary>
+        /// Constant THURSDAY for HoursOfOperationDays
+        /// </summary>
+        public static readonly HoursOfOperationDays THURSDAY = new HoursOfOperationDays("THURSDAY");
+
+        /// <summary>
+        /// Constant TUESDAY for HoursOfOperationDays
+        /// </summary>
+        public static readonly HoursOfOperationDays TUESDAY = new HoursOfOperationDays("TUESDAY");
+
+        /// <summary>
+        /// Constant WEDNESDAY for HoursOfOperationDays
+        /// </summary>
+        public static readonly HoursOfOperationDays WEDNESDAY = new HoursOfOperationDays("WEDNESDAY");
+
+        /// <summary>
+        /// Constructs a custom HoursOfOperationDays for a value not among the defined constants.
+        /// </summary>
+        public HoursOfOperationDays(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HoursOfOperationDays FindValue(string value)
+        {
+            return FindValue<HoursOfOperationDays>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HoursOfOperationDays(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type InboundMessageSourceType.
+    /// </summary>
+    public class InboundMessageSourceType : ConstantClass
+    {
+        /// <summary>
+        /// Constant RAW for InboundMessageSourceType
+        /// </summary>
+        public static readonly InboundMessageSourceType RAW = new InboundMessageSourceType("RAW");
+
+        /// <summary>
+        /// Constructs a custom InboundMessageSourceType for a value not among the defined constants.
+        /// </summary>
+        public InboundMessageSourceType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InboundMessageSourceType FindValue(string value)
+        {
+            return FindValue<InboundMessageSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InboundMessageSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type InitiateAs.
+    /// </summary>
+    public class InitiateAs : ConstantClass
+    {
+        /// <summary>
+        /// Constant COMPLETED for InitiateAs
+        /// </summary>
+        public static readonly InitiateAs COMPLETED = new InitiateAs("COMPLETED");
+
+        /// <summary>
+        /// Constant CONNECTED_TO_USER for InitiateAs
+        /// </summary>
+        public static readonly InitiateAs CONNECTED_TO_USER = new InitiateAs("CONNECTED_TO_USER");
+
+        /// <summary>
+        /// Constructs a custom InitiateAs for a value not among the defined constants.
+        /// </summary>
+        public InitiateAs(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InitiateAs FindValue(string value)
+        {
+            return FindValue<InitiateAs>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InitiateAs(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type InstanceAttributeType.
+    /// </summary>
+    public class InstanceAttributeType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AUTO_MUTE_AGENT_ON_HOLD for InstanceAttributeType
+        /// </summary>
+        public static readonly InstanceAttributeType AUTO_MUTE_AGENT_ON_HOLD = new InstanceAttributeType("AUTO_MUTE_AGENT_ON_HOLD");
+
+        /// <summary>
+        /// Constant AUTO_RESOLVE_BEST_VOICES for InstanceAttributeType
+        /// </summary>
+        public static readonly InstanceAttributeType AUTO_RESOLVE_BEST_VOICES = new InstanceAttributeType("AUTO_RESOLVE_BEST_VOICES");
+
+        /// <summary>
+        /// Constant CONTACTFLOW_LOGS for InstanceAttributeType
+        /// </summary>
+        public static readonly InstanceAttributeType CONTACTFLOW_LOGS = new InstanceAttributeType("CONTACTFLOW_LOGS");
+
+        /// <summary>
+        /// Constant CONTACT_LENS for InstanceAttributeType
+        /// </summary>
+        public static readonly InstanceAttributeType CONTACT_LENS = new InstanceAttributeType("CONTACT_LENS");
+
+        /// <summary>
+        /// Constant EARLY_MEDIA for InstanceAttributeType
+        /// </summary>
+        public static readonly InstanceAttributeType EARLY_MEDIA = new InstanceAttributeType("EARLY_MEDIA");
+
+        /// <summary>
+        /// Constant ENHANCED_CHAT_MONITORING for InstanceAttributeType
+        /// </summary>
+        public static readonly InstanceAttributeType ENHANCED_CHAT_MONITORING = new InstanceAttributeType("ENHANCED_CHAT_MONITORING");
+
+        /// <summary>
+        /// Constant ENHANCED_CONTACT_MONITORING for InstanceAttributeType
+        /// </summary>
+        public static readonly InstanceAttributeType ENHANCED_CONTACT_MONITORING = new InstanceAttributeType("ENHANCED_CONTACT_MONITORING");
+
+        /// <summary>
+        /// Constant HIGH_VOLUME_OUTBOUND for InstanceAttributeType
+        /// </summary>
+        public static readonly InstanceAttributeType HIGH_VOLUME_OUTBOUND = new InstanceAttributeType("HIGH_VOLUME_OUTBOUND");
+
+        /// <summary>
+        /// Constant INBOUND_CALLS for InstanceAttributeType
+        /// </summary>
+        public static readonly InstanceAttributeType INBOUND_CALLS = new InstanceAttributeType("INBOUND_CALLS");
+
+        /// <summary>
+        /// Constant MESSAGE_STREAMING for InstanceAttributeType
+        /// </summary>
+        public static readonly InstanceAttributeType MESSAGE_STREAMING = new InstanceAttributeType("MESSAGE_STREAMING");
+
+        /// <summary>
+        /// Constant MULTI_PARTY_CHAT_CONFERENCE for InstanceAttributeType
+        /// </summary>
+        public static readonly InstanceAttributeType MULTI_PARTY_CHAT_CONFERENCE = new InstanceAttributeType("MULTI_PARTY_CHAT_CONFERENCE");
+
+        /// <summary>
+        /// Constant MULTI_PARTY_CONFERENCE for InstanceAttributeType
+        /// </summary>
+        public static readonly InstanceAttributeType MULTI_PARTY_CONFERENCE = new InstanceAttributeType("MULTI_PARTY_CONFERENCE");
+
+        /// <summary>
+        /// Constant OUTBOUND_CALLS for InstanceAttributeType
+        /// </summary>
+        public static readonly InstanceAttributeType OUTBOUND_CALLS = new InstanceAttributeType("OUTBOUND_CALLS");
+
+        /// <summary>
+        /// Constant USE_CUSTOM_TTS_VOICES for InstanceAttributeType
+        /// </summary>
+        public static readonly InstanceAttributeType USE_CUSTOM_TTS_VOICES = new InstanceAttributeType("USE_CUSTOM_TTS_VOICES");
+
+        /// <summary>
+        /// Constructs a custom InstanceAttributeType for a value not among the defined constants.
+        /// </summary>
+        public InstanceAttributeType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceAttributeType FindValue(string value)
+        {
+            return FindValue<InstanceAttributeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceAttributeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type InstanceReplicationStatus.
+    /// </summary>
+    public class InstanceReplicationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant INSTANCE_REPLICATION_COMPLETE for InstanceReplicationStatus
+        /// </summary>
+        public static readonly InstanceReplicationStatus INSTANCE_REPLICATION_COMPLETE = new InstanceReplicationStatus("INSTANCE_REPLICATION_COMPLETE");
+
+        /// <summary>
+        /// Constant INSTANCE_REPLICATION_DELETION_FAILED for InstanceReplicationStatus
+        /// </summary>
+        public static readonly InstanceReplicationStatus INSTANCE_REPLICATION_DELETION_FAILED = new InstanceReplicationStatus("INSTANCE_REPLICATION_DELETION_FAILED");
+
+        /// <summary>
+        /// Constant INSTANCE_REPLICATION_FAILED for InstanceReplicationStatus
+        /// </summary>
+        public static readonly InstanceReplicationStatus INSTANCE_REPLICATION_FAILED = new InstanceReplicationStatus("INSTANCE_REPLICATION_FAILED");
+
+        /// <summary>
+        /// Constant INSTANCE_REPLICATION_IN_PROGRESS for InstanceReplicationStatus
+        /// </summary>
+        public static readonly InstanceReplicationStatus INSTANCE_REPLICATION_IN_PROGRESS = new InstanceReplicationStatus("INSTANCE_REPLICATION_IN_PROGRESS");
+
+        /// <summary>
+        /// Constant INSTANCE_REPLICA_DELETING for InstanceReplicationStatus
+        /// </summary>
+        public static readonly InstanceReplicationStatus INSTANCE_REPLICA_DELETING = new InstanceReplicationStatus("INSTANCE_REPLICA_DELETING");
+
+        /// <summary>
+        /// Constant RESOURCE_REPLICATION_NOT_STARTED for InstanceReplicationStatus
+        /// </summary>
+        public static readonly InstanceReplicationStatus RESOURCE_REPLICATION_NOT_STARTED = new InstanceReplicationStatus("RESOURCE_REPLICATION_NOT_STARTED");
+
+        /// <summary>
+        /// Constructs a custom InstanceReplicationStatus for a value not among the defined constants.
+        /// </summary>
+        public InstanceReplicationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceReplicationStatus FindValue(string value)
+        {
+            return FindValue<InstanceReplicationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceReplicationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type InstanceStatus.
+    /// </summary>
+    public class InstanceStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for InstanceStatus
+        /// </summary>
+        public static readonly InstanceStatus ACTIVE = new InstanceStatus("ACTIVE");
+
+        /// <summary>
+        /// Constant CREATION_FAILED for InstanceStatus
+        /// </summary>
+        public static readonly InstanceStatus CREATION_FAILED = new InstanceStatus("CREATION_FAILED");
+
+        /// <summary>
+        /// Constant CREATION_IN_PROGRESS for InstanceStatus
+        /// </summary>
+        public static readonly InstanceStatus CREATION_IN_PROGRESS = new InstanceStatus("CREATION_IN_PROGRESS");
+
+        /// <summary>
+        /// Constructs a custom InstanceStatus for a value not among the defined constants.
+        /// </summary>
+        public InstanceStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceStatus FindValue(string value)
+        {
+            return FindValue<InstanceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type InstanceStorageResourceType.
+    /// </summary>
+    public class InstanceStorageResourceType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AGENT_EVENTS for InstanceStorageResourceType
+        /// </summary>
+        public static readonly InstanceStorageResourceType AGENT_EVENTS = new InstanceStorageResourceType("AGENT_EVENTS");
+
+        /// <summary>
+        /// Constant ATTACHMENTS for InstanceStorageResourceType
+        /// </summary>
+        public static readonly InstanceStorageResourceType ATTACHMENTS = new InstanceStorageResourceType("ATTACHMENTS");
+
+        /// <summary>
+        /// Constant CALL_RECORDINGS for InstanceStorageResourceType
+        /// </summary>
+        public static readonly InstanceStorageResourceType CALL_RECORDINGS = new InstanceStorageResourceType("CALL_RECORDINGS");
+
+        /// <summary>
+        /// Constant CHAT_TRANSCRIPTS for InstanceStorageResourceType
+        /// </summary>
+        public static readonly InstanceStorageResourceType CHAT_TRANSCRIPTS = new InstanceStorageResourceType("CHAT_TRANSCRIPTS");
+
+        /// <summary>
+        /// Constant CONTACT_EVALUATIONS for InstanceStorageResourceType
+        /// </summary>
+        public static readonly InstanceStorageResourceType CONTACT_EVALUATIONS = new InstanceStorageResourceType("CONTACT_EVALUATIONS");
+
+        /// <summary>
+        /// Constant CONTACT_TRACE_RECORDS for InstanceStorageResourceType
+        /// </summary>
+        public static readonly InstanceStorageResourceType CONTACT_TRACE_RECORDS = new InstanceStorageResourceType("CONTACT_TRACE_RECORDS");
+
+        /// <summary>
+        /// Constant EMAIL_MESSAGES for InstanceStorageResourceType
+        /// </summary>
+        public static readonly InstanceStorageResourceType EMAIL_MESSAGES = new InstanceStorageResourceType("EMAIL_MESSAGES");
+
+        /// <summary>
+        /// Constant MEDIA_STREAMS for InstanceStorageResourceType
+        /// </summary>
+        public static readonly InstanceStorageResourceType MEDIA_STREAMS = new InstanceStorageResourceType("MEDIA_STREAMS");
+
+        /// <summary>
+        /// Constant REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS for InstanceStorageResourceType
+        /// </summary>
+        public static readonly InstanceStorageResourceType REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS = new InstanceStorageResourceType("REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS");
+
+        /// <summary>
+        /// Constant REAL_TIME_CONTACT_ANALYSIS_SEGMENTS for InstanceStorageResourceType
+        /// </summary>
+        public static readonly InstanceStorageResourceType REAL_TIME_CONTACT_ANALYSIS_SEGMENTS = new InstanceStorageResourceType("REAL_TIME_CONTACT_ANALYSIS_SEGMENTS");
+
+        /// <summary>
+        /// Constant REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS for InstanceStorageResourceType
+        /// </summary>
+        public static readonly InstanceStorageResourceType REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS = new InstanceStorageResourceType("REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS");
+
+        /// <summary>
+        /// Constant SCHEDULED_REPORTS for InstanceStorageResourceType
+        /// </summary>
+        public static readonly InstanceStorageResourceType SCHEDULED_REPORTS = new InstanceStorageResourceType("SCHEDULED_REPORTS");
+
+        /// <summary>
+        /// Constant SCREEN_RECORDINGS for InstanceStorageResourceType
+        /// </summary>
+        public static readonly InstanceStorageResourceType SCREEN_RECORDINGS = new InstanceStorageResourceType("SCREEN_RECORDINGS");
+
+        /// <summary>
+        /// Constructs a custom InstanceStorageResourceType for a value not among the defined constants.
+        /// </summary>
+        public InstanceStorageResourceType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceStorageResourceType FindValue(string value)
+        {
+            return FindValue<InstanceStorageResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceStorageResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type IntegrationType.
+    /// </summary>
+    public class IntegrationType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ANALYTICS_CONNECTOR for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType ANALYTICS_CONNECTOR = new IntegrationType("ANALYTICS_CONNECTOR");
+
+        /// <summary>
+        /// Constant APPLICATION for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType APPLICATION = new IntegrationType("APPLICATION");
+
+        /// <summary>
+        /// Constant CALL_TRANSFER_CONNECTOR for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType CALL_TRANSFER_CONNECTOR = new IntegrationType("CALL_TRANSFER_CONNECTOR");
+
+        /// <summary>
+        /// Constant CASES_DOMAIN for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType CASES_DOMAIN = new IntegrationType("CASES_DOMAIN");
+
+        /// <summary>
+        /// Constant COGNITO_USER_POOL for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType COGNITO_USER_POOL = new IntegrationType("COGNITO_USER_POOL");
+
+        /// <summary>
+        /// Constant EVENT for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType EVENT = new IntegrationType("EVENT");
+
+        /// <summary>
+        /// Constant FILE_SCANNER for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType FILE_SCANNER = new IntegrationType("FILE_SCANNER");
+
+        /// <summary>
+        /// Constant MESSAGE_PROCESSOR for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType MESSAGE_PROCESSOR = new IntegrationType("MESSAGE_PROCESSOR");
+
+        /// <summary>
+        /// Constant PINPOINT_APP for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType PINPOINT_APP = new IntegrationType("PINPOINT_APP");
+
+        /// <summary>
+        /// Constant Q_MESSAGE_TEMPLATES for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType Q_MESSAGE_TEMPLATES = new IntegrationType("Q_MESSAGE_TEMPLATES");
+
+        /// <summary>
+        /// Constant SES_IDENTITY for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType SES_IDENTITY = new IntegrationType("SES_IDENTITY");
+
+        /// <summary>
+        /// Constant VOICE_ID for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType VOICE_ID = new IntegrationType("VOICE_ID");
+
+        /// <summary>
+        /// Constant WISDOM_ASSISTANT for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType WISDOM_ASSISTANT = new IntegrationType("WISDOM_ASSISTANT");
+
+        /// <summary>
+        /// Constant WISDOM_KNOWLEDGE_BASE for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType WISDOM_KNOWLEDGE_BASE = new IntegrationType("WISDOM_KNOWLEDGE_BASE");
+
+        /// <summary>
+        /// Constant WISDOM_QUICK_RESPONSES for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType WISDOM_QUICK_RESPONSES = new IntegrationType("WISDOM_QUICK_RESPONSES");
+
+        /// <summary>
+        /// Constructs a custom IntegrationType for a value not among the defined constants.
+        /// </summary>
+        public IntegrationType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IntegrationType FindValue(string value)
+        {
+            return FindValue<IntegrationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IntegrationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type IntervalPeriod.
+    /// </summary>
+    public class IntervalPeriod : ConstantClass
+    {
+        /// <summary>
+        /// Constant DAY for IntervalPeriod
+        /// </summary>
+        public static readonly IntervalPeriod DAY = new IntervalPeriod("DAY");
+
+        /// <summary>
+        /// Constant FIFTEEN_MIN for IntervalPeriod
+        /// </summary>
+        public static readonly IntervalPeriod FIFTEEN_MIN = new IntervalPeriod("FIFTEEN_MIN");
+
+        /// <summary>
+        /// Constant HOUR for IntervalPeriod
+        /// </summary>
+        public static readonly IntervalPeriod HOUR = new IntervalPeriod("HOUR");
+
+        /// <summary>
+        /// Constant THIRTY_MIN for IntervalPeriod
+        /// </summary>
+        public static readonly IntervalPeriod THIRTY_MIN = new IntervalPeriod("THIRTY_MIN");
+
+        /// <summary>
+        /// Constant TOTAL for IntervalPeriod
+        /// </summary>
+        public static readonly IntervalPeriod TOTAL = new IntervalPeriod("TOTAL");
+
+        /// <summary>
+        /// Constant WEEK for IntervalPeriod
+        /// </summary>
+        public static readonly IntervalPeriod WEEK = new IntervalPeriod("WEEK");
+
+        /// <summary>
+        /// Constructs a custom IntervalPeriod for a value not among the defined constants.
+        /// </summary>
+        public IntervalPeriod(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IntervalPeriod FindValue(string value)
+        {
+            return FindValue<IntervalPeriod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IntervalPeriod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type IvrRecordingTrack.
+    /// </summary>
+    public class IvrRecordingTrack : ConstantClass
+    {
+        /// <summary>
+        /// Constant ALL for IvrRecordingTrack
+        /// </summary>
+        public static readonly IvrRecordingTrack ALL = new IvrRecordingTrack("ALL");
+
+        /// <summary>
+        /// Constructs a custom IvrRecordingTrack for a value not among the defined constants.
+        /// </summary>
+        public IvrRecordingTrack(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IvrRecordingTrack FindValue(string value)
+        {
+            return FindValue<IvrRecordingTrack>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IvrRecordingTrack(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type LexVersion.
+    /// </summary>
+    public class LexVersion : ConstantClass
+    {
+        /// <summary>
+        /// Constant V1 for LexVersion
+        /// </summary>
+        public static readonly LexVersion V1 = new LexVersion("V1");
+
+        /// <summary>
+        /// Constant V2 for LexVersion
+        /// </summary>
+        public static readonly LexVersion V2 = new LexVersion("V2");
+
+        /// <summary>
+        /// Constructs a custom LexVersion for a value not among the defined constants.
+        /// </summary>
+        public LexVersion(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LexVersion FindValue(string value)
+        {
+            return FindValue<LexVersion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LexVersion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ListFlowAssociationResourceType.
+    /// </summary>
+    public class ListFlowAssociationResourceType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ANALYTICS_CONNECTOR for ListFlowAssociationResourceType
+        /// </summary>
+        public static readonly ListFlowAssociationResourceType ANALYTICS_CONNECTOR = new ListFlowAssociationResourceType("ANALYTICS_CONNECTOR");
+
+        /// <summary>
+        /// Constant INBOUND_EMAIL for ListFlowAssociationResourceType
+        /// </summary>
+        public static readonly ListFlowAssociationResourceType INBOUND_EMAIL = new ListFlowAssociationResourceType("INBOUND_EMAIL");
+
+        /// <summary>
+        /// Constant OUTBOUND_EMAIL for ListFlowAssociationResourceType
+        /// </summary>
+        public static readonly ListFlowAssociationResourceType OUTBOUND_EMAIL = new ListFlowAssociationResourceType("OUTBOUND_EMAIL");
+
+        /// <summary>
+        /// Constant VOICE_PHONE_NUMBER for ListFlowAssociationResourceType
+        /// </summary>
+        public static readonly ListFlowAssociationResourceType VOICE_PHONE_NUMBER = new ListFlowAssociationResourceType("VOICE_PHONE_NUMBER");
+
+        /// <summary>
+        /// Constant WHATSAPP_MESSAGING_PHONE_NUMBER for ListFlowAssociationResourceType
+        /// </summary>
+        public static readonly ListFlowAssociationResourceType WHATSAPP_MESSAGING_PHONE_NUMBER = new ListFlowAssociationResourceType("WHATSAPP_MESSAGING_PHONE_NUMBER");
+
+        /// <summary>
+        /// Constructs a custom ListFlowAssociationResourceType for a value not among the defined constants.
+        /// </summary>
+        public ListFlowAssociationResourceType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListFlowAssociationResourceType FindValue(string value)
+        {
+            return FindValue<ListFlowAssociationResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListFlowAssociationResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type LocaleCode.
+    /// </summary>
+    public class LocaleCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant De_DE for LocaleCode
+        /// </summary>
+        public static readonly LocaleCode De_DE = new LocaleCode("de_DE");
+
+        /// <summary>
+        /// Constant En_US for LocaleCode
+        /// </summary>
+        public static readonly LocaleCode En_US = new LocaleCode("en_US");
+
+        /// <summary>
+        /// Constant Es_ES for LocaleCode
+        /// </summary>
+        public static readonly LocaleCode Es_ES = new LocaleCode("es_ES");
+
+        /// <summary>
+        /// Constant Fr_FR for LocaleCode
+        /// </summary>
+        public static readonly LocaleCode Fr_FR = new LocaleCode("fr_FR");
+
+        /// <summary>
+        /// Constant Id_ID for LocaleCode
+        /// </summary>
+        public static readonly LocaleCode Id_ID = new LocaleCode("id_ID");
+
+        /// <summary>
+        /// Constant It_IT for LocaleCode
+        /// </summary>
+        public static readonly LocaleCode It_IT = new LocaleCode("it_IT");
+
+        /// <summary>
+        /// Constant Ja_JP for LocaleCode
+        /// </summary>
+        public static readonly LocaleCode Ja_JP = new LocaleCode("ja_JP");
+
+        /// <summary>
+        /// Constant Ko_KR for LocaleCode
+        /// </summary>
+        public static readonly LocaleCode Ko_KR = new LocaleCode("ko_KR");
+
+        /// <summary>
+        /// Constant Pt_BR for LocaleCode
+        /// </summary>
+        public static readonly LocaleCode Pt_BR = new LocaleCode("pt_BR");
+
+        /// <summary>
+        /// Constant Zh_CN for LocaleCode
+        /// </summary>
+        public static readonly LocaleCode Zh_CN = new LocaleCode("zh_CN");
+
+        /// <summary>
+        /// Constant Zh_TW for LocaleCode
+        /// </summary>
+        public static readonly LocaleCode Zh_TW = new LocaleCode("zh_TW");
+
+        /// <summary>
+        /// Constructs a custom LocaleCode for a value not among the defined constants.
+        /// </summary>
+        public LocaleCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LocaleCode FindValue(string value)
+        {
+            return FindValue<LocaleCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LocaleCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MaskMode.
+    /// </summary>
+    public class MaskMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant EntityType for MaskMode
+        /// </summary>
+        public static readonly MaskMode EntityType = new MaskMode("EntityType");
+
+        /// <summary>
+        /// Constant PII for MaskMode
+        /// </summary>
+        public static readonly MaskMode PII = new MaskMode("PII");
+
+        /// <summary>
+        /// Constructs a custom MaskMode for a value not among the defined constants.
+        /// </summary>
+        public MaskMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MaskMode FindValue(string value)
+        {
+            return FindValue<MaskMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MaskMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MediaStreamType.
+    /// </summary>
+    public class MediaStreamType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AUDIO for MediaStreamType
+        /// </summary>
+        public static readonly MediaStreamType AUDIO = new MediaStreamType("AUDIO");
+
+        /// <summary>
+        /// Constant VIDEO for MediaStreamType
+        /// </summary>
+        public static readonly MediaStreamType VIDEO = new MediaStreamType("VIDEO");
+
+        /// <summary>
+        /// Constructs a custom MediaStreamType for a value not among the defined constants.
+        /// </summary>
+        public MediaStreamType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MediaStreamType FindValue(string value)
+        {
+            return FindValue<MediaStreamType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MediaStreamType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MediaType.
+    /// </summary>
+    public class MediaType : ConstantClass
+    {
+        /// <summary>
+        /// Constant IMAGE_LOGO_DARK_FAVICON for MediaType
+        /// </summary>
+        public static readonly MediaType IMAGE_LOGO_DARK_FAVICON = new MediaType("IMAGE_LOGO_DARK_FAVICON");
+
+        /// <summary>
+        /// Constant IMAGE_LOGO_DARK_HORIZONTAL for MediaType
+        /// </summary>
+        public static readonly MediaType IMAGE_LOGO_DARK_HORIZONTAL = new MediaType("IMAGE_LOGO_DARK_HORIZONTAL");
+
+        /// <summary>
+        /// Constant IMAGE_LOGO_LIGHT_FAVICON for MediaType
+        /// </summary>
+        public static readonly MediaType IMAGE_LOGO_LIGHT_FAVICON = new MediaType("IMAGE_LOGO_LIGHT_FAVICON");
+
+        /// <summary>
+        /// Constant IMAGE_LOGO_LIGHT_HORIZONTAL for MediaType
+        /// </summary>
+        public static readonly MediaType IMAGE_LOGO_LIGHT_HORIZONTAL = new MediaType("IMAGE_LOGO_LIGHT_HORIZONTAL");
+
+        /// <summary>
+        /// Constructs a custom MediaType for a value not among the defined constants.
+        /// </summary>
+        public MediaType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MediaType FindValue(string value)
+        {
+            return FindValue<MediaType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MediaType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MeetingFeatureStatus.
+    /// </summary>
+    public class MeetingFeatureStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant AVAILABLE for MeetingFeatureStatus
+        /// </summary>
+        public static readonly MeetingFeatureStatus AVAILABLE = new MeetingFeatureStatus("AVAILABLE");
+
+        /// <summary>
+        /// Constant UNAVAILABLE for MeetingFeatureStatus
+        /// </summary>
+        public static readonly MeetingFeatureStatus UNAVAILABLE = new MeetingFeatureStatus("UNAVAILABLE");
+
+        /// <summary>
+        /// Constructs a custom MeetingFeatureStatus for a value not among the defined constants.
+        /// </summary>
+        public MeetingFeatureStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MeetingFeatureStatus FindValue(string value)
+        {
+            return FindValue<MeetingFeatureStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MeetingFeatureStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MetricCreationMethod.
+    /// </summary>
+    public class MetricCreationMethod : ConstantClass
+    {
+        /// <summary>
+        /// Constant METRIC_BUILDER for MetricCreationMethod
+        /// </summary>
+        public static readonly MetricCreationMethod METRIC_BUILDER = new MetricCreationMethod("METRIC_BUILDER");
+
+        /// <summary>
+        /// Constant SERVICE_LEVEL_BUILDER for MetricCreationMethod
+        /// </summary>
+        public static readonly MetricCreationMethod SERVICE_LEVEL_BUILDER = new MetricCreationMethod("SERVICE_LEVEL_BUILDER");
+
+        /// <summary>
+        /// Constructs a custom MetricCreationMethod for a value not among the defined constants.
+        /// </summary>
+        public MetricCreationMethod(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetricCreationMethod FindValue(string value)
+        {
+            return FindValue<MetricCreationMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetricCreationMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MetricFilterBooleanConditionComparison.
+    /// </summary>
+    public class MetricFilterBooleanConditionComparison : ConstantClass
+    {
+        /// <summary>
+        /// Constant IS_FALSE for MetricFilterBooleanConditionComparison
+        /// </summary>
+        public static readonly MetricFilterBooleanConditionComparison IS_FALSE = new MetricFilterBooleanConditionComparison("IS_FALSE");
+
+        /// <summary>
+        /// Constant IS_TRUE for MetricFilterBooleanConditionComparison
+        /// </summary>
+        public static readonly MetricFilterBooleanConditionComparison IS_TRUE = new MetricFilterBooleanConditionComparison("IS_TRUE");
+
+        /// <summary>
+        /// Constructs a custom MetricFilterBooleanConditionComparison for a value not among the defined constants.
+        /// </summary>
+        public MetricFilterBooleanConditionComparison(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetricFilterBooleanConditionComparison FindValue(string value)
+        {
+            return FindValue<MetricFilterBooleanConditionComparison>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetricFilterBooleanConditionComparison(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MetricFilterNumberConditionComparison.
+    /// </summary>
+    public class MetricFilterNumberConditionComparison : ConstantClass
+    {
+        /// <summary>
+        /// Constant GREATER for MetricFilterNumberConditionComparison
+        /// </summary>
+        public static readonly MetricFilterNumberConditionComparison GREATER = new MetricFilterNumberConditionComparison("GREATER");
+
+        /// <summary>
+        /// Constant GREATER_OR_EQUAL for MetricFilterNumberConditionComparison
+        /// </summary>
+        public static readonly MetricFilterNumberConditionComparison GREATER_OR_EQUAL = new MetricFilterNumberConditionComparison("GREATER_OR_EQUAL");
+
+        /// <summary>
+        /// Constant LESSER for MetricFilterNumberConditionComparison
+        /// </summary>
+        public static readonly MetricFilterNumberConditionComparison LESSER = new MetricFilterNumberConditionComparison("LESSER");
+
+        /// <summary>
+        /// Constant LESSER_OR_EQUAL for MetricFilterNumberConditionComparison
+        /// </summary>
+        public static readonly MetricFilterNumberConditionComparison LESSER_OR_EQUAL = new MetricFilterNumberConditionComparison("LESSER_OR_EQUAL");
+
+        /// <summary>
+        /// Constructs a custom MetricFilterNumberConditionComparison for a value not among the defined constants.
+        /// </summary>
+        public MetricFilterNumberConditionComparison(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetricFilterNumberConditionComparison FindValue(string value)
+        {
+            return FindValue<MetricFilterNumberConditionComparison>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetricFilterNumberConditionComparison(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MetricFilterStringConditionComparison.
+    /// </summary>
+    public class MetricFilterStringConditionComparison : ConstantClass
+    {
+        /// <summary>
+        /// Constant MATCHES_ANY for MetricFilterStringConditionComparison
+        /// </summary>
+        public static readonly MetricFilterStringConditionComparison MATCHES_ANY = new MetricFilterStringConditionComparison("MATCHES_ANY");
+
+        /// <summary>
+        /// Constant MATCHES_NONE for MetricFilterStringConditionComparison
+        /// </summary>
+        public static readonly MetricFilterStringConditionComparison MATCHES_NONE = new MetricFilterStringConditionComparison("MATCHES_NONE");
+
+        /// <summary>
+        /// Constructs a custom MetricFilterStringConditionComparison for a value not among the defined constants.
+        /// </summary>
+        public MetricFilterStringConditionComparison(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetricFilterStringConditionComparison FindValue(string value)
+        {
+            return FindValue<MetricFilterStringConditionComparison>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetricFilterStringConditionComparison(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MetricStatus.
+    /// </summary>
+    public class MetricStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant PUBLISHED for MetricStatus
+        /// </summary>
+        public static readonly MetricStatus PUBLISHED = new MetricStatus("PUBLISHED");
+
+        /// <summary>
+        /// Constant SAVED for MetricStatus
+        /// </summary>
+        public static readonly MetricStatus SAVED = new MetricStatus("SAVED");
+
+        /// <summary>
+        /// Constructs a custom MetricStatus for a value not among the defined constants.
+        /// </summary>
+        public MetricStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetricStatus FindValue(string value)
+        {
+            return FindValue<MetricStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetricStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MetricType.
+    /// </summary>
+    public class MetricType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AWS_MANAGED for MetricType
+        /// </summary>
+        public static readonly MetricType AWS_MANAGED = new MetricType("AWS_MANAGED");
+
+        /// <summary>
+        /// Constant CUSTOMER_MANAGED for MetricType
+        /// </summary>
+        public static readonly MetricType CUSTOMER_MANAGED = new MetricType("CUSTOMER_MANAGED");
+
+        /// <summary>
+        /// Constructs a custom MetricType for a value not among the defined constants.
+        /// </summary>
+        public MetricType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetricType FindValue(string value)
+        {
+            return FindValue<MetricType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetricType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MetricUnit.
+    /// </summary>
+    public class MetricUnit : ConstantClass
+    {
+        /// <summary>
+        /// Constant DOUBLE for MetricUnit
+        /// </summary>
+        public static readonly MetricUnit DOUBLE = new MetricUnit("DOUBLE");
+
+        /// <summary>
+        /// Constant INTEGER for MetricUnit
+        /// </summary>
+        public static readonly MetricUnit INTEGER = new MetricUnit("INTEGER");
+
+        /// <summary>
+        /// Constant PERCENT for MetricUnit
+        /// </summary>
+        public static readonly MetricUnit PERCENT = new MetricUnit("PERCENT");
+
+        /// <summary>
+        /// Constant SECONDS for MetricUnit
+        /// </summary>
+        public static readonly MetricUnit SECONDS = new MetricUnit("SECONDS");
+
+        /// <summary>
+        /// Constructs a custom MetricUnit for a value not among the defined constants.
+        /// </summary>
+        public MetricUnit(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetricUnit FindValue(string value)
+        {
+            return FindValue<MetricUnit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetricUnit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MonitorCapability.
+    /// </summary>
+    public class MonitorCapability : ConstantClass
+    {
+        /// <summary>
+        /// Constant BARGE for MonitorCapability
+        /// </summary>
+        public static readonly MonitorCapability BARGE = new MonitorCapability("BARGE");
+
+        /// <summary>
+        /// Constant SILENT_MONITOR for MonitorCapability
+        /// </summary>
+        public static readonly MonitorCapability SILENT_MONITOR = new MonitorCapability("SILENT_MONITOR");
+
+        /// <summary>
+        /// Constructs a custom MonitorCapability for a value not among the defined constants.
+        /// </summary>
+        public MonitorCapability(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MonitorCapability FindValue(string value)
+        {
+            return FindValue<MonitorCapability>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MonitorCapability(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MultiSelectQuestionRuleCategoryAutomationCondition.
+    /// </summary>
+    public class MultiSelectQuestionRuleCategoryAutomationCondition : ConstantClass
+    {
+        /// <summary>
+        /// Constant NOT_PRESENT for MultiSelectQuestionRuleCategoryAutomationCondition
+        /// </summary>
+        public static readonly MultiSelectQuestionRuleCategoryAutomationCondition NOT_PRESENT = new MultiSelectQuestionRuleCategoryAutomationCondition("NOT_PRESENT");
+
+        /// <summary>
+        /// Constant PRESENT for MultiSelectQuestionRuleCategoryAutomationCondition
+        /// </summary>
+        public static readonly MultiSelectQuestionRuleCategoryAutomationCondition PRESENT = new MultiSelectQuestionRuleCategoryAutomationCondition("PRESENT");
+
+        /// <summary>
+        /// Constructs a custom MultiSelectQuestionRuleCategoryAutomationCondition for a value not among the defined constants.
+        /// </summary>
+        public MultiSelectQuestionRuleCategoryAutomationCondition(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MultiSelectQuestionRuleCategoryAutomationCondition FindValue(string value)
+        {
+            return FindValue<MultiSelectQuestionRuleCategoryAutomationCondition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MultiSelectQuestionRuleCategoryAutomationCondition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type NextContactType.
+    /// </summary>
+    public class NextContactType : ConstantClass
+    {
+        /// <summary>
+        /// Constant QUICK_CONNECT for NextContactType
+        /// </summary>
+        public static readonly NextContactType QUICK_CONNECT = new NextContactType("QUICK_CONNECT");
+
+        /// <summary>
+        /// Constructs a custom NextContactType for a value not among the defined constants.
+        /// </summary>
+        public NextContactType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NextContactType FindValue(string value)
+        {
+            return FindValue<NextContactType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NextContactType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type NotFoundBehaviorType.
+    /// </summary>
+    public class NotFoundBehaviorType : ConstantClass
+    {
+        /// <summary>
+        /// Constant OMIT for NotFoundBehaviorType
+        /// </summary>
+        public static readonly NotFoundBehaviorType OMIT = new NotFoundBehaviorType("OMIT");
+
+        /// <summary>
+        /// Constant USE_DEFAULT_VALUE for NotFoundBehaviorType
+        /// </summary>
+        public static readonly NotFoundBehaviorType USE_DEFAULT_VALUE = new NotFoundBehaviorType("USE_DEFAULT_VALUE");
+
+        /// <summary>
+        /// Constructs a custom NotFoundBehaviorType for a value not among the defined constants.
+        /// </summary>
+        public NotFoundBehaviorType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NotFoundBehaviorType FindValue(string value)
+        {
+            return FindValue<NotFoundBehaviorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NotFoundBehaviorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type NotificationContentType.
+    /// </summary>
+    public class NotificationContentType : ConstantClass
+    {
+        /// <summary>
+        /// Constant PLAIN_TEXT for NotificationContentType
+        /// </summary>
+        public static readonly NotificationContentType PLAIN_TEXT = new NotificationContentType("PLAIN_TEXT");
+
+        /// <summary>
+        /// Constructs a custom NotificationContentType for a value not among the defined constants.
+        /// </summary>
+        public NotificationContentType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NotificationContentType FindValue(string value)
+        {
+            return FindValue<NotificationContentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NotificationContentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type NotificationDeliveryType.
+    /// </summary>
+    public class NotificationDeliveryType : ConstantClass
+    {
+        /// <summary>
+        /// Constant EMAIL for NotificationDeliveryType
+        /// </summary>
+        public static readonly NotificationDeliveryType EMAIL = new NotificationDeliveryType("EMAIL");
+
+        /// <summary>
+        /// Constructs a custom NotificationDeliveryType for a value not among the defined constants.
+        /// </summary>
+        public NotificationDeliveryType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NotificationDeliveryType FindValue(string value)
+        {
+            return FindValue<NotificationDeliveryType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NotificationDeliveryType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type NotificationPriority.
+    /// </summary>
+    public class NotificationPriority : ConstantClass
+    {
+        /// <summary>
+        /// Constant HIGH for NotificationPriority
+        /// </summary>
+        public static readonly NotificationPriority HIGH = new NotificationPriority("HIGH");
+
+        /// <summary>
+        /// Constant LOW for NotificationPriority
+        /// </summary>
+        public static readonly NotificationPriority LOW = new NotificationPriority("LOW");
+
+        /// <summary>
+        /// Constant URGENT for NotificationPriority
+        /// </summary>
+        public static readonly NotificationPriority URGENT = new NotificationPriority("URGENT");
+
+        /// <summary>
+        /// Constructs a custom NotificationPriority for a value not among the defined constants.
+        /// </summary>
+        public NotificationPriority(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NotificationPriority FindValue(string value)
+        {
+            return FindValue<NotificationPriority>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NotificationPriority(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type NotificationSource.
+    /// </summary>
+    public class NotificationSource : ConstantClass
+    {
+        /// <summary>
+        /// Constant CUSTOMER for NotificationSource
+        /// </summary>
+        public static readonly NotificationSource CUSTOMER = new NotificationSource("CUSTOMER");
+
+        /// <summary>
+        /// Constant RULES for NotificationSource
+        /// </summary>
+        public static readonly NotificationSource RULES = new NotificationSource("RULES");
+
+        /// <summary>
+        /// Constant SYSTEM for NotificationSource
+        /// </summary>
+        public static readonly NotificationSource SYSTEM = new NotificationSource("SYSTEM");
+
+        /// <summary>
+        /// Constructs a custom NotificationSource for a value not among the defined constants.
+        /// </summary>
+        public NotificationSource(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NotificationSource FindValue(string value)
+        {
+            return FindValue<NotificationSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NotificationSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type NotificationStatus.
+    /// </summary>
+    public class NotificationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant HIDDEN for NotificationStatus
+        /// </summary>
+        public static readonly NotificationStatus HIDDEN = new NotificationStatus("HIDDEN");
+
+        /// <summary>
+        /// Constant READ for NotificationStatus
+        /// </summary>
+        public static readonly NotificationStatus READ = new NotificationStatus("READ");
+
+        /// <summary>
+        /// Constant UNREAD for NotificationStatus
+        /// </summary>
+        public static readonly NotificationStatus UNREAD = new NotificationStatus("UNREAD");
+
+        /// <summary>
+        /// Constructs a custom NotificationStatus for a value not among the defined constants.
+        /// </summary>
+        public NotificationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NotificationStatus FindValue(string value)
+        {
+            return FindValue<NotificationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NotificationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type NotificationType.
+    /// </summary>
+    public class NotificationType : ConstantClass
+    {
+        /// <summary>
+        /// Constant WIDGET_ACTION for NotificationType
+        /// </summary>
+        public static readonly NotificationType WIDGET_ACTION = new NotificationType("WIDGET_ACTION");
+
+        /// <summary>
+        /// Constant WIDGET_VIEW for NotificationType
+        /// </summary>
+        public static readonly NotificationType WIDGET_VIEW = new NotificationType("WIDGET_VIEW");
+
+        /// <summary>
+        /// Constructs a custom NotificationType for a value not among the defined constants.
+        /// </summary>
+        public NotificationType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NotificationType FindValue(string value)
+        {
+            return FindValue<NotificationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NotificationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type NumberComparisonType.
+    /// </summary>
+    public class NumberComparisonType : ConstantClass
+    {
+        /// <summary>
+        /// Constant EQUAL for NumberComparisonType
+        /// </summary>
+        public static readonly NumberComparisonType EQUAL = new NumberComparisonType("EQUAL");
+
+        /// <summary>
+        /// Constant GREATER for NumberComparisonType
+        /// </summary>
+        public static readonly NumberComparisonType GREATER = new NumberComparisonType("GREATER");
+
+        /// <summary>
+        /// Constant GREATER_OR_EQUAL for NumberComparisonType
+        /// </summary>
+        public static readonly NumberComparisonType GREATER_OR_EQUAL = new NumberComparisonType("GREATER_OR_EQUAL");
+
+        /// <summary>
+        /// Constant LESSER for NumberComparisonType
+        /// </summary>
+        public static readonly NumberComparisonType LESSER = new NumberComparisonType("LESSER");
+
+        /// <summary>
+        /// Constant LESSER_OR_EQUAL for NumberComparisonType
+        /// </summary>
+        public static readonly NumberComparisonType LESSER_OR_EQUAL = new NumberComparisonType("LESSER_OR_EQUAL");
+
+        /// <summary>
+        /// Constant NOT_EQUAL for NumberComparisonType
+        /// </summary>
+        public static readonly NumberComparisonType NOT_EQUAL = new NumberComparisonType("NOT_EQUAL");
+
+        /// <summary>
+        /// Constant RANGE for NumberComparisonType
+        /// </summary>
+        public static readonly NumberComparisonType RANGE = new NumberComparisonType("RANGE");
+
+        /// <summary>
+        /// Constructs a custom NumberComparisonType for a value not among the defined constants.
+        /// </summary>
+        public NumberComparisonType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NumberComparisonType FindValue(string value)
+        {
+            return FindValue<NumberComparisonType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NumberComparisonType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type NumericQuestionPropertyAutomationLabel.
+    /// </summary>
+    public class NumericQuestionPropertyAutomationLabel : ConstantClass
+    {
+        /// <summary>
+        /// Constant AGENT_INTERACTION_AND_HOLD_DURATION for NumericQuestionPropertyAutomationLabel
+        /// </summary>
+        public static readonly NumericQuestionPropertyAutomationLabel AGENT_INTERACTION_AND_HOLD_DURATION = new NumericQuestionPropertyAutomationLabel("AGENT_INTERACTION_AND_HOLD_DURATION");
+
+        /// <summary>
+        /// Constant AGENT_INTERACTION_DURATION for NumericQuestionPropertyAutomationLabel
+        /// </summary>
+        public static readonly NumericQuestionPropertyAutomationLabel AGENT_INTERACTION_DURATION = new NumericQuestionPropertyAutomationLabel("AGENT_INTERACTION_DURATION");
+
+        /// <summary>
+        /// Constant CONTACT_DURATION for NumericQuestionPropertyAutomationLabel
+        /// </summary>
+        public static readonly NumericQuestionPropertyAutomationLabel CONTACT_DURATION = new NumericQuestionPropertyAutomationLabel("CONTACT_DURATION");
+
+        /// <summary>
+        /// Constant CUSTOMER_HOLD_TIME for NumericQuestionPropertyAutomationLabel
+        /// </summary>
+        public static readonly NumericQuestionPropertyAutomationLabel CUSTOMER_HOLD_TIME = new NumericQuestionPropertyAutomationLabel("CUSTOMER_HOLD_TIME");
+
+        /// <summary>
+        /// Constant CUSTOMER_SENTIMENT_SCORE_WITHOUT_AGENT for NumericQuestionPropertyAutomationLabel
+        /// </summary>
+        public static readonly NumericQuestionPropertyAutomationLabel CUSTOMER_SENTIMENT_SCORE_WITHOUT_AGENT = new NumericQuestionPropertyAutomationLabel("CUSTOMER_SENTIMENT_SCORE_WITHOUT_AGENT");
+
+        /// <summary>
+        /// Constant CUSTOMER_SENTIMENT_SCORE_WITH_AGENT for NumericQuestionPropertyAutomationLabel
+        /// </summary>
+        public static readonly NumericQuestionPropertyAutomationLabel CUSTOMER_SENTIMENT_SCORE_WITH_AGENT = new NumericQuestionPropertyAutomationLabel("CUSTOMER_SENTIMENT_SCORE_WITH_AGENT");
+
+        /// <summary>
+        /// Constant LONGEST_HOLD_DURATION for NumericQuestionPropertyAutomationLabel
+        /// </summary>
+        public static readonly NumericQuestionPropertyAutomationLabel LONGEST_HOLD_DURATION = new NumericQuestionPropertyAutomationLabel("LONGEST_HOLD_DURATION");
+
+        /// <summary>
+        /// Constant NON_TALK_TIME for NumericQuestionPropertyAutomationLabel
+        /// </summary>
+        public static readonly NumericQuestionPropertyAutomationLabel NON_TALK_TIME = new NumericQuestionPropertyAutomationLabel("NON_TALK_TIME");
+
+        /// <summary>
+        /// Constant NON_TALK_TIME_PERCENTAGE for NumericQuestionPropertyAutomationLabel
+        /// </summary>
+        public static readonly NumericQuestionPropertyAutomationLabel NON_TALK_TIME_PERCENTAGE = new NumericQuestionPropertyAutomationLabel("NON_TALK_TIME_PERCENTAGE");
+
+        /// <summary>
+        /// Constant NUMBER_OF_HOLDS for NumericQuestionPropertyAutomationLabel
+        /// </summary>
+        public static readonly NumericQuestionPropertyAutomationLabel NUMBER_OF_HOLDS = new NumericQuestionPropertyAutomationLabel("NUMBER_OF_HOLDS");
+
+        /// <summary>
+        /// Constant NUMBER_OF_INTERRUPTIONS for NumericQuestionPropertyAutomationLabel
+        /// </summary>
+        public static readonly NumericQuestionPropertyAutomationLabel NUMBER_OF_INTERRUPTIONS = new NumericQuestionPropertyAutomationLabel("NUMBER_OF_INTERRUPTIONS");
+
+        /// <summary>
+        /// Constant OVERALL_AGENT_SENTIMENT_SCORE for NumericQuestionPropertyAutomationLabel
+        /// </summary>
+        public static readonly NumericQuestionPropertyAutomationLabel OVERALL_AGENT_SENTIMENT_SCORE = new NumericQuestionPropertyAutomationLabel("OVERALL_AGENT_SENTIMENT_SCORE");
+
+        /// <summary>
+        /// Constant OVERALL_CUSTOMER_SENTIMENT_SCORE for NumericQuestionPropertyAutomationLabel
+        /// </summary>
+        public static readonly NumericQuestionPropertyAutomationLabel OVERALL_CUSTOMER_SENTIMENT_SCORE = new NumericQuestionPropertyAutomationLabel("OVERALL_CUSTOMER_SENTIMENT_SCORE");
+
+        /// <summary>
+        /// Constructs a custom NumericQuestionPropertyAutomationLabel for a value not among the defined constants.
+        /// </summary>
+        public NumericQuestionPropertyAutomationLabel(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NumericQuestionPropertyAutomationLabel FindValue(string value)
+        {
+            return FindValue<NumericQuestionPropertyAutomationLabel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NumericQuestionPropertyAutomationLabel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type OperationalStatus.
+    /// </summary>
+    public class OperationalStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant CLOSED for OperationalStatus
+        /// </summary>
+        public static readonly OperationalStatus CLOSED = new OperationalStatus("CLOSED");
+
+        /// <summary>
+        /// Constant OPEN for OperationalStatus
+        /// </summary>
+        public static readonly OperationalStatus OPEN = new OperationalStatus("OPEN");
+
+        /// <summary>
+        /// Constructs a custom OperationalStatus for a value not among the defined constants.
+        /// </summary>
+        public OperationalStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OperationalStatus FindValue(string value)
+        {
+            return FindValue<OperationalStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OperationalStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type OutboundMessageSourceType.
+    /// </summary>
+    public class OutboundMessageSourceType : ConstantClass
+    {
+        /// <summary>
+        /// Constant RAW for OutboundMessageSourceType
+        /// </summary>
+        public static readonly OutboundMessageSourceType RAW = new OutboundMessageSourceType("RAW");
+
+        /// <summary>
+        /// Constant TEMPLATE for OutboundMessageSourceType
+        /// </summary>
+        public static readonly OutboundMessageSourceType TEMPLATE = new OutboundMessageSourceType("TEMPLATE");
+
+        /// <summary>
+        /// Constructs a custom OutboundMessageSourceType for a value not among the defined constants.
+        /// </summary>
+        public OutboundMessageSourceType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OutboundMessageSourceType FindValue(string value)
+        {
+            return FindValue<OutboundMessageSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OutboundMessageSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type OutboundStrategyType.
+    /// </summary>
+    public class OutboundStrategyType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AGENT_FIRST for OutboundStrategyType
+        /// </summary>
+        public static readonly OutboundStrategyType AGENT_FIRST = new OutboundStrategyType("AGENT_FIRST");
+
+        /// <summary>
+        /// Constructs a custom OutboundStrategyType for a value not among the defined constants.
+        /// </summary>
+        public OutboundStrategyType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OutboundStrategyType FindValue(string value)
+        {
+            return FindValue<OutboundStrategyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OutboundStrategyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type OverrideDays.
+    /// </summary>
+    public class OverrideDays : ConstantClass
+    {
+        /// <summary>
+        /// Constant FRIDAY for OverrideDays
+        /// </summary>
+        public static readonly OverrideDays FRIDAY = new OverrideDays("FRIDAY");
+
+        /// <summary>
+        /// Constant MONDAY for OverrideDays
+        /// </summary>
+        public static readonly OverrideDays MONDAY = new OverrideDays("MONDAY");
+
+        /// <summary>
+        /// Constant SATURDAY for OverrideDays
+        /// </summary>
+        public static readonly OverrideDays SATURDAY = new OverrideDays("SATURDAY");
+
+        /// <summary>
+        /// Constant SUNDAY for OverrideDays
+        /// </summary>
+        public static readonly OverrideDays SUNDAY = new OverrideDays("SUNDAY");
+
+        /// <summary>
+        /// Constant THURSDAY for OverrideDays
+        /// </summary>
+        public static readonly OverrideDays THURSDAY = new OverrideDays("THURSDAY");
+
+        /// <summary>
+        /// Constant TUESDAY for OverrideDays
+        /// </summary>
+        public static readonly OverrideDays TUESDAY = new OverrideDays("TUESDAY");
+
+        /// <summary>
+        /// Constant WEDNESDAY for OverrideDays
+        /// </summary>
+        public static readonly OverrideDays WEDNESDAY = new OverrideDays("WEDNESDAY");
+
+        /// <summary>
+        /// Constructs a custom OverrideDays for a value not among the defined constants.
+        /// </summary>
+        public OverrideDays(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OverrideDays FindValue(string value)
+        {
+            return FindValue<OverrideDays>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OverrideDays(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type OverrideType.
+    /// </summary>
+    public class OverrideType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CLOSED for OverrideType
+        /// </summary>
+        public static readonly OverrideType CLOSED = new OverrideType("CLOSED");
+
+        /// <summary>
+        /// Constant OPEN for OverrideType
+        /// </summary>
+        public static readonly OverrideType OPEN = new OverrideType("OPEN");
+
+        /// <summary>
+        /// Constant STANDARD for OverrideType
+        /// </summary>
+        public static readonly OverrideType STANDARD = new OverrideType("STANDARD");
+
+        /// <summary>
+        /// Constructs a custom OverrideType for a value not among the defined constants.
+        /// </summary>
+        public OverrideType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OverrideType FindValue(string value)
+        {
+            return FindValue<OverrideType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OverrideType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ParticipantRole.
+    /// </summary>
+    public class ParticipantRole : ConstantClass
+    {
+        /// <summary>
+        /// Constant AGENT for ParticipantRole
+        /// </summary>
+        public static readonly ParticipantRole AGENT = new ParticipantRole("AGENT");
+
+        /// <summary>
+        /// Constant CUSTOMER for ParticipantRole
+        /// </summary>
+        public static readonly ParticipantRole CUSTOMER = new ParticipantRole("CUSTOMER");
+
+        /// <summary>
+        /// Constant CUSTOM_BOT for ParticipantRole
+        /// </summary>
+        public static readonly ParticipantRole CUSTOM_BOT = new ParticipantRole("CUSTOM_BOT");
+
+        /// <summary>
+        /// Constant SUPERVISOR for ParticipantRole
+        /// </summary>
+        public static readonly ParticipantRole SUPERVISOR = new ParticipantRole("SUPERVISOR");
+
+        /// <summary>
+        /// Constant SYSTEM for ParticipantRole
+        /// </summary>
+        public static readonly ParticipantRole SYSTEM = new ParticipantRole("SYSTEM");
+
+        /// <summary>
+        /// Constructs a custom ParticipantRole for a value not among the defined constants.
+        /// </summary>
+        public ParticipantRole(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ParticipantRole FindValue(string value)
+        {
+            return FindValue<ParticipantRole>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ParticipantRole(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ParticipantState.
+    /// </summary>
+    public class ParticipantState : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONNECTED for ParticipantState
+        /// </summary>
+        public static readonly ParticipantState CONNECTED = new ParticipantState("CONNECTED");
+
+        /// <summary>
+        /// Constant DISCONNECTED for ParticipantState
+        /// </summary>
+        public static readonly ParticipantState DISCONNECTED = new ParticipantState("DISCONNECTED");
+
+        /// <summary>
+        /// Constant INITIAL for ParticipantState
+        /// </summary>
+        public static readonly ParticipantState INITIAL = new ParticipantState("INITIAL");
+
+        /// <summary>
+        /// Constant MISSED for ParticipantState
+        /// </summary>
+        public static readonly ParticipantState MISSED = new ParticipantState("MISSED");
+
+        /// <summary>
+        /// Constructs a custom ParticipantState for a value not among the defined constants.
+        /// </summary>
+        public ParticipantState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ParticipantState FindValue(string value)
+        {
+            return FindValue<ParticipantState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ParticipantState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ParticipantTimerAction.
+    /// </summary>
+    public class ParticipantTimerAction : ConstantClass
+    {
+        /// <summary>
+        /// Constant Unset for ParticipantTimerAction
+        /// </summary>
+        public static readonly ParticipantTimerAction Unset = new ParticipantTimerAction("Unset");
+
+        /// <summary>
+        /// Constructs a custom ParticipantTimerAction for a value not among the defined constants.
+        /// </summary>
+        public ParticipantTimerAction(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ParticipantTimerAction FindValue(string value)
+        {
+            return FindValue<ParticipantTimerAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ParticipantTimerAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ParticipantTimerType.
+    /// </summary>
+    public class ParticipantTimerType : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISCONNECT_NONCUSTOMER for ParticipantTimerType
+        /// </summary>
+        public static readonly ParticipantTimerType DISCONNECT_NONCUSTOMER = new ParticipantTimerType("DISCONNECT_NONCUSTOMER");
+
+        /// <summary>
+        /// Constant IDLE for ParticipantTimerType
+        /// </summary>
+        public static readonly ParticipantTimerType IDLE = new ParticipantTimerType("IDLE");
+
+        /// <summary>
+        /// Constructs a custom ParticipantTimerType for a value not among the defined constants.
+        /// </summary>
+        public ParticipantTimerType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ParticipantTimerType FindValue(string value)
+        {
+            return FindValue<ParticipantTimerType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ParticipantTimerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ParticipantType.
+    /// </summary>
+    public class ParticipantType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AGENT for ParticipantType
+        /// </summary>
+        public static readonly ParticipantType AGENT = new ParticipantType("AGENT");
+
+        /// <summary>
+        /// Constant ALL for ParticipantType
+        /// </summary>
+        public static readonly ParticipantType ALL = new ParticipantType("ALL");
+
+        /// <summary>
+        /// Constant CUSTOMER for ParticipantType
+        /// </summary>
+        public static readonly ParticipantType CUSTOMER = new ParticipantType("CUSTOMER");
+
+        /// <summary>
+        /// Constant MANAGER for ParticipantType
+        /// </summary>
+        public static readonly ParticipantType MANAGER = new ParticipantType("MANAGER");
+
+        /// <summary>
+        /// Constant THIRDPARTY for ParticipantType
+        /// </summary>
+        public static readonly ParticipantType THIRDPARTY = new ParticipantType("THIRDPARTY");
+
+        /// <summary>
+        /// Constructs a custom ParticipantType for a value not among the defined constants.
+        /// </summary>
+        public ParticipantType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ParticipantType FindValue(string value)
+        {
+            return FindValue<ParticipantType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ParticipantType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PerformanceCategoryName.
+    /// </summary>
+    public class PerformanceCategoryName : ConstantClass
+    {
+        /// <summary>
+        /// Constant EXCEEDS_EXPECTATIONS for PerformanceCategoryName
+        /// </summary>
+        public static readonly PerformanceCategoryName EXCEEDS_EXPECTATIONS = new PerformanceCategoryName("EXCEEDS_EXPECTATIONS");
+
+        /// <summary>
+        /// Constant NEEDS_IMPROVEMENT for PerformanceCategoryName
+        /// </summary>
+        public static readonly PerformanceCategoryName NEEDS_IMPROVEMENT = new PerformanceCategoryName("NEEDS_IMPROVEMENT");
+
+        /// <summary>
+        /// Constructs a custom PerformanceCategoryName for a value not among the defined constants.
+        /// </summary>
+        public PerformanceCategoryName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PerformanceCategoryName FindValue(string value)
+        {
+            return FindValue<PerformanceCategoryName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PerformanceCategoryName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PhoneNumberCountryCode.
+    /// </summary>
+    public class PhoneNumberCountryCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant AD for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode AD = new PhoneNumberCountryCode("AD");
+
+        /// <summary>
+        /// Constant AE for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode AE = new PhoneNumberCountryCode("AE");
+
+        /// <summary>
+        /// Constant AF for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode AF = new PhoneNumberCountryCode("AF");
+
+        /// <summary>
+        /// Constant AG for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode AG = new PhoneNumberCountryCode("AG");
+
+        /// <summary>
+        /// Constant AI for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode AI = new PhoneNumberCountryCode("AI");
+
+        /// <summary>
+        /// Constant AL for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode AL = new PhoneNumberCountryCode("AL");
+
+        /// <summary>
+        /// Constant AM for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode AM = new PhoneNumberCountryCode("AM");
+
+        /// <summary>
+        /// Constant AN for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode AN = new PhoneNumberCountryCode("AN");
+
+        /// <summary>
+        /// Constant AO for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode AO = new PhoneNumberCountryCode("AO");
+
+        /// <summary>
+        /// Constant AQ for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode AQ = new PhoneNumberCountryCode("AQ");
+
+        /// <summary>
+        /// Constant AR for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode AR = new PhoneNumberCountryCode("AR");
+
+        /// <summary>
+        /// Constant AS for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode AS = new PhoneNumberCountryCode("AS");
+
+        /// <summary>
+        /// Constant AT for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode AT = new PhoneNumberCountryCode("AT");
+
+        /// <summary>
+        /// Constant AU for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode AU = new PhoneNumberCountryCode("AU");
+
+        /// <summary>
+        /// Constant AW for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode AW = new PhoneNumberCountryCode("AW");
+
+        /// <summary>
+        /// Constant AZ for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode AZ = new PhoneNumberCountryCode("AZ");
+
+        /// <summary>
+        /// Constant BA for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode BA = new PhoneNumberCountryCode("BA");
+
+        /// <summary>
+        /// Constant BB for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode BB = new PhoneNumberCountryCode("BB");
+
+        /// <summary>
+        /// Constant BD for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode BD = new PhoneNumberCountryCode("BD");
+
+        /// <summary>
+        /// Constant BE for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode BE = new PhoneNumberCountryCode("BE");
+
+        /// <summary>
+        /// Constant BF for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode BF = new PhoneNumberCountryCode("BF");
+
+        /// <summary>
+        /// Constant BG for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode BG = new PhoneNumberCountryCode("BG");
+
+        /// <summary>
+        /// Constant BH for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode BH = new PhoneNumberCountryCode("BH");
+
+        /// <summary>
+        /// Constant BI for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode BI = new PhoneNumberCountryCode("BI");
+
+        /// <summary>
+        /// Constant BJ for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode BJ = new PhoneNumberCountryCode("BJ");
+
+        /// <summary>
+        /// Constant BL for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode BL = new PhoneNumberCountryCode("BL");
+
+        /// <summary>
+        /// Constant BM for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode BM = new PhoneNumberCountryCode("BM");
+
+        /// <summary>
+        /// Constant BN for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode BN = new PhoneNumberCountryCode("BN");
+
+        /// <summary>
+        /// Constant BO for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode BO = new PhoneNumberCountryCode("BO");
+
+        /// <summary>
+        /// Constant BR for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode BR = new PhoneNumberCountryCode("BR");
+
+        /// <summary>
+        /// Constant BS for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode BS = new PhoneNumberCountryCode("BS");
+
+        /// <summary>
+        /// Constant BT for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode BT = new PhoneNumberCountryCode("BT");
+
+        /// <summary>
+        /// Constant BW for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode BW = new PhoneNumberCountryCode("BW");
+
+        /// <summary>
+        /// Constant BY for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode BY = new PhoneNumberCountryCode("BY");
+
+        /// <summary>
+        /// Constant BZ for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode BZ = new PhoneNumberCountryCode("BZ");
+
+        /// <summary>
+        /// Constant CA for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode CA = new PhoneNumberCountryCode("CA");
+
+        /// <summary>
+        /// Constant CC for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode CC = new PhoneNumberCountryCode("CC");
+
+        /// <summary>
+        /// Constant CD for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode CD = new PhoneNumberCountryCode("CD");
+
+        /// <summary>
+        /// Constant CF for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode CF = new PhoneNumberCountryCode("CF");
+
+        /// <summary>
+        /// Constant CG for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode CG = new PhoneNumberCountryCode("CG");
+
+        /// <summary>
+        /// Constant CH for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode CH = new PhoneNumberCountryCode("CH");
+
+        /// <summary>
+        /// Constant CI for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode CI = new PhoneNumberCountryCode("CI");
+
+        /// <summary>
+        /// Constant CK for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode CK = new PhoneNumberCountryCode("CK");
+
+        /// <summary>
+        /// Constant CL for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode CL = new PhoneNumberCountryCode("CL");
+
+        /// <summary>
+        /// Constant CM for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode CM = new PhoneNumberCountryCode("CM");
+
+        /// <summary>
+        /// Constant CN for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode CN = new PhoneNumberCountryCode("CN");
+
+        /// <summary>
+        /// Constant CO for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode CO = new PhoneNumberCountryCode("CO");
+
+        /// <summary>
+        /// Constant CR for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode CR = new PhoneNumberCountryCode("CR");
+
+        /// <summary>
+        /// Constant CU for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode CU = new PhoneNumberCountryCode("CU");
+
+        /// <summary>
+        /// Constant CV for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode CV = new PhoneNumberCountryCode("CV");
+
+        /// <summary>
+        /// Constant CW for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode CW = new PhoneNumberCountryCode("CW");
+
+        /// <summary>
+        /// Constant CX for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode CX = new PhoneNumberCountryCode("CX");
+
+        /// <summary>
+        /// Constant CY for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode CY = new PhoneNumberCountryCode("CY");
+
+        /// <summary>
+        /// Constant CZ for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode CZ = new PhoneNumberCountryCode("CZ");
+
+        /// <summary>
+        /// Constant DE for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode DE = new PhoneNumberCountryCode("DE");
+
+        /// <summary>
+        /// Constant DJ for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode DJ = new PhoneNumberCountryCode("DJ");
+
+        /// <summary>
+        /// Constant DK for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode DK = new PhoneNumberCountryCode("DK");
+
+        /// <summary>
+        /// Constant DM for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode DM = new PhoneNumberCountryCode("DM");
+
+        /// <summary>
+        /// Constant DO for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode DO = new PhoneNumberCountryCode("DO");
+
+        /// <summary>
+        /// Constant DZ for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode DZ = new PhoneNumberCountryCode("DZ");
+
+        /// <summary>
+        /// Constant EC for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode EC = new PhoneNumberCountryCode("EC");
+
+        /// <summary>
+        /// Constant EE for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode EE = new PhoneNumberCountryCode("EE");
+
+        /// <summary>
+        /// Constant EG for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode EG = new PhoneNumberCountryCode("EG");
+
+        /// <summary>
+        /// Constant EH for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode EH = new PhoneNumberCountryCode("EH");
+
+        /// <summary>
+        /// Constant ER for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode ER = new PhoneNumberCountryCode("ER");
+
+        /// <summary>
+        /// Constant ES for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode ES = new PhoneNumberCountryCode("ES");
+
+        /// <summary>
+        /// Constant ET for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode ET = new PhoneNumberCountryCode("ET");
+
+        /// <summary>
+        /// Constant FI for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode FI = new PhoneNumberCountryCode("FI");
+
+        /// <summary>
+        /// Constant FJ for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode FJ = new PhoneNumberCountryCode("FJ");
+
+        /// <summary>
+        /// Constant FK for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode FK = new PhoneNumberCountryCode("FK");
+
+        /// <summary>
+        /// Constant FM for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode FM = new PhoneNumberCountryCode("FM");
+
+        /// <summary>
+        /// Constant FO for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode FO = new PhoneNumberCountryCode("FO");
+
+        /// <summary>
+        /// Constant FR for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode FR = new PhoneNumberCountryCode("FR");
+
+        /// <summary>
+        /// Constant GA for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode GA = new PhoneNumberCountryCode("GA");
+
+        /// <summary>
+        /// Constant GB for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode GB = new PhoneNumberCountryCode("GB");
+
+        /// <summary>
+        /// Constant GD for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode GD = new PhoneNumberCountryCode("GD");
+
+        /// <summary>
+        /// Constant GE for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode GE = new PhoneNumberCountryCode("GE");
+
+        /// <summary>
+        /// Constant GG for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode GG = new PhoneNumberCountryCode("GG");
+
+        /// <summary>
+        /// Constant GH for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode GH = new PhoneNumberCountryCode("GH");
+
+        /// <summary>
+        /// Constant GI for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode GI = new PhoneNumberCountryCode("GI");
+
+        /// <summary>
+        /// Constant GL for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode GL = new PhoneNumberCountryCode("GL");
+
+        /// <summary>
+        /// Constant GM for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode GM = new PhoneNumberCountryCode("GM");
+
+        /// <summary>
+        /// Constant GN for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode GN = new PhoneNumberCountryCode("GN");
+
+        /// <summary>
+        /// Constant GQ for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode GQ = new PhoneNumberCountryCode("GQ");
+
+        /// <summary>
+        /// Constant GR for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode GR = new PhoneNumberCountryCode("GR");
+
+        /// <summary>
+        /// Constant GT for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode GT = new PhoneNumberCountryCode("GT");
+
+        /// <summary>
+        /// Constant GU for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode GU = new PhoneNumberCountryCode("GU");
+
+        /// <summary>
+        /// Constant GW for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode GW = new PhoneNumberCountryCode("GW");
+
+        /// <summary>
+        /// Constant GY for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode GY = new PhoneNumberCountryCode("GY");
+
+        /// <summary>
+        /// Constant HK for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode HK = new PhoneNumberCountryCode("HK");
+
+        /// <summary>
+        /// Constant HN for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode HN = new PhoneNumberCountryCode("HN");
+
+        /// <summary>
+        /// Constant HR for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode HR = new PhoneNumberCountryCode("HR");
+
+        /// <summary>
+        /// Constant HT for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode HT = new PhoneNumberCountryCode("HT");
+
+        /// <summary>
+        /// Constant HU for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode HU = new PhoneNumberCountryCode("HU");
+
+        /// <summary>
+        /// Constant ID for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode ID = new PhoneNumberCountryCode("ID");
+
+        /// <summary>
+        /// Constant IE for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode IE = new PhoneNumberCountryCode("IE");
+
+        /// <summary>
+        /// Constant IL for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode IL = new PhoneNumberCountryCode("IL");
+
+        /// <summary>
+        /// Constant IM for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode IM = new PhoneNumberCountryCode("IM");
+
+        /// <summary>
+        /// Constant IN for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode IN = new PhoneNumberCountryCode("IN");
+
+        /// <summary>
+        /// Constant IO for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode IO = new PhoneNumberCountryCode("IO");
+
+        /// <summary>
+        /// Constant IQ for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode IQ = new PhoneNumberCountryCode("IQ");
+
+        /// <summary>
+        /// Constant IR for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode IR = new PhoneNumberCountryCode("IR");
+
+        /// <summary>
+        /// Constant IS for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode IS = new PhoneNumberCountryCode("IS");
+
+        /// <summary>
+        /// Constant IT for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode IT = new PhoneNumberCountryCode("IT");
+
+        /// <summary>
+        /// Constant JE for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode JE = new PhoneNumberCountryCode("JE");
+
+        /// <summary>
+        /// Constant JM for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode JM = new PhoneNumberCountryCode("JM");
+
+        /// <summary>
+        /// Constant JO for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode JO = new PhoneNumberCountryCode("JO");
+
+        /// <summary>
+        /// Constant JP for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode JP = new PhoneNumberCountryCode("JP");
+
+        /// <summary>
+        /// Constant KE for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode KE = new PhoneNumberCountryCode("KE");
+
+        /// <summary>
+        /// Constant KG for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode KG = new PhoneNumberCountryCode("KG");
+
+        /// <summary>
+        /// Constant KH for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode KH = new PhoneNumberCountryCode("KH");
+
+        /// <summary>
+        /// Constant KI for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode KI = new PhoneNumberCountryCode("KI");
+
+        /// <summary>
+        /// Constant KM for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode KM = new PhoneNumberCountryCode("KM");
+
+        /// <summary>
+        /// Constant KN for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode KN = new PhoneNumberCountryCode("KN");
+
+        /// <summary>
+        /// Constant KP for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode KP = new PhoneNumberCountryCode("KP");
+
+        /// <summary>
+        /// Constant KR for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode KR = new PhoneNumberCountryCode("KR");
+
+        /// <summary>
+        /// Constant KW for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode KW = new PhoneNumberCountryCode("KW");
+
+        /// <summary>
+        /// Constant KY for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode KY = new PhoneNumberCountryCode("KY");
+
+        /// <summary>
+        /// Constant KZ for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode KZ = new PhoneNumberCountryCode("KZ");
+
+        /// <summary>
+        /// Constant LA for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode LA = new PhoneNumberCountryCode("LA");
+
+        /// <summary>
+        /// Constant LB for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode LB = new PhoneNumberCountryCode("LB");
+
+        /// <summary>
+        /// Constant LC for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode LC = new PhoneNumberCountryCode("LC");
+
+        /// <summary>
+        /// Constant LI for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode LI = new PhoneNumberCountryCode("LI");
+
+        /// <summary>
+        /// Constant LK for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode LK = new PhoneNumberCountryCode("LK");
+
+        /// <summary>
+        /// Constant LR for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode LR = new PhoneNumberCountryCode("LR");
+
+        /// <summary>
+        /// Constant LS for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode LS = new PhoneNumberCountryCode("LS");
+
+        /// <summary>
+        /// Constant LT for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode LT = new PhoneNumberCountryCode("LT");
+
+        /// <summary>
+        /// Constant LU for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode LU = new PhoneNumberCountryCode("LU");
+
+        /// <summary>
+        /// Constant LV for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode LV = new PhoneNumberCountryCode("LV");
+
+        /// <summary>
+        /// Constant LY for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode LY = new PhoneNumberCountryCode("LY");
+
+        /// <summary>
+        /// Constant MA for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode MA = new PhoneNumberCountryCode("MA");
+
+        /// <summary>
+        /// Constant MC for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode MC = new PhoneNumberCountryCode("MC");
+
+        /// <summary>
+        /// Constant MD for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode MD = new PhoneNumberCountryCode("MD");
+
+        /// <summary>
+        /// Constant ME for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode ME = new PhoneNumberCountryCode("ME");
+
+        /// <summary>
+        /// Constant MF for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode MF = new PhoneNumberCountryCode("MF");
+
+        /// <summary>
+        /// Constant MG for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode MG = new PhoneNumberCountryCode("MG");
+
+        /// <summary>
+        /// Constant MH for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode MH = new PhoneNumberCountryCode("MH");
+
+        /// <summary>
+        /// Constant MK for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode MK = new PhoneNumberCountryCode("MK");
+
+        /// <summary>
+        /// Constant ML for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode ML = new PhoneNumberCountryCode("ML");
+
+        /// <summary>
+        /// Constant MM for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode MM = new PhoneNumberCountryCode("MM");
+
+        /// <summary>
+        /// Constant MN for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode MN = new PhoneNumberCountryCode("MN");
+
+        /// <summary>
+        /// Constant MO for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode MO = new PhoneNumberCountryCode("MO");
+
+        /// <summary>
+        /// Constant MP for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode MP = new PhoneNumberCountryCode("MP");
+
+        /// <summary>
+        /// Constant MR for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode MR = new PhoneNumberCountryCode("MR");
+
+        /// <summary>
+        /// Constant MS for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode MS = new PhoneNumberCountryCode("MS");
+
+        /// <summary>
+        /// Constant MT for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode MT = new PhoneNumberCountryCode("MT");
+
+        /// <summary>
+        /// Constant MU for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode MU = new PhoneNumberCountryCode("MU");
+
+        /// <summary>
+        /// Constant MV for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode MV = new PhoneNumberCountryCode("MV");
+
+        /// <summary>
+        /// Constant MW for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode MW = new PhoneNumberCountryCode("MW");
+
+        /// <summary>
+        /// Constant MX for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode MX = new PhoneNumberCountryCode("MX");
+
+        /// <summary>
+        /// Constant MY for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode MY = new PhoneNumberCountryCode("MY");
+
+        /// <summary>
+        /// Constant MZ for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode MZ = new PhoneNumberCountryCode("MZ");
+
+        /// <summary>
+        /// Constant NA for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode NA = new PhoneNumberCountryCode("NA");
+
+        /// <summary>
+        /// Constant NC for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode NC = new PhoneNumberCountryCode("NC");
+
+        /// <summary>
+        /// Constant NE for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode NE = new PhoneNumberCountryCode("NE");
+
+        /// <summary>
+        /// Constant NG for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode NG = new PhoneNumberCountryCode("NG");
+
+        /// <summary>
+        /// Constant NI for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode NI = new PhoneNumberCountryCode("NI");
+
+        /// <summary>
+        /// Constant NL for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode NL = new PhoneNumberCountryCode("NL");
+
+        /// <summary>
+        /// Constant NO for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode NO = new PhoneNumberCountryCode("NO");
+
+        /// <summary>
+        /// Constant NP for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode NP = new PhoneNumberCountryCode("NP");
+
+        /// <summary>
+        /// Constant NR for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode NR = new PhoneNumberCountryCode("NR");
+
+        /// <summary>
+        /// Constant NU for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode NU = new PhoneNumberCountryCode("NU");
+
+        /// <summary>
+        /// Constant NZ for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode NZ = new PhoneNumberCountryCode("NZ");
+
+        /// <summary>
+        /// Constant OM for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode OM = new PhoneNumberCountryCode("OM");
+
+        /// <summary>
+        /// Constant PA for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode PA = new PhoneNumberCountryCode("PA");
+
+        /// <summary>
+        /// Constant PE for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode PE = new PhoneNumberCountryCode("PE");
+
+        /// <summary>
+        /// Constant PF for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode PF = new PhoneNumberCountryCode("PF");
+
+        /// <summary>
+        /// Constant PG for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode PG = new PhoneNumberCountryCode("PG");
+
+        /// <summary>
+        /// Constant PH for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode PH = new PhoneNumberCountryCode("PH");
+
+        /// <summary>
+        /// Constant PK for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode PK = new PhoneNumberCountryCode("PK");
+
+        /// <summary>
+        /// Constant PL for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode PL = new PhoneNumberCountryCode("PL");
+
+        /// <summary>
+        /// Constant PM for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode PM = new PhoneNumberCountryCode("PM");
+
+        /// <summary>
+        /// Constant PN for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode PN = new PhoneNumberCountryCode("PN");
+
+        /// <summary>
+        /// Constant PR for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode PR = new PhoneNumberCountryCode("PR");
+
+        /// <summary>
+        /// Constant PT for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode PT = new PhoneNumberCountryCode("PT");
+
+        /// <summary>
+        /// Constant PW for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode PW = new PhoneNumberCountryCode("PW");
+
+        /// <summary>
+        /// Constant PY for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode PY = new PhoneNumberCountryCode("PY");
+
+        /// <summary>
+        /// Constant QA for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode QA = new PhoneNumberCountryCode("QA");
+
+        /// <summary>
+        /// Constant RE for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode RE = new PhoneNumberCountryCode("RE");
+
+        /// <summary>
+        /// Constant RO for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode RO = new PhoneNumberCountryCode("RO");
+
+        /// <summary>
+        /// Constant RS for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode RS = new PhoneNumberCountryCode("RS");
+
+        /// <summary>
+        /// Constant RU for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode RU = new PhoneNumberCountryCode("RU");
+
+        /// <summary>
+        /// Constant RW for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode RW = new PhoneNumberCountryCode("RW");
+
+        /// <summary>
+        /// Constant SA for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode SA = new PhoneNumberCountryCode("SA");
+
+        /// <summary>
+        /// Constant SB for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode SB = new PhoneNumberCountryCode("SB");
+
+        /// <summary>
+        /// Constant SC for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode SC = new PhoneNumberCountryCode("SC");
+
+        /// <summary>
+        /// Constant SD for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode SD = new PhoneNumberCountryCode("SD");
+
+        /// <summary>
+        /// Constant SE for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode SE = new PhoneNumberCountryCode("SE");
+
+        /// <summary>
+        /// Constant SG for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode SG = new PhoneNumberCountryCode("SG");
+
+        /// <summary>
+        /// Constant SH for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode SH = new PhoneNumberCountryCode("SH");
+
+        /// <summary>
+        /// Constant SI for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode SI = new PhoneNumberCountryCode("SI");
+
+        /// <summary>
+        /// Constant SJ for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode SJ = new PhoneNumberCountryCode("SJ");
+
+        /// <summary>
+        /// Constant SK for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode SK = new PhoneNumberCountryCode("SK");
+
+        /// <summary>
+        /// Constant SL for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode SL = new PhoneNumberCountryCode("SL");
+
+        /// <summary>
+        /// Constant SM for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode SM = new PhoneNumberCountryCode("SM");
+
+        /// <summary>
+        /// Constant SN for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode SN = new PhoneNumberCountryCode("SN");
+
+        /// <summary>
+        /// Constant SO for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode SO = new PhoneNumberCountryCode("SO");
+
+        /// <summary>
+        /// Constant SR for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode SR = new PhoneNumberCountryCode("SR");
+
+        /// <summary>
+        /// Constant ST for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode ST = new PhoneNumberCountryCode("ST");
+
+        /// <summary>
+        /// Constant SV for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode SV = new PhoneNumberCountryCode("SV");
+
+        /// <summary>
+        /// Constant SX for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode SX = new PhoneNumberCountryCode("SX");
+
+        /// <summary>
+        /// Constant SY for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode SY = new PhoneNumberCountryCode("SY");
+
+        /// <summary>
+        /// Constant SZ for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode SZ = new PhoneNumberCountryCode("SZ");
+
+        /// <summary>
+        /// Constant TC for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode TC = new PhoneNumberCountryCode("TC");
+
+        /// <summary>
+        /// Constant TD for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode TD = new PhoneNumberCountryCode("TD");
+
+        /// <summary>
+        /// Constant TG for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode TG = new PhoneNumberCountryCode("TG");
+
+        /// <summary>
+        /// Constant TH for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode TH = new PhoneNumberCountryCode("TH");
+
+        /// <summary>
+        /// Constant TJ for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode TJ = new PhoneNumberCountryCode("TJ");
+
+        /// <summary>
+        /// Constant TK for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode TK = new PhoneNumberCountryCode("TK");
+
+        /// <summary>
+        /// Constant TL for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode TL = new PhoneNumberCountryCode("TL");
+
+        /// <summary>
+        /// Constant TM for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode TM = new PhoneNumberCountryCode("TM");
+
+        /// <summary>
+        /// Constant TN for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode TN = new PhoneNumberCountryCode("TN");
+
+        /// <summary>
+        /// Constant TO for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode TO = new PhoneNumberCountryCode("TO");
+
+        /// <summary>
+        /// Constant TR for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode TR = new PhoneNumberCountryCode("TR");
+
+        /// <summary>
+        /// Constant TT for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode TT = new PhoneNumberCountryCode("TT");
+
+        /// <summary>
+        /// Constant TV for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode TV = new PhoneNumberCountryCode("TV");
+
+        /// <summary>
+        /// Constant TW for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode TW = new PhoneNumberCountryCode("TW");
+
+        /// <summary>
+        /// Constant TZ for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode TZ = new PhoneNumberCountryCode("TZ");
+
+        /// <summary>
+        /// Constant UA for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode UA = new PhoneNumberCountryCode("UA");
+
+        /// <summary>
+        /// Constant UG for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode UG = new PhoneNumberCountryCode("UG");
+
+        /// <summary>
+        /// Constant US for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode US = new PhoneNumberCountryCode("US");
+
+        /// <summary>
+        /// Constant UY for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode UY = new PhoneNumberCountryCode("UY");
+
+        /// <summary>
+        /// Constant UZ for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode UZ = new PhoneNumberCountryCode("UZ");
+
+        /// <summary>
+        /// Constant VA for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode VA = new PhoneNumberCountryCode("VA");
+
+        /// <summary>
+        /// Constant VC for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode VC = new PhoneNumberCountryCode("VC");
+
+        /// <summary>
+        /// Constant VE for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode VE = new PhoneNumberCountryCode("VE");
+
+        /// <summary>
+        /// Constant VG for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode VG = new PhoneNumberCountryCode("VG");
+
+        /// <summary>
+        /// Constant VI for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode VI = new PhoneNumberCountryCode("VI");
+
+        /// <summary>
+        /// Constant VN for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode VN = new PhoneNumberCountryCode("VN");
+
+        /// <summary>
+        /// Constant VU for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode VU = new PhoneNumberCountryCode("VU");
+
+        /// <summary>
+        /// Constant WF for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode WF = new PhoneNumberCountryCode("WF");
+
+        /// <summary>
+        /// Constant WS for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode WS = new PhoneNumberCountryCode("WS");
+
+        /// <summary>
+        /// Constant YE for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode YE = new PhoneNumberCountryCode("YE");
+
+        /// <summary>
+        /// Constant YT for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode YT = new PhoneNumberCountryCode("YT");
+
+        /// <summary>
+        /// Constant ZA for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode ZA = new PhoneNumberCountryCode("ZA");
+
+        /// <summary>
+        /// Constant ZM for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode ZM = new PhoneNumberCountryCode("ZM");
+
+        /// <summary>
+        /// Constant ZW for PhoneNumberCountryCode
+        /// </summary>
+        public static readonly PhoneNumberCountryCode ZW = new PhoneNumberCountryCode("ZW");
+
+        /// <summary>
+        /// Constructs a custom PhoneNumberCountryCode for a value not among the defined constants.
+        /// </summary>
+        public PhoneNumberCountryCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PhoneNumberCountryCode FindValue(string value)
+        {
+            return FindValue<PhoneNumberCountryCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PhoneNumberCountryCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PhoneNumberType.
+    /// </summary>
+    public class PhoneNumberType : ConstantClass
+    {
+        /// <summary>
+        /// Constant DID for PhoneNumberType
+        /// </summary>
+        public static readonly PhoneNumberType DID = new PhoneNumberType("DID");
+
+        /// <summary>
+        /// Constant SHARED for PhoneNumberType
+        /// </summary>
+        public static readonly PhoneNumberType SHARED = new PhoneNumberType("SHARED");
+
+        /// <summary>
+        /// Constant SHORT_CODE for PhoneNumberType
+        /// </summary>
+        public static readonly PhoneNumberType SHORT_CODE = new PhoneNumberType("SHORT_CODE");
+
+        /// <summary>
+        /// Constant THIRD_PARTY_DID for PhoneNumberType
+        /// </summary>
+        public static readonly PhoneNumberType THIRD_PARTY_DID = new PhoneNumberType("THIRD_PARTY_DID");
+
+        /// <summary>
+        /// Constant THIRD_PARTY_TF for PhoneNumberType
+        /// </summary>
+        public static readonly PhoneNumberType THIRD_PARTY_TF = new PhoneNumberType("THIRD_PARTY_TF");
+
+        /// <summary>
+        /// Constant TOLL_FREE for PhoneNumberType
+        /// </summary>
+        public static readonly PhoneNumberType TOLL_FREE = new PhoneNumberType("TOLL_FREE");
+
+        /// <summary>
+        /// Constant UIFN for PhoneNumberType
+        /// </summary>
+        public static readonly PhoneNumberType UIFN = new PhoneNumberType("UIFN");
+
+        /// <summary>
+        /// Constructs a custom PhoneNumberType for a value not among the defined constants.
+        /// </summary>
+        public PhoneNumberType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PhoneNumberType FindValue(string value)
+        {
+            return FindValue<PhoneNumberType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PhoneNumberType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PhoneNumberWorkflowStatus.
+    /// </summary>
+    public class PhoneNumberWorkflowStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant CLAIMED for PhoneNumberWorkflowStatus
+        /// </summary>
+        public static readonly PhoneNumberWorkflowStatus CLAIMED = new PhoneNumberWorkflowStatus("CLAIMED");
+
+        /// <summary>
+        /// Constant FAILED for PhoneNumberWorkflowStatus
+        /// </summary>
+        public static readonly PhoneNumberWorkflowStatus FAILED = new PhoneNumberWorkflowStatus("FAILED");
+
+        /// <summary>
+        /// Constant IN_PROGRESS for PhoneNumberWorkflowStatus
+        /// </summary>
+        public static readonly PhoneNumberWorkflowStatus IN_PROGRESS = new PhoneNumberWorkflowStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// Constructs a custom PhoneNumberWorkflowStatus for a value not among the defined constants.
+        /// </summary>
+        public PhoneNumberWorkflowStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PhoneNumberWorkflowStatus FindValue(string value)
+        {
+            return FindValue<PhoneNumberWorkflowStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PhoneNumberWorkflowStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PhoneType.
+    /// </summary>
+    public class PhoneType : ConstantClass
+    {
+        /// <summary>
+        /// Constant DESK_PHONE for PhoneType
+        /// </summary>
+        public static readonly PhoneType DESK_PHONE = new PhoneType("DESK_PHONE");
+
+        /// <summary>
+        /// Constant SOFT_PHONE for PhoneType
+        /// </summary>
+        public static readonly PhoneType SOFT_PHONE = new PhoneType("SOFT_PHONE");
+
+        /// <summary>
+        /// Constructs a custom PhoneType for a value not among the defined constants.
+        /// </summary>
+        public PhoneType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PhoneType FindValue(string value)
+        {
+            return FindValue<PhoneType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PhoneType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type Policy.
+    /// </summary>
+    public class Policy : ConstantClass
+    {
+        /// <summary>
+        /// Constant None for Policy
+        /// </summary>
+        public static readonly Policy None = new Policy("None");
+
+        /// <summary>
+        /// Constant RedactedAndOriginal for Policy
+        /// </summary>
+        public static readonly Policy RedactedAndOriginal = new Policy("RedactedAndOriginal");
+
+        /// <summary>
+        /// Constant RedactedOnly for Policy
+        /// </summary>
+        public static readonly Policy RedactedOnly = new Policy("RedactedOnly");
+
+        /// <summary>
+        /// Constructs a custom Policy for a value not among the defined constants.
+        /// </summary>
+        public Policy(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Policy FindValue(string value)
+        {
+            return FindValue<Policy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Policy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PreEvaluationFilterOperator.
+    /// </summary>
+    public class PreEvaluationFilterOperator : ConstantClass
+    {
+        /// <summary>
+        /// Constant EQUALS for PreEvaluationFilterOperator
+        /// </summary>
+        public static readonly PreEvaluationFilterOperator EQUALS = new PreEvaluationFilterOperator("EQUALS");
+
+        /// <summary>
+        /// Constructs a custom PreEvaluationFilterOperator for a value not among the defined constants.
+        /// </summary>
+        public PreEvaluationFilterOperator(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PreEvaluationFilterOperator FindValue(string value)
+        {
+            return FindValue<PreEvaluationFilterOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PreEvaluationFilterOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PreEvaluationFilterResourceType.
+    /// </summary>
+    public class PreEvaluationFilterResourceType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONTACT for PreEvaluationFilterResourceType
+        /// </summary>
+        public static readonly PreEvaluationFilterResourceType CONTACT = new PreEvaluationFilterResourceType("CONTACT");
+
+        /// <summary>
+        /// Constructs a custom PreEvaluationFilterResourceType for a value not among the defined constants.
+        /// </summary>
+        public PreEvaluationFilterResourceType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PreEvaluationFilterResourceType FindValue(string value)
+        {
+            return FindValue<PreEvaluationFilterResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PreEvaluationFilterResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PreEvaluationFilterType.
+    /// </summary>
+    public class PreEvaluationFilterType : ConstantClass
+    {
+        /// <summary>
+        /// Constant TAG for PreEvaluationFilterType
+        /// </summary>
+        public static readonly PreEvaluationFilterType TAG = new PreEvaluationFilterType("TAG");
+
+        /// <summary>
+        /// Constructs a custom PreEvaluationFilterType for a value not among the defined constants.
+        /// </summary>
+        public PreEvaluationFilterType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PreEvaluationFilterType FindValue(string value)
+        {
+            return FindValue<PreEvaluationFilterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PreEvaluationFilterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PropertyValidationExceptionReason.
+    /// </summary>
+    public class PropertyValidationExceptionReason : ConstantClass
+    {
+        /// <summary>
+        /// Constant INVALID_FORMAT for PropertyValidationExceptionReason
+        /// </summary>
+        public static readonly PropertyValidationExceptionReason INVALID_FORMAT = new PropertyValidationExceptionReason("INVALID_FORMAT");
+
+        /// <summary>
+        /// Constant NOT_SUPPORTED for PropertyValidationExceptionReason
+        /// </summary>
+        public static readonly PropertyValidationExceptionReason NOT_SUPPORTED = new PropertyValidationExceptionReason("NOT_SUPPORTED");
+
+        /// <summary>
+        /// Constant REFERENCED_RESOURCE_NOT_FOUND for PropertyValidationExceptionReason
+        /// </summary>
+        public static readonly PropertyValidationExceptionReason REFERENCED_RESOURCE_NOT_FOUND = new PropertyValidationExceptionReason("REFERENCED_RESOURCE_NOT_FOUND");
+
+        /// <summary>
+        /// Constant REQUIRED_PROPERTY_MISSING for PropertyValidationExceptionReason
+        /// </summary>
+        public static readonly PropertyValidationExceptionReason REQUIRED_PROPERTY_MISSING = new PropertyValidationExceptionReason("REQUIRED_PROPERTY_MISSING");
+
+        /// <summary>
+        /// Constant RESOURCE_NAME_ALREADY_EXISTS for PropertyValidationExceptionReason
+        /// </summary>
+        public static readonly PropertyValidationExceptionReason RESOURCE_NAME_ALREADY_EXISTS = new PropertyValidationExceptionReason("RESOURCE_NAME_ALREADY_EXISTS");
+
+        /// <summary>
+        /// Constant TYPE_MISMATCH for PropertyValidationExceptionReason
+        /// </summary>
+        public static readonly PropertyValidationExceptionReason TYPE_MISMATCH = new PropertyValidationExceptionReason("TYPE_MISMATCH");
+
+        /// <summary>
+        /// Constant UNIQUE_CONSTRAINT_VIOLATED for PropertyValidationExceptionReason
+        /// </summary>
+        public static readonly PropertyValidationExceptionReason UNIQUE_CONSTRAINT_VIOLATED = new PropertyValidationExceptionReason("UNIQUE_CONSTRAINT_VIOLATED");
+
+        /// <summary>
+        /// Constructs a custom PropertyValidationExceptionReason for a value not among the defined constants.
+        /// </summary>
+        public PropertyValidationExceptionReason(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PropertyValidationExceptionReason FindValue(string value)
+        {
+            return FindValue<PropertyValidationExceptionReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PropertyValidationExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type QuestionRuleCategoryAutomationCondition.
+    /// </summary>
+    public class QuestionRuleCategoryAutomationCondition : ConstantClass
+    {
+        /// <summary>
+        /// Constant NOT_PRESENT for QuestionRuleCategoryAutomationCondition
+        /// </summary>
+        public static readonly QuestionRuleCategoryAutomationCondition NOT_PRESENT = new QuestionRuleCategoryAutomationCondition("NOT_PRESENT");
+
+        /// <summary>
+        /// Constant PRESENT for QuestionRuleCategoryAutomationCondition
+        /// </summary>
+        public static readonly QuestionRuleCategoryAutomationCondition PRESENT = new QuestionRuleCategoryAutomationCondition("PRESENT");
+
+        /// <summary>
+        /// Constructs a custom QuestionRuleCategoryAutomationCondition for a value not among the defined constants.
+        /// </summary>
+        public QuestionRuleCategoryAutomationCondition(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QuestionRuleCategoryAutomationCondition FindValue(string value)
+        {
+            return FindValue<QuestionRuleCategoryAutomationCondition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QuestionRuleCategoryAutomationCondition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type QueueStatus.
+    /// </summary>
+    public class QueueStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for QueueStatus
+        /// </summary>
+        public static readonly QueueStatus DISABLED = new QueueStatus("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for QueueStatus
+        /// </summary>
+        public static readonly QueueStatus ENABLED = new QueueStatus("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom QueueStatus for a value not among the defined constants.
+        /// </summary>
+        public QueueStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QueueStatus FindValue(string value)
+        {
+            return FindValue<QueueStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QueueStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type QueueType.
+    /// </summary>
+    public class QueueType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AGENT for QueueType
+        /// </summary>
+        public static readonly QueueType AGENT = new QueueType("AGENT");
+
+        /// <summary>
+        /// Constant STANDARD for QueueType
+        /// </summary>
+        public static readonly QueueType STANDARD = new QueueType("STANDARD");
+
+        /// <summary>
+        /// Constructs a custom QueueType for a value not among the defined constants.
+        /// </summary>
+        public QueueType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QueueType FindValue(string value)
+        {
+            return FindValue<QueueType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QueueType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type QuickConnectType.
+    /// </summary>
+    public class QuickConnectType : ConstantClass
+    {
+        /// <summary>
+        /// Constant FLOW for QuickConnectType
+        /// </summary>
+        public static readonly QuickConnectType FLOW = new QuickConnectType("FLOW");
+
+        /// <summary>
+        /// Constant PHONE_NUMBER for QuickConnectType
+        /// </summary>
+        public static readonly QuickConnectType PHONE_NUMBER = new QuickConnectType("PHONE_NUMBER");
+
+        /// <summary>
+        /// Constant QUEUE for QuickConnectType
+        /// </summary>
+        public static readonly QuickConnectType QUEUE = new QuickConnectType("QUEUE");
+
+        /// <summary>
+        /// Constant USER for QuickConnectType
+        /// </summary>
+        public static readonly QuickConnectType USER = new QuickConnectType("USER");
+
+        /// <summary>
+        /// Constructs a custom QuickConnectType for a value not among the defined constants.
+        /// </summary>
+        public QuickConnectType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QuickConnectType FindValue(string value)
+        {
+            return FindValue<QuickConnectType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QuickConnectType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RealTimeContactAnalysisExtractedInformationFailureCode.
+    /// </summary>
+    public class RealTimeContactAnalysisExtractedInformationFailureCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant FAILED_SAFETY_GUIDELINES for RealTimeContactAnalysisExtractedInformationFailureCode
+        /// </summary>
+        public static readonly RealTimeContactAnalysisExtractedInformationFailureCode FAILED_SAFETY_GUIDELINES = new RealTimeContactAnalysisExtractedInformationFailureCode("FAILED_SAFETY_GUIDELINES");
+
+        /// <summary>
+        /// Constant INSUFFICIENT_CONVERSATION_CONTENT for RealTimeContactAnalysisExtractedInformationFailureCode
+        /// </summary>
+        public static readonly RealTimeContactAnalysisExtractedInformationFailureCode INSUFFICIENT_CONVERSATION_CONTENT = new RealTimeContactAnalysisExtractedInformationFailureCode("INSUFFICIENT_CONVERSATION_CONTENT");
+
+        /// <summary>
+        /// Constant INTERNAL_ERROR for RealTimeContactAnalysisExtractedInformationFailureCode
+        /// </summary>
+        public static readonly RealTimeContactAnalysisExtractedInformationFailureCode INTERNAL_ERROR = new RealTimeContactAnalysisExtractedInformationFailureCode("INTERNAL_ERROR");
+
+        /// <summary>
+        /// Constant MAX_PACKAGE_FEATURE_ONLY for RealTimeContactAnalysisExtractedInformationFailureCode
+        /// </summary>
+        public static readonly RealTimeContactAnalysisExtractedInformationFailureCode MAX_PACKAGE_FEATURE_ONLY = new RealTimeContactAnalysisExtractedInformationFailureCode("MAX_PACKAGE_FEATURE_ONLY");
+
+        /// <summary>
+        /// Constant QUOTA_EXCEEDED for RealTimeContactAnalysisExtractedInformationFailureCode
+        /// </summary>
+        public static readonly RealTimeContactAnalysisExtractedInformationFailureCode QUOTA_EXCEEDED = new RealTimeContactAnalysisExtractedInformationFailureCode("QUOTA_EXCEEDED");
+
+        /// <summary>
+        /// Constructs a custom RealTimeContactAnalysisExtractedInformationFailureCode for a value not among the defined constants.
+        /// </summary>
+        public RealTimeContactAnalysisExtractedInformationFailureCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RealTimeContactAnalysisExtractedInformationFailureCode FindValue(string value)
+        {
+            return FindValue<RealTimeContactAnalysisExtractedInformationFailureCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RealTimeContactAnalysisExtractedInformationFailureCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RealTimeContactAnalysisOutputType.
+    /// </summary>
+    public class RealTimeContactAnalysisOutputType : ConstantClass
+    {
+        /// <summary>
+        /// Constant Raw for RealTimeContactAnalysisOutputType
+        /// </summary>
+        public static readonly RealTimeContactAnalysisOutputType Raw = new RealTimeContactAnalysisOutputType("Raw");
+
+        /// <summary>
+        /// Constant Redacted for RealTimeContactAnalysisOutputType
+        /// </summary>
+        public static readonly RealTimeContactAnalysisOutputType Redacted = new RealTimeContactAnalysisOutputType("Redacted");
+
+        /// <summary>
+        /// Constructs a custom RealTimeContactAnalysisOutputType for a value not among the defined constants.
+        /// </summary>
+        public RealTimeContactAnalysisOutputType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RealTimeContactAnalysisOutputType FindValue(string value)
+        {
+            return FindValue<RealTimeContactAnalysisOutputType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RealTimeContactAnalysisOutputType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RealTimeContactAnalysisPostContactSummaryFailureCode.
+    /// </summary>
+    public class RealTimeContactAnalysisPostContactSummaryFailureCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant FAILED_SAFETY_GUIDELINES for RealTimeContactAnalysisPostContactSummaryFailureCode
+        /// </summary>
+        public static readonly RealTimeContactAnalysisPostContactSummaryFailureCode FAILED_SAFETY_GUIDELINES = new RealTimeContactAnalysisPostContactSummaryFailureCode("FAILED_SAFETY_GUIDELINES");
+
+        /// <summary>
+        /// Constant INSUFFICIENT_CONVERSATION_CONTENT for RealTimeContactAnalysisPostContactSummaryFailureCode
+        /// </summary>
+        public static readonly RealTimeContactAnalysisPostContactSummaryFailureCode INSUFFICIENT_CONVERSATION_CONTENT = new RealTimeContactAnalysisPostContactSummaryFailureCode("INSUFFICIENT_CONVERSATION_CONTENT");
+
+        /// <summary>
+        /// Constant INTERNAL_ERROR for RealTimeContactAnalysisPostContactSummaryFailureCode
+        /// </summary>
+        public static readonly RealTimeContactAnalysisPostContactSummaryFailureCode INTERNAL_ERROR = new RealTimeContactAnalysisPostContactSummaryFailureCode("INTERNAL_ERROR");
+
+        /// <summary>
+        /// Constant INVALID_ANALYSIS_CONFIGURATION for RealTimeContactAnalysisPostContactSummaryFailureCode
+        /// </summary>
+        public static readonly RealTimeContactAnalysisPostContactSummaryFailureCode INVALID_ANALYSIS_CONFIGURATION = new RealTimeContactAnalysisPostContactSummaryFailureCode("INVALID_ANALYSIS_CONFIGURATION");
+
+        /// <summary>
+        /// Constant QUOTA_EXCEEDED for RealTimeContactAnalysisPostContactSummaryFailureCode
+        /// </summary>
+        public static readonly RealTimeContactAnalysisPostContactSummaryFailureCode QUOTA_EXCEEDED = new RealTimeContactAnalysisPostContactSummaryFailureCode("QUOTA_EXCEEDED");
+
+        /// <summary>
+        /// Constructs a custom RealTimeContactAnalysisPostContactSummaryFailureCode for a value not among the defined constants.
+        /// </summary>
+        public RealTimeContactAnalysisPostContactSummaryFailureCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RealTimeContactAnalysisPostContactSummaryFailureCode FindValue(string value)
+        {
+            return FindValue<RealTimeContactAnalysisPostContactSummaryFailureCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RealTimeContactAnalysisPostContactSummaryFailureCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RealTimeContactAnalysisPostContactSummaryStatus.
+    /// </summary>
+    public class RealTimeContactAnalysisPostContactSummaryStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant COMPLETED for RealTimeContactAnalysisPostContactSummaryStatus
+        /// </summary>
+        public static readonly RealTimeContactAnalysisPostContactSummaryStatus COMPLETED = new RealTimeContactAnalysisPostContactSummaryStatus("COMPLETED");
+
+        /// <summary>
+        /// Constant FAILED for RealTimeContactAnalysisPostContactSummaryStatus
+        /// </summary>
+        public static readonly RealTimeContactAnalysisPostContactSummaryStatus FAILED = new RealTimeContactAnalysisPostContactSummaryStatus("FAILED");
+
+        /// <summary>
+        /// Constructs a custom RealTimeContactAnalysisPostContactSummaryStatus for a value not among the defined constants.
+        /// </summary>
+        public RealTimeContactAnalysisPostContactSummaryStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RealTimeContactAnalysisPostContactSummaryStatus FindValue(string value)
+        {
+            return FindValue<RealTimeContactAnalysisPostContactSummaryStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RealTimeContactAnalysisPostContactSummaryStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RealTimeContactAnalysisSegmentType.
+    /// </summary>
+    public class RealTimeContactAnalysisSegmentType : ConstantClass
+    {
+        /// <summary>
+        /// Constant Attachments for RealTimeContactAnalysisSegmentType
+        /// </summary>
+        public static readonly RealTimeContactAnalysisSegmentType Attachments = new RealTimeContactAnalysisSegmentType("Attachments");
+
+        /// <summary>
+        /// Constant Categories for RealTimeContactAnalysisSegmentType
+        /// </summary>
+        public static readonly RealTimeContactAnalysisSegmentType Categories = new RealTimeContactAnalysisSegmentType("Categories");
+
+        /// <summary>
+        /// Constant Event for RealTimeContactAnalysisSegmentType
+        /// </summary>
+        public static readonly RealTimeContactAnalysisSegmentType Event = new RealTimeContactAnalysisSegmentType("Event");
+
+        /// <summary>
+        /// Constant ExtractedInformation for RealTimeContactAnalysisSegmentType
+        /// </summary>
+        public static readonly RealTimeContactAnalysisSegmentType ExtractedInformation = new RealTimeContactAnalysisSegmentType("ExtractedInformation");
+
+        /// <summary>
+        /// Constant Issues for RealTimeContactAnalysisSegmentType
+        /// </summary>
+        public static readonly RealTimeContactAnalysisSegmentType Issues = new RealTimeContactAnalysisSegmentType("Issues");
+
+        /// <summary>
+        /// Constant PostContactSummary for RealTimeContactAnalysisSegmentType
+        /// </summary>
+        public static readonly RealTimeContactAnalysisSegmentType PostContactSummary = new RealTimeContactAnalysisSegmentType("PostContactSummary");
+
+        /// <summary>
+        /// Constant Transcript for RealTimeContactAnalysisSegmentType
+        /// </summary>
+        public static readonly RealTimeContactAnalysisSegmentType Transcript = new RealTimeContactAnalysisSegmentType("Transcript");
+
+        /// <summary>
+        /// Constructs a custom RealTimeContactAnalysisSegmentType for a value not among the defined constants.
+        /// </summary>
+        public RealTimeContactAnalysisSegmentType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RealTimeContactAnalysisSegmentType FindValue(string value)
+        {
+            return FindValue<RealTimeContactAnalysisSegmentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RealTimeContactAnalysisSegmentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RealTimeContactAnalysisSentimentLabel.
+    /// </summary>
+    public class RealTimeContactAnalysisSentimentLabel : ConstantClass
+    {
+        /// <summary>
+        /// Constant NEGATIVE for RealTimeContactAnalysisSentimentLabel
+        /// </summary>
+        public static readonly RealTimeContactAnalysisSentimentLabel NEGATIVE = new RealTimeContactAnalysisSentimentLabel("NEGATIVE");
+
+        /// <summary>
+        /// Constant NEUTRAL for RealTimeContactAnalysisSentimentLabel
+        /// </summary>
+        public static readonly RealTimeContactAnalysisSentimentLabel NEUTRAL = new RealTimeContactAnalysisSentimentLabel("NEUTRAL");
+
+        /// <summary>
+        /// Constant POSITIVE for RealTimeContactAnalysisSentimentLabel
+        /// </summary>
+        public static readonly RealTimeContactAnalysisSentimentLabel POSITIVE = new RealTimeContactAnalysisSentimentLabel("POSITIVE");
+
+        /// <summary>
+        /// Constructs a custom RealTimeContactAnalysisSentimentLabel for a value not among the defined constants.
+        /// </summary>
+        public RealTimeContactAnalysisSentimentLabel(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RealTimeContactAnalysisSentimentLabel FindValue(string value)
+        {
+            return FindValue<RealTimeContactAnalysisSentimentLabel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RealTimeContactAnalysisSentimentLabel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RealTimeContactAnalysisStatus.
+    /// </summary>
+    public class RealTimeContactAnalysisStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant COMPLETED for RealTimeContactAnalysisStatus
+        /// </summary>
+        public static readonly RealTimeContactAnalysisStatus COMPLETED = new RealTimeContactAnalysisStatus("COMPLETED");
+
+        /// <summary>
+        /// Constant FAILED for RealTimeContactAnalysisStatus
+        /// </summary>
+        public static readonly RealTimeContactAnalysisStatus FAILED = new RealTimeContactAnalysisStatus("FAILED");
+
+        /// <summary>
+        /// Constant IN_PROGRESS for RealTimeContactAnalysisStatus
+        /// </summary>
+        public static readonly RealTimeContactAnalysisStatus IN_PROGRESS = new RealTimeContactAnalysisStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// Constructs a custom RealTimeContactAnalysisStatus for a value not among the defined constants.
+        /// </summary>
+        public RealTimeContactAnalysisStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RealTimeContactAnalysisStatus FindValue(string value)
+        {
+            return FindValue<RealTimeContactAnalysisStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RealTimeContactAnalysisStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RealTimeContactAnalysisSupportedChannel.
+    /// </summary>
+    public class RealTimeContactAnalysisSupportedChannel : ConstantClass
+    {
+        /// <summary>
+        /// Constant CHAT for RealTimeContactAnalysisSupportedChannel
+        /// </summary>
+        public static readonly RealTimeContactAnalysisSupportedChannel CHAT = new RealTimeContactAnalysisSupportedChannel("CHAT");
+
+        /// <summary>
+        /// Constant VOICE for RealTimeContactAnalysisSupportedChannel
+        /// </summary>
+        public static readonly RealTimeContactAnalysisSupportedChannel VOICE = new RealTimeContactAnalysisSupportedChannel("VOICE");
+
+        /// <summary>
+        /// Constructs a custom RealTimeContactAnalysisSupportedChannel for a value not among the defined constants.
+        /// </summary>
+        public RealTimeContactAnalysisSupportedChannel(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RealTimeContactAnalysisSupportedChannel FindValue(string value)
+        {
+            return FindValue<RealTimeContactAnalysisSupportedChannel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RealTimeContactAnalysisSupportedChannel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RecordingStatus.
+    /// </summary>
+    public class RecordingStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant AVAILABLE for RecordingStatus
+        /// </summary>
+        public static readonly RecordingStatus AVAILABLE = new RecordingStatus("AVAILABLE");
+
+        /// <summary>
+        /// Constant DELETED for RecordingStatus
+        /// </summary>
+        public static readonly RecordingStatus DELETED = new RecordingStatus("DELETED");
+
+        /// <summary>
+        /// Constructs a custom RecordingStatus for a value not among the defined constants.
+        /// </summary>
+        public RecordingStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecordingStatus FindValue(string value)
+        {
+            return FindValue<RecordingStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecordingStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RecurrenceFrequency.
+    /// </summary>
+    public class RecurrenceFrequency : ConstantClass
+    {
+        /// <summary>
+        /// Constant MONTHLY for RecurrenceFrequency
+        /// </summary>
+        public static readonly RecurrenceFrequency MONTHLY = new RecurrenceFrequency("MONTHLY");
+
+        /// <summary>
+        /// Constant WEEKLY for RecurrenceFrequency
+        /// </summary>
+        public static readonly RecurrenceFrequency WEEKLY = new RecurrenceFrequency("WEEKLY");
+
+        /// <summary>
+        /// Constant YEARLY for RecurrenceFrequency
+        /// </summary>
+        public static readonly RecurrenceFrequency YEARLY = new RecurrenceFrequency("YEARLY");
+
+        /// <summary>
+        /// Constructs a custom RecurrenceFrequency for a value not among the defined constants.
+        /// </summary>
+        public RecurrenceFrequency(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecurrenceFrequency FindValue(string value)
+        {
+            return FindValue<RecurrenceFrequency>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecurrenceFrequency(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ReferenceStatus.
+    /// </summary>
+    public class ReferenceStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant APPROVED for ReferenceStatus
+        /// </summary>
+        public static readonly ReferenceStatus APPROVED = new ReferenceStatus("APPROVED");
+
+        /// <summary>
+        /// Constant AVAILABLE for ReferenceStatus
+        /// </summary>
+        public static readonly ReferenceStatus AVAILABLE = new ReferenceStatus("AVAILABLE");
+
+        /// <summary>
+        /// Constant DELETED for ReferenceStatus
+        /// </summary>
+        public static readonly ReferenceStatus DELETED = new ReferenceStatus("DELETED");
+
+        /// <summary>
+        /// Constant DRAFTING for ReferenceStatus
+        /// </summary>
+        public static readonly ReferenceStatus DRAFTING = new ReferenceStatus("DRAFTING");
+
+        /// <summary>
+        /// Constant FAILED for ReferenceStatus
+        /// </summary>
+        public static readonly ReferenceStatus FAILED = new ReferenceStatus("FAILED");
+
+        /// <summary>
+        /// Constant PROCESSING for ReferenceStatus
+        /// </summary>
+        public static readonly ReferenceStatus PROCESSING = new ReferenceStatus("PROCESSING");
+
+        /// <summary>
+        /// Constant REJECTED for ReferenceStatus
+        /// </summary>
+        public static readonly ReferenceStatus REJECTED = new ReferenceStatus("REJECTED");
+
+        /// <summary>
+        /// Constructs a custom ReferenceStatus for a value not among the defined constants.
+        /// </summary>
+        public ReferenceStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReferenceStatus FindValue(string value)
+        {
+            return FindValue<ReferenceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReferenceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ReferenceType.
+    /// </summary>
+    public class ReferenceType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ATTACHMENT for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType ATTACHMENT = new ReferenceType("ATTACHMENT");
+
+        /// <summary>
+        /// Constant CONTACT_ANALYSIS for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType CONTACT_ANALYSIS = new ReferenceType("CONTACT_ANALYSIS");
+
+        /// <summary>
+        /// Constant DATE for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType DATE = new ReferenceType("DATE");
+
+        /// <summary>
+        /// Constant EMAIL for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType EMAIL = new ReferenceType("EMAIL");
+
+        /// <summary>
+        /// Constant EMAIL_MESSAGE for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType EMAIL_MESSAGE = new ReferenceType("EMAIL_MESSAGE");
+
+        /// <summary>
+        /// Constant EMAIL_MESSAGE_PLAIN_TEXT for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType EMAIL_MESSAGE_PLAIN_TEXT = new ReferenceType("EMAIL_MESSAGE_PLAIN_TEXT");
+
+        /// <summary>
+        /// Constant EMAIL_MESSAGE_PLAIN_TEXT_REDACTED for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType EMAIL_MESSAGE_PLAIN_TEXT_REDACTED = new ReferenceType("EMAIL_MESSAGE_PLAIN_TEXT_REDACTED");
+
+        /// <summary>
+        /// Constant EMAIL_MESSAGE_REDACTED for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType EMAIL_MESSAGE_REDACTED = new ReferenceType("EMAIL_MESSAGE_REDACTED");
+
+        /// <summary>
+        /// Constant NUMBER for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType NUMBER = new ReferenceType("NUMBER");
+
+        /// <summary>
+        /// Constant STRING for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType STRING = new ReferenceType("STRING");
+
+        /// <summary>
+        /// Constant URL for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType URL = new ReferenceType("URL");
+
+        /// <summary>
+        /// Constructs a custom ReferenceType for a value not among the defined constants.
+        /// </summary>
+        public ReferenceType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReferenceType FindValue(string value)
+        {
+            return FindValue<ReferenceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReferenceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RehydrationType.
+    /// </summary>
+    public class RehydrationType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ENTIRE_PAST_SESSION for RehydrationType
+        /// </summary>
+        public static readonly RehydrationType ENTIRE_PAST_SESSION = new RehydrationType("ENTIRE_PAST_SESSION");
+
+        /// <summary>
+        /// Constant FROM_SEGMENT for RehydrationType
+        /// </summary>
+        public static readonly RehydrationType FROM_SEGMENT = new RehydrationType("FROM_SEGMENT");
+
+        /// <summary>
+        /// Constructs a custom RehydrationType for a value not among the defined constants.
+        /// </summary>
+        public RehydrationType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RehydrationType FindValue(string value)
+        {
+            return FindValue<RehydrationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RehydrationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ResourceType.
+    /// </summary>
+    public class ResourceType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONTACT for ResourceType
+        /// </summary>
+        public static readonly ResourceType CONTACT = new ResourceType("CONTACT");
+
+        /// <summary>
+        /// Constant CONTACT_FLOW for ResourceType
+        /// </summary>
+        public static readonly ResourceType CONTACT_FLOW = new ResourceType("CONTACT_FLOW");
+
+        /// <summary>
+        /// Constant HIERARCHY_GROUP for ResourceType
+        /// </summary>
+        public static readonly ResourceType HIERARCHY_GROUP = new ResourceType("HIERARCHY_GROUP");
+
+        /// <summary>
+        /// Constant HIERARCHY_LEVEL for ResourceType
+        /// </summary>
+        public static readonly ResourceType HIERARCHY_LEVEL = new ResourceType("HIERARCHY_LEVEL");
+
+        /// <summary>
+        /// Constant INSTANCE for ResourceType
+        /// </summary>
+        public static readonly ResourceType INSTANCE = new ResourceType("INSTANCE");
+
+        /// <summary>
+        /// Constant PARTICIPANT for ResourceType
+        /// </summary>
+        public static readonly ResourceType PARTICIPANT = new ResourceType("PARTICIPANT");
+
+        /// <summary>
+        /// Constant PHONE_NUMBER for ResourceType
+        /// </summary>
+        public static readonly ResourceType PHONE_NUMBER = new ResourceType("PHONE_NUMBER");
+
+        /// <summary>
+        /// Constant USER for ResourceType
+        /// </summary>
+        public static readonly ResourceType USER = new ResourceType("USER");
+
+        /// <summary>
+        /// Constructs a custom ResourceType for a value not among the defined constants.
+        /// </summary>
+        public ResourceType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceType FindValue(string value)
+        {
+            return FindValue<ResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ResponseMode.
+    /// </summary>
+    public class ResponseMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant COMPLETE for ResponseMode
+        /// </summary>
+        public static readonly ResponseMode COMPLETE = new ResponseMode("COMPLETE");
+
+        /// <summary>
+        /// Constant INCREMENTAL for ResponseMode
+        /// </summary>
+        public static readonly ResponseMode INCREMENTAL = new ResponseMode("INCREMENTAL");
+
+        /// <summary>
+        /// Constructs a custom ResponseMode for a value not among the defined constants.
+        /// </summary>
+        public ResponseMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResponseMode FindValue(string value)
+        {
+            return FindValue<ResponseMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResponseMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RoutingCriteriaStepStatus.
+    /// </summary>
+    public class RoutingCriteriaStepStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for RoutingCriteriaStepStatus
+        /// </summary>
+        public static readonly RoutingCriteriaStepStatus ACTIVE = new RoutingCriteriaStepStatus("ACTIVE");
+
+        /// <summary>
+        /// Constant EXPIRED for RoutingCriteriaStepStatus
+        /// </summary>
+        public static readonly RoutingCriteriaStepStatus EXPIRED = new RoutingCriteriaStepStatus("EXPIRED");
+
+        /// <summary>
+        /// Constant INACTIVE for RoutingCriteriaStepStatus
+        /// </summary>
+        public static readonly RoutingCriteriaStepStatus INACTIVE = new RoutingCriteriaStepStatus("INACTIVE");
+
+        /// <summary>
+        /// Constant JOINED for RoutingCriteriaStepStatus
+        /// </summary>
+        public static readonly RoutingCriteriaStepStatus JOINED = new RoutingCriteriaStepStatus("JOINED");
+
+        /// <summary>
+        /// Constructs a custom RoutingCriteriaStepStatus for a value not among the defined constants.
+        /// </summary>
+        public RoutingCriteriaStepStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RoutingCriteriaStepStatus FindValue(string value)
+        {
+            return FindValue<RoutingCriteriaStepStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RoutingCriteriaStepStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RuleCapabilityTier.
+    /// </summary>
+    public class RuleCapabilityTier : ConstantClass
+    {
+        /// <summary>
+        /// Constant GenerativeAI for RuleCapabilityTier
+        /// </summary>
+        public static readonly RuleCapabilityTier GenerativeAI = new RuleCapabilityTier("GenerativeAI");
+
+        /// <summary>
+        /// Constructs a custom RuleCapabilityTier for a value not among the defined constants.
+        /// </summary>
+        public RuleCapabilityTier(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuleCapabilityTier FindValue(string value)
+        {
+            return FindValue<RuleCapabilityTier>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuleCapabilityTier(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RulePublishStatus.
+    /// </summary>
+    public class RulePublishStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant DRAFT for RulePublishStatus
+        /// </summary>
+        public static readonly RulePublishStatus DRAFT = new RulePublishStatus("DRAFT");
+
+        /// <summary>
+        /// Constant PUBLISHED for RulePublishStatus
+        /// </summary>
+        public static readonly RulePublishStatus PUBLISHED = new RulePublishStatus("PUBLISHED");
+
+        /// <summary>
+        /// Constructs a custom RulePublishStatus for a value not among the defined constants.
+        /// </summary>
+        public RulePublishStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RulePublishStatus FindValue(string value)
+        {
+            return FindValue<RulePublishStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RulePublishStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ScreenShareCapability.
+    /// </summary>
+    public class ScreenShareCapability : ConstantClass
+    {
+        /// <summary>
+        /// Constant SEND for ScreenShareCapability
+        /// </summary>
+        public static readonly ScreenShareCapability SEND = new ScreenShareCapability("SEND");
+
+        /// <summary>
+        /// Constructs a custom ScreenShareCapability for a value not among the defined constants.
+        /// </summary>
+        public ScreenShareCapability(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScreenShareCapability FindValue(string value)
+        {
+            return FindValue<ScreenShareCapability>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScreenShareCapability(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SearchContactsMatchType.
+    /// </summary>
+    public class SearchContactsMatchType : ConstantClass
+    {
+        /// <summary>
+        /// Constant MATCH_ALL for SearchContactsMatchType
+        /// </summary>
+        public static readonly SearchContactsMatchType MATCH_ALL = new SearchContactsMatchType("MATCH_ALL");
+
+        /// <summary>
+        /// Constant MATCH_ANY for SearchContactsMatchType
+        /// </summary>
+        public static readonly SearchContactsMatchType MATCH_ANY = new SearchContactsMatchType("MATCH_ANY");
+
+        /// <summary>
+        /// Constant MATCH_EXACT for SearchContactsMatchType
+        /// </summary>
+        public static readonly SearchContactsMatchType MATCH_EXACT = new SearchContactsMatchType("MATCH_EXACT");
+
+        /// <summary>
+        /// Constant MATCH_NONE for SearchContactsMatchType
+        /// </summary>
+        public static readonly SearchContactsMatchType MATCH_NONE = new SearchContactsMatchType("MATCH_NONE");
+
+        /// <summary>
+        /// Constructs a custom SearchContactsMatchType for a value not among the defined constants.
+        /// </summary>
+        public SearchContactsMatchType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SearchContactsMatchType FindValue(string value)
+        {
+            return FindValue<SearchContactsMatchType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SearchContactsMatchType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SearchContactsTimeRangeConditionType.
+    /// </summary>
+    public class SearchContactsTimeRangeConditionType : ConstantClass
+    {
+        /// <summary>
+        /// Constant NOT_EXISTS for SearchContactsTimeRangeConditionType
+        /// </summary>
+        public static readonly SearchContactsTimeRangeConditionType NOT_EXISTS = new SearchContactsTimeRangeConditionType("NOT_EXISTS");
+
+        /// <summary>
+        /// Constructs a custom SearchContactsTimeRangeConditionType for a value not among the defined constants.
+        /// </summary>
+        public SearchContactsTimeRangeConditionType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SearchContactsTimeRangeConditionType FindValue(string value)
+        {
+            return FindValue<SearchContactsTimeRangeConditionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SearchContactsTimeRangeConditionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SearchContactsTimeRangeType.
+    /// </summary>
+    public class SearchContactsTimeRangeType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONNECTED_TO_AGENT_TIMESTAMP for SearchContactsTimeRangeType
+        /// </summary>
+        public static readonly SearchContactsTimeRangeType CONNECTED_TO_AGENT_TIMESTAMP = new SearchContactsTimeRangeType("CONNECTED_TO_AGENT_TIMESTAMP");
+
+        /// <summary>
+        /// Constant DISCONNECT_TIMESTAMP for SearchContactsTimeRangeType
+        /// </summary>
+        public static readonly SearchContactsTimeRangeType DISCONNECT_TIMESTAMP = new SearchContactsTimeRangeType("DISCONNECT_TIMESTAMP");
+
+        /// <summary>
+        /// Constant ENQUEUE_TIMESTAMP for SearchContactsTimeRangeType
+        /// </summary>
+        public static readonly SearchContactsTimeRangeType ENQUEUE_TIMESTAMP = new SearchContactsTimeRangeType("ENQUEUE_TIMESTAMP");
+
+        /// <summary>
+        /// Constant INITIATION_TIMESTAMP for SearchContactsTimeRangeType
+        /// </summary>
+        public static readonly SearchContactsTimeRangeType INITIATION_TIMESTAMP = new SearchContactsTimeRangeType("INITIATION_TIMESTAMP");
+
+        /// <summary>
+        /// Constant SCHEDULED_TIMESTAMP for SearchContactsTimeRangeType
+        /// </summary>
+        public static readonly SearchContactsTimeRangeType SCHEDULED_TIMESTAMP = new SearchContactsTimeRangeType("SCHEDULED_TIMESTAMP");
+
+        /// <summary>
+        /// Constructs a custom SearchContactsTimeRangeType for a value not among the defined constants.
+        /// </summary>
+        public SearchContactsTimeRangeType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SearchContactsTimeRangeType FindValue(string value)
+        {
+            return FindValue<SearchContactsTimeRangeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SearchContactsTimeRangeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SearchableQueueType.
+    /// </summary>
+    public class SearchableQueueType : ConstantClass
+    {
+        /// <summary>
+        /// Constant STANDARD for SearchableQueueType
+        /// </summary>
+        public static readonly SearchableQueueType STANDARD = new SearchableQueueType("STANDARD");
+
+        /// <summary>
+        /// Constructs a custom SearchableQueueType for a value not among the defined constants.
+        /// </summary>
+        public SearchableQueueType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SearchableQueueType FindValue(string value)
+        {
+            return FindValue<SearchableQueueType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SearchableQueueType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SecurityProfileType.
+    /// </summary>
+    public class SecurityProfileType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AWS_MANAGED for SecurityProfileType
+        /// </summary>
+        public static readonly SecurityProfileType AWS_MANAGED = new SecurityProfileType("AWS_MANAGED");
+
+        /// <summary>
+        /// Constant CUSTOMER_MANAGED for SecurityProfileType
+        /// </summary>
+        public static readonly SecurityProfileType CUSTOMER_MANAGED = new SecurityProfileType("CUSTOMER_MANAGED");
+
+        /// <summary>
+        /// Constructs a custom SecurityProfileType for a value not among the defined constants.
+        /// </summary>
+        public SecurityProfileType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SecurityProfileType FindValue(string value)
+        {
+            return FindValue<SecurityProfileType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SecurityProfileType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SingleSelectQuestionRuleCategoryAutomationCondition.
+    /// </summary>
+    public class SingleSelectQuestionRuleCategoryAutomationCondition : ConstantClass
+    {
+        /// <summary>
+        /// Constant NOT_PRESENT for SingleSelectQuestionRuleCategoryAutomationCondition
+        /// </summary>
+        public static readonly SingleSelectQuestionRuleCategoryAutomationCondition NOT_PRESENT = new SingleSelectQuestionRuleCategoryAutomationCondition("NOT_PRESENT");
+
+        /// <summary>
+        /// Constant PRESENT for SingleSelectQuestionRuleCategoryAutomationCondition
+        /// </summary>
+        public static readonly SingleSelectQuestionRuleCategoryAutomationCondition PRESENT = new SingleSelectQuestionRuleCategoryAutomationCondition("PRESENT");
+
+        /// <summary>
+        /// Constructs a custom SingleSelectQuestionRuleCategoryAutomationCondition for a value not among the defined constants.
+        /// </summary>
+        public SingleSelectQuestionRuleCategoryAutomationCondition(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SingleSelectQuestionRuleCategoryAutomationCondition FindValue(string value)
+        {
+            return FindValue<SingleSelectQuestionRuleCategoryAutomationCondition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SingleSelectQuestionRuleCategoryAutomationCondition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SlaAssignmentType.
+    /// </summary>
+    public class SlaAssignmentType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CASES for SlaAssignmentType
+        /// </summary>
+        public static readonly SlaAssignmentType CASES = new SlaAssignmentType("CASES");
+
+        /// <summary>
+        /// Constructs a custom SlaAssignmentType for a value not among the defined constants.
+        /// </summary>
+        public SlaAssignmentType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SlaAssignmentType FindValue(string value)
+        {
+            return FindValue<SlaAssignmentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SlaAssignmentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SlaType.
+    /// </summary>
+    public class SlaType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CaseField for SlaType
+        /// </summary>
+        public static readonly SlaType CaseField = new SlaType("CaseField");
+
+        /// <summary>
+        /// Constructs a custom SlaType for a value not among the defined constants.
+        /// </summary>
+        public SlaType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SlaType FindValue(string value)
+        {
+            return FindValue<SlaType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SlaType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SortOrder.
+    /// </summary>
+    public class SortOrder : ConstantClass
+    {
+        /// <summary>
+        /// Constant ASCENDING for SortOrder
+        /// </summary>
+        public static readonly SortOrder ASCENDING = new SortOrder("ASCENDING");
+
+        /// <summary>
+        /// Constant DESCENDING for SortOrder
+        /// </summary>
+        public static readonly SortOrder DESCENDING = new SortOrder("DESCENDING");
+
+        /// <summary>
+        /// Constructs a custom SortOrder for a value not among the defined constants.
+        /// </summary>
+        public SortOrder(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortOrder FindValue(string value)
+        {
+            return FindValue<SortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SortableFieldName.
+    /// </summary>
+    public class SortableFieldName : ConstantClass
+    {
+        /// <summary>
+        /// Constant CHANNEL for SortableFieldName
+        /// </summary>
+        public static readonly SortableFieldName CHANNEL = new SortableFieldName("CHANNEL");
+
+        /// <summary>
+        /// Constant CONNECTED_TO_AGENT_TIMESTAMP for SortableFieldName
+        /// </summary>
+        public static readonly SortableFieldName CONNECTED_TO_AGENT_TIMESTAMP = new SortableFieldName("CONNECTED_TO_AGENT_TIMESTAMP");
+
+        /// <summary>
+        /// Constant DISCONNECT_TIMESTAMP for SortableFieldName
+        /// </summary>
+        public static readonly SortableFieldName DISCONNECT_TIMESTAMP = new SortableFieldName("DISCONNECT_TIMESTAMP");
+
+        /// <summary>
+        /// Constant EXPIRY_TIMESTAMP for SortableFieldName
+        /// </summary>
+        public static readonly SortableFieldName EXPIRY_TIMESTAMP = new SortableFieldName("EXPIRY_TIMESTAMP");
+
+        /// <summary>
+        /// Constant INITIATION_METHOD for SortableFieldName
+        /// </summary>
+        public static readonly SortableFieldName INITIATION_METHOD = new SortableFieldName("INITIATION_METHOD");
+
+        /// <summary>
+        /// Constant INITIATION_TIMESTAMP for SortableFieldName
+        /// </summary>
+        public static readonly SortableFieldName INITIATION_TIMESTAMP = new SortableFieldName("INITIATION_TIMESTAMP");
+
+        /// <summary>
+        /// Constant SCHEDULED_TIMESTAMP for SortableFieldName
+        /// </summary>
+        public static readonly SortableFieldName SCHEDULED_TIMESTAMP = new SortableFieldName("SCHEDULED_TIMESTAMP");
+
+        /// <summary>
+        /// Constructs a custom SortableFieldName for a value not among the defined constants.
+        /// </summary>
+        public SortableFieldName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortableFieldName FindValue(string value)
+        {
+            return FindValue<SortableFieldName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SortableFieldName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SourceType.
+    /// </summary>
+    public class SourceType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CASES for SourceType
+        /// </summary>
+        public static readonly SourceType CASES = new SourceType("CASES");
+
+        /// <summary>
+        /// Constant SALESFORCE for SourceType
+        /// </summary>
+        public static readonly SourceType SALESFORCE = new SourceType("SALESFORCE");
+
+        /// <summary>
+        /// Constant ZENDESK for SourceType
+        /// </summary>
+        public static readonly SourceType ZENDESK = new SourceType("ZENDESK");
+
+        /// <summary>
+        /// Constructs a custom SourceType for a value not among the defined constants.
+        /// </summary>
+        public SourceType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SourceType FindValue(string value)
+        {
+            return FindValue<SourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type Statistic.
+    /// </summary>
+    public class Statistic : ConstantClass
+    {
+        /// <summary>
+        /// Constant AVG for Statistic
+        /// </summary>
+        public static readonly Statistic AVG = new Statistic("AVG");
+
+        /// <summary>
+        /// Constant MAX for Statistic
+        /// </summary>
+        public static readonly Statistic MAX = new Statistic("MAX");
+
+        /// <summary>
+        /// Constant SUM for Statistic
+        /// </summary>
+        public static readonly Statistic SUM = new Statistic("SUM");
+
+        /// <summary>
+        /// Constructs a custom Statistic for a value not among the defined constants.
+        /// </summary>
+        public Statistic(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Statistic FindValue(string value)
+        {
+            return FindValue<Statistic>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Statistic(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type Status.
+    /// </summary>
+    public class Status : ConstantClass
+    {
+        /// <summary>
+        /// Constant COMPLETE for Status
+        /// </summary>
+        public static readonly Status COMPLETE = new Status("COMPLETE");
+
+        /// <summary>
+        /// Constant DELETED for Status
+        /// </summary>
+        public static readonly Status DELETED = new Status("DELETED");
+
+        /// <summary>
+        /// Constant IN_PROGRESS for Status
+        /// </summary>
+        public static readonly Status IN_PROGRESS = new Status("IN_PROGRESS");
+
+        /// <summary>
+        /// Constructs a custom Status for a value not among the defined constants.
+        /// </summary>
+        public Status(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Status FindValue(string value)
+        {
+            return FindValue<Status>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Status(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type StorageType.
+    /// </summary>
+    public class StorageType : ConstantClass
+    {
+        /// <summary>
+        /// Constant KINESIS_FIREHOSE for StorageType
+        /// </summary>
+        public static readonly StorageType KINESIS_FIREHOSE = new StorageType("KINESIS_FIREHOSE");
+
+        /// <summary>
+        /// Constant KINESIS_STREAM for StorageType
+        /// </summary>
+        public static readonly StorageType KINESIS_STREAM = new StorageType("KINESIS_STREAM");
+
+        /// <summary>
+        /// Constant KINESIS_VIDEO_STREAM for StorageType
+        /// </summary>
+        public static readonly StorageType KINESIS_VIDEO_STREAM = new StorageType("KINESIS_VIDEO_STREAM");
+
+        /// <summary>
+        /// Constant S3 for StorageType
+        /// </summary>
+        public static readonly StorageType S3 = new StorageType("S3");
+
+        /// <summary>
+        /// Constructs a custom StorageType for a value not among the defined constants.
+        /// </summary>
+        public StorageType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StorageType FindValue(string value)
+        {
+            return FindValue<StorageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StorageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type StringComparisonType.
+    /// </summary>
+    public class StringComparisonType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONTAINS for StringComparisonType
+        /// </summary>
+        public static readonly StringComparisonType CONTAINS = new StringComparisonType("CONTAINS");
+
+        /// <summary>
+        /// Constant EXACT for StringComparisonType
+        /// </summary>
+        public static readonly StringComparisonType EXACT = new StringComparisonType("EXACT");
+
+        /// <summary>
+        /// Constant STARTS_WITH for StringComparisonType
+        /// </summary>
+        public static readonly StringComparisonType STARTS_WITH = new StringComparisonType("STARTS_WITH");
+
+        /// <summary>
+        /// Constructs a custom StringComparisonType for a value not among the defined constants.
+        /// </summary>
+        public StringComparisonType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StringComparisonType FindValue(string value)
+        {
+            return FindValue<StringComparisonType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StringComparisonType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SummaryMode.
+    /// </summary>
+    public class SummaryMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant AutomatedInteraction for SummaryMode
+        /// </summary>
+        public static readonly SummaryMode AutomatedInteraction = new SummaryMode("AutomatedInteraction");
+
+        /// <summary>
+        /// Constant ContactChain for SummaryMode
+        /// </summary>
+        public static readonly SummaryMode ContactChain = new SummaryMode("ContactChain");
+
+        /// <summary>
+        /// Constant PostContact for SummaryMode
+        /// </summary>
+        public static readonly SummaryMode PostContact = new SummaryMode("PostContact");
+
+        /// <summary>
+        /// Constructs a custom SummaryMode for a value not among the defined constants.
+        /// </summary>
+        public SummaryMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SummaryMode FindValue(string value)
+        {
+            return FindValue<SummaryMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SummaryMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TargetListType.
+    /// </summary>
+    public class TargetListType : ConstantClass
+    {
+        /// <summary>
+        /// Constant PROFICIENCIES for TargetListType
+        /// </summary>
+        public static readonly TargetListType PROFICIENCIES = new TargetListType("PROFICIENCIES");
+
+        /// <summary>
+        /// Constructs a custom TargetListType for a value not among the defined constants.
+        /// </summary>
+        public TargetListType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetListType FindValue(string value)
+        {
+            return FindValue<TargetListType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetListType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TaskTemplateFieldType.
+    /// </summary>
+    public class TaskTemplateFieldType : ConstantClass
+    {
+        /// <summary>
+        /// Constant BOOLEAN for TaskTemplateFieldType
+        /// </summary>
+        public static readonly TaskTemplateFieldType BOOLEAN = new TaskTemplateFieldType("BOOLEAN");
+
+        /// <summary>
+        /// Constant DATE_TIME for TaskTemplateFieldType
+        /// </summary>
+        public static readonly TaskTemplateFieldType DATE_TIME = new TaskTemplateFieldType("DATE_TIME");
+
+        /// <summary>
+        /// Constant DESCRIPTION for TaskTemplateFieldType
+        /// </summary>
+        public static readonly TaskTemplateFieldType DESCRIPTION = new TaskTemplateFieldType("DESCRIPTION");
+
+        /// <summary>
+        /// Constant EMAIL for TaskTemplateFieldType
+        /// </summary>
+        public static readonly TaskTemplateFieldType EMAIL = new TaskTemplateFieldType("EMAIL");
+
+        /// <summary>
+        /// Constant EXPIRY_DURATION for TaskTemplateFieldType
+        /// </summary>
+        public static readonly TaskTemplateFieldType EXPIRY_DURATION = new TaskTemplateFieldType("EXPIRY_DURATION");
+
+        /// <summary>
+        /// Constant NAME for TaskTemplateFieldType
+        /// </summary>
+        public static readonly TaskTemplateFieldType NAME = new TaskTemplateFieldType("NAME");
+
+        /// <summary>
+        /// Constant NUMBER for TaskTemplateFieldType
+        /// </summary>
+        public static readonly TaskTemplateFieldType NUMBER = new TaskTemplateFieldType("NUMBER");
+
+        /// <summary>
+        /// Constant QUICK_CONNECT for TaskTemplateFieldType
+        /// </summary>
+        public static readonly TaskTemplateFieldType QUICK_CONNECT = new TaskTemplateFieldType("QUICK_CONNECT");
+
+        /// <summary>
+        /// Constant SCHEDULED_TIME for TaskTemplateFieldType
+        /// </summary>
+        public static readonly TaskTemplateFieldType SCHEDULED_TIME = new TaskTemplateFieldType("SCHEDULED_TIME");
+
+        /// <summary>
+        /// Constant SELF_ASSIGN for TaskTemplateFieldType
+        /// </summary>
+        public static readonly TaskTemplateFieldType SELF_ASSIGN = new TaskTemplateFieldType("SELF_ASSIGN");
+
+        /// <summary>
+        /// Constant SINGLE_SELECT for TaskTemplateFieldType
+        /// </summary>
+        public static readonly TaskTemplateFieldType SINGLE_SELECT = new TaskTemplateFieldType("SINGLE_SELECT");
+
+        /// <summary>
+        /// Constant TEXT for TaskTemplateFieldType
+        /// </summary>
+        public static readonly TaskTemplateFieldType TEXT = new TaskTemplateFieldType("TEXT");
+
+        /// <summary>
+        /// Constant TEXT_AREA for TaskTemplateFieldType
+        /// </summary>
+        public static readonly TaskTemplateFieldType TEXT_AREA = new TaskTemplateFieldType("TEXT_AREA");
+
+        /// <summary>
+        /// Constant URL for TaskTemplateFieldType
+        /// </summary>
+        public static readonly TaskTemplateFieldType URL = new TaskTemplateFieldType("URL");
+
+        /// <summary>
+        /// Constructs a custom TaskTemplateFieldType for a value not among the defined constants.
+        /// </summary>
+        public TaskTemplateFieldType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TaskTemplateFieldType FindValue(string value)
+        {
+            return FindValue<TaskTemplateFieldType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TaskTemplateFieldType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TaskTemplateStatus.
+    /// </summary>
+    public class TaskTemplateStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for TaskTemplateStatus
+        /// </summary>
+        public static readonly TaskTemplateStatus ACTIVE = new TaskTemplateStatus("ACTIVE");
+
+        /// <summary>
+        /// Constant INACTIVE for TaskTemplateStatus
+        /// </summary>
+        public static readonly TaskTemplateStatus INACTIVE = new TaskTemplateStatus("INACTIVE");
+
+        /// <summary>
+        /// Constructs a custom TaskTemplateStatus for a value not among the defined constants.
+        /// </summary>
+        public TaskTemplateStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TaskTemplateStatus FindValue(string value)
+        {
+            return FindValue<TaskTemplateStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TaskTemplateStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TestCaseEntryPointType.
+    /// </summary>
+    public class TestCaseEntryPointType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CHAT for TestCaseEntryPointType
+        /// </summary>
+        public static readonly TestCaseEntryPointType CHAT = new TestCaseEntryPointType("CHAT");
+
+        /// <summary>
+        /// Constant VOICE_CALL for TestCaseEntryPointType
+        /// </summary>
+        public static readonly TestCaseEntryPointType VOICE_CALL = new TestCaseEntryPointType("VOICE_CALL");
+
+        /// <summary>
+        /// Constructs a custom TestCaseEntryPointType for a value not among the defined constants.
+        /// </summary>
+        public TestCaseEntryPointType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TestCaseEntryPointType FindValue(string value)
+        {
+            return FindValue<TestCaseEntryPointType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TestCaseEntryPointType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TestCaseExecutionStatus.
+    /// </summary>
+    public class TestCaseExecutionStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant FAILED for TestCaseExecutionStatus
+        /// </summary>
+        public static readonly TestCaseExecutionStatus FAILED = new TestCaseExecutionStatus("FAILED");
+
+        /// <summary>
+        /// Constant INITIATED for TestCaseExecutionStatus
+        /// </summary>
+        public static readonly TestCaseExecutionStatus INITIATED = new TestCaseExecutionStatus("INITIATED");
+
+        /// <summary>
+        /// Constant IN_PROGRESS for TestCaseExecutionStatus
+        /// </summary>
+        public static readonly TestCaseExecutionStatus IN_PROGRESS = new TestCaseExecutionStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// Constant PASSED for TestCaseExecutionStatus
+        /// </summary>
+        public static readonly TestCaseExecutionStatus PASSED = new TestCaseExecutionStatus("PASSED");
+
+        /// <summary>
+        /// Constant STOPPED for TestCaseExecutionStatus
+        /// </summary>
+        public static readonly TestCaseExecutionStatus STOPPED = new TestCaseExecutionStatus("STOPPED");
+
+        /// <summary>
+        /// Constructs a custom TestCaseExecutionStatus for a value not among the defined constants.
+        /// </summary>
+        public TestCaseExecutionStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TestCaseExecutionStatus FindValue(string value)
+        {
+            return FindValue<TestCaseExecutionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TestCaseExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TestCaseStatus.
+    /// </summary>
+    public class TestCaseStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant PUBLISHED for TestCaseStatus
+        /// </summary>
+        public static readonly TestCaseStatus PUBLISHED = new TestCaseStatus("PUBLISHED");
+
+        /// <summary>
+        /// Constant SAVED for TestCaseStatus
+        /// </summary>
+        public static readonly TestCaseStatus SAVED = new TestCaseStatus("SAVED");
+
+        /// <summary>
+        /// Constructs a custom TestCaseStatus for a value not among the defined constants.
+        /// </summary>
+        public TestCaseStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TestCaseStatus FindValue(string value)
+        {
+            return FindValue<TestCaseStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TestCaseStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TimerEligibleParticipantRoles.
+    /// </summary>
+    public class TimerEligibleParticipantRoles : ConstantClass
+    {
+        /// <summary>
+        /// Constant AGENT for TimerEligibleParticipantRoles
+        /// </summary>
+        public static readonly TimerEligibleParticipantRoles AGENT = new TimerEligibleParticipantRoles("AGENT");
+
+        /// <summary>
+        /// Constant CUSTOMER for TimerEligibleParticipantRoles
+        /// </summary>
+        public static readonly TimerEligibleParticipantRoles CUSTOMER = new TimerEligibleParticipantRoles("CUSTOMER");
+
+        /// <summary>
+        /// Constructs a custom TimerEligibleParticipantRoles for a value not among the defined constants.
+        /// </summary>
+        public TimerEligibleParticipantRoles(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TimerEligibleParticipantRoles FindValue(string value)
+        {
+            return FindValue<TimerEligibleParticipantRoles>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TimerEligibleParticipantRoles(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TrafficDistributionGroupStatus.
+    /// </summary>
+    public class TrafficDistributionGroupStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for TrafficDistributionGroupStatus
+        /// </summary>
+        public static readonly TrafficDistributionGroupStatus ACTIVE = new TrafficDistributionGroupStatus("ACTIVE");
+
+        /// <summary>
+        /// Constant CREATION_FAILED for TrafficDistributionGroupStatus
+        /// </summary>
+        public static readonly TrafficDistributionGroupStatus CREATION_FAILED = new TrafficDistributionGroupStatus("CREATION_FAILED");
+
+        /// <summary>
+        /// Constant CREATION_IN_PROGRESS for TrafficDistributionGroupStatus
+        /// </summary>
+        public static readonly TrafficDistributionGroupStatus CREATION_IN_PROGRESS = new TrafficDistributionGroupStatus("CREATION_IN_PROGRESS");
+
+        /// <summary>
+        /// Constant DELETION_FAILED for TrafficDistributionGroupStatus
+        /// </summary>
+        public static readonly TrafficDistributionGroupStatus DELETION_FAILED = new TrafficDistributionGroupStatus("DELETION_FAILED");
+
+        /// <summary>
+        /// Constant PENDING_DELETION for TrafficDistributionGroupStatus
+        /// </summary>
+        public static readonly TrafficDistributionGroupStatus PENDING_DELETION = new TrafficDistributionGroupStatus("PENDING_DELETION");
+
+        /// <summary>
+        /// Constant UPDATE_IN_PROGRESS for TrafficDistributionGroupStatus
+        /// </summary>
+        public static readonly TrafficDistributionGroupStatus UPDATE_IN_PROGRESS = new TrafficDistributionGroupStatus("UPDATE_IN_PROGRESS");
+
+        /// <summary>
+        /// Constructs a custom TrafficDistributionGroupStatus for a value not among the defined constants.
+        /// </summary>
+        public TrafficDistributionGroupStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrafficDistributionGroupStatus FindValue(string value)
+        {
+            return FindValue<TrafficDistributionGroupStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrafficDistributionGroupStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TrafficType.
+    /// </summary>
+    public class TrafficType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CAMPAIGN for TrafficType
+        /// </summary>
+        public static readonly TrafficType CAMPAIGN = new TrafficType("CAMPAIGN");
+
+        /// <summary>
+        /// Constant GENERAL for TrafficType
+        /// </summary>
+        public static readonly TrafficType GENERAL = new TrafficType("GENERAL");
+
+        /// <summary>
+        /// Constructs a custom TrafficType for a value not among the defined constants.
+        /// </summary>
+        public TrafficType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrafficType FindValue(string value)
+        {
+            return FindValue<TrafficType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrafficType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TrendIndicator.
+    /// </summary>
+    public class TrendIndicator : ConstantClass
+    {
+        /// <summary>
+        /// Constant NEGATIVE for TrendIndicator
+        /// </summary>
+        public static readonly TrendIndicator NEGATIVE = new TrendIndicator("NEGATIVE");
+
+        /// <summary>
+        /// Constant NEUTRAL for TrendIndicator
+        /// </summary>
+        public static readonly TrendIndicator NEUTRAL = new TrendIndicator("NEUTRAL");
+
+        /// <summary>
+        /// Constant POSITIVE for TrendIndicator
+        /// </summary>
+        public static readonly TrendIndicator POSITIVE = new TrendIndicator("POSITIVE");
+
+        /// <summary>
+        /// Constructs a custom TrendIndicator for a value not among the defined constants.
+        /// </summary>
+        public TrendIndicator(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrendIndicator FindValue(string value)
+        {
+            return FindValue<TrendIndicator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrendIndicator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type Unit.
+    /// </summary>
+    public class Unit : ConstantClass
+    {
+        /// <summary>
+        /// Constant COUNT for Unit
+        /// </summary>
+        public static readonly Unit COUNT = new Unit("COUNT");
+
+        /// <summary>
+        /// Constant PERCENT for Unit
+        /// </summary>
+        public static readonly Unit PERCENT = new Unit("PERCENT");
+
+        /// <summary>
+        /// Constant SECONDS for Unit
+        /// </summary>
+        public static readonly Unit SECONDS = new Unit("SECONDS");
+
+        /// <summary>
+        /// Constructs a custom Unit for a value not among the defined constants.
+        /// </summary>
+        public Unit(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Unit FindValue(string value)
+        {
+            return FindValue<Unit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Unit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type UpdateOutboundEmailMessageSourceType.
+    /// </summary>
+    public class UpdateOutboundEmailMessageSourceType : ConstantClass
+    {
+        /// <summary>
+        /// Constant RAW for UpdateOutboundEmailMessageSourceType
+        /// </summary>
+        public static readonly UpdateOutboundEmailMessageSourceType RAW = new UpdateOutboundEmailMessageSourceType("RAW");
+
+        /// <summary>
+        /// Constructs a custom UpdateOutboundEmailMessageSourceType for a value not among the defined constants.
+        /// </summary>
+        public UpdateOutboundEmailMessageSourceType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UpdateOutboundEmailMessageSourceType FindValue(string value)
+        {
+            return FindValue<UpdateOutboundEmailMessageSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UpdateOutboundEmailMessageSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type UseCaseType.
+    /// </summary>
+    public class UseCaseType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONNECT_CAMPAIGNS for UseCaseType
+        /// </summary>
+        public static readonly UseCaseType CONNECT_CAMPAIGNS = new UseCaseType("CONNECT_CAMPAIGNS");
+
+        /// <summary>
+        /// Constant RULES_EVALUATION for UseCaseType
+        /// </summary>
+        public static readonly UseCaseType RULES_EVALUATION = new UseCaseType("RULES_EVALUATION");
+
+        /// <summary>
+        /// Constructs a custom UseCaseType for a value not among the defined constants.
+        /// </summary>
+        public UseCaseType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UseCaseType FindValue(string value)
+        {
+            return FindValue<UseCaseType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UseCaseType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type VideoCapability.
+    /// </summary>
+    public class VideoCapability : ConstantClass
+    {
+        /// <summary>
+        /// Constant SEND for VideoCapability
+        /// </summary>
+        public static readonly VideoCapability SEND = new VideoCapability("SEND");
+
+        /// <summary>
+        /// Constructs a custom VideoCapability for a value not among the defined constants.
+        /// </summary>
+        public VideoCapability(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VideoCapability FindValue(string value)
+        {
+            return FindValue<VideoCapability>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VideoCapability(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ViewStatus.
+    /// </summary>
+    public class ViewStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant PUBLISHED for ViewStatus
+        /// </summary>
+        public static readonly ViewStatus PUBLISHED = new ViewStatus("PUBLISHED");
+
+        /// <summary>
+        /// Constant SAVED for ViewStatus
+        /// </summary>
+        public static readonly ViewStatus SAVED = new ViewStatus("SAVED");
+
+        /// <summary>
+        /// Constructs a custom ViewStatus for a value not among the defined constants.
+        /// </summary>
+        public ViewStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ViewStatus FindValue(string value)
+        {
+            return FindValue<ViewStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ViewStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ViewType.
+    /// </summary>
+    public class ViewType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AWS_MANAGED for ViewType
+        /// </summary>
+        public static readonly ViewType AWS_MANAGED = new ViewType("AWS_MANAGED");
+
+        /// <summary>
+        /// Constant CUSTOMER_MANAGED for ViewType
+        /// </summary>
+        public static readonly ViewType CUSTOMER_MANAGED = new ViewType("CUSTOMER_MANAGED");
+
+        /// <summary>
+        /// Constructs a custom ViewType for a value not among the defined constants.
+        /// </summary>
+        public ViewType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ViewType FindValue(string value)
+        {
+            return FindValue<ViewType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ViewType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type Visibility.
+    /// </summary>
+    public class Visibility : ConstantClass
+    {
+        /// <summary>
+        /// Constant ALL for Visibility
+        /// </summary>
+        public static readonly Visibility ALL = new Visibility("ALL");
+
+        /// <summary>
+        /// Constant ASSIGNED for Visibility
+        /// </summary>
+        public static readonly Visibility ASSIGNED = new Visibility("ASSIGNED");
+
+        /// <summary>
+        /// Constant NONE for Visibility
+        /// </summary>
+        public static readonly Visibility NONE = new Visibility("NONE");
+
+        /// <summary>
+        /// Constructs a custom Visibility for a value not among the defined constants.
+        /// </summary>
+        public Visibility(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Visibility FindValue(string value)
+        {
+            return FindValue<Visibility>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Visibility(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type VocabularyLanguageCode.
+    /// </summary>
+    public class VocabularyLanguageCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant ArAE for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode ArAE = new VocabularyLanguageCode("ar-AE");
+
+        /// <summary>
+        /// Constant CaES for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode CaES = new VocabularyLanguageCode("ca-ES");
+
+        /// <summary>
+        /// Constant DaDK for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode DaDK = new VocabularyLanguageCode("da-DK");
+
+        /// <summary>
+        /// Constant DeCH for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode DeCH = new VocabularyLanguageCode("de-CH");
+
+        /// <summary>
+        /// Constant DeDE for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode DeDE = new VocabularyLanguageCode("de-DE");
+
+        /// <summary>
+        /// Constant EnAB for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode EnAB = new VocabularyLanguageCode("en-AB");
+
+        /// <summary>
+        /// Constant EnAU for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode EnAU = new VocabularyLanguageCode("en-AU");
+
+        /// <summary>
+        /// Constant EnGB for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode EnGB = new VocabularyLanguageCode("en-GB");
+
+        /// <summary>
+        /// Constant EnIE for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode EnIE = new VocabularyLanguageCode("en-IE");
+
+        /// <summary>
+        /// Constant EnIN for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode EnIN = new VocabularyLanguageCode("en-IN");
+
+        /// <summary>
+        /// Constant EnNZ for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode EnNZ = new VocabularyLanguageCode("en-NZ");
+
+        /// <summary>
+        /// Constant EnUS for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode EnUS = new VocabularyLanguageCode("en-US");
+
+        /// <summary>
+        /// Constant EnWL for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode EnWL = new VocabularyLanguageCode("en-WL");
+
+        /// <summary>
+        /// Constant EnZA for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode EnZA = new VocabularyLanguageCode("en-ZA");
+
+        /// <summary>
+        /// Constant EsES for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode EsES = new VocabularyLanguageCode("es-ES");
+
+        /// <summary>
+        /// Constant EsUS for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode EsUS = new VocabularyLanguageCode("es-US");
+
+        /// <summary>
+        /// Constant FiFI for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode FiFI = new VocabularyLanguageCode("fi-FI");
+
+        /// <summary>
+        /// Constant FrCA for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode FrCA = new VocabularyLanguageCode("fr-CA");
+
+        /// <summary>
+        /// Constant FrFR for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode FrFR = new VocabularyLanguageCode("fr-FR");
+
+        /// <summary>
+        /// Constant HiIN for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode HiIN = new VocabularyLanguageCode("hi-IN");
+
+        /// <summary>
+        /// Constant IdID for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode IdID = new VocabularyLanguageCode("id-ID");
+
+        /// <summary>
+        /// Constant ItIT for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode ItIT = new VocabularyLanguageCode("it-IT");
+
+        /// <summary>
+        /// Constant JaJP for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode JaJP = new VocabularyLanguageCode("ja-JP");
+
+        /// <summary>
+        /// Constant KoKR for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode KoKR = new VocabularyLanguageCode("ko-KR");
+
+        /// <summary>
+        /// Constant MsMY for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode MsMY = new VocabularyLanguageCode("ms-MY");
+
+        /// <summary>
+        /// Constant NlNL for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode NlNL = new VocabularyLanguageCode("nl-NL");
+
+        /// <summary>
+        /// Constant NoNO for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode NoNO = new VocabularyLanguageCode("no-NO");
+
+        /// <summary>
+        /// Constant PlPL for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode PlPL = new VocabularyLanguageCode("pl-PL");
+
+        /// <summary>
+        /// Constant PtBR for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode PtBR = new VocabularyLanguageCode("pt-BR");
+
+        /// <summary>
+        /// Constant PtPT for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode PtPT = new VocabularyLanguageCode("pt-PT");
+
+        /// <summary>
+        /// Constant SvSE for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode SvSE = new VocabularyLanguageCode("sv-SE");
+
+        /// <summary>
+        /// Constant TlPH for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode TlPH = new VocabularyLanguageCode("tl-PH");
+
+        /// <summary>
+        /// Constant ZhCN for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode ZhCN = new VocabularyLanguageCode("zh-CN");
+
+        /// <summary>
+        /// Constructs a custom VocabularyLanguageCode for a value not among the defined constants.
+        /// </summary>
+        public VocabularyLanguageCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VocabularyLanguageCode FindValue(string value)
+        {
+            return FindValue<VocabularyLanguageCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VocabularyLanguageCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type VocabularyState.
+    /// </summary>
+    public class VocabularyState : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for VocabularyState
+        /// </summary>
+        public static readonly VocabularyState ACTIVE = new VocabularyState("ACTIVE");
+
+        /// <summary>
+        /// Constant CREATION_FAILED for VocabularyState
+        /// </summary>
+        public static readonly VocabularyState CREATION_FAILED = new VocabularyState("CREATION_FAILED");
+
+        /// <summary>
+        /// Constant CREATION_IN_PROGRESS for VocabularyState
+        /// </summary>
+        public static readonly VocabularyState CREATION_IN_PROGRESS = new VocabularyState("CREATION_IN_PROGRESS");
+
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for VocabularyState
+        /// </summary>
+        public static readonly VocabularyState DELETE_IN_PROGRESS = new VocabularyState("DELETE_IN_PROGRESS");
+
+        /// <summary>
+        /// Constructs a custom VocabularyState for a value not among the defined constants.
+        /// </summary>
+        public VocabularyState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VocabularyState FindValue(string value)
+        {
+            return FindValue<VocabularyState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VocabularyState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type VoiceEnhancementMode.
+    /// </summary>
+    public class VoiceEnhancementMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant NOISE_SUPPRESSION for VoiceEnhancementMode
+        /// </summary>
+        public static readonly VoiceEnhancementMode NOISE_SUPPRESSION = new VoiceEnhancementMode("NOISE_SUPPRESSION");
+
+        /// <summary>
+        /// Constant NONE for VoiceEnhancementMode
+        /// </summary>
+        public static readonly VoiceEnhancementMode NONE = new VoiceEnhancementMode("NONE");
+
+        /// <summary>
+        /// Constant VOICE_ISOLATION for VoiceEnhancementMode
+        /// </summary>
+        public static readonly VoiceEnhancementMode VOICE_ISOLATION = new VoiceEnhancementMode("VOICE_ISOLATION");
+
+        /// <summary>
+        /// Constructs a custom VoiceEnhancementMode for a value not among the defined constants.
+        /// </summary>
+        public VoiceEnhancementMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VoiceEnhancementMode FindValue(string value)
+        {
+            return FindValue<VoiceEnhancementMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VoiceEnhancementMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type VoiceRecordingTrack.
+    /// </summary>
+    public class VoiceRecordingTrack : ConstantClass
+    {
+        /// <summary>
+        /// Constant ALL for VoiceRecordingTrack
+        /// </summary>
+        public static readonly VoiceRecordingTrack ALL = new VoiceRecordingTrack("ALL");
+
+        /// <summary>
+        /// Constant FROM_AGENT for VoiceRecordingTrack
+        /// </summary>
+        public static readonly VoiceRecordingTrack FROM_AGENT = new VoiceRecordingTrack("FROM_AGENT");
+
+        /// <summary>
+        /// Constant TO_AGENT for VoiceRecordingTrack
+        /// </summary>
+        public static readonly VoiceRecordingTrack TO_AGENT = new VoiceRecordingTrack("TO_AGENT");
+
+        /// <summary>
+        /// Constructs a custom VoiceRecordingTrack for a value not among the defined constants.
+        /// </summary>
+        public VoiceRecordingTrack(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VoiceRecordingTrack FindValue(string value)
+        {
+            return FindValue<VoiceRecordingTrack>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VoiceRecordingTrack(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type WorkspaceFontFamily.
+    /// </summary>
+    public class WorkspaceFontFamily : ConstantClass
+    {
+        /// <summary>
+        /// Constant Arial for WorkspaceFontFamily
+        /// </summary>
+        public static readonly WorkspaceFontFamily Arial = new WorkspaceFontFamily("Arial");
+
+        /// <summary>
+        /// Constant CourierNew for WorkspaceFontFamily
+        /// </summary>
+        public static readonly WorkspaceFontFamily CourierNew = new WorkspaceFontFamily("Courier New");
+
+        /// <summary>
+        /// Constant Georgia for WorkspaceFontFamily
+        /// </summary>
+        public static readonly WorkspaceFontFamily Georgia = new WorkspaceFontFamily("Georgia");
+
+        /// <summary>
+        /// Constant TimesNewRoman for WorkspaceFontFamily
+        /// </summary>
+        public static readonly WorkspaceFontFamily TimesNewRoman = new WorkspaceFontFamily("Times New Roman");
+
+        /// <summary>
+        /// Constant Trebuchet for WorkspaceFontFamily
+        /// </summary>
+        public static readonly WorkspaceFontFamily Trebuchet = new WorkspaceFontFamily("Trebuchet");
+
+        /// <summary>
+        /// Constant Verdana for WorkspaceFontFamily
+        /// </summary>
+        public static readonly WorkspaceFontFamily Verdana = new WorkspaceFontFamily("Verdana");
+
+        /// <summary>
+        /// Constructs a custom WorkspaceFontFamily for a value not among the defined constants.
+        /// </summary>
+        public WorkspaceFontFamily(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorkspaceFontFamily FindValue(string value)
+        {
+            return FindValue<WorkspaceFontFamily>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorkspaceFontFamily(string value)
+        {
+            return FindValue(value);
+        }
+    }
+}

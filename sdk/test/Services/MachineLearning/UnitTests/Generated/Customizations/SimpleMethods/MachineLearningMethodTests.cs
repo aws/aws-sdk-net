@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the machinelearning-2014-12-12.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -55,7 +55,7 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
             EnsureSimpleMethodExists(typeof(Amazon.MachineLearning.AmazonMachineLearningClient), "UpdateEvaluation", new Type[] { typeof(string), typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.MachineLearning.AmazonMachineLearningClient), "UpdateMLModel", new Type[] { typeof(string), typeof(string), typeof(float?), });
         }
-        
+
         void EnsureSimpleMethodExists(Type type, string methodName, Type[] simpleParams)
         {
             Assert.IsNotNull(type.GetMethod(methodName, simpleParams), "Failed to find simple method " + methodName);

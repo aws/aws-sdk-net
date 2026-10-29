@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the streams.dynamodb-2012-08-10.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -40,7 +40,7 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
             EnsureSimpleMethodExists(typeof(Amazon.DynamoDBStreams.AmazonDynamoDBStreamsClient), "DescribeStream", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.DynamoDBStreams.AmazonDynamoDBStreamsClient), "GetRecords", new Type[] { typeof(string), });
         }
-        
+
         void EnsureSimpleMethodExists(Type type, string methodName, Type[] simpleParams)
         {
             Assert.IsNotNull(type.GetMethod(methodName, simpleParams), "Failed to find simple method " + methodName);

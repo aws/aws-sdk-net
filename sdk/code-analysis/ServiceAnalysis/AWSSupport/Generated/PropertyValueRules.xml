@@ -16,6 +16,10 @@
     <max>8000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AWSSupport.Model.CreateCaseRequest.ServiceCode</property>
+    <pattern>^[0-9a-z\-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AWSSupport.Model.DescribeAttachmentUploadStatusRequest.UploadId</property>
     <min>1</min>
     <max>2048</max>
@@ -29,6 +33,10 @@
     <property>Amazon.AWSSupport.Model.DescribeCommunicationsRequest.MaxResults</property>
     <min>10</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSSupport.Model.DescribeCreateCaseOptionsRequest.ServiceCode</property>
+    <pattern>^[0-9a-z\-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSSupport.Model.DescribeCreateCaseOptionsResponse.LanguageAvailability</property>

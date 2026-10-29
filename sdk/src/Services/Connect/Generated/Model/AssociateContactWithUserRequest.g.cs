@@ -1,0 +1,101 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Connect.Model
+{
+    /// <summary>
+    /// Container for the parameters to the AssociateContactWithUser operation. Associates
+    /// a queued contact with an agent. <para> <b>Use cases</b> </para> <para> Following are
+    /// common uses cases for this API: </para> <ul> <li> <para> Programmatically assign queued
+    /// contacts to available users. </para> </li> <li> <para> Leverage the IAM context key
+    /// <c>connect:PreferredUserArn</c> to restrict contact association to specific preferred
+    /// user. </para> </li> </ul> <para> <b>Important things to know</b> </para> <ul> <li>
+    /// <para> Use this API with chat, email, task, and voice contacts. For voice callbacks,
+    /// this API does not support customer-first mode. </para> </li> <li> <para> This API
+    /// can be used to offer a contact to an agent even if the agent is currently at maximum
+    /// concurrency for the channel. </para> </li> <li> <para> Use it to associate contacts
+    /// with users regardless of their current state, including custom states. Ensure your
+    /// application logic accounts for user availability before making associations. </para>
+    /// </li> <li> <para> It honors the IAM context key <c>connect:PreferredUserArn</c> to
+    /// prevent unauthorized contact associations. </para> </li> <li> <para> It respects the
+    /// IAM context key <c>connect:PreferredUserArn</c> to enforce authorization controls
+    /// and prevent unauthorized contact associations. Verify that your IAM policies are properly
+    /// configured to support your intended use cases. </para> </li> <li> <para> The service
+    /// quota <i>Queues per routing profile per instance</i> applies to manually assigned
+    /// queues, too. For more information about this quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Connect
+    /// Customer quotas</a> in the <i>Connect Customer Administrator Guide</i>. </para> </li>
+    /// </ul> <para> <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+    /// Customer endpoints and quotas</a>. </para>
+    /// </summary>
+    public partial class AssociateContactWithUserRequest : AmazonConnectRequest
+    {
+        /// <summary>
+        /// Gets and sets the property ContactId. 
+        /// <para>
+        /// The identifier of the contact in this instance of Connect Customer. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 256)]
+        public string ContactId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ContactId property is set.
+        /// </summary>
+        internal bool IsSetContactId() => this.ContactId != null;
+
+        /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 100)]
+        public string InstanceId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the InstanceId property is set.
+        /// </summary>
+        internal bool IsSetInstanceId() => this.InstanceId != null;
+
+        /// <summary>
+        /// Gets and sets the property UserId. 
+        /// <para>
+        /// The identifier for the user. This can be the ID or the ARN of the user.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 256)]
+        public string UserId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UserId property is set.
+        /// </summary>
+        internal bool IsSetUserId() => this.UserId != null;
+    }
+}
