@@ -94,7 +94,7 @@ namespace Amazon.RestXmlProtocol.Model
         /// Gets and sets the property Short.
         /// </summary>
         [AWSProperty(Required = true)]
-        public int? Short { get; set; }
+        public short? Short { get; set; }
 
         /// <summary>
         /// Checks to see if the Short property is set.

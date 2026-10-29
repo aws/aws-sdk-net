@@ -380,6 +380,10 @@ public static class XmlBodyMemberMarshaller
             LongShape => $"StringUtils.FromLong({value})",
             FloatShape => $"StringUtils.FromFloat({value})",
             DoubleShape => $"StringUtils.FromDouble({value})",
+            ByteShape => $"StringUtils.FromSByte({value})",
+            ShortShape => $"StringUtils.FromShort({value})",
+            BigIntegerShape => $"StringUtils.FromBigInteger({value})",
+            BigDecimalShape => $"StringUtils.FromBigDecimal({value})",
             TimestampShape => HttpBindingConversions.TimestampStringConversion(timestampFormat ?? BodyTimestampDefault, value),
             _ => null,
         };

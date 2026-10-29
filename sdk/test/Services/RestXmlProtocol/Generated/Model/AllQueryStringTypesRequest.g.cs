@@ -64,7 +64,7 @@ namespace Amazon.RestXmlProtocol.Model
         /// <summary>
         /// Gets and sets the property QueryByte.
         /// </summary>
-        public int? QueryByte { get; set; }
+        public sbyte? QueryByte { get; set; }
 
         /// <summary>
         /// Checks to see if the QueryByte property is set.
@@ -230,7 +230,7 @@ namespace Amazon.RestXmlProtocol.Model
         /// <summary>
         /// Gets and sets the property QueryShort.
         /// </summary>
-        public int? QueryShort { get; set; }
+        public short? QueryShort { get; set; }
 
         /// <summary>
         /// Checks to see if the QueryShort property is set.
