@@ -120,6 +120,23 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetRuntimeSessionId() => this.RuntimeSessionId != null;
 
         /// <summary>
+        /// Gets and sets the property SessionEndpointUrl. 
+        /// <para>
+        /// The HTTPS endpoint that addresses this runtime session directly. This value is returned
+        /// only when the agent runtime is configured with allowed ports and direct runtime access
+        /// is available for the session. If this value is not present, use <c>InvokeAgentRuntime</c>
+        /// to communicate with the session.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 128)]
+        public string SessionEndpointUrl { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SessionEndpointUrl property is set.
+        /// </summary>
+        internal bool IsSetSessionEndpointUrl() => this.SessionEndpointUrl != null;
+
+        /// <summary>
         /// Gets and sets the property StatusCode. 
         /// <para>
         /// The HTTP status code of the response. A status code of 200 indicates a successful
