@@ -75,7 +75,7 @@ namespace Amazon.RestXmlProtocolNamespace.Model.Internal.MarshallTransformations
                 context.Writer.WriteStartElement("SimpleScalarPropertiesRequest", "https://example.com");
                 if (publicRequest.IsSetByteValue())
                 {
-                    context.Writer.WriteElementString("byteValue", StringUtils.FromInt(publicRequest.ByteValue.Value));
+                    context.Writer.WriteElementString("byteValue", StringUtils.FromSByte(publicRequest.ByteValue.Value));
                 }
                 if (publicRequest.IsSetDoubleValue())
                 {
@@ -106,7 +106,7 @@ namespace Amazon.RestXmlProtocolNamespace.Model.Internal.MarshallTransformations
                 }
                 if (publicRequest.IsSetShortValue())
                 {
-                    context.Writer.WriteElementString("shortValue", StringUtils.FromInt(publicRequest.ShortValue.Value));
+                    context.Writer.WriteElementString("shortValue", StringUtils.FromShort(publicRequest.ShortValue.Value));
                 }
                 if (publicRequest.IsSetStringValue())
                 {
