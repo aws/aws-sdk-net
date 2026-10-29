@@ -1,6 +1,7 @@
 AWSSDK.Core.dll
 System.IO.Hashing.dll
 extensions\CborProtocol\AWSSDK.Extensions.CborProtocol.dll
+extensions\CborProtocol\Microsoft.Bcl.HashCode.dll
 extensions\CborProtocol\System.Formats.Cbor.dll
 extensions\CborProtocol\System.IO.Hashing.dll
 extensions\CloudFrontSigners\AWSSDK.Extensions.CloudFront.Signers.dll

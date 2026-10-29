@@ -41,8 +41,9 @@
     </Otherwise>
   </Choose>  	
 
+  <!-- System.Formats.Cbor 11.0.0 is netstandard2.0, so all targets use it and its incremental APIs. -->
   <ItemGroup>
-    <PackageReference Include="System.Formats.Cbor" Version="9.0.5" />
+    <PackageReference Include="System.Formats.Cbor" Version="11.0.0-rc.2.26504.105" />
   </ItemGroup>
 
   <ItemGroup>
