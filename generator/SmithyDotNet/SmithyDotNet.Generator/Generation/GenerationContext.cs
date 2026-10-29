@@ -80,6 +80,13 @@ public class GenerationContext
     public EndpointBdd? EndpointBdd { get; }
 
     /// <summary>
+    /// The endpoint parameters the parameters class and resolver are generated from: the rule set's when
+    /// present (so output is unchanged for services carrying both traits), otherwise the BDD's. <c>null</c>
+    /// when the service has neither trait.
+    /// </summary>
+    public IReadOnlyDictionary<string, EndpointParameter>? EndpointParameters => EndpointRuleSet?.Parameters ?? EndpointBdd?.Parameters;
+
+    /// <summary>
     /// The service's <c>clientContextParams</c> as client-config properties, empty when the trait is
     /// absent. The config writer emits a property per entry; the endpoint resolver assigns from it.
     /// </summary>

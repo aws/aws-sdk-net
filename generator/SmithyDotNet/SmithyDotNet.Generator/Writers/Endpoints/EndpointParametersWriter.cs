@@ -11,12 +11,13 @@ namespace SmithyDotNet.Generator.Writers.Endpoints;
 public sealed class EndpointParametersWriter(GenerationContext context, string modelFileName)
 {
     /// <summary>
-    /// Emits the endpoint parameters source. The rule set is required; callers gate on
-    /// <see cref="GenerationContext.HasEndpointRuleSet"/>.
+    /// Emits the endpoint parameters source from <see cref="GenerationContext.EndpointParameters"/>. A rule set
+    /// or endpoint BDD is required; callers gate on <see cref="GenerationContext.HasEndpointRuleSet"/> or
+    /// <see cref="GenerationContext.HasEndpointBdd"/>.
     /// </summary>
     public string Write(CancellationToken cancellationToken = default)
     {
-        var ruleSet = context.EndpointRuleSet ?? throw new GeneratorException("EndpointParametersWriter requires an endpoint rule set.");
+        var parameters = context.EndpointParameters ?? throw new GeneratorException("EndpointParametersWriter requires an endpoint rule set or endpoint BDD.");
         var className = $"{context.BaseName}EndpointParameters";
 
         var writer = new CodeWriter();
@@ -35,28 +36,28 @@ public sealed class EndpointParametersWriter(GenerationContext context, string m
             writer.WriteLine("/// </summary>");
             writer.OpenBlock($"public class {className} : EndpointParameters", () =>
             {
-                WriteConstructor(writer, ruleSet, className);
-                foreach (var (name, parameter) in ruleSet.Parameters)
+                WriteConstructor(writer, parameters, className);
+                foreach (var (name, parameter) in parameters)
                 {
                     writer.WriteLine();
                     WriteProperty(writer, name, parameter);
                 }
 
-                WriteIndexer(writer, ruleSet);
+                WriteIndexer(writer, parameters);
             });
         });
 
         return writer.ToFormattedString(cancellationToken);
     }
 
-    private static void WriteConstructor(CodeWriter writer, EndpointRuleSet ruleSet, string className)
+    private static void WriteConstructor(CodeWriter writer, IReadOnlyDictionary<string, EndpointParameter> parameters, string className)
     {
         writer.WriteLine("/// <summary>");
         writer.WriteLine($"/// {className} constructor");
         writer.WriteLine("/// </summary>");
         writer.OpenBlock($"public {className}()", () =>
         {
-            foreach (var (name, parameter) in ruleSet.Parameters)
+            foreach (var (name, parameter) in parameters)
             {
                 if (parameter.Default is { } defaultValue)
                 {
@@ -87,14 +88,18 @@ public sealed class EndpointParametersWriter(GenerationContext context, string m
     // Overrides PropertyBag's (virtual) indexer so parameters["X"] reads/writes the same typed
     // backing field as parameters.X. Unknown keys fall through to the base dictionary, preserving the
     // custom-provider contract.
-    private static void WriteIndexer(CodeWriter writer, EndpointRuleSet ruleSet)
+    private static void WriteIndexer(CodeWriter writer, IReadOnlyDictionary<string, EndpointParameter> parameters)
     {
         writer.WriteLine();
+        writer.WriteLine("/// <summary>");
+        writer.WriteLine("/// Gets or sets an endpoint parameter by name. Known parameters read and write the typed");
+        writer.WriteLine("/// properties; any other name falls through to the underlying property bag.");
+        writer.WriteLine("/// </summary>");
         writer.OpenBlock("public override object this[string name]", () =>
         {
             writer.OpenBlock("get => name switch", "};", () =>
             {
-                foreach (var (name, _) in ruleSet.Parameters)
+                foreach (var (name, _) in parameters)
                 {
                     writer.WriteLine($"\"{name}\" => {name},");
                 }
@@ -106,7 +111,7 @@ public sealed class EndpointParametersWriter(GenerationContext context, string m
             {
                 writer.OpenBlock("switch (name)", () =>
                 {
-                    foreach (var (name, parameter) in ruleSet.Parameters)
+                    foreach (var (name, parameter) in parameters)
                     {
                         writer.WriteLine($"case \"{name}\": {name} = ({NativeType(parameter.Type)})value; break;");
                     }

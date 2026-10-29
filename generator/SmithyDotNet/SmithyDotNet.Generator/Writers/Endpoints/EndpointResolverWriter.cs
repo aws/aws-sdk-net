@@ -45,12 +45,13 @@ public sealed class EndpointResolverWriter(GenerationContext context, string mod
     };
 
     /// <summary>
-    /// Emits the endpoint resolver source. The rule set is required; callers gate on
-    /// <see cref="GenerationContext.HasEndpointRuleSet"/>.
+    /// Emits the endpoint resolver source from <see cref="GenerationContext.EndpointParameters"/>. A rule set
+    /// or endpoint BDD is required; callers gate on <see cref="GenerationContext.HasEndpointRuleSet"/> or
+    /// <see cref="GenerationContext.HasEndpointBdd"/>.
     /// </summary>
     public string Write(CancellationToken cancellationToken = default)
     {
-        var ruleSet = context.EndpointRuleSet ?? throw new GeneratorException("EndpointResolverWriter requires an endpoint rule set.");
+        var parameters = context.EndpointParameters ?? throw new GeneratorException("EndpointResolverWriter requires an endpoint rule set or endpoint BDD.");
         var className = $"{context.ClientName}EndpointResolver";
         var parametersName = $"{context.BaseName}EndpointParameters";
 
@@ -74,7 +75,7 @@ public sealed class EndpointResolverWriter(GenerationContext context, string mod
             {
                 WriteServiceSpecificHandler(writer);
                 writer.WriteLine();
-                WriteMapEndpointsParameters(writer, ruleSet, parametersName);
+                WriteMapEndpointsParameters(writer, parameters, parametersName);
             });
         });
 
@@ -89,14 +90,14 @@ public sealed class EndpointResolverWriter(GenerationContext context, string mod
         });
     }
 
-    private void WriteMapEndpointsParameters(CodeWriter writer, EndpointRuleSet ruleSet, string parametersName)
+    private void WriteMapEndpointsParameters(CodeWriter writer, IReadOnlyDictionary<string, EndpointParameter> parameters, string parametersName)
     {
         writer.OpenBlock("protected override EndpointParameters MapEndpointsParameters(IRequestContext requestContext)", () =>
         {
             writer.WriteLine($"var config = ({context.ClientName}Config)requestContext.ClientConfig;");
             writer.WriteLine($"var result = new {parametersName}();");
 
-            foreach (var (name, parameter) in ruleSet.Parameters)
+            foreach (var (name, parameter) in parameters)
             {
                 if (parameter.BuiltIn is { } builtIn)
                 {
@@ -108,13 +109,13 @@ public sealed class EndpointResolverWriter(GenerationContext context, string mod
             // parameter that *also* declares a builtIn takes the builtIn instead (C2J AssignClientContext).
             foreach (var parameter in context.ClientContextParameters)
             {
-                var source = ruleSet.Parameters.TryGetValue(parameter.Name, out var declared) && declared.BuiltIn is { } builtIn
+                var source = parameters.TryGetValue(parameter.Name, out var declared) && declared.BuiltIn is { } builtIn
                     ? BuiltInSource(builtIn)
                     : $"config.{parameter.Name}";
                 writer.WriteLine($"result.{parameter.Name} = {source};");
             }
 
-            if (ruleSet.Parameters.ContainsKey("Region"))
+            if (parameters.ContainsKey("Region"))
             {
                 writer.WriteLine();
                 WriteRegionFromServiceUrl(writer);

@@ -40,6 +40,13 @@ public sealed class BddProviderWriter(GenerationContext context, string modelFil
         ]);
         writer.OpenNamespace($"{context.Namespace}.Internal", () =>
         {
+            // Same class summary as the tree provider, since this is a drop-in replacement for it.
+            writer.WriteLine("/// <summary>");
+            writer.WriteLine($"/// Amazon {context.BaseName} endpoint provider.");
+            writer.WriteLine("/// <para />");
+            writer.WriteLine($"/// Resolves endpoint for given set of <see cref=\"{parametersName}\"/>.");
+            writer.WriteLine("/// Can throw <see cref=\"AmazonClientException\"/> if endpoint resolution is unsuccessful.");
+            writer.WriteLine("/// </summary>");
             // Context is private, so the base list names it qualified and EvaluateCondition is an explicit
             // interface implementation (a public signature cannot expose a private type).
             writer.OpenBlock($"public class {className} : IEndpointProvider, IBddConditionEvaluator<{className}.Context>", () =>
@@ -109,6 +116,8 @@ public sealed class BddProviderWriter(GenerationContext context, string modelFil
         "uriEncode" => "string",
         "getAttr" => "object",
         "split" => "IList<string>",
+        // Every ite assign in the fleet selects between two strings (e.g. ".dualstack" / "").
+        "ite" => "string",
         _ => throw new GeneratorException($"BDD assign uses unsupported function '{fn}'."),
     };
 
@@ -270,7 +279,9 @@ public sealed class BddProviderWriter(GenerationContext context, string modelFil
     // they are boolean when their operands are. Everything else reads IsBoolean off Functions.
     private static bool IsBooleanFn(string fn) => fn switch
     {
-        "coalesce" or "ite" => true,
+        // An unassigned coalesce/ite can't be typed here: it may yield bool? or a string. No model uses
+        // one as a top-level condition, so fail loudly rather than emit a condition of unknown type.
+        "coalesce" or "ite" => throw new GeneratorException($"BDD function '{fn}' is only supported as an argument or an assign, not as a top-level condition."),
         _ => Functions.TryGetValue(fn, out var spec) ? spec.IsBoolean
             : throw new GeneratorException($"BDD condition function '{fn}' is not supported yet."),
     };
@@ -280,7 +291,8 @@ public sealed class BddProviderWriter(GenerationContext context, string modelFil
         // coalesce -> a ?? b ?? ... (no boxing for bool?); ite -> cond == true ? then : else.
         if (fn == "coalesce")
         {
-            return string.Join(" ?? ", argv.Select(arg => BuildArgument(arg, spec: null, index: 0)));
+            // Parenthesized so a surrounding cast or comparison applies to the whole expression.
+            return $"({string.Join(" ?? ", argv.Select(arg => BuildArgument(arg, spec: null, index: 0)))})";
         }
         if (fn == "ite")
         {
@@ -288,9 +300,9 @@ public sealed class BddProviderWriter(GenerationContext context, string modelFil
             {
                 throw new GeneratorException($"BDD function 'ite' expects exactly three arguments but got {argv.Count}.");
             }
-            return $"{BuildArgument(argv[0], spec: null, index: 0)} == true "
+            return $"({BuildArgument(argv[0], spec: null, index: 0)} == true "
                  + $"? {BuildArgument(argv[1], spec: null, index: 1)} "
-                 + $": {BuildArgument(argv[2], spec: null, index: 2)}";
+                 + $": {BuildArgument(argv[2], spec: null, index: 2)})";
         }
 
         if (!Functions.TryGetValue(fn, out var fnSpec))
