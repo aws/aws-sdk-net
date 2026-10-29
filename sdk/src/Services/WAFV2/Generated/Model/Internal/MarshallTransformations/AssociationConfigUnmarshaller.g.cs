@@ -53,6 +53,13 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("ChallengeJavascriptSdkInjection", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, ChallengeJavascriptSdkInjectionConfig, StringUnmarshaller, ChallengeJavascriptSdkInjectionConfigUnmarshaller>(StringUnmarshaller.Instance, ChallengeJavascriptSdkInjectionConfigUnmarshaller.Instance);
+                    unmarshalledObject.ChallengeJavascriptSdkInjection = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("RequestBody", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, RequestBodyAssociatedResourceTypeConfig, StringUnmarshaller, RequestBodyAssociatedResourceTypeConfigUnmarshaller>(StringUnmarshaller.Instance, RequestBodyAssociatedResourceTypeConfigUnmarshaller.Instance);
