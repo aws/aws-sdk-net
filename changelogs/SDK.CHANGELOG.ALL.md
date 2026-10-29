@@ -1,3 +1,94 @@
+### 4.0.361.0 (2026-10-29 18:09 UTC)
+* AppMesh (4.0.100.22)
+	* AppMesh is now generated from its Smithy model. There are no changes to the public API.
+* AWSSupport (4.0.101.11)
+	* AWSSupport is now generated from its Smithy model. There are no changes to the public API.
+* BedrockAgentCore (4.0.116.0)
+	* Adds AgentCore Runtime session endpoint support, including sessionEndpointUrl on the InvokeAgentRuntime response
+* BedrockAgentCoreControl (4.0.125.0)
+	* Adds Session Endpoint Feature on AgentCore Runtime
+* CleanRooms (4.0.106.0)
+	* Adds support for the PySpark 2.0 analysis template format and for choosing the file format (CSV or Parquet) of protected job results written to Amazon S3, including in a membership's default job result configuration.
+* CloudHSM (4.0.100.22)
+	* CloudHSM is now generated from its Smithy model. CloudHsmInternalException and InvalidRequestException now expose the Retryable flag (bool?) that the service returns, hiding the base RetryableDetails property as CloudHsmServiceException already does.
+* CloudTrail (4.0.101.10)
+	* CloudTrail is now generated from its Smithy model. There are no changes to the public API.
+	* The X-Amz-Target request header now uses the service shape name (CloudTrail_20131101.{Operation}) instead of the legacy namespaced prefix; the service accepts both and other AWS SDKs already send the new form.
+* CloudWatchLogs (4.0.106.3)
+	* CloudWatchLogs is now generated from its Smithy model. There are no changes to the public API.
+* CodeDeploy (4.0.103.3)
+	* CodeDeploy is now generated from its Smithy model. There are no changes to the public API.
+* CodePipeline (4.0.101.3)
+	* CodePipeline is now generated from its Smithy model. There are no changes to the public API.
+* CognitoSync (4.0.100.22)
+	* CognitoSync is now generated from its Smithy model. There are no changes to the public API.
+* ConfigService (4.0.102.20)
+	* ConfigService is now generated from its Smithy model. There are no changes to the public API.
+* Connect (4.0.128.1)
+	* Connect is now generated from its Smithy model. There are no changes to the public API.
+* DataPipeline (4.0.100.22)
+	* DataPipeline is now generated from its Smithy model. There are no changes to the public API.
+	* The DescribeObjects, ListPipelines and QueryObjects paginators now stop when the response carries no marker instead of checking the HasMoreResults flag; the service omits the marker on the last page.
+* DeviceFarm (4.0.102.12)
+	* DeviceFarm is now generated from its Smithy model. There are no changes to the public API.
+* DirectConnect (4.0.103.8)
+	* DirectConnect is now generated from its Smithy model. There are no changes to the public API.
+* DirectoryService (4.0.100.22)
+	* DirectoryService is now generated from its Smithy model. There are no changes to the public API.
+* DynamoDBStreams (4.0.101.4)
+	* DynamoDBStreams is now generated from its Smithy model. There are no changes to the public API.
+* ElasticFileSystem (4.0.100.22)
+	* ElasticFileSystem is now generated from its Smithy model. There are no changes to the public API.
+* ElasticMapReduce (4.0.101.18)
+	* ElasticMapReduce is now generated from its Smithy model. BlockPublicAccessConfiguration now exposes the Classification, Configurations and Properties members that the service returns.
+* GameLift (4.0.104.5)
+	* GameLift is now generated from its Smithy model. There are no changes to the public API.
+* Glacier (4.0.100.22)
+	* Glacier is now generated from its Smithy model.
+	* Added the ListMultipartUploads paginator (IGlacierPaginatorFactory.ListMultipartUploads). The operation was always declared as paginated, but the previous generator skipped it.
+* Imagebuilder (4.0.104.0)
+	* This release adds support for on-demand AMI scanning with Amazon Inspector.
+* IoT (4.0.101.12)
+	* IoT is now generated from its Smithy model.
+	* Added the ListPrincipalThings, ListThings and ListTopicRules paginators (IIoTPaginatorFactory). The operations were always declared as paginated, but the previous generator skipped them.
+* KeyManagementService (4.0.101.1)
+	* KeyManagementService is now generated from its Smithy model. There are no changes to the public API.
+	* The DescribeCustomKeyStores, ListAliases, ListGrants, ListKeyPolicies, ListKeyRotations, ListKeys, ListResourceTags and ListRetirableGrants paginators now stop when the response carries no NextMarker instead of checking the Truncated flag; the service omits NextMarker on the last page.
+* Kinesis (4.0.104.8)
+	* Kinesis is now generated from its Smithy model. There are no changes to the public API.
+	* The ListStreams paginator now stops when the response carries no NextToken instead of checking the HasMoreStreams flag; the service omits NextToken on the last page, which is how the other Smithy-based SDKs already paginate it.
+* KinesisFirehose (4.0.100.22)
+	* KinesisFirehose is now generated from its Smithy model. There are no changes to the public API.
+* Lightsail (4.0.106.0)
+	* This release adds support for instance health status checks and system status checks.
+* MachineLearning (4.0.100.22)
+	* MachineLearning is now generated from its Smithy model. There are no changes to the public API.
+* Route53Domains (4.0.101.5)
+	* Route53Domains is now generated from its Smithy model. There are no changes to the public API.
+* S3 (4.0.104.8)
+	* Fix S3 Express sessions being shared between clients that use different credentials with the same AmazonS3Config. Each client now creates and caches its own sessions, keyed by bucket and credentials, and clients no longer dispose an S3ExpressCredentialProvider set on the config.
+* SimpleSystemsManagement (4.0.104.8)
+	* SimpleSystemsManagement is now generated from its Smithy model. There are no changes to the public API.
+* SQS (4.0.100.22)
+	* SQS is now generated from its Smithy model. There are no changes to the public API.
+* StorageGateway (4.0.100.22)
+	* StorageGateway is now generated from its Smithy model. There are no changes to the public API.
+* TimestreamQuery (4.0.100.22)
+	* TimestreamQuery is now generated from its Smithy model. There are no changes to the public API.
+* TimestreamWrite (4.0.100.22)
+	* TimestreamWrite is now generated from its Smithy model. There are no changes to the public API.
+* WAF (4.0.100.22)
+	* WAF is now generated from its Smithy model. There are no changes to the public API.
+* WAFRegional (4.0.100.22)
+	* WAFRegional is now generated from its Smithy model. There are no changes to the public API.
+* WAFV2 (4.0.102.0)
+	* AWS WAF customers using Targeted Bot Control, ATP, or ACFP managed rule groups can now enable automatic Challenge JavaScript SDK injection. When enabled, Amazon CloudFront injects the script tag into HTML responses on your behalf, removing the need for manual integration.
+* WorkSpaces (4.0.104.3)
+	* WorkSpaces is now generated from its Smithy model. There are no changes to the public API.
+* Core 4.0.102.15
+	* Read the AWS_LAMBDA_FUNCTION_NAME environment variable once per process instead of on every request when setting the recursion detection header.
+	* Removed a lock from the cached logger lookup and avoided building debug log arguments during request path canonicalization unless a debug logger is attached.
+
 ### 4.0.360.0 (2026-10-28 18:11 UTC)
 * Artifact (4.0.103.0)
 	* Update support mode for Assurance Assistance

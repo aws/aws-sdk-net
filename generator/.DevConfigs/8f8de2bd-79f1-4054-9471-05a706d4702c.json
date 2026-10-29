@@ -1,9 +1,0 @@
-{
-  "core": {
-    "changeLogMessages": [
-      "Removed a lock from the cached logger lookup and avoided building debug log arguments during request path canonicalization unless a debug logger is attached."
-    ],
-    "type": "patch",
-    "updateMinimum": false
-  }
-}

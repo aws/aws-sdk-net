@@ -32,7 +32,7 @@ namespace Amazon.WAFRegional
     public partial class AmazonWAFRegionalConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("WAF Regional", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("WAF Regional", "4.0.100.22");
 
         private static readonly AmazonWAFRegionalEndpointResolver EndpointResolver =
             new AmazonWAFRegionalEndpointResolver();

@@ -32,7 +32,7 @@ namespace Amazon.CognitoSync
     public partial class AmazonCognitoSyncConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Cognito Sync", "4.0.100.21");
+            InternalSDKUtils.BuildUserAgentString("Cognito Sync", "4.0.100.22");
 
         private static readonly AmazonCognitoSyncEndpointResolver EndpointResolver =
             new AmazonCognitoSyncEndpointResolver();
