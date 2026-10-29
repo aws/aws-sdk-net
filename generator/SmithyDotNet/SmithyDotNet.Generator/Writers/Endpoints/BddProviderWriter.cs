@@ -40,7 +40,9 @@ public sealed class BddProviderWriter(GenerationContext context, string modelFil
         ]);
         writer.OpenNamespace($"{context.Namespace}.Internal", () =>
         {
-            writer.OpenBlock($"public class {className} : IEndpointProvider, IBddConditionEvaluator<Context>", () =>
+            // Context is private, so the base list names it qualified and EvaluateCondition is an explicit
+            // interface implementation (a public signature cannot expose a private type).
+            writer.OpenBlock($"public class {className} : IEndpointProvider, IBddConditionEvaluator<{className}.Context>", () =>
             {
                 WriteContextClass(writer, parametersName, assignFields);
                 writer.WriteLine();
@@ -94,12 +96,15 @@ public sealed class BddProviderWriter(GenerationContext context, string modelFil
         return fields;
     }
 
-    /// <summary>Maps an assigning function to the runtime type its result binds to.</summary>
+    /// <summary>
+    /// Maps an assigning function to the runtime type its result binds to. Runtime types are fully
+    /// qualified: inside <c>Amazon.{Service}.Internal</c> a bare <c>Arn</c> binds to <c>Amazon.Arn</c>.
+    /// </summary>
     private static string AssignFieldType(string fn) => fn switch
     {
-        "aws.partition" => "Partition",
-        "aws.parseArn" => "Arn",
-        "parseURL" => "URL",
+        "aws.partition" => "global::Amazon.Runtime.Internal.Endpoints.StandardLibrary.Partition",
+        "aws.parseArn" => "global::Amazon.Runtime.Internal.Endpoints.StandardLibrary.Arn",
+        "parseURL" => "global::Amazon.Runtime.Internal.Endpoints.StandardLibrary.URL",
         "substring" => "string",
         "uriEncode" => "string",
         "getAttr" => "object",
@@ -178,7 +183,7 @@ public sealed class BddProviderWriter(GenerationContext context, string modelFil
         {
             case "endpoint":
                 var endpoint = rule.Endpoint ?? throw new GeneratorException("BDD endpoint result is missing its endpoint definition.");
-                writer.WriteLine($"return new Endpoint({UnrollUrl(endpoint.Url)}, {UnrollJsonTemplate(endpoint.Properties)}, {UnrollJsonTemplate(endpoint.Headers)});");
+                WriteEndpoint(writer, endpoint);
                 break;
             case "error":
                 var error = rule.Error ?? throw new GeneratorException("BDD error result is missing its error message.");
@@ -194,7 +199,7 @@ public sealed class BddProviderWriter(GenerationContext context, string modelFil
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Evaluates the BDD condition at <paramref name=\"conditionIndex\"/> against the context.");
         writer.WriteLine("/// </summary>");
-        writer.OpenBlock("public bool EvaluateCondition(int conditionIndex, Context context)", () =>
+        writer.OpenBlock("bool IBddConditionEvaluator<Context>.EvaluateCondition(int conditionIndex, Context context)", () =>
         {
             writer.OpenBlock("switch (conditionIndex)", () =>
             {
@@ -362,15 +367,154 @@ public sealed class BddProviderWriter(GenerationContext context, string modelFil
         throw new GeneratorException("BDD endpoint URL is not a template string, a reference, or a function.");
     }
 
-    // Endpoint properties/headers are a JSON string arg to the Endpoint ctor. Pilot results leave
-    // both empty; emit null (the ctor's empty form). Rich JSON-template unrolling is deferred.
-    private static string UnrollJsonTemplate(JsonElement? json)
+    // Builds the Endpoint with an object initializer instead of the tree path's attributesJson /
+    // headersJson strings, so resolution never parses JSON: properties.authSchemes becomes the typed
+    // AuthSchemes list (Endpoint.Attributes synthesizes the "authSchemes" bag on demand), other
+    // properties become a PropertyBag in PropertyBag.FromJsonElement's shape, and headers become a
+    // Dictionary<string, IList<string>>.
+    private void WriteEndpoint(CodeWriter writer, EndpointDefinition endpoint)
     {
-        if (json is { } value && value.ValueKind == JsonValueKind.Object && value.EnumerateObject().Any())
+        var url = UnrollUrl(endpoint.Url);
+        var members = new List<string>();
+        JsonElement? authSchemes = null;
+        var otherProperties = new List<JsonProperty>();
+
+        if (endpoint.Properties is { ValueKind: JsonValueKind.Object } properties)
         {
-            throw new GeneratorException("BDD endpoint properties/headers interpolation is not yet implemented.");
+            foreach (var property in properties.EnumerateObject())
+            {
+                if (property.Name == "authSchemes")
+                {
+                    authSchemes = property.Value;
+                }
+                else
+                {
+                    otherProperties.Add(property);
+                }
+            }
         }
-        return "null";
+
+        if (authSchemes is { } schemes)
+        {
+            if (schemes.ValueKind != JsonValueKind.Array)
+            {
+                throw new GeneratorException("BDD endpoint property 'authSchemes' must be an array.");
+            }
+            var items = schemes.EnumerateArray().Select(BuildAuthScheme);
+            members.Add($"AuthSchemes = new AuthScheme[] {{ {string.Join(", ", items)} }},");
+        }
+
+        if (otherProperties.Count > 0)
+        {
+            var entries = otherProperties.Select(p => $"[{CodeWriter.Literal(p.Name)}] = {BuildPropertyValue(p.Value)}");
+            members.Add($"Attributes = new PropertyBag {{ {string.Join(", ", entries)} }},");
+        }
+
+        if (endpoint.Headers is { ValueKind: JsonValueKind.Object } headers && headers.EnumerateObject().Any())
+        {
+            var entries = headers.EnumerateObject().Select(BuildHeader);
+            members.Add($"Headers = new Dictionary<string, IList<string>> {{ {string.Join(", ", entries)} }},");
+        }
+
+        if (members.Count == 0)
+        {
+            writer.WriteLine($"return new Endpoint({url});");
+            return;
+        }
+
+        writer.OpenBlock($"return new Endpoint({url})", "};", () =>
+        {
+            foreach (var member in members)
+            {
+                writer.WriteLine(member);
+            }
+        });
+    }
+
+    // One authSchemes entry -> new AuthScheme(name, signingName, signingRegion, signingRegionSet,
+    // disableDoubleEncoding). Absent fields are null so Endpoint.Attributes omits them, matching the
+    // bag the tree path parses from JSON. Unknown keys fail loudly rather than being dropped.
+    private string BuildAuthScheme(JsonElement scheme)
+    {
+        if (scheme.ValueKind != JsonValueKind.Object)
+        {
+            throw new GeneratorException("BDD authSchemes entry must be an object.");
+        }
+
+        string name = "null", signingName = "null", signingRegion = "null", signingRegionSet = "null", disableDoubleEncoding = "null";
+        foreach (var field in scheme.EnumerateObject())
+        {
+            switch (field.Name)
+            {
+                case "name":
+                    name = BuildStringValue(field.Value);
+                    break;
+                case "signingName":
+                    signingName = BuildStringValue(field.Value);
+                    break;
+                case "signingRegion":
+                    signingRegion = BuildStringValue(field.Value);
+                    break;
+                case "signingRegionSet":
+                    if (field.Value.ValueKind != JsonValueKind.Array)
+                    {
+                        throw new GeneratorException("BDD authSchemes 'signingRegionSet' must be an array.");
+                    }
+                    signingRegionSet = $"new List<string> {{ {string.Join(", ", field.Value.EnumerateArray().Select(BuildStringValue))} }}";
+                    break;
+                case "disableDoubleEncoding":
+                    disableDoubleEncoding = field.Value.ValueKind switch
+                    {
+                        JsonValueKind.True => "true",
+                        JsonValueKind.False => "false",
+                        _ => throw new GeneratorException("BDD authSchemes 'disableDoubleEncoding' must be a boolean literal."),
+                    };
+                    break;
+                default:
+                    throw new GeneratorException($"Unsupported BDD authSchemes field '{field.Name}'.");
+            }
+        }
+
+        if (name == "null")
+        {
+            throw new GeneratorException("BDD authSchemes entry is missing its 'name'.");
+        }
+        return $"new AuthScheme({name}, {signingName}, {signingRegion}, {signingRegionSet}, {disableDoubleEncoding})";
+    }
+
+    // A header is a name -> array of template strings.
+    private string BuildHeader(JsonProperty header)
+    {
+        if (header.Value.ValueKind != JsonValueKind.Array)
+        {
+            throw new GeneratorException($"BDD endpoint header '{header.Name}' must be an array.");
+        }
+        var values = header.Value.EnumerateArray().Select(BuildStringValue);
+        return $"[{CodeWriter.Literal(header.Name)}] = new List<string> {{ {string.Join(", ", values)} }}";
+    }
+
+    // A string-typed value: a template string, or a {"ref"}/{"fn"} cast to string.
+    private string BuildStringValue(JsonElement value) => value.ValueKind switch
+    {
+        JsonValueKind.String => UnrollTemplate(value.GetString() ?? string.Empty),
+        JsonValueKind.Object => $"(string){BuildArgument(value, null, 0)}",
+        _ => throw new GeneratorException($"Expected a string-valued BDD template but found '{value.ValueKind}'."),
+    };
+
+    // Mirrors PropertyBag.FromJsonElement: arrays -> List<object>, plain objects -> nested PropertyBag,
+    // {"ref"}/{"fn"} objects and scalars -> the expression emitter.
+    private string BuildPropertyValue(JsonElement value)
+    {
+        switch (value.ValueKind)
+        {
+            case JsonValueKind.Array:
+                return $"new List<object> {{ {string.Join(", ", value.EnumerateArray().Select(BuildPropertyValue))} }}";
+            case JsonValueKind.Object when !value.TryGetProperty("ref", out _) && !value.TryGetProperty("fn", out _):
+                var entries = value.EnumerateObject().Select(p => $"[{CodeWriter.Literal(p.Name)}] = {BuildPropertyValue(p.Value)}");
+                return $"new PropertyBag {{ {string.Join(", ", entries)} }}";
+            default:
+                return BuildArgument(value, null, 0);
+        }
     }
 
     // Reproduces Fn.Interpolate's grammar at generation time, emitting a C# $"..." interpolated

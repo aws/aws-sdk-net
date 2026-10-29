@@ -130,11 +130,16 @@ namespace Amazon.Runtime.Internal
         }
 
         private static readonly string[] SupportedAuthSchemas = { "sigv4-s3express", "sigv4", "sigv4a" };
-        private static void SetAuthenticationAndHeaders(IRequest request, Endpoint endpoint)
+        // internal (via InternalsVisibleTo) so unit tests can compare the typed and attributes-bag auth paths.
+        internal static void SetAuthenticationAndHeaders(IRequest request, Endpoint endpoint)
         {
-            if (endpoint.Attributes != null)
+            if (endpoint.AuthSchemes != null)
             {
-                var authSchemes = (IList)endpoint.Attributes["authSchemes"];
+                ApplyTypedAuthSchemes(request, endpoint.AuthSchemes);
+            }
+            else if (endpoint.RawAttributesOrNull != null)
+            {
+                var authSchemes = (IList)endpoint.RawAttributesOrNull["authSchemes"];
                 if (authSchemes != null)
                 {
                     var schemaFound = false;
@@ -143,25 +148,9 @@ namespace Amazon.Runtime.Internal
                     foreach (PropertyBag schema in authSchemes)
                     {
                         var schemaName = (string)schema["name"];
-                        if (!SupportedAuthSchemas.Contains(schemaName))
+                        if (ShouldSkipScheme(request, schemaName, hasMultipleSchemes))
                         {
                             continue;
-                        }
-
-                        // This check is to protect against the (unlikely) scenario where:
-                        // - The endpoint rules support both SigV4a and SigV4 (in that order)
-                        // - Customer has explicitly requested SigV4 to be used (via the auth scheme preference config option)
-                        // - SigV4a signer can be instantiated
-                        // In the previous logic, this method would always pick SigV4a (as it showed up first in the endpoint rules).
-                        if (request.ChosenAuthScheme != null && request.ChosenAuthScheme.ShortName != schemaName)
-                        {
-                            // We also need to check it's not S3 Express because its name is specific to endpoint rules,
-                            // it'll never be the chosen auth scheme in the request object.
-                            // All the S3 Express rules only contain that single auth scheme.
-                            if (!schemaName.EndsWith("-s3express"))
-                            {
-                                continue;
-                            }
                         }
 
                         switch (schemaName)
@@ -182,16 +171,6 @@ namespace Amazon.Runtime.Internal
                             }
                             case "sigv4a":
                             {
-                                // If there are multiple authentication schemes but the CRT dependency is not available,
-                                // we will proceed to check the next value in authSchemes.
-                                if (hasMultipleSchemes)
-                                {
-                                    if (!IsCrtDependencyAvailable())
-                                    {
-                                        continue;
-                                    }
-                                }
-
                                 request.SignatureVersion = SignatureVersion.SigV4a;
 
                                 // The authentication region could be overriden in the auth resolver by the set in the 
@@ -227,6 +206,91 @@ namespace Amazon.Runtime.Internal
                     request.Headers[header.Key] = string.Join(",", header.Value.ToArray());
                 }
             }
+        }
+
+        private static void ApplyTypedAuthSchemes(IRequest request, IReadOnlyList<AuthScheme> schemes)
+        {
+            var hasMultipleSchemes = schemes.Count > 1;
+            foreach (var scheme in schemes)
+            {
+                if (ShouldSkipScheme(request, scheme.Name, hasMultipleSchemes))
+                {
+                    continue;
+                }
+
+                switch (scheme.Name)
+                {
+                    case "sigv4-s3express":
+                    case "sigv4":
+                        request.SignatureVersion = SignatureVersion.SigV4;
+                        if (!string.IsNullOrEmpty(scheme.SigningRegion))
+                        {
+                            request.AuthenticationRegion = scheme.SigningRegion;
+                        }
+                        break;
+                    case "sigv4a":
+                        request.SignatureVersion = SignatureVersion.SigV4a;
+                        // The authentication region could be overriden in the auth resolver by the set in the
+                        // client config (and that must take precedence over the endpoint rules).
+                        if (string.IsNullOrEmpty(request.AuthenticationRegion) && scheme.SigningRegionSet != null)
+                        {
+                            var authenticationRegion = string.Join(",", scheme.SigningRegionSet);
+                            if (!string.IsNullOrEmpty(authenticationRegion))
+                            {
+                                request.AuthenticationRegion = authenticationRegion;
+                            }
+                        }
+                        break;
+                }
+
+                if (!string.IsNullOrEmpty(scheme.SigningName))
+                {
+                    request.OverrideSigningServiceName = scheme.SigningName;
+                }
+                if (scheme.DisableDoubleEncoding is bool disableDoubleEncoding)
+                {
+                    request.UseDoubleEncoding = !disableDoubleEncoding;
+                }
+                return;
+            }
+
+            if (schemes.Count > 0)
+            {
+                throw new AmazonClientException("Cannot find supported authentication schema");
+            }
+        }
+
+        private static bool ShouldSkipScheme(IRequest request, string schemaName, bool hasMultipleSchemes)
+        {
+            if (!SupportedAuthSchemas.Contains(schemaName))
+            {
+                return true;
+            }
+
+            // This check is to protect against the (unlikely) scenario where:
+            // - The endpoint rules support both SigV4a and SigV4 (in that order)
+            // - Customer has explicitly requested SigV4 to be used (via the auth scheme preference config option)
+            // - SigV4a signer can be instantiated
+            // In the previous logic, this method would always pick SigV4a (as it showed up first in the endpoint rules).
+            if (request.ChosenAuthScheme != null && request.ChosenAuthScheme.ShortName != schemaName)
+            {
+                // We also need to check it's not S3 Express because its name is specific to endpoint rules,
+                // it'll never be the chosen auth scheme in the request object.
+                // All the S3 Express rules only contain that single auth scheme.
+                if (!schemaName.EndsWith("-s3express"))
+                {
+                    return true;
+                }
+            }
+
+            // If there are multiple authentication schemes but the CRT dependency is not available,
+            // we will proceed to check the next value in authSchemes.
+            if (schemaName == "sigv4a" && hasMultipleSchemes && !IsCrtDependencyAvailable())
+            {
+                return true;
+            }
+
+            return false;
         }
 
         private static void ApplyCommonSchema(IRequest request, PropertyBag schema)

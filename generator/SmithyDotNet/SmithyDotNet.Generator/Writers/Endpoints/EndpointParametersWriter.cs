@@ -41,6 +41,8 @@ public sealed class EndpointParametersWriter(GenerationContext context, string m
                     writer.WriteLine();
                     WriteProperty(writer, name, parameter);
                 }
+
+                WriteIndexer(writer, ruleSet);
             });
         });
 
@@ -77,10 +79,41 @@ public sealed class EndpointParametersWriter(GenerationContext context, string m
         writer.WriteLine("/// <summary>");
         writer.WriteLine($"/// {parameter.Documentation ?? $"{name} parameter"}");
         writer.WriteLine("/// </summary>");
-        writer.OpenBlock($"public {type} {name}", () =>
+        // A typed auto-property (backing field, no dictionary lookup/boxing). The overridden indexer
+        // routes parameters["X"] to this same property so string and typed access stay in sync.
+        writer.WriteLine($"public {type} {name} {{ get; set; }}");
+    }
+
+    // Overrides PropertyBag's (virtual) indexer so parameters["X"] reads/writes the same typed
+    // backing field as parameters.X. Unknown keys fall through to the base dictionary, preserving the
+    // custom-provider contract.
+    private static void WriteIndexer(CodeWriter writer, EndpointRuleSet ruleSet)
+    {
+        writer.WriteLine();
+        writer.OpenBlock("public override object this[string name]", () =>
         {
-            writer.WriteLine($"get => ({type})this[\"{name}\"];");
-            writer.WriteLine($"set => this[\"{name}\"] = value;");
+            writer.OpenBlock("get => name switch", "};", () =>
+            {
+                foreach (var (name, _) in ruleSet.Parameters)
+                {
+                    writer.WriteLine($"\"{name}\" => {name},");
+                }
+
+                writer.WriteLine("_ => base[name],");
+            });
+
+            writer.OpenBlock("set", () =>
+            {
+                writer.OpenBlock("switch (name)", () =>
+                {
+                    foreach (var (name, parameter) in ruleSet.Parameters)
+                    {
+                        writer.WriteLine($"case \"{name}\": {name} = ({NativeType(parameter.Type)})value; break;");
+                    }
+
+                    writer.WriteLine("default: base[name] = value; break;");
+                });
+            });
         });
     }
 
