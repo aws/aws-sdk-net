@@ -2022,6 +2022,149 @@ namespace Amazon.Lightsail
     }
 
     /// <summary>
+    /// Constants used for properties of type InstanceHealthStatusDetailName.
+    /// </summary>
+    public class InstanceHealthStatusDetailName : ConstantClass
+    {
+        /// <summary>
+        /// Constant Reachability for InstanceHealthStatusDetailName
+        /// </summary>
+        public static readonly InstanceHealthStatusDetailName Reachability = new InstanceHealthStatusDetailName("reachability");
+
+        /// <summary>
+        /// Constructs a custom InstanceHealthStatusDetailName for a value not among the defined constants.
+        /// </summary>
+        public InstanceHealthStatusDetailName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceHealthStatusDetailName FindValue(string value)
+        {
+            return FindValue<InstanceHealthStatusDetailName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceHealthStatusDetailName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type InstanceHealthStatusDetailValue.
+    /// </summary>
+    public class InstanceHealthStatusDetailValue : ConstantClass
+    {
+        /// <summary>
+        /// Constant Failed for InstanceHealthStatusDetailValue
+        /// </summary>
+        public static readonly InstanceHealthStatusDetailValue Failed = new InstanceHealthStatusDetailValue("failed");
+
+        /// <summary>
+        /// Constant Initializing for InstanceHealthStatusDetailValue
+        /// </summary>
+        public static readonly InstanceHealthStatusDetailValue Initializing = new InstanceHealthStatusDetailValue("initializing");
+
+        /// <summary>
+        /// Constant InsufficientData for InstanceHealthStatusDetailValue
+        /// </summary>
+        public static readonly InstanceHealthStatusDetailValue InsufficientData = new InstanceHealthStatusDetailValue("insufficient-data");
+
+        /// <summary>
+        /// Constant Passed for InstanceHealthStatusDetailValue
+        /// </summary>
+        public static readonly InstanceHealthStatusDetailValue Passed = new InstanceHealthStatusDetailValue("passed");
+
+        /// <summary>
+        /// Constructs a custom InstanceHealthStatusDetailValue for a value not among the defined constants.
+        /// </summary>
+        public InstanceHealthStatusDetailValue(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceHealthStatusDetailValue FindValue(string value)
+        {
+            return FindValue<InstanceHealthStatusDetailValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceHealthStatusDetailValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type InstanceHealthStatusValue.
+    /// </summary>
+    public class InstanceHealthStatusValue : ConstantClass
+    {
+        /// <summary>
+        /// Constant Impaired for InstanceHealthStatusValue
+        /// </summary>
+        public static readonly InstanceHealthStatusValue Impaired = new InstanceHealthStatusValue("impaired");
+
+        /// <summary>
+        /// Constant Initializing for InstanceHealthStatusValue
+        /// </summary>
+        public static readonly InstanceHealthStatusValue Initializing = new InstanceHealthStatusValue("initializing");
+
+        /// <summary>
+        /// Constant InsufficientData for InstanceHealthStatusValue
+        /// </summary>
+        public static readonly InstanceHealthStatusValue InsufficientData = new InstanceHealthStatusValue("insufficient-data");
+
+        /// <summary>
+        /// Constant NotApplicable for InstanceHealthStatusValue
+        /// </summary>
+        public static readonly InstanceHealthStatusValue NotApplicable = new InstanceHealthStatusValue("not-applicable");
+
+        /// <summary>
+        /// Constant Ok for InstanceHealthStatusValue
+        /// </summary>
+        public static readonly InstanceHealthStatusValue Ok = new InstanceHealthStatusValue("ok");
+
+        /// <summary>
+        /// Constructs a custom InstanceHealthStatusValue for a value not among the defined constants.
+        /// </summary>
+        public InstanceHealthStatusValue(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceHealthStatusValue FindValue(string value)
+        {
+            return FindValue<InstanceHealthStatusValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceHealthStatusValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type InstanceMetadataState.
     /// </summary>
     public class InstanceMetadataState : ConstantClass
