@@ -84,6 +84,21 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+            if (publicRequest.IsSetAllowedPorts())
+            {
+                context.Writer.WritePropertyName("allowedPorts");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestAllowedPortsListValue in publicRequest.AllowedPorts)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AllowedPortMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAllowedPortsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
             if (publicRequest.IsSetAuthorizerConfiguration())
             {
                 context.Writer.WritePropertyName("authorizerConfiguration");

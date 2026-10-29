@@ -87,6 +87,13 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("allowedPorts", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<AllowedPort, AllowedPortUnmarshaller>(AllowedPortUnmarshaller.Instance);
+                    unmarshalledObject.AllowedPorts = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("authorizerConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AuthorizerConfigurationUnmarshaller.Instance;

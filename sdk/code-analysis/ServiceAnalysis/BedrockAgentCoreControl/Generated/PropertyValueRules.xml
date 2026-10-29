@@ -4289,6 +4289,11 @@
     <pattern>^([1-9][0-9]{0,4})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.AllowedPort.Port</property>
+    <min>8000</min>
+    <max>12000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.ApiKeyCredentialProviderItem.CredentialProviderArn</property>
     <pattern>^arn:(aws|aws-us-gov):acps:[A-Za-z0-9-]{1,64}:[0-9]{12}:token-vault/[a-zA-Z0-9-.]+/apikeycredentialprovider/[a-zA-Z0-9-.]+$</pattern>
   </property-value-rule>
@@ -5988,9 +5993,30 @@
     <pattern>^[A-Za-z][A-Za-z0-9_]*-[a-z0-9_]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.PortRange.From</property>
+    <min>8000</min>
+    <max>12000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.PortRange.To</property>
+    <min>8000</min>
+    <max>12000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.PrivateEndpointOverride.Domain</property>
     <min>1</min>
     <max>253</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.ProtocolConfiguration.Path</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^/[A-Za-z0-9\-._~/%]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.ProtocolConfiguration.Port</property>
+    <min>8000</min>
+    <max>12000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.ProviderPrefix.Separator</property>

@@ -36,6 +36,39 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class ProtocolConfiguration
     {
         /// <summary>
+        /// Gets and sets the property Path. 
+        /// <para>
+        /// The path on which the agent server accepts requests. The path must begin with <c>/</c>.
+        /// When this field is omitted, the default is <c>/invocations</c> for <c>HTTP</c> and
+        /// <c>AGUI</c>, <c>/mcp</c> for <c>MCP</c>, and <c>/</c> for <c>A2A</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2048)]
+        public string Path { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Path property is set.
+        /// </summary>
+        internal bool IsSetPath() => this.Path != null;
+
+        /// <summary>
+        /// Gets and sets the property Port. 
+        /// <para>
+        /// The port on which the agent server listens. The port must be between <c>8000</c> and
+        /// <c>12000</c>, excluding the reserved port <c>8443</c>. When this field is omitted,
+        /// the default is <c>8080</c> for <c>HTTP</c> and <c>AGUI</c>, <c>8000</c> for <c>MCP</c>,
+        /// and <c>9000</c> for <c>A2A</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 8000, Max = 12000)]
+        public int? Port { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Port property is set.
+        /// </summary>
+        internal bool IsSetPort() => this.Port.HasValue;
+
+        /// <summary>
         /// Gets and sets the property ServerProtocol. 
         /// <para>
         /// The server protocol for the agent runtime. This field specifies which protocol the
