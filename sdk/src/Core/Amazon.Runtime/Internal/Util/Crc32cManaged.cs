@@ -14,6 +14,7 @@
  */
 
 using System;
+using System.Buffers.Binary;
 using System.IO.Hashing;
 using System.Security.Cryptography;
 
@@ -46,12 +47,10 @@ namespace Amazon.Runtime.Internal.Util
 
         protected override byte[] HashFinal()
         {
-            var result = _crc32c.GetHashAndReset();
-
-            if (BitConverter.IsLittleEndian)
-            {
-                Array.Reverse(result);
-            }
+            // S3 expects big-endian. System.IO.Hashing returns this CRC little-endian on every CPU, so write it out explicitly.
+            var result = new byte[sizeof(uint)];
+            BinaryPrimitives.WriteUInt32BigEndian(result, _crc32c.GetCurrentHashAsUInt32());
+            _crc32c.Reset();
 
             return result;
         }
