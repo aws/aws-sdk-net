@@ -61,6 +61,28 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("imageScanningEnabled");
                 context.Writer.WriteBooleanValue(requestObject.ImageScanningEnabled.Value);
             }
+
+            if (requestObject.IsSetImageScanningTypes())
+            {
+                context.Writer.WritePropertyName("imageScanningTypes");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectImageScanningTypesListValue in requestObject.ImageScanningTypes)
+                {
+                    context.Writer.WriteStringValue(requestObjectImageScanningTypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetScanResultCondition())
+            {
+                context.Writer.WritePropertyName("scanResultCondition");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ScanResultConditionMarshaller.Instance;
+                marshaller.Marshall(requestObject.ScanResultCondition, context);
+
+                context.Writer.WriteEndObject();
+            }
         }
 
         /// <summary>

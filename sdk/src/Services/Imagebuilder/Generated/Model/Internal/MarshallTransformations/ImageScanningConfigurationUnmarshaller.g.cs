@@ -66,6 +66,20 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.ImageScanningEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("imageScanningTypes", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ImageScanningTypes = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("scanResultCondition", targetDepth, ref reader))
+                {
+                    var unmarshaller = ScanResultConditionUnmarshaller.Instance;
+                    unmarshalledObject.ScanResultCondition = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

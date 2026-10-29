@@ -138,10 +138,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageScanningConfiguration. 
         /// <para>
-        /// Settings for vulnerability scans that Amazon Inspector runs during image creation.
-        /// For AMI output, Amazon Inspector scans the test instance. For container output, Amazon
-        /// Inspector scans the container image that Image Builder pushes to the Amazon ECR repository
-        /// specified in <c>ecrConfiguration</c>.
+        /// The settings that determine whether and how Amazon Inspector scans the image for vulnerabilities.
         /// </para>
         /// </summary>
         public ImageScanningConfiguration ImageScanningConfiguration { get; set; }
