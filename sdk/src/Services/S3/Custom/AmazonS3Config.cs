@@ -51,6 +51,8 @@ namespace Amazon.S3
         /// This property is used to provide credentials for requests that uses S3Express authentication.
         /// During client initialization it is set to default S3Express credential provider,
         /// but can be changed to use custom user supplied S3Express credential provider.
+        /// Unless a custom provider is set, each client creates and caches sessions with its own
+        /// credentials, even when clients share this config. Clients do not dispose a custom provider.
         /// </summary>
         public IS3ExpressCredentialProvider S3ExpressCredentialProvider
         {

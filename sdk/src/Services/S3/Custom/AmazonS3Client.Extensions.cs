@@ -64,20 +64,77 @@ namespace Amazon.S3
             "us-west-2",
         };
 
+        // Owned by this client. An AmazonS3Config can be shared by clients that use different
+        // credentials, and each of them must get its own sessions.
+        private DefaultS3ExpressCredentialProvider _defaultS3ExpressCredentialProvider;
+
         /// <summary>
         /// Specialize the initialize of the client.
         /// </summary>
         protected override void Initialize()
         {
             var clientConfig = this.Config as AmazonS3Config;
+            _defaultS3ExpressCredentialProvider = new DefaultS3ExpressCredentialProvider(this);
             if (clientConfig != null)
             {
                 clientConfig.ResignRetries = true;
 
+                // Still expose a default provider on the config, as before. Requests never use a
+                // default provider found on the config; each client uses its own.
                 if (clientConfig.S3ExpressCredentialProvider == null)
-                    clientConfig.S3ExpressCredentialProvider = new DefaultS3ExpressCredentialProvider(this);
+                    clientConfig.S3ExpressCredentialProvider = _defaultS3ExpressCredentialProvider;
             }
             base.Initialize();
+        }
+
+        internal AWSCredentials ResolveCredentials()
+        {
+            return ExplicitAWSCredentials ??
+                Config.DefaultAWSCredentials ??
+                DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
+        }
+
+        /// <summary>
+        /// Resolves S3Express session credentials for a request signed by <paramref name="identity"/>.
+        /// A custom provider set on the config takes precedence over this client's default provider.
+        /// </summary>
+        internal SessionCredentials ResolveS3ExpressSessionCredentials(string bucketName, AWSCredentials identity)
+        {
+            var customProvider = GetCustomS3ExpressCredentialProvider();
+            if (customProvider != null)
+                return customProvider.ResolveSessionCredentials(bucketName);
+
+            return _defaultS3ExpressCredentialProvider?.ResolveSessionCredentials(bucketName, identity);
+        }
+
+        /// <summary>
+        /// Resolves S3Express session credentials for a request signed by <paramref name="identity"/>.
+        /// A custom provider set on the config takes precedence over this client's default provider.
+        /// </summary>
+        internal Task<SessionCredentials> ResolveS3ExpressSessionCredentialsAsync(string bucketName, AWSCredentials identity, CancellationToken cancellationToken = default)
+        {
+            var customProvider = GetCustomS3ExpressCredentialProvider();
+            if (customProvider != null)
+                return customProvider.ResolveSessionCredentialsAsync(bucketName, cancellationToken);
+
+            return _defaultS3ExpressCredentialProvider?.ResolveSessionCredentialsAsync(bucketName, identity, cancellationToken)
+                ?? Task.FromResult<SessionCredentials>(null);
+        }
+
+        // A default provider on the config was created by whichever client used the config first,
+        // so it is bound to that client's credentials and lifetime and is never used for requests.
+        private IS3ExpressCredentialProvider GetCustomS3ExpressCredentialProvider()
+        {
+            var provider = (Config as AmazonS3Config)?.S3ExpressCredentialProvider;
+            return provider is DefaultS3ExpressCredentialProvider ? null : provider;
+        }
+
+        // Called from Dispose. Only the provider this client created is disposed; a custom provider
+        // set on the config belongs to the caller and may be shared with other clients.
+        private void DisposeS3ExpressCredentialProvider()
+        {
+            _defaultS3ExpressCredentialProvider?.Dispose();
+            _defaultS3ExpressCredentialProvider = null;
         }
 
         /// <summary>
@@ -103,10 +160,7 @@ namespace Amazon.S3
         /// <exception cref="T:System.ArgumentNullException" />
         internal string GetPreSignedURLInternal(GetPreSignedUrlRequest request)
         {
-            var credentials = 
-                ExplicitAWSCredentials ??
-                Config.DefaultAWSCredentials ?? 
-                DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
+            var credentials = ResolveCredentials();
 
             if(credentials == null)
                 throw new AmazonS3Exception("Credentials must be specified, cannot call method anonymously");
@@ -135,7 +189,7 @@ namespace Amazon.S3
             if (context.RequestContext.Request.IsDirectoryBucket() && !expressConfig.DisableS3ExpressSessionAuth)
             {
                 ConvertToS3Express(immutableCredentials, context, ref signatureVersionToUse, expressConfig);
-                var s3ExpressCredentials = expressConfig.S3ExpressCredentialProvider.ResolveSessionCredentials(request.BucketName);
+                var s3ExpressCredentials = ResolveS3ExpressSessionCredentials(request.BucketName, credentials);
 
                 // Only use SessionCredentials if it was resolved correctly.
                 // Otherwise skip overriding ImmutableCredentials and use the regular credentials.
@@ -174,10 +228,7 @@ namespace Amazon.S3
         [SuppressMessage("AWSSDKRules", "CR1004")]
         internal async Task<string> GetPreSignedURLInternalAsync(GetPreSignedUrlRequest request)
         {
-            var credentials = 
-                ExplicitAWSCredentials ??
-                Config.DefaultAWSCredentials ?? 
-                DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
+            var credentials = ResolveCredentials();
 
             if (credentials == null)
                 throw new AmazonS3Exception("Credentials must be specified, cannot call method anonymously");
@@ -206,10 +257,15 @@ namespace Amazon.S3
             if (context.RequestContext.Request.IsDirectoryBucket() && !expressConfig.DisableS3ExpressSessionAuth)
             {
                 ConvertToS3Express(immutableCredentials, context, ref signatureVersionToUse, expressConfig);
-                var s3ExpressCredentials = await expressConfig.S3ExpressCredentialProvider.ResolveSessionCredentialsAsync(request.BucketName).ConfigureAwait(false);
+                var s3ExpressCredentials = await ResolveS3ExpressSessionCredentialsAsync(request.BucketName, credentials).ConfigureAwait(false);
 
-                irequest.Parameters.Add(HeaderKeys.XAmzS3ExpressSessionTokenQueryParam, s3ExpressCredentials.SessionToken);
-                immutableCredentials = new ImmutableCredentials(s3ExpressCredentials.AccessKeyId, s3ExpressCredentials.SecretAccessKey, null);
+                // Only use SessionCredentials if it was resolved correctly.
+                // Otherwise skip overriding ImmutableCredentials and use the regular credentials.
+                if (s3ExpressCredentials != null)
+                {
+                    irequest.Parameters.Add(HeaderKeys.XAmzS3ExpressSessionTokenQueryParam, s3ExpressCredentials.SessionToken);
+                    immutableCredentials = new ImmutableCredentials(s3ExpressCredentials.AccessKeyId, s3ExpressCredentials.SecretAccessKey, null);
+                }
             }
             var metrics = new RequestMetrics();
             var signingResult = ReturnSigningResult(signatureVersionToUse, irequest, Config, metrics, immutableCredentials, arn);
@@ -737,10 +793,7 @@ namespace Amazon.S3
         {
             ValidateCreatePresignedPostRequest(request);
 
-            var credentials =
-                ExplicitAWSCredentials ??
-                Config.DefaultAWSCredentials ??
-                DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
+            var credentials = ResolveCredentials();
             
             if (credentials == null)
                 throw new AmazonS3Exception("Credentials must be specified, cannot call method anonymously");
@@ -762,10 +815,7 @@ namespace Amazon.S3
         {
             ValidateCreatePresignedPostRequest(request);
 
-            var credentials =
-                ExplicitAWSCredentials ??
-                Config.DefaultAWSCredentials ??
-                DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
+            var credentials = ResolveCredentials();
 
             if (credentials == null)
                 throw new AmazonS3Exception("Credentials must be specified, cannot call method anonymously");

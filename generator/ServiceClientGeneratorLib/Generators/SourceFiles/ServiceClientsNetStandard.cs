@@ -771,10 +771,8 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             
             #line default
             #line hidden
-            this.Write("            var clientConfig = this.Config as AmazonS3Config;\r\n            if (cl" +
-                    "ientConfig != null && clientConfig.S3ExpressCredentialProvider != null)\r\n       " +
-                    "     {\r\n                clientConfig.S3ExpressCredentialProvider.Dispose();\r\n   " +
-                    "         }\r\n");
+            this.Write("            if (disposing)\r\n            {\r\n                DisposeS3ExpressCr" +
+                    "edentialProvider();\r\n            }\r\n");
             
             #line 318 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsNetStandard.tt"
 
