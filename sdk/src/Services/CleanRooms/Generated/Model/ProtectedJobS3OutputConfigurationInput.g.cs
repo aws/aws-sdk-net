@@ -61,5 +61,19 @@ namespace Amazon.CleanRooms.Model
         /// Checks to see if the KeyPrefix property is set.
         /// </summary>
         internal bool IsSetKeyPrefix() => this.KeyPrefix != null;
+
+        /// <summary>
+        /// Gets and sets the property ResultFormat. 
+        /// <para>
+        /// The file format of the protected job results. If you don't specify a format, results
+        /// are written as CSV.
+        /// </para>
+        /// </summary>
+        public ResultFormat ResultFormat { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ResultFormat property is set.
+        /// </summary>
+        internal bool IsSetResultFormat() => this.ResultFormat != null;
     }
 }

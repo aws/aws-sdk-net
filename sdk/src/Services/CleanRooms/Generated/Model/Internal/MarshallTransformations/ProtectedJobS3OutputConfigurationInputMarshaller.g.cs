@@ -56,6 +56,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("keyPrefix");
                 context.Writer.WriteStringValue(requestObject.KeyPrefix);
             }
+
+            if (requestObject.IsSetResultFormat())
+            {
+                context.Writer.WritePropertyName("resultFormat");
+                context.Writer.WriteStringValue(requestObject.ResultFormat);
+            }
         }
 
         /// <summary>
