@@ -25,7 +25,9 @@
       "ThirdParty.RuntimeBackports.ArrayPoolBufferWriter/MethodRemoved",
       "ThirdParty.RuntimeBackports.ArrayPoolBufferWriter/MethodReturnTypeChanged",
       "ThirdParty.RuntimeBackports.ArrayPoolBufferWriter/TypeInterfaceRemoved",
-      "Amazon.Runtime.Internal.Util.StreamingUtf8JsonReader/MethodRemoved"
+      "Amazon.Runtime.Internal.Util.StreamingUtf8JsonReader/MethodRemoved",
+      "Amazon.Util.AWSSDKUtils/MethodRemoved",
+      "Amazon.Util.AWSSDKUtils/ParameterDefaultChanged"
     ]
   },
   "overrideVersion": "4.1.0.0"
