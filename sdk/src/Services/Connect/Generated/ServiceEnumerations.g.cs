@@ -8486,6 +8486,11 @@ namespace Amazon.Connect
         public static readonly PreEvaluationFilterResourceType CONTACT = new PreEvaluationFilterResourceType("CONTACT");
 
         /// <summary>
+        /// Constant CONTACT_EVALUATION for PreEvaluationFilterResourceType
+        /// </summary>
+        public static readonly PreEvaluationFilterResourceType CONTACT_EVALUATION = new PreEvaluationFilterResourceType("CONTACT_EVALUATION");
+
+        /// <summary>
         /// Constructs a custom PreEvaluationFilterResourceType for a value not among the defined constants.
         /// </summary>
         public PreEvaluationFilterResourceType(string value) : base(value) { }

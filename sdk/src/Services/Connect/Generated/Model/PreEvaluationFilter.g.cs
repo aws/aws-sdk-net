@@ -94,8 +94,20 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resource to filter on. Valid values: <c>CONTACT</c>.
+        /// The type of resource to filter on. Valid values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CONTACT</c> - Filter on attributes of the contact, such as tags assigned to the
+        /// contact.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CONTACT_EVALUATION</c> - Filter on attributes of the contact evaluation, such
+        /// as tags assigned to the contact evaluation, for rules triggered on the <c>OnContactEvaluationSubmit</c>
+        /// event source.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required = true)]
         public PreEvaluationFilterResourceType ResourceType { get; set; }

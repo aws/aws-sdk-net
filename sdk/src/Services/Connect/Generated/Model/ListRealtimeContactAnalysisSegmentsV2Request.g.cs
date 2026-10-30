@@ -68,6 +68,22 @@ namespace Amazon.Connect.Model
         internal bool IsSetInstanceId() => this.InstanceId != null;
 
         /// <summary>
+        /// Gets and sets the property ListFilter. 
+        /// <para>
+        /// A filter that restricts the segments returned by the API. When <c>SegmentTypes</c>
+        /// includes <c>Categories</c>, use <c>CategoriesAttributeFilter</c> to return only the
+        /// category segments whose rules have tags that match the filter. This enforces tag-based
+        /// access control on the categories a caller can view.
+        /// </para>
+        /// </summary>
+        public RealTimeContactAnalysisSegmentsFilter ListFilter { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ListFilter property is set.
+        /// </summary>
+        internal bool IsSetListFilter() => this.ListFilter != null;
+
+        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return per page.

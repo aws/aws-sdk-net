@@ -800,6 +800,20 @@ namespace Amazon.Connect.Model
         /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-evaluation-score">Average
         /// evaluation score</a> 
         /// </para>
+        ///  </dd> <dt>AVG_EVALUATION_SCORE_BY_SUBMIT_TIME</dt> <dd> 
+        /// <para>
+        /// Unit: Percent
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form ID,
+        /// Evaluation Source, Form Version, Queue, Routing Profile
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-evaluation-score-by-submit-time">Average
+        /// evaluation score (Submit time)</a> 
+        /// </para>
         ///  </dd> <dt>AVG_FIRST_RESPONSE_TIME_AGENT</dt> <dd> 
         /// <para>
         /// Unit: Seconds
@@ -2509,6 +2523,20 @@ namespace Amazon.Connect.Model
         /// <para>
         /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#evaluations-performed">Evaluations
         /// performed</a> 
+        /// </para>
+        ///  </dd> <dt>EVALUATIONS_PERFORMED_BY_SUBMIT_TIME</dt> <dd> 
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form ID,
+        /// Evaluation Source, Form Version, Queue, Routing Profile
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#evaluations-performed-by-submit-time">Evaluations
+        /// performed (Submit time)</a> 
         /// </para>
         ///  </dd> <dt>FLOWS_OUTCOME</dt> <dd> 
         /// <para>

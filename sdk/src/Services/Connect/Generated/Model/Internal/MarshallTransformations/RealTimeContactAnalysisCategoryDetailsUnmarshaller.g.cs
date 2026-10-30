@@ -59,6 +59,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.PointsOfInterest = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("RuleId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RuleId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

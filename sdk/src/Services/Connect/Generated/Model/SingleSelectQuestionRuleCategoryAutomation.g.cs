@@ -38,7 +38,10 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Category. 
         /// <para>
-        ///  The category name, as defined in Rules.
+        /// The category name, as defined in Rules. This is equivalent to a conversational analytics
+        /// rule with the same name: the automation option is applied based on whether that rule
+        /// matched the contact. For more information about creating rules, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-rules.html">Create
+        /// rules</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

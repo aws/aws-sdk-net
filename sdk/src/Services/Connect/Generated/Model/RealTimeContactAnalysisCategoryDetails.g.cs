@@ -53,5 +53,19 @@ namespace Amazon.Connect.Model
         /// Checks to see if the PointsOfInterest property is set.
         /// </summary>
         internal bool IsSetPointsOfInterest() => this.PointsOfInterest != null && (this.PointsOfInterest.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property RuleId. 
+        /// <para>
+        /// The unique identifier of the rule that created the matched category.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 256)]
+        public string RuleId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RuleId property is set.
+        /// </summary>
+        internal bool IsSetRuleId() => this.RuleId != null;
     }
 }

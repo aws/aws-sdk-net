@@ -80,6 +80,16 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetListFilter())
+            {
+                context.Writer.WritePropertyName("ListFilter");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RealTimeContactAnalysisSegmentsFilterMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ListFilter, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetMaxResults())
             {
                 context.Writer.WritePropertyName("MaxResults");
