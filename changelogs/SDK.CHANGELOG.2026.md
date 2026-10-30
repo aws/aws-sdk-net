@@ -1,3 +1,27 @@
+### 4.0.362.0 (2026-10-30 18:10 UTC)
+* BedrockAgentRuntime (4.0.105.0)
+	* Adds the CodeExecution step and codeExecution action to AgenticRetrieveStream trace events, showing when the agent runs code and which documents it reads.
+* CloudWatchLogs (4.0.107.0)
+	* Adds support for account-level retention policies in Amazon CloudWatch Logs. Customers can now use PutAccountPolicy with the new RETENTION POLICY type to set default log retention across all log groups in an account. Includes dry-run mode to preview the impact of policy changes before applying them.
+* Connect (4.0.129.0)
+	* Amazon Connect adds tag-based access control for Contact Lens rules. ListRealtimeContactAnalysisSegmentsV2 adds a ListFilter to return only category segments whose rules match given tags. PreEvaluationFilter now supports contact evaluation resources for OnContactEvaluationSubmit rules.
+* CustomerProfiles (4.0.104.0)
+	* Adds support for template ingestion controls in the GetProfileObjectTypeTemplate API response.
+* DocDB (4.0.102.0)
+	* Amazon DocumentDB now returns ServerlessV2PlatformVersion in DBCluster API responses and adds the DescribeServerlessV2PlatformVersions API to discover available platform versions and their capabilities.
+* Lambda (4.0.111.0)
+	* Adds ConsumptionMode to SelfManagedKafkaEventSourceConfig, letting Lambda event source mappings consume self-managed Apache Kafka topics as a queue. Set ConsumptionMode to Queue when creating an event source mapping.
+* Omics (4.0.105.0)
+	* Adds the outputUriPrefixMode parameter to StartRun and GetRun. You can now write run outputs directly under outputUri, without the prefixes the service adds by default. When you opt in, outputs overwrite existing objects at the same keys.
+* PrometheusService (4.0.103.0)
+	* Managed Prometheus collectors now support Amazon MSK consumer-group metrics for Amazon Managed Service for Prometheus and CloudWatch.
+* SageMaker (4.0.124.0)
+	* Create endpoints with AcceleratorPartitionLayouts on ProductionVariant and deploy inference components with AcceleratorPartitionType in ComputeResourceRequirements to divide accelerators into hardware-isolated NVIDIA MIG partitions, running multiple models per GPU. P4d, P5, G7, G7e.
+* TimestreamInfluxDB (4.0.105.0)
+	* Add DeploymentConfiguration field to CreateDbCluster and UpdateDbCluster APIs to support creation of heterogenous InfluxDB v3 Enterprise clusters.
+* Core 4.0.102.16
+	* Return the streaming JSON reader's pooled buffer once the root value has been read, and dispose the unmarshaller context for non-streaming responses, so JSON responses no longer allocate a fresh buffer per request.
+
 ### 4.0.361.0 (2026-10-29 18:09 UTC)
 * AppMesh (4.0.100.22)
 	* AppMesh is now generated from its Smithy model. There are no changes to the public API.
