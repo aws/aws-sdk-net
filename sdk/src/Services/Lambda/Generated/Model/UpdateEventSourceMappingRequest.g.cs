@@ -306,6 +306,10 @@ namespace Amazon.Lambda.Model
         /// <c>BatchSize</c> to a value greater than 10, you must set <c>MaximumBatchingWindowInSeconds</c>
         /// to at least 1.
         /// </para>
+        ///  
+        /// <para>
+        /// Not supported for Kafka event source mappings when <c>ConsumptionMode</c> is <c>Queue</c>.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 0, Max = 300)]
         public int? MaximumBatchingWindowInSeconds { get; set; }
@@ -336,6 +340,13 @@ namespace Amazon.Lambda.Model
         /// (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka) Discard records
         /// after the specified number of retries. The default value is infinite (-1). When set
         /// to infinite (-1), failed records are retried until the record expires.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Kafka <c>Stream</c> consumption mode, the default is <c>-1</c> (infinite retries;
+        /// capped at 10 when an on-failure destination is configured). For Kafka <c>Queue</c>
+        /// consumption mode, the default is <c>0</c>, and if no on-failure destination is configured
+        /// the Kafka broker performs retries.
         /// </para>
         /// </summary>
         [AWSProperty(Min = -1, Max = 10000)]

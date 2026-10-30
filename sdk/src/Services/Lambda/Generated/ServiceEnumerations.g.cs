@@ -997,6 +997,47 @@ namespace Amazon.Lambda
     }
 
     /// <summary>
+    /// Constants used for properties of type KafkaEventSourceMappingConsumptionMode.
+    /// </summary>
+    public class KafkaEventSourceMappingConsumptionMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant Queue for KafkaEventSourceMappingConsumptionMode
+        /// </summary>
+        public static readonly KafkaEventSourceMappingConsumptionMode Queue = new KafkaEventSourceMappingConsumptionMode("Queue");
+
+        /// <summary>
+        /// Constant Stream for KafkaEventSourceMappingConsumptionMode
+        /// </summary>
+        public static readonly KafkaEventSourceMappingConsumptionMode Stream = new KafkaEventSourceMappingConsumptionMode("Stream");
+
+        /// <summary>
+        /// Constructs a custom KafkaEventSourceMappingConsumptionMode for a value not among the defined constants.
+        /// </summary>
+        public KafkaEventSourceMappingConsumptionMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KafkaEventSourceMappingConsumptionMode FindValue(string value)
+        {
+            return FindValue<KafkaEventSourceMappingConsumptionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KafkaEventSourceMappingConsumptionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type KafkaSchemaRegistryAuthType.
     /// </summary>
     public class KafkaSchemaRegistryAuthType : ConstantClass

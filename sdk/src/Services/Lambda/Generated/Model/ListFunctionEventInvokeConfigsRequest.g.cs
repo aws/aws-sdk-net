@@ -31,7 +31,8 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the ListFunctionEventInvokeConfigs operation. Retrieves
-    /// a list of configurations for asynchronous invocation for a function. <para> To configure
+    /// a list of configurations for asynchronous invocation for a Lambda Event Function.
+    /// To retrieve more configurations, use the <c>Marker</c> parameter. <para> To configure
     /// options for asynchronous invocation, use <a>PutFunctionEventInvokeConfig</a>. </para>
     /// </summary>
     public partial class ListFunctionEventInvokeConfigsRequest : AmazonLambdaRequest

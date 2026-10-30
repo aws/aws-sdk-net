@@ -51,6 +51,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ConsumerGroupId);
             }
 
+            if (requestObject.IsSetConsumptionMode())
+            {
+                context.Writer.WritePropertyName("ConsumptionMode");
+                context.Writer.WriteStringValue(requestObject.ConsumptionMode);
+            }
+
             if (requestObject.IsSetSchemaRegistryConfig())
             {
                 context.Writer.WritePropertyName("SchemaRegistryConfig");

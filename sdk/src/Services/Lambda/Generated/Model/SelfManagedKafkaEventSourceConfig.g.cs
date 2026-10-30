@@ -53,6 +53,42 @@ namespace Amazon.Lambda.Model
         internal bool IsSetConsumerGroupId() => this.ConsumerGroupId != null;
 
         /// <summary>
+        /// Gets and sets the property ConsumptionMode. 
+        /// <para>
+        /// The mode that Lambda uses to consume records from your self-managed Apache Kafka topic.
+        /// The default is <c>Stream</c>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Stream</c> – Lambda consumes records using a Kafka consumer group and preserves
+        /// the order of records within each partition. This is the default when you omit <c>ConsumptionMode</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Queue</c> – Lambda consumes records using a Kafka share group. Multiple consumers
+        /// can process records from the same partitions concurrently. Queue mode does not preserve
+        /// per-partition order. Queue mode requires an Apache Kafka cluster running version 4.2
+        /// or later with share groups enabled.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You cannot change <c>ConsumptionMode</c> after you create the event source mapping.
+        /// To use a different consumption mode, create a new event source mapping.
+        /// </para>
+        ///  
+        /// <para>
+        /// When <c>ConsumptionMode</c> is <c>Queue</c>, the <c>StartingPosition</c>, <c>StartingPositionTimestamp</c>,
+        /// and <c>MaximumBatchingWindowInSeconds</c> parameters are not supported.
+        /// </para>
+        /// </summary>
+        public KafkaEventSourceMappingConsumptionMode ConsumptionMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ConsumptionMode property is set.
+        /// </summary>
+        internal bool IsSetConsumptionMode() => this.ConsumptionMode != null;
+
+        /// <summary>
         /// Gets and sets the property SchemaRegistryConfig. 
         /// <para>
         /// Specific configuration settings for a Kafka schema registry.

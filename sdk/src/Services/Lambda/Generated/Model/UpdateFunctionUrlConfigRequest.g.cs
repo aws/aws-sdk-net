@@ -31,7 +31,7 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateFunctionUrlConfig operation. Updates the
-    /// configuration for a Lambda function URL.
+    /// configuration for a function URL of a Lambda Event Function.
     /// </summary>
     public partial class UpdateFunctionUrlConfigRequest : AmazonLambdaRequest
     {
