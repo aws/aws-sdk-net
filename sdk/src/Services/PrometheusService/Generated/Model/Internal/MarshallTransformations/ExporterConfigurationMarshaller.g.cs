@@ -45,6 +45,17 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetKafkaConfiguration())
+            {
+                context.Writer.WritePropertyName("kafkaConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = KafkaExporterConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.KafkaConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetOpenSearchConfiguration())
             {
                 context.Writer.WritePropertyName("openSearchConfiguration");

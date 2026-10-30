@@ -406,6 +406,8 @@ namespace Amazon.PrometheusService
         /// to access the metrics in your source. You must configure this role with a policy that
         /// allows it to scrape metrics from your source. For Amazon EKS sources, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-eks-setup">Configuring
         /// your Amazon EKS cluster</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.
+        /// For a Kafka exporter, grant this role access with a cluster policy on the Amazon MSK
+        /// cluster instead. For details, see <c>KafkaExporterConfiguration</c>.
         /// </para>
         ///  
         /// <para>
@@ -469,6 +471,8 @@ namespace Amazon.PrometheusService
         /// to access the metrics in your source. You must configure this role with a policy that
         /// allows it to scrape metrics from your source. For Amazon EKS sources, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-eks-setup">Configuring
         /// your Amazon EKS cluster</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.
+        /// For a Kafka exporter, grant this role access with a cluster policy on the Amazon MSK
+        /// cluster instead. For details, see <c>KafkaExporterConfiguration</c>.
         /// </para>
         ///  
         /// <para>

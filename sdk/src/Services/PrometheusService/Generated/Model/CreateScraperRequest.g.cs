@@ -42,13 +42,14 @@ namespace Amazon.PrometheusService.Model
     /// that allows it to scrape metrics from your source. For Amazon EKS sources, see <a
     /// href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-eks-setup">Configuring
     /// your Amazon EKS cluster</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.
-    /// </para> <para> The <c>scrapeConfiguration</c> parameter contains the base-64 encoded
-    /// YAML configuration for the scraper. </para> <para> When creating a scraper, the service
-    /// creates a <c>Network Interface</c> in each <b>Availability Zone</b> that are passed
-    /// into <c>CreateScraper</c> through subnets. These network interfaces are used to connect
-    /// to your source within the VPC for scraping metrics. </para> <note> <para> For more
-    /// information about collectors, including what metrics are collected, and how to configure
-    /// the scraper, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html">Using
+    /// For a Kafka exporter, grant this role access with a cluster policy on the Amazon MSK
+    /// cluster instead. For details, see <c>KafkaExporterConfiguration</c>. </para> <para>
+    /// The <c>scrapeConfiguration</c> parameter contains the base-64 encoded YAML configuration
+    /// for the scraper. </para> <para> When creating a scraper, the service creates a <c>Network
+    /// Interface</c> in each <b>Availability Zone</b> that are passed into <c>CreateScraper</c>
+    /// through subnets. These network interfaces are used to connect to your source within
+    /// the VPC for scraping metrics. </para> <note> <para> For more information about collectors,
+    /// including what metrics are collected, and how to configure the scraper, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html">Using
     /// an Amazon Web Services managed collector</a> in the <i>Amazon Managed Service for
     /// Prometheus User Guide</i>. </para> </note>
     /// </summary>
@@ -102,9 +103,9 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Exporters. 
         /// <para>
-        /// The exporter configurations for the scraper. You can configure at most one Amazon
-        /// OpenSearch Service domain. If you don't specify a value, the scraper is created without
-        /// an exporter configuration.
+        /// The exporter configurations for the scraper. You can configure at most one exporter,
+        /// for either an Amazon OpenSearch Service domain or an Amazon MSK cluster. If you don't
+        /// specify a value, the scraper is created without an exporter configuration.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

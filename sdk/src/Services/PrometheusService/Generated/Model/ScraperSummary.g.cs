@@ -96,7 +96,8 @@ namespace Amazon.PrometheusService.Model
         /// Gets and sets the property Exporters. 
         /// <para>
         /// The exporter configurations for the scraper, if configured. The list contains at most
-        /// one configuration for an Amazon OpenSearch Service domain.
+        /// one configuration, for either an Amazon OpenSearch Service domain or an Amazon MSK
+        /// cluster.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
