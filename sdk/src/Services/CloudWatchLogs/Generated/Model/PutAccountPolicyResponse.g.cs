@@ -46,5 +46,19 @@ namespace Amazon.CloudWatchLogs.Model
         /// Checks to see if the AccountPolicy property is set.
         /// </summary>
         internal bool IsSetAccountPolicy() => this.AccountPolicy != null;
+
+        /// <summary>
+        /// Gets and sets the property DryRunResult. 
+        /// <para>
+        /// The estimated impact of the policy on log groups in the account. This field is returned
+        /// only when the request specifies <c>dryRun</c> as <c>true</c>.
+        /// </para>
+        /// </summary>
+        public DryRunResult DryRunResult { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DryRunResult property is set.
+        /// </summary>
+        internal bool IsSetDryRunResult() => this.DryRunResult != null;
     }
 }

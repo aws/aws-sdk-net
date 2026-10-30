@@ -1385,6 +1385,11 @@ namespace Amazon.CloudWatchLogs
         public static readonly PolicyType METRIC_EXTRACTION_POLICY = new PolicyType("METRIC_EXTRACTION_POLICY");
 
         /// <summary>
+        /// Constant RETENTION_POLICY for PolicyType
+        /// </summary>
+        public static readonly PolicyType RETENTION_POLICY = new PolicyType("RETENTION_POLICY");
+
+        /// <summary>
         /// Constant SUBSCRIPTION_FILTER_POLICY for PolicyType
         /// </summary>
         public static readonly PolicyType SUBSCRIPTION_FILTER_POLICY = new PolicyType("SUBSCRIPTION_FILTER_POLICY");

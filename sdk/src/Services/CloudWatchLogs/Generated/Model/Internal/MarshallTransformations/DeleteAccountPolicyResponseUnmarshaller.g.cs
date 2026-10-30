@@ -46,6 +46,19 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             var unmarshalledObject = new DeleteAccountPolicyResponse();
+            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+
+            context.Read(ref reader);
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth, ref reader))
+            {
+                if (context.TestExpression("dryRunResult", targetDepth, ref reader))
+                {
+                    var unmarshaller = DryRunResultUnmarshaller.Instance;
+                    unmarshalledObject.DryRunResult = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+            }
 
             return unmarshalledObject;
         }

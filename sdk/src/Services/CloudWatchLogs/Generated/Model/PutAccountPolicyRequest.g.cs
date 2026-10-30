@@ -260,6 +260,27 @@ namespace Amazon.CloudWatchLogs.Model
     public partial class PutAccountPolicyRequest : AmazonCloudWatchLogsRequest
     {
         /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// Specifies whether to preview the impact of the policy without creating or updating
+        /// it. If you specify <c>true</c>, CloudWatch Logs validates the request, does not save
+        /// the policy, and returns the estimated impact in <c>dryRunResult</c> instead of <c>accountPolicy</c>.
+        /// The default is <c>false</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specifying <c>dryRun</c> is valid only when you specify <c>RETENTION_POLICY</c> for
+        /// <c>policyType</c>. Only one dry run can be in progress for an account at a time.
+        /// </para>
+        /// </summary>
+        public bool? DryRun { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DryRun property is set.
+        /// </summary>
+        internal bool IsSetDryRun() => this.DryRun.HasValue;
+
+        /// <summary>
         /// Gets and sets the property PolicyDocument. 
         /// <para>
         /// Specify the policy, in JSON.

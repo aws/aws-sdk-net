@@ -58,6 +58,13 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     unmarshalledObject.AccountPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("dryRunResult", targetDepth, ref reader))
+                {
+                    var unmarshaller = DryRunResultUnmarshaller.Instance;
+                    unmarshalledObject.DryRunResult = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return unmarshalledObject;

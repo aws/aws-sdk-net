@@ -1952,6 +1952,26 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DryRunResult.DecreasedRetentionLogGroupCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DryRunResult.FailedAnalysisCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DryRunResult.IncreasedRetentionLogGroupCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DryRunResult.TotalMatchedLogGroups</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DryRunResult.UnchangedRetentionLogGroupCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.ExportTask.Destination</property>
     <min>1</min>
     <max>512</max>
@@ -2199,6 +2219,26 @@
     <property>Amazon.CloudWatchLogs.Model.LogGroupField.Percent</property>
     <min>0</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.LogGroupImpact.CurrentRetention</property>
+    <min>1</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.LogGroupImpact.LogGroupName</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^[\.\-_/#A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.LogGroupImpact.ProposedRetention</property>
+    <min>1</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.LogGroupImpact.StoredBytes</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.LogGroupSummary.LogGroupName</property>

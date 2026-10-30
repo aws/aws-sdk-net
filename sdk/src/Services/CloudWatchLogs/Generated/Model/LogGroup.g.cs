@@ -254,6 +254,23 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetRetentionInDays() => this.RetentionInDays.HasValue;
 
         /// <summary>
+        /// Gets and sets the property RetentionPolicyName. 
+        /// <para>
+        /// The name of the account-level retention policy that determines the retention period
+        /// of this log group. This field is returned only when an account-level retention policy
+        /// applies to the log group. When it is returned, <c>retentionInDays</c> shows the retention
+        /// period from that policy instead of the retention period set on the log group. If the
+        /// policy specifies that log events never expire, <c>retentionInDays</c> is not returned.
+        /// </para>
+        /// </summary>
+        public string RetentionPolicyName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RetentionPolicyName property is set.
+        /// </summary>
+        internal bool IsSetRetentionPolicyName() => this.RetentionPolicyName != null;
+
+        /// <summary>
         /// Gets and sets the property StoredBytes. 
         /// <para>
         /// The number of bytes stored.

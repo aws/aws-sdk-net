@@ -34,5 +34,18 @@ namespace Amazon.CloudWatchLogs.Model
     /// </summary>
     public partial class DeleteAccountPolicyResponse : AmazonWebServiceResponse
     {
+        /// <summary>
+        /// Gets and sets the property DryRunResult. 
+        /// <para>
+        /// The estimated impact of deleting the policy. This field is returned only when the
+        /// request specifies <c>dryRun</c> as <c>true</c>.
+        /// </para>
+        /// </summary>
+        public DryRunResult DryRunResult { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DryRunResult property is set.
+        /// </summary>
+        internal bool IsSetDryRunResult() => this.DryRunResult != null;
     }
 }

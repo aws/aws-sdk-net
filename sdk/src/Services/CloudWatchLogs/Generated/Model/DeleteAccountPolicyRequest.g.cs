@@ -55,6 +55,26 @@ namespace Amazon.CloudWatchLogs.Model
     public partial class DeleteAccountPolicyRequest : AmazonCloudWatchLogsRequest
     {
         /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// Specifies whether to preview the impact of deleting the policy without deleting it.
+        /// If you specify <c>true</c>, CloudWatch Logs does not delete the policy and returns
+        /// the estimated impact in <c>dryRunResult</c>. The default is <c>false</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specifying <c>dryRun</c> is valid only when you specify <c>RETENTION_POLICY</c> for
+        /// <c>policyType</c>. Only one dry run can be in progress for an account at a time.
+        /// </para>
+        /// </summary>
+        public bool? DryRun { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DryRun property is set.
+        /// </summary>
+        internal bool IsSetDryRun() => this.DryRun.HasValue;
+
+        /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
         /// The name of the policy to delete.
