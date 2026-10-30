@@ -50,8 +50,16 @@ namespace Amazon.Runtime.Internal.Transform
             // has not been read yet. context.ResponseBody is built from the bytes that the context's caching wrapper stream
             // has seen pass through it, and it is used in the error message below, so it would otherwise be truncated to
             // whatever the reader had buffered. Copying the remainder to Stream.Null reads it (and so caches it) without
-            // keeping it anywhere else.
-            context.Stream.CopyTo(Stream.Null);
+            // keeping it anywhere else. A failure here (such as a connection reset) is ignored: the error response has
+            // already been parsed, and throwing would hide the service error that the caller needs to see.
+            try
+            {
+                context.Stream.CopyTo(Stream.Null);
+            }
+            catch (Exception e) when (e is IOException || e is ObjectDisposedException || e is System.Net.WebException)
+            {
+                Logger.GetLogger(typeof(JsonErrorResponseUnmarshaller)).DebugFormat("Failed to read the remainder of the error response body: {0}", e);
+            }
 
             // The reader does not touch the stream until its first Read(), so only now has the start of the body been
             // buffered into context.ResponseBody. A body that starts with '<' is an XML error document (an XML body
