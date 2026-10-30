@@ -30,7 +30,22 @@ namespace Amazon.Runtime.Endpoints
     /// </summary>
     public class PropertyBag : IPropertyBag
     {
-        private Dictionary<string, object> properties = new Dictionary<string, object>(); 
+        private readonly Dictionary<string, object> properties;
+
+        public PropertyBag()
+        {
+            properties = new Dictionary<string, object>();
+        }
+
+        /// <summary>
+        /// Creates a bag holding a copy of the properties in <paramref name="source"/>. The dictionary is
+        /// sized exactly, so this is cheaper than rebuilding the same bag entry by entry.
+        /// </summary>
+        internal PropertyBag(PropertyBag source)
+        {
+            properties = new Dictionary<string, object>(source.properties);
+        }
+
         public object this[string propertyName]
         {
             get 
@@ -46,6 +61,29 @@ namespace Amazon.Runtime.Endpoints
             { 
                 properties[propertyName] = value; 
             }
+        }
+
+        /// <summary>
+        /// Returns true when <paramref name="other"/> holds exactly the same properties and values as this bag.
+        /// Values are compared with <see cref="object.Equals(object, object)"/>.
+        /// </summary>
+        internal bool ContentEquals(PropertyBag other)
+        {
+            if (other == null || other.properties.Count != properties.Count)
+            {
+                return false;
+            }
+
+            foreach (var kvp in properties)
+            {
+                object otherValue;
+                if (!other.properties.TryGetValue(kvp.Key, out otherValue) || !Equals(kvp.Value, otherValue))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         /// <summary>
