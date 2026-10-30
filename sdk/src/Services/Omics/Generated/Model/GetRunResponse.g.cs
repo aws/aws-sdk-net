@@ -282,6 +282,20 @@ namespace Amazon.Omics.Model
         internal bool IsSetOutputUri() => this.OutputUri != null;
 
         /// <summary>
+        /// Gets and sets the property OutputUriPrefixMode. 
+        /// <para>
+        /// The service returns the value that the <c>StartRun</c> request specified for <c>outputUriPrefixMode</c>.
+        /// The service returns <c>SERVICE_DEFINED</c> if the request did not specify a value.
+        /// </para>
+        /// </summary>
+        public RunOutputUriPrefixMode OutputUriPrefixMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OutputUriPrefixMode property is set.
+        /// </summary>
+        internal bool IsSetOutputUriPrefixMode() => this.OutputUriPrefixMode != null;
+
+        /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
         /// The run's parameters.

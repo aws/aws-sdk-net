@@ -178,6 +178,13 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("outputUriPrefixMode", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OutputUriPrefixMode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("parameters", targetDepth, ref reader))
                 {
                     var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;

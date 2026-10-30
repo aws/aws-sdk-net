@@ -189,6 +189,21 @@ namespace Amazon.Omics.Model
         internal bool IsSetOutputUri() => this.OutputUri != null;
 
         /// <summary>
+        /// Gets and sets the property OutputUriPrefixMode. 
+        /// <para>
+        /// You can control the path prefixes that the service adds beneath <c>outputUri</c>.
+        /// If you don't specify a value, the service uses <c>SERVICE_DEFINED</c>, which adds
+        /// a run-specific prefix.
+        /// </para>
+        /// </summary>
+        public RunOutputUriPrefixMode OutputUriPrefixMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OutputUriPrefixMode property is set.
+        /// </summary>
+        internal bool IsSetOutputUriPrefixMode() => this.OutputUriPrefixMode != null;
+
+        /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
         /// Parameters for the run. The run needs all required parameters and can include optional
