@@ -471,6 +471,14 @@ namespace Amazon.Runtime
         /// <returns>Uri for the given SDK request</returns>
         public static Uri ComposeUrl(IRequest internalRequest, bool skipEncodingValidPathChars)
         {
+            return CreateRequestUri(ComposeUrlString(internalRequest));
+        }
+
+        /// <summary>
+        /// Builds the string form of the Uri that <see cref="ComposeUrl(IRequest)"/> returns.
+        /// </summary>
+        internal static string ComposeUrlString(IRequest internalRequest)
+        {
             Uri url = internalRequest.Endpoint;
             var resourcePath = internalRequest.ResourcePath;
             if (resourcePath == null)
@@ -514,6 +522,27 @@ namespace Amazon.Runtime
                 ? url.AbsoluteUri + parameterizedPath
                 : url.AbsoluteUri + "/" + parameterizedPath;
 
+            return strUri;
+        }
+
+        /// <summary>
+        /// Creates the request Uri from a string produced by <see cref="ComposeUrlString(IRequest)"/>.
+        /// </summary>
+        internal static Uri CreateRequestUri(string strUri)
+        {
+#if NET8_0_OR_GREATER
+            return CreateRequestUri(strUri, AWSConfigs.DisableDangerousDisablePathAndQueryCanonicalization);
+#else
+            return CreateRequestUri(strUri, false);
+#endif
+        }
+
+        /// <summary>
+        /// Creates the request Uri from a string produced by <see cref="ComposeUrlString(IRequest)"/>, using the given
+        /// value of <c>AWSConfigs.DisableDangerousDisablePathAndQueryCanonicalization</c> (ignored before .NET 8).
+        /// </summary>
+        internal static Uri CreateRequestUri(string strUri, bool disableCanonicalizationFlag)
+        {
 #if NET8_0_OR_GREATER
             // The UriCreationOptions and DangerousDisablePathAndQueryCanonicalization were added in .NET 6 and allows
             // us to turn off the Uri behavior of canonicalizing Uri. For example if the resource path was "foo/../bar.txt"
@@ -521,7 +550,7 @@ namespace Amazon.Runtime
             // request has been signed will trigger a signature mismatch error. It is valid especially for S3 for the resource
             // path to contain ".." segments.
             var uriCreationOptions = new UriCreationOptions();
-            if (!AWSConfigs.DisableDangerousDisablePathAndQueryCanonicalization)
+            if (!disableCanonicalizationFlag)
             {
                 uriCreationOptions.DangerousDisablePathAndQueryCanonicalization = true;
             }

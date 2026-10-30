@@ -71,12 +71,67 @@ namespace Amazon.Runtime.Internal.UserAgent
         /// <returns>The final user-agent string including metrics data.</returns>
         public string GenerateUserAgentWithMetrics()
         {
-            var metricsUserAgent = GenerateMetricsUserAgent();
-            if (!string.IsNullOrEmpty(metricsUserAgent))
+            var customComponents = string.Join(" ", _userAgentCustomComponents);
+            if (_trackedFeatureIds.Count == 0)
             {
-                return $"{string.Join(" ", _userAgentCustomComponents)} {metricsUserAgent}";
+                return customComponents;
             }
-            return string.Join(" ", _userAgentCustomComponents);
+            return string.Concat(customComponents, " ", GenerateMetricsUserAgent());
+        }
+
+        /// <summary>
+        /// Creates an entry holding <see cref="GenerateUserAgentWithMetrics"/> and the components and features
+        /// (in order) it was generated from.
+        /// </summary>
+        internal GeneratedUserAgent CreateGeneratedUserAgent()
+        {
+            var components = new string[_userAgentCustomComponents.Count];
+            _userAgentCustomComponents.CopyTo(components);
+            var featureIds = new string[_trackedFeatureIds.Count];
+            _trackedFeatureIds.CopyTo(featureIds);
+            return new GeneratedUserAgent(components, featureIds, GenerateUserAgentWithMetrics());
+        }
+
+        /// <summary>
+        /// Returns true if <paramref name="cached"/> was generated from the same components and features
+        /// (same values in the same order) as this instance.
+        /// </summary>
+        internal bool Matches(GeneratedUserAgent cached)
+        {
+            return cached != null &&
+                SequenceEqual(_userAgentCustomComponents, cached.Components) &&
+                SequenceEqual(_trackedFeatureIds, cached.FeatureIds);
+        }
+
+        private static bool SequenceEqual(HashSet<string> set, string[] values)
+        {
+            if (set.Count != values.Length)
+                return false;
+
+            int i = 0;
+            foreach (var item in set)
+            {
+                if (!string.Equals(item, values[i++], System.StringComparison.Ordinal))
+                    return false;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Copies the custom components and tracked features of <paramref name="source"/> into this instance.
+        /// Equivalent to <c>AddUserAgentComponent(source.GetCustomUserAgentComponents())</c> followed by
+        /// <c>AddFeature</c> for each of <c>source.TrackedFeatureIds</c>.
+        /// </summary>
+        internal void MergeFrom(UserAgentDetails source)
+        {
+            if (source._userAgentCustomComponents.Count > 0)
+            {
+                AddUserAgentComponent(source.GetCustomUserAgentComponents());
+            }
+            foreach (var featureId in source._trackedFeatureIds)
+            {
+                _trackedFeatureIds.Add(featureId);
+            }
         }
 
         /// <summary>
@@ -90,7 +145,7 @@ namespace Amazon.Runtime.Internal.UserAgent
             {
                 return string.Empty;
             }
-            var metricsString = $"m/{string.Join(",", _trackedFeatureIds)}";
+            var metricsString = "m/" + string.Join(",", _trackedFeatureIds);
             metricsString = TruncateToSize(metricsString);
 
             return metricsString;
@@ -103,12 +158,12 @@ namespace Amazon.Runtime.Internal.UserAgent
         /// <returns>A truncated version of the string within the byte limit.</returns>
         private static string TruncateToSize(string input)
         {
-            byte[] bytes = Encoding.UTF8.GetBytes(input);
-            if (bytes.Length <= MaxSizeBytes)
+            if (Encoding.UTF8.GetByteCount(input) <= MaxSizeBytes)
             {
                 return input;
             }
 
+            byte[] bytes = Encoding.UTF8.GetBytes(input);
             var cutOffIndex = MaxSizeBytes;
             while (cutOffIndex > 0 && bytes[cutOffIndex - 1] != ',')
             {
@@ -117,5 +172,22 @@ namespace Amazon.Runtime.Internal.UserAgent
 
             return Encoding.UTF8.GetString(bytes, 0, cutOffIndex - 1); // Remove last comma
         }
+    }
+
+    /// <summary>
+    /// A generated User-Agent string together with the ordered components and feature ids it was generated from.
+    /// </summary>
+    internal sealed class GeneratedUserAgent
+    {
+        internal GeneratedUserAgent(string[] components, string[] featureIds, string value)
+        {
+            Components = components;
+            FeatureIds = featureIds;
+            Value = value;
+        }
+
+        internal string[] Components { get; }
+        internal string[] FeatureIds { get; }
+        internal string Value { get; }
     }
 }
