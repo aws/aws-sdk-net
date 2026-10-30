@@ -147,6 +147,7 @@
     "EMRContainers",
     "EMRServerless",
     "ElasticFileSystem",
+    "ElasticLoadBalancingV2",
     "ElasticMapReduce",
     "Elasticsearch",
     "ElementalInference",
