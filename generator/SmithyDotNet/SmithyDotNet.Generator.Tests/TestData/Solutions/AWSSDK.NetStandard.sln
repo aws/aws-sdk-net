@@ -1,0 +1,9 @@
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ACMPCA", "ACMPCA", "{22222222-2222-2222-2222-222222222222}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ACMPCA.NetStandard", "src/Services/ACMPCA/AWSSDK.ACMPCA.NetStandard.csproj", "{11111111-1111-1111-1111-111111111111}"
+EndProject
+Global
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {33333333-3333-3333-3333-333333333333}
+	EndGlobalSection
+EndGlobal

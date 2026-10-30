@@ -2,7 +2,8 @@ namespace SmithyDotNet.Generator.Writers.ProjectFiles;
 
 /// <summary>
 /// MSBuild condition expressions and sections shared by the project file writers
-/// (<see cref="ServiceProjectFileWriter"/> and <see cref="UnitTestProjectFileWriter"/>).
+/// (<see cref="ServiceProjectFileWriter"/>, <see cref="UnitTestProjectFileWriter"/> and
+/// <see cref="LegacyUnitTestProjectFileWriter"/>).
 /// </summary>
 internal static class ProjectFileSections
 {
@@ -108,5 +109,23 @@ internal static class ProjectFileSections
         writer.WriteLine("<GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>");
         writer.WriteLine("<GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>");
         writer.WriteLine("<GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>");
+    }
+
+    /// <summary>Writes the build, naming and signing properties every unit-test project shares.</summary>
+    internal static void WriteTestProjectProperties(CodeWriter writer, string assemblyName, string noWarn)
+    {
+        writer.WriteLine("<DebugType>portable</DebugType>");
+        writer.WriteLine("<GenerateDocumentationFile>true</GenerateDocumentationFile>");
+        writer.WriteLine($"<AssemblyName>{assemblyName}</AssemblyName>");
+        writer.WriteLine($"<PackageId>{assemblyName}</PackageId>");
+        writer.WriteLine();
+        WriteGenerateAssemblyAttributeSuppressions(writer);
+        writer.WriteLine("<SignAssembly>true</SignAssembly>");
+        writer.WriteLine("<TreatWarningsAsErrors>true</TreatWarningsAsErrors>");
+        writer.WriteLine();
+        if (!string.IsNullOrEmpty(noWarn))
+        {
+            writer.WriteLine($"<NoWarn>{noWarn}</NoWarn>");
+        }
     }
 }

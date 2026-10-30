@@ -26,7 +26,7 @@ public class CloudTrailModelFixture
     public CloudTrailModelFixture()
     {
         Index = new ServiceIndex(Model);
-        Context = new GenerationContext(Index, Manifest, Metadata);
+        Context = new GenerationContext(Index, Manifest, Metadata) { UnitTestProject = UnitTestProjectManifest.Load("TestData/_manifest.json") };
     }
 
     private static readonly ServiceMetadata Metadata = ServiceMetadata.Load("TestData/metadata.json");

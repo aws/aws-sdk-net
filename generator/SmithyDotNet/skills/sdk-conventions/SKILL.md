@@ -182,6 +182,25 @@ Each extension under `extensions/src` with a nuspec gets its `ExtensionVersions`
 `Properties/AssemblyInfo.cs` (`ExtensionVersionUpdater`). Those files are hand-written, so they're edited in place;
 C2J's `GeneratorExtensionsDriver` still makes the same edits.
 
+## SDK Solutions and Legacy Unit-Test Projects
+
+After the services, each batch run writes the files that span every project, matching C2J's apart from line endings.
+C2J still writes them too:
+
+- `sdk/test/UnitTests/AWSSDK.UnitTests.{NetFramework,NetStandard}.csproj` (`LegacyUnitTestProjectFileWriter`), from
+  `_manifest.json`'s `unittestprojects` entry (`UnitTestProjectManifest`). The per-service test projects take only
+  its package references and `noWarn`: its other settings name TFMs (`targets`), which their framework-identifier
+  conditions avoid, or paths relative to `sdk/test/UnitTests`; the `obj` exclude is fixed. Written first, since the
+  solutions list them.
+- `sdk/AWSSDK.{NetFramework,NetStandard}.sln` (`SdkSolutionFileWriter`). Project and folder GUIDs are read back from
+  the existing solution by name, so only a new project gets a new GUID, and C2J then reuses it. Folders and files sort
+  by the invariant culture (`AccessAnalyzer` before `ACMPCA`), which matches C2J's current-culture `OrderBy` under
+  en-US.
+- `sdk/AWSSDK.CodeAnalysis.sln` (`CodeAnalysisSolutionFileWriter`), taking each project's GUID from its
+  `<ProjectGuid>`. C2J writes it untrimmed, so it keeps a leading and a final newline.
+
+Core's two csproj files are hand-maintained: their `_manifest.json` template, `VS2017ProjectFile`, makes C2J skip them.
+
 ## Event Streams
 
 Protocol-independent; only the per-event payload (un)marshalling and the response unmarshaller's body

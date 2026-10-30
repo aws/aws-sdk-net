@@ -217,6 +217,9 @@ public class GenerationContext
     /// </summary>
     public SdkVersionManifest Manifest { get; }
 
+    /// <summary>The unit-test project settings from <c>_manifest.json</c>; set by the batch run, which writes the unit-test projects.</summary>
+    public UnitTestProjectManifest? UnitTestProject { get; init; }
+
     /// <summary>
     /// The service's customizations, for hooks applied at generation time (enum constant names, member
     /// renames, runtime pipeline overrides, and later code injection). Hooks with a Smithy trait equivalent never

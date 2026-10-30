@@ -23,9 +23,9 @@ public class BatchGeneratorTests : IDisposable
         }
     }
 
-    // The seeded CloudTrailData model is unlisted, so it is skipped; Core's files are written regardless.
+    // The seeded CloudTrailData model is unlisted, so it is skipped; Core's files and the solutions are written regardless.
     [Fact]
-    public void EmptyServiceListWritesOnlyCoreFiles()
+    public void EmptyServiceListWritesOnlyRepoLevelFiles()
     {
         WriteControlFile();
 
@@ -36,6 +36,7 @@ public class BatchGeneratorTests : IDisposable
         Assert.Contains("public static readonly RegionEndpoint USEast1 =", File.ReadAllText(Path.Combine(coreDir, "RegionEndpoint", "RegionEndpoint.generated.cs")));
         Assert.Contains("_defaultPartition = aws;", File.ReadAllText(Path.Combine(coreDir, "Amazon.Runtime", "Internal", "Endpoints", "StandardLibrary", "Partition.generated.cs")));
         Assert.Contains("""CoreVersionNumber = "4.0.100.3";""", File.ReadAllText(Path.Combine(coreDir, "Amazon.Util", "Internal", "InternalSDKUtils.generated.cs")));
+        Assert.True(File.Exists(Path.Combine(SdkTreeLayout.SdkRoot(_repoRoot), "AWSSDK.NetStandard.sln")));
     }
 
     [Fact]
@@ -233,6 +234,11 @@ public class BatchGeneratorTests : IDisposable
         File.Copy("TestData/partitions.json", Path.Combine(coreDir, "partitions.json"));
         File.Copy("TestData/Directory.Build.props", Path.Combine(SdkTreeLayout.SdkRoot(_repoRoot), "Directory.Build.props"));
         Directory.CreateDirectory(SdkTreeLayout.ExtensionsRoot(_repoRoot));
+        File.Copy("TestData/_manifest.json", Path.Combine(SdkTreeLayout.ModelsRoot(_repoRoot), "_manifest.json"));
+        foreach (var directory in new[] { Path.Combine("src", "Services"), Path.Combine("test", "Services"), "code-analysis" })
+        {
+            Directory.CreateDirectory(Path.Combine(SdkTreeLayout.SdkRoot(_repoRoot), directory));
+        }
     }
 
     // Relocates the seeded CloudTrailData model into TestServiceModels and marks it test-service.

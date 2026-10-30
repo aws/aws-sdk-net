@@ -53,14 +53,16 @@ public class UnitTestProjectFileWriterTests
         Assert.Contains("../../../UnitTests/Custom/AWSSDK.UnitTestUtilities.csproj", _project);
     }
 
-    // The generated endpoint tests are MSTest, so the test framework packages are load-bearing.
+    // The generated endpoint tests are MSTest, so the test framework packages are load-bearing. The fixture manifest's
+    // Moq version and NoWarn code are made up, so they show the manifest is read.
     [Fact]
-    public void ReferencesTestPackages()
+    public void TakesPackagesAndNoWarnFromTheManifest()
     {
         Assert.Contains("""<PackageReference Include="MSTest.TestAdapter" Version="3.11.1"/>""", _project);
         Assert.Contains("""<PackageReference Include="MSTest.TestFramework" Version="3.11.1"/>""", _project);
         Assert.Contains("""<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.13.0"/>""", _project);
-        Assert.Contains("""<PackageReference Include="Moq" Version="4.18.4"/>""", _project);
+        Assert.Contains("""<PackageReference Include="Moq" Version="9.9.9"/>""", _project);
+        Assert.Contains("<NoWarn>CS1591,CS0612,CS0618,CS9999</NoWarn>", _project);
         Assert.Contains("""<PackageReference Include="AutoFixture" Version="4.18.1"/>""", _project);
         Assert.Contains("""<PackageReference Include="AutoFixture.AutoMoq" Version="4.18.1"/>""", _project);
     }
@@ -82,7 +84,7 @@ public class UnitTestProjectFileWriterTests
     public void TargetsFrameworkOnlyWhenNetStandardUnsupported()
     {
         var metadata = new ServiceMetadata { NetStandardSupport = false };
-        var context = new GenerationContext(_fixture.Index, _fixture.Context.Manifest, metadata);
+        var context = new GenerationContext(_fixture.Index, _fixture.Context.Manifest, metadata) { UnitTestProject = _fixture.Context.UnitTestProject };
         var project = new UnitTestProjectFileWriter(context).Write();
 
         Assert.Contains("<TargetFrameworks>$(SdkNetFrameworkTargets)</TargetFrameworks>", project);

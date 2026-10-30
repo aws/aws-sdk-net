@@ -20,12 +20,21 @@ public class CodeWriter
     private const string XmlIndentUnit = "  ";
     private readonly StringBuilder _buffer = new();
     private int _indent;
-    private string _indentUnit = IndentUnit;
+    private string _indentUnit;
 
     // Lexes /// comments as plain comments rather than parsing their XML: the formatter indents both the same
     // (output is identical) and skips the XML parse.
     private static readonly CSharpParseOptions ParseOptions = new(documentationMode: DocumentationMode.None);
     private static readonly AdhocWorkspace Workspace = new();
+
+    /// <summary>
+    /// Creates a writer that indents with four spaces, or with <paramref name="indentUnit"/> for a format such as
+    /// <c>.sln</c> that indents with tabs.
+    /// </summary>
+    public CodeWriter(string indentUnit = IndentUnit)
+    {
+        _indentUnit = indentUnit;
+    }
 
     /// <summary>
     /// Appends <paramref name="line"/> at the current indent followed by a newline.
