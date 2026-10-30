@@ -37,6 +37,26 @@ namespace Amazon.SageMaker.Model
     public partial class InferenceComponentComputeResourceRequirements
     {
         /// <summary>
+        /// Gets and sets the property AcceleratorPartitionType. 
+        /// <para>
+        /// The accelerator partition profile this inference component occupies; on NVIDIA GPUs
+        /// this is a Multi-Instance GPU (MIG) profile such as <c>mig-3g.40gb</c>. It must be
+        /// one of the partition profiles declared in the target endpoint's accelerator partition
+        /// layout, and when set, <c>NumberOfAcceleratorDevicesRequired</c> must be <c>1</c>.
+        /// This field is required when the endpoint's production variant has an accelerator partition
+        /// layout. For endpoints without a layout, omit this field to place the inference component
+        /// on a whole accelerator.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max = 32)]
+        public string AcceleratorPartitionType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AcceleratorPartitionType property is set.
+        /// </summary>
+        internal bool IsSetAcceleratorPartitionType() => this.AcceleratorPartitionType != null;
+
+        /// <summary>
         /// Gets and sets the property MaxMemoryRequiredInMb. 
         /// <para>
         /// The maximum MB of memory to allocate to run a model that you assign to an inference

@@ -39,6 +39,31 @@ namespace Amazon.SageMaker.Model
     public partial class ProductionVariant
     {
         /// <summary>
+        /// Gets and sets the property AcceleratorPartitionLayouts. 
+        /// <para>
+        /// The accelerator partition layout for the accelerators backing this production variant.
+        /// A layout lists the partition profiles to carve on the accelerators it applies to;
+        /// on NVIDIA GPUs these are Multi-Instance GPU (MIG) profiles such as <c>mig-3g.40gb</c>.
+        /// Specify a single layout: SageMaker applies it uniformly to every accelerator on the
+        /// variant's instance type, and you place one inference component on each partition.
+        /// Omit this field to use whole, unpartitioned accelerators.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 32)]
+        public List<AcceleratorPartitionLayout> AcceleratorPartitionLayouts { get; set; } = AWSConfigs.InitializeCollections ? new List<AcceleratorPartitionLayout>() : null;
+
+        /// <summary>
+        /// Checks to see if the AcceleratorPartitionLayouts property is set.
+        /// </summary>
+        internal bool IsSetAcceleratorPartitionLayouts() => this.AcceleratorPartitionLayouts != null && (this.AcceleratorPartitionLayouts.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property AcceleratorType. 
         /// <para>
         /// This parameter is no longer supported. Elastic Inference (EI) is no longer available.
