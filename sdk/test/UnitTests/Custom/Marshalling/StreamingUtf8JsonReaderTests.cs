@@ -271,5 +271,88 @@ namespace AWSSDK.UnitTests
                 sb.Append("}");
             return sb.ToString();
         }
+
+        /// <summary>
+        /// Once the root object's closing token has been read the pooled buffer is released; further reads
+        /// report end of document instead of touching the buffer.
+        /// </summary>
+        [TestMethod]
+        public void ReadReturnsFalseAfterRootObjectCloses()
+        {
+            // The bytes after the root value are not valid JSON: if the reader kept filling its buffer after the
+            // closing token (instead of releasing it), the next Read would throw a JsonException.
+            byte[] payload = Encoding.UTF8.GetBytes("{ \"key\": { \"nested\": [1, 2, 3] } }garbage-after-root");
+            using (var stream = new MemoryStream(payload))
+            {
+                var reader = new StreamingUtf8JsonReader(stream, 16);
+                var tokens = new List<JsonTokenType>();
+                while (reader.Read())
+                {
+                    tokens.Add(reader.TokenType);
+                }
+
+                Assert.AreEqual(JsonTokenType.EndObject, tokens[tokens.Count - 1]);
+                Assert.AreEqual(2, tokens.Count(t => t == JsonTokenType.EndObject));
+                Assert.IsFalse(reader.Read());
+                Assert.IsFalse(reader.Read());
+            }
+        }
+
+        /// <summary>
+        /// A root array is released on its closing token too, including when the document spans several buffers.
+        /// </summary>
+        [TestMethod]
+        public void ReadReturnsFalseAfterRootArrayClosesAcrossBuffers()
+        {
+            var sb = new StringBuilder("[");
+            for (int i = 0; i < 100; i++)
+            {
+                if (i > 0) sb.Append(',');
+                sb.Append("{\"k\":\"").Append(new string('v', 40)).Append("\"}");
+            }
+            sb.Append("]not-json");
+            byte[] payload = Encoding.UTF8.GetBytes(sb.ToString());
+            using (var stream = new MemoryStream(payload))
+            {
+                var reader = new StreamingUtf8JsonReader(stream, 64);
+                int objects = 0;
+                JsonTokenType last = JsonTokenType.None;
+                while (reader.Read())
+                {
+                    last = reader.TokenType;
+                    if (last == JsonTokenType.StartObject) objects++;
+                }
+
+                Assert.AreEqual(100, objects);
+                Assert.AreEqual(JsonTokenType.EndArray, last);
+                Assert.IsFalse(reader.Read());
+            }
+        }
+
+        /// <summary>
+        /// Generated unmarshallers stop at the closing token; the context must still observe it as the current token.
+        /// </summary>
+        [TestMethod]
+        public void ContextSeesRootEndObjectAfterBufferRelease()
+        {
+            byte[] payload = Encoding.UTF8.GetBytes("{\"a\":1}");
+            using (var stream = new MemoryStream(payload))
+            using (var context = new Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext(stream, false, null))
+            {
+                var reader = new StreamingUtf8JsonReader(stream);
+                var sawRootEnd = false;
+                while (context.Read(ref reader))
+                {
+                    if (context.CurrentTokenType == JsonTokenType.EndObject && context.CurrentDepth == 0)
+                    {
+                        sawRootEnd = true;
+                    }
+                }
+
+                Assert.IsTrue(sawRootEnd);
+                Assert.IsNull(context.CurrentTokenType);
+            }
+        }
+
     }
 }
