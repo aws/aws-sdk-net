@@ -64,12 +64,12 @@ namespace AWSSDK.UnitTests
         private static string GenerateAndAssertReuse(string[] components, string[] featureIds)
         {
             var details = CreateDetails(components, featureIds);
-            var generated = details.GetOrGenerateUserAgentWithMetrics(null);
+            var generated = details.CreateGeneratedUserAgent();
             Assert.AreEqual(details.GenerateUserAgentWithMetrics(), generated.Value);
 
             var copy = CreateDetails(components.Select(c => c == null ? null : new string(c.ToCharArray())),
                                      featureIds.Select(f => new string(f.ToCharArray())));
-            Assert.AreSame(generated, copy.GetOrGenerateUserAgentWithMetrics(generated));
+            Assert.IsTrue(copy.Matches(generated));
             return generated.Value;
         }
 
@@ -101,9 +101,9 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        public void GetOrGenerateUserAgentWithMetrics_RegeneratesWhenInputsDiffer()
+        public void Matches_FalseWhenInputsDiffer()
         {
-            var cached = CreateDetails(new[] { "ua/2.1", "md/ClientAsync" }, new[] { "E", "b" }).GetOrGenerateUserAgentWithMetrics(null);
+            var cached = CreateDetails(new[] { "ua/2.1", "md/ClientAsync" }, new[] { "E", "b" }).CreateGeneratedUserAgent();
             var variants = new[]
             {
                 CreateDetails(new[] { "ua/2.1", "md/ClientSync" }, new[] { "E", "b" }),
@@ -114,8 +114,8 @@ namespace AWSSDK.UnitTests
 
             foreach (var variant in variants)
             {
-                var result = variant.GetOrGenerateUserAgentWithMetrics(cached);
-                Assert.AreNotSame(cached, result);
+                Assert.IsFalse(variant.Matches(cached));
+                var result = variant.CreateGeneratedUserAgent();
                 Assert.AreEqual(variant.GenerateUserAgentWithMetrics(), result.Value);
                 Assert.AreNotEqual(cached.Value, result.Value);
             }

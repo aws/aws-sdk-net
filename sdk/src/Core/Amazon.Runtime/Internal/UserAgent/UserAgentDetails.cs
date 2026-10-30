@@ -80,17 +80,11 @@ namespace Amazon.Runtime.Internal.UserAgent
         }
 
         /// <summary>
-        /// Returns <paramref name="cached"/> if it was generated from the same components and features
-        /// (same values in the same order) as this instance, otherwise a new entry for this instance.
-        /// The entry's <see cref="GeneratedUserAgent.Value"/> equals <see cref="GenerateUserAgentWithMetrics"/>.
+        /// Creates an entry holding <see cref="GenerateUserAgentWithMetrics"/> and the components and features
+        /// (in order) it was generated from.
         /// </summary>
-        internal GeneratedUserAgent GetOrGenerateUserAgentWithMetrics(GeneratedUserAgent cached)
+        internal GeneratedUserAgent CreateGeneratedUserAgent()
         {
-            if (Matches(cached))
-            {
-                return cached;
-            }
-
             var components = new string[_userAgentCustomComponents.Count];
             _userAgentCustomComponents.CopyTo(components);
             var featureIds = new string[_trackedFeatureIds.Count];

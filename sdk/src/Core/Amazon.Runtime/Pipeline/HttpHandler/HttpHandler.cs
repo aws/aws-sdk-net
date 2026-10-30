@@ -678,7 +678,7 @@ namespace Amazon.Runtime.Internal
                     return cached.Value;
             }
 
-            var generated = userAgentDetails.GetOrGenerateUserAgentWithMetrics(null);
+            var generated = userAgentDetails.CreateGeneratedUserAgent();
             var slot = (Interlocked.Increment(ref _nextUserAgentCacheSlot) - 1) & (UserAgentCacheSize - 1);
             Volatile.Write(ref _userAgentCache[slot], generated);
             return generated.Value;
