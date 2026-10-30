@@ -197,6 +197,27 @@ namespace AWSSDK.UnitTests.Custom.Marshalling
             }
         }
 
+        /// <summary>
+        /// The reader stops at the closing token of the error document, so the rest of the body (here, trailing
+        /// whitespace spanning several reader buffers) must still be read into the response body of the context.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        public void UnmarshalJsonErrorResponseBodyIncludesDataAfterRootValue()
+        {
+            var body = ValidJson + new string(' ', 8000);
+            var webResponse = new WebResponseData { StatusCode = HttpStatusCode.ServiceUnavailable };
+            webResponse.Headers.Add("Content-Length", Encoding.UTF8.GetBytes(body).Length.ToString());
+
+            var stream = AWSSDK_DotNet.UnitTests.Utils.CreateStreamFromString(body);
+            var context = new JsonUnmarshallerContext(stream, false, webResponse, isException: true);
+            var reader = new StreamingUtf8JsonReader(context.Stream);
+            var response = new JsonErrorResponseUnmarshaller().Unmarshall(context, ref reader);
+
+            Assert.AreEqual("message", response.Message);
+            Assert.AreEqual(body, context.ResponseBody);
+        }
+
         private void RunJsonErrorUnmarshallingTest(string body, string xAmzErrorTypeValue, string xAmznErrorMessageValue,
             string expectedMessage, string expectedCode, ErrorType expectedType)
         {

@@ -46,6 +46,13 @@ namespace Amazon.Runtime.Internal.Transform
             string requestId = null;
             GetValuesFromJsonIfPossible(context, ref reader, out type, out message, out code);
 
+            // The reader stops at the closing token of the root value, so anything after it (such as trailing whitespace)
+            // has not been read yet. context.ResponseBody is built from the bytes that the context's caching wrapper stream
+            // has seen pass through it, and it is used in the error message below, so it would otherwise be truncated to
+            // whatever the reader had buffered. Copying the remainder to Stream.Null reads it (and so caches it) without
+            // keeping it anywhere else.
+            context.Stream.CopyTo(Stream.Null);
+
             // The reader does not touch the stream until its first Read(), so only now has the start of the body been
             // buffered into context.ResponseBody. A body that starts with '<' is an XML error document (an XML body
             // fails the JSON read above without consuming anything but the first buffer): unmarshall it as XML.
