@@ -43,8 +43,15 @@ public static class CpuTimeRunner
     public static int DefaultWarmupIterations = 100000;
     public static int DefaultMinIterations = 50000;
     public static double DefaultMinCpuSeconds = 5.0;
+    // Optional case-name filter (regex); non-matching cases are skipped and return null.
+    public static System.Text.RegularExpressions.Regex? Filter;
+    // Concurrent workers per case (--threads). 1 = the original single-threaded loop below, unchanged.
+    public static int Threads = 1;
+    // Cases whose shared request holds a MemoryStream; concurrent calls would race on its position, so --threads > 1 skips them.
+    private static readonly System.Text.RegularExpressions.Regex SharedStreamCase =
+        new(@"_PutItemRequest_BinaryData_|_PutObject_");
 
-    public static async Task<CpuTimeResult> MeasureAsync(
+    public static async Task<CpuTimeResult?> MeasureAsync(
         string name,
         Func<Task> operation,
         int warmupIterations = -1,
@@ -56,6 +63,17 @@ public static class CpuTimeRunner
         if (warmupIterations < 0) warmupIterations = DefaultWarmupIterations;
         if (minIterations < 0) minIterations = DefaultMinIterations;
         if (minCpuSeconds < 0) minCpuSeconds = DefaultMinCpuSeconds;
+        if (Filter != null && !Filter.IsMatch(name)) return null;
+        if (Threads > 1)
+        {
+            if (SharedStreamCase.IsMatch(name))
+            {
+                Console.WriteLine($"[threads {Threads}] skipped {name}: its shared request holds a MemoryStream that concurrent calls would race on");
+                return null;
+            }
+            return await MeasureConcurrentAsync(name, operation, warmupIterations, minIterations, minCpuSeconds, checkInterval, Threads);
+        }
+        if (PipelineBreakdown.Enabled) operation = PipelineBreakdown.Wrap(operation);
 
         // Warmup: let JIT, tiered compilation, and caches stabilize
         for (int i = 0; i < warmupIterations; i++)
@@ -73,6 +91,7 @@ public static class CpuTimeRunner
         var cpuBefore = process.TotalProcessorTime;
         var wallBefore = Stopwatch.GetTimestamp();
         int iterations = 0;
+        if (PipelineBreakdown.Enabled) PipelineBreakdown.BeginMeasurement();
 
         // Run until EITHER condition is met (first one wins)
         while (true)
@@ -96,6 +115,7 @@ public static class CpuTimeRunner
 
         var wallSeconds = (wallAfter - wallBefore) / (double)Stopwatch.Frequency;
         var cpuSeconds = (cpuAfter - cpuBefore).TotalSeconds;
+        if (PipelineBreakdown.Enabled) PipelineBreakdown.EndMeasurement(name, cpuSeconds / iterations);
 
         return new CpuTimeResult(
             BenchmarkName: name,
@@ -108,30 +128,136 @@ public static class CpuTimeRunner
         );
     }
 
+    // Shared counters for one concurrent run. Fields (not captured locals) so Interlocked/Volatile get a plain ref.
+    private sealed class ConcurrentRunState
+    {
+        public long CompletedOps;
+        public int Stop;
+    }
+
+    /// <summary>
+    /// --threads N (N &gt; 1): N workers on the shared client and request; a regression check, not the cross-SDK metric.
+    /// Stops at minIterations * N total ops or minCpuSeconds * N process CPU. See README.md.
+    /// </summary>
+    private static async Task<CpuTimeResult> MeasureConcurrentAsync(
+        string name,
+        Func<Task> operation,
+        int warmupIterations,
+        int minIterations,
+        double minCpuSeconds,
+        int checkInterval,
+        int threads)
+    {
+        var warmup = new Task[threads];
+        for (int w = 0; w < threads; w++)
+        {
+            int count = warmupIterations / threads + (w < warmupIterations % threads ? 1 : 0);
+            warmup[w] = Task.Run(async () =>
+            {
+                for (int i = 0; i < count; i++)
+                    await operation();
+            });
+        }
+        await Task.WhenAll(warmup);
+
+        // Force GC to start clean
+        GC.Collect(2, GCCollectionMode.Forced, true, true);
+        GC.WaitForPendingFinalizers();
+        GC.Collect(2, GCCollectionMode.Forced, true, true);
+
+        long targetOps = (long)minIterations * threads;
+        double targetCpuSeconds = minCpuSeconds * threads;
+        var state = new ConcurrentRunState();
+        var workers = new Task[threads];
+
+        var process = Process.GetCurrentProcess();
+        var cpuBefore = process.TotalProcessorTime;
+        var wallBefore = Stopwatch.GetTimestamp();
+
+        for (int w = 0; w < threads; w++)
+        {
+            workers[w] = Task.Run(async () =>
+            {
+                // Process is not thread-safe; each worker refreshes its own instance.
+                var own = Process.GetCurrentProcess();
+                int local = 0;
+                while (true)
+                {
+                    await operation();
+                    if (++local == checkInterval)
+                    {
+                        local = 0;
+                        long total = Interlocked.Add(ref state.CompletedOps, checkInterval);
+                        if (Volatile.Read(ref state.Stop) != 0)
+                            break;
+                        own.Refresh();
+                        if (total >= targetOps || (own.TotalProcessorTime - cpuBefore).TotalSeconds >= targetCpuSeconds)
+                        {
+                            Volatile.Write(ref state.Stop, 1);
+                            break;
+                        }
+                    }
+                }
+            });
+        }
+        await Task.WhenAll(workers);
+
+        var wallAfter = Stopwatch.GetTimestamp();
+        process.Refresh();
+        var cpuAfter = process.TotalProcessorTime;
+
+        long ops = Interlocked.Read(ref state.CompletedOps);
+        var wallSeconds = (wallAfter - wallBefore) / (double)Stopwatch.Frequency;
+        var cpuSeconds = (cpuAfter - cpuBefore).TotalSeconds;
+
+        return new CpuTimeResult(
+            BenchmarkName: name,
+            Iterations: (int)ops,
+            WallClockSeconds: wallSeconds,
+            CpuTimeSeconds: cpuSeconds,
+            OpsPerWallSec: ops / wallSeconds,
+            OpsPerCpuSec: ops / cpuSeconds,
+            CpuToWallRatio: cpuSeconds / wallSeconds
+        );
+    }
+
+    /// <summary>
+    /// Geometric mean computed in log space; the direct product of 71 values overflows double
+    /// once the geomean exceeds ~21,960 ops/CPU-sec.
+    /// </summary>
+    public static double GeometricMean(IEnumerable<CpuTimeResult> results)
+        => Math.Exp(results.Average(r => Math.Log(r.OpsPerCpuSec)));
+
     /// <summary>
     /// Prints results in a table format and computes geometric mean.
     /// </summary>
-    public static void PrintResults(IList<CpuTimeResult> results, string suiteName)
+    public static void PrintResults(IList<CpuTimeResult?> resultsWithSkips, string suiteName)
     {
+        var results = resultsWithSkips.Where(r => r != null).Select(r => r!).ToList();
+        if (results.Count == 0) return;
         Console.WriteLine();
-        Console.WriteLine($"=== CPU Time Results: {suiteName} ===");
+        Console.WriteLine(Threads > 1
+            ? $"=== CPU Time Results: {suiteName} (Threads: {Threads}) ==="
+            : $"=== CPU Time Results: {suiteName} ===");
         Console.WriteLine($"{"Benchmark",-45} {"Iters",8} {"Wall(s)",9} {"CPU(s)",9} {"Ops/Wall-s",12} {"Ops/CPU-s",12} {"CPU/Wall",8}");
         Console.WriteLine(new string('-', 105));
-
-        double geoMeanProduct = 1.0;
-        int count = 0;
 
         foreach (var r in results)
         {
             Console.WriteLine($"{r.BenchmarkName,-45} {r.Iterations,8} {r.WallClockSeconds,9:F4} {r.CpuTimeSeconds,9:F4} {r.OpsPerWallSec,12:F0} {r.OpsPerCpuSec,12:F0} {r.CpuToWallRatio,8:F4}");
-            geoMeanProduct *= r.OpsPerCpuSec;
-            count++;
         }
 
-        var geoMean = Math.Pow(geoMeanProduct, 1.0 / count);
+        var geoMean = GeometricMean(results);
         Console.WriteLine(new string('-', 105));
         Console.WriteLine($"{"Geometric Mean (ops/CPU-sec)",-45} {"",8} {"",9} {"",9} {"",12} {geoMean,12:F0}");
         Console.WriteLine();
+        if (Threads > 1)
+        {
+            Console.WriteLine($"CPU/Wall ratio interpretation ({Threads} concurrent workers):");
+            Console.WriteLine($"  ~{Threads} = workers stayed busy (expected)");
+            Console.WriteLine($"  well below {Threads} = workers blocked or starved (contention, thread-pool injection, or too few cores)");
+            return;
+        }
         Console.WriteLine($"CPU/Wall ratio interpretation:");
         Console.WriteLine($"  ~1.0 = single-threaded, CPU-bound (good: wall and CPU time agree)");
         Console.WriteLine($"  >1.0 = multi-threaded work (CPU time > wall time)");
