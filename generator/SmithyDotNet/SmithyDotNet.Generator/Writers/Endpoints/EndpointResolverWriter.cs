@@ -61,7 +61,7 @@ public sealed class EndpointResolverWriter(GenerationContext context, string mod
         writer.OpenNamespace($"{context.Namespace}.Internal", () =>
         {
             writer.WriteLine("/// <summary>");
-            writer.WriteLine($"/// Amazon {context.BaseName} endpoint resolver.");
+            writer.WriteLine($"/// {context.ServiceTitle} endpoint resolver.");
             writer.WriteLine("/// <para />");
             writer.WriteLine($"""/// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for {context.BaseName} service requests.""");
             writer.WriteLine("/// <para />");

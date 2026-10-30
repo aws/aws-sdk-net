@@ -27,7 +27,7 @@ using Amazon.Lambda.Internal;
 namespace Amazon.Lambda
 {
     /// <summary>
-    /// Configuration for accessing Amazon Lambda service
+    /// Configuration for accessing AWS Lambda
     /// </summary>
     public partial class AmazonLambdaConfig : ClientConfig
     {

@@ -172,17 +172,12 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
 
     // Package metadata that lives in the .nuspec today. On the unified and standalone projects it
     // moves onto the csproj so `dotnet pack` produces a complete package without a separate nuspec.
-    // Only what the model or the caller supplies: the description is the metadata.json synopsis,
-    // falling back to the model's @title when there is no metadata (standalone).
     private void WritePackagingProperties(CodeWriter writer, string version)
     {
         writer.WriteLine($"<PackageId>{context.AssemblyName}</PackageId>");
         writer.WriteLine($"<Version>{version}</Version>");
         writer.WriteLine($"<Title>AWSSDK - {context.ServiceName}</Title>");
-        if ((context.Metadata?.Synopsis ?? context.ServiceTitle) is { Length: > 0 } description)
-        {
-            writer.WriteLine($"<Description>{System.Security.SecurityElement.Escape(description)}</Description>");
-        }
+        writer.WriteLine($"<Description>{System.Security.SecurityElement.Escape(context.NuGetPackageDescription)}</Description>");
         writer.WriteLine("<PackageReadmeFile>nuget-readme.md</PackageReadmeFile>");
     }
 

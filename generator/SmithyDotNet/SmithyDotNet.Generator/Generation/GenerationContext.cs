@@ -126,6 +126,9 @@ public class GenerationContext
     /// <summary>The service's <c>smithy.api#title</c> (e.g. "AWS CloudTrail Data Service"). C2J equivalent: <c>service.FullName</c>. Used in the assembly description.</summary>
     public string? ServiceTitle { get; }
 
+    /// <summary>The NuGet package description, in the Core package's form; the nuspec and the packable csproj both emit it. Not the metadata.json synopsis: that is the launch-time blurb and goes stale. C2J: <c>NuGetPackageDescription</c>.</summary>
+    public string NuGetPackageDescription => $"The Amazon Web Services SDK for .NET - {ServiceTitle}";
+
     /// <summary>The wire protocol detected from the service shape's protocol trait.</summary>
     public AWSProtocol Protocol { get; }
 

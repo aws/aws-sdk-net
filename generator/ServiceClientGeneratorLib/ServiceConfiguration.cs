@@ -176,36 +176,24 @@ namespace ServiceClientGenerator
             }
         }
 
-        public string AssemblyDescription(
-            string versionIdentifier = "", 
-            bool includePreamble = true, 
-            bool includeBody = true, 
-            bool includePostamble = true)
+        /// <summary>
+        /// The assembly description, matching the Smithy generator's AssemblyInfoWriter. The synopsis is
+        /// not appended: it is the service's launch-time blurb and goes stale, while serviceFullName
+        /// tracks the model.
+        /// </summary>
+        public string AssemblyDescription(string versionIdentifier = "")
         {
-            if (!string.IsNullOrEmpty(versionIdentifier) && !versionIdentifier.StartsWith("("))
-                versionIdentifier = $"({versionIdentifier})";
-
-            var preamble =
-                includePreamble
-                    ? $"The Amazon Web Services SDK for .NET {versionIdentifier} - "
-                    : "";
-
-            string body = "";
-            if (includeBody)
-            {
-                body =
-                    !string.IsNullOrEmpty(ServiceModel.ServiceFullName)
-                        ? $"{ServiceModel.ServiceFullName}. "
-                        : $"{ServiceId}. ";
-            }
-            
-            var postamble =
-                includePostamble 
-                    ? $"{ (!string.IsNullOrEmpty(Synopsis) ? Synopsis.Replace("\"", "\\\"") : ServiceId) }"
-                    : "";
-            return $"{preamble}{body}{postamble}";
+            var version = string.IsNullOrEmpty(versionIdentifier) ? "" : $" ({versionIdentifier.Trim('(', ')')})";
+            var name = !string.IsNullOrEmpty(ServiceModel.ServiceFullName) ? ServiceModel.ServiceFullName : ServiceId;
+            return $"The Amazon Web Services SDK for .NET{version} - {name}.";
         }
-        
+
+        /// <summary>
+        /// The NuGet package description, in the Core package's form. Not the synopsis: that is the
+        /// service's launch-time blurb and goes stale.
+        /// </summary>
+        public string NuGetPackageDescription => $"The Amazon Web Services SDK for .NET - {ServiceModel.ServiceFullName}";
+
         public string BaseException
         {
             get

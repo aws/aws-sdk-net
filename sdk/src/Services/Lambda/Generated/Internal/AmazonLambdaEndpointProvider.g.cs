@@ -26,7 +26,7 @@ using Amazon.Lambda.Endpoints;
 namespace Amazon.Lambda.Internal
 {
     /// <summary>
-    /// Amazon Lambda endpoint provider.
+    /// AWS Lambda endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="LambdaEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.

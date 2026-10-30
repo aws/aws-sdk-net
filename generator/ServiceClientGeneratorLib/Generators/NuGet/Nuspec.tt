@@ -11,7 +11,7 @@
     <title><#=this.Session["NuGetTitle"]#></title>
     <version><#=this.Session["AssemblyVersion"]#><#=this.Session["NuGetPreviewFlag"]#></version> 
     <authors>Amazon Web Services</authors>
-    <description><#=this.Session["AssemblyDescription"]#></description>
+    <description><#=this.Session["NuGetPackageDescription"]#></description>
     <language>en-US</language>
     <license type="expression">Apache-2.0</license>
     <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
