@@ -12,10 +12,15 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon;
+using Amazon.DynamoDBv2;
+using Amazon.DynamoDBv2.Internal;
+using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace AWSSDK.UnitTests
 {
@@ -203,5 +208,31 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual("https://localhost:7777/", executionContext.RequestContext.Request.Endpoint.ToString());
         }
 
+        /// <summary>
+        /// The auth resolver resolves the endpoint before the identity exists (S3 and others); a parameter
+        /// that comes from the identity must make the endpoint resolver evaluate the ruleset again.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        public void EndpointResolverDoesNotReuseEndpointResolvedBeforeIdentity()
+        {
+            var request = new Amazon.DynamoDBv2.Model.GetItemRequest();
+            var executionContext = new ExecutionContext(new RequestContext(false, new NullSigner())
+            {
+                ClientConfig = new AmazonDynamoDBConfig { RegionEndpoint = RegionEndpoint.USEast1, AccountIdEndpointMode = AccountIdEndpointMode.PREFERRED },
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, "DynamoDB"),
+            }, null);
+
+            // Auth resolver: identity not resolved yet
+            var resolver = new AmazonDynamoDBEndpointResolver();
+            var before = resolver.GetEndpoint(executionContext);
+            Assert.AreEqual("https://dynamodb.us-east-1.amazonaws.com/", before.URL);
+
+            // Endpoint resolver: identity resolved in between
+            executionContext.RequestContext.Identity = new BasicAWSCredentials("foo", "bar", "123456789012");
+            resolver.ProcessRequestHandlers(executionContext);
+            Assert.AreEqual("https://123456789012.ddb.us-east-1.amazonaws.com/", executionContext.RequestContext.Request.Endpoint.ToString());
+        }
     }
 }
