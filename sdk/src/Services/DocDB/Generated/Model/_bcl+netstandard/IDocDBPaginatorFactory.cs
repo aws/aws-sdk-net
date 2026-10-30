@@ -156,5 +156,15 @@ namespace Amazon.DocDB.Model
             OutputToken = new[] { "Marker" }
         )]
         IDescribePendingMaintenanceActionsPaginator DescribePendingMaintenanceActions(DescribePendingMaintenanceActionsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeServerlessV2PlatformVersions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxRecords",
+            OutputToken = new[] { "Marker" }
+        )]
+        IDescribeServerlessV2PlatformVersionsPaginator DescribeServerlessV2PlatformVersions(DescribeServerlessV2PlatformVersionsRequest request);
     }
 }

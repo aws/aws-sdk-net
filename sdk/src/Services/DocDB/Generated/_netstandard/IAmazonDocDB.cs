@@ -1156,6 +1156,25 @@ namespace Amazon.DocDB
 
         #endregion
                 
+        #region  DescribeServerlessV2PlatformVersions
+
+
+
+        /// <summary>
+        /// Describes the properties of specific platform versions for Amazon DocumentDB Serverless
+        /// v2.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServerlessV2PlatformVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeServerlessV2PlatformVersions service method, as returned by DocDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeServerlessV2PlatformVersions">REST API Reference for DescribeServerlessV2PlatformVersions Operation</seealso>
+        Task<DescribeServerlessV2PlatformVersionsResponse> DescribeServerlessV2PlatformVersionsAsync(DescribeServerlessV2PlatformVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  FailoverDBCluster
 
 
