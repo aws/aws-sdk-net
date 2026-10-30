@@ -233,8 +233,12 @@ namespace Amazon.Runtime.Internal
                     InitializeEventInputStream(response, requestContext);
                 }
 
-                requestContext.Metrics.AddProperty(Metric.StatusCode, response.HttpStatusCode);
-                requestContext.Metrics.AddProperty(Metric.BytesProcessed, response.ContentLength);
+                // Guarded to avoid boxing the value-type properties when metrics are disabled.
+                if (requestContext.Metrics.IsEnabled)
+                {
+                    requestContext.Metrics.AddProperty(Metric.StatusCode, response.HttpStatusCode);
+                    requestContext.Metrics.AddProperty(Metric.BytesProcessed, response.ContentLength);
+                }
                 if (response.ResponseMetadata != null)
                 {
                     requestContext.Metrics.AddProperty(Metric.AWSRequestID, response.ResponseMetadata.RequestId);
