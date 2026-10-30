@@ -17,6 +17,7 @@ using Amazon.Util;
 using System;
 using System.Globalization;
 using System.Text;
+using ThirdParty.RuntimeBackports;
 
 namespace Amazon.Runtime.Internal.Auth
 {
@@ -89,11 +90,22 @@ namespace Amazon.Runtime.Internal.Auth
         {
             get
             {
-                var authorizationHeader = new StringBuilder()
-                    .Append(AWS4Signer.AWS4AlgorithmTag)
-                    .AppendFormat(" {0}={1}/{2},", AWS4Signer.Credential, AccessKeyId, Scope)
-                    .AppendFormat(" {0}={1},", AWS4Signer.SignedHeaders, SignedHeaders)
-                    .AppendFormat(" {0}={1}", AWS4Signer.Signature, Signature);
+                var authorizationHeader = new ValueStringBuilder(stackalloc char[512]);
+                authorizationHeader.Append(AWS4Signer.AWS4AlgorithmTag);
+                authorizationHeader.Append(' ');
+                authorizationHeader.Append(AWS4Signer.Credential);
+                authorizationHeader.Append('=');
+                authorizationHeader.Append(AccessKeyId);
+                authorizationHeader.Append('/');
+                authorizationHeader.Append(Scope);
+                authorizationHeader.Append(", ");
+                authorizationHeader.Append(AWS4Signer.SignedHeaders);
+                authorizationHeader.Append('=');
+                authorizationHeader.Append(SignedHeaders);
+                authorizationHeader.Append(", ");
+                authorizationHeader.Append(AWS4Signer.Signature);
+                authorizationHeader.Append('=');
+                authorizationHeader.Append(Signature);
 
                 return authorizationHeader.ToString();
             }
