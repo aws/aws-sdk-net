@@ -67,7 +67,12 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <para>
         /// The cluster configuration of the resource at the time of backup.
         /// </para>
+        ///  
+        /// <para>
+        /// Deprecated. Use deploymentConfiguration to view the cluster topology instead.
+        /// </para>
         /// </summary>
+        [Obsolete("Use deploymentConfiguration instead.")]
         public ClusterConfiguration ClusterConfiguration { get; set; }
 
         /// <summary>
@@ -141,6 +146,19 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// Checks to see if the DbStorageType property is set.
         /// </summary>
         internal bool IsSetDbStorageType() => this.DbStorageType != null;
+
+        /// <summary>
+        /// Gets and sets the property DeploymentConfiguration. 
+        /// <para>
+        /// The deployment configuration of the resource at the time of backup.
+        /// </para>
+        /// </summary>
+        public DeploymentConfiguration DeploymentConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DeploymentConfiguration property is set.
+        /// </summary>
+        internal bool IsSetDeploymentConfiguration() => this.DeploymentConfiguration != null;
 
         /// <summary>
         /// Gets and sets the property DeploymentType. 
