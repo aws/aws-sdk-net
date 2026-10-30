@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Stop the streaming JSON reader from exposing its pooled buffer after it has been returned to the pool, and read the whole body of a JSON error response so the response body in the exception message is complete."
+    ],
+    "type": "patch",
+    "updateMinimum": false
+  }
+}
