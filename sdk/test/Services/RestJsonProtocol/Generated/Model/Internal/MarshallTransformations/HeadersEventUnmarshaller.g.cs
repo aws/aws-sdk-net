@@ -57,7 +57,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             }
             if (context.ResponseData.IsEventHeaderPresent("byteHeader"))
             {
-                unmarshalledObject.ByteHeader = context.ResponseData.GetEventStreamHeader("byteHeader").AsInt32();
+                unmarshalledObject.ByteHeader = context.ResponseData.GetEventStreamHeader("byteHeader").AsSByte();
             }
             if (context.ResponseData.IsEventHeaderPresent("intHeader"))
             {
@@ -69,7 +69,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             }
             if (context.ResponseData.IsEventHeaderPresent("shortHeader"))
             {
-                unmarshalledObject.ShortHeader = context.ResponseData.GetEventStreamHeader("shortHeader").AsInt32();
+                unmarshalledObject.ShortHeader = context.ResponseData.GetEventStreamHeader("shortHeader").AsInt16();
             }
             if (context.ResponseData.IsEventHeaderPresent("stringHeader"))
             {

@@ -82,4 +82,8 @@
     <PackageReference Include="System.Memory" Version="4.6.3" />
     <PackageReference Include="System.Text.Json" Version="$(SystemTextJsonVersion)" />
   </ItemGroup>
+  <ItemGroup>
+    <!-- AWSSDK.Extensions.Numerics provides BigDecimal, which generated code uses for the bigDecimal Smithy shape. -->
+    <ProjectReference Include="..\..\..\extensions\src\AWSSDK.Extensions.Numerics\AWSSDK.Extensions.Numerics.csproj" />
+  </ItemGroup>
 </Project>

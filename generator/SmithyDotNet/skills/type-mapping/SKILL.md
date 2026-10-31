@@ -15,7 +15,10 @@ description: Smithy shape to .NET type mapping, nullability, collection element 
 | `float` | `float?` | |
 | `double` | `double?` | |
 | `timestamp` | `DateTime?` | |
-| `byte`, `short`, `bigInteger`, `bigDecimal` | — | Not supported yet: throws |
+| `byte` | `sbyte?` | Smithy's byte is signed (Full Numeric Type Support specification), so not `System.Byte` |
+| `short` | `short?` | |
+| `bigInteger` | `System.Numerics.BigInteger?` | Fully qualified; no `using` is added |
+| `bigDecimal` | `Amazon.Extensions.Numerics.BigDecimal?` | From `AWSSDK.Extensions.Numerics`, which `AWSSDK.Core` depends on |
 | `blob` | `MemoryStream` | Supported as an `@httpPayload` body, a JSON body member, or a list element / map value (base64 on the wire). A header, query or label blob throws. `@streaming` blob → `Stream`, `@httpPayload`-only (throws as a collection element) |
 | `document` | `Amazon.Runtime.Documents.Document` | (Un)marshals wholesale through the runtime document transforms. Supported as a body member, `@httpPayload`, list element, or map value |
 | `enum` | `ConstantClass` | The generated `ConstantClass` subclass; marshals as a string via implicit conversion, matching C2J. **Only as a member's own type**; inside a collection it is plain `string` (see Enums in Collections) |

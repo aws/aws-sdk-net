@@ -85,7 +85,7 @@ instead of the default `application/json`, matching C2J.
 | `@httpHeader("name")` scalar | Header | `request.Headers["name"] = ...` |
 | `@httpHeader("name")` `@mediaType` string | Header | Base64: `Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(...))`; the read side decodes (C2J "jsonvalue"). Body-bound `@mediaType` strings are plain |
 | `@httpHeader("name")` `list<string>` | Header | `request.Headers["name"] = StringUtils.FromList(publicRequest.Prop)` (comma join, RFC-7230 quoting) |
-| `@httpHeader("name")` `list<value-type>` | Header | `request.Headers["name"] = StringUtils.FromValueTypeList(publicRequest.Prop)` (the `List<T>` overload lowercases bool and forces `DateTime` to RFC822, so no per-element or per-format branch is emitted) |
+| `@httpHeader("name")` `list<value-type>` | Header | `request.Headers["name"] = StringUtils.FromValueTypeList(publicRequest.Prop)` (the `List<T>` overload lowercases bool and forces `DateTime` to RFC822, so no per-element or per-format branch is emitted). byte/short/bigInteger/bigDecimal pass their formatter: `StringUtils.FromValueTypeList(publicRequest.Prop, StringUtils.FromShort)`, since the untyped overload uses the current culture |
 | `@httpPrefixHeaders("prefix")` map | Multiple headers | Loop `map<string,string>`, emit `{prefix}{key}` headers (see below); request & response |
 | `@httpPayload` | Entire body | Direct stream/string (skips body serialization) |
 | `@hostLabel` | Endpoint host prefix | `request.HostPrefix` label **in addition to** the member's normal binding (see below) |
@@ -153,8 +153,9 @@ already open, then reads `context.Request.EventHeaders` and `context.Request.Con
 route by trait:
 
 - `@eventHeader` → `IsSet`-guarded `EventStreamHeader("{memberName}")` (never `@jsonName`) with the typed
-  setter for the target shape (`SetString` string/enum, `SetBool`/`SetInt32`/`SetInt64`/`SetTimestamp`
-  with `.Value`, `SetByteBuf(….ToArray())` blob), added to `EventHeaders`. Any other target fails loud.
+  setter for the target shape (`SetString` string/enum, `SetBool`/`SetInt32`/`SetInt64`/`SetSByte` (byte)/
+  `SetInt16` (short)/`SetTimestamp` with `.Value`, `SetByteBuf(….ToArray())` blob), added to `EventHeaders`. Any
+  other target (bigInteger/bigDecimal have no header encoding) fails loud.
 - `@eventPayload` → `IsSet`-guarded: blob `Request.Content = ….ToArray()`, string/enum
   `Encoding.UTF8.GetBytes(…)` (publisher sends octet-stream / text/plain, C2J parity); structure/union
   `{Type}Marshaller.Instance.Marshall(…, context)` into the open object (the protocol tests expect the bare
@@ -261,8 +262,8 @@ invoked per event from the event-stream class's `EventMapping`. A member carries
 - **`@eventHeader`** → read from the event-message header via `context.ResponseData`, guarded by
   `IsEventHeaderPresent("{ModeledName}")` (the wire header key is the member name verbatim). The accessor on
   `GetEventStreamHeader("{ModeledName}")` follows the target shape: string/enum → `AsString()`, boolean →
-  `AsBool()`, integer/intEnum → `AsInt32()`, long → `AsInt64()`, timestamp → `AsTimestamp()`, blob →
-  `new MemoryStream(...AsByteBuf())`. Any other target fails loud.
+  `AsBool()`, integer/intEnum → `AsInt32()`, long → `AsInt64()`, byte → `AsSByte()`, short → `AsInt16()`,
+  timestamp → `AsTimestamp()`, blob → `new MemoryStream(...AsByteBuf())`. Any other target fails loud.
 - **unbound** → the JSON body, read through the ordinary reader loop.
 
 An event can carry `@eventHeader` members **without** an `@eventPayload` member: a headers-only event (only
@@ -312,6 +313,8 @@ Each member is guarded by `context.ResponseData.IsHeaderPresent("x-foo")` and as
 | timestamp, epoch-seconds | `Amazon.Util.AWSSDKUtils.ConvertFromUnixEpochSeconds(int.Parse(value, CultureInfo.InvariantCulture))` |
 | `list<string>` / `list<enum>` | `MultiValueHeaderParser.ToStringList(value)` |
 | `list<value-type>` (int/long/bool/double/float) | `MultiValueHeaderParser.ToValueTypeList<T>(value)` (T = the non-nullable element type, e.g. `int`) |
+| byte / short / bigInteger / bigDecimal | `{T}.Parse(value, CultureInfo.InvariantCulture)` with T `sbyte`, `short`, `System.Numerics.BigInteger`, `Amazon.Extensions.Numerics.BigDecimal` |
+| `list<byte/short/bigInteger/bigDecimal>` | `MultiValueHeaderParser.ToValueTypeList<T>(value, s => T.Parse(s, CultureInfo.InvariantCulture))` (BigInteger/BigDecimal are not `IConvertible`) |
 | `list<timestamp>` | `MultiValueHeaderParser.ToDateTimeList(value, "FMT")`, where `FMT` is the runtime's format name (`RFC822`/`ISO8601`/`UnixTimestamp`, header default `RFC822`), **not** the Smithy token |
 
 A non-scalar list element fails loud, as does a `@sparse` value-type element.
@@ -336,6 +339,10 @@ Same output on the response and exception unmarshallers.
 | float | `float?` | `WriteNumberValue` (NaN/∞ as strings, members only) | `FloatUnmarshaller` |
 | double | `double?` | `WriteNumberValue` (NaN/∞ as strings, members only) | `DoubleUnmarshaller` |
 | timestamp | `DateTime?` | Format-dependent (see below) | `DateTimeUnmarshaller` |
+| byte | `sbyte?` | `WriteNumberValue` | `SByteUnmarshaller` (out of range throws `OverflowException`) |
+| short | `short?` | `WriteNumberValue` | `ShortUnmarshaller` (out of range throws `OverflowException`) |
+| bigInteger | `System.Numerics.BigInteger?` | `StringUtils.WriteBigIntegerValue(context.Writer, ...)` (raw JSON number, every digit) | `BigIntegerUnmarshaller` (parses the raw token text, never via double) |
+| bigDecimal | `Amazon.Extensions.Numerics.BigDecimal?` | `StringUtils.WriteBigDecimalValue(context.Writer, ...)` (raw JSON number, plain decimal) | `BigDecimalUnmarshaller` (parses the raw token text, never via double) |
 | blob | `MemoryStream` | `StringUtils.WriteBase64StringValue(context.Writer, ...)` | `MemoryStreamUnmarshaller` |
 | document | `Amazon.Runtime.Documents.Document` | `DocumentMarshaller.Instance.Write` | `DocumentUnmarshaller.Instance` |
 | list | `List<T>` | Array loop | `JsonListUnmarshaller<ElementType, ElementUnmarshaller>` |
@@ -434,6 +441,12 @@ operation is `POST service/{ServiceShapeName}/operation/{OperationName}` with `s
 `Unit`. HTTP binding traits, `@jsonName` and `@timestampFormat` are ignored: keys are member names and
 timestamps are tag 1. The output is wire-compatible with C2J's CBOR templates and formatted like the JSON
 writers' output; the `Cbor*` writers mirror the JSON ones and are pinned by `RpcV2CborCodegenTests`.
+
+byte/short are written with `WriteInt32` (smallest integer encoding) and read by `CborSByteUnmarshaller` /
+`CborShortUnmarshaller` (out of range throws `OverflowException`). bigInteger is written with
+`CborWriter.WriteBigInteger` (tag 2/3 bignum) and bigDecimal with the `WriteBigDecimal` extension (tag 4 decimal
+fraction, bignum mantissa when it exceeds 64 bits), as the spec requires; the readers also accept a plain integer,
+and reject floats so no value goes through a double.
 
 A `@sparse` element writes CBOR null per the spec; C2J writes `{}` for a null structure element in a sparse
 list, but no CBOR service model uses `@sparse`. Documents and streaming blobs are rejected by

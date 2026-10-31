@@ -108,8 +108,11 @@ public static class CborBodyMemberMarshaller
         {
             StringShape or EnumShape => $"context.Writer.WriteTextString({value});",
             BooleanShape => $"context.Writer.WriteBoolean({scalar});",
-            IntegerShape or IntEnumShape => $"context.Writer.WriteInt32({scalar});",
+            IntegerShape or IntEnumShape or ByteShape or ShortShape => $"context.Writer.WriteInt32({scalar});",
             LongShape => $"context.Writer.WriteInt64({scalar});",
+            // rpcv2Cbor requires a bignum (tags 2/3) for bigInteger and a decimal fraction (tag 4) for bigDecimal.
+            BigIntegerShape => $"context.Writer.WriteBigInteger({scalar});",
+            BigDecimalShape => $"context.Writer.WriteBigDecimal({scalar});",
             FloatShape or DoubleShape => $"context.Writer.WriteOptimizedNumber({scalar});",
             TimestampShape => $"context.Writer.WriteDateTime({scalar});",
             _ => throw new GeneratorException($"Unsupported rpcv2Cbor body type '{type.DotNetType}' ('{value}')."),

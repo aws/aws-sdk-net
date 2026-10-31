@@ -16,21 +16,26 @@
     <icon>images\AWSLogo.png</icon>
     <dependencies>
       <group targetFramework="net472">
+        <dependency id="AWSSDK.Extensions.Numerics" version="<#=this.Session["NumericsVersionRange"]#>" />
         <dependency id="System.Buffers" version="4.5.1" />
         <dependency id="System.Memory" version="4.5.5" />
         <dependency id="System.Text.Json" version="8.0.6" />
       </group>
       <group targetFramework="netstandard2.0">
+        <dependency id="AWSSDK.Extensions.Numerics" version="<#=this.Session["NumericsVersionRange"]#>" />
         <dependency id="Microsoft.Bcl.AsyncInterfaces" version="8.0.0" />
         <dependency id="System.Buffers" version="4.5.1" />
         <dependency id="System.Memory" version="4.5.5" />
         <dependency id="System.Text.Json" version="8.0.6" />
       </group>
       <group targetFramework="net8.0">
+        <dependency id="AWSSDK.Extensions.Numerics" version="<#=this.Session["NumericsVersionRange"]#>" />
       </group>		
       <group targetFramework="net10.0">
+        <dependency id="AWSSDK.Extensions.Numerics" version="<#=this.Session["NumericsVersionRange"]#>" />
       </group>		
       <group targetFramework="net11.0">
+        <dependency id="AWSSDK.Extensions.Numerics" version="<#=this.Session["NumericsVersionRange"]#>" />
       </group>		
     </dependencies>
   </metadata> 

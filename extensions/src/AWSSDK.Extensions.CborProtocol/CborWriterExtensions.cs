@@ -17,6 +17,7 @@ using System;
 using System.Buffers;
 using System.Formats.Cbor;
 using System.IO;
+using Amazon.Extensions.Numerics;
 using Amazon.Util;
 
 namespace Amazon.Extensions.CborProtocol
@@ -75,6 +76,31 @@ namespace Amazon.Extensions.CborProtocol
         {
             writer.WriteTag(CborTag.UnixTimeSeconds);
             writer.WriteOptimizedNumber(AWSSDKUtils.ConvertToUnixEpochSecondsDouble(value));
+        }
+
+        /// <summary>
+        /// Writes a <see cref="BigDecimal"/> as a CBOR decimal fraction (tag 4), the encoding Smithy RPC v2 CBOR uses
+        /// for bigDecimal: the array [exponent, mantissa], where the value is mantissa * 10^exponent. The mantissa is
+        /// a plain integer when it fits in 64 bits and a bignum otherwise, so every digit and the scale are kept.
+        /// </summary>
+        /// <param name="writer">The CBOR writer to use.</param>
+        /// <param name="value">The BigDecimal value to write.</param>
+        public static void WriteBigDecimal(this CborWriter writer, BigDecimal value)
+        {
+            writer.WriteTag(CborTag.DecimalFraction);
+            writer.WriteStartArray(2);
+            writer.WriteInt64(-(long)value.Scale);
+
+            var mantissa = value.UnscaledValue;
+            if (mantissa >= long.MinValue && mantissa <= long.MaxValue)
+            {
+                writer.WriteInt64((long)mantissa);
+            }
+            else
+            {
+                writer.WriteBigInteger(mantissa);
+            }
+            writer.WriteEndArray();
         }
 
         /// <summary>

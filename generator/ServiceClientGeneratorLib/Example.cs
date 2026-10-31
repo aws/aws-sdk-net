@@ -233,12 +233,19 @@ namespace ServiceClientGenerator
             else if (shape.IsBoolean)
                 cb.Append(data.ToString().ToLowerInvariant());
 
-            else if (shape.IsFloat || shape.IsInt || shape.IsDouble || shape.IsLong)
+            else if (shape.IsFloat || shape.IsInt || shape.IsDouble || shape.IsLong || shape.IsByte || shape.IsShort)
             {
                 if (data.IsDouble)
                     cb.Append(((double)data).ToString(CultureInfo.InvariantCulture));
                 else
                     cb.Append(data.ToString());
+            }
+
+            else if (shape.IsArbitraryPrecisionNumber)
+            {
+                // Parse from text so the sample keeps every digit; a C# numeric literal could not hold the value.
+                var text = data.IsDouble ? ((double)data).ToString("R", CultureInfo.InvariantCulture) : data.ToString();
+                cb.AppendFormat("{0}.Parse(\"{1}\", System.Globalization.CultureInfo.InvariantCulture)", ShapeType(shape), text);
             }
 
             else if (shape.IsList && data.IsArray)
@@ -367,6 +374,8 @@ namespace ServiceClientGenerator
                 return "float";
             if (shape.IsDouble)
                 return "double";
+            if (shape.IsExtendedNumericType)
+                return shape.PrimitiveCSharpTypeName;
             if (shape.IsTimeStamp)
                 return "DateTime";
             if (shape.IsMemoryStream)

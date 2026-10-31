@@ -638,7 +638,7 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 					if (innerShape == null || (innerShape != null && !innerShape.Shape.IsList))
 					{
 #>
-<#=new string(' ', level * 4)#>						xmlWriter.WriteValue(<#=listItemVariable#>);
+<#=new string(' ', level * 4)#>						xmlWriter.WriteValue(<#=listItemVariable#><#=member.Shape.ListShape.RestXmlListValueSuffix#>);
 <#+
 					}
 #>
@@ -733,7 +733,7 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 			if(string.IsNullOrEmpty(member.Shape.ValueShapeXmlNamespace))
 			{
 #>
-<#=new string(' ', level * 4)#>						xmlWriter.WriteElementString("<#=member.Shape.ValueMarshallName#>", kvp.Value<#=member.Shape.ValueShape.IsString ? "" : ".ToString()"#>);
+<#=new string(' ', level * 4)#>						xmlWriter.WriteElementString("<#=member.Shape.ValueMarshallName#>", kvp.Value<#=member.Shape.ValueShape.RestXmlMapValueSuffix#>);
 <#+
 			}
 			else
@@ -742,12 +742,12 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 				if(valueNode[ServiceModel.XmlNamespaceKey].IsString)
 				{
 #>
-<#=new string(' ', level * 4)#>						xmlWriter.WriteElementString("<#=member.Shape.ValueMarshallName#>", "<#=member.Shape.ValueShapeXmlNamespace#>",kvp.Value<#=member.Shape.ValueShape.IsString ? "" : ".ToString()"#>);
+<#=new string(' ', level * 4)#>						xmlWriter.WriteElementString("<#=member.Shape.ValueMarshallName#>", "<#=member.Shape.ValueShapeXmlNamespace#>",kvp.Value<#=member.Shape.ValueShape.RestXmlMapValueSuffix#>);
 <#+				}
 				else
 				{
 #>
-<#=new string(' ', level * 4)#>						xmlWriter.WriteElementString("<#=valueNode[ServiceModel.XmlNamespaceKey][ServiceModel.XmlNamespacePrefixKey]#>","<#=member.Shape.ValueMarshallName#>", "<#=member.Shape.ValueShapeXmlNamespace#>",kvp.Value<#=member.Shape.ValueShape.IsString ? "" : ".ToString()"#>);
+<#=new string(' ', level * 4)#>						xmlWriter.WriteElementString("<#=valueNode[ServiceModel.XmlNamespaceKey][ServiceModel.XmlNamespacePrefixKey]#>","<#=member.Shape.ValueMarshallName#>", "<#=member.Shape.ValueShapeXmlNamespace#>",kvp.Value<#=member.Shape.ValueShape.RestXmlMapValueSuffix#>);
 <#+
 				}
 			}
@@ -799,14 +799,14 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 			if(string.IsNullOrEmpty(member.Shape.ValueShapeXmlNamespace))
 			{
 #>
-<#=new string(' ', level * 4)#>						xmlWriter.WriteElementString("<#=member.Shape.ValueMarshallName#>", kvp.Value<#=member.Shape.ValueShape.IsString ? "" : ".ToString()"#>);
+<#=new string(' ', level * 4)#>						xmlWriter.WriteElementString("<#=member.Shape.ValueMarshallName#>", kvp.Value<#=member.Shape.ValueShape.RestXmlMapValueSuffix#>);
 <#=new string(' ', level * 4)#>						xmlWriter.WriteEndElement();
 <#+
 			}
 			else
 			{
 #>
-<#=new string(' ', level * 4)#>						xmlWriter.WriteElementString("<#=member.Shape.ValueMarshallName#>", "<#=member.Shape.ValueShapeXmlNamespace#>", kvp.Value<#=member.Shape.ValueShape.IsString ? "" : ".ToString()"#>);
+<#=new string(' ', level * 4)#>						xmlWriter.WriteElementString("<#=member.Shape.ValueMarshallName#>", "<#=member.Shape.ValueShapeXmlNamespace#>", kvp.Value<#=member.Shape.ValueShape.RestXmlMapValueSuffix#>);
 <#=new string(' ', level * 4)#>						xmlWriter.WriteEndElement();
 <#+
 			}
@@ -900,7 +900,7 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 <#=new string(' ', (level) * 4)#>					foreach (var <#=innerListItemVariable#> in <#=listItemVariable#>)
 <#=new string(' ', (level) * 4)#>					{
 <#=new string(' ', (level) * 4)#>						xmlWriter.WriteStartElement("<#=listMarshallName#>");
-<#=new string(' ', (level) * 4)#>						xmlWriter.WriteValue(<#=innerListItemVariable#>);
+<#=new string(' ', (level) * 4)#>						xmlWriter.WriteValue(<#=innerListItemVariable#><#=innerMember.Shape.ListShape.RestXmlListValueSuffix#>);
 <#=new string(' ', (level) * 4)#>						xmlWriter.WriteEndElement();
 <#+
 		if (innerShape != null && innerShape.Shape.IsList)

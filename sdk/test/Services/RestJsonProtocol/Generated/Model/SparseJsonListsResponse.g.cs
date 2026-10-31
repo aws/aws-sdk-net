@@ -43,7 +43,7 @@ namespace Amazon.RestJsonProtocol.Model
         /// a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public List<int?> SparseShortList { get; set; } = AWSConfigs.InitializeCollections ? new List<int?>() : null;
+        public List<short?> SparseShortList { get; set; } = AWSConfigs.InitializeCollections ? new List<short?>() : null;
 
         /// <summary>
         /// Checks to see if the SparseShortList property is set.

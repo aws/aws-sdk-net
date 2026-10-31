@@ -1,5 +1,6 @@
 AWSSDK.Core.dll
 extensions\CborProtocol\AWSSDK.Extensions.CborProtocol.dll
+extensions\CborProtocol\AWSSDK.Extensions.Numerics.dll
 extensions\CborProtocol\Microsoft.Bcl.AsyncInterfaces.dll
 extensions\CborProtocol\Microsoft.Bcl.HashCode.dll
 extensions\CborProtocol\System.Buffers.dll
@@ -13,6 +14,7 @@ extensions\CborProtocol\System.Threading.Tasks.Extensions.dll
 extensions\CborProtocol\System.Formats.Asn1.dll
 extensions\CborProtocol\System.IO.Hashing.dll
 extensions\CloudFrontSigners\AWSSDK.Extensions.CloudFront.Signers.dll
+extensions\CloudFrontSigners\AWSSDK.Extensions.Numerics.dll
 extensions\CloudFrontSigners\BouncyCastle.Cryptography.dll
 extensions\CloudFrontSigners\Microsoft.Bcl.AsyncInterfaces.dll
 extensions\CloudFrontSigners\System.Buffers.dll
@@ -29,6 +31,7 @@ extensions\CrtIntegration\aws-crt-checksums.dll
 extensions\CrtIntegration\aws-crt-http.dll
 extensions\CrtIntegration\aws-crt.dll
 extensions\CrtIntegration\AWSSDK.Extensions.CrtIntegration.dll
+extensions\CrtIntegration\AWSSDK.Extensions.Numerics.dll
 extensions\CrtIntegration\Microsoft.Bcl.AsyncInterfaces.dll
 extensions\CrtIntegration\Microsoft.CSharp.dll
 extensions\CrtIntegration\System.Buffers.dll
@@ -42,6 +45,7 @@ extensions\CrtIntegration\System.Threading.Tasks.Extensions.dll
 extensions\CrtIntegration\System.Formats.Asn1.dll
 extensions\CrtIntegration\System.IO.Hashing.dll
 extensions\EC2DecryptPassword\AWSSDK.Extensions.EC2.DecryptPassword.dll
+extensions\EC2DecryptPassword\AWSSDK.Extensions.Numerics.dll
 extensions\EC2DecryptPassword\BouncyCastle.Cryptography.dll
 extensions\EC2DecryptPassword\Microsoft.Bcl.AsyncInterfaces.dll
 extensions\EC2DecryptPassword\System.Buffers.dll
@@ -54,6 +58,7 @@ extensions\EC2DecryptPassword\System.Threading.Tasks.Extensions.dll
 extensions\EC2DecryptPassword\System.Formats.Asn1.dll
 extensions\EC2DecryptPassword\System.IO.Hashing.dll
 extensions\LoggingILoggerAdaptor\AWSSDK.Extensions.Logging.ILoggerAdaptor.dll
+extensions\LoggingILoggerAdaptor\AWSSDK.Extensions.Numerics.dll
 extensions\LoggingILoggerAdaptor\Microsoft.Bcl.AsyncInterfaces.dll
 extensions\LoggingILoggerAdaptor\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 extensions\LoggingILoggerAdaptor\Microsoft.Extensions.Logging.Abstractions.dll
@@ -67,6 +72,7 @@ extensions\LoggingILoggerAdaptor\System.Text.Encodings.Web.dll
 extensions\LoggingILoggerAdaptor\System.Text.Json.dll
 extensions\LoggingILoggerAdaptor\System.Threading.Tasks.Extensions.dll
 extensions\LoggingLog4NetAdaptor\AWSSDK.Extensions.Logging.Log4NetAdaptor.dll
+extensions\LoggingLog4NetAdaptor\AWSSDK.Extensions.Numerics.dll
 extensions\LoggingLog4NetAdaptor\log4net.dll
 extensions\LoggingLog4NetAdaptor\Microsoft.Bcl.AsyncInterfaces.dll
 extensions\LoggingLog4NetAdaptor\System.Buffers.dll
@@ -84,6 +90,7 @@ extensions\LoggingLog4NetAdaptor\System.Text.Encodings.Web.dll
 extensions\LoggingLog4NetAdaptor\System.Text.Json.dll
 extensions\LoggingLog4NetAdaptor\System.Threading.Tasks.Extensions.dll
 extensions\NETCoreSetup\AWSSDK.Extensions.NETCore.Setup.dll
+extensions\NETCoreSetup\AWSSDK.Extensions.Numerics.dll
 extensions\NETCoreSetup\Microsoft.Bcl.AsyncInterfaces.dll
 extensions\NETCoreSetup\Microsoft.Extensions.Configuration.Abstractions.dll
 extensions\NETCoreSetup\Microsoft.Extensions.DependencyInjection.Abstractions.dll
@@ -99,6 +106,7 @@ extensions\NETCoreSetup\System.Text.Encodings.Web.dll
 extensions\NETCoreSetup\System.Text.Json.dll
 extensions\NETCoreSetup\System.Threading.Tasks.Extensions.dll
 extensions\Numerics\AWSSDK.Extensions.Numerics.dll
+AWSSDK.Extensions.Numerics.dll
 Microsoft.Bcl.AsyncInterfaces.dll
 System.Buffers.dll
 System.Memory.dll

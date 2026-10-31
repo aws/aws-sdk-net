@@ -73,6 +73,21 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
                 return;
             }
 
+            if (type == typeof(System.Numerics.BigInteger))
+            {
+                Assert.IsTrue(x.Equals(y), $"x is not equal to y. x={x} y={y}");
+                return;
+            }
+
+            if (type == typeof(Amazon.Extensions.Numerics.BigDecimal))
+            {
+                // BigDecimal equality is numeric (2.0 == 2.00), so also compare the text, which carries the scale.
+                var xText = ((Amazon.Extensions.Numerics.BigDecimal)x).ToString(CultureInfo.InvariantCulture);
+                var yText = ((Amazon.Extensions.Numerics.BigDecimal)y).ToString(CultureInfo.InvariantCulture);
+                Assert.IsTrue(x.Equals(y) && xText == yText, $"x is not equal to y. x={xText} y={yText}");
+                return;
+            }
+
             if (type == typeof(DateTime))
             {
                 var xDate = (DateTime)x;

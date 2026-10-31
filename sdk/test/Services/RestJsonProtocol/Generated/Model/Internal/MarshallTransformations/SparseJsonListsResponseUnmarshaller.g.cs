@@ -54,7 +54,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("sparseShortList", targetDepth, ref reader))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<int?, NullableIntUnmarshaller>(NullableIntUnmarshaller.Instance);
+                    var unmarshaller = new JsonListUnmarshaller<short?, NullableShortUnmarshaller>(NullableShortUnmarshaller.Instance);
                     unmarshalledObject.SparseShortList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }

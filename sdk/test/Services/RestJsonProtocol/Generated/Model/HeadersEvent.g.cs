@@ -56,7 +56,7 @@ namespace Amazon.RestJsonProtocol.Model
         /// <summary>
         /// Gets and sets the property ByteHeader.
         /// </summary>
-        public int? ByteHeader { get; set; }
+        public sbyte? ByteHeader { get; set; }
 
         /// <summary>
         /// Checks to see if the ByteHeader property is set.
@@ -86,7 +86,7 @@ namespace Amazon.RestJsonProtocol.Model
         /// <summary>
         /// Gets and sets the property ShortHeader.
         /// </summary>
-        public int? ShortHeader { get; set; }
+        public short? ShortHeader { get; set; }
 
         /// <summary>
         /// Checks to see if the ShortHeader property is set.

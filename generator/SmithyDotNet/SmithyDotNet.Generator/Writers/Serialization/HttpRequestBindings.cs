@@ -37,6 +37,10 @@ public sealed class HttpRequestBindings(GenerationContext context)
             LongShape => $"StringUtils.FromLong({expression}.Value)",
             FloatShape => $"StringUtils.FromFloat({expression}.Value)",
             DoubleShape => $"StringUtils.FromDouble({expression}.Value)",
+            ByteShape => $"StringUtils.FromSByte({expression}.Value)",
+            ShortShape => $"StringUtils.FromShort({expression}.Value)",
+            BigIntegerShape => $"StringUtils.FromBigInteger({expression}.Value)",
+            BigDecimalShape => $"StringUtils.FromBigDecimal({expression}.Value)",
             TimestampShape => HttpBindingConversions.TimestampStringConversion(member.TimestampFormat ?? timestampDefault, expression),
             _ => null,
         };
@@ -60,6 +64,10 @@ public sealed class HttpRequestBindings(GenerationContext context)
             LongShape => "StringUtils.FromLong",
             FloatShape => "StringUtils.FromFloat",
             DoubleShape => "StringUtils.FromDouble",
+            ByteShape => "StringUtils.FromSByte",
+            ShortShape => "StringUtils.FromShort",
+            BigIntegerShape => "StringUtils.FromBigInteger",
+            BigDecimalShape => "StringUtils.FromBigDecimal",
             TimestampShape => HttpBindingConversions.TimestampConverter(element.TimestampFormat ?? QueryLabelTimestampDefault),
             _ => null,
         };
@@ -249,7 +257,12 @@ public sealed class HttpRequestBindings(GenerationContext context)
         {
             throw new GeneratorException($"@httpHeader list of timestamps with @timestampFormat '{format}' is not supported (StringUtils.FromValueTypeList always emits RFC822); member: {member.PropertyName}.");
         }
-        writer.WriteLine($"""request.Headers["{headerName}"] = StringUtils.FromValueTypeList(publicRequest.{member.PropertyName});""");
+        // The numeric types from the specification pass their invariant-culture StringUtils.From* formatter: the
+        // untyped overload uses the current culture's ToString() and would write BigDecimal in exponent form.
+        var formatter = element.Target is ByteShape or ShortShape or BigIntegerShape or BigDecimalShape
+            ? $", {QueryElementConverter(element)}"
+            : "";
+        writer.WriteLine($"""request.Headers["{headerName}"] = StringUtils.FromValueTypeList(publicRequest.{member.PropertyName}{formatter});""");
     }
 
     // https://smithy.io/2.0/spec/http-bindings.html#httplabel-trait

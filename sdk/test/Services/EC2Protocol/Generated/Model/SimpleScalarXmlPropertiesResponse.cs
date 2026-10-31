@@ -34,21 +34,21 @@ namespace Amazon.EC2Protocol.Model
     /// </summary>
     public partial class SimpleScalarXmlPropertiesResponse : AmazonWebServiceResponse
     {
-        private int? _byteValue;
+        private sbyte? _byteValue;
         private double? _doubleValue;
         private string _emptyStringValue;
         private bool? _falseBooleanValue;
         private float? _floatValue;
         private int? _integerValue;
         private long? _longValue;
-        private int? _shortValue;
+        private short? _shortValue;
         private string _stringValue;
         private bool? _trueBooleanValue;
 
         /// <summary>
         /// Gets and sets the property ByteValue.
         /// </summary>
-        public int? ByteValue
+        public sbyte? ByteValue
         {
             get { return this._byteValue; }
             set { this._byteValue = value; }
@@ -153,7 +153,7 @@ namespace Amazon.EC2Protocol.Model
         /// <summary>
         /// Gets and sets the property ShortValue.
         /// </summary>
-        public int? ShortValue
+        public short? ShortValue
         {
             get { return this._shortValue; }
             set { this._shortValue = value; }

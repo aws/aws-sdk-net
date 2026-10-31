@@ -61,7 +61,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
 
             if (publicRequest.IsSetHeaderByte())
             {
-                request.Headers["X-Byte"] = StringUtils.FromInt(publicRequest.HeaderByte.Value);
+                request.Headers["X-Byte"] = StringUtils.FromSByte(publicRequest.HeaderByte.Value);
             }
 
             if (publicRequest.IsSetHeaderDouble())
@@ -106,7 +106,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
 
             if (publicRequest.IsSetHeaderShort())
             {
-                request.Headers["X-Short"] = StringUtils.FromInt(publicRequest.HeaderShort.Value);
+                request.Headers["X-Short"] = StringUtils.FromShort(publicRequest.HeaderShort.Value);
             }
 
             if (publicRequest.IsSetHeaderString())

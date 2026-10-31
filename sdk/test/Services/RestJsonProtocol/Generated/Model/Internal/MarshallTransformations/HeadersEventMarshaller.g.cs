@@ -62,7 +62,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             if (requestObject.IsSetByteHeader())
             {
                 var header = new Amazon.Runtime.EventStreams.EventStreamHeader("byteHeader");
-                header.SetInt32(requestObject.ByteHeader.Value);
+                header.SetSByte(requestObject.ByteHeader.Value);
                 context.Request.EventHeaders.Add(header);
             }
 
@@ -83,7 +83,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             if (requestObject.IsSetShortHeader())
             {
                 var header = new Amazon.Runtime.EventStreams.EventStreamHeader("shortHeader");
-                header.SetInt32(requestObject.ShortHeader.Value);
+                header.SetInt16(requestObject.ShortHeader.Value);
                 context.Request.EventHeaders.Add(header);
             }
 

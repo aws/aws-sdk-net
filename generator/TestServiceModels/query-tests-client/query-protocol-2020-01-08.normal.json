@@ -948,10 +948,10 @@
                     "shape": "Boolean"
                 },
                 "byteValue": {
-                    "shape": "Integer"
+                    "shape": "Byte"
                 },
                 "shortValue": {
-                    "shape": "Integer"
+                    "shape": "Short"
                 },
                 "integerValue": {
                     "shape": "Integer"
@@ -1249,6 +1249,12 @@
                     "shape": "HttpDate"
                 }
             }
+        },
+        "Byte": {
+            "type": "byte"
+        },
+        "Short": {
+            "type": "short"
         }
     },
     "documentation": "<p>A query service that sends query requests and XML responses.</p>"
