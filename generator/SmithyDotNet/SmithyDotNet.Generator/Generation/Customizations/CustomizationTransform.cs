@@ -36,6 +36,11 @@ public static class CustomizationTransform
             }
         }
 
+        if (customizations.ShapeModifiers.Remove("*", out var global))
+        {
+            ExpandGlobal(model, global, customizations);
+        }
+
         foreach (var (shapeName, modifier) in customizations.ShapeModifiers)
         {
             var shape = FindSingleShape(model, shapeName, $"shapeModifiers['{shapeName}']");
@@ -243,7 +248,7 @@ public static class CustomizationTransform
 
     // The response keeps one property, wrappedResultMember, typed as the modeled output: a new structure with that
     // single member becomes the operation's output, and the modeled output turns into an ordinary class.
-    // JsonResponseUnmarshallerWriter reads that member from the whole body, and PaginationResolver resolves output
+    // The JSON and CBOR response unmarshallers read that member from the whole body, and PaginationResolver resolves output
     // paths through it.
     private static void WrapOutput(SmithyModel model, OperationShape operation, string operationName, OperationModifier modifier)
     {
@@ -418,6 +423,47 @@ public static class CustomizationTransform
         && !member.IsHttpLabel() && !member.IsHostLabel() && !member.IsIdempotencyToken()
         && !member.IsEventHeader() && !member.IsEventPayload()
         && !swappedType.StartsWith("List<", StringComparison.Ordinal) && !swappedType.StartsWith("Dictionary<", StringComparison.Ordinal);
+
+    // "*" modifies a member of that name in every structure, unless the structure's own entry modifies it, so it
+    // becomes one entry per structure.
+    private static void ExpandGlobal(SmithyModel model, ShapeModifier global, CustomizationsModel customizations)
+    {
+        if (global.Exclude.Count > 0 || global.DeprecatedMessage is not null)
+        {
+            throw new GeneratorException("shapeModifiers['*'] only supports modify.");
+        }
+
+        foreach (var (memberName, property) in global.Modify.SelectMany(entry => entry))
+        {
+            var found = false;
+            foreach (var structure in model.Shapes.Values.OfType<StructureShape>())
+            {
+                if (!structure.Members.ContainsKey(memberName))
+                {
+                    continue;
+                }
+
+                found = true;
+                if (!customizations.ShapeModifiers.TryGetValue(structure.Id.Name, out var modifier))
+                {
+                    modifier = new ShapeModifier();
+                    customizations.ShapeModifiers[structure.Id.Name] = modifier;
+                }
+
+                if (!modifier.Modify.Any(entry => entry.ContainsKey(memberName)))
+                {
+                    var entry = new Dictionary<string, PropertyModifier>();
+                    entry[memberName] = property;
+                    modifier.Modify.Add(entry);
+                }
+            }
+
+            if (!found)
+            {
+                throw new GeneratorException($"shapeModifiers['*'] modifies member '{memberName}', which no structure has.");
+            }
+        }
+    }
 
     private static void ApplyMember(StructureShape structure, string memberName, PropertyModifier property, string shapeName, CustomizationsModel customizations)
     {

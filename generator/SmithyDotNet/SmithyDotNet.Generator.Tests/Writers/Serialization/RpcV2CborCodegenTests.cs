@@ -53,6 +53,19 @@ public class RpcV2CborCodegenTests
         Assert.DoesNotContain("CborWriterPool", unit);
     }
 
+    [Fact]
+    public void WrappedOutputIsReadFromTheWholeBody()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.OperationModifiers["Put"] = new OperationModifier { UseWrappingResult = true, WrappedResultShape = "PutResponse", WrappedResultMember = "Result" };
+        var context = TestModels.Context(TestModels.Load("Codegen/rpcv2cbor-model.json"), customizations);
+
+        var output = new CborResponseUnmarshallerWriter(context, ModelFileName).Write(context.Operations.Single(o => o.Name == "Put"), TestContext.Current.CancellationToken);
+
+        Assert.Contains("unmarshalledObject.Result = PutResponseUnmarshaller.Instance.Unmarshall(context);", output);
+        Assert.DoesNotContain("reader.ReadStartMap();", output);
+    }
+
     // Logs-style swap: a modeled long exposed as DateTime?, epoch milliseconds on the wire.
     [Fact]
     public void DataTypeSwap_EpochMillis_WritesInt64_AndReadsWithTheCborUnmarshaller()

@@ -182,6 +182,44 @@ public class CustomizationTransformTests
         Assert.Contains("which the shape already has", ex.Message);
     }
 
+    // The clash with Bucket's own arn rename shows "*" reached Bucket.name.
+    [Fact]
+    public void ShapeModifiers_GlobalRenameClashingInAStructure_Throws()
+    {
+        var customizations = TestCustomizations.Rename("*", "name", "Same");
+        customizations.ShapeModifiers["Bucket"] = TestCustomizations.RenameMember("arn", "Same");
+
+        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
+        Assert.Contains("shapeModifiers['Bucket'] renames", ex.Message);
+    }
+
+    [Fact]
+    public void ShapeModifiers_GlobalRename_YieldsToTheStructuresOwnEntry()
+    {
+        var customizations = TestCustomizations.Rename("*", "action", "Verb");
+        customizations.ShapeModifiers["PermissionOutput"] = TestCustomizations.RenameMember("action", "Act");
+
+        ApplyAndValidate(customizations);
+
+        Assert.Equal("Verb", customizations.EmittedName("PermissionInput", "action"));
+        Assert.Equal("Act", customizations.EmittedName("PermissionOutput", "action"));
+    }
+
+    [Theory]
+    [InlineData("name", true, "shapeModifiers['*'] only supports modify.")]
+    [InlineData("missing", false, "shapeModifiers['*'] modifies member 'missing', which no structure has.")]
+    public void ShapeModifiers_GlobalKey_Throws(string memberName, bool exclude, string expectedMessage)
+    {
+        var customizations = TestCustomizations.Rename("*", memberName, "Renamed");
+        if (exclude)
+        {
+            customizations.ShapeModifiers["*"].Exclude.Add(memberName);
+        }
+
+        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
+        Assert.Contains(expectedMessage, ex.Message);
+    }
+
     [Fact]
     public void ShapeModifiers_Exclude_RemovesMember()
     {

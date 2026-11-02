@@ -11,6 +11,7 @@ using SmithyDotNet.Generator.Generation.Protocols;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
+using SmithyDotNet.Generator.Writers.Shapes;
 
 namespace SmithyDotNet.Generator.Generation;
 
@@ -285,12 +286,16 @@ public class GenerationContext
         XmlNamespace = index.Service.GetXmlNamespace();
         Protocol = ProtocolResolver.Resolve(index.Service, SdkId);
         UsesHttpBindings = Protocol is AWSProtocol.RestJson1 or AWSProtocol.RestXml;
-        // The wrapped output is read as the whole response body, which only awsJson's response is.
+
+        // The wrapped output is read as the whole response body, which only awsJson's and rpcv2Cbor's responses are.
         // TODO: ec2 wraps outputs too; support it in the XML response unmarshaller when ec2Query lands.
-        if (Protocol is not (AWSProtocol.AwsJson1_0 or AWSProtocol.AwsJson1_1)
-            && Customizations.OperationModifiers.FirstOrDefault(entry => entry.Value.UseWrappingResult).Key is { } wrapped)
+        var supportsWrappedOutput = Protocol is AWSProtocol.AwsJson1_0 or AWSProtocol.AwsJson1_1 or AWSProtocol.RpcV2Cbor;
+        foreach (var (operationName, modifier) in Customizations.OperationModifiers)
         {
-            throw new GeneratorException($"operationModifiers['{wrapped}'] wraps the output, which is only supported for awsJson.");
+            if (modifier.UseWrappingResult && !supportsWrappedOutput)
+            {
+                throw new GeneratorException($"operationModifiers['{operationName}'] wraps the output, which is only supported for awsJson and rpcv2Cbor.");
+            }
         }
         // allowEmptyResult only drives the restXml response unmarshaller's empty-body early-return; on any
         // other protocol it would generate silently without the guard, where C2J throws.
@@ -329,6 +334,19 @@ public class GenerationContext
             else if (!structure.IsInput() && !structure.IsOutput())
             {
                 structures[shapeId] = structure;
+            }
+        }
+
+        // monitoring models LimitExceededFault next to LimitExceededException, and ResourceNotFound next to
+        // ResourceNotFoundException. Each pair maps to one class; C2J ships the one already named like the class, and
+        // the other's wire code still dispatches to it.
+        var errorNames = errors.Keys.Select(errorId => errorId.Name).ToHashSet();
+        foreach (var errorId in errors.Keys.ToList())
+        {
+            var exceptionName = ExceptionWriter.ToExceptionName(ToDotNetName(errorId));
+            if (exceptionName != errorId.Name && errorNames.Contains(exceptionName))
+            {
+                errors.Remove(errorId);
             }
         }
 

@@ -1,0 +1,26 @@
+{
+  "services": [
+    {
+      "serviceName": "CloudWatch",
+      "type": "patch",
+      "changeLogMessages": [
+        "CloudWatch is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "LexRuntimeV2",
+      "type": "patch",
+      "changeLogMessages": [
+        "LexRuntimeV2 is now generated from its Smithy model.",
+        "Marked PutSessionRequest.SessionStateValue as required ([AWSProperty(Required = true)]), matching the service model. The previous generator omitted it because of a bug; the service already rejected requests without it."
+      ]
+    },
+    {
+      "serviceName": "SimpleWorkflow",
+      "type": "patch",
+      "changeLogMessages": [
+        "SimpleWorkflow is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    }
+  ]
+}

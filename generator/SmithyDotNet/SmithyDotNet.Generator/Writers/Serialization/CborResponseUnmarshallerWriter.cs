@@ -30,7 +30,7 @@ public sealed class CborResponseUnmarshallerWriter(GenerationContext context, st
             writer.WriteLine("/// </summary>");
             writer.OpenBlock($"public partial class {unmarshallerClassName} : CborResponseUnmarshaller", () =>
             {
-                WriteUnmarshallMethod(writer, className, operation.Name, members);
+                WriteUnmarshallMethod(writer, className, operation.Name, members, context.Customizations.WrapsOutput(operation.Name));
                 if (hasEventStream && members.Count > 1)
                 {
                     writer.WriteLine("");
@@ -62,7 +62,7 @@ public sealed class CborResponseUnmarshallerWriter(GenerationContext context, st
     }
 
     // A response with no members (Unit output included) reads nothing.
-    private static void WriteUnmarshallMethod(CodeWriter writer, string className, string operationName, List<Member> members)
+    private static void WriteUnmarshallMethod(CodeWriter writer, string className, string operationName, List<Member> members, bool wrapsOutput)
     {
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Unmarshaller the response from the service to the response class.");
@@ -77,6 +77,12 @@ public sealed class CborResponseUnmarshallerWriter(GenerationContext context, st
                 {
                     writer.WriteLine($"unmarshalledObject.{eventStream.PropertyName}.InitialResponseReceived += (sender, args) => UnmarshallInitialResponse(unmarshalledObject, args.EventStreamEvent);");
                 }
+            }
+            else if (wrapsOutput)
+            {
+                // A wrapped output's single member is the whole body.
+                var wrapped = members.Single();
+                writer.WriteLine($"unmarshalledObject.{wrapped.PropertyName} = {wrapped.Type.UnmarshallerName}.Instance.Unmarshall(context);");
             }
             else if (members.Count > 0)
             {
