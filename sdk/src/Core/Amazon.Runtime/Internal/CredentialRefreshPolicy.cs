@@ -72,8 +72,7 @@ namespace Amazon.Runtime.Internal
                 "InvalidIdentityToken",
                 "MalformedPolicyDocument",
                 "PackedPolicyTooLarge",
-                "RegionDisabled",
-                // The modeled exception name, in case a response reports the code that way.
+                // The wire code keeps the suffix (the awsQueryError code of RegionDisabledException).
                 "RegionDisabledException",
                 // SSO.
                 "UnauthorizedException",

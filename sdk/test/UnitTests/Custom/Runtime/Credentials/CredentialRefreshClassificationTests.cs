@@ -89,7 +89,6 @@ namespace AWSSDK.UnitTests
         [DataRow("InvalidIdentityToken")]
         [DataRow("MalformedPolicyDocument")]
         [DataRow("PackedPolicyTooLarge")]
-        [DataRow("RegionDisabled")]
         [DataRow("RegionDisabledException")]
         public void StsNonRecoverableCode_WrappedByStsClient_IsNonRecoverable(string errorCode)
         {
@@ -620,34 +619,20 @@ namespace AWSSDK.UnitTests
             return new SSOTokenManager(oidc.Object, new SSOTokenFileCache(CryptoUtilFactory.CryptoInstance, fileSystem, fileSystem));
         }
 
-        // An expired cached token whose refresh fails for a reason that a later attempt can resolve (SSO OIDC
-        // unavailable): recoverable, so the credential provider keeps its cached credentials and applies the refresh
-        // backoff. Calls during the 30-second refresh cooldown raise the same failure, with the same cause.
+        // An expired cached token whose refresh fails, for any reason, is an expired SSO token that could not be
+        // refreshed, which the credential refresh specification makes non-recoverable: an SSO OIDC rejection (the
+        // refresh token or client registration is invalid, expired or revoked) or a transient failure (the service
+        // unavailable). The OIDC error is the inner exception, also during the 30-second refresh cooldown.
         [TestMethod]
-        public async Task SsoTokenManager_ExpiredTokenWhoseRefreshFailsTransiently_ThrowsRecoverable_Async()
-        {
-            var refreshFailure = new AmazonServiceException("The SSO OIDC service is unavailable.");
-            var manager = ExpiredRefreshableSsoTokenManager(refreshFailure);
-
-            var ex = await Assert.ThrowsExactlyAsync<AmazonClientException>(() => manager.GetTokenAsync(SsoOptions()));
-            Assert.AreEqual("SSO Token has expired and failed to refresh", ex.Message);
-            Assert.AreSame(refreshFailure, ex.InnerException);
-
-            var duringCooldown = await Assert.ThrowsExactlyAsync<AmazonClientException>(() => manager.GetTokenAsync(SsoOptions()));
-            Assert.AreEqual("SSO Token has expired and failed to refresh", duringCooldown.Message);
-            Assert.AreSame(refreshFailure, duringCooldown.InnerException, "calls during the cooldown keep the cause");
-        }
-
-        // An expired cached token whose refresh SSO OIDC rejects (the refresh token or client registration is invalid,
-        // expired or revoked): non-recoverable, with the OIDC error as the inner exception, also during the cooldown.
-        [TestMethod]
+        [DataRow(null)]
+        [DataRow("InternalServerException")]
         [DataRow("InvalidGrantException")]
         [DataRow("ExpiredTokenException")]
         [DataRow("InvalidClientException")]
         [DataRow("UnauthorizedClientException")]
         [DataRow("AccessDeniedException")]
         [DataRow("InvalidRequestException")]
-        public async Task SsoTokenManager_ExpiredTokenWhoseRefreshIsRejected_ThrowsNonRecoverable_Async(string errorCode)
+        public async Task SsoTokenManager_ExpiredTokenWhoseRefreshFails_ThrowsNonRecoverable_Async(string errorCode)
         {
             var refreshFailure = new AmazonServiceException("The refresh was rejected.") { ErrorCode = errorCode };
             var manager = ExpiredRefreshableSsoTokenManager(refreshFailure);

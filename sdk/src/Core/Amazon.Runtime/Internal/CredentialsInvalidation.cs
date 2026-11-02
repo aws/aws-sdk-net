@@ -77,7 +77,8 @@ namespace Amazon.Runtime.Internal
 
         /// <summary>
         /// Returns <c>true</c> when <paramref name="exception"/> is a service exception with an invalid credential
-        /// error code (<c>ExpiredToken</c>/<c>ExpiredTokenException</c>) and the request was signed with refreshing
+        /// error code (<c>ExpiredToken</c>/<c>ExpiredTokenException</c>) that the operation does not model (see
+        /// <see cref="IsModeledError"/>), and the request was signed with refreshing
         /// credentials that support invalidation (see <see cref="RefreshingAWSCredentials.SupportsInvalidationOnAuthFailure"/>).
         /// Such an error is retryable: the pipeline invalidates the rejected credentials and the retry is re-signed
         /// with credentials resolved again. For any other identity the error is left to the retry policy.
@@ -85,6 +86,20 @@ namespace Amazon.Runtime.Internal
         internal static bool IsInvalidCredentialError(IExecutionContext executionContext, Exception exception)
         {
             return TryGetRejectedCredentials(executionContext, exception, out _, out _);
+        }
+
+        /// <summary>
+        /// Returns <c>true</c> when the operation that was called models the error. An operation's response
+        /// unmarshaller creates a modeled exception class (which derives from the service's exception class) only for
+        /// the errors that operation models, and creates the service's exception class, which derives directly from
+        /// <see cref="AmazonServiceException"/>, for any other error. A few operations, such as STS <c>AssumeRole</c>,
+        /// model <c>ExpiredTokenException</c> for an expired token in the request input, which refreshing the
+        /// credentials cannot resolve, so a modeled error neither invalidates the credentials nor is retried for them.
+        /// </summary>
+        internal static bool IsModeledError(AmazonServiceException exception)
+        {
+            var type = exception.GetType();
+            return type != typeof(AmazonServiceException) && type.BaseType != typeof(AmazonServiceException);
         }
 
         private static bool TryGetRejectedCredentials(IExecutionContext executionContext, Exception exception,
@@ -98,6 +113,8 @@ namespace Amazon.Runtime.Internal
             if (!(exception is AmazonServiceException ase))
                 return false;
             if (string.IsNullOrEmpty(ase.ErrorCode) || !InvalidatingErrorCodes.Contains(ase.ErrorCode))
+                return false;
+            if (IsModeledError(ase))
                 return false;
 
             var requestContext = executionContext.RequestContext;

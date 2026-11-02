@@ -122,29 +122,13 @@ namespace Amazon.Runtime.Credentials.Internal
             }
         }
 
-        // SSO OIDC CreateToken errors that retrying cannot resolve: the refresh token or the client registration is
-        // invalid, expired or revoked, or the client is not allowed to refresh.
-        private static readonly HashSet<string> NonRecoverableRefreshErrorCodes = new HashSet<string>(StringComparer.Ordinal)
+        // The error for an expired token whose refresh failed, for any reason. As the credential refresh specification
+        // requires, it is non-recoverable: an expired SSO token that could not be refreshed. The error is cached only
+        // briefly, and the refresh is attempted again once the 30-second cooldown ends, so a transient failure (the
+        // service unreachable, throttling, a server error) still recovers.
+        private static AmazonNonRecoverableCredentialsException ExpiredTokenRefreshFailure(Exception failure)
         {
-            "InvalidGrantException",
-            "ExpiredTokenException",
-            "InvalidClientException",
-            "UnauthorizedClientException",
-            "AccessDeniedException",
-            "InvalidRequestException",
-        };
-
-        // The error for an expired token whose refresh failed. It is non-recoverable only when SSO OIDC rejected the
-        // refresh; any other failure (the service unreachable, throttling, a server error) can succeed on a later
-        // attempt, which the cooldown allows after 30 seconds.
-        private static AmazonClientException ExpiredTokenRefreshFailure(Exception failure)
-        {
-            if (failure is AmazonServiceException serviceException && serviceException.ErrorCode != null &&
-                NonRecoverableRefreshErrorCodes.Contains(serviceException.ErrorCode))
-            {
-                return new AmazonNonRecoverableCredentialsException("SSO Token has expired and failed to refresh. Please reauthenticate.", failure);
-            }
-            return new AmazonClientException("SSO Token has expired and failed to refresh", failure);
+            return new AmazonNonRecoverableCredentialsException("SSO Token has expired and failed to refresh. Please reauthenticate.", failure);
         }
 
         private class CacheState

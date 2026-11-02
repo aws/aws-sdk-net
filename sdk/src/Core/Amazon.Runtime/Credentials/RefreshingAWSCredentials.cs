@@ -1492,7 +1492,7 @@ namespace Amazon.Runtime
         /// <see cref="AmazonNonRecoverableCredentialsException"/>, or for an <see cref="AmazonServiceException"/> with
         /// one of these error codes: the STS codes <c>AccessDenied</c>, <c>IDPRejectedClaim</c>,
         /// <c>InvalidIdentityToken</c>, <c>MalformedPolicyDocument</c>, <c>PackedPolicyTooLarge</c> and
-        /// <c>RegionDisabled</c> (or <c>RegionDisabledException</c>); the SSO <c>UnauthorizedException</c>; and the
+        /// <c>RegionDisabledException</c>; the SSO <c>UnauthorizedException</c>; and the
         /// Sign-In errors <c>TOKEN_EXPIRED</c>, <c>USER_CREDENTIALS_CHANGED</c> and <c>INSUFFICIENT_PERMISSIONS</c>. The
         /// first service exception in the chain that has an error code decides. Network errors, throttling, and other
         /// service errors are recoverable.

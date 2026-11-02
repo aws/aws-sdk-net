@@ -34,7 +34,7 @@ namespace Amazon.Runtime
     /// recoverable and raise <see cref="AmazonClientException"/>.</description></item>
     /// <item><description><see cref="AssumeRoleAWSCredentials"/> and <see cref="AssumeRoleWithWebIdentityCredentials"/>:
     /// STS rejects the request with <c>AccessDenied</c>, <c>IDPRejectedClaim</c>, <c>InvalidIdentityToken</c>,
-    /// <c>MalformedPolicyDocument</c>, <c>PackedPolicyTooLarge</c> or <c>RegionDisabled</c>. The exception has the
+    /// <c>MalformedPolicyDocument</c>, <c>PackedPolicyTooLarge</c> or <c>RegionDisabledException</c>. The exception has the
     /// STS client's message ("Error calling AssumeRole for role ...") and the STS service exception as its
     /// <see cref="Exception.InnerException"/>, as the <see cref="AmazonClientException"/> raised by earlier versions
     /// of the SDK did.</description></item>

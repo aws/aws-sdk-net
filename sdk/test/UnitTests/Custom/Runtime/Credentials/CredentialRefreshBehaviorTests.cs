@@ -299,7 +299,7 @@ namespace AWSSDK.UnitTests
         #region Refresh backoff and non-recoverable error cache durations
 
         // The refresh backoff is uniformly random between 1 minute and half the remaining lifetime of the cached
-        // credentials, with that upper bound kept between 90 seconds and 10 minutes (the SEP's RefreshBackoff table).
+        // credentials, with that upper bound kept between 90 seconds and 10 minutes (the specification's RefreshBackoff table).
         [TestMethod]
         [DataRow(3600, 600, DisplayName = "1 hour left: 1 to 10 minutes")]
         [DataRow(1200, 600, DisplayName = "20 minutes left: 1 to 10 minutes")]
@@ -729,9 +729,9 @@ namespace AWSSDK.UnitTests
             // The bare modeled exception name is not non-recoverable on its own.
             Assert.IsFalse(set.Contains("AccessDeniedException"));
 
-            // STS RegionDisabled, keyed by wire code; the modeled exception name is kept too.
-            Assert.IsTrue(set.Contains("RegionDisabled"));
+            // STS RegionDisabledException, keyed by its wire code, which keeps the suffix.
             Assert.IsTrue(set.Contains("RegionDisabledException"));
+            Assert.IsFalse(set.Contains("RegionDisabled"));
 
             // STS AccessDenied wire code stays non-recoverable.
             Assert.IsTrue(set.Contains("AccessDenied"));
@@ -761,8 +761,8 @@ namespace AWSSDK.UnitTests
         public void Classifier_RegionDisabled_NonRecoverable()
         {
             var creds = NewCreds(Lifetime60, TimeSpan.FromMinutes(15));
-            var ex = new AmazonServiceException("region disabled", ErrorType.Sender, "RegionDisabled", "req", HttpStatusCode.Forbidden);
-            Assert.IsTrue(creds.IsNonRecoverableErrorPublic(ex), "RegionDisabled must be non-recoverable");
+            var ex = new AmazonServiceException("region disabled", ErrorType.Sender, "RegionDisabledException", "req", HttpStatusCode.Forbidden);
+            Assert.IsTrue(creds.IsNonRecoverableErrorPublic(ex), "RegionDisabledException must be non-recoverable");
         }
 
         [TestMethod]
@@ -1477,7 +1477,7 @@ namespace AWSSDK.UnitTests
         }
 
         // A non-recoverable failure of a proactive refresh arms no backoff and is surfaced by the next on-demand refresh,
-        // where a caller is available (the SEP's Proactive Refresh rules). While the cached credentials are still Valid
+        // where a caller is available (the specification's Proactive Refresh rules). While the cached credentials are still Valid
         // no on-demand refresh runs, so callers keep getting them; in the advisory window the call refreshes while it
         // waits and raises the error if it recurs.
         [TestMethod]

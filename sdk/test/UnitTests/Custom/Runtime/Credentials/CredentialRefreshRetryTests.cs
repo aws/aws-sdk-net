@@ -98,32 +98,22 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(control.Capacity.AvailableCapacity, scenario.Capacity.AvailableCapacity);
         }
 
-        // RetryPolicy.Retry has a separate branch for the newer retry behavior (RetryPolicy.UseNewRetries2026); the
-        // invalid credential retry must work there too.
+        // The invalid credential retry must also work with the Standard retry behavior's capacity accounting.
         [TestMethod]
         [DataRow(false)]
         [DataRow(true)]
         public async Task RejectedOnce_NewRetryBehavior_RetriedOnceWithRefreshedCredentials(bool useAsync)
         {
-            var original = RetryPolicy.UseNewRetries2026;
-            RetryPolicy.UseNewRetries2026 = true;
-            try
-            {
-                var creds = new RetryTestCredentials(new TestClock());
-                var scenario = BuildScenario(creds, attempt => attempt == 1 ? Rejection("ExpiredToken") : null, PolicyKind.Standard);
+            var creds = new RetryTestCredentials(new TestClock());
+            var scenario = BuildScenario(creds, attempt => attempt == 1 ? Rejection("ExpiredToken") : null, PolicyKind.Standard);
 
-                var thrown = await InvokeAsync(scenario, useAsync);
+            var thrown = await InvokeAsync(scenario, useAsync);
 
-                Assert.IsNull(thrown, "the retry signed with refreshed credentials should succeed");
-                Assert.AreEqual(2, scenario.Transport.Attempts, "exactly one retry");
-                CollectionAssert.AreEqual(new[] { "AKIA_RETRY_1", "AKIA_RETRY_2" }, scenario.Transport.SentAccessKeys,
-                    "the retry must be signed with the credentials obtained after invalidation");
-                Assert.AreEqual(2, creds.GenerateCount);
-            }
-            finally
-            {
-                RetryPolicy.UseNewRetries2026 = original;
-            }
+            Assert.IsNull(thrown, "the retry signed with refreshed credentials should succeed");
+            Assert.AreEqual(2, scenario.Transport.Attempts, "exactly one retry");
+            CollectionAssert.AreEqual(new[] { "AKIA_RETRY_1", "AKIA_RETRY_2" }, scenario.Transport.SentAccessKeys,
+                "the retry must be signed with the credentials obtained after invalidation");
+            Assert.AreEqual(2, creds.GenerateCount);
         }
 
         // ExpiredTokenException is an invalid credential error whatever the HTTP status code it comes with, such as 400
@@ -148,6 +138,26 @@ namespace AWSSDK.UnitTests
             CollectionAssert.AreEqual(new[] { "AKIA_RETRY_1", "AKIA_RETRY_2" }, scenario.Signer.SignedAccessKeys,
                 "the retry must be re-signed");
             Assert.AreEqual(2, creds.GenerateCount);
+        }
+
+        // An ExpiredTokenException that the operation models (here STS AssumeRole's, for an expired token in the request
+        // input) does not invalidate the credentials, and the request is not retried for them: refreshing the
+        // credentials cannot resolve it.
+        [TestMethod]
+        [DataRow(false)]
+        [DataRow(true)]
+        public async Task ModeledExpiredTokenException_NotInvalidatedAndNotRetried(bool useAsync)
+        {
+            var creds = new RetryTestCredentials(new TestClock());
+            var initial = creds.GetCredentials();
+            var scenario = BuildScenario(creds, attempt => ModeledStsExpiredTokenException());
+
+            var thrown = await InvokeAsync(scenario, useAsync);
+
+            Assert.AreEqual(1, scenario.Transport.Attempts, "a modeled error is not retried for the credentials");
+            Assert.AreSame(scenario.Transport.LastThrown, thrown);
+            Assert.AreSame(initial, creds.GetCredentials(), "a modeled error must not invalidate the credentials");
+            Assert.AreEqual(1, creds.GenerateCount);
         }
 
         // InvalidToken is returned for tokens other than the signing credentials, such as Step Functions task tokens, so
@@ -408,6 +418,14 @@ namespace AWSSDK.UnitTests
             Assert.IsFalse(Classify(inScope, used, ServerError()));
             Assert.IsFalse(Classify(inScope, used, new AmazonClientException("ExpiredToken")));
 
+            // The exceptions the response unmarshallers create. An error the operation does not model comes back as the
+            // service's exception class, which derives directly from AmazonServiceException, and is an invalid
+            // credential error; an error the operation models comes back as its modeled class and is not.
+            Assert.IsTrue(Classify(inScope, used, new Amazon.S3.AmazonS3Exception("expired", ErrorType.Sender, "ExpiredToken", "req", HttpStatusCode.BadRequest)));
+            Assert.IsTrue(Classify(inScope, used, new Amazon.DynamoDBv2.AmazonDynamoDBException("expired", ErrorType.Sender, "ExpiredTokenException", "req", HttpStatusCode.BadRequest)));
+            Assert.IsTrue(Classify(inScope, used, new Amazon.SecurityToken.AmazonSecurityTokenServiceException("expired", ErrorType.Sender, "ExpiredToken", "req", HttpStatusCode.Forbidden)));
+            Assert.IsFalse(Classify(inScope, used, ModeledStsExpiredTokenException()));
+
             // The signing credentials must be known, and the identity must support invalidation.
             Assert.IsFalse(Classify(inScope, null, Rejection("ExpiredToken")));
             Assert.IsFalse(Classify(outOfScope, outOfScope.GetCredentials(), Rejection("ExpiredToken")));
@@ -513,6 +531,11 @@ namespace AWSSDK.UnitTests
 
         private static AmazonServiceException Rejection(string errorCode, HttpStatusCode statusCode = HttpStatusCode.BadRequest) =>
             new AmazonServiceException(errorCode + " rejection", ErrorType.Sender, errorCode, "request-id", statusCode);
+
+        // STS AssumeRole models ExpiredTokenException for an expired token in its request input.
+        private static AmazonServiceException ModeledStsExpiredTokenException() =>
+            new Amazon.SecurityToken.Model.ExpiredTokenException("The web identity token that was passed is expired.",
+                ErrorType.Sender, "ExpiredTokenException", "request-id", HttpStatusCode.BadRequest);
 
         private static AmazonServiceException ServerError() =>
             new AmazonServiceException("Internal Server Error", ErrorType.Receiver, "InternalError", "request-id", HttpStatusCode.InternalServerError);
