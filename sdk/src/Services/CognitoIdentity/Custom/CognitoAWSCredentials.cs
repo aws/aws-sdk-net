@@ -350,7 +350,7 @@ namespace Amazon.CognitoIdentity
                     IdentityPoolId = IdentityPoolId,
                     Logins = Logins
                 };
-#if BCL
+#if NETFRAMEWORK
                 var response = cib.GetId(getIdRequest);
 #else
                 var response = Amazon.Runtime.Internal.Util.AsyncHelpers.RunSync<GetIdResponse>(() => cib.GetIdAsync(getIdRequest));
@@ -773,5 +773,104 @@ namespace Amazon.CognitoIdentity
         }
 
         #endregion
+
+        private Amazon.SecurityToken.Model.Credentials GetStsCredentials(AssumeRoleWithWebIdentityRequest assumeRequest)
+        {
+#if NETFRAMEWORK
+            var assumeResult = sts.AssumeRoleWithWebIdentity(assumeRequest);
+#else
+            var assumeResult = Amazon.Runtime.Internal.Util.AsyncHelpers.RunSync<AssumeRoleWithWebIdentityResponse>(() => sts.AssumeRoleWithWebIdentityAsync(assumeRequest));
+#endif
+            var credentials = assumeResult.Credentials;
+            return credentials;
+        }
+
+        private GetCredentialsForIdentityResponse GetCredentialsForIdentity(GetCredentialsForIdentityRequest getCredentialsRequest)
+        {
+#if NETFRAMEWORK
+            var result = cib.GetCredentialsForIdentity(getCredentialsRequest);
+#else
+            var result = Amazon.Runtime.Internal.Util.AsyncHelpers.RunSync<GetCredentialsForIdentityResponse>(() => cib.GetCredentialsForIdentityAsync(getCredentialsRequest));
+#endif
+            return result;
+        }
+
+        private GetOpenIdTokenResponse GetOpenId(GetOpenIdTokenRequest getTokenRequest)
+        {
+#if NETFRAMEWORK
+            var getTokenResult = cib.GetOpenIdToken(getTokenRequest);
+#else
+            var getTokenResult = Amazon.Runtime.Internal.Util.AsyncHelpers.RunSync<GetOpenIdTokenResponse>(() => cib.GetOpenIdTokenAsync(getTokenRequest));
+#endif
+            return getTokenResult;
+        }
+
+        /// <summary>
+        /// Gets the previously cached the identity id retrieved from Cognito.
+        /// <para>
+        /// For the Windows Phone and Windows Store version of the SDK the identity id is stored in the
+        /// Windows.Storage.ApplicationData.Current.LocalSettings or
+        /// Windows.Storage.ApplicationData.Current.RoamingSettings depending on the IdentityIdCacheMode
+        /// property. By default IdentityIdCacheMode will be set LocalSettings.
+        /// </para>
+        /// <para>
+        /// For the .NET Framework versions of the SDK the identity id is not cached. To support caching
+        /// the CacheIdentityId, GetCachedIdentityId and ClearIdentityCache methods need to be overridden.
+        /// </para>
+        /// </summary>
+        /// <returns>The previously cached identity id</returns>
+        public virtual string GetCachedIdentityId()
+        {
+            // override this method to support caching
+            return null;
+        }
+
+        /// <summary>
+        /// Caches the identity id retrieved from Cognito.
+        /// <para>
+        /// For the Windows Phone and Windows Store version of the SDK the identity id is stored in the
+        /// Windows.Storage.ApplicationData.Current.LocalSettings or
+        /// Windows.Storage.ApplicationData.Current.RoamingSettings depending on the IdentityIdCacheMode
+        /// property.
+        /// </para>
+        /// <para>
+        /// For the .NET Framework versions of the SDK the identity id is not cached. To support caching
+        /// the CacheIdentityId, GetCachedIdentityId and ClearIdentityCache methods need to be overridden.
+        /// </para>
+        /// </summary>
+        /// <param name="identityId">The Cognito identity id to cache</param>
+        public virtual void CacheIdentityId(string identityId)
+        {
+            // override this method to support caching
+        }
+
+        /// <summary>
+        /// Clears the currently identity id from the cache.
+        /// <para>
+        /// For the .NET Framework versions of the SDK the identity id is not cached. To support caching
+        /// the CacheIdentityId, GetCachedIdentityId and ClearIdentityCache methods need to be overridden.
+        /// </para>
+        /// </summary>
+        public virtual void ClearIdentityCache()
+        {
+            // override this method to support caching
+        }
+
+        /// <summary>
+        /// Caches the credentials to player pref's
+        /// </summary>
+        public virtual void CacheCredentials(CredentialsRefreshState credentialsState)
+        {
+            //TODO: add support for caching
+        }
+
+        /// <summary>
+        /// Gets the cached credentials state
+        /// </summary>
+        public virtual CredentialsRefreshState GetCachedCredentials()
+        {
+            return null;
+            //TODO: add support for caching
+        }
     }
 }

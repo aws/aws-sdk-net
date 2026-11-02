@@ -328,6 +328,9 @@ nothing targets it.
 name on every protocol. `CustomizationsModel.PropertyName` is used wherever a member's C# name is derived.
 As in C2J, the name's first letter is upper-cased (iot's `marker` is `Marker`) and
 `emitIsSetProperties`/`dataTypeSwap` list a renamed member under its new name.
+The Smithy-only `overridesBaseMember` emits a member with `override` when a hand-written partial gives its structure a
+base class declaring the same member: CognitoIdentity's and SecurityToken's `Credentials` derive from `AWSCredentials`,
+whose `BaseIdentity.Expiration` is virtual. C2J hard-codes that case instead.
 `paginators.{Operation}` supplies what `@paginated` lacks but the shipped paginator has: `pageSize` (PowerShell reads
 `LimitKey`); `inputToken`/`outputToken` arrays, which make a trait-less operation paginated — map tokens loop while entries
 remain (DynamoDB `BatchGetItem`), several tokens page together (Route 53 `ListResourceRecordSets`); `items` (dotted paths)

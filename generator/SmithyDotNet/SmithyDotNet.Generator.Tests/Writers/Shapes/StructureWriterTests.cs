@@ -159,4 +159,17 @@ public class StructureWriterTests
         Assert.Contains("public long? Total", structure);
         Assert.Contains("public bool IsTotalSet", structure);
     }
+
+    // CognitoIdentity's and SecurityToken's Credentials derive from AWSCredentials, whose Expiration they override.
+    [Fact]
+    public void MemberOverridingABaseMember_EmitsOverride()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ShapeModifiers["DoScalarsRequest"] = TestCustomizations.Modify("created", new PropertyModifier { OverridesBaseMember = true });
+        var context = TestModels.Context(TestModels.Load("Codegen/codegen-model.json"), customizations);
+
+        var requestId = ShapeId.Parse("com.example#DoScalarsRequest");
+        var structure = new StructureWriter(context, "scalars.json").Write(context.Structures[requestId], TestContext.Current.CancellationToken);
+        Assert.Contains("public override DateTime? Created ", structure);
+    }
 }

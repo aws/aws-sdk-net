@@ -104,6 +104,14 @@ public sealed record TypeDescriptor(
     public bool MarshalsAsString => IsString || IsEnum;
 }
 
+/// <summary>The modifier a member needs because a base class declares a member of the same name.</summary>
+public enum BaseMemberModifier
+{
+    None,
+    New,
+    Override,
+}
+
 /// <summary>
 /// A resolved structure member ready for codegen: .NET type, attribute, doc, and modeledName (the name as it appears in the model)
 /// </summary>
@@ -117,7 +125,7 @@ public sealed record TypeDescriptor(
 /// <param name="ModeledName">The name of the member as it appears in the model</param>
 /// <param name="EmitIsSetProperties">True when the <c>emitIsSetProperties</c> customization lists this member: it gets a public <c>Is{Property}Set</c> flag backing its set-ness.</param>
 /// <param name="JsonName">For JSON protocols, represents the value that should be used over the wire for the member (specified via JsonName trait). </param>
-/// <param name="HidesBaseMember">True when the member shadows a base-class member and must be emitted with the <c>new</c> modifier. Set for any structure's <c>Equals</c> (hides <c>object.Equals</c>) and, on exceptions, for <c>Retryable</c> (hides <c>AmazonServiceException.Retryable</c>).</param>
+/// <param name="BaseMemberModifier">How the member relates to a same-named base-class member: <c>new</c> for any structure's <c>Equals</c> (hides <c>object.Equals</c>) and, on exceptions, <c>Retryable</c> (hides <c>AmazonServiceException.Retryable</c>); <c>override</c> when the customizations set <c>overridesBaseMember</c>.</param>
 /// <param name="IsEventPayload">True when the member carries <c>@eventPayload</c>: it is the event message payload, unmarshalled from the raw stream rather than a header.</param>
 /// <param name="IsEventHeader">True when the member carries <c>@eventHeader</c>: it is unmarshalled from an event-message header.</param>
 /// <param name="EventStreamPublisher">Set when this is a request event-stream member: the member is emitted as a <c>Func&lt;Task&lt;I{Stream}Event&gt;&gt;</c> publisher property (keeping any modeled <c>[Obsolete]</c>/<c>[AWSProperty]</c>, but with no <c>IsSet</c>) instead of a normal property.</param>
@@ -132,7 +140,7 @@ public sealed record Member(
     string ModeledName,
     bool EmitIsSetProperties = false,
     string? JsonName = null,
-    bool HidesBaseMember = false,
+    BaseMemberModifier BaseMemberModifier = BaseMemberModifier.None,
     bool IsEventPayload = false,
     bool IsEventHeader = false,
     EventStreamPublisherInfo? EventStreamPublisher = null
@@ -219,8 +227,7 @@ public static class TypeMapper
                 EmitIsSetProperties: context.Customizations.EmitIsSet(shapeName, emittedName),
                 // awsJson1.x ignores @jsonName (not in its supported traits); the wire name is the member name.
                 JsonName: context.UsesHttpBindings ? member.GetJsonName() : null,
-                // Any structure can model a member named "Equals" — it hides object.Equals(object).
-                HidesBaseMember: propertyName == "Equals",
+                BaseMemberModifier: BaseMemberModifierFor(context.Customizations, shapeName, memberName, propertyName),
                 IsEventPayload: member.IsEventPayload(),
                 IsEventHeader: member.IsEventHeader())
             );
@@ -229,6 +236,17 @@ public static class TypeMapper
         return context.Customizations.RetainOriginalMemberOrdering
             ? resolved
             : [.. resolved.OrderBy(m => m.PropertyName, StringComparer.Ordinal)];
+    }
+
+    private static BaseMemberModifier BaseMemberModifierFor(CustomizationsModel customizations, string shapeName, string memberName, string propertyName)
+    {
+        // Any structure can model a member named "Equals", which hides object.Equals(object).
+        if (propertyName == "Equals")
+        {
+            return BaseMemberModifier.New;
+        }
+
+        return customizations.OverridesBaseMember(shapeName, memberName) ? BaseMemberModifier.Override : BaseMemberModifier.None;
     }
 
     /// <summary>

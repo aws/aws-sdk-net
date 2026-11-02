@@ -66,10 +66,10 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
         var eventClasses = stream.Events.Select(context.ToDotNetName).ToList();
         var publisher = new EventStreamPublisherInfo(stream.InterfaceName, eventClasses);
         return members
-            // Clear HidesBaseMember: the "Publisher" suffix means a member named "equals" no longer
+            // Clear the modifier: the "Publisher" suffix means a member named "equals" no longer
             // shadows object.Equals, so it must not keep the `new` modifier (CS0109).
             .Select(member => member.ModeledName == memberName && member.Type.IsEventStream
-                ? member with { PropertyName = $"{member.PropertyName}Publisher", EventStreamPublisher = publisher, HidesBaseMember = false }
+                ? member with { PropertyName = $"{member.PropertyName}Publisher", EventStreamPublisher = publisher, BaseMemberModifier = BaseMemberModifier.None }
                 : member)
             .OrderBy(member => member.PropertyName, StringComparer.Ordinal)
             .ToList();

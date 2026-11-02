@@ -114,11 +114,15 @@ public sealed record CustomizationsModel
     /// The <c>emitPropertyName</c> of modeled member <paramref name="memberName"/>, or the modeled name when it isn't
     /// renamed. C2J keys <c>emitIsSetProperties</c> and <c>dataTypeSwap</c> by this name.
     /// </summary>
-    public string EmittedName(string shapeName, string memberName) =>
+    public string EmittedName(string shapeName, string memberName) => PropertyModifierFor(shapeName, memberName)?.EmitPropertyName ?? memberName;
+
+    /// <summary>Whether modeled member <paramref name="memberName"/> overrides a base-class member of the same name.</summary>
+    public bool OverridesBaseMember(string shapeName, string memberName) => PropertyModifierFor(shapeName, memberName)?.OverridesBaseMember ?? false;
+
+    private PropertyModifier? PropertyModifierFor(string shapeName, string memberName) =>
         ShapeModifiers.TryGetValue(shapeName, out var modifier)
-        && modifier.Modify.SelectMany(entry => entry).FirstOrDefault(entry => entry.Key == memberName).Value?.EmitPropertyName is { } name
-            ? name
-            : memberName;
+            ? modifier.Modify.SelectMany(entry => entry).FirstOrDefault(entry => entry.Key == memberName).Value
+            : null;
 
     /// <summary>
     /// The C# property name of modeled member <paramref name="memberName"/>: its <see cref="EmittedName"/> with the
@@ -349,6 +353,14 @@ public sealed record PropertyModifier
     /// <summary>The <c>[Obsolete]</c> message for the member; applied only when the member is already <c>@deprecated</c>.</summary>
     [JsonPropertyName("deprecatedMessage")]
     public string? DeprecatedMessage { get; init; }
+
+    /// <summary>
+    /// Emit the property with <c>override</c>: a hand-written partial gives the structure a base class that declares
+    /// the same member (CognitoIdentity's and SecurityToken's <c>Credentials</c> derive from <c>AWSCredentials</c>,
+    /// whose <c>BaseIdentity</c> declares a virtual <c>Expiration</c>).
+    /// </summary>
+    [JsonPropertyName("overridesBaseMember")]
+    public bool OverridesBaseMember { get; init; }
 }
 
 /// <summary>An <c>operationModifiers</c> entry, keyed by operation name.</summary>

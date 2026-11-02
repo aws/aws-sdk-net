@@ -126,7 +126,7 @@ public sealed class ExceptionWriter(GenerationContext context, string modelFileN
             // A modeled member named Retryable hides AmazonServiceException.Retryable (the CloudHSM
             // case).
             members.Add(resolved.PropertyName == "Retryable"
-                ? resolved with { HidesBaseMember = true }
+                ? resolved with { BaseMemberModifier = BaseMemberModifier.New }
                 : resolved);
         }
 

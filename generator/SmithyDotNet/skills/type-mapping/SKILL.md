@@ -115,7 +115,7 @@ Two base-class adjustments follow (matching the current SDK):
 - A member named `errorType` is renamed to the property `RequestErrorType` (**property name only; the wire name stays `errorType`**) so it doesn't hide `AmazonServiceException.ErrorType`, whose type is the `ErrorType` enum rather than the member's own type.
 - A member named `Retryable` is emitted with the `new` modifier, hiding `AmazonServiceException.Retryable`.
 
-Independently of the exception-only rules, a member named `Equals` on **any** structure is emitted with `new` to hide `object.Equals(object)`.
+Independently of the exception-only rules, a member named `Equals` on **any** structure is emitted with `new` to hide `object.Equals(object)`, and a member with the `overridesBaseMember` property modifier is emitted with `override` (see sdk-conventions).
 
 A **response** member named `ContentLength` is not shadowed but omitted from the response class entirely: `AmazonWebServiceResponse` already declares it and the unmarshaller assigns the inherited property. See sdk-conventions.
 

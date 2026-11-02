@@ -95,6 +95,7 @@
     "CodePipeline",
     "CodeStarNotifications",
     "CodeStarconnections",
+    "CognitoIdentity",
     "CognitoIdentityProvider",
     "CognitoSync",
     "Comprehend",
