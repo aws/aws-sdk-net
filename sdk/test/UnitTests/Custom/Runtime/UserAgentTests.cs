@@ -385,6 +385,106 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
+        [DataRow(new[] { "ua/2.1", "md/ClientAsync" }, new string[0], "ua/2.1 md/ClientAsync")]
+        [DataRow(new string[0], new[] { "E", "b" }, " m/E,b")]
+        [DataRow(new[] { "  padded  ", "dup", "dup", " ", null, "" }, new[] { "E", "E", "F" }, "padded dup m/E,F")]
+        public void GenerateUserAgentWithMetrics_JoinsComponentsAndFeatures(string[] components, string[] featureIds, string expected)
+        {
+            var details = CreateDetails(components, featureIds);
+            Assert.AreEqual(expected, details.GenerateUserAgentWithMetrics());
+            Assert.AreEqual(expected, details.CreateGeneratedUserAgent().Value);
+        }
+
+        [TestMethod]
+        public void GenerateUserAgentWithMetrics_TruncatesMultiByteFeatureIdsAtLastComma()
+        {
+            var result = CreateDetails(new[] { "ua" }, Enumerable.Range(0, 200).Select(i => "é" + i)).GenerateUserAgentWithMetrics();
+
+            Assert.AreEqual(834, result.Length);
+            StringAssert.EndsWith(result, ",é186,é187");
+            Assert.IsTrue(Encoding.UTF8.GetByteCount(result.Substring("ua ".Length)) <= 1024);
+        }
+
+        [TestMethod]
+        public void Matches_OnlySameComponentsAndFeaturesInOrder()
+        {
+            var cached = CreateDetails(new[] { "ua/2.1", "md/ClientAsync" }, new[] { "E", "b" }).CreateGeneratedUserAgent();
+
+            Assert.IsTrue(CreateDetails(new[] { "ua/2.1", string.Concat("md/", "ClientAsync") }, new[] { "E", "b" }).Matches(cached));
+            Assert.IsFalse(CreateDetails(new[] { "ua/2.1", "md/ClientSync" }, new[] { "E", "b" }).Matches(cached));
+            Assert.IsFalse(CreateDetails(new[] { "ua/2.1", "md/ClientAsync" }, new[] { "E", "c" }).Matches(cached));
+            Assert.IsFalse(CreateDetails(new[] { "ua/2.1", "md/ClientAsync" }, new[] { "b", "E" }).Matches(cached));
+            Assert.IsFalse(CreateDetails(new[] { "ua/2.1", "md/ClientAsync" }, new[] { "E", "b", "Z" }).Matches(cached));
+        }
+
+        [TestMethod]
+        public void HttpHandler_ReusesUserAgentPerShape()
+        {
+            var handler = new HttpHandler<Stream>(new HttpHandlerTests.MockHttpRequestFactory(), new object());
+            var shapes = Enumerable.Range(0, 9).Select(i => new[] { "ua/2.1", "md/shape" + i }).ToArray();
+
+            // Up to four shapes are reused; more than that are regenerated but still correct.
+            var first = shapes.Take(3).Select(c => handler.GetUserAgent(CreateDetails(c, new[] { "E" }))).ToArray();
+            for (int i = 0; i < 3; i++)
+                Assert.AreSame(first[i], handler.GetUserAgent(CreateDetails(shapes[i], new[] { "E" })));
+            foreach (var components in shapes.Concat(shapes))
+                Assert.AreEqual($"{string.Join(" ", components)} m/E", handler.GetUserAgent(CreateDetails(components, new[] { "E" })));
+        }
+
+        [TestMethod]
+        public void HttpHandler_UserAgentHeaderMergesRequestDetails()
+        {
+            var handler = new HttpHandler<Stream>(HttpHandlerTests.CreateListBucketsFactory(), new object());
+            _ = new RuntimePipeline(handler);
+
+            var first = CreateListBucketsContext();
+            handler.InvokeSync(first);
+            var firstHeader = first.RequestContext.Request.Headers[HeaderKeys.UserAgentHeader];
+            Assert.AreEqual("ua/2.1 m/E", firstHeader);
+
+            var same = CreateListBucketsContext();
+            handler.InvokeSync(same);
+            Assert.AreSame(firstHeader, same.RequestContext.Request.Headers[HeaderKeys.UserAgentHeader]);
+
+            var different = CreateListBucketsContext();
+            var originalDetails = ((IAmazonWebServiceRequest)different.RequestContext.OriginalRequest).UserAgentDetails;
+            originalDetails.AddUserAgentComponent("custom");
+            originalDetails.AddFeature(UserAgentFeatureId.PAGINATOR);
+            handler.InvokeSync(different);
+            Assert.AreEqual($"ua/2.1 custom m/E,{UserAgentFeatureId.PAGINATOR.Value}",
+                different.RequestContext.Request.Headers[HeaderKeys.UserAgentHeader]);
+        }
+
+        private static UserAgentDetails CreateDetails(IEnumerable<string> components, IEnumerable<string> featureIds)
+        {
+            var details = new UserAgentDetails();
+            foreach (var c in components)
+                details.AddUserAgentComponent(c);
+            foreach (var f in featureIds)
+                details.AddFeature(new UserAgentFeatureId(f));
+            return details;
+        }
+
+        private static IExecutionContext CreateListBucketsContext()
+        {
+            var listBucketsRequest = new ListBucketsRequest();
+            var context = new ExecutionContext(
+                new RequestContext(false, new NullSigner())
+                {
+                    ClientConfig = new AmazonS3Config(),
+                    Marshaller = new ListBucketsRequestMarshaller(),
+                    OriginalRequest = listBucketsRequest,
+                    Request = new ListBucketsRequestMarshaller().Marshall(listBucketsRequest),
+                    Unmarshaller = new ListBucketsResponseUnmarshaller()
+                },
+                new ResponseContext());
+            context.RequestContext.Request.Endpoint = new Uri("https://s3.amazonaws.com");
+            context.RequestContext.UserAgentDetails.AddUserAgentComponent("ua/2.1");
+            context.RequestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.RETRY_MODE_STANDARD);
+            return context;
+        }
+
+        [TestMethod]
         public void Test_ReusingRequestObjectDoesNotDuplicateUserAgentComponents()
         {
             var listObjectsV2Request = new ListObjectsV2Request

@@ -548,25 +548,13 @@ namespace Amazon.Runtime
         /// <param name="headers">A dictionary of header names and values.</param>
         public void SetRequestHeaders(IDictionary<string, string> headers)
         {
-            // Enumerate the concrete type when possible to avoid boxing the enumerator.
-            if (headers is Dictionary<string, string> dictionary)
+            foreach (var kvp in headers)
             {
-                foreach (var kvp in dictionary)
-                    AddRequestHeader(kvp.Key, kvp.Value);
-            }
-            else
-            {
-                foreach (var kvp in headers)
-                    AddRequestHeader(kvp.Key, kvp.Value);
-            }
-        }
+                if (ContentHeaderNames.Contains(kvp.Key))
+                    continue;
 
-        private void AddRequestHeader(string name, string value)
-        {
-            if (ContentHeaderNames.Contains(name))
-                return;
-
-            _request.Headers.TryAddWithoutValidation(name, value);
+                _request.Headers.TryAddWithoutValidation(kvp.Key, kvp.Value);
+            }
         }
 
         /// <summary>
