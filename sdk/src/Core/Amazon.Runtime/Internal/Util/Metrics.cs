@@ -19,7 +19,6 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
 using System.Text.Json;
@@ -30,46 +29,18 @@ namespace Amazon.Runtime.Internal.Util
     {
         #region Private members
 
-        private static readonly double TickFrequency = TimeSpan.TicksPerSecond / (double)Stopwatch.Frequency;
-
-        // Collections and the lock are created on first use so that a disabled
-        // metrics object costs a single allocation per request.
-        private object metricsLock;
+        private object metricsLock = new object();
         private readonly long startTimestamp;
+        private bool isEnabled;
+        // Created on the first StartEvent, so a disabled request that never times CSM attempt latency doesn't allocate it.
         private Dictionary<Metric, Timing> inFlightTimings;
-        private List<MetricError> errors;
+        private List<MetricError> errors = new List<MetricError>();
         private Dictionary<Metric, List<object>> properties;
         private Dictionary<Metric, List<IMetricsTiming>> timings;
         private Dictionary<Metric, long> counters;
-
-        private object MetricsLock
-        {
-            get
-            {
-                var l = metricsLock;
-                if (l == null)
-                {
-                    Interlocked.CompareExchange(ref metricsLock, new object(), null);
-                    l = metricsLock;
-                }
-                return l;
-            }
-        }
-        private static T EnsureCreated<T>(ref T field) where T : class, new()
-        {
-            var value = Volatile.Read(ref field);
-            if (value == null)
-            {
-                Interlocked.CompareExchange(ref field, new T(), null);
-                value = Volatile.Read(ref field);
-            }
-            return value;
-        }
-        private long CurrentTime { get { return (long)((Stopwatch.GetTimestamp() - startTimestamp) * TickFrequency); } }
+        private long CurrentTime { get { return Extensions.GetElapsedDateTimeTicks(startTimestamp); } }
         private void LogError_Locked(Metric metric, string messageFormat, params object[] args)
         {
-            if (errors == null)
-                errors = new List<MetricError>();
             errors.Add(new MetricError(metric, messageFormat, args));
         }
         private static void Log(StringBuilder builder, Metric metric, object metricValue)
@@ -119,7 +90,7 @@ namespace Amazon.Runtime.Internal.Util
         /// </summary>
         public Dictionary<Metric, List<object>> Properties
         {
-            get { return EnsureCreated(ref properties); }
+            get { return properties ??= new Dictionary<Metric, List<object>>(); }
             set { properties = value; }
         }
 
@@ -128,7 +99,7 @@ namespace Amazon.Runtime.Internal.Util
         /// </summary>
         public Dictionary<Metric, List<IMetricsTiming>> Timings
         {
-            get { return EnsureCreated(ref timings); }
+            get { return timings ??= new Dictionary<Metric, List<IMetricsTiming>>(); }
             set { timings = value; }
         }
 
@@ -137,14 +108,27 @@ namespace Amazon.Runtime.Internal.Util
         /// </summary>
         public Dictionary<Metric, long> Counters
         {
-            get { return EnsureCreated(ref counters); }
+            get { return counters ??= new Dictionary<Metric, long>(); }
             set { counters = value; }
         }
 
         /// <summary>
         /// Whether metrics are enabled for the request
         /// </summary>
-        public bool IsEnabled { get; internal set; }
+        public bool IsEnabled
+        {
+            get { return isEnabled; }
+            internal set
+            {
+                isEnabled = value;
+                if (value)
+                {
+                    properties ??= new Dictionary<Metric, List<object>>();
+                    timings ??= new Dictionary<Metric, List<IMetricsTiming>>();
+                    counters ??= new Dictionary<Metric, long>();
+                }
+            }
+        }
 
         #endregion
 
@@ -156,7 +140,6 @@ namespace Amazon.Runtime.Internal.Util
         public RequestMetrics()
         {
             startTimestamp = Stopwatch.GetTimestamp();
-            IsEnabled = false;
         }
 
         #endregion
@@ -166,35 +149,25 @@ namespace Amazon.Runtime.Internal.Util
         /// <summary>
         /// Starts timing an event. Logs an exception if an event
         /// of the same type was started but not stopped.
-        /// When metrics are disabled, nothing is tracked and a shared no-op event is returned.
+        /// When metrics are disabled, only <see cref="Metric.CSMAttemptLatency"/> is timed
+        /// and other metrics return a shared no-op event.
         /// </summary>
         /// <param name="metric"></param>
         /// <returns></returns>
         public TimingEvent StartEvent(Metric metric)
         {
-            if (!IsEnabled)
+            if (!IsEnabled && metric != Metric.CSMAttemptLatency)
                 return TimingEvent.NoOp;
 
-            StartTimedEvent(metric);
-            return new TimingEvent(this, metric);
-        }
-
-        /// <summary>
-        /// Starts timing an event regardless of <see cref="IsEnabled"/>, so that
-        /// a later <see cref="StopEvent"/> returns the measured timing. The timing is only
-        /// added to <see cref="Timings"/> when metrics are enabled.
-        /// </summary>
-        internal void StartTimedEvent(Metric metric)
-        {
-            lock (MetricsLock)
+            lock (metricsLock)
             {
-                var inFlight = inFlightTimings;
-                if (inFlight == null)
-                    inFlightTimings = inFlight = new Dictionary<Metric, Timing>();
-                else if (inFlight.ContainsKey(metric))
+                if (inFlightTimings == null)
+                    inFlightTimings = new Dictionary<Metric, Timing>();
+                else if (inFlightTimings.ContainsKey(metric))
                     LogError_Locked(metric, "Starting multiple events for the same metric");
-                inFlight[metric] = new Timing(CurrentTime);
+                inFlightTimings[metric] = new Timing(CurrentTime);
             }
+            return new TimingEvent(this, metric);
         }
 
         /// <summary>
@@ -204,18 +177,15 @@ namespace Amazon.Runtime.Internal.Util
         /// <returns></returns>
         public Timing StopEvent(Metric metric)
         {
-            // When disabled, only events started through StartTimedEvent are tracked;
-            // anything else was never started, so skip the lock and error bookkeeping.
-            if (!IsEnabled && Volatile.Read(ref inFlightTimings) == null)
+            if (!IsEnabled && metric != Metric.CSMAttemptLatency)
                 return new Timing();
 
             Timing timing;
-            lock (MetricsLock)
+            lock (metricsLock)
             {
                 if (inFlightTimings == null || !inFlightTimings.TryGetValue(metric, out timing))
                 {
-                    if (IsEnabled)
-                        LogError_Locked(metric, "Trying to stop event that has not been started");
+                    LogError_Locked(metric, "Trying to stop event that has not been started");
                     return new Timing();
                 }
                 inFlightTimings.Remove(metric);
@@ -223,12 +193,11 @@ namespace Amazon.Runtime.Internal.Util
  
                 if (IsEnabled)
                 {
-                    var allTimings = Timings;
                     List<IMetricsTiming> list;
-                    if (!allTimings.TryGetValue(metric, out list))
+                    if (!Timings.TryGetValue(metric, out list))
                     {
                         list = new List<IMetricsTiming>();
-                        allTimings[metric] = list;
+                        Timings[metric] = list;
                     }
                     list.Add(timing);
                 }
@@ -247,7 +216,7 @@ namespace Amazon.Runtime.Internal.Util
             if (!IsEnabled) return;
 
             List<object> list;
-            lock (MetricsLock)
+            lock (metricsLock)
             {
                 if (!Properties.TryGetValue(metric, out list))
                 {
@@ -267,7 +236,7 @@ namespace Amazon.Runtime.Internal.Util
         {
             if (!IsEnabled) return;
 
-            lock (MetricsLock)
+            lock (metricsLock)
             {
                 Counters[metric] = value;
             }
@@ -281,7 +250,7 @@ namespace Amazon.Runtime.Internal.Util
         {
             if (!IsEnabled) return;
 
-            lock (MetricsLock)
+            lock (metricsLock)
             {
                 long value;
                 if (!Counters.TryGetValue(metric, out value))
@@ -305,14 +274,14 @@ namespace Amazon.Runtime.Internal.Util
         {
             using (StringWriter writer = new StringWriter(CultureInfo.InvariantCulture))
             {
-                lock (MetricsLock)
+                lock (metricsLock)
                 {
                     if (inFlightTimings != null && inFlightTimings.Count > 0)
                     {
                         string inFlightTimingsValue = string.Join(", ", inFlightTimings.Keys.Select(k => k.ToString()).ToArray());
                         writer.Write("Timings are still in flight: {0}.", inFlightTimingsValue);
                     }
-                    if (errors != null && errors.Count > 0)
+                    if (errors.Count > 0)
                     {
                         writer.Write("Logged {0} metrics errors: ", errors.Count);
                         foreach (MetricError error in errors)
@@ -362,7 +331,7 @@ namespace Amazon.Runtime.Internal.Util
             {
                 try
                 {
-                    lock (MetricsLock)
+                    lock (metricsLock)
                     {
                         builder.Append(AWSConfigs.LoggingConfig.LogMetricsCustomFormatter.FormatMetrics(this));
                     }
@@ -378,7 +347,7 @@ namespace Amazon.Runtime.Internal.Util
             // If no custom formatter, or formatter fails, check to see if JSON is configured
             if (AWSConfigs.LoggingConfig.LogMetricsFormat == LogMetricsFormatOption.JSON)
             {
-                lock (MetricsLock)
+                lock (metricsLock)
                 {
                     builder.Append(this.ToJSON());
                 }
@@ -386,7 +355,7 @@ namespace Amazon.Runtime.Internal.Util
             }
 
             // Standard format.
-            lock (MetricsLock)
+            lock (metricsLock)
             {
                 foreach (var kvp in Properties)
                 {

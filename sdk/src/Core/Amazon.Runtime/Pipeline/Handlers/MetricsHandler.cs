@@ -48,6 +48,7 @@ namespace Amazon.Runtime.Internal
         public override void InvokeSync(IExecutionContext executionContext)
         {
             var metrics = executionContext.RequestContext.Metrics;
+            // Guarded to avoid boxing the value when metrics are disabled.
             if (metrics.IsEnabled)
                 metrics.AddProperty(Metric.AsyncCall, false);
 
@@ -57,8 +58,7 @@ namespace Amazon.Runtime.Internal
             try
             {
                 callDurationMetricsMeasurer = MetricsUtilities.MeasureDuration(executionContext.RequestContext, TelemetryConstants.CallDurationMetricName);
-                if (metrics.IsEnabled)
-                    metrics.StartTimedEvent(Metric.ClientExecuteTime);
+                metrics.StartEvent(Metric.ClientExecuteTime);
                 base.InvokeSync(executionContext);
 
                 var requestId = executionContext.ResponseContext.Response.ResponseMetadata?.RequestId;
@@ -73,6 +73,7 @@ namespace Amazon.Runtime.Internal
             }
             finally
             {
+                // Guarded to avoid allocating an empty Timing when metrics are disabled.
                 if (metrics.IsEnabled)
                     metrics.StopEvent(Metric.ClientExecuteTime);
                 this.LogMetrics(executionContext);
@@ -92,6 +93,7 @@ namespace Amazon.Runtime.Internal
         public override async System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
         {
             var metrics = executionContext.RequestContext.Metrics;
+            // Guarded to avoid boxing the value when metrics are disabled.
             if (metrics.IsEnabled)
                 metrics.AddProperty(Metric.AsyncCall, true);
 
@@ -101,8 +103,7 @@ namespace Amazon.Runtime.Internal
             try
             {
                 callDurationMetricsMeasurer = MetricsUtilities.MeasureDuration(executionContext.RequestContext, TelemetryConstants.CallDurationMetricName);
-                if (metrics.IsEnabled)
-                    metrics.StartTimedEvent(Metric.ClientExecuteTime);
+                metrics.StartEvent(Metric.ClientExecuteTime);
                 var response = await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
 
                 var requestId = executionContext.ResponseContext.Response.ResponseMetadata?.RequestId;
@@ -119,6 +120,7 @@ namespace Amazon.Runtime.Internal
             }
             finally
             {
+                // Guarded to avoid allocating an empty Timing when metrics are disabled.
                 if (metrics.IsEnabled)
                     metrics.StopEvent(Metric.ClientExecuteTime);
                 this.LogMetrics(executionContext);
