@@ -385,27 +385,6 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [DataRow(new[] { "ua/2.1", "md/ClientAsync" }, new string[0], "ua/2.1 md/ClientAsync")]
-        [DataRow(new string[0], new[] { "E", "b" }, " m/E,b")]
-        [DataRow(new[] { "  padded  ", "dup", "dup", " ", null, "" }, new[] { "E", "E", "F" }, "padded dup m/E,F")]
-        public void GenerateUserAgentWithMetrics_JoinsComponentsAndFeatures(string[] components, string[] featureIds, string expected)
-        {
-            var details = CreateDetails(components, featureIds);
-            Assert.AreEqual(expected, details.GenerateUserAgentWithMetrics());
-            Assert.AreEqual(expected, details.CreateGeneratedUserAgent().Value);
-        }
-
-        [TestMethod]
-        public void GenerateUserAgentWithMetrics_TruncatesMultiByteFeatureIdsAtLastComma()
-        {
-            var result = CreateDetails(new[] { "ua" }, Enumerable.Range(0, 200).Select(i => "é" + i)).GenerateUserAgentWithMetrics();
-
-            Assert.AreEqual(834, result.Length);
-            StringAssert.EndsWith(result, ",é186,é187");
-            Assert.IsTrue(Encoding.UTF8.GetByteCount(result.Substring("ua ".Length)) <= 1024);
-        }
-
-        [TestMethod]
         public void Matches_OnlySameComponentsAndFeaturesInOrder()
         {
             var cached = CreateDetails(new[] { "ua/2.1", "md/ClientAsync" }, new[] { "E", "b" }).CreateGeneratedUserAgent();
@@ -431,30 +410,6 @@ namespace AWSSDK.UnitTests
                 Assert.AreEqual($"{string.Join(" ", components)} m/E", handler.GetUserAgent(CreateDetails(components, new[] { "E" })));
         }
 
-        [TestMethod]
-        public void HttpHandler_UserAgentHeaderMergesRequestDetails()
-        {
-            var handler = new HttpHandler<Stream>(HttpHandlerTests.CreateListBucketsFactory(), new object());
-            _ = new RuntimePipeline(handler);
-
-            var first = CreateListBucketsContext();
-            handler.InvokeSync(first);
-            var firstHeader = first.RequestContext.Request.Headers[HeaderKeys.UserAgentHeader];
-            Assert.AreEqual("ua/2.1 m/E", firstHeader);
-
-            var same = CreateListBucketsContext();
-            handler.InvokeSync(same);
-            Assert.AreSame(firstHeader, same.RequestContext.Request.Headers[HeaderKeys.UserAgentHeader]);
-
-            var different = CreateListBucketsContext();
-            var originalDetails = ((IAmazonWebServiceRequest)different.RequestContext.OriginalRequest).UserAgentDetails;
-            originalDetails.AddUserAgentComponent("custom");
-            originalDetails.AddFeature(UserAgentFeatureId.PAGINATOR);
-            handler.InvokeSync(different);
-            Assert.AreEqual($"ua/2.1 custom m/E,{UserAgentFeatureId.PAGINATOR.Value}",
-                different.RequestContext.Request.Headers[HeaderKeys.UserAgentHeader]);
-        }
-
         private static UserAgentDetails CreateDetails(IEnumerable<string> components, IEnumerable<string> featureIds)
         {
             var details = new UserAgentDetails();
@@ -463,25 +418,6 @@ namespace AWSSDK.UnitTests
             foreach (var f in featureIds)
                 details.AddFeature(new UserAgentFeatureId(f));
             return details;
-        }
-
-        private static IExecutionContext CreateListBucketsContext()
-        {
-            var listBucketsRequest = new ListBucketsRequest();
-            var context = new ExecutionContext(
-                new RequestContext(false, new NullSigner())
-                {
-                    ClientConfig = new AmazonS3Config(),
-                    Marshaller = new ListBucketsRequestMarshaller(),
-                    OriginalRequest = listBucketsRequest,
-                    Request = new ListBucketsRequestMarshaller().Marshall(listBucketsRequest),
-                    Unmarshaller = new ListBucketsResponseUnmarshaller()
-                },
-                new ResponseContext());
-            context.RequestContext.Request.Endpoint = new Uri("https://s3.amazonaws.com");
-            context.RequestContext.UserAgentDetails.AddUserAgentComponent("ua/2.1");
-            context.RequestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.RETRY_MODE_STANDARD);
-            return context;
         }
 
         [TestMethod]

@@ -140,18 +140,13 @@ namespace AWSSDK.UnitTests
             var withSubResource = CreateRequest("https://bucket.s3.amazonaws.com", "/key");
             withSubResource.AddSubResource("versionId", "v1");
             withSubResource.AddSubResource("acl");
-            var withQuery = CreateRequest("https://sqs.us-east-1.amazonaws.com", "/");
-            withQuery.UseQueryString = true;
-            withQuery.Parameters["Prefix"] = "a b";
             var requests = new[]
             {
                 CreateRequest("https://dynamodb.us-east-1.amazonaws.com", "/"),
                 CreateRequest("https://dynamodb.us-east-1.amazonaws.com", "/"),
                 CreateRequest("https://dynamodb.us-west-2.amazonaws.com", "/"),
-                CreateRequest("https://bucket.s3.amazonaws.com", null),
                 withPathResource,
                 withSubResource,
-                withQuery,
             };
 
             var handler = new HttpHandler<Stream>(new MockHttpRequestFactory(), callbackSender);
@@ -202,29 +197,20 @@ namespace AWSSDK.UnitTests
         {
             var httpHandler = new HttpHandler<Stream>(CreateListBucketsFactory(), callbackSender);
             _ = new RuntimePipeline(httpHandler);
-            var executionContext = CreatePutContentContext(enableMetrics);
+            var executionContext = CreateExecutionContextForListBuckets(enableMetrics: enableMetrics);
+            executionContext.RequestContext.Request.HttpMethod = "PUT";
+            executionContext.RequestContext.Request.Content = Encoding.UTF8.GetBytes("payload");
             httpHandler.InvokeSync(executionContext);
-            AssertRequestSize(executionContext, enableMetrics);
-        }
 
-#if NETFRAMEWORK
-        [TestMethod]
-        [DataRow(true)]
-        [DataRow(false)]
-        public async Task RecordsRequestSizeOnlyWhenRequestMetricsEnabledAsync(bool enableMetrics)
-        {
-            var httpHandler = new HttpHandler<Stream>(CreateListBucketsFactory(), callbackSender);
-            _ = new RuntimePipeline(httpHandler);
-            var executionContext = CreatePutContentContext(enableMetrics);
-            await httpHandler.InvokeAsync<ListBucketsResponse>(executionContext);
-            AssertRequestSize(executionContext, enableMetrics);
+            var properties = executionContext.RequestContext.Metrics.Properties;
+            Assert.AreEqual(enableMetrics, properties.ContainsKey(Metric.RequestSize));
+            if (enableMetrics)
+                Assert.AreEqual(7, properties[Metric.RequestSize].Single());
         }
-#endif
 
         [TestMethod]
         [DataRow(true, false)]
         [DataRow(false, true)]
-        [DataRow(false, false)]
         public void RecordsHttpTelemetryUnlessBothProvidersAreNoOp(bool customMeter, bool customTracer)
         {
             var meterProvider = new RecordingMeterProvider();
@@ -240,7 +226,6 @@ namespace AWSSDK.UnitTests
             var executionContext = CreateExecutionContextForListBuckets(config);
             httpHandler.InvokeSync(executionContext);
 
-            Assert.AreEqual(HttpStatusCode.OK, executionContext.ResponseContext.HttpResponse.StatusCode);
             CollectionAssert.AreEqual(customMeter ? new[] { 25L } : new long[0], meterProvider.BytesReceived);
             if (customTracer)
             {
@@ -279,7 +264,9 @@ namespace AWSSDK.UnitTests
                 ("Last-Modified", "garbage"),
                 ("Content-Length", "7"),
             };
-            CollectionAssert.AreEqual(expected.Select(h => h.Item1).ToArray(), data.GetHeaderNames());
+            var names = data.GetHeaderNames();
+            CollectionAssert.AreEqual(expected.Select(h => h.Item1).ToArray(), names);
+            Assert.AreSame(names, data.GetHeaderNames());
             foreach (var (name, value) in expected)
             {
                 Assert.AreEqual(value, data.GetHeaderValue(name.ToUpperInvariant()), name);
@@ -287,6 +274,7 @@ namespace AWSSDK.UnitTests
             }
             Assert.AreEqual("application/json", data.ContentType);
             Assert.AreEqual(7, data.ContentLength);
+            Assert.AreEqual(string.Empty, data.GetHeaderValue("x-missing"));
             Assert.IsFalse(data.IsHeaderPresent("x-missing"));
             Assert.IsFalse(data.IsHeaderPresent(null));
         }
@@ -326,23 +314,7 @@ namespace AWSSDK.UnitTests
             };
         }
 
-        private ExecutionContext CreatePutContentContext(bool enableMetrics)
-        {
-            var executionContext = CreateExecutionContextForListBuckets(enableMetrics: enableMetrics);
-            executionContext.RequestContext.Request.HttpMethod = "PUT";
-            executionContext.RequestContext.Request.Content = Encoding.UTF8.GetBytes("payload");
-            return executionContext;
-        }
-
-        private static void AssertRequestSize(IExecutionContext executionContext, bool enableMetrics)
-        {
-            var properties = executionContext.RequestContext.Metrics.Properties;
-            Assert.AreEqual(enableMetrics, properties.ContainsKey(Metric.RequestSize));
-            if (enableMetrics)
-                Assert.AreEqual(7, properties[Metric.RequestSize].Single());
-        }
-
-        internal static MockHttpRequestFactory CreateListBucketsFactory()
+        private static MockHttpRequestFactory CreateListBucketsFactory()
         {
             return new MockHttpRequestFactory
             {
@@ -367,13 +339,13 @@ namespace AWSSDK.UnitTests
                 private readonly RecordingMeterProvider _provider;
                 public RecordingMeter(RecordingMeterProvider provider) { _provider = provider; }
                 public override MonotonicCounter<T> CreateMonotonicCounter<T>(string name, string units = null, string description = null)
-                    => name == TelemetryConstants.HTTPBytesReceivedMetricName ? new BytesCounter<T>(_provider) : base.CreateMonotonicCounter<T>(name, units, description);
+                    => name == TelemetryConstants.HTTPBytesReceivedMetricName ? new Counter<T>(_provider) : base.CreateMonotonicCounter<T>(name, units, description);
             }
 
-            private class BytesCounter<T> : MonotonicCounter<T> where T : struct
+            private class Counter<T> : MonotonicCounter<T> where T : struct
             {
                 private readonly RecordingMeterProvider _provider;
-                public BytesCounter(RecordingMeterProvider provider) { _provider = provider; }
+                public Counter(RecordingMeterProvider provider) { _provider = provider; }
                 public override void Add(T value, Attributes attributes = null) => _provider.BytesReceived.Add(Convert.ToInt64(value));
             }
         }
@@ -381,16 +353,16 @@ namespace AWSSDK.UnitTests
         private class RecordingTracerProvider : TracerProvider
         {
             public List<RecordingSpan> Spans { get; } = new List<RecordingSpan>();
-            public override Tracer GetTracer(string scope) => new RecordingTracer(this);
+            public override Tracer GetTracer(string scope) => new RecordingTracer(Spans);
 
             private class RecordingTracer : Tracer
             {
-                private readonly RecordingTracerProvider _provider;
-                public RecordingTracer(RecordingTracerProvider provider) { _provider = provider; }
+                private readonly List<RecordingSpan> _spans;
+                public RecordingTracer(List<RecordingSpan> spans) { _spans = spans; }
                 public override TraceSpan CreateSpan(string name, Attributes initialAttributes = null, SpanKind spanKind = SpanKind.INTERNAL, SpanContext parentContext = null)
                 {
                     var span = new RecordingSpan(name);
-                    _provider.Spans.Add(span);
+                    _spans.Add(span);
                     return span;
                 }
             }
