@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.CancelBulkOperationRequest.BulkOperationArn</property>
+    <min>37</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.CancelBulkOperationResponse.BulkOperationArn</property>
+    <min>37</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.CreateBackupRequest.BackupName</property>
     <min>3</min>
     <max>255</max>
@@ -59,6 +69,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.DescribeBackupRequest.BackupArn</property>
+    <min>37</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.DescribeBulkOperationRequest.BulkOperationArn</property>
     <min>37</min>
     <max>1024</max>
   </property-value-rule>
@@ -295,6 +310,23 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.ListBulkOperationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.ListBulkOperationsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([0-9a-f]{16})+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.ListBulkOperationsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([0-9a-f]{16})+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ListContributorInsightsRequest.MaxResults</property>
     <max>100</max>
   </property-value-rule>
@@ -475,6 +507,19 @@
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.SearchVectorsRequest.TopK</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.StartBulkPutItemsRequest.ClientToken</property>
+    <pattern>^[^\$]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.StartBulkPutItemsRequest.MaxWriteRequestUnits</property>
+    <min>1024</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.StartBulkPutItemsRequest.TableName</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.TagResourceRequest.ResourceArn</property>
@@ -678,6 +723,66 @@
     <min>3</min>
     <max>255</max>
     <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.BulkOperationBytes.BulkPutBytes</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.BulkOperationDescription.BulkOperationArn</property>
+    <min>37</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.BulkOperationDescription.ClientToken</property>
+    <pattern>^[^\$]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.BulkOperationDescription.FailedItemCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.BulkOperationDescription.MaxWriteRequestUnits</property>
+    <min>1024</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.BulkOperationDescription.ProcessedInputBytes</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.BulkOperationDescription.ProcessedItemCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.BulkOperationDescription.TotalInputBytes</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.BulkOperationSummary.BulkOperationArn</property>
+    <min>37</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.BulkOperationTableDetail.TableId</property>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.BulkOperationTableDetail.TableName</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.BulkOperationUsage.BulkPutBytes</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.BulkOperationUsage.TableName</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.BulkOperationVectorBytes.BulkPutVectorBytes</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ConditionCheck.TableName</property>
@@ -901,6 +1006,21 @@
     <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.InputS3Configuration.S3Bucket</property>
+    <min>0</min>
+    <max>255</max>
+    <pattern>^[a-z0-9A-Z]+[\.\-\w]*[a-z0-9A-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.InputS3Configuration.S3BucketOwner</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.InputS3Configuration.S3KeyPrefix</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.KeySchemaElement.AttributeName</property>
     <min>1</min>
     <max>255</max>
@@ -927,6 +1047,26 @@
     <min>3</min>
     <max>255</max>
     <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.OutputS3Configuration.S3Bucket</property>
+    <min>0</min>
+    <max>255</max>
+    <pattern>^[a-z0-9A-Z]+[\.\-\w]*[a-z0-9A-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.OutputS3Configuration.S3BucketOwner</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.OutputS3Configuration.S3KeyPrefix</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.OutputS3Configuration.S3SseKmsKeyId</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ParameterizedStatement.Statement</property>

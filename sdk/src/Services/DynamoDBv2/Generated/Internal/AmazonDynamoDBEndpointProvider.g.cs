@@ -112,9 +112,9 @@ namespace Amazon.DynamoDBv2.Internal
                         return new Endpoint("http://localhost:8000", InterpolateJson(@"{
                                                             ""authSchemes"": [
                                                                 {
-                                                                    ""signingRegion"": ""us-east-1"",
                                                                     ""name"": ""sigv4"",
-                                                                    ""signingName"": ""dynamodb""
+                                                                    ""signingName"": ""dynamodb"",
+                                                                    ""signingRegion"": ""us-east-1""
                                                                 }
                                                             ]
                                                         }", refs), InterpolateJson(@"", refs));

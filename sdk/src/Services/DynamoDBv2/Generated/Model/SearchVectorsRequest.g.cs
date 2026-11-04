@@ -136,9 +136,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// Only the equality operator (<c>=</c>) is supported for <c>HASH</c> attributes. Comparison
-        /// and range operators are supported for <c>INLINE_FILTER</c> attributes. Only top-level
-        /// attributes from the search schema can be referenced.
+        /// The <c>HASH</c> and <c>INLINE_FILTER</c> attributes support only the equality operator
+        /// (<c>=</c>). You can reference only top-level attributes from the search schema.
         /// </para>
         /// </summary>
         public string SearchConditionExpression { get; set; }

@@ -1484,6 +1484,43 @@ namespace Amazon.DynamoDBv2
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Cancels an in-progress bulk operation asynchronously. Cancellation doesn't remove
+        /// items that the operation has already written. Use <c>DescribeBulkOperation</c> to
+        /// monitor the operation until it reaches a terminal status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelBulkOperation service method.</param>
+        /// <returns>The response from the CancelBulkOperation service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InvalidEndpointException">
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CancelBulkOperation">REST API Reference for CancelBulkOperation Operation</seealso>
+        CancelBulkOperationResponse CancelBulkOperation(CancelBulkOperationRequest request);
+#endif
+
+        /// <summary>
+        /// Cancels an in-progress bulk operation asynchronously. Cancellation doesn't remove
+        /// items that the operation has already written. Use <c>DescribeBulkOperation</c> to
+        /// monitor the operation until it reaches a terminal status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelBulkOperation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CancelBulkOperation service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InvalidEndpointException">
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CancelBulkOperation">REST API Reference for CancelBulkOperation Operation</seealso>
+        Task<CancelBulkOperationResponse> CancelBulkOperationAsync(CancelBulkOperationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Creates a backup for an existing table.
         /// 
         ///  
@@ -3591,6 +3628,39 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeBackup">REST API Reference for DescribeBackup Operation</seealso>
         Task<DescribeBackupResponse> DescribeBackupAsync(DescribeBackupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Describes the specified bulk operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBulkOperation service method.</param>
+        /// <returns>The response from the DescribeBulkOperation service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InvalidEndpointException">
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeBulkOperation">REST API Reference for DescribeBulkOperation Operation</seealso>
+        DescribeBulkOperationResponse DescribeBulkOperation(DescribeBulkOperationRequest request);
+#endif
+
+        /// <summary>
+        /// Describes the specified bulk operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBulkOperation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeBulkOperation service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InvalidEndpointException">
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeBulkOperation">REST API Reference for DescribeBulkOperation Operation</seealso>
+        Task<DescribeBulkOperationResponse> DescribeBulkOperationAsync(DescribeBulkOperationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -6459,6 +6529,37 @@ namespace Amazon.DynamoDBv2
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Lists bulk operations that started within the past 90 days for the current Amazon
+        /// Web Services account and Amazon Web Services Region, with the most recent operations
+        /// first. Results are paginated. Use the <c>NextToken</c> parameter to retrieve additional
+        /// results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBulkOperations service method.</param>
+        /// <returns>The response from the ListBulkOperations service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InvalidEndpointException">
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListBulkOperations">REST API Reference for ListBulkOperations Operation</seealso>
+        ListBulkOperationsResponse ListBulkOperations(ListBulkOperationsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists bulk operations that started within the past 90 days for the current Amazon
+        /// Web Services account and Amazon Web Services Region, with the most recent operations
+        /// first. Results are paginated. Use the <c>NextToken</c> parameter to retrieve additional
+        /// results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBulkOperations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListBulkOperations service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InvalidEndpointException">
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListBulkOperations">REST API Reference for ListBulkOperations Operation</seealso>
+        Task<ListBulkOperationsResponse> ListBulkOperationsAsync(ListBulkOperationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Returns a list of ContributorInsightsSummary for a table and all its global secondary
         /// indexes.
         /// </summary>
@@ -9308,6 +9409,159 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/SearchVectors">REST API Reference for SearchVectors Operation</seealso>
         Task<SearchVectorsResponse> SearchVectorsAsync(SearchVectorsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Starts an asynchronous bulk operation that reads items from Amazon S3 and writes them
+        /// to an existing DynamoDB table, so you can efficiently load or migrate large datasets.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartBulkPutItems service method.</param>
+        /// <returns>The response from the StartBulkPutItems service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.IdempotentParameterMismatchException">
+        /// DynamoDB rejected the request because you retried a request with a different payload
+        /// but with an idempotent token that was already used.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InvalidEndpointException">
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
+        /// 
+        ///  
+        /// <para>
+        /// For most purposes, up to 500 simultaneous table operations are allowed per account.
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When you are creating a table with one or more secondary indexes, you can have up
+        /// to 250 such requests running at a time. However, if the table or index specifications
+        /// are complex, then DynamoDB might temporarily reduce the number of concurrent operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When importing into DynamoDB, up to 50 simultaneous import table operations are allowed
+        /// per account.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a soft account quota of 2,500 tables.
+        /// </para>
+        ///  
+        /// <para>
+        /// GetRecords was called with a value of more than 1000 for the limit request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// More than 2 processes are reading from the same streams shard at the same time. Exceeding
+        /// this limit may result in request throttling.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/StartBulkPutItems">REST API Reference for StartBulkPutItems Operation</seealso>
+        StartBulkPutItemsResponse StartBulkPutItems(StartBulkPutItemsRequest request);
+#endif
+
+        /// <summary>
+        /// Starts an asynchronous bulk operation that reads items from Amazon S3 and writes them
+        /// to an existing DynamoDB table, so you can efficiently load or migrate large datasets.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartBulkPutItems service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the StartBulkPutItems service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.IdempotentParameterMismatchException">
+        /// DynamoDB rejected the request because you retried a request with a different payload
+        /// but with an idempotent token that was already used.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InvalidEndpointException">
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
+        /// 
+        ///  
+        /// <para>
+        /// For most purposes, up to 500 simultaneous table operations are allowed per account.
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When you are creating a table with one or more secondary indexes, you can have up
+        /// to 250 such requests running at a time. However, if the table or index specifications
+        /// are complex, then DynamoDB might temporarily reduce the number of concurrent operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When importing into DynamoDB, up to 50 simultaneous import table operations are allowed
+        /// per account.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a soft account quota of 2,500 tables.
+        /// </para>
+        ///  
+        /// <para>
+        /// GetRecords was called with a value of more than 1000 for the limit request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// More than 2 processes are reading from the same streams shard at the same time. Exceeding
+        /// this limit may result in request throttling.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/StartBulkPutItems">REST API Reference for StartBulkPutItems Operation</seealso>
+        Task<StartBulkPutItemsResponse> StartBulkPutItemsAsync(StartBulkPutItemsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>

@@ -41,6 +41,14 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
+        /// Paginator for ListBulkOperations operation
+        /// </summary>
+        public IListBulkOperationsPaginator ListBulkOperations(ListBulkOperationsRequest request)
+        {
+            return new ListBulkOperationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListContributorInsights operation
         /// </summary>
         public IListContributorInsightsPaginator ListContributorInsights(ListContributorInsightsRequest request)

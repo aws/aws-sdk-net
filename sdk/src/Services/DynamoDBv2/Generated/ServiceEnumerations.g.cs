@@ -379,6 +379,149 @@ namespace Amazon.DynamoDBv2
     }
 
     /// <summary>
+    /// Constants used for properties of type BulkOperationInputFormat.
+    /// </summary>
+    public class BulkOperationInputFormat : ConstantClass
+    {
+        /// <summary>
+        /// Constant DYNAMODB_JSON for BulkOperationInputFormat
+        /// </summary>
+        public static readonly BulkOperationInputFormat DYNAMODB_JSON = new BulkOperationInputFormat("DYNAMODB_JSON");
+
+        /// <summary>
+        /// Constant ION for BulkOperationInputFormat
+        /// </summary>
+        public static readonly BulkOperationInputFormat ION = new BulkOperationInputFormat("ION");
+
+        /// <summary>
+        /// Constructs a custom BulkOperationInputFormat for a value not among the defined constants.
+        /// </summary>
+        public BulkOperationInputFormat(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BulkOperationInputFormat FindValue(string value)
+        {
+            return FindValue<BulkOperationInputFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BulkOperationInputFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type BulkOperationPerformanceTier.
+    /// </summary>
+    public class BulkOperationPerformanceTier : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACCELERATED for BulkOperationPerformanceTier
+        /// </summary>
+        public static readonly BulkOperationPerformanceTier ACCELERATED = new BulkOperationPerformanceTier("ACCELERATED");
+
+        /// <summary>
+        /// Constant STANDARD for BulkOperationPerformanceTier
+        /// </summary>
+        public static readonly BulkOperationPerformanceTier STANDARD = new BulkOperationPerformanceTier("STANDARD");
+
+        /// <summary>
+        /// Constructs a custom BulkOperationPerformanceTier for a value not among the defined constants.
+        /// </summary>
+        public BulkOperationPerformanceTier(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BulkOperationPerformanceTier FindValue(string value)
+        {
+            return FindValue<BulkOperationPerformanceTier>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BulkOperationPerformanceTier(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type BulkOperationStatus.
+    /// </summary>
+    public class BulkOperationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant CANCELLED for BulkOperationStatus
+        /// </summary>
+        public static readonly BulkOperationStatus CANCELLED = new BulkOperationStatus("CANCELLED");
+
+        /// <summary>
+        /// Constant CANCELLING for BulkOperationStatus
+        /// </summary>
+        public static readonly BulkOperationStatus CANCELLING = new BulkOperationStatus("CANCELLING");
+
+        /// <summary>
+        /// Constant COMPLETED for BulkOperationStatus
+        /// </summary>
+        public static readonly BulkOperationStatus COMPLETED = new BulkOperationStatus("COMPLETED");
+
+        /// <summary>
+        /// Constant COMPLETED_WITH_ERRORS for BulkOperationStatus
+        /// </summary>
+        public static readonly BulkOperationStatus COMPLETED_WITH_ERRORS = new BulkOperationStatus("COMPLETED_WITH_ERRORS");
+
+        /// <summary>
+        /// Constant FAILED for BulkOperationStatus
+        /// </summary>
+        public static readonly BulkOperationStatus FAILED = new BulkOperationStatus("FAILED");
+
+        /// <summary>
+        /// Constant IN_PROGRESS for BulkOperationStatus
+        /// </summary>
+        public static readonly BulkOperationStatus IN_PROGRESS = new BulkOperationStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// Constructs a custom BulkOperationStatus for a value not among the defined constants.
+        /// </summary>
+        public BulkOperationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BulkOperationStatus FindValue(string value)
+        {
+            return FindValue<BulkOperationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BulkOperationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ComparisonOperator.
     /// </summary>
     public class ComparisonOperator : ConstantClass
@@ -1333,6 +1476,47 @@ namespace Amazon.DynamoDBv2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MultiRegionConsistency(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type OutputTypeEnum.
+    /// </summary>
+    public class OutputTypeEnum : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONDITION_CHECK_FAILURE for OutputTypeEnum
+        /// </summary>
+        public static readonly OutputTypeEnum CONDITION_CHECK_FAILURE = new OutputTypeEnum("CONDITION_CHECK_FAILURE");
+
+        /// <summary>
+        /// Constant ERROR for OutputTypeEnum
+        /// </summary>
+        public static readonly OutputTypeEnum ERROR = new OutputTypeEnum("ERROR");
+
+        /// <summary>
+        /// Constructs a custom OutputTypeEnum for a value not among the defined constants.
+        /// </summary>
+        public OutputTypeEnum(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OutputTypeEnum FindValue(string value)
+        {
+            return FindValue<OutputTypeEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OutputTypeEnum(string value)
         {
             return FindValue(value);
         }

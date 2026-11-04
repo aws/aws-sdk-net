@@ -39,6 +39,12 @@ namespace Amazon.DynamoDBv2.Model
         IBatchGetItemPaginator BatchGetItem(BatchGetItemRequest request);
 
         /// <summary>
+        /// Paginator for ListBulkOperations operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListBulkOperationsPaginator ListBulkOperations(ListBulkOperationsRequest request);
+
+        /// <summary>
         /// Paginator for ListContributorInsights operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]

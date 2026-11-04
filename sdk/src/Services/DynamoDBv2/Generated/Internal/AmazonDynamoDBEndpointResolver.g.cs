@@ -99,6 +99,12 @@ namespace Amazon.DynamoDBv2.Internal
                 result.ResourceArnList = request.RequestItems?.Keys.ToList();
                 return result;
             }
+            if (requestContext.RequestName == "CancelBulkOperationRequest")
+            {
+                var request = (CancelBulkOperationRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.BulkOperationArn;
+                return result;
+            }
             if (requestContext.RequestName == "CreateBackupRequest")
             {
                 var request = (CreateBackupRequest)requestContext.OriginalRequest;
@@ -145,6 +151,12 @@ namespace Amazon.DynamoDBv2.Internal
             {
                 var request = (DescribeBackupRequest)requestContext.OriginalRequest;
                 result.ResourceArn = request.BackupArn;
+                return result;
+            }
+            if (requestContext.RequestName == "DescribeBulkOperationRequest")
+            {
+                var request = (DescribeBulkOperationRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.BulkOperationArn;
                 return result;
             }
             if (requestContext.RequestName == "DescribeContinuousBackupsRequest")
@@ -313,6 +325,12 @@ namespace Amazon.DynamoDBv2.Internal
             {
                 result.IsSearchOperation = true;
                 var request = (SearchVectorsRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.TableName;
+                return result;
+            }
+            if (requestContext.RequestName == "StartBulkPutItemsRequest")
+            {
+                var request = (StartBulkPutItemsRequest)requestContext.OriginalRequest;
                 result.ResourceArn = request.TableName;
                 return result;
             }
