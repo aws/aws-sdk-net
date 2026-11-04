@@ -517,11 +517,22 @@ body. Wire names reuse the XML naming traits via `XmlNames` (member `@xmlName` e
   Smithy shape name, handing off to the per-error unmarshaller from `XmlExceptionUnmarshallerWriter`
   (shared with restXml).
 
-## Other Protocols (not yet implemented)
+## ec2Query
 
-ec2Query: the target output is defined by the C2J templates
-(`generator/ServiceClientGeneratorLib/Generators/Marshallers/*.tt`). Like awsQuery it routes via an
-`Action={Operation}` param with a URL-encoded body, but every list is flattened and wire names use
-`@ec2QueryName` or the member name with its first letter upper-cased.
+Spec: [aws.protocols#ec2Query](https://smithy.io/2.0/aws/protocols/aws-ec2-query-protocol.html). The
+awsQuery writers with EC2's differences; only EC2 and the EC2Protocol test client use it. Pinned by
+`Ec2QueryCodegenTests` and the EC2Protocol protocol tests.
 
-When implementing it, replace this note with the real patterns and pin the emitted code in codegen tests.
+- **Request body** — as awsQuery, except a parameter name is the member's `@ec2QueryName` verbatim, else
+  its `@xmlName` or member name with an upper-case first letter (`XmlNames.Ec2QueryName`), and every list
+  is flattened (`{name}.{i}`, no `member` segment).
+- **Response body** — `QueryResponseUnmarshallerWriter` with base `EC2ResponseUnmarshaller` (which reads
+  the request id). The output members sit directly under `{Operation}Response`, read at depth 2 with no
+  `Result` element and no `ResponseMetadata`. Element names are the `@xmlName` or member name with a
+  lower-case first letter (`XmlNames.Ec2ResponseName`, used by every XML unmarshaller for this protocol):
+  C2J emits them that way and the runtime matches case-insensitively. A `useWrappingResult` output reads its
+  single member from the whole body (`TestExpression(".", targetDepth)`), as C2J's EC2 output does.
+- **Errors** — `UnmarshallException` builds each modeled error straight from the envelope
+  (`new {Error}Exception(errorResponse.Message, …)`), with no body copy or per-error unmarshaller call,
+  matching C2J's `AWSQueryEC2ResponseUnmarshaller.tt`. The exception unmarshallers themselves are the awsQuery
+  ones.

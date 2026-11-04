@@ -287,14 +287,13 @@ public class GenerationContext
         Protocol = ProtocolResolver.Resolve(index.Service, SdkId);
         UsesHttpBindings = Protocol is AWSProtocol.RestJson1 or AWSProtocol.RestXml;
 
-        // The wrapped output is read as the whole response body, which only awsJson's and rpcv2Cbor's responses are.
-        // TODO: ec2 wraps outputs too; support it in the XML response unmarshaller when ec2Query lands.
-        var supportsWrappedOutput = Protocol is AWSProtocol.AwsJson1_0 or AWSProtocol.AwsJson1_1 or AWSProtocol.RpcV2Cbor;
+        // The wrapped output is read as the whole response body, which only awsJson's, rpcv2Cbor's and ec2Query's responses are.
+        var supportsWrappedOutput = Protocol is AWSProtocol.AwsJson1_0 or AWSProtocol.AwsJson1_1 or AWSProtocol.RpcV2Cbor or AWSProtocol.Ec2Query;
         foreach (var (operationName, modifier) in Customizations.OperationModifiers)
         {
             if (modifier.UseWrappingResult && !supportsWrappedOutput)
             {
-                throw new GeneratorException($"operationModifiers['{operationName}'] wraps the output, which is only supported for awsJson and rpcv2Cbor.");
+                throw new GeneratorException($"operationModifiers['{operationName}'] wraps the output, which is only supported for awsJson, rpcv2Cbor and ec2Query.");
             }
         }
         // allowEmptyResult only drives the restXml response unmarshaller's empty-body early-return; on any
@@ -423,7 +422,6 @@ public class GenerationContext
 
     /// <inheritdoc cref="ServiceIndex.ToDotNetName"/>
     /// <remarks>
-    /// TODO: EC2 query name (aws.protocols#ec2QueryName) is not applied yet.
     /// Customization renames don't belong here — <see cref="CustomizationTransform"/> merges them
     /// into the model.
     /// </remarks>

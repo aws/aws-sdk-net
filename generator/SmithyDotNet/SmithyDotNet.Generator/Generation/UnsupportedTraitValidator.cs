@@ -35,16 +35,17 @@ public static class UnsupportedTraitValidator
 
         // rpcv2Cbor has no document encoding and no content streaming
         // (https://smithy.io/2.0/additional-specs/protocols/smithy-rpc-v2-cbor.html), and no CBOR model uses either.
-        // restXml and awsQuery have no document shape either (neither XML nor a query string can carry an
-        // untyped document). awsQuery has no streaming of any kind
+        // restXml, awsQuery and ec2Query have no document shape either (neither XML nor a query string can carry an
+        // untyped document). awsQuery and ec2Query have no streaming of any kind
         // (https://smithy.io/2.0/aws/protocols/aws-query-protocol.html).
-        var documentsSupported = protocol is not (AWSProtocol.RpcV2Cbor or AWSProtocol.RestXml or AWSProtocol.AwsQuery);
-        var streamingBlobsSupported = protocol is not (AWSProtocol.RpcV2Cbor or AWSProtocol.AwsQuery);
-        var eventStreamsSupported = protocol is not AWSProtocol.AwsQuery;
+        var documentsSupported = protocol is not (AWSProtocol.RpcV2Cbor or AWSProtocol.RestXml or AWSProtocol.AwsQuery or AWSProtocol.Ec2Query);
+        var streamingBlobsSupported = protocol is not (AWSProtocol.RpcV2Cbor or AWSProtocol.AwsQuery or AWSProtocol.Ec2Query);
+        var eventStreamsSupported = protocol is not (AWSProtocol.AwsQuery or AWSProtocol.Ec2Query);
         var protocolLabel = protocol switch
         {
             AWSProtocol.RestXml => "restXml",
             AWSProtocol.AwsQuery => "awsQuery",
+            AWSProtocol.Ec2Query => "ec2Query",
             _ => "rpcv2Cbor",
         };
 

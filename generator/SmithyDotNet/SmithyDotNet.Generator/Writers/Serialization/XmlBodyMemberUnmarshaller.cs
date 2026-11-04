@@ -5,9 +5,10 @@ using SmithyDotNet.Generator.Model.Traits;
 namespace SmithyDotNet.Generator.Writers.Serialization;
 
 /// <summary>
-/// Emits the per-member <c>if (context.TestExpression(...)) { ... }</c> blocks of a restXml/awsQuery
+/// Emits the per-member <c>if (context.TestExpression(...)) { ... }</c> blocks of a restXml/awsQuery/ec2Query
 /// <c>while (context.Read())</c> body loop, into the in-scope <c>unmarshalledObject</c> local. Shared by
-/// the response, structure and exception unmarshaller writers.
+/// the response, structure and exception unmarshaller writers. ec2Query element names come from
+/// <see cref="XmlNames.Ec2ResponseName"/>.
 /// <para/>
 /// A scalar/structure/blob member reads whole; a non-flattened list matches <c>member/item</c> and adds
 /// one element per hit; a flattened list matches the member name and adds; a restXml wrapped map reads
@@ -28,12 +29,12 @@ internal static class XmlBodyMemberUnmarshaller
         {
             var member = members[i];
             var memberShape = owner.Members[member.ModeledName];
-            var name = XmlNames.ElementName(memberShape, member.ModeledName);
+            var name = protocol == AWSProtocol.Ec2Query ? XmlNames.Ec2ResponseName(memberShape, member.ModeledName) : XmlNames.ElementName(memberShape, member.ModeledName);
             var isAttribute = memberShape.IsXmlAttribute();
             var flattened = XmlNames.IsFlattened(memberShape, member.Type.Target);
             // C2J's awsQuery templates build every map one entry at a time, so an empty <map/> leaves the
             // property unset; restXml reads a wrapped map whole, yielding an empty map.
-            var incrementalMap = member.Type.MapValue is not null && (flattened || protocol == AWSProtocol.AwsQuery);
+            var incrementalMap = member.Type.MapValue is not null && (flattened || protocol is AWSProtocol.AwsQuery or AWSProtocol.Ec2Query);
 
             string expression;
             string? depth = depthExpr;

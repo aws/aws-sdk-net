@@ -33,6 +33,13 @@ public static class AWSTraits
     /// <remarks><see href="https://smithy.io/2.0/aws/protocols/aws-query-protocol.html#aws-protocols-awsquery-trait" /></remarks>
     public static ProtocolTrait? GetAwsQuery(this Shape shape) => DeserializeTrait<ProtocolTrait>(shape, "aws.protocols#awsQuery");
 
+    /// <remarks><see href="https://smithy.io/2.0/aws/protocols/aws-ec2-query-protocol.html#aws-protocols-ec2query-trait" /></remarks>
+    public static ProtocolTrait? GetEc2Query(this Shape shape) => DeserializeTrait<ProtocolTrait>(shape, "aws.protocols#ec2Query");
+
+    /// <summary>The member's <c>aws.protocols#ec2QueryName</c>: its ec2Query request parameter name, used verbatim.</summary>
+    /// <remarks><see href="https://smithy.io/2.0/aws/protocols/aws-ec2-query-protocol.html#aws-protocols-ec2queryname-trait" /></remarks>
+    public static string? GetEc2QueryName(this Shape shape) => GetStringTrait(shape, "aws.protocols#ec2QueryName");
+
     /// <summary>The error's <c>aws.protocols#awsQueryError</c> customization (the wire <c>Code</c> awsQuery dispatches on), or null.</summary>
     /// <remarks><see href="https://smithy.io/2.0/aws/protocols/aws-query-protocol.html#aws-protocols-awsqueryerror-trait" /></remarks>
     public static AwsQueryErrorTrait? GetAwsQueryError(this Shape shape) => DeserializeTrait<AwsQueryErrorTrait>(shape, "aws.protocols#awsQueryError");

@@ -353,7 +353,7 @@ for a form member). All three carry the member `@documentation` onto the paramet
 `operationModifiers.{Operation}.exclude` unbinds the operation from its service or resource and `shapeModifiers.{Shape}.exclude`
 removes members, so whatever is no longer reachable is not emitted. `useWrappingResult` moves the output under one member,
 `wrappedResultMember`, of a new output structure: the response has a single property of the output's type, paginator paths go
-through it, and the JSON response unmarshaller reads it from the whole body.
+through it, and the JSON, CBOR and ec2Query response unmarshallers read it from the whole body.
 
 - What Smithy supports today is whatever `Generation/Customizations/CustomizationsModel.cs` parses;
   each hook's per-level behavior lives on that record, its `Apply`/`Validate` step, and its lookup.

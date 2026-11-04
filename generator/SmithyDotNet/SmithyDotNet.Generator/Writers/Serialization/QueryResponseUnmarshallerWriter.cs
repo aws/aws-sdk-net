@@ -1,6 +1,7 @@
 using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Generation.Operations;
 using SmithyDotNet.Generator.Generation.Protocols;
+using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
 using SmithyDotNet.Generator.Writers.Shapes;
 
@@ -15,9 +16,16 @@ namespace SmithyDotNet.Generator.Writers.Serialization;
 /// error dispatch are the same XML machinery as restXml (<see cref="XmlBodyMemberUnmarshaller"/>,
 /// <c>XmlErrorResponseUnmarshaller</c>); there are no HTTP binding reads. Mirrors C2J's
 /// <c>AWSQueryResponseUnmarshaller.tt</c>.
+/// <para/>
+/// ec2Query has no <c>Result</c> element and no <c>ResponseMetadata</c>: the output members sit directly under
+/// the <c>{Operation}Response</c> root, read by an <c>EC2ResponseUnmarshaller</c> (which takes the request id),
+/// and a modeled error is constructed straight from the error envelope. Mirrors C2J's
+/// <c>AWSQueryEC2ResponseUnmarshaller.tt</c>.
 /// </summary>
 public sealed class QueryResponseUnmarshallerWriter(GenerationContext context, string modelFileName)
 {
+    private const string ErrorEnvelopeArguments = "errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode";
+
     public string Write(Operation operation, CancellationToken cancellationToken = default)
     {
         var className = $"{operation.Name}Response";
@@ -34,13 +42,23 @@ public sealed class QueryResponseUnmarshallerWriter(GenerationContext context, s
             writer.WriteLine("/// <summary>");
             writer.WriteLine($"/// Response Unmarshaller for {operation.Name} operation.");
             writer.WriteLine("/// </summary>");
-            writer.OpenBlock($"public partial class {unmarshallerClassName} : XmlResponseUnmarshaller", () =>
+            var isEc2 = context.Protocol == AWSProtocol.Ec2Query;
+            writer.OpenBlock($"public partial class {unmarshallerClassName} : {(isEc2 ? "EC2ResponseUnmarshaller" : "XmlResponseUnmarshaller")}", () =>
             {
-                WriteUnmarshallMethod(writer, className, operation);
-                writer.WriteLine("");
-                WriteUnmarshallResult(writer, className, operation, members);
-                writer.WriteLine("");
-                WriteUnmarshallExceptionMethod(writer, operation);
+                if (isEc2)
+                {
+                    WriteUnmarshallResult(writer, className, operation, members);
+                    writer.WriteLine("");
+                    WriteEc2UnmarshallExceptionMethod(writer, operation);
+                }
+                else
+                {
+                    WriteUnmarshallMethod(writer, className, operation);
+                    writer.WriteLine("");
+                    WriteUnmarshallResult(writer, className, operation, members);
+                    writer.WriteLine("");
+                    WriteUnmarshallExceptionMethod(writer, operation);
+                }
                 writer.WriteLine("");
                 MarshallerCommon.WriteResponseUnmarshallerSingleton(writer, unmarshallerClassName);
             });
@@ -81,42 +99,71 @@ public sealed class QueryResponseUnmarshallerWriter(GenerationContext context, s
         });
     }
 
-    // The {Operation}Result element's members, read with the shared XML body-member machinery into the
-    // in-scope `unmarshalledObject` local (the name WriteMemberBlocks writes to). Depth handling matches
-    // C2J: a result read from the document root sits two elements below it (the Response wrapper and the
-    // Result element), hence targetDepth += 2 at the start of the document.
-    private static void WriteUnmarshallResult(CodeWriter writer, string className, Operation operation, List<Member> members)
+    // The output members, read with the shared XML body-member machinery into the in-scope `unmarshalledObject`
+    // local (the name WriteMemberBlocks writes to). awsQuery reads them in UnmarshallResult, entered inside the
+    // {Operation}Result element; ec2Query has no Result element, so its Unmarshall override reads them under the root.
+    private void WriteUnmarshallResult(CodeWriter writer, string className, Operation operation, List<Member> members)
     {
-        // An output with no members still gets the method and the dispatch to it (C2J parity): the Result
-        // element is then consumed by this loop rather than the caller's. Its object parameter goes unused,
-        // so the analyzer is suppressed exactly as C2J does.
-        if (members.Count == 0)
+        var isEc2 = context.Protocol == AWSProtocol.Ec2Query;
+        if (isEc2)
         {
+            writer.WriteLine("/// <summary>");
+            writer.WriteLine("/// Unmarshaller the response from the service to the response class.");
+            writer.WriteLine("/// </summary>");
+        }
+        else if (members.Count == 0)
+        {
+            // An output with no members still gets the method and the dispatch to it (C2J parity): the Result
+            // element is then consumed by this loop rather than the caller's. Its object parameter goes unused,
+            // so the analyzer is suppressed exactly as C2J does.
             writer.WriteLine("""[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId = "unmarshalledObject")]""");
         }
-        writer.OpenBlock($"private static void UnmarshallResult(XmlUnmarshallerContext context, {className} unmarshalledObject)", () =>
+
+        var signature = isEc2
+            ? "public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)"
+            : $"private static void UnmarshallResult(XmlUnmarshallerContext context, {className} unmarshalledObject)";
+        writer.OpenBlock(signature, () =>
         {
+            if (isEc2)
+            {
+                writer.WriteLine($"{className} unmarshalledObject = new {className}();");
+                writer.WriteLine("");
+            }
             writer.WriteLine("int originalDepth = context.CurrentDepth;");
             writer.WriteLine("int targetDepth = originalDepth + 1;");
-            // A result read from the document root sits two elements below it (the Response wrapper and the
-            // Result element). In the normal flow UnmarshallResult is entered already inside the Result
-            // element, so this never fires; C2J emits it unconditionally and it is kept for parity.
+            // From the document root, ec2Query members sit at depth 2 (under the Response root) and awsQuery
+            // members two elements further down (under the Response wrapper and the Result element). awsQuery
+            // enters UnmarshallResult already inside the Result element, so there this never fires; C2J emits
+            // it unconditionally and each protocol keeps its C2J line.
             writer.OpenBlock("if (context.IsStartOfDocument)", () =>
             {
-                writer.WriteLine("targetDepth += 2;");
+                writer.WriteLine(isEc2 ? "targetDepth = 2;" : "targetDepth += 2;");
             });
             writer.WriteLine("");
-            // ReadAtDepth bounds the loop to the Result element's subtree: it stops as soon as the reader
-            // rises above originalDepth, so the sibling <ResponseMetadata> is left for the outer loop.
+            // ReadAtDepth bounds the loop to the current element's subtree: on awsQuery it stops as soon as the
+            // reader rises above the Result element, so the sibling <ResponseMetadata> is left for the outer loop.
             writer.OpenBlock("while (context.ReadAtDepth(originalDepth))", () =>
             {
                 writer.OpenBlock("if (context.IsStartElement || context.IsAttribute)", () =>
                 {
-                    XmlBodyMemberUnmarshaller.WriteMemberBlocks(writer, operation.Output, members, "targetDepth", AWSProtocol.AwsQuery);
+                    if (context.Customizations.WrapsOutput(operation.Name))
+                    {
+                        // A wrapped output reads its single member from the whole body (".").
+                        var wrapped = members.Single();
+                        writer.OpenBlock("""if (context.TestExpression(".", targetDepth))""", () =>
+                        {
+                            writer.WriteLine($"unmarshalledObject.{wrapped.PropertyName} = {wrapped.Type.UnmarshallerName}.Instance.Unmarshall(context);");
+                            writer.WriteLine("continue;");
+                        });
+                    }
+                    else
+                    {
+                        XmlBodyMemberUnmarshaller.WriteMemberBlocks(writer, operation.Output, members, "targetDepth", context.Protocol);
+                    }
                 });
             });
             writer.WriteLine("");
-            writer.WriteLine("return;");
+            writer.WriteLine(isEc2 ? "return unmarshalledObject;" : "return;");
         });
     }
 
@@ -140,18 +187,39 @@ public sealed class QueryResponseUnmarshallerWriter(GenerationContext context, s
                     foreach (var error in operation.Errors)
                     {
                         var exceptionClassName = ExceptionWriter.ToExceptionName(context.ToDotNetName(error.Id));
-                        // @awsQueryError overrides the wire Code the client dispatches on (else the shape name).
-                        var dispatchCode = error.GetAwsQueryError()?.Code ?? error.Id.Name;
-                        writer.OpenBlock($"""if (errorResponse.Code != null && errorResponse.Code.Equals("{dispatchCode}"))""", () =>
+                        writer.OpenBlock($"""if (errorResponse.Code != null && errorResponse.Code.Equals("{DispatchCode(error)}"))""", () =>
                         {
                             writer.WriteLine($"return {exceptionClassName}Unmarshaller.Instance.Unmarshall(contextCopy, errorResponse);");
                         });
                     }
                 });
             });
-            writer.WriteLine($"return new Amazon{context.BaseName}Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);");
+            writer.WriteLine($"return new Amazon{context.BaseName}Exception({ErrorEnvelopeArguments});");
         });
     }
+
+    private void WriteEc2UnmarshallExceptionMethod(CodeWriter writer, Operation operation)
+    {
+        writer.WriteLine("/// <summary>");
+        writer.WriteLine("/// Unmarshall error response to exception.");
+        writer.WriteLine("/// </summary>");
+        writer.OpenBlock("public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)", () =>
+        {
+            writer.WriteLine("ErrorResponse errorResponse = XmlErrorResponseUnmarshaller.GetInstance().Unmarshall(context);");
+            foreach (var error in operation.Errors)
+            {
+                var exceptionClassName = ExceptionWriter.ToExceptionName(context.ToDotNetName(error.Id));
+                writer.OpenBlock($"""if (errorResponse.Code != null && errorResponse.Code.Equals("{DispatchCode(error)}"))""", () =>
+                {
+                    writer.WriteLine($"return new {exceptionClassName}({ErrorEnvelopeArguments});");
+                });
+            }
+            writer.WriteLine($"return new Amazon{context.BaseName}Exception({ErrorEnvelopeArguments});");
+        });
+    }
+
+    // @awsQueryError overrides the wire Code the client dispatches on (else the shape name).
+    private static string DispatchCode(StructureShape error) => error.GetAwsQueryError()?.Code ?? error.Id.Name;
 
     private void WriteUsings(CodeWriter writer)
     {

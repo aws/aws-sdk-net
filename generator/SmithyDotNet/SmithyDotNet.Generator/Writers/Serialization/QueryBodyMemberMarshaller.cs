@@ -1,4 +1,5 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Protocols;
 using SmithyDotNet.Generator.Model.Shapes;
 
 namespace SmithyDotNet.Generator.Writers.Serialization;
@@ -13,7 +14,8 @@ namespace SmithyDotNet.Generator.Writers.Serialization;
 /// structure dot-joins its prefix (<c>Outer.Inner</c>); a list is <c>{name}.member.{i}</c> (or
 /// <c>{name}.{i}</c> when <c>@xmlFlattened</c>), its item element named by the list value's <c>@xmlName</c>;
 /// a map is <c>{name}.entry.{i}.key</c>/<c>.value</c> (or <c>{name}.{i}.*</c> when flattened). Indices are
-/// 1-based, matching C2J (<c>AWSQueryRequestMarshaller.tt</c>).
+/// 1-based, matching C2J (<c>AWSQueryRequestMarshaller.tt</c>). ec2Query names a member by
+/// <see cref="XmlNames.Ec2QueryName"/> and writes every list flattened.
 /// </summary>
 internal sealed class QueryBodyMemberMarshaller(GenerationContext context)
 {
@@ -31,7 +33,7 @@ internal sealed class QueryBodyMemberMarshaller(GenerationContext context)
         foreach (var member in members)
         {
             var memberShape = owner.Members[member.ModeledName];
-            var name = XmlNames.ElementName(memberShape, member.ModeledName);
+            var name = context.Protocol == AWSProtocol.Ec2Query ? XmlNames.Ec2QueryName(memberShape, member.ModeledName) : XmlNames.ElementName(memberShape, member.ModeledName);
             var paramName = Join(prefix, name);
             var access = $"{objectVar}.{member.PropertyName}";
 
@@ -83,7 +85,8 @@ internal sealed class QueryBodyMemberMarshaller(GenerationContext context)
     private void WriteList(CodeWriter writer, MemberShape memberShape, TypeDescriptor collection, TypeDescriptor element, string access, string paramName, int depth)
     {
         var list = (ListShape)collection.Target;
-        var flattened = XmlNames.IsFlattened(memberShape, list);
+        // The ec2Query spec never wraps list items (C2J's DetermineAWSQueryListMemberPrefix).
+        var flattened = context.Protocol == AWSProtocol.Ec2Query || XmlNames.IsFlattened(memberShape, list);
         var itemPrefix = flattened ? paramName : Join(paramName, XmlNames.ListItemName(list));
         var indexVar = $"index{depth}";
         var itemVar = $"item{depth}";

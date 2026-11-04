@@ -104,13 +104,13 @@ public class GenerationContextTests
     }
 
     [Fact]
-    public void UseWrappingResult_OutsideAwsJsonAndRpcV2Cbor_Throws()
+    public void UseWrappingResult_OutsideAwsJsonRpcV2CborAndEc2Query_Throws()
     {
         var customizations = new CustomizationsModel();
         customizations.OperationModifiers["GetThing"] = new OperationModifier { UseWrappingResult = true };
 
         var ex = Assert.Throws<GeneratorException>(() => new GenerationContext(new ServiceIndex(TestModels.Load("Codegen/codegen-model.json")), TestManifests.Example(), customizations: customizations));
-        Assert.Contains("operationModifiers['GetThing'] wraps the output, which is only supported for awsJson and rpcv2Cbor.", ex.Message);
+        Assert.Contains("operationModifiers['GetThing'] wraps the output, which is only supported for awsJson, rpcv2Cbor and ec2Query.", ex.Message);
     }
 
     [Theory]
