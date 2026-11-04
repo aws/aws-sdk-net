@@ -12,6 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+#if NETFRAMEWORK
 using System.Collections.Generic;
 using System.Linq;
 
@@ -212,3 +213,4 @@ namespace Amazon.SimpleNotificationService
         }
     }
 }
+#endif

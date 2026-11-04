@@ -21,6 +21,23 @@
         "GenerateCredentialReport",
         "GetCredentialReport"
     ],
+    "paginators": {
+        "GetAccountAuthorizationDetails": {
+            "items": [
+                "UserDetailList",
+                "GroupDetailList",
+                "RoleDetailList",
+                "Policies"
+            ]
+        },
+        "ListEntitiesForPolicy": {
+            "items": [
+                "PolicyGroups",
+                "PolicyUsers",
+                "PolicyRoles"
+            ]
+        }
+    },
     "shapeSubstitutions": {
         "Policy": {
             "renameShape": "ManagedPolicy"
