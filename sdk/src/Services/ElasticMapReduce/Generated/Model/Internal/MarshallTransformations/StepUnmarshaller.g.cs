@@ -60,6 +60,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("AdditionalInfo", targetDepth, ref reader))
+                {
+                    var unmarshaller = StepAdditionalInfoUnmarshaller.Instance;
+                    unmarshalledObject.AdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("Config", targetDepth, ref reader))
                 {
                     var unmarshaller = HadoopStepConfigUnmarshaller.Instance;

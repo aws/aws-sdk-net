@@ -49,6 +49,20 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetActionOnFailure() => this.ActionOnFailure != null;
 
         /// <summary>
+        /// Gets and sets the property AdditionalInfo. 
+        /// <para>
+        /// Additional information about the step, including the YARN application IDs associated
+        /// with the step and the resource manager that processed it.
+        /// </para>
+        /// </summary>
+        public StepAdditionalInfo AdditionalInfo { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AdditionalInfo property is set.
+        /// </summary>
+        internal bool IsSetAdditionalInfo() => this.AdditionalInfo != null;
+
+        /// <summary>
         /// Gets and sets the property Config. 
         /// <para>
         /// The Hadoop job configuration of the cluster step.
