@@ -70,6 +70,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         CreateDatasetResponse CreateDataset(CreateDatasetRequest request);
 #endif
 
@@ -105,6 +106,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<CreateDatasetResponse> CreateDatasetAsync(CreateDatasetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -142,6 +144,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateInferenceScheduler">REST API Reference for CreateInferenceScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         CreateInferenceSchedulerResponse CreateInferenceScheduler(CreateInferenceSchedulerRequest request);
 #endif
 
@@ -182,6 +185,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateInferenceScheduler">REST API Reference for CreateInferenceScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<CreateInferenceSchedulerResponse> CreateInferenceSchedulerAsync(CreateInferenceSchedulerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -215,6 +219,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabel">REST API Reference for CreateLabel Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         CreateLabelResponse CreateLabel(CreateLabelRequest request);
 #endif
 
@@ -251,6 +256,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabel">REST API Reference for CreateLabel Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<CreateLabelResponse> CreateLabelAsync(CreateLabelRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -280,6 +286,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabelGroup">REST API Reference for CreateLabelGroup Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         CreateLabelGroupResponse CreateLabelGroup(CreateLabelGroupRequest request);
 #endif
 
@@ -312,6 +319,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabelGroup">REST API Reference for CreateLabelGroup Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<CreateLabelGroupResponse> CreateLabelGroupAsync(CreateLabelGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -360,6 +368,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateModel">REST API Reference for CreateModel Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         CreateModelResponse CreateModel(CreateModelRequest request);
 #endif
 
@@ -411,6 +420,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateModel">REST API Reference for CreateModel Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<CreateModelResponse> CreateModelAsync(CreateModelRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -441,6 +451,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateRetrainingScheduler">REST API Reference for CreateRetrainingScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         CreateRetrainingSchedulerResponse CreateRetrainingScheduler(CreateRetrainingSchedulerRequest request);
 #endif
 
@@ -474,6 +485,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateRetrainingScheduler">REST API Reference for CreateRetrainingScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<CreateRetrainingSchedulerResponse> CreateRetrainingSchedulerAsync(CreateRetrainingSchedulerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -508,6 +520,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request);
 #endif
 
@@ -545,6 +558,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<DeleteDatasetResponse> DeleteDatasetAsync(DeleteDatasetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -576,6 +590,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteInferenceScheduler">REST API Reference for DeleteInferenceScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         DeleteInferenceSchedulerResponse DeleteInferenceScheduler(DeleteInferenceSchedulerRequest request);
 #endif
 
@@ -610,6 +625,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteInferenceScheduler">REST API Reference for DeleteInferenceScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<DeleteInferenceSchedulerResponse> DeleteInferenceSchedulerAsync(DeleteInferenceSchedulerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -640,6 +656,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabel">REST API Reference for DeleteLabel Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         DeleteLabelResponse DeleteLabel(DeleteLabelRequest request);
 #endif
 
@@ -673,6 +690,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabel">REST API Reference for DeleteLabel Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<DeleteLabelResponse> DeleteLabelAsync(DeleteLabelRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -703,6 +721,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabelGroup">REST API Reference for DeleteLabelGroup Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         DeleteLabelGroupResponse DeleteLabelGroup(DeleteLabelGroupRequest request);
 #endif
 
@@ -736,6 +755,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabelGroup">REST API Reference for DeleteLabelGroup Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<DeleteLabelGroupResponse> DeleteLabelGroupAsync(DeleteLabelGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -768,6 +788,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteModel">REST API Reference for DeleteModel Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         DeleteModelResponse DeleteModel(DeleteModelRequest request);
 #endif
 
@@ -803,6 +824,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteModel">REST API Reference for DeleteModel Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<DeleteModelResponse> DeleteModelAsync(DeleteModelRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -833,6 +855,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request);
 #endif
 
@@ -866,6 +889,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -897,6 +921,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteRetrainingScheduler">REST API Reference for DeleteRetrainingScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         DeleteRetrainingSchedulerResponse DeleteRetrainingScheduler(DeleteRetrainingSchedulerRequest request);
 #endif
 
@@ -931,6 +956,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteRetrainingScheduler">REST API Reference for DeleteRetrainingScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<DeleteRetrainingSchedulerResponse> DeleteRetrainingSchedulerAsync(DeleteRetrainingSchedulerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -958,6 +984,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeDataIngestionJob">REST API Reference for DescribeDataIngestionJob Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         DescribeDataIngestionJobResponse DescribeDataIngestionJob(DescribeDataIngestionJobRequest request);
 #endif
 
@@ -988,6 +1015,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeDataIngestionJob">REST API Reference for DescribeDataIngestionJob Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<DescribeDataIngestionJobResponse> DescribeDataIngestionJobAsync(DescribeDataIngestionJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -1015,6 +1043,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeDataset">REST API Reference for DescribeDataset Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         DescribeDatasetResponse DescribeDataset(DescribeDatasetRequest request);
 #endif
 
@@ -1045,6 +1074,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeDataset">REST API Reference for DescribeDataset Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<DescribeDatasetResponse> DescribeDatasetAsync(DescribeDatasetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -1072,6 +1102,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeInferenceScheduler">REST API Reference for DescribeInferenceScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         DescribeInferenceSchedulerResponse DescribeInferenceScheduler(DescribeInferenceSchedulerRequest request);
 #endif
 
@@ -1102,6 +1133,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeInferenceScheduler">REST API Reference for DescribeInferenceScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<DescribeInferenceSchedulerResponse> DescribeInferenceSchedulerAsync(DescribeInferenceSchedulerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -1128,6 +1160,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabel">REST API Reference for DescribeLabel Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         DescribeLabelResponse DescribeLabel(DescribeLabelRequest request);
 #endif
 
@@ -1157,6 +1190,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabel">REST API Reference for DescribeLabel Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<DescribeLabelResponse> DescribeLabelAsync(DescribeLabelRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -1183,6 +1217,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabelGroup">REST API Reference for DescribeLabelGroup Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         DescribeLabelGroupResponse DescribeLabelGroup(DescribeLabelGroupRequest request);
 #endif
 
@@ -1212,6 +1247,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabelGroup">REST API Reference for DescribeLabelGroup Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<DescribeLabelGroupResponse> DescribeLabelGroupAsync(DescribeLabelGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -1240,6 +1276,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeModel">REST API Reference for DescribeModel Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         DescribeModelResponse DescribeModel(DescribeModelRequest request);
 #endif
 
@@ -1271,6 +1308,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeModel">REST API Reference for DescribeModel Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<DescribeModelResponse> DescribeModelAsync(DescribeModelRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -1297,6 +1335,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeModelVersion">REST API Reference for DescribeModelVersion Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         DescribeModelVersionResponse DescribeModelVersion(DescribeModelVersionRequest request);
 #endif
 
@@ -1326,6 +1365,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeModelVersion">REST API Reference for DescribeModelVersion Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<DescribeModelVersionResponse> DescribeModelVersionAsync(DescribeModelVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -1352,6 +1392,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeResourcePolicy">REST API Reference for DescribeResourcePolicy Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         DescribeResourcePolicyResponse DescribeResourcePolicy(DescribeResourcePolicyRequest request);
 #endif
 
@@ -1381,6 +1422,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeResourcePolicy">REST API Reference for DescribeResourcePolicy Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<DescribeResourcePolicyResponse> DescribeResourcePolicyAsync(DescribeResourcePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -1408,6 +1450,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeRetrainingScheduler">REST API Reference for DescribeRetrainingScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         DescribeRetrainingSchedulerResponse DescribeRetrainingScheduler(DescribeRetrainingSchedulerRequest request);
 #endif
 
@@ -1438,6 +1481,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeRetrainingScheduler">REST API Reference for DescribeRetrainingScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<DescribeRetrainingSchedulerResponse> DescribeRetrainingSchedulerAsync(DescribeRetrainingSchedulerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -1471,6 +1515,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ImportDataset">REST API Reference for ImportDataset Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         ImportDatasetResponse ImportDataset(ImportDatasetRequest request);
 #endif
 
@@ -1507,6 +1552,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ImportDataset">REST API Reference for ImportDataset Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<ImportDatasetResponse> ImportDatasetAsync(ImportDatasetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -1540,6 +1586,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ImportModelVersion">REST API Reference for ImportModelVersion Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         ImportModelVersionResponse ImportModelVersion(ImportModelVersionRequest request);
 #endif
 
@@ -1576,6 +1623,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ImportModelVersion">REST API Reference for ImportModelVersion Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<ImportModelVersionResponse> ImportModelVersionAsync(ImportModelVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -1599,6 +1647,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListDataIngestionJobs">REST API Reference for ListDataIngestionJobs Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         ListDataIngestionJobsResponse ListDataIngestionJobs(ListDataIngestionJobsRequest request);
 #endif
 
@@ -1625,6 +1674,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListDataIngestionJobs">REST API Reference for ListDataIngestionJobs Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<ListDataIngestionJobsResponse> ListDataIngestionJobsAsync(ListDataIngestionJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -1647,6 +1697,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         ListDatasetsResponse ListDatasets(ListDatasetsRequest request);
 #endif
 
@@ -1672,6 +1723,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<ListDatasetsResponse> ListDatasetsAsync(ListDatasetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -1698,6 +1750,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceEvents">REST API Reference for ListInferenceEvents Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         ListInferenceEventsResponse ListInferenceEvents(ListInferenceEventsRequest request);
 #endif
 
@@ -1727,6 +1780,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceEvents">REST API Reference for ListInferenceEvents Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<ListInferenceEventsResponse> ListInferenceEventsAsync(ListInferenceEventsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -1754,6 +1808,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceExecutions">REST API Reference for ListInferenceExecutions Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         ListInferenceExecutionsResponse ListInferenceExecutions(ListInferenceExecutionsRequest request);
 #endif
 
@@ -1784,6 +1839,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceExecutions">REST API Reference for ListInferenceExecutions Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<ListInferenceExecutionsResponse> ListInferenceExecutionsAsync(ListInferenceExecutionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -1806,6 +1862,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceSchedulers">REST API Reference for ListInferenceSchedulers Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         ListInferenceSchedulersResponse ListInferenceSchedulers(ListInferenceSchedulersRequest request);
 #endif
 
@@ -1831,6 +1888,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceSchedulers">REST API Reference for ListInferenceSchedulers Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<ListInferenceSchedulersResponse> ListInferenceSchedulersAsync(ListInferenceSchedulersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -1853,6 +1911,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabelGroups">REST API Reference for ListLabelGroups Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         ListLabelGroupsResponse ListLabelGroups(ListLabelGroupsRequest request);
 #endif
 
@@ -1878,6 +1937,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabelGroups">REST API Reference for ListLabelGroups Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<ListLabelGroupsResponse> ListLabelGroupsAsync(ListLabelGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -1900,6 +1960,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabels">REST API Reference for ListLabels Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         ListLabelsResponse ListLabels(ListLabelsRequest request);
 #endif
 
@@ -1925,6 +1986,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabels">REST API Reference for ListLabels Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<ListLabelsResponse> ListLabelsAsync(ListLabelsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -1953,6 +2015,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListModelVersions">REST API Reference for ListModelVersions Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         ListModelVersionsResponse ListModelVersions(ListModelVersionsRequest request);
 #endif
 
@@ -1984,6 +2047,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListModelVersions">REST API Reference for ListModelVersions Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<ListModelVersionsResponse> ListModelVersionsAsync(ListModelVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -2007,6 +2071,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListModels">REST API Reference for ListModels Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         ListModelsResponse ListModels(ListModelsRequest request);
 #endif
 
@@ -2033,6 +2098,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListModels">REST API Reference for ListModels Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<ListModelsResponse> ListModelsAsync(ListModelsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -2056,6 +2122,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListRetrainingSchedulers">REST API Reference for ListRetrainingSchedulers Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         ListRetrainingSchedulersResponse ListRetrainingSchedulers(ListRetrainingSchedulersRequest request);
 #endif
 
@@ -2082,6 +2149,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListRetrainingSchedulers">REST API Reference for ListRetrainingSchedulers Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<ListRetrainingSchedulersResponse> ListRetrainingSchedulersAsync(ListRetrainingSchedulersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -2110,6 +2178,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListSensorStatistics">REST API Reference for ListSensorStatistics Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         ListSensorStatisticsResponse ListSensorStatistics(ListSensorStatisticsRequest request);
 #endif
 
@@ -2141,6 +2210,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListSensorStatistics">REST API Reference for ListSensorStatistics Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<ListSensorStatisticsResponse> ListSensorStatisticsAsync(ListSensorStatisticsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -2167,6 +2237,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
 #endif
 
@@ -2196,6 +2267,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -2229,6 +2301,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request);
 #endif
 
@@ -2265,6 +2338,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -2298,6 +2372,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartDataIngestionJob">REST API Reference for StartDataIngestionJob Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         StartDataIngestionJobResponse StartDataIngestionJob(StartDataIngestionJobRequest request);
 #endif
 
@@ -2334,6 +2409,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartDataIngestionJob">REST API Reference for StartDataIngestionJob Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<StartDataIngestionJobResponse> StartDataIngestionJobAsync(StartDataIngestionJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -2364,6 +2440,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartInferenceScheduler">REST API Reference for StartInferenceScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         StartInferenceSchedulerResponse StartInferenceScheduler(StartInferenceSchedulerRequest request);
 #endif
 
@@ -2397,6 +2474,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartInferenceScheduler">REST API Reference for StartInferenceScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<StartInferenceSchedulerResponse> StartInferenceSchedulerAsync(StartInferenceSchedulerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -2427,6 +2505,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartRetrainingScheduler">REST API Reference for StartRetrainingScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         StartRetrainingSchedulerResponse StartRetrainingScheduler(StartRetrainingSchedulerRequest request);
 #endif
 
@@ -2460,6 +2539,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartRetrainingScheduler">REST API Reference for StartRetrainingScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<StartRetrainingSchedulerResponse> StartRetrainingSchedulerAsync(StartRetrainingSchedulerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -2490,6 +2570,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StopInferenceScheduler">REST API Reference for StopInferenceScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         StopInferenceSchedulerResponse StopInferenceScheduler(StopInferenceSchedulerRequest request);
 #endif
 
@@ -2523,6 +2604,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StopInferenceScheduler">REST API Reference for StopInferenceScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<StopInferenceSchedulerResponse> StopInferenceSchedulerAsync(StopInferenceSchedulerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -2553,6 +2635,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StopRetrainingScheduler">REST API Reference for StopRetrainingScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         StopRetrainingSchedulerResponse StopRetrainingScheduler(StopRetrainingSchedulerRequest request);
 #endif
 
@@ -2586,6 +2669,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StopRetrainingScheduler">REST API Reference for StopRetrainingScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<StopRetrainingSchedulerResponse> StopRetrainingSchedulerAsync(StopRetrainingSchedulerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -2619,6 +2703,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/TagResource">REST API Reference for TagResource Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         TagResourceResponse TagResource(TagResourceRequest request);
 #endif
 
@@ -2655,6 +2740,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/TagResource">REST API Reference for TagResource Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -2681,6 +2767,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         UntagResourceResponse UntagResource(UntagResourceRequest request);
 #endif
 
@@ -2710,6 +2797,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -2740,6 +2828,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateActiveModelVersion">REST API Reference for UpdateActiveModelVersion Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         UpdateActiveModelVersionResponse UpdateActiveModelVersion(UpdateActiveModelVersionRequest request);
 #endif
 
@@ -2773,6 +2862,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateActiveModelVersion">REST API Reference for UpdateActiveModelVersion Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<UpdateActiveModelVersionResponse> UpdateActiveModelVersionAsync(UpdateActiveModelVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -2803,6 +2893,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateInferenceScheduler">REST API Reference for UpdateInferenceScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         UpdateInferenceSchedulerResponse UpdateInferenceScheduler(UpdateInferenceSchedulerRequest request);
 #endif
 
@@ -2836,6 +2927,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateInferenceScheduler">REST API Reference for UpdateInferenceScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<UpdateInferenceSchedulerResponse> UpdateInferenceSchedulerAsync(UpdateInferenceSchedulerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -2866,6 +2958,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateLabelGroup">REST API Reference for UpdateLabelGroup Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         UpdateLabelGroupResponse UpdateLabelGroup(UpdateLabelGroupRequest request);
 #endif
 
@@ -2899,6 +2992,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateLabelGroup">REST API Reference for UpdateLabelGroup Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<UpdateLabelGroupResponse> UpdateLabelGroupAsync(UpdateLabelGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -2929,6 +3023,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateModel">REST API Reference for UpdateModel Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         UpdateModelResponse UpdateModel(UpdateModelRequest request);
 #endif
 
@@ -2962,6 +3057,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateModel">REST API Reference for UpdateModel Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<UpdateModelResponse> UpdateModelAsync(UpdateModelRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -2992,6 +3088,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateRetrainingScheduler">REST API Reference for UpdateRetrainingScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         UpdateRetrainingSchedulerResponse UpdateRetrainingScheduler(UpdateRetrainingSchedulerRequest request);
 #endif
 
@@ -3025,6 +3122,7 @@ namespace Amazon.LookoutEquipment
         /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateRetrainingScheduler">REST API Reference for UpdateRetrainingScheduler Operation</seealso>
+        [Obsolete("End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/")]
         Task<UpdateRetrainingSchedulerResponse> UpdateRetrainingSchedulerAsync(UpdateRetrainingSchedulerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
