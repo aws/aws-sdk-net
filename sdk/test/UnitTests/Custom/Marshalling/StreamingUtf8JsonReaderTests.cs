@@ -354,5 +354,124 @@ namespace AWSSDK.UnitTests
             }
         }
 
+        /// <summary>
+        /// After the buffer has been released the value accessors must not read from the array that went back to the
+        /// pool: they report nothing or throw, and the token type is still that of the closing token.
+        /// </summary>
+        [TestMethod]
+        public void ValueAccessorsDoNotReadReleasedBuffer()
+        {
+            byte[] payload = Encoding.UTF8.GetBytes("{\"key\":\"value\"}");
+            using (var stream = new MemoryStream(payload))
+            {
+                var reader = new StreamingUtf8JsonReader(stream);
+                while (reader.Read())
+                {
+                    if (reader.TokenType == JsonTokenType.String)
+                    {
+                        Assert.AreEqual("value", reader.GetString());
+                    }
+                }
+
+                Assert.AreEqual(JsonTokenType.EndObject, reader.TokenType);
+                Assert.AreEqual(0, reader.ValueSpan.Length);
+
+                // The reader is no longer positioned on a string, so these throw instead of returning stale data.
+                Assert.IsTrue(Throws(ref reader, (ref StreamingUtf8JsonReader r) => r.GetString()));
+                Assert.IsTrue(Throws(ref reader, (ref StreamingUtf8JsonReader r) => r.ValueTextEquals("key")));
+            }
+        }
+
+        private delegate void ReaderAction(ref StreamingUtf8JsonReader reader);
+
+        private static bool Throws(ref StreamingUtf8JsonReader reader, ReaderAction action)
+        {
+            try
+            {
+                action(ref reader);
+                return false;
+            }
+            catch (InvalidOperationException)
+            {
+                return true;
+            }
+        }
+
+        /// <summary>
+        /// Every buffer rented while reading a document, including ones rented to grow the buffer, goes back to the pool
+        /// once the root value's closing token has been read.
+        /// </summary>
+        [TestMethod]
+        public void BuffersAreReturnedToThePoolAfterRootValueCloses()
+        {
+            // The first token (a long string) does not fit in the 16 byte buffer, so the reader also has to grow it.
+            byte[] payload = Encoding.UTF8.GetBytes("{\"key\":\"" + new string('v', 100) + "\",\"n\":[1,2,3]}trailing");
+
+            using (var listener = new ArrayPoolListener())
+            {
+                using (var stream = new MemoryStream(payload))
+                {
+                    var reader = new StreamingUtf8JsonReader(stream, 16);
+                    while (reader.Read()) { }
+                }
+
+                Assert.IsTrue(listener.RentedCount > 1, "Expected the initial buffer and at least one resized buffer to be rented.");
+                Assert.AreEqual(0, listener.OutstandingCount, "Buffers rented by the reader were not returned to the pool.");
+            }
+        }
+
+        /// <summary>
+        /// Records the shared ArrayPool buffers rented, and not yet returned, by the thread that created it.
+        /// </summary>
+        private sealed class ArrayPoolListener : System.Diagnostics.Tracing.EventListener
+        {
+            // Event ids of System.Buffers.ArrayPoolEventSource.
+            private const int BufferRented = 1;
+            private const int BufferReturned = 3;
+
+            private readonly int _threadId = System.Threading.Thread.CurrentThread.ManagedThreadId;
+            private readonly HashSet<long> _outstanding = new HashSet<long>();
+
+            public int RentedCount { get; private set; }
+
+            public int OutstandingCount
+            {
+                get { lock (_outstanding) return _outstanding.Count; }
+            }
+
+            protected override void OnEventSourceCreated(System.Diagnostics.Tracing.EventSource eventSource)
+            {
+                if (eventSource.Name == "System.Buffers.ArrayPoolEventSource")
+                {
+                    EnableEvents(eventSource, System.Diagnostics.Tracing.EventLevel.Verbose, System.Diagnostics.Tracing.EventKeywords.All);
+                }
+            }
+
+            protected override void OnEventWritten(System.Diagnostics.Tracing.EventWrittenEventArgs eventData)
+            {
+                // Events are written synchronously on the thread that rents or returns the buffer, so other tests
+                // running in parallel that use the shared pool can be told apart by thread.
+                if (eventData.EventSource.Name != "System.Buffers.ArrayPoolEventSource" ||
+                    System.Threading.Thread.CurrentThread.ManagedThreadId != _threadId)
+                {
+                    return;
+                }
+
+                var bufferId = Convert.ToInt64(eventData.Payload[0]);
+                lock (_outstanding)
+                {
+                    if (eventData.EventId == BufferRented)
+                    {
+                        RentedCount++;
+                        _outstanding.Add(bufferId);
+                    }
+                    else if (eventData.EventId == BufferReturned)
+                    {
+                        _outstanding.Remove(bufferId);
+                    }
+                }
+            }
+        }
+
     }
 }

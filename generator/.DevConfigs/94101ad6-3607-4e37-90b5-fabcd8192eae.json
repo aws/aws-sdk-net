@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Reuse the endpoint resolved during auth scheme resolution instead of evaluating the endpoint ruleset twice per request, and build partition property bags from a per-partition prototype."
+    ],
+    "type": "patch",
+    "updateMinimum": false
+  }
+}
